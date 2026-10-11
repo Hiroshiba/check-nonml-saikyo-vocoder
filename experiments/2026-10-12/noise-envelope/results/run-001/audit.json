@@ -1,0 +1,380 @@
+{
+  "planned_cases": 120,
+  "methods": {
+    "hnm": {
+      "rows": 120,
+      "processing": {
+        "measured": 120
+      },
+      "mos": {
+        "measured": 120
+      },
+      "estoi": {
+        "measured": 120
+      },
+      "pitch": {
+        "estimated_consistency_not_ground_truth": 120
+      },
+      "pitch_no_reference_voiced": 0,
+      "pooled_reference_voiced_frames": 20640,
+      "pooled_reference_voiced_output_unvoiced_frames": 1897,
+      "pooled_voicing_loss": 0.09190891472868216,
+      "wrong_seed_rows": [],
+      "incomplete_primary_rows": [],
+      "seed_statuses": {
+        "measured": 960
+      },
+      "zero_output_seeds": [],
+      "full_scale_seeds": [
+        [
+          "librispeech_2094-142345-0040",
+          0
+        ],
+        [
+          "librispeech_2094-142345-0040",
+          1
+        ],
+        [
+          "librispeech_2094-142345-0040",
+          4
+        ],
+        [
+          "librispeech_2094-142345-0040",
+          5
+        ],
+        [
+          "librispeech_2830-3980-0000",
+          5
+        ],
+        [
+          "librispeech_2830-3980-0000",
+          6
+        ],
+        [
+          "librispeech_3575-170457-0034",
+          1
+        ],
+        [
+          "librispeech_3575-170457-0034",
+          2
+        ],
+        [
+          "librispeech_3575-170457-0034",
+          4
+        ],
+        [
+          "librispeech_3575-170457-0034",
+          7
+        ]
+      ]
+    },
+    "candidate": {
+      "rows": 120,
+      "processing": {
+        "measured": 120
+      },
+      "mos": {
+        "measured": 120
+      },
+      "estoi": {
+        "measured": 120
+      },
+      "pitch": {
+        "estimated_consistency_not_ground_truth": 120
+      },
+      "pitch_no_reference_voiced": 0,
+      "pooled_reference_voiced_frames": 20640,
+      "pooled_reference_voiced_output_unvoiced_frames": 1819,
+      "pooled_voicing_loss": 0.08812984496124031,
+      "wrong_seed_rows": [],
+      "incomplete_primary_rows": [],
+      "seed_statuses": {
+        "measured": 960
+      },
+      "zero_output_seeds": [],
+      "full_scale_seeds": [
+        [
+          "librispeech_2094-142345-0040",
+          0
+        ],
+        [
+          "librispeech_2094-142345-0040",
+          1
+        ],
+        [
+          "librispeech_2094-142345-0040",
+          4
+        ],
+        [
+          "librispeech_2094-142345-0040",
+          5
+        ],
+        [
+          "librispeech_2830-3980-0000",
+          5
+        ],
+        [
+          "librispeech_2830-3980-0000",
+          6
+        ],
+        [
+          "librispeech_3575-170457-0034",
+          1
+        ],
+        [
+          "librispeech_3575-170457-0034",
+          2
+        ],
+        [
+          "librispeech_3575-170457-0034",
+          3
+        ],
+        [
+          "librispeech_3575-170457-0034",
+          6
+        ],
+        [
+          "librispeech_3575-170457-0034",
+          7
+        ]
+      ]
+    },
+    "world_harvest": {
+      "rows": 120,
+      "processing": {
+        "measured": 120
+      },
+      "mos": {
+        "measured": 120
+      },
+      "estoi": {
+        "measured": 120
+      },
+      "pitch": {
+        "estimated_consistency_not_ground_truth": 120
+      },
+      "pitch_no_reference_voiced": 0,
+      "pooled_reference_voiced_frames": 20640,
+      "pooled_reference_voiced_output_unvoiced_frames": 1738,
+      "pooled_voicing_loss": 0.08420542635658915,
+      "wrong_seed_rows": [],
+      "incomplete_primary_rows": [],
+      "seed_statuses": {
+        "measured": 120
+      },
+      "zero_output_seeds": [],
+      "full_scale_seeds": [
+        [
+          "librispeech_237-134500-0029",
+          0
+        ],
+        [
+          "librispeech_2830-3980-0000",
+          0
+        ],
+        [
+          "librispeech_3575-170457-0054",
+          0
+        ],
+        [
+          "librispeech_4077-13751-0001",
+          0
+        ],
+        [
+          "librispeech_4970-29093-0005",
+          0
+        ],
+        [
+          "librispeech_8230-279154-0033",
+          0
+        ],
+        [
+          "librispeech_8455-210777-0010",
+          0
+        ],
+        [
+          "librispeech_8455-210777-0060",
+          0
+        ]
+      ]
+    }
+  },
+  "new_full_scale_exceedances": [
+    {
+      "case": "librispeech_3575-170457-0034",
+      "seed": 3,
+      "base_peak": 0.7959110024614798,
+      "candidate_peak": 1.0505617584740041
+    },
+    {
+      "case": "librispeech_3575-170457-0034",
+      "seed": 6,
+      "base_peak": 0.9956273200560799,
+      "candidate_peak": 1.0037023925858537
+    }
+  ],
+  "original_mos": {
+    "measured": 120
+  },
+  "original_mos_mean": 3.8491800367832183,
+  "paired_metrics": {
+    "mos": {
+      "paired": 120,
+      "total": 120,
+      "speakers": 40,
+      "mean_difference": 0.0032105306784311932,
+      "speaker_bootstrap_95": [
+        -0.024115044325590133,
+        0.028643267502387354
+      ],
+      "bootstrap_repetitions": 2000,
+      "bootstrap_seed": 20261012
+    },
+    "estoi": {
+      "paired": 120,
+      "total": 120,
+      "speakers": 40,
+      "mean_difference": 0.0015209556582393082,
+      "speaker_bootstrap_95": [
+        0.000928697351352858,
+        0.00205918548780272
+      ],
+      "bootstrap_repetitions": 2000,
+      "bootstrap_seed": 20261012
+    },
+    "envelope": {
+      "paired": 120,
+      "total": 120,
+      "speakers": 40,
+      "mean_difference": -0.006650553360439402,
+      "speaker_bootstrap_95": [
+        -0.008094629136688649,
+        -0.005370961268180446
+      ],
+      "bootstrap_repetitions": 2000,
+      "bootstrap_seed": 20261012
+    },
+    "stft": {
+      "paired": 120,
+      "total": 120,
+      "speakers": 40,
+      "mean_difference": -0.0008981316846459124,
+      "speaker_bootstrap_95": [
+        -0.011827585815508327,
+        0.00969838361801607
+      ],
+      "bootstrap_repetitions": 2000,
+      "bootstrap_seed": 20261012
+    },
+    "band": {
+      "paired": 120,
+      "total": 120,
+      "speakers": 40,
+      "mean_difference": -0.0015221937464167518,
+      "speaker_bootstrap_95": [
+        -0.006036403348069568,
+        0.003209077815118524
+      ],
+      "bootstrap_repetitions": 2000,
+      "bootstrap_seed": 20261012
+    },
+    "level": {
+      "paired": 120,
+      "total": 120,
+      "speakers": 40,
+      "mean_difference": 0.0032537757110498245,
+      "speaker_bootstrap_95": [
+        0.0004924422548638689,
+        0.005601181125456121
+      ],
+      "bootstrap_repetitions": 2000,
+      "bootstrap_seed": 20261012
+    },
+    "modulation": {
+      "paired": 120,
+      "total": 120,
+      "speakers": 40,
+      "mean_difference": -0.1474080867469531,
+      "speaker_bootstrap_95": [
+        -0.17836520559083063,
+        -0.12043879521748042
+      ],
+      "bootstrap_repetitions": 2000,
+      "bootstrap_seed": 20261012
+    },
+    "pitch": {
+      "paired": 120,
+      "total": 120,
+      "speakers": 40,
+      "mean_difference": 0.20787021801628333,
+      "speaker_bootstrap_95": [
+        0.0254862822600482,
+        0.3925312268392443
+      ],
+      "bootstrap_repetitions": 2000,
+      "bootstrap_seed": 20261012
+    },
+    "voicing_loss": {
+      "paired": 120,
+      "total": 120,
+      "speakers": 40,
+      "mean_difference": -0.005267100004079758,
+      "speaker_bootstrap_95": [
+        -0.007566051771138175,
+        -0.0029939516929829734
+      ],
+      "bootstrap_repetitions": 2000,
+      "bootstrap_seed": 20261012
+    },
+    "full_scale": {
+      "paired": 120,
+      "total": 120,
+      "speakers": 40,
+      "mean_difference": 1.3102725366876308e-06,
+      "speaker_bootstrap_95": [
+        0.0,
+        3.930817610062892e-06
+      ],
+      "bootstrap_repetitions": 2000,
+      "bootstrap_seed": 20261012
+    }
+  },
+  "primary_subgroups": {
+    "全体": {
+      "paired": 120,
+      "total": 120,
+      "speakers": 40,
+      "mean_difference": -0.006650553360439402,
+      "speaker_bootstrap_95": [
+        -0.008094629136688649,
+        -0.005370961268180446
+      ],
+      "bootstrap_repetitions": 2000,
+      "bootstrap_seed": 20261012
+    },
+    "en/normal/F": {
+      "paired": 60,
+      "total": 60,
+      "speakers": 20,
+      "mean_difference": -0.007372389477900758,
+      "speaker_bootstrap_95": [
+        -0.009937650582495914,
+        -0.005159212242796404
+      ],
+      "bootstrap_repetitions": 2000,
+      "bootstrap_seed": 20261012
+    },
+    "en/normal/M": {
+      "paired": 60,
+      "total": 60,
+      "speakers": 20,
+      "mean_difference": -0.005928717242978045,
+      "speaker_bootstrap_95": [
+        -0.0072011223504862155,
+        -0.004822895753276989
+      ],
+      "bootstrap_repetitions": 2000,
+      "bootstrap_seed": 20261012
+    }
+  }
+}

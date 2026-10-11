@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "id": "2026-10-12-noise-envelope",
+  "date": "2026-10-12",
+  "timezone": "Asia/Tokyo",
+  "topic": "noise-envelope",
+  "title": "雑音の包絡を分ける案と固定120音声評価",
+  "summary": "包絡誤差は約7.2%改善。新規の振幅上限超過が2組あり、採用見送り。",
+  "status": "固定120録音・480予測MOS測定済み、現ベース維持",
+  "notes": [
+    "README.md",
+    "research.md",
+    "reviews/discussion.md",
+    "reviews/criteria.md",
+    "reviews/calibration.md",
+    "reviews/decision.md",
+    "reviews/peak_analysis.md"
+  ],
+  "runs": [
+    {
+      "id": "run-001",
+      "date": "2026-10-12",
+      "title": "固定120音声：雑音包絡候補とベース・WORLD",
+      "path": "results/run-001",
+      "recorded_at": "2026-10-12T01:03:04+09:00",
+      "recorded_at_source": "全件測定完了後、結果を公開対象へ保存した日時。測定開始はexecution.json、生成日時はresults.json。"
+    }
+  ]
+}
