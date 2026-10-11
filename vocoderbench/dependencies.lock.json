@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "dependencies": [
+    {
+      "name": "libllsm2",
+      "url": "https://github.com/Sleepwalking/libllsm2.git",
+      "commit": "d18cdf02b31819670e3bc23ead933ad9467da06d",
+      "license": "GPL-3.0-or-later",
+      "license_file": "LICENSE"
+    },
+    {
+      "name": "ciglet",
+      "url": "https://github.com/Sleepwalking/ciglet.git",
+      "commit": "895ba9b1c0eabee83d3544208bbc82420efa3206",
+      "license": "BSD-3-Clause core, see source headers for bundled dependencies",
+      "license_file": "ciglet.h"
+    }
+  ],
+  "build": {
+    "fp_type": "double",
+    "optimization": "-O2",
+    "openmp": false,
+    "f0_refine": false,
+    "harmonic_analysis": "CZT",
+    "max_harmonics": 400,
+    "noise_psd_bins": 256,
+    "noise_envelope_harmonics": 4,
+    "noise_band_edges_hz": [2000, 4000, 8000],
+    "noise_band_edge_policy": "retain only edges strictly below Nyquist",
+    "rng": "libc srand/rand, native seed = public seed + 1",
+    "adapter_f0_guard_hz": [40, 2000],
+    "adapter_sample_rate_guard_hz": [16000, 96000],
+    "adapter_max_hop_seconds": 0.05
+  }
+}

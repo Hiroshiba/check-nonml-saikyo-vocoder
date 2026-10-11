@@ -1,0 +1,947 @@
+{
+  "copy": {
+    "status": "ok",
+    "reference_samples": 24000,
+    "output_samples": 24000,
+    "length_delta_samples": 0,
+    "sample_rate": 24000,
+    "reference_finite": true,
+    "output_finite": true,
+    "alignment": "none",
+    "gain_normalization": "none",
+    "mr_stft": [
+      {
+        "window_ms": 5,
+        "window_samples": 120,
+        "hop_samples": 30,
+        "log_magnitude_mae_db": 0.0,
+        "spectral_convergence": 0.0,
+        "spectral_convergence_status": "ok",
+        "amplitude_floor": 1.0743374054450115e-06
+      },
+      {
+        "window_ms": 20,
+        "window_samples": 480,
+        "hop_samples": 120,
+        "log_magnitude_mae_db": 0.0,
+        "spectral_convergence": 0.0,
+        "spectral_convergence_status": "ok",
+        "amplitude_floor": 8.420869806705298e-07
+      },
+      {
+        "window_ms": 80,
+        "window_samples": 1920,
+        "hop_samples": 480,
+        "log_magnitude_mae_db": 0.0,
+        "spectral_convergence": 0.0,
+        "spectral_convergence_status": "ok",
+        "amplitude_floor": 8.325964069221952e-07
+      }
+    ],
+    "band_energy": {
+      "bands": [
+        {
+          "low_hz": 0.0,
+          "high_hz": 200.0,
+          "reference_power": 0.00819876060220343,
+          "output_power": 0.00819876060220343,
+          "delta_db": 0.0,
+          "reference_active": true
+        },
+        {
+          "low_hz": 200.0,
+          "high_hz": 500.0,
+          "reference_power": 6.069062493688723e-06,
+          "output_power": 6.069062493688723e-06,
+          "delta_db": 0.0,
+          "reference_active": true
+        },
+        {
+          "low_hz": 500.0,
+          "high_hz": 1000.0,
+          "reference_power": 0.0024410173832539414,
+          "output_power": 0.0024410173832539414,
+          "delta_db": 0.0,
+          "reference_active": true
+        },
+        {
+          "low_hz": 1000.0,
+          "high_hz": 2000.0,
+          "reference_power": 0.0016951619331734232,
+          "output_power": 0.0016951619331734232,
+          "delta_db": 0.0,
+          "reference_active": true
+        },
+        {
+          "low_hz": 2000.0,
+          "high_hz": 4000.0,
+          "reference_power": 0.001084897651009141,
+          "output_power": 0.001084897651009141,
+          "delta_db": 0.0,
+          "reference_active": true
+        },
+        {
+          "low_hz": 4000.0,
+          "high_hz": 8000.0,
+          "reference_power": 6.080666060804323e-11,
+          "output_power": 6.080666060804323e-11,
+          "delta_db": 0.0,
+          "reference_active": false
+        },
+        {
+          "low_hz": 8000.0,
+          "high_hz": 12000.0,
+          "reference_power": 4.925471256219429e-13,
+          "output_power": 4.925471256219429e-13,
+          "delta_db": 0.0,
+          "reference_active": false
+        }
+      ],
+      "power_floor": 1e-12,
+      "active_band_count": 5,
+      "band_count": 7,
+      "active_band_mae_db": 0.0,
+      "active_policy": "reference power > max(1e-12, total reference power * 1e-6)",
+      "status": "ok"
+    },
+    "rms_gain_error_db": 0.0,
+    "pitch": null,
+    "output_rms_dbfs": -18.720563753745495,
+    "output_peak": 0.3505310358274129,
+    "reference_rms_dbfs": -18.720563753745495,
+    "rms_gain_status": "ok",
+    "mr_stft_log_magnitude_mae_db": 0.0
+  },
+  "gain": {
+    "status": "ok",
+    "reference_samples": 24000,
+    "output_samples": 24000,
+    "length_delta_samples": 0,
+    "sample_rate": 24000,
+    "reference_finite": true,
+    "output_finite": true,
+    "alignment": "none",
+    "gain_normalization": "none",
+    "mr_stft": [
+      {
+        "window_ms": 5,
+        "window_samples": 120,
+        "hop_samples": 30,
+        "log_magnitude_mae_db": 2.4555955832693885,
+        "spectral_convergence": 0.5,
+        "spectral_convergence_status": "ok",
+        "amplitude_floor": 1.0743374054450115e-06
+      },
+      {
+        "window_ms": 20,
+        "window_samples": 480,
+        "hop_samples": 120,
+        "log_magnitude_mae_db": 1.6837816339294212,
+        "spectral_convergence": 0.5,
+        "spectral_convergence_status": "ok",
+        "amplitude_floor": 8.420869806705298e-07
+      },
+      {
+        "window_ms": 80,
+        "window_samples": 1920,
+        "hop_samples": 480,
+        "log_magnitude_mae_db": 0.9933115780686673,
+        "spectral_convergence": 0.5,
+        "spectral_convergence_status": "ok",
+        "amplitude_floor": 8.325964069221952e-07
+      }
+    ],
+    "band_energy": {
+      "bands": [
+        {
+          "low_hz": 0.0,
+          "high_hz": 200.0,
+          "reference_power": 0.00819876060220343,
+          "output_power": 0.0020496901505508577,
+          "delta_db": -6.020599913279624,
+          "reference_active": true
+        },
+        {
+          "low_hz": 200.0,
+          "high_hz": 500.0,
+          "reference_power": 6.069062493688723e-06,
+          "output_power": 1.5172656234221807e-06,
+          "delta_db": -6.020599913279624,
+          "reference_active": true
+        },
+        {
+          "low_hz": 500.0,
+          "high_hz": 1000.0,
+          "reference_power": 0.0024410173832539414,
+          "output_power": 0.0006102543458134853,
+          "delta_db": -6.020599913279624,
+          "reference_active": true
+        },
+        {
+          "low_hz": 1000.0,
+          "high_hz": 2000.0,
+          "reference_power": 0.0016951619331734232,
+          "output_power": 0.0004237904832933558,
+          "delta_db": -6.020599913279624,
+          "reference_active": true
+        },
+        {
+          "low_hz": 2000.0,
+          "high_hz": 4000.0,
+          "reference_power": 0.001084897651009141,
+          "output_power": 0.00027122441275228524,
+          "delta_db": -6.020599913279624,
+          "reference_active": true
+        },
+        {
+          "low_hz": 4000.0,
+          "high_hz": 8000.0,
+          "reference_power": 6.080666060804323e-11,
+          "output_power": 1.5201665152010808e-11,
+          "delta_db": -6.020599913279624,
+          "reference_active": false
+        },
+        {
+          "low_hz": 8000.0,
+          "high_hz": 12000.0,
+          "reference_power": 4.925471256219429e-13,
+          "output_power": 1.2313678140548572e-13,
+          "delta_db": 0.0,
+          "reference_active": false
+        }
+      ],
+      "power_floor": 1e-12,
+      "active_band_count": 5,
+      "band_count": 7,
+      "active_band_mae_db": 6.020599913279624,
+      "active_policy": "reference power > max(1e-12, total reference power * 1e-6)",
+      "status": "ok"
+    },
+    "rms_gain_error_db": -6.020599913279624,
+    "pitch": null,
+    "output_rms_dbfs": -24.74116366702512,
+    "output_peak": 0.17526551791370645,
+    "reference_rms_dbfs": -18.720563753745495,
+    "rms_gain_status": "ok",
+    "mr_stft_log_magnitude_mae_db": 1.7108962650891588
+  },
+  "shift": {
+    "status": "ok",
+    "reference_samples": 24000,
+    "output_samples": 24000,
+    "length_delta_samples": 0,
+    "sample_rate": 24000,
+    "reference_finite": true,
+    "output_finite": true,
+    "alignment": "none",
+    "gain_normalization": "none",
+    "mr_stft": [
+      {
+        "window_ms": 5,
+        "window_samples": 120,
+        "hop_samples": 30,
+        "log_magnitude_mae_db": 1.3101320949551039,
+        "spectral_convergence": 0.4169743496089656,
+        "spectral_convergence_status": "ok",
+        "amplitude_floor": 1.0743374054450115e-06
+      },
+      {
+        "window_ms": 20,
+        "window_samples": 480,
+        "hop_samples": 120,
+        "log_magnitude_mae_db": 0.9308259474322117,
+        "spectral_convergence": 0.10328643529641682,
+        "spectral_convergence_status": "ok",
+        "amplitude_floor": 8.420869806705298e-07
+      },
+      {
+        "window_ms": 80,
+        "window_samples": 1920,
+        "hop_samples": 480,
+        "log_magnitude_mae_db": 1.0465101425841588,
+        "spectral_convergence": 0.08822942429588128,
+        "spectral_convergence_status": "ok",
+        "amplitude_floor": 8.325964069221952e-07
+      }
+    ],
+    "band_energy": {
+      "bands": [
+        {
+          "low_hz": 0.0,
+          "high_hz": 200.0,
+          "reference_power": 0.00819876060220343,
+          "output_power": 0.008190336164955807,
+          "delta_db": -0.004464781658195493,
+          "reference_active": true
+        },
+        {
+          "low_hz": 200.0,
+          "high_hz": 500.0,
+          "reference_power": 6.069062493688723e-06,
+          "output_power": 9.098728324189677e-06,
+          "delta_db": 1.7585908829055428,
+          "reference_active": true
+        },
+        {
+          "low_hz": 500.0,
+          "high_hz": 1000.0,
+          "reference_power": 0.0024410173832539414,
+          "output_power": 0.0024396431892576703,
+          "delta_db": -0.0024455906185199146,
+          "reference_active": true
+        },
+        {
+          "low_hz": 1000.0,
+          "high_hz": 2000.0,
+          "reference_power": 0.0016951619331734232,
+          "output_power": 0.0016941513218483586,
+          "delta_db": -0.002589922511185153,
+          "reference_active": true
+        },
+        {
+          "low_hz": 2000.0,
+          "high_hz": 4000.0,
+          "reference_power": 0.001084897651009141,
+          "output_power": 0.0010842622226750727,
+          "delta_db": -0.002544423123186266,
+          "reference_active": true
+        },
+        {
+          "low_hz": 4000.0,
+          "high_hz": 8000.0,
+          "reference_power": 6.080666060804323e-11,
+          "output_power": 1.1415794521606596e-08,
+          "delta_db": 22.73554989701879,
+          "reference_active": false
+        },
+        {
+          "low_hz": 8000.0,
+          "high_hz": 12000.0,
+          "reference_power": 4.925471256219429e-13,
+          "output_power": 6.936284674279256e-10,
+          "delta_db": 28.41126908852751,
+          "reference_active": false
+        }
+      ],
+      "power_floor": 1e-12,
+      "active_band_count": 5,
+      "band_count": 7,
+      "active_band_mae_db": 0.3541271201633259,
+      "active_policy": "reference power > max(1e-12, total reference power * 1e-6)",
+      "status": "ok"
+    },
+    "rms_gain_error_db": -0.0027189972475672773,
+    "pitch": null,
+    "output_rms_dbfs": -18.72328275099306,
+    "output_peak": 0.3505310358274129,
+    "reference_rms_dbfs": -18.720563753745495,
+    "rms_gain_status": "ok",
+    "mr_stft_log_magnitude_mae_db": 1.0958227283238247
+  },
+  "lowpass": {
+    "status": "ok",
+    "reference_samples": 24000,
+    "output_samples": 24000,
+    "length_delta_samples": 0,
+    "sample_rate": 24000,
+    "reference_finite": true,
+    "output_finite": true,
+    "alignment": "none",
+    "gain_normalization": "none",
+    "mr_stft": [
+      {
+        "window_ms": 5,
+        "window_samples": 120,
+        "hop_samples": 30,
+        "log_magnitude_mae_db": 7.598866828579558,
+        "spectral_convergence": 0.5458660974563677,
+        "spectral_convergence_status": "ok",
+        "amplitude_floor": 1.0743374054450115e-06
+      },
+      {
+        "window_ms": 20,
+        "window_samples": 480,
+        "hop_samples": 120,
+        "log_magnitude_mae_db": 4.7643888667953505,
+        "spectral_convergence": 0.4497515143749347,
+        "spectral_convergence_status": "ok",
+        "amplitude_floor": 8.420869806705298e-07
+      },
+      {
+        "window_ms": 80,
+        "window_samples": 1920,
+        "hop_samples": 480,
+        "log_magnitude_mae_db": 2.0071778114277885,
+        "spectral_convergence": 0.44969558288192224,
+        "spectral_convergence_status": "ok",
+        "amplitude_floor": 8.325964069221952e-07
+      }
+    ],
+    "band_energy": {
+      "bands": [
+        {
+          "low_hz": 0.0,
+          "high_hz": 200.0,
+          "reference_power": 0.00819876060220343,
+          "output_power": 0.00819872060324917,
+          "delta_db": -2.1187796954092853e-05,
+          "reference_active": true
+        },
+        {
+          "low_hz": 200.0,
+          "high_hz": 500.0,
+          "reference_power": 6.069062493688723e-06,
+          "output_power": 6.106966163049886e-06,
+          "delta_db": 0.0270390421792711,
+          "reference_active": true
+        },
+        {
+          "low_hz": 500.0,
+          "high_hz": 1000.0,
+          "reference_power": 0.0024410173832539414,
+          "output_power": 0.002428886779231732,
+          "delta_db": -0.021636012165015615,
+          "reference_active": true
+        },
+        {
+          "low_hz": 1000.0,
+          "high_hz": 2000.0,
+          "reference_power": 0.0016951619331734232,
+          "output_power": 6.479410372288667e-07,
+          "delta_db": -34.17675704446948,
+          "reference_active": true
+        },
+        {
+          "low_hz": 2000.0,
+          "high_hz": 4000.0,
+          "reference_power": 0.001084897651009141,
+          "output_power": 1.2463394128044456e-11,
+          "delta_db": -79.39752440009023,
+          "reference_active": true
+        },
+        {
+          "low_hz": 4000.0,
+          "high_hz": 8000.0,
+          "reference_power": 6.080666060804323e-11,
+          "output_power": 8.105784423385575e-12,
+          "delta_db": -8.751561040772435,
+          "reference_active": false
+        },
+        {
+          "low_hz": 8000.0,
+          "high_hz": 12000.0,
+          "reference_power": 4.925471256219429e-13,
+          "output_power": 4.217259068265913e-12,
+          "delta_db": 6.250302807545886,
+          "reference_active": false
+        }
+      ],
+      "power_floor": 1e-12,
+      "active_band_count": 5,
+      "band_count": 7,
+      "active_band_mae_db": 22.72459553734019,
+      "active_policy": "reference power > max(1e-12, total reference power * 1e-6)",
+      "status": "ok"
+    },
+    "rms_gain_error_db": -1.0123217191102212,
+    "pitch": null,
+    "output_rms_dbfs": -19.732885472855713,
+    "output_peak": 0.2786432808294176,
+    "reference_rms_dbfs": -18.720563753745495,
+    "rms_gain_status": "ok",
+    "mr_stft_log_magnitude_mae_db": 4.790144502267566
+  },
+  "crop": {
+    "status": "length_mismatch",
+    "reference_samples": 24000,
+    "output_samples": 21600,
+    "length_delta_samples": -2400,
+    "sample_rate": 24000,
+    "reference_finite": true,
+    "output_finite": true,
+    "alignment": "none",
+    "gain_normalization": "none",
+    "mr_stft": null,
+    "band_energy": null,
+    "rms_gain_error_db": null,
+    "pitch": null,
+    "output_rms_dbfs": -18.379354315279425,
+    "output_peak": 0.3505310358274129
+  },
+  "nan": {
+    "status": "nonfinite_input_or_output",
+    "reference_samples": 24000,
+    "output_samples": 24000,
+    "length_delta_samples": 0,
+    "sample_rate": 24000,
+    "reference_finite": true,
+    "output_finite": false,
+    "alignment": "none",
+    "gain_normalization": "none",
+    "mr_stft": null,
+    "band_energy": null,
+    "rms_gain_error_db": null,
+    "pitch": null,
+    "output_rms_dbfs": null,
+    "output_peak": null
+  },
+  "inf": {
+    "status": "nonfinite_input_or_output",
+    "reference_samples": 24000,
+    "output_samples": 24000,
+    "length_delta_samples": 0,
+    "sample_rate": 24000,
+    "reference_finite": true,
+    "output_finite": false,
+    "alignment": "none",
+    "gain_normalization": "none",
+    "mr_stft": null,
+    "band_energy": null,
+    "rms_gain_error_db": null,
+    "pitch": null,
+    "output_rms_dbfs": null,
+    "output_peak": null
+  },
+  "silence": {
+    "status": "ok",
+    "reference_samples": 24000,
+    "output_samples": 24000,
+    "length_delta_samples": 0,
+    "sample_rate": 24000,
+    "reference_finite": true,
+    "output_finite": true,
+    "alignment": "none",
+    "gain_normalization": "none",
+    "mr_stft": [
+      {
+        "window_ms": 5,
+        "window_samples": 120,
+        "hop_samples": 30,
+        "log_magnitude_mae_db": 22.101916787397954,
+        "spectral_convergence": 1.0,
+        "spectral_convergence_status": "ok",
+        "amplitude_floor": 1.0743374054450115e-06
+      },
+      {
+        "window_ms": 20,
+        "window_samples": 480,
+        "hop_samples": 120,
+        "log_magnitude_mae_db": 11.903413562233752,
+        "spectral_convergence": 1.0,
+        "spectral_convergence_status": "ok",
+        "amplitude_floor": 8.420869806705298e-07
+      },
+      {
+        "window_ms": 80,
+        "window_samples": 1920,
+        "hop_samples": 480,
+        "log_magnitude_mae_db": 4.984189567199777,
+        "spectral_convergence": 1.0,
+        "spectral_convergence_status": "ok",
+        "amplitude_floor": 8.325964069221952e-07
+      }
+    ],
+    "band_energy": {
+      "bands": [
+        {
+          "low_hz": 0.0,
+          "high_hz": 200.0,
+          "reference_power": 0.00819876060220343,
+          "output_power": 0.0,
+          "delta_db": -99.137482055171,
+          "reference_active": true
+        },
+        {
+          "low_hz": 200.0,
+          "high_hz": 500.0,
+          "reference_power": 6.069062493688723e-06,
+          "output_power": 0.0,
+          "delta_db": -67.83121609483288,
+          "reference_active": true
+        },
+        {
+          "low_hz": 500.0,
+          "high_hz": 1000.0,
+          "reference_power": 0.0024410173832539414,
+          "output_power": 0.0,
+          "delta_db": -93.8757087217605,
+          "reference_active": true
+        },
+        {
+          "low_hz": 1000.0,
+          "high_hz": 2000.0,
+          "reference_power": 0.0016951619331734232,
+          "output_power": 0.0,
+          "delta_db": -92.29211191226128,
+          "reference_active": true
+        },
+        {
+          "low_hz": 2000.0,
+          "high_hz": 4000.0,
+          "reference_power": 0.001084897651009141,
+          "output_power": 0.0,
+          "delta_db": -90.35388768877105,
+          "reference_active": true
+        },
+        {
+          "low_hz": 4000.0,
+          "high_hz": 8000.0,
+          "reference_power": 6.080666060804323e-11,
+          "output_power": 0.0,
+          "delta_db": -17.839511533991473,
+          "reference_active": false
+        },
+        {
+          "low_hz": 8000.0,
+          "high_hz": 12000.0,
+          "reference_power": 4.925471256219429e-13,
+          "output_power": 0.0,
+          "delta_db": 0.0,
+          "reference_active": false
+        }
+      ],
+      "power_floor": 1e-12,
+      "active_band_count": 5,
+      "band_count": 7,
+      "active_band_mae_db": 88.69808129455933,
+      "active_policy": "reference power > max(1e-12, total reference power * 1e-6)",
+      "status": "ok"
+    },
+    "rms_gain_error_db": -101.2794362462545,
+    "pitch": null,
+    "output_rms_dbfs": -120.0,
+    "output_peak": 0.0,
+    "reference_rms_dbfs": -18.720563753745495,
+    "rms_gain_status": "ok",
+    "mr_stft_log_magnitude_mae_db": 12.996506638943828
+  },
+  "out_of_range": {
+    "status": "ok",
+    "reference_samples": 24000,
+    "output_samples": 24000,
+    "length_delta_samples": 0,
+    "sample_rate": 24000,
+    "reference_finite": true,
+    "output_finite": true,
+    "alignment": "none",
+    "gain_normalization": "none",
+    "mr_stft": [
+      {
+        "window_ms": 5,
+        "window_samples": 120,
+        "hop_samples": 30,
+        "log_magnitude_mae_db": 11.219488364094987,
+        "spectral_convergence": 9.0,
+        "spectral_convergence_status": "ok",
+        "amplitude_floor": 1.0743374054450115e-06
+      },
+      {
+        "window_ms": 20,
+        "window_samples": 480,
+        "hop_samples": 120,
+        "log_magnitude_mae_db": 7.100045197272645,
+        "spectral_convergence": 9.0,
+        "spectral_convergence_status": "ok",
+        "amplitude_floor": 8.420869806705298e-07
+      },
+      {
+        "window_ms": 80,
+        "window_samples": 1920,
+        "hop_samples": 480,
+        "log_magnitude_mae_db": 4.550467583949985,
+        "spectral_convergence": 9.0,
+        "spectral_convergence_status": "ok",
+        "amplitude_floor": 8.325964069221952e-07
+      }
+    ],
+    "band_energy": {
+      "bands": [
+        {
+          "low_hz": 0.0,
+          "high_hz": 200.0,
+          "reference_power": 0.00819876060220343,
+          "output_power": 0.8198760602203431,
+          "delta_db": 20.0,
+          "reference_active": true
+        },
+        {
+          "low_hz": 200.0,
+          "high_hz": 500.0,
+          "reference_power": 6.069062493688723e-06,
+          "output_power": 0.0006069062493688727,
+          "delta_db": 20.000000000000004,
+          "reference_active": true
+        },
+        {
+          "low_hz": 500.0,
+          "high_hz": 1000.0,
+          "reference_power": 0.0024410173832539414,
+          "output_power": 0.24410173832539417,
+          "delta_db": 20.0,
+          "reference_active": true
+        },
+        {
+          "low_hz": 1000.0,
+          "high_hz": 2000.0,
+          "reference_power": 0.0016951619331734232,
+          "output_power": 0.16951619331734222,
+          "delta_db": 19.999999999999996,
+          "reference_active": true
+        },
+        {
+          "low_hz": 2000.0,
+          "high_hz": 4000.0,
+          "reference_power": 0.001084897651009141,
+          "output_power": 0.10848976510091407,
+          "delta_db": 19.999999999999996,
+          "reference_active": true
+        },
+        {
+          "low_hz": 4000.0,
+          "high_hz": 8000.0,
+          "reference_power": 6.080666060804323e-11,
+          "output_power": 6.080666060804634e-09,
+          "delta_db": 20.00000000000022,
+          "reference_active": false
+        },
+        {
+          "low_hz": 8000.0,
+          "high_hz": 12000.0,
+          "reference_power": 4.925471256219429e-13,
+          "output_power": 4.9254712562213715e-11,
+          "delta_db": 16.92447788982937,
+          "reference_active": false
+        }
+      ],
+      "power_floor": 1e-12,
+      "active_band_count": 5,
+      "band_count": 7,
+      "active_band_mae_db": 20.0,
+      "active_policy": "reference power > max(1e-12, total reference power * 1e-6)",
+      "status": "ok"
+    },
+    "rms_gain_error_db": 20.0,
+    "pitch": null,
+    "output_rms_dbfs": 1.2794362462545057,
+    "output_peak": 3.505310358274129,
+    "reference_rms_dbfs": -18.720563753745495,
+    "rms_gain_status": "ok",
+    "mr_stft_log_magnitude_mae_db": 7.623333715105872
+  },
+  "known_pitch": {
+    "estimator": "independent-yin-difference-v2-prefiltered",
+    "frame_ms": 80.0,
+    "hop_ms": 10.0,
+    "prefilter": {
+      "kind": "butterworth-forward-backward",
+      "order_per_pass": 6,
+      "cutoff_hz": 2000.0,
+      "pad_type": "even",
+      "max_pad_samples": 1920
+    },
+    "validated_scope": "independent synthetic calibration; requires sufficient periodic energy below 2 kHz; not validated for natural speech",
+    "fmin_hz": 65.0,
+    "fmax_hz": 700.0,
+    "total_frames": 93,
+    "expected_voiced_frames": 93,
+    "expected_unvoiced_frames": 0,
+    "boundary_frames": 0,
+    "boundary_policy": "mixed-truth windows counted but excluded from cent and UV summaries",
+    "valid_voiced_frames": 93,
+    "missing_voiced_frames": 0,
+    "false_voiced_frames": 0,
+    "gross_pitch_error_frames": 0,
+    "abs_error_cents_median": 0.060061698150966854,
+    "abs_error_cents_p95": 0.06751089649147639,
+    "voiced_detection_rate": 1.0,
+    "unvoiced_false_positive_rate": null,
+    "score_status": "ok",
+    "uncovered_tail_samples": 0
+  },
+  "missing_voice": {
+    "estimator": "independent-yin-difference-v2-prefiltered",
+    "frame_ms": 80.0,
+    "hop_ms": 10.0,
+    "prefilter": {
+      "kind": "butterworth-forward-backward",
+      "order_per_pass": 6,
+      "cutoff_hz": 2000.0,
+      "pad_type": "even",
+      "max_pad_samples": 1920
+    },
+    "validated_scope": "independent synthetic calibration; requires sufficient periodic energy below 2 kHz; not validated for natural speech",
+    "fmin_hz": 65.0,
+    "fmax_hz": 700.0,
+    "total_frames": 93,
+    "expected_voiced_frames": 93,
+    "expected_unvoiced_frames": 0,
+    "boundary_frames": 0,
+    "boundary_policy": "mixed-truth windows counted but excluded from cent and UV summaries",
+    "valid_voiced_frames": 0,
+    "missing_voiced_frames": 93,
+    "false_voiced_frames": 0,
+    "gross_pitch_error_frames": 0,
+    "abs_error_cents_median": null,
+    "abs_error_cents_p95": null,
+    "voiced_detection_rate": 0.0,
+    "unvoiced_false_positive_rate": null,
+    "score_status": "no_valid_voiced_frames",
+    "uncovered_tail_samples": 0
+  },
+  "silence_truth": {
+    "estimator": "independent-yin-difference-v2-prefiltered",
+    "frame_ms": 80.0,
+    "hop_ms": 10.0,
+    "prefilter": {
+      "kind": "butterworth-forward-backward",
+      "order_per_pass": 6,
+      "cutoff_hz": 2000.0,
+      "pad_type": "even",
+      "max_pad_samples": 1920
+    },
+    "validated_scope": "independent synthetic calibration; requires sufficient periodic energy below 2 kHz; not validated for natural speech",
+    "fmin_hz": 65.0,
+    "fmax_hz": 700.0,
+    "total_frames": 93,
+    "expected_voiced_frames": 0,
+    "expected_unvoiced_frames": 93,
+    "boundary_frames": 0,
+    "boundary_policy": "mixed-truth windows counted but excluded from cent and UV summaries",
+    "valid_voiced_frames": 0,
+    "missing_voiced_frames": 0,
+    "false_voiced_frames": 0,
+    "gross_pitch_error_frames": 0,
+    "abs_error_cents_median": null,
+    "abs_error_cents_p95": null,
+    "voiced_detection_rate": null,
+    "unvoiced_false_positive_rate": 0.0,
+    "score_status": "no_valid_voiced_frames",
+    "uncovered_tail_samples": 0
+  },
+  "dc_truth_unvoiced": {
+    "estimator": "independent-yin-difference-v2-prefiltered",
+    "frame_ms": 80.0,
+    "hop_ms": 10.0,
+    "prefilter": {
+      "kind": "butterworth-forward-backward",
+      "order_per_pass": 6,
+      "cutoff_hz": 2000.0,
+      "pad_type": "even",
+      "max_pad_samples": 1920
+    },
+    "validated_scope": "independent synthetic calibration; requires sufficient periodic energy below 2 kHz; not validated for natural speech",
+    "fmin_hz": 65.0,
+    "fmax_hz": 700.0,
+    "total_frames": 93,
+    "expected_voiced_frames": 0,
+    "expected_unvoiced_frames": 93,
+    "boundary_frames": 0,
+    "boundary_policy": "mixed-truth windows counted but excluded from cent and UV summaries",
+    "valid_voiced_frames": 0,
+    "missing_voiced_frames": 0,
+    "false_voiced_frames": 0,
+    "gross_pitch_error_frames": 0,
+    "abs_error_cents_median": null,
+    "abs_error_cents_p95": null,
+    "voiced_detection_rate": null,
+    "unvoiced_false_positive_rate": 0.0,
+    "score_status": "no_valid_voiced_frames",
+    "uncovered_tail_samples": 0
+  },
+  "very_short_voiced": {
+    "estimator": "independent-yin-difference-v2-prefiltered",
+    "frame_ms": 80.0,
+    "hop_ms": 10.0,
+    "prefilter": {
+      "kind": "butterworth-forward-backward",
+      "order_per_pass": 6,
+      "cutoff_hz": 2000.0,
+      "pad_type": "even",
+      "max_pad_samples": 1920
+    },
+    "validated_scope": "independent synthetic calibration; requires sufficient periodic energy below 2 kHz; not validated for natural speech",
+    "fmin_hz": 65.0,
+    "fmax_hz": 700.0,
+    "total_frames": 0,
+    "expected_voiced_frames": 0,
+    "expected_unvoiced_frames": 0,
+    "boundary_frames": 0,
+    "boundary_policy": "mixed-truth windows counted but excluded from cent and UV summaries",
+    "valid_voiced_frames": 0,
+    "missing_voiced_frames": 0,
+    "false_voiced_frames": 0,
+    "gross_pitch_error_frames": 0,
+    "abs_error_cents_median": null,
+    "abs_error_cents_p95": null,
+    "voiced_detection_rate": null,
+    "unvoiced_false_positive_rate": null,
+    "score_status": "no_valid_voiced_frames",
+    "uncovered_tail_samples": 100
+  },
+  "audit_provenance": {
+    "metric_sha256": "8e1eebbe772b86efe16087121dfab01257940c22108f03206c8872aa613b683e",
+    "audit_script_sha256": "3034451bc65dc34a5b603b98bf912fec1b9c701ccc625e213479ba358e462f05",
+    "reference_float64_sha256": "bd5b30d03a2ad4a4dd0485cbcd0186d3c03ffefbd3eef2bfef628b2b50d3f771",
+    "scope": "independent mechanical metric audit; not perceptual validation",
+    "assertion_scope": "thresholds check these known stimuli, not user quality requirements"
+  },
+  "checks": [
+    {
+      "check": "all_metric_calls_recorded",
+      "status": "passed"
+    },
+    {
+      "check": "copy_is_identical",
+      "status": "passed"
+    },
+    {
+      "check": "gain_sign_and_units",
+      "status": "passed"
+    },
+    {
+      "check": "shift_is_not_hidden",
+      "status": "passed"
+    },
+    {
+      "check": "lowpass_band_loss",
+      "status": "passed"
+    },
+    {
+      "check": "crop_is_length_failure",
+      "status": "passed"
+    },
+    {
+      "check": "nan_is_invalid",
+      "status": "passed"
+    },
+    {
+      "check": "inf_is_invalid",
+      "status": "passed"
+    },
+    {
+      "check": "missing_voice_is_not_zero_error",
+      "status": "passed"
+    },
+    {
+      "check": "silence_pitch_is_undefined",
+      "status": "passed"
+    },
+    {
+      "check": "dc_is_not_periodicity",
+      "status": "passed"
+    },
+    {
+      "check": "overflow_range_not_normalized",
+      "status": "passed"
+    },
+    {
+      "check": "short_signal_is_unevaluated",
+      "status": "passed"
+    },
+    {
+      "check": "known_pitch_calibrated",
+      "status": "passed"
+    }
+  ],
+  "audit_status": "passed"
+}
