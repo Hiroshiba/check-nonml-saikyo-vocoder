@@ -14,6 +14,8 @@ def esc(value):
 
 def brief(results):
     data = json.loads((results / 'results.json').read_text(encoding='utf-8'))
+    if data.get('schema_version', 1) >= 3:
+        return _brief_expanded(data, results)
     if data.get('schema_version', 1) >= 2:
         return _brief_current(data)
     rows = data['resynthesis']
@@ -42,6 +44,22 @@ def brief(results):
             '<div class="scroll"><table><thead><tr><th>方式</th><th>スペクトル誤差中央値 dB</th>'
             '<th>対応する差分の中央値 dB</th><th>有効／全件</th><th>処理・測定失敗</th></tr></thead>'
             f'<tbody>{"".join(body)}</tbody></table></div>')
+
+
+def _brief_expanded(data, results):
+    summary = json.loads((results / 'summary.json').read_text(encoding='utf-8'))['全体']
+    rows = []
+    for method, group in summary.items():
+        mos, envelope = group['metrics']['mos'], group['metrics']['envelope']
+        delta = envelope['difference_from_base']['mean_difference']
+        mos_text = f'{mos["mean"]:.3f}' if mos['mean'] is not None else '未測定'
+        error_text = f'{envelope["mean"]:.3f}' if envelope['mean'] is not None else '未測定'
+        delta_text = f'{delta:+.3f}' if delta is not None else '—'
+        values = [data['method_labels'][method], mos_text, error_text, delta_text,
+                  f'{mos["valid"]}/{data["planned_cases"]}']
+        rows.append('<tr>'+''.join(f'<td>{esc(v)}</td>' for v in values)+'</tr>')
+    return ('<div class="scroll"><table><tr><th>方式</th><th>予測MOS ↑</th><th>包絡誤差 ↓</th>'
+            '<th>ベースとの差 ↓</th><th>MOS有効数</th></tr>'+''.join(rows)+'</table></div>')
 
 
 def _brief_current(data):
@@ -79,8 +97,9 @@ def short_audio(results):
     if not path.exists():
         return '<p><small>この過去の記録には音声例を保存していません。</small></p>'
     data = json.loads(path.read_text(encoding='utf-8'))
-    current = json.loads((results / 'results.json').read_text(encoding='utf-8')).get('schema_version', 1) >= 2
-    labels = CURRENT_LABELS if current else LABELS
+    measurements = json.loads((results / 'results.json').read_text(encoding='utf-8'))
+    current = measurements.get('schema_version', 1) >= 2
+    labels = measurements.get('method_labels', CURRENT_LABELS if current else LABELS)
     samples = data.get('samples', [])
     refs = [s for s in samples if s['method'] == 'identity']
     if not refs:
@@ -88,8 +107,9 @@ def short_audio(results):
     chosen = next((s for s in refs if s['case'].startswith('librispeech_')), refs[0])
     cards = []
     if current:
-        samples = sorted((s for s in samples if s['method'] in CURRENT_LABELS),
-                         key=lambda s: ['identity', 'hnm', 'world_harvest'].index(s['method']))
+        order = ['candidate', 'identity', 'hnm', 'world_harvest']
+        samples = sorted((s for s in samples if s['method'] in labels),
+                         key=lambda s: order.index(s['method']) if s['method'] in order else len(order))
     for sample in samples:
         if sample['case'] != chosen['case']:
             continue

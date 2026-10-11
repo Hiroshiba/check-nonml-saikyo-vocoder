@@ -1,0 +1,71 @@
+{
+  "schema": "peak-cause-study-v1",
+  "frozen_at_utc": "2026-10-11T16:09:49.794629+00:00",
+  "purpose": "正式120録音比較で棄却した候補の事後原因分析。採否再判定・正式比較の代替ではない。",
+  "case": {
+    "id": "librispeech_3575-170457-0034",
+    "language": "en",
+    "style": "normal",
+    "speaker": "librispeech_3575",
+    "source_utterance_id": "3575-170457-0034",
+    "speaker_gender_as_distributed": "F",
+    "excerpt_start_sample": 0,
+    "excerpt_samples": 55920,
+    "kind": "natural_speech",
+    "sr": 16000,
+    "source_file": "audio/librispeech_3575-170457-0034.wav",
+    "source_file_sha256": "53cc005f386dbcd9738a8dd623cab86151cf87bd4f53bdfa78d7cea937f0764f",
+    "decoded_pcm_sha256": "b1c60dfc008f07f56156adc48b00db15f16da435fb212895c0516ecbd9e5de30",
+    "original_source_sha256": "7379f6afffbfc11aded5aae60cf94ff2f5aa5a2dc317f61b2cd70c9c4d4847df",
+    "corpus_entry_id": "librispeech_3575-170457-0034"
+  },
+  "seeds": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "full_scale_rule": "abs(sample) >= 1.0",
+  "window": "最大値または対象時刻から±50 ms、両端を含む、原音の範囲で切る",
+  "normalization": "none",
+  "source_sha256": {
+    "base": {
+      "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "hnm.py": "58f0378793b7433f80bf854972882298649799d8e3d0868674816e9bf6b63f74",
+      "hnm_analysis.py": "3f45703667237333d76c4145c1513e4eb3342bd40f01a714c10303082440e26a",
+      "hnm_control.py": "b2f5efbbb1e550569c231a08f12997d94b0bacb130bcc816fe6bd458b17a98bc",
+      "hnm_diagnostics.py": "a3f47468d10db7e8040c78fc24546043b2eeae6b518f59da1f5904c674aae436",
+      "hnm_parameters.py": "635bf222bac8ce41897c0977677e67be4366724f4239a9e85e153169fcea2cf0",
+      "hnm_synthesis.py": "574124b6c412a5adc3cbe4152c3188ed56796cb5efe5d632d9e84b85040b9fbf"
+    },
+    "candidate": {
+      "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "hnm.py": "58f0378793b7433f80bf854972882298649799d8e3d0868674816e9bf6b63f74",
+      "hnm_analysis.py": "3f45703667237333d76c4145c1513e4eb3342bd40f01a714c10303082440e26a",
+      "hnm_control.py": "b2f5efbbb1e550569c231a08f12997d94b0bacb130bcc816fe6bd458b17a98bc",
+      "hnm_diagnostics.py": "a3f47468d10db7e8040c78fc24546043b2eeae6b518f59da1f5904c674aae436",
+      "hnm_parameters.py": "635bf222bac8ce41897c0977677e67be4366724f4239a9e85e153169fcea2cf0",
+      "hnm_synthesis.py": "937721cd363f06afa3bf4c20c1ff182a8c337c4b19ac9f4b57314f6adea6b44c"
+    }
+  },
+  "study_script_sha256": "20f29977ef7fbb017c5faf19736fa31aab55d1868a24b5b852699dc059392741",
+  "formal_part_sha256": "46d94243c43976a6efcb964814407d3635b85a47ab6664be677dfd6b66884cf5",
+  "formal_contract_sha256": "65fb527ea770a935c1228420a034fe4c8ab4b27efca8235595acdcb7cb825e50",
+  "environment": {
+    "python": "3.12.14",
+    "numpy": "2.3.5",
+    "scipy": "1.17.0"
+  },
+  "analysis": [
+    "両方式を独立encodeしパラメータ一致を測る",
+    "noise_psd=0で調波のみを合成",
+    "全8seedの正式最大値を再現",
+    "同時刻のH、N、2HNと±50msの集約",
+    "FFTの端点係数を含む期待雑音分散と帯域構成の分析"
+  ],
+  "no_waveforms_in_public_artifacts": true
+}

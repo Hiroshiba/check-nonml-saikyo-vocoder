@@ -25,7 +25,7 @@ uv run --locked python -m http.server --directory _site 8000
 
 旧 `reports/initial-comparison/index.html` と旧 `docs/research/research_index_ja.html` には、公開サイト内で新しい場所への案内ページを生成します。測定JSONは新しい実行フォルダに集約します。
 
-移設時に測定値・ハッシュ・当時のコマンドを書き換えません。結果HTMLを表示変更のため再生成した場合も、測定JSONの来歴は測定時点の情報です。
+移設時に測定値・ハッシュ・当時のコマンドを書き換えません。過去の結果HTMLも表示変更のために再生成せず、当時の状態で保持します。一覧の並び順・日時表示は保存済みの記録日時から生成します。
 
 ## 参照した公式仕様
 
