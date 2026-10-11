@@ -2,11 +2,16 @@
 import hashlib
 import json
 from pathlib import Path
-import subprocess
 import tempfile
 import urllib.request
 
-from scipy.io import wavfile
+import sys
+ROOT=Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT))
+from vocoderbench.logging_utils import configure_logging, run_cli, run_process  # noqa: E402
+configure_logging('fetch-data')
+
+from scipy.io import wavfile  # noqa: E402
 
 ROOT=Path(__file__).resolve().parents[1]
 
@@ -36,11 +41,11 @@ def main():
             if hashlib.sha256(flac.read_bytes()).hexdigest()!=entry['source_sha256']:
                 raise RuntimeError('Source download hash mismatch')
             wav=Path(tmp)/'decoded.wav'
-            subprocess.run(['ffmpeg','-v','error','-i',str(flac),'-acodec','pcm_s16le',str(wav)],check=True)
+            run_process(['ffmpeg','-v','error','-i',str(flac),'-acodec','pcm_s16le',str(wav)],check=True)
             verify(wav,entry)
             wav.replace(target)
         print('Downloaded and verified',target.name)
 
 
 if __name__=='__main__':
-    main()
+    raise SystemExit(run_cli(main, 'fetch-data'))

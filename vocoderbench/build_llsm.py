@@ -3,18 +3,21 @@
 SPDX-License-Identifier: GPL-3.0-or-later
 """
 from __future__ import annotations
-import argparse
+from .logging_utils import LoggedArgumentParser, configure_logging, run_cli, run_process
+
+if __name__ == '__main__':
+    configure_logging('build_llsm')
+
 import hashlib
 import json
 import os
 from pathlib import Path
-import subprocess
 
 HERE = Path(__file__).resolve().parent
 
 
 def run(argv: list[str], **kwargs):
-    return subprocess.run(argv, check=True, text=True, **kwargs)
+    return run_process(argv, **kwargs)
 
 
 def build(cache: Path, output: Path, cc: str = "cc") -> Path:
@@ -51,10 +54,14 @@ def build(cache: Path, output: Path, cc: str = "cc") -> Path:
     return output
 
 
-if __name__ == "__main__":
-    p = argparse.ArgumentParser(description=__doc__)
+def main():
+    p = LoggedArgumentParser(description=__doc__)
     p.add_argument("--cache", type=Path, default=HERE / ".cache/llsm/source")
     p.add_argument("--output", type=Path, default=HERE / "build/libllsm_adapter.so")
     p.add_argument("--cc", default=os.environ.get("CC", "cc"))
     a = p.parse_args()
     print(build(a.cache, a.output, a.cc))
+
+
+if __name__ == '__main__':
+    raise SystemExit(run_cli(main, 'build_llsm'))

@@ -1,7 +1,9 @@
 # 独立した測定器監査の結果
 
+以下は初回監査時の記録です。その後のユーザー指示でテストと監査スクリプトは削除済みです。以下のコマンド・コードの説明は当時の版についてのもので、現行の実行手順ではありません。数値記録は保持しています。
+
 2026-10-11、critic 担当。比較担当とは別に作った刺激で `vocoderbench/metrics.py` を監査した。
-初回の隔離実験を移植した [audit_metrics.py](../../../../scripts/audit_metrics.py) が入力を内部生成するため、外部音声・NPZ・native ボコーダーは不要。リポジトリのルートで次を実行する。
+初回の隔離実験を移植した [当時のaudit_metrics.py](https://github.com/Hiroshiba/check-nonml-saikyo-vocoder/blob/8309ba4afde277d39dd8a4ab4652da8a590a24ae/scripts/audit_metrics.py) が入力を内部生成するため、外部音声・NPZ・native ボコーダーは不要。リポジトリのルートで次を実行する。
 
 ```sh
 python scripts/audit_metrics.py --output runs/metric-audit

@@ -1,7 +1,6 @@
 """保存済みの記録からGitHub Pages用一覧を生成し、内部リンクを検査する。"""
 from __future__ import annotations
 
-import argparse
 from collections import defaultdict
 from datetime import date
 import html
@@ -16,6 +15,8 @@ from urllib.parse import unquote, urlsplit
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
+from vocoderbench.logging_utils import LoggedArgumentParser, configure_logging, run_cli  # noqa: E402
+configure_logging('build-site')
 from vocoderbench.site_summary import brief, short_audio  # noqa: E402
 
 REPO = 'https://github.com/Hiroshiba/check-nonml-saikyo-vocoder'
@@ -210,7 +211,11 @@ def build(output):
     print(f'{len(groups)} グループを生成し、{count} 件の内部リンクを確認しました: {output}')
 
 
-if __name__ == '__main__':
-    parser = argparse.ArgumentParser(description=__doc__)
+def main():
+    parser = LoggedArgumentParser(description=__doc__)
     parser.add_argument('--output', type=Path, default=ROOT / '_site')
     build(parser.parse_args().output)
+
+
+if __name__ == '__main__':
+    raise SystemExit(run_cli(main, 'build-site'))

@@ -1,4 +1,4 @@
-name: Verify comparison workbench
+name: 比較基盤の確認
 on:
   push:
     branches: [main]
@@ -11,16 +11,32 @@ jobs:
     timeout-minutes: 15
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
+      - uses: astral-sh/setup-uv@v9
         with:
-          python-version: '3.12'
-      - run: python -m pip install -r requirements.txt
-      - run: python -m vocoderbench.build_world
-      - run: python -m vocoderbench.build_llsm
-      - run: python -m unittest discover -s tests -v
-      - run: python -m vocoderbench.run --no-natural --sample-rates 16000 --output runs/ci
+          version: '0.12.23'
+          enable-cache: true
+      - run: uv sync --locked
+      - uses: actions/cache@v4
+        with:
+          path: |
+            .cache/ruff
+            .cache/source-size.json
+          key: static-${{ runner.os }}-${{ hashFiles('uv.lock') }}-${{ github.sha }}
+          restore-keys: static-${{ runner.os }}-${{ hashFiles('uv.lock') }}-
+      - name: キャッシュを使って静的解析する
+        shell: bash
+        run: |
+          mkdir -p runs/logs
+          uv run --locked ruff check . 2>&1 | tee runs/logs/ruff.log
+          uv run --locked python scripts/check_source_size.py
+      - run: uv run --locked python -m vocoderbench.build_world
+      - run: uv run --locked python -m vocoderbench.build_llsm
+      - name: 小規模な比較を実行する（正常終了は品質合格ではない）
+        run: uv run --locked python -m vocoderbench.run --no-natural --sample-rates 16000 --output runs/ci
       - uses: actions/upload-artifact@v4
         if: always()
         with:
           name: comparison-report
-          path: runs/ci
+          path: |
+            runs/ci
+            runs/logs
