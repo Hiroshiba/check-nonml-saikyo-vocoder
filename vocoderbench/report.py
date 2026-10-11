@@ -7,6 +7,7 @@ from pathlib import Path
 import numpy as np
 
 from .audio_report import section as audio_section
+from .site_summary import CURRENT_LABELS
 
 
 def esc(value):
@@ -41,7 +42,138 @@ def input_label(value):
     return f'{description}（{value}）'
 
 
+def _table(headers, rows):
+    heading = ''.join(f'<th>{esc(cell)}</th>' for cell in headers)
+    body = ''.join('<tr>'+''.join(f'<td>{esc(cell)}</td>' for cell in row)+'</tr>' for row in rows)
+    return f'<div class="scroll"><table><thead><tr>{heading}</tr></thead><tbody>{body}</tbody></table></div>'
+
+
+def _pitch_cells(pitch):
+    return [fmt(pitch.get('abs_error_cents_p95')),
+            f"{pitch.get('valid_voiced_frames', '—')}/{pitch.get('expected_voiced_frames', '—')}",
+            pitch.get('missing_voiced_frames', '—'), pitch.get('false_voiced_frames', '—')]
+
+
+def _render_current(data, path):
+    """第2版は比較と音声を先頭へ置き、全数値の詳細を折りたたむ。"""
+    path = Path(path)
+    reference = data['comparison_reference']
+    def name(method):
+        return CURRENT_LABELS.get(method, method)
+    refs = {r['case']: r for r in data['resynthesis'] if r['method'] == reference}
+    groups, all_rows = defaultdict(list), []
+    for row in data['resynthesis']:
+        measurement = row.get('measurement', {})
+        value = measurement.get('mr_stft_log_magnitude_mae_db')
+        base_value = refs.get(row['case'], {}).get('measurement', {}).get('mr_stft_log_magnitude_mae_db')
+        delta = value - base_value if value is not None and base_value is not None else None
+        group = '自然音声' if row['kind'] == 'natural_speech' else '人工信号'
+        if row['method'] != 'identity':
+            groups[(group, row['method'])].append((row, value, delta))
+        all_rows.append([input_label(row['case']), name(row['method']),
+                         STATUSES.get(row['status'], row['status']),
+                         STATUSES.get(measurement.get('status', 'undefined'), '測定なし'),
+                         fmt(value), fmt(delta), fmt((measurement.get('band_energy') or {}).get('active_band_mae_db')),
+                         fmt(measurement.get('rms_gain_error_db')), *_pitch_cells(measurement.get('pitch') or {}),
+                         measurement.get('length_delta_samples', '—'), fmt(row.get('repeat_max_abs_diff'), 9)])
+    summaries = []
+    for (group, method), records in sorted(groups.items(), key=lambda item: (item[0][0] != '自然音声', item[0][1] != reference, item[0][1])):
+        values = [value for _, value, _ in records if value is not None]
+        deltas = [delta for _, _, delta in records if delta is not None]
+        failed = sum(row['status'] != 'measured' or row.get('measurement', {}).get('status') != 'ok'
+                     for row, _, _ in records)
+        summaries.append([group, name(method), fmt(float(np.median(values)) if values else None),
+                          fmt(float(np.median(deltas)) if deltas else None),
+                          f'{len(values)}/{len(records)}', f'{len(deltas)}/{len(records)}', f'{failed}/{len(records)}'])
+    summary_table = _table(['入力群', '方式', 'MR-STFT中央値 dB', '差分中央値 dB',
+                            '有効／全件', '比較可能／全件', '処理・測定失敗／全件'], summaries)
+    pitch_headers = ['真値F0 P95 cent', '測定できた／真値の有声フレーム', '有声の欠測', '誤有声']
+    all_table = _table(['入力', '方式', '処理', '測定', 'MR-STFT dB', '差分 dB', '帯域差 dB',
+                        'RMS差 dB', *pitch_headers, '長さ差 サンプル', '再実行最大差'], all_rows)
+    operation_rows = []
+    for row in data.get('operations', []):
+        relative = row.get('relative_pitch') or {}
+        operation_rows.append([input_label(row['case']), name(row['method']),
+                               OPERATIONS.get(row['operation'], row['operation']),
+                               STATUSES.get(row['status'], row['status']), fmt(row.get('gain_tracking_error_db'), 6), fmt((row.get('band_change_after_pitch') or {}).get('active_band_mae_db')),
+                               *_pitch_cells(row.get('pitch_against_known_truth') or {}),
+                               fmt(relative.get('p95_error_cents')),
+                               f"{relative.get('valid_pairs', '—')}/{relative.get('total_frames', '—')}",
+                               row.get('length_error_samples', '—'), fmt((row.get('event') or {}).get('error_ms'))])
+    operation_table = _table(['入力', '方式', '操作', '状態', 'ゲイン追従誤差 dB', '音高編集後の帯域変化 dB', *pitch_headers,
+                              '相対F0誤差 P95 cent', '相対比較可能／全フレーム', '長さ誤差 サンプル',
+                              'イベント誤差 ms'], operation_rows)
+    decoder_rows = []
+    for row in data.get('decoder_only', []):
+        decoder_rows.append([name(row.get('method', '未記録')), row.get('f0_hz', '—'),
+                             STATUSES.get(row['status'], row['status']), row.get('output_samples', '—'),
+                             {True: 'はい', False: 'いいえ'}.get(row.get('finite'), '未確認'),
+                             *_pitch_cells(row.get('pitch') or {})])
+    decoder_table = _table(['方式', '指定F0 Hz', '状態', '出力サンプル数', '全値が有限', *pitch_headers], decoder_rows)
+    diagnostic_rows = []
+    for row in data.get('diagnostics', []):
+        pitch = row.get('pitch') or row.get('pitch_against_known_truth') or row.get('measurement', {}).get('pitch') or {}
+        diagnostic_rows.append([input_label(row.get('case', '未記録')), name(row.get('method', 'hnm')),
+                                row.get('label', row.get('variant', row.get('diagnostic', '詳細JSONを参照'))),
+                                STATUSES.get(row.get('status', 'undefined'), row.get('status', '測定なし')),
+                                *_pitch_cells(pitch)])
+    diagnostic_table = _table(['入力', '方式', '条件', '状態', *pitch_headers], diagnostic_rows)
+    calibration_rows = [[input_label(row['case']), *_pitch_cells(row.get('measurement', {}).get('pitch') or {})]
+                        for row in data.get('calibration', [])]
+    calibration_table = _table(['入力', *pitch_headers], calibration_rows)
+    failures = [row for row in data['resynthesis'] if row['status'] != 'measured' or row.get('measurement', {}).get('status') != 'ok']
+    failures += [row for key in ('operations', 'decoder_only', 'diagnostics') for row in data.get(key, [])
+                 if row.get('status') in ('failed', 'error')]
+    natural = [case for case in data.get('cases', []) if case['kind'] == 'natural_speech']
+    speakers = len({case.get('speaker', case['id']) for case in natural})
+    seconds = sum(case['n_samples']/case['sr'] for case in natural)
+    base = data['formal_base']
+    repo = 'https://github.com/Hiroshiba/check-nonml-saikyo-vocoder/blob/main/'
+    review = repo + 'docs/WORKFLOW.md'
+    root = Path(__file__).resolve().parents[1]
+    for parent in path.resolve().parents:
+        if (parent/'reviews/discussion.md').is_file() and parent.is_relative_to(root):
+            review = repo + str((parent/'reviews/discussion.md').relative_to(root))
+            break
+    iteration = data.get('development_iteration')
+    iteration_section = ('<details><summary>初代作成中の改善記録</summary><pre>' + esc(json.dumps(iteration, ensure_ascii=False, indent=2)) + '</pre></details>') if iteration else ''
+    provenance = {key: data.get(key) for key in ('environment', 'parent_commit', 'data_status', 'formal_base', 'native_builds')}
+    content = f'''<!doctype html><html lang="ja"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>自作HNMとWORLD（Harvest）の比較</title><style>
+:root{{color-scheme:light dark;--ink:#172a3a;--muted:#506375;--line:#d8e2ea;--accent:#156d79;--bg:#f6f8fb;--surface:#fff;--head:#e7eef5;--link:#126d8a}}
+body{{font:15px/1.7 system-ui,sans-serif;color:var(--ink);background:var(--bg);margin:0}}main{{max-width:1250px;margin:auto;padding:32px 24px 64px}}
+h1{{font-size:28px;margin:0 0 12px}}h2{{font-size:22px;margin-top:32px}}h3{{font-size:17px}}p{{max-width:1050px}}a{{color:var(--link)}}small{{color:var(--muted)}}
+table{{border-collapse:collapse;width:100%;font-size:13px;background:var(--surface)}}th,td{{padding:9px 12px;border-bottom:1px solid var(--line);text-align:right;white-space:nowrap}}
+th{{background:var(--head)}}th:first-child,td:first-child,th:nth-child(2),td:nth-child(2){{text-align:left}}td:first-child{{white-space:normal;min-width:9em;overflow-wrap:anywhere}}
+.scroll{{overflow:auto;border:1px solid var(--line);border-radius:8px}}.audio-grid{{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px}}audio{{width:100%}}
+details{{margin:16px 0;border:1px solid var(--line);border-radius:8px;padding:14px;background:var(--surface)}}summary{{cursor:pointer;font-weight:600}}pre{{white-space:pre-wrap;overflow-wrap:anywhere;font-size:12px}}
+a:focus-visible,summary:focus-visible,audio:focus-visible{{outline:2px solid var(--accent);outline-offset:3px}}@media(prefers-color-scheme:dark){{:root{{--ink:#e6edf4;--muted:#b3c1d0;--line:#3b4b60;--accent:#68c8c6;--bg:#0f1724;--surface:#182438;--head:#23334a;--link:#7fdae8}}}}
+</style><main><h1>自作HNMとWORLD（Harvest）の比較</h1>
+<p>ベース：<strong>{esc(name(base.get('method') or reference))}</strong>。誤差は小さいほど原音に近く、差分は{esc(name(reference))}比です。知覚品質の勝敗ではありません。</p>
+{summary_table}
+{audio_section(path.parent, base.get('method'), compact=True)}
+<details><summary>比較条件と指標の読み方</summary>
+<p>{esc(base.get('reason', ''))}</p><p>自然音声は{speakers}話者・{len(natural)}区間・計{fmt(seconds, 1)}秒です。人工信号は評価対象のデコーダーとは独立に生成しています。</p>
+<p>MR-STFTは5・20・80 ms窓のスペクトル誤差です。表はケース中央値、差分は対応するケース同士の差の中央値です。自動時間整列・ゲイン正規化は行いません。—は欠測・未定義であり、ゼロ誤差ではありません。</p>
+<p>F0は音高に対応する基本周波数、100 centは1半音、P95は誤差の95パーセンタイルです。有声の欠測と誤有声は別に示します。F0測定には固定2 kHz低域通過処理を含む独立YIN型測定器を使います。自然音声の絶対正解F0はありません。</p>
+<p>WORLD（Harvest）はWORLDボコーダーにHarvestによるF0抽出を組み合わせた既存比較です。自作HNMは独自の解析・合成系です。原音は比較の参照であり、手法の順位には含めません。今回の測定だけで自然性、共鳴保持、多話者への一般化を保証しません。</p>
+<p><a href="{repo}docs/EVALUATION.md">測定仕様</a> ／ <a href="{repo}docs/F0_CALIBRATION.md">音高測定器の校正</a> ／ <a href="{esc(review)}">5人の議論</a></p></details>
+<details><summary>再合成の全ケースとF0欠測</summary>{all_table}</details>
+<details><summary>操作の追従と欠測</summary><p>ゲイン・音高・時間長の変更を測定します。真値F0との誤差と、未操作出力からの相対変化推定は別の値です。全長一致は局所タイミングの保持を保証しません。帯域変化は未操作出力との差で、音高変更に伴う正常な変化も含む診断値です。</p>{operation_table}</details>
+<details><summary>エンコーダーを通さない合成</summary><p>手作り特徴からの合成です。全値が有限でも、聴感品質の合格を示すものではありません。</p>{decoder_table}</details>
+<details><summary>細部表現などの診断</summary>{diagnostic_table}<details><summary>診断の全値</summary><pre>{esc(json.dumps(data.get('diagnostics', []), ensure_ascii=False, indent=2))}</pre></details></details>
+<details><summary>原音に対する音高測定器の校正</summary>{calibration_table}</details>
+<details><summary>処理・測定の失敗記録（{len(failures)}件）</summary><p>処理失敗がなくても、F0欠測などの品質上の問題がないとは限りません。</p><pre>{esc(json.dumps(failures, ensure_ascii=False, indent=2))}</pre></details>
+{iteration_section}
+<details><summary>実行環境と再現情報</summary><pre>{esc(json.dumps(provenance, ensure_ascii=False, indent=2))}</pre></details>
+<p><a href="results.json">全数値JSON</a> ／ <a href="audio_samples.json">保存音声と切り出し情報</a> ／ <a href="{repo}docs/WORKFLOW.md">進め方</a></p>
+</main></html>'''
+    path.write_text(content, encoding='utf-8')
+
+
 def render(data, path):
+    if data.get('schema_version', 1) >= 2:
+        return _render_current(data, path)
     audit_link = ('<a href="metric_audit_results.json">測定器監査</a>'
                   if (Path(path).parent / "metric_audit_results.json").exists()
                   else "この出力先には測定器監査の記録はありません")

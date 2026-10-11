@@ -11,7 +11,6 @@ uv sync --locked
 uv run --locked ruff check .
 uv run --locked python scripts/check_source_size.py
 uv run --locked python -m vocoderbench.build_world
-uv run --locked python -m vocoderbench.build_llsm
 uv run --locked python -m vocoderbench.run --no-natural --sample-rates 16000 --output runs/local-comparison
 uv run --locked python scripts/build_site.py
 ```
@@ -35,7 +34,7 @@ Ruffは `.cache/ruff` を使用する。行数確認はGit管理対象と未追�
 
 キャッシュ・外部ソース・ビルド成果物は `.gitignore` で除外する。実験の自動生成HTML・JSONはソース行数の対象外。将来、Git管理する自動生成ソースを追加する場合は、手編集できない生成物である根拠と生成手順を文書化してから例外を追加する。現在そのようなソースの例外はない。
 
-PRとデフォルトブランチ `main` へのpushで、依存環境の構築、静的解析、WORLD/LLSMのビルド、小規模比較、Pagesの生成を行う。uvと静的解析のキャッシュを引き継ぐ。失敗時も比較出力とログをActionsの成果物へ保存する。静的解析の成功と、音質が優れていることは別の判断である。
+PRとデフォルトブランチ `main` へのpushで、依存環境の構築、静的解析、WORLDのビルド、小規模比較、Pagesの生成を行う。uvと静的解析のキャッシュを引き継ぐ。失敗時も比較出力とログをActionsの成果物へ保存する。静的解析の成功と、音質が優れていることは別の判断である。
 
 ## 表示と今後のGUI
 

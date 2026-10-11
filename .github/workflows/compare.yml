@@ -30,7 +30,6 @@ jobs:
           uv run --locked ruff check . 2>&1 | tee runs/logs/ruff.log
           uv run --locked python scripts/check_source_size.py
       - run: uv run --locked python -m vocoderbench.build_world
-      - run: uv run --locked python -m vocoderbench.build_llsm
       - name: 小規模な比較を実行する（正常終了は品質合格ではない）
         run: uv run --locked python -m vocoderbench.run --no-natural --sample-rates 16000 --output runs/ci
       - uses: actions/upload-artifact@v4
