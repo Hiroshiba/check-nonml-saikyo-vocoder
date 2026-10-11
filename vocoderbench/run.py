@@ -17,7 +17,7 @@ from scipy.io import wavfile
 from .fixtures import make_synthetic_cases
 from .metrics import compare_waveforms, pitch_metrics, estimate_f0_yin
 from .control import edit_parameters, make_synthetic_parameters
-from . import world
+from . import world, audio_samples
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -106,6 +106,7 @@ def run(args):
                   alignment='none', normalization='none', data_status=data_status,
                   fixture_seed=20261011, comparison_reference=comparison_reference,
                   cases=[], resynthesis=[], operations=[], decoder_only=[], calibration=[])
+    saved_audio = []
     for case in cases:
         x, sr = case['x'], case['sr']
         report['cases'].append({**{k:v for k,v in case.items() if k not in ('x','f0_truth')},
@@ -142,6 +143,7 @@ def run(args):
                     elapsed = time.perf_counter()-begin
                     repeated, _ = reconstruct(x,sr,dio.f0,dio.time,seed=0)
                     row['native_metadata'] = meta
+                audio_samples.collect(saved_audio, case, method, y)
                 row.update(status='measured',seconds=elapsed,rtf=elapsed/(len(x)/sr),
                            output_sha256=digest(y),repeat_max_abs_diff=float(np.max(abs(y-repeated))),
                            measurement=compare_waveforms(x,y,sr,case['f0_truth']))
@@ -193,6 +195,7 @@ def run(args):
     args.output.mkdir(parents=True,exist_ok=True)
     target=args.output/'results.json'
     target.write_text(json.dumps(report,ensure_ascii=False,indent=2,allow_nan=False)+'\n')
+    audio_samples.save(saved_audio, args.output)
     from .report import render
     render(report,args.output/'index.html')
     failures=sum(r['status']=='failed' or r.get('measurement',{}).get('status')!='ok' for r in report['resynthesis'])

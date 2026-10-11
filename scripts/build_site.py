@@ -11,18 +11,22 @@ import os
 from pathlib import Path
 import re
 import shutil
+import sys
 from urllib.parse import unquote, urlsplit
 
 ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT))
+from vocoderbench.site_summary import brief, short_audio  # noqa: E402
+
 REPO = 'https://github.com/Hiroshiba/check-nonml-saikyo-vocoder'
 CSS = '''
-:root{color-scheme:light;--ink:#182f40;--accent:#116d73;--line:#d5e1e8}
-body{margin:0;background:#f3f7f9;color:var(--ink);font:16px/1.8 system-ui,sans-serif}
+:root{color-scheme:light dark;--ink:#182f40;--accent:#116d73;--line:#d5e1e8;--bg:#f3f7f9;--surface:#fff;--muted:#506474;--link:#086777}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.8 system-ui,sans-serif}
 main{max-width:1080px;margin:auto;padding:40px 24px 80px}h1{font-size:clamp(26px,5vw,38px);line-height:1.4}
-h2{margin-top:36px}a{color:#086777;overflow-wrap:anywhere}small{color:#506474}
-article,.notice{background:white;border:1px solid var(--line);border-radius:12px;padding:20px 24px;margin:18px 0}
+h2{margin-top:36px}a{color:var(--link);overflow-wrap:anywhere}small{color:var(--muted)}
+article,.notice{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:20px 24px;margin:18px 0}
 article h3{margin:0 0 8px}.notice{border-left:5px solid var(--accent)}code{overflow-wrap:anywhere}
-li{margin:8px 0}nav{font-size:14px}footer{margin-top:40px;font-size:14px}
+.scroll{overflow:auto}table{border-collapse:collapse;width:100%;font-size:14px}th,td{border-bottom:1px solid var(--line);padding:8px;text-align:right}th:first-child,td:first-child{text-align:left}.audio-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px}audio{width:100%;max-width:100%}@media(prefers-color-scheme:dark){:root{--ink:#e6edf4;--accent:#68c8c6;--line:#3b4b60;--bg:#0f1724;--surface:#182438;--muted:#b3c1d0;--link:#7fdae8}}li{margin:8px 0}nav{font-size:14px}footer{margin-top:40px;font-size:14px}
 '''
 
 
@@ -178,7 +182,8 @@ def build(output):
     for rel, meta in groups:
         by_date[meta['date']].append(f'<article><h3><a href="{rel}/index.html">{esc(meta["title"])}</a>'
                                    f'</h3><p>{esc(meta["summary"])}</p><small>テーマ：{esc(meta["topic"])}'
-                                   f' · 実行記録 {len(meta["runs"])}件 · {esc(meta["status"])}</small></article>')
+                                   f' · 実行記録 {len(meta["runs"])}件 · {esc(meta["status"])}</small>'
+                                   + (brief(ROOT / rel / meta['runs'][-1]['path']) + short_audio(ROOT / rel / meta['runs'][-1]['path']) if meta['runs'] else '') + '</article>')
     body = ('<h1>非MLボコーダーの調査・実験記録</h1><p>日付とテーマから、調査・議論・比較結果を辿れます。'
             '日付は日本時間です。各実験のベース情報は測定時点のものを保持します。</p>'
             f'<div class="notice"><strong>現在の正式ベース：{esc(current)}</strong><br>'

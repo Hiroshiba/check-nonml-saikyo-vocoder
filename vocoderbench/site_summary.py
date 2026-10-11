@@ -1,0 +1,65 @@
+"""一覧へ載せる比較指標と短い音声例を保存済みの記録から作る。"""
+import html
+import json
+from statistics import median
+
+LABELS = {'world_harvest': 'WORLD Harvest', 'world_dio': 'WORLD DIO',
+          'llsm_world_dio': 'LLSM（WORLD DIOの音高）', 'identity': '原音（再合成の正解参照）'}
+
+
+def esc(value):
+    return html.escape(str(value), quote=True)
+
+
+def brief(results):
+    data = json.loads((results / 'results.json').read_text(encoding='utf-8'))
+    rows = data['resynthesis']
+    natural = any(row['kind'] == 'natural_speech' for row in rows)
+    selected = [r for r in rows if (r['kind'] == 'natural_speech') == natural]
+    reference = data['comparison_reference']
+    refs = {r['case']: r for r in selected if r['method'] == reference}
+    body = []
+    for method in dict.fromkeys(r['method'] for r in selected if r['method'] != 'identity'):
+        records = [r for r in selected if r['method'] == method]
+        values, deltas = [], []
+        for r in records:
+            value = r.get('measurement', {}).get('mr_stft_log_magnitude_mae_db')
+            base = refs.get(r['case'], {}).get('measurement', {}).get('mr_stft_log_magnitude_mae_db')
+            if value is not None:
+                values.append(value)
+                if base is not None:
+                    deltas.append(value - base)
+        failed = sum(r['status'] != 'measured' or r.get('measurement', {}).get('status') != 'ok' for r in records)
+        cells = [LABELS.get(method, method), f'{median(values):.3f}' if values else '未測定',
+                 f'{median(deltas):+.3f}' if deltas else '比較不能', f'{len(values)}/{len(records)}', failed]
+        body.append('<tr>'+''.join(f'<td>{esc(v)}</td>' for v in cells)+'</tr>')
+    kind = '自然音声' if natural else '人工信号'
+    return (f'<p>{kind}の比較。差分の相手：{esc(LABELS.get(reference, reference))}。'
+            '誤差は小さいほど原音に近く、差分が負なら比較相手より小さい値です。知覚品質の順位ではありません。</p>'
+            '<div class="scroll"><table><thead><tr><th>方式</th><th>スペクトル誤差中央値 dB</th>'
+            '<th>対応する差分の中央値 dB</th><th>有効／全件</th><th>処理・測定失敗</th></tr></thead>'
+            f'<tbody>{"".join(body)}</tbody></table></div>')
+
+
+def short_audio(results):
+    path = results / 'audio_samples.json'
+    if not path.exists():
+        return '<p><small>この過去の記録には音声例を保存していません。</small></p>'
+    data = json.loads(path.read_text(encoding='utf-8'))
+    samples = data.get('samples', [])
+    refs = [s for s in samples if s['method'] == 'identity']
+    if not refs:
+        return '<p>比較できる原音の音声例がありません。</p>'
+    chosen = next((s for s in refs if s['case'].startswith('librispeech_')), refs[0])
+    cards = []
+    for sample in samples:
+        if sample['case'] != chosen['case']:
+            continue
+        uri = sample['data_uri']
+        if not uri.startswith('data:audio/wav;base64,'):
+            raise ValueError('音声例はWAV形式で保存してください')
+        cards.append(f'<div><p>{esc(LABELS.get(sample["method"], sample["method"]))}</p>'
+                     f'<audio controls preload="none" aria-label="{esc(LABELS.get(sample["method"], sample["method"]))}" '
+                     f'src="{esc(uri)}"></audio></div>')
+    return (f'<p>短い音声例：{esc(chosen["label"])}（{chosen["n_samples"]/chosen["sample_rate"]:.1f}秒）。'
+            '同じ原音・区間を各方式で比較できます。</p><div class="audio-grid">'+''.join(cards)+'</div>')
