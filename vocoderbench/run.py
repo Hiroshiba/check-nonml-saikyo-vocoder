@@ -19,9 +19,8 @@ import scipy
 from scipy.io import wavfile
 
 from .fixtures import make_synthetic_cases
-from .metrics import compare_waveforms, pitch_metrics, estimate_f0_yin
-from .control import edit_parameters, make_synthetic_parameters
-from . import world, audio_samples
+from .metrics import compare_waveforms, pitch_metrics, estimate_f0_yin, _band_metrics
+from . import world, audio_samples, methods, hnm_diagnostics
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -92,26 +91,24 @@ def run(args):
         except Exception as e:
             logging.exception('自然音声の取得・読み込みに失敗')
             data_status.append({'status':'blocked','error':str(e)})
-    methods = ['identity', 'world_dio', 'world_harvest']
-    if not args.no_llsm:
-        methods += ['llsm_world_dio']
+    selected_methods = methods.METHODS
     base = json.loads((ROOT/'BASELINE.json').read_text())
     comparison_reference=base['method'] or base['comparison_reference']
-    if comparison_reference not in methods:
+    if comparison_reference not in selected_methods:
         raise ValueError(f'Current comparison/base method is unavailable: {comparison_reference}')
     try:
         head = run_process(['git','rev-parse','HEAD'],cwd=ROOT).stdout.strip()
     except (OSError,subprocess.CalledProcessError):
         logging.exception('実行版の取得に失敗')
         head = None
-    report = dict(schema_version=1, formal_base=base,
+    report = dict(schema_version=2, formal_base=base,
                   environment={'python':platform.python_version(),'numpy':np.__version__,
                                'scipy':scipy.__version__,'platform':platform.platform()},
                   parent_commit=head, source_sha256={str(p.relative_to(ROOT)):hashlib.sha256(p.read_bytes()).hexdigest()
                           for p in sorted((ROOT/'vocoderbench').glob('*.py'))},
                   alignment='none', normalization='none', data_status=data_status,
                   fixture_seed=20261011, comparison_reference=comparison_reference,
-                  cases=[], resynthesis=[], operations=[], decoder_only=[], calibration=[])
+                  cases=[], resynthesis=[], operations=[], decoder_only=[], calibration=[], diagnostics=[])
     saved_audio = []
     for case in cases:
         x, sr = case['x'], case['sr']
@@ -119,36 +116,21 @@ def run(args):
                                 'n_samples':len(x),'input_float64_sha256':digest(x)})
         measured_input = compare_waveforms(x,x,sr,case['f0_truth'])
         report['calibration'].append({'case':case['id'],'measurement':measured_input})
-        dio = None
-        for method in methods:
+        audio_samples.collect(saved_audio, case, 'identity', x)
+        for method in selected_methods:
             row = dict(case=case['id'],kind=case['kind'],method=method,base_method=base['method'],
-                       decoder_family='WORLD' if method.startswith('world_') else ('LLSM layer0' if method.startswith('llsm') else 'none'),
-                       f0_source='WORLD DIO+StoneMask' if method in ('world_dio','llsm_world_dio') else ('WORLD Harvest' if method=='world_harvest' else None))
+                       decoder_family='自作HNM' if method == 'hnm' else 'WORLD',
+                       f0_source='正規化自己相関' if method == 'hnm' else 'WORLD Harvest')
             begin = time.perf_counter()
             try:
-                params = None
-                if method == 'identity':
-                    y, repeated = x.copy(), x.copy()
-                    elapsed = time.perf_counter()-begin
-                    row['role'] = 'measurement_sanity_only_not_a_vocoder'
-                elif method.startswith('world_'):
-                    params = world.encode(x,sr,method=method.removeprefix('world_'))
-                    if method == 'world_dio':
-                        dio = params
-                    y = world.decode(params)
-                    elapsed = time.perf_counter()-begin
-                    repeated = world.decode(params)
-                    row['native_length_policy']='C API synthesizes requested n_samples directly; no crop/pad'
-                    row['feature_scalars'] = sum(a.size for a in (params.f0,params.spectral_envelope,params.aperiodicity))
-                    row['feature_f0_voiced_fraction'] = float(np.mean(params.f0>0))
-                else:
-                    from .llsm_adapter import reconstruct
-                    if dio is None:
-                        raise RuntimeError('WORLD DIO F0 prerequisite failed')
-                    y, meta = reconstruct(x,sr,dio.f0,dio.time,seed=0)
-                    elapsed = time.perf_counter()-begin
-                    repeated, _ = reconstruct(x,sr,dio.f0,dio.time,seed=0)
-                    row['native_metadata'] = meta
+                params = methods.encode(method, x, sr)
+                y = methods.decode(method, params)
+                elapsed = time.perf_counter()-begin
+                repeated = methods.decode(method, params)
+                row.update(methods.metadata(method, params))
+                row['analysis_pitch_against_truth'] = hnm_diagnostics.feature_pitch(params, case['f0_truth'], sr)
+                if method == 'hnm':
+                    report['diagnostics'].extend(hnm_diagnostics.inspect(case, params, y))
                 audio_samples.collect(saved_audio, case, method, y)
                 row.update(status='measured',seconds=elapsed,rtf=elapsed/(len(x)/sr),
                            output_sha256=digest(y),repeat_max_abs_diff=float(np.max(abs(y-repeated))),
@@ -160,11 +142,13 @@ def run(args):
                                          ('gain_up6',dict(gain_db=6)),('gain_down6',dict(gain_db=-6)),('time_1p25',dict(time_scale=1.25))]:
                         op = dict(case=case['id'],method=method,operation=name,request=kwargs)
                         try:
-                            edited = edit_parameters(params,**kwargs)
-                            ey = world.decode(edited)
+                            edited = methods.edit(method, params,**kwargs)
+                            ey = methods.decode(method, edited)
                             op.update(status='measured',requested_samples=edited.n_samples,output_samples=len(ey),
                                       length_error_samples=len(ey)-edited.n_samples,finite=bool(np.isfinite(ey).all()),
                                       peak=float(np.max(abs(ey))),level_delta_db=level_delta(y,ey))
+                            if 'pitch_semitones' in kwargs:
+                                op['band_change_after_pitch'] = _band_metrics(y, ey, sr)
                             if 'gain_db' in kwargs:
                                 op['gain_tracking_error_db'] = None if op['level_delta_db'] is None else op['level_delta_db']-kwargs['gain_db']
                             if 'time_scale' not in kwargs:
@@ -184,22 +168,21 @@ def run(args):
                 logging.error('測定が完了しませんでした: %s / %s / %s', case['id'], method, row['measurement']['status'], stack_info=True)
             report['resynthesis'].append(row)
             print(f"{case['id']} {method}: {row['status']}",flush=True)
-    for f0 in (0.,140.):
-        row={'f0_hz':f0,'sample_rate':16000}
-        try:
-            params=make_synthetic_parameters(world.WorldParameters,f0_hz=f0,aperiodicity=1. if f0==0 else .001)
-            y=world.decode(params)
-            row.update(status='measured',output_samples=len(y),finite=bool(np.isfinite(y).all()),
-                       pitch=pitch_metrics(y,16000,np.full(len(y),f0)))
-        except Exception as e:
-            logging.exception('デコーダー単体の合成に失敗: %s Hz', f0)
-            row.update(status='failed',error=str(e))
-        report['decoder_only'].append(row)
-    report['unsupported_operations']=[{'method':'llsm_world_dio','operations':['pitch','gain','time'],
-                                      'reason':'layer0 resynthesis adapter only; not implemented in this comparison'}] if not args.no_llsm else []
+    for method in selected_methods:
+        for f0 in (0., 140.):
+            row = {'method': method, 'f0_hz': f0, 'sample_rate': 16000}
+            try:
+                params = methods.handmade(method, f0)
+                y = methods.decode(method, params)
+                row.update(status='measured', output_samples=len(y), finite=bool(np.isfinite(y).all()),
+                           pitch=pitch_metrics(y,16000,np.full(len(y),f0)))
+            except Exception as e:
+                logging.exception('デコーダー単体の合成に失敗: %s / %s Hz', method, f0)
+                row.update(status='failed', error=str(e))
+            report['decoder_only'].append(row)
+    report['unsupported_operations'] = []
     report['native_builds']={}
-    for name, p in [('world',world.library_path().parent/'build.json'),
-                    ('llsm',ROOT/'vocoderbench/build/libllsm_adapter.build.json')]:
+    for name, p in [('world', world.library_path().parent/'build.json')]:
         if p.exists():
             meta=json.loads(p.read_text())
             report['native_builds'][name]={k:v for k,v in meta.items() if k!='command'}
@@ -222,7 +205,6 @@ def main():
     parser.add_argument('--data-root',type=Path,default=ROOT/'data'/'cache')
     parser.add_argument('--sample-rates',nargs='+',type=int,default=[16000,24000,48000])
     parser.add_argument('--no-natural',action='store_true')
-    parser.add_argument('--no-llsm',action='store_true')
     args=parser.parse_args()
     failures=run(args)
     if failures:

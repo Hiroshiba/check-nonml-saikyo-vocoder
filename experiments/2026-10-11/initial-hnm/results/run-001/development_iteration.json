@@ -1,0 +1,589 @@
+{
+  "scope": "初代作成中の探索。16 kHz人工10例と自然2例。正式ベース置換の比較ではない。旧候補コードはGit管理しない。",
+  "change": "雑音量を入力パワーと調波定常パワーの差から求める案を見直し、短時間波形上で調波振幅を1係数で合わせた後の差のPSDを有限帯域で保存。残差波形は保存しない。",
+  "measurement_seed": 0,
+  "conditions": "同一入力・同一測定器。前後の全記録を保存。元候補のソースハッシュは未保存のため、前案の厳密再現性には限界がある。",
+  "before": [
+    {
+      "case": "sine_120_16000",
+      "seconds": 0.3930397059993993,
+      "stft_db": 2.0072622909568136,
+      "level_db": -0.23150177139895176,
+      "f0_median": 120.00024174961335,
+      "voiced_fraction": 1.0,
+      "metadata": {
+        "f0_estimator": "normalized-autocorrelation-continuity-v1",
+        "f0_floor_hz": 65.0,
+        "f0_ceil_hz": 700.0,
+        "frame_count": 241,
+        "voiced_frames": 241,
+        "low_confidence_frames": 0,
+        "unvoiced_or_unresolved_frames": 0,
+        "phase_detail": "unwrapped-relative-harmonic-phase",
+        "envelope_description": "fixed-Hz harmonic amplitude envelope; not physiological parameters",
+        "stored_waveform_or_complex_residual": false
+      }
+    },
+    {
+      "case": "harmonic_110_16000",
+      "seconds": 0.40251808800167055,
+      "stft_db": 6.272704556914732,
+      "level_db": 0.08485994316002589,
+      "f0_median": 110.00209457629951,
+      "voiced_fraction": 1.0,
+      "metadata": {
+        "f0_estimator": "normalized-autocorrelation-continuity-v1",
+        "f0_floor_hz": 65.0,
+        "f0_ceil_hz": 700.0,
+        "frame_count": 241,
+        "voiced_frames": 241,
+        "low_confidence_frames": 0,
+        "unvoiced_or_unresolved_frames": 0,
+        "phase_detail": "unwrapped-relative-harmonic-phase",
+        "envelope_description": "fixed-Hz harmonic amplitude envelope; not physiological parameters",
+        "stored_waveform_or_complex_residual": false
+      },
+      "pitch_up3": {
+        "status": "estimated_relative_change_not_ground_truth",
+        "total_frames": 113,
+        "valid_pairs": 113,
+        "voiced_in_base": 113,
+        "voiced_in_edit": 113,
+        "p95_error_cents": 2.764822298745855
+      },
+      "pitch_up3_no_details": {
+        "status": "estimated_relative_change_not_ground_truth",
+        "total_frames": 113,
+        "valid_pairs": 113,
+        "voiced_in_base": 113,
+        "voiced_in_edit": 113,
+        "p95_error_cents": 3.4188743698047688
+      },
+      "roundtrip_max": 0.0
+    },
+    {
+      "case": "harmonic_220_16000",
+      "seconds": 0.29737604500041925,
+      "stft_db": 6.706061247359607,
+      "level_db": -0.005755308997833272,
+      "f0_median": 219.9787787523763,
+      "voiced_fraction": 1.0,
+      "metadata": {
+        "f0_estimator": "normalized-autocorrelation-continuity-v1",
+        "f0_floor_hz": 65.0,
+        "f0_ceil_hz": 700.0,
+        "frame_count": 241,
+        "voiced_frames": 241,
+        "low_confidence_frames": 0,
+        "unvoiced_or_unresolved_frames": 0,
+        "phase_detail": "unwrapped-relative-harmonic-phase",
+        "envelope_description": "fixed-Hz harmonic amplitude envelope; not physiological parameters",
+        "stored_waveform_or_complex_residual": false
+      }
+    },
+    {
+      "case": "missing_fundamental_150_16000",
+      "seconds": 0.33216523400187725,
+      "stft_db": 6.458556801571387,
+      "level_db": -0.07077165332384136,
+      "f0_median": 149.99342420129878,
+      "voiced_fraction": 1.0,
+      "metadata": {
+        "f0_estimator": "normalized-autocorrelation-continuity-v1",
+        "f0_floor_hz": 65.0,
+        "f0_ceil_hz": 700.0,
+        "frame_count": 241,
+        "voiced_frames": 241,
+        "low_confidence_frames": 0,
+        "unvoiced_or_unresolved_frames": 0,
+        "phase_detail": "unwrapped-relative-harmonic-phase",
+        "envelope_description": "fixed-Hz harmonic amplitude envelope; not physiological parameters",
+        "stored_waveform_or_complex_residual": false
+      }
+    },
+    {
+      "case": "harmonic_sweep_90_240_16000",
+      "seconds": 0.3818505000017467,
+      "stft_db": 3.663746373748331,
+      "level_db": -0.06229925979554105,
+      "f0_median": 164.92049968534624,
+      "voiced_fraction": 1.0,
+      "metadata": {
+        "f0_estimator": "normalized-autocorrelation-continuity-v1",
+        "f0_floor_hz": 65.0,
+        "f0_ceil_hz": 700.0,
+        "frame_count": 301,
+        "voiced_frames": 301,
+        "low_confidence_frames": 0,
+        "unvoiced_or_unresolved_frames": 0,
+        "phase_detail": "unwrapped-relative-harmonic-phase",
+        "envelope_description": "fixed-Hz harmonic amplitude envelope; not physiological parameters",
+        "stored_waveform_or_complex_residual": false
+      }
+    },
+    {
+      "case": "pulse_iir_vowel_90_16000",
+      "seconds": 0.37966870200034464,
+      "stft_db": 4.58408202331175,
+      "level_db": 0.3068216703058448,
+      "f0_median": 90.01089075437,
+      "voiced_fraction": 1.0,
+      "metadata": {
+        "f0_estimator": "normalized-autocorrelation-continuity-v1",
+        "f0_floor_hz": 65.0,
+        "f0_ceil_hz": 700.0,
+        "frame_count": 241,
+        "voiced_frames": 241,
+        "low_confidence_frames": 0,
+        "unvoiced_or_unresolved_frames": 0,
+        "phase_detail": "unwrapped-relative-harmonic-phase",
+        "envelope_description": "fixed-Hz harmonic amplitude envelope; not physiological parameters",
+        "stored_waveform_or_complex_residual": false
+      }
+    },
+    {
+      "case": "am_noise_6hz_16000",
+      "seconds": 0.21196123199842987,
+      "stft_db": 6.1415462933855585,
+      "level_db": -0.04699507148378023,
+      "f0_median": null,
+      "voiced_fraction": 0.0,
+      "metadata": {
+        "f0_estimator": "normalized-autocorrelation-continuity-v1",
+        "f0_floor_hz": 65.0,
+        "f0_ceil_hz": 700.0,
+        "frame_count": 301,
+        "voiced_frames": 0,
+        "low_confidence_frames": 301,
+        "unvoiced_or_unresolved_frames": 301,
+        "phase_detail": "unwrapped-relative-harmonic-phase",
+        "envelope_description": "fixed-Hz harmonic amplitude envelope; not physiological parameters",
+        "stored_waveform_or_complex_residual": false
+      }
+    },
+    {
+      "case": "voiced_unvoiced_boundaries_16000",
+      "seconds": 0.3725830049988872,
+      "stft_db": 4.851221567865161,
+      "level_db": -0.02772088045542097,
+      "f0_median": 170.00677282396174,
+      "voiced_fraction": 0.6947040498442367,
+      "metadata": {
+        "f0_estimator": "normalized-autocorrelation-continuity-v1",
+        "f0_floor_hz": 65.0,
+        "f0_ceil_hz": 700.0,
+        "frame_count": 321,
+        "voiced_frames": 223,
+        "low_confidence_frames": 99,
+        "unvoiced_or_unresolved_frames": 98,
+        "phase_detail": "unwrapped-relative-harmonic-phase",
+        "envelope_description": "fixed-Hz harmonic amplitude envelope; not physiological parameters",
+        "stored_waveform_or_complex_residual": false
+      }
+    },
+    {
+      "case": "silence_16000",
+      "seconds": 0.08002505799959181,
+      "stft_db": 0.0,
+      "level_db": null,
+      "f0_median": null,
+      "voiced_fraction": 0.0,
+      "metadata": {
+        "f0_estimator": "normalized-autocorrelation-continuity-v1",
+        "f0_floor_hz": 65.0,
+        "f0_ceil_hz": 700.0,
+        "frame_count": 161,
+        "voiced_frames": 0,
+        "low_confidence_frames": 0,
+        "unvoiced_or_unresolved_frames": 161,
+        "phase_detail": "unwrapped-relative-harmonic-phase",
+        "envelope_description": "fixed-Hz harmonic amplitude envelope; not physiological parameters",
+        "stored_waveform_or_complex_residual": false
+      }
+    },
+    {
+      "case": "impulse_16000",
+      "seconds": 0.10742563599706045,
+      "stft_db": 3.717188241413522,
+      "level_db": 0.0656050238971862,
+      "f0_median": null,
+      "voiced_fraction": 0.0,
+      "metadata": {
+        "f0_estimator": "normalized-autocorrelation-continuity-v1",
+        "f0_floor_hz": 65.0,
+        "f0_ceil_hz": 700.0,
+        "frame_count": 161,
+        "voiced_frames": 0,
+        "low_confidence_frames": 2,
+        "unvoiced_or_unresolved_frames": 161,
+        "phase_detail": "unwrapped-relative-harmonic-phase",
+        "envelope_description": "fixed-Hz harmonic amplitude envelope; not physiological parameters",
+        "stored_waveform_or_complex_residual": false
+      }
+    },
+    {
+      "case": "librispeech_5142-36586_first6s",
+      "seconds": 1.2719789820002916,
+      "stft_db": 6.123762831532566,
+      "level_db": -0.12580845596488408,
+      "f0_median": 185.13841720974523,
+      "voiced_fraction": 0.5711906744379683,
+      "metadata": {
+        "f0_estimator": "normalized-autocorrelation-continuity-v1",
+        "f0_floor_hz": 65.0,
+        "f0_ceil_hz": 700.0,
+        "frame_count": 1201,
+        "voiced_frames": 686,
+        "low_confidence_frames": 579,
+        "unvoiced_or_unresolved_frames": 515,
+        "phase_detail": "unwrapped-relative-harmonic-phase",
+        "envelope_description": "fixed-Hz harmonic amplitude envelope; not physiological parameters",
+        "stored_waveform_or_complex_residual": false
+      },
+      "pitch_up3": {
+        "status": "estimated_relative_change_not_ground_truth",
+        "total_frames": 593,
+        "valid_pairs": 109,
+        "voiced_in_base": 121,
+        "voiced_in_edit": 117,
+        "p95_error_cents": 9.007284098504499
+      },
+      "pitch_up3_no_details": {
+        "status": "estimated_relative_change_not_ground_truth",
+        "total_frames": 593,
+        "valid_pairs": 122,
+        "voiced_in_base": 139,
+        "voiced_in_edit": 133,
+        "p95_error_cents": 7.361105184149169
+      },
+      "roundtrip_max": 0.0
+    },
+    {
+      "case": "librispeech_7021-79759_first6s",
+      "seconds": 1.1053164589975495,
+      "stft_db": 5.710229465872717,
+      "level_db": 0.031516133383935975,
+      "f0_median": 115.39857936788455,
+      "voiced_fraction": 0.492089925062448,
+      "metadata": {
+        "f0_estimator": "normalized-autocorrelation-continuity-v1",
+        "f0_floor_hz": 65.0,
+        "f0_ceil_hz": 700.0,
+        "frame_count": 1201,
+        "voiced_frames": 591,
+        "low_confidence_frames": 650,
+        "unvoiced_or_unresolved_frames": 610,
+        "phase_detail": "unwrapped-relative-harmonic-phase",
+        "envelope_description": "fixed-Hz harmonic amplitude envelope; not physiological parameters",
+        "stored_waveform_or_complex_residual": false
+      },
+      "pitch_up3": {
+        "status": "estimated_relative_change_not_ground_truth",
+        "total_frames": 593,
+        "valid_pairs": 52,
+        "voiced_in_base": 64,
+        "voiced_in_edit": 54,
+        "p95_error_cents": 20.251837280442857
+      },
+      "pitch_up3_no_details": {
+        "status": "estimated_relative_change_not_ground_truth",
+        "total_frames": 593,
+        "valid_pairs": 56,
+        "voiced_in_base": 73,
+        "voiced_in_edit": 60,
+        "p95_error_cents": 28.53733831958698
+      },
+      "roundtrip_max": 0.0
+    }
+  ],
+  "after": [
+    {
+      "case": "sine_120_16000",
+      "seconds": 0.36292745700120577,
+      "stft_db": 1.2372473671919642,
+      "level_db": -0.24318760275711648,
+      "f0_median": 120.00024174961335,
+      "voiced_fraction": 1.0,
+      "metadata": {
+        "f0_estimator": "normalized-autocorrelation-continuity-v1",
+        "f0_floor_hz": 65.0,
+        "f0_ceil_hz": 700.0,
+        "frame_count": 241,
+        "voiced_frames": 241,
+        "low_confidence_frames": 0,
+        "unvoiced_or_unresolved_frames": 0,
+        "phase_detail": "unwrapped-relative-harmonic-phase",
+        "envelope_description": "fixed-Hz harmonic amplitude envelope; not physiological parameters",
+        "stored_waveform_or_complex_residual": false
+      }
+    },
+    {
+      "case": "harmonic_110_16000",
+      "seconds": 0.3192779220007651,
+      "stft_db": 0.6589666730378956,
+      "level_db": -0.005351555594390172,
+      "f0_median": 110.00209457629951,
+      "voiced_fraction": 1.0,
+      "metadata": {
+        "f0_estimator": "normalized-autocorrelation-continuity-v1",
+        "f0_floor_hz": 65.0,
+        "f0_ceil_hz": 700.0,
+        "frame_count": 241,
+        "voiced_frames": 241,
+        "low_confidence_frames": 0,
+        "unvoiced_or_unresolved_frames": 0,
+        "phase_detail": "unwrapped-relative-harmonic-phase",
+        "envelope_description": "fixed-Hz harmonic amplitude envelope; not physiological parameters",
+        "stored_waveform_or_complex_residual": false
+      },
+      "pitch_up3": {
+        "status": "estimated_relative_change_not_ground_truth",
+        "total_frames": 113,
+        "valid_pairs": 113,
+        "voiced_in_base": 113,
+        "voiced_in_edit": 113,
+        "p95_error_cents": 0.08516652149744394
+      },
+      "pitch_up3_no_details": {
+        "status": "estimated_relative_change_not_ground_truth",
+        "total_frames": 113,
+        "valid_pairs": 113,
+        "voiced_in_base": 113,
+        "voiced_in_edit": 113,
+        "p95_error_cents": 0.13624862361850631
+      }
+    },
+    {
+      "case": "harmonic_220_16000",
+      "seconds": 0.22207426100067096,
+      "stft_db": 1.8724263719713932,
+      "level_db": -0.009842266246559598,
+      "f0_median": 219.9787787523763,
+      "voiced_fraction": 1.0,
+      "metadata": {
+        "f0_estimator": "normalized-autocorrelation-continuity-v1",
+        "f0_floor_hz": 65.0,
+        "f0_ceil_hz": 700.0,
+        "frame_count": 241,
+        "voiced_frames": 241,
+        "low_confidence_frames": 0,
+        "unvoiced_or_unresolved_frames": 0,
+        "phase_detail": "unwrapped-relative-harmonic-phase",
+        "envelope_description": "fixed-Hz harmonic amplitude envelope; not physiological parameters",
+        "stored_waveform_or_complex_residual": false
+      }
+    },
+    {
+      "case": "missing_fundamental_150_16000",
+      "seconds": 0.25685283100028755,
+      "stft_db": 3.7778347002419586,
+      "level_db": -0.06970961430615978,
+      "f0_median": 149.99342420129878,
+      "voiced_fraction": 1.0,
+      "metadata": {
+        "f0_estimator": "normalized-autocorrelation-continuity-v1",
+        "f0_floor_hz": 65.0,
+        "f0_ceil_hz": 700.0,
+        "frame_count": 241,
+        "voiced_frames": 241,
+        "low_confidence_frames": 0,
+        "unvoiced_or_unresolved_frames": 0,
+        "phase_detail": "unwrapped-relative-harmonic-phase",
+        "envelope_description": "fixed-Hz harmonic amplitude envelope; not physiological parameters",
+        "stored_waveform_or_complex_residual": false
+      }
+    },
+    {
+      "case": "harmonic_sweep_90_240_16000",
+      "seconds": 0.36829663000025903,
+      "stft_db": 1.619659042668707,
+      "level_db": -0.04764359339612584,
+      "f0_median": 164.92049968534624,
+      "voiced_fraction": 1.0,
+      "metadata": {
+        "f0_estimator": "normalized-autocorrelation-continuity-v1",
+        "f0_floor_hz": 65.0,
+        "f0_ceil_hz": 700.0,
+        "frame_count": 301,
+        "voiced_frames": 301,
+        "low_confidence_frames": 0,
+        "unvoiced_or_unresolved_frames": 0,
+        "phase_detail": "unwrapped-relative-harmonic-phase",
+        "envelope_description": "fixed-Hz harmonic amplitude envelope; not physiological parameters",
+        "stored_waveform_or_complex_residual": false
+      }
+    },
+    {
+      "case": "pulse_iir_vowel_90_16000",
+      "seconds": 0.3567204639984993,
+      "stft_db": 1.3814192419288815,
+      "level_db": -0.0851271457540185,
+      "f0_median": 90.01089075437,
+      "voiced_fraction": 1.0,
+      "metadata": {
+        "f0_estimator": "normalized-autocorrelation-continuity-v1",
+        "f0_floor_hz": 65.0,
+        "f0_ceil_hz": 700.0,
+        "frame_count": 241,
+        "voiced_frames": 241,
+        "low_confidence_frames": 0,
+        "unvoiced_or_unresolved_frames": 0,
+        "phase_detail": "unwrapped-relative-harmonic-phase",
+        "envelope_description": "fixed-Hz harmonic amplitude envelope; not physiological parameters",
+        "stored_waveform_or_complex_residual": false
+      }
+    },
+    {
+      "case": "am_noise_6hz_16000",
+      "seconds": 0.17302080599984038,
+      "stft_db": 6.1415462933855585,
+      "level_db": -0.04699507148378023,
+      "f0_median": null,
+      "voiced_fraction": 0.0,
+      "metadata": {
+        "f0_estimator": "normalized-autocorrelation-continuity-v1",
+        "f0_floor_hz": 65.0,
+        "f0_ceil_hz": 700.0,
+        "frame_count": 301,
+        "voiced_frames": 0,
+        "low_confidence_frames": 301,
+        "unvoiced_or_unresolved_frames": 301,
+        "phase_detail": "unwrapped-relative-harmonic-phase",
+        "envelope_description": "fixed-Hz harmonic amplitude envelope; not physiological parameters",
+        "stored_waveform_or_complex_residual": false
+      }
+    },
+    {
+      "case": "voiced_unvoiced_boundaries_16000",
+      "seconds": 0.32575685999836423,
+      "stft_db": 3.3134957392333564,
+      "level_db": -0.017012029909338307,
+      "f0_median": 170.00677282396174,
+      "voiced_fraction": 0.6947040498442367,
+      "metadata": {
+        "f0_estimator": "normalized-autocorrelation-continuity-v1",
+        "f0_floor_hz": 65.0,
+        "f0_ceil_hz": 700.0,
+        "frame_count": 321,
+        "voiced_frames": 223,
+        "low_confidence_frames": 99,
+        "unvoiced_or_unresolved_frames": 98,
+        "phase_detail": "unwrapped-relative-harmonic-phase",
+        "envelope_description": "fixed-Hz harmonic amplitude envelope; not physiological parameters",
+        "stored_waveform_or_complex_residual": false
+      }
+    },
+    {
+      "case": "silence_16000",
+      "seconds": 0.06747541799995815,
+      "stft_db": 0.0,
+      "level_db": null,
+      "f0_median": null,
+      "voiced_fraction": 0.0,
+      "metadata": {
+        "f0_estimator": "normalized-autocorrelation-continuity-v1",
+        "f0_floor_hz": 65.0,
+        "f0_ceil_hz": 700.0,
+        "frame_count": 161,
+        "voiced_frames": 0,
+        "low_confidence_frames": 0,
+        "unvoiced_or_unresolved_frames": 161,
+        "phase_detail": "unwrapped-relative-harmonic-phase",
+        "envelope_description": "fixed-Hz harmonic amplitude envelope; not physiological parameters",
+        "stored_waveform_or_complex_residual": false
+      }
+    },
+    {
+      "case": "impulse_16000",
+      "seconds": 0.07496823800101993,
+      "stft_db": 3.717188241413522,
+      "level_db": 0.0656050238971862,
+      "f0_median": null,
+      "voiced_fraction": 0.0,
+      "metadata": {
+        "f0_estimator": "normalized-autocorrelation-continuity-v1",
+        "f0_floor_hz": 65.0,
+        "f0_ceil_hz": 700.0,
+        "frame_count": 161,
+        "voiced_frames": 0,
+        "low_confidence_frames": 2,
+        "unvoiced_or_unresolved_frames": 161,
+        "phase_detail": "unwrapped-relative-harmonic-phase",
+        "envelope_description": "fixed-Hz harmonic amplitude envelope; not physiological parameters",
+        "stored_waveform_or_complex_residual": false
+      }
+    },
+    {
+      "case": "librispeech_5142-36586_first6s",
+      "seconds": 1.1365023420003126,
+      "stft_db": 5.96647826799144,
+      "level_db": -0.11965669391156646,
+      "f0_median": 185.13841720974523,
+      "voiced_fraction": 0.5711906744379683,
+      "metadata": {
+        "f0_estimator": "normalized-autocorrelation-continuity-v1",
+        "f0_floor_hz": 65.0,
+        "f0_ceil_hz": 700.0,
+        "frame_count": 1201,
+        "voiced_frames": 686,
+        "low_confidence_frames": 579,
+        "unvoiced_or_unresolved_frames": 515,
+        "phase_detail": "unwrapped-relative-harmonic-phase",
+        "envelope_description": "fixed-Hz harmonic amplitude envelope; not physiological parameters",
+        "stored_waveform_or_complex_residual": false
+      },
+      "pitch_up3": {
+        "status": "estimated_relative_change_not_ground_truth",
+        "total_frames": 593,
+        "valid_pairs": 146,
+        "voiced_in_base": 157,
+        "voiced_in_edit": 154,
+        "p95_error_cents": 7.5343338496352885
+      },
+      "pitch_up3_no_details": {
+        "status": "estimated_relative_change_not_ground_truth",
+        "total_frames": 593,
+        "valid_pairs": 163,
+        "voiced_in_base": 179,
+        "voiced_in_edit": 169,
+        "p95_error_cents": 7.474048563879223
+      }
+    },
+    {
+      "case": "librispeech_7021-79759_first6s",
+      "seconds": 1.205148968998401,
+      "stft_db": 5.309757379085367,
+      "level_db": -0.013573393066099473,
+      "f0_median": 115.39857936788455,
+      "voiced_fraction": 0.492089925062448,
+      "metadata": {
+        "f0_estimator": "normalized-autocorrelation-continuity-v1",
+        "f0_floor_hz": 65.0,
+        "f0_ceil_hz": 700.0,
+        "frame_count": 1201,
+        "voiced_frames": 591,
+        "low_confidence_frames": 650,
+        "unvoiced_or_unresolved_frames": 610,
+        "phase_detail": "unwrapped-relative-harmonic-phase",
+        "envelope_description": "fixed-Hz harmonic amplitude envelope; not physiological parameters",
+        "stored_waveform_or_complex_residual": false
+      },
+      "pitch_up3": {
+        "status": "estimated_relative_change_not_ground_truth",
+        "total_frames": 593,
+        "valid_pairs": 93,
+        "voiced_in_base": 98,
+        "voiced_in_edit": 106,
+        "p95_error_cents": 18.536328262598897
+      },
+      "pitch_up3_no_details": {
+        "status": "estimated_relative_change_not_ground_truth",
+        "total_frames": 593,
+        "valid_pairs": 106,
+        "voiced_in_base": 115,
+        "voiced_in_edit": 122,
+        "p95_error_cents": 15.53956902501541
+      }
+    }
+  ]
+}

@@ -1,7 +1,7 @@
-"""Validated ctypes adapter for two analysis variants of the same WORLD decoder.
+"""WORLD（Harvest）の解析・合成用ctypesアダプター。
 
 Scope: mono float64, 16--96 kHz, offline analysis of at least 100 ms.
-Neither path uses a learned model. DIO is refined with StoneMask; Harvest is not.
+学習済みモデルは使用しない。HarvestはF0推定、WORLDがボコーダー本体。
 """
 from __future__ import annotations
 
@@ -35,12 +35,6 @@ class WorldParameters:
     schema_version: int = SCHEMA_VERSION
     source_revision: str = REVISION
     status: str = "ok"
-
-
-class _DioOption(ct.Structure):
-    _fields_ = [("f0_floor", ct.c_double), ("f0_ceil", ct.c_double),
-                ("channels_in_octave", ct.c_double), ("frame_period", ct.c_double),
-                ("speed", ct.c_int), ("allowed_range", ct.c_double)]
 
 
 class _HarvestOption(ct.Structure):
@@ -80,15 +74,11 @@ def _lib():
         raise RuntimeError(f"Build WORLD first with {ROOT / 'build_world.py'} (missing {path})")
     lib = ct.CDLL(str(path))
     signatures = {
-        "InitializeDioOption": ([ct.POINTER(_DioOption)], None),
         "InitializeHarvestOption": ([ct.POINTER(_HarvestOption)], None),
         "InitializeCheapTrickOption": ([ct.c_int, ct.POINTER(_CheapTrickOption)], None),
         "InitializeD4COption": ([ct.POINTER(_D4COption)], None),
-        "GetSamplesForDIO": ([ct.c_int, ct.c_int, ct.c_double], ct.c_int),
         "GetSamplesForHarvest": ([ct.c_int, ct.c_int, ct.c_double], ct.c_int),
-        "Dio": ([DoublePointer, ct.c_int, ct.c_int, ct.POINTER(_DioOption), DoublePointer, DoublePointer], None),
         "Harvest": ([DoublePointer, ct.c_int, ct.c_int, ct.POINTER(_HarvestOption), DoublePointer, DoublePointer], None),
-        "StoneMask": ([DoublePointer, ct.c_int, ct.c_int, DoublePointer, DoublePointer, ct.c_int, DoublePointer], None),
         "CheapTrick": ([DoublePointer, ct.c_int, ct.c_int, DoublePointer, DoublePointer, ct.c_int,
                         ct.POINTER(_CheapTrickOption), RowPointers], None),
         "D4C": ([DoublePointer, ct.c_int, ct.c_int, DoublePointer, DoublePointer, ct.c_int,
@@ -175,27 +165,17 @@ def encode(x, sr: int, method: str = "harvest", *, frame_period: float = 5.0) ->
     _sample_count(x.size, "input length")
     if x.size < math.ceil(sr * 0.1):
         raise ValueError("WORLD analysis requires at least 100 ms in this adapter")
-    if method not in ("dio", "harvest"):
-        raise ValueError("method must be 'dio' (with StoneMask) or 'harvest'")
+    if method != "harvest":
+        raise ValueError("この比較アダプターはHarvestだけを使用します")
     if not math.isfinite(frame_period) or not 1 <= frame_period <= 20:
         raise ValueError("frame_period must be 1 through 20 ms")
     lib = _lib()
-    if method == "dio":
-        option = _DioOption()
-        lib.InitializeDioOption(ct.byref(option))
-        option.frame_period = frame_period
-        n_frames = lib.GetSamplesForDIO(sr, x.size, frame_period)
-        time, initial_f0 = np.empty(n_frames), np.empty(n_frames)
-        lib.Dio(_ptr(x), x.size, sr, ct.byref(option), _ptr(time), _ptr(initial_f0))
-        f0 = np.empty(n_frames)
-        lib.StoneMask(_ptr(x), x.size, sr, _ptr(time), _ptr(initial_f0), n_frames, _ptr(f0))
-    else:
-        option = _HarvestOption()
-        lib.InitializeHarvestOption(ct.byref(option))
-        option.frame_period = frame_period
-        n_frames = lib.GetSamplesForHarvest(sr, x.size, frame_period)
-        time, f0 = np.empty(n_frames), np.empty(n_frames)
-        lib.Harvest(_ptr(x), x.size, sr, ct.byref(option), _ptr(time), _ptr(f0))
+    option = _HarvestOption()
+    lib.InitializeHarvestOption(ct.byref(option))
+    option.frame_period = frame_period
+    n_frames = lib.GetSamplesForHarvest(sr, x.size, frame_period)
+    time, f0 = np.empty(n_frames), np.empty(n_frames)
+    lib.Harvest(_ptr(x), x.size, sr, ct.byref(option), _ptr(time), _ptr(f0))
     cheaptrick = _CheapTrickOption()
     lib.InitializeCheapTrickOption(sr, ct.byref(cheaptrick))
     sp = np.empty((n_frames, cheaptrick.fft_size // 2 + 1))
