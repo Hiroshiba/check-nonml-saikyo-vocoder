@@ -6,6 +6,11 @@ from statistics import median
 LABELS = {'world_harvest': 'WORLD Harvest', 'world_dio': 'WORLD DIO',
           'llsm_world_dio': 'LLSM（WORLD DIOの音高）', 'identity': '原音（再合成の正解参照）'}
 CURRENT_LABELS = {'hnm': '自作HNM', 'world_harvest': 'WORLD（Harvest）', 'identity': '原音'}
+INDEX_METRICS = (
+    ('mos', '予測MOS ↑'), ('estoi', '明瞭性 eSTOI ↑'),
+    ('stft', 'スペクトル誤差 dB ↓'), ('band', '帯域の音量誤差 dB ↓'),
+    ('envelope', '音量変動の誤差 ↓'), ('level', '音量差 dB ↓'),
+)
 
 
 def esc(value):
@@ -50,42 +55,30 @@ def brief(results):
 
 def _brief_supplement(data, results):
     summary = json.loads((results / 'summary.json').read_text(encoding='utf-8'))['groups']['全体']
-    rows = []
-    missing = False
-    for method, group in summary.items():
-        cells = [data['method_labels'][method]]
-        for key in ('mos', 'envelope'):
-            metric = group['metrics'][key]
-            cells.append(f'{metric["mean"]:.3f}' if metric['mean'] is not None else '未測定')
-            missing |= metric['valid'] != data['planned_cases']
-        rows.append('<tr>'+''.join(f'<td>{esc(v)}</td>' for v in cells)+'</tr>')
-    base = summary['hnm']['metrics']['envelope']['mean']
-    candidate = summary['candidate']['metrics']['envelope']['mean']
-    comparison = ''
-    if base and candidate is not None:
-        change = (candidate / base - 1) * 100
-        comparison = f'<p>音量変動の再現誤差は、候補が当時のベースより平均{abs(change):.1f}%{"減少" if change < 0 else "増加"}。</p>'
-    note = '<p>一部未測定です。比較できる範囲は詳細を確認してください。</p>' if missing else ''
-    return (comparison + '<div class="scroll"><table><tr><th>方式</th>'
-            '<th>自動MOS<br>高いほど良い</th><th>音量変動の再現誤差<br>低いほど良い</th></tr>'
-            + ''.join(rows) + '</table></div>' + note
-            + '<p><small>日本語12録音の補助評価。自動MOSは、この言語・発声での妥当性を未確認です。</small></p>')
+    return _metric_table(data, summary)
 
 
 def _brief_expanded(data, results):
     summary = json.loads((results / 'summary.json').read_text(encoding='utf-8'))['全体']
+    return _metric_table(data, summary)
+
+
+def _metric_table(data, summary):
+    """各方式の保存済み平均値を、品質の異なる観点で並べる。"""
     rows = []
     for method, group in summary.items():
-        mos, envelope = group['metrics']['mos'], group['metrics']['envelope']
-        delta = envelope['difference_from_base']['mean_difference']
-        mos_text = f'{mos["mean"]:.3f}' if mos['mean'] is not None else '未測定'
-        error_text = f'{envelope["mean"]:.3f}' if envelope['mean'] is not None else '未測定'
-        delta_text = f'{delta:+.3f}' if delta is not None else '—'
-        values = [data['method_labels'][method], mos_text, error_text, delta_text,
-                  f'{mos["valid"]}/{data["planned_cases"]}']
-        rows.append('<tr>'+''.join(f'<td>{esc(v)}</td>' for v in values)+'</tr>')
-    return ('<div class="scroll"><table><tr><th>方式</th><th>予測MOS ↑</th><th>包絡誤差 ↓</th>'
-            '<th>ベースとの差 ↓</th><th>MOS有効数</th></tr>'+''.join(rows)+'</table></div>')
+        cells = [data['method_labels'][method]]
+        for key, _ in INDEX_METRICS:
+            metric = group['metrics'][key]
+            value = metric['mean']
+            text = f'{value:.3f}' if value is not None else '未測定'
+            if value is not None and metric['valid'] != data['planned_cases']:
+                text += '（部分測定）'
+            cells.append(text)
+        rows.append('<tr>'+''.join(f'<td>{esc(v)}</td>' for v in cells)+'</tr>')
+    headings = '<th>方式</th>' + ''.join(f'<th>{esc(label)}</th>' for _, label in INDEX_METRICS)
+    return ('<div class="scroll"><table><thead><tr>' + headings + '</tr></thead><tbody>'
+            + ''.join(rows) + '</tbody></table></div>')
 
 
 def _brief_current(data):
@@ -118,14 +111,13 @@ def _brief_current(data):
             f'</tr></thead><tbody>{"".join(body)}</tbody></table></div>')
 
 
-def short_audio(results):
+def short_audio(results, *, heading='同じ区間の音声'):
     path = results / 'audio_samples.json'
     if not path.exists():
         measurements = json.loads((results / 'results.json').read_text(encoding='utf-8'))
         if measurements.get('study_role') == 'supplement_to_completed_fixed_120':
             parent = results.parents[2] / 'noise-envelope/results/run-001'
-            return ('<p><small>日本語の音声は公開していません。以下は親の120録音比較で公開済みの英語例です。</small></p>'
-                    + short_audio(parent))
+            return short_audio(parent, heading='英語の音声例')
         return '<p><small>この過去の記録には音声例を保存していません。</small></p>'
     data = json.loads(path.read_text(encoding='utf-8'))
     measurements = json.loads((results / 'results.json').read_text(encoding='utf-8'))
@@ -138,8 +130,9 @@ def short_audio(results):
     chosen = next((s for s in refs if s['case'].startswith('librispeech_')), refs[0])
     cards = []
     if current:
-        order = ['candidate', 'identity', 'hnm', 'world_harvest']
-        samples = sorted((s for s in samples if s['method'] in labels),
+        order = measurements.get('index_methods', ['candidate', 'identity', 'hnm', 'world_harvest'])
+        visible = order if 'index_methods' in measurements else labels
+        samples = sorted((s for s in samples if s['method'] in labels and s['method'] in visible),
                          key=lambda s: order.index(s['method']) if s['method'] in order else len(order))
     for sample in samples:
         if sample['case'] != chosen['case']:
@@ -151,7 +144,7 @@ def short_audio(results):
                      f'<audio controls preload="none" aria-label="{esc(labels.get(sample["method"], sample["method"]))}" '
                      f'src="{esc(uri)}"></audio></div>')
     if current:
-        return (f'<p>同じ区間の音声（{chosen["n_samples"]/chosen["sample_rate"]:.1f}秒）</p>'
+        return (f'<p>{esc(heading)}（{chosen["n_samples"]/chosen["sample_rate"]:.1f}秒）</p>'
                 '<div class="audio-grid">'+''.join(cards)+'</div>')
     return (f'<p>短い音声例：{esc(chosen["label"])}（{chosen["n_samples"]/chosen["sample_rate"]:.1f}秒）。'
             '同じ原音・区間を各方式で比較できます。</p><div class="audio-grid">'+''.join(cards)+'</div>')
