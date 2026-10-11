@@ -1,0 +1,40 @@
+{
+  "title": "自作HNM v2を採用：平均的な再現改善と振幅超過の程度を合わせて判断",
+  "reason": "英語の固定120録音で音量変動の再現誤差が平均約7.2%減った。振幅1以上の出力は960合成中10→11、該当録音は同じ3/120件、最大振幅は低下した。単一seedの新規超過だけで見送ったAIの条件を過剰と見直し、開発ベースとして採用する。日本語12録音の補助評価でも包絡誤差は平均約3.7%減り、合成失敗と振幅超過はなかった。",
+  "limitations": "予測MOSの明確な改善は確認していない。日本語のささやき4件では明瞭性指標と予測MOSが少し低下した。振幅超過を解消した、すべての音声が良くなった、知覚品質が改善したという判断ではない。",
+  "decision_type": "post_measurement_reassessment",
+  "decided_at": "2026-10-11T16:51:05.440417+00:00",
+  "adopted_version": "hnm-v2",
+  "previous_version": "hnm-v1",
+  "old_decision_retained": "experiments/2026-10-12/noise-envelope/reviews/decision.md",
+  "parent_results": "experiments/2026-10-12/noise-envelope/results/run-001/results.json",
+  "primary_cases": 120,
+  "supplement_cases_separate": 12,
+  "primary_peak_outputs": {
+    "base": 10,
+    "candidate": 11,
+    "denominator_each": 960,
+    "new": 2,
+    "resolved": 1,
+    "affected_recordings_each": 3,
+    "base_maximum": 1.3376452525041775,
+    "candidate_maximum": 1.2915653835929033
+  },
+  "local_peak_changes": [
+    {
+      "case": "librispeech_3575-170457-0034",
+      "seed": 3,
+      "base": 0.7959110024614798,
+      "candidate": 1.0505617584740041,
+      "exceeding_samples": 8
+    },
+    {
+      "case": "librispeech_3575-170457-0034",
+      "seed": 6,
+      "base": 0.9956273200560799,
+      "candidate": 1.0037023925858537,
+      "exceeding_samples": 1
+    }
+  ],
+  "adopted_synthesis_sha256": "937721cd363f06afa3bf4c20c1ff182a8c337c4b19ac9f4b57314f6adea6b44c"
+}

@@ -6,7 +6,6 @@ from datetime import datetime
 from zoneinfo import ZoneInfo
 
 from .benchmark_summary import METRICS, build_summary
-from .benchmark_io import LABELS
 
 CSS = '''
 :root{color-scheme:light dark;--bg:#f5f7fa;--fg:#1e3044;--panel:#fff;--line:#ccd7e0;--link:#006879}
@@ -46,7 +45,7 @@ def overview(data, summary):
             f'（{len(mos)}/{data["planned_cases"]}）。各値は発話平均、下段は有効／予定件数。</p>')
 
 
-def detail_table(scope):
+def detail_table(scope, labels):
     rows = []
     for method, group in scope.items():
         for key, label, _ in METRICS:
@@ -54,7 +53,7 @@ def detail_table(scope):
             delta = m['difference_from_base']
             ci = delta['speaker_bootstrap_95']
             interval = '—' if ci is None else f'[{number(ci[0], True)}, {number(ci[1], True)}]'
-            cells = [LABELS[method], label, number(m['mean']), number(m['worst_5_percent_mean']),
+            cells = [labels[method], label, number(m['mean']), number(m['worst_5_percent_mean']),
                      number(delta['mean_difference'], True), interval,
                      f'{m["valid"]}/{m["total"]}', f'{delta["paired"]}/{delta["total"]}']
             rows.append('<tr>' + ''.join(f'<td>{esc(c)}</td>' for c in cells) + '</tr>')
@@ -81,9 +80,10 @@ def decision_section(path):
 
 def render(data, target):
     target = Path(target)
+    labels = data['method_labels']
     summary = build_summary(data)
     (target.parent / 'summary.json').write_text(json.dumps(summary, ensure_ascii=False, indent=2) + '\n')
-    body = '<h1>固定120音声：雑音包絡候補・ベース・WORLDの比較</h1>'
+    body = f'<h1>固定{data["planned_cases"]}音声：候補・当時のベース・WORLDの比較</h1>'
     body += overview(data, summary)
     body += decision_section(target.parent / 'decision.json')
     body += ('<p>包絡・スペクトルは自作2方式の8 seed平均、WORLDは固定出力。'
@@ -98,7 +98,7 @@ def render(data, target):
             for sample in samples:
                 if sample['case'] != case:
                     continue
-                body += f'<div><p>{esc(LABELS[sample["method"]])}</p><audio controls preload="none" src="{esc(sample["data_uri"])}"></audio></div>'
+                body += f'<div><p>{esc(labels[sample["method"]])}</p><audio controls preload="none" src="{esc(sample["data_uri"])}"></audio></div>'
             body += '</div>'
     body += ('<div class="box"><strong>評価範囲</strong><p>英語の女性20話者・男性20話者（配布メタデータ）から、'
              '各3発話の通常朗読120録音。120件を固定して繰り返す開発用比較であり、未使用の最終評価ではありません。'
@@ -107,7 +107,7 @@ def render(data, target):
              'eSTOIは明瞭性、F0欄は独立解析器の推定整合性であり、自然音声の正解F0ではありません。</p></div>')
     for scope, values in summary.items():
         label = scope.replace('ja/', '日本語・').replace('en/', '英語・').replace('normal', '通常').replace('whisper', 'ささやき').replace('falsetto', '裏声').replace('/F', '・女性').replace('/M', '・男性')
-        body += f'<details><summary>{esc(label)}：全指標・ベースとの差・欠測</summary>{detail_table(values)}</details>'
+        body += f'<details><summary>{esc(label)}：全指標・ベースとの差・欠測</summary>{detail_table(values, labels)}</details>'
     body += ('<p>差は候補またはWORLDから当時のベースを引いた値。矢印は望ましい方向です。'
              '信頼区間は配布女性・男性の比率を保った話者単位の再標本化2,000回で算出し、seedや音声フレームを独立標本と数えていません。'
              '指標間の多数決や総合点は作りません。</p><p><a href="results.json">発話別の全測定値</a> ／ '

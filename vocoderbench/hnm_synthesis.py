@@ -14,13 +14,38 @@ def _noise(params: HNMParameters, seed: int) -> np.ndarray:
     window = np.hanning(nfft)
     out, norm = np.zeros(n), np.zeros(n)
     rng = np.random.default_rng(seed)
-    for i, time in enumerate(params.frame_times):
+    powers = np.trapezoid(params.noise_psd, params.frequency_grid, axis=1)
+    active = np.flatnonzero(powers > 0)
+    if not len(active):
+        return out
+    # 無音フレームにも色の形だけを補う。発音の有無は後段の包絡だけで決める。
+    active_times = params.frame_times[active]
+    insertion = np.searchsorted(active_times, params.frame_times)
+    before = np.clip(insertion - 1, 0, len(active) - 1)
+    after = np.clip(insertion, 0, len(active) - 1)
+    nearest = np.where(np.abs(params.frame_times - active_times[before]) <=
+                       np.abs(active_times[after] - params.frame_times), before, after)
+    shape_indices = active[nearest]
+    shapes = params.noise_psd[shape_indices] / powers[shape_indices, None]
+    # 時間編集で解析フレームが疎になっても、合成窓の間隔は5 msを維持する。
+    synthesis_times = np.arange(int(np.ceil(n / sr / 0.005)) + 1) * 0.005
+    for time in synthesis_times:
         center = round(time * sr)
         start, end = center - half, center + half
         left, right = max(start, 0), min(end, n)
         if left >= right:
             continue
-        psd = np.interp(grid, params.frequency_grid, params.noise_psd[i])
+        next_frame = int(np.searchsorted(params.frame_times, time, side="right"))
+        i0 = max(0, min(next_frame - 1, len(params.frame_times) - 1))
+        i1 = min(next_frame, len(params.frame_times) - 1)
+        weight = 0.0 if i0 == i1 else (time - params.frame_times[i0]) / (params.frame_times[i1] - params.frame_times[i0])
+        shape = (1 - weight) * shapes[i0] + weight * shapes[i1]
+        psd = np.interp(grid, params.frequency_grid, shape)
+        # 現在のDC/Nyquistの生成係数を変更せず、その式の期待パワーで単位化する。
+        expected_power = (sr / nfft) * float(np.sum(psd))
+        if expected_power <= 0:
+            raise ValueError("雑音の形を合成FFT格子へ写せませんでした")
+        psd = psd / expected_power
         spectrum = (rng.standard_normal(len(grid)) + 1j * rng.standard_normal(len(grid))) * np.sqrt(psd * sr * nfft / 4)
         spectrum[0] = rng.standard_normal() * np.sqrt(psd[0] * sr * nfft)
         spectrum[-1] = rng.standard_normal() * np.sqrt(psd[-1] * sr * nfft)
@@ -28,7 +53,9 @@ def _noise(params: HNMParameters, seed: int) -> np.ndarray:
         local = slice(left - start, right - start)
         out[left:right] += noise[local] * window[local]
         norm[left:right] += window[local] ** 2
-    return np.divide(out, np.sqrt(norm), out=np.zeros_like(out), where=norm > 1e-15)
+    carrier = np.divide(out, np.sqrt(norm), out=np.zeros_like(out), where=norm > 1e-15)
+    target_power = np.interp(np.arange(n) / sr, params.frame_times, powers)
+    return carrier * np.sqrt(target_power)
 
 
 def decode(params: HNMParameters, seed: int = 0) -> np.ndarray:

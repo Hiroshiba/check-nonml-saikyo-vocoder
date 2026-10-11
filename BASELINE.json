@@ -1,8 +1,10 @@
 {
   "status": "selected",
   "method": "hnm",
-  "version": "hnm-v1",
-  "reason": "ユーザーの方針変更に従い、自作の調波・雑音方式を改善の出発点とする。WORLD（Harvest）は既存比較対象であり、初代採用はWORLDへの品質優越を意味しない。",
+  "version": "hnm-v2",
+  "reason": "固定120録音で音量変動の再現誤差が平均約7.2%減少。振幅超過の頻度・程度も踏まえて事後に採否を見直し、雑音包絡を分離する実装を採用。日本語12録音の補助評価も実施。予測MOSや知覚品質の改善を保証するものではない。",
   "comparison_reference": "hnm",
-  "comparison_reference_meaning": "この実験時点の自作ベース。初代の自己比較差は0。既存比較対象はWORLD（Harvest）の1方式。"
+  "comparison_reference_meaning": "実験開始時点の唯一の自作ベース。過去結果は当時の版を保持する。既存比較対象はWORLD（Harvest）。",
+  "previous_version": "hnm-v1",
+  "selection_report": "experiments/2026-10-12/jvs-supplement/results/run-001/index.html"
 }

@@ -10,7 +10,8 @@ import sys
 import numpy as np
 
 ROOT = Path(__file__).resolve().parents[1]
-LABELS = {'identity': '原音', 'hnm': '自作HNM v1（当時のベース）',
+BASE_VERSION = json.loads((ROOT / 'BASELINE.json').read_text(encoding='utf-8'))['version']
+LABELS = {'identity': '原音', 'hnm': f'自作HNM {BASE_VERSION.removeprefix("hnm-")}（当時のベース）',
           'candidate': '雑音包絡を分離した候補', 'world_harvest': 'WORLD（Harvest）'}
 SEEDS = tuple(range(8))
 
@@ -49,7 +50,7 @@ def external_candidate(path):
     return importlib.import_module(name + '.hnm')
 
 
-def source_contract(manifest, candidate):
+def source_contract(manifest, candidate, criteria=None):
     import scipy
     from . import world
     from .logging_utils import run_process
@@ -68,7 +69,8 @@ def source_contract(manifest, candidate):
                             'scipy': scipy.__version__, 'platform': platform.platform()},
             'source_sha256': {name: sha(ROOT / 'vocoderbench' / name) for name in sorted(set(selected))},
             'dependency_lock_sha256': sha(ROOT / 'uv.lock'),
-            'decision_criteria_sha256': sha(ROOT / 'experiments/2026-10-12/noise-envelope/reviews/criteria.md'),
+            'decision_criteria_sha256': sha(criteria if criteria is not None else
+                ROOT / 'experiments/2026-10-12/noise-envelope/reviews/criteria.md'),
             'candidate_source_sha256': {p.name: sha(p) for p in sorted(Path(candidate).glob('*.py'))},
             'noise_seeds': SEEDS, 'mos_noise_seed': 0, 'mos_extraction_seed': 20261012,
             'mos_repetitions': 1, 'mos_domain': 'bvcc', 'alignment': 'none', 'normalization': 'none',
