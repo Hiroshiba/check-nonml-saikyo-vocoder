@@ -193,7 +193,9 @@ def build(output):
         shutil.copy2(ROOT / library / name, output / library / name)
     baseline = read_json(ROOT / 'BASELINE.json')
     shutil.copy2(ROOT / 'BASELINE.json', output / 'BASELINE.json')
-    current = baseline['method'] or '未選定'
+    method = baseline['method']
+    current = ('自作HNM ' + baseline['version'].removeprefix('hnm-') if method == 'hnm'
+               else method or '未選定')
     cards = []
     for _, rel, meta, run in sorted(reports, key=lambda item: (item[0], str(item[1]), item[3]['id']), reverse=True):
         results = ROOT / rel / run['path']
