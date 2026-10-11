@@ -31,7 +31,7 @@ class WorldParameters:
     sample_rate: int
     frame_period: float
     n_samples: int
-    method: str = "dio"
+    method: str = "harvest"
     schema_version: int = SCHEMA_VERSION
     source_revision: str = REVISION
     status: str = "ok"
@@ -164,7 +164,7 @@ def validate(params: WorldParameters) -> None:
         raise ValueError("n_samples exceeds the parameter time coverage")
 
 
-def encode(x, sr: int, method: str = "dio", *, frame_period: float = 5.0) -> WorldParameters:
+def encode(x, sr: int, method: str = "harvest", *, frame_period: float = 5.0) -> WorldParameters:
     """Analyze mono audio; exact silence is measured by the native algorithm too.
 
     Inputs under 100 ms are rejected instead of being silently padded. The adapter

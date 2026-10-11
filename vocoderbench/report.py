@@ -6,6 +6,8 @@ from pathlib import Path
 
 import numpy as np
 
+from .audio_report import section as audio_section
+
 
 def esc(value):
     return html.escape(str(value))
@@ -73,9 +75,12 @@ def render(data, path):
     for (group,method), records in groups.items():
         vals=[r['measurement']['mr_stft_log_magnitude_mae_db'] for r in records
               if r.get('measurement',{}).get('mr_stft_log_magnitude_mae_db') is not None]
+        deltas = [r['measurement']['mr_stft_log_magnitude_mae_db'] - ref[r['case']]['measurement']['mr_stft_log_magnitude_mae_db']
+                  for r in records if r.get('measurement', {}).get('mr_stft_log_magnitude_mae_db') is not None
+                  and ref.get(r['case'], {}).get('measurement', {}).get('mr_stft_log_magnitude_mae_db') is not None]
         failures=sum(r['status']!='measured' or r.get('measurement',{}).get('status')!='ok' for r in records)
         summaries.append('<tr>'+''.join(f'<td>{esc(v)}</td>' for v in [group,label(method,METHODS),len(records),len(vals),failures,
-                  fmt(float(np.median(vals)) if vals else None)])+'</tr>')
+                  fmt(float(np.median(vals)) if vals else None),fmt(float(np.median(deltas)) if deltas else None)])+'</tr>')
     op_rows=[]
     for r in data['operations']:
         p=r.get('pitch_against_known_truth') or {}
@@ -108,17 +113,21 @@ def render(data, path):
                   pitch.get('false_voiced_frames', '—')]
         decoder_rows.append('<tr>'+''.join(f'<td>{esc(v)}</td>' for v in values)+'</tr>')
     content=f'''<!doctype html><html lang="ja"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>非MLボコーダー 比較基盤の初回測定</title>
+<title>非MLボコーダー 比較結果</title>
 <style>
-:root{{color-scheme:light;--ink:#172a3a;--muted:#506375;--line:#d8e2ea;--accent:#156d79}}
-body{{font:15px/1.75 system-ui,sans-serif;color:var(--ink);background:#f6f8fb;margin:0}}
+:root{{color-scheme:light dark;--ink:#172a3a;--muted:#506375;--line:#d8e2ea;--accent:#156d79;--bg:#f6f8fb;--surface:#fff;--head:#e7eef5;--link:#126d8a}}
+body{{font:15px/1.75 system-ui,sans-serif;color:var(--ink);background:var(--bg);margin:0}}
 main{{max-width:1450px;margin:auto;padding:36px 26px 70px}}h1{{font-size:30px;margin:0 0 12px}}h2{{font-size:22px;margin-top:38px}}
-.tag{{letter-spacing:.12em;color:var(--accent);font-size:12px;font-weight:700}}.notice{{border-left:5px solid var(--accent);background:white;padding:18px 24px;margin:22px 0}}
-p{{max-width:1000px}}table{{border-collapse:collapse;width:100%;font-size:13px;background:white}}th,td{{padding:9px 12px;border-bottom:1px solid var(--line);text-align:right;white-space:nowrap}}th:first-child,td:first-child{{text-align:left;white-space:normal;min-width:18em;overflow-wrap:anywhere}}td:nth-child(2),td:nth-child(3){{white-space:normal;min-width:13em;overflow-wrap:anywhere}}th{{background:#e7eef5}}.scroll{{overflow:auto;border:1px solid var(--line);border-radius:8px}}input{{padding:12px;border:1px solid #9fb2c3;border-radius:6px;width:min(500px,80%);margin:12px 0}}pre{{white-space:pre-wrap;overflow-wrap:anywhere;font-size:12px;background:#fff;padding:16px}}a{{color:#126d8a}}small{{color:var(--muted)}}
+.tag{{letter-spacing:.12em;color:var(--accent);font-size:12px;font-weight:700}}.notice{{border-left:5px solid var(--accent);background:var(--surface);padding:18px 24px;margin:22px 0}}
+p{{max-width:1000px}}table{{border-collapse:collapse;width:100%;font-size:13px;background:var(--surface)}}th,td{{padding:9px 12px;border-bottom:1px solid var(--line);text-align:right;white-space:nowrap}}th:first-child,td:first-child{{text-align:left;white-space:normal;min-width:18em;overflow-wrap:anywhere}}td:nth-child(2),td:nth-child(3){{white-space:normal;min-width:13em;overflow-wrap:anywhere}}th{{background:var(--head)}}.scroll{{overflow:auto;border:1px solid var(--line);border-radius:8px}}input{{background:var(--surface);color:var(--ink);padding:12px;border:1px solid #9fb2c3;border-radius:6px;width:min(500px,80%);margin:12px 0}}pre{{white-space:pre-wrap;overflow-wrap:anywhere;font-size:12px;background:var(--surface);padding:16px}}a{{color:var(--link)}}small{{color:var(--muted)}}
+.audio-grid{{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px}}audio{{width:100%}}input::placeholder{{color:var(--muted)}}a:focus-visible,input:focus-visible,audio:focus-visible{{outline:2px solid var(--accent);outline-offset:3px}}@media(prefers-color-scheme:dark){{:root{{--ink:#e6edf4;--muted:#b3c1d0;--line:#3b4b60;--accent:#68c8c6;--bg:#0f1724;--surface:#182438;--head:#23334a;--link:#7fdae8}}}}
 </style><main><div class="tag">非MLボコーダー・再現可能な比較</div>
-<h1>比較対象と測定方法を整える</h1>
-<p>既存の非ML方式を同じ入力で動かし、測定の妥当性・失敗・再現性を確認した初回結果です。音質の最良や知覚的な透明性を認定する実験ではありません。</p>
+<h1>ベース手法と既存方式を比較する</h1>
+<p>既存の非ML方式を同じ入力で動かし、測定の妥当性・失敗・再現性を確認した比較結果です。音質の最良や知覚的な透明性を認定する実験ではありません。</p>
 <div class="notice"><strong>{esc(base_label)}</strong><br>{esc(base['reason'])}<br>各表のΔは <strong>{esc(data['comparison_reference'])}</strong> との差です。{("未選定時の表示基準であり、正式ベース手法との差ではありません。" if base["method"] is None else "その時点の正式ベース手法との差です。") }初代選定後もベース手法と版を記録して比較します。</div>
+<h2>入力の種類ごとの要約</h2><p>同一条件の対応のある比較を基本にします。以下はケース中央値の診断値で、MOSでも品質順位でもありません。失敗件数を分母とともに残します。</p>
+<div class="scroll"><table><thead><tr><th>群</th><th>方式</th><th>全ケース</th><th>有効スコア</th><th>処理・測定失敗</th><th>MR-STFT中央値 dB</th><th>比較相手との差分中央値 dB</th></tr></thead><tbody>{''.join(summaries)}</tbody></table></div>
+{audio_section(Path(path).parent, base['method'])}
 <h2>比較の役割</h2><ul><li>WORLD DIO + StoneMask と WORLD Harvest：同じCheapTrick・D4C・合成器に対する解析器の比較。</li><li>LLSM layer 0：WORLD DIOの同じF0を渡して別の解析合成表現を比較。音高の推定から合成まで独立した方式同士の比較ではありません。</li><li>原音コピー（identity）：測定器の検査だけに使う原音コピー。ボコーダーの候補や最良手法には数えません。</li></ul>
 <h2>測定条件</h2><p>今回の自然音声はLibriSpeechの{natural_speakers}話者、{len(natural)}区間、合計{fmt(natural_seconds,1)}秒です（読み込めた固定先頭区間）。人工信号は加算合成、パルス列とIIR共鳴器、変調雑音、無音、インパルスで作り、評価対象デコーダーから生成していません。録音の新しい聴取評価は行っていません。</p>
 <p>自動時間整列・動的時間伸縮・ゲイン正規化は行いません。MR-STFT（複数の窓長で測るスペクトル誤差）の窓長は5・20・80 msです。音高は独立YIN型測定器で既知F0に対して測定します。自然音声のF0の絶対正解はありません。—は未定義・対象外でありゼロ誤差ではありません。</p>
@@ -126,8 +135,6 @@ p{{max-width:1000px}}table{{border-collapse:collapse;width:100%;font-size:13px;b
 <h2>測定器の校正</h2><p>入力信号をそのまま測定した音高誤差P95のケース最大値: <strong>{fmt(max_cal)} cent</strong>。既知有声の欠測: {cal_missing}フレーム、既知無声の誤有声: {cal_false}フレーム。境界を跨ぐフレームは別計数です。詳細と欠測分母は <a href="results.json">results.json</a> に保存しています。</p>
 <p>別途、原音コピー、既知の音量変更、10 msの時間ずらし、高域の除去、末尾の切り落とし、非数（NaN）、無限大（Inf）、直流成分（DC）、無音化による独立監査を行います。その記録は {audit_link}。</p>
 <h2>表の読み方</h2><ul><li>F0は基本周波数で、周期的な音の高さに対応します。cent（セント）は音程差の単位で、100 centが1半音です。</li><li>P95は誤差の95パーセンタイルです。測定できたフレームの95％がこの値以下ですが、欠測は別に確認します。</li><li>Δは「対象の誤差 − 比較相手の誤差」です。負ならこの指標の誤差が比較相手より小さく、正なら大きいことを表します。音質全体の順位ではありません。</li><li>RMS差は実効値で測るレベル差です。正は原音より大きく、負は小さいことを表し、0 dBに近いほどレベルが一致します。</li><li>フレームは測定用に切り出す短い区間、サンプルは波形の1点です。有声の欠測は本来ある周期を測れなかった区間、誤有声は本来無声の区間を有声と判定したものです。</li><li>—は未定義・対象外です。計算の完了や欠測の少なさだけで、聴感上の良さを保証しません。</li></ul>
-<h2>入力の種類ごとの要約</h2><p>同一条件の対応のある比較を基本にします。以下はケース中央値の診断値で、MOSでも品質順位でもありません。失敗件数を分母とともに残します。</p>
-<div class="scroll"><table><thead><tr><th>群</th><th>方式</th><th>全ケース</th><th>有効スコア</th><th>処理・測定失敗</th><th>MR-STFT中央値 dB</th></tr></thead><tbody>{''.join(summaries)}</tbody></table></div>
 <h2>無加工再合成の全ケース</h2><p>「処理完了／測定完了（measured / ok）」は計算できたという状態です。無音化、音高欠測、レベル誤差などを含め、品質合格を意味しません。STFT・帯域差・cent誤差は小さいほど原音に近い診断値です。</p><input id="filter" aria-label="ケースまたは方式で絞り込み" placeholder="ケースまたは方式で絞り込み">
 <div class="scroll"><table id="cases"><thead><tr>{''.join('<th>'+v+'</th>' for v in ['入力','比較対象','状態','MR-STFT dB','Δ対'+ref_label+' dB','帯域差 dB','RMS差 dB','F0 P95 cent','測定できた／真値の有声フレーム','誤有声（フレーム）','長さ差（サンプル）','再実行最大差'])}</tr></thead><tbody>{''.join(rows)}</tbody></table></div>
 <h2>操作試験</h2><p>未操作の同方式出力からの変化を測ります。既知F0への絶対誤差と、出力間の相対変化推定を区別します。時間操作の全長一致だけでは局所イベントや末尾の保持を保証しません。LLSMの操作は今回未実装であり、合格に数えません。</p>

@@ -4,8 +4,9 @@
 
 まず既存の比較対象と比較方法を実装しました。独自の高品質ボコーダーが完成した段階ではありません。
 
-- [初回比較結果HTML](experiments/2026-10-11/comparison-workbench/results/run-001/index.html) と [全数値JSON](experiments/2026-10-11/comparison-workbench/results/run-001/results.json)
-- [現在のベース手法の情報](BASELINE.json)：初代は未選定です。ベース手法は、今後の改善を比較する正式な基準を指します。現在、表の差分表示に使うWORLD DIOは表示上の比較基準であり、品質最良の認定ではありません。
+- [現在のベースとの比較・音声例](experiments/2026-10-11/world-harvest-base/results/run-001/index.html)
+- [比較基盤の初回記録HTML](experiments/2026-10-11/comparison-workbench/results/run-001/index.html) と [全数値JSON](experiments/2026-10-11/comparison-workbench/results/run-001/results.json)
+- [現在のベース手法の情報](BASELINE.json)：現在はユーザー指定のWORLD Harvestです。WORLDの解析・合成と組み合わせ、今後の改善を比較する正式な基準にします。実験から品質最良と認定したという意味ではありません。
 - [進め方](docs/WORKFLOW.md)、[測定仕様](docs/EVALUATION.md)、[次の作業](docs/STATUS.md)
 - [5人の議論](experiments/2026-10-11/comparison-workbench/reviews/discussion.md)、[参考資料と確認範囲](research/reference-survey/README.md)
 
@@ -15,8 +16,8 @@
 
 | ID | 構成 | 役割 |
 |---|---|---|
-| `world_dio` | DIO + StoneMask / CheapTrick / D4C / WORLD合成 | 固定した差分表示の比較基準 |
-| `world_harvest` | Harvest / CheapTrick / D4C / WORLD合成 | 同じ合成器で解析器の影響を比較 |
+| `world_dio` | DIO + StoneMask / CheapTrick / D4C / WORLD合成 | 既存の比較対象 |
+| `world_harvest` | Harvest / CheapTrick / D4C / WORLD合成 | 現在の正式ベース。自己比較の差分も表示 |
 | `llsm_world_dio` | WORLD DIOの基本周波数（F0）を渡すLLSM2の層0（layer 0） | 調波の位相と雑音の表現が異なる解析合成系を比較 |
 | `identity` | 元波形コピー | 測定器の検査専用。ボコーダーでも候補でもない |
 
@@ -45,4 +46,4 @@ python -m vocoderbench.run --output runs/local-comparison
 
 ## 依存と音声の帰属
 
-WORLDはBSD-3-Clause、LLSM2と直接結合するアダプターはGPL-3.0-or-laterです。詳細は [依存情報](docs/THIRD_PARTY.md) と [音声の帰属](data/ATTRIBUTION.md) を参照してください。音声はリポジトリに再配布せず、取得方法と条件を記録しています。
+WORLDはBSD-3-Clause、LLSM2と直接結合するアダプターはGPL-3.0-or-laterです。詳細は [依存情報](docs/THIRD_PARTY.md) と [音声の帰属](data/ATTRIBUTION.md) を参照してください。元録音全体は取得用キャッシュに置き、短い比較用音声例はレポートに同梱します。出典・利用条件・変換内容を記録しています。
