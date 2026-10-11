@@ -1,0 +1,26 @@
+{
+  "unittest": {
+    "count": 28,
+    "status": "passed",
+    "command": "python -m unittest discover -s tests -v"
+  },
+  "meter_calibration": {
+    "known_cases": 78,
+    "status": "passed",
+    "command": "python -m vocoderbench.calibrate_pitch --output reports/initial-comparison/calibration.json"
+  },
+  "independent_audit": {
+    "checks": 20,
+    "status": "passed",
+    "command": "python scripts/audit_metrics.py --output reports/initial-comparison"
+  },
+  "benchmark": {
+    "cases": 32,
+    "rows": 128,
+    "operations": 50,
+    "decoder_only": 2,
+    "processing_failures": 0,
+    "quality_pass_claim": false
+  },
+  "cloud_ci": "not yet run at creation of this record"
+}

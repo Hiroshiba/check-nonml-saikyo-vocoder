@@ -1,0 +1,6750 @@
+{
+  "date": "2026-10-10",
+  "purpose": "非ML音声ボコーダーの方針設計に関するスコーピング調査",
+  "counts": {
+    "papers": 307,
+    "academic_supplements": 3,
+    "nonpaper_screened": 339,
+    "nonpaper_selected": 203,
+    "nonpaper_excluded": 136
+  },
+  "methodology_ja": "この資料は、非機械学習ベースの音声分析・合成系について、方式や音響特徴量の選定ではなく、設計方針として分けるべき論点を探すためのスコーピング調査の記録です。2026年10月10日に整理しました。\n\n**確認件数：研究論文・会議論文・プレプリント307件、補助学術資料3件、非論文資料339件。非論文のうち203件を設計論点の資料として採用し、136件を除外しました。**\n\n論文の大部分は著者要旨を確認した段階であり、307件を全文精読したという意味ではありません。要旨以上に本文・図表を確認した場合は個別記録に記しました。非論文はGitHubの起票本文が中心で、検索結果に返された質問・回答の本文抜粋を確認したもの、技術文書の関連節を確認したものも含みます。全スレッド・全コメントの精読ではなく、不具合の再現実験もしていません。\n\n検索・選定は目的に沿った探索であり、無作為標本でも網羅的システマティックレビューでもありません。SSW、Interspeech、VOQUAL/MAVEBA、音声評価研究、公開DSP実装と評価器の議論を中心に調べました。学術資料はISCA Archiveの比重が高く、非論文はWORLD系、Rubber Band系、音声品質評価器のGitHubに偏っています。論点の出現数は研究者の賛成人数や分野全体での支持率を表しません。\n\n採用基準は、表現の性質、操作の意味、品質の定義、測定の妥当性、適用範囲、再現性・状態・数値・入出力の契約に関連する記述があることです。インストール、依存関係、連絡先、単なるリリース予定など、今回の設計論点に結びつかないものは除外しました。実装上の問題報告を、方式そのものの欠陥や現在も未解決の問題だと解釈しないでください。\n\n論文の「直接」は音声分析・合成表現やボコーダーなどとの直接的な関係、「近接」は音声合成・声質知覚・品質評価・ソフトウェア検証等からの関係を表す粗い整理です。直接74件、近接233件です。機械学習を用いる研究も近接領域の証拠として含めましたが、機械学習方式の採用を提案するものではありません。「直接」も非機械学習方式のみを保証するラベルではありません。\n\n同一URLは重複除去しました。版違いのURLを跨ぐ完全な書誌同定や著者単位の独立性検証はしていません。招待講演要旨1件、デモ要旨1件、博士学位論文1件は、307件の論文数から外して別欄に置きました。検索件数、参考文献一覧の項目数、開けなかったページは確認件数に加えていません。\n\n「確認した論点」は資料を調べるための短い日本語メモであり、正式な論文・記事タイトルの翻訳でも、著者の主張の完全な要約でもありません。具体的な採用判断にはリンク先の本文、実験条件、限界の確認が必要です。\n",
+  "tags": {
+    "A": "表現・再構成",
+    "B": "制御・操作",
+    "C": "頑健性・適用範囲",
+    "D": "評価・測定",
+    "E": "実装・検証"
+  },
+  "tag_counts_multilabel": {
+    "A": 157,
+    "D": 192,
+    "B": 113,
+    "C": 110,
+    "E": 16
+  },
+  "papers": [
+    {
+      "id": "P001",
+      "url": "https://www.isca-archive.org/ssw_2013/inukai13_ssw.html",
+      "checked_topic": "同一話者・同文でも残るスペクトル差と評価の参照問題",
+      "tags": [
+        "A",
+        "D"
+      ],
+      "scope": "近接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P002",
+      "url": "https://www.isca-archive.org/ssw_2013/nicolao13_ssw.html",
+      "checked_topic": "明瞭度の制御と他言語への適用",
+      "tags": [
+        "B",
+        "C"
+      ],
+      "scope": "近接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P003",
+      "url": "https://www.isca-archive.org/ssw_2013/valentinibotinhao13_ssw.html",
+      "checked_topic": "単語単独と文中で異なる明瞭度・文脈依存性",
+      "tags": [
+        "C",
+        "D"
+      ],
+      "scope": "近接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P004",
+      "url": "https://www.isca-archive.org/ssw_2013/yanagisawa13_ssw.html",
+      "checked_topic": "録音環境の違いに対する話者適応の頑健性",
+      "tags": [
+        "C"
+      ],
+      "scope": "近接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P005",
+      "url": "https://www.isca-archive.org/ssw_2013/erro13_ssw.html",
+      "checked_topic": "生成誤差と尤度という異なる最適化基準",
+      "tags": [
+        "B",
+        "D"
+      ],
+      "scope": "近接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P006",
+      "url": "https://www.isca-archive.org/ssw_2013/hu13_ssw.html",
+      "checked_topic": "ボコーダー知覚比較における発声様式・質問形式の影響",
+      "tags": [
+        "A",
+        "C",
+        "D"
+      ],
+      "scope": "直接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P007",
+      "url": "https://www.isca-archive.org/ssw_2013/astrinaki13_ssw.html",
+      "checked_topic": "人が操作する調音座標と音響特徴の接続",
+      "tags": [
+        "B"
+      ],
+      "scope": "近接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P008",
+      "url": "https://www.isca-archive.org/ssw_2013/umbert13_ssw.html",
+      "checked_topic": "表情豊かな歌唱制御の組合せを網羅するデータ設計",
+      "tags": [
+        "B",
+        "C"
+      ],
+      "scope": "近接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P009",
+      "url": "https://www.isca-archive.org/ssw_2013/aylett13_ssw.html",
+      "checked_topic": "テキストと声質の相互作用による情動知覚",
+      "tags": [
+        "B",
+        "D"
+      ],
+      "scope": "近接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P010",
+      "url": "https://www.isca-archive.org/ssw_2013/baumann13_ssw.html",
+      "checked_topic": "信号品質とは別の対話上の適切さ",
+      "tags": [
+        "C",
+        "D"
+      ],
+      "scope": "近接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P011",
+      "url": "https://www.isca-archive.org/ssw_2013/csapo13_ssw.html",
+      "checked_topic": "非モーダルな発声の再現と話者らしさ",
+      "tags": [
+        "A",
+        "C"
+      ],
+      "scope": "直接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P012",
+      "url": "https://www.isca-archive.org/ssw_2013/astrinaki13c_ssw.html",
+      "checked_topic": "連続補間によるアクセントのインタラクティブ制御",
+      "tags": [
+        "B"
+      ],
+      "scope": "近接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P013",
+      "url": "https://www.isca-archive.org/ssw_2013/veaux13_ssw.html",
+      "checked_topic": "リアルタイムの身体操作と音声制御の対応",
+      "tags": [
+        "B",
+        "E"
+      ],
+      "scope": "近接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P014",
+      "url": "https://www.isca-archive.org/ssw_2013/calzadadefez13_ssw.html",
+      "checked_topic": "音質を維持した声の努力度の中間値生成",
+      "tags": [
+        "A",
+        "B"
+      ],
+      "scope": "直接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P015",
+      "url": "https://www.isca-archive.org/ssw_2013/nishizawa13_ssw.html",
+      "checked_topic": "音質・計算量・メモリの分離した評価",
+      "tags": [
+        "A",
+        "E"
+      ],
+      "scope": "直接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P016",
+      "url": "https://www.isca-archive.org/ssw_2013/saheer13_ssw.html",
+      "checked_topic": "情動の生成と情動の知覚要因の区別",
+      "tags": [
+        "B",
+        "D"
+      ],
+      "scope": "近接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P017",
+      "url": "https://www.isca-archive.org/ssw_2013/takashima13_ssw.html",
+      "checked_topic": "雑音下の音声変換と計算量",
+      "tags": [
+        "C",
+        "E"
+      ],
+      "scope": "近接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P018",
+      "url": "https://www.isca-archive.org/ssw_2013/toman13_ssw.html",
+      "checked_topic": "話者類似性と方言類似性の別評価",
+      "tags": [
+        "B",
+        "D"
+      ],
+      "scope": "近接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P019",
+      "url": "https://www.isca-archive.org/ssw_2013/toman13b_ssw.html",
+      "checked_topic": "全体的品質と話者・方言類似性の区別",
+      "tags": [
+        "B",
+        "D"
+      ],
+      "scope": "近接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P020",
+      "url": "https://www.isca-archive.org/ssw_2013/hinterleitner13_ssw.html",
+      "checked_topic": "9研究から整理した合成音声の多次元知覚品質",
+      "tags": [
+        "D"
+      ],
+      "scope": "直接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P021",
+      "url": "https://www.isca-archive.org/ssw_2013/lorenzotrueba13_ssw.html",
+      "checked_topic": "中立話者への発話スタイル移植",
+      "tags": [
+        "B",
+        "C"
+      ],
+      "scope": "近接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P022",
+      "url": "https://www.isca-archive.org/ssw_2013/merritt13_ssw.html",
+      "checked_topic": "合成の劣化要因を独立操作する診断実験",
+      "tags": [
+        "A",
+        "D"
+      ],
+      "scope": "直接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P023",
+      "url": "https://www.isca-archive.org/ssw_2013/remes13_ssw.html",
+      "checked_topic": "児童音声・雑音条件での客観指標と主観評価の対応",
+      "tags": [
+        "C",
+        "D"
+      ],
+      "scope": "近接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P024",
+      "url": "https://www.isca-archive.org/ssw_2013/tesser13_ssw.html",
+      "checked_topic": "音声由来の韻律ラベルとテキスト由来ラベルの不一致",
+      "tags": [
+        "B",
+        "D"
+      ],
+      "scope": "近接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P025",
+      "url": "https://www.isca-archive.org/ssw_2013/watson13_ssw.html",
+      "checked_topic": "評価する聴取者集団による明瞭度差",
+      "tags": [
+        "C",
+        "D"
+      ],
+      "scope": "近接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P026",
+      "url": "https://www.isca-archive.org/ssw_2013/wu13_ssw.html",
+      "checked_topic": "統計平均化による音響軌跡の過平滑化",
+      "tags": [
+        "A",
+        "C"
+      ],
+      "scope": "近接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P027",
+      "url": "https://www.isca-archive.org/ssw_2013/golipour13_ssw.html",
+      "checked_topic": "大きな韻律変更の実用限界と自然性",
+      "tags": [
+        "B",
+        "C"
+      ],
+      "scope": "近接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P028",
+      "url": "https://www.isca-archive.org/ssw_2013/matousek13_ssw.html",
+      "checked_topic": "目的関数に反映されない聴覚的アーティファクト",
+      "tags": [
+        "D"
+      ],
+      "scope": "近接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P029",
+      "url": "https://www.isca-archive.org/ssw_2010/kawahara10_ssw.html",
+      "checked_topic": "知覚的等価性を利用する平滑表現と操作性",
+      "tags": [
+        "A",
+        "B"
+      ],
+      "scope": "直接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P030",
+      "url": "https://www.isca-archive.org/ssw_2010/kain10_ssw.html",
+      "checked_topic": "非同期補間と表現圧縮の誤差",
+      "tags": [
+        "A",
+        "C"
+      ],
+      "scope": "直接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P031",
+      "url": "https://www.isca-archive.org/ssw_2010/villavicencio10_ssw.html",
+      "checked_topic": "低次元声質変換と品質・計算量",
+      "tags": [
+        "A",
+        "B"
+      ],
+      "scope": "直接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P032",
+      "url": "https://www.isca-archive.org/ssw_2010/godoy10_ssw.html",
+      "checked_topic": "表現依存の過平滑化とスペクトルピーク変換",
+      "tags": [
+        "A",
+        "B"
+      ],
+      "scope": "直接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P033",
+      "url": "https://www.isca-archive.org/ssw_2010/nose10_ssw.html",
+      "checked_topic": "話者・文ごとの適応的量子化",
+      "tags": [
+        "A",
+        "C"
+      ],
+      "scope": "近接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P034",
+      "url": "https://www.isca-archive.org/ssw_2010/maia10_ssw.html",
+      "checked_topic": "波形閉ループでの音響・励振同時推定",
+      "tags": [
+        "A",
+        "D"
+      ],
+      "scope": "近接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P035",
+      "url": "https://www.isca-archive.org/ssw_2010/yu10_ssw.html",
+      "checked_topic": "不連続な基本周波数表現と連続表現",
+      "tags": [
+        "A",
+        "C"
+      ],
+      "scope": "近接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P036",
+      "url": "https://www.isca-archive.org/ssw_2010/steiner10_ssw.html",
+      "checked_topic": "記号的制御と音響的制御の比較",
+      "tags": [
+        "B",
+        "D"
+      ],
+      "scope": "直接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P037",
+      "url": "https://www.isca-archive.org/ssw_2010/tesser10_ssw.html",
+      "checked_topic": "感情声質変換と客観・主観評価",
+      "tags": [
+        "B",
+        "D"
+      ],
+      "scope": "直接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P038",
+      "url": "https://www.isca-archive.org/ssw_2010/wolters10_ssw.html",
+      "checked_topic": "実験室とクラウドでの明瞭度評価の差",
+      "tags": [
+        "D"
+      ],
+      "scope": "近接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P039",
+      "url": "https://www.isca-archive.org/ssw_2010/janska10_ssw.html",
+      "checked_topic": "多次元尺度構成の可能性と落とし穴",
+      "tags": [
+        "D"
+      ],
+      "scope": "近接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P040",
+      "url": "https://www.isca-archive.org/ssw_2010/anumanchipalli10_ssw.html",
+      "checked_topic": "静かな収録と騒音下利用の目的差",
+      "tags": [
+        "C",
+        "D"
+      ],
+      "scope": "近接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P041",
+      "url": "https://www.isca-archive.org/ssw_2010/andersson10_ssw.html",
+      "checked_topic": "自発会話音声での表現と被覆範囲",
+      "tags": [
+        "A",
+        "C"
+      ],
+      "scope": "近接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P042",
+      "url": "https://www.isca-archive.org/ssw_2010/wester10_ssw.html",
+      "checked_topic": "言語横断の話者類似性評価",
+      "tags": [
+        "C",
+        "D"
+      ],
+      "scope": "近接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P043",
+      "url": "https://www.isca-archive.org/ssw_2010/anumanchipalli10b_ssw.html",
+      "checked_topic": "音声生成知識に基づく合成表現",
+      "tags": [
+        "A",
+        "B"
+      ],
+      "scope": "近接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P044",
+      "url": "https://www.isca-archive.org/ssw_2010/saheer10_ssw.html",
+      "checked_topic": "話者正規化と状態依存の声道変動",
+      "tags": [
+        "A",
+        "C"
+      ],
+      "scope": "近接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P045",
+      "url": "https://www.isca-archive.org/ssw_2010/lasarcyk10_ssw.html",
+      "checked_topic": "不確実性を伝える複数の韻律操作",
+      "tags": [
+        "B",
+        "D"
+      ],
+      "scope": "近接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P046",
+      "url": "https://www.isca-archive.org/ssw_2010/pammi10_ssw.html",
+      "checked_topic": "抑揚移植での自然さと意味の分離評価",
+      "tags": [
+        "B",
+        "D"
+      ],
+      "scope": "直接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P047",
+      "url": "https://www.isca-archive.org/ssw_2010/huang10b_ssw.html",
+      "checked_topic": "ロンバード音声の複数属性の共変動",
+      "tags": [
+        "B",
+        "C"
+      ],
+      "scope": "近接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P048",
+      "url": "https://www.isca-archive.org/ssw_2010/picart10_ssw.html",
+      "checked_topic": "発声努力で声道・音源・時間が共変動",
+      "tags": [
+        "B",
+        "C"
+      ],
+      "scope": "近接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P049",
+      "url": "https://www.isca-archive.org/ssw_2010/rajkumar10_ssw.html",
+      "checked_topic": "オンライン認知処理と評点の違い",
+      "tags": [
+        "D"
+      ],
+      "scope": "近接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P050",
+      "url": "https://www.isca-archive.org/ssw_2010/raitio10_ssw.html",
+      "checked_topic": "分析・生成段階ごとの過平滑化補償",
+      "tags": [
+        "A",
+        "D"
+      ],
+      "scope": "近接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P051",
+      "url": "https://www.isca-archive.org/ssw_2010/huang10c_ssw.html",
+      "checked_topic": "知覚に整合した直交制御空間による声変形",
+      "tags": [
+        "A",
+        "B",
+        "D"
+      ],
+      "scope": "直接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P052",
+      "url": "https://www.isca-archive.org/ssw_2010/cabral10_ssw.html",
+      "checked_topic": "音源制御と自然さ・明瞭度・話者性",
+      "tags": [
+        "A",
+        "B",
+        "D"
+      ],
+      "scope": "直接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P054",
+      "url": "https://www.isca-archive.org/ssw_2007/birkholz07_ssw.html",
+      "checked_topic": "再合成と任意文合成の制御入力の差",
+      "tags": [
+        "A",
+        "B"
+      ],
+      "scope": "直接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P055",
+      "url": "https://www.isca-archive.org/ssw_2007/kain07_ssw.html",
+      "checked_topic": "制御と接続不連続の削減",
+      "tags": [
+        "B",
+        "C"
+      ],
+      "scope": "直接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P056",
+      "url": "https://www.isca-archive.org/ssw_2007/kirkpatrick07_ssw.html",
+      "checked_topic": "知覚的接続不連続と特徴距離のずれ",
+      "tags": [
+        "A",
+        "D"
+      ],
+      "scope": "近接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P057",
+      "url": "https://www.isca-archive.org/ssw_2007/campbell07_ssw.html",
+      "checked_topic": "会話での声質と対人情報",
+      "tags": [
+        "B",
+        "C",
+        "D"
+      ],
+      "scope": "近接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P058",
+      "url": "https://www.isca-archive.org/ssw_2007/wollermann07_ssw.html",
+      "checked_topic": "不確実性の段階的操作と明瞭度",
+      "tags": [
+        "B",
+        "D"
+      ],
+      "scope": "近接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P059",
+      "url": "https://www.isca-archive.org/ssw_2007/wang07_ssw.html",
+      "checked_topic": "知覚注釈の一致度と表現距離",
+      "tags": [
+        "A",
+        "B",
+        "D"
+      ],
+      "scope": "近接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P060",
+      "url": "https://www.isca-archive.org/ssw_2007/schnell07_ssw.html",
+      "checked_topic": "時間軌跡を含む同時分析と品質",
+      "tags": [
+        "A",
+        "C"
+      ],
+      "scope": "直接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P061",
+      "url": "https://www.isca-archive.org/ssw_2007/huckvale07_ssw.html",
+      "checked_topic": "アクセント修正と話者性の保存",
+      "tags": [
+        "B",
+        "D"
+      ],
+      "scope": "近接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P062",
+      "url": "https://www.isca-archive.org/ssw_2007/ohta07_ssw.html",
+      "checked_topic": "低次元制御と直感的な意味の区別",
+      "tags": [
+        "A",
+        "B"
+      ],
+      "scope": "近接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P063",
+      "url": "https://www.isca-archive.org/ssw_2007/cabral07_ssw.html",
+      "checked_topic": "音源の単純化・雑音配分・操作性",
+      "tags": [
+        "A",
+        "B"
+      ],
+      "scope": "直接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P064",
+      "url": "https://www.isca-archive.org/ssw_2007/maia07_ssw.html",
+      "checked_topic": "励振モデルの同時推定",
+      "tags": [
+        "A"
+      ],
+      "scope": "近接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P065",
+      "url": "https://www.isca-archive.org/ssw_2007/kain07b_ssw.html",
+      "checked_topic": "非同期補間による圧縮・接続・話者変形",
+      "tags": [
+        "A",
+        "B",
+        "C"
+      ],
+      "scope": "直接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P066",
+      "url": "https://www.isca-archive.org/ssw_2007/hertrich07_ssw.html",
+      "checked_topic": "無声音・過渡音への表現拡張",
+      "tags": [
+        "A",
+        "C"
+      ],
+      "scope": "直接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P067",
+      "url": "https://www.isca-archive.org/ssw_2007/toth07_ssw.html",
+      "checked_topic": "調音情報の追加が必ずしも変換を改善しない",
+      "tags": [
+        "A",
+        "D"
+      ],
+      "scope": "近接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P068",
+      "url": "https://www.isca-archive.org/ssw_2007/erro07_ssw.html",
+      "checked_topic": "一定フレーム・位相整合性・柔軟な変形",
+      "tags": [
+        "A",
+        "B",
+        "C"
+      ],
+      "scope": "直接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P069",
+      "url": "https://www.isca-archive.org/ssw_2007/zhao07_ssw.html",
+      "checked_topic": "属性ごとの非類似度と知覚実験",
+      "tags": [
+        "A",
+        "D"
+      ],
+      "scope": "近接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P070",
+      "url": "https://www.isca-archive.org/ssw_2007/chevelu07_ssw.html",
+      "checked_topic": "評価用・学習用コーパスの被覆と予算",
+      "tags": [
+        "C",
+        "D"
+      ],
+      "scope": "近接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P071",
+      "url": "https://www.isca-archive.org/ssw_2007/krul07_ssw.html",
+      "checked_topic": "用途依存のデータ分布と削減",
+      "tags": [
+        "C",
+        "D"
+      ],
+      "scope": "近接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P072",
+      "url": "https://www.isca-archive.org/ssw_2007/gu07_ssw.html",
+      "checked_topic": "表面的指標と生成モデルによる説明",
+      "tags": [
+        "A",
+        "B"
+      ],
+      "scope": "近接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P073",
+      "url": "https://www.isca-archive.org/ssw_2007/shechtman07_ssw.html",
+      "checked_topic": "粗い韻律と細かな変動の保持",
+      "tags": [
+        "A",
+        "B"
+      ],
+      "scope": "近接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P074",
+      "url": "https://www.isca-archive.org/ssw_2007/lambert07_ssw.html",
+      "checked_topic": "被覆率を上げても品質が上がらない反例",
+      "tags": [
+        "C",
+        "D"
+      ],
+      "scope": "近接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P075",
+      "url": "https://www.isca-archive.org/ssw_2007/moers07_ssw.html",
+      "checked_topic": "高速読み上げでの利用者依存の品質",
+      "tags": [
+        "C",
+        "D"
+      ],
+      "scope": "近接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P076",
+      "url": "https://www.isca-archive.org/ssw_2007/wolters07_ssw.html",
+      "checked_topic": "聴取者・内容・聴力と明瞭度",
+      "tags": [
+        "C",
+        "D"
+      ],
+      "scope": "近接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P077",
+      "url": "https://www.isca-archive.org/ssw_2004/schweitzer04_ssw.html",
+      "checked_topic": "閉領域・開領域で品質順位が変化",
+      "tags": [
+        "C",
+        "D"
+      ],
+      "scope": "近接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P078",
+      "url": "https://www.isca-archive.org/ssw_2004/vepa04_ssw.html",
+      "checked_topic": "相関のある接続距離の聴取による再検証",
+      "tags": [
+        "A",
+        "D"
+      ],
+      "scope": "近接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P079",
+      "url": "https://www.isca-archive.org/ssw_2004/marsi04_ssw.html",
+      "checked_topic": "参照不一致でも許容可能な韻律",
+      "tags": [
+        "A",
+        "D"
+      ],
+      "scope": "近接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P080",
+      "url": "https://www.isca-archive.org/ssw_2004/shiga04_ssw.html",
+      "checked_topic": "詳細情報の保存と不要成分除去の両立",
+      "tags": [
+        "A"
+      ],
+      "scope": "直接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P081",
+      "url": "https://www.isca-archive.org/ssw_2004/kain04_ssw.html",
+      "checked_topic": "変換改善と分析・様式化での損失の分離",
+      "tags": [
+        "A",
+        "B",
+        "D"
+      ],
+      "scope": "直接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P082",
+      "url": "https://www.isca-archive.org/ssw_2004/toda04_ssw.html",
+      "checked_topic": "調音入力だけでは足りないスペクトル推定",
+      "tags": [
+        "A"
+      ],
+      "scope": "近接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P083",
+      "url": "https://www.isca-archive.org/ssw_2004/hirai04_ssw.html",
+      "checked_topic": "短い単位による柔軟性と接続雑音",
+      "tags": [
+        "A",
+        "C"
+      ],
+      "scope": "直接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P084",
+      "url": "https://www.isca-archive.org/ssw_2004/nukaga04_ssw.html",
+      "checked_topic": "位相不整合を反映する接続尺度",
+      "tags": [
+        "C",
+        "D"
+      ],
+      "scope": "近接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P085",
+      "url": "https://www.isca-archive.org/ssw_2004/syrdal04_ssw.html",
+      "checked_topic": "知覚データによる距離校正と音素文脈",
+      "tags": [
+        "A",
+        "D"
+      ],
+      "scope": "近接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P086",
+      "url": "https://www.isca-archive.org/ssw_2004/bellegarda04_ssw.html",
+      "checked_topic": "局所接続と汎用距離の不一致",
+      "tags": [
+        "A",
+        "D"
+      ],
+      "scope": "近接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P087",
+      "url": "https://www.isca-archive.org/ssw_2004/kominek04_ssw.html",
+      "checked_topic": "文脈依存の外れ値除去・自動品質改善",
+      "tags": [
+        "C",
+        "D"
+      ],
+      "scope": "近接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P088",
+      "url": "https://www.isca-archive.org/ssw_2004/zen04_ssw.html",
+      "checked_topic": "学習と生成での制約不整合",
+      "tags": [
+        "A",
+        "C"
+      ],
+      "scope": "近接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P089",
+      "url": "https://www.isca-archive.org/ssw_2001/abe01_ssw.html",
+      "checked_topic": "人が試行錯誤する韻律設計の操作系",
+      "tags": [
+        "B"
+      ],
+      "scope": "近接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P090",
+      "url": "https://www.isca-archive.org/ssw_2001/brinckmann01_ssw.html",
+      "checked_topic": "表現の適切さが下流の予測改善に先行",
+      "tags": [
+        "A",
+        "D"
+      ],
+      "scope": "近接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P091",
+      "url": "https://www.isca-archive.org/ssw_2001/mobius01_ssw.html",
+      "checked_topic": "稀な事象と閉領域という仮定の危険",
+      "tags": [
+        "C",
+        "D"
+      ],
+      "scope": "近接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P092",
+      "url": "https://www.isca-archive.org/ssw_2001/donovan01_ssw.html",
+      "checked_topic": "接続の知覚品質を予測する距離",
+      "tags": [
+        "A",
+        "D"
+      ],
+      "scope": "近接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P093",
+      "url": "https://www.isca-archive.org/ssw_2001/black01_ssw.html",
+      "checked_topic": "話者・用途別のコーパス被覆",
+      "tags": [
+        "C",
+        "D"
+      ],
+      "scope": "近接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P094",
+      "url": "https://www.isca-archive.org/ssw_2001/lee01_ssw.html",
+      "checked_topic": "知覚選好による多目的コストの重み校正",
+      "tags": [
+        "D"
+      ],
+      "scope": "近接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P095",
+      "url": "https://www.isca-archive.org/ssw_2001/engwall01_ssw.html",
+      "checked_topic": "物理モデルの静的音と動的音の評価",
+      "tags": [
+        "A",
+        "C"
+      ],
+      "scope": "直接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P096",
+      "url": "https://www.isca-archive.org/ssw_2001/bailly01b_ssw.html",
+      "checked_topic": "自然・合成音声への追唱反応の差",
+      "tags": [
+        "D"
+      ],
+      "scope": "近接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P097",
+      "url": "https://www.isca-archive.org/ssw_2001/shadle01_ssw.html",
+      "checked_topic": "調音モデルの選択・簡略化仮定とデータ",
+      "tags": [
+        "A",
+        "B"
+      ],
+      "scope": "近接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P098",
+      "url": "https://www.isca-archive.org/ssw_2001/bozkurt01_ssw.html",
+      "checked_topic": "固定単位という制約を外す表現拡張",
+      "tags": [
+        "A",
+        "B"
+      ],
+      "scope": "直接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P099",
+      "url": "https://www.isca-archive.org/ssw_2001/rilliard01_ssw.html",
+      "checked_topic": "韻律の機能別診断と主観客観対応",
+      "tags": [
+        "A",
+        "D"
+      ],
+      "scope": "近接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P100",
+      "url": "https://www.isca-archive.org/ssw_2001/yang01_ssw.html",
+      "checked_topic": "抑揚形状と感情・確信度の関係",
+      "tags": [
+        "B",
+        "D"
+      ],
+      "scope": "近接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P101",
+      "url": "https://www.isca-archive.org/ssw_2016/dall16_ssw.html",
+      "checked_topic": "読み上げの総合品質と会話的現象の再現の差",
+      "tags": [
+        "C",
+        "D"
+      ],
+      "scope": "近接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P102",
+      "url": "https://www.isca-archive.org/ssw_2016/honnet16_ssw.html",
+      "checked_topic": "意図した語への強調操作",
+      "tags": [
+        "B"
+      ],
+      "scope": "近接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P103",
+      "url": "https://www.isca-archive.org/ssw_2016/hamada16_ssw.html",
+      "checked_topic": "復元法に依存する不適切な利得・時間尾",
+      "tags": [
+        "A",
+        "C"
+      ],
+      "scope": "直接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P104",
+      "url": "https://www.isca-archive.org/ssw_2016/lazaridis16_ssw.html",
+      "checked_topic": "複数時間尺度の表現と客観評価",
+      "tags": [
+        "A",
+        "D"
+      ],
+      "scope": "近接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P105",
+      "url": "https://www.isca-archive.org/ssw_2016/wester16_ssw.html",
+      "checked_topic": "話者識別知覚に基づく多次元距離",
+      "tags": [
+        "A",
+        "D"
+      ],
+      "scope": "近接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P106",
+      "url": "https://www.isca-archive.org/ssw_2016/huang16_ssw.html",
+      "checked_topic": "話者類似と雑音歪みによる自動評価",
+      "tags": [
+        "D"
+      ],
+      "scope": "近接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P107",
+      "url": "https://www.isca-archive.org/ssw_2016/jauk16_ssw.html",
+      "checked_topic": "演技感情と朗読で有用表現が異なる",
+      "tags": [
+        "A",
+        "C",
+        "D"
+      ],
+      "scope": "近接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P108",
+      "url": "https://www.isca-archive.org/ssw_2016/pucher16_ssw.html",
+      "checked_topic": "歌唱スタイル・音域・時間制約",
+      "tags": [
+        "B",
+        "C"
+      ],
+      "scope": "近接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P109",
+      "url": "https://www.isca-archive.org/ssw_2016/rajpal16_ssw.html",
+      "checked_topic": "調音軌跡の平滑性と生理的制約",
+      "tags": [
+        "A",
+        "C"
+      ],
+      "scope": "近接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P110",
+      "url": "https://www.isca-archive.org/ssw_2016/kim16_ssw.html",
+      "checked_topic": "自然音声の好ましさは合成品質を保証しない",
+      "tags": [
+        "D"
+      ],
+      "scope": "近接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P111",
+      "url": "https://www.isca-archive.org/ssw_2016/tokuda16_ssw.html",
+      "checked_topic": "時間・スペクトル・高さを統一的に扱う制約",
+      "tags": [
+        "A",
+        "C"
+      ],
+      "scope": "近接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P113",
+      "url": "https://www.isca-archive.org/ssw_2016/soni16_ssw.html",
+      "checked_topic": "評価モデルの言語・合成法依存性",
+      "tags": [
+        "C",
+        "D"
+      ],
+      "scope": "近接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P114",
+      "url": "https://www.isca-archive.org/ssw_2016/rao16_ssw.html",
+      "checked_topic": "表現の外れ値と下流変換品質",
+      "tags": [
+        "A",
+        "C"
+      ],
+      "scope": "近接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P115",
+      "url": "https://www.isca-archive.org/ssw_2016/luo16_ssw.html",
+      "checked_topic": "感情制御における複数時間尺度",
+      "tags": [
+        "A",
+        "B"
+      ],
+      "scope": "近接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P116",
+      "url": "https://www.isca-archive.org/ssw_2016/valentinibotinhao16_ssw.html",
+      "checked_topic": "スペクトル誤差が増えても聴取品質が改善する例",
+      "tags": [
+        "D"
+      ],
+      "scope": "近接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P117",
+      "url": "https://www.isca-archive.org/ssw_2016/nishizawa16_ssw.html",
+      "checked_topic": "復元誤差・エイリアシング・計算量",
+      "tags": [
+        "A",
+        "C",
+        "E"
+      ],
+      "scope": "直接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P118",
+      "url": "https://www.isca-archive.org/ssw_2016/baljekar16_ssw.html",
+      "checked_topic": "多様な収録条件が助けにも害にもなる",
+      "tags": [
+        "C",
+        "D"
+      ],
+      "scope": "近接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P119",
+      "url": "https://www.isca-archive.org/ssw_2016/li16_ssw.html",
+      "checked_topic": "自動時間対応づけの誤差と品質",
+      "tags": [
+        "C",
+        "D"
+      ],
+      "scope": "近接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P120",
+      "url": "https://www.isca-archive.org/ssw_2016/beskow16_ssw.html",
+      "checked_topic": "定常有声音と過渡無声音で適切な表現が違う",
+      "tags": [
+        "A",
+        "C"
+      ],
+      "scope": "直接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P121",
+      "url": "https://www.isca-archive.org/ssw_2016/degottex16_ssw.html",
+      "checked_topic": "統一的表現・声域・雑音復元・再合成とTTSの差",
+      "tags": [
+        "A",
+        "C",
+        "D"
+      ],
+      "scope": "直接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P122",
+      "url": "https://www.isca-archive.org/ssw_2016/kawahara16_ssw.html",
+      "checked_topic": "時間変動と周期性の識別・分析精度",
+      "tags": [
+        "A",
+        "C",
+        "D"
+      ],
+      "scope": "直接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P123",
+      "url": "https://www.isca-archive.org/ssw_2016/shechtman16_ssw.html",
+      "checked_topic": "復元と変形の品質・確率成分との依存関係",
+      "tags": [
+        "A",
+        "B",
+        "C"
+      ],
+      "scope": "直接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P124",
+      "url": "https://www.isca-archive.org/ssw_2016/pascual16_ssw.html",
+      "checked_topic": "話者間補間の可能性",
+      "tags": [
+        "A",
+        "B"
+      ],
+      "scope": "近接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P125",
+      "url": "https://www.isca-archive.org/ssw_2019/govalkar19_ssw.html",
+      "checked_topic": "コンパクト非可逆表現の品質と計算量比較",
+      "tags": [
+        "A",
+        "D",
+        "E"
+      ],
+      "scope": "近接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P126",
+      "url": "https://www.isca-archive.org/ssw_2019/hu19_ssw.html",
+      "checked_topic": "公開録音の品質とドメイン適合",
+      "tags": [
+        "C",
+        "D"
+      ],
+      "scope": "近接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P127",
+      "url": "https://www.isca-archive.org/ssw_2019/alvarez19_ssw.html",
+      "checked_topic": "タスク非依存の話者表現",
+      "tags": [
+        "A",
+        "B"
+      ],
+      "scope": "近接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P128",
+      "url": "https://www.isca-archive.org/ssw_2019/saito19_ssw.html",
+      "checked_topic": "話者識別用距離と主観的話者類似度の不一致",
+      "tags": [
+        "A",
+        "D"
+      ],
+      "scope": "近接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P129",
+      "url": "https://www.isca-archive.org/ssw_2019/huang19_ssw.html",
+      "checked_topic": "残差に基づく波形編集の柔軟性",
+      "tags": [
+        "A",
+        "B"
+      ],
+      "scope": "直接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P130",
+      "url": "https://www.isca-archive.org/ssw_2019/suda19_ssw.html",
+      "checked_topic": "明示的音源フィルタ分離の制約と結合モデル",
+      "tags": [
+        "A",
+        "B"
+      ],
+      "scope": "近接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P131",
+      "url": "https://www.isca-archive.org/ssw_2019/gburrek19_ssw.html",
+      "checked_topic": "時間尺度で分ける内容と話者の表現",
+      "tags": [
+        "A",
+        "B"
+      ],
+      "scope": "近接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P132",
+      "url": "https://www.isca-archive.org/ssw_2019/clark19_ssw.html",
+      "checked_topic": "文単位と段落文脈単位の評価の相違",
+      "tags": [
+        "D"
+      ],
+      "scope": "近接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P133",
+      "url": "https://www.isca-archive.org/ssw_2019/wagner19_ssw.html",
+      "checked_topic": "利用場面から切り離された音声合成評価への批判",
+      "tags": [
+        "D"
+      ],
+      "scope": "近接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P134",
+      "url": "https://www.isca-archive.org/ssw_2019/aylett19_ssw.html",
+      "checked_topic": "模倣以外の表現と演技を重視する音声設計",
+      "tags": [
+        "B",
+        "D"
+      ],
+      "scope": "近接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P135",
+      "url": "https://www.isca-archive.org/ssw_2019/govender19_ssw.html",
+      "checked_topic": "実測と予測パラメータを組み合わせた認知負荷評価",
+      "tags": [
+        "A",
+        "D"
+      ],
+      "scope": "直接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P136",
+      "url": "https://www.isca-archive.org/ssw_2019/freixes19_ssw.html",
+      "checked_topic": "物理発声モデルにおける表現の限界と制御の結合",
+      "tags": [
+        "A",
+        "B"
+      ],
+      "scope": "直接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P137",
+      "url": "https://www.isca-archive.org/ssw_2019/matsunaga19_ssw.html",
+      "checked_topic": "隣接フレーム関係と系列平滑性",
+      "tags": [
+        "A",
+        "E"
+      ],
+      "scope": "近接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P138",
+      "url": "https://www.isca-archive.org/ssw_2019/fang19_ssw.html",
+      "checked_topic": "内容保存と話者性除去を分ける表現",
+      "tags": [
+        "A",
+        "D"
+      ],
+      "scope": "近接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P139",
+      "url": "https://www.isca-archive.org/ssw_2019/nishizawa19_ssw.html",
+      "checked_topic": "ブロック単位生成の計算特性",
+      "tags": [
+        "E"
+      ],
+      "scope": "近接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P140",
+      "url": "https://www.isca-archive.org/ssw_2019/pucher19_ssw.html",
+      "checked_topic": "補間による未収録方言音素と韻律の生成",
+      "tags": [
+        "A",
+        "B"
+      ],
+      "scope": "近接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P141",
+      "url": "https://www.isca-archive.org/ssw_2019/watts19_ssw.html",
+      "checked_topic": "部品の置換実験で品質改善要因を切り分ける",
+      "tags": [
+        "D"
+      ],
+      "scope": "近接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P142",
+      "url": "https://www.isca-archive.org/ssw_2019/shirahata19_ssw.html",
+      "checked_topic": "解釈可能な韻律生成にも必要な言語的制約",
+      "tags": [
+        "B",
+        "D"
+      ],
+      "scope": "近接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P143",
+      "url": "https://www.isca-archive.org/ssw_2019/hodari19_ssw.html",
+      "checked_topic": "平均化による韻律多様性喪失",
+      "tags": [
+        "A",
+        "D"
+      ],
+      "scope": "近接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P144",
+      "url": "https://www.isca-archive.org/ssw_2019/szekely19_ssw.html",
+      "checked_topic": "原発話に忠実なフィラーと好まれるフィラーの違い",
+      "tags": [
+        "B",
+        "D"
+      ],
+      "scope": "近接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P145",
+      "url": "https://www.isca-archive.org/ssw_2019/eshghi19_ssw.html",
+      "checked_topic": "電気喉頭と自然音声の共有表現",
+      "tags": [
+        "A",
+        "C"
+      ],
+      "scope": "近接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P146",
+      "url": "https://www.isca-archive.org/ssw_2019/malisz19_ssw.html",
+      "checked_topic": "卓立制御の精度と自然性を別々に評価",
+      "tags": [
+        "B",
+        "D"
+      ],
+      "scope": "近接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P147",
+      "url": "https://www.isca-archive.org/ssw_2019/shechtman19_ssw.html",
+      "checked_topic": "潜在スタイルの解釈と校正された連続制御",
+      "tags": [
+        "B",
+        "D"
+      ],
+      "scope": "近接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P148",
+      "url": "https://www.isca-archive.org/ssw_2023/finkelstein23b_ssw.html",
+      "checked_topic": "評定者選択と時系列変化が評価の再現性に及ぼす影響",
+      "tags": [
+        "D"
+      ],
+      "scope": "近接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P149",
+      "url": "https://www.isca-archive.org/ssw_2023/seebauer23_ssw.html",
+      "checked_topic": "合成音声品質の次元の再検討と音響量との弱い相関",
+      "tags": [
+        "D"
+      ],
+      "scope": "近接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P150",
+      "url": "https://www.isca-archive.org/ssw_2023/kirkland23_ssw.html",
+      "checked_topic": "MOSの質問文と尺度が結果に与える影響",
+      "tags": [
+        "D"
+      ],
+      "scope": "近接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P151",
+      "url": "https://www.isca-archive.org/ssw_2023/platek23_ssw.html",
+      "checked_topic": "少量の人評定データによる評価器の校正",
+      "tags": [
+        "D"
+      ],
+      "scope": "近接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P152",
+      "url": "https://www.isca-archive.org/ssw_2023/lameris23_ssw.html",
+      "checked_topic": "利用文脈を提示した際に変わる音声評価",
+      "tags": [
+        "D"
+      ],
+      "scope": "近接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P153",
+      "url": "https://www.isca-archive.org/ssw_2023/omahony23_ssw.html",
+      "checked_topic": "文脈を明示的な発話交替機能に絞った制御と評価",
+      "tags": [
+        "B",
+        "D"
+      ],
+      "scope": "近接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P154",
+      "url": "https://www.isca-archive.org/ssw_2023/das23_ssw.html",
+      "checked_topic": "話者変換時の感情漏洩と保存",
+      "tags": [
+        "A",
+        "B"
+      ],
+      "scope": "近接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P155",
+      "url": "https://www.isca-archive.org/ssw_2023/tanaka23_ssw.html",
+      "checked_topic": "内容保存変換に対する表現の不変性",
+      "tags": [
+        "A",
+        "C"
+      ],
+      "scope": "近接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P156",
+      "url": "https://www.isca-archive.org/ssw_2023/joly23_ssw.html",
+      "checked_topic": "制御の知覚的成功と自然性の別評価",
+      "tags": [
+        "B",
+        "D"
+      ],
+      "scope": "近接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P157",
+      "url": "https://www.isca-archive.org/ssw_2023/lenglet23_ssw.html",
+      "checked_topic": "単語と音素の時間粒度で行う局所制御",
+      "tags": [
+        "A",
+        "B"
+      ],
+      "scope": "近接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P158",
+      "url": "https://www.isca-archive.org/ssw_2023/stan23_ssw.html",
+      "checked_topic": "話者埋め込みの交換と話者情報漏洩",
+      "tags": [
+        "A",
+        "B"
+      ],
+      "scope": "近接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P159",
+      "url": "https://www.isca-archive.org/ssw_2023/zhang23_ssw.html",
+      "checked_topic": "長文での理解、聞きやすさ、注意維持、楽しさの評価",
+      "tags": [
+        "D"
+      ],
+      "scope": "近接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P160",
+      "url": "https://www.isca-archive.org/ssw_2023/raitio23_ssw.html",
+      "checked_topic": "話者間のスタイル転移と長文録音の適用範囲",
+      "tags": [
+        "B",
+        "C"
+      ],
+      "scope": "近接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P161",
+      "url": "https://www.isca-archive.org/ssw_2023/guennec23_ssw.html",
+      "checked_topic": "学習話者との近さが自然性と話者類似性に異なる影響",
+      "tags": [
+        "A",
+        "D"
+      ],
+      "scope": "近接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P162",
+      "url": "https://www.isca-archive.org/ssw_2023/shankar23_ssw.html",
+      "checked_topic": "未知の目標音声に対する時間編集",
+      "tags": [
+        "B"
+      ],
+      "scope": "近接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P163",
+      "url": "https://www.isca-archive.org/ssw_2023/duret23_ssw.html",
+      "checked_topic": "言語を越えて保存する感情表現",
+      "tags": [
+        "A",
+        "B",
+        "C"
+      ],
+      "scope": "近接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P164",
+      "url": "https://www.isca-archive.org/ssw_2023/kayyar23_ssw.html",
+      "checked_topic": "絶対評定と除去式順位付けの比較",
+      "tags": [
+        "D"
+      ],
+      "scope": "近接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P165",
+      "url": "https://www.isca-archive.org/ssw_2023/shiralishahreza23_ssw.html",
+      "checked_topic": "自然性の意味を評定者自身の定義から分解",
+      "tags": [
+        "D"
+      ],
+      "scope": "近接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P166",
+      "url": "https://www.isca-archive.org/ssw_2023/elmers23_ssw.html",
+      "checked_topic": "ポーズ内要素の操作と記憶成績",
+      "tags": [
+        "B",
+        "D"
+      ],
+      "scope": "近接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P167",
+      "url": "https://www.isca-archive.org/ssw_2023/yoshimura23_ssw.html",
+      "checked_topic": "再利用可能な音声信号処理ツールの設計",
+      "tags": [
+        "E"
+      ],
+      "scope": "直接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P168",
+      "url": "https://www.isca-archive.org/interspeech_2025/wardah25_interspeech.html",
+      "checked_topic": "品質の多次元予測と複数コーパス",
+      "tags": [
+        "D",
+        "C"
+      ],
+      "scope": "近接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P169",
+      "url": "https://www.isca-archive.org/interspeech_2025/kuhlmann25_interspeech.html",
+      "checked_topic": "局所的歪みとフレーム品質予測の時間漏れ",
+      "tags": [
+        "D",
+        "C"
+      ],
+      "scope": "近接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P170",
+      "url": "https://www.isca-archive.org/interspeech_2025/cumlin25_interspeech.html",
+      "checked_topic": "品質次元の同時分布と不確実性",
+      "tags": [
+        "D"
+      ],
+      "scope": "近接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P171",
+      "url": "https://www.isca-archive.org/interspeech_2025/zalkow25_interspeech.html",
+      "checked_topic": "自然音抽出特徴と推論特徴の分布差",
+      "tags": [
+        "A",
+        "C"
+      ],
+      "scope": "近接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P172",
+      "url": "https://www.isca-archive.org/interspeech_2025/huang25g_interspeech.html",
+      "checked_topic": "音声合成の主観品質予測の共通ツールキット",
+      "tags": [
+        "D",
+        "E"
+      ],
+      "scope": "近接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P173",
+      "url": "https://www.isca-archive.org/interspeech_2024/pieper24_interspeech.html",
+      "checked_topic": "独立MOSデータ集合の尺度合わせ",
+      "tags": [
+        "D"
+      ],
+      "scope": "近接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P174",
+      "url": "https://www.isca-archive.org/interspeech_2024/wells24_interspeech.html",
+      "checked_topic": "MOS・対比較・best-worstの比較",
+      "tags": [
+        "D"
+      ],
+      "scope": "近接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P175",
+      "url": "https://www.isca-archive.org/interspeech_2024/edlund24_interspeech.html",
+      "checked_topic": "実験のフレーミングが評価に与える影響",
+      "tags": [
+        "D"
+      ],
+      "scope": "近接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P176",
+      "url": "https://www.isca-archive.org/interspeech_2024/saget24_interspeech.html",
+      "checked_topic": "技術の時間的変化と品質予測器の更新",
+      "tags": [
+        "D",
+        "C"
+      ],
+      "scope": "近接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P177",
+      "url": "https://www.isca-archive.org/interspeech_2024/hu24d_interspeech.html",
+      "checked_topic": "評価値の差を反映する音声表現距離",
+      "tags": [
+        "A",
+        "D"
+      ],
+      "scope": "近接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P178",
+      "url": "https://www.isca-archive.org/interspeech_2024/deoliveira24_interspeech.html",
+      "checked_topic": "PESQ最適化と聴感悪化の反例",
+      "tags": [
+        "D"
+      ],
+      "scope": "近接",
+      "read_level": "著者要旨＋本文の問題設定・実験設定・結果・結論の確認（PDF図表を含む）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true,
+      "additional_url": "https://www.isca-archive.org/interspeech_2024/deoliveira24_interspeech.pdf"
+    },
+    {
+      "id": "P179",
+      "url": "https://www.isca-archive.org/ssw_2025/bailly25_ssw.html",
+      "checked_topic": "用途と能力別に音声合成評価を問い直す",
+      "tags": [
+        "D"
+      ],
+      "scope": "近接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P180",
+      "url": "https://www.isca-archive.org/ssw_2025/carbonneau25_ssw.html",
+      "checked_topic": "話者識別表現と知覚的な声質特徴づけの違い",
+      "tags": [
+        "A",
+        "D"
+      ],
+      "scope": "近接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P181",
+      "url": "https://www.isca-archive.org/ssw_2025/yasuda25_ssw.html",
+      "checked_topic": "文脈依存の主観評価データを継続収集する課題",
+      "tags": [
+        "D"
+      ],
+      "scope": "近接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P182",
+      "url": "https://www.isca-archive.org/ssw_2025/bauer25_ssw.html",
+      "checked_topic": "強調の制御と意味・自然性の評価",
+      "tags": [
+        "B",
+        "D"
+      ],
+      "scope": "近接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P183",
+      "url": "https://www.isca-archive.org/ssw_2025/suni25_ssw.html",
+      "checked_topic": "単一アンカー話者からの制御方向の一般化",
+      "tags": [
+        "A",
+        "B",
+        "C"
+      ],
+      "scope": "近接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P184",
+      "url": "https://www.isca-archive.org/ssw_2025/lemerle25_ssw.html",
+      "checked_topic": "局所制御信号を作る限定的合成データ利用",
+      "tags": [
+        "B",
+        "D"
+      ],
+      "scope": "近接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P185",
+      "url": "https://www.isca-archive.org/ssw_2025/koriyama25_ssw.html",
+      "checked_topic": "韻律注釈の言語情報・音響情報への依存",
+      "tags": [
+        "B",
+        "D"
+      ],
+      "scope": "近接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P186",
+      "url": "https://www.isca-archive.org/ssw_2025/minixhofer25_ssw.html",
+      "checked_topic": "複数ドメイン・複数指標と既存主観評定の照合",
+      "tags": [
+        "D",
+        "C"
+      ],
+      "scope": "近接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P187",
+      "url": "https://www.isca-archive.org/ssw_2025/pine25_ssw.html",
+      "checked_topic": "誤りの時刻・種類・重大性を区別した評価",
+      "tags": [
+        "D"
+      ],
+      "scope": "近接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P188",
+      "url": "https://www.isca-archive.org/ssw_2025/miniconi25_ssw.html",
+      "checked_topic": "合成音判別を品質代理指標にする仮説",
+      "tags": [
+        "D"
+      ],
+      "scope": "近接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P189",
+      "url": "https://www.isca-archive.org/ssw_2025/lameris25_ssw.html",
+      "checked_topic": "意図的な不完全さと文脈に適した声質",
+      "tags": [
+        "B",
+        "D"
+      ],
+      "scope": "近接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P190",
+      "url": "https://www.isca-archive.org/ssw_2025/adigwe25_ssw.html",
+      "checked_topic": "朗読と自発発話の二値分類を超える連続的変動",
+      "tags": [
+        "A",
+        "B",
+        "D"
+      ],
+      "scope": "近接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P191",
+      "url": "https://www.isca-archive.org/ssw_2025/borisov25_ssw.html",
+      "checked_topic": "非言語発声・感情を含む音声範囲",
+      "tags": [
+        "C",
+        "D"
+      ],
+      "scope": "近接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P192",
+      "url": "https://www.isca-archive.org/ssw_2025/lemaguer25_ssw.html",
+      "checked_topic": "採点に代わる投票と順位付け",
+      "tags": [
+        "D"
+      ],
+      "scope": "近接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P193",
+      "url": "https://www.isca-archive.org/interspeech_2012/drugman12b_interspeech.html",
+      "checked_topic": "不規則・きしみ発声に対する励振モデル",
+      "tags": [
+        "A",
+        "C"
+      ],
+      "scope": "直接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P194",
+      "url": "https://www.isca-archive.org/interspeech_2012/wen12_interspeech.html",
+      "checked_topic": "圧縮した残差表現と分析再合成品質",
+      "tags": [
+        "A",
+        "D"
+      ],
+      "scope": "直接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P195",
+      "url": "https://www.isca-archive.org/interspeech_2016/airaksinen16b_interspeech.html",
+      "checked_topic": "声門逆フィルタと励振・帯域別処理の組合せ",
+      "tags": [
+        "A",
+        "C"
+      ],
+      "scope": "近接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P196",
+      "url": "https://www.isca-archive.org/interspeech_2017/airaksinen17_interspeech.html",
+      "checked_topic": "直接測れない声門流の推定と高い基本周波数・雑音",
+      "tags": [
+        "A",
+        "C",
+        "D"
+      ],
+      "scope": "直接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P197",
+      "url": "https://www.isca-archive.org/interspeech_2017/blaauw17_interspeech.html",
+      "checked_topic": "歌唱の音高・音色制御と誤差に強い合成表現",
+      "tags": [
+        "A",
+        "B",
+        "C"
+      ],
+      "scope": "近接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P198",
+      "url": "https://www.isca-archive.org/interspeech_2017/morise17_interspeech.html",
+      "checked_topic": "知覚劣化を抑えたスペクトル低次元化",
+      "tags": [
+        "A",
+        "D"
+      ],
+      "scope": "直接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P199",
+      "url": "https://www.isca-archive.org/interspeech_2018/juvela18_interspeech.html",
+      "checked_topic": "音源フィルタ事前知識とデータ効率",
+      "tags": [
+        "A"
+      ],
+      "scope": "近接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P200",
+      "url": "https://www.isca-archive.org/interspeech_2018/cui18_interspeech.html",
+      "checked_topic": "声門モデルの位相連続性と計算量・品質",
+      "tags": [
+        "A",
+        "C",
+        "E"
+      ],
+      "scope": "近接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P201",
+      "url": "https://www.isca-archive.org/interspeech_2018/fu18c_interspeech.html",
+      "checked_topic": "参照なし品質評価と主観評定の対応",
+      "tags": [
+        "D"
+      ],
+      "scope": "近接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P202",
+      "url": "https://www.isca-archive.org/interspeech_2018/wan18_interspeech.html",
+      "checked_topic": "波形に基づく話者表現",
+      "tags": [
+        "A"
+      ],
+      "scope": "近接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P203",
+      "url": "https://www.isca-archive.org/interspeech_2021/hwang21_interspeech.html",
+      "checked_topic": "調波・雑音分解と帯域別調整の結合",
+      "tags": [
+        "A",
+        "B"
+      ],
+      "scope": "近接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P204",
+      "url": "https://www.isca-archive.org/interspeech_2011/wen11_interspeech.html",
+      "checked_topic": "有声無声の滑らかな遷移と残差励振",
+      "tags": [
+        "A",
+        "C"
+      ],
+      "scope": "直接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P205",
+      "url": "https://www.isca-archive.org/speechprosody_2006/wang06_speechprosody.html",
+      "checked_topic": "朗読音声の表現空間と感情ラベル",
+      "tags": [
+        "A",
+        "B"
+      ],
+      "scope": "近接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P206",
+      "url": "https://www.isca-archive.org/interspeech_2022/yi22b_interspeech.html",
+      "checked_topic": "会議音声品質の評価データとドメイン",
+      "tags": [
+        "D",
+        "C"
+      ],
+      "scope": "近接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P208",
+      "url": "https://research.aalto.fi/en/publications/a-comparison-between-straight-glottal-and-sinusoidal-vocoding-in-/",
+      "checked_topic": "分析再合成と統計的合成でのボコーダー評価の違い",
+      "tags": [
+        "A",
+        "D"
+      ],
+      "scope": "直接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P209",
+      "url": "https://www.jstage.jst.go.jp/article/ast/45/4/45_e24.12/_article/",
+      "checked_topic": "音声合成の主観・客観評価に関するレビュー",
+      "tags": [
+        "D"
+      ],
+      "scope": "近接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P210",
+      "url": "https://research.google/pubs/visqol-an-objective-speech-quality-model/",
+      "checked_topic": "知覚的音声品質の機械的比較",
+      "tags": [
+        "D"
+      ],
+      "scope": "近接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P211",
+      "url": "https://www.sciencedirect.com/science/article/pii/S0885230819302694",
+      "checked_topic": "連続表現によるアラビア語音声合成",
+      "tags": [
+        "A",
+        "C"
+      ],
+      "scope": "直接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P212",
+      "url": "https://www.sciencedirect.com/science/article/pii/S092523122400242X",
+      "checked_topic": "参照なし音声品質評価の総説",
+      "tags": [
+        "D"
+      ],
+      "scope": "近接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P213",
+      "url": "https://www.isca-archive.org/ssw_2025/wallet25_ssw.html",
+      "checked_topic": "方言差・受容性とASRの評価の比較",
+      "tags": [
+        "C",
+        "D"
+      ],
+      "scope": "近接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P214",
+      "url": "https://www.isca-archive.org/ssw_2025/seebauer25_ssw.html",
+      "checked_topic": "評定者の個人差とシステム差の寄与",
+      "tags": [
+        "D"
+      ],
+      "scope": "近接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P215",
+      "url": "https://www.isca-archive.org/ssw_2025/francis25_ssw.html",
+      "checked_topic": "話者空間の補間と疎な領域での劣化",
+      "tags": [
+        "A",
+        "B",
+        "C"
+      ],
+      "scope": "近接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P216",
+      "url": "https://www.isca-archive.org/ssw_2025/abrassart25_ssw.html",
+      "checked_topic": "分解学習だけでなく明示的条件付けによる制御",
+      "tags": [
+        "A",
+        "B"
+      ],
+      "scope": "近接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P217",
+      "url": "https://www.isca-archive.org/ssw_2025/shiralishahreza25_ssw.html",
+      "checked_topic": "自然性を複数次元に分ける実測",
+      "tags": [
+        "D"
+      ],
+      "scope": "近接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P218",
+      "url": "https://www.isca-archive.org/ssw_2025/pandey25_ssw.html",
+      "checked_topic": "自然性を人間らしさと文脈への適切さに分ける",
+      "tags": [
+        "D"
+      ],
+      "scope": "近接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P219",
+      "url": "https://www.isca-archive.org/ssw_2025/tannander25_ssw.html",
+      "checked_topic": "稀な・曖昧な入力で変わる明示的表現の有用性",
+      "tags": [
+        "A",
+        "C"
+      ],
+      "scope": "近接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P220",
+      "url": "https://www.isca-archive.org/ssw_2025/kanagawa25_ssw.html",
+      "checked_topic": "ユーザーの意図に合わせた反復的な演技修正",
+      "tags": [
+        "B"
+      ],
+      "scope": "近接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P221",
+      "url": "https://www.isca-archive.org/ssw_2025/yoshimura25_ssw.html",
+      "checked_topic": "表現のコンパクト化と不要話者情報の除去",
+      "tags": [
+        "A"
+      ],
+      "scope": "近接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P222",
+      "url": "https://www.isca-archive.org/ssw_2025/sigurgeirsson25_ssw.html",
+      "checked_topic": "操作可能な要素と制御不能な変動の区別",
+      "tags": [
+        "A",
+        "B"
+      ],
+      "scope": "近接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P223",
+      "url": "https://www.isca-archive.org/ssw_2025/park25_ssw.html",
+      "checked_topic": "球面座標による連続感情制御と話者保持",
+      "tags": [
+        "A",
+        "B"
+      ],
+      "scope": "近接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P224",
+      "url": "https://www.isca-archive.org/ssw_2025/bhyravajulla25_ssw.html",
+      "checked_topic": "全体評定で隠れる無声摩擦音の偏り",
+      "tags": [
+        "C",
+        "D"
+      ],
+      "scope": "近接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P225",
+      "url": "https://www.isca-archive.org/ssw_2025/tuttosi25_ssw.html",
+      "checked_topic": "知覚された明瞭さ・実際の了解度・ASRの不一致",
+      "tags": [
+        "C",
+        "D"
+      ],
+      "scope": "近接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P226",
+      "url": "https://www.isca-archive.org/ssw_2025/li25_ssw.html",
+      "checked_topic": "局所編集の効果と自然性・話者同一性の別評価",
+      "tags": [
+        "B",
+        "D"
+      ],
+      "scope": "近接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P227",
+      "url": "https://www.isca-archive.org/interspeech_2014/degottex14_interspeech.html",
+      "checked_topic": "強い解析モデルの仮定と多様な声質表現の制約",
+      "tags": [
+        "A",
+        "C"
+      ],
+      "scope": "直接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P228",
+      "url": "https://www.isca-archive.org/interspeech_2014/degottex14b_interspeech.html",
+      "checked_topic": "円環的位相・不規則性・二値判定を避ける表現",
+      "tags": [
+        "A"
+      ],
+      "scope": "直接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P229",
+      "url": "https://www.isca-archive.org/interspeech_2014/koutsogiannaki14_interspeech.html",
+      "checked_topic": "声質評価と位相・既存医師評定との照合",
+      "tags": [
+        "A",
+        "D"
+      ],
+      "scope": "近接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P230",
+      "url": "https://www.isca-archive.org/interspeech_2014/sanchez14_interspeech.html",
+      "checked_topic": "話者らしさを複数の時間尺度で捉える",
+      "tags": [
+        "A",
+        "B"
+      ],
+      "scope": "近接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P231",
+      "url": "https://www.isca-archive.org/interspeech_2014/dall14_interspeech.html",
+      "checked_topic": "ためらい挿入の機能と正しい配置",
+      "tags": [
+        "B",
+        "D"
+      ],
+      "scope": "近接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P232",
+      "url": "https://www.isca-archive.org/interspeech_2014/mowlaee14b_interspeech.html",
+      "checked_topic": "位相を捨てる慣行の再検討と用途ごとの差",
+      "tags": [
+        "A",
+        "D"
+      ],
+      "scope": "直接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P233",
+      "url": "https://www.isca-archive.org/interspeech_2017/espic17_interspeech.html",
+      "checked_topic": "過度な分解・近似・非線形処理を避ける合成用表現",
+      "tags": [
+        "A",
+        "C",
+        "E"
+      ],
+      "scope": "直接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P234",
+      "url": "https://www.isca-archive.org/interspeech_2017/kawahara17_interspeech.html",
+      "checked_topic": "分離せず測る非周期性と線形な較正",
+      "tags": [
+        "A",
+        "D"
+      ],
+      "scope": "直接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P235",
+      "url": "https://www.isca-archive.org/interspeech_2017/juvela17_interspeech.html",
+      "checked_topic": "励振が正しくても推定フィルタとの組合せで再現誤差",
+      "tags": [
+        "A",
+        "C"
+      ],
+      "scope": "近接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P236",
+      "url": "https://www.isca-archive.org/interspeech_2017/sorin17_interspeech.html",
+      "checked_topic": "全区間をパラメータ化しない品質と編集性の折衷",
+      "tags": [
+        "A",
+        "B"
+      ],
+      "scope": "直接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P237",
+      "url": "https://www.isca-archive.org/interspeech_2017/manriquez17_interspeech.html",
+      "checked_topic": "生理的な微小変動と設定依存の効果",
+      "tags": [
+        "A",
+        "C"
+      ],
+      "scope": "直接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P238",
+      "url": "https://www.isca-archive.org/interspeech_2017/alradhi17_interspeech.html",
+      "checked_topic": "雑音成分の時間構造と知覚品質",
+      "tags": [
+        "A",
+        "D"
+      ],
+      "scope": "直接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P239",
+      "url": "https://www.isca-archive.org/interspeech_2016/song16_interspeech.html",
+      "checked_topic": "音高依存の次元とパラメータ化効率",
+      "tags": [
+        "A"
+      ],
+      "scope": "直接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P240",
+      "url": "https://www.isca-archive.org/interspeech_2016/kuang16_interspeech.html",
+      "checked_topic": "同じスペクトル変化の知覚効果が声域で変わる",
+      "tags": [
+        "A",
+        "B",
+        "D"
+      ],
+      "scope": "近接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P241",
+      "url": "https://www.isca-archive.org/interspeech_2016/ohtani16_interspeech.html",
+      "checked_topic": "知覚的な形容表現と測定値の対応を用いた制御",
+      "tags": [
+        "B",
+        "D"
+      ],
+      "scope": "近接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P242",
+      "url": "https://www.isca-archive.org/interspeech_2019/mustafa19_interspeech.html",
+      "checked_topic": "圧縮表現・知覚品質・逐次生成計算量の区別",
+      "tags": [
+        "A",
+        "D",
+        "E"
+      ],
+      "scope": "近接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P243",
+      "url": "https://www.isca-archive.org/interspeech_2019/lorenzotrueba19_interspeech.html",
+      "checked_topic": "未見話者・言語と録音品質・非発話で異なる頑健性",
+      "tags": [
+        "C",
+        "D"
+      ],
+      "scope": "近接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P244",
+      "url": "https://www.isca-archive.org/interspeech_2019/csapo19_interspeech.html",
+      "checked_topic": "不連続な判定を避けた表現と下流予測",
+      "tags": [
+        "A",
+        "C"
+      ],
+      "scope": "近接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P245",
+      "url": "https://www.isca-archive.org/ssw_2019/wu19_ssw.html",
+      "checked_topic": "未見特徴量に対する音高制御と頑健性",
+      "tags": [
+        "B",
+        "C"
+      ],
+      "scope": "近接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P246",
+      "url": "https://www.isca-archive.org/interspeech_2017/tamamori17_interspeech.html",
+      "checked_topic": "表現から落ちた情報の再構成と生成器の寄与",
+      "tags": [
+        "A",
+        "D"
+      ],
+      "scope": "近接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P247",
+      "url": "https://www.isca-archive.org/interspeech_2020/yang20_interspeech.html",
+      "checked_topic": "出力品質と入力の音響条件への忠実さの区別",
+      "tags": [
+        "A",
+        "D"
+      ],
+      "scope": "近接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P248",
+      "url": "https://www.isca-archive.org/interspeech_2021/perrotin21_interspeech.html",
+      "checked_topic": "通常範囲だけでは分からない外挿と局所評価",
+      "tags": [
+        "B",
+        "C",
+        "D"
+      ],
+      "scope": "近接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P249",
+      "url": "https://www.isca-archive.org/interspeech_2021/alradhi21_interspeech.html",
+      "checked_topic": "連続分解と平滑化・計算量の折衷",
+      "tags": [
+        "A",
+        "E"
+      ],
+      "scope": "直接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P250",
+      "url": "https://www.isca-archive.org/interspeech_2015/bocquelet15_interspeech.html",
+      "checked_topic": "実使用と初期条件の差・実時間フィードバック制御",
+      "tags": [
+        "B",
+        "C"
+      ],
+      "scope": "近接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P251",
+      "url": "https://www.isca-archive.org/interspeech_2024/yoon24b_interspeech.html",
+      "checked_topic": "自然音分布からの逸脱を品質とみなす評価仮説",
+      "tags": [
+        "D"
+      ],
+      "scope": "近接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P252",
+      "url": "https://www.isca-archive.org/interspeech_2025/shi25f_interspeech.html",
+      "checked_topic": "自然性・了解度・話者・韻律・雑音の統合評価",
+      "tags": [
+        "D"
+      ],
+      "scope": "近接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P253",
+      "url": "https://www.isca-archive.org/interspeech_2025/deoliveira25_interspeech.html",
+      "checked_topic": "クリーン音声の尤度を品質に結び付ける仮説",
+      "tags": [
+        "D"
+      ],
+      "scope": "近接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P254",
+      "url": "https://www.isca-archive.org/eurospeech_1993/wery93_eurospeech.html",
+      "checked_topic": "同一実装制約下の符号化と複数了解度試験",
+      "tags": [
+        "D",
+        "E"
+      ],
+      "scope": "直接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P255",
+      "url": "https://www.isca-archive.org/spac_1992/steeneken92_spac.html",
+      "checked_topic": "了解度・全体印象・物理診断を分ける評価体系",
+      "tags": [
+        "D"
+      ],
+      "scope": "近接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P256",
+      "url": "https://www.isca-archive.org/maveba_2003/picovici03_maveba.html",
+      "checked_topic": "クリーン音との近傍照合による参照なし品質推定",
+      "tags": [
+        "A",
+        "D"
+      ],
+      "scope": "近接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P257",
+      "url": "https://www.isca-archive.org/spsc_2023/gaznepoglu23_spsc.html",
+      "checked_topic": "再合成での表現の損失とデコーダーの損失を区別",
+      "tags": [
+        "A",
+        "D"
+      ],
+      "scope": "近接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P258",
+      "url": "https://www.isca-archive.org/icslp_2000/kwon00_icslp.html",
+      "checked_topic": "小変更で良くても大変更で劣化する合成・音高推定誤差",
+      "tags": [
+        "A",
+        "B",
+        "C"
+      ],
+      "scope": "直接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P259",
+      "url": "https://arxiv.org/abs/2411.03715",
+      "checked_topic": "MOS予測のドメイン外一般化とデータ多様性（2026改訂）",
+      "tags": [
+        "C",
+        "D"
+      ],
+      "scope": "近接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P260",
+      "url": "https://arxiv.org/abs/1702.08608",
+      "checked_topic": "解釈可能性を用途・人・機能の評価に分ける立場",
+      "tags": [
+        "B",
+        "D"
+      ],
+      "scope": "近接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P261",
+      "url": "https://proceedings.mlr.press/v97/locatello19a",
+      "checked_topic": "因子分離の識別不能性・仮定・下流効用への反論",
+      "tags": [
+        "A",
+        "B",
+        "D"
+      ],
+      "scope": "近接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P262",
+      "url": "https://arxiv.org/abs/2406.05397",
+      "checked_topic": "正解出力のない試験で使う関係とその構築",
+      "tags": [
+        "D",
+        "E"
+      ],
+      "scope": "近接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P263",
+      "url": "https://ieeexplore.ieee.org/document/1164910/",
+      "checked_topic": "合成品質と変換可能性・雑音を含む一般的な再現",
+      "tags": [
+        "A",
+        "B",
+        "C"
+      ],
+      "scope": "直接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P264",
+      "url": "https://www.researchgate.net/publication/3333523_Speech_analysissynthesis_and_modification_using_an_analysis-by-synthesisoverlap-add_sinusoidal_model",
+      "checked_topic": "非定常音の推定と変換時の形状・帯域・雑音の保持（著者公開版要旨）",
+      "tags": [
+        "A",
+        "B",
+        "C"
+      ],
+      "scope": "直接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P265",
+      "url": "https://ieeexplore.ieee.org/abstract/document/4960401/",
+      "checked_topic": "音声変換の品質限界と生成・知覚機構の関係",
+      "tags": [
+        "A",
+        "B",
+        "D"
+      ],
+      "scope": "直接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P266",
+      "url": "https://pubs.asha.org/doi/abs/10.1044/jshr.3601.21",
+      "checked_topic": "声質評定の信頼性と将来研究の枠組み",
+      "tags": [
+        "D"
+      ],
+      "scope": "近接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P267",
+      "url": "https://pubs.asha.org/doi/full/10.1044/jshr.3601.14",
+      "checked_topic": "声質判断の内的基準と外的基準",
+      "tags": [
+        "D"
+      ],
+      "scope": "近接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P268",
+      "url": "https://www.jstage.jst.go.jp/article/transinf/E99.D/7/E99.D_2015EDP7457/_article",
+      "checked_topic": "品質と高速性を同時に扱う分析合成システム",
+      "tags": [
+        "A",
+        "E"
+      ],
+      "scope": "直接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P269",
+      "url": "https://www.isca-archive.org/interspeech_2006/hu06_interspeech.html",
+      "checked_topic": "信号歪み・雑音歪み・全体品質を分ける客観指標検証",
+      "tags": [
+        "D"
+      ],
+      "scope": "近接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P270",
+      "url": "https://www.isca-archive.org/eurospeech_1997/takahashi97_eurospeech.html",
+      "checked_topic": "主観評定の信頼性と客観予測誤差の比較",
+      "tags": [
+        "D"
+      ],
+      "scope": "近接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P271",
+      "url": "https://www.isca-archive.org/eurospeech_1999/edmondson99_eurospeech.html",
+      "checked_topic": "言語的抽象化と連続的な調音表現の利点・未解決点",
+      "tags": [
+        "A",
+        "B"
+      ],
+      "scope": "近接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P272",
+      "url": "https://www.isca-archive.org/eurospeech_1999/maeda99_eurospeech.html",
+      "checked_topic": "滑らかな表現での変換と話者性・品質の別評価",
+      "tags": [
+        "A",
+        "B",
+        "D"
+      ],
+      "scope": "直接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P273",
+      "url": "https://www.isca-archive.org/interspeech_2017/morise17b_interspeech.html",
+      "checked_topic": "時間的な局所雑音への頑健性とEGGに基づく検証",
+      "tags": [
+        "A",
+        "C",
+        "D"
+      ],
+      "scope": "直接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P274",
+      "url": "https://www.isca-archive.org/interspeech_2017/loweimi17_interspeech.html",
+      "checked_topic": "分解の頑健性・ダイナミックレンジと下流タスクへの適合",
+      "tags": [
+        "A",
+        "C"
+      ],
+      "scope": "直接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P275",
+      "url": "https://www.isca-archive.org/interspeech_2017/stone17_interspeech.html",
+      "checked_topic": "フレーム内定常仮定と速い音高変化の誤差",
+      "tags": [
+        "A",
+        "C"
+      ],
+      "scope": "直接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P276",
+      "url": "https://www.isca-archive.org/interspeech_2015/csapo15_interspeech.html",
+      "checked_topic": "不規則な発声の保持と意図的な規則化の区別",
+      "tags": [
+        "A",
+        "B"
+      ],
+      "scope": "直接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P277",
+      "url": "https://www.isca-archive.org/interspeech_2025/gaudrain25_interspeech.html",
+      "checked_topic": "精密に制御した自然に近い音声刺激と実験横断の制約",
+      "tags": [
+        "B",
+        "D"
+      ],
+      "scope": "近接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P278",
+      "url": "https://www.isca-archive.org/interspeech_2025/lameris25_interspeech.html",
+      "checked_topic": "音響操作の達成と親密さ・態度など知覚効果の別評価",
+      "tags": [
+        "B",
+        "D"
+      ],
+      "scope": "近接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P279",
+      "url": "https://www.isca-archive.org/interspeech_2022/yoneyama22_interspeech.html",
+      "checked_topic": "周期・非周期成分の分離と音質・操作性の両立",
+      "tags": [
+        "A",
+        "B"
+      ],
+      "scope": "近接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P280",
+      "url": "https://www.isca-archive.org/interspeech_2018/gu18_interspeech.html",
+      "checked_topic": "上流予測の誤差が合成段で蓄積する問題",
+      "tags": [
+        "A",
+        "C"
+      ],
+      "scope": "近接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P281",
+      "url": "https://www.isca-archive.org/interspeech_2018/lee18b_interspeech.html",
+      "checked_topic": "データ選択の単位と了解度・客観指標の条件付き相関",
+      "tags": [
+        "C",
+        "D"
+      ],
+      "scope": "近接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P282",
+      "url": "https://www.isca-archive.org/interspeech_2020/mittag20_interspeech.html",
+      "checked_topic": "複数データでの合成音自然性予測と転移",
+      "tags": [
+        "C",
+        "D"
+      ],
+      "scope": "近接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P283",
+      "url": "https://www.isca-archive.org/maveba_2011/fraj11_maveba.html",
+      "checked_topic": "真の特性を既知にできる合成刺激による測定器の検証",
+      "tags": [
+        "D"
+      ],
+      "scope": "近接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P284",
+      "url": "https://www.isca-archive.org/voqual_2003/kawahara03_voqual.html",
+      "checked_topic": "例示・モーフィングと系統的劣化による声質研究",
+      "tags": [
+        "A",
+        "B",
+        "D"
+      ],
+      "scope": "直接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P285",
+      "url": "https://www.isca-archive.org/voqual_2003/kreiman03b_voqual.html",
+      "checked_topic": "声質は固定値ではなく聞き手・信号・課題の相互作用",
+      "tags": [
+        "D"
+      ],
+      "scope": "近接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P286",
+      "url": "https://www.isca-archive.org/voqual_2003/doval03_voqual.html",
+      "checked_topic": "モデルの分け方と声質推定・操作の関係",
+      "tags": [
+        "A",
+        "B"
+      ],
+      "scope": "直接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P287",
+      "url": "https://www.isca-archive.org/voqual_2003/bozkurt03_voqual.html",
+      "checked_topic": "位相と因果性の仮定による音源・フィルタ分離",
+      "tags": [
+        "A"
+      ],
+      "scope": "直接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P288",
+      "url": "https://www.isca-archive.org/voqual_2003/bjorkner03_voqual.html",
+      "checked_topic": "喉声の価値が用途で変わる・MRIと音響の不一致",
+      "tags": [
+        "A",
+        "B",
+        "D"
+      ],
+      "scope": "近接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P289",
+      "url": "https://www.isca-archive.org/voqual_2003/arroabarren03_voqual.html",
+      "checked_topic": "単一指標に複数の生成特性が混在する問題",
+      "tags": [
+        "A",
+        "D"
+      ],
+      "scope": "直接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P290",
+      "url": "https://www.isca-archive.org/voqual_2003/orr03_voqual.html",
+      "checked_topic": "測定装置が発声と測定値に与える影響",
+      "tags": [
+        "C",
+        "D"
+      ],
+      "scope": "近接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P291",
+      "url": "https://www.isca-archive.org/voqual_2003/tooher03_voqual.html",
+      "checked_topic": "声門指標が音高・母音・文脈に非一様に依存",
+      "tags": [
+        "A",
+        "C",
+        "D"
+      ],
+      "scope": "直接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P292",
+      "url": "https://www.isca-archive.org/voqual_2003/hirtum03_voqual.html",
+      "checked_topic": "生成モデルの入力操作と出力計測値の感度",
+      "tags": [
+        "A",
+        "B",
+        "D"
+      ],
+      "scope": "直接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P293",
+      "url": "https://www.isca-archive.org/voqual_2003/kreiman03_voqual.html",
+      "checked_topic": "頻用の物理指標と知覚上の寄与の不一致",
+      "tags": [
+        "D"
+      ],
+      "scope": "近接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P294",
+      "url": "https://www.isca-archive.org/voqual_2003/bettens03_voqual.html",
+      "checked_topic": "測りたい雑音以外の話者性・境界が測定に混入",
+      "tags": [
+        "C",
+        "D"
+      ],
+      "scope": "近接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P295",
+      "url": "https://www.isca-archive.org/voqual_2003/meltzner03_voqual.html",
+      "checked_topic": "既知の欠点を直しても全体品質を説明し切れない例",
+      "tags": [
+        "A",
+        "D"
+      ],
+      "scope": "近接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P296",
+      "url": "https://www.isca-archive.org/voqual_2003/keller03_voqual.html",
+      "checked_topic": "話者の属性より話し方が表現距離を支配しうる",
+      "tags": [
+        "A",
+        "D"
+      ],
+      "scope": "近接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P297",
+      "url": "https://www.isca-archive.org/voqual_2003/gutierrezarriola03_voqual.html",
+      "checked_topic": "識別目的における声のパラメータ重要性",
+      "tags": [
+        "A",
+        "D"
+      ],
+      "scope": "近接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P298",
+      "url": "https://www.isca-archive.org/voqual_2003/rao03_voqual.html",
+      "checked_topic": "フレームごとの一定値表現で失われる細かい非周期性",
+      "tags": [
+        "A",
+        "C",
+        "D"
+      ],
+      "scope": "直接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P299",
+      "url": "https://www.isca-archive.org/voqual_2003/drioli03_voqual.html",
+      "checked_topic": "音高・時間だけでは再現できない感情的な声質",
+      "tags": [
+        "A",
+        "B"
+      ],
+      "scope": "直接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P300",
+      "url": "https://www.isca-archive.org/voqual_2003/mokhtari03_voqual.html",
+      "checked_topic": "低次元・大きな分散説明率と声質分類の差",
+      "tags": [
+        "A",
+        "B",
+        "D"
+      ],
+      "scope": "直接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P301",
+      "url": "https://www.isca-archive.org/voqual_2003/gobl03_voqual.html",
+      "checked_topic": "正規化が広い声域で知覚差の測定を損ないうる",
+      "tags": [
+        "A",
+        "C",
+        "D"
+      ],
+      "scope": "近接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P302",
+      "url": "https://www.isca-archive.org/voqual_2003/ito03_voqual.html",
+      "checked_topic": "丁寧さと物理量の関係が話者ごとに異なる",
+      "tags": [
+        "B",
+        "C",
+        "D"
+      ],
+      "scope": "近接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P303",
+      "url": "https://www.isca-archive.org/voqual_2003/bruckl03_voqual.html",
+      "checked_topic": "実年齢・知覚年齢と読み上げ・自発発話の区別",
+      "tags": [
+        "C",
+        "D"
+      ],
+      "scope": "近接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P304",
+      "url": "https://www.isca-archive.org/voqual_2003/banziger03_voqual.html",
+      "checked_topic": "感情音声の知覚的特徴を評定する方法と限界",
+      "tags": [
+        "B",
+        "D"
+      ],
+      "scope": "近接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P305",
+      "url": "https://www.isca-archive.org/voqual_2003/dioubina03_voqual.html",
+      "checked_topic": "音響だけから感情・態度を注釈する問題",
+      "tags": [
+        "B",
+        "D"
+      ],
+      "scope": "近接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P306",
+      "url": "https://www.isca-archive.org/voqual_2003/bruijn03_voqual.html",
+      "checked_topic": "発話区間・母音・話者群ごとの評定信頼性",
+      "tags": [
+        "C",
+        "D"
+      ],
+      "scope": "近接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P307",
+      "url": "https://www.isca-archive.org/interspeech_2019/hojo19_interspeech.html",
+      "checked_topic": "伝達意図を明示的な達成条件で評価する",
+      "tags": [
+        "B",
+        "D"
+      ],
+      "scope": "近接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P308",
+      "url": "https://www.isca-archive.org/interspeech_2019/ayllon19_interspeech.html",
+      "checked_topic": "雑音と残響・上流モデル別の影響",
+      "tags": [
+        "C",
+        "D"
+      ],
+      "scope": "近接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P309",
+      "url": "https://www.isca-archive.org/interspeech_2019/shamsi19_interspeech.html",
+      "checked_topic": "コーパスの距離に基づく選択と目標分布の違い",
+      "tags": [
+        "A",
+        "C",
+        "D"
+      ],
+      "scope": "近接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    },
+    {
+      "id": "P310",
+      "url": "https://arxiv.org/abs/2206.13411",
+      "checked_topic": "参照との類似性が品質の代理にならない条件：参照依存・無視される属性・微小レベル差",
+      "tags": [
+        "D",
+        "A"
+      ],
+      "scope": "近接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "研究論文・会議論文・プレプリント",
+      "counted_as_paper": true
+    }
+  ],
+  "academic_supplements": [
+    {
+      "id": "P053",
+      "url": "https://www.isca-archive.org/ssw_2007/kroger07_ssw.html",
+      "checked_topic": "調音合成の制御概念と生成知識",
+      "tags": [
+        "A",
+        "B"
+      ],
+      "scope": "近接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "招待講演要旨",
+      "counted_as_paper": false
+    },
+    {
+      "id": "P112",
+      "url": "https://www.isca-archive.org/ssw_2016/kawahara16b_ssw.html",
+      "checked_topic": "分析手続き検証用の制御可能な合成信号",
+      "tags": [
+        "D",
+        "E"
+      ],
+      "scope": "直接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "デモ発表要旨",
+      "counted_as_paper": false
+    },
+    {
+      "id": "P207",
+      "url": "https://era.ed.ac.uk/items/0ce38c70-361f-4a97-bc44-669236c53835",
+      "checked_topic": "合成用音響表現と符号化用表現の違い・過度な分解への反論（学位論文）",
+      "tags": [
+        "A",
+        "B",
+        "C"
+      ],
+      "scope": "直接",
+      "read_level": "著者要旨（全本文の精読ではない）",
+      "document_type": "博士学位論文",
+      "counted_as_paper": false
+    }
+  ],
+  "community": [
+    {
+      "id": "C001",
+      "url": "https://github.com/mmorise/World/issues/47",
+      "source_type": "GitHub issue",
+      "checked_topic": "リアルタイム分割でクリック音",
+      "selection": "採用",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C002",
+      "url": "https://github.com/mmorise/World/issues/77",
+      "source_type": "GitHub issue",
+      "checked_topic": "マイク変更で同一発声の推定値が変わる",
+      "selection": "採用",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C003",
+      "url": "https://github.com/mmorise/World/issues/114",
+      "source_type": "GitHub issue",
+      "checked_topic": "実行ファイル操作",
+      "selection": "除外",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C004",
+      "url": "https://github.com/mmorise/World/issues/134",
+      "source_type": "GitHub issue",
+      "checked_topic": "モバイルでの合成速度",
+      "selection": "採用",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C005",
+      "url": "https://github.com/mmorise/World/issues/7",
+      "source_type": "GitHub issue",
+      "checked_topic": "インストール",
+      "selection": "除外",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C006",
+      "url": "https://github.com/mmorise/World/issues/18",
+      "source_type": "GitHub issue",
+      "checked_topic": "特定入力でクラッシュ",
+      "selection": "採用",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C007",
+      "url": "https://github.com/mmorise/World/issues/31",
+      "source_type": "GitHub issue",
+      "checked_topic": "直流成分とクリッピングが比較聴取を汚染",
+      "selection": "採用",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C008",
+      "url": "https://github.com/mmorise/World/issues/44",
+      "source_type": "GitHub issue",
+      "checked_topic": "ビルド設定とブザー様雑音",
+      "selection": "採用",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C009",
+      "url": "https://github.com/mmorise/World/issues/79",
+      "source_type": "GitHub issue",
+      "checked_topic": "基本的利用法",
+      "selection": "除外",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C010",
+      "url": "https://github.com/mmorise/World/issues/81",
+      "source_type": "GitHub issue",
+      "checked_topic": "話者属性変換の制御",
+      "selection": "採用",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C011",
+      "url": "https://github.com/mmorise/World/issues/108",
+      "source_type": "GitHub issue",
+      "checked_topic": "歌唱の高さ編集と品質低下",
+      "selection": "採用",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C012",
+      "url": "https://github.com/mmorise/World/issues/3",
+      "source_type": "GitHub issue",
+      "checked_topic": "低い声への対応と定数設定",
+      "selection": "採用",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C013",
+      "url": "https://github.com/mmorise/World/issues/36",
+      "source_type": "GitHub issue",
+      "checked_topic": "特定音声で分析結果が空",
+      "selection": "採用",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C014",
+      "url": "https://github.com/mmorise/World/issues/55",
+      "source_type": "GitHub issue",
+      "checked_topic": "処理速度と移植",
+      "selection": "採用",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C015",
+      "url": "https://github.com/mmorise/World/issues/70",
+      "source_type": "GitHub issue",
+      "checked_topic": "バイナリ型の誤解による異常値",
+      "selection": "採用",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C016",
+      "url": "https://github.com/mmorise/World/issues/62",
+      "source_type": "GitHub issue",
+      "checked_topic": "短い音声でのクラッシュ",
+      "selection": "採用",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C017",
+      "url": "https://github.com/mmorise/World/issues/78",
+      "source_type": "GitHub issue",
+      "checked_topic": "短い波形と打ち切りの境界",
+      "selection": "採用",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C018",
+      "url": "https://github.com/mmorise/World/issues/19",
+      "source_type": "GitHub issue",
+      "checked_topic": "入力境界とバッファオーバーフロー",
+      "selection": "採用",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C019",
+      "url": "https://github.com/mmorise/World/issues/39",
+      "source_type": "GitHub issue",
+      "checked_topic": "予測した極端なパラメータで合成器が停止",
+      "selection": "採用",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C020",
+      "url": "https://github.com/mmorise/World/issues/98",
+      "source_type": "GitHub issue",
+      "checked_topic": "FFTサイズと雑音・図のみ",
+      "selection": "除外",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C021",
+      "url": "https://github.com/mmorise/World/issues/33",
+      "source_type": "GitHub issue",
+      "checked_topic": "再表現による話者性の低下の報告",
+      "selection": "採用",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C022",
+      "url": "https://github.com/mmorise/World/issues/35",
+      "source_type": "GitHub issue",
+      "checked_topic": "再合成では問題がなく下流で表現不整合",
+      "selection": "採用",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C023",
+      "url": "https://github.com/mmorise/World/issues/111",
+      "source_type": "GitHub issue",
+      "checked_topic": "具体性の乏しいアーティファクト報告",
+      "selection": "除外",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C024",
+      "url": "https://github.com/mmorise/World/issues/116",
+      "source_type": "GitHub issue",
+      "checked_topic": "正弦波入力の非数・失敗時動作",
+      "selection": "採用",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C025",
+      "url": "https://github.com/mmorise/World/issues/129",
+      "source_type": "GitHub issue",
+      "checked_topic": "乱数固定後もオフラインと逐次処理が異なる",
+      "selection": "採用",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C026",
+      "url": "https://github.com/mmorise/World/issues/132",
+      "source_type": "GitHub issue",
+      "checked_topic": "逐次版と一括版の結果差",
+      "selection": "採用",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C027",
+      "url": "https://github.com/mmorise/World/issues/43",
+      "source_type": "GitHub issue",
+      "checked_topic": "入力単位とリアルタイム処理",
+      "selection": "採用",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C028",
+      "url": "https://github.com/mmorise/World/issues/56",
+      "source_type": "GitHub issue",
+      "checked_topic": "再現情報の乏しいクラッシュ",
+      "selection": "除外",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C029",
+      "url": "https://github.com/mmorise/World/issues/58",
+      "source_type": "GitHub issue",
+      "checked_topic": "実装間のFFT符号・利得の整合",
+      "selection": "採用",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C030",
+      "url": "https://github.com/mmorise/World/issues/80",
+      "source_type": "GitHub issue",
+      "checked_topic": "APIの利用法",
+      "selection": "除外",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C031",
+      "url": "https://github.com/mmorise/World/issues/117",
+      "source_type": "GitHub issue",
+      "checked_topic": "並列処理とスケーリング",
+      "selection": "採用",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C032",
+      "url": "https://github.com/mmorise/World/issues/147",
+      "source_type": "GitHub issue",
+      "checked_topic": "非周期性の非数と場当たり的補正の問題",
+      "selection": "採用",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C033",
+      "url": "https://github.com/mmorise/World/issues/29",
+      "source_type": "GitHub issue",
+      "checked_topic": "話者による再合成品質の差",
+      "selection": "採用",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C034",
+      "url": "https://github.com/mmorise/World/issues/20",
+      "source_type": "GitHub issue",
+      "checked_topic": "パラメータ数の質問",
+      "selection": "採用",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C035",
+      "url": "https://github.com/mmorise/World/issues/73",
+      "source_type": "GitHub issue",
+      "checked_topic": "小さいFFTと逐次境界の異音",
+      "selection": "採用",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C036",
+      "url": "https://github.com/mmorise/World/issues/72",
+      "source_type": "GitHub issue",
+      "checked_topic": "インストール",
+      "selection": "除外",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C037",
+      "url": "https://github.com/mmorise/World/issues/84",
+      "source_type": "GitHub issue",
+      "checked_topic": "非標準パラメータの組合せでメモリ異常",
+      "selection": "採用",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C038",
+      "url": "https://github.com/mmorise/World/issues/99",
+      "source_type": "GitHub issue",
+      "checked_topic": "フレーム中心時刻の定義",
+      "selection": "採用",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C039",
+      "url": "https://github.com/mmorise/World/issues/90",
+      "source_type": "GitHub issue",
+      "checked_topic": "異なる包絡表現の定義差",
+      "selection": "採用",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C040",
+      "url": "https://github.com/mmorise/World/issues/107",
+      "source_type": "GitHub issue",
+      "checked_topic": "コピー合成品質の報告",
+      "selection": "採用",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C041",
+      "url": "https://github.com/mmorise/World/issues/122",
+      "source_type": "GitHub issue",
+      "checked_topic": "保存量と再分析計算量の選択",
+      "selection": "採用",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C042",
+      "url": "https://github.com/mmorise/World/issues/124",
+      "source_type": "GitHub issue",
+      "checked_topic": "パルス位置の数式と実装の対応",
+      "selection": "採用",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C043",
+      "url": "https://github.com/mmorise/World/issues/138",
+      "source_type": "GitHub issue",
+      "checked_topic": "逐次処理で負の雑音サイズ",
+      "selection": "採用",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C044",
+      "url": "https://github.com/mmorise/World/issues/135",
+      "source_type": "GitHub issue",
+      "checked_topic": "損失のない分解を求める質問",
+      "selection": "採用",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C045",
+      "url": "https://github.com/mmorise/World/issues/151",
+      "source_type": "GitHub issue",
+      "checked_topic": "ツールキット告知",
+      "selection": "除外",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C046",
+      "url": "https://github.com/mmorise/World/issues/68",
+      "source_type": "GitHub issue",
+      "checked_topic": "FFT実装の最適化",
+      "selection": "採用",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C047",
+      "url": "https://github.com/mmorise/World/issues/17",
+      "source_type": "GitHub issue",
+      "checked_topic": "C版とMatlab版で推定が異なる",
+      "selection": "採用",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C048",
+      "url": "https://github.com/mmorise/World/issues/14",
+      "source_type": "GitHub issue",
+      "checked_topic": "予測した外れ値のクリッピングと実装差",
+      "selection": "採用",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C049",
+      "url": "https://github.com/mmorise/World/issues/27",
+      "source_type": "GitHub issue",
+      "checked_topic": "未初期化値の検出",
+      "selection": "採用",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C050",
+      "url": "https://github.com/mmorise/World/issues/42",
+      "source_type": "GitHub issue",
+      "checked_topic": "再合成波形の位相反転",
+      "selection": "採用",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C051",
+      "url": "https://github.com/mmorise/World/issues/59",
+      "source_type": "GitHub issue",
+      "checked_topic": "ほぼ無音での停止",
+      "selection": "採用",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C052",
+      "url": "https://github.com/mmorise/World/issues/48",
+      "source_type": "GitHub issue",
+      "checked_topic": "サンプリング周波数とバイナリ入出力",
+      "selection": "採用",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C053",
+      "url": "https://github.com/mmorise/World/issues/51",
+      "source_type": "GitHub issue",
+      "checked_topic": "フレーム幅とシフトの区別",
+      "selection": "採用",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C054",
+      "url": "https://github.com/mmorise/World/issues/49",
+      "source_type": "GitHub issue",
+      "checked_topic": "8kHzでの対応範囲",
+      "selection": "採用",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C055",
+      "url": "https://github.com/mmorise/World/issues/76",
+      "source_type": "GitHub issue",
+      "checked_topic": "音声サンプルの所在",
+      "selection": "除外",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C056",
+      "url": "https://github.com/mmorise/World/issues/110",
+      "source_type": "GitHub issue",
+      "checked_topic": "リリース版管理と再現性",
+      "selection": "採用",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C057",
+      "url": "https://github.com/mmorise/World/issues/127",
+      "source_type": "GitHub issue",
+      "checked_topic": "サニタイザによる境界違反検出",
+      "selection": "採用",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C058",
+      "url": "https://github.com/mmorise/World/issues/83",
+      "source_type": "GitHub issue",
+      "checked_topic": "高音域歌唱の雑音",
+      "selection": "採用",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C059",
+      "url": "https://github.com/mmorise/World/issues/24",
+      "source_type": "GitHub issue",
+      "checked_topic": "誤記",
+      "selection": "除外",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C060",
+      "url": "https://github.com/mmorise/World/issues/21",
+      "source_type": "GitHub issue",
+      "checked_topic": "有声無声判定閾値の影響",
+      "selection": "採用",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C061",
+      "url": "https://github.com/mmorise/World/issues/40",
+      "source_type": "GitHub issue",
+      "checked_topic": "実装の版の同期",
+      "selection": "採用",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C062",
+      "url": "https://github.com/mmorise/World/issues/53",
+      "source_type": "GitHub issue",
+      "checked_topic": "名称の由来",
+      "selection": "除外",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C063",
+      "url": "https://github.com/mmorise/World/issues/66",
+      "source_type": "GitHub issue",
+      "checked_topic": "異なる特徴列の時刻対応",
+      "selection": "採用",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C064",
+      "url": "https://github.com/mmorise/World/issues/105",
+      "source_type": "GitHub issue",
+      "checked_topic": "無音区間での高さパラメータの意味",
+      "selection": "採用",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C065",
+      "url": "https://github.com/mmorise/World/issues/88",
+      "source_type": "GitHub issue",
+      "checked_topic": "FFT比較に関する短い質問",
+      "selection": "除外",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C066",
+      "url": "https://github.com/mmorise/World/issues/94",
+      "source_type": "GitHub issue",
+      "checked_topic": "モバイル逐次版の境界条件",
+      "selection": "採用",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C067",
+      "url": "https://github.com/mmorise/World/issues/95",
+      "source_type": "GitHub issue",
+      "checked_topic": "分割分析と全体分析が一致しない",
+      "selection": "採用",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C068",
+      "url": "https://github.com/mmorise/World/issues/93",
+      "source_type": "GitHub issue",
+      "checked_topic": "ビルド記述",
+      "selection": "除外",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C069",
+      "url": "https://github.com/mmorise/World/issues/106",
+      "source_type": "GitHub issue",
+      "checked_topic": "時間分解能変更と品質",
+      "selection": "採用",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C070",
+      "url": "https://github.com/mmorise/World/issues/115",
+      "source_type": "GitHub issue",
+      "checked_topic": "リンクエラー",
+      "selection": "除外",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C071",
+      "url": "https://github.com/mmorise/World/issues/119",
+      "source_type": "GitHub issue",
+      "checked_topic": "リアルタイム性と総処理速度の違い",
+      "selection": "採用",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C072",
+      "url": "https://github.com/mmorise/World/issues/126",
+      "source_type": "GitHub issue",
+      "checked_topic": "フレームとファイル全体の処理契約",
+      "selection": "採用",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C073",
+      "url": "https://github.com/mmorise/World/issues/133",
+      "source_type": "GitHub issue",
+      "checked_topic": "FFTの実装差",
+      "selection": "採用",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C074",
+      "url": "https://github.com/mmorise/World/issues/142",
+      "source_type": "GitHub issue",
+      "checked_topic": "フォークと本体の差",
+      "selection": "採用",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C075",
+      "url": "https://github.com/mmorise/World/issues/150",
+      "source_type": "GitHub issue",
+      "checked_topic": "窓関数の符号についての未検証報告",
+      "selection": "採用",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C076",
+      "url": "https://github.com/mmorise/World/issues/145",
+      "source_type": "GitHub issue",
+      "checked_topic": "常に推定することと失敗検出の区別",
+      "selection": "採用",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C077",
+      "url": "https://github.com/mmorise/World/issues/153",
+      "source_type": "GitHub issue",
+      "checked_topic": "歌唱・怒声と通常発声での閾値の適用範囲",
+      "selection": "採用",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C078",
+      "url": "https://github.com/mmorise/World/issues/154",
+      "source_type": "GitHub issue",
+      "checked_topic": "低サンプリング周波数の境界条件",
+      "selection": "採用",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C079",
+      "url": "https://github.com/mmorise/World/issues/75",
+      "source_type": "GitHub issue",
+      "checked_topic": "非周期性の粒度と品質",
+      "selection": "採用",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C080",
+      "url": "https://github.com/mmorise/World/issues/158",
+      "source_type": "GitHub issue",
+      "checked_topic": "移植時の数値同等性と例外",
+      "selection": "採用",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C081",
+      "url": "https://github.com/JeremyCCHsu/Python-Wrapper-for-World-Vocoder/issues/87",
+      "source_type": "GitHub issue",
+      "checked_topic": "インストール",
+      "selection": "除外",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C082",
+      "url": "https://github.com/JeremyCCHsu/Python-Wrapper-for-World-Vocoder/issues/1",
+      "source_type": "GitHub issue",
+      "checked_topic": "インストール",
+      "selection": "除外",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C083",
+      "url": "https://github.com/JeremyCCHsu/Python-Wrapper-for-World-Vocoder/issues/25",
+      "source_type": "GitHub issue",
+      "checked_topic": "同設定の異なる実装で出力が不一致",
+      "selection": "採用",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C084",
+      "url": "https://github.com/JeremyCCHsu/Python-Wrapper-for-World-Vocoder/issues/52",
+      "source_type": "GitHub issue",
+      "checked_topic": "インストール",
+      "selection": "除外",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C085",
+      "url": "https://github.com/JeremyCCHsu/Python-Wrapper-for-World-Vocoder/issues/34",
+      "source_type": "GitHub issue",
+      "checked_topic": "特徴列と波形の時刻対応",
+      "selection": "採用",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C086",
+      "url": "https://github.com/JeremyCCHsu/Python-Wrapper-for-World-Vocoder/issues/38",
+      "source_type": "GitHub issue",
+      "checked_topic": "時間分解能を細かくすると悪化する報告",
+      "selection": "採用",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C087",
+      "url": "https://github.com/JeremyCCHsu/Python-Wrapper-for-World-Vocoder/issues/12",
+      "source_type": "GitHub issue",
+      "checked_topic": "インストール",
+      "selection": "除外",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C088",
+      "url": "https://github.com/JeremyCCHsu/Python-Wrapper-for-World-Vocoder/issues/58",
+      "source_type": "GitHub issue",
+      "checked_topic": "分析処理の速度",
+      "selection": "採用",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C089",
+      "url": "https://github.com/JeremyCCHsu/Python-Wrapper-for-World-Vocoder/issues/35",
+      "source_type": "GitHub issue",
+      "checked_topic": "メモリ確保エラー",
+      "selection": "採用",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C090",
+      "url": "https://github.com/JeremyCCHsu/Python-Wrapper-for-World-Vocoder/issues/17",
+      "source_type": "GitHub issue",
+      "checked_topic": "インストール",
+      "selection": "除外",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C091",
+      "url": "https://github.com/JeremyCCHsu/Python-Wrapper-for-World-Vocoder/issues/43",
+      "source_type": "GitHub issue",
+      "checked_topic": "インストール",
+      "selection": "除外",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C092",
+      "url": "https://github.com/JeremyCCHsu/Python-Wrapper-for-World-Vocoder/issues/46",
+      "source_type": "GitHub issue",
+      "checked_topic": "浮動小数と整数の利得契約",
+      "selection": "採用",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C093",
+      "url": "https://github.com/JeremyCCHsu/Python-Wrapper-for-World-Vocoder/issues/70",
+      "source_type": "GitHub issue",
+      "checked_topic": "インストール",
+      "selection": "除外",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C094",
+      "url": "https://github.com/JeremyCCHsu/Python-Wrapper-for-World-Vocoder/issues/21",
+      "source_type": "GitHub issue",
+      "checked_topic": "下流処理とフレーム周期",
+      "selection": "採用",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C095",
+      "url": "https://github.com/JeremyCCHsu/Python-Wrapper-for-World-Vocoder/issues/33",
+      "source_type": "GitHub issue",
+      "checked_topic": "配列形状とFFTサイズ",
+      "selection": "採用",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C096",
+      "url": "https://github.com/JeremyCCHsu/Python-Wrapper-for-World-Vocoder/issues/50",
+      "source_type": "GitHub issue",
+      "checked_topic": "非周期性の非数と危うい代替処置",
+      "selection": "採用",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C097",
+      "url": "https://github.com/JeremyCCHsu/Python-Wrapper-for-World-Vocoder/issues/67",
+      "source_type": "GitHub issue",
+      "checked_topic": "インストール",
+      "selection": "除外",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C098",
+      "url": "https://github.com/JeremyCCHsu/Python-Wrapper-for-World-Vocoder/issues/9",
+      "source_type": "GitHub issue",
+      "checked_topic": "インストール",
+      "selection": "除外",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C099",
+      "url": "https://github.com/JeremyCCHsu/Python-Wrapper-for-World-Vocoder/issues/37",
+      "source_type": "GitHub issue",
+      "checked_topic": "インストール",
+      "selection": "除外",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C100",
+      "url": "https://github.com/JeremyCCHsu/Python-Wrapper-for-World-Vocoder/issues/36",
+      "source_type": "GitHub issue",
+      "checked_topic": "時間窓と時間シフトの用語契約",
+      "selection": "採用",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C101",
+      "url": "https://github.com/google/visqol/issues/3",
+      "source_type": "GitHub issue",
+      "checked_topic": "Python配布要求",
+      "selection": "除外",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C102",
+      "url": "https://github.com/google/visqol/issues/6",
+      "source_type": "GitHub issue",
+      "checked_topic": "Windowsビルド",
+      "selection": "除外",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C103",
+      "url": "https://github.com/google/visqol/issues/72",
+      "source_type": "GitHub issue",
+      "checked_topic": "ビルド失敗",
+      "selection": "除外",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C104",
+      "url": "https://github.com/google/visqol/issues/18",
+      "source_type": "GitHub issue",
+      "checked_topic": "依存先停止",
+      "selection": "除外",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C105",
+      "url": "https://github.com/google/visqol/issues/31",
+      "source_type": "GitHub issue",
+      "checked_topic": "公称長さが十分でも計測に必要なサンプル不足",
+      "selection": "採用",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C106",
+      "url": "https://github.com/google/visqol/issues/75",
+      "source_type": "GitHub issue",
+      "checked_topic": "Windowsビルド",
+      "selection": "除外",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C107",
+      "url": "https://github.com/google/visqol/issues/50",
+      "source_type": "GitHub issue",
+      "checked_topic": "Windowsテストのファイルパス",
+      "selection": "除外",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C108",
+      "url": "https://github.com/google/visqol/issues/57",
+      "source_type": "GitHub issue",
+      "checked_topic": "論文と実装のスペクトログラム処理の相違",
+      "selection": "採用",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C109",
+      "url": "https://github.com/google/visqol/issues/46",
+      "source_type": "GitHub issue",
+      "checked_topic": "POLQAとの置換と無音の評価妥当性",
+      "selection": "採用",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C110",
+      "url": "https://github.com/google/visqol/issues/106",
+      "source_type": "GitHub issue",
+      "checked_topic": "ビルド失敗",
+      "selection": "除外",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C111",
+      "url": "https://github.com/google/visqol/issues/78",
+      "source_type": "GitHub issue",
+      "checked_topic": "長い音声の並列評価とスレッド安全性",
+      "selection": "採用",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C112",
+      "url": "https://github.com/google/visqol/issues/71",
+      "source_type": "GitHub issue",
+      "checked_topic": "参照音声と評価音声の長さの不一致",
+      "selection": "採用",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C113",
+      "url": "https://github.com/google/visqol/issues/77",
+      "source_type": "GitHub issue",
+      "checked_topic": "Windowsビルド",
+      "selection": "除外",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C114",
+      "url": "https://github.com/google/visqol/issues/102",
+      "source_type": "GitHub issue",
+      "checked_topic": "画像のみで論点確認不能",
+      "selection": "除外",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C115",
+      "url": "https://github.com/google/visqol/issues/117",
+      "source_type": "GitHub issue",
+      "checked_topic": "バイナリ配布要求",
+      "selection": "除外",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C116",
+      "url": "https://github.com/google/visqol/issues/126",
+      "source_type": "GitHub issue",
+      "checked_topic": "依存先取得失敗",
+      "selection": "除外",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C117",
+      "url": "https://github.com/google/visqol/issues/37",
+      "source_type": "GitHub issue",
+      "checked_topic": "ビルド失敗",
+      "selection": "除外",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C118",
+      "url": "https://github.com/google/visqol/issues/17",
+      "source_type": "GitHub issue",
+      "checked_topic": "コーデック評価用劣化音声の作成手順",
+      "selection": "採用",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C119",
+      "url": "https://github.com/google/visqol/issues/5",
+      "source_type": "GitHub issue",
+      "checked_topic": "大量評価時のメモリ増大",
+      "selection": "採用",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C120",
+      "url": "https://github.com/google/visqol/issues/52",
+      "source_type": "GitHub issue",
+      "checked_topic": "Pythonバインディングのビルド",
+      "selection": "除外",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C121",
+      "url": "https://github.com/google/visqol/issues/49",
+      "source_type": "GitHub issue",
+      "checked_topic": "CSVコマンドの質問",
+      "selection": "除外",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C122",
+      "url": "https://github.com/google/visqol/issues/55",
+      "source_type": "GitHub issue",
+      "checked_topic": "ビルド後のモデルパス",
+      "selection": "除外",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C123",
+      "url": "https://github.com/google/visqol/issues/86",
+      "source_type": "GitHub issue",
+      "checked_topic": "ビルド失敗",
+      "selection": "除外",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C124",
+      "url": "https://github.com/google/visqol/issues/100",
+      "source_type": "GitHub issue",
+      "checked_topic": "インストール失敗",
+      "selection": "除外",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C125",
+      "url": "https://github.com/google/visqol/issues/97",
+      "source_type": "GitHub issue",
+      "checked_topic": "ビルド失敗",
+      "selection": "除外",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C126",
+      "url": "https://github.com/google/visqol/issues/36",
+      "source_type": "GitHub issue",
+      "checked_topic": "音声モードと一般音響モードの適用範囲",
+      "selection": "採用",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C127",
+      "url": "https://github.com/google/visqol/issues/32",
+      "source_type": "GitHub issue",
+      "checked_topic": "ビルド失敗",
+      "selection": "除外",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C128",
+      "url": "https://github.com/google/visqol/issues/61",
+      "source_type": "GitHub issue",
+      "checked_topic": "P.Sup23で期待と異なるMOS相関",
+      "selection": "採用",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C129",
+      "url": "https://github.com/google/visqol/issues/56",
+      "source_type": "GitHub issue",
+      "checked_topic": "WAV形式と誤解を招くサンプルレートエラー",
+      "selection": "採用",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C130",
+      "url": "https://github.com/google/visqol/issues/80",
+      "source_type": "GitHub issue",
+      "checked_topic": "音声モードの帯域外雑音と指標の平均の妥当性",
+      "selection": "採用",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C131",
+      "url": "https://github.com/google/visqol/issues/89",
+      "source_type": "GitHub issue",
+      "checked_topic": "同一音声で類似度1でもMOSが最大にならない",
+      "selection": "採用",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C132",
+      "url": "https://github.com/google/visqol/issues/63",
+      "source_type": "GitHub issue",
+      "checked_topic": "ビルド失敗",
+      "selection": "除外",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C133",
+      "url": "https://github.com/google/visqol/issues/76",
+      "source_type": "GitHub issue",
+      "checked_topic": "Mac実行エラー",
+      "selection": "除外",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C134",
+      "url": "https://github.com/google/visqol/issues/87",
+      "source_type": "GitHub issue",
+      "checked_topic": "インポート失敗",
+      "selection": "除外",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C135",
+      "url": "https://github.com/google/visqol/issues/94",
+      "source_type": "GitHub issue",
+      "checked_topic": "バインディングの不明確なクラッシュ",
+      "selection": "除外",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C136",
+      "url": "https://github.com/google/visqol/issues/101",
+      "source_type": "GitHub issue",
+      "checked_topic": "詳細のないクラッシュ報告",
+      "selection": "除外",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C137",
+      "url": "https://github.com/google/visqol/issues/104",
+      "source_type": "GitHub issue",
+      "checked_topic": "8kHz入力への評価モデル適用",
+      "selection": "採用",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C138",
+      "url": "https://github.com/google/visqol/issues/107",
+      "source_type": "GitHub issue",
+      "checked_topic": "ビルド済み配布要求",
+      "selection": "除外",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C139",
+      "url": "https://github.com/google/visqol/issues/111",
+      "source_type": "GitHub issue",
+      "checked_topic": "Python対応バージョン",
+      "selection": "除外",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C140",
+      "url": "https://github.com/google/visqol/issues/103",
+      "source_type": "GitHub issue",
+      "checked_topic": "圧縮ファイルを復号してから評価する必要",
+      "selection": "採用",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C141",
+      "url": "https://github.com/google/visqol/issues/108",
+      "source_type": "GitHub issue",
+      "checked_topic": "短い参照音声と長い劣化音声での失敗",
+      "selection": "採用",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C142",
+      "url": "https://github.com/google/visqol/issues/121",
+      "source_type": "GitHub issue",
+      "checked_topic": "依存先取得失敗",
+      "selection": "除外",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C143",
+      "url": "https://github.com/google/visqol/issues/136",
+      "source_type": "GitHub issue",
+      "checked_topic": "Ubuntuビルド",
+      "selection": "除外",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C144",
+      "url": "https://github.com/google/visqol/issues/137",
+      "source_type": "GitHub issue",
+      "checked_topic": "インストール失敗",
+      "selection": "除外",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C145",
+      "url": "https://github.com/google/visqol/issues/134",
+      "source_type": "GitHub issue",
+      "checked_topic": "Pythonシンボルの互換性",
+      "selection": "除外",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C146",
+      "url": "https://github.com/google/visqol/issues/38",
+      "source_type": "GitHub issue",
+      "checked_topic": "時間合わせと先頭切断によるスコアの変化",
+      "selection": "採用",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C147",
+      "url": "https://github.com/gabrielmittag/NISQA/issues/26",
+      "source_type": "GitHub issue",
+      "checked_topic": "dtype互換性",
+      "selection": "除外",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C148",
+      "url": "https://github.com/gabrielmittag/NISQA/issues/23",
+      "source_type": "GitHub issue",
+      "checked_topic": "ONNX変換失敗",
+      "selection": "除外",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C149",
+      "url": "https://github.com/gabrielmittag/NISQA/issues/38",
+      "source_type": "GitHub issue",
+      "checked_topic": "pip配布要求",
+      "selection": "除外",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C150",
+      "url": "https://github.com/gabrielmittag/NISQA/issues/9",
+      "source_type": "GitHub issue",
+      "checked_topic": "中国語MOSデータでの適用範囲と相関",
+      "selection": "採用",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C151",
+      "url": "https://github.com/gabrielmittag/NISQA/issues/18",
+      "source_type": "GitHub issue",
+      "checked_topic": "大量評価の計算速度",
+      "selection": "採用",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C152",
+      "url": "https://github.com/gabrielmittag/NISQA/issues/21",
+      "source_type": "GitHub issue",
+      "checked_topic": "品質次元ごとの値の方向と範囲",
+      "selection": "採用",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C153",
+      "url": "https://github.com/gabrielmittag/NISQA/issues/31",
+      "source_type": "GitHub issue",
+      "checked_topic": "発話全体の予測値を局所的に利用できるか",
+      "selection": "採用",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C154",
+      "url": "https://github.com/gabrielmittag/NISQA/issues/33",
+      "source_type": "GitHub issue",
+      "checked_topic": "教師MOSが人による評定かPESQか",
+      "selection": "採用",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C155",
+      "url": "https://github.com/gabrielmittag/NISQA/issues/6",
+      "source_type": "GitHub issue",
+      "checked_topic": "サンプルレートと実効帯域の違い",
+      "selection": "採用",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C156",
+      "url": "https://github.com/gabrielmittag/NISQA/issues/11",
+      "source_type": "GitHub issue",
+      "checked_topic": "入力最大長の制約",
+      "selection": "採用",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C157",
+      "url": "https://github.com/gabrielmittag/NISQA/issues/41",
+      "source_type": "GitHub issue",
+      "checked_topic": "ASRコーパスからTTS用音声を選ぶ際の評価妥当性",
+      "selection": "採用",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C158",
+      "url": "https://github.com/gabrielmittag/NISQA/issues/3",
+      "source_type": "GitHub issue",
+      "checked_topic": "一般的な訓練方法の質問",
+      "selection": "除外",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C159",
+      "url": "https://github.com/gabrielmittag/NISQA/issues/19",
+      "source_type": "GitHub issue",
+      "checked_topic": "入力窓数の定義と模擬入力",
+      "selection": "採用",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C160",
+      "url": "https://github.com/gabrielmittag/NISQA/issues/7",
+      "source_type": "GitHub issue",
+      "checked_topic": "参照音声を用いる評価モデルの利用可能性",
+      "selection": "採用",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C161",
+      "url": "https://github.com/gabrielmittag/NISQA/issues/27",
+      "source_type": "GitHub issue",
+      "checked_topic": "評価器を合成の損失関数として使用すること",
+      "selection": "採用",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C162",
+      "url": "https://github.com/gabrielmittag/NISQA/issues/36",
+      "source_type": "GitHub issue",
+      "checked_topic": "長さ、発話率、レベル、SNRの適用条件と主観不一致",
+      "selection": "採用",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C163",
+      "url": "https://github.com/mpariente/pystoi/issues/4",
+      "source_type": "GitHub issue",
+      "checked_topic": "恒等性を破る無音除去と原実装互換性の対立",
+      "selection": "採用",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C164",
+      "url": "https://github.com/mpariente/pystoi/issues/5",
+      "source_type": "GitHub issue",
+      "checked_topic": "TensorFlow移植計画",
+      "selection": "除外",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C165",
+      "url": "https://github.com/mpariente/pystoi/issues/20",
+      "source_type": "GitHub issue",
+      "checked_topic": "背景音楽の追加でSTOIが上がる事例",
+      "selection": "採用",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C166",
+      "url": "https://github.com/mpariente/pystoi/issues/32",
+      "source_type": "GitHub issue",
+      "checked_topic": "MATLABとPythonの添字差で末尾フレームが欠落",
+      "selection": "採用",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C167",
+      "url": "https://github.com/mpariente/pystoi/issues/11",
+      "source_type": "GitHub issue",
+      "checked_topic": "dtype互換性",
+      "selection": "除外",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C168",
+      "url": "https://github.com/mpariente/pystoi/issues/14",
+      "source_type": "GitHub issue",
+      "checked_topic": "MATLABとOctaveのリサンプリングの一致",
+      "selection": "採用",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C169",
+      "url": "https://github.com/mpariente/pystoi/issues/23",
+      "source_type": "GitHub issue",
+      "checked_topic": "短い入力の適用限界と不明瞭なエラー",
+      "selection": "採用",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C170",
+      "url": "https://github.com/mpariente/pystoi/issues/21",
+      "source_type": "GitHub issue",
+      "checked_topic": "短い発話と無音を含む入力への適用限界",
+      "selection": "採用",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C171",
+      "url": "https://github.com/mpariente/pystoi/issues/3",
+      "source_type": "GitHub issue",
+      "checked_topic": "Pythonインポート",
+      "selection": "除外",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C172",
+      "url": "https://github.com/mpariente/pystoi/issues/22",
+      "source_type": "GitHub issue",
+      "checked_topic": "10kHzへのリサンプリング前提を外してよいか",
+      "selection": "採用",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C173",
+      "url": "https://github.com/mpariente/pystoi/issues/34",
+      "source_type": "GitHub issue",
+      "checked_topic": "バージョンとMATLAB実装間のスコア差",
+      "selection": "採用",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C174",
+      "url": "https://github.com/aliutkus/speechmetrics/issues/20",
+      "source_type": "GitHub issue",
+      "checked_topic": "インストール失敗",
+      "selection": "除外",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C175",
+      "url": "https://github.com/aliutkus/speechmetrics/issues/8",
+      "source_type": "GitHub issue",
+      "checked_topic": "Keras互換性",
+      "selection": "除外",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C176",
+      "url": "https://github.com/aliutkus/speechmetrics/issues/32",
+      "source_type": "GitHub issue",
+      "checked_topic": "詳細のないクラッシュ",
+      "selection": "除外",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C177",
+      "url": "https://github.com/aliutkus/speechmetrics/issues/1",
+      "source_type": "GitHub issue",
+      "checked_topic": "インストール失敗",
+      "selection": "除外",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C178",
+      "url": "https://github.com/aliutkus/speechmetrics/issues/15",
+      "source_type": "GitHub issue",
+      "checked_topic": "別評価器の追加要求",
+      "selection": "除外",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C179",
+      "url": "https://github.com/aliutkus/speechmetrics/issues/36",
+      "source_type": "GitHub issue",
+      "checked_topic": "インストール失敗",
+      "selection": "除外",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C180",
+      "url": "https://github.com/aliutkus/speechmetrics/issues/12",
+      "source_type": "GitHub issue",
+      "checked_topic": "複数指標が相反する値を出す場合の解釈",
+      "selection": "採用",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C181",
+      "url": "https://github.com/aliutkus/speechmetrics/issues/2",
+      "source_type": "GitHub issue",
+      "checked_topic": "コミュニティで共有するSI-SDR定義",
+      "selection": "採用",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C182",
+      "url": "https://github.com/aliutkus/speechmetrics/issues/4",
+      "source_type": "GitHub issue",
+      "checked_topic": "インストール失敗",
+      "selection": "除外",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C183",
+      "url": "https://github.com/ludlows/PESQ/issues/12",
+      "source_type": "GitHub issue",
+      "checked_topic": "3時間の入力で評価が無言で停止する問題",
+      "selection": "採用",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C184",
+      "url": "https://github.com/ludlows/PESQ/issues/45",
+      "source_type": "GitHub issue",
+      "checked_topic": "AWSへのインストール",
+      "selection": "除外",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C185",
+      "url": "https://github.com/ludlows/PESQ/issues/14",
+      "source_type": "GitHub issue",
+      "checked_topic": "リリース要求",
+      "selection": "除外",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C186",
+      "url": "https://github.com/ludlows/PESQ/issues/13",
+      "source_type": "GitHub issue",
+      "checked_topic": "同一音声時のPESQ最大値の解釈",
+      "selection": "採用",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C187",
+      "url": "https://github.com/ludlows/PESQ/issues/54",
+      "source_type": "GitHub issue",
+      "checked_topic": "numpy互換性",
+      "selection": "除外",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C188",
+      "url": "https://github.com/ludlows/PESQ/issues/23",
+      "source_type": "GitHub issue",
+      "checked_topic": "ITU参照実装と同一入力のスコアが異なる",
+      "selection": "採用",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C189",
+      "url": "https://github.com/ludlows/PESQ/issues/24",
+      "source_type": "GitHub issue",
+      "checked_topic": "インポート失敗",
+      "selection": "除外",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C190",
+      "url": "https://github.com/ludlows/PESQ/issues/32",
+      "source_type": "GitHub issue",
+      "checked_topic": "Torchmetrics連携要求",
+      "selection": "除外",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C191",
+      "url": "https://github.com/ludlows/PESQ/issues/20",
+      "source_type": "GitHub issue",
+      "checked_topic": "インポート失敗",
+      "selection": "除外",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C192",
+      "url": "https://github.com/ludlows/PESQ/issues/29",
+      "source_type": "GitHub issue",
+      "checked_topic": "インポート失敗",
+      "selection": "除外",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C193",
+      "url": "https://github.com/ludlows/PESQ/issues/43",
+      "source_type": "GitHub issue",
+      "checked_topic": "発話未検出エラーが起きる入力条件",
+      "selection": "採用",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C194",
+      "url": "https://github.com/ludlows/PESQ/issues/50",
+      "source_type": "GitHub issue",
+      "checked_topic": "利用論文のリストのみ",
+      "selection": "除外",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C195",
+      "url": "https://github.com/ludlows/PESQ/issues/10",
+      "source_type": "GitHub issue",
+      "checked_topic": "依存ライブラリのインストール",
+      "selection": "除外",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C196",
+      "url": "https://github.com/ludlows/PESQ/issues/15",
+      "source_type": "GitHub issue",
+      "checked_topic": "25分入力と5秒入力で動作が変わる",
+      "selection": "採用",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C197",
+      "url": "https://github.com/ludlows/PESQ/issues/31",
+      "source_type": "GitHub issue",
+      "checked_topic": "リリース要求",
+      "selection": "除外",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C198",
+      "url": "https://github.com/ludlows/PESQ/issues/36",
+      "source_type": "GitHub issue",
+      "checked_topic": "条件の不明なランダムエラー",
+      "selection": "除外",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C199",
+      "url": "https://github.com/ludlows/PESQ/issues/44",
+      "source_type": "GitHub issue",
+      "checked_topic": "多チャネルと一次元入力の契約",
+      "selection": "採用",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C200",
+      "url": "https://github.com/ludlows/PESQ/issues/49",
+      "source_type": "GitHub issue",
+      "checked_topic": "インストール失敗",
+      "selection": "除外",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C201",
+      "url": "https://github.com/librosa/librosa/issues/1260",
+      "source_type": "GitHub issue",
+      "checked_topic": "音声読込の環境依存インストール問題",
+      "selection": "除外",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C202",
+      "url": "https://github.com/librosa/librosa/issues/1928",
+      "source_type": "GitHub issue",
+      "checked_topic": "特定音声でのYIN処理のクラッシュと再現用入力",
+      "selection": "採用",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C203",
+      "url": "https://github.com/librosa/librosa/issues/1102",
+      "source_type": "GitHub issue",
+      "checked_topic": "状態を持つ低遅延処理と関数型APIの設計",
+      "selection": "採用",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C204",
+      "url": "https://github.com/librosa/librosa/issues/233",
+      "source_type": "GitHub issue",
+      "checked_topic": "周波数推定におけるゼロ除算",
+      "selection": "採用",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C205",
+      "url": "https://github.com/librosa/librosa/issues/1681",
+      "source_type": "GitHub issue",
+      "checked_topic": "依存ライブラリの型互換性",
+      "selection": "除外",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C206",
+      "url": "https://github.com/librosa/librosa/issues/860",
+      "source_type": "GitHub issue",
+      "checked_topic": "音高変更と高域・再標本化条件の相互作用",
+      "selection": "採用",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C207",
+      "url": "https://github.com/librosa/librosa/issues/993",
+      "source_type": "GitHub issue",
+      "checked_topic": "Pythonバージョン互換性",
+      "selection": "除外",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C208",
+      "url": "https://github.com/librosa/librosa/issues/2107",
+      "source_type": "GitHub issue",
+      "checked_topic": "分析と合成で異なる引数契約の混同",
+      "selection": "採用",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C209",
+      "url": "https://github.com/librosa/librosa/issues/1486",
+      "source_type": "GitHub issue",
+      "checked_topic": "基本周波数の探索範囲と信号帯域の意味の区別",
+      "selection": "採用",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C210",
+      "url": "https://github.com/librosa/librosa/issues/1065",
+      "source_type": "GitHub issue",
+      "checked_topic": "クリックトラックの一般的使い方質問",
+      "selection": "除外",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C211",
+      "url": "https://github.com/librosa/librosa/issues/1918",
+      "source_type": "GitHub issue",
+      "checked_topic": "PCMと浮動小数点の尺度変換による歪み",
+      "selection": "採用",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C212",
+      "url": "https://github.com/librosa/librosa/issues/1085",
+      "source_type": "GitHub issue",
+      "checked_topic": "多チャネル入力と次元の契約",
+      "selection": "採用",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C213",
+      "url": "https://github.com/librosa/librosa/issues/806",
+      "source_type": "GitHub issue",
+      "checked_topic": "ヒストグラム境界での有効な値の欠落",
+      "selection": "採用",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C214",
+      "url": "https://github.com/librosa/librosa/issues/1128",
+      "source_type": "GitHub issue",
+      "checked_topic": "ブロックごとの音高修正と境界の劣化",
+      "selection": "採用",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C215",
+      "url": "https://github.com/librosa/librosa/issues/75",
+      "source_type": "GitHub issue",
+      "checked_topic": "ゼロ周波数と対数の定義域・推定バイアス",
+      "selection": "採用",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C216",
+      "url": "https://github.com/breakfastquay/rubberband/issues/51",
+      "source_type": "GitHub issue",
+      "checked_topic": "静的動的ビルド",
+      "selection": "除外",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C217",
+      "url": "https://github.com/breakfastquay/rubberband/issues/37",
+      "source_type": "GitHub issue",
+      "checked_topic": "NaNと試験時の異常終了",
+      "selection": "採用",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C218",
+      "url": "https://github.com/breakfastquay/rubberband/issues/53",
+      "source_type": "GitHub issue",
+      "checked_topic": "Windowsリンク",
+      "selection": "除外",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C219",
+      "url": "https://github.com/breakfastquay/rubberband/issues/81",
+      "source_type": "GitHub issue",
+      "checked_topic": "ステレオ位相とモノ再生互換性",
+      "selection": "採用",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C220",
+      "url": "https://github.com/breakfastquay/rubberband/issues/30",
+      "source_type": "GitHub issue",
+      "checked_topic": "微小な動的音高変更によるクリック",
+      "selection": "採用",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C221",
+      "url": "https://github.com/breakfastquay/rubberband/issues/83",
+      "source_type": "GitHub issue",
+      "checked_topic": "正弦波・インパルス・出力長を使う回帰試験",
+      "selection": "採用",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C222",
+      "url": "https://github.com/breakfastquay/rubberband/issues/87",
+      "source_type": "GitHub issue",
+      "checked_topic": "アーキテクチャ依存の処理停止試験",
+      "selection": "採用",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C223",
+      "url": "https://github.com/breakfastquay/rubberband/issues/68",
+      "source_type": "GitHub issue",
+      "checked_topic": "クロスコンパイル",
+      "selection": "除外",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C224",
+      "url": "https://github.com/breakfastquay/rubberband/issues/56",
+      "source_type": "GitHub issue",
+      "checked_topic": "同一コードのプラットフォーム別の大幅な振幅差",
+      "selection": "採用",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C225",
+      "url": "https://github.com/breakfastquay/rubberband/issues/78",
+      "source_type": "GitHub issue",
+      "checked_topic": "特定入力で処理が終了しない",
+      "selection": "採用",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C226",
+      "url": "https://github.com/breakfastquay/rubberband/issues/20",
+      "source_type": "GitHub issue",
+      "checked_topic": "同じ設定でもプラグインとCLIで発生する開始音の違い",
+      "selection": "採用",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C227",
+      "url": "https://github.com/breakfastquay/rubberband/issues/57",
+      "source_type": "GitHub issue",
+      "checked_topic": "無変更設定で生じる雑音",
+      "selection": "採用",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C228",
+      "url": "https://github.com/breakfastquay/rubberband/issues/112",
+      "source_type": "GitHub issue",
+      "checked_topic": "数学関数の実装と計算時間",
+      "selection": "採用",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C229",
+      "url": "https://github.com/breakfastquay/rubberband/issues/62",
+      "source_type": "GitHub issue",
+      "checked_topic": "リンク失敗",
+      "selection": "除外",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C230",
+      "url": "https://github.com/breakfastquay/rubberband/issues/65",
+      "source_type": "GitHub issue",
+      "checked_topic": "試験のビルド失敗",
+      "selection": "除外",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C231",
+      "url": "https://github.com/breakfastquay/rubberband/issues/73",
+      "source_type": "GitHub issue",
+      "checked_topic": "Java検出",
+      "selection": "除外",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C232",
+      "url": "https://github.com/breakfastquay/rubberband/issues/77",
+      "source_type": "GitHub issue",
+      "checked_topic": "空入力による最終フラッシュと末尾欠落",
+      "selection": "採用",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C233",
+      "url": "https://github.com/breakfastquay/rubberband/issues/86",
+      "source_type": "GitHub issue",
+      "checked_topic": "処理ブロックサイズと内部バッファ蓄積",
+      "selection": "採用",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C234",
+      "url": "https://github.com/breakfastquay/rubberband/issues/17",
+      "source_type": "GitHub issue",
+      "checked_topic": "インストール",
+      "selection": "除外",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C235",
+      "url": "https://github.com/breakfastquay/rubberband/issues/31",
+      "source_type": "GitHub issue",
+      "checked_topic": "Appleのビルド",
+      "selection": "除外",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C236",
+      "url": "https://github.com/breakfastquay/rubberband/issues/46",
+      "source_type": "GitHub issue",
+      "checked_topic": "音高と時間の独立した制御への期待",
+      "selection": "採用",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C237",
+      "url": "https://github.com/breakfastquay/rubberband/issues/54",
+      "source_type": "GitHub issue",
+      "checked_topic": "報告遅延と実際の出力開始・途切れ",
+      "selection": "採用",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C238",
+      "url": "https://github.com/breakfastquay/rubberband/issues/90",
+      "source_type": "GitHub issue",
+      "checked_topic": "OpenMPリンク",
+      "selection": "除外",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C239",
+      "url": "https://github.com/breakfastquay/rubberband/issues/2",
+      "source_type": "GitHub issue",
+      "checked_topic": "外部依存化",
+      "selection": "除外",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C240",
+      "url": "https://github.com/breakfastquay/rubberband/issues/21",
+      "source_type": "GitHub issue",
+      "checked_topic": "極端な伸縮率での品質の変化",
+      "selection": "採用",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C241",
+      "url": "https://github.com/breakfastquay/rubberband/issues/35",
+      "source_type": "GitHub issue",
+      "checked_topic": "動的変更と補間・バックエンド依存のクリック",
+      "selection": "採用",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C242",
+      "url": "https://github.com/breakfastquay/rubberband/issues/48",
+      "source_type": "GitHub issue",
+      "checked_topic": "MinGWビルド",
+      "selection": "除外",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C243",
+      "url": "https://github.com/breakfastquay/rubberband/issues/55",
+      "source_type": "GitHub issue",
+      "checked_topic": "制御設定・ブロック長・チャネルの組合せによる不具合",
+      "selection": "採用",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C244",
+      "url": "https://github.com/breakfastquay/rubberband/issues/67",
+      "source_type": "GitHub issue",
+      "checked_topic": "半音と周波数比のAPI意味・再現性",
+      "selection": "採用",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C245",
+      "url": "https://github.com/breakfastquay/rubberband/issues/70",
+      "source_type": "GitHub issue",
+      "checked_topic": "低いサンプルレートだけで現れる歪み",
+      "selection": "採用",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C246",
+      "url": "https://github.com/breakfastquay/rubberband/issues/80",
+      "source_type": "GitHub issue",
+      "checked_topic": "聴感の改善と時間写像の正確さの不一致",
+      "selection": "採用",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C247",
+      "url": "https://github.com/breakfastquay/rubberband/issues/79",
+      "source_type": "GitHub issue",
+      "checked_topic": "パッケージの拡張子",
+      "selection": "除外",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C248",
+      "url": "https://github.com/breakfastquay/rubberband/issues/84",
+      "source_type": "GitHub issue",
+      "checked_topic": "無変更・チャープ信号・リアルタイム別の差分試験",
+      "selection": "採用",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C249",
+      "url": "https://github.com/breakfastquay/rubberband/issues/92",
+      "source_type": "GitHub issue",
+      "checked_topic": "Androidリンク",
+      "selection": "除外",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C250",
+      "url": "https://github.com/breakfastquay/rubberband/issues/104",
+      "source_type": "GitHub issue",
+      "checked_topic": "Android導入",
+      "selection": "除外",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C251",
+      "url": "https://github.com/breakfastquay/rubberband/issues/116",
+      "source_type": "GitHub issue",
+      "checked_topic": "シークと終了フラッシュで変わる末尾",
+      "selection": "採用",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C252",
+      "url": "https://github.com/breakfastquay/rubberband/issues/9",
+      "source_type": "GitHub issue",
+      "checked_topic": "リンク",
+      "selection": "除外",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C253",
+      "url": "https://github.com/breakfastquay/rubberband/issues/6",
+      "source_type": "GitHub issue",
+      "checked_topic": "途中位置への移動と処理状態",
+      "selection": "採用",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C254",
+      "url": "https://github.com/breakfastquay/rubberband/issues/4",
+      "source_type": "GitHub issue",
+      "checked_topic": "リリース予定",
+      "selection": "除外",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C255",
+      "url": "https://github.com/breakfastquay/rubberband/issues/12",
+      "source_type": "GitHub issue",
+      "checked_topic": "ビルド設定",
+      "selection": "除外",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C256",
+      "url": "https://github.com/breakfastquay/rubberband/issues/14",
+      "source_type": "GitHub issue",
+      "checked_topic": "入力範囲と出力振幅上限の契約",
+      "selection": "採用",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C257",
+      "url": "https://github.com/breakfastquay/rubberband/issues/25",
+      "source_type": "GitHub issue",
+      "checked_topic": "ビルド依存",
+      "selection": "除外",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C258",
+      "url": "https://github.com/breakfastquay/rubberband/issues/41",
+      "source_type": "GitHub issue",
+      "checked_topic": "導入用サンプル",
+      "selection": "除外",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C259",
+      "url": "https://github.com/breakfastquay/rubberband/issues/32",
+      "source_type": "GitHub issue",
+      "checked_topic": "ビルド依存",
+      "selection": "除外",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C260",
+      "url": "https://github.com/breakfastquay/rubberband/issues/33",
+      "source_type": "GitHub issue",
+      "checked_topic": "リアルタイムという名称とストリーミング機能の区別",
+      "selection": "採用",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C261",
+      "url": "https://github.com/breakfastquay/rubberband/issues/34",
+      "source_type": "GitHub issue",
+      "checked_topic": "プラグイン形式",
+      "selection": "除外",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C262",
+      "url": "https://github.com/breakfastquay/rubberband/issues/71",
+      "source_type": "GitHub issue",
+      "checked_topic": "ビルド依存",
+      "selection": "除外",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C263",
+      "url": "https://github.com/breakfastquay/rubberband/issues/69",
+      "source_type": "GitHub issue",
+      "checked_topic": "Macビルド",
+      "selection": "除外",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C264",
+      "url": "https://github.com/breakfastquay/rubberband/issues/74",
+      "source_type": "GitHub issue",
+      "checked_topic": "Windowsビルド",
+      "selection": "除外",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C265",
+      "url": "https://github.com/breakfastquay/rubberband/issues/75",
+      "source_type": "GitHub issue",
+      "checked_topic": "Androidビルド",
+      "selection": "除外",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C266",
+      "url": "https://github.com/breakfastquay/rubberband/issues/72",
+      "source_type": "GitHub issue",
+      "checked_topic": "実行ファイルのstrip",
+      "selection": "除外",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C267",
+      "url": "https://github.com/breakfastquay/rubberband/issues/85",
+      "source_type": "GitHub issue",
+      "checked_topic": "開始時の意図しないフェード",
+      "selection": "採用",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C268",
+      "url": "https://github.com/breakfastquay/rubberband/issues/89",
+      "source_type": "GitHub issue",
+      "checked_topic": "複数音声流の処理性能",
+      "selection": "採用",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C269",
+      "url": "https://github.com/breakfastquay/rubberband/issues/93",
+      "source_type": "GitHub issue",
+      "checked_topic": "再現情報の乏しい破棄時クラッシュ",
+      "selection": "除外",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C270",
+      "url": "https://github.com/breakfastquay/rubberband/issues/105",
+      "source_type": "GitHub issue",
+      "checked_topic": "設定数の多さと別環境で同じ動作を再現する困難",
+      "selection": "採用",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C271",
+      "url": "https://github.com/breakfastquay/rubberband/issues/108",
+      "source_type": "GitHub issue",
+      "checked_topic": "更新予定",
+      "selection": "除外",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C272",
+      "url": "https://github.com/breakfastquay/rubberband/issues/107",
+      "source_type": "GitHub issue",
+      "checked_topic": "入力サンプルレートと最高品質の関係への疑問",
+      "selection": "採用",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C273",
+      "url": "https://github.com/breakfastquay/rubberband/issues/110",
+      "source_type": "GitHub issue",
+      "checked_topic": "組込み環境の性能制約",
+      "selection": "採用",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C274",
+      "url": "https://github.com/breakfastquay/rubberband/issues/113",
+      "source_type": "GitHub issue",
+      "checked_topic": "Windowsビルド",
+      "selection": "除外",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C275",
+      "url": "https://github.com/breakfastquay/rubberband/issues/117",
+      "source_type": "GitHub issue",
+      "checked_topic": "対応ファイル形式",
+      "selection": "除外",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C276",
+      "url": "https://github.com/breakfastquay/rubberband/issues/3",
+      "source_type": "GitHub issue",
+      "checked_topic": "言語移植の要望",
+      "selection": "除外",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C277",
+      "url": "https://github.com/breakfastquay/rubberband/issues/8",
+      "source_type": "GitHub issue",
+      "checked_topic": "伸縮率と過渡音・設定履歴の関係",
+      "selection": "採用",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C278",
+      "url": "https://github.com/breakfastquay/rubberband/issues/11",
+      "source_type": "GitHub issue",
+      "checked_topic": "単純なメモリ解放",
+      "selection": "除外",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C279",
+      "url": "https://github.com/breakfastquay/rubberband/issues/5",
+      "source_type": "GitHub issue",
+      "checked_topic": "時間写像の単位と有効範囲・出力長",
+      "selection": "採用",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C280",
+      "url": "https://github.com/breakfastquay/rubberband/issues/7",
+      "source_type": "GitHub issue",
+      "checked_topic": "ストレス操作時の並行処理クラッシュ報告",
+      "selection": "採用",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C281",
+      "url": "https://github.com/breakfastquay/rubberband/issues/16",
+      "source_type": "GitHub issue",
+      "checked_topic": "パッケージ登録",
+      "selection": "除外",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C282",
+      "url": "https://github.com/breakfastquay/rubberband/issues/26",
+      "source_type": "GitHub issue",
+      "checked_topic": "iOSビルド",
+      "selection": "除外",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C283",
+      "url": "https://github.com/breakfastquay/rubberband/issues/28",
+      "source_type": "GitHub issue",
+      "checked_topic": "音声の種類と品質設定の意味",
+      "selection": "採用",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C284",
+      "url": "https://github.com/breakfastquay/rubberband/issues/19",
+      "source_type": "GitHub issue",
+      "checked_topic": "CとC++で逆になった品質・速度設定",
+      "selection": "採用",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C285",
+      "url": "https://github.com/breakfastquay/rubberband/issues/29",
+      "source_type": "GitHub issue",
+      "checked_topic": "リンク失敗",
+      "selection": "除外",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C286",
+      "url": "https://github.com/breakfastquay/rubberband/issues/38",
+      "source_type": "GitHub issue",
+      "checked_topic": "クロスコンパイル",
+      "selection": "除外",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C287",
+      "url": "https://github.com/breakfastquay/rubberband/issues/36",
+      "source_type": "GitHub issue",
+      "checked_topic": "ヘッダのインストール",
+      "selection": "除外",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C288",
+      "url": "https://github.com/breakfastquay/rubberband/issues/39",
+      "source_type": "GitHub issue",
+      "checked_topic": "小さな制御変更でも生じる一時的なグリッチ",
+      "selection": "採用",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C289",
+      "url": "https://github.com/breakfastquay/rubberband/issues/40",
+      "source_type": "GitHub issue",
+      "checked_topic": "長さゼロ付近の符号付き・符号なし処理",
+      "selection": "採用",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C290",
+      "url": "https://github.com/breakfastquay/rubberband/issues/44",
+      "source_type": "GitHub issue",
+      "checked_topic": "チャネル配置と統合時の入力契約",
+      "selection": "採用",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C291",
+      "url": "https://github.com/breakfastquay/rubberband/issues/47",
+      "source_type": "GitHub issue",
+      "checked_topic": "パイプ入出力の契約",
+      "selection": "採用",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C292",
+      "url": "https://github.com/breakfastquay/rubberband/issues/59",
+      "source_type": "GitHub issue",
+      "checked_topic": "ファイル形式の対応",
+      "selection": "除外",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C293",
+      "url": "https://github.com/breakfastquay/rubberband/issues/58",
+      "source_type": "GitHub issue",
+      "checked_topic": "半音とオクターブの説明不一致",
+      "selection": "採用",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C294",
+      "url": "https://github.com/breakfastquay/rubberband/issues/61",
+      "source_type": "GitHub issue",
+      "checked_topic": "言語移植環境",
+      "selection": "除外",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C295",
+      "url": "https://github.com/breakfastquay/rubberband/issues/94",
+      "source_type": "GitHub issue",
+      "checked_topic": "クラウド導入",
+      "selection": "除外",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C296",
+      "url": "https://github.com/breakfastquay/rubberband/issues/91",
+      "source_type": "GitHub issue",
+      "checked_topic": "処理中のサンプルレート変更と状態初期化",
+      "selection": "採用",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C297",
+      "url": "https://github.com/breakfastquay/rubberband/issues/96",
+      "source_type": "GitHub issue",
+      "checked_topic": "ARMビルド",
+      "selection": "除外",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C298",
+      "url": "https://github.com/breakfastquay/rubberband/issues/99",
+      "source_type": "GitHub issue",
+      "checked_topic": "静的リンク",
+      "selection": "除外",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C299",
+      "url": "https://github.com/breakfastquay/rubberband/issues/106",
+      "source_type": "GitHub issue",
+      "checked_topic": "自動ゲイン低減とクリッピング判定",
+      "selection": "採用",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C300",
+      "url": "https://github.com/breakfastquay/rubberband/issues/120",
+      "source_type": "GitHub issue",
+      "checked_topic": "画像主体で再現情報が不足するCPU報告",
+      "selection": "除外",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C301",
+      "url": "https://github.com/breakfastquay/rubberband/issues/121",
+      "source_type": "GitHub issue",
+      "checked_topic": "基準音高変換の一般的質問",
+      "selection": "除外",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C302",
+      "url": "https://github.com/breakfastquay/rubberband/issues/123",
+      "source_type": "GitHub issue",
+      "checked_topic": "商用契約",
+      "selection": "除外",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C303",
+      "url": "https://github.com/breakfastquay/rubberband/issues/13",
+      "source_type": "GitHub issue",
+      "checked_topic": "導入方法",
+      "selection": "除外",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C304",
+      "url": "https://github.com/breakfastquay/rubberband/issues/15",
+      "source_type": "GitHub issue",
+      "checked_topic": "想定外の極低サンプルレートと解析窓",
+      "selection": "採用",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C305",
+      "url": "https://github.com/breakfastquay/rubberband/issues/27",
+      "source_type": "GitHub issue",
+      "checked_topic": "音高変更・リセットと出力標本数",
+      "selection": "採用",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C306",
+      "url": "https://github.com/breakfastquay/rubberband/issues/45",
+      "source_type": "GitHub issue",
+      "checked_topic": "Raspberry Piビルド",
+      "selection": "除外",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C307",
+      "url": "https://github.com/breakfastquay/rubberband/issues/66",
+      "source_type": "GitHub issue",
+      "checked_topic": "本文なし",
+      "selection": "除外",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C308",
+      "url": "https://github.com/breakfastquay/rubberband/issues/82",
+      "source_type": "GitHub issue",
+      "checked_topic": "遅延とCPU負荷分散を分けるDFT設計の提案",
+      "selection": "採用",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C309",
+      "url": "https://github.com/breakfastquay/rubberband/issues/95",
+      "source_type": "GitHub issue",
+      "checked_topic": "静的リンク",
+      "selection": "除外",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C310",
+      "url": "https://github.com/breakfastquay/rubberband/issues/101",
+      "source_type": "GitHub issue",
+      "checked_topic": "長大入力での無警告の切捨て",
+      "selection": "採用",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C311",
+      "url": "https://github.com/breakfastquay/rubberband/issues/109",
+      "source_type": "GitHub issue",
+      "checked_topic": "ループ境界の停止とエンジン・統合条件",
+      "selection": "採用",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C312",
+      "url": "https://github.com/breakfastquay/rubberband/issues/114",
+      "source_type": "GitHub issue",
+      "checked_topic": "極端な制御量でのバッファと出力取得の契約",
+      "selection": "採用",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C313",
+      "url": "https://github.com/breakfastquay/rubberband/issues/111",
+      "source_type": "GitHub issue",
+      "checked_topic": "ファイル形式",
+      "selection": "除外",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C314",
+      "url": "https://github.com/breakfastquay/rubberband/issues/118",
+      "source_type": "GitHub issue",
+      "checked_topic": "DFTバックエンドの性能と保守性",
+      "selection": "採用",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C315",
+      "url": "https://github.com/breakfastquay/rubberband/issues/115",
+      "source_type": "GitHub issue",
+      "checked_topic": "導入例の要望",
+      "selection": "除外",
+      "read_level": "起票本文確認（コメント未確認・未再現）"
+    },
+    {
+      "id": "C316",
+      "url": "https://www.breakfastquay.com/rubberband/integration.html",
+      "source_type": "公式技術解説",
+      "checked_topic": "固定設定の品質と動的制御時の一貫性・遅延・入出力長の扱い",
+      "selection": "採用",
+      "read_level": "本文確認"
+    },
+    {
+      "id": "C317",
+      "url": "https://www.breakfastquay.com/rubberband/technical.html",
+      "source_type": "開発者の技術解説",
+      "checked_topic": "論文の基本手法だけでなく過渡音・位相・実用上の境界条件が品質を左右するという説明",
+      "selection": "採用",
+      "read_level": "本文確認"
+    },
+    {
+      "id": "C318",
+      "url": "https://blogs.zynaptiq.com/bernsee/time-pitch-overview/",
+      "source_type": "開発者ブログ",
+      "checked_topic": "時間・音高変換の方式ごとのアーティファクトと素材・用途による品質差",
+      "selection": "採用",
+      "read_level": "本文の関連箇所確認（コメント全体は未確認）"
+    },
+    {
+      "id": "C319",
+      "url": "https://speechprocessingbook.aalto.fi/evaluation/objective-quality-evaluation/",
+      "source_type": "大学の公開教材",
+      "checked_topic": "客観指標は知覚品質の近似であり機能別の測定と組み合わせるという整理",
+      "selection": "採用",
+      "read_level": "本文確認"
+    },
+    {
+      "id": "C320",
+      "url": "https://speechprocessingbook.aalto.fi/synthesis/statistical-parametric-speech-synthesis/",
+      "source_type": "大学の公開教材",
+      "checked_topic": "同じ知覚に対応する異なる波形と合成用のコンパクトな表現・情報の補完",
+      "selection": "採用",
+      "read_level": "本文の関連箇所確認"
+    },
+    {
+      "id": "C321",
+      "url": "https://speechprocessingbook.aalto.fi/modelling/griffinlim/",
+      "source_type": "大学の公開教材",
+      "checked_topic": "表現の整合性と再構成可能性を区別する説明",
+      "selection": "採用",
+      "read_level": "本文抜粋確認"
+    },
+    {
+      "id": "C322",
+      "url": "https://dsp.stackexchange.com/questions/55573/how-to-reduce-synthesis-artifacts-produced-by-phase-vocoder",
+      "source_type": "DSP Stack Exchange議論",
+      "checked_topic": "明瞭さ・音高の正確さとロボット的な音色は別の問題という相談",
+      "selection": "採用",
+      "read_level": "質問・回答の本文抜粋確認（全コメント未確認・未再現）"
+    },
+    {
+      "id": "C323",
+      "url": "https://dsp.stackexchange.com/questions/2302/what-sonic-artifacts-are-caused-by-phase-vocoders",
+      "source_type": "DSP Stack Exchange議論",
+      "checked_topic": "位相ボコーダーのアーティファクト・過渡音と表現の仮定",
+      "selection": "採用",
+      "read_level": "質問・回答の本文抜粋確認（全コメント未確認・未再現）"
+    },
+    {
+      "id": "C324",
+      "url": "https://dsp.stackexchange.com/questions/86007/phase-vocoder-has-crackling-artifact",
+      "source_type": "DSP Stack Exchange議論",
+      "checked_topic": "単純な試験信号での成功と一般音でのクリックの不一致",
+      "selection": "採用",
+      "read_level": "質問・回答の本文抜粋確認（全コメント未確認・未再現）"
+    },
+    {
+      "id": "C325",
+      "url": "https://dsp.stackexchange.com/questions/67197/audio-time-scaling-using-a-phase-vocoder",
+      "source_type": "DSP Stack Exchange議論",
+      "checked_topic": "位相の整合性と原理を実装に落とす際の問題",
+      "selection": "採用",
+      "read_level": "質問・回答の本文抜粋確認（全コメント未確認・未再現）"
+    },
+    {
+      "id": "C326",
+      "url": "https://dsp.stackexchange.com/questions/2980/my-vocoder-sounds-bad",
+      "source_type": "DSP Stack Exchange議論",
+      "checked_topic": "複雑化と品質の非同一性・合成時のアーティファクトの切り分け",
+      "selection": "採用",
+      "read_level": "質問・回答の本文抜粋確認（全コメント未確認・未再現）"
+    },
+    {
+      "id": "C327",
+      "url": "https://dsp.stackexchange.com/questions/1232/programming-a-vocoder",
+      "source_type": "DSP Stack Exchange議論",
+      "checked_topic": "ボコーダーという語で想定される目的の違いと制御更新",
+      "selection": "採用",
+      "read_level": "質問・回答の本文抜粋確認（全コメント未確認・未再現）"
+    },
+    {
+      "id": "C328",
+      "url": "https://dsp.stackexchange.com/questions/33541/audio-quality-evaluation",
+      "source_type": "DSP Stack Exchange議論",
+      "checked_topic": "音声の品質評価と雑音に偏った代理指標の限界",
+      "selection": "採用",
+      "read_level": "質問・回答の本文抜粋確認（全コメント未確認・未再現）"
+    },
+    {
+      "id": "C329",
+      "url": "https://dsp.stackexchange.com/questions/44308/how-to-detect-continuous-noise-in-audio-call/44364",
+      "source_type": "DSP Stack Exchange議論",
+      "checked_topic": "雑音・部屋・時間変化など品質劣化の意味を分ける必要性",
+      "selection": "採用",
+      "read_level": "回答の本文抜粋確認（全コメント未確認・未再現）"
+    },
+    {
+      "id": "C330",
+      "url": "https://forum.juce.com/t/realtime-rubberband-pitchshifter-working-example/46874",
+      "source_type": "JUCEフォーラム",
+      "checked_topic": "制御変更・バッファ・実際の遅延・素材別設定が交わる実用上の問題",
+      "selection": "採用",
+      "read_level": "起票本文・複数返信の関連箇所確認（全スレッド未確認・未再現）"
+    },
+    {
+      "id": "C331",
+      "url": "https://forum.juce.com/t/looking-for-a-timestretching-pitchshifting-library-that-has-very-low-latency/45404",
+      "source_type": "JUCEフォーラム",
+      "checked_topic": "低遅延・品質・用途のトレードオフに関する複数の意見",
+      "selection": "採用",
+      "read_level": "起票本文・複数返信の関連箇所確認（全スレッド未確認・未再現）"
+    },
+    {
+      "id": "C332",
+      "url": "https://github.com/mmorise/World",
+      "source_type": "公式README",
+      "checked_topic": "分析・操作・再合成の目的と実装・検証対象バージョンの明確化",
+      "selection": "採用",
+      "read_level": "README本文の関連箇所確認"
+    },
+    {
+      "id": "C333",
+      "url": "https://github.com/unilight/sheet",
+      "source_type": "公式README",
+      "checked_topic": "品質評価器の汎化を複数データで検証する枠組みと評価器バージョンの固定",
+      "selection": "採用",
+      "read_level": "README本文の関連箇所確認"
+    },
+    {
+      "id": "C334",
+      "url": "https://huggingface.co/unilight/sheet-models",
+      "source_type": "開発者モデルカード",
+      "checked_topic": "学習済み品質予測器を主観実験の完全代替としないという開発者の注意",
+      "selection": "採用",
+      "read_level": "モデルカード本文確認"
+    },
+    {
+      "id": "C335",
+      "url": "https://github.com/Signalsmith-Audio/signalsmith-stretch",
+      "source_type": "公式README",
+      "checked_topic": "得意な操作範囲・入出力遅延・制御の時刻・計算負荷分散の区別",
+      "selection": "採用",
+      "read_level": "README本文の関連箇所確認"
+    },
+    {
+      "id": "C336",
+      "url": "https://github.com/google/visqol",
+      "source_type": "公式README",
+      "checked_topic": "評価時のサンプルレート・信号長・参照品質・集約単位の条件",
+      "selection": "採用",
+      "read_level": "README Guidelines節確認"
+    },
+    {
+      "id": "C337",
+      "url": "https://librosa.org/doc/0.11.0/generated/librosa.phase_vocoder.html",
+      "source_type": "公式API文書",
+      "checked_topic": "教育用の簡略実装と高品質な実用実装の違い・過渡音を扱わないという明示",
+      "selection": "採用",
+      "read_level": "本文確認"
+    },
+    {
+      "id": "C338",
+      "url": "https://raw.githubusercontent.com/gabrielmittag/NISQA/master/README.md",
+      "source_type": "公式README",
+      "checked_topic": "伝送品質と合成音声の自然性に異なる評価器を用いるという適用範囲の区別",
+      "selection": "採用",
+      "read_level": "README本文確認"
+    },
+    {
+      "id": "C339",
+      "url": "https://libsndfile.github.io/libsamplerate/faq.html",
+      "source_type": "開発者FAQ",
+      "checked_topic": "高品質設定でも状態の扱いを誤ると劣化すること・往復変換・ピーク・遅延の注意",
+      "selection": "採用",
+      "read_level": "本文確認"
+    }
+  ]
+}

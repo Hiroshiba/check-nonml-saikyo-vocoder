@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "retrieved_at": "2026-10-11",
+  "scope": "Engineering comparison fixtures, not a representative speech-quality corpus.",
+  "files": [
+    {
+      "id": "librispeech_5142-36586",
+      "source_url": "https://raw.githubusercontent.com/langtern/librispeech-test-en/aa69814de02d7d9eca5e61456c8fee8a0e85dd92/data/5142-36586.flac",
+      "source_sha256": "305669f61efc2877294bd171c28f15afb03ab0042b4e48843397b3e03429b646",
+      "source_git_blob_sha1": "0923afd066085f70088c15fc3cad5354f0b84e1d",
+      "source_dataset_url": "https://www.openslr.org/12",
+      "source_license": "CC-BY-4.0",
+      "source_license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "source_creators": "Vassil Panayotov, Guoguo Chen, Daniel Povey, Sanjeev Khudanpur; source recordings: LibriVox volunteers",
+      "mirror": "langtern/librispeech-test-en",
+      "speaker_id": "5142",
+      "chapter_id": "36586",
+      "local_wav": "librispeech_5142-36586.wav",
+      "wav_sha256": "1b5f3637a3031cca864a3993e4a20e3f5cb7bf1fc5c51f1d72136a5a4f6231aa",
+      "modifications": "Decoded losslessly from source FLAC to signed 16-bit PCM WAV using FFmpeg. No resampling, normalization or trimming.",
+      "sample_rate": 16000,
+      "channels": 1,
+      "samples": 269120,
+      "duration_s": 16.82,
+      "sample_width_bytes": 2,
+      "pcm_s16le_sha256": "f126f2ffa45c0cf5b0a539e5154324118e74ed25c2cd5effe0227da09a0a6d71"
+    },
+    {
+      "id": "librispeech_7021-79759",
+      "source_url": "https://raw.githubusercontent.com/langtern/librispeech-test-en/aa69814de02d7d9eca5e61456c8fee8a0e85dd92/data/7021-79759.flac",
+      "source_sha256": "7ad67cfdf5f9bf93f1beb89177b65d2daa2c866655f4304192c6105d8c7df7d3",
+      "source_git_blob_sha1": "8f689d68f6bc66f6b93d484b4932e310d19a9607",
+      "source_dataset_url": "https://www.openslr.org/12",
+      "source_license": "CC-BY-4.0",
+      "source_license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "source_creators": "Vassil Panayotov, Guoguo Chen, Daniel Povey, Sanjeev Khudanpur; source recordings: LibriVox volunteers",
+      "mirror": "langtern/librispeech-test-en",
+      "speaker_id": "7021",
+      "chapter_id": "79759",
+      "local_wav": "librispeech_7021-79759.wav",
+      "wav_sha256": "5535eca6eedc9ea24287d00cfbb9ee37d28f381343b7e3abf7e2310db2446295",
+      "modifications": "Decoded losslessly from source FLAC to signed 16-bit PCM WAV using FFmpeg. No resampling, normalization or trimming.",
+      "sample_rate": 16000,
+      "channels": 1,
+      "samples": 873840,
+      "duration_s": 54.615,
+      "sample_width_bytes": 2,
+      "pcm_s16le_sha256": "53985589c8b3fcdfa291c955b5871b87dd2e0efdd7f2fcbe172c02bcb223fe7b"
+    }
+  ]
+}
