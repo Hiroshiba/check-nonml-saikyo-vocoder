@@ -18,7 +18,7 @@ from .temporal_metrics import measure_temporal
 
 def initialize(args):
     args.output.mkdir(parents=True, exist_ok=True)
-    contract = source_contract(args.manifest, args.candidate_package)
+    contract = source_contract(args.manifest, args.candidate_package, args.criteria)
     # JSON往復でtupleを正規化し、再開時は科学的条件の完全一致を要求する。
     import json
     contract = json.loads(json.dumps(contract))
@@ -158,6 +158,8 @@ def main():
     parser.add_argument('--cache', type=Path, default=corpus.CACHE)
     parser.add_argument('--mos-cache', type=Path, default=ROOT / '.cache/mos')
     parser.add_argument('--candidate-package', type=Path, required=True)
+    parser.add_argument('--criteria', type=Path, required=True,
+                        help='今回の判断条件を記した文書。過去候補の条件を暗黙に流用しない')
     parser.add_argument('--output', type=Path, required=True)
     parser.add_argument('--stage', choices=('all', 'acoustic', 'mos', 'report'), default='all')
     parser.add_argument('--retry-failed', action='store_true', help='元の失敗記録を保存して、失敗行だけ再実行する')

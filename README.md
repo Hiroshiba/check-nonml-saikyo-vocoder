@@ -2,9 +2,10 @@
 
 **ユーザー指示の正本は [USER_INSTRUCTIONS.md](USER_INSTRUCTIONS.md) です。** 以下の文書・コード・解釈はAI作成物です。
 
-自作の調波・雑音方式を最初のベースとして実装し、既存比較対象の **WORLD（Harvest）** と同じ入力で測定します。HarvestはWORLDの基本周波数（F0）抽出方法です。初代は改善の出発点であり、WORLDより高品質との認定ではありません。
+現在のベースは **自作HNM v2** です。雑音の音色と時間包絡を分け、初代に対して固定120録音の音量変動の再現誤差が平均約7.2%減りました。既存比較対象は **WORLD（Harvest）**。HarvestはWORLDの基本周波数（F0）抽出方法です。WORLDより高品質との認定ではありません。
 
-- [固定120音声の最新比較と音声](experiments/2026-10-12/noise-envelope/results/run-001/index.html)
+- [日本語の補助比較・英語音声例とv2採用](experiments/2026-10-12/jvs-supplement/results/run-001/index.html)
+- [固定120音声の比較と当初の判定](experiments/2026-10-12/noise-envelope/results/run-001/index.html)
 - [初代ベースの記録](experiments/2026-10-11/initial-hnm/results/run-001/index.html)
 - [現在のベース](BASELINE.json)、[進め方](docs/WORKFLOW.md)、[測定仕様](docs/EVALUATION.md)、[開発とログ](docs/DEVELOPMENT.md)
 - [5人の往復議論と出典](experiments/2026-10-11/initial-hnm/reviews/discussion.md)
@@ -14,7 +15,7 @@
 
 | 方式 | 役割・構成 |
 |---|---|
-| 自作HNM (`hnm`) | 初代ベース。自己相関F0、調波振幅・相対位相、時間別の雑音パワーを解析し合成 |
+| 自作HNM v2 (`hnm`) | 現在のベース。自己相関F0、調波振幅・相対位相、雑音の音色と時間包絡を解析し合成 |
 | WORLD（Harvest） (`world_harvest`) | 唯一の既存比較対象。Harvest / CheapTrick / D4C / WORLD合成 |
 
 原音は再合成の正解参照として音声を載せ、候補方式には数えません。両方式とも音高・音量・時間長を編集できます。自作方式の表現は保存・読込と、細部を持たない手作り入力からの合成に対応します。声質の知覚的距離や「息っぽさ」などの制御は未検証です。
@@ -46,10 +47,13 @@ uv run --locked python -m vocoderbench.run --output runs/local-comparison
 uv run --locked python -m vocoderbench.corpus fetch
 uv run --locked python -m vocoderbench.benchmark \
   --candidate-package /absolute/path/to/candidate \
+  --criteria /absolute/path/to/criteria.md \
   --output runs/fixed-comparison
 ```
 
 候補はリポジトリ外のPythonパッケージとして用意し、現在のHNMと同じ解析・合成APIを持たせます。不採用の候補実装はGitに残さず、変更内容・ソースのハッシュ・全測定値を保存します。そのため不採用候補の出力を公開リポジトリだけから完全再生成することはできません。条件が一致する場合だけ中断地点から再開でき、既存の結果の条件を変えて上書きしません。
+
+`--criteria` は今回の目的・保持条件・採否の考え方を記した文書です。次の候補へ過去の棄却条件を暗黙に引き継がないよう、実行ごとに明示します。条件を結果の後で見直す場合は、旧判定を残して事後の判断と記録します。
 
 出力は `index.html`、`results.json`、`summary.json`、音声例です。HNMの音響指標は8種類の乱数seed、MOS・eSTOI・F0整合性はseed 0で測ります。予測MOSは人間の新規評定ではなく、今回の音声に対する独自校正も未実施です。正式集合は英語の通常発声であり、日本語やささやき・裏声への品質を保証しません。
 

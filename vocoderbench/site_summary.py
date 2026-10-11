@@ -14,6 +14,8 @@ def esc(value):
 
 def brief(results):
     data = json.loads((results / 'results.json').read_text(encoding='utf-8'))
+    if data.get('study_role') == 'supplement_to_completed_fixed_120':
+        return _brief_supplement(data, results)
     if data.get('schema_version', 1) >= 3:
         return _brief_expanded(data, results)
     if data.get('schema_version', 1) >= 2:
@@ -44,6 +46,30 @@ def brief(results):
             '<div class="scroll"><table><thead><tr><th>方式</th><th>スペクトル誤差中央値 dB</th>'
             '<th>対応する差分の中央値 dB</th><th>有効／全件</th><th>処理・測定失敗</th></tr></thead>'
             f'<tbody>{"".join(body)}</tbody></table></div>')
+
+
+def _brief_supplement(data, results):
+    summary = json.loads((results / 'summary.json').read_text(encoding='utf-8'))['groups']['全体']
+    rows = []
+    missing = False
+    for method, group in summary.items():
+        cells = [data['method_labels'][method]]
+        for key in ('mos', 'envelope'):
+            metric = group['metrics'][key]
+            cells.append(f'{metric["mean"]:.3f}' if metric['mean'] is not None else '未測定')
+            missing |= metric['valid'] != data['planned_cases']
+        rows.append('<tr>'+''.join(f'<td>{esc(v)}</td>' for v in cells)+'</tr>')
+    base = summary['hnm']['metrics']['envelope']['mean']
+    candidate = summary['candidate']['metrics']['envelope']['mean']
+    comparison = ''
+    if base and candidate is not None:
+        change = (candidate / base - 1) * 100
+        comparison = f'<p>音量変動の再現誤差は、候補が当時のベースより平均{abs(change):.1f}%{"減少" if change < 0 else "増加"}。</p>'
+    note = '<p>一部未測定です。比較できる範囲は詳細を確認してください。</p>' if missing else ''
+    return (comparison + '<div class="scroll"><table><tr><th>方式</th>'
+            '<th>自動MOS<br>高いほど良い</th><th>音量変動の再現誤差<br>低いほど良い</th></tr>'
+            + ''.join(rows) + '</table></div>' + note
+            + '<p><small>日本語12録音の補助評価。自動MOSは、この言語・発声での妥当性を未確認です。</small></p>')
 
 
 def _brief_expanded(data, results):
@@ -95,6 +121,11 @@ def _brief_current(data):
 def short_audio(results):
     path = results / 'audio_samples.json'
     if not path.exists():
+        measurements = json.loads((results / 'results.json').read_text(encoding='utf-8'))
+        if measurements.get('study_role') == 'supplement_to_completed_fixed_120':
+            parent = results.parents[2] / 'noise-envelope/results/run-001'
+            return ('<p><small>日本語の音声は公開していません。以下は親の120録音比較で公開済みの英語例です。</small></p>'
+                    + short_audio(parent))
         return '<p><small>この過去の記録には音声例を保存していません。</small></p>'
     data = json.loads(path.read_text(encoding='utf-8'))
     measurements = json.loads((results / 'results.json').read_text(encoding='utf-8'))
