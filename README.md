@@ -4,12 +4,12 @@
 
 まず既存の比較対象と比較方法を実装しました。独自の高品質ボコーダーが完成した段階ではありません。
 
-- [初回比較結果HTML](reports/initial-comparison/index.html) と [全数値JSON](reports/initial-comparison/results.json)
+- [初回比較結果HTML](experiments/2026-10-11/comparison-workbench/results/run-001/index.html) と [全数値JSON](experiments/2026-10-11/comparison-workbench/results/run-001/results.json)
 - [現在のbase情報](BASELINE.json)：初代は未選定。差分表示の比較基準はWORLD DIOで、品質最良の認定ではありません。
 - [進め方](docs/WORKFLOW.md)、[測定仕様](docs/EVALUATION.md)、[次の作業](docs/STATUS.md)
-- [5人の議論](docs/reviews/discussion.md)、[参考資料と確認範囲](docs/research/README.md)
+- [5人の議論](experiments/2026-10-11/comparison-workbench/reviews/discussion.md)、[参考資料と確認範囲](research/reference-survey/README.md)
 
-GitHubのファイル表示ではHTMLがソースとして表示されます。cloneしたファイルをブラウザで開くと、検索可能な比較表を表示できます。
+[GitHub Pagesの実験一覧](https://hiroshiba.github.io/check-nonml-saikyo-vocoder/) から日付・テーマ別に閲覧できます（初回の公開設定とデプロイ完了後）。[記録の構成](experiments/README.md) と [公開・ローカル確認の手順](docs/PUBLISHING.md) を参照してください。
 
 ## 比較対象
 

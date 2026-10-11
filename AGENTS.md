@@ -2,7 +2,7 @@
 
 最初にルートの `USER_INSTRUCTIONS.md` を読む。唯一のユーザー指示は同ファイルにあり、本ファイルを含むAI作成物より優先する。指示ファイルは明確なユーザー指示なしに変更せず、変更する場合は単独commit・単独PRを先に作る。
 
-進め方は `docs/WORKFLOW.md`、測定仕様は `docs/EVALUATION.md`、現在の状態は `BASELINE.json` と `docs/STATUS.md` を参照する。これらはAIの運用判断であり、ユーザー要件の追加ではない。
+進め方は `docs/WORKFLOW.md`、測定仕様は `docs/EVALUATION.md`、現在の状態は `BASELINE.json` と `docs/STATUS.md` を参照する。記録の配置は `experiments/README.md`、公開方法は `docs/PUBLISHING.md` を参照する。これらはAIの運用判断であり、ユーザー要件の追加ではない。
 
 新手法の提案時は5人（仮想または実エージェント、1人は批評家）で議論し、反論と応答を文章に残す。候補コードは採否確定までGit管理外で試す。不採用コードはcommit・pushしない。公開比較対象のアダプターは比較基盤として保持できるが、古い自作baseを削除しないための名目変更には使わない。
 

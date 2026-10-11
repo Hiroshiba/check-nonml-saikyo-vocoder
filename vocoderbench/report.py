@@ -16,6 +16,17 @@ def fmt(value, digits=3):
 
 
 def render(data, path):
+    audit_link = ('<a href="metric_audit_results.json">測定器監査</a>'
+                  if (Path(path).parent / "metric_audit_results.json").exists()
+                  else "この出力先には測定器監査の記録はありません")
+    repo = 'https://github.com/Hiroshiba/check-nonml-saikyo-vocoder/blob/main/'
+    review_url = repo + 'docs/WORKFLOW.md'
+    root = Path(__file__).resolve().parents[1]
+    for parent in Path(path).resolve().parents:
+        if (parent / 'experiment.json').is_file() and (parent / 'reviews/discussion.md').is_file():
+            if parent.is_relative_to(root):
+                review_url = repo + str((parent / 'reviews/discussion.md').relative_to(root))
+            break
     ref = {r['case']:r for r in data['resynthesis'] if r['method']==data['comparison_reference']}
     rows, groups = [], defaultdict(list)
     for r in data['resynthesis']:
@@ -75,9 +86,9 @@ p{{max-width:1000px}}table{{border-collapse:collapse;width:100%;font-size:13px;b
 <h2>比較の役割</h2><ul><li>WORLD DIO + StoneMask と WORLD Harvest：同じCheapTrick・D4C・合成器に対する解析器の比較。</li><li>LLSM layer 0：WORLD DIOの同じF0を渡して別の解析合成表現を比較。独立F0推定器を持つend-to-end比較ではありません。</li><li>Identity：測定器の検査だけに使う原音コピー。ボコーダーの候補や最良手法には数えません。</li></ul>
 <h2>測定条件</h2><p>今回の自然音声はLibriSpeechの{natural_speakers}話者、{len(natural)}区間、合計{fmt(natural_seconds,1)}秒です（読み込めた固定先頭区間）。人工信号は加算合成、パルス列とIIR共鳴器、変調雑音、無音、インパルスで作り、評価対象デコーダーから生成していません。録音の新しい聴取評価は行っていません。</p>
 <p>自動時間整列・動的時間伸縮・ゲイン正規化は行いません。MR-STFTは5/20/80 ms。音高は独立YIN型測定器で既知F0に対して測定します。自然音声のF0の絶対正解はありません。—は未定義・対象外でありゼロ誤差ではありません。</p>
-<p>F0診断だけに固定2 kHz・6次Butterworth forward/backwardと最大80 msのeven反射を適用します。2 kHz以下に十分な周期成分が必要で、自然音声全般の精度は未校正です。STFT・帯域・レベル測定はこの前処理を使いません。<a href="../../docs/F0_CALIBRATION.md">78ケースの校正と追加反例</a>も確認してください。</p>
+<p>F0診断だけに固定2 kHz・6次Butterworth forward/backwardと最大80 msのeven反射を適用します。2 kHz以下に十分な周期成分が必要で、自然音声全般の精度は未校正です。STFT・帯域・レベル測定はこの前処理を使いません。<a href="https://github.com/Hiroshiba/check-nonml-saikyo-vocoder/blob/main/docs/F0_CALIBRATION.md">78ケースの校正と追加反例</a>も確認してください。</p>
 <h2>測定器の校正</h2><p>入力信号をそのまま測定した音高誤差P95のケース最大値: <strong>{fmt(max_cal)} cent</strong>。既知有声の欠測: {cal_missing} frame、既知無声の誤有声: {cal_false} frame。境界を跨ぐフレームは別計数です。詳細と欠測分母は <a href="results.json">results.json</a> に保存しています。</p>
-<p>別途、copy、既知gain、10 ms shift、lowpass、crop、NaN、Inf、DC、無音化による独立監査を行います。その記録は <a href="metric_audit_results.json">測定器監査</a> を参照してください。</p>
+<p>別途、copy、既知gain、10 ms shift、lowpass、crop、NaN、Inf、DC、無音化による独立監査を行います。その記録は {audit_link}。</p>
 <h2>層別の要約</h2><p>同一条件の対応のある比較を基本にします。以下はケース中央値の診断値で、MOSでも品質順位でもありません。失敗件数を分母とともに残します。</p>
 <div class="scroll"><table><thead><tr><th>群</th><th>方式</th><th>全ケース</th><th>有効スコア</th><th>処理・測定失敗</th><th>MR-STFT中央値 dB</th></tr></thead><tbody>{''.join(summaries)}</tbody></table></div>
 <h2>無加工再合成の全ケース</h2><p>「measured / ok」は計算できたという状態です。無音化、音高欠測、レベル誤差などを含め、品質合格を意味しません。STFT・帯域差・cent誤差は小さいほど原音に近い診断値です。</p><input id="filter" aria-label="ケースまたは方式で絞り込み" placeholder="ケースまたは方式で絞り込み">
@@ -86,7 +97,7 @@ p{{max-width:1000px}}table{{border-collapse:collapse;width:100%;font-size:13px;b
 <div class="scroll"><table><thead><tr>{''.join('<th>'+v+'</th>' for v in ['入力','方式','操作','状態','gain追従誤差 dB','真値F0 P95 cent','相対F0 P95 cent','相対有効/全frame','真値有効/有声frame','真値欠測frame','真値誤有声frame','長さ誤差sample','イベント誤差ms'])}</tr></thead><tbody>{''.join(op_rows)}</tbody></table></div>
 <h2>デコーダー単体と失敗記録</h2><details><summary>手作り特徴からの合成結果</summary><pre>{esc(json.dumps(data['decoder_only'],ensure_ascii=False,indent=2))}</pre></details><details><summary>処理・測定の失敗 {len(failure_details)} 件</summary><pre>{esc(json.dumps(failure_details,ensure_ascii=False,indent=2))}</pre></details>
 <h2>今回判断できないこと</h2><p>多話者・多言語・日本語・歌唱・ささやきへの一般化、話者類似度・表現距離の知覚的妥当性、息っぽさ等の知覚制御、動的・複合操作、長時間連続処理、未使用の最終評価データでの優位は未確認です。48 kHzの人工信号が動いても、48 kHz自然音声の品質確認にはなりません。外部MOS予測器、ViSQOL、eSTOIは今回計測していません。</p>
-<h2>再現情報</h2><p><a href="results.json">全数値JSON</a> ／ <a href="../../docs/EVALUATION.md">測定仕様</a> ／ <a href="../../docs/WORKFLOW.md">進め方</a> ／ <a href="../../docs/reviews/discussion.md">5人の議論</a></p><pre>{esc(json.dumps({'environment':data['environment'],'parent_commit':data['parent_commit'],'data_status':data['data_status']},ensure_ascii=False,indent=2))}</pre>
+<h2>再現情報</h2><p><a href="results.json">全数値JSON</a> ／ <a href="https://github.com/Hiroshiba/check-nonml-saikyo-vocoder/blob/main/docs/EVALUATION.md">測定仕様</a> ／ <a href="https://github.com/Hiroshiba/check-nonml-saikyo-vocoder/blob/main/docs/WORKFLOW.md">進め方</a> ／ <a href="{esc(review_url)}">5人の議論</a></p><pre>{esc(json.dumps({'environment':data['environment'],'parent_commit':data['parent_commit'],'data_status':data['data_status']},ensure_ascii=False,indent=2))}</pre>
 <p><small>ユーザー指示の正本はリポジトリのUSER_INSTRUCTIONS.mdです。この結果と解釈はAI作成物です。</small></p></main>
 <script>document.getElementById('filter').addEventListener('input',e=>{{const q=e.target.value.toLowerCase();document.querySelectorAll('#cases tbody tr').forEach(r=>r.hidden=!r.textContent.toLowerCase().includes(q));}});</script></html>'''
     Path(path).write_text(content,encoding='utf-8')
