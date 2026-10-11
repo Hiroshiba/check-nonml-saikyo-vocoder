@@ -3,10 +3,24 @@ from pathlib import Path
 import hashlib
 import json
 
+from .logging_utils import LoggedArgumentParser, configure_logging, run_cli
+import logging
+
+if __name__ == '__main__':
+    configure_logging('calibrate_pitch')
+
 import numpy as np
 
 from .fixtures import make_synthetic_cases, make_pitch_stress_cases
 from .metrics import estimate_f0_yin, pitch_metrics
+
+
+def known_max(values):
+    values = list(values)
+    if not values:
+        logging.warning('有効な音高測定値がないため最大値は未測定とします')
+        return None
+    return max(values)
 
 
 def run(output):
@@ -37,26 +51,30 @@ def run(output):
                                  "total_frames": sum(r["total_frames"] for r in selected),
                                  "missing_frames": sum(r["missing_frames"] for r in selected),
                                  "gross_error_frames": sum(r["gross_error_frames"] for r in selected),
-                                 "max_case_abs_error_cents_p95": max(r["abs_error_cents_p95"] for r in selected if r["abs_error_cents_p95"] is not None),
-                                 "max_single_frame_abs_error_cents": max(r["abs_error_cents_max"] for r in selected if r["abs_error_cents_max"] is not None)})
+                                 "max_case_abs_error_cents_p95": known_max(r["abs_error_cents_p95"] for r in selected if r["abs_error_cents_p95"] is not None),
+                                 "max_single_frame_abs_error_cents": known_max(r["abs_error_cents_max"] for r in selected if r["abs_error_cents_max"] is not None)})
     root = Path(__file__).resolve().parent
     report = {"schema_version": 2, "estimator_revision": "v2-fixed-lowpass-2000hz",
               "scope": "Independent known synthetic stimuli, not natural speech, MOS or perceptual pitch.",
               "input_seed": 20261011, "known_case_count": len(rows),
               "original_signal_case_count": 30, "broadband_pulse_case_count": 48,
-              "max_case_f0_abs_error_cents_p95": max(r["abs_error_cents_p95"] for r in rows if r["abs_error_cents_p95"] is not None),
+              "max_case_f0_abs_error_cents_p95": known_max(r["abs_error_cents_p95"] for r in rows if r["abs_error_cents_p95"] is not None),
               "total_missing_voiced_frames": sum(r["missing_voiced_frames"] for r in rows),
               "total_false_voiced_frames": sum(r["false_voiced_frames"] for r in rows),
               "total_gross_pitch_error_frames": sum(r["gross_pitch_error_frames"] for r in rows),
               "source_sha256": {name: hashlib.sha256((root/name).read_bytes()).hexdigest()
                                 for name in ("metrics.py", "fixtures.py", "calibrate_pitch.py")},
               "ablation_summary": ablation_summary, "ablation_rows": ablations, "rows": rows}
+    Path(output).parent.mkdir(parents=True, exist_ok=True)
     Path(output).write_text(json.dumps(report, indent=2, allow_nan=False)+"\n")
     print(json.dumps({key: value for key, value in report.items() if key not in ("rows", "ablation_rows")}, indent=2))
 
 
-if __name__ == "__main__":
-    import argparse
-    parser=argparse.ArgumentParser(description=__doc__)
+def main():
+    parser=LoggedArgumentParser(description=__doc__)
     parser.add_argument("--output",type=Path,default=Path("calibration.json"))
     run(parser.parse_args().output)
+
+
+if __name__ == '__main__':
+    raise SystemExit(run_cli(main, 'calibrate_pitch'))

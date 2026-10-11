@@ -1,12 +1,15 @@
 """Build the pinned, unmodified WORLD sources without pip or CMake."""
 from __future__ import annotations
 
-import argparse
+from .logging_utils import LoggedArgumentParser, configure_logging, run_cli, run_process
+
+if __name__ == '__main__':
+    configure_logging('build_world')
+
 import hashlib
 import json
 import os
 from pathlib import Path
-import subprocess
 import tempfile
 
 ROOT = Path(__file__).resolve().parent
@@ -14,7 +17,7 @@ LOCK_PATH = ROOT / "world.lock.json"
 
 
 def _run(argv: list[str], cwd: Path | None = None) -> str:
-    return subprocess.check_output(argv, cwd=cwd, text=True, stderr=subprocess.STDOUT).strip()
+    return run_process(argv, cwd=cwd).stdout.strip()
 
 
 def cache_dir() -> Path:
@@ -75,8 +78,12 @@ def build(*, force: bool = False) -> Path:
     return library
 
 
-if __name__ == "__main__":
-    parser = argparse.ArgumentParser(description=__doc__)
+def main():
+    parser = LoggedArgumentParser(description=__doc__)
     parser.add_argument("--force", action="store_true")
     args = parser.parse_args()
     print(build(force=args.force))
+
+
+if __name__ == '__main__':
+    raise SystemExit(run_cli(main, 'build_world'))

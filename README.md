@@ -7,10 +7,10 @@
 - [現在のベースとの比較・音声例](experiments/2026-10-11/world-harvest-base/results/run-001/index.html)
 - [比較基盤の初回記録HTML](experiments/2026-10-11/comparison-workbench/results/run-001/index.html) と [全数値JSON](experiments/2026-10-11/comparison-workbench/results/run-001/results.json)
 - [現在のベース手法の情報](BASELINE.json)：現在はユーザー指定のWORLD Harvestです。WORLDの解析・合成と組み合わせ、今後の改善を比較する正式な基準にします。実験から品質最良と認定したという意味ではありません。
-- [進め方](docs/WORKFLOW.md)、[測定仕様](docs/EVALUATION.md)、[次の作業](docs/STATUS.md)
+- [進め方](docs/WORKFLOW.md)、[測定仕様](docs/EVALUATION.md)、[次の作業](docs/STATUS.md)、[開発とログ](docs/DEVELOPMENT.md)
 - [5人の議論](experiments/2026-10-11/comparison-workbench/reviews/discussion.md)、[参考資料と確認範囲](research/reference-survey/README.md)
 
-[GitHub Pagesの実験一覧](https://hiroshiba.github.io/check-nonml-saikyo-vocoder/) から日付・テーマ別に閲覧できます（初回の公開設定とデプロイ完了後）。[記録の構成](experiments/README.md) と [公開・ローカル確認の手順](docs/PUBLISHING.md) を参照してください。
+[GitHub Pagesの実験一覧](https://hiroshiba.github.io/check-nonml-saikyo-vocoder/) からグループごとに閲覧できます。[記録の構成](experiments/README.md) と [公開・ローカル確認の手順](docs/PUBLISHING.md) を参照してください。
 
 ## 比較対象
 
@@ -25,17 +25,14 @@
 
 ## 再実行
 
-検証環境はLinux x86_64、Python 3.12、GCC/G++ 13です。必要なものはPython、git、C/C++コンパイラと、自然音声のFLACファイルを波形へ復号するFFmpegです。初回は依存ソースと音声を取得するネットワーク接続が必要です。以下はリポジトリのルートで実行します。学習済みモデルは使いません。
+検証環境はLinux x86_64、Python 3.12、GCC/G++ 13です。必要なものはuv、git、C/C++コンパイラと、自然音声のFLACファイルを波形へ復号するFFmpegです。初回は依存ソースと音声を取得するネットワーク接続が必要です。以下はリポジトリのルートで実行します。学習済みモデルは使いません。
 
 ```sh
-python3 -m venv .venv
-. .venv/bin/activate
-python -m pip install -r requirements.txt
-python -m vocoderbench.build_world
-python -m vocoderbench.build_llsm
-python scripts/fetch_data.py
-python -m unittest discover -s tests -v
-python -m vocoderbench.run --output runs/local-comparison
+uv sync --locked
+uv run --locked python -m vocoderbench.build_world
+uv run --locked python -m vocoderbench.build_llsm
+uv run --locked python scripts/fetch_data.py
+uv run --locked python -m vocoderbench.run --output runs/local-comparison
 ```
 
 `runs/local-comparison/index.html` を開いてください。依存ソースは特定のcommitに固定し、WORLDはファイルの内容を照合するハッシュ値も検査します。音声は固定URLに加え、FLACファイルと復号後のPCM波形のハッシュ値で確認します。キャッシュ、C/C++からビルドした共有ライブラリ、取得音声はGit管理外です。

@@ -55,12 +55,16 @@ def estimate_f0_yin(x, sr, frame_ms=80.0, hop_ms=10.0, fmin=65.0, fmax=700.0,
     for start in starts:
         frame = x[start:start+n]
         if _rms(frame) < rms_threshold:
-            values.append(0.0); confidence.append(1.0); continue
+            values.append(0.0)
+            confidence.append(1.0)
+            continue
         frame = frame-frame.mean()
         # A DC offset has energy but no periodic AC component. Without this
         # check an all-zero difference curve can be mistaken for high F0.
         if _rms(frame) < rms_threshold:
-            values.append(0.0); confidence.append(1.0); continue
+            values.append(0.0)
+            confidence.append(1.0)
+            continue
         power = np.r_[0.0, np.cumsum(frame*frame)]
         spectrum = fft.rfft(frame, fft.next_fast_len(2*n-1))
         ac = fft.irfft(spectrum*np.conj(spectrum), fft.next_fast_len(2*n-1))[:hi+1]
@@ -74,7 +78,8 @@ def estimate_f0_yin(x, sr, frame_ms=80.0, hop_ms=10.0, fmin=65.0, fmax=700.0,
         while tau <= hi and cmnd[tau] >= threshold:
             tau += 1
         if tau > hi:
-            values.append(0.0); continue
+            values.append(0.0)
+            continue
         while tau < hi and cmnd[tau+1] < cmnd[tau]:
             tau += 1
         refined = float(tau)

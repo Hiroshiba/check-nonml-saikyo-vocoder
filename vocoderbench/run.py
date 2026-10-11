@@ -1,8 +1,12 @@
 """Execute comparison fixtures and preserve all outcomes, including failures."""
 from __future__ import annotations
 
-import argparse
-import dataclasses
+from .logging_utils import LoggedArgumentParser, configure_logging, run_cli, run_process
+import logging
+
+if __name__ == '__main__':
+    configure_logging('run')
+
 import hashlib
 import json
 import platform
@@ -86,6 +90,7 @@ def run(args):
             cases += list(natural_cases(args.data_root))
             data_status.append({'status':'loaded','speakers':2,'excerpts':2,'seconds_per_excerpt':6})
         except Exception as e:
+            logging.exception('自然音声の取得・読み込みに失敗')
             data_status.append({'status':'blocked','error':str(e)})
     methods = ['identity', 'world_dio', 'world_harvest']
     if not args.no_llsm:
@@ -95,8 +100,9 @@ def run(args):
     if comparison_reference not in methods:
         raise ValueError(f'Current comparison/base method is unavailable: {comparison_reference}')
     try:
-        head = subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT,text=True).strip()
+        head = run_process(['git','rev-parse','HEAD'],cwd=ROOT).stdout.strip()
     except (OSError,subprocess.CalledProcessError):
+        logging.exception('実行版の取得に失敗')
         head = None
     report = dict(schema_version=1, formal_base=base,
                   environment={'python':platform.python_version(),'numpy':np.__version__,
@@ -168,10 +174,14 @@ def run(args):
                             if case['kind']=='transient_diagnostic':
                                 op['event']=event_diagnostic(ey,sr,.3*kwargs.get('time_scale',1))
                         except Exception as e:
+                            logging.exception('操作に失敗: %s / %s / %s', case['id'], method, name)
                             op.update(status='failed',error=f'{type(e).__name__}: {e}')
                         report['operations'].append(op)
             except Exception as e:
+                logging.exception('解析・再合成に失敗: %s / %s', case['id'], method)
                 row.update(status='failed',error=f'{type(e).__name__}: {e}')
+            if row.get('measurement', {}).get('status', 'ok') != 'ok':
+                logging.error('測定が完了しませんでした: %s / %s / %s', case['id'], method, row['measurement']['status'], stack_info=True)
             report['resynthesis'].append(row)
             print(f"{case['id']} {method}: {row['status']}",flush=True)
     for f0 in (0.,140.):
@@ -182,6 +192,7 @@ def run(args):
             row.update(status='measured',output_samples=len(y),finite=bool(np.isfinite(y).all()),
                        pitch=pitch_metrics(y,16000,np.full(len(y),f0)))
         except Exception as e:
+            logging.exception('デコーダー単体の合成に失敗: %s Hz', f0)
             row.update(status='failed',error=str(e))
         report['decoder_only'].append(row)
     report['unsupported_operations']=[{'method':'llsm_world_dio','operations':['pitch','gain','time'],
@@ -206,7 +217,7 @@ def run(args):
 
 
 def main():
-    parser=argparse.ArgumentParser(description=__doc__)
+    parser=LoggedArgumentParser(description=__doc__)
     parser.add_argument('--output',type=Path,default=ROOT/'runs'/'latest')
     parser.add_argument('--data-root',type=Path,default=ROOT/'data'/'cache')
     parser.add_argument('--sample-rates',nargs='+',type=int,default=[16000,24000,48000])
@@ -219,4 +230,4 @@ def main():
 
 
 if __name__=='__main__':
-    main()
+    raise SystemExit(run_cli(main, 'run'))

@@ -1,4 +1,4 @@
-name: Publish experiment archive
+name: 実験記録の公開
 on:
   push:
     branches: [main]
@@ -14,11 +14,18 @@ jobs:
     timeout-minutes: 5
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
+      - uses: astral-sh/setup-uv@v9.0.0
         with:
-          python-version: '3.12'
+          version: '0.12.23'
+          enable-cache: true
+      - run: uv sync --locked
       - name: 記録と公開リンクを検査する
-        run: python scripts/build_site.py
+        run: uv run --locked python scripts/build_site.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: site-build-logs
+          path: runs/logs
       - uses: actions/upload-pages-artifact@v4
         with:
           path: _site

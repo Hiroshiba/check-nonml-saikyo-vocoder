@@ -34,10 +34,9 @@ F0診断にだけ、固定2 kHz・6次Butterworthの低域通過フィルタを�
 
 ## 再現と適用範囲
 
-以下のコマンドはリポジトリのルートで実行する。
+以下のコマンドはリポジトリのルートで実行する。過去の単体テストはユーザー指示に従って削除済みで、ここでは数値を保存する校正実行だけを案内する。
 
-- `python -m unittest discover -s tests -p test_metrics.py -v`：8テストを実行する。
-- `python -m vocoderbench.calibrate_pitch`：カレントディレクトリの`calibration.json`を再生成する。ケース別結果、フィルタなしと3種類の遮断周波数（cutoff）の比較、生成器・測定器・校正スクリプトの内容を照合するSHA-256を保存する。出力先は`--output`で指定できる。
+- `uv run --locked python -m vocoderbench.calibrate_pitch --output runs/calibration/calibration.json`：校正結果を再生成する。ケース別結果、フィルタなしと3種類の遮断周波数（cutoff）の比較、生成器・測定器・校正スクリプトの内容を照合するSHA-256を保存する。出力先は`--output`で指定できる。
 - 初回の保存結果は [calibration.json](../experiments/2026-10-11/comparison-workbench/results/run-001/calibration.json) を参照する。
 - API は変更なし。`pitch_metrics` の結果に前処理仕様と適用範囲が加わった。
 - 2 kHz 以下に周期の判断に足る成分を持つ、今回の既知刺激に対する機械的校正である。高い倍音だけに周期情報がある音、異常発声、多重周期、自然音声一般への精度保証ではない。

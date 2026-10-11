@@ -105,7 +105,7 @@ def render(data, path):
     decoder_rows = []
     for item in data['decoder_only']:
         pitch = item.get('pitch') or {}
-        values = [f"無声指定（F0=0 Hz）" if item['f0_hz'] == 0 else f"音高 {item['f0_hz']:g} Hz 指定",
+        values = ["無声指定（F0=0 Hz）" if item['f0_hz'] == 0 else f"音高 {item['f0_hz']:g} Hz 指定",
                   label(item['status'], STATUSES), item.get('output_samples', '—'),
                   {True: 'はい', False: 'いいえ'}.get(item.get('finite'), '未確認'),
                   fmt(pitch.get('abs_error_cents_p95')),
