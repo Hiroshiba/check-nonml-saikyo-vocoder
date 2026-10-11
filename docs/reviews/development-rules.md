@@ -21,3 +21,5 @@
 次の研究実験からはユーザーの最新指定に従い、既存比較をWORLD（Harvest）だけにし、独自方式を初代ベースにする。この構成変更は別PRで扱う。
 
 参考: [GitHub Actionsのシェル仕様](https://docs.github.com/ja/actions/reference/workflows-and-actions/workflow-syntax)。省略時と明示bashのpipefailの違いを批評担当が公式仕様で確認した。
+
+CI初回はsetup-uvのメジャータグv9が存在せず、処理開始前に失敗した。公式文書と実リポジトリのタグ一覧を照合し、存在するv9.0.0へ固定した。依存actionのバージョンは文書の例だけでなく実在する参照も確認する。
