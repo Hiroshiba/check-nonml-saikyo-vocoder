@@ -1,6 +1,6 @@
 """Reproduce the critic's independent metric audits without native vocoders.
 
-Usage: python scripts/audit_metrics.py --output reports/initial-comparison
+Usage: python scripts/audit_metrics.py --output experiments/2026-10-11/comparison-workbench/results/run-001
 Synthetic inputs are generated here, independently of the comparison fixtures.
 Passing these mechanical checks does not certify perceptual quality.
 """
