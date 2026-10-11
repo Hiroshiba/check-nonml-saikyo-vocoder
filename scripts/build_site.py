@@ -1,8 +1,8 @@
 """保存済みの記録からGitHub Pages用一覧を生成し、内部リンクを検査する。"""
 from __future__ import annotations
 
-from collections import defaultdict
-from datetime import date
+from datetime import date, datetime, timezone
+from zoneinfo import ZoneInfo
 import html
 from html.parser import HTMLParser
 import json
@@ -26,7 +26,7 @@ body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.8 system-ui,sans
 main{max-width:1080px;margin:auto;padding:40px 24px 80px}h1{font-size:clamp(26px,5vw,38px);line-height:1.4}
 h2{margin-top:36px}a{color:var(--link);overflow-wrap:anywhere}small{color:var(--muted)}
 article,.notice{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:20px 24px;margin:18px 0}
-article h3{margin:0 0 8px}.notice{border-left:5px solid var(--accent)}code{overflow-wrap:anywhere}
+article h2,article h3{margin:0 0 8px;font-size:20px}.notice{border-left:5px solid var(--accent)}code{overflow-wrap:anywhere}
 .scroll{overflow:auto}table{border-collapse:collapse;width:100%;font-size:14px}th,td{border-bottom:1px solid var(--line);padding:8px;text-align:right}th:first-child,td:first-child{text-align:left}.audio-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px}audio{width:100%;max-width:100%}@media(prefers-color-scheme:dark){:root{--ink:#e6edf4;--accent:#68c8c6;--line:#3b4b60;--bg:#0f1724;--surface:#182438;--muted:#b3c1d0;--link:#7fdae8}}li{margin:8px 0}nav{font-size:14px}footer{margin-top:40px;font-size:14px}
 '''
 
@@ -95,6 +95,20 @@ def check_links(site):
     return count
 
 
+def recorded_time(run):
+    """永続化した記録日時を使い、checkout時刻やファイル名で順序を変えない。"""
+    value = datetime.fromisoformat(run['recorded_at'])
+    if value.tzinfo is None:
+        raise ValueError('記録日時にはUTCオフセットが必要です')
+    return value.astimezone(timezone.utc)
+
+
+def time_label(run):
+    local = recorded_time(run).astimezone(ZoneInfo('Asia/Tokyo'))
+    return (f'<time datetime="{esc(run["recorded_at"])}">'
+            f'{local:%Y年%m月%d日 %H:%M}（日本時間）</time>')
+
+
 def build(output):
     # 書き出し先は固定し、誤指定による記録の削除を防ぐ。
     output = output.resolve()
@@ -106,7 +120,7 @@ def build(output):
         shutil.rmtree(output)
     output.mkdir()
     (output / '.nojekyll').write_text('')
-    groups = []
+    groups, reports = [], []
     for manifest in sorted((ROOT / 'experiments').glob('*/*/experiment.json'), reverse=True):
         group = manifest.parent
         meta = read_json(manifest)
@@ -129,7 +143,7 @@ def build(output):
             title = note.read_text(encoding='utf-8').splitlines()[0].lstrip('# ')
             notes.append('<li>' + repo_link(note.relative_to(ROOT), title) + '</li>')
         runs, seen = [], set()
-        for run in meta['runs']:
+        for run in sorted(meta['runs'], key=recorded_time, reverse=True):
             if not re.fullmatch(r'run-[0-9]{3,}', run['id']) or run['id'] in seen:
                 raise ValueError(f'実行IDが不正または重複しています: {run["id"]}')
             seen.add(run['id'])
@@ -151,8 +165,9 @@ def build(output):
                 if file.suffix not in ('.html', '.json') or not file.is_file():
                     raise ValueError(f'未定義の公開ファイルです: {file}')
                 shutil.copy2(file, dest / file.name)
+            reports.append((recorded_time(run), rel, meta, run))
             label = '未選定' if formal is None else formal
-            runs.append(f'<article><h3>{esc(run["title"])}</h3><p>{esc(run["date"])} · '
+            runs.append(f'<article><h3>{esc(run["title"])}</h3><p>記録：{time_label(run)} · '
                         f'{esc(run["id"])}</p><p>当時の正式ベース：{esc(label)}。'
                         f'差分の比較相手：{esc(reference)}。</p><p>'
                         f'<a href="{esc(run["path"])}/index.html">比較結果を見る</a> ／ '
@@ -179,20 +194,27 @@ def build(output):
     baseline = read_json(ROOT / 'BASELINE.json')
     shutil.copy2(ROOT / 'BASELINE.json', output / 'BASELINE.json')
     current = baseline['method'] or '未選定'
-    by_date = defaultdict(list)
+    cards = []
+    for _, rel, meta, run in sorted(reports, key=lambda item: (item[0], str(item[1]), item[3]['id']), reverse=True):
+        results = ROOT / rel / run['path']
+        link = rel / run['path'] / 'index.html'
+        cards.append(f'<article><h2><a href="{esc(link)}">{esc(run["title"])}</a></h2>'
+                     f'<small>記録：{time_label(run)} · '
+                     f'<a href="{esc(rel)}/index.html">調査・議論</a></small>'
+                     f'<p>{esc(meta["summary"])}</p>' + brief(results) + short_audio(results)
+                     + '</article>')
     for rel, meta in groups:
-        by_date[meta['date']].append(f'<article><h3><a href="{rel}/index.html">{esc(meta["title"])}</a>'
-                                   f'</h3><p>{esc(meta["summary"])}</p><small>テーマ：{esc(meta["topic"])}'
-                                   f' · 実行記録 {len(meta["runs"])}件 · {esc(meta["status"])}</small>'
-                                   + (brief(ROOT / rel / meta['runs'][-1]['path']) + short_audio(ROOT / rel / meta['runs'][-1]['path']) if meta['runs'] else '') + '</article>')
-    body = ('<h1>非MLボコーダーの調査・実験記録</h1><p>日付とテーマから、調査・議論・比較結果を辿れます。'
-            '日付は日本時間です。各実験のベース情報は測定時点のものを保持します。</p>'
+        if not meta['runs']:
+            cards.append(f'<article><h2><a href="{esc(rel)}/index.html">{esc(meta["title"])}</a></h2>'
+                         f'<p>{esc(meta["summary"])}（調査中・比較結果なし）</p></article>')
+    body = ('<h1>非MLボコーダーの調査・実験記録</h1><p>新しい記録から表示しています。'
+            '日時は日本時間です。</p>'
             f'<div class="notice"><strong>現在の正式ベース：{esc(current)}</strong><br>'
             f'{esc(baseline["reason"])}<br><a href="BASELINE.json">現在のベース情報（JSON）</a></div>'
             f'<p>{repo_link("README.md", "プロジェクトの説明")} ／ '
             f'{repo_link("experiments/README.md", "ファイル構成と追加手順")} ／ '
             f'{repo_link("docs/STATUS.md", "現在の状態と次の作業")}</p>'
-            + ''.join(f'<section><h2>{day}</h2>{"".join(cards)}</section>' for day, cards in by_date.items())
+            + ''.join(cards)
             + '<h2>共通の参考資料</h2><p><a href="research/reference-survey/research_index_ja.html">'
             '過去の調査資料一覧</a> ／ ' + repo_link('research/reference-survey/README.md', '資料の確認範囲')
             + '</p><p>過去のAI調査資料を含みます。記載された全資料を今回再確認したという意味ではありません。</p>')
