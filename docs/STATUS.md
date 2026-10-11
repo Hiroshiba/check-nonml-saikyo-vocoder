@@ -11,7 +11,7 @@
 - 独立校正78ケースと、20チェックの破損刺激監査を用意。DC誤有声化、広帯域非整数周期でのF0欠測という測定器の2つの問題を見つけ、修正して再検査した。
 - 28件の単体・native統合テストがローカルで合格。PR/pushで同じ検査と小規模比較を動かすCIを用意した。クラウドCIの実行結果はGitHubで別途確認する。
 
-結果は `reports/initial-comparison/index.html`。処理エラーがないことは、品質合格とは異なる。
+結果は `experiments/2026-10-11/comparison-workbench/results/run-001/index.html`。処理エラーがないことは、品質合格とは異なる。
 
 ## 実験で分かったこと
 

@@ -1,13 +1,13 @@
 # 独立した測定器監査の結果
 
 2026-10-11、critic 担当。比較担当とは別に作った刺激で `vocoderbench/metrics.py` を監査した。
-初回の隔離実験を移植した [audit_metrics.py](../../scripts/audit_metrics.py) が入力を内部生成するため、外部音声・NPZ・native ボコーダーは不要。リポジトリのルートで次を実行する。
+初回の隔離実験を移植した [audit_metrics.py](../../../../scripts/audit_metrics.py) が入力を内部生成するため、外部音声・NPZ・native ボコーダーは不要。リポジトリのルートで次を実行する。
 
 ```sh
 python scripts/audit_metrics.py --output runs/metric-audit
 ```
 
-各検査の成功・失敗を表示し、2 本の JSON を保存した後、失敗があれば終了コード 1 を返す。今回、20 検査が成功した。これは既知刺激に対する測定器の工学検査であり、方式の品質認定ではない。最終実行の [基本監査 JSON](../../reports/initial-comparison/metric_audit_results.json) と [広帯域監査 JSON](../../reports/initial-comparison/wideband_pitch_results.json) に測定器・監査スクリプトの SHA-256 と判定を記録した。
+各検査の成功・失敗を表示し、2 本の JSON を保存した後、失敗があれば終了コード 1 を返す。今回、20 検査が成功した。これは既知刺激に対する測定器の工学検査であり、方式の品質認定ではない。最終実行の [基本監査 JSON](../results/run-001/metric_audit_results.json) と [広帯域監査 JSON](../results/run-001/wideband_pitch_results.json) に測定器・監査スクリプトの SHA-256 と判定を記録した。
 
 監査コード自体の失敗検出も確認した。別 Python プロセス内で F0 の前処理だけを意図的に無効化すると、20 検査のうち 4 件を失敗として記録し、失敗数を返した。リポジトリの測定器ソースは変更していない。この意図的な不合格結果は上記の正常な最終結果には混ぜていない。
 
