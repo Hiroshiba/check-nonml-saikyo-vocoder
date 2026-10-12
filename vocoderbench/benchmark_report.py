@@ -83,11 +83,13 @@ def render(data, target):
     labels = data['method_labels']
     summary = build_summary(data)
     (target.parent / 'summary.json').write_text(json.dumps(summary, ensure_ascii=False, indent=2) + '\n')
-    body = f'<h1>固定{data["planned_cases"]}音声：候補・当時のベース・WORLDの比較</h1>'
+    body = f'<h1>固定{data["planned_cases"]}音声：候補・当時のベース・既存方式の比較</h1>'
     body += overview(data, summary)
+    if data.get("existing_reference_note"):
+        body += "<p>追加の既存方式はseed 0で計測。" + esc(data["existing_reference_note"]) + "</p>"
     body += decision_section(target.parent / 'decision.json')
     body += ('<p>包絡・スペクトルは自作2方式の8 seed平均、WORLDは固定出力。'
-             '帯域・レベル・変調も8 seed平均、MOS・eSTOI・F0・振幅上限率は事前固定のseed 0です。'
+             '帯域・レベル・変調も自作2方式は8 seed平均、MOS・eSTOI・F0・振幅上限率は事前固定のseed 0です。'
              '反復に失敗がある場合は有効反復だけの値なので、処理成功数と確認記録を併読してください。'
              'MOSは予測値で、新規の人間評定ではありません。</p>')
     audio_path = target.parent / 'audio_samples.json'
@@ -108,7 +110,7 @@ def render(data, target):
     for scope, values in summary.items():
         label = scope.replace('ja/', '日本語・').replace('en/', '英語・').replace('normal', '通常').replace('whisper', 'ささやき').replace('falsetto', '裏声').replace('/F', '・女性').replace('/M', '・男性')
         body += f'<details><summary>{esc(label)}：全指標・ベースとの差・欠測</summary>{detail_table(values, labels)}</details>'
-    body += ('<p>差は候補またはWORLDから当時のベースを引いた値。矢印は望ましい方向です。'
+    body += ('<p>差は各比較方式から当時のベースを引いた値。矢印は望ましい方向です。'
              '信頼区間は配布女性・男性の比率を保った話者単位の再標本化2,000回で算出し、seedや音声フレームを独立標本と数えていません。'
              '指標間の多数決や総合点は作りません。</p><p><a href="results.json">発話別の全測定値</a> ／ '
              '<a href="summary.json">集計値</a> ／ <a href="../../index.html">調査・議論・採否</a></p>')
