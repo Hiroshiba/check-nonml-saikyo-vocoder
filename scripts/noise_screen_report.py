@@ -13,8 +13,9 @@ import numpy as np  # noqa: E402
 from vocoderbench import audio_samples  # noqa: E402
 from vocoderbench.benchmark_io import read, sha, write  # noqa: E402
 from vocoderbench.logging_utils import LoggedArgumentParser, run_cli  # noqa: E402
+from noise_report_provenance import inspect_mos_origin, copy_execution_records, copy_world_records  # noqa: E402
 
-LABELS = {'hnm': '現在のHNM v2', 'A': 'A：元パワーで重ね合わせ', 'B': 'B：長い合成窓',
+LABELS = {'hnm': '実験時のHNM v2', 'A': 'A：元パワーで重ね合わせ', 'B': 'B：長い合成窓',
           'C': 'C：短い合成窓', 'D': 'D：FFT端点の重み', 'E': 'E：振幅乱数を固定',
           'world_harvest': 'WORLD（Harvest）', 'identity': '原音'}
 METRICS = [('mos', '予測MOS ↑', True), ('estoi', 'eSTOI ↑', True),
@@ -165,7 +166,8 @@ def render(summary, status, historical, samples, missing_audio):
         peak_rows.append([label, f"{p['at_or_above_one_outputs']}/{p['valid_outputs']}",
                           f"{p['at_or_above_one_cases']}/120", number(p['maximum']),
                           p['at_or_above_one_samples'] if p['at_or_above_one_samples'] is not None else '未測定',
-                          number(p['at_or_above_one_fraction']), number(p['at_or_above_one_seconds']),
+                          ('未測定' if p['at_or_above_one_fraction'] is None
+                           else f"{p['at_or_above_one_fraction']:.3e}"), number(p['at_or_above_one_seconds']),
                           f"{p['valid_outputs']}/{p['planned_outputs']}"])
         if method not in ('hnm', 'world_harvest'):
             for k, title, _ in METRICS:
@@ -178,26 +180,57 @@ def render(summary, status, historical, samples, missing_audio):
     page = '''<!doctype html><html lang="ja"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>雑音の時間形状と乱数を変える5案：固定120音声比較</title><style>
 :root{color-scheme:light dark;font:16px/1.7 system-ui,sans-serif}body{max-width:1250px;margin:auto;padding:24px}h1{line-height:1.35;font-size:1.8rem}h2{font-size:1.25rem;margin-top:2rem}.scroll{overflow:auto}table{border-collapse:collapse;width:100%;font-size:.9rem}th,td{padding:8px;border-bottom:1px solid #8886;text-align:left;white-space:nowrap}th{background:#8882}a{color:light-dark(#1554ad,#91baff)}audio{width:250px}article{display:inline-block;margin:8px;vertical-align:top}.warning{border-left:4px solid #d98616;padding:12px;background:#8881}</style>
-<h1>雑音の時間形状と乱数を変える5案</h1><p>固定120録音・40話者。現在のHNM v2と5候補、既存比較対象WORLD（Harvest）。</p>'''
-    page += f'<p class="warning">測定状態：{html.escape(status)}。候補を自動採用する結果ではない。</p>'
+<h1>雑音の時間形状と乱数を変える5案</h1><p>固定120録音・40話者。実験時のHNM v2と5候補、既存比較対象WORLD（Harvest）。</p>'''
+    page += f'<p>測定状態：{html.escape(status)}。</p>'
     original = summary['original_mos']
     absolute.insert(0, ['原音', number(original['mean']) + (f" ({original['valid']}/120)" if original['valid'] != 120 else '')] + ['—'] * 5)
     page += '<p>各値は固定120録音の発話平均（欠測時だけ有効件数を併記）。音響指標は発話内8 seedを先に平均、MOS・eSTOIはseed 0。音量誤差は各seedの絶対値を平均した。原音はMOSだけを掲載し、未測定項目をゼロとしない。MOSは人間評定による独立校正前の探索的予測。</p>'
+    provenance_notes = ''
     if summary.get('effective_mos_contract'):
-        page += '<p>英語MOSは開始前にCPUスレッド数を予定1から4へ変更。モデル・重み・音声seed・抽出seed・反復数は維持した。WORLDと日本語補助はCPU1スレッドの別実行で、CPU実行条件まで同一とは扱わない。<a href="effective_mos_contract.json">有効MOS条件</a>と<a href="../../reviews/execution-adjustment.md">変更記録</a>を参照。</p>'
+        provenance_notes += '<p>英語MOSはCPUスレッド数を予定1から4へ変更し、途中から2処理を並列実行。モデル・重み・音声seed・抽出seed・反復数は維持した。WORLDと日本語補助はCPU1スレッドの別実行で、CPU実行条件まで同一とは扱わない。<a href="effective_mos_contract.json">有効MOS条件</a>と<a href="https://github.com/Hiroshiba/check-nonml-saikyo-vocoder/blob/main/experiments/2026-10-12/noise-stability/reviews/execution-adjustment.md">変更記録</a>を参照。</p>'
+    origin = summary['mos_origin']
+    provenance_notes += (f'<p>原音＋実験時ベース＋5候補の予測MOSは{origin["available_values"]}/{origin["planned_values"]}値が有効。'
+             f'内訳は新規Windows評価{origin["new_values"]}値、同一入力の過去Linux評価から引用{origin["reused_historical_values"]}値。'
+             '引用は原音・実験時ベースのみで、A〜Eは新規評価。入力float32 SHA・評価器の全由来・MOS実装SHA・元値を照合した。'
+             '引用値を新規再測定と数えず、プラットフォーム差も残す。'
+             '<a href="mos_reuse_audit.json">引用監査</a>を参照。WORLDの120 MOSは別実行として数える。</p>')
     page += table(['方式'] + [t for _, t, _ in METRICS], absolute)
-    page += '<h2>現在のv2との差</h2><p>候補−現在ベース。MOS・eSTOIは正、誤差は負が改善。</p>'
+    if summary.get('adoption'):
+        page += (f'<p class="warning">{html.escape(summary["adoption"]["summary"])} '
+                 '<a href="https://github.com/Hiroshiba/check-nonml-saikyo-vocoder/blob/main/'
+                 'experiments/2026-10-12/noise-stability/reviews/adoption.md">採用判断と代償</a></p>')
+    page += '<h2>実験時のv2との差</h2><p>候補−実験時ベース。MOS・eSTOIは正、誤差は負が改善。</p>'
     if historical:
         page += '<p class="warning">WORLDは同じ固定120音声の過去Linux実行を参照。今回のWindows実行と環境が異なり、差は参考値。今回WORLDを再測定したことや同一実行条件を意味しない。過去の結果は変更していない。</p>'
     page += table(['方式'] + [t for _, t, _ in METRICS], differences)
     page += render_audio(samples, missing_audio)
+    if summary.get('adoption'):
+        page += '<h2>採用前の確認と残る制限</h2>'
+        page += '<p>' + html.escape(summary['adoption']['controls_summary']) + '</p>'
+        page += '<p>' + html.escape(summary['adoption']['control_limitations']) + '</p>'
+    page += '<h2>測定の由来と実行条件</h2>' + provenance_notes
+    page += '<details><summary>MOSの新規評価・引用・未完了件数</summary>'
+    page += table(['方式', '新規Windows評価', '過去Linux引用', '未完了', '失敗・評価不能'],
+                  [[LABELS[m], c['new'], c['reused'], c['pending'], c['failed_or_unavailable']]
+                   for m, c in origin['by_method'].items()]) + '</details>'
+    if summary.get('execution_record_files'):
+        page += '<details><summary>MOSの実行履歴・スレッド観察・引用監査</summary><ul>'
+        page += ''.join(f'<li><a href="{html.escape(n)}">{html.escape(n)}</a></li>'
+                        for n in summary['execution_record_files']) + '</ul></details>'
+    if summary.get('world_execution', {}).get('initial_failed_execution'):
+        initial = summary['world_execution']['initial_failed_execution']
+        page += (f'<p>WORLD初回は{initial["failed_rows"]}録音の処理が失敗した。'
+                 f'{html.escape(initial["interpretation"])}'
+                 'DEFによる関数公開を修正した別実行が今回の比較対象。初回失敗を成功測定へ混ぜず、'
+                 '<a href="world_execution_provenance.json">失敗と修復の由来</a>・'
+                 '<a href="world_build.json">DLL・DEF・固定ソースのbuild記録</a>を保存した。</p>')
     page += '<h2>振幅上限の診断</h2><p>振幅1以上の閾値超過。聴感上の音割れを直接数えた値ではない。seed出力数と録音数を区別する。</p>'
     page += '<p>超過標本数・率・秒数は全seed出力の合計。超過秒数は複数出力の総和で、独立した録音時間ではない。欠測値は補完しない。</p>'
     page += table(['方式', '超過出力／有効出力', '超過録音／120', '最大振幅', '超過標本数', '超過標本率', '超過秒数', '有効／予定出力'], peak_rows)
     page += '<h2>対応する話者を単位にした不確かさ</h2><p>各発話のseed平均から候補−v2を計算し、3発話が揃った話者を等重みで平均。40話者を再抽出する2000回の百分位bootstrap（seed 20261012）。区間は探索的95%区間で、多候補・多指標の検定補正をしていない。seedを独立話者と数えない。欠測があれば完全な3発話が揃う話者だけを区間へ使う。</p>'
     page += table(['候補', '指標', '差の話者平均', '探索的95%区間', '改善発話／対応発話', '完全話者／40'], uncertainty)
     page += '''<h2>記録と適用範囲</h2><p>学習モデルを使わない合成器の改善候補を比較する研究。予測MOS評価器は学習モデル。正式な採否は多指標・制御性・失敗例・条件を併読して別に判断し、この表示から自動決定しない。</p>
-<p><a href="results.json">全結果JSON</a> · <a href="summary.json">集計JSON</a> · <a href="contract.json">測定条件</a> · <a href="publication.json">集計・参照元SHA</a> · <a href="../jvs-run-001/index.html">日本語12録音の5候補比較</a> · <a href="../whisper-run-001/index.html">ささやきのseed診断</a> · <a href="../../reviews/control-findings.md">制御性の確認</a> · <a href="../../research.md">調査</a> · <a href="../../reviews/criteria.md">事前の比較条件</a></p></html>'''
+<p><a href="results.json">全結果JSON</a> · <a href="summary.json">集計JSON</a> · <a href="contract.json">測定条件</a> · <a href="publication.json">集計・参照元SHA</a> · <a href="../jvs-run-001/index.html">日本語12録音の5候補比較</a> · <a href="../whisper-run-001/index.html">ささやきのseed診断</a> · <a href="https://github.com/Hiroshiba/check-nonml-saikyo-vocoder/blob/main/experiments/2026-10-12/noise-stability/reviews/control-findings.md">制御性の確認</a> · <a href="https://github.com/Hiroshiba/check-nonml-saikyo-vocoder/blob/main/experiments/2026-10-12/noise-stability/research.md">調査</a> · <a href="https://github.com/Hiroshiba/check-nonml-saikyo-vocoder/blob/main/experiments/2026-10-12/noise-stability/reviews/criteria.md">事前の比較条件</a></p></html>'''
     return page
 
 
@@ -218,8 +251,11 @@ def main():
     parser = LoggedArgumentParser(description=__doc__)
     parser.add_argument('--input', type=Path, required=True)
     parser.add_argument('--world', type=Path)
+    parser.add_argument('--world-failed', type=Path, default=ROOT / 'runs/noise-world-120')
     parser.add_argument('--output', type=Path, default=ROOT / 'experiments/2026-10-12/noise-stability/results/run-001')
     parser.add_argument('--allow-partial', action='store_true')
+    parser.add_argument('--decision', type=Path,
+                        default=ROOT / 'experiments/2026-10-12/noise-stability/reviews/adoption.json')
     args = parser.parse_args()
     source = args.input / 'results.json'
     if not source.exists():
@@ -232,11 +268,14 @@ def main():
     if len(planned_ids) != 120 or len({r['speaker'] for r in input_records}) != 40:
         raise ValueError('このレポートは固定120録音・40話者専用です')
     expected_pairs = {(identifier, method) for identifier in planned_ids for method in ('hnm', 'A', 'B', 'C', 'D', 'E')}
-    complete = (len(current) == 720 and {(r['case'], r['method']) for r in current} == expected_pairs
+    complete = (data.get('status') == 'completed' and data.get('failures') == 0 and
+                len(current) == 720 and {(r['case'], r['method']) for r in current} == expected_pairs
                 and all(r.get('status') == 'measured' and all(metric(r, k) is not None for k, _, _ in METRICS)
                         and len(r.get('seed_diagnostics', [])) == 8
                         and {s['seed'] for s in r.get('seed_diagnostics', [])} == set(range(8)) for r in current)
-                and len(parts) == 120 and all(p['original'].get('mos', {}).get('status') == 'measured' for p in parts))
+                and len(parts) == 120 and all(p['original'].get('mos', {}).get('status') == 'measured'
+                                             and p['original']['mos'].get('value') is not None
+                                             and np.isfinite(p['original']['mos']['value']) for p in parts))
     if not complete and not args.allow_partial:
         raise ValueError('未完了・欠測があります。途中表示には--allow-partialを明示してください')
     historical = args.world is None
@@ -247,7 +286,8 @@ def main():
     world_rows = [r for r in flatten(world_data) if r['method'] == 'world_harvest']
     if any(r['case'] not in planned_ids for r in world_rows):
         raise ValueError('WORLDの録音IDが固定集合と一致しません')
-    world_complete = (len(world_rows) == 120 and {r['case'] for r in world_rows} == planned_ids
+    world_complete = ((historical or (world_data.get('status') == 'completed' and world_data.get('failures') == 0))
+                      and len(world_rows) == 120 and {r['case'] for r in world_rows} == planned_ids
                       and all(r.get('status') == 'measured' and
                               len(r.get('seed_diagnostics', [])) == 1 and
                               r['seed_diagnostics'][0].get('seed') == 0 and
@@ -264,15 +304,23 @@ def main():
     best = max(candidates, key=lambda m: groups[m]['metrics']['mos']['mean']) if candidates else None
     card = {m: groups[m] for m in ('hnm', best, 'world_harvest') if m in groups}
     summary = {'schema': 'noise-screen-summary-v1', 'methods': groups, '全体': card,
-               'card_candidate': best, 'card_selection': '予測MOS平均最大の候補。採用・総合優越ではない',
+               'card_candidate': best, 'card_selection': '一覧は予測MOS平均最大の候補。採否は別記の総合判断',
                'world_origin': 'historical_linux' if historical else 'current_separate_execution'}
     original = [p['original']['mos']['value'] for p in parts if p['original'].get('mos', {}).get('status') == 'measured'
                 and p['original']['mos'].get('value') is not None]
     summary['original_mos'] = {'mean': float(np.mean(original)) if original else None, 'valid': len(original)}
+    summary['mos_origin'] = inspect_mos_origin(args.input, data)
     effective = args.input / 'effective_mos_contract.json'
     if effective.exists():
         summary['effective_mos_contract'] = read(effective)
     args.output.mkdir(parents=True, exist_ok=True)
+    if args.decision.exists():
+        decision = read(args.decision)
+        if decision['source_results_sha256'] != sha(source):
+            raise ValueError('採用判断の対象と測定結果SHAが一致しません')
+        summary['adoption'] = decision
+        LABELS[decision['method']] = decision['label']
+        shutil.copyfile(args.decision, args.output / 'adoption.json')
     write(args.output / 'summary.json', summary)
     data.update(schema_version=3, planned_cases=120, comparison_reference='hnm', method_labels=LABELS,
                 formal_base=data['contract']['formal_base'],
@@ -291,11 +339,20 @@ def main():
             shutil.copyfile(world_path.parent / name, args.output / ('world_' + name))
     if effective.exists():
         shutil.copyfile(effective, args.output / effective.name)
+    copied_records = copy_execution_records(args.input, args.output)
+    summary['execution_record_files'] = sorted(copied_records)
+    if not historical:
+        summary['world_execution'] = copy_world_records(world_data, args.world_failed, args.output)
+    write(args.output / 'summary.json', summary)
     write(args.output / 'publication.json', {'source_results_sha256': sha(source),
           'world_results_sha256': sha(world_path), 'generator_sha256': sha(Path(__file__)),
-          'world_origin': summary['world_origin'], 'complete_current_measurements': complete})
+          'world_origin': summary['world_origin'], 'complete_current_measurements': complete,
+          'mos_origin': summary['mos_origin'], 'copied_execution_record_sha256': copied_records,
+          'world_execution': summary.get('world_execution'),
+          'provenance_helper_sha256': sha(Path(__file__).with_name('noise_report_provenance.py')),
+          'adoption_sha256': sha(args.decision) if args.decision.exists() else None})
     samples, missing = make_audio(args, data, world_data, historical, read(ROOT / 'data/clean_speech_v1.json'), args.output)
-    status = '現在の6方式は測定完了' if complete and world_complete else '部分測定・未完了を含む'
+    status = 'HNM v2と5候補は測定完了' if complete and world_complete else '部分測定・未完了を含む'
     (args.output / 'index.html').write_text(render(summary, status, historical, samples, missing), encoding='utf-8')
     print(json.dumps({'output': str(args.output), 'complete': complete, 'card_candidate': best,
                       'audio_examples': len(samples), 'missing_audio': missing}, ensure_ascii=False))

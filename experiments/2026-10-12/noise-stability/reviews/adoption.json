@@ -1,0 +1,26 @@
+{
+  "source_results_sha256": "aac0e7252a152209d8628973fcda3eaf1dab6709cbcc33decc722f68a04b999e",
+  "action": "adopt_as_development_base",
+  "method": "D",
+  "label": "HNM v3（D：FFT端点の重み）",
+  "previous_version": "hnm-v2",
+  "adopted_version": "hnm-v3",
+  "summary": "判断：DをHNM v3として開発ベースに採用。帯域・平均包絡・音量誤差と予測MOSの小幅改善を優先し、eSTOIとスペクトル誤差の小さな系統的悪化を許容した。知覚品質の優越は未確証。",
+  "implementation_provenance": {
+    "candidate": "D",
+    "adopted_version": "hnm-v3",
+    "candidate_source_sha256": "a4fda7d4cfcaff18f49862b09f5c289d3947a8517f4885b35b281102d953ef0c",
+    "adopted_source_sha256": "079057d2fba2b4ca0d189e050449aa7bc3fa20033afb0b03893300950ae13593",
+    "ast_identical_ignoring_comment_and_line_endings": true,
+    "change": "採用候補の3数式をそのまま反映。旧コメントだけを定義に合わせて訂正。",
+    "measurement_source_commit": "12aaf69",
+    "measurement_sources_unchanged_during_execution": true
+  },
+  "control_results_sha256": {
+    "results\\adoption-controls-synthetic\\results.json": "620ff8aaf54b501ef8f6c90032ac4b0f1bbbdb41e6f2df1e3c139be10a9207a6",
+    "results\\adoption-controls-natural\\results.json": "3ff133bc6677603b97b4672734effbf4279590209f940d6a957b33d87ded4ecd",
+    "results\\adoption-decode\\results.json": "6f85b02ce546ef091c5c073ac851cba65f15b765717691e3d8c3c8ca00b5c610"
+  },
+  "controls_summary": "人工PSD・編集192出力、自然音声の操作60出力で有限性・長さ・パラメータ関係を確認。英語2録音と日本語ささやき4録音で、通常decodeと測定D波形の最大差は0、保存・読込は互換。これらは正式120録音の品質平均に混ぜない。",
+  "control_limitations": "時間0.5倍ではF0推定の測定可能率が低く、1条件でD約77 Hz／v2約154 Hzというオクターブ判定差が出た。合成した調波波形は同じで、真の音高差とは断定できないが、推定器の診断値まで不変とは保証しない。eSTOIは119/120録音で低下し、スペクトル誤差も103/120で増加している。"
+}

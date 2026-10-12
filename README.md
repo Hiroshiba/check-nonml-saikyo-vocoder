@@ -2,9 +2,10 @@
 
 **ユーザー指示の正本は [USER_INSTRUCTIONS.md](USER_INSTRUCTIONS.md) です。** 以下の文書・コード・解釈はAI作成物です。
 
-現在のベースは **自作HNM v2** です。雑音の音色と時間包絡を分け、初代に対して固定120録音の音量変動の再現誤差が平均約7.2%減りました。既存比較対象は **WORLD（Harvest）**。HarvestはWORLDの基本周波数（F0）抽出方法です。WORLDより高品質との認定ではありません。
+現在のベースは **自作HNM v3** です。雑音の音色と時間包絡の分離を保ち、PSDの台形積分とFFT端点配分を揃えました。固定120録音の5案比較から、小さな明瞭性・スペクトル誤差の悪化を許容し、帯域再現などを優先した開発上の選択です。既存比較対象は **WORLD（Harvest）**。知覚品質の優越やWORLD超えを確証したものではありません。
 
-- [日本語の補助比較・英語音声例とv2採用](experiments/2026-10-12/jvs-supplement/results/run-001/index.html)
+- [雑音合成5案の比較・音声とv3採用](experiments/2026-10-12/noise-stability/results/run-001/index.html)
+- [日本語の補助比較・英語音声例と以前のv2採用](experiments/2026-10-12/jvs-supplement/results/run-001/index.html)
 - [固定120音声の比較と当初の判定](experiments/2026-10-12/noise-envelope/results/run-001/index.html)
 - [初代ベースの記録](experiments/2026-10-11/initial-hnm/results/run-001/index.html)
 - [現在のベース](BASELINE.json)、[進め方](docs/WORKFLOW.md)、[測定仕様](docs/EVALUATION.md)、[開発とログ](docs/DEVELOPMENT.md)
@@ -15,7 +16,7 @@
 
 | 方式 | 役割・構成 |
 |---|---|
-| 自作HNM v2 (`hnm`) | 現在のベース。自己相関F0、調波振幅・相対位相、雑音の音色と時間包絡を解析し合成 |
+| 自作HNM v3 (`hnm`) | 現在のベース。自己相関F0、調波振幅・相対位相、雑音の音色と時間包絡を解析し合成。雑音FFT端点を半重みで配分 |
 | WORLD（Harvest） (`world_harvest`) | 唯一の既存比較対象。Harvest / CheapTrick / D4C / WORLD合成 |
 
 原音は再合成の正解参照として音声を載せ、候補方式には数えません。両方式とも音高・音量・時間長を編集できます。自作方式の表現は保存・読込と、細部を持たない手作り入力からの合成に対応します。声質の知覚的距離や「息っぽさ」などの制御は未検証です。

@@ -1,0 +1,4 @@
+# SHA256で照合する今回の測定記録は、実行時の改行を含めて保持する。
+experiments/2026-10-12/noise-stability/results/** -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+experiments/2026-10-12/noise-stability/reviews/execution-sources.json -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+scripts/noise*.py text eol=lf

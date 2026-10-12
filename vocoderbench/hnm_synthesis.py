@@ -41,14 +41,14 @@ def _noise(params: HNMParameters, seed: int) -> np.ndarray:
         weight = 0.0 if i0 == i1 else (time - params.frame_times[i0]) / (params.frame_times[i1] - params.frame_times[i0])
         shape = (1 - weight) * shapes[i0] + weight * shapes[i1]
         psd = np.interp(grid, params.frequency_grid, shape)
-        # 現在のDC/Nyquistの生成係数を変更せず、その式の期待パワーで単位化する。
-        expected_power = (sr / nfft) * float(np.sum(psd))
+        # 連続PSDの台形積分に合わせ、DC/Nyquistの期待パワーを半重みにする。
+        expected_power = (sr / nfft) * float(np.sum(psd) - 0.5 * (psd[0] + psd[-1]))
         if expected_power <= 0:
             raise ValueError("雑音の形を合成FFT格子へ写せませんでした")
         psd = psd / expected_power
         spectrum = (rng.standard_normal(len(grid)) + 1j * rng.standard_normal(len(grid))) * np.sqrt(psd * sr * nfft / 4)
-        spectrum[0] = rng.standard_normal() * np.sqrt(psd[0] * sr * nfft)
-        spectrum[-1] = rng.standard_normal() * np.sqrt(psd[-1] * sr * nfft)
+        spectrum[0] = rng.standard_normal() * np.sqrt(0.5 * psd[0] * sr * nfft)
+        spectrum[-1] = rng.standard_normal() * np.sqrt(0.5 * psd[-1] * sr * nfft)
         noise = np.fft.irfft(spectrum, nfft)
         local = slice(left - start, right - start)
         out[left:right] += noise[local] * window[local]

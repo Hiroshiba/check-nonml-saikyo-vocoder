@@ -173,6 +173,24 @@ def build(output):
                         f'<a href="{esc(run["path"])}/index.html">比較結果を見る</a> ／ '
                         f'<a href="{esc(run["path"])}/results.json">全測定値（JSON）</a></p>'
                         f'<small>{esc(run.get("date_note", ""))}</small></article>')
+        supplements = []
+        for item in meta.get('supplements', []):
+            identifier = item['id']
+            if (not re.fullmatch(r'[a-z0-9]+(?:-[a-z0-9]+)*', identifier)
+                    or identifier in seen or item['path'] != f'results/{identifier}'):
+                raise ValueError(f'補助記録のID・パスが不正または重複しています: {item}')
+            seen.add(identifier)
+            source = contained(group, item['path'])
+            read_json(source / 'results.json')
+            dest = public / item['path']
+            dest.mkdir(parents=True)
+            for file in source.iterdir():
+                if file.suffix not in ('.html', '.json') or not file.is_file():
+                    raise ValueError(f'未定義の補助公開ファイルです: {file}')
+                shutil.copy2(file, dest / file.name)
+            entry = 'index.html' if (source / 'index.html').is_file() else 'results.json'
+            supplements.append(f'<li><a href="{esc(item["path"])}/{entry}">'
+                               f'{esc(item["title"])}</a></li>')
         actual_runs = {p.name for p in (group / 'results').iterdir()} if (group / 'results').exists() else set()
         if actual_runs != seen:
             raise ValueError(f'一覧への登録がない実行結果があります: {group}')
@@ -181,7 +199,8 @@ def build(output):
                 f'<p>{esc(day)}（日本時間） · {esc(topic)}</p><p>{esc(meta["summary"])}</p>'
                 f'<div class="notice">状態：{esc(meta["status"])}</div><h2>調査・議論・レビュー</h2>'
                 f'<ul>{"".join(notes)}</ul><h2>実行結果</h2>'
-                + (''.join(runs) or '<p>調査段階です。測定結果はまだありません。</p>'))
+                + (''.join(runs) or '<p>調査段階です。測定結果はまだありません。</p>')
+                + ('<h2>補助記録</h2><ul>' + ''.join(supplements) + '</ul>' if supplements else ''))
         (public / 'index.html').write_text(page(meta['title'], body), encoding='utf-8')
         groups.append((rel, meta))
     if not groups:

@@ -1,10 +1,10 @@
 {
   "status": "selected",
   "method": "hnm",
-  "version": "hnm-v2",
-  "reason": "固定120録音で音量変動の再現誤差が平均約7.2%減少。振幅超過の頻度・程度も踏まえて事後に採否を見直し、雑音包絡を分離する実装を採用。日本語12録音の補助評価も実施。予測MOSや知覚品質の改善を保証するものではない。",
+  "version": "hnm-v3",
+  "reason": "雑音PSDの台形積分とFFT端点配分を揃える候補Dを採用。固定120録音で帯域・平均包絡・音量誤差と予測MOSが小幅改善し、制御と保存互換を確認。明瞭性・スペクトル誤差の小さな系統的悪化を許容した開発上の選択で、知覚品質の優越は未確証。",
   "comparison_reference": "hnm",
   "comparison_reference_meaning": "実験開始時点の唯一の自作ベース。過去結果は当時の版を保持する。既存比較対象はWORLD（Harvest）。",
-  "previous_version": "hnm-v1",
-  "selection_report": "experiments/2026-10-12/jvs-supplement/results/run-001/index.html"
+  "previous_version": "hnm-v2",
+  "selection_report": "experiments/2026-10-12/noise-stability/results/run-001/index.html"
 }

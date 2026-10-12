@@ -125,7 +125,7 @@ def main():
     page += '<h2>ささやきの各録音：CとDの変化</h2>' + table(['話者', '方式', '予測MOS', 'MOS差', 'eSTOI', 'eSTOI差'], rows)
     page += '''<h2>解釈と記録</h2><p>通常・ささやき・裏声で文は同一とは限らず、発声差の因果効果とは扱わない。全12件でも独立話者は4人。seedやフレームを独立話者として数えない。振幅超過は聴感上の音割れを直接測ったものではない。日本語原音・加工音は公開しない。WORLDはこの補助再測定に含めず、過去比較を今回の実行へ混ぜない。</p>
 <p>自動MOSはUTMOSv2の固定コード・重み・抽出seedで実施。この補助はCPU1スレッド。正式英語比較のMOSは別の実行条件記録を参照し、スレッド数の違いを同一条件と表現しない。採用条件や正式120件の分母を補助結果に合わせて変更しない。</p>
-<p><a href="results.json">全測定JSON</a> · <a href="summary.json">発声別集計</a> · <a href="contract.json">条件</a> · <a href="mos_provenance.json">MOSの由来</a> · <a href="../run-001/index.html">正式英語120録音の比較</a> · <a href="../whisper-run-001/index.html">旧v1との複数seed診断</a> · <a href="../../reviews/jvs-five-findings.md">判断メモ</a></p></html>'''
+<p><a href="results.json">全測定JSON</a> · <a href="summary.json">発声別集計</a> · <a href="contract.json">条件</a> · <a href="mos_provenance.json">MOSの由来</a> · <a href="../run-001/index.html">正式英語120録音の比較</a> · <a href="../whisper-run-001/index.html">旧v1との複数seed診断</a> · <a href="https://github.com/Hiroshiba/check-nonml-saikyo-vocoder/blob/main/experiments/2026-10-12/noise-stability/reviews/jvs-five-findings.md">判断メモ</a></p></html>'''
     (args.output / 'index.html').write_text(page, encoding='utf-8')
     notes = ['# 日本語12録音での雑音合成5案の補助比較', '',
              '[結果HTML](../results/jvs-run-001/index.html) / [数値](../results/jvs-run-001/results.json)', '',

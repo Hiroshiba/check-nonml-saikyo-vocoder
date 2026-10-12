@@ -105,8 +105,15 @@ def acoustic_case(task):
     except Exception as error:
         logging.exception('共通解析失敗: %s', identifier)
         for row, item in selected:
+            item.pop('values', None)
+            item.pop('full_scale', None)
             item.update(status='failed', error=str(error), traceback=traceback.format_exc())
             row['status'] = 'partial_failure'
+            row['seed_summary'] = seed_summary(row['seed_diagnostics'])
+            if item['seed'] == 0:
+                for key in ('measurement', 'temporal', 'waveform_sha256'):
+                    row.pop(key, None)
+                row['estoi'] = {'status': 'failed', 'value': None, 'reason': str(error)}
         write(part, data)
         return identifier
     for row, item in selected:
@@ -135,7 +142,13 @@ def acoustic_case(task):
                 row['waveform_sha256'] = sha(waves / f'{method}.npy')
         except Exception as error:
             logging.exception('合成・測定失敗: %s / %s / %s', identifier, method, seed)
+            item.pop('values', None)
+            item.pop('full_scale', None)
             item.update(status='failed', error=str(error), traceback=traceback.format_exc())
+            if seed == 0:
+                for key in ('measurement', 'temporal', 'waveform_sha256'):
+                    row.pop(key, None)
+                row['estoi'] = {'status': 'failed', 'value': None, 'reason': str(error)}
         row['status'] = ('measured' if all(v['status'] == 'measured' for v in row['seed_diagnostics'])
                          else 'partial_failure')
         row['seed_summary'] = seed_summary(row['seed_diagnostics'])

@@ -1,0 +1,32 @@
+{
+  "started_at": "2026-10-12T07:01:26.799886+00:00",
+  "script_sha256": "25c5cbadb8ae2fb88b007679dc19caad08943538d0d0a55484307f182339946d",
+  "original_contract_sha256": "7919752c875190bf5db026ad8e6a081abbfc4b1d0bcc4c15974480a240061a18",
+  "requested_workers": 2,
+  "workers": 2,
+  "available_memory_bytes_before_models": 8997236736,
+  "threads_per_worker": 4,
+  "memory_policy": "単一モデルは終了済み約2.2 GiBモデル枠を置換。低空きRAM警告を記録。",
+  "checkpoint_transition": "WORLD120 completed with exit0. English single worker PID22804 verified and stopped at saved row checkpoints. Resume same CPU4 MOS settings with two disjoint case workers; reuse audited exact cache rows.",
+  "planned_mos_settings": {
+    "mos_noise_seed": 0,
+    "mos_extraction_seed": 20261012,
+    "mos_repetitions": 1,
+    "mos_threads": 1
+  },
+  "effective_mos_settings": {
+    "mos_noise_seed": 0,
+    "mos_extraction_seed": 20261012,
+    "mos_repetitions": 1,
+    "mos_threads": 4
+  },
+  "amendment": "英語MOS開始前にCPUスレッド数のみ変更。音響契約原本は維持。",
+  "retry_failed": false,
+  "status": "failed_checkpoint_write",
+  "note": "録音ごとに単一writer。原コマンド停止後にだけ実行する。",
+  "exit_code": 1,
+  "finished_at": "2026-10-12T07:21:37.687955+00:00",
+  "failure_log": "../../parallel-screen-mos-2workers.stderr.log",
+  "failure": "PermissionError WinError5 replacing librispeech_8463-294828-0014.tmp -> .json; 836 saved, 4 pending",
+  "traceback": "ERROR root: コマンドが失敗しました\nconcurrent.futures.process._RemoteTraceback: \n\"\"\"\nTraceback (most recent call last):\n  File \"C:\\Users\\hihok\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\Lib\\concurrent\\futures\\process.py\", line 264, in _process_worker\n    r = call_item.fn(*call_item.args, **call_item.kwargs)\n        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\hihok\\Documents\\Codex\\2026-10-12\\new-chat-2\\work\\parallel_screen_mos.py\", line 69, in score_case\n    write(path, part)\n  File \"C:\\Users\\hihok\\Documents\\Codex\\2026-10-12\\new-chat-2\\work\\vocoder\\vocoderbench\\benchmark_io.py\", line 36, in write\n    temporary.replace(path)\n  File \"C:\\Users\\hihok\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\Lib\\pathlib.py\", line 1376, in replace\n    os.replace(self, target)\nPermissionError: [WinError 5] アクセスが拒否されました。: 'C:\\\\Users\\\\hihok\\\\Documents\\\\Codex\\\\2026-10-12\\\\new-chat-2\\\\work\\\\vocoder\\\\runs\\\\noise-screen-120\\\\parts\\\\librispeech_8463-294828-0014.tmp' -> 'C:\\\\Users\\\\hihok\\\\Documents\\\\Codex\\\\2026-10-12\\\\new-chat-2\\\\work\\\\vocoder\\\\runs\\\\noise-screen-120\\\\parts\\\\librispeech_8463-294828-0014.json'\n\"\"\"\n\nThe above exception was the direct cause of the following exception:\n\nTraceback (most recent call last):\n  File \"C:\\Users\\hihok\\Documents\\Codex\\2026-10-12\\new-chat-2\\work\\vocoder\\vocoderbench\\logging_utils.py\", line 50, in run_cli\n    return function() or 0\n           ^^^^^^^^^^\n  File \"C:\\Users\\hihok\\Documents\\Codex\\2026-10-12\\new-chat-2\\work\\parallel_screen_mos.py\", line 165, in main\n    identifier, provenance = future.result()\n                             ^^^^^^^^^^^^^^^\n  File \"C:\\Users\\hihok\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\Lib\\concurrent\\futures\\_base.py\", line 449, in result\n    return self.__get_result()\n           ^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\hihok\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\Lib\\concurrent\\futures\\_base.py\", line 401, in __get_result\n    raise self._exception\nPermissionError: [WinError None] アクセスが拒否されました。: 'C:\\\\Users\\\\hihok\\\\Documents\\\\Codex\\\\2026-10-12\\\\new-chat-2\\\\work\\\\vocoder\\\\runs\\\\noise-screen-120\\\\parts\\\\librispeech_8463-294828-0014.tmp' -> 'C:\\\\Users\\\\hihok\\\\Documents\\\\Codex\\\\2026-10-12\\\\new-chat-2\\\\work\\\\vocoder\\\\runs\\\\noise-screen-120\\\\parts\\\\librispeech_8463-294828-0014.json'\n"
+}
