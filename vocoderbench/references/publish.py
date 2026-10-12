@@ -14,7 +14,8 @@ from .catalog import METHODS
 from .common import ROOT, digest, now, read, write
 
 REQUIRED = ('index.html', 'results.json', 'summary.json', 'audio_samples.json')
-OPTIONAL = ('contract.json', 'execution.json', 'processes.json', 'mos_provenance.json')
+OPTIONAL = ('contract.json', 'execution.json', 'processes.json', 'mos_provenance.json',
+            'evaluation_history.json')
 
 
 def timestamp(value):
