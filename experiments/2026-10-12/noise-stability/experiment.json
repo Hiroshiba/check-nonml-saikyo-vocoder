@@ -1,0 +1,64 @@
+{
+  "schema_version": 1,
+  "id": "2026-10-12-noise-stability",
+  "date": "2026-10-12",
+  "timezone": "Asia/Tokyo",
+  "topic": "noise-stability",
+  "title": "雑音合成5案とFFT端点配分の見直し",
+  "summary": "DをHNM v3へ採用。帯域誤差などの小幅改善を優先し、明瞭性・スペクトル誤差の小さな悪化を許容。",
+  "status": "120録音・全5案の評価と採用前確認を完了、HNM v3を採用",
+  "notes": [
+    "README.md",
+    "research.md",
+    "reviews/discussion.md",
+    "reviews/criteria.md",
+    "reviews/adoption.md",
+    "reviews/whisper-findings.md",
+    "reviews/control-findings.md",
+    "reviews/jvs-five-findings.md",
+    "reviews/reproduction.md",
+    "reviews/execution-adjustment.md"
+  ],
+  "runs": [
+    {
+      "id": "run-001",
+      "date": "2026-10-12",
+      "title": "雑音合成5案：HNM v2・採用v3・WORLDの比較",
+      "path": "results/run-001",
+      "recorded_at": "2026-10-12T16:36:56.484248+09:00",
+      "recorded_at_source": "全件測定・採用前確認・採用判断を含む公開用結果を保存した日時。測定の開始・終了は各実行JSON。"
+    }
+  ],
+  "supplements": [
+    {
+      "id": "jvs-run-001",
+      "path": "results/jvs-run-001",
+      "title": "日本語12録音の5候補比較"
+    },
+    {
+      "id": "whisper-run-001",
+      "path": "results/whisper-run-001",
+      "title": "ささやき4話者の8 seed診断"
+    },
+    {
+      "id": "control-run-001",
+      "path": "results/control-run-001",
+      "title": "短い雑音の時間操作・ゲイン確認"
+    },
+    {
+      "id": "adoption-controls-synthetic",
+      "path": "results/adoption-controls-synthetic",
+      "title": "採用前：人工PSD・編集192出力"
+    },
+    {
+      "id": "adoption-controls-natural",
+      "path": "results/adoption-controls-natural",
+      "title": "採用前：自然音声操作60出力"
+    },
+    {
+      "id": "adoption-decode",
+      "path": "results/adoption-decode",
+      "title": "採用前：通常decode・保存互換"
+    }
+  ]
+}

@@ -3,9 +3,11 @@ from datetime import datetime, timezone
 import hashlib
 import importlib.util
 import json
+import logging
 from pathlib import Path
 import platform
 import sys
+import time
 
 import numpy as np
 
@@ -33,7 +35,15 @@ def write(path, data):
     path.parent.mkdir(parents=True, exist_ok=True)
     temporary = path.with_suffix('.tmp')
     temporary.write_text(json.dumps(data, ensure_ascii=False, allow_nan=False) + '\n', encoding='utf-8')
-    temporary.replace(path)
+    for attempt in range(5):
+        try:
+            temporary.replace(path)
+            break
+        except PermissionError:
+            if attempt == 4:
+                raise
+            logging.warning('結果の置換が一時的に拒否されました。再試行します: %s', path, exc_info=True)
+            time.sleep(0.05 * (attempt + 1))
 
 
 def external_candidate(path):
