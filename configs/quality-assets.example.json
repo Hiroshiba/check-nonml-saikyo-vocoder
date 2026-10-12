@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "metrics": {
+    "utmosv2": {
+      "checkpoint": "../.cache/mos/weights/fold0_s42_best_model.pth",
+      "config": "../.cache/mos/wav2vec2_config/config.json",
+      "preprocessor_config": "../.cache/mos/wav2vec2_config/preprocessor_config.json"
+    },
+    "scoreq": {
+      "model": "../.cache/quality/fixed_nmr_telephone.onnx",
+      "domain": "natural"
+    },
+    "visqol_audio": {
+      "binary": "../.cache/visqol/visqol",
+      "model": "../.cache/visqol/libsvm_nu_svr_model.txt",
+      "timeout_seconds": 120
+    },
+    "speaker_ecapa": {
+      "embedding_model": "../.cache/ecapa/embedding_model.ckpt"
+    },
+    "erb": {}
+  }
+}
