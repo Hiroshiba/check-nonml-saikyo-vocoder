@@ -19,6 +19,9 @@ def esc(value):
 
 def brief(results):
     data = json.loads((results / 'results.json').read_text(encoding='utf-8'))
+    if data.get('study_role') == 'existing_references':
+        from .references.report import table
+        return '<p>' + esc(data['scope']) + '</p>' + table(data)
     if data.get('study_role') == 'supplement_to_completed_fixed_120':
         return _brief_supplement(data, results)
     if data.get('schema_version', 1) >= 3:

@@ -19,6 +19,9 @@ from .temporal_metrics import measure_temporal
 def initialize(args):
     args.output.mkdir(parents=True, exist_ok=True)
     contract = source_contract(args.manifest, args.candidate_package, args.criteria)
+    if not args.legacy_three_methods:
+        from .references.integration import contract as reference_contract
+        contract['existing_references'] = reference_contract(args)
     # JSON往復でtupleを正規化し、再開時は科学的条件の完全一致を要求する。
     import json
     contract = json.loads(json.dumps(contract))
@@ -144,16 +147,25 @@ def collect(args, cases, contract):
                 path = args.output / 'waveforms' / case['id'] / f'{method}.npy'
                 if path.exists():
                     audio_samples.collect(samples, case, method, np.load(path, allow_pickle=False))
+    from .references.integration import append_results
+    append_results(args, report, samples)
     write(args.output / 'results.json', report)
     write(args.output / 'audio_samples.json', {'schema_version': 1, 'samples': samples,
-          'selection_note': '固定集合の英語2話者、各先頭最大2秒。原音・候補・当時のベース・WORLDで同一区間。音量補正なし。'})
+          'selection_note': '固定集合の英語2話者、各先頭最大2秒。原音・候補・当時のベース・既存方式で同一区間。音量補正なし。'})
     from .benchmark_report import render
     render(report, args.output / 'index.html')
     return report
 
 
 def main():
+    import sys
+    # With no development candidate, compare the standard public methods without a self-made base.
+    if not any(arg == '--candidate-package' or arg.startswith('--candidate-package=') for arg in sys.argv[1:]):
+        from .reference import main as references_main
+        return references_main()
     parser = LoggedArgumentParser(description=__doc__)
+    from .references.integration import add_arguments, execute as execute_references
+    add_arguments(parser)
     parser.add_argument('--manifest', type=Path, default=corpus.MANIFEST)
     parser.add_argument('--cache', type=Path, default=corpus.CACHE)
     parser.add_argument('--mos-cache', type=Path, default=ROOT / '.cache/mos')
@@ -178,6 +190,7 @@ def main():
             acoustic_case(case, candidate, args.output, args.retry_failed)
     if args.stage == 'mos':
         score_mos(args, cases)
+    execute_references(args)
     report = collect(args, cases, contract)
     failures = sum(r['status'] != 'measured' for r in report['resynthesis'])
     if args.stage in ('all', 'mos'):
