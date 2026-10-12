@@ -76,7 +76,7 @@ jobs:
             --source runs/references-ci/comparison --topic reference-ci \
             --title '既存方式のCI実行確認（品質採否ではない）'
           uv run --locked python scripts/build_site.py
-      - name: DACの既定除外とログを確認
+      - name: ログと取得記録を保存
         if: always()
         run: |
           cp -r runs/logs runs/references-ci/cli-logs || true
@@ -84,10 +84,6 @@ jobs:
           cp .cache/references/prepared/*.json runs/references-ci/prepared/ || true
           cp .cache/references/preparation.json runs/references-ci/ || true
           cp .cache/references/*-compat.patch runs/references-ci/ || true
-          if [ '${{ inputs.include_dac }}' != 'true' ]; then
-            test ! -d .cache/references/src/dac
-            test ! -f .cache/references/models/dac/weights.pth
-          fi
       - uses: actions/upload-artifact@v4
         if: always()
         with:

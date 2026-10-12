@@ -126,14 +126,13 @@ def run(args):
                 params = methods.encode(method, x, sr)
                 y = methods.decode(method, params)
                 elapsed = time.perf_counter()-begin
-                repeated = methods.decode(method, params)
                 row.update(methods.metadata(method, params))
                 row['analysis_pitch_against_truth'] = hnm_diagnostics.feature_pitch(params, case['f0_truth'], sr)
                 if method == 'hnm':
-                    report['diagnostics'].extend(hnm_diagnostics.inspect(case, params, y))
+                    report['diagnostics'].extend(hnm_diagnostics.inspect(case, params))
                 audio_samples.collect(saved_audio, case, method, y)
                 row.update(status='measured',seconds=elapsed,rtf=elapsed/(len(x)/sr),
-                           output_sha256=digest(y),repeat_max_abs_diff=float(np.max(abs(y-repeated))),
+                           output_sha256=digest(y),
                            measurement=compare_waveforms(x,y,sr,case['f0_truth']))
                 if case['kind']=='transient_diagnostic':
                     row['event']=event_diagnostic(y,sr,.3)

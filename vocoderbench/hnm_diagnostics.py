@@ -1,7 +1,5 @@
-"""自作表現の解析誤差・細部の影響・保存読込を数値として記録する。"""
+"""自作表現の解析誤差・細部の影響を数値として記録する。"""
 from dataclasses import replace
-from pathlib import Path
-import tempfile
 
 import numpy as np
 
@@ -24,17 +22,10 @@ def feature_pitch(params, truth, sr):
             'abs_error_cents_p95': float(np.percentile(errors, 95)) if len(errors) else None}
 
 
-def inspect(case, params, base_output):
+def inspect(case, params):
     if case['sr'] != 16000 or case['id'] not in ('harmonic_110_16000', 'harmonic_220_16000'):
         return []
     rows = []
-    with tempfile.TemporaryDirectory() as folder:
-        path = Path(folder) / 'parameters.npz'
-        hnm.save(params, path)
-        restored = hnm.decode(hnm.load(path), seed=0)
-        rows.append({'case': case['id'], 'diagnostic': 'save_load', 'label': '保存・読込', 'status': 'measured',
-                     'max_abs_waveform_difference': float(np.max(abs(base_output - restored))),
-                     'compressed_parameter_bytes': path.stat().st_size})
     for details in (True, False):
         selected = params if details else hnm.without_details(params)
         for semitones in (-3, 3):

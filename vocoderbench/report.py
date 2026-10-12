@@ -75,7 +75,7 @@ def _render_current(data, path):
                          STATUSES.get(measurement.get('status', 'undefined'), '測定なし'),
                          fmt(value), fmt(delta), fmt((measurement.get('band_energy') or {}).get('active_band_mae_db')),
                          fmt(measurement.get('rms_gain_error_db')), *_pitch_cells(measurement.get('pitch') or {}),
-                         measurement.get('length_delta_samples', '—'), fmt(row.get('repeat_max_abs_diff'), 9)])
+                         measurement.get('length_delta_samples', '—')])
     summaries = []
     for (group, method), records in sorted(groups.items(), key=lambda item: (item[0][0] != '自然音声', item[0][1] != reference, item[0][1])):
         values = [value for _, value, _ in records if value is not None]
@@ -89,7 +89,7 @@ def _render_current(data, path):
                             '有効／全件', '比較可能／全件', '処理・測定失敗／全件'], summaries)
     pitch_headers = ['真値F0 P95 cent', '測定できた／真値の有声フレーム', '有声の欠測', '誤有声']
     all_table = _table(['入力', '方式', '処理', '測定', 'MR-STFT dB', '差分 dB', '帯域差 dB',
-                        'RMS差 dB', *pitch_headers, '長さ差 サンプル', '再実行最大差'], all_rows)
+                        'RMS差 dB', *pitch_headers, '長さ差 サンプル'], all_rows)
     operation_rows = []
     for row in data.get('operations', []):
         relative = row.get('relative_pitch') or {}
@@ -198,7 +198,7 @@ def render(data, path):
                label(r['status'],STATUSES)+'／'+label(m.get('status','undefined'),STATUSES),
                fmt(metric),fmt(delta),fmt((m.get('band_energy') or {}).get('active_band_mae_db')),
                fmt(m.get('rms_gain_error_db')),fmt(pitch.get('abs_error_cents_p95')),voiced,
-               pitch.get('false_voiced_frames','—'),m.get('length_delta_samples','—'),fmt(r.get('repeat_max_abs_diff'),9)]
+               pitch.get('false_voiced_frames','—'),m.get('length_delta_samples','—')]
         rows.append('<tr>'+''.join(f'<td>{esc(v)}</td>' for v in row)+'</tr>')
         if r['method']!='identity':
             group='自然音声' if r['kind']=='natural_speech' else '合成診断信号'
@@ -268,7 +268,7 @@ p{{max-width:1000px}}table{{border-collapse:collapse;width:100%;font-size:13px;b
 <p>別途、原音コピー、既知の音量変更、10 msの時間ずらし、高域の除去、末尾の切り落とし、非数（NaN）、無限大（Inf）、直流成分（DC）、無音化による独立監査を行います。その記録は {audit_link}。</p>
 <h2>表の読み方</h2><ul><li>F0は基本周波数で、周期的な音の高さに対応します。cent（セント）は音程差の単位で、100 centが1半音です。</li><li>P95は誤差の95パーセンタイルです。測定できたフレームの95％がこの値以下ですが、欠測は別に確認します。</li><li>Δは「対象の誤差 − 比較相手の誤差」です。負ならこの指標の誤差が比較相手より小さく、正なら大きいことを表します。音質全体の順位ではありません。</li><li>RMS差は実効値で測るレベル差です。正は原音より大きく、負は小さいことを表し、0 dBに近いほどレベルが一致します。</li><li>フレームは測定用に切り出す短い区間、サンプルは波形の1点です。有声の欠測は本来ある周期を測れなかった区間、誤有声は本来無声の区間を有声と判定したものです。</li><li>—は未定義・対象外です。計算の完了や欠測の少なさだけで、聴感上の良さを保証しません。</li></ul>
 <h2>無加工再合成の全ケース</h2><p>「処理完了／測定完了（measured / ok）」は計算できたという状態です。無音化、音高欠測、レベル誤差などを含め、品質合格を意味しません。STFT・帯域差・cent誤差は小さいほど原音に近い診断値です。</p><input id="filter" aria-label="ケースまたは方式で絞り込み" placeholder="ケースまたは方式で絞り込み">
-<div class="scroll"><table id="cases"><thead><tr>{''.join('<th>'+v+'</th>' for v in ['入力','比較対象','状態','MR-STFT dB','Δ対'+ref_label+' dB','帯域差 dB','RMS差 dB','F0 P95 cent','測定できた／真値の有声フレーム','誤有声（フレーム）','長さ差（サンプル）','再実行最大差'])}</tr></thead><tbody>{''.join(rows)}</tbody></table></div>
+<div class="scroll"><table id="cases"><thead><tr>{''.join('<th>'+v+'</th>' for v in ['入力','比較対象','状態','MR-STFT dB','Δ対'+ref_label+' dB','帯域差 dB','RMS差 dB','F0 P95 cent','測定できた／真値の有声フレーム','誤有声（フレーム）','長さ差（サンプル）'])}</tr></thead><tbody>{''.join(rows)}</tbody></table></div>
 <h2>操作試験</h2><p>未操作の同方式出力からの変化を測ります。既知F0への絶対誤差と、出力間の相対変化推定を区別します。時間操作の全長一致だけでは局所イベントや末尾の保持を保証しません。LLSMの操作は今回未実装であり、合格に数えません。</p>
 <div class="scroll"><table><thead><tr>{''.join('<th>'+v+'</th>' for v in ['入力','方式','操作','状態','音量追従誤差 dB','真値F0 P95 cent','相対F0 P95 cent','相対比較できた／全フレーム','真値と比較できた／有声フレーム','真値に対する欠測（フレーム）','真値に対する誤有声（フレーム）','長さ誤差（サンプル）','イベント誤差ms'])}</tr></thead><tbody>{''.join(op_rows)}</tbody></table></div>
 <h2>デコーダー単体と失敗記録</h2><p>エンコーダーを通さず、手作りの特徴量から合成した結果です。「全値が有限」は非数や無限大がないことだけを示します。無声指定では音高誤差は定義しません。</p>
