@@ -1,0 +1,20 @@
+{
+  "schema_version": 1,
+  "baseline": "base",
+  "cases": [
+    {
+      "id": "speech_001",
+      "kind": "natural_speech",
+      "language": "ja",
+      "style": "normal",
+      "speaker": "speaker_001",
+      "sample_rate": 48000,
+      "reference": "../runs/input/reference.wav",
+      "outputs": {
+        "base": "../runs/input/base.wav",
+        "candidate": "../runs/input/candidate.wav",
+        "world_harvest": "../runs/input/world.wav"
+      }
+    }
+  ]
+}
