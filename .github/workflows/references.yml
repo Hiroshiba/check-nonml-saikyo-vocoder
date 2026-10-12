@@ -6,8 +6,10 @@ on:
       - 'vocoderbench/reference.py'
       - 'vocoderbench/benchmark*.py'
       - 'vocoderbench/*metrics.py'
+      - 'vocoderbench/site_summary.py'
       - 'uv.lock'
       - 'scripts/setup_references.sh'
+      - 'scripts/build_site.py'
       - '.github/workflows/references.yml'
   push:
     branches: [main]
@@ -16,8 +18,10 @@ on:
       - 'vocoderbench/reference.py'
       - 'vocoderbench/benchmark*.py'
       - 'vocoderbench/*metrics.py'
+      - 'vocoderbench/site_summary.py'
       - 'uv.lock'
       - 'scripts/setup_references.sh'
+      - 'scripts/build_site.py'
       - '.github/workflows/references.yml'
   workflow_dispatch:
     inputs:
@@ -66,6 +70,12 @@ jobs:
           uv run --locked python -m vocoderbench.reference --smoke --no-mos --output runs/references-ci/comparison "${extra[@]}"
       - name: 保存済みHTMLを再表示する
         run: uv run --locked python -m vocoderbench.reference --stage report --output runs/references-ci/comparison
+      - name: HTMLの保存と実験一覧への登録を確認する
+        run: |
+          uv run --locked python -m vocoderbench.references.publish \
+            --source runs/references-ci/comparison --topic reference-ci \
+            --title '既存方式のCI実行確認（品質採否ではない）'
+          uv run --locked python scripts/build_site.py
       - name: DACの既定除外とログを確認
         if: always()
         run: |

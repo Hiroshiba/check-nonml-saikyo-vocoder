@@ -4,7 +4,9 @@
 
 ## 標準の既存方式比較
 
-**WORLDに加えて、FACodec・HiFi-Glot・GOLF-ff・SiFi-GAN・LLSM2 Layer 0・MagPhaseを標準比較対象にします。DACは `--include-dac` 指定時のみ追加します。** 自作ベースとの近さや、改良に使えるかを選定理由にはしません。既存方式への全置換も候補です。指示変更はPR #25、実装はPR #26です。
+**WORLDに加えて、FACodec・HiFi-Glot・GOLF-ff・SiFi-GAN・LLSM2 Layer 0・MagPhaseを標準比較対象にします。DACは `--include-dac` 指定時のみ追加します。** 自作ベースとの近さや、改良に使えるかを選定理由にはしません。既存方式への全置換も候補です。指示変更は [PR #28](https://github.com/Hiroshiba/check-nonml-saikyo-vocoder/pull/28)、実装と結果保存は [PR #29](https://github.com/Hiroshiba/check-nonml-saikyo-vocoder/pull/29) に分けています。
+
+**保存済みの比較：[WORLD＋6方式の音声付きHTML](experiments/2026-10-12/reference-methods/results/run-001/index.html)** ／ [全測定値](experiments/2026-10-12/reference-methods/results/run-001/results.json) ／ [確認範囲と復元元](docs/reviews/2026-10-13-reference-publication.md)。これは2026年10月12日の2音声・14再合成の動作確認です。固定120音声の品質比較・MOS測定・方式の採用判定を済ませたものではありません。HTMLと音声JSONはこのリポジトリに保存し、mainへのマージ後にPagesで公開します。
 
 ```sh
 uv sync --locked
@@ -34,6 +36,19 @@ uv run --locked python -m vocoderbench.reference --include-dac --output runs/ref
 uv run --locked python -m vocoderbench.reference --list-methods
 uv run --locked python -m vocoderbench.reference --smoke --no-mos --output runs/references-smoke
 ```
+
+### 結果をGit・Pagesへ残す
+
+`runs/` はGit管理外です。計測後は次のコマンドでHTML・短い音声JSON・測定条件・ログを実験フォルダへコピーし、`experiment.json` に登録します。元のHTML・測定値を変更せず、SHA-256と元の記録日時を保持します。出力された実験フォルダ一式を比較のPRに含めます。
+
+```sh
+uv run --locked python -m vocoderbench.references.publish \
+  --source runs/references-120 --topic reference-methods \
+  --title '既存7方式の固定120音声比較'
+uv run --locked python scripts/build_site.py
+```
+
+上のコマンドは結果を公開用に保存する操作であり、GitへのcommitやPagesのデプロイはしません。実験フォルダをmainへ反映した後、[公開ワークフロー](docs/PUBLISHING.md)が成功すると、一覧から音声付きHTMLを開けます。CIの期限付き成果物だけを結果の保存先にはしません。
 
 ## 自作開発経路と過去の記録
 

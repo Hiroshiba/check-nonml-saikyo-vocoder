@@ -4,7 +4,7 @@
 
 WORLD（Harvest）に加え、FACodec v1、HiFi-Glot、GOLF-ff、SiFi-GAN、LLSM2 Layer 0、MagPhaseを標準の既存比較対象にする。DACはオプショナルで、`--include-dac` を指定したときだけコード・重みの取得と計測を行う。原音は正解参照であり方式数に含めない。自作ベースを良いものと前提にせず、既存方式への全置換も検討できる比較にする。
 
-指示変更はPR #25、実装追加はPR #26。USER_INSTRUCTIONS.mdの変更は実装PRに含めない。既存のBASELINE.json・自作実装・過去の結果は今回変更しない。
+指示変更はPR #28、実装と結果保存はPR #29。USER_INSTRUCTIONS.mdの変更は実装PRに含めない。既存のBASELINE.json・自作実装・過去の結果は今回変更しない。閉じたPR #26から実装を引き継ぎ、保存されていなかった音声付き結果を補った。
 
 ## 実行
 
@@ -45,6 +45,23 @@ uv run --locked python -m vocoderbench.reference --smoke --no-mos --output runs/
 
 `native/方式/` に未調整の全長生成波形（npy）、出力ハッシュ、解析秒数・合成秒数・出力長差・ピークを残す。`logs/` にワーカーとネイティブ警告を残す。`results.json`、`summary.json`、`index.html`、`audio_samples.json` が比較の結果。表のRTFは単回推論の集計で、前回のウォームアップ付き5反復速度試験そのものではない。
 
+### Git・Pagesへの保存
+
+`runs/` に出力しただけではGitにもPagesにも残らない。結果を比較PRへ含めるには、次を実行する。
+
+```sh
+uv run --locked python -m vocoderbench.references.publish \
+  --source runs/references-120 --topic reference-methods \
+  --title '既存7方式の固定120音声比較'
+uv run --locked python scripts/build_site.py
+```
+
+保存先は測定開始日（日本時間）の `experiments/YYYY-MM-DD/reference-methods/results/run-NNN/`。元のHTML・JSONはバイト列を変えずコピーし、`publication.json` に各SHA-256と保存日時を記録する。`experiment.json` の一覧登録日時は元の `generated_at` を保持し、過去の測定を新規実験に見せない。既存のrunを上書きせず、同一の測定結果を重複登録しない。CIから復元する場合は `--provenance 出典.json` で元の実行ID・成果物ID等を追加できる。
+
+公開物はHTML・JSONに限定し、短いWAVをJSON/HTMLに埋め込む。条件・ワーカーログ・ワーカーの測定記録もJSONとして保存する。全長npy、原音全体、学習済み重み、ネイティブライブラリは公開用フォルダへコピーしない。コマンドはGitへcommitしないため、出力した実験フォルダ一式をPRに含める。mainへのマージとPagesの公開成功後に一覧から閲覧できる。
+
+今回の保存結果は [2音声・7方式の実測HTML](../experiments/2026-10-12/reference-methods/results/run-001/index.html)。2026年10月12日のCIから復元したもので、[復元と検証の記録](reviews/2026-10-13-reference-publication.md)を併記する。固定120録音・自動MOSはこの保存操作で測定したものではない。
+
 ## 出力長・帯域の契約
 
 方式を同じ特徴形式へ押し込まず、公開学習済み構成のネイティブ帯域で解析・合成する。WORLD/FACodecは16 kHz、GOLF/SiFi-GAN/LLSM2は24 kHz、HiFi-Glot/DACは44.1 kHz、MagPhaseは48 kHz。48 kHzへの最終適用目標を、低帯域モデルのアップサンプリングだけで達成したとは扱わない。
@@ -78,4 +95,4 @@ GOLFの固定サブモジュールをHTTPSで取得し、`torch.Any`の型注釈
 
 ## このPRの範囲
 
-再合成・実行時間・既存指標の比較入口を追加する。属性操作、表現保存形式の共通化、距離学習、下流TTS学習、GPU、ストリーミングを新たに実装したものではない。CIは実際の学習済み推論で動作を確認するが、固定120録音全体の品質比較・MOS校正・方式採否は別の実験として記録する。
+再合成・実行時間・既存指標の比較入口を追加する。属性操作、表現保存形式の共通化、距離学習、下流TTS学習、GPU、ストリーミングを新たに実装したものではない。CIは実際の学習済み推論からHTMLの保存・一覧生成までを確認するが、固定120録音全体の品質比較・MOS校正・方式採否は別の実験として記録する。
