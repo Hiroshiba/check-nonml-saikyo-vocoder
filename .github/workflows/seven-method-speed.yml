@@ -1,0 +1,49 @@
+name: 7方式の速度計測（手動調査用）
+on:
+  pull_request:
+    paths:
+      - '.github/workflows/seven-method-speed.yml'
+      - 'speedbench/**'
+permissions:
+  contents: read
+jobs:
+  speed:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 45
+    env:
+      OMP_NUM_THREADS: '1'
+      MKL_NUM_THREADS: '1'
+      OPENBLAS_NUM_THREADS: '1'
+      NUMBA_NUM_THREADS: '1'
+      HF_HUB_DISABLE_XET: '1'
+      CUDA_VISIBLE_DEVICES: ''
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+      - name: 公開ソースと実行環境を取得
+        shell: bash
+        run: |
+          set -euxo pipefail
+          mkdir -p /tmp/speed-src speed-results
+          lscpu > speed-results/lscpu.txt
+          free -h > speed-results/memory.txt
+          python -VV > speed-results/python.txt
+          for pair in 'dac descriptinc/descript-audio-codec' 'facodec lifeiteng/naturalspeech3_facodec' 'hifiglot PupuAI/HiFi-Glot' 'golf iamycy/golf' 'sifigan chomeyama/SiFiGAN' 'llsm Sleepwalking/libllsm2' 'magphase CSTR-Edinburgh/magphase' 'ciglet Sleepwalking/ciglet' 'reaper google/REAPER'; do
+            read -r name repo <<< "$pair"
+            git clone --depth 1 "https://github.com/$repo.git" "/tmp/speed-src/$name"
+            printf '%s %s ' "$name" "$repo" >> speed-results/revisions.txt
+            git -C "/tmp/speed-src/$name" rev-parse HEAD >> speed-results/revisions.txt
+          done
+          tar --exclude='*/.git' --exclude='*.ckpt' --exclude='*.pth' --exclude='*.pkl' --exclude='*.safetensors' --exclude='*.wav' --exclude='*.flac' --exclude='*.mp3' --exclude='*.png' --exclude='*.jpg' --exclude='*.pdf' --exclude='*.ipynb' -czf speed-results/sources.tar.gz -C /tmp speed-src
+      - name: 計測スクリプトを実行
+        if: ${{ hashFiles('speedbench/run.sh') != '' }}
+        shell: bash
+        run: bash speedbench/run.sh 2>&1 | tee speed-results/execution.log
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: seven-method-speed
+          path: speed-results
+          retention-days: 7
