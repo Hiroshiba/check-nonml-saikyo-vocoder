@@ -7,14 +7,13 @@ python -m pip install -q uv
 python -m uv venv --python 3.10 /tmp/vspeed
 PY=/tmp/vspeed/bin/python
 python -m uv pip install --python "$PY" 'torch==2.5.1+cpu' 'torchaudio==2.5.1+cpu' --index-url https://download.pytorch.org/whl/cpu
-python -m uv pip install --python "$PY" 'numpy==1.26.4' 'scipy==1.13.1' soundfile 'librosa==0.10.2.post1' einops 'huggingface_hub<1' safetensors pyworld pysptk hydra-core joblib scikit-learn tensorboardX 'setuptools<81' future gdown requests pyyaml matplotlib descript-audiotools argbind tqdm tensorboard h5py
+python -m uv pip install --python "$PY" 'numpy==1.26.4' 'scipy==1.13.1' soundfile 'librosa==0.10.2.post1' einops 'huggingface_hub<1' safetensors pyworld pysptk hydra-core joblib scikit-learn tensorboardX 'setuptools<81' future gdown requests pyyaml matplotlib descript-audiotools argbind tqdm tensorboard h5py nnAudio
 python -m uv pip install --python "$PY" 'diffsptk==4.0.1' 'lightning==2.1.3' jsonargparse 'torchlpc==0.6' 'kazane==1.0.4' 'torch_fftconv==1.0.0' praat-parselmouth
-# Preserve the revisions recorded in GOLF's gitlinks; rewrite SSH to public HTTPS only for this command.
 git -C /tmp/speed-src/golf -c url.https://github.com/.insteadOf=git@github.com: submodule update --init --recursive
 git -C /tmp/speed-src/golf submodule status --recursive > speed-results/golf-submodules.txt
-cp speedbench/benchmark.py speed-results/benchmark.py
+cp speedbench/benchmark.py speed-results/benchmark_original.py
 "$PY" - <<'PYCODE'
-import os,json,traceback,pathlib,hashlib,subprocess
+import os,json,traceback,pathlib,hashlib,subprocess,difflib
 from huggingface_hub import HfApi,hf_hub_download
 root=pathlib.Path('/tmp/speed-models');root.mkdir(exist_ok=True)
 records=[]
@@ -43,8 +42,20 @@ for p in pathlib.Path('/tmp/speed-src/golf/ckpts/interspeech24/golf-ff').rglob('
  records.append({'repo':'official-golf','path':str(p),'size':p.stat().st_size,'sha256':sha(p)})
 pathlib.Path('speed-results/model_manifest.json').write_text(json.dumps(records,indent=2))
 for r in records:print('MODEL_RECORD',json.dumps(r),flush=True)
+# Annotation compatibility only; no GOLF forward algorithm replacement.
+p=pathlib.Path('/tmp/speed-src/golf/models/lru/recurrence.py');old=p.read_text();new='from typing import Any\n'+old.replace('torch.Any','Any');p.write_text(new)
+pathlib.Path('speed-results/golf-compat.patch').write_text(''.join(difflib.unified_diff(old.splitlines(True),new.splitlines(True),fromfile='recurrence.py.original',tofile='recurrence.py')))
+# Keep benchmark source and the exact runtime patch together in the artifact.
+p=pathlib.Path('speed-results/benchmark_original.py');old=p.read_text();new=old
+new=new.replace('model(sg(z[0]),z[1],z[2])','model(sg(z[0]).float(),z[1],z[2])')
+new=new.replace("for p in pathlib.Path('/usr/lib/sptk/bin').glob('*'):","for p in [pathlib.Path(f) for f in subprocess.check_output(['dpkg','-L','sptk'],text=True).splitlines() if pathlib.Path(f).is_file() and os.access(f,os.X_OK)]:")
+new=new.replace('resource.getrusage(resource.RUSAGE_SELF).ru_maxrss/1024',"float(re.search(r'VmHWM:\\s+(\\d+)',pathlib.Path('/proc/self/status').read_text())[1])/1024")
+new=new.replace("meta.update(adapter.info)","meta.update(adapter.info);meta['rss_after_load_mib']=float(re.search(r'VmRSS:\\s+(\\d+)',pathlib.Path('/proc/self/status').read_text())[1])/1024")
+pathlib.Path('speed-results/benchmark.py').write_text(new)
+pathlib.Path('speed-results/benchmark-compat.patch').write_text(''.join(difflib.unified_diff(old.splitlines(True),new.splitlines(True),fromfile='benchmark_original.py',tofile='benchmark.py')))
 PYCODE
 python -m uv pip freeze --python "$PY" > speed-results/pip-freeze.txt
-"$PY" speedbench/benchmark.py
+"$PY" speed-results/benchmark.py
 cp speedbench/run.sh speed-results/run.sh
 tar --exclude='*/.git' --exclude='*.pyc' --exclude='__pycache__' -czf speed-results/golf-submodule-sources.tar.gz -C /tmp/speed-src/golf models/audiotensor models/lru
+if [ -d /tmp/magphase-port ]; then tar --exclude='*.wav' --exclude='*.pyc' --exclude='__pycache__' -czf speed-results/magphase-port.tar.gz -C /tmp magphase-port; fi
