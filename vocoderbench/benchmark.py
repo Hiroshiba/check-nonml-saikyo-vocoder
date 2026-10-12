@@ -193,6 +193,7 @@ def main():
     execute_references(args)
     report = collect(args, cases, contract)
     failures = sum(r['status'] != 'measured' for r in report['resynthesis'])
+    failures += bool(getattr(args, 'reference_exit_status', 0) or report.get('existing_reference_failures'))
     if args.stage in ('all', 'mos'):
         failures += sum(r['mos']['status'] != 'measured' for r in report['resynthesis'] + report['calibration'])
     logging.info('比較結果: %s / 音声数=%s / 失敗=%s / 条件SHA=%s',

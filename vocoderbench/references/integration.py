@@ -36,7 +36,7 @@ def execute(args):
     if args.retry_failed:
         argv.append('--retry-failed')
     # Failures are kept in the resulting report; parent main returns nonzero after collection.
-    main(argv)
+    args.reference_exit_status = main(argv)
 
 
 def append_results(args, report, samples):
@@ -48,6 +48,8 @@ def append_results(args, report, samples):
     report['method_labels'] = dict(report['method_labels'])
     report['method_labels'].update({m: METHODS[m].label for m in data['selected_methods']})
     report['existing_reference_contract'] = data['contract']
+    report['existing_reference_failures'] = data.get('failure_count', 0)
+    report['existing_reference_processes'] = data.get('processes', [])
     report['existing_reference_note'] = (
         '追加方式は公開ネイティブ帯域で合成。長さ不一致の全長指標を未測定として残し、'
         '共通先頭区間の補助値はcommon_prefixに分離。予測MOSはネイティブ全長出力。')

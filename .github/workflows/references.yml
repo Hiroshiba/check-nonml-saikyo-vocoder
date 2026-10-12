@@ -64,10 +64,16 @@ jobs:
           extra=()
           if [ '${{ inputs.include_dac }}' = 'true' ]; then extra+=(--include-dac); fi
           uv run --locked python -m vocoderbench.reference --smoke --no-mos --output runs/references-ci/comparison "${extra[@]}"
+      - name: 保存済みHTMLを再表示する
+        run: uv run --locked python -m vocoderbench.reference --stage report --output runs/references-ci/comparison
       - name: DACの既定除外とログを確認
         if: always()
         run: |
           cp -r runs/logs runs/references-ci/cli-logs || true
+          mkdir -p runs/references-ci/prepared
+          cp .cache/references/prepared/*.json runs/references-ci/prepared/ || true
+          cp .cache/references/preparation.json runs/references-ci/ || true
+          cp .cache/references/*-compat.patch runs/references-ci/ || true
           if [ '${{ inputs.include_dac }}' != 'true' ]; then
             test ! -d .cache/references/src/dac
             test ! -f .cache/references/models/dac/weights.pth

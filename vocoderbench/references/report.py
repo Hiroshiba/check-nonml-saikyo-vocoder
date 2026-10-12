@@ -76,6 +76,9 @@ def render(data, output):
         for row in sample_rows if row['case'] == chosen) + '</div>'
     failures = '\n\n'.join(f'{row["case"]} / {row["method"]}: ' + row.get('error', row.get('evaluation_error', ''))
                              for row in data['resynthesis'] if row['status'] != 'measured')
+    process_errors = '\n'.join(f'{p["method"]}: {p.get("error", p.get("returncode"))}; {p.get("log", "")}'
+                               for p in data.get('processes', []) if p.get('returncode') != 0 or p.get('error'))
+    failures = '\n\n'.join(v for v in (process_errors, failures) if v)
     text = f'''<!doctype html><html lang="ja"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1"><title>既存方式の再合成比較</title>
 <style>{CSS}</style></head><body><main><h1>既存方式の再合成比較</h1>

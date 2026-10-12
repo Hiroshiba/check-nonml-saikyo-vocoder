@@ -107,7 +107,7 @@ def main(argv=None):
     if args.stage == 'report':
         data = read(args.output / 'results.json')
         render(data, args.output)
-        return int(any(r['status'] != 'measured' for r in data['resynthesis']))
+        return int(bool(data.get('failure_count', sum(r['status'] != 'measured' for r in data['resynthesis']))))
     cases, public = inputs.load(args)
     contract = initialize(args, cases, names)
     if args.stage in ('all', 'acoustic'):
@@ -118,6 +118,12 @@ def main(argv=None):
         args.mos = False
     rows, originals = measure(args, cases, names, public)
     args.mos = requested_mos
+    processes_path = args.output / 'processes.json'
+    processes = read(processes_path) if processes_path.exists() else []
+    process_failures = sum(p.get('returncode') != 0 or bool(p.get('error')) for p in processes)
+    failures = process_failures + sum(row['status'] != 'measured' for row in rows)
+    if args.mos and args.stage in ('all', 'mos'):
+        failures += sum(row['mos']['status'] != 'measured' for row in rows + originals)
     data = {'schema_version': 4, 'study_role': 'existing_references', 'formal_base': {'method': None,
             'reason': '既存方式の比較。現自作ベースを測定・選定基準にしない'},
             'comparison_reference': 'world_harvest' if 'world_harvest' in names else names[0],
@@ -127,15 +133,13 @@ def main(argv=None):
             'index_methods': ['identity', *names], 'generated_at': now(),
             'scope': '2音声の実行確認・品質採否には使用不可' if args.smoke else '固定100音声以上の既存方式比較',
             'planned_cases': len(cases), 'contract': contract, 'execution': read(args.output / 'execution.json'),
-            'resynthesis': rows, 'calibration': originals,
+            'resynthesis': rows, 'calibration': originals, 'processes': processes,
+            'failure_count': failures, 'process_failure_count': process_failures,
             'operation_evaluation': {'status': 'not_implemented', 'reason': '本PRは再合成比較の追加。属性操作・下流学習は未評価'}}
     if (args.output / 'mos_provenance.json').exists():
         data['mos_provenance'] = read(args.output / 'mos_provenance.json')
     write(args.output / 'results.json', data)
     render(data, args.output)
-    failures = sum(row['status'] != 'measured' for row in rows)
-    if args.mos and args.stage in ('all', 'mos'):
-        failures += sum(row['mos']['status'] != 'measured' for row in rows + originals)
     logging.info('既存方式比較: %s。%d方式・%d音声。失敗=%d', args.output, len(names), len(cases), failures)
     return int(bool(failures))
 
