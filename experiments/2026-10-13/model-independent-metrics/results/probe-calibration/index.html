@@ -1,0 +1,30 @@
+<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>方式非依存の追加指標：人工計測</title>
+<style>:root{color-scheme:light dark}body{font:16px/1.7 system-ui,sans-serif;max-width:1100px;margin:2rem auto;padding:0 1rem}table{border-collapse:collapse;width:100%}td,th{border:1px solid #888;padding:.4rem}pre{white-space:pre-wrap;overflow-wrap:anywhere}.scroll{overflow:auto}button{font:inherit;margin:.4rem;padding:.4rem}</style></head><body>
+<h1>方式非依存の追加指標：人工計測</h1>
+<h2>ベースと比較対象</h2><p>正式ベースの性能比較は未実施です。原音そのものをERB診断の比較基準とし、他は既知の解析的操作を測りました。新しいボコーダーの採用・音質優位性は判断しません。</p>
+<h2>条件別結果</h2><p>48 kHz、主に1.2秒。15条件を各6回実行し、11条件は計算完了、4条件は品質等の証跡が不足する部分測定です。反復は同じ入力であり、90個の独立発話ではありません。</p>
+<div class="scroll"><table><thead><tr><th>条件</th><th>状態</th><th>主値</th><th>単位</th><th>初回 秒</th><th>反復中央値 秒</th></tr></thead><tbody><tr><td>content</td><td>ok</td><td>0.4444444444444444</td><td>CER差</td><td>0.000916</td><td>0.000512</td></tr><tr><td>erb-identity</td><td>ok</td><td>0.0</td><td>dB</td><td>0.012534</td><td>0.009457</td></tr><tr><td>erb-gain</td><td>ok</td><td>0.7499999712310478</td><td>dB</td><td>0.010091</td><td>0.009732</td></tr><tr><td>pitch-dynamic</td><td>ok</td><td>0.04395639701579596</td><td>cent</td><td>0.047650</td><td>0.044970</td></tr><tr><td>gain-dynamic</td><td>ok</td><td>1.36245999794713e-08</td><td>dB</td><td>0.002933</td><td>0.002487</td></tr><tr><td>local-events</td><td>ok</td><td>0.020833333333358794</td><td>ms</td><td>0.004837</td><td>0.004493</td></tr><tr><td>spectral-slope</td><td>ok</td><td>8.687634894721796e-05</td><td>dB/oct</td><td>0.003437</td><td>0.002939</td></tr><tr><td>gain-interference</td><td>ok</td><td>—</td><td>干渉行列</td><td>0.047437</td><td>0.049152</td></tr><tr><td>content-only-curve</td><td>partial</td><td>—</td><td>編集量別の品質・内容保持</td><td>0.003032</td><td>0.002553</td></tr><tr><td>abx</td><td>ok</td><td>—</td><td>ABX誤り率</td><td>0.003049</td><td>0.002415</td></tr><tr><td>abx-ties</td><td>ok</td><td>—</td><td>ABX誤り率</td><td>0.003075</td><td>0.002647</td></tr><tr><td>readout</td><td>ok</td><td>—</td><td>属性別誤差</td><td>0.003009</td><td>0.002315</td></tr><tr><td>interpolation</td><td>partial</td><td>—</td><td>補間診断</td><td>0.071557</td><td>0.074481</td></tr><tr><td>rough-input</td><td>partial</td><td>—</td><td>摂動曲線</td><td>0.030497</td><td>0.030740</td></tr><tr><td>bits</td><td>partial</td><td>—</td><td>表現量曲線</td><td>0.030233</td><td>0.030622</td></tr></tbody></table></div>
+<p>行列や属性別結果には総合点を作らないため、計算完了でも主値は「—」です。原音自己比較ERBは0、ABX同点は0.5。ピッチの値は測定器の動作確認であり、自然音声での精度保証ではありません。</p>
+<h2>人工信号を聴く</h2><p>下記はブラウザーで式から再生成する例であり、保存された測定音声ファイルそのものではありません。自動再生はしません。元の48 kHz float32 WAVは提出ZIPに保存しました。</p>
+<button type="button" data-probe="identity">220 Hz 無編集例</button><button type="button" data-probe="pitch">0→300 cent例</button><button type="button" data-probe="gain">0→6 dB例</button><p id="audio-status" role="status"></p>
+<h2>異常・対象外の扱い</h2><p>長さ不一致、非有限値、音声ハッシュ不一致はfailed、無音F0と短すぎるERB入力はnot_applicable、欠落ファイルはunavailable。原音認識が事前CER上限を超える場合はpartialで主値null。7条件を各2回観測しました。結果を0点や0誤差へ置換しません。</p>
+<h2>解釈の限界</h2><p>実ボコーダー、自然音声、実ASR・MOSモデル、人間評定は未測定です。特徴量は人工ベクトル、表現量は固定幅波形ビット列の例です。HNM内部表現を共通仕様へ持ち込みません。単一の正弦波では無効帯域を含むERB平均がゲイン量と一致しないため、有効セル数をJSONへ残しています。</p>
+<p>Python 3.13.5 / NumPy 2.3.5 / SciPy 1.17.0、BLAS/OMP各1スレッド。リポジトリ指定のPython 3.12と異なります。初回・反復時間には入力I/Oとハッシュ・参照解析を含み、モデル推論や起動時間は含みません。メモリと信頼区間は未計測です。</p>
+<p><a href="results.json">代表結果・全回の時間・ソースハッシュ</a> ／ <a href="../../index.html">説明・レビュー</a></p>
+<script>
+let context;
+document.querySelectorAll('button[data-probe]').forEach(button=>button.addEventListener('click',async()=>{
+ try{
+  context??=new AudioContext(); await context.resume();
+  const rate=48000,n=57600,buffer=context.createBuffer(1,n,rate),data=buffer.getChannelData(0);
+  let phase=0;const kind=button.dataset.probe;
+  for(let i=0;i<n;i++){
+   const t=i/rate,frequency=kind==='pitch'?220*2**((300*t/1.2)/1200):220;
+   if(kind==='pitch'){phase+=2*Math.PI*frequency/rate;data[i]=.2*Math.sin(phase);}
+   else{data[i]=.2*Math.sin(2*Math.PI*220*t)*(kind==='gain'?10**((6*t/1.2)/20):1);}
+  }
+  const source=context.createBufferSource();source.buffer=buffer;source.connect(context.destination);source.start();
+  document.getElementById('audio-status').textContent='式から再生成した人工例を再生しました。測定ファイルの再生ではありません。';
+ }catch(error){document.getElementById('audio-status').textContent='再生できません: '+error.message;}
+}));
+</script></body></html>

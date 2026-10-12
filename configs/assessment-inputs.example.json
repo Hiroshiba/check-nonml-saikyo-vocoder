@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "baseline_method": "comparison-baseline",
+  "scope": "例のパス・方式・話者・長さ・操作量を実データへ変更して使う。人工入力一式はassessment.probesで生成する。",
+  "jobs": [
+    {
+      "id": "candidate-pitch-ramp", "metric": "pitch_tracking",
+      "case": "utterance-001", "condition": "pitch-ramp-0-to-300-cent",
+      "method": "candidate", "seed": 0, "speaker": "speaker-001",
+      "language": "ja", "style": "normal", "kind": "speech",
+      "reference": "../runs/saved/unedited.wav", "output": "../runs/saved/pitch-ramp.wav",
+      "target_cents": {"times": [0, 1.2], "values": [0, 300]}
+    },
+    {
+      "id": "candidate-gain-ramp", "metric": "gain_tracking",
+      "case": "utterance-001", "condition": "gain-ramp-0-to-6-db",
+      "method": "candidate", "seed": 0, "speaker": "speaker-001",
+      "language": "ja", "style": "normal", "kind": "speech",
+      "reference": "../runs/saved/unedited.wav", "output": "../runs/saved/gain-ramp.wav",
+      "target_gain_db": {"times": [0, 1.2], "values": [0, 6]}
+    }
+  ]
+}
