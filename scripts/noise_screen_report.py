@@ -180,7 +180,7 @@ def render(summary, status, historical, samples, missing_audio):
     page = '''<!doctype html><html lang="ja"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>雑音の時間形状と乱数を変える5案：固定120音声比較</title><style>
 :root{color-scheme:light dark;font:16px/1.7 system-ui,sans-serif}body{max-width:1250px;margin:auto;padding:24px}h1{line-height:1.35;font-size:1.8rem}h2{font-size:1.25rem;margin-top:2rem}.scroll{overflow:auto}table{border-collapse:collapse;width:100%;font-size:.9rem}th,td{padding:8px;border-bottom:1px solid #8886;text-align:left;white-space:nowrap}th{background:#8882}a{color:light-dark(#1554ad,#91baff)}audio{width:250px}article{display:inline-block;margin:8px;vertical-align:top}.warning{border-left:4px solid #d98616;padding:12px;background:#8881}</style>
-<h1>雑音の時間形状と乱数を変える5案</h1><p>固定120録音・40話者。実験時のHNM v2と5候補、既存比較対象WORLD（Harvest）。</p>'''
+<h1>雑音の時間形状と乱数を変える5案</h1><p>固定120録音・40話者、16 kHz。48 kHzの品質は未評価。実験時のHNM v2と5候補、既存比較対象WORLD（Harvest）。</p>'''
     page += f'<p>測定状態：{html.escape(status)}。</p>'
     original = summary['original_mos']
     absolute.insert(0, ['原音', number(original['mean']) + (f" ({original['valid']}/120)" if original['valid'] != 120 else '')] + ['—'] * 5)
