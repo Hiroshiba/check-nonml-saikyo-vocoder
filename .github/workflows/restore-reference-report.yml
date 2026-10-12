@@ -40,10 +40,10 @@ jobs:
           import io
           import json
           from pathlib import Path
-          import wave
           import numpy as np
+          import soundfile as sf
           from vocoderbench.references.catalog import DEFAULT_METHODS
-          from vocoderbench.references.common import read, write
+          from vocoderbench.references.common import read
           from vocoderbench.references.publish import publish
           roots = list(Path('runs/reference-restored').rglob('comparison/results.json'))
           if len(roots) != 1:
@@ -68,10 +68,9 @@ jobs:
           for sample in audio:
               assert sample['data_uri'].startswith('data:audio/wav;base64,')
               raw = base64.b64decode(sample['data_uri'].split(',', 1)[1], validate=True)
-              with wave.open(io.BytesIO(raw)) as stream:
-                  assert stream.getnframes() == sample['n_samples']
-                  assert stream.getframerate() == sample['sample_rate']
-                  assert stream.getnchannels() == 1
+              y, sr = sf.read(io.BytesIO(raw))
+              assert len(y) == sample['n_samples']
+              assert sr == sample['sample_rate'] and y.ndim == 1
           provenance = {
               'source_pr': 26, 'workflow_run_id': 38243678340,
               'workflow_url': 'https://github.com/Hiroshiba/check-nonml-saikyo-vocoder/actions/runs/38243678340',
