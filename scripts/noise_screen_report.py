@@ -183,6 +183,8 @@ def render(summary, status, historical, samples, missing_audio):
     original = summary['original_mos']
     absolute.insert(0, ['原音', number(original['mean']) + (f" ({original['valid']}/120)" if original['valid'] != 120 else '')] + ['—'] * 5)
     page += '<p>各値は固定120録音の発話平均（欠測時だけ有効件数を併記）。音響指標は発話内8 seedを先に平均、MOS・eSTOIはseed 0。音量誤差は各seedの絶対値を平均した。原音はMOSだけを掲載し、未測定項目をゼロとしない。MOSは人間評定による独立校正前の探索的予測。</p>'
+    if summary.get('effective_mos_contract'):
+        page += '<p>英語MOSは開始前にCPUスレッド数を予定1から4へ変更。モデル・重み・音声seed・抽出seed・反復数は維持した。WORLDと日本語補助はCPU1スレッドの別実行で、CPU実行条件まで同一とは扱わない。<a href="effective_mos_contract.json">有効MOS条件</a>と<a href="../../reviews/execution-adjustment.md">変更記録</a>を参照。</p>'
     page += table(['方式'] + [t for _, t, _ in METRICS], absolute)
     page += '<h2>現在のv2との差</h2><p>候補−現在ベース。MOS・eSTOIは正、誤差は負が改善。</p>'
     if historical:
@@ -195,7 +197,7 @@ def render(summary, status, historical, samples, missing_audio):
     page += '<h2>対応する話者を単位にした不確かさ</h2><p>各発話のseed平均から候補−v2を計算し、3発話が揃った話者を等重みで平均。40話者を再抽出する2000回の百分位bootstrap（seed 20261012）。区間は探索的95%区間で、多候補・多指標の検定補正をしていない。seedを独立話者と数えない。欠測があれば完全な3発話が揃う話者だけを区間へ使う。</p>'
     page += table(['候補', '指標', '差の話者平均', '探索的95%区間', '改善発話／対応発話', '完全話者／40'], uncertainty)
     page += '''<h2>記録と適用範囲</h2><p>学習モデルを使わない合成器の改善候補を比較する研究。予測MOS評価器は学習モデル。正式な採否は多指標・制御性・失敗例・条件を併読して別に判断し、この表示から自動決定しない。</p>
-<p><a href="results.json">全結果JSON</a> · <a href="summary.json">集計JSON</a> · <a href="contract.json">測定条件</a> · <a href="publication.json">集計・参照元SHA</a> · <a href="../whisper-run-001/index.html">ささやきのseed診断</a> · <a href="../../research.md">調査</a> · <a href="../../reviews/criteria.md">事前の比較条件</a></p></html>'''
+<p><a href="results.json">全結果JSON</a> · <a href="summary.json">集計JSON</a> · <a href="contract.json">測定条件</a> · <a href="publication.json">集計・参照元SHA</a> · <a href="../jvs-run-001/index.html">日本語12録音の5候補比較</a> · <a href="../whisper-run-001/index.html">ささやきのseed診断</a> · <a href="../../reviews/control-findings.md">制御性の確認</a> · <a href="../../research.md">調査</a> · <a href="../../reviews/criteria.md">事前の比較条件</a></p></html>'''
     return page
 
 
@@ -267,6 +269,9 @@ def main():
     original = [p['original']['mos']['value'] for p in parts if p['original'].get('mos', {}).get('status') == 'measured'
                 and p['original']['mos'].get('value') is not None]
     summary['original_mos'] = {'mean': float(np.mean(original)) if original else None, 'valid': len(original)}
+    effective = args.input / 'effective_mos_contract.json'
+    if effective.exists():
+        summary['effective_mos_contract'] = read(effective)
     args.output.mkdir(parents=True, exist_ok=True)
     write(args.output / 'summary.json', summary)
     data.update(schema_version=3, planned_cases=120, comparison_reference='hnm', method_labels=LABELS,
@@ -284,6 +289,8 @@ def main():
             shutil.copyfile(args.input / name, args.output / name)
         if (world_path.parent / name).exists():
             shutil.copyfile(world_path.parent / name, args.output / ('world_' + name))
+    if effective.exists():
+        shutil.copyfile(effective, args.output / effective.name)
     write(args.output / 'publication.json', {'source_results_sha256': sha(source),
           'world_results_sha256': sha(world_path), 'generator_sha256': sha(Path(__file__)),
           'world_origin': summary['world_origin'], 'complete_current_measurements': complete})
