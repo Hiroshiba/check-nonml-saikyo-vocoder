@@ -2,7 +2,7 @@
 import numpy as np
 
 from . import world, hnm
-from .control import edit_parameters as edit_world, make_synthetic_parameters
+from .control import edit_parameters as edit_world
 
 METHODS = ('hnm', 'world_harvest')
 
@@ -17,12 +17,6 @@ def decode(method, params):
 
 def edit(method, params, **kwargs):
     return hnm.edit_parameters(params, **kwargs) if method == 'hnm' else edit_world(params, **kwargs)
-
-
-def handmade(method, f0):
-    if method == 'hnm':
-        return hnm.make_synthetic_parameters(f0_hz=f0)
-    return make_synthetic_parameters(world.WorldParameters, f0_hz=f0, aperiodicity=1. if f0 == 0 else .001)
 
 
 def scalars(params):

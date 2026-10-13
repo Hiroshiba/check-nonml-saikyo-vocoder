@@ -24,7 +24,7 @@ def initialize(args, cases, names):
         versions[method] = read(path) if path.exists() else {'status': 'not_prepared'}
         versions[method].pop('prepared_at', None)
     contract = {'schema_version': 1, 'methods': names, 'inputs': inputs.fingerprint(cases),
-                'scope': 'smoke' if args.smoke else 'fixed_corpus', 'seed': args.seed,
+                'scope': 'fixed_corpus', 'seed': args.seed,
                 'threads': args.threads, 'device': 'cpu', 'mos_requested': args.mos,
                 'source_hashes': implementation_hashes(), 'prepared_methods': versions,
                 'native_sample_rates': {m: METHODS[m].sample_rate for m in names},
@@ -83,8 +83,7 @@ def main(argv=None):
     parser.add_argument('--corpus-cache', type=Path, default=corpus.CACHE)
     parser.add_argument('--mos-cache', type=Path, default=Path('.cache/mos'))
     parser.add_argument('--stage', choices=('all', 'acoustic', 'mos', 'report'), default='all')
-    parser.add_argument('--smoke', action='store_true', help='固定2音声での動作確認。正式品質比較ではない')
-    parser.add_argument('--no-mos', dest='mos', action='store_false', help='動作確認のみ。正式比較では使えない')
+    parser.set_defaults(mos=True)
     parser.add_argument('--list-methods', action='store_true')
     parser.add_argument('--retry-failed', action='store_true')
     parser.add_argument('--threads', type=int, default=1)
@@ -100,8 +99,6 @@ def main(argv=None):
         parser.error('--output が必要です')
     if args.threads < 1 or args.timeout < 1 or not 0 <= args.seed < 2**32:
         parser.error('threads/timeoutは正の整数、seedは0以上2**32未満にしてください')
-    if not args.smoke and not args.mos:
-        parser.error('正式比較では自動MOSを含めてください。--no-mos は --smoke 専用です')
     args.output, args.runtime_cache = args.output.resolve(), args.runtime_cache.resolve()
     args.output.mkdir(parents=True, exist_ok=True)
     if args.stage == 'report':
@@ -131,7 +128,7 @@ def main(argv=None):
             'method_labels': {'identity': '原音', **{m: METHODS[m].label for m in names}},
             'native_sample_rates': {m: METHODS[m].sample_rate for m in names},
             'index_methods': ['identity', *names], 'generated_at': now(),
-            'scope': '2音声の実行確認・品質採否には使用不可' if args.smoke else '固定100音声以上の既存方式比較',
+            'scope': '固定100音声以上の既存方式比較',
             'planned_cases': len(cases), 'contract': contract, 'execution': read(args.output / 'execution.json'),
             'resynthesis': rows, 'calibration': originals, 'processes': processes,
             'failure_count': failures, 'process_failure_count': process_failures,

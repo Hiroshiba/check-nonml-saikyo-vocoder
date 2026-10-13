@@ -1,6 +1,6 @@
 """Independent, deterministic diagnostic signals; none uses a vocoder decoder.
 
-These fixtures test engineering properties, not perceptual speech quality.
+These stimuli measure acoustic properties and meter calibration, not perceptual speech quality.
 F0 truth is sample-wise Hz, with zero meaning known unvoiced/nonperiodic.
 """
 from __future__ import annotations

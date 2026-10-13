@@ -30,11 +30,10 @@ uv run --locked python -m vocoderbench.reference --include-dac --output runs/ref
 
 正式比較は [固定集合](docs/CORPUS.md) の120録音、[追加指標](docs/EXTENDED_METRICS.md)、[自動MOS](docs/MOS.md) を使います。出力は `index.html`、`results.json`、`summary.json`、音声例、未調整の全長波形、条件記録、失敗ログです。異なる出力長を強制的に合わせず、全長の不一致と共通区間の補助指標を分けます。予測MOSは新規の人間評定ではありません。
 
-短い動作確認には次を使います。正式な100音声以上の品質比較・採否を済ませたことにはなりません。
+登録済み方式の一覧は、音声処理や通信をせずに表示できます。
 
 ```sh
 uv run --locked python -m vocoderbench.reference --list-methods
-uv run --locked python -m vocoderbench.reference --smoke --no-mos --output runs/references-smoke
 ```
 
 ### 結果をGit・Pagesへ残す
@@ -61,7 +60,7 @@ uv run --locked python scripts/build_site.py
 - [5人の往復議論と出典](experiments/2026-10-11/initial-hnm/reviews/discussion.md)
 - [GitHub Pagesの一覧](https://hiroshiba.github.io/check-nonml-saikyo-vocoder/)
 
-自作HNMとWORLDの従来の小規模実行は次のコマンドで再実行します。検証環境はLinux x86_64、Python 3.12、GCC/G++ 13。uv、git、C/C++コンパイラ、自然音声復号用FFmpegが必要です。
+自作HNMとWORLDの人工信号による音響特性・操作追従と、固定自然音声2区間の補助測定は次のコマンドで記録します。正式な品質採否は上記の固定120音声比較で行います。実行環境はLinux x86_64、Python 3.12、GCC/G++ 13。uv、git、C/C++コンパイラ、自然音声復号用FFmpegが必要です。
 
 ```sh
 uv sync --locked
@@ -70,7 +69,7 @@ uv run --locked python scripts/fetch_data.py
 uv run --locked python -m vocoderbench.run --output runs/local-comparison
 ```
 
-自然音声を省く動作確認には最後のコマンドへ `--no-natural --sample-rates 16000` を追加します。正常終了は音質合格ではありません。
+人工信号だけの原因分析では `--no-natural`、対象帯域の指定には `--sample-rates` を使います。同一出力の再decode照合、保存読込往復、固定手作り入力のAPI確認、原音波形の自己比較は行いません。既知F0に対する校正と、位相細部・雑音成分・操作追従の研究測定は保持します。
 
 自作HNMとWORLDは音高・音量・時間長を編集できます。自作表現は保存・読込と手作り入力からの合成に対応しますが、声質の知覚距離や息っぽさ等の制御は未検証です。今回追加する6方式の共通入口は再合成比較であり、属性操作・下流学習の比較は未実装です。
 
@@ -90,6 +89,8 @@ uv run --locked python -m vocoderbench.benchmark \
 最終目標は48 kHzへの適用も含みます。正式集合は16 kHzの英語通常発声であり、低帯域モデルのアップサンプリングだけで48 kHz対応を達成したとは扱いません。日本語・ささやき・裏声の少数補助測定は別に記録しています。
 
 ## 文書と帰属
+
+開発時のCIはキャッシュ付きRuff・ソース行数の静的解析だけを行います。2音声のスモーク経路と、音声合成・レポート保存・Pages生成の動作確認CIは削除しました。Pagesの本番生成・内部リンク検査・公開は `main` への反映後に行います。過去に保存したHTML・JSONは変更しません。
 
 [既存方式比較](docs/REFERENCES.md)、[進め方](docs/WORKFLOW.md)、[測定仕様](docs/EVALUATION.md)、[開発・ログ](docs/DEVELOPMENT.md)、[現在の状態](docs/STATUS.md)、[公開方法](docs/PUBLISHING.md) を参照してください。
 
