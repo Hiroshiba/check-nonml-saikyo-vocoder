@@ -39,12 +39,11 @@ def check(path, expected):
 
 
 def implementation_hashes():
-    paths = [*HERE.glob('*.py'), HERE / 'sources.lock.json', HERE / 'requirements.txt',
-             ROOT / 'vocoderbench/reference.py', ROOT / 'vocoderbench/metrics.py',
-             ROOT / 'vocoderbench/extended_metrics.py', ROOT / 'vocoderbench/temporal_metrics.py',
-             ROOT / 'vocoderbench/mos.py', ROOT / 'vocoderbench/world.py',
-             ROOT / 'vocoderbench/world.lock.json', ROOT / 'uv.lock']
-    return {str(p.relative_to(ROOT)): digest(p) for p in sorted(paths)}
+    paths = [*HERE.glob('*.py'), *(ROOT / 'vocoderbench').glob('*.py'),
+             HERE / 'sources.lock.json', HERE / 'requirements.txt',
+             ROOT / 'vocoderbench/world.lock.json', ROOT / 'uv.lock', ROOT / 'BASELINE.json']
+    return {str(p.relative_to(ROOT)): digest(p) for p in sorted(set(paths))}
+
 
 
 def verify_prepared(cache, method):

@@ -66,13 +66,15 @@ def build_magphase(cache):
     bins = port / 'tools/bin'
     bins.mkdir(parents=True, exist_ok=True)
     shutil.copy2(src / 'reaper/build/reaper', bins / 'reaper')
-    files = subprocess.check_output(['dpkg', '-L', 'sptk'], text=True).splitlines()
+    local_sptk = os.environ.get('VOCODERBENCH_SPTK_BIN')
+    files = (list(Path(local_sptk).resolve().iterdir()) if local_sptk else
+             subprocess.check_output(['dpkg', '-L', 'sptk'], text=True).splitlines())
     for name in files:
         path = Path(name)
         if path.is_file() and os.access(path, os.X_OK) and not (bins / path.name).exists():
             (bins / path.name).symlink_to(path)
     if not (bins / 'mcep').exists():
-        raise FileNotFoundError('SPTK 3.9が必要です。Ubuntu: sudo apt-get install sptk')
+        raise FileNotFoundError('SPTK 3.9が必要です。Ubuntu: sudo apt-get install sptk、またはVOCODERBENCH_SPTK_BINで配置先を指定')
     sources = sorted((port / 'src').glob('*.py'))
     original = {p.name: p.read_text() for p in sources}
     run_process([sys.executable, '-m', 'lib2to3', '-w', '-n', *map(str, sources)])
