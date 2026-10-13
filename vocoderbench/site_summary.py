@@ -19,6 +19,8 @@ def esc(value):
 
 def brief(results):
     data = json.loads((results / 'results.json').read_text(encoding='utf-8'))
+    if data.get('study_role') == 'added_quality_control_metrics':
+        return _brief_added_metrics(data)
     if data.get('study_role') == 'existing_references':
         from .references.report import table
         return '<p>' + esc(data['scope']) + '</p>' + table(data)
@@ -58,6 +60,25 @@ def brief(results):
             '<div class="scroll"><table><thead><tr><th>方式</th><th>スペクトル誤差中央値 dB</th>'
             '<th>対応する差分の中央値 dB</th><th>有効／全件</th><th>処理・測定失敗</th></tr></thead>'
             f'<tbody>{"".join(body)}</tbody></table></div>')
+
+
+def _brief_added_metrics(data):
+    rows = []
+    for item in data['comparison_summary']:
+        if item['metric'] not in ('mos', 'speaker_ecapa', 'erb', 'scoreq'):
+            continue
+        cells = [item['label']]
+        for method in ('hnm', 'world_harvest'):
+            metric = item['methods'].get(method, {})
+            value = metric.get('speaker_macro_mean')
+            cells.append(f"{value:.3f}（{metric['valid_cases']}/120）" if value is not None else '未測定')
+        rows.append('<tr>' + ''.join(f'<td>{esc(v)}</td>' for v in cells) + '</tr>')
+    scoreq_count = data['scoreq_status']['measured_rows']
+    return ('<p>固定120録音40話者の追加品質・制御測定。話者等重み。'
+            '無編集MOSは同条件の歴史値、編集MOS・ECAPA・ERB等を追加実測。'
+            f'SCOREQ有効{scoreq_count}/240件、ASRは55録音の補助集合。総合順位は作りません。</p>'
+            '<div class="scroll"><table><thead><tr><th>指標</th><th>HNM v3（現ベース）</th>'
+            '<th>WORLD（Harvest）</th></tr></thead><tbody>' + ''.join(rows) + '</tbody></table></div>')
 
 
 def _brief_supplement(data, results):

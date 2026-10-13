@@ -1,0 +1,55 @@
+{
+  "population": {
+    "cases": 120,
+    "speakers": 40,
+    "methods": [
+      "hnm",
+      "world_harvest"
+    ],
+    "repetitions_are_independent_samples": false
+  },
+  "group_keys": [
+    "metric",
+    "condition",
+    "method",
+    "scalar_name",
+    "unit"
+  ],
+  "scalar_order": "各発話で初回結果の指標値→同じ話者内の有効発話平均→話者等重み平均。",
+  "paired_difference": "同じcase/condition/seedのWORLD−HNM。有効な対だけで話者内平均→話者等重み平均。",
+  "denominators": "予定発話120、実測有効発話、対比較可能発話、予定話者40、有効話者と全status件数を並記。",
+  "missing": "欠測/部分測定/対象外/失敗は元状態とnullを保持。0補完しない。品質曲線は各証跡点の状態で判断。",
+  "auditory_local": [
+    "value (dB)",
+    "local_frame_rmse.abs_p95 (dB)",
+    "reference_active_cells / total_band_frame_cells"
+  ],
+  "pitch_tracking": [
+    "value (cent)",
+    "relative_error.abs_p95 (cent)",
+    "relative_error.count",
+    "expected_voiced_frames",
+    "missing_voiced_frames",
+    "false_voiced_frames",
+    "expected_unvoiced_frames",
+    "unmapped_frames",
+    "out_of_range_frames",
+    "gross_error_over_600_cents",
+    "octave_error_frames",
+    "total_frames"
+  ],
+  "gain_tracking": [
+    "value (dB)",
+    "errors.abs_p95 (dB)",
+    "errors.count",
+    "reference_silent_frames",
+    "silent_output_frames",
+    "output_peak",
+    "over_one_fraction",
+    "total_frames"
+  ],
+  "interference": "gain列の属性ごとresponseとnormalized_errorを別々に集計。行列全体を総合点にしない。",
+  "quality_curve": "control/amount/metricを分離。絶対値と同じ発話の無編集値との差を別々に集計。",
+  "serialized_size": "実bytes/原音秒を方式ごとに集計。理論パラメータbit率とも表現量曲線とも別。",
+  "uncertainty": "実装する場合は話者単位の再標本化。発話フレームや時間反復を独立標本数にしない。"
+}

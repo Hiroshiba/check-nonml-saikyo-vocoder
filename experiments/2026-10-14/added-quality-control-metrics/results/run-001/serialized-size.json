@@ -1,0 +1,4624 @@
+{
+  "metric": "serialized_bytes_per_second",
+  "condition": "native_compressed_npz",
+  "unit": "bytes/s",
+  "source": "assessment準備で実ファイルhashを合成記録と照合し計測したNPZ bytes。ヘッダー・メタデータ込み。",
+  "rows": [
+    {
+      "case": "librispeech_1089-134686-0008",
+      "method": "hnm",
+      "speaker": "librispeech_1089",
+      "status": "measured",
+      "value": 1386976.1666666667,
+      "serialized_bytes": 8321857,
+      "duration_seconds": 6.0,
+      "artifact_sha256": "ba5c6bd14ca1df7dc45ed5213847cf1fb8e721cc080342a29cc966bd20437fe2",
+      "source_status": "ok",
+      "reason": null
+    },
+    {
+      "case": "librispeech_1089-134686-0008",
+      "method": "world_harvest",
+      "speaker": "librispeech_1089",
+      "status": "measured",
+      "value": 1341188.0,
+      "serialized_bytes": 8047128,
+      "duration_seconds": 6.0,
+      "artifact_sha256": "e0b86b482f0f21a5cc3d27bc408a17b0ac2d0f6ed7e1bc23e9b01b1122bc9039",
+      "source_status": "ok",
+      "reason": null
+    },
+    {
+      "case": "librispeech_1089-134686-0011",
+      "method": "hnm",
+      "speaker": "librispeech_1089",
+      "status": "measured",
+      "value": 1382601.6666666667,
+      "serialized_bytes": 8295610,
+      "duration_seconds": 6.0,
+      "artifact_sha256": "d3a183915d7941381effdf1e7cf7c319f8997e16a215424f208e13818d8f020e",
+      "source_status": "ok",
+      "reason": null
+    },
+    {
+      "case": "librispeech_1089-134686-0011",
+      "method": "world_harvest",
+      "speaker": "librispeech_1089",
+      "status": "measured",
+      "value": 1310159.1666666667,
+      "serialized_bytes": 7860955,
+      "duration_seconds": 6.0,
+      "artifact_sha256": "d51e79adfdfbcea8cc0e98b4b3d182036229bbfeb483950c8aefa7a58996dabb",
+      "source_status": "ok",
+      "reason": null
+    },
+    {
+      "case": "librispeech_1089-134686-0032",
+      "method": "hnm",
+      "speaker": "librispeech_1089",
+      "status": "measured",
+      "value": 1277898.04400978,
+      "serialized_bytes": 5226603,
+      "duration_seconds": 4.09,
+      "artifact_sha256": "f1d84bb4c8372c1f4d7d7dc0959d58dffb345279e41f5f7154cd78f8337d162a",
+      "source_status": "ok",
+      "reason": null
+    },
+    {
+      "case": "librispeech_1089-134686-0032",
+      "method": "world_harvest",
+      "speaker": "librispeech_1089",
+      "status": "measured",
+      "value": 1241703.9119804401,
+      "serialized_bytes": 5078569,
+      "duration_seconds": 4.09,
+      "artifact_sha256": "b1b66279d8ed7ee3cca7f9bb8c50f9ef79e5f33a162dc3c62da78065a52d4363",
+      "source_status": "ok",
+      "reason": null
+    },
+    {
+      "case": "librispeech_1188-133604-0003",
+      "method": "hnm",
+      "speaker": "librispeech_1188",
+      "status": "measured",
+      "value": 1334564.0,
+      "serialized_bytes": 8007384,
+      "duration_seconds": 6.0,
+      "artifact_sha256": "3dad34607f7849e6fcd1edf986c48a1e806712dde5ce2e250834a39a7405a694",
+      "source_status": "ok",
+      "reason": null
+    },
+    {
+      "case": "librispeech_1188-133604-0003",
+      "method": "world_harvest",
+      "speaker": "librispeech_1188",
+      "status": "measured",
+      "value": 1206343.0,
+      "serialized_bytes": 7238058,
+      "duration_seconds": 6.0,
+      "artifact_sha256": "2d4887c8337af60ffacd5d94873f3e73ae4aa5530d33936936b4264429059f92",
+      "source_status": "ok",
+      "reason": null
+    },
+    {
+      "case": "librispeech_1188-133604-0031",
+      "method": "hnm",
+      "speaker": "librispeech_1188",
+      "status": "measured",
+      "value": 1338338.8235294118,
+      "serialized_bytes": 5687940,
+      "duration_seconds": 4.25,
+      "artifact_sha256": "95c00356ba5997a74b791777c782610422df3223263b519b5dc225e2b8466b5b",
+      "source_status": "ok",
+      "reason": null
+    },
+    {
+      "case": "librispeech_1188-133604-0031",
+      "method": "world_harvest",
+      "speaker": "librispeech_1188",
+      "status": "measured",
+      "value": 1170877.4117647058,
+      "serialized_bytes": 4976229,
+      "duration_seconds": 4.25,
+      "artifact_sha256": "d3c7f2c63416eae2c86fd52b913bd72ffa07685c6eae7628df6fa52ea160221b",
+      "source_status": "ok",
+      "reason": null
+    },
+    {
+      "case": "librispeech_1188-133604-0037",
+      "method": "hnm",
+      "speaker": "librispeech_1188",
+      "status": "measured",
+      "value": 1405622.0,
+      "serialized_bytes": 8433732,
+      "duration_seconds": 6.0,
+      "artifact_sha256": "20011a06882b1cd819967107f7d3946138d374534da22807da2fffb7f5a29ddb",
+      "source_status": "ok",
+      "reason": null
+    },
+    {
+      "case": "librispeech_1188-133604-0037",
+      "method": "world_harvest",
+      "speaker": "librispeech_1188",
+      "status": "measured",
+      "value": 1206268.1666666667,
+      "serialized_bytes": 7237609,
+      "duration_seconds": 6.0,
+      "artifact_sha256": "2dcc6f70dd2726c31aed51e29fd7c3a4950c088ddf0aff4838cd86e1607dba03",
+      "source_status": "ok",
+      "reason": null
+    },
+    {
+      "case": "librispeech_121-121726-0012",
+      "method": "hnm",
+      "speaker": "librispeech_121",
+      "status": "measured",
+      "value": 1315645.241038319,
+      "serialized_bytes": 5321785,
+      "duration_seconds": 4.045,
+      "artifact_sha256": "6bb8ebf2b73a603421bfc0bc9ea62ab3db3dd13a6cb85b0d5a0afd0d78194b32",
+      "source_status": "ok",
+      "reason": null
+    },
+    {
+      "case": "librispeech_121-121726-0012",
+      "method": "world_harvest",
+      "speaker": "librispeech_121",
+      "status": "measured",
+      "value": 1259350.803461063,
+      "serialized_bytes": 5094074,
+      "duration_seconds": 4.045,
+      "artifact_sha256": "be46b5b5624a34439b02b38f23690648abb5ee30f8f21614340fd0378d6f5179",
+      "source_status": "ok",
+      "reason": null
+    },
+    {
+      "case": "librispeech_121-123852-0000",
+      "method": "hnm",
+      "speaker": "librispeech_121",
+      "status": "measured",
+      "value": 1158956.8333333333,
+      "serialized_bytes": 6953741,
+      "duration_seconds": 6.0,
+      "artifact_sha256": "cd4e300e1d7311e9cc8c4ac661df3b826e7c71b25aaceb620fee67378ac4a169",
+      "source_status": "ok",
+      "reason": null
+    },
+    {
+      "case": "librispeech_121-123852-0000",
+      "method": "world_harvest",
+      "speaker": "librispeech_121",
+      "status": "measured",
+      "value": 1200139.0,
+      "serialized_bytes": 7200834,
+      "duration_seconds": 6.0,
+      "artifact_sha256": "8843d20d66ae400aacc6a3281a87b667456a047d5b7b3adca296a7592fe09176",
+      "source_status": "ok",
+      "reason": null
+    },
+    {
+      "case": "librispeech_121-127105-0035",
+      "method": "hnm",
+      "speaker": "librispeech_121",
+      "status": "measured",
+      "value": 1096743.5,
+      "serialized_bytes": 6580461,
+      "duration_seconds": 6.0,
+      "artifact_sha256": "134426fedf1898a5d3b265a27d048fe5889ad91592cd8ab41873fc5e323996b6",
+      "source_status": "ok",
+      "reason": null
+    },
+    {
+      "case": "librispeech_121-127105-0035",
+      "method": "world_harvest",
+      "speaker": "librispeech_121",
+      "status": "measured",
+      "value": 1157485.0,
+      "serialized_bytes": 6944910,
+      "duration_seconds": 6.0,
+      "artifact_sha256": "333814c876d038c5cb0bae54a2a60574667be1aba82fba094cc9602a6cf90dc6",
+      "source_status": "ok",
+      "reason": null
+    },
+    {
+      "case": "librispeech_1221-135766-0005",
+      "method": "hnm",
+      "speaker": "librispeech_1221",
+      "status": "measured",
+      "value": 1475078.1666666667,
+      "serialized_bytes": 8850469,
+      "duration_seconds": 6.0,
+      "artifact_sha256": "f109256a97bc1d2f49727f58ed63d8caeec5ce2524552ac14be2176eb87bcb8b",
+      "source_status": "ok",
+      "reason": null
+    },
+    {
+      "case": "librispeech_1221-135766-0005",
+      "method": "world_harvest",
+      "speaker": "librispeech_1221",
+      "status": "measured",
+      "value": 1309953.5,
+      "serialized_bytes": 7859721,
+      "duration_seconds": 6.0,
+      "artifact_sha256": "a37d444be6db68bd4fa7a5c7f628d560b5ec146d04b715d17016902c44c94ba0",
+      "source_status": "ok",
+      "reason": null
+    },
+    {
+      "case": "librispeech_1221-135767-0006",
+      "method": "hnm",
+      "speaker": "librispeech_1221",
+      "status": "measured",
+      "value": 1467892.8333333333,
+      "serialized_bytes": 8807357,
+      "duration_seconds": 6.0,
+      "artifact_sha256": "8e81030256a1ebfc91bfd829ff7bd7e978c12c701e9fadaf40288c59f45125ac",
+      "source_status": "ok",
+      "reason": null
+    },
+    {
+      "case": "librispeech_1221-135767-0006",
+      "method": "world_harvest",
+      "speaker": "librispeech_1221",
+      "status": "measured",
+      "value": 1298380.0,
+      "serialized_bytes": 7790280,
+      "duration_seconds": 6.0,
+      "artifact_sha256": "5797034eadcfce8922e697678a547898ada837cce27c14b5c27a0868e2eccd35",
+      "source_status": "ok",
+      "reason": null
+    },
+    {
+      "case": "librispeech_1221-135767-0019",
+      "method": "hnm",
+      "speaker": "librispeech_1221",
+      "status": "measured",
+      "value": 1256050.7936507936,
+      "serialized_bytes": 4747872,
+      "duration_seconds": 3.78,
+      "artifact_sha256": "b24762c5796cfe84903c2f6841e257475a899dbfccb779ef61896f3ae51121c3",
+      "source_status": "ok",
+      "reason": null
+    },
+    {
+      "case": "librispeech_1221-135767-0019",
+      "method": "world_harvest",
+      "speaker": "librispeech_1221",
+      "status": "measured",
+      "value": 1154730.4232804233,
+      "serialized_bytes": 4364881,
+      "duration_seconds": 3.78,
+      "artifact_sha256": "d39ca605bc0e5afe4c4e267a64810b67752dc407b2408bf0199e5349119eb6ed",
+      "source_status": "ok",
+      "reason": null
+    },
+    {
+      "case": "librispeech_1284-1180-0020",
+      "method": "hnm",
+      "speaker": "librispeech_1284",
+      "status": "measured",
+      "value": 1483529.6422487223,
+      "serialized_bytes": 8708319,
+      "duration_seconds": 5.87,
+      "artifact_sha256": "47a636452a3c037b8eb38312af670ca47b6230dfbae714d63d4cedfae0f799e3",
+      "source_status": "ok",
+      "reason": null
+    },
+    {
+      "case": "librispeech_1284-1180-0020",
+      "method": "world_harvest",
+      "speaker": "librispeech_1284",
+      "status": "measured",
+      "value": 1335113.9693356047,
+      "serialized_bytes": 7837119,
+      "duration_seconds": 5.87,
+      "artifact_sha256": "a48d215b57b50ebc5e3998d313490c4b3c28a9ed3c1f4e2a9853aece3351279e",
+      "source_status": "ok",
+      "reason": null
+    },
+    {
+      "case": "librispeech_1284-1180-0027",
+      "method": "hnm",
+      "speaker": "librispeech_1284",
+      "status": "measured",
+      "value": 1493710.0917431193,
+      "serialized_bytes": 4884432,
+      "duration_seconds": 3.27,
+      "artifact_sha256": "454f2477f2493654a6c074589017bb1fd598c8c06824c62a81984a3b717710a4",
+      "source_status": "ok",
+      "reason": null
+    },
+    {
+      "case": "librispeech_1284-1180-0027",
+      "method": "world_harvest",
+      "speaker": "librispeech_1284",
+      "status": "measured",
+      "value": 1312812.2324159022,
+      "serialized_bytes": 4292896,
+      "duration_seconds": 3.27,
+      "artifact_sha256": "a26ee586a16279f50142c14aa43743d5b0a1db5372b2e263c75037f558a75fab",
+      "source_status": "ok",
+      "reason": null
+    },
+    {
+      "case": "librispeech_1284-1180-0028",
+      "method": "hnm",
+      "speaker": "librispeech_1284",
+      "status": "measured",
+      "value": 1491056.0,
+      "serialized_bytes": 8946336,
+      "duration_seconds": 6.0,
+      "artifact_sha256": "8db11bfcd0af91edf6ac46ff4853d993e03101ebc8a3cd8f2f60fe498eabff10",
+      "source_status": "ok",
+      "reason": null
+    },
+    {
+      "case": "librispeech_1284-1180-0028",
+      "method": "world_harvest",
+      "speaker": "librispeech_1284",
+      "status": "measured",
+      "value": 1364990.5,
+      "serialized_bytes": 8189943,
+      "duration_seconds": 6.0,
+      "artifact_sha256": "72f37bc45c86fc191813019e8b081dba60ff3932c0dafdccd36314642654b740",
+      "source_status": "ok",
+      "reason": null
+    },
+    {
+      "case": "librispeech_1320-122617-0019",
+      "method": "hnm",
+      "speaker": "librispeech_1320",
+      "status": "measured",
+      "value": 1476096.0,
+      "serialized_bytes": 8856576,
+      "duration_seconds": 6.0,
+      "artifact_sha256": "400a88b59eec4427ce8713aaf223edaffe53853d548ef75be56dd8c7be95b1aa",
+      "source_status": "ok",
+      "reason": null
+    },
+    {
+      "case": "librispeech_1320-122617-0019",
+      "method": "world_harvest",
+      "speaker": "librispeech_1320",
+      "status": "measured",
+      "value": 1382062.1666666667,
+      "serialized_bytes": 8292373,
+      "duration_seconds": 6.0,
+      "artifact_sha256": "c55f98fc1d0ac0d2c293c3644f525436d73039c06fa5a19bbda91c145c60c9a8",
+      "source_status": "ok",
+      "reason": null
+    },
+    {
+      "case": "librispeech_1320-122617-0023",
+      "method": "hnm",
+      "speaker": "librispeech_1320",
+      "status": "measured",
+      "value": 1461883.6666666667,
+      "serialized_bytes": 8771302,
+      "duration_seconds": 6.0,
+      "artifact_sha256": "532d91180e99c17844d9a6dcdd2a055f12e858b8c390c68dfe7a997ba549cad9",
+      "source_status": "ok",
+      "reason": null
+    },
+    {
+      "case": "librispeech_1320-122617-0023",
+      "method": "world_harvest",
+      "speaker": "librispeech_1320",
+      "status": "measured",
+      "value": 1356727.8333333333,
+      "serialized_bytes": 8140367,
+      "duration_seconds": 6.0,
+      "artifact_sha256": "39cb3654b65b14b7cec62821edf5978385cd2208db0704ad91c9d0f8f923c25c",
+      "source_status": "ok",
+      "reason": null
+    },
+    {
+      "case": "librispeech_1320-122617-0039",
+      "method": "hnm",
+      "speaker": "librispeech_1320",
+      "status": "measured",
+      "value": 1472942.8333333333,
+      "serialized_bytes": 8837657,
+      "duration_seconds": 6.0,
+      "artifact_sha256": "ba0705c6dc020a4d9bf4926d7d1063514b440d7b9b0f03fe830d745dfdc953c4",
+      "source_status": "ok",
+      "reason": null
+    },
+    {
+      "case": "librispeech_1320-122617-0039",
+      "method": "world_harvest",
+      "speaker": "librispeech_1320",
+      "status": "measured",
+      "value": 1380104.3333333333,
+      "serialized_bytes": 8280626,
+      "duration_seconds": 6.0,
+      "artifact_sha256": "6b722e3fbc820c723a0b978b4790bd4a0cd49a2f8fd924130379708f578c6da7",
+      "source_status": "ok",
+      "reason": null
+    },
+    {
+      "case": "librispeech_1580-141083-0010",
+      "method": "hnm",
+      "speaker": "librispeech_1580",
+      "status": "measured",
+      "value": 1380122.3684210526,
+      "serialized_bytes": 7342251,
+      "duration_seconds": 5.32,
+      "artifact_sha256": "d4b8265259b1efaf32f39a2da62ffe28ff9db80072703f59ab847fd610655c66",
+      "source_status": "ok",
+      "reason": null
+    },
+    {
+      "case": "librispeech_1580-141083-0010",
+      "method": "world_harvest",
+      "speaker": "librispeech_1580",
+      "status": "measured",
+      "value": 1354696.4285714284,
+      "serialized_bytes": 7206985,
+      "duration_seconds": 5.32,
+      "artifact_sha256": "f1111e47c85aecc1cafaa7a892a41d8822c1bfe71a399278020973818dedfada",
+      "source_status": "ok",
+      "reason": null
+    },
+    {
+      "case": "librispeech_1580-141084-0016",
+      "method": "hnm",
+      "speaker": "librispeech_1580",
+      "status": "measured",
+      "value": 1318287.9194630873,
+      "serialized_bytes": 7856996,
+      "duration_seconds": 5.96,
+      "artifact_sha256": "ffe33942d99ef33f757ad8bb7c4beba415aa0ed6c9ffbecc18622027059eba37",
+      "source_status": "ok",
+      "reason": null
+    },
+    {
+      "case": "librispeech_1580-141084-0016",
+      "method": "world_harvest",
+      "speaker": "librispeech_1580",
+      "status": "measured",
+      "value": 1213869.2953020134,
+      "serialized_bytes": 7234661,
+      "duration_seconds": 5.96,
+      "artifact_sha256": "8568c3c2ee6a93ccace01776dc3e9b8a86b45eb4c2161303404dd31bbc3d440c",
+      "source_status": "ok",
+      "reason": null
+    },
+    {
+      "case": "librispeech_1580-141084-0047",
+      "method": "hnm",
+      "speaker": "librispeech_1580",
+      "status": "measured",
+      "value": 1376888.9523809524,
+      "serialized_bytes": 7228667,
+      "duration_seconds": 5.25,
+      "artifact_sha256": "f38a332918a645f2701f54130aa814385360310b90cbc87436cb8ac2c44522d1",
+      "source_status": "ok",
+      "reason": null
+    },
+    {
+      "case": "librispeech_1580-141084-0047",
+      "method": "world_harvest",
+      "speaker": "librispeech_1580",
+      "status": "measured",
+      "value": 1279795.619047619,
+      "serialized_bytes": 6718927,
+      "duration_seconds": 5.25,
+      "artifact_sha256": "1eeaeb0f0ba4957a0fcb6f5e7f5378c3a1e4cb5010619b13a2cfaa04d3bbc41b",
+      "source_status": "ok",
+      "reason": null
+    },
+    {
+      "case": "librispeech_1995-1836-0000",
+      "method": "hnm",
+      "speaker": "librispeech_1995",
+      "status": "measured",
+      "value": 1487535.5,
+      "serialized_bytes": 8925213,
+      "duration_seconds": 6.0,
+      "artifact_sha256": "2509c1edd3c6b04cec509b48327db88636e295d29db3c2aaacb7337840c094f7",
+      "source_status": "ok",
+      "reason": null
+    },
+    {
+      "case": "librispeech_1995-1836-0000",
+      "method": "world_harvest",
+      "speaker": "librispeech_1995",
+      "status": "measured",
+      "value": 1355544.6666666667,
+      "serialized_bytes": 8133268,
+      "duration_seconds": 6.0,
+      "artifact_sha256": "d6f4ed55cd9a6c006d0bc09147794dccea431f29dd0a7c4f8eaa2196640c8d96",
+      "source_status": "ok",
+      "reason": null
+    },
+    {
+      "case": "librispeech_1995-1836-0014",
+      "method": "hnm",
+      "speaker": "librispeech_1995",
+      "status": "measured",
+      "value": 1519560.0,
+      "serialized_bytes": 9117360,
+      "duration_seconds": 6.0,
+      "artifact_sha256": "6b4c76a87f9b85802cf8bd385c9470873e1aebf9259c07a67f53f4a5db048167",
+      "source_status": "ok",
+      "reason": null
+    },
+    {
+      "case": "librispeech_1995-1836-0014",
+      "method": "world_harvest",
+      "speaker": "librispeech_1995",
+      "status": "measured",
+      "value": 1412645.3333333333,
+      "serialized_bytes": 8475872,
+      "duration_seconds": 6.0,
+      "artifact_sha256": "d625f0875d1be5644a9c5fc4cb04a0d6e65bf4fa42816a6c231cd3c2531b41c5",
+      "source_status": "ok",
+      "reason": null
+    },
+    {
+      "case": "librispeech_1995-1837-0023",
+      "method": "hnm",
+      "speaker": "librispeech_1995",
+      "status": "measured",
+      "value": 1481030.6666666667,
+      "serialized_bytes": 8886184,
+      "duration_seconds": 6.0,
+      "artifact_sha256": "b02f1034649950ba312f70dfbb85387c40e4dc8775afc46338aad6a07ddfe4a5",
+      "source_status": "ok",
+      "reason": null
+    },
+    {
+      "case": "librispeech_1995-1837-0023",
+      "method": "world_harvest",
+      "speaker": "librispeech_1995",
+      "status": "measured",
+      "value": 1391691.6666666667,
+      "serialized_bytes": 8350150,
+      "duration_seconds": 6.0,
+      "artifact_sha256": "66be3864c80b481e96c3c88d7693b4e815f3ccba3488b1c305d43049e4b47184",
+      "source_status": "ok",
+      "reason": null
+    },
+    {
+      "case": "librispeech_2094-142345-0032",
+      "method": "hnm",
+      "speaker": "librispeech_2094",
+      "status": "measured",
+      "value": 1444176.8518518517,
+      "serialized_bytes": 4679133,
+      "duration_seconds": 3.24,
+      "artifact_sha256": "1e86231d27cf34f9e2a38f910328fa880a2466c84737ec75a147f8489226633b",
+      "source_status": "ok",
+      "reason": null
+    },
+    {
+      "case": "librispeech_2094-142345-0032",
+      "method": "world_harvest",
+      "speaker": "librispeech_2094",
+      "status": "measured",
+      "value": 1389618.5185185184,
+      "serialized_bytes": 4502364,
+      "duration_seconds": 3.24,
+      "artifact_sha256": "b916603d7a2befca5122f12e4e1b73faba371ae1f10cd39cf6ad92c8e5adb87f",
+      "source_status": "ok",
+      "reason": null
+    },
+    {
+      "case": "librispeech_2094-142345-0039",
+      "method": "hnm",
+      "speaker": "librispeech_2094",
+      "status": "measured",
+      "value": 1477559.5,
+      "serialized_bytes": 8865357,
+      "duration_seconds": 6.0,
+      "artifact_sha256": "c69c32bdca6e7dac9c044849759d9e2388d1141b2ad324c447c3096bef4a991a",
+      "source_status": "ok",
+      "reason": null
+    },
+    {
+      "case": "librispeech_2094-142345-0039",
+      "method": "world_harvest",
+      "speaker": "librispeech_2094",
+      "status": "measured",
+      "value": 1403426.5,
+      "serialized_bytes": 8420559,
+      "duration_seconds": 6.0,
+      "artifact_sha256": "bcd2ae11a4dd594ad9d58c093686f18d27d72fa6aa1e3005790568b2a7d8ae83",
+      "source_status": "ok",
+      "reason": null
+    },
+    {
+      "case": "librispeech_2094-142345-0040",
+      "method": "hnm",
+      "speaker": "librispeech_2094",
+      "status": "measured",
+      "value": 1258319.9161425577,
+      "serialized_bytes": 3001093,
+      "duration_seconds": 2.385,
+      "artifact_sha256": "afef181bbaf93afb43d646b2831c4ac60fe91500d8a500bb7258e97cc4477ed9",
+      "source_status": "ok",
+      "reason": null
+    },
+    {
+      "case": "librispeech_2094-142345-0040",
+      "method": "world_harvest",
+      "speaker": "librispeech_2094",
+      "status": "measured",
+      "value": 1284566.0377358492,
+      "serialized_bytes": 3063690,
+      "duration_seconds": 2.385,
+      "artifact_sha256": "84df80af88e0c50907dd234f6f1ce9b99565ee00704ee9390ad628e3763d9a22",
+      "source_status": "ok",
+      "reason": null
+    },
+    {
+      "case": "librispeech_2300-131720-0022",
+      "method": "hnm",
+      "speaker": "librispeech_2300",
+      "status": "measured",
+      "value": 1521714.1666666667,
+      "serialized_bytes": 9130285,
+      "duration_seconds": 6.0,
+      "artifact_sha256": "3c0979fadb5e52bb14db3dffac46028f1452afbe72dd83dab0dde87d8183f070",
+      "source_status": "ok",
+      "reason": null
+    },
+    {
+      "case": "librispeech_2300-131720-0022",
+      "method": "world_harvest",
+      "speaker": "librispeech_2300",
+      "status": "measured",
+      "value": 1405080.8333333333,
+      "serialized_bytes": 8430485,
+      "duration_seconds": 6.0,
+      "artifact_sha256": "fce7860534171767f7c9d88946aa815b5b4899724faaf69b26ae583903c2987b",
+      "source_status": "ok",
+      "reason": null
+    },
+    {
+      "case": "librispeech_2300-131720-0028",
+      "method": "hnm",
+      "speaker": "librispeech_2300",
+      "status": "measured",
+      "value": 1467320.0,
+      "serialized_bytes": 8803920,
+      "duration_seconds": 6.0,
+      "artifact_sha256": "1da844cbf3c763068c132809a2e7c9df78ae507013321e3a9fee87724c702c0a",
+      "source_status": "ok",
+      "reason": null
+    },
+    {
+      "case": "librispeech_2300-131720-0028",
+      "method": "world_harvest",
+      "speaker": "librispeech_2300",
+      "status": "measured",
+      "value": 1263934.5,
+      "serialized_bytes": 7583607,
+      "duration_seconds": 6.0,
+      "artifact_sha256": "a5546a969903524a9ef008ffaa0c777094884bd4eeaff5d54dc4df66440ae51d",
+      "source_status": "ok",
+      "reason": null
+    },
+    {
+      "case": "librispeech_2300-131720-0041",
+      "method": "hnm",
+      "speaker": "librispeech_2300",
+      "status": "measured",
+      "value": 1276481.6,
+      "serialized_bytes": 4786806,
+      "duration_seconds": 3.75,
+      "artifact_sha256": "5f11ec1ef999b762f268cfa19652ed74d0a9f547edd88746370100099afda5fc",
+      "source_status": "ok",
+      "reason": null
+    },
+    {
+      "case": "librispeech_2300-131720-0041",
+      "method": "world_harvest",
+      "speaker": "librispeech_2300",
+      "status": "measured",
+      "value": 1313821.6,
+      "serialized_bytes": 4926831,
+      "duration_seconds": 3.75,
+      "artifact_sha256": "b7eddf890f894652f905a59d8eb2b0e45688d28e4465c77cfd3b46554227bfff",
+      "source_status": "ok",
+      "reason": null
+    },
+    {
+      "case": "librispeech_237-126133-0003",
+      "method": "hnm",
+      "speaker": "librispeech_237",
+      "status": "measured",
+      "value": 1453948.6666666667,
+      "serialized_bytes": 8723692,
+      "duration_seconds": 6.0,
+      "artifact_sha256": "c441e0ac35660f17373db3b88a5dbe1de7fa539e550b9f6ce4accde29de83eb3",
+      "source_status": "ok",
+      "reason": null
+    },
+    {
+      "case": "librispeech_237-126133-0003",
+      "method": "world_harvest",
+      "speaker": "librispeech_237",
+      "status": "measured",
+      "value": 1380403.3333333333,
+      "serialized_bytes": 8282420,
+      "duration_seconds": 6.0,
+      "artifact_sha256": "c2525b4401092ff4e39be4cb39b7e3c42161ab885ddf310e7f3e578b24756edc",
+      "source_status": "ok",
+      "reason": null
+    },
+    {
+      "case": "librispeech_237-134500-0029",
+      "method": "hnm",
+      "speaker": "librispeech_237",
+      "status": "measured",
+      "value": 1414962.2276029056,
+      "serialized_bytes": 2921897,
+      "duration_seconds": 2.065,
+      "artifact_sha256": "96649e623b90e6e02403fb310bf343a2dd8d3d30a0f71386c5d3c91844bf61b1",
+      "source_status": "ok",
+      "reason": null
+    },
+    {
+      "case": "librispeech_237-134500-0029",
+      "method": "world_harvest",
+      "speaker": "librispeech_237",
+      "status": "measured",
+      "value": 1348130.7506053268,
+      "serialized_bytes": 2783890,
+      "duration_seconds": 2.065,
+      "artifact_sha256": "4cf02bc5f59a373d047fc763382048f0b73ff46f394566d9f5ca4748fa1b4975",
+      "source_status": "ok",
+      "reason": null
+    },
+    {
+      "case": "librispeech_237-134500-0031",
+      "method": "hnm",
+      "speaker": "librispeech_237",
+      "status": "measured",
+      "value": 1404457.0,
+      "serialized_bytes": 8426742,
+      "duration_seconds": 6.0,
+      "artifact_sha256": "70a35423bff50881b0d28ab808a385a03d0cad38e1080d614c9e0805f0ecfc77",
+      "source_status": "ok",
+      "reason": null
+    },
+    {
+      "case": "librispeech_237-134500-0031",
+      "method": "world_harvest",
+      "speaker": "librispeech_237",
+      "status": "measured",
+      "value": 1380051.0,
+      "serialized_bytes": 8280306,
+      "duration_seconds": 6.0,
+      "artifact_sha256": "3ee925df521fe0cdc2dd260934bf81bbe3a0b87acba87a52abf27ca861f286d4",
+      "source_status": "ok",
+      "reason": null
+    },
+    {
+      "case": "librispeech_260-123286-0008",
+      "method": "hnm",
+      "speaker": "librispeech_260",
+      "status": "measured",
+      "value": 1361683.266398929,
+      "serialized_bytes": 5085887,
+      "duration_seconds": 3.735,
+      "artifact_sha256": "da2d9c2bb902d33af7fcbb8973f00f6d8ff5d4e680abf0389e2a8e7e3f14e554",
+      "source_status": "ok",
+      "reason": null
+    },
+    {
+      "case": "librispeech_260-123286-0008",
+      "method": "world_harvest",
+      "speaker": "librispeech_260",
+      "status": "measured",
+      "value": 1226888.888888889,
+      "serialized_bytes": 4582430,
+      "duration_seconds": 3.735,
+      "artifact_sha256": "bcc8d06c1b17bb400a41dfa0fa6378e91d47cd14e90a25edab5eaa16f4cdade6",
+      "source_status": "ok",
+      "reason": null
+    },
+    {
+      "case": "librispeech_260-123288-0003",
+      "method": "hnm",
+      "speaker": "librispeech_260",
+      "status": "measured",
+      "value": 1261872.3333333333,
+      "serialized_bytes": 7571234,
+      "duration_seconds": 6.0,
+      "artifact_sha256": "608fb07ed064416e7529276ac9dea8e602f22411f5dd72c8c5644bc1d6a60183",
+      "source_status": "ok",
+      "reason": null
+    },
+    {
+      "case": "librispeech_260-123288-0003",
+      "method": "world_harvest",
+      "speaker": "librispeech_260",
+      "status": "measured",
+      "value": 1228047.5,
+      "serialized_bytes": 7368285,
+      "duration_seconds": 6.0,
+      "artifact_sha256": "431bef85a2861b2f15807d31792a42afcb97c9da0a4f32ecaa736d1fb79ea60c",
+      "source_status": "ok",
+      "reason": null
+    },
+    {
+      "case": "librispeech_260-123440-0020",
+      "method": "hnm",
+      "speaker": "librispeech_260",
+      "status": "measured",
+      "value": 1349700.9009009008,
+      "serialized_bytes": 6741756,
+      "duration_seconds": 4.995,
+      "artifact_sha256": "84552fdf55036480cc4cc459bafe92dd51d546b06b3e7fb4406ad7a8020b5ad1",
+      "source_status": "ok",
+      "reason": null
+    },
+    {
+      "case": "librispeech_260-123440-0020",
+      "method": "world_harvest",
+      "speaker": "librispeech_260",
+      "status": "measured",
+      "value": 1317630.8308308308,
+      "serialized_bytes": 6581566,
+      "duration_seconds": 4.995,
+      "artifact_sha256": "cbfc90515cc0c6d4a40dc94fe15f698f655b222ce919e33ea76dc855f3a4d87a",
+      "source_status": "ok",
+      "reason": null
+    },
+    {
+      "case": "librispeech_2830-3980-0000",
+      "method": "hnm",
+      "speaker": "librispeech_2830",
+      "status": "measured",
+      "value": 1433363.27077748,
+      "serialized_bytes": 5346445,
+      "duration_seconds": 3.73,
+      "artifact_sha256": "c412efbb90d2ce08832d017f59a2e23076e4e443c3bbe5226c2fcd9beb951179",
+      "source_status": "ok",
+      "reason": null
+    },
+    {
+      "case": "librispeech_2830-3980-0000",
+      "method": "world_harvest",
+      "speaker": "librispeech_2830",
+      "status": "measured",
+      "value": 1284634.8525469168,
+      "serialized_bytes": 4791688,
+      "duration_seconds": 3.73,
+      "artifact_sha256": "ccf6e09b6cd1d6e7253e8fceff6576ba691190dc4d1def352c2ccde33f2eeb62",
+      "source_status": "ok",
+      "reason": null
+    },
+    {
+      "case": "librispeech_2830-3980-0038",
+      "method": "hnm",
+      "speaker": "librispeech_2830",
+      "status": "measured",
+      "value": 1281098.5559566787,
+      "serialized_bytes": 7097286,
+      "duration_seconds": 5.54,
+      "artifact_sha256": "d4e6bb5c15c2f75054991c8083d953ce49b0a7171a097a1b343585f7358aa983",
+      "source_status": "ok",
+      "reason": null
+    },
+    {
+      "case": "librispeech_2830-3980-0038",
+      "method": "world_harvest",
+      "speaker": "librispeech_2830",
+      "status": "measured",
+      "value": 1160781.4079422383,
+      "serialized_bytes": 6430729,
+      "duration_seconds": 5.54,
+      "artifact_sha256": "c611fcef230ed98b5fe482e579ed775b94578636beb36dbb363688b481be29bb",
+      "source_status": "ok",
+      "reason": null
+    },
+    {
+      "case": "librispeech_2830-3980-0042",
+      "method": "hnm",
+      "speaker": "librispeech_2830",
+      "status": "measured",
+      "value": 1235776.1589403974,
+      "serialized_bytes": 3732044,
+      "duration_seconds": 3.02,
+      "artifact_sha256": "8e5d20cb1e4eaa47b3e79e3ee56b41c709ecb4ea38a9fb9ec04b8d5bc76b7c2d",
+      "source_status": "ok",
+      "reason": null
+    },
+    {
+      "case": "librispeech_2830-3980-0042",
+      "method": "world_harvest",
+      "speaker": "librispeech_2830",
+      "status": "measured",
+      "value": 1138260.927152318,
+      "serialized_bytes": 3437548,
+      "duration_seconds": 3.02,
+      "artifact_sha256": "61e7c58a4295993963ee9625b7f5e609187ca797fc4de1ead840027d6ce5c64a",
+      "source_status": "ok",
+      "reason": null
+    },
+    {
+      "case": "librispeech_2961-960-0010",
+      "method": "hnm",
+      "speaker": "librispeech_2961",
+      "status": "measured",
+      "value": 1480344.3333333333,
+      "serialized_bytes": 8882066,
+      "duration_seconds": 6.0,
+      "artifact_sha256": "c5e73ab1e4f84c6c684a21603066a74ef294ebcb7bb7189b83bdc304a9dbf697",
+      "source_status": "ok",
+      "reason": null
+    },
+    {
+      "case": "librispeech_2961-960-0010",
+      "method": "world_harvest",
+      "speaker": "librispeech_2961",
+      "status": "measured",
+      "value": 1264793.3333333333,
+      "serialized_bytes": 7588760,
+      "duration_seconds": 6.0,
+      "artifact_sha256": "2fb01f89dc0b155b9f0121b578dd346876bfa9d2f0982dad3db823a1d681f3e6",
+      "source_status": "ok",
+      "reason": null
+    },
+    {
+      "case": "librispeech_2961-960-0019",
+      "method": "hnm",
+      "speaker": "librispeech_2961",
+      "status": "measured",
+      "value": 1480174.1666666667,
+      "serialized_bytes": 8881045,
+      "duration_seconds": 6.0,
+      "artifact_sha256": "6d625d4898307f3cbbe537bef448dd0e8e0ebafb91103c49935e7594e781af01",
+      "source_status": "ok",
+      "reason": null
+    },
+    {
+      "case": "librispeech_2961-960-0019",
+      "method": "world_harvest",
+      "speaker": "librispeech_2961",
+      "status": "measured",
+      "value": 1290575.0,
+      "serialized_bytes": 7743450,
+      "duration_seconds": 6.0,
+      "artifact_sha256": "c4811ddd66350ef469c0607842c3d53bf7ff0d55af9db14a40f3d5bf0e4cc97e",
+      "source_status": "ok",
+      "reason": null
+    },
+    {
+      "case": "librispeech_2961-961-0011",
+      "method": "hnm",
+      "speaker": "librispeech_2961",
+      "status": "measured",
+      "value": 1318800.6666666667,
+      "serialized_bytes": 7912804,
+      "duration_seconds": 6.0,
+      "artifact_sha256": "12d99a5f486a2dff06f58bdac2ecdfec8c8affcc964fb6623e30dd9277d1ebbb",
+      "source_status": "ok",
+      "reason": null
+    },
+    {
+      "case": "librispeech_2961-961-0011",
+      "method": "world_harvest",
+      "speaker": "librispeech_2961",
+      "status": "measured",
+      "value": 1272353.6666666667,
+      "serialized_bytes": 7634122,
+      "duration_seconds": 6.0,
+      "artifact_sha256": "e6906699b390f38186c457d1a0cd8993343a361d6a290b53ef4d8c36d2475411",
+      "source_status": "ok",
+      "reason": null
+    },
+    {
+      "case": "librispeech_3570-5694-0001",
+      "method": "hnm",
+      "speaker": "librispeech_3570",
+      "status": "measured",
+      "value": 1378148.193832599,
+      "serialized_bytes": 7820991,
+      "duration_seconds": 5.675,
+      "artifact_sha256": "b545b928ace5b3f56333e7f493125ee500abc1ae5bd7a023da451726e875074d",
+      "source_status": "ok",
+      "reason": null
+    },
+    {
+      "case": "librispeech_3570-5694-0001",
+      "method": "world_harvest",
+      "speaker": "librispeech_3570",
+      "status": "measured",
+      "value": 1319850.2202643172,
+      "serialized_bytes": 7490150,
+      "duration_seconds": 5.675,
+      "artifact_sha256": "eac71811fdaa6fa8a900b2d7664a61a7c049d4af3add76796c241a475df5699a",
+      "source_status": "ok",
+      "reason": null
+    },
+    {
+      "case": "librispeech_3570-5694-0004",
+      "method": "hnm",
+      "speaker": "librispeech_3570",
+      "status": "measured",
+      "value": 1357067.7298311444,
+      "serialized_bytes": 7233171,
+      "duration_seconds": 5.33,
+      "artifact_sha256": "780d68310e1147248c27e7e03f86c75672224e02143fd1dcec2e0b2253302a9c",
+      "source_status": "ok",
+      "reason": null
+    },
+    {
+      "case": "librispeech_3570-5694-0004",
+      "method": "world_harvest",
+      "speaker": "librispeech_3570",
+      "status": "measured",
+      "value": 1303359.8499061915,
+      "serialized_bytes": 6946908,
+      "duration_seconds": 5.33,
+      "artifact_sha256": "83e82e9b7e798015c0ea68e70dfe0a077fc0d81c492efc63664bd01d3713d480",
+      "source_status": "ok",
+      "reason": null
+    },
+    {
+      "case": "librispeech_3570-5696-0010",
+      "method": "hnm",
+      "speaker": "librispeech_3570",
+      "status": "measured",
+      "value": 1474282.3333333333,
+      "serialized_bytes": 8845694,
+      "duration_seconds": 6.0,
+      "artifact_sha256": "ecc8b24ddc5835948a315caf9d560452eed742bcb2b3aa1242d477c15769884f",
+      "source_status": "ok",
+      "reason": null
+    },
+    {
+      "case": "librispeech_3570-5696-0010",
+      "method": "world_harvest",
+      "speaker": "librispeech_3570",
+      "status": "measured",
+      "value": 1397984.0,
+      "serialized_bytes": 8387904,
+      "duration_seconds": 6.0,
+      "artifact_sha256": "c4e1435e6919f407b5c43c1fb84eefc5de4d62df0c054747e1150b5dbf2fdad8",
+      "source_status": "ok",
+      "reason": null
+    },
+    {
+      "case": "librispeech_3575-170457-0034",
+      "method": "hnm",
+      "speaker": "librispeech_3575",
+      "status": "measured",
+      "value": 1480332.7610872674,
+      "serialized_bytes": 5173763,
+      "duration_seconds": 3.495,
+      "artifact_sha256": "ddf7d015ae0172763ccf0e9130db3177e62afab5f26e05b03936e9858d9c6477",
+      "source_status": "ok",
+      "reason": null
+    },
+    {
+      "case": "librispeech_3575-170457-0034",
+      "method": "world_harvest",
+      "speaker": "librispeech_3575",
+      "status": "measured",
+      "value": 1352456.652360515,
+      "serialized_bytes": 4726836,
+      "duration_seconds": 3.495,
+      "artifact_sha256": "cf01c4081a79bc4a0f424b7b837b1c4fef211addb924224e2cfef0dcd04adf1d",
+      "source_status": "ok",
+      "reason": null
+    },
+    {
+      "case": "librispeech_3575-170457-0041",
+      "method": "hnm",
+      "speaker": "librispeech_3575",
+      "status": "measured",
+      "value": 1462957.3333333333,
+      "serialized_bytes": 8777744,
+      "duration_seconds": 6.0,
+      "artifact_sha256": "57ddab88e9edaf6a80f96461e1561fa6f6d805e28514508424e61f755f52be85",
+      "source_status": "ok",
+      "reason": null
+    },
+    {
+      "case": "librispeech_3575-170457-0041",
+      "method": "world_harvest",
+      "speaker": "librispeech_3575",
+      "status": "measured",
+      "value": 1295852.6666666667,
+      "serialized_bytes": 7775116,
+      "duration_seconds": 6.0,
+      "artifact_sha256": "a20acf7b01636879ee8b969352ed12708930d918e8c85257c2803328ff69c436",
+      "source_status": "ok",
+      "reason": null
+    },
+    {
+      "case": "librispeech_3575-170457-0054",
+      "method": "hnm",
+      "speaker": "librispeech_3575",
+      "status": "measured",
+      "value": 1437197.8333333333,
+      "serialized_bytes": 8623187,
+      "duration_seconds": 6.0,
+      "artifact_sha256": "03e0feeb8d78851e75ed12d6bbc48eddd3a0ad0a45f9769f5fa256995d5ff3bb",
+      "source_status": "ok",
+      "reason": null
+    },
+    {
+      "case": "librispeech_3575-170457-0054",
+      "method": "world_harvest",
+      "speaker": "librispeech_3575",
+      "status": "measured",
+      "value": 1270886.0,
+      "serialized_bytes": 7625316,
+      "duration_seconds": 6.0,
+      "artifact_sha256": "a1205b431817a0c16b5a0184d84d335f9d908c14b92c8b80ceceb21ca89b034e",
+      "source_status": "ok",
+      "reason": null
+    },
+    {
+      "case": "librispeech_3729-6852-0000",
+      "method": "hnm",
+      "speaker": "librispeech_3729",
+      "status": "measured",
+      "value": 1514230.8333333333,
+      "serialized_bytes": 9085385,
+      "duration_seconds": 6.0,
+      "artifact_sha256": "0c907c1592c56c26234249be191de74a461a13f32c3e70b7cd95e32f3cc5aa7c",
+      "source_status": "ok",
+      "reason": null
+    },
+    {
+      "case": "librispeech_3729-6852-0000",
+      "method": "world_harvest",
+      "speaker": "librispeech_3729",
+      "status": "measured",
+      "value": 1408754.0,
+      "serialized_bytes": 8452524,
+      "duration_seconds": 6.0,
+      "artifact_sha256": "75491440849238567b93c03a7207cfaad604f9b62b02cf330ac46a3438363169",
+      "source_status": "ok",
+      "reason": null
+    },
+    {
+      "case": "librispeech_3729-6852-0007",
+      "method": "hnm",
+      "speaker": "librispeech_3729",
+      "status": "measured",
+      "value": 1565362.8333333333,
+      "serialized_bytes": 9392177,
+      "duration_seconds": 6.0,
+      "artifact_sha256": "c1c1a3c5748bbfe23d568aaba66a6026b9ebba43852d371e827b95902ba4bd5a",
+      "source_status": "ok",
+      "reason": null
+    },
+    {
+      "case": "librispeech_3729-6852-0007",
+      "method": "world_harvest",
+      "speaker": "librispeech_3729",
+      "status": "measured",
+      "value": 1515480.1666666667,
+      "serialized_bytes": 9092881,
+      "duration_seconds": 6.0,
+      "artifact_sha256": "2ef295f2452e4b0a7902711b2889a31140af0236d2ceff906db2ecffd35f4edf",
+      "source_status": "ok",
+      "reason": null
+    },
+    {
+      "case": "librispeech_3729-6852-0017",
+      "method": "hnm",
+      "speaker": "librispeech_3729",
+      "status": "measured",
+      "value": 1520000.6666666667,
+      "serialized_bytes": 9120004,
+      "duration_seconds": 6.0,
+      "artifact_sha256": "4d953ef306ec66f1cb68732f61de0631f87cfb4ad66811a08e14b229e4ff8f78",
+      "source_status": "ok",
+      "reason": null
+    },
+    {
+      "case": "librispeech_3729-6852-0017",
+      "method": "world_harvest",
+      "speaker": "librispeech_3729",
+      "status": "measured",
+      "value": 1392413.0,
+      "serialized_bytes": 8354478,
+      "duration_seconds": 6.0,
+      "artifact_sha256": "9f833ed8ec71f8eb5cae3530a08c5d76dc0dd5e50e56b7b1ed7fa2394974c7e9",
+      "source_status": "ok",
+      "reason": null
+    },
+    {
+      "case": "librispeech_4077-13751-0001",
+      "method": "hnm",
+      "speaker": "librispeech_4077",
+      "status": "measured",
+      "value": 1396804.5,
+      "serialized_bytes": 8380827,
+      "duration_seconds": 6.0,
+      "artifact_sha256": "8aca9826dc1578c9507a9be2629ef27ccea85fd0dc186293e513aa25d900f8b7",
+      "source_status": "ok",
+      "reason": null
+    },
+    {
+      "case": "librispeech_4077-13751-0001",
+      "method": "world_harvest",
+      "speaker": "librispeech_4077",
+      "status": "measured",
+      "value": 1164352.1666666667,
+      "serialized_bytes": 6986113,
+      "duration_seconds": 6.0,
+      "artifact_sha256": "821ded8c2f55029e2686d5562ca31bb90138d0b013e3a4119c130cc44c3bee64",
+      "source_status": "ok",
+      "reason": null
+    },
+    {
+      "case": "librispeech_4077-13754-0002",
+      "method": "hnm",
+      "speaker": "librispeech_4077",
+      "status": "measured",
+      "value": 1317603.3333333333,
+      "serialized_bytes": 7905620,
+      "duration_seconds": 6.0,
+      "artifact_sha256": "022dcd6bda2a2e6cc0ec26abc066468aa34a79d0e9dabfcf09b908eb0ab3d049",
+      "source_status": "ok",
+      "reason": null
+    },
+    {
+      "case": "librispeech_4077-13754-0002",
+      "method": "world_harvest",
+      "speaker": "librispeech_4077",
+      "status": "measured",
+      "value": 1246865.1666666667,
+      "serialized_bytes": 7481191,
+      "duration_seconds": 6.0,
+      "artifact_sha256": "f2b971f914a731132f148fb8fff3c317c28f859eb7de42ee00439c78fe26cb60",
+      "source_status": "ok",
+      "reason": null
+    },
+    {
+      "case": "librispeech_4077-13754-0012",
+      "method": "hnm",
+      "speaker": "librispeech_4077",
+      "status": "measured",
+      "value": 1331668.3333333333,
+      "serialized_bytes": 7990010,
+      "duration_seconds": 6.0,
+      "artifact_sha256": "9e350b1cd03baa687fde43f05e33b00d71c726a72859b3f78793cc5670c62677",
+      "source_status": "ok",
+      "reason": null
+    },
+    {
+      "case": "librispeech_4077-13754-0012",
+      "method": "world_harvest",
+      "speaker": "librispeech_4077",
+      "status": "measured",
+      "value": 1219130.5,
+      "serialized_bytes": 7314783,
+      "duration_seconds": 6.0,
+      "artifact_sha256": "8506fe21e7237de9b02b15d69cd40caaa2ac0988581cfa99f7e7116dcd7147fc",
+      "source_status": "ok",
+      "reason": null
+    },
+    {
+      "case": "librispeech_4446-2271-0003",
+      "method": "hnm",
+      "speaker": "librispeech_4446",
+      "status": "measured",
+      "value": 1465174.8648648649,
+      "serialized_bytes": 5421147,
+      "duration_seconds": 3.7,
+      "artifact_sha256": "cd21f2d8daf894bfdf816d2f3fad152e4d7fddaff3cf122247cfc1aa0e7505e2",
+      "source_status": "ok",
+      "reason": null
+    },
+    {
+      "case": "librispeech_4446-2271-0003",
+      "method": "world_harvest",
+      "speaker": "librispeech_4446",
+      "status": "measured",
+      "value": 1412195.6756756755,
+      "serialized_bytes": 5225124,
+      "duration_seconds": 3.7,
+      "artifact_sha256": "65f41272d4feab34a2ad20474bd62162608ebafcd49691b5736a166e7d8fad8a",
+      "source_status": "ok",
+      "reason": null
+    },
+    {
+      "case": "librispeech_4446-2271-0022",
+      "method": "hnm",
+      "speaker": "librispeech_4446",
+      "status": "measured",
+      "value": 1367052.9032258063,
+      "serialized_bytes": 3178398,
+      "duration_seconds": 2.325,
+      "artifact_sha256": "ef198ea683ad84dd97e800a9456d51546c10a3f1b115548fa1a6f145efc271d0",
+      "source_status": "ok",
+      "reason": null
+    },
+    {
+      "case": "librispeech_4446-2271-0022",
+      "method": "world_harvest",
+      "speaker": "librispeech_4446",
+      "status": "measured",
+      "value": 1214046.88172043,
+      "serialized_bytes": 2822659,
+      "duration_seconds": 2.325,
+      "artifact_sha256": "db0483601ee2893a8da4fdd8438fc6d9bd6bb872a398a72bf76e95125b94744b",
+      "source_status": "ok",
+      "reason": null
+    },
+    {
+      "case": "librispeech_4446-2273-0010",
+      "method": "hnm",
+      "speaker": "librispeech_4446",
+      "status": "measured",
+      "value": 1297716.1666666667,
+      "serialized_bytes": 7786297,
+      "duration_seconds": 6.0,
+      "artifact_sha256": "4735c320cee30f69240d7b1486ed92871eb9b732a86681c931198beaaba73bb4",
+      "source_status": "ok",
+      "reason": null
+    },
+    {
+      "case": "librispeech_4446-2273-0010",
+      "method": "world_harvest",
+      "speaker": "librispeech_4446",
+      "status": "measured",
+      "value": 1190687.3333333333,
+      "serialized_bytes": 7144124,
+      "duration_seconds": 6.0,
+      "artifact_sha256": "53454cdb3086019b43d8d7126cd4dbd945ed1a16a2cb7a5d95fec5aeae32519b",
+      "source_status": "ok",
+      "reason": null
+    },
+    {
+      "case": "librispeech_4507-16021-0016",
+      "method": "hnm",
+      "speaker": "librispeech_4507",
+      "status": "measured",
+      "value": 1363058.8333333333,
+      "serialized_bytes": 8178353,
+      "duration_seconds": 6.0,
+      "artifact_sha256": "1c494a58bbb1edeb68ab84b7bd1165f18a7ba75209b7a7cfb0aa0bbc2bd66b71",
+      "source_status": "ok",
+      "reason": null
+    },
+    {
+      "case": "librispeech_4507-16021-0016",
+      "method": "world_harvest",
+      "speaker": "librispeech_4507",
+      "status": "measured",
+      "value": 1257449.3333333333,
+      "serialized_bytes": 7544696,
+      "duration_seconds": 6.0,
+      "artifact_sha256": "e4b945f2644b7925c8a43ce4eec9e7cd8a3109d79d5ef5c31e7a91f1a79a6596",
+      "source_status": "ok",
+      "reason": null
+    },
+    {
+      "case": "librispeech_4507-16021-0032",
+      "method": "hnm",
+      "speaker": "librispeech_4507",
+      "status": "measured",
+      "value": 1376925.3333333333,
+      "serialized_bytes": 8261552,
+      "duration_seconds": 6.0,
+      "artifact_sha256": "08c2103c3c0d8b9df9a1d8d521b6e15cfbe10c9ada869b1d4b3cbd1fab2c281a",
+      "source_status": "ok",
+      "reason": null
+    },
+    {
+      "case": "librispeech_4507-16021-0032",
+      "method": "world_harvest",
+      "speaker": "librispeech_4507",
+      "status": "measured",
+      "value": 1230711.3333333333,
+      "serialized_bytes": 7384268,
+      "duration_seconds": 6.0,
+      "artifact_sha256": "b71ccfdfd4e69d1b7f4c1ff5882c1bf26c0bd307ed0326c695bd1ab01d1e6837",
+      "source_status": "ok",
+      "reason": null
+    },
+    {
+      "case": "librispeech_4507-16021-0045",
+      "method": "hnm",
+      "speaker": "librispeech_4507",
+      "status": "measured",
+      "value": 1314933.1288343559,
+      "serialized_bytes": 6430023,
+      "duration_seconds": 4.89,
+      "artifact_sha256": "dec72877b80389123c474b767850ad40a1cafeb314c4a9dc44bc2a57f157220d",
+      "source_status": "ok",
+      "reason": null
+    },
+    {
+      "case": "librispeech_4507-16021-0045",
+      "method": "world_harvest",
+      "speaker": "librispeech_4507",
+      "status": "measured",
+      "value": 1211208.7934560329,
+      "serialized_bytes": 5922811,
+      "duration_seconds": 4.89,
+      "artifact_sha256": "00441aa8bdfd92720bba6ae641c3ff94619cb6b35a5f8a40ead224ee7034af8c",
+      "source_status": "ok",
+      "reason": null
+    },
+    {
+      "case": "librispeech_4970-29093-0004",
+      "method": "hnm",
+      "speaker": "librispeech_4970",
+      "status": "measured",
+      "value": 1355940.2666666666,
+      "serialized_bytes": 5084776,
+      "duration_seconds": 3.75,
+      "artifact_sha256": "f2d4da2af539da89238fd9d0c41c59dabd0ec58f0329dcf4d40dfb423d468b26",
+      "source_status": "ok",
+      "reason": null
+    },
+    {
+      "case": "librispeech_4970-29093-0004",
+      "method": "world_harvest",
+      "speaker": "librispeech_4970",
+      "status": "measured",
+      "value": 1197826.9333333333,
+      "serialized_bytes": 4491851,
+      "duration_seconds": 3.75,
+      "artifact_sha256": "5ba89c9668a5ad6d5db9d0797f3d2e6e80734f37c19999f90957349ccd1b00a9",
+      "source_status": "ok",
+      "reason": null
+    },
+    {
+      "case": "librispeech_4970-29093-0005",
+      "method": "hnm",
+      "speaker": "librispeech_4970",
+      "status": "measured",
+      "value": 1353561.6666666667,
+      "serialized_bytes": 8121370,
+      "duration_seconds": 6.0,
+      "artifact_sha256": "21d81bc2fd5b4b11a3065343ef005e34633739f18e8c8c265375e8ffc7c8a165",
+      "source_status": "ok",
+      "reason": null
+    },
+    {
+      "case": "librispeech_4970-29093-0005",
+      "method": "world_harvest",
+      "speaker": "librispeech_4970",
+      "status": "measured",
+      "value": 1212851.3333333333,
+      "serialized_bytes": 7277108,
+      "duration_seconds": 6.0,
+      "artifact_sha256": "3a1f984f0fdbd83b93811bd07d479a73058444e4a35555c05d38dd1e08a261fe",
+      "source_status": "ok",
+      "reason": null
+    },
+    {
+      "case": "librispeech_4970-29095-0008",
+      "method": "hnm",
+      "speaker": "librispeech_4970",
+      "status": "measured",
+      "value": 1427896.7105263157,
+      "serialized_bytes": 4340806,
+      "duration_seconds": 3.04,
+      "artifact_sha256": "da2a1386334d75f918eff784dd42ec9ccf4e3be519aaaa4645c2fd677925e6ab",
+      "source_status": "ok",
+      "reason": null
+    },
+    {
+      "case": "librispeech_4970-29095-0008",
+      "method": "world_harvest",
+      "speaker": "librispeech_4970",
+      "status": "measured",
+      "value": 1244688.4868421052,
+      "serialized_bytes": 3783853,
+      "duration_seconds": 3.04,
+      "artifact_sha256": "29dd79c2d59bb7d826aa18c2a4ef52612a085c54e337200b7a96b8164acffb67",
+      "source_status": "ok",
+      "reason": null
+    },
+    {
+      "case": "librispeech_4992-23283-0016",
+      "method": "hnm",
+      "speaker": "librispeech_4992",
+      "status": "measured",
+      "value": 1510457.6195773082,
+      "serialized_bytes": 6789507,
+      "duration_seconds": 4.495,
+      "artifact_sha256": "eea130f8dfa9722d737498209b3a3b562fc419ef25218ecba4669a54b5d37f17",
+      "source_status": "ok",
+      "reason": null
+    },
+    {
+      "case": "librispeech_4992-23283-0016",
+      "method": "world_harvest",
+      "speaker": "librispeech_4992",
+      "status": "measured",
+      "value": 1298578.4204671858,
+      "serialized_bytes": 5837110,
+      "duration_seconds": 4.495,
+      "artifact_sha256": "7907f708a0ffda818e6ebc83b83a72b0b40b04fcd7365c00caea7ec2232de99e",
+      "source_status": "ok",
+      "reason": null
+    },
+    {
+      "case": "librispeech_4992-41797-0000",
+      "method": "hnm",
+      "speaker": "librispeech_4992",
+      "status": "measured",
+      "value": 1442211.1212397446,
+      "serialized_bytes": 7910528,
+      "duration_seconds": 5.485,
+      "artifact_sha256": "a16dc660d4383e36bd28588a9c10ee23f9d6084ed7745f197f488b17a21138d1",
+      "source_status": "ok",
+      "reason": null
+    },
+    {
+      "case": "librispeech_4992-41797-0000",
+      "method": "world_harvest",
+      "speaker": "librispeech_4992",
+      "status": "measured",
+      "value": 1338811.8505013674,
+      "serialized_bytes": 7343383,
+      "duration_seconds": 5.485,
+      "artifact_sha256": "865b9fd77599d5aa2acfec0e145df6eb57e3eeb72054c492117f529c951b55f6",
+      "source_status": "ok",
+      "reason": null
+    },
+    {
+      "case": "librispeech_4992-41806-0000",
+      "method": "hnm",
+      "speaker": "librispeech_4992",
+      "status": "measured",
+      "value": 1492489.0,
+      "serialized_bytes": 8954934,
+      "duration_seconds": 6.0,
+      "artifact_sha256": "eeaf0000724b6b0a9a5b31e6c4dbfdc83317799848be5a15cf125350b2b89f43",
+      "source_status": "ok",
+      "reason": null
+    },
+    {
+      "case": "librispeech_4992-41806-0000",
+      "method": "world_harvest",
+      "speaker": "librispeech_4992",
+      "status": "measured",
+      "value": 1473639.6666666667,
+      "serialized_bytes": 8841838,
+      "duration_seconds": 6.0,
+      "artifact_sha256": "149348b19f9b8231411f5b2a3be8515674005f7eb1c3b490489ff61a10c0523c",
+      "source_status": "ok",
+      "reason": null
+    },
+    {
+      "case": "librispeech_5105-28240-0011",
+      "method": "hnm",
+      "speaker": "librispeech_5105",
+      "status": "measured",
+      "value": 1377370.5,
+      "serialized_bytes": 8264223,
+      "duration_seconds": 6.0,
+      "artifact_sha256": "d8f002965b1792d63a88e710bb31269efbdbc90570cf752d2d16a31093429d78",
+      "source_status": "ok",
+      "reason": null
+    },
+    {
+      "case": "librispeech_5105-28240-0011",
+      "method": "world_harvest",
+      "speaker": "librispeech_5105",
+      "status": "measured",
+      "value": 1283367.0,
+      "serialized_bytes": 7700202,
+      "duration_seconds": 6.0,
+      "artifact_sha256": "b8ddc1c0c7c4f3c8ae9140ce8588f6712080bf30f68023fbceb56834e24de795",
+      "source_status": "ok",
+      "reason": null
+    },
+    {
+      "case": "librispeech_5105-28241-0004",
+      "method": "hnm",
+      "speaker": "librispeech_5105",
+      "status": "measured",
+      "value": 1342579.6666666667,
+      "serialized_bytes": 8055478,
+      "duration_seconds": 6.0,
+      "artifact_sha256": "4b31f7c7eb8ceac30b5da7649221c234693050c47755d148d470ce6b83159963",
+      "source_status": "ok",
+      "reason": null
+    },
+    {
+      "case": "librispeech_5105-28241-0004",
+      "method": "world_harvest",
+      "speaker": "librispeech_5105",
+      "status": "measured",
+      "value": 1310911.6666666667,
+      "serialized_bytes": 7865470,
+      "duration_seconds": 6.0,
+      "artifact_sha256": "ce50a935aece94a016c0410102feba7e4f252cc3355403ada112a635aacf3137",
+      "source_status": "ok",
+      "reason": null
+    },
+    {
+      "case": "librispeech_5105-28241-0019",
+      "method": "hnm",
+      "speaker": "librispeech_5105",
+      "status": "measured",
+      "value": 1271267.8638941399,
+      "serialized_bytes": 6725007,
+      "duration_seconds": 5.29,
+      "artifact_sha256": "5647db9f32c1bae15609d42db5d1db5b03816e8fe989de8be77963d73050f7ec",
+      "source_status": "ok",
+      "reason": null
+    },
+    {
+      "case": "librispeech_5105-28241-0019",
+      "method": "world_harvest",
+      "speaker": "librispeech_5105",
+      "status": "measured",
+      "value": 1286540.4536862003,
+      "serialized_bytes": 6805799,
+      "duration_seconds": 5.29,
+      "artifact_sha256": "2f2a500a8ccba5e8e7613d2aa4e88248ba478a31d9abf65c98102f7d39778250",
+      "source_status": "ok",
+      "reason": null
+    },
+    {
+      "case": "librispeech_5142-33396-0019",
+      "method": "hnm",
+      "speaker": "librispeech_5142",
+      "status": "measured",
+      "value": 1540093.6810431292,
+      "serialized_bytes": 7677367,
+      "duration_seconds": 4.985,
+      "artifact_sha256": "53674a5c14cfdb27c58fd231158c964d0f2292ea635c9fe3cbfd7b124c1092f6",
+      "source_status": "ok",
+      "reason": null
+    },
+    {
+      "case": "librispeech_5142-33396-0019",
+      "method": "world_harvest",
+      "speaker": "librispeech_5142",
+      "status": "measured",
+      "value": 1346859.3781344031,
+      "serialized_bytes": 6714094,
+      "duration_seconds": 4.985,
+      "artifact_sha256": "1da76530ab28d2423a44944d5e77ff5e8eae085feeac3c0d42c676702aa51fe8",
+      "source_status": "ok",
+      "reason": null
+    },
+    {
+      "case": "librispeech_5142-33396-0030",
+      "method": "hnm",
+      "speaker": "librispeech_5142",
+      "status": "measured",
+      "value": 1460714.6473779385,
+      "serialized_bytes": 4038876,
+      "duration_seconds": 2.765,
+      "artifact_sha256": "790676b090ebfabdac9e45c6b1b2cec4c77d37195c0ca6d255d06fae9b491568",
+      "source_status": "ok",
+      "reason": null
+    },
+    {
+      "case": "librispeech_5142-33396-0030",
+      "method": "world_harvest",
+      "speaker": "librispeech_5142",
+      "status": "measured",
+      "value": 1367019.5298372514,
+      "serialized_bytes": 3779809,
+      "duration_seconds": 2.765,
+      "artifact_sha256": "8e3f020af45cc18eff08ace4edbd7cc8797abde7ec44750e6d4f5a9d3d94ee30",
+      "source_status": "ok",
+      "reason": null
+    },
+    {
+      "case": "librispeech_5142-33396-0065",
+      "method": "hnm",
+      "speaker": "librispeech_5142",
+      "status": "measured",
+      "value": 1461434.8411934553,
+      "serialized_bytes": 7592154,
+      "duration_seconds": 5.195,
+      "artifact_sha256": "52dd731a60d44c42ccf7bc181adfe19d77f1d5571fb6609729de8b3ad4685fa1",
+      "source_status": "ok",
+      "reason": null
+    },
+    {
+      "case": "librispeech_5142-33396-0065",
+      "method": "world_harvest",
+      "speaker": "librispeech_5142",
+      "status": "measured",
+      "value": 1298695.4764196342,
+      "serialized_bytes": 6746723,
+      "duration_seconds": 5.195,
+      "artifact_sha256": "50ef2d5e6512ec78d78462b85924052af19e978355a84cc67d863a3539bce7e4",
+      "source_status": "ok",
+      "reason": null
+    },
+    {
+      "case": "librispeech_5639-40744-0013",
+      "method": "hnm",
+      "speaker": "librispeech_5639",
+      "status": "measured",
+      "value": 1393990.5,
+      "serialized_bytes": 8363943,
+      "duration_seconds": 6.0,
+      "artifact_sha256": "8d3dcd80fe051f079bb8420f95be53a72f7ff8574a7b46332a830b08e5b89b09",
+      "source_status": "ok",
+      "reason": null
+    },
+    {
+      "case": "librispeech_5639-40744-0013",
+      "method": "world_harvest",
+      "speaker": "librispeech_5639",
+      "status": "measured",
+      "value": 1310924.1666666667,
+      "serialized_bytes": 7865545,
+      "duration_seconds": 6.0,
+      "artifact_sha256": "a101cce42a4bd09b141a154089c8de10443bea41a779764586f985d8533fc5cc",
+      "source_status": "ok",
+      "reason": null
+    },
+    {
+      "case": "librispeech_5639-40744-0023",
+      "method": "hnm",
+      "speaker": "librispeech_5639",
+      "status": "measured",
+      "value": 1383223.6666666667,
+      "serialized_bytes": 8299342,
+      "duration_seconds": 6.0,
+      "artifact_sha256": "7042c9a694fa76e50f3984969715ad268450ae79f948aac3bcc9e40701b931ba",
+      "source_status": "ok",
+      "reason": null
+    },
+    {
+      "case": "librispeech_5639-40744-0023",
+      "method": "world_harvest",
+      "speaker": "librispeech_5639",
+      "status": "measured",
+      "value": 1372273.6666666667,
+      "serialized_bytes": 8233642,
+      "duration_seconds": 6.0,
+      "artifact_sha256": "302be34e49ee12492a21e83250c6c4ff06a2520e88fe8b85433e4d8bf7f93b1d",
+      "source_status": "ok",
+      "reason": null
+    },
+    {
+      "case": "librispeech_5639-40744-0030",
+      "method": "hnm",
+      "speaker": "librispeech_5639",
+      "status": "measured",
+      "value": 1312727.8333333333,
+      "serialized_bytes": 7876367,
+      "duration_seconds": 6.0,
+      "artifact_sha256": "e4683dedc871b1ddbdf01c2bfb3ce5955e3f41fe00e7df3b524cc11d8c8e4103",
+      "source_status": "ok",
+      "reason": null
+    },
+    {
+      "case": "librispeech_5639-40744-0030",
+      "method": "world_harvest",
+      "speaker": "librispeech_5639",
+      "status": "measured",
+      "value": 1310758.8333333333,
+      "serialized_bytes": 7864553,
+      "duration_seconds": 6.0,
+      "artifact_sha256": "78e9aa5d03fa6fb39e27efc598681d9f88287e9198b65b322b8867d4ffd58b11",
+      "source_status": "ok",
+      "reason": null
+    },
+    {
+      "case": "librispeech_5683-32865-0017",
+      "method": "hnm",
+      "speaker": "librispeech_5683",
+      "status": "measured",
+      "value": 1346871.8606782767,
+      "serialized_bytes": 7347186,
+      "duration_seconds": 5.455,
+      "artifact_sha256": "aa92a7d1ba7c481d3523f514af0e4fbb4a2c4e0261b0da17bf876dca0dab5de1",
+      "source_status": "ok",
+      "reason": null
+    },
+    {
+      "case": "librispeech_5683-32865-0017",
+      "method": "world_harvest",
+      "speaker": "librispeech_5683",
+      "status": "measured",
+      "value": 1214889.4592117323,
+      "serialized_bytes": 6627222,
+      "duration_seconds": 5.455,
+      "artifact_sha256": "7a15f9a8e52f7ae8c7cab528124d9b1457b2f7dae382a7fc49a091afc4fbbe4e",
+      "source_status": "ok",
+      "reason": null
+    },
+    {
+      "case": "librispeech_5683-32879-0009",
+      "method": "hnm",
+      "speaker": "librispeech_5683",
+      "status": "measured",
+      "value": 1415207.594936709,
+      "serialized_bytes": 7267091,
+      "duration_seconds": 5.135,
+      "artifact_sha256": "45f0f6a4a6b6df8ce29096f50b217ee56531c89a429c5e2bbf361e348fe96f1e",
+      "source_status": "ok",
+      "reason": null
+    },
+    {
+      "case": "librispeech_5683-32879-0009",
+      "method": "world_harvest",
+      "speaker": "librispeech_5683",
+      "status": "measured",
+      "value": 1313255.8909444986,
+      "serialized_bytes": 6743569,
+      "duration_seconds": 5.135,
+      "artifact_sha256": "ed030d31f14cdefe3f3f7ca08f4a38bf9eded4b0178727d96c38d16d1de54267",
+      "source_status": "ok",
+      "reason": null
+    },
+    {
+      "case": "librispeech_5683-32879-0019",
+      "method": "hnm",
+      "speaker": "librispeech_5683",
+      "status": "measured",
+      "value": 1455933.0,
+      "serialized_bytes": 8735598,
+      "duration_seconds": 6.0,
+      "artifact_sha256": "4856d91e8d7ced5d272ffb5c5a382418b76682810ddee8e6c8e3e485b5b8a43f",
+      "source_status": "ok",
+      "reason": null
+    },
+    {
+      "case": "librispeech_5683-32879-0019",
+      "method": "world_harvest",
+      "speaker": "librispeech_5683",
+      "status": "measured",
+      "value": 1413094.5,
+      "serialized_bytes": 8478567,
+      "duration_seconds": 6.0,
+      "artifact_sha256": "09f1bf4e99cae7a6358cae4ea5b066a92c3ed4168783a3f0dbb3f78951d789cc",
+      "source_status": "ok",
+      "reason": null
+    },
+    {
+      "case": "librispeech_61-70968-0042",
+      "method": "hnm",
+      "speaker": "librispeech_61",
+      "status": "measured",
+      "value": 1408023.698384201,
+      "serialized_bytes": 3921346,
+      "duration_seconds": 2.785,
+      "artifact_sha256": "522cd46f37abf3a611031c92b1025386e7729d51d53f5cc554252bcbc67aac2a",
+      "source_status": "ok",
+      "reason": null
+    },
+    {
+      "case": "librispeech_61-70968-0042",
+      "method": "world_harvest",
+      "speaker": "librispeech_61",
+      "status": "measured",
+      "value": 1330050.987432675,
+      "serialized_bytes": 3704192,
+      "duration_seconds": 2.785,
+      "artifact_sha256": "f4bc4263260630aad23d2a10e6cb50613dec625b978f49d4387f53224cd7b8e3",
+      "source_status": "ok",
+      "reason": null
+    },
+    {
+      "case": "librispeech_61-70968-0043",
+      "method": "hnm",
+      "speaker": "librispeech_61",
+      "status": "measured",
+      "value": 1227490.6666666667,
+      "serialized_bytes": 7364944,
+      "duration_seconds": 6.0,
+      "artifact_sha256": "18c4abd9b15c062da13c04f8a05481aa7c354cbf129259e59133608b9cdc1679",
+      "source_status": "ok",
+      "reason": null
+    },
+    {
+      "case": "librispeech_61-70968-0043",
+      "method": "world_harvest",
+      "speaker": "librispeech_61",
+      "status": "measured",
+      "value": 1119740.8333333333,
+      "serialized_bytes": 6718445,
+      "duration_seconds": 6.0,
+      "artifact_sha256": "18864b188a1314e9596f281d830579bf0b7f899c361812bcdf24e2dc8a7164a3",
+      "source_status": "ok",
+      "reason": null
+    },
+    {
+      "case": "librispeech_61-70968-0054",
+      "method": "hnm",
+      "speaker": "librispeech_61",
+      "status": "measured",
+      "value": 1353105.5,
+      "serialized_bytes": 8118633,
+      "duration_seconds": 6.0,
+      "artifact_sha256": "055fe8efd12cb77622fe05bc462c888075f745afbddbe08e451dbd963c6c33a7",
+      "source_status": "ok",
+      "reason": null
+    },
+    {
+      "case": "librispeech_61-70968-0054",
+      "method": "world_harvest",
+      "speaker": "librispeech_61",
+      "status": "measured",
+      "value": 1282365.8333333333,
+      "serialized_bytes": 7694195,
+      "duration_seconds": 6.0,
+      "artifact_sha256": "1c4b55fd7a09a09ba85e334226bf26ff9b0f6546e7730a66637d306da827c468",
+      "source_status": "ok",
+      "reason": null
+    },
+    {
+      "case": "librispeech_672-122797-0003",
+      "method": "hnm",
+      "speaker": "librispeech_672",
+      "status": "measured",
+      "value": 1455477.3109243698,
+      "serialized_bytes": 6928072,
+      "duration_seconds": 4.76,
+      "artifact_sha256": "fd290b0efdf15206beb97d53c99ee9434c51188b838877433c5a655feca348e7",
+      "source_status": "ok",
+      "reason": null
+    },
+    {
+      "case": "librispeech_672-122797-0003",
+      "method": "world_harvest",
+      "speaker": "librispeech_672",
+      "status": "measured",
+      "value": 1174353.1512605043,
+      "serialized_bytes": 5589921,
+      "duration_seconds": 4.76,
+      "artifact_sha256": "d17e0e11664a1f521ba572dc16835157081290556b77bb964be7e2458dfdb554",
+      "source_status": "ok",
+      "reason": null
+    },
+    {
+      "case": "librispeech_672-122797-0044",
+      "method": "hnm",
+      "speaker": "librispeech_672",
+      "status": "measured",
+      "value": 1551983.6898395722,
+      "serialized_bytes": 5804419,
+      "duration_seconds": 3.74,
+      "artifact_sha256": "2cf0a19c84a7842abe60bda7bb3c5f2e1561744bb2f355a012907052679e7486",
+      "source_status": "ok",
+      "reason": null
+    },
+    {
+      "case": "librispeech_672-122797-0044",
+      "method": "world_harvest",
+      "speaker": "librispeech_672",
+      "status": "measured",
+      "value": 1295235.0267379677,
+      "serialized_bytes": 4844179,
+      "duration_seconds": 3.74,
+      "artifact_sha256": "f0f47184cc43885bda8a1a7f6d5e55e916527c848fb5265c6c4ae85c54b29582",
+      "source_status": "ok",
+      "reason": null
+    },
+    {
+      "case": "librispeech_672-122797-0056",
+      "method": "hnm",
+      "speaker": "librispeech_672",
+      "status": "measured",
+      "value": 1513091.291866029,
+      "serialized_bytes": 7905902,
+      "duration_seconds": 5.225,
+      "artifact_sha256": "f3dfd6b95fe8565be27d03ef382d61b48951d7f3a347543f0a9ae6ed2953ebf7",
+      "source_status": "ok",
+      "reason": null
+    },
+    {
+      "case": "librispeech_672-122797-0056",
+      "method": "world_harvest",
+      "speaker": "librispeech_672",
+      "status": "measured",
+      "value": 1303884.9760765552,
+      "serialized_bytes": 6812799,
+      "duration_seconds": 5.225,
+      "artifact_sha256": "fb97fae1808b3ecb86cc69180b29fc5bc4677c5db8bc5058740ca793bb8a9f38",
+      "source_status": "ok",
+      "reason": null
+    },
+    {
+      "case": "librispeech_6829-68769-0014",
+      "method": "hnm",
+      "speaker": "librispeech_6829",
+      "status": "measured",
+      "value": 1290107.2503419972,
+      "serialized_bytes": 4715342,
+      "duration_seconds": 3.655,
+      "artifact_sha256": "8633ceb20f104cec64cb5ac96ad08f0ab04d5546f4bd4bc1538e9d600c07f5d2",
+      "source_status": "ok",
+      "reason": null
+    },
+    {
+      "case": "librispeech_6829-68769-0014",
+      "method": "world_harvest",
+      "speaker": "librispeech_6829",
+      "status": "measured",
+      "value": 1200722.024623803,
+      "serialized_bytes": 4388639,
+      "duration_seconds": 3.655,
+      "artifact_sha256": "9b710a9419909251e9efdb52601bee95501e780167cdbd2242164570ebfa7a71",
+      "source_status": "ok",
+      "reason": null
+    },
+    {
+      "case": "librispeech_6829-68769-0038",
+      "method": "hnm",
+      "speaker": "librispeech_6829",
+      "status": "measured",
+      "value": 1198962.0758483035,
+      "serialized_bytes": 3003400,
+      "duration_seconds": 2.505,
+      "artifact_sha256": "8a8f49ecd8e431628ad43552456c92635db5248e8b4e15886a31aecc0068736b",
+      "source_status": "ok",
+      "reason": null
+    },
+    {
+      "case": "librispeech_6829-68769-0038",
+      "method": "world_harvest",
+      "speaker": "librispeech_6829",
+      "status": "measured",
+      "value": 1151639.520958084,
+      "serialized_bytes": 2884857,
+      "duration_seconds": 2.505,
+      "artifact_sha256": "589503b5f7b983066abc708e7cf4f8af76a4abea59e796e3517385c7bad2ae8b",
+      "source_status": "ok",
+      "reason": null
+    },
+    {
+      "case": "librispeech_6829-68769-0041",
+      "method": "hnm",
+      "speaker": "librispeech_6829",
+      "status": "measured",
+      "value": 1282625.1879699246,
+      "serialized_bytes": 3411783,
+      "duration_seconds": 2.66,
+      "artifact_sha256": "bc7c3bcda76455064bf717c68159d6236f5b139d1a5027983b6d61fb922c3a27",
+      "source_status": "ok",
+      "reason": null
+    },
+    {
+      "case": "librispeech_6829-68769-0041",
+      "method": "world_harvest",
+      "speaker": "librispeech_6829",
+      "status": "measured",
+      "value": 1272070.6766917293,
+      "serialized_bytes": 3383708,
+      "duration_seconds": 2.66,
+      "artifact_sha256": "1c2c63f052aa1560d50e34f1baf3a77f47792a67a2b65688ca67ec5da3b2201a",
+      "source_status": "ok",
+      "reason": null
+    },
+    {
+      "case": "librispeech_6930-75918-0013",
+      "method": "hnm",
+      "speaker": "librispeech_6930",
+      "status": "measured",
+      "value": 1285619.7278911564,
+      "serialized_bytes": 3779722,
+      "duration_seconds": 2.94,
+      "artifact_sha256": "279b8f18e16664a8aac723f19e7ec0d6d56285e0c1caa93fa78db310f3e7ddaf",
+      "source_status": "ok",
+      "reason": null
+    },
+    {
+      "case": "librispeech_6930-75918-0013",
+      "method": "world_harvest",
+      "speaker": "librispeech_6930",
+      "status": "measured",
+      "value": 1264665.6462585034,
+      "serialized_bytes": 3718117,
+      "duration_seconds": 2.94,
+      "artifact_sha256": "909ef08e875a84407b05228e3d83d43ad9f0900447fea74f86b10d80639de8ab",
+      "source_status": "ok",
+      "reason": null
+    },
+    {
+      "case": "librispeech_6930-76324-0024",
+      "method": "hnm",
+      "speaker": "librispeech_6930",
+      "status": "measured",
+      "value": 1382168.1481481483,
+      "serialized_bytes": 5597781,
+      "duration_seconds": 4.05,
+      "artifact_sha256": "f4731b9c32f29219d25eaae48f6cec0965914a11e18940cb9b154be43b0c120c",
+      "source_status": "ok",
+      "reason": null
+    },
+    {
+      "case": "librispeech_6930-76324-0024",
+      "method": "world_harvest",
+      "speaker": "librispeech_6930",
+      "status": "measured",
+      "value": 1239825.6790123458,
+      "serialized_bytes": 5021294,
+      "duration_seconds": 4.05,
+      "artifact_sha256": "48afa4a0524065c523e254a551af2c1c138a4e04eedd42851f527055d1ca87b0",
+      "source_status": "ok",
+      "reason": null
+    },
+    {
+      "case": "librispeech_6930-81414-0026",
+      "method": "hnm",
+      "speaker": "librispeech_6930",
+      "status": "measured",
+      "value": 1395357.0731707315,
+      "serialized_bytes": 4290723,
+      "duration_seconds": 3.075,
+      "artifact_sha256": "51316128fb122143149d17d3f5bbc448738a5a0d60883d4f6fadb2aff4fbc183",
+      "source_status": "ok",
+      "reason": null
+    },
+    {
+      "case": "librispeech_6930-81414-0026",
+      "method": "world_harvest",
+      "speaker": "librispeech_6930",
+      "status": "measured",
+      "value": 1164913.4959349593,
+      "serialized_bytes": 3582109,
+      "duration_seconds": 3.075,
+      "artifact_sha256": "dd008eb83ccbd27a17c60091a195120f0db986844b7958b045c8dd818b307429",
+      "source_status": "ok",
+      "reason": null
+    },
+    {
+      "case": "librispeech_7021-79740-0002",
+      "method": "hnm",
+      "speaker": "librispeech_7021",
+      "status": "measured",
+      "value": 1362346.6666666667,
+      "serialized_bytes": 8174080,
+      "duration_seconds": 6.0,
+      "artifact_sha256": "6cae0a14043570902d6695c6a093a6a734863d08a084c43ed0d1e6eb268bd924",
+      "source_status": "ok",
+      "reason": null
+    },
+    {
+      "case": "librispeech_7021-79740-0002",
+      "method": "world_harvest",
+      "speaker": "librispeech_7021",
+      "status": "measured",
+      "value": 1256904.0,
+      "serialized_bytes": 7541424,
+      "duration_seconds": 6.0,
+      "artifact_sha256": "ea3627649611caf38744d28dff66b7fdf6cf9ab1bc9bfeb6461daf20d7a5326c",
+      "source_status": "ok",
+      "reason": null
+    },
+    {
+      "case": "librispeech_7021-79740-0011",
+      "method": "hnm",
+      "speaker": "librispeech_7021",
+      "status": "measured",
+      "value": 1419971.1666666667,
+      "serialized_bytes": 8519827,
+      "duration_seconds": 6.0,
+      "artifact_sha256": "a452a5a1883e9bd376ff59cba1b62623fb94224a2989236725e262a8d735c481",
+      "source_status": "ok",
+      "reason": null
+    },
+    {
+      "case": "librispeech_7021-79740-0011",
+      "method": "world_harvest",
+      "speaker": "librispeech_7021",
+      "status": "measured",
+      "value": 1249576.5,
+      "serialized_bytes": 7497459,
+      "duration_seconds": 6.0,
+      "artifact_sha256": "30cd72b69eab54e4fb5f0383a0a1a0be1b32eeabefc521dda4fb5b800f64080a",
+      "source_status": "ok",
+      "reason": null
+    },
+    {
+      "case": "librispeech_7021-85628-0025",
+      "method": "hnm",
+      "speaker": "librispeech_7021",
+      "status": "measured",
+      "value": 1270587.7477477477,
+      "serialized_bytes": 3525881,
+      "duration_seconds": 2.775,
+      "artifact_sha256": "26f3aeb5f47d9663644be3c4480e30856ce60dd1acf6b3e46c586da167749b98",
+      "source_status": "ok",
+      "reason": null
+    },
+    {
+      "case": "librispeech_7021-85628-0025",
+      "method": "world_harvest",
+      "speaker": "librispeech_7021",
+      "status": "measured",
+      "value": 1195739.0990990992,
+      "serialized_bytes": 3318176,
+      "duration_seconds": 2.775,
+      "artifact_sha256": "16b5e112a171585578483a599b6112c33f0f1abb39b6ef7457130242fbda3410",
+      "source_status": "ok",
+      "reason": null
+    },
+    {
+      "case": "librispeech_7127-75946-0002",
+      "method": "hnm",
+      "speaker": "librispeech_7127",
+      "status": "measured",
+      "value": 1385872.8333333333,
+      "serialized_bytes": 8315237,
+      "duration_seconds": 6.0,
+      "artifact_sha256": "fef7e22a6ec9950bd9cb2000d3ae7d09c26178d4fca9ccd6df62edfc03492c96",
+      "source_status": "ok",
+      "reason": null
+    },
+    {
+      "case": "librispeech_7127-75946-0002",
+      "method": "world_harvest",
+      "speaker": "librispeech_7127",
+      "status": "measured",
+      "value": 1307219.8333333333,
+      "serialized_bytes": 7843319,
+      "duration_seconds": 6.0,
+      "artifact_sha256": "3eced73c5b09156e46c65e96c63d43fee9e0e0021136d7a149d3ede773fcb798",
+      "source_status": "ok",
+      "reason": null
+    },
+    {
+      "case": "librispeech_7127-75946-0029",
+      "method": "hnm",
+      "speaker": "librispeech_7127",
+      "status": "measured",
+      "value": 1401927.5,
+      "serialized_bytes": 8411565,
+      "duration_seconds": 6.0,
+      "artifact_sha256": "10d356a6ebc227c6b8a06dabdf16164b11064b33fb15a95d3ec17615e12a7634",
+      "source_status": "ok",
+      "reason": null
+    },
+    {
+      "case": "librispeech_7127-75946-0029",
+      "method": "world_harvest",
+      "speaker": "librispeech_7127",
+      "status": "measured",
+      "value": 1316876.3333333333,
+      "serialized_bytes": 7901258,
+      "duration_seconds": 6.0,
+      "artifact_sha256": "64918ea27ea8c410979b3f4fb077cb628569ac01ceadfb315c38d4ecfa88b381",
+      "source_status": "ok",
+      "reason": null
+    },
+    {
+      "case": "librispeech_7127-75947-0011",
+      "method": "hnm",
+      "speaker": "librispeech_7127",
+      "status": "measured",
+      "value": 1330483.7016574584,
+      "serialized_bytes": 4816351,
+      "duration_seconds": 3.62,
+      "artifact_sha256": "6a541fbec95198db446b4c9f544d4c467144c8305cef3c0fb218deb106d5f521",
+      "source_status": "ok",
+      "reason": null
+    },
+    {
+      "case": "librispeech_7127-75947-0011",
+      "method": "world_harvest",
+      "speaker": "librispeech_7127",
+      "status": "measured",
+      "value": 1332302.4861878452,
+      "serialized_bytes": 4822935,
+      "duration_seconds": 3.62,
+      "artifact_sha256": "32488ce0cf5b59f107e43d1b3e170a69b56d5fa83ed0c1a1eabf95635d8975c5",
+      "source_status": "ok",
+      "reason": null
+    },
+    {
+      "case": "librispeech_7176-88083-0002",
+      "method": "hnm",
+      "speaker": "librispeech_7176",
+      "status": "measured",
+      "value": 1369619.5,
+      "serialized_bytes": 8217717,
+      "duration_seconds": 6.0,
+      "artifact_sha256": "bf2d320a9f628d331f09f81d9a9edba8cb37fb7b5967cb70a5ec80ddb55d8c62",
+      "source_status": "ok",
+      "reason": null
+    },
+    {
+      "case": "librispeech_7176-88083-0002",
+      "method": "world_harvest",
+      "speaker": "librispeech_7176",
+      "status": "measured",
+      "value": 1345208.5,
+      "serialized_bytes": 8071251,
+      "duration_seconds": 6.0,
+      "artifact_sha256": "d78667548db0aed1a9f2b265c5f59bd9b2e04c67afe4a5e5426d79396122907b",
+      "source_status": "ok",
+      "reason": null
+    },
+    {
+      "case": "librispeech_7176-88083-0004",
+      "method": "hnm",
+      "speaker": "librispeech_7176",
+      "status": "measured",
+      "value": 1355622.1666666667,
+      "serialized_bytes": 8133733,
+      "duration_seconds": 6.0,
+      "artifact_sha256": "8eda02b831fc8d9b028cf25f1cd5c9494a97422daa36e9ad0d574349ce98a3db",
+      "source_status": "ok",
+      "reason": null
+    },
+    {
+      "case": "librispeech_7176-88083-0004",
+      "method": "world_harvest",
+      "speaker": "librispeech_7176",
+      "status": "measured",
+      "value": 1302008.0,
+      "serialized_bytes": 7812048,
+      "duration_seconds": 6.0,
+      "artifact_sha256": "d3f933bcf98232e0aa4db3ade754666fa8aa8309df0b55014d301a334b1d295b",
+      "source_status": "ok",
+      "reason": null
+    },
+    {
+      "case": "librispeech_7176-88083-0026",
+      "method": "hnm",
+      "speaker": "librispeech_7176",
+      "status": "measured",
+      "value": 1392435.0813743218,
+      "serialized_bytes": 7700166,
+      "duration_seconds": 5.53,
+      "artifact_sha256": "1ff3153328ace555eef31ab8bc15c0363f0f6efe345ec8413ccac24014846bd6",
+      "source_status": "ok",
+      "reason": null
+    },
+    {
+      "case": "librispeech_7176-88083-0026",
+      "method": "world_harvest",
+      "speaker": "librispeech_7176",
+      "status": "measured",
+      "value": 1337177.576853526,
+      "serialized_bytes": 7394592,
+      "duration_seconds": 5.53,
+      "artifact_sha256": "7a00a43b6becce4f324afbb2c9b9b6a1579a396eb177ee70fb5927b68c29e5ae",
+      "source_status": "ok",
+      "reason": null
+    },
+    {
+      "case": "librispeech_7729-102255-0028",
+      "method": "hnm",
+      "speaker": "librispeech_7729",
+      "status": "measured",
+      "value": 1378636.3333333333,
+      "serialized_bytes": 8271818,
+      "duration_seconds": 6.0,
+      "artifact_sha256": "490d9997487a954057ccdf7903c28493bd1a7d7aa811324f8c2c30651ddc5811",
+      "source_status": "ok",
+      "reason": null
+    },
+    {
+      "case": "librispeech_7729-102255-0028",
+      "method": "world_harvest",
+      "speaker": "librispeech_7729",
+      "status": "measured",
+      "value": 1308181.6666666667,
+      "serialized_bytes": 7849090,
+      "duration_seconds": 6.0,
+      "artifact_sha256": "cd4fc2e1a17cf885f60f6ec96a04ab30f6c3c49a819ca8c938b814dafded1ecc",
+      "source_status": "ok",
+      "reason": null
+    },
+    {
+      "case": "librispeech_7729-102255-0038",
+      "method": "hnm",
+      "speaker": "librispeech_7729",
+      "status": "measured",
+      "value": 1425153.8333333333,
+      "serialized_bytes": 8550923,
+      "duration_seconds": 6.0,
+      "artifact_sha256": "3909c5973b65c4a55bfc40b538edb26e54704e7ee22520b9e4dfdebc3cbc7d46",
+      "source_status": "ok",
+      "reason": null
+    },
+    {
+      "case": "librispeech_7729-102255-0038",
+      "method": "world_harvest",
+      "speaker": "librispeech_7729",
+      "status": "measured",
+      "value": 1280739.8333333333,
+      "serialized_bytes": 7684439,
+      "duration_seconds": 6.0,
+      "artifact_sha256": "0deda03aa50301db2b992552533eb02acf4a5527412e8172bd70e4580cf5cdbf",
+      "source_status": "ok",
+      "reason": null
+    },
+    {
+      "case": "librispeech_7729-102255-0042",
+      "method": "hnm",
+      "speaker": "librispeech_7729",
+      "status": "measured",
+      "value": 1316552.3333333333,
+      "serialized_bytes": 7899314,
+      "duration_seconds": 6.0,
+      "artifact_sha256": "c46d6daf25e03f32cfd35c3ce9e6d26e9cc3e16d8124fabd31f4b587bf75d71a",
+      "source_status": "ok",
+      "reason": null
+    },
+    {
+      "case": "librispeech_7729-102255-0042",
+      "method": "world_harvest",
+      "speaker": "librispeech_7729",
+      "status": "measured",
+      "value": 1228764.3333333333,
+      "serialized_bytes": 7372586,
+      "duration_seconds": 6.0,
+      "artifact_sha256": "d1ad918933496b8923df891caf32d6520f0d540d5c4f9041b65ec83366014cda",
+      "source_status": "ok",
+      "reason": null
+    },
+    {
+      "case": "librispeech_8224-274381-0010",
+      "method": "hnm",
+      "speaker": "librispeech_8224",
+      "status": "measured",
+      "value": 1454222.6666666667,
+      "serialized_bytes": 8725336,
+      "duration_seconds": 6.0,
+      "artifact_sha256": "5e876b126a16652dda118e606c1fc1b1aab6476b9c4478e9dd7b1df5f3b4ef17",
+      "source_status": "ok",
+      "reason": null
+    },
+    {
+      "case": "librispeech_8224-274381-0010",
+      "method": "world_harvest",
+      "speaker": "librispeech_8224",
+      "status": "measured",
+      "value": 1254319.6666666667,
+      "serialized_bytes": 7525918,
+      "duration_seconds": 6.0,
+      "artifact_sha256": "ed30c4e108513f1727a647a2676f5d25a54cbfe689719909e9b942d68b19f1c5",
+      "source_status": "ok",
+      "reason": null
+    },
+    {
+      "case": "librispeech_8224-274381-0013",
+      "method": "hnm",
+      "speaker": "librispeech_8224",
+      "status": "measured",
+      "value": 1512900.5,
+      "serialized_bytes": 9077403,
+      "duration_seconds": 6.0,
+      "artifact_sha256": "f60dee5930fea1c838492c215863c131bc6fd5390baad9b9cf143d8b0d480116",
+      "source_status": "ok",
+      "reason": null
+    },
+    {
+      "case": "librispeech_8224-274381-0013",
+      "method": "world_harvest",
+      "speaker": "librispeech_8224",
+      "status": "measured",
+      "value": 1308080.8333333333,
+      "serialized_bytes": 7848485,
+      "duration_seconds": 6.0,
+      "artifact_sha256": "697d8a7ac260943217d23fbe1d95201c5368b1296b13f4e0311a1a7b9e9e0c0b",
+      "source_status": "ok",
+      "reason": null
+    },
+    {
+      "case": "librispeech_8224-274384-0010",
+      "method": "hnm",
+      "speaker": "librispeech_8224",
+      "status": "measured",
+      "value": 1487447.0,
+      "serialized_bytes": 8924682,
+      "duration_seconds": 6.0,
+      "artifact_sha256": "21f2330334605edb2a7d33690a2dbcb5a0f191be126f3b7a47ec6603b21b8a0f",
+      "source_status": "ok",
+      "reason": null
+    },
+    {
+      "case": "librispeech_8224-274384-0010",
+      "method": "world_harvest",
+      "speaker": "librispeech_8224",
+      "status": "measured",
+      "value": 1294694.8333333333,
+      "serialized_bytes": 7768169,
+      "duration_seconds": 6.0,
+      "artifact_sha256": "43fbec33007ad3014a4dd48ddbe60a379d5e5b44836dc1ad43ecd69e7fbd7a15",
+      "source_status": "ok",
+      "reason": null
+    },
+    {
+      "case": "librispeech_8230-279154-0018",
+      "method": "hnm",
+      "speaker": "librispeech_8230",
+      "status": "measured",
+      "value": 1427308.6666666667,
+      "serialized_bytes": 8563852,
+      "duration_seconds": 6.0,
+      "artifact_sha256": "1cf712ed53435f526b52be5b08854acd94f659c3bed30784611807127ac8684b",
+      "source_status": "ok",
+      "reason": null
+    },
+    {
+      "case": "librispeech_8230-279154-0018",
+      "method": "world_harvest",
+      "speaker": "librispeech_8230",
+      "status": "measured",
+      "value": 1310553.8333333333,
+      "serialized_bytes": 7863323,
+      "duration_seconds": 6.0,
+      "artifact_sha256": "b45d7179534c1aadec2007c0dfbe26f72a4e027cbae9f7382ca0a5f588437682",
+      "source_status": "ok",
+      "reason": null
+    },
+    {
+      "case": "librispeech_8230-279154-0032",
+      "method": "hnm",
+      "speaker": "librispeech_8230",
+      "status": "measured",
+      "value": 1300368.556701031,
+      "serialized_bytes": 5045430,
+      "duration_seconds": 3.88,
+      "artifact_sha256": "a139c8b8798633c02aec7fe35c95c2ecc2ca852150ce691c68ad4265c205657b",
+      "source_status": "ok",
+      "reason": null
+    },
+    {
+      "case": "librispeech_8230-279154-0032",
+      "method": "world_harvest",
+      "speaker": "librispeech_8230",
+      "status": "measured",
+      "value": 1224138.9175257732,
+      "serialized_bytes": 4749659,
+      "duration_seconds": 3.88,
+      "artifact_sha256": "2a32ef62a42bc8b882906442fea4a51cb108c0d0d395901251986baa434f3b7c",
+      "source_status": "ok",
+      "reason": null
+    },
+    {
+      "case": "librispeech_8230-279154-0033",
+      "method": "hnm",
+      "speaker": "librispeech_8230",
+      "status": "measured",
+      "value": 1399429.3333333333,
+      "serialized_bytes": 8396576,
+      "duration_seconds": 6.0,
+      "artifact_sha256": "320a974d5ad0168cc63eed4675add85c24fc5d7d727b4bd8c3ac1e01ab2974df",
+      "source_status": "ok",
+      "reason": null
+    },
+    {
+      "case": "librispeech_8230-279154-0033",
+      "method": "world_harvest",
+      "speaker": "librispeech_8230",
+      "status": "measured",
+      "value": 1296708.3333333333,
+      "serialized_bytes": 7780250,
+      "duration_seconds": 6.0,
+      "artifact_sha256": "9264e57a6422bf88db5ee536bac4c166422c1fb159ae0a08374ca6458ae5c81e",
+      "source_status": "ok",
+      "reason": null
+    },
+    {
+      "case": "librispeech_8455-210777-0010",
+      "method": "hnm",
+      "speaker": "librispeech_8455",
+      "status": "measured",
+      "value": 1250814.1935483871,
+      "serialized_bytes": 3877524,
+      "duration_seconds": 3.1,
+      "artifact_sha256": "925e415aebd0db9ddb4a131443f3b0b4a6242c3f891dc07f8866e1b173ff8bd5",
+      "source_status": "ok",
+      "reason": null
+    },
+    {
+      "case": "librispeech_8455-210777-0010",
+      "method": "world_harvest",
+      "speaker": "librispeech_8455",
+      "status": "measured",
+      "value": 1153267.0967741935,
+      "serialized_bytes": 3575128,
+      "duration_seconds": 3.1,
+      "artifact_sha256": "bac91ffae9d783d219f1406ab46a91002a9cec5db796de48310b6b8bf0bf5c69",
+      "source_status": "ok",
+      "reason": null
+    },
+    {
+      "case": "librispeech_8455-210777-0049",
+      "method": "hnm",
+      "speaker": "librispeech_8455",
+      "status": "measured",
+      "value": 1253546.228710462,
+      "serialized_bytes": 5152075,
+      "duration_seconds": 4.11,
+      "artifact_sha256": "6456d4af2e0fdac41a37afb6b6e1ed243e0fa2135355ab675bd0fa20959f0b98",
+      "source_status": "ok",
+      "reason": null
+    },
+    {
+      "case": "librispeech_8455-210777-0049",
+      "method": "world_harvest",
+      "speaker": "librispeech_8455",
+      "status": "measured",
+      "value": 1213857.9075425789,
+      "serialized_bytes": 4988956,
+      "duration_seconds": 4.11,
+      "artifact_sha256": "b44a2544fbabb238778dfd9bf54d4c22c703580dbc76fa58b60efc795a70cbb0",
+      "source_status": "ok",
+      "reason": null
+    },
+    {
+      "case": "librispeech_8455-210777-0060",
+      "method": "hnm",
+      "speaker": "librispeech_8455",
+      "status": "measured",
+      "value": 1412285.3333333333,
+      "serialized_bytes": 8473712,
+      "duration_seconds": 6.0,
+      "artifact_sha256": "62b4b7c5d04587200d5e59cb5f38a462e2c97bc687a1fade78ee96bd2de8683a",
+      "source_status": "ok",
+      "reason": null
+    },
+    {
+      "case": "librispeech_8455-210777-0060",
+      "method": "world_harvest",
+      "speaker": "librispeech_8455",
+      "status": "measured",
+      "value": 1374651.5,
+      "serialized_bytes": 8247909,
+      "duration_seconds": 6.0,
+      "artifact_sha256": "d7dc9931852bfdf344d9c6d4dc4e2171166923a188a61cdccf9dbc4c8b5ae7c1",
+      "source_status": "ok",
+      "reason": null
+    },
+    {
+      "case": "librispeech_8463-294828-0003",
+      "method": "hnm",
+      "speaker": "librispeech_8463",
+      "status": "measured",
+      "value": 1342078.3333333333,
+      "serialized_bytes": 8052470,
+      "duration_seconds": 6.0,
+      "artifact_sha256": "983efd9bafaf296f2f944c2c5e5a736699625aa0ecd00574ced6a808bb013335",
+      "source_status": "ok",
+      "reason": null
+    },
+    {
+      "case": "librispeech_8463-294828-0003",
+      "method": "world_harvest",
+      "speaker": "librispeech_8463",
+      "status": "measured",
+      "value": 1286089.3333333333,
+      "serialized_bytes": 7716536,
+      "duration_seconds": 6.0,
+      "artifact_sha256": "e51420cb66cd442291c29c0113f166a4dc09d3949f7c662fa2ac8295bdcf252b",
+      "source_status": "ok",
+      "reason": null
+    },
+    {
+      "case": "librispeech_8463-294828-0014",
+      "method": "hnm",
+      "speaker": "librispeech_8463",
+      "status": "measured",
+      "value": 1337204.017467249,
+      "serialized_bytes": 7655493,
+      "duration_seconds": 5.725,
+      "artifact_sha256": "aa1ada5ad51718fd1953ee70ddef43d0b3ca6ae1d27825b394444df30c7f8a0e",
+      "source_status": "ok",
+      "reason": null
+    },
+    {
+      "case": "librispeech_8463-294828-0014",
+      "method": "world_harvest",
+      "speaker": "librispeech_8463",
+      "status": "measured",
+      "value": 1200132.576419214,
+      "serialized_bytes": 6870759,
+      "duration_seconds": 5.725,
+      "artifact_sha256": "f27353694e2f6cb6ac90b4509195f106fb1f7233fe9c8820bcbc77d9ff2e39ed",
+      "source_status": "ok",
+      "reason": null
+    },
+    {
+      "case": "librispeech_8463-294828-0022",
+      "method": "hnm",
+      "speaker": "librispeech_8463",
+      "status": "measured",
+      "value": 1328495.966029724,
+      "serialized_bytes": 3128608,
+      "duration_seconds": 2.355,
+      "artifact_sha256": "0f2af6fdb6afa2eecd9ed1a390a002931eff206cf1afef5f327349d3d4672359",
+      "source_status": "ok",
+      "reason": null
+    },
+    {
+      "case": "librispeech_8463-294828-0022",
+      "method": "world_harvest",
+      "speaker": "librispeech_8463",
+      "status": "measured",
+      "value": 1298356.263269639,
+      "serialized_bytes": 3057629,
+      "duration_seconds": 2.355,
+      "artifact_sha256": "9a77392378f7fc3d776a3ec49748d89e0e2bd95d59acac859b4d93e3b84141e4",
+      "source_status": "ok",
+      "reason": null
+    },
+    {
+      "case": "librispeech_8555-284447-0007",
+      "method": "hnm",
+      "speaker": "librispeech_8555",
+      "status": "measured",
+      "value": 1460291.8333333333,
+      "serialized_bytes": 8761751,
+      "duration_seconds": 6.0,
+      "artifact_sha256": "c0edf6a0830abb7e8c84e10c38d0b0dbb561c83d8baeb9634b6fd05078f36d5c",
+      "source_status": "ok",
+      "reason": null
+    },
+    {
+      "case": "librispeech_8555-284447-0007",
+      "method": "world_harvest",
+      "speaker": "librispeech_8555",
+      "status": "measured",
+      "value": 1356042.1666666667,
+      "serialized_bytes": 8136253,
+      "duration_seconds": 6.0,
+      "artifact_sha256": "2b583940b9774aedc307071f0c0bb0350799708fb578ac3b62f02930e59b18e7",
+      "source_status": "ok",
+      "reason": null
+    },
+    {
+      "case": "librispeech_8555-284449-0020",
+      "method": "hnm",
+      "speaker": "librispeech_8555",
+      "status": "measured",
+      "value": 1439614.9165848873,
+      "serialized_bytes": 7334838,
+      "duration_seconds": 5.095,
+      "artifact_sha256": "9d5b018dfeadca2c4ce932fc78cef80ccae6d935a06b84c02ea15640022324c4",
+      "source_status": "ok",
+      "reason": null
+    },
+    {
+      "case": "librispeech_8555-284449-0020",
+      "method": "world_harvest",
+      "speaker": "librispeech_8555",
+      "status": "measured",
+      "value": 1342391.5603532875,
+      "serialized_bytes": 6839485,
+      "duration_seconds": 5.095,
+      "artifact_sha256": "39027ed0a583dfbb848ad0d13d43705d72ca7f90e6c8d724085cabfab939a32d",
+      "source_status": "ok",
+      "reason": null
+    },
+    {
+      "case": "librispeech_8555-292519-0001",
+      "method": "hnm",
+      "speaker": "librispeech_8555",
+      "status": "measured",
+      "value": 1474220.0,
+      "serialized_bytes": 8845320,
+      "duration_seconds": 6.0,
+      "artifact_sha256": "af6f01b0e246fcd0f37227c47a8267fae0842e3167cc7faa4e095aba01bab4d8",
+      "source_status": "ok",
+      "reason": null
+    },
+    {
+      "case": "librispeech_8555-292519-0001",
+      "method": "world_harvest",
+      "speaker": "librispeech_8555",
+      "status": "measured",
+      "value": 1407495.6666666667,
+      "serialized_bytes": 8444974,
+      "duration_seconds": 6.0,
+      "artifact_sha256": "74490241e3100740437d12bbad1999c8cb8f4eb748433557ebf9c7d58077abee",
+      "source_status": "ok",
+      "reason": null
+    },
+    {
+      "case": "librispeech_908-157963-0018",
+      "method": "hnm",
+      "speaker": "librispeech_908",
+      "status": "measured",
+      "value": 1277849.3537015277,
+      "serialized_bytes": 5437249,
+      "duration_seconds": 4.255,
+      "artifact_sha256": "47f40ed37021f6d556421cb94b85c75efa979fd974e730a461636db4002a09cb",
+      "source_status": "ok",
+      "reason": null
+    },
+    {
+      "case": "librispeech_908-157963-0018",
+      "method": "world_harvest",
+      "speaker": "librispeech_908",
+      "status": "measured",
+      "value": 1266752.0564042304,
+      "serialized_bytes": 5390030,
+      "duration_seconds": 4.255,
+      "artifact_sha256": "fd5cb99daac2e0af025240584ad4ce58d044d5537babe490f8f037c89af92691",
+      "source_status": "ok",
+      "reason": null
+    },
+    {
+      "case": "librispeech_908-31957-0002",
+      "method": "hnm",
+      "speaker": "librispeech_908",
+      "status": "measured",
+      "value": 1307917.1189979124,
+      "serialized_bytes": 6264923,
+      "duration_seconds": 4.79,
+      "artifact_sha256": "9621b0bfd3d0dc14c046c689650a866d1ccf496e78c2951f69e4ccbc4d99505b",
+      "source_status": "ok",
+      "reason": null
+    },
+    {
+      "case": "librispeech_908-31957-0002",
+      "method": "world_harvest",
+      "speaker": "librispeech_908",
+      "status": "measured",
+      "value": 1273470.3549060542,
+      "serialized_bytes": 6099923,
+      "duration_seconds": 4.79,
+      "artifact_sha256": "64fb3e4076cab12fb37a22abdde33b409c412609b5f368b2d511a5fb0acf00d8",
+      "source_status": "ok",
+      "reason": null
+    },
+    {
+      "case": "librispeech_908-31957-0016",
+      "method": "hnm",
+      "speaker": "librispeech_908",
+      "status": "measured",
+      "value": 1161491.0,
+      "serialized_bytes": 6968946,
+      "duration_seconds": 6.0,
+      "artifact_sha256": "801ef32320cfada4f4c5674e9830d29874f40bd8f6953fb4086f184e822f0e0b",
+      "source_status": "ok",
+      "reason": null
+    },
+    {
+      "case": "librispeech_908-31957-0016",
+      "method": "world_harvest",
+      "speaker": "librispeech_908",
+      "status": "measured",
+      "value": 1184807.6666666667,
+      "serialized_bytes": 7108846,
+      "duration_seconds": 6.0,
+      "artifact_sha256": "a45430f94cf23a0b315a49db824078406f5cbbec25bef870609cdf0046321bf3",
+      "source_status": "ok",
+      "reason": null
+    }
+  ],
+  "methods": {
+    "hnm": {
+      "planned_cases": 120,
+      "valid_cases": 120,
+      "missing_cases": 0,
+      "planned_speakers": 40,
+      "valid_speakers": 40,
+      "complete_speakers": 40,
+      "speaker_macro_mean": 1386716.339589765,
+      "utterance_macro": {
+        "mean": 1386716.339589765,
+        "median": 1386424.5,
+        "minimum": 1096743.5,
+        "maximum": 1565362.8333333333
+      },
+      "speaker_rows": [
+        {
+          "speaker": "librispeech_1089",
+          "planned_cases": 3,
+          "valid_cases": 3,
+          "mean": 1349158.6257810378,
+          "median": 1382601.6666666667,
+          "minimum": 1277898.04400978,
+          "maximum": 1386976.1666666667
+        },
+        {
+          "speaker": "librispeech_1188",
+          "planned_cases": 3,
+          "valid_cases": 3,
+          "mean": 1359508.2745098039,
+          "median": 1338338.8235294118,
+          "minimum": 1334564.0,
+          "maximum": 1405622.0
+        },
+        {
+          "speaker": "librispeech_121",
+          "planned_cases": 3,
+          "valid_cases": 3,
+          "mean": 1190448.5247905508,
+          "median": 1158956.8333333333,
+          "minimum": 1096743.5,
+          "maximum": 1315645.241038319
+        },
+        {
+          "speaker": "librispeech_1221",
+          "planned_cases": 3,
+          "valid_cases": 3,
+          "mean": 1399673.9312169312,
+          "median": 1467892.8333333333,
+          "minimum": 1256050.7936507936,
+          "maximum": 1475078.1666666667
+        },
+        {
+          "speaker": "librispeech_1284",
+          "planned_cases": 3,
+          "valid_cases": 3,
+          "mean": 1489431.9113306138,
+          "median": 1491056.0,
+          "minimum": 1483529.6422487223,
+          "maximum": 1493710.0917431193
+        },
+        {
+          "speaker": "librispeech_1320",
+          "planned_cases": 3,
+          "valid_cases": 3,
+          "mean": 1470307.5,
+          "median": 1472942.8333333333,
+          "minimum": 1461883.6666666667,
+          "maximum": 1476096.0
+        },
+        {
+          "speaker": "librispeech_1580",
+          "planned_cases": 3,
+          "valid_cases": 3,
+          "mean": 1358433.0800883642,
+          "median": 1376888.9523809524,
+          "minimum": 1318287.9194630873,
+          "maximum": 1380122.3684210526
+        },
+        {
+          "speaker": "librispeech_1995",
+          "planned_cases": 3,
+          "valid_cases": 3,
+          "mean": 1496042.0555555555,
+          "median": 1487535.5,
+          "minimum": 1481030.6666666667,
+          "maximum": 1519560.0
+        },
+        {
+          "speaker": "librispeech_2094",
+          "planned_cases": 3,
+          "valid_cases": 3,
+          "mean": 1393352.0893314697,
+          "median": 1444176.8518518517,
+          "minimum": 1258319.9161425577,
+          "maximum": 1477559.5
+        },
+        {
+          "speaker": "librispeech_2300",
+          "planned_cases": 3,
+          "valid_cases": 3,
+          "mean": 1421838.588888889,
+          "median": 1467320.0,
+          "minimum": 1276481.6,
+          "maximum": 1521714.1666666667
+        },
+        {
+          "speaker": "librispeech_237",
+          "planned_cases": 3,
+          "valid_cases": 3,
+          "mean": 1424455.9647565242,
+          "median": 1414962.2276029056,
+          "minimum": 1404457.0,
+          "maximum": 1453948.6666666667
+        },
+        {
+          "speaker": "librispeech_260",
+          "planned_cases": 3,
+          "valid_cases": 3,
+          "mean": 1324418.8335443877,
+          "median": 1349700.9009009008,
+          "minimum": 1261872.3333333333,
+          "maximum": 1361683.266398929
+        },
+        {
+          "speaker": "librispeech_2830",
+          "planned_cases": 3,
+          "valid_cases": 3,
+          "mean": 1316745.995224852,
+          "median": 1281098.5559566787,
+          "minimum": 1235776.1589403974,
+          "maximum": 1433363.27077748
+        },
+        {
+          "speaker": "librispeech_2961",
+          "planned_cases": 3,
+          "valid_cases": 3,
+          "mean": 1426439.7222222222,
+          "median": 1480174.1666666667,
+          "minimum": 1318800.6666666667,
+          "maximum": 1480344.3333333333
+        },
+        {
+          "speaker": "librispeech_3570",
+          "planned_cases": 3,
+          "valid_cases": 3,
+          "mean": 1403166.0856656923,
+          "median": 1378148.193832599,
+          "minimum": 1357067.7298311444,
+          "maximum": 1474282.3333333333
+        },
+        {
+          "speaker": "librispeech_3575",
+          "planned_cases": 3,
+          "valid_cases": 3,
+          "mean": 1460162.6425846447,
+          "median": 1462957.3333333333,
+          "minimum": 1437197.8333333333,
+          "maximum": 1480332.7610872674
+        },
+        {
+          "speaker": "librispeech_3729",
+          "planned_cases": 3,
+          "valid_cases": 3,
+          "mean": 1533198.111111111,
+          "median": 1520000.6666666667,
+          "minimum": 1514230.8333333333,
+          "maximum": 1565362.8333333333
+        },
+        {
+          "speaker": "librispeech_4077",
+          "planned_cases": 3,
+          "valid_cases": 3,
+          "mean": 1348692.0555555555,
+          "median": 1331668.3333333333,
+          "minimum": 1317603.3333333333,
+          "maximum": 1396804.5
+        },
+        {
+          "speaker": "librispeech_4446",
+          "planned_cases": 3,
+          "valid_cases": 3,
+          "mean": 1376647.978252446,
+          "median": 1367052.9032258063,
+          "minimum": 1297716.1666666667,
+          "maximum": 1465174.8648648649
+        },
+        {
+          "speaker": "librispeech_4507",
+          "planned_cases": 3,
+          "valid_cases": 3,
+          "mean": 1351639.0985003407,
+          "median": 1363058.8333333333,
+          "minimum": 1314933.1288343559,
+          "maximum": 1376925.3333333333
+        },
+        {
+          "speaker": "librispeech_4970",
+          "planned_cases": 3,
+          "valid_cases": 3,
+          "mean": 1379132.8812865496,
+          "median": 1355940.2666666666,
+          "minimum": 1353561.6666666667,
+          "maximum": 1427896.7105263157
+        },
+        {
+          "speaker": "librispeech_4992",
+          "planned_cases": 3,
+          "valid_cases": 3,
+          "mean": 1481719.2469390177,
+          "median": 1492489.0,
+          "minimum": 1442211.1212397446,
+          "maximum": 1510457.6195773082
+        },
+        {
+          "speaker": "librispeech_5105",
+          "planned_cases": 3,
+          "valid_cases": 3,
+          "mean": 1330406.0101869355,
+          "median": 1342579.6666666667,
+          "minimum": 1271267.8638941399,
+          "maximum": 1377370.5
+        },
+        {
+          "speaker": "librispeech_5142",
+          "planned_cases": 3,
+          "valid_cases": 3,
+          "mean": 1487414.3898715077,
+          "median": 1461434.8411934553,
+          "minimum": 1460714.6473779385,
+          "maximum": 1540093.6810431292
+        },
+        {
+          "speaker": "librispeech_5639",
+          "planned_cases": 3,
+          "valid_cases": 3,
+          "mean": 1363314.0,
+          "median": 1383223.6666666667,
+          "minimum": 1312727.8333333333,
+          "maximum": 1393990.5
+        },
+        {
+          "speaker": "librispeech_5683",
+          "planned_cases": 3,
+          "valid_cases": 3,
+          "mean": 1406004.151871662,
+          "median": 1415207.594936709,
+          "minimum": 1346871.8606782767,
+          "maximum": 1455933.0
+        },
+        {
+          "speaker": "librispeech_61",
+          "planned_cases": 3,
+          "valid_cases": 3,
+          "mean": 1329539.955016956,
+          "median": 1353105.5,
+          "minimum": 1227490.6666666667,
+          "maximum": 1408023.698384201
+        },
+        {
+          "speaker": "librispeech_672",
+          "planned_cases": 3,
+          "valid_cases": 3,
+          "mean": 1506850.7642099904,
+          "median": 1513091.291866029,
+          "minimum": 1455477.3109243698,
+          "maximum": 1551983.6898395722
+        },
+        {
+          "speaker": "librispeech_6829",
+          "planned_cases": 3,
+          "valid_cases": 3,
+          "mean": 1257231.504720075,
+          "median": 1282625.1879699246,
+          "minimum": 1198962.0758483035,
+          "maximum": 1290107.2503419972
+        },
+        {
+          "speaker": "librispeech_6930",
+          "planned_cases": 3,
+          "valid_cases": 3,
+          "mean": 1354381.6497366787,
+          "median": 1382168.1481481483,
+          "minimum": 1285619.7278911564,
+          "maximum": 1395357.0731707315
+        },
+        {
+          "speaker": "librispeech_7021",
+          "planned_cases": 3,
+          "valid_cases": 3,
+          "mean": 1350968.527027027,
+          "median": 1362346.6666666667,
+          "minimum": 1270587.7477477477,
+          "maximum": 1419971.1666666667
+        },
+        {
+          "speaker": "librispeech_7127",
+          "planned_cases": 3,
+          "valid_cases": 3,
+          "mean": 1372761.3449969306,
+          "median": 1385872.8333333333,
+          "minimum": 1330483.7016574584,
+          "maximum": 1401927.5
+        },
+        {
+          "speaker": "librispeech_7176",
+          "planned_cases": 3,
+          "valid_cases": 3,
+          "mean": 1372558.916013663,
+          "median": 1369619.5,
+          "minimum": 1355622.1666666667,
+          "maximum": 1392435.0813743218
+        },
+        {
+          "speaker": "librispeech_7729",
+          "planned_cases": 3,
+          "valid_cases": 3,
+          "mean": 1373447.5,
+          "median": 1378636.3333333333,
+          "minimum": 1316552.3333333333,
+          "maximum": 1425153.8333333333
+        },
+        {
+          "speaker": "librispeech_8224",
+          "planned_cases": 3,
+          "valid_cases": 3,
+          "mean": 1484856.7222222222,
+          "median": 1487447.0,
+          "minimum": 1454222.6666666667,
+          "maximum": 1512900.5
+        },
+        {
+          "speaker": "librispeech_8230",
+          "planned_cases": 3,
+          "valid_cases": 3,
+          "mean": 1375702.1855670104,
+          "median": 1399429.3333333333,
+          "minimum": 1300368.556701031,
+          "maximum": 1427308.6666666667
+        },
+        {
+          "speaker": "librispeech_8455",
+          "planned_cases": 3,
+          "valid_cases": 3,
+          "mean": 1305548.5851973942,
+          "median": 1253546.228710462,
+          "minimum": 1250814.1935483871,
+          "maximum": 1412285.3333333333
+        },
+        {
+          "speaker": "librispeech_8463",
+          "planned_cases": 3,
+          "valid_cases": 3,
+          "mean": 1335926.1056101022,
+          "median": 1337204.017467249,
+          "minimum": 1328495.966029724,
+          "maximum": 1342078.3333333333
+        },
+        {
+          "speaker": "librispeech_8555",
+          "planned_cases": 3,
+          "valid_cases": 3,
+          "mean": 1458042.2499727402,
+          "median": 1460291.8333333333,
+          "minimum": 1439614.9165848873,
+          "maximum": 1474220.0
+        },
+        {
+          "speaker": "librispeech_908",
+          "planned_cases": 3,
+          "valid_cases": 3,
+          "mean": 1249085.8242331466,
+          "median": 1277849.3537015277,
+          "minimum": 1161491.0,
+          "maximum": 1307917.1189979124
+        }
+      ],
+      "status_counts": {
+        "measured": 120,
+        "missing_result": 0
+      }
+    },
+    "world_harvest": {
+      "planned_cases": 120,
+      "valid_cases": 120,
+      "missing_cases": 0,
+      "planned_speakers": 40,
+      "valid_speakers": 40,
+      "complete_speakers": 40,
+      "speaker_macro_mean": 1288785.6578538627,
+      "utterance_macro": {
+        "mean": 1288785.6578538627,
+        "median": 1295543.8467023172,
+        "minimum": 1119740.8333333333,
+        "maximum": 1515480.1666666667
+      },
+      "speaker_rows": [
+        {
+          "speaker": "librispeech_1089",
+          "planned_cases": 3,
+          "valid_cases": 3,
+          "mean": 1297683.692882369,
+          "median": 1310159.1666666667,
+          "minimum": 1241703.9119804401,
+          "maximum": 1341188.0
+        },
+        {
+          "speaker": "librispeech_1188",
+          "planned_cases": 3,
+          "valid_cases": 3,
+          "mean": 1194496.1928104574,
+          "median": 1206268.1666666667,
+          "minimum": 1170877.4117647058,
+          "maximum": 1206343.0
+        },
+        {
+          "speaker": "librispeech_121",
+          "planned_cases": 3,
+          "valid_cases": 3,
+          "mean": 1205658.2678203543,
+          "median": 1200139.0,
+          "minimum": 1157485.0,
+          "maximum": 1259350.803461063
+        },
+        {
+          "speaker": "librispeech_1221",
+          "planned_cases": 3,
+          "valid_cases": 3,
+          "mean": 1254354.6410934743,
+          "median": 1298380.0,
+          "minimum": 1154730.4232804233,
+          "maximum": 1309953.5
+        },
+        {
+          "speaker": "librispeech_1284",
+          "planned_cases": 3,
+          "valid_cases": 3,
+          "mean": 1337638.9005838356,
+          "median": 1335113.9693356047,
+          "minimum": 1312812.2324159022,
+          "maximum": 1364990.5
+        },
+        {
+          "speaker": "librispeech_1320",
+          "planned_cases": 3,
+          "valid_cases": 3,
+          "mean": 1372964.7777777778,
+          "median": 1380104.3333333333,
+          "minimum": 1356727.8333333333,
+          "maximum": 1382062.1666666667
+        },
+        {
+          "speaker": "librispeech_1580",
+          "planned_cases": 3,
+          "valid_cases": 3,
+          "mean": 1282787.1143070203,
+          "median": 1279795.619047619,
+          "minimum": 1213869.2953020134,
+          "maximum": 1354696.4285714284
+        },
+        {
+          "speaker": "librispeech_1995",
+          "planned_cases": 3,
+          "valid_cases": 3,
+          "mean": 1386627.2222222222,
+          "median": 1391691.6666666667,
+          "minimum": 1355544.6666666667,
+          "maximum": 1412645.3333333333
+        },
+        {
+          "speaker": "librispeech_2094",
+          "planned_cases": 3,
+          "valid_cases": 3,
+          "mean": 1359203.6854181224,
+          "median": 1389618.5185185184,
+          "minimum": 1284566.0377358492,
+          "maximum": 1403426.5
+        },
+        {
+          "speaker": "librispeech_2300",
+          "planned_cases": 3,
+          "valid_cases": 3,
+          "mean": 1327612.3111111112,
+          "median": 1313821.6,
+          "minimum": 1263934.5,
+          "maximum": 1405080.8333333333
+        },
+        {
+          "speaker": "librispeech_237",
+          "planned_cases": 3,
+          "valid_cases": 3,
+          "mean": 1369528.3613128867,
+          "median": 1380051.0,
+          "minimum": 1348130.7506053268,
+          "maximum": 1380403.3333333333
+        },
+        {
+          "speaker": "librispeech_260",
+          "planned_cases": 3,
+          "valid_cases": 3,
+          "mean": 1257522.40657324,
+          "median": 1228047.5,
+          "minimum": 1226888.888888889,
+          "maximum": 1317630.8308308308
+        },
+        {
+          "speaker": "librispeech_2830",
+          "planned_cases": 3,
+          "valid_cases": 3,
+          "mean": 1194559.0625471578,
+          "median": 1160781.4079422383,
+          "minimum": 1138260.927152318,
+          "maximum": 1284634.8525469168
+        },
+        {
+          "speaker": "librispeech_2961",
+          "planned_cases": 3,
+          "valid_cases": 3,
+          "mean": 1275907.3333333333,
+          "median": 1272353.6666666667,
+          "minimum": 1264793.3333333333,
+          "maximum": 1290575.0
+        },
+        {
+          "speaker": "librispeech_3570",
+          "planned_cases": 3,
+          "valid_cases": 3,
+          "mean": 1340398.0233901695,
+          "median": 1319850.2202643172,
+          "minimum": 1303359.8499061915,
+          "maximum": 1397984.0
+        },
+        {
+          "speaker": "librispeech_3575",
+          "planned_cases": 3,
+          "valid_cases": 3,
+          "mean": 1306398.4396757272,
+          "median": 1295852.6666666667,
+          "minimum": 1270886.0,
+          "maximum": 1352456.652360515
+        },
+        {
+          "speaker": "librispeech_3729",
+          "planned_cases": 3,
+          "valid_cases": 3,
+          "mean": 1438882.388888889,
+          "median": 1408754.0,
+          "minimum": 1392413.0,
+          "maximum": 1515480.1666666667
+        },
+        {
+          "speaker": "librispeech_4077",
+          "planned_cases": 3,
+          "valid_cases": 3,
+          "mean": 1210115.9444444445,
+          "median": 1219130.5,
+          "minimum": 1164352.1666666667,
+          "maximum": 1246865.1666666667
+        },
+        {
+          "speaker": "librispeech_4446",
+          "planned_cases": 3,
+          "valid_cases": 3,
+          "mean": 1272309.9635764796,
+          "median": 1214046.88172043,
+          "minimum": 1190687.3333333333,
+          "maximum": 1412195.6756756755
+        },
+        {
+          "speaker": "librispeech_4507",
+          "planned_cases": 3,
+          "valid_cases": 3,
+          "mean": 1233123.153374233,
+          "median": 1230711.3333333333,
+          "minimum": 1211208.7934560329,
+          "maximum": 1257449.3333333333
+        },
+        {
+          "speaker": "librispeech_4970",
+          "planned_cases": 3,
+          "valid_cases": 3,
+          "mean": 1218455.584502924,
+          "median": 1212851.3333333333,
+          "minimum": 1197826.9333333333,
+          "maximum": 1244688.4868421052
+        },
+        {
+          "speaker": "librispeech_4992",
+          "planned_cases": 3,
+          "valid_cases": 3,
+          "mean": 1370343.3125450732,
+          "median": 1338811.8505013674,
+          "minimum": 1298578.4204671858,
+          "maximum": 1473639.6666666667
+        },
+        {
+          "speaker": "librispeech_5105",
+          "planned_cases": 3,
+          "valid_cases": 3,
+          "mean": 1293606.3734509556,
+          "median": 1286540.4536862003,
+          "minimum": 1283367.0,
+          "maximum": 1310911.6666666667
+        },
+        {
+          "speaker": "librispeech_5142",
+          "planned_cases": 3,
+          "valid_cases": 3,
+          "mean": 1337524.7947970962,
+          "median": 1346859.3781344031,
+          "minimum": 1298695.4764196342,
+          "maximum": 1367019.5298372514
+        },
+        {
+          "speaker": "librispeech_5639",
+          "planned_cases": 3,
+          "valid_cases": 3,
+          "mean": 1331318.888888889,
+          "median": 1310924.1666666667,
+          "minimum": 1310758.8333333333,
+          "maximum": 1372273.6666666667
+        },
+        {
+          "speaker": "librispeech_5683",
+          "planned_cases": 3,
+          "valid_cases": 3,
+          "mean": 1313746.6167187437,
+          "median": 1313255.8909444986,
+          "minimum": 1214889.4592117323,
+          "maximum": 1413094.5
+        },
+        {
+          "speaker": "librispeech_61",
+          "planned_cases": 3,
+          "valid_cases": 3,
+          "mean": 1244052.5513664472,
+          "median": 1282365.8333333333,
+          "minimum": 1119740.8333333333,
+          "maximum": 1330050.987432675
+        },
+        {
+          "speaker": "librispeech_672",
+          "planned_cases": 3,
+          "valid_cases": 3,
+          "mean": 1257824.3846916757,
+          "median": 1295235.0267379677,
+          "minimum": 1174353.1512605043,
+          "maximum": 1303884.9760765552
+        },
+        {
+          "speaker": "librispeech_6829",
+          "planned_cases": 3,
+          "valid_cases": 3,
+          "mean": 1208144.0740912054,
+          "median": 1200722.024623803,
+          "minimum": 1151639.520958084,
+          "maximum": 1272070.6766917293
+        },
+        {
+          "speaker": "librispeech_6930",
+          "planned_cases": 3,
+          "valid_cases": 3,
+          "mean": 1223134.9404019362,
+          "median": 1239825.6790123458,
+          "minimum": 1164913.4959349593,
+          "maximum": 1264665.6462585034
+        },
+        {
+          "speaker": "librispeech_7021",
+          "planned_cases": 3,
+          "valid_cases": 3,
+          "mean": 1234073.1996996996,
+          "median": 1249576.5,
+          "minimum": 1195739.0990990992,
+          "maximum": 1256904.0
+        },
+        {
+          "speaker": "librispeech_7127",
+          "planned_cases": 3,
+          "valid_cases": 3,
+          "mean": 1318799.550951504,
+          "median": 1316876.3333333333,
+          "minimum": 1307219.8333333333,
+          "maximum": 1332302.4861878452
+        },
+        {
+          "speaker": "librispeech_7176",
+          "planned_cases": 3,
+          "valid_cases": 3,
+          "mean": 1328131.3589511754,
+          "median": 1337177.576853526,
+          "minimum": 1302008.0,
+          "maximum": 1345208.5
+        },
+        {
+          "speaker": "librispeech_7729",
+          "planned_cases": 3,
+          "valid_cases": 3,
+          "mean": 1272561.9444444445,
+          "median": 1280739.8333333333,
+          "minimum": 1228764.3333333333,
+          "maximum": 1308181.6666666667
+        },
+        {
+          "speaker": "librispeech_8224",
+          "planned_cases": 3,
+          "valid_cases": 3,
+          "mean": 1285698.4444444445,
+          "median": 1294694.8333333333,
+          "minimum": 1254319.6666666667,
+          "maximum": 1308080.8333333333
+        },
+        {
+          "speaker": "librispeech_8230",
+          "planned_cases": 3,
+          "valid_cases": 3,
+          "mean": 1277133.6947308131,
+          "median": 1296708.3333333333,
+          "minimum": 1224138.9175257732,
+          "maximum": 1310553.8333333333
+        },
+        {
+          "speaker": "librispeech_8455",
+          "planned_cases": 3,
+          "valid_cases": 3,
+          "mean": 1247258.8347722574,
+          "median": 1213857.9075425789,
+          "minimum": 1153267.0967741935,
+          "maximum": 1374651.5
+        },
+        {
+          "speaker": "librispeech_8463",
+          "planned_cases": 3,
+          "valid_cases": 3,
+          "mean": 1261526.0576740622,
+          "median": 1286089.3333333333,
+          "minimum": 1200132.576419214,
+          "maximum": 1298356.263269639
+        },
+        {
+          "speaker": "librispeech_8555",
+          "planned_cases": 3,
+          "valid_cases": 3,
+          "mean": 1368643.1312288737,
+          "median": 1356042.1666666667,
+          "minimum": 1342391.5603532875,
+          "maximum": 1407495.6666666667
+        },
+        {
+          "speaker": "librispeech_908",
+          "planned_cases": 3,
+          "valid_cases": 3,
+          "mean": 1241676.6926589839,
+          "median": 1266752.0564042304,
+          "minimum": 1184807.6666666667,
+          "maximum": 1273470.3549060542
+        }
+      ],
+      "status_counts": {
+        "measured": 120,
+        "missing_result": 0
+      }
+    }
+  },
+  "paired_world_harvest_minus_hnm": {
+    "planned_cases": 120,
+    "paired_cases": 120,
+    "planned_speakers": 40,
+    "paired_speakers": 40,
+    "complete_speakers": 40,
+    "speaker_macro_mean": -97930.68173590228,
+    "speaker_rows": [
+      {
+        "speaker": "librispeech_1089",
+        "planned_cases": 3,
+        "paired_cases": 3,
+        "mean": -51474.932898668885,
+        "median": -45788.166666666744,
+        "minimum": -72442.5,
+        "maximum": -36194.132029339904
+      },
+      {
+        "speaker": "librispeech_1188",
+        "planned_cases": 3,
+        "paired_cases": 3,
+        "mean": -165012.08169934643,
+        "median": -167461.41176470602,
+        "minimum": -199353.83333333326,
+        "maximum": -128221.0
+      },
+      {
+        "speaker": "librispeech_121",
+        "planned_cases": 3,
+        "paired_cases": 3,
+        "mean": 15209.743029803582,
+        "median": 41182.166666666744,
+        "minimum": -56294.437577256,
+        "maximum": 60741.5
+      },
+      {
+        "speaker": "librispeech_1221",
+        "planned_cases": 3,
+        "paired_cases": 3,
+        "mean": -145319.29012345677,
+        "median": -165124.66666666674,
+        "minimum": -169512.83333333326,
+        "maximum": -101320.37037037034
+      },
+      {
+        "speaker": "librispeech_1284",
+        "planned_cases": 3,
+        "paired_cases": 3,
+        "mean": -151793.01074677822,
+        "median": -148415.67291311757,
+        "minimum": -180897.8593272171,
+        "maximum": -126065.5
+      },
+      {
+        "speaker": "librispeech_1320",
+        "planned_cases": 3,
+        "paired_cases": 3,
+        "mean": -97342.72222222225,
+        "median": -94033.83333333326,
+        "minimum": -105155.83333333349,
+        "maximum": -92838.5
+      },
+      {
+        "speaker": "librispeech_1580",
+        "planned_cases": 3,
+        "paired_cases": 3,
+        "mean": -75645.96578134387,
+        "median": -97093.33333333349,
+        "minimum": -104418.62416107394,
+        "maximum": -25425.939849624177
+      },
+      {
+        "speaker": "librispeech_1995",
+        "planned_cases": 3,
+        "paired_cases": 3,
+        "mean": -109414.83333333333,
+        "median": -106914.66666666674,
+        "minimum": -131990.83333333326,
+        "maximum": -89339.0
+      },
+      {
+        "speaker": "librispeech_2094",
+        "planned_cases": 3,
+        "paired_cases": 3,
+        "mean": -34148.40391334728,
+        "median": -54558.333333333256,
+        "minimum": -74133.0,
+        "maximum": 26246.121593291406
+      },
+      {
+        "speaker": "librispeech_2300",
+        "planned_cases": 3,
+        "paired_cases": 3,
+        "mean": -94226.27777777782,
+        "median": -116633.33333333349,
+        "minimum": -203385.5,
+        "maximum": 37340.0
+      },
+      {
+        "speaker": "librispeech_237",
+        "planned_cases": 3,
+        "paired_cases": 3,
+        "mean": -54927.60344363741,
+        "median": -66831.47699757875,
+        "minimum": -73545.33333333349,
+        "maximum": -24406.0
+      },
+      {
+        "speaker": "librispeech_260",
+        "planned_cases": 3,
+        "paired_cases": 3,
+        "mean": -66896.42697114777,
+        "median": -33824.833333333256,
+        "minimum": -134794.37751004007,
+        "maximum": -32070.07007006998
+      },
+      {
+        "speaker": "librispeech_2830",
+        "planned_cases": 3,
+        "paired_cases": 3,
+        "mean": -122186.93267769436,
+        "median": -120317.14801444043,
+        "minimum": -148728.41823056317,
+        "maximum": -97515.23178807949
+      },
+      {
+        "speaker": "librispeech_2961",
+        "planned_cases": 3,
+        "paired_cases": 3,
+        "mean": -150532.3888888889,
+        "median": -189599.16666666674,
+        "minimum": -215551.0,
+        "maximum": -46447.0
+      },
+      {
+        "speaker": "librispeech_3570",
+        "planned_cases": 3,
+        "paired_cases": 3,
+        "mean": -62768.0622755227,
+        "median": -58297.97356828186,
+        "minimum": -76298.33333333326,
+        "maximum": -53707.879924952984
+      },
+      {
+        "speaker": "librispeech_3575",
+        "planned_cases": 3,
+        "paired_cases": 3,
+        "mean": -153764.20290891742,
+        "median": -166311.83333333326,
+        "minimum": -167104.6666666665,
+        "maximum": -127876.10872675246
+      },
+      {
+        "speaker": "librispeech_3729",
+        "planned_cases": 3,
+        "paired_cases": 3,
+        "mean": -94315.72222222218,
+        "median": -105476.83333333326,
+        "minimum": -127587.66666666674,
+        "maximum": -49882.66666666651
+      },
+      {
+        "speaker": "librispeech_4077",
+        "planned_cases": 3,
+        "paired_cases": 3,
+        "mean": -138576.111111111,
+        "median": -112537.83333333326,
+        "minimum": -232452.33333333326,
+        "maximum": -70738.16666666651
+      },
+      {
+        "speaker": "librispeech_4446",
+        "planned_cases": 3,
+        "paired_cases": 3,
+        "mean": -104338.01467596639,
+        "median": -107028.83333333349,
+        "minimum": -153006.02150537632,
+        "maximum": -52979.18918918935
+      },
+      {
+        "speaker": "librispeech_4507",
+        "planned_cases": 3,
+        "paired_cases": 3,
+        "mean": -118515.94512610766,
+        "median": -105609.5,
+        "minimum": -146214.0,
+        "maximum": -103724.33537832298
+      },
+      {
+        "speaker": "librispeech_4970",
+        "planned_cases": 3,
+        "paired_cases": 3,
+        "mean": -160677.29678362576,
+        "median": -158113.33333333326,
+        "minimum": -183208.22368421056,
+        "maximum": -140710.3333333335
+      },
+      {
+        "speaker": "librispeech_4992",
+        "planned_cases": 3,
+        "paired_cases": 3,
+        "mean": -111375.93439394429,
+        "median": -103399.27073837724,
+        "minimum": -211879.1991101224,
+        "maximum": -18849.333333333256
+      },
+      {
+        "speaker": "librispeech_5105",
+        "planned_cases": 3,
+        "paired_cases": 3,
+        "mean": -36799.63673597985,
+        "median": -31668.0,
+        "minimum": -94003.5,
+        "maximum": 15272.589792060433
+      },
+      {
+        "speaker": "librispeech_5142",
+        "planned_cases": 3,
+        "paired_cases": 3,
+        "mean": -149889.5950744114,
+        "median": -162739.3647738211,
+        "minimum": -193234.30290872604,
+        "maximum": -93695.11754068709
+      },
+      {
+        "speaker": "librispeech_5639",
+        "planned_cases": 3,
+        "paired_cases": 3,
+        "mean": -31995.111111111084,
+        "median": -10950.0,
+        "minimum": -83066.33333333326,
+        "maximum": -1969.0
+      },
+      {
+        "speaker": "librispeech_5683",
+        "planned_cases": 3,
+        "paired_cases": 3,
+        "mean": -92257.53515291827,
+        "median": -101951.70399221033,
+        "minimum": -131982.40146654448,
+        "maximum": -42838.5
+      },
+      {
+        "speaker": "librispeech_61",
+        "planned_cases": 3,
+        "paired_cases": 3,
+        "mean": -85487.40365050873,
+        "median": -77972.71095152595,
+        "minimum": -107749.83333333349,
+        "maximum": -70739.66666666674
+      },
+      {
+        "speaker": "librispeech_672",
+        "planned_cases": 3,
+        "paired_cases": 3,
+        "mean": -249026.37951831458,
+        "median": -256748.66310160444,
+        "minimum": -281124.1596638656,
+        "maximum": -209206.3157894737
+      },
+      {
+        "speaker": "librispeech_6829",
+        "planned_cases": 3,
+        "paired_cases": 3,
+        "mean": -49087.43062886968,
+        "median": -47322.55489021959,
+        "minimum": -89385.22571819415,
+        "maximum": -10554.511278195307
+      },
+      {
+        "speaker": "librispeech_6930",
+        "planned_cases": 3,
+        "paired_cases": 3,
+        "mean": -131246.7093347426,
+        "median": -142342.46913580247,
+        "minimum": -230443.57723577227,
+        "maximum": -20954.08163265302
+      },
+      {
+        "speaker": "librispeech_7021",
+        "planned_cases": 3,
+        "paired_cases": 3,
+        "mean": -116895.32732732734,
+        "median": -105442.66666666674,
+        "minimum": -170394.66666666674,
+        "maximum": -74848.64864864852
+      },
+      {
+        "speaker": "librispeech_7127",
+        "planned_cases": 3,
+        "paired_cases": 3,
+        "mean": -53961.79404542665,
+        "median": -78653.0,
+        "minimum": -85051.16666666674,
+        "maximum": 1818.7845303867944
+      },
+      {
+        "speaker": "librispeech_7176",
+        "planned_cases": 3,
+        "paired_cases": 3,
+        "mean": -44427.5570624875,
+        "median": -53614.166666666744,
+        "minimum": -55257.504520795774,
+        "maximum": -24411.0
+      },
+      {
+        "speaker": "librispeech_7729",
+        "planned_cases": 3,
+        "paired_cases": 3,
+        "mean": -100885.5555555555,
+        "median": -87788.0,
+        "minimum": -144414.0,
+        "maximum": -70454.66666666651
+      },
+      {
+        "speaker": "librispeech_8224",
+        "planned_cases": 3,
+        "paired_cases": 3,
+        "mean": -199158.27777777784,
+        "median": -199903.0,
+        "minimum": -204819.66666666674,
+        "maximum": -192752.16666666674
+      },
+      {
+        "speaker": "librispeech_8230",
+        "planned_cases": 3,
+        "paired_cases": 3,
+        "mean": -98568.49083619712,
+        "median": -102721.0,
+        "minimum": -116754.83333333349,
+        "maximum": -76229.63917525788
+      },
+      {
+        "speaker": "librispeech_8455",
+        "planned_cases": 3,
+        "paired_cases": 3,
+        "mean": -58289.75042513673,
+        "median": -39688.32116788323,
+        "minimum": -97547.09677419369,
+        "maximum": -37633.833333333256
+      },
+      {
+        "speaker": "librispeech_8463",
+        "planned_cases": 3,
+        "paired_cases": 3,
+        "mean": -74400.04793603998,
+        "median": -55989.0,
+        "minimum": -137071.44104803493,
+        "maximum": -30139.702760084998
+      },
+      {
+        "speaker": "librispeech_8555",
+        "planned_cases": 3,
+        "paired_cases": 3,
+        "mean": -89399.11874386652,
+        "median": -97223.35623159981,
+        "minimum": -104249.66666666651,
+        "maximum": -66724.33333333326
+      },
+      {
+        "speaker": "librispeech_908",
+        "planned_cases": 3,
+        "paired_cases": 3,
+        "mean": -7409.131574162903,
+        "median": -11097.297297297278,
+        "minimum": -34446.764091858175,
+        "maximum": 23316.666666666744
+      }
+    ],
+    "case_rows": [
+      {
+        "case": "librispeech_1089-134686-0008",
+        "speaker": "librispeech_1089",
+        "value": -45788.166666666744
+      },
+      {
+        "case": "librispeech_1089-134686-0011",
+        "speaker": "librispeech_1089",
+        "value": -72442.5
+      },
+      {
+        "case": "librispeech_1089-134686-0032",
+        "speaker": "librispeech_1089",
+        "value": -36194.132029339904
+      },
+      {
+        "case": "librispeech_1188-133604-0003",
+        "speaker": "librispeech_1188",
+        "value": -128221.0
+      },
+      {
+        "case": "librispeech_1188-133604-0031",
+        "speaker": "librispeech_1188",
+        "value": -167461.41176470602
+      },
+      {
+        "case": "librispeech_1188-133604-0037",
+        "speaker": "librispeech_1188",
+        "value": -199353.83333333326
+      },
+      {
+        "case": "librispeech_121-121726-0012",
+        "speaker": "librispeech_121",
+        "value": -56294.437577256
+      },
+      {
+        "case": "librispeech_121-123852-0000",
+        "speaker": "librispeech_121",
+        "value": 41182.166666666744
+      },
+      {
+        "case": "librispeech_121-127105-0035",
+        "speaker": "librispeech_121",
+        "value": 60741.5
+      },
+      {
+        "case": "librispeech_1221-135766-0005",
+        "speaker": "librispeech_1221",
+        "value": -165124.66666666674
+      },
+      {
+        "case": "librispeech_1221-135767-0006",
+        "speaker": "librispeech_1221",
+        "value": -169512.83333333326
+      },
+      {
+        "case": "librispeech_1221-135767-0019",
+        "speaker": "librispeech_1221",
+        "value": -101320.37037037034
+      },
+      {
+        "case": "librispeech_1284-1180-0020",
+        "speaker": "librispeech_1284",
+        "value": -148415.67291311757
+      },
+      {
+        "case": "librispeech_1284-1180-0027",
+        "speaker": "librispeech_1284",
+        "value": -180897.8593272171
+      },
+      {
+        "case": "librispeech_1284-1180-0028",
+        "speaker": "librispeech_1284",
+        "value": -126065.5
+      },
+      {
+        "case": "librispeech_1320-122617-0019",
+        "speaker": "librispeech_1320",
+        "value": -94033.83333333326
+      },
+      {
+        "case": "librispeech_1320-122617-0023",
+        "speaker": "librispeech_1320",
+        "value": -105155.83333333349
+      },
+      {
+        "case": "librispeech_1320-122617-0039",
+        "speaker": "librispeech_1320",
+        "value": -92838.5
+      },
+      {
+        "case": "librispeech_1580-141083-0010",
+        "speaker": "librispeech_1580",
+        "value": -25425.939849624177
+      },
+      {
+        "case": "librispeech_1580-141084-0016",
+        "speaker": "librispeech_1580",
+        "value": -104418.62416107394
+      },
+      {
+        "case": "librispeech_1580-141084-0047",
+        "speaker": "librispeech_1580",
+        "value": -97093.33333333349
+      },
+      {
+        "case": "librispeech_1995-1836-0000",
+        "speaker": "librispeech_1995",
+        "value": -131990.83333333326
+      },
+      {
+        "case": "librispeech_1995-1836-0014",
+        "speaker": "librispeech_1995",
+        "value": -106914.66666666674
+      },
+      {
+        "case": "librispeech_1995-1837-0023",
+        "speaker": "librispeech_1995",
+        "value": -89339.0
+      },
+      {
+        "case": "librispeech_2094-142345-0032",
+        "speaker": "librispeech_2094",
+        "value": -54558.333333333256
+      },
+      {
+        "case": "librispeech_2094-142345-0039",
+        "speaker": "librispeech_2094",
+        "value": -74133.0
+      },
+      {
+        "case": "librispeech_2094-142345-0040",
+        "speaker": "librispeech_2094",
+        "value": 26246.121593291406
+      },
+      {
+        "case": "librispeech_2300-131720-0022",
+        "speaker": "librispeech_2300",
+        "value": -116633.33333333349
+      },
+      {
+        "case": "librispeech_2300-131720-0028",
+        "speaker": "librispeech_2300",
+        "value": -203385.5
+      },
+      {
+        "case": "librispeech_2300-131720-0041",
+        "speaker": "librispeech_2300",
+        "value": 37340.0
+      },
+      {
+        "case": "librispeech_237-126133-0003",
+        "speaker": "librispeech_237",
+        "value": -73545.33333333349
+      },
+      {
+        "case": "librispeech_237-134500-0029",
+        "speaker": "librispeech_237",
+        "value": -66831.47699757875
+      },
+      {
+        "case": "librispeech_237-134500-0031",
+        "speaker": "librispeech_237",
+        "value": -24406.0
+      },
+      {
+        "case": "librispeech_260-123286-0008",
+        "speaker": "librispeech_260",
+        "value": -134794.37751004007
+      },
+      {
+        "case": "librispeech_260-123288-0003",
+        "speaker": "librispeech_260",
+        "value": -33824.833333333256
+      },
+      {
+        "case": "librispeech_260-123440-0020",
+        "speaker": "librispeech_260",
+        "value": -32070.07007006998
+      },
+      {
+        "case": "librispeech_2830-3980-0000",
+        "speaker": "librispeech_2830",
+        "value": -148728.41823056317
+      },
+      {
+        "case": "librispeech_2830-3980-0038",
+        "speaker": "librispeech_2830",
+        "value": -120317.14801444043
+      },
+      {
+        "case": "librispeech_2830-3980-0042",
+        "speaker": "librispeech_2830",
+        "value": -97515.23178807949
+      },
+      {
+        "case": "librispeech_2961-960-0010",
+        "speaker": "librispeech_2961",
+        "value": -215551.0
+      },
+      {
+        "case": "librispeech_2961-960-0019",
+        "speaker": "librispeech_2961",
+        "value": -189599.16666666674
+      },
+      {
+        "case": "librispeech_2961-961-0011",
+        "speaker": "librispeech_2961",
+        "value": -46447.0
+      },
+      {
+        "case": "librispeech_3570-5694-0001",
+        "speaker": "librispeech_3570",
+        "value": -58297.97356828186
+      },
+      {
+        "case": "librispeech_3570-5694-0004",
+        "speaker": "librispeech_3570",
+        "value": -53707.879924952984
+      },
+      {
+        "case": "librispeech_3570-5696-0010",
+        "speaker": "librispeech_3570",
+        "value": -76298.33333333326
+      },
+      {
+        "case": "librispeech_3575-170457-0034",
+        "speaker": "librispeech_3575",
+        "value": -127876.10872675246
+      },
+      {
+        "case": "librispeech_3575-170457-0041",
+        "speaker": "librispeech_3575",
+        "value": -167104.6666666665
+      },
+      {
+        "case": "librispeech_3575-170457-0054",
+        "speaker": "librispeech_3575",
+        "value": -166311.83333333326
+      },
+      {
+        "case": "librispeech_3729-6852-0000",
+        "speaker": "librispeech_3729",
+        "value": -105476.83333333326
+      },
+      {
+        "case": "librispeech_3729-6852-0007",
+        "speaker": "librispeech_3729",
+        "value": -49882.66666666651
+      },
+      {
+        "case": "librispeech_3729-6852-0017",
+        "speaker": "librispeech_3729",
+        "value": -127587.66666666674
+      },
+      {
+        "case": "librispeech_4077-13751-0001",
+        "speaker": "librispeech_4077",
+        "value": -232452.33333333326
+      },
+      {
+        "case": "librispeech_4077-13754-0002",
+        "speaker": "librispeech_4077",
+        "value": -70738.16666666651
+      },
+      {
+        "case": "librispeech_4077-13754-0012",
+        "speaker": "librispeech_4077",
+        "value": -112537.83333333326
+      },
+      {
+        "case": "librispeech_4446-2271-0003",
+        "speaker": "librispeech_4446",
+        "value": -52979.18918918935
+      },
+      {
+        "case": "librispeech_4446-2271-0022",
+        "speaker": "librispeech_4446",
+        "value": -153006.02150537632
+      },
+      {
+        "case": "librispeech_4446-2273-0010",
+        "speaker": "librispeech_4446",
+        "value": -107028.83333333349
+      },
+      {
+        "case": "librispeech_4507-16021-0016",
+        "speaker": "librispeech_4507",
+        "value": -105609.5
+      },
+      {
+        "case": "librispeech_4507-16021-0032",
+        "speaker": "librispeech_4507",
+        "value": -146214.0
+      },
+      {
+        "case": "librispeech_4507-16021-0045",
+        "speaker": "librispeech_4507",
+        "value": -103724.33537832298
+      },
+      {
+        "case": "librispeech_4970-29093-0004",
+        "speaker": "librispeech_4970",
+        "value": -158113.33333333326
+      },
+      {
+        "case": "librispeech_4970-29093-0005",
+        "speaker": "librispeech_4970",
+        "value": -140710.3333333335
+      },
+      {
+        "case": "librispeech_4970-29095-0008",
+        "speaker": "librispeech_4970",
+        "value": -183208.22368421056
+      },
+      {
+        "case": "librispeech_4992-23283-0016",
+        "speaker": "librispeech_4992",
+        "value": -211879.1991101224
+      },
+      {
+        "case": "librispeech_4992-41797-0000",
+        "speaker": "librispeech_4992",
+        "value": -103399.27073837724
+      },
+      {
+        "case": "librispeech_4992-41806-0000",
+        "speaker": "librispeech_4992",
+        "value": -18849.333333333256
+      },
+      {
+        "case": "librispeech_5105-28240-0011",
+        "speaker": "librispeech_5105",
+        "value": -94003.5
+      },
+      {
+        "case": "librispeech_5105-28241-0004",
+        "speaker": "librispeech_5105",
+        "value": -31668.0
+      },
+      {
+        "case": "librispeech_5105-28241-0019",
+        "speaker": "librispeech_5105",
+        "value": 15272.589792060433
+      },
+      {
+        "case": "librispeech_5142-33396-0019",
+        "speaker": "librispeech_5142",
+        "value": -193234.30290872604
+      },
+      {
+        "case": "librispeech_5142-33396-0030",
+        "speaker": "librispeech_5142",
+        "value": -93695.11754068709
+      },
+      {
+        "case": "librispeech_5142-33396-0065",
+        "speaker": "librispeech_5142",
+        "value": -162739.3647738211
+      },
+      {
+        "case": "librispeech_5639-40744-0013",
+        "speaker": "librispeech_5639",
+        "value": -83066.33333333326
+      },
+      {
+        "case": "librispeech_5639-40744-0023",
+        "speaker": "librispeech_5639",
+        "value": -10950.0
+      },
+      {
+        "case": "librispeech_5639-40744-0030",
+        "speaker": "librispeech_5639",
+        "value": -1969.0
+      },
+      {
+        "case": "librispeech_5683-32865-0017",
+        "speaker": "librispeech_5683",
+        "value": -131982.40146654448
+      },
+      {
+        "case": "librispeech_5683-32879-0009",
+        "speaker": "librispeech_5683",
+        "value": -101951.70399221033
+      },
+      {
+        "case": "librispeech_5683-32879-0019",
+        "speaker": "librispeech_5683",
+        "value": -42838.5
+      },
+      {
+        "case": "librispeech_61-70968-0042",
+        "speaker": "librispeech_61",
+        "value": -77972.71095152595
+      },
+      {
+        "case": "librispeech_61-70968-0043",
+        "speaker": "librispeech_61",
+        "value": -107749.83333333349
+      },
+      {
+        "case": "librispeech_61-70968-0054",
+        "speaker": "librispeech_61",
+        "value": -70739.66666666674
+      },
+      {
+        "case": "librispeech_672-122797-0003",
+        "speaker": "librispeech_672",
+        "value": -281124.1596638656
+      },
+      {
+        "case": "librispeech_672-122797-0044",
+        "speaker": "librispeech_672",
+        "value": -256748.66310160444
+      },
+      {
+        "case": "librispeech_672-122797-0056",
+        "speaker": "librispeech_672",
+        "value": -209206.3157894737
+      },
+      {
+        "case": "librispeech_6829-68769-0014",
+        "speaker": "librispeech_6829",
+        "value": -89385.22571819415
+      },
+      {
+        "case": "librispeech_6829-68769-0038",
+        "speaker": "librispeech_6829",
+        "value": -47322.55489021959
+      },
+      {
+        "case": "librispeech_6829-68769-0041",
+        "speaker": "librispeech_6829",
+        "value": -10554.511278195307
+      },
+      {
+        "case": "librispeech_6930-75918-0013",
+        "speaker": "librispeech_6930",
+        "value": -20954.08163265302
+      },
+      {
+        "case": "librispeech_6930-76324-0024",
+        "speaker": "librispeech_6930",
+        "value": -142342.46913580247
+      },
+      {
+        "case": "librispeech_6930-81414-0026",
+        "speaker": "librispeech_6930",
+        "value": -230443.57723577227
+      },
+      {
+        "case": "librispeech_7021-79740-0002",
+        "speaker": "librispeech_7021",
+        "value": -105442.66666666674
+      },
+      {
+        "case": "librispeech_7021-79740-0011",
+        "speaker": "librispeech_7021",
+        "value": -170394.66666666674
+      },
+      {
+        "case": "librispeech_7021-85628-0025",
+        "speaker": "librispeech_7021",
+        "value": -74848.64864864852
+      },
+      {
+        "case": "librispeech_7127-75946-0002",
+        "speaker": "librispeech_7127",
+        "value": -78653.0
+      },
+      {
+        "case": "librispeech_7127-75946-0029",
+        "speaker": "librispeech_7127",
+        "value": -85051.16666666674
+      },
+      {
+        "case": "librispeech_7127-75947-0011",
+        "speaker": "librispeech_7127",
+        "value": 1818.7845303867944
+      },
+      {
+        "case": "librispeech_7176-88083-0002",
+        "speaker": "librispeech_7176",
+        "value": -24411.0
+      },
+      {
+        "case": "librispeech_7176-88083-0004",
+        "speaker": "librispeech_7176",
+        "value": -53614.166666666744
+      },
+      {
+        "case": "librispeech_7176-88083-0026",
+        "speaker": "librispeech_7176",
+        "value": -55257.504520795774
+      },
+      {
+        "case": "librispeech_7729-102255-0028",
+        "speaker": "librispeech_7729",
+        "value": -70454.66666666651
+      },
+      {
+        "case": "librispeech_7729-102255-0038",
+        "speaker": "librispeech_7729",
+        "value": -144414.0
+      },
+      {
+        "case": "librispeech_7729-102255-0042",
+        "speaker": "librispeech_7729",
+        "value": -87788.0
+      },
+      {
+        "case": "librispeech_8224-274381-0010",
+        "speaker": "librispeech_8224",
+        "value": -199903.0
+      },
+      {
+        "case": "librispeech_8224-274381-0013",
+        "speaker": "librispeech_8224",
+        "value": -204819.66666666674
+      },
+      {
+        "case": "librispeech_8224-274384-0010",
+        "speaker": "librispeech_8224",
+        "value": -192752.16666666674
+      },
+      {
+        "case": "librispeech_8230-279154-0018",
+        "speaker": "librispeech_8230",
+        "value": -116754.83333333349
+      },
+      {
+        "case": "librispeech_8230-279154-0032",
+        "speaker": "librispeech_8230",
+        "value": -76229.63917525788
+      },
+      {
+        "case": "librispeech_8230-279154-0033",
+        "speaker": "librispeech_8230",
+        "value": -102721.0
+      },
+      {
+        "case": "librispeech_8455-210777-0010",
+        "speaker": "librispeech_8455",
+        "value": -97547.09677419369
+      },
+      {
+        "case": "librispeech_8455-210777-0049",
+        "speaker": "librispeech_8455",
+        "value": -39688.32116788323
+      },
+      {
+        "case": "librispeech_8455-210777-0060",
+        "speaker": "librispeech_8455",
+        "value": -37633.833333333256
+      },
+      {
+        "case": "librispeech_8463-294828-0003",
+        "speaker": "librispeech_8463",
+        "value": -55989.0
+      },
+      {
+        "case": "librispeech_8463-294828-0014",
+        "speaker": "librispeech_8463",
+        "value": -137071.44104803493
+      },
+      {
+        "case": "librispeech_8463-294828-0022",
+        "speaker": "librispeech_8463",
+        "value": -30139.702760084998
+      },
+      {
+        "case": "librispeech_8555-284447-0007",
+        "speaker": "librispeech_8555",
+        "value": -104249.66666666651
+      },
+      {
+        "case": "librispeech_8555-284449-0020",
+        "speaker": "librispeech_8555",
+        "value": -97223.35623159981
+      },
+      {
+        "case": "librispeech_8555-292519-0001",
+        "speaker": "librispeech_8555",
+        "value": -66724.33333333326
+      },
+      {
+        "case": "librispeech_908-157963-0018",
+        "speaker": "librispeech_908",
+        "value": -11097.297297297278
+      },
+      {
+        "case": "librispeech_908-31957-0002",
+        "speaker": "librispeech_908",
+        "value": -34446.764091858175
+      },
+      {
+        "case": "librispeech_908-31957-0016",
+        "speaker": "librispeech_908",
+        "value": 23316.666666666744
+      }
+    ]
+  }
+}

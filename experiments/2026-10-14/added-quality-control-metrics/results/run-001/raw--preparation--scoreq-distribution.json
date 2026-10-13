@@ -1,0 +1,112 @@
+{
+  "id": 15739280,
+  "doi": "10.5281/zenodo.15739280",
+  "metadata": {
+    "title": "SCOREQ: Speech Quality Assessment with Contrastive Regression - PyTorch weights",
+    "doi": "10.5281/zenodo.15739280",
+    "publication_date": "2025-06-25",
+    "description": "<table style=\"width: 71.3611%; height: 137.156px;\">\n<tbody>\n<tr style=\"height: 19.5938px;\">\n<td style=\"width: 23.0769%; height: 19.5938px;\"><strong>Model</strong></td>\n<td style=\"width: 32.8912%; height: 19.5938px;\"><strong>Training Set/Domain</strong></td>\n<td style=\"width: 34.3501%; height: 19.5938px;\"><strong>Usage Mode</strong></td>\n<td style=\"width: 9.81432%; height: 19.5938px;\"><strong>Margin</strong></td>\n</tr>\n<tr style=\"height: 39.1875px;\">\n<td style=\"width: 23.0769%; height: 39.1875px;\">adapt_nr_telephone.pt/.onnx</td>\n<td style=\"width: 32.8912%; height: 39.1875px;\">NISQA TRAIN SIM / Telephone speech</td>\n<td style=\"width: 34.3501%; height: 39.1875px;\">No-reference</td>\n<td style=\"width: 9.81432%; height: 39.1875px;\">Adaptive</td>\n</tr>\n<tr style=\"height: 39.1875px;\">\n<td style=\"width: 23.0769%; height: 39.1875px;\">fixed_nmr_telephone.pt/.onnx</td>\n<td style=\"width: 32.8912%; height: 39.1875px;\">NISQA TRAIN SIM / Telephone speech</td>\n<td style=\"width: 34.3501%; height: 39.1875px;\">Non-matching reference, full-reference</td>\n<td style=\"width: 9.81432%; height: 39.1875px;\">Constant</td>\n</tr>\n<tr style=\"height: 19.5938px;\">\n<td style=\"width: 23.0769%; height: 19.5938px;\">adapt_nr_synthetic.pt/.onnx</td>\n<td style=\"width: 32.8912%; height: 19.5938px;\">VoiceMOS 22 / Synthetic speech</td>\n<td style=\"width: 34.3501%; height: 19.5938px;\">No-reference</td>\n<td style=\"width: 9.81432%; height: 19.5938px;\">Adaptive</td>\n</tr>\n<tr style=\"height: 19.5938px;\">\n<td style=\"width: 23.0769%; height: 19.5938px;\">fixed_nmr_synthetic.pt/.onnx</td>\n<td style=\"width: 32.8912%; height: 19.5938px;\">VoiceMOS 22 / Synthetic speech</td>\n<td style=\"width: 34.3501%; height: 19.5938px;\">Non-matching reference</td>\n<td style=\"width: 9.81432%; height: 19.5938px;\">Constant</td>\n</tr>\n</tbody>\n</table>",
+    "access_right": "open",
+    "creators": [
+      {
+        "name": "Ragano, Alessandro",
+        "affiliation": "University College Dublin",
+        "orcid": "0009-0007-5097-0100"
+      }
+    ],
+    "resource_type": {
+      "title": "Model",
+      "type": "model"
+    },
+    "license": {
+      "id": "cc-by-4.0"
+    },
+    "relations": {
+      "version": [
+        {
+          "index": 1,
+          "is_last": true,
+          "parent": {
+            "pid_type": "recid",
+            "pid_value": "13860325"
+          }
+        }
+      ]
+    },
+    "notes": "<p><strong>Cite as</strong></p>\n<p>Alessandro Ragano, Jan Skoglund, and Andrew Hines (2024) SCOREQ: Speech Quality Assessment with Contrastive Regression, <em>Advances in Neural Information Processing Systems (NeurIPS) 2024.&nbsp;</em></p>"
+  },
+  "files": [
+    {
+      "id": "ef40b354-f778-45d3-a24a-eec0163591aa",
+      "key": "fixed_nmr_telephone.onnx",
+      "size": 377979175,
+      "checksum": "md5:0dd68ca51e7540706218e37317f8c756",
+      "links": {
+        "self": "https://zenodo.org/api/records/15739280/files/fixed_nmr_telephone.onnx/content"
+      }
+    },
+    {
+      "id": "03fd5878-48eb-4ea3-aa38-4208b8c4a841",
+      "key": "adapt_nr_synthetic.pt",
+      "size": 378367829,
+      "checksum": "md5:3c9c121f1b9e568de8616911acc98e02",
+      "links": {
+        "self": "https://zenodo.org/api/records/15739280/files/adapt_nr_synthetic.pt/content"
+      }
+    },
+    {
+      "id": "e5cbe0ff-616b-4d8f-aefc-7734d89741a9",
+      "key": "fixed_nmr_telephone.pt",
+      "size": 378360211,
+      "checksum": "md5:6157e47bdbeda0e0e3b7a2b0c868f272",
+      "links": {
+        "self": "https://zenodo.org/api/records/15739280/files/fixed_nmr_telephone.pt/content"
+      }
+    },
+    {
+      "id": "978505c7-f8de-4a5f-835e-113ad7627f94",
+      "key": "adapt_nr_telephone.pt",
+      "size": 378367829,
+      "checksum": "md5:87811369e1bbba353ee6cc560d5c17ac",
+      "links": {
+        "self": "https://zenodo.org/api/records/15739280/files/adapt_nr_telephone.pt/content"
+      }
+    },
+    {
+      "id": "61600b7b-6221-4363-b0d6-c08920eceffa",
+      "key": "fixed_nmr_synthetic.pt",
+      "size": 378360211,
+      "checksum": "md5:5f12a7eefdbbe1db52363b3495934441",
+      "links": {
+        "self": "https://zenodo.org/api/records/15739280/files/fixed_nmr_synthetic.pt/content"
+      }
+    },
+    {
+      "id": "8b65d307-d345-4e9b-9f74-4cd12b9777ce",
+      "key": "fixed_nmr_synthetic.onnx",
+      "size": 377979175,
+      "checksum": "md5:83983f42a13e0caecdc3dc72373a76c8",
+      "links": {
+        "self": "https://zenodo.org/api/records/15739280/files/fixed_nmr_synthetic.onnx/content"
+      }
+    },
+    {
+      "id": "b43b0577-8985-4318-b4af-e4cf63827178",
+      "key": "adapt_nr_synthetic.onnx",
+      "size": 378049307,
+      "checksum": "md5:404b659fcf1208e619f7a71831967cfe",
+      "links": {
+        "self": "https://zenodo.org/api/records/15739280/files/adapt_nr_synthetic.onnx/content"
+      }
+    },
+    {
+      "id": "d9802f5a-e3ba-4cbb-8115-27141432c26d",
+      "key": "adapt_nr_telephone.onnx",
+      "size": 378049307,
+      "checksum": "md5:00f512e40db4e447df54d73150efbebe",
+      "links": {
+        "self": "https://zenodo.org/api/records/15739280/files/adapt_nr_telephone.onnx/content"
+      }
+    }
+  ]
+}

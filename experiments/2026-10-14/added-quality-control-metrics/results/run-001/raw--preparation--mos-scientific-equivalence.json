@@ -1,0 +1,169 @@
+{
+  "scientific_configuration_identical": true,
+  "checks": {
+    "source_commit": {
+      "old": "cc2700db57bb83ee13dc31ebe1b868c254e15d09",
+      "new": "cc2700db57bb83ee13dc31ebe1b868c254e15d09",
+      "equal": true
+    },
+    "checkpoint_revision": {
+      "old": "506474f2b33dc77c234d668cc419be1861899cad",
+      "new": "506474f2b33dc77c234d668cc419be1861899cad",
+      "equal": true
+    },
+    "checkpoint_sha256": {
+      "old": "c8149d988e4bbf3f347e6966b5d769de347a5f8c59ffca1dc4bd4bf5b8585e57",
+      "new": "c8149d988e4bbf3f347e6966b5d769de347a5f8c59ffca1dc4bd4bf5b8585e57",
+      "equal": true
+    },
+    "fold": {
+      "old": 0,
+      "new": 0,
+      "equal": true
+    },
+    "device": {
+      "old": "cpu",
+      "new": "cpu",
+      "equal": true
+    },
+    "configuration": {
+      "old": "fusion_stage3",
+      "new": "fusion_stage3",
+      "equal": true
+    },
+    "predict_dataset": {
+      "old": "bvcc",
+      "new": "bvcc",
+      "equal": true
+    },
+    "repetitions": {
+      "old": 1,
+      "new": 1,
+      "equal": true
+    },
+    "extraction_seed": {
+      "old": 20261012,
+      "new": 20261012,
+      "equal": true
+    },
+    "cpu_threads": {
+      "old": 4,
+      "new": 4,
+      "equal": true
+    },
+    "remove_silent_section": {
+      "old": false,
+      "new": false,
+      "equal": true
+    },
+    "nnpack_enabled": {
+      "old": false,
+      "new": false,
+      "equal": true
+    },
+    "internal_sample_rate": {
+      "old": 16000,
+      "new": 16000,
+      "equal": true
+    },
+    "ssl_crop_seconds": {
+      "old": 3.0,
+      "new": 3.0,
+      "equal": true
+    },
+    "spectrogram_crop_seconds": {
+      "old": 1.4,
+      "new": 1.4,
+      "equal": true
+    },
+    "spectrogram_frames_per_repetition": {
+      "old": 2,
+      "new": 2,
+      "equal": true
+    },
+    "spectrogram_inner_mixup": {
+      "old": true,
+      "new": true,
+      "equal": true
+    },
+    "short_input_extension": {
+      "old": "tile",
+      "new": "tile",
+      "equal": true
+    },
+    "initialization": {
+      "old": "official_architecture_then_complete_strict_state_dict",
+      "new": "official_architecture_then_complete_strict_state_dict",
+      "equal": true
+    },
+    "packages": {
+      "old": {
+        "torch": "2.8.0+cpu",
+        "torchaudio": "2.8.0+cpu",
+        "torchvision": "0.23.0+cpu",
+        "transformers": "4.51.3",
+        "timm": "1.0.15",
+        "librosa": "0.11.0",
+        "numpy": "2.3.5",
+        "utmosv2": "1.3.1.dev0"
+      },
+      "new": {
+        "torch": "2.8.0+cpu",
+        "torchaudio": "2.8.0+cpu",
+        "torchvision": "0.23.0+cpu",
+        "transformers": "4.51.3",
+        "timm": "1.0.15",
+        "librosa": "0.11.0",
+        "numpy": "2.3.5",
+        "utmosv2": "1.3.1.dev0"
+      },
+      "equal": true
+    },
+    "checkpoint": {
+      "old": {
+        "url": "https://huggingface.co/sarulab-speech/UTMOSv2/resolve/506474f2b33dc77c234d668cc419be1861899cad/fold0_s42_best_model.pth",
+        "sha256": "c8149d988e4bbf3f347e6966b5d769de347a5f8c59ffca1dc4bd4bf5b8585e57",
+        "bytes": 818531314
+      },
+      "new": {
+        "url": "https://huggingface.co/sarulab-speech/UTMOSv2/resolve/506474f2b33dc77c234d668cc419be1861899cad/fold0_s42_best_model.pth",
+        "sha256": "c8149d988e4bbf3f347e6966b5d769de347a5f8c59ffca1dc4bd4bf5b8585e57",
+        "bytes": 818531314
+      },
+      "equal": true
+    },
+    "feature_configuration": {
+      "old": {
+        "config.json": {
+          "url": "https://huggingface.co/facebook/wav2vec2-base/resolve/0b5b8e868dd84f03fd87d01f9c4ff0f080fecfe8/config.json",
+          "sha256": "4937977e24d12d1bba70cdce8709c3c04807a8e4ae8ddac4229c48c436ae99ae",
+          "bytes": 1842
+        },
+        "preprocessor_config.json": {
+          "url": "https://huggingface.co/facebook/wav2vec2-base/resolve/0b5b8e868dd84f03fd87d01f9c4ff0f080fecfe8/preprocessor_config.json",
+          "sha256": "b225d617c025463b9e157e06afea8b90dc7078fc70b013c533328423e0486b4a",
+          "bytes": 159
+        }
+      },
+      "new": {
+        "config.json": {
+          "url": "https://huggingface.co/facebook/wav2vec2-base/resolve/0b5b8e868dd84f03fd87d01f9c4ff0f080fecfe8/config.json",
+          "sha256": "4937977e24d12d1bba70cdce8709c3c04807a8e4ae8ddac4229c48c436ae99ae",
+          "bytes": 1842
+        },
+        "preprocessor_config.json": {
+          "url": "https://huggingface.co/facebook/wav2vec2-base/resolve/0b5b8e868dd84f03fd87d01f9c4ff0f080fecfe8/preprocessor_config.json",
+          "sha256": "b225d617c025463b9e157e06afea8b90dc7078fc70b013c533328423e0486b4a",
+          "bytes": 159
+        }
+      },
+      "equal": true
+    },
+    "mos_source": {
+      "equal": true
+    }
+  },
+  "prior_report_sha256": "dea3413f70beef631f758c086c036dfb94e98258e59834e994cf64b31364bf63",
+  "new_initialization_sha256": "cad31cacf107510d96cc0b2738d4b0ed22708c63d69ecb16f117ac6bc64aba5c",
+  "note": "時間・初期化日時は一致条件外。個別音声は各行のfloat32/SR/長さで照合。新規推論と引用を混同しない。"
+}
