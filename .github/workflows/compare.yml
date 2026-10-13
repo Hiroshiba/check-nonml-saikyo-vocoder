@@ -1,4 +1,4 @@
-name: 比較基盤の確認
+name: 静的解析
 on:
   push:
     branches: [main]
@@ -6,16 +6,16 @@ on:
 permissions:
   contents: read
 jobs:
-  compare:
+  static-analysis:
     runs-on: ubuntu-24.04
-    timeout-minutes: 15
+    timeout-minutes: 5
     steps:
       - uses: actions/checkout@v4
       - uses: astral-sh/setup-uv@v9.0.0
         with:
           version: '0.12.23'
           enable-cache: true
-      - run: uv sync --locked
+      - run: uv sync --locked --only-dev
       - uses: actions/cache@v4
         with:
           path: |
@@ -27,15 +27,10 @@ jobs:
         shell: bash
         run: |
           mkdir -p runs/logs
-          uv run --locked ruff check . 2>&1 | tee runs/logs/ruff.log
-          uv run --locked python scripts/check_source_size.py
-      - run: uv run --locked python -m vocoderbench.build_world
-      - name: 小規模な比較を実行する（正常終了は品質合格ではない）
-        run: uv run --locked python -m vocoderbench.run --no-natural --sample-rates 16000 --output runs/ci
+          uv run --locked --only-dev ruff check . 2>&1 | tee runs/logs/ruff.log
+          uv run --locked --only-dev python scripts/check_source_size.py
       - uses: actions/upload-artifact@v4
         if: always()
         with:
-          name: comparison-report
-          path: |
-            runs/ci
-            runs/logs
+          name: static-analysis-logs
+          path: runs/logs

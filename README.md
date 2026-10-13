@@ -30,12 +30,7 @@ uv run --locked python -m vocoderbench.reference --include-dac --output runs/ref
 
 正式比較は [固定集合](docs/CORPUS.md) の120録音、[追加指標](docs/EXTENDED_METRICS.md)、[自動MOS](docs/MOS.md) を使います。出力は `index.html`、`results.json`、`summary.json`、音声例、未調整の全長波形、条件記録、失敗ログです。異なる出力長を強制的に合わせず、全長の不一致と共通区間の補助指標を分けます。予測MOSは新規の人間評定ではありません。
 
-短い動作確認には次を使います。正式な100音声以上の品質比較・採否を済ませたことにはなりません。
-
-```sh
-uv run --locked python -m vocoderbench.reference --list-methods
-uv run --locked python -m vocoderbench.reference --smoke --no-mos --output runs/references-smoke
-```
+動作確認専用の `--smoke` と `--no-mos` は削除しました。CIは静的解析だけを行い、比較・再合成・推論をコードの動作確認として実行しません。上のコマンドは本来の品質測定を行うためのものです。
 
 ### 結果をGit・Pagesへ残す
 
@@ -61,16 +56,7 @@ uv run --locked python scripts/build_site.py
 - [5人の往復議論と出典](experiments/2026-10-11/initial-hnm/reviews/discussion.md)
 - [GitHub Pagesの一覧](https://hiroshiba.github.io/check-nonml-saikyo-vocoder/)
 
-自作HNMとWORLDの従来の小規模実行は次のコマンドで再実行します。検証環境はLinux x86_64、Python 3.12、GCC/G++ 13。uv、git、C/C++コンパイラ、自然音声復号用FFmpegが必要です。
-
-```sh
-uv sync --locked
-uv run --locked python -m vocoderbench.build_world
-uv run --locked python scripts/fetch_data.py
-uv run --locked python -m vocoderbench.run --output runs/local-comparison
-```
-
-自然音声を省く動作確認には最後のコマンドへ `--no-natural --sample-rates 16000` を追加します。正常終了は音質合格ではありません。
+人工信号や少数音声でコードを動かす旧 `vocoderbench.run`、専用の信号生成・HNM診断・F0校正CLIは削除しました。過去の結果と当時の説明は記録として残しますが、その再実行を開発の確認手順にはしません。開発時の静的解析は [開発・ログ](docs/DEVELOPMENT.md) を参照してください。
 
 自作HNMとWORLDは音高・音量・時間長を編集できます。自作表現は保存・読込と手作り入力からの合成に対応しますが、声質の知覚距離や息っぽさ等の制御は未検証です。今回追加する6方式の共通入口は再合成比較であり、属性操作・下流学習の比較は未実装です。
 

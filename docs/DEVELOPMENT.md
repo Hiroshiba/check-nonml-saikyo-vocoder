@@ -4,20 +4,21 @@
 
 ## PythonのCLIと依存関係
 
-Python 3.12、uv 0.12.23、Ruff 0.17.0を使用する。`pyproject.toml` と `uv.lock` で依存を固定し、`uv sync --locked` で環境を作る。NumPyとSciPyの版は従来の比較実行から変えていない。
+Python 3.12、uv 0.12.23、Ruff 0.17.0を使用する。`pyproject.toml` と `uv.lock` で依存を固定する。開発時の確認は開発用依存だけを用意して静的解析を行い、音声処理を起動しない。
 
 ```sh
-uv sync --locked
-uv run --locked ruff check .
-uv run --locked python scripts/check_source_size.py
-uv run --locked python -m vocoderbench.build_world
-uv run --locked python -m vocoderbench.run --no-natural --sample-rates 16000 --output runs/local-comparison
-uv run --locked python scripts/build_site.py
+uv sync --locked --only-dev
+uv run --locked --only-dev ruff check .
+uv run --locked --only-dev python scripts/check_source_size.py
 ```
 
-テストコードは実装しない。旧 `tests/` と、合否を判定していた `scripts/audit_metrics.py` は削除した。過去の実験記録は残し、現在の手順と区別する。比較・校正CLIは音響測定値と欠測を保存する研究用の実行であり、品質を合否判定するテストへ置き換えない。通常の入力検証と、処理失敗時の非ゼロ終了は維持する。
+本来の音声比較を行う際の環境構築・測定コマンドは [既存方式比較](REFERENCES.md) とルートのREADMEを参照する。依存のNumPyとSciPyの版は従来の比較実行から変えていない。
 
-比較処理やCIに埋め込んだテストも同じ扱いとする。同じ入力・同じ条件での再デコード一致検査、保存・読込後の一致検査、CIでのDAC未取得アサーションは削除した。合否を返さず結果を診断値として保存する形でも、これらの自己検査を再実装しない。音響特性の比較・校正、通常の入力検証、ログ収集は残す。過去の結果JSON・HTMLは書き換えない。
+テストコードは実装しない。アサーションや合否判定の有無にかかわらず、コードを実行して正常性を確かめる処理はテストとして扱う。「比較」「診断」「校正」「実行確認」と呼び替えたり、結果をJSON・HTMLに保存したりしても例外にしない。
+
+旧 `tests/`、`scripts/audit_metrics.py` に加え、人工信号による `vocoderbench.run`、`fixtures.py`、`hnm_diagnostics.py`、`calibrate_pitch.py` と、既存方式の `--smoke` / `--no-mos` 経路を削除した。CIのWORLDビルド・小規模比較・既存方式の推論・HTML再表示・実験一覧登録による動作確認も削除した。これらをローカルや別workflowへ移して残さない。
+
+固定コーパスで実際の音質・方式差を測る研究処理と、保存済み結果を実際に公開する処理は残す。それらを変更確認のために起動しない。通常の入力検証、処理失敗時の非ゼロ終了、スタックトレース付きログは本処理の一部として維持する。過去の実験結果JSON・HTMLと当時の記録は書き換えない。
 
 ## 後から追えるログ
 
@@ -36,7 +37,7 @@ Ruffは `.cache/ruff` を使用する。行数確認はGit管理対象と未追�
 
 キャッシュ・外部ソース・ビルド成果物は `.gitignore` で除外する。実験の自動生成HTML・JSONはソース行数の対象外。将来、Git管理する自動生成ソースを追加する場合は、手編集できない生成物である根拠と生成手順を文書化してから例外を追加する。現在そのようなソースの例外はない。
 
-PRとデフォルトブランチ `main` へのpushで、依存環境の構築、静的解析、WORLDのビルド、小規模比較、Pagesの生成を行う。uvと静的解析のキャッシュを引き継ぐ。失敗時も比較出力とログをActionsの成果物へ保存する。静的解析の成功と、音質が優れていることは別の判断である。
+PRとデフォルトブランチ `main` へのpushでは、開発用依存の準備、キャッシュ付きRuff・ソース行数の静的解析だけを行う。失敗時も静的解析のログをActionsの成果物へ保存する。モデル取得・音声合成・品質測定・公開の予行実行は行わない。Pagesの生成とデプロイは `main` へのpushまたは `main` を対象にした手動実行による本番公開だけで行い、PRでは起動しない。静的解析の成功は音質の優位を意味しない。
 
 ## 表示と今後のGUI
 

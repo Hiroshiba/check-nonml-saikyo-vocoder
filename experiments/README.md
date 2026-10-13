@@ -17,9 +17,9 @@
 ## 新しい記録を追加する
 
 1. 日付・テーマのディレクトリを作り、初回グループの `experiment.json` を参考に各項目を記入します。`id` は `日付-テーマ名`、`date` は親ディレクトリと同じ日付、`topic` はテーマ名にします。`notes` にはグループ内の実在するMarkdownを指定します。
-2. 比較はまずGit管理外の `runs/` で行います。例：`python -m vocoderbench.run --output runs/local-comparison`。
+2. 品質比較はまずGit管理外の `runs/` で行います。例：`uv run --locked python -m vocoderbench.reference --output runs/references-120`。準備と固定コーパスは [既存方式比較](../docs/REFERENCES.md) に従います。コードの動作確認を目的とした小規模実行は行いません。
 3. 記録する結果一式を新しい `results/run-NNN/` に移し、`runs` に `id`、`date`、`title`、`path`、`recorded_at` を追加します。未選定を含む当時のベース情報・比較相手は、各 `results.json` の値を保存します。後から現在のベースに置き換えません。
-4. `python scripts/build_site.py` で全記録を検査します。欠落した結果・壊れた内部リンクは公開前にエラーになります。
+4. 公開時に `python scripts/build_site.py` で一覧ページを生成します。欠落した結果・壊れた内部リンクは公開処理の入力エラーになります。PRでの予行実行は行いません。
 5. 結果HTMLとJSON、説明・レビューを同じPRに入れます。ベース採用時の実装・削除についてはユーザー指示に従います。
 
 一覧ページとテーマページはビルド時に生成し、測定HTML自体はGit管理します。公開方法は [GitHub Pagesの運用](../docs/PUBLISHING.md) を参照してください。

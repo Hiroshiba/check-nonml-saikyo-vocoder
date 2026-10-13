@@ -29,13 +29,7 @@ uv run --locked python -m vocoderbench.reference --include-dac --output runs/ref
 
 部分実行では `--methods facodec golf` のように指定する。選択しなかった方式を完了件数に含めない。登録の一覧は `--list-methods` で通信せず表示できる。隔離環境の場所は準備・実行とも `--runtime-cache /absolute/cache` で合わせる。
 
-CIと短い実行確認には次を使う。サンプルの取得にはLLSM2のソースが必要。`--smoke` はLLSM2が同梱する英語2録音の先頭最大5秒に固定し、正式な品質比較・採否には使わない。
-
-```sh
-uv run --locked python -m vocoderbench.reference --smoke --no-mos --output runs/references-smoke
-```
-
-正式比較では100音声以上と自動MOSを必須にし、`--no-mos` を拒否する。音声はコーパス取得コマンドで先に準備する。推論と評価は別環境で実行するため、本体のtorchやnumpyを旧版へ下げない。
+2音声でコードを動かす `--smoke` と、動作確認専用の `--no-mos` は削除した。CI用の音声読込・推論経路も残さない。比較は100音声以上と自動MOSを前提にし、音声はコーパス取得コマンドで先に準備する。推論と評価は別環境で実行するため、本体のtorchやnumpyを旧版へ下げない。
 
 ## 保存・再開・失敗
 
@@ -56,7 +50,7 @@ uv run --locked python -m vocoderbench.references.publish \
 uv run --locked python scripts/build_site.py
 ```
 
-保存先は測定開始日（日本時間）の `experiments/YYYY-MM-DD/reference-methods/results/run-NNN/`。元のHTML・JSONはバイト列を変えずコピーし、`publication.json` に各SHA-256と保存日時を記録する。`experiment.json` の一覧登録日時は元の `generated_at` を保持し、過去の測定を新規実験に見せない。既存のrunを上書きせず、同一の測定結果を重複登録しない。CIから復元する場合は `--provenance 出典.json` で元の実行ID・成果物ID等を追加できる。
+保存先は測定開始日（日本時間）の `experiments/YYYY-MM-DD/reference-methods/results/run-NNN/`。元のHTML・JSONはバイト列を変えずコピーし、`publication.json` に各SHA-256と保存日時を記録する。`experiment.json` の一覧登録日時は元の `generated_at` を保持し、過去の測定を新規実験に見せない。既存のrunを上書きせず、同一の測定結果を重複登録しない。過去のCIから復元する場合は `--provenance 出典.json` で元の実行ID・成果物ID等を追加できる。
 
 公開物はHTML・JSONに限定し、短いWAVをJSON/HTMLに埋め込む。条件・ワーカーログ・ワーカーの測定記録もJSONとして保存する。全長npy、原音全体、学習済み重み、ネイティブライブラリは公開用フォルダへコピーしない。コマンドはGitへcommitしないため、出力した実験フォルダ一式をPRに含める。mainへのマージとPagesの公開成功後に一覧から閲覧できる。
 
@@ -91,8 +85,8 @@ GOLFの固定サブモジュールをHTTPSで取得し、`torch.Any`の型注釈
 
 上流のコード・重み・コンパイル物はGit管理外のキャッシュに置き、ライセンス文書を削除しない。比較基盤への登録と商用再配布の承認を混同しない。
 
-音声例は通常は正式集合の公開許諾された英語例のみを保存する。CIの2音声はLLSM2のテスト素材（CMU ARCTIC、unfaのFreesound 258342）で、元実装のREADME記載の出典を保持する。JVSの音声をこの追加によって自動公開しない。
+音声例は通常は正式集合の公開許諾された英語例のみを保存する。過去のCIの2音声はLLSM2のテスト素材（CMU ARCTIC、unfaのFreesound 258342）で、元実装のREADME記載の出典を保持する。JVSの音声をこの追加によって自動公開しない。
 
 ## このPRの範囲
 
-再合成・実行時間・既存指標の比較入口を追加する。属性操作、表現保存形式の共通化、距離学習、下流TTS学習、GPU、ストリーミングを新たに実装したものではない。CIは実際の学習済み推論からHTMLの保存・一覧生成までを確認するが、固定120録音全体の品質比較・MOS校正・方式採否は別の実験として記録する。
+再合成・実行時間・既存指標の比較入口を追加する。属性操作、表現保存形式の共通化、距離学習、下流TTS学習、GPU、ストリーミングを新たに実装したものではない。推論からHTMLの保存・一覧生成までを動作確認するCIは削除し、CIは静的解析だけを行う。固定120録音全体の品質比較・MOS校正・方式採否は本来の研究として記録し、コードの動作確認には転用しない。
