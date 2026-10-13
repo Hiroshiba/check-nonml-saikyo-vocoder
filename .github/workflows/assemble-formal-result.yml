@@ -1,0 +1,65 @@
+name: 正式比較JSONの一回限り保存
+on:
+  push:
+    branches: [codex/formal-hnm-v3-reference-report]
+    paths: [.github/workflows/assemble-formal-result.yml]
+permissions:
+  contents: write
+concurrency:
+  group: save-formal-hnm-v3-result-20261013
+  cancel-in-progress: false
+jobs:
+  save-result:
+    if: contains(github.event.head_commit.message, '[assemble-formal-json-20261013]')
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+          ref: ${{ github.sha }}
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12.14'
+      - name: 対象headと親commitを確認する
+        env:
+          EXPECTED_HEAD: ${{ github.sha }}
+        run: |
+          set -euo pipefail
+          test "$(git rev-parse HEAD)" = "$EXPECTED_HEAD"
+          test "$(git rev-parse HEAD^)" = 2308accfd3069e19fed852e1334b8269da761b5a
+          test "$(git ls-remote origin refs/heads/codex/formal-hnm-v3-reference-report | cut -f1)" = "$EXPECTED_HEAD"
+      - name: 圧縮原本から公開JSONだけを保存する
+        run: |
+          python3 - <<'PY'
+          import gzip
+          import hashlib
+          import json
+          from pathlib import Path
+          import sys
+          print(sys.version)
+          assert sys.version_info[:3] == (3, 12, 14)
+          root = Path('experiments/2026-10-13/formal-hnm-v3-references')
+          archive = (root / 'archives/results.run-001.original.json.gz').read_bytes()
+          assert hashlib.sha256(archive).hexdigest() == '75bdb8a96e6dd82524312c00be471276e72c0abb430979917e6faa95d35ca39b'
+          original = gzip.decompress(archive)
+          assert len(original) == 36328216
+          assert hashlib.sha256(original).hexdigest() == 'e0744e243097493acbe50defae65f6b27976851d3a30974146659334968ecafc'
+          result = (json.dumps(json.loads(original), ensure_ascii=False, separators=(',', ':'), allow_nan=False) + '\n').encode('utf-8')
+          assert len(result) == 19636212
+          assert hashlib.sha256(result).hexdigest() == 'dea3413f70beef631f758c086c036dfb94e98258e59834e994cf64b31364bf63'
+          destination = root / 'results/run-001/results.json'
+          assert not destination.exists()
+          destination.write_bytes(result)
+          PY
+      - name: 一時workflowを除き固定treeだけをcommitする
+        env:
+          EXPECTED_HEAD: ${{ github.sha }}
+        run: |
+          set -euo pipefail
+          git rm .github/workflows/assemble-formal-result.yml
+          git add experiments/2026-10-13/formal-hnm-v3-references/results/run-001/results.json
+          test "$(git write-tree)" = ef2d2183007b4b39c070a29ccdff56e601b8b528
+          test "$(git ls-remote origin refs/heads/codex/formal-hnm-v3-reference-report | cut -f1)" = "$EXPECTED_HEAD"
+          git -c user.name='github-actions[bot]' -c user.email='41898282+github-actions[bot]@users.noreply.github.com' commit -m 'Save complete formal comparison JSON and remove temporary publisher'
+          git push origin HEAD:refs/heads/codex/formal-hnm-v3-reference-report
