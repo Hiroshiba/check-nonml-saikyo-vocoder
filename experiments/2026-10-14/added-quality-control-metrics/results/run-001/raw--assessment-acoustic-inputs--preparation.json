@@ -1,0 +1,127 @@
+{
+  "schema_version": 1,
+  "created_at_utc": "2026-10-13T16:24:28.355920+00:00",
+  "dataset": "data/clean_speech_v1.json",
+  "dataset_sha256": "644f4d57483366bb20d8dbcfdaa254e354aed4af8318a6a2984bb2e8b3ddc9c1",
+  "formal_base": {
+    "status": "selected",
+    "method": "hnm",
+    "version": "hnm-v3",
+    "reason": "雑音PSDの台形積分とFFT端点配分を揃える候補Dを採用。固定120録音で帯域・平均包絡・音量誤差と予測MOSが小幅改善し、制御と保存互換を確認。明瞭性・スペクトル誤差の小さな系統的悪化を許容した開発上の選択で、知覚品質の優越は未確証。",
+    "comparison_reference": "hnm",
+    "comparison_reference_meaning": "実験開始時点の唯一の自作ベース。過去結果は当時の版を保持する。既存比較対象はWORLD（Harvest）。",
+    "previous_version": "hnm-v2",
+    "selection_report": "experiments/2026-10-12/noise-stability/results/run-001/index.html"
+  },
+  "decoder_revision": "bbc9e70c7955c03d74f49cc11a7ac098b513536e",
+  "source_sha256": {
+    "scripts/added_metrics_assessment.py": "9b9a008e0019f280a5b17fc8f81de0eb2903f87f522a4d0247808746ed608c80",
+    "vocoderbench/world.py": "d14558eed772e07031a9183f57facc55acb1c27deccb3dd4fa098ffcbe0cde3a",
+    "BASELINE.json": "da49356e381abd9a4538ef48a578b5474373efa1a9618d62e74e08fa45b302f4",
+    "vocoderbench/hnm.py": "58f0378793b7433f80bf854972882298649799d8e3d0868674816e9bf6b63f74",
+    "vocoderbench/hnm_analysis.py": "3f45703667237333d76c4145c1513e4eb3342bd40f01a714c10303082440e26a",
+    "vocoderbench/hnm_control.py": "b2f5efbbb1e550569c231a08f12997d94b0bacb130bcc816fe6bd458b17a98bc",
+    "vocoderbench/hnm_diagnostics.py": "076edd5a785e83540a0cf55fea06075769ef35503f210eb977efc1703dd0081e",
+    "vocoderbench/hnm_parameters.py": "635bf222bac8ce41897c0977677e67be4366724f4239a9e85e153169fcea2cf0",
+    "vocoderbench/hnm_synthesis.py": "079057d2fba2b4ca0d189e050449aa7bc3fa20033afb0b03893300950ae13593"
+  },
+  "synthesis_records": [
+    {
+      "path": "runs/added-metrics-20261014/synthesis-contract.json",
+      "sha256": "3d62fe035f75c44ef207df3c542bf9bef9da5a4a0c170fa874ee2c043d934e9f"
+    }
+  ],
+  "planned_jobs": 1440,
+  "planned_by_metric": {
+    "auditory_local": 240,
+    "pitch_tracking": 480,
+    "gain_tracking": 480,
+    "interference": 240
+  },
+  "selected_metrics": [
+    "auditory_local",
+    "pitch_tracking",
+    "gain_tracking",
+    "interference"
+  ],
+  "shards": [
+    {
+      "path": "runs/added-metrics-20261014/assessment-acoustic-inputs/manifest-00.json",
+      "sha256": "906d6c1db1209d5e97201f4f2482c953955b03a3c50e980509b7951f271f17cf",
+      "cases": 10,
+      "jobs": 120
+    },
+    {
+      "path": "runs/added-metrics-20261014/assessment-acoustic-inputs/manifest-01.json",
+      "sha256": "21bcb5aab9d537bdb26ee95b291b0bbbffad655a936d96ef7466581abed19263",
+      "cases": 10,
+      "jobs": 120
+    },
+    {
+      "path": "runs/added-metrics-20261014/assessment-acoustic-inputs/manifest-02.json",
+      "sha256": "375613592d674ece75b36b1adc51969eb5120168304f277be1254ad126bffef9",
+      "cases": 10,
+      "jobs": 120
+    },
+    {
+      "path": "runs/added-metrics-20261014/assessment-acoustic-inputs/manifest-03.json",
+      "sha256": "503300221d9808a67da77f0e5bfcc37590a5b3d3962a49f8b6605a52fbef49a0",
+      "cases": 10,
+      "jobs": 120
+    },
+    {
+      "path": "runs/added-metrics-20261014/assessment-acoustic-inputs/manifest-04.json",
+      "sha256": "fe5c641164d6dca4d148b812236ec70b20ec9a5a3bb1411e93bdd199b4ed467e",
+      "cases": 10,
+      "jobs": 120
+    },
+    {
+      "path": "runs/added-metrics-20261014/assessment-acoustic-inputs/manifest-05.json",
+      "sha256": "316014554ebc39088a45653e23fa6055af2ceeea5aea2fef7e3ad2e54d19f078",
+      "cases": 10,
+      "jobs": 120
+    },
+    {
+      "path": "runs/added-metrics-20261014/assessment-acoustic-inputs/manifest-06.json",
+      "sha256": "6fc08fc6cc13a0fea849fd1c1a643b749b86dabdd35229b090588aa88299566e",
+      "cases": 10,
+      "jobs": 120
+    },
+    {
+      "path": "runs/added-metrics-20261014/assessment-acoustic-inputs/manifest-07.json",
+      "sha256": "f9e4e535ff908280f7f0c8584ea4e5dbd54d72534e11f24ea3428e9affa82dcc",
+      "cases": 10,
+      "jobs": 120
+    },
+    {
+      "path": "runs/added-metrics-20261014/assessment-acoustic-inputs/manifest-08.json",
+      "sha256": "9366fc95eebcde771b71c85f022a07246df17312b40f873ad624e3768166ec4d",
+      "cases": 10,
+      "jobs": 120
+    },
+    {
+      "path": "runs/added-metrics-20261014/assessment-acoustic-inputs/manifest-09.json",
+      "sha256": "1b0ceeb62ce16fe9f34f7382608a3d2b677c6d89675da7f3aebf1b8f10c6b7e0",
+      "cases": 10,
+      "jobs": 120
+    },
+    {
+      "path": "runs/added-metrics-20261014/assessment-acoustic-inputs/manifest-10.json",
+      "sha256": "424892b2f4fb5b9ac8ce6c9720334c104031ea0429e7f9c9ec5f5afb66ff71d2",
+      "cases": 10,
+      "jobs": 120
+    },
+    {
+      "path": "runs/added-metrics-20261014/assessment-acoustic-inputs/manifest-11.json",
+      "sha256": "549e1c04cd9987beb3caa44618ba9ce2fd92a62a59be2b7eff8a2636e6c782dd",
+      "cases": 10,
+      "jobs": 120
+    }
+  ],
+  "sharding_scope": "実行単位10発話。話者統計は全120発話を統合してから行う。",
+  "quality_indexes": [],
+  "quality_evidence_resolution": [],
+  "wall_seconds": 2.6575759380002637,
+  "process_cpu_seconds": 2.276391883,
+  "scope": "固定LibriSpeech英語40話者120発話・16 kHz・各方式seed 0。HNM現ベースとWORLD。局所ERBは40 ms窓・5 ms hop・32帯域で、PR27の20 ms ERBとは別定義。ピッチ±300 cent、ゲイン±6 dBの定常操作のみ。制御参照は各方式の無編集復号音。動的操作・絶対F0真値・知覚品質の優劣・使用可能な編集幅へ一般化しない。干渉はゲイン操作1列のみ。理想一様振幅スケールの不変性を期待値にし、知覚的独立性の正解とはしない。ピッチ操作の非対角期待応答は未校正。品質証跡は別工程のUTMOSv2と固定原音参照のECAPA。欠測はnull/partialのまま残す。実保存量は公開saveの圧縮NPZ全体の1点で、理論情報率や品質–表現量曲線ではない。"
+}

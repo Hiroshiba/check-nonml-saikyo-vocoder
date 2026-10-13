@@ -1,0 +1,106 @@
+{
+  "schema_version": 1,
+  "source_commit": "bbc9e70c7955c03d74f49cc11a7ac098b513536e",
+  "source_sha256": {
+    "vocoderbench/__init__.py": "73738d70706824f85fdfac302306af505437a50b0ca4cdc68fd57aec211a308d",
+    "vocoderbench/audio_report.py": "f46ff0cf69e7cb956ea94ee0c7013d44052c0400c5ffc64d7f9f90b4489aa980",
+    "vocoderbench/audio_samples.py": "b9b975c1f305cdaff47909b99bd2a3dce64996e90774d2a8305adc1c67ed6c17",
+    "vocoderbench/benchmark.py": "7fdb6b4dfa4f9cf64bc8d009dd4b0b1e267ab18a5e87a9e1a7004ae45d84a244",
+    "vocoderbench/benchmark_io.py": "d2fa3e56f52da225573939c92056005be47568c531b7a317a5e893e10a5d9d5c",
+    "vocoderbench/benchmark_pipeline.py": "a049034dcd272bbafda47cbf5719cc6b1cd8dae6f80682200cd3fc7b90e522cd",
+    "vocoderbench/benchmark_report.py": "2a8061e8acc89dc4897d77efa206922720d6aa9843c340daea8ec78c2cb0b759",
+    "vocoderbench/benchmark_summary.py": "8221086fe08bfc70cbfb9308a3a01d6fea976afb7de86af8cbacd7999e8281da",
+    "vocoderbench/build_world.py": "7d29d81c9a48d633edfeae0425c5cc055bc0a10d230232a51eab5720b2cc6974",
+    "vocoderbench/calibrate_pitch.py": "282c917bf87c6f549f32467647802852907e4b0b88128eb8017157b84566adec",
+    "vocoderbench/control.py": "bc41e73ff34b5f9cb52280a6f2317c989abc53f8b15f8f82db5ee3102b4b58bd",
+    "vocoderbench/corpus.py": "bc14cee2c3dd1a651cf2e5f0e9fe871fbd3a712d1a90d7c18a18547a625802e8",
+    "vocoderbench/extended_metrics.py": "ab3537d2c8e5d568a0cd2fa8aa36309de09c3bce7cf2f849214331a22fe3624f",
+    "vocoderbench/fixtures.py": "2b2ba922ed611abc91a29f1d270c9a91c0743bc9a8a6a131c7dcd184fcf60dc9",
+    "vocoderbench/hnm.py": "58f0378793b7433f80bf854972882298649799d8e3d0868674816e9bf6b63f74",
+    "vocoderbench/hnm_analysis.py": "3f45703667237333d76c4145c1513e4eb3342bd40f01a714c10303082440e26a",
+    "vocoderbench/hnm_control.py": "b2f5efbbb1e550569c231a08f12997d94b0bacb130bcc816fe6bd458b17a98bc",
+    "vocoderbench/hnm_diagnostics.py": "076edd5a785e83540a0cf55fea06075769ef35503f210eb977efc1703dd0081e",
+    "vocoderbench/hnm_parameters.py": "635bf222bac8ce41897c0977677e67be4366724f4239a9e85e153169fcea2cf0",
+    "vocoderbench/hnm_synthesis.py": "079057d2fba2b4ca0d189e050449aa7bc3fa20033afb0b03893300950ae13593",
+    "vocoderbench/logging_utils.py": "c80eb5d9647516a4bc03980cb178f8b4bb130ac15877d1b3289797e7ad81e381",
+    "vocoderbench/methods.py": "99a040b960139aa842a9a46623b34717db9c71195df21ae969fb2a9e9b9155b0",
+    "vocoderbench/metrics.py": "b8767feb49494058bd9ec08fd95ae2fb50ce7897fcdd6cebe319ff8a0ac51f22",
+    "vocoderbench/mos.py": "fb632aa5440245525289962372db4f3eb007cd2b3b493b2d05ecccb878e85f03",
+    "vocoderbench/mos_batch.py": "c7a732dfe52b08fa155201a7134d2f5561a10b16d1866e9f0526f61b2b244f64",
+    "vocoderbench/noise_screen.py": "8eb38cfb49b315dd09f394a1a6753cd416704442b78051096c168da70bdc41f1",
+    "vocoderbench/noise_stability.py": "624dc434add0086c53c41b9fb7fd0e65b2c51b16c08d4485e4147a77f5534213",
+    "vocoderbench/quality.py": "f6a276d9ac2acdd345e49070c51d76bfa179e82f8459d8e15dbd1a050323d63d",
+    "vocoderbench/quality_backends.py": "1f36068515bc3e218f9eb149d7fc3b2b8e62b5eee804448ff30f01624dd23a48",
+    "vocoderbench/quality_core.py": "66bf6c08633424f544b2ad7eef2a74283c05d809aa9a59df8fc1ba0e5ab51f4b",
+    "vocoderbench/quality_evidence.py": "5e555c1747c41978bfb8d1a13948510e55898ab38714551d857196d2ac87052a",
+    "vocoderbench/quality_inputs.py": "5f71690e4daf12cf900029224c78232de34327c1ff4a23ee4376064367c40909",
+    "vocoderbench/quality_reference_inputs.py": "215c0967258c20af5b3267a00cb90aa1d0c7f22bb11e1efef98ad55711511a42",
+    "vocoderbench/quality_report.py": "aae925d97a6c990ad3318899a6b14995ecbf1cf6554041344bbed708fa51dad4",
+    "vocoderbench/quality_similarity.py": "32b537b5eb006834a55314a5ddb2f9faa7f5c9fa8d6a4faa626d892360d965f7",
+    "vocoderbench/quality_visqol.py": "908ea7cbf6b8202a46863c4c4b66d5a0e3adce817facd6898bd666a2e806099a",
+    "vocoderbench/reference.py": "345fe4c8ae0fb107f01e7ce973daaccdc5e60e1624753de61928b3718b23672f",
+    "vocoderbench/report.py": "659d8406e8c1d09e29e120d6f0ef13ddc3047565915c125588a2704fb25c6737",
+    "vocoderbench/run.py": "ac2b6c3a90dea0b9b563ddf30c94e58b8cd9b2e16fb368546ad4efd206a729a6",
+    "vocoderbench/site_summary.py": "a33996e31664281ccfc556b944b9013856369c4e1fdf1ff88b1af86f615ae91f",
+    "vocoderbench/supplement.py": "8b72b63b7059f3e94ecb13f575ab93060e00fee0cb89c5abcaa51719061b890d",
+    "vocoderbench/supplement_contract.py": "748bff65db3bd3709cdd472b02358af35518c5d1a96fbf212f6b02ba5fa45cd4",
+    "vocoderbench/supplement_report.py": "9146b635745c6bb10c733c090696c564d463180507809588ac377ef682c668ad",
+    "vocoderbench/temporal_metrics.py": "ce21b6a4767071a7b98ea0cdbfe54bdba15b596bf8d6b6127281a97095e7be91",
+    "vocoderbench/world.py": "d14558eed772e07031a9183f57facc55acb1c27deccb3dd4fa098ffcbe0cde3a",
+    "scripts/added_metrics_synthesize.py": "16dee629388eca2e49b5e71d968605cad5f0d609c402d24ef1e1bec49c4e5b0e"
+  },
+  "manifest_sha256": "644f4d57483366bb20d8dbcfdaa254e354aed4af8318a6a2984bb2e8b3ddc9c1",
+  "conditions": {
+    "unedited": {},
+    "pitch_minus3": {
+      "pitch_semitones": -3
+    },
+    "pitch_plus3": {
+      "pitch_semitones": 3
+    },
+    "gain_minus6": {
+      "gain_db": -6
+    },
+    "gain_plus6": {
+      "gain_db": 6
+    }
+  },
+  "methods": [
+    "hnm",
+    "world_harvest"
+  ],
+  "seed": 0,
+  "threads": 4,
+  "sample_rate": 16000,
+  "planned_cases": 120,
+  "planned_outputs": 1200,
+  "environment": {
+    "python": "3.12.14",
+    "platform": "Linux-6.18.44-x86_64-with-glibc2.41",
+    "cpu": "",
+    "logical_cpu_count": 9,
+    "packages": {
+      "numpy": "2.3.5",
+      "scipy": "1.17.0",
+      "torch": "2.8.0+cpu",
+      "torchaudio": "2.8.0+cpu",
+      "onnxruntime": "1.22.0",
+      "speechbrain": "1.0.3",
+      "utmosv2": "1.3.1.dev0",
+      "transformers": "4.51.3",
+      "timm": "1.0.15",
+      "librosa": "0.11.0"
+    }
+  },
+  "formal_base": {
+    "status": "selected",
+    "method": "hnm",
+    "version": "hnm-v3",
+    "reason": "雑音PSDの台形積分とFFT端点配分を揃える候補Dを採用。固定120録音で帯域・平均包絡・音量誤差と予測MOSが小幅改善し、制御と保存互換を確認。明瞭性・スペクトル誤差の小さな系統的悪化を許容した開発上の選択で、知覚品質の優越は未確証。",
+    "comparison_reference": "hnm",
+    "comparison_reference_meaning": "実験開始時点の唯一の自作ベース。過去結果は当時の版を保持する。既存比較対象はWORLD（Harvest）。",
+    "previous_version": "hnm-v2",
+    "selection_report": "experiments/2026-10-12/noise-stability/results/run-001/index.html"
+  },
+  "goal": "現ベースとWORLDの再合成品質と既存pitch/gain操作の追従を固定自然音声で測る。新候補や動作テストではない。"
+}

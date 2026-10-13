@@ -1,0 +1,334 @@
+{
+  "_id": "621ffdc136468d709f17ae45",
+  "id": "facebook/wav2vec2-base-960h",
+  "private": false,
+  "pipeline_tag": "automatic-speech-recognition",
+  "library_name": "transformers",
+  "tags": [
+    "transformers",
+    "pytorch",
+    "tf",
+    "safetensors",
+    "wav2vec2",
+    "automatic-speech-recognition",
+    "audio",
+    "hf-asr-leaderboard",
+    "en",
+    "dataset:librispeech_asr",
+    "arxiv:2006.11477",
+    "license:apache-2.0",
+    "model-index",
+    "eval-results",
+    "endpoints_compatible",
+    "deploy:azure",
+    "region:us"
+  ],
+  "downloads": 1765964,
+  "likes": 410,
+  "modelId": "facebook/wav2vec2-base-960h",
+  "author": "facebook",
+  "sha": "22aad52d435eb6dbaf354bdad9b0da84ce7d6156",
+  "lastModified": "2022-11-14T21:37:23.000Z",
+  "gated": false,
+  "disabled": false,
+  "widgetData": [
+    {
+      "example_title": "Librispeech sample 1",
+      "src": "https://cdn-media.huggingface.co/speech_samples/sample1.flac"
+    },
+    {
+      "example_title": "Librispeech sample 2",
+      "src": "https://cdn-media.huggingface.co/speech_samples/sample2.flac"
+    }
+  ],
+  "model-index": [
+    {
+      "name": "wav2vec2-base-960h",
+      "results": [
+        {
+          "task": {
+            "name": "Automatic Speech Recognition",
+            "type": "automatic-speech-recognition"
+          },
+          "dataset": {
+            "name": "LibriSpeech (clean)",
+            "type": "librispeech_asr",
+            "config": "clean",
+            "split": "test",
+            "args": {
+              "language": "en"
+            }
+          },
+          "metrics": [
+            {
+              "name": "Test WER",
+              "type": "wer",
+              "value": 3.4,
+              "verified": false
+            }
+          ]
+        },
+        {
+          "task": {
+            "name": "Automatic Speech Recognition",
+            "type": "automatic-speech-recognition"
+          },
+          "dataset": {
+            "name": "LibriSpeech (other)",
+            "type": "librispeech_asr",
+            "config": "other",
+            "split": "test",
+            "args": {
+              "language": "en"
+            }
+          },
+          "metrics": [
+            {
+              "name": "Test WER",
+              "type": "wer",
+              "value": 8.6,
+              "verified": false
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "config": {
+    "architectures": [
+      "Wav2Vec2ForCTC"
+    ],
+    "model_type": "wav2vec2",
+    "tokenizer_config": {
+      "unk_token": "<unk>",
+      "bos_token": "<s>",
+      "eos_token": "</s>",
+      "pad_token": "<pad>"
+    }
+  },
+  "cardData": {
+    "language": "en",
+    "datasets": [
+      "librispeech_asr"
+    ],
+    "tags": [
+      "audio",
+      "automatic-speech-recognition",
+      "hf-asr-leaderboard"
+    ],
+    "license": "apache-2.0",
+    "widget": [
+      {
+        "example_title": "Librispeech sample 1",
+        "src": "https://cdn-media.huggingface.co/speech_samples/sample1.flac"
+      },
+      {
+        "example_title": "Librispeech sample 2",
+        "src": "https://cdn-media.huggingface.co/speech_samples/sample2.flac"
+      }
+    ],
+    "model-index": [
+      {
+        "name": "wav2vec2-base-960h",
+        "results": [
+          {
+            "task": {
+              "name": "Automatic Speech Recognition",
+              "type": "automatic-speech-recognition"
+            },
+            "dataset": {
+              "name": "LibriSpeech (clean)",
+              "type": "librispeech_asr",
+              "config": "clean",
+              "split": "test",
+              "args": {
+                "language": "en"
+              }
+            },
+            "metrics": [
+              {
+                "name": "Test WER",
+                "type": "wer",
+                "value": 3.4,
+                "verified": false
+              }
+            ]
+          },
+          {
+            "task": {
+              "name": "Automatic Speech Recognition",
+              "type": "automatic-speech-recognition"
+            },
+            "dataset": {
+              "name": "LibriSpeech (other)",
+              "type": "librispeech_asr",
+              "config": "other",
+              "split": "test",
+              "args": {
+                "language": "en"
+              }
+            },
+            "metrics": [
+              {
+                "name": "Test WER",
+                "type": "wer",
+                "value": 8.6,
+                "verified": false
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "transformersInfo": {
+    "auto_model": "AutoModelForCTC",
+    "pipeline_tag": "automatic-speech-recognition",
+    "processor": "AutoProcessor"
+  },
+  "siblings": [
+    {
+      "rfilename": ".gitattributes"
+    },
+    {
+      "rfilename": "README.md"
+    },
+    {
+      "rfilename": "config.json"
+    },
+    {
+      "rfilename": "feature_extractor_config.json"
+    },
+    {
+      "rfilename": "model.safetensors"
+    },
+    {
+      "rfilename": "preprocessor_config.json"
+    },
+    {
+      "rfilename": "pytorch_model.bin"
+    },
+    {
+      "rfilename": "special_tokens_map.json"
+    },
+    {
+      "rfilename": "tf_model.h5"
+    },
+    {
+      "rfilename": "tokenizer_config.json"
+    },
+    {
+      "rfilename": "vocab.json"
+    }
+  ],
+  "spaces": [
+    "tardellirs/model-pulse",
+    "mteb/leaderboard",
+    "embedl/hfviewer",
+    "hf-audio/open_asr_leaderboard",
+    "alexnasa/Wan2.2-Animate-ZEROGPU",
+    "emanforhelp/model-pulse",
+    "kulkas2pintu/Video_to_video_WAN",
+    "anycoderapps/Z-Image-Turbo",
+    "jhescheles/01_speech_to_text_to_speech",
+    "gunship999/SexyImages",
+    "H-Liu1997/TANGO",
+    "Yntec/ToyWorld",
+    "alexnasa/OmniAvatar",
+    "AIGC-Audio/AudioGPT",
+    "radames/edit-video-by-editing-text",
+    "Skywork/skyreels-a1-talking-head",
+    "llamameta/flux-pro-uncensored",
+    "acvlab/FantasyTalking",
+    "Uthar/SexyReality",
+    "Yntec/PrintingPress",
+    "rajistics/Financial_Analyst_AI",
+    "C4G-HKUST/AnyTalker",
+    "llamameta/fluxproV2",
+    "fffiloni/MEMO",
+    "Yntec/ToyWorldXL",
+    "Yntec/blitz_diffusion",
+    "microsoft/paza-bench",
+    "John6666/Diffusion80XX4sg",
+    "jbilcke-hf/OmniAvatar",
+    "Gradio-Blocks/Create_GIFs_from_Video",
+    "John6666/PrintingPress4",
+    "llamameta/fast-sd3.5-large",
+    "eduagarcia/multilingual-tokenizer-leaderboard",
+    "Soul-AILab/SoulX-FlashHead",
+    "Yntec/Image-Models-Test-2024",
+    "Yntec/Image-Models-Test-April-2024",
+    "DemiPoto/TestDifs",
+    "Abinivesh/Multi-models-prompt-to-image-generation",
+    "NativeAngels/Compare-6",
+    "herokominato/Wan2.2-Animate-ZEROGPU",
+    "reach-vb/asr-pyctcdecode",
+    "John6666/hfd_test_nostopbutton",
+    "Kameswara/TextToVideo",
+    "Nymbo/Diffusion80XX4sg",
+    "DemiPoto/testSortModels",
+    "kaleidoskop-hug/PrintingPress",
+    "artificialguybr/EchoMimicV3-Demo",
+    "hugging-apps/leaptalk-talking-head",
+    "Gradio-Blocks/SlowMo_n_Timelapse_Your_Video",
+    "awacke1/ASRGenerateStoryandVideo",
+    "awacke1/ASRGenerateStory",
+    "abdualimov/Universal_Video_Translator",
+    "Chakshu123/image-colorization-with-hint",
+    "GroveStreet/GTA_SOVITS",
+    "Yntec/MiniToyWorld",
+    "kulkas2pintu/Video_to_video_WAN2",
+    "siddh4rth/audio_to_text",
+    "yl12053/so-vits-4.1-Tokai-Teio",
+    "John6666/ToyWorld4",
+    "Steveeeeeeen/ASR-comparaison",
+    "svjack/FantasyTalking",
+    "build-small-hackathon/Rizz-Therapy",
+    "JavierGon12/retrAIced",
+    "John6666/Diffusion80XX4g",
+    "SAITAN666/StableDiffusion35Large-Image-Models-Test-November-2024",
+    "NativeAngels/HuggingfaceDiffusion",
+    "NativeAngels/ToyWorld",
+    "Yntec/Image-Models-Test-December-2024",
+    "prathameshv07/Multilingual-Audio-Intelligence-System",
+    "r2d2/speech2text",
+    "priyanshu02/Linguistics-Accents",
+    "yl12053/so-vits-4.1-Special-Week",
+    "neuroama/so-vits-svc",
+    "peechapp/PeechTTSv22050",
+    "John6666/blitz_diffusion4",
+    "John6666/blitz_diffusion_builtin",
+    "K00B404/HuggingfaceDiffusion_custom",
+    "John6666/Diffusion80XX4",
+    "Uthar/BodyPaint",
+    "K00B404/SimpleBrothel",
+    "andrasnest/wan-loop-generator",
+    "rsatish1110/AudioToTextToStoryToImageToVideo",
+    "Gradio-Blocks/CloudSaveText2Speech",
+    "rajistics/Ask-Wiki",
+    "HighCWu/anime-colorization-with-hint",
+    "feifeifeiliu/TalkSHOW",
+    "ericsali/language_translator",
+    "yl12053/so-vits-4.1-Rice-Shower",
+    "yl12053/so-vits-4.1-Matikanetannhauser",
+    "yl12053/so-vits-4.1-Matikanefukukitaru",
+    "GroveStreet/GTAVC_SOVITS",
+    "Nymbo/edit-video-by-editing-text",
+    "KasugaiSakura/so-vits-svc-Sora",
+    "Blane187/multi-diffusion",
+    "bpiyush/SoundOfWater",
+    "Uthar/LewdExperiments",
+    "Uthar/HighFashion",
+    "Uthar/HRGiger",
+    "KuyaToto/wav2vec2-api",
+    "Oluko/yoruba-practice"
+  ],
+  "createdAt": "2022-03-02T23:29:05.000Z",
+  "safetensors": {
+    "parameters": {
+      "F32": 94395552
+    },
+    "total": 94395552
+  },
+  "usedStorage": 2503111080
+}

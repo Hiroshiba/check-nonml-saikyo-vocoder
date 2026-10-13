@@ -1,0 +1,24 @@
+{
+  "schema_version": 1,
+  "id": "2026-10-14-added-quality-control-metrics",
+  "date": "2026-10-14",
+  "topic": "added-quality-control-metrics",
+  "timezone": "Asia/Tokyo",
+  "title": "固定自然音声の追加品質・制御指標",
+  "summary": "HNM v3とWORLDを固定英語120録音40話者で追加評価。SCOREQを含む無編集品質240件、操作960出力と品質曲線480 job、実表現量を別軸で記録しました。ASRは全文55録音32話者の補助集合、過去8方式は歴史的参考として分離します。",
+  "status": "追加品質・制御指標の実測結果を保存",
+  "notes": [
+    "README.md"
+  ],
+  "runs": [
+    {
+      "id": "run-001",
+      "date": "2026-10-14",
+      "title": "固定自然音声の追加品質・制御指標",
+      "path": "results/run-001",
+      "recorded_at": "2026-10-13T17:13:27.986543+00:00",
+      "recorded_at_source": "results/run-001/results.jsonのgenerated_at",
+      "date_note": "合成開始は2026-10-13 UTC（日本時間10月14日）。測定終了と本番レポート記録時刻はREADMEに分けて記録。"
+    }
+  ]
+}
