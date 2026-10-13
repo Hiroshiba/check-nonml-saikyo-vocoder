@@ -34,5 +34,11 @@ def save(cases, output):
 
 def fingerprint(cases):
     return [{'id': case['id'], 'sample_rate': case['sr'], 'samples': len(case['x']),
+             'source_file': case['source_file'], 'source_file_sha256': case['source_file_sha256'],
+             'original_source_sha256': case['original_source_sha256'],
+             'decoded_pcm_sha256': case['decoded_pcm_sha256'],
+             'excerpt_start_sample': case['excerpt_start_sample'], 'excerpt_samples': case['excerpt_samples'],
+             'speaker': case['speaker'], 'language': case['language'], 'style': case['style'],
+             'speaker_gender_as_distributed': case.get('speaker_gender_as_distributed', 'unknown'),
              'pcm_sha256': hashlib.sha256(case['x'].astype('<f8').tobytes()).hexdigest()}
             for case in cases]

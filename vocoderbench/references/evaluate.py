@@ -45,9 +45,12 @@ def measure(args, cases, methods, public):
     for case in cases:
         x, sr = case['x'], case['sr']
         reference = {'pcm_sha256': hashlib.sha256(x.astype('<f8').tobytes()).hexdigest(),
-                     'sample_rate': sr, 'language': case['language'], 'style': case['style']}
+                     'sample_rate': sr, 'language': case['language'], 'style': case['style'], 'speaker': case['speaker'],
+                     'speaker_gender_as_distributed': case.get('speaker_gender_as_distributed', 'unknown')}
         identity = {'case': case['id'], 'method': 'identity', 'status': 'measured',
-                    'evaluation_input': reference}
+                    'evaluation_input': reference, 'speaker': case['speaker'],
+                    'speaker_gender_as_distributed': case.get('speaker_gender_as_distributed', 'unknown'),
+                    'language': case['language'], 'style': case['style']}
         previous = cache.lookup(case['id'], 'identity', reference)
         identity['mos'] = mos.measure(identity, previous, x, sr, case)
         cache.save(identity)
@@ -78,7 +81,8 @@ def measure(args, cases, methods, public):
                     if row['status'] == 'measured':
                         # MOS実行中に中断しても完了済みの音響評価を残す。
                         row.update(kind='natural_speech', language=case['language'],
-                                   style=case['style'], speaker=case['speaker'])
+                                   style=case['style'], speaker=case['speaker'],
+                                   speaker_gender_as_distributed=case.get('speaker_gender_as_distributed', 'unknown'))
                         cache.save(row)
                         row['mos'] = mos.measure(row, previous, y_native, nsr, case)
                         if case['id'] in public:
@@ -87,7 +91,8 @@ def measure(args, cases, methods, public):
                 logging.exception('評価に失敗: %s / %s', case['id'], method)
                 row['status'] = 'evaluation_failed'
                 row['evaluation_error'] = traceback.format_exc()
-            row.update(kind='natural_speech', language=case['language'], style=case['style'], speaker=case['speaker'])
+            row.update(kind='natural_speech', language=case['language'], style=case['style'], speaker=case['speaker'],
+                                   speaker_gender_as_distributed=case.get('speaker_gender_as_distributed', 'unknown'))
             rows.append(row)
             cache.save(row)
     write(args.output / 'audio_samples.json', {'schema_version': 1, 'samples': samples,

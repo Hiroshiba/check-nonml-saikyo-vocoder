@@ -1,0 +1,62 @@
+{
+  "schema_version": 1,
+  "archived_at": "2026-10-13T08:49:30.728460+00:00",
+  "measurement_generated_at": "2026-10-13T08:46:11.624578+00:00",
+  "source_provenance": {
+    "source_directory": "runs/formal-hnm-v3-reference-120",
+    "local_source_commit": "c00edae9ed07a258d43c7c3e8bf8bb9d6ea7c595",
+    "remote_source_commit": "2308accfd3069e19fed852e1334b8269da761b5a",
+    "source_tree_sha": "53cb6143cf00340b8a5b1b328571aefd9aabbc07",
+    "measurement_started_at": "2026-10-13T04:37:48.919662+00:00",
+    "measurement_finished_at": "2026-10-13T08:46:22Z",
+    "recovery_driver_sha256": "7bf6a97d7553ed226853883b75709aa12cb464c60837b1c5c30e90a981651138",
+    "scope": "New fixed 120 recordings x HNM v3 and 7 references, synthesis seed 0; original MOS included. No historical scores imported.",
+    "recovery_note": "Three initial worker SIGKILL failures; only 216 incomplete cases recovered in 24 sequential batches of at most 10. Full history and driver source are retained in preparation.json. Initial 744 successful pairs of JSON/npy preserved byte-for-byte."
+  },
+  "copied_files": {
+    "index.html": "78b8a90886f5b6bf8526a37a9cefb08a8a888dd4bbd56b49a0ad149c3b7121a4",
+    "results.json": "dea3413f70beef631f758c086c036dfb94e98258e59834e994cf64b31364bf63",
+    "summary.json": "9358acf0c6b288900b23942151b56e80d9b7e9e5344ea0b720868a114aac4ed8",
+    "audio_samples.json": "e2329f124eaf1d1b318d022597f07dce1e7cffc5c9807b4ffb225e5d07352668",
+    "contract.json": "51b9b6faf9e328fc0942a0b31c491e9ca8ea24d6775ba80ce9bfeef5a1203194",
+    "execution.json": "e0418f74b94bddd695c95b5639d54dbb01892acf457ed39e4bc97deb66025295",
+    "processes.json": "8cb7c38d64d25a73c403d222d1d1a13fc4a25037a2af3020f0d7f30c407628bf",
+    "mos_provenance.json": "8f03b288f1198cb38ae50409330032821e3ffb701c8fef229b5d6ff64338bc19",
+    "evaluation_history.json": "1e574934714766a26807177de7185e747e966786aa95e0006e0e6d64364b63e2",
+    "preparation.json": "12103341793e3102a63dbad70c9c355f2a292bd31e7d5e77ec24e665106cc222"
+  },
+  "rerun": false,
+  "html_regenerated": false,
+  "note": "HTML・測定値を保持。results.jsonは空白除去のみで全JSON値同値、元bytesはgzipに保全。全長波形・モデル・原音全体は公開対象外。",
+  "source_file_sha256": {
+    "index.html": "78b8a90886f5b6bf8526a37a9cefb08a8a888dd4bbd56b49a0ad149c3b7121a4",
+    "results.json": "e0744e243097493acbe50defae65f6b27976851d3a30974146659334968ecafc",
+    "summary.json": "9358acf0c6b288900b23942151b56e80d9b7e9e5344ea0b720868a114aac4ed8",
+    "audio_samples.json": "e2329f124eaf1d1b318d022597f07dce1e7cffc5c9807b4ffb225e5d07352668",
+    "contract.json": "51b9b6faf9e328fc0942a0b31c491e9ca8ea24d6775ba80ce9bfeef5a1203194",
+    "execution.json": "e0418f74b94bddd695c95b5639d54dbb01892acf457ed39e4bc97deb66025295",
+    "processes.json": "8cb7c38d64d25a73c403d222d1d1a13fc4a25037a2af3020f0d7f30c407628bf",
+    "mos_provenance.json": "8f03b288f1198cb38ae50409330032821e3ffb701c8fef229b5d6ff64338bc19",
+    "evaluation_history.json": "1e574934714766a26807177de7185e747e966786aa95e0006e0e6d64364b63e2",
+    "preparation.json": "12103341793e3102a63dbad70c9c355f2a292bd31e7d5e77ec24e665106cc222"
+  },
+  "archived_additional_files": {
+    "../../archives/results.run-001.original.json.gz": "75bdb8a96e6dd82524312c00be471276e72c0abb430979917e6faa95d35ca39b"
+  },
+  "export_transform": {
+    "file": "results.json",
+    "reason": "36.3 MBの整形済みJSONをGitHubコネクタへ送信するとtransport error。測定値と型を変えずJSONの空白だけ除去。",
+    "source_bytes": 36328216,
+    "source_sha256": "e0744e243097493acbe50defae65f6b27976851d3a30974146659334968ecafc",
+    "published_bytes": 19636212,
+    "published_sha256": "dea3413f70beef631f758c086c036dfb94e98258e59834e994cf64b31364bf63",
+    "all_json_values_equal": true,
+    "original_gzip": "../../archives/results.run-001.original.json.gz",
+    "gzip_decompress_exact_original_bytes": true,
+    "measurement_rerun": false,
+    "html_changed": false,
+    "serialization": "json.dumps(ensure_ascii=False, separators=(comma, colon), allow_nan=False) + newline",
+    "converted_at": "2026-10-13T09:00:00+00:00",
+    "archive_scope": "Git保管のみ。Pagesのrunディレクトリ走査対象外。"
+  }
+}

@@ -1,18 +1,20 @@
 """WORLDと既存6方式の比較。DACは --include-dac でのみ追加する。"""
 from __future__ import annotations
 
+import importlib.metadata
 import logging
 import os
 from pathlib import Path
 import platform
 import subprocess
+import sys
 import traceback
 
 from . import corpus
 from .logging_utils import LoggedArgumentParser, run_cli
 from .references import inputs
 from .references.catalog import METHODS, add_arguments, selected
-from .references.common import implementation_hashes, now, read, write
+from .references.common import digest, implementation_hashes, now, read, write
 from .references.evaluate import measure
 from .references.report import render
 
@@ -20,6 +22,10 @@ from .references.report import render
 def initialize(args, cases, names):
     versions = {}
     for method in names:
+        if method == 'hnm':
+            from .references.current_base import record
+            versions[method] = record()
+            continue
         path = args.runtime_cache / 'prepared' / f'{method}.json'
         versions[method] = read(path) if path.exists() else {'status': 'not_prepared'}
         versions[method].pop('prepared_at', None)
@@ -30,7 +36,23 @@ def initialize(args, cases, names):
                 'native_sample_rates': {m: METHODS[m].sample_rate for m in names},
                 'evaluation': 'native-full-MOS + strict-length + original-rate-common-prefix-v1',
                 'runtime_python': str(args.runtime_cache / 'env/bin/python'),
-                'host_python': platform.python_version()}
+                'host_python': platform.python_version(),
+                'host_environment': {'platform': platform.platform(), 'machine': platform.machine(),
+                    'cpu_count': os.cpu_count(),
+                    'cpu_model': next((line.split(':', 1)[1].strip() for line in
+                        Path('/proc/cpuinfo').read_text().splitlines() if line.startswith('model name')),
+                        platform.processor()) if Path('/proc/cpuinfo').exists() else platform.processor(),
+                    'packages': {name: importlib.metadata.version(name) for name in
+                        ('numpy', 'scipy', 'pystoi', 'torch', 'torchaudio', 'torchvision',
+                         'transformers', 'timm', 'librosa', 'utmosv2')}},
+                'manifest_sha256': digest(args.manifest),
+                'current_base': versions.get('hnm'),
+                'synthesis_repetitions': 1, 'noise_seeds': [args.seed],
+                'timing_protocol': 'single encode/decode; no warmup/repetitions; diagnostic only',
+                'mos_protocol': {'fold': 0, 'extraction_seed': 20261012, 'repetitions': 1,
+                                 'cpu_threads': 4, 'include_originals': True},
+                'scope_limit': ('今回HNMもseed 0。過去の8 seed音響研究の再現ではない'
+                                if args.include_current_base else '既存方式のみの単一seed比較')}
     path = args.output / 'contract.json'
     if path.exists() and read(path) != contract:
         raise ValueError('既存結果の条件が違います。別の出力先を指定してください')
@@ -50,7 +72,7 @@ def run_workers(args, names):
     logs = args.output / 'logs'
     logs.mkdir(exist_ok=True)
     for name in names:
-        command = [str(python), '-m', 'vocoderbench.references.worker', '--method', name,
+        command = [sys.executable if name == 'hnm' else str(python), '-m', 'vocoderbench.references.worker', '--method', name,
                    '--runtime-cache', str(args.runtime_cache), '--inputs', str(args.output / 'inputs.json'),
                    '--output', str(args.output / 'native' / name), '--threads', str(args.threads),
                    '--seed', str(args.seed)]
@@ -79,6 +101,8 @@ def main(argv=None):
     parser = LoggedArgumentParser(description=__doc__)
     add_arguments(parser)
     parser.add_argument('--output', type=Path)
+    parser.add_argument('--include-current-base', action='store_true',
+                        help='現在のHNMを同じ入力・seedで正式に併記する。新候補や採用判断ではない')
     parser.add_argument('--manifest', type=Path, default=corpus.MANIFEST)
     parser.add_argument('--corpus-cache', type=Path, default=corpus.CACHE)
     parser.add_argument('--mos-cache', type=Path, default=Path('.cache/mos'))
@@ -91,9 +115,13 @@ def main(argv=None):
     parser.add_argument('--timeout', type=int, default=3600, help='方式ごとの上限秒数。失敗を記録し次方式へ進む')
     args = parser.parse_args(argv)
     names = selected(args)
+    if args.include_current_base:
+        if args.seed != 0:
+            parser.error('現ベース併記はseed 0に固定しています')
+        names.insert(0, 'hnm')
     if args.list_methods:
         for name, spec in METHODS.items():
-            print(f'{name}: {spec.label} / {spec.variant} / {"任意" if spec.optional else "標準"}')
+            print(f'{name}: {spec.label} / {spec.variant} / {"明示併記" if name == "hnm" else "任意" if spec.optional else "標準"}')
         return 0
     if args.output is None:
         parser.error('--output が必要です')
@@ -106,6 +134,8 @@ def main(argv=None):
         render(data, args.output)
         return int(bool(data.get('failure_count', sum(r['status'] != 'measured' for r in data['resynthesis']))))
     cases, public = inputs.load(args)
+    if args.include_current_base and any(case['sr'] != 16000 for case in cases):
+        parser.error('現ベース併記は16 kHzの固定入力専用です')
     contract = initialize(args, cases, names)
     if args.stage in ('all', 'acoustic'):
         run_workers(args, names)
@@ -121,18 +151,25 @@ def main(argv=None):
     failures = process_failures + sum(row['status'] != 'measured' for row in rows)
     if args.mos and args.stage in ('all', 'mos'):
         failures += sum(row['mos']['status'] != 'measured' for row in rows + originals)
-    data = {'schema_version': 4, 'study_role': 'existing_references', 'formal_base': {'method': None,
-            'reason': '既存方式の比較。現自作ベースを測定・選定基準にしない'},
-            'comparison_reference': 'world_harvest' if 'world_harvest' in names else names[0],
+    formal_base = (contract['current_base']['baseline'] if args.include_current_base else
+                   {'method': None, 'reason': '既存方式の比較。現自作ベースを測定・選定基準にしない'})
+    data = {'schema_version': 5,
+            'study_role': 'current_base_and_references' if args.include_current_base else 'existing_references',
+            'formal_base': formal_base,
+            'comparison_reference': 'hnm' if args.include_current_base else
+                'world_harvest' if 'world_harvest' in names else names[0],
             'selected_methods': names, 'optional_omissions': [] if args.include_dac else ['dac'],
             'method_labels': {'identity': '原音', **{m: METHODS[m].label for m in names}},
             'native_sample_rates': {m: METHODS[m].sample_rate for m in names},
             'index_methods': ['identity', *names], 'generated_at': now(),
-            'scope': '固定100音声以上の既存方式比較',
+            'scope': '固定100音声以上の現ベース・既存方式比較' if args.include_current_base else
+                     '固定100音声以上の既存方式比較',
             'planned_cases': len(cases), 'contract': contract, 'execution': read(args.output / 'execution.json'),
             'resynthesis': rows, 'calibration': originals, 'processes': processes,
             'failure_count': failures, 'process_failure_count': process_failures,
             'operation_evaluation': {'status': 'not_implemented', 'reason': '本PRは再合成比較の追加。属性操作・下流学習は未評価'}}
+    if args.include_current_base:
+        data['method_labels']['hnm'] = f"HNM（現ベース: {formal_base['version']}）"
     if (args.output / 'mos_provenance.json').exists():
         data['mos_provenance'] = read(args.output / 'mos_provenance.json')
     write(args.output / 'results.json', data)

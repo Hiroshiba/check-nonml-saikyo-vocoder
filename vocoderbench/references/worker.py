@@ -123,12 +123,20 @@ def main():
     args.output.mkdir(parents=True, exist_ok=True)
     torch.set_num_threads(args.threads)
     torch.set_num_interop_threads(1)
-    spec = verify_prepared(args.runtime_cache, args.method)
-    module, name = BUILDERS[args.method]
     start = time.perf_counter()
     seed_all(args.seed)
-    adapter = getattr(importlib.import_module('.' + module, __package__), name)(
-        args.runtime_cache / 'src', args.runtime_cache / 'models', args.output)
+    if args.method == 'hnm':
+        from .current_base import build, record
+        spec = record()
+        contract = read(args.output.parent.parent / 'contract.json')
+        if spec != contract['current_base']:
+            raise ValueError('現在のベースのコード・依存・識別子が固定条件と一致しません')
+        adapter = build(args.seed)
+    else:
+        spec = verify_prepared(args.runtime_cache, args.method)
+        module, name = BUILDERS[args.method]
+        adapter = getattr(importlib.import_module('.' + module, __package__), name)(
+            args.runtime_cache / 'src', args.runtime_cache / 'models', args.output)
     write(args.output / 'implementation.json', {'method': args.method, 'prepared': spec,
           'runtime': {'python': sys.version, 'torch': torch.__version__, 'threads': args.threads,
                       'cpu_count': os.cpu_count(), 'processor': platform.processor(), 'device': 'cpu'},
