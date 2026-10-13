@@ -19,6 +19,9 @@ from .temporal_metrics import measure_temporal
 def initialize(args):
     args.output.mkdir(parents=True, exist_ok=True)
     contract = source_contract(args.manifest, args.candidate_package, args.criteria)
+    if not args.legacy_three_methods:
+        from .references.integration import contract as reference_contract
+        contract['existing_references'] = reference_contract(args)
     # JSON往復でtupleを正規化し、再開時は科学的条件の完全一致を要求する。
     import json
     contract = json.loads(json.dumps(contract))
@@ -46,8 +49,7 @@ def acoustic_case(case, candidate, output, retry_failed=False):
         write(output / 'failure_history' / f'{identifier}-{time.time_ns()}.json', previous)
     rows = []
     original = dict(case=identifier, method='identity', status='measured',
-                    measurement=compare_waveforms(x, x, sr),
-                    extended=measure_extended(x, x, sr), mos={'status': 'pending', 'value': None})
+                    mos={'status': 'pending', 'value': None})
     waves = output / 'waveforms' / identifier
     waves.mkdir(parents=True, exist_ok=True)
     for method in ('hnm', 'candidate', 'world_harvest'):
@@ -112,7 +114,7 @@ def collect(args, cases, contract):
     report = {'schema_version': 3, 'formal_base': base, 'comparison_reference': base['method'],
               'method_labels': LABELS, 'contract': contract, 'execution': read(args.output / 'execution.json'),
               'generated_at': now(), 'planned_cases': len(cases), 'cases': [], 'resynthesis': [],
-              'calibration': [], 'operations': [], 'decoder_only': [], 'diagnostics': [],
+              'calibration': [], 'operations': [], 'diagnostics': [],
               'corpus_counts': corpus.read_manifest(args.manifest)['counts'],
               'data_manifest': str(args.manifest.relative_to(ROOT)) if args.manifest.is_relative_to(ROOT)
                                else args.manifest.name,
@@ -144,16 +146,25 @@ def collect(args, cases, contract):
                 path = args.output / 'waveforms' / case['id'] / f'{method}.npy'
                 if path.exists():
                     audio_samples.collect(samples, case, method, np.load(path, allow_pickle=False))
+    from .references.integration import append_results
+    append_results(args, report, samples)
     write(args.output / 'results.json', report)
     write(args.output / 'audio_samples.json', {'schema_version': 1, 'samples': samples,
-          'selection_note': '固定集合の英語2話者、各先頭最大2秒。原音・候補・当時のベース・WORLDで同一区間。音量補正なし。'})
+          'selection_note': '固定集合の英語2話者、各先頭最大2秒。原音・候補・当時のベース・既存方式で同一区間。音量補正なし。'})
     from .benchmark_report import render
     render(report, args.output / 'index.html')
     return report
 
 
 def main():
+    import sys
+    # With no development candidate, compare the standard public methods without a self-made base.
+    if not any(arg == '--candidate-package' or arg.startswith('--candidate-package=') for arg in sys.argv[1:]):
+        from .reference import main as references_main
+        return references_main()
     parser = LoggedArgumentParser(description=__doc__)
+    from .references.integration import add_arguments, execute as execute_references
+    add_arguments(parser)
     parser.add_argument('--manifest', type=Path, default=corpus.MANIFEST)
     parser.add_argument('--cache', type=Path, default=corpus.CACHE)
     parser.add_argument('--mos-cache', type=Path, default=ROOT / '.cache/mos')
@@ -178,8 +189,10 @@ def main():
             acoustic_case(case, candidate, args.output, args.retry_failed)
     if args.stage == 'mos':
         score_mos(args, cases)
+    execute_references(args)
     report = collect(args, cases, contract)
     failures = sum(r['status'] != 'measured' for r in report['resynthesis'])
+    failures += bool(getattr(args, 'reference_exit_status', 0) or report.get('existing_reference_failures'))
     if args.stage in ('all', 'mos'):
         failures += sum(r['mos']['status'] != 'measured' for r in report['resynthesis'] + report['calibration'])
     logging.info('比較結果: %s / 音声数=%s / 失敗=%s / 条件SHA=%s',

@@ -2,7 +2,7 @@
 
 本書は実装仕様です。ユーザー指示を追加・変更するものではありません。
 
-## 今回追加するもの
+## 当初の追加内容と確認範囲（2026-10-12）
 
 直近に取得方法を整理した5項目を実装します。以前提案した18項目すべてを完成させたPRではありません。
 
@@ -66,10 +66,10 @@ uv run --locked python -m vocoderbench.quality \
   --output runs/audio48-quality-001
 ```
 
-各caseの `outputs` に `baseline` として指定した方式を必ず含めます。原音は予約ID `identity` として自動追加します。
+各caseの `outputs` に `baseline` として指定した方式を必ず含めます。原音は予約ID `identity` としてUTMOSv2だけを自動測定します。参照型指標の原音自己比較は行いません。
 入力はモノラルWAVか浮動小数点PCMのNPYです。NPYには `sample_rate` が必須です。
 ファイルは入力一覧・資産設定それぞれのJSONが置かれたディレクトリからの相対パス、または絶対パスで指定できます。
-このCLIは無編集再合成専用です。長さ・サンプルレートが不一致なら失敗させ、自動整列、DTW、無音除去、音量補正を共通前処理では行いません。
+このCLIは保存済み音声の追加評価用です。SCOREQ・ViSQOL・ERBの参照距離は無編集再合成の比較に用い、意図した編集を原音との差で罰する尺度にはしません。適用条件を満たす編集点は、非参照UTMOSv2、または全点で固定した適切な参照に対するECAPA話者類似度の入力として別工程から渡せます。声質変更など話者保持を目的としない操作にECAPAを一律要求しません。参照型指標は長さ・サンプルレートが不一致なら失敗させ、自動整列、DTW、無音除去、音量補正を共通前処理では行いません。非参照のUTMOSv2は出力固有の全長・標本化周波数で測ります。
 自然音声・合成音声は1秒以上を対象にする予備プロトコルです。正弦波等には `kind: artificial_probe` を指定し、音声品質・話者指標を適用しません。
 各指標に固有の再標本化・正規化・内部整列は別途存在し、各評価器の来歴へ記録します。
 
@@ -135,7 +135,7 @@ uv run --locked python -m vocoderbench.quality_similarity \
 
 音声側は `results.json`、`summary.json`、`contract.json`、`index.html` を新しい出力先に保存します。
 既存結果を上書きせず、音声も勝手に複製・公開しません。固定比較から実行した場合、元の音声付きレポートへのリンクを載せます。
-結果は指標×ケース×方式ごとに保存し、ベースとの差を表示します。平均の総合点は作りません。
+結果は指標×ケース×方式ごとに保存し、比較基準との差を表示します。原音はUTMOSv2のみです。平均の総合点は作りません。
 
 - 初期化時間: パッケージの読み込み、資産hash確認、モデル構築・読み込みを含みます。
 - 初回: ケースごとの最初の指標呼び出しです。最初のケース以外はモデルはすでに温まっています。
@@ -161,3 +161,96 @@ uv run --locked python -m vocoderbench.quality_similarity \
 - [ViSQOL公式CLI](https://github.com/google/visqol/blob/v3.3.3/src/commandline_parser.cc): Audio/SpeechとCSV出力の引数。
 
 品質値の妥当性・実重みの相互互換性は、モデルと音声を取得後に検証してください。
+
+## 2026-10-14更新: 現行の既存方式比較の保存出力
+
+この更新は測定を行わず、現行mainの静的解析だけの開発方針へ合わせたものです。
+当初の確認欄・レビューにある少数音声、ERB自己比較、CLI起動等は当時の記録であり、今回再実行した結果ではありません。
+今後、原音 `identity` はUTMOSv2予測MOSだけを測定します。SCOREQ・ViSQOL・ECAPA・ERBで原音と原音を自動比較する行は作りません。
+各再合成出力を原音と比較する通常の参照型評価は維持します。
+
+現行の標準入口は [REFERENCES.md](REFERENCES.md) の `vocoderbench.reference` です。保存先を追加評価へ渡します。
+以下は後日の研究実行用で、このPRでは実行していません。
+
+```sh
+uv run --locked python -m vocoderbench.quality \
+  --reference-run runs/references-120 \
+  --assets configs/quality-assets.example.json \
+  --metrics utmosv2 speaker_ecapa erb \
+  --repetitions 5 --threads 4 \
+  --output runs/references-120-quality-001
+```
+
+- 入力は `results.json`（schema_version 5）、それと一致する `contract.json`、原音の `inputs.json`、`inputs/<case>.npy`、`native/<method>/<case>.json` と同名の `.npy` です。現在の実装は `status.json` や出力WAVを保存する形式ではありません。
+- NPYは全長の保存音声です。公開済みの短い音声例や共通先頭区間から全長を復元せず、公開HTML/JSONだけでは追加計測できません。NPYのない状態は測定不能として記録します。
+- 選択方式とケースは元の契約から取得します。欠落した方式出力や失敗行を除外せず、予定行を残します。原音・出力の記録hashを読み込み時に照合し、原音は契約のPCM hashも照合します。
+- 比較基準は元の `comparison_reference` を使い、正式な開発ベース指定 `formal_base` は別にそのまま保存します。既存方式のみの標準比較は通常WORLDが比較基準、formal_base.methodはnullです。現HNMを明示併記した比較では保存時のHNMが比較基準ですが、現在のBASELINE.jsonから選び直しません。
+- 元の契約、ソース・入力・モデル識別子、seed、各方式の出力記録を保持します。追加評価の反復は同じ保存音声への評価器反復であり、元の解析・合成時間や合成seed反復を置き換えません。
+- 参照型指標はネイティブ標本化周波数と原音が不一致、または全長が不一致なら値はnullです。追加評価の共通入力処理は再標本化・切り詰め・ゼロ埋め・整列をしません。元の比較にある `common_prefix` の補助値も転記しません。
+- UTMOSv2は非参照なので原音を読まず、各出力の固有標本化周波数・全長だけで評価します。原音についても同じ単一音声のMOSだけを残し、原音対原音の自己差分は測りません。1秒未満・無音等の適用条件は維持します。元のMOSは削除・変更・流用せず、このPRで再測定もしません。
+
+`--benchmark` は従来の開発候補比較の `waveforms/<case>/<method>.npy` を読む互換入口として残します。
+現在の標準7方式や現HNM併記のネイティブ保存出力には `--reference-run` を使います。
+既存benchmark内の追加既存方式は別の `references/` 以下に保存されるため、必要ならその実行先へ `--reference-run` を別途指定します。
+任意方式は引き続き `--manifest` で指定します。例の `baseline` は比較差の基準であり、`formal_base: null` は開発ベースを指定しない意味です。
+
+## 曲線への品質証跡の受け渡し
+
+追加評価は常に `quality-evidence-index.json` と、対象音声ごとの `quality-evidence-<digest>.json` を出力します。
+`digest` は `[case, method]` のJSON（UTF-8、ensure_ascii=false、キー整列、空白なし）に対するSHA-256です。
+ユーザー指定IDをパスへ直接連結せず、同じcase・methodは同じ相対名になります。各実行は新規出力先を要求するので過去の証跡は上書きしません。
+
+一覧の形式は次のとおりです（値は書式説明で、実測結果ではありません）。
+
+```json
+{
+  "schema_version": 1,
+  "points": [
+    {
+      "case": "speech_001",
+      "method": "world_harvest",
+      "quality_evidence": "quality-evidence-<digest>.json",
+      "audio_path": "/path/to/output.npy",
+      "audio_sha256": "<実ファイルのSHA-256、取得できなければnull>",
+      "scores": {"predicted_mos": "not_configured"}
+    }
+  ],
+  "path_base": "追加評価の出力ディレクトリ（この一覧と同じ階層）。利用側manifestからの相対パスへ直して指定する。"
+}
+```
+
+各証跡ファイルの中核は、PR #30の `assessment.curves.evidence` が読む次の形式です。
+
+```json
+{
+  "audio_sha256": "<評価した出力ファイル全体のSHA-256>",
+  "scores": {
+    "predicted_mos": {
+      "status": "not_configured",
+      "value": null,
+      "evaluator": "vocoderbench.quality_backends.UtmosLocal",
+      "configuration_sha256": "<評価器の設定・モデル来歴等のSHA-256>",
+      "unit": "predicted MOS"
+    }
+  }
+}
+```
+
+- 対応はUTMOSv2→`predicted_mos`、ECAPA→`speaker_similarity`（unitは`cosine`）だけです。ViSQOL・SCOREQ・ERBをMOSや話者類似度に名前替えしません。
+- 元行が `measured` の場合だけ `status: ok` と初回値を保存します。`partial_failure`、`failed`、`unavailable`、`not_configured`、`not_applicable` 等はその状態とnullを残します。要求しなかった指標はscoresへ入れません。
+- 評価器設定のhashは、評価器クラス、設定値、読み込めたモデル・設定ファイルの実hashと上流版、評価ソースhash、依存・環境、スレッド、反復数、初回値選択・入力条件を識別します。初期化秒数や測定値はhashへ混ぜません。初期化できなかった評価器はモデル来歴がnullのままで、実モデルを確認済みと偽りません。
+- 証跡には完全な `configuration`、`source_metric`、`direction`、元結果の行番号、理由、`initialization_seconds`、`measurement`（初回と各反復）も保存します。初期化・初回・反復の範囲、値の方向、採点・集約規則は変更しません。
+- 元行を欠測ごと落としません。音声が存在せずhashを取得できない証跡も一覧にはnullで残しますが、その証跡を曲線へ有効入力として渡すことはできません。
+- 曲線manifestの各pointへ、一覧で対応を確認した `quality_evidence` パスを指定します。そのパスは曲線manifestから解決できる位置へ直し、`output` は同じバイト列の音声を指してください。NPYをWAVへ変換するとhashが変わるため、その証跡を流用しません。
+- 曲線の要求指標名は `quality_metrics: ["predicted_mos", "speaker_similarity"]` です。人工信号への音声品質評価、条件途中での評価器変更、音声hash不一致はPR #30側の既存適用条件に従います。渡すファイルがあるだけで全指標の測定完了とは扱いません。
+- 参照距離SCOREQ・ViSQOL・ERBは無編集再合成用です。曲線に渡す非参照MOSと固定参照の話者類似度は、各編集点が評価器の適用条件を満たす場合に限ります。長さ変更を伴う編集や異なる録音間補間のためにECAPA等の同一長・同一標本化周波数の制約を緩めてはいません。対象・参照の意味が一致する条件だけを選びます。
+
+## 結果の保存と公開
+
+追加評価の実測後は、元の比較の `experiment.json` の `supplements` へ新しいID・日本語title・`results/新しいID` のpathを登録します。
+主比較の `runs` や保存済み `results.json`、HTML、判断を上書きせず、主比較の固定集合・平均へ追加評価を混ぜません。
+公開用補助ディレクトリは直下のHTML・JSONのみ対応しています。元実行先を丸ごとコピーせず、`results.json`・`summary.json`・`contract.json`・`index.html` と必要な `quality-evidence-*.json` だけを新しい補助ディレクトリへ保存します。品質証跡はこの制約に合わせ同階層のJSONにしています。
+`work/` やログのディレクトリ、NPY・WAV、モデルは元実行先に残し、`experiments/.../results/` に入れません。
+元の音声付き比較への相対リンクは、そのままの移設で解決する配置を事前に確認してください。配置変更が必要な場合は元のHTML・JSONを保持したまま別の公開用コピーを作り、リンク変更とコピー元hashを記録してください。
+公開前に個人音声・モデル・全長音声を含めていないことを確認し、[実験記録](../experiments/README.md) と [公開手順](PUBLISHING.md) に従います。
+`quality` は `supplements` の自動登録や公開を行いません。今回、測定・補助結果登録・Pages生成の予行は実行していません。

@@ -2,7 +2,6 @@ name: 実験記録の公開
 on:
   push:
     branches: [main]
-  pull_request:
   workflow_dispatch:
 
 permissions:
@@ -10,6 +9,7 @@ permissions:
 
 jobs:
   build:
+    if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-24.04
     timeout-minutes: 5
     steps:
@@ -19,7 +19,7 @@ jobs:
           version: '0.12.23'
           enable-cache: true
       - run: uv sync --locked
-      - name: 記録と公開リンクを検査する
+      - name: 公開サイトを生成して内部リンクを確認する
         run: uv run --locked python scripts/build_site.py
       - uses: actions/upload-artifact@v4
         if: always()
@@ -31,7 +31,7 @@ jobs:
           path: _site
 
   deploy:
-    if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
+    if: github.ref == 'refs/heads/main'
     needs: build
     runs-on: ubuntu-24.04
     timeout-minutes: 10

@@ -1,6 +1,7 @@
 {
   "schema_version": 1,
-  "baseline": "base",
+  "baseline": "world_harvest",
+  "formal_base": null,
   "cases": [
     {
       "id": "speech_001",
@@ -11,7 +12,7 @@
       "sample_rate": 48000,
       "reference": "../runs/input/reference.wav",
       "outputs": {
-        "base": "../runs/input/base.wav",
+        "facodec": "../runs/input/facodec.wav",
         "candidate": "../runs/input/candidate.wav",
         "world_harvest": "../runs/input/world.wav"
       }

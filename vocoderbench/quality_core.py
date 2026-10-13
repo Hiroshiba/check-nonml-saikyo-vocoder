@@ -136,9 +136,17 @@ def load_audio(path, sample_rate=None):
     }
 
 
+def check_output(output, sample_rate):
+    """非参照評価の対象条件。原音との比較や自己差分は行わない。"""
+    if len(output) / sample_rate < 1.0:
+        raise NotApplicable('この追加評価の自然音声プロトコルは1秒以上を対象にします')
+    if not np.any(output - np.mean(output)):
+        raise ValueError('出力が無音または定数です。通常の欠測と区別します')
+
+
 def check_pair(reference, output, sample_rate):
     if reference.shape != output.shape:
-        raise ValueError('無編集の再合成評価には同一長の音声が必要です。自動整列しません')
+        raise ValueError('参照型の追加評価には同一長の音声が必要です。自動整列しません')
     if len(reference) / sample_rate < 1.0:
         raise NotApplicable('この追加評価の自然音声プロトコルは1秒以上を対象にします')
     if not np.any(reference - np.mean(reference)):

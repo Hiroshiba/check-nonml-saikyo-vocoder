@@ -26,6 +26,8 @@ def render(report, output):
     output = Path(output)
     output.mkdir(parents=True, exist_ok=True)
     baseline = report['input']['baseline']
+    formal_base = report['input'].get('formal_base')
+    base_description = json.dumps(formal_base, ensure_ascii=False) if formal_base else '未指定'
     rows = report['rows']
     lookup = {(r['metric'], r['case'], r['method']): r for r in rows}
     summary = {}
@@ -59,16 +61,22 @@ def render(report, output):
 table{{border-collapse:collapse;min-width:100%;font-size:.9rem}}th,td{{border:1px solid #8888;padding:6px;text-align:left}}
 .scroll{{overflow:auto}}pre{{white-space:pre-wrap;overflow-wrap:anywhere}}h1{{font-size:1.6rem}}
 </style><h1>保存音声の追加品質指標</h1>
-<p>比較基準: <strong>{text(baseline)}</strong>。差は「その方式−ベース」です。品質の優劣・採否を自動認定しません。</p>
+<p>比較基準: <strong>{text(baseline)}</strong>。差は「その方式−比較基準」です。品質の優劣・採否を自動認定しません。</p>
+<p>元記録の開発ベース指定: {text(base_description)}。比較基準の指定は正式baseの選定とは別です。</p>
 <p>SCOREQ・ERBは低いほど近く、予測MOS・ViSQOL・話者類似度は高い方向です。異なる指標を合算しません。
 未設定・資産不足・対象外・失敗は0点ではありません。</p>{source_link}
-<div class="scroll"><table><thead><tr><th>音声</th><th>方式</th><th>指標</th><th>単位</th><th>値</th><th>ベースとの差</th>
+<div class="scroll"><table><thead><tr><th>音声</th><th>方式</th><th>指標</th><th>単位</th><th>値</th><th>比較基準との差</th>
 <th>状態</th><th>初回秒</th><th>反復中央値秒</th><th>有効反復</th><th>理由</th></tr></thead><tbody>{''.join(table)}</tbody></table></div>
-<h2>測定範囲</h2><p>無編集再合成が対象です。一般的な主観品質や日本語・特殊発声での評価精度は未校正です。
+<h2>測定範囲</h2><p>保存済み音声が対象です。参照距離SCOREQ・ViSQOL・ERBは無編集再合成用で、意図した編集の罰則にしません。
+適用条件を満たす編集点は、非参照MOSと固定参照の話者類似度を別工程から渡せます。
+ECAPAの同一長・同一標本化周波数の条件は維持し、話者保持を目的としない声質変更へ一律要求しません。
+一般的な主観品質や日本語・特殊発声での評価精度は未校正です。
 反復は同一音声・同一seedでの処理時間測定であり、独立した話者や聴取評定には数えません。
 初回秒はケースごとの最初の呼び出しで、最初のケース以外はモデル自体は温まっています。</p>
 <p>初期化はモデル読み込みと資産hash確認を含めて別計測します。ViSQOL CLIは各回にプロセス起動・モデル読み込み・WAV入出力を含み、
 そのCPU秒は親プロセスのみです。各回の値と時間は<a href="results.json">results.json</a>に保存しています。</p>
+<p><a href="quality-evidence-index.json">品質証跡の一覧</a>に、原音MOSと各出力のMOS・話者類似度（要求分のみ）を記録します。
+原音の参照型自己比較は行いません。欠測の証跡も残し、音声hashがないものは曲線に利用できません。</p>
 <details><summary>評価器の来歴・初期化・環境</summary><pre>{details}</pre></details></html>'''
     (output / 'index.html').write_text(html, encoding='utf-8')
 

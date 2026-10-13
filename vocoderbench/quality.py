@@ -2,15 +2,18 @@
 from __future__ import annotations
 
 from datetime import datetime, timezone
+from functools import partial
 import gc
 import importlib
 import logging
 from pathlib import Path
 import time
 
-from .quality_core import (NotApplicable, Unavailable, check_pair, environment, load_audio,
+from .quality_core import (NotApplicable, Unavailable, environment,
                            measure_repeated, offline_environment, read_json, sha256, write_json)
-from .quality_inputs import load_benchmark, load_manifest
+from .quality_evidence import configuration, export
+from .quality_inputs import evaluation_audio, load_benchmark, load_manifest
+from .quality_reference_inputs import load_reference_run
 from .quality_report import render
 
 REGISTRY = {
@@ -60,36 +63,30 @@ def evaluate(inputs, settings, settings_directory, output, metrics, repetitions=
                     logging.exception('追加指標の初期化失敗: %s', metric)
                     preparation.update(status='failed', reason=f'{type(error).__name__}: {error}')
                 preparation['seconds'] = time.perf_counter() - start
+            configuration(report, metric, f'vocoderbench.{module}.{class_name}', preparation)
             report['metrics'][metric] = preparation
             for case in inputs['cases']:
-                methods = {'identity': case['reference'], **case['outputs']}
+                # 原音は非参照MOSだけを測る。参照型指標の自己比較を自動生成しない。
+                methods = ({'identity': case['reference'], **case['outputs']}
+                           if metric == 'utmosv2' else case['outputs'])
                 for method, filename in methods.items():
                     row = {'metric': metric, 'label': cls.label, 'unit': cls.unit, 'direction': cls.direction,
                            'case': case['id'], 'method': method, 'value': None,
+                           'reference_path': case['reference'], 'output_path': filename,
+                           'upstream_status': case.get('upstream_status', {}).get(method, 'measured'),
                            'language': case.get('language'), 'style': case.get('style'), 'speaker': case.get('speaker'),
                            'status': preparation['status'] if backend is None else 'pending'}
                     if backend is None:
                         row['reason'] = preparation.get('reason', '資産設定がありません。自動取得はしません')
                     else:
                         try:
-                            status = case.get('upstream_status', {}).get(method, 'measured')
-                            row['upstream_status'] = status
+                            status = row['upstream_status']
                             if status != 'measured':
                                 raise ValueError(f'元の再合成が未完了または失敗: {status}')
-                            x, sr, reference_info = load_audio(case['reference'], case.get('sample_rate'))
-                            y, other_sr, output_info = load_audio(filename, case.get('sample_rate'))
-                            row.update(reference=reference_info, output=output_info)
-                            for info in (reference_info, output_info):
-                                hashes = report['input_file_sha256']
-                                old = hashes.setdefault(info['path'], info['file_sha256'])
-                                if old != info['file_sha256']:
-                                    raise ValueError('計測中に入力ファイルが変更されました')
-                            if other_sr != sr:
-                                raise ValueError('入出力のサンプルレートが一致しません')
-                            check_pair(x, y, sr)
+                            x, y, sr = evaluation_audio(case, method, filename, metric, row, report['input_file_sha256'])
                             if case['kind'] == 'artificial_probe' and metric != 'erb':
                                 raise NotApplicable('人工診断信号に音声品質・話者指標を適用しません')
-                            measurement = measure_repeated(lambda: backend.score(x, y, sr), repetitions)
+                            measurement = measure_repeated(partial(backend.score, x, y, sr), repetitions)
                             row.update(measurement=measurement, status=measurement['status'], value=measurement['value'])
                         except NotApplicable as error:
                             logging.warning('追加指標の対象外: %s / %s', metric, error)
@@ -102,6 +99,7 @@ def evaluate(inputs, settings, settings_directory, output, metrics, repetitions=
                     logging.info('追加評価: %s / %s / %s: %s', metric, case['id'], method, row['status'])
             del backend
             gc.collect()
+    export(report, output)
     render(report, output)
     code = int(any(r['status'] != 'measured' for r in report['rows']))
     return report, code
@@ -112,7 +110,8 @@ def main():
     parser = LoggedArgumentParser(description=__doc__)
     group = parser.add_mutually_exclusive_group(required=True)
     group.add_argument('--manifest', type=Path, help='任意方式のWAV/NPY入力一覧')
-    group.add_argument('--benchmark', type=Path, help='既存固定比較のディレクトリ。保存seed 0波形を使う')
+    group.add_argument('--benchmark', type=Path, help='従来の開発候補比較。保存seed 0波形を使う')
+    group.add_argument('--reference-run', type=Path, help='既存方式比較のresults.json・inputs.json・native出力のある実行先')
     parser.add_argument('--assets', type=Path, required=True, help='ローカル資産のJSON。パスはこのJSONの位置から解決')
     parser.add_argument('--metrics', nargs='+', choices=tuple(REGISTRY), default=list(REGISTRY))
     parser.add_argument('--repetitions', type=int, default=5)
@@ -126,7 +125,12 @@ def main():
         raise ValueError('各指標の設定は辞書またはnullにしてください')
     if set(settings['metrics']) - set(REGISTRY):
         raise ValueError('資産設定に未知の指標IDがあります')
-    inputs = load_manifest(args.manifest) if args.manifest else load_benchmark(args.benchmark)
+    if args.manifest:
+        inputs = load_manifest(args.manifest)
+    elif args.reference_run:
+        inputs = load_reference_run(args.reference_run)
+    else:
+        inputs = load_benchmark(args.benchmark)
     _, code = evaluate(inputs, settings, args.assets.resolve().parent, args.output,
                        args.metrics, args.repetitions, args.threads)
     return code

@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "provenance": "PR #24, run 38231956948, artifact 11738924341",
+  "sources": {
+    "dac": {"repository": "https://github.com/descriptinc/descript-audio-codec.git", "revision": "c7cfc5d2647e26471dc394f95846a0830e7bec34"},
+    "facodec": {"repository": "https://github.com/lifeiteng/naturalspeech3_facodec.git", "revision": "aac16b7268b1b96e70b9e3526b13e216984e80d0"},
+    "hifiglot": {"repository": "https://github.com/PupuAI/HiFi-Glot.git", "revision": "78951625e8f0a113f401fef7032e98d58cfa7dac"},
+    "golf": {"repository": "https://github.com/iamycy/golf.git", "revision": "dfe4f4628b8d59d05c9988ae9341a544b1ff30c4"},
+    "sifigan": {"repository": "https://github.com/chomeyama/SiFiGAN.git", "revision": "cdb20daeb4da4a126077819091706ee90522c7a8"},
+    "llsm": {"repository": "https://github.com/Sleepwalking/libllsm2.git", "revision": "d18cdf02b31819670e3bc23ead933ad9467da06d"},
+    "magphase": {"repository": "https://github.com/CSTR-Edinburgh/magphase.git", "revision": "ec6ae285c3128d3f416857f05d2a7e4be0bd5707"},
+    "ciglet": {"repository": "https://github.com/Sleepwalking/ciglet.git", "revision": "895ba9b1c0eabee83d3544208bbc82420efa3206"},
+    "reaper": {"repository": "https://github.com/google/REAPER.git", "revision": "1d6e9b95e6b08b500fccbc9a043989dbda747276"}
+  },
+  "weights": {
+    "facodec": [
+      {"path": "models/naturalspeech3_facodec/ns3_facodec_encoder.bin", "sha256": "c8fa7b8d79ccd915e6c3b19cd3c9d5f4cba3fbeb794a2e598d7e31db8efee47e", "hf_repo": "amphion/naturalspeech3_facodec", "revision": "314afc3ea1455ba881a0e484ef9408b6cb996736", "filename": "ns3_facodec_encoder.bin"},
+      {"path": "models/naturalspeech3_facodec/ns3_facodec_decoder.bin", "sha256": "4b8f2c9a691385c1a61542585116f52263a029758dcb4a3a955ff2c190afd536", "hf_repo": "amphion/naturalspeech3_facodec", "revision": "314afc3ea1455ba881a0e484ef9408b6cb996736", "filename": "ns3_facodec_decoder.bin"}
+    ],
+    "hifiglot": [
+      {"path": "models/HiFi-Glot/hifiglot/config.json", "sha256": "d8af1f8f4207d3d56a7959ebff54d0645b9557256d518002869bdfeefa691c87", "hf_repo": "Aalto-Speech-Synthesis/HiFi-Glot", "revision": "3a0e2fd2353e8978fce753c76343d0cca2ff3aa9", "filename": "hifiglot/config.json"},
+      {"path": "models/HiFi-Glot/hifiglot/epoch-0175_step-1070000/model.safetensors", "sha256": "8955e6f43593099b912c25e2e5f9abd2120950e2927b34c5aaebbe3df9eb14c4", "hf_repo": "Aalto-Speech-Synthesis/HiFi-Glot", "revision": "3a0e2fd2353e8978fce753c76343d0cca2ff3aa9", "filename": "hifiglot/epoch-0175_step-1070000/model.safetensors"}
+    ],
+    "golf": [{"path": "src/golf/ckpts/interspeech24/golf-ff/checkpoints/epoch=539-step=996840-val_loss=3.073.ckpt", "sha256": "1eba39620c64d1c59b0a6acb4149200c4791f8e22ec0435bf13bfe5fd86468ab"}],
+    "sifigan": [
+      {"path": "models/sifigan.tar.gz", "sha256": "5f9ceaafd8d2fd14a683b6cf2e208e8da149fc59d17e34d4027ba02573eeedfe", "gdrive_id": "1uzqTeumvkPQpfdK_D4U41MDL5-s-hs0l"},
+      {"path": "models/model+stats/sifigan_libritts-r-clean+nus-48e_checkpoint-1000000steps.pkl", "sha256": "2d673e3cee10b4e88dd69b344443b38e0ef0d48f15f1ee5b417c66c0544e5df6"}
+    ],
+    "dac": [{"path": "models/dac/weights.pth", "sha256": "a88eed82a7024ccc1facdb1e605c4c2f99281c8118c22c9895ffa846d8fb61aa", "url": "https://github.com/descriptinc/descript-audio-codec/releases/download/0.0.1/weights.pth"}]
+  }
+}

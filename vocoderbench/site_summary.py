@@ -19,6 +19,13 @@ def esc(value):
 
 def brief(results):
     data = json.loads((results / 'results.json').read_text(encoding='utf-8'))
+    if data.get('study_role') == 'existing_references':
+        from .references.report import table
+        return '<p>' + esc(data['scope']) + '</p>' + table(data)
+    if data.get('study_role') == 'current_base_and_references':
+        return ('<p>現ベースと既存方式の固定比較。MOSはネイティブ全長、他は方式ごとの16 kHz共通先頭区間。'
+                '単一合成seed。HNMとの差・95%区間・有効件数・被覆率は詳細に表示します。</p>'
+                + _brief_expanded(data, results))
     if data.get('study_role') == 'supplement_to_completed_fixed_120':
         return _brief_supplement(data, results)
     if data.get('schema_version', 1) >= 3:

@@ -1,4 +1,4 @@
-"""Execute comparison fixtures and preserve all outcomes, including failures."""
+"""人工信号と固定音声で音響特性・操作追従を測定し、失敗も保存する。"""
 from __future__ import annotations
 
 from .logging_utils import LoggedArgumentParser, configure_logging, run_cli, run_process
@@ -108,14 +108,15 @@ def run(args):
                           for p in sorted((ROOT/'vocoderbench').glob('*.py'))},
                   alignment='none', normalization='none', data_status=data_status,
                   fixture_seed=20261011, comparison_reference=comparison_reference,
-                  cases=[], resynthesis=[], operations=[], decoder_only=[], calibration=[], diagnostics=[])
+                  cases=[], resynthesis=[], operations=[], calibration=[], diagnostics=[])
     saved_audio = []
     for case in cases:
         x, sr = case['x'], case['sr']
         report['cases'].append({**{k:v for k,v in case.items() if k not in ('x','f0_truth')},
                                 'n_samples':len(x),'input_float64_sha256':digest(x)})
-        measured_input = compare_waveforms(x,x,sr,case['f0_truth'])
-        report['calibration'].append({'case':case['id'],'measurement':measured_input})
+        if case['f0_truth'] is not None:
+            report['calibration'].append({'case': case['id'], 'measurement': {
+                'pitch': pitch_metrics(x, sr, case['f0_truth'])}})
         audio_samples.collect(saved_audio, case, 'identity', x)
         for method in selected_methods:
             row = dict(case=case['id'],kind=case['kind'],method=method,base_method=base['method'],
@@ -126,14 +127,13 @@ def run(args):
                 params = methods.encode(method, x, sr)
                 y = methods.decode(method, params)
                 elapsed = time.perf_counter()-begin
-                repeated = methods.decode(method, params)
                 row.update(methods.metadata(method, params))
                 row['analysis_pitch_against_truth'] = hnm_diagnostics.feature_pitch(params, case['f0_truth'], sr)
                 if method == 'hnm':
-                    report['diagnostics'].extend(hnm_diagnostics.inspect(case, params, y))
+                    report['diagnostics'].extend(hnm_diagnostics.inspect(case, params))
                 audio_samples.collect(saved_audio, case, method, y)
                 row.update(status='measured',seconds=elapsed,rtf=elapsed/(len(x)/sr),
-                           output_sha256=digest(y),repeat_max_abs_diff=float(np.max(abs(y-repeated))),
+                           output_sha256=digest(y),
                            measurement=compare_waveforms(x,y,sr,case['f0_truth']))
                 if case['kind']=='transient_diagnostic':
                     row['event']=event_diagnostic(y,sr,.3)
@@ -168,18 +168,6 @@ def run(args):
                 logging.error('測定が完了しませんでした: %s / %s / %s', case['id'], method, row['measurement']['status'], stack_info=True)
             report['resynthesis'].append(row)
             print(f"{case['id']} {method}: {row['status']}",flush=True)
-    for method in selected_methods:
-        for f0 in (0., 140.):
-            row = {'method': method, 'f0_hz': f0, 'sample_rate': 16000}
-            try:
-                params = methods.handmade(method, f0)
-                y = methods.decode(method, params)
-                row.update(status='measured', output_samples=len(y), finite=bool(np.isfinite(y).all()),
-                           pitch=pitch_metrics(y,16000,np.full(len(y),f0)))
-            except Exception as e:
-                logging.exception('デコーダー単体の合成に失敗: %s / %s Hz', method, f0)
-                row.update(status='failed', error=str(e))
-            report['decoder_only'].append(row)
     report['unsupported_operations'] = []
     report['native_builds']={}
     for name, p in [('world', world.library_path().parent/'build.json')]:
@@ -193,7 +181,7 @@ def run(args):
     from .report import render
     render(report,args.output/'index.html')
     failures=sum(r['status']=='failed' or r.get('measurement',{}).get('status')!='ok' for r in report['resynthesis'])
-    failures+=sum(r['status']=='failed' for r in report['operations']+report['decoder_only'])
+    failures+=sum(r['status']=='failed' for r in report['operations'])
     failures+=sum(r['status']=='blocked' for r in data_status)
     print(f'Report: {args.output}/index.html; failed cases: {failures}',flush=True)
     return failures
@@ -204,7 +192,7 @@ def main():
     parser.add_argument('--output',type=Path,default=ROOT/'runs'/'latest')
     parser.add_argument('--data-root',type=Path,default=ROOT/'data'/'cache')
     parser.add_argument('--sample-rates',nargs='+',type=int,default=[16000,24000,48000])
-    parser.add_argument('--no-natural',action='store_true')
+    parser.add_argument('--no-natural',action='store_true',help='人工信号だけで音響特性・操作追従を測定する')
     args=parser.parse_args()
     failures=run(args)
     if failures:
