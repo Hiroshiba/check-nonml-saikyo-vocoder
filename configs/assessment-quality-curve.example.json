@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "baseline_method": "comparison-baseline",
+  "scope": "編集量0と+3 dBの例。実際の全長音声・方式・話者と、同じ音声を評価したquality-evidence-index.jsonの参照先へ置き換える。未実測の例であり合成・推論は行わない。",
+  "jobs": [
+    {
+      "id": "candidate-gain-quality",
+      "metric": "quality_curve",
+      "case": "utterance-001",
+      "condition": "gain-0-and-3-db",
+      "method": "candidate",
+      "seed": 0,
+      "speaker": "speaker-001",
+      "language": "ja",
+      "style": "normal",
+      "kind": "speech",
+      "reference": "../runs/saved/unedited.wav",
+      "control": "gain",
+      "control_unit": "dB",
+      "quality_metrics": ["predicted_mos", "speaker_similarity"],
+      "points": [
+        {
+          "amount": 0,
+          "output": "../runs/saved/unedited.wav",
+          "quality_evidence": "../runs/quality-edit-001/quality-evidence-REPLACE_WITH_UNEDITED_DIGEST.json"
+        },
+        {
+          "amount": 3,
+          "output": "../runs/saved/gain3.wav",
+          "quality_evidence": "../runs/quality-edit-001/quality-evidence-REPLACE_WITH_EDITED_DIGEST.json"
+        }
+      ]
+    }
+  ]
+}

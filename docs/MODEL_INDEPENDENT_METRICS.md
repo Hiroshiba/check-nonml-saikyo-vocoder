@@ -23,7 +23,9 @@
 | 17 | `robustness` | 宣言した物理的摂動と保存済み復号音の曲線。全配列への同分散雑音は要求しない |
 | 18 | `information_rate` | 実表現ファイルのbytes・bit/sと品質・制御。量子化／符号化／復号は別工程 |
 
-これは「18項目の実モデル評価が完成した」という変更ではない。新しい13項目にも、部分実装・証跡入力・限定された測定器を含む。主観的な自然さ、方式の採用、使用可能な編集幅は今回の人工プローブから決めない。
+これは「18項目の実モデル評価が完成した」という変更ではない。新しい13項目にも、部分実装・証跡入力・限定された測定器を含む。主観的な自然さ、方式の採用、使用可能な編集幅は人工信号の測定だけから決めない。
+
+導入・校正は段階を分ける。最初は1〜6の再合成評価、次に7〜9・11の制御、続いて13・17の特徴表現を優先し、その他は実際の入力と根拠が整った項目から使う。全18項目を一度に実測する条件にはしない。自然さ・忠実性・制御・特徴表現は別軸として読む。評価用MLはボコーダーの非ML条件とは分け、16 kHzの固定比較や人工48 kHz信号を日本語48 kHz録音での評価済み実績へ読み替えない。
 
 ## 実行
 
@@ -39,21 +41,24 @@ uv run --locked python -m vocoderbench.assessment \
 
 追加指標だけの依存は既存のNumPy・SciPyと標準ライブラリ。既存YIN・ログ処理を再利用する。外部モデル・重みの自動ダウンロードや、任意コードの動的実行はしない。
 
-### 再生成可能な人工入力
+### 既知変換による測定研究
+
+`assessment.probes` は既知の音高・ゲイン・時間写像・スペクトル傾斜を与える6条件だけを生成する。各jobに調べる音響的な問いを記録する。ERBは+3 dBの狭帯域入力への感度、ピッチは相対追従と既知F0軌跡への誤差、ゲインは連続振幅変化、局所時間は非一様写像、傾斜は固定帯域、干渉はゲインに対する属性応答を対象とする。
+
+測定研究として目的・対象・条件を固定した場合の入力生成例：
 
 ```sh
-uv run --locked python -m vocoderbench.assessment.probes --output runs/assessment-inputs-001
-OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 uv run --locked python -m vocoderbench.assessment \
-  --manifest runs/assessment-inputs-001/manifest.json \
-  --output runs/assessment-probes-001 --repetitions 5
-OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 uv run --locked python -m vocoderbench.assessment \
-  --manifest runs/assessment-inputs-001/failure-manifest.json \
-  --output runs/assessment-failures-001 --repetitions 1
+uv run --locked python -m vocoderbench.assessment.probes --output runs/acoustic-research-inputs-001
+uv run --locked python -m vocoderbench.assessment \
+  --manifest runs/acoustic-research-inputs-001/manifest.json \
+  --output runs/acoustic-research-001 --repetitions 5
 ```
 
-人工入力は48 kHz・主に1.2秒の正弦波、既知の時間イベント、傾斜付き雑音、記号列、単純な特徴配列。自然音声・実ボコーダーではない。ASR用記号列は音声の認識結果を装わず `synthetic_token_fixture` とする。表現量プローブは8/12/16 bitの実際の波形ビット列であり、ボコーダーの性能結果ではない。
+これは通常の開発確認やCIでは実行しない。研究入力は48 kHz・主に1.2秒の解析的波形で、自然音声の品質、実方式の性能、48 kHz録音の高域再現を証明しない。F0真値は既知の解析式から10 msごとに与え、フレーム時刻への線形補間誤差も限界に含める。雑音RNGは42、jobのseed 0は固定条件の識別ラベルで、独立した複数seedの測定ではない。正式ベースの比較行はないため比較基準は `unselected`、差分はnullとする。
 
-両例は部分測定／対象外を含むので終了コード1になる。成功へ書き換えたり `|| true` で結果を隠したりしない。全jobが `ok` の場合だけ終了コード0。結果HTMLの各行・JSONの理由と、実行ログを読む。これは測定記録を作る研究用CLIであり、assert・pytest・自動音質合否テストは追加していない。
+原音ERB自己比較、故意の偽ハッシュ・欠落ファイル・非有限値・短音・長さ不一致等、動作確認専用の生成と再実行手順は削除した。架空ASR記号列・玩具特徴・同点ABX等の確認用生成も含めない。通常の入力ガード、定義域外・失敗・欠測の保存は維持する。終了コードは結果状態に従い、値を0で埋めたり成功へ書き換えたりしない。
+
+2026-10-13の旧15条件・90計算と異常7条件は[当時の記録](../experiments/2026-10-13/model-independent-metrics/README.md)にそのまま保存する。現在の6条件の実測結果として転記しない。今回の調整では入力生成・合成・指標計算・モデル推論を実行していない。
 
 ## 共通入力・出力契約
 
@@ -61,7 +66,7 @@ manifestは `schema_version:1`、`baseline_method`、`scope`、`jobs` を持つ�
 
 相対ファイルパスはmanifestのあるディレクトリ基準であり、dataset／sidecar内のパスも同じ基準。ファイル・入力条件・実装のSHA256を保存し、実行中に入力が変わったら停止値を残す。pickleは読み込まない。既存結果ディレクトリは上書きしない。
 
-通常出力は `manifest.json,results.json,index.html,run.log`。各回の結果、壁時計時間・プロセスCPU時間、初回、反復中央値・P95・最小・最大を残す。指標モジュールのimport時間は初期化欄、共通import・プロセス起動は対象外。各反復にファイルI/O・ハッシュ・参照解析を含む。ASR／品質モデルの推論、符号化・復号は含まない。失敗までの時間も保存するが成功した指標の実行時間と混ぜない。
+通常出力は `manifest.json,results.json,index.html,run.log,run-log.json`。終了時に生ログを保存し、そのファイルのSHA256と全文をJSONにも包んでHTMLからリンクする。各回の結果、壁時計時間・プロセスCPU時間、初回、反復中央値・P95・最小・最大を残す。指標モジュールのimport時間は初期化欄、共通import・プロセス起動は対象外。各反復にファイルI/O・ハッシュ・参照解析を含む。ASR／品質モデルの推論、符号化・復号は含まない。失敗までの時間も保存するが成功した指標の実行時間と混ぜない。
 
 ベースとの差は指標・case・condition・seedが一致し、双方がokかつ同単位のスカラーのときだけ計算する。行列や属性別の結果を総合点にしない。発話間の統計・信頼区間・メモリ計測はこのCLIには未実装。seed・話者等の行ラベルは保持するが、複数seedのばらつきを今回実測したわけではない。
 
@@ -117,3 +122,31 @@ tripletは `a,b,x,condition`。A/Bは同じ話者・違う音素、XはAと同�
 - リポジトリ内の独立F0仕様: [既存F0実装](../vocoderbench/metrics.py)、[既存追加指標](../vocoderbench/extended_metrics.py)
 
 新規指標の式・固定条件・集計は本実装の測定仕様であり、上記文献に妥当性が保証された主観品質尺度ではない。自然音声の実コーパス、実方式の編集出力、認識・品質モデルの実資産、既存評定との照合は後続の検証である。
+
+## #27の品質結果を曲線へ渡す
+
+[品質曲線の入力例](../configs/assessment-quality-curve.example.json)は未実測の雛形であり、ハッシュ風の架空値や実測値は埋めていない。次の順で実際の音声・評価結果を指定する。
+
+1. 無編集・編集音を同じ全長ファイルで固定する。#27の `--manifest` で各編集点を識別できるcase・methodとして列挙し、必要な `utmosv2`／`speaker_ecapa` だけを評価する。各caseにはmanifestが求める比較基準の出力を含める。speaker_ecapaを使う場合は全編集点の話者比較参照を同じ音声にする。SCOREQ・ViSQOL・ERBは編集量曲線の品質点へ自動変換しない。
+2. #27は `<quality出力先>/quality-evidence-index.json` の `points` にcase・methodごとの対応を出力する。各 `quality_evidence` の値はquality出力先からの相対パスであり、同じディレクトリの `quality-evidence-<digest>.json` を指す。`audio_path` と `audio_sha256` も照合する。
+3. 該当点の `quality_evidence` をassessment manifest基準の相対パス（または絶対パス）へ解決し直して `points[].quality_evidence` に入れる。`output` は品質を測った同一ファイルを指す。WAVへ変換し直すとファイルハッシュが変わるため、NPYを評価した場合は同じNPYを `{"path":"...npy","sample_rate":実際の周波数}` で指定する。雛形の `REPLACE_WITH_...` はindexの実際のパスへ置き換える。
+4. 無編集点のamountは0、`reference` はその無編集復号音と同じファイルにする。比較する各方式について同じcase・condition・seedのjobを追加する。例の `comparison-baseline` は実際の比較基準へ変更し、比較基準のjobがなければ方式間の差はnullのままにする。
+
+sidecarは `utmosv2 → predicted_mos`、`speaker_ecapa → speaker_similarity` だけを対応させる。#27の `measured` を `ok` に写し、未設定・失敗・対象外は元の状態とnullを保持する。valueは#27が出力した初回値で、反復平均へ変えない。評価器名・単位・評価器の設定と重み等を識別する `configuration_sha256` を保持し、同じ曲線内で設定が変われば拒否する。SCOREQ距離をMOSと呼んだり、小さいほど良い距離の符号を逆転したりしない。
+
+音声ファイルのハッシュが不明・不一致の場合は、その証跡で測定済みの値を使わない。証跡なしは欠測またはpartialとなり、0点として補完しない。話者指標を意図した声質変更へ一律に要求しない。モデル推論と初期化・初回・反復時間は#27の元結果に残り、assessmentの曲線計算時間へ合算しない。
+
+## 固定比較からの入力と実験登録
+
+1. `vocoderbench.reference` の実行先を保存する。正式な入力は `inputs.json` とそこで指定された原音NPY、方式ごとの `native/<method>/<case>.json` とNPYである。公開用の `results.json`・短い試聴音声だけでは全長の追加測定はできない。固定120件の現在の記録には現ベースと既存方式があるが、既存方式のみの別実験へ現ベースを後付けしない。
+2. 追加品質は #27 の `vocoderbench.quality --reference-run` で同じ保存先から読める。既存の `--benchmark` は従来のbenchmark保存形式専用。参照あり指標で原音／方式の標本化周波数・長さが違う場合は、追加品質側で黙って合わせず欠測を残す。非参照のUTMOSv2は各出力自身の標本化周波数で評価する。評価用前処理を研究で採用する場合は、その音声・条件・ハッシュを別版のmanifestへ保存する。
+3. assessment側の `reference`・`output` には同じ全長WAV、または標本化周波数を明示したNPYを指定する。再合成の聴覚帯域距離では原録音と復号音、制御追従と編集量0の参照ではその方式の無編集復号音を使い分ける。reference比較は無編集音しか生成しないので、編集曲線には別工程で保存した実際の編集音・操作条件が必要。
+4. `baseline_method` は当時の比較基準を明記し、比較する現ベース・既存方式ごとに同じcase・condition・seedのjobを用意する。対応行がない差はnullのままにする。元の `formal_base`、比較条件、元レポートの場所とハッシュは研究記録に残し、現在のbaseへ置き換えない。
+5. 全長入力・モデル・生ログ・品質sidecar／証跡と実行結果一式は研究用保存先に保持し、追加評価は毎回新しい `runs/` へ出力する。Pages用の補助先 `experiments/YYYY-MM-DD/<theme>/results/<id>/` は平坦なHTML・JSONだけを許可するため、実行先を丸ごと移さない。assessmentからは完了時の `results.json,index.html,manifest.json,run-log.json` をコピーする。生の `run.log`・NPY・WAV・下位ディレクトリは補助先に入れず、完全保存先とハッシュをテーマのREADMEに記す。私有データや絶対ローカルパスを公開してよいか確認し、公開用の加工が必要なら元の研究記録を保持したまま別物として明示する。公開manifestは条件の記録であり、記載パスの実入力までPagesに同梱されたことを意味しない。新たな音声取得や推論はこのPR調整では行っていない。
+6. 同じ比較の補助評価は元テーマの `experiment.json` の `supplements` に `id,title,path` を登録する。主比較の `runs` や母集団平均へ混ぜず、テーマのREADMEから元比較と追加評価の両方へリンクする。例：
+
+```json
+{"id":"additional-metrics-001","title":"同じ保存音声の追加評価","path":"results/additional-metrics-001"}
+```
+
+各補助先には `results.json` が必要。HTMLがあれば併せて公開される。別日の継続研究は新しい日付のグループから元比較へリンクする。元比較が公開している試聴音声へのリンクを補助記録の説明に付け、音声を再合成しない。実際の研究結果・公開の工程は [記録の構成](../experiments/README.md) と [公開手順](PUBLISHING.md) に従う。サイト生成の予行・リンク検査を今回の開発確認として実行しない。

@@ -95,7 +95,7 @@ table{border-collapse:collapse;width:100%;font-variant-numeric:tabular-nums}th,t
     page += f"<p>状態別件数: {escape(report['counts'])}。欠測・対象外・部分測定を0にしません。</p>"
     page += "<p>波形・特徴・モデル推論の生成は別工程です。保存済み認識結果の集計時間をASR推論時間と表示しません。"
     page += "初回と反復を独立発話として数えません。話者・言語・発声様式は各行の詳細に保持します。</p>"
-    page += "<p><a href='results.json'>全測定JSON</a> · <a href='manifest.json'>入力条件</a> · <a href='run.log'>実行ログ</a></p>"
+    page += "<p><a href='results.json'>全測定JSON</a> · <a href='manifest.json'>入力条件</a> · <a href='run-log.json'>実行ログ（JSON）</a></p>"
     page += "<h2>各行の生値・適用限界</h2>" + details + "</html>"
     path.write_text(page, encoding="utf-8")
 
@@ -172,6 +172,9 @@ def evaluate(manifest, output, repetitions):
     for handler in logging.getLogger().handlers:
         handler.flush()
     shutil.copy2(log, output / "run.log")
+    save_json(output / "run-log.json", {"source_name": "run.log",
+              "source_sha256": digest(output / "run.log"),
+              "text": (output / "run.log").read_text(encoding="utf-8")})
     return 0 if all(row["status"] == "ok" for row in report["rows"]) else 1
 
 

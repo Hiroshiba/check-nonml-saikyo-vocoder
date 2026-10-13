@@ -66,6 +66,10 @@ def table(data):
 
 
 def render(data, output):
+    if data.get('study_role') == 'current_base_and_references':
+        from .report_formal import render as render_formal
+        render_formal(data, output)
+        return
     write(output / 'summary.json', summary(data))
     audio = read(output / 'audio_samples.json') if (output / 'audio_samples.json').exists() else {'samples': []}
     sample_rows = audio['samples']
