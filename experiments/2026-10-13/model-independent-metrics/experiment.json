@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "id": "2026-10-13-model-independent-metrics",
+  "date": "2026-10-13",
+  "timezone": "Asia/Tokyo",
+  "topic": "model-independent-metrics",
+  "title": "方式非依存の追加指標・人工入力による計算確認",
+  "summary": "内容・制御・特徴表現の13入口を追加。方式比較ではなく、部分測定を含む人工診断。",
+  "status": "実装・人工計測、実音声校正は未完了",
+  "notes": [
+    "README.md",
+    "reviews.md"
+  ],
+  "runs": [],
+  "supplements": [
+    {
+      "id": "probe-calibration",
+      "title": "15条件・90回の人工計測と7異常条件",
+      "path": "results/probe-calibration"
+    }
+  ]
+}
