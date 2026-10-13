@@ -49,8 +49,7 @@ def acoustic_case(case, candidate, output, retry_failed=False):
         write(output / 'failure_history' / f'{identifier}-{time.time_ns()}.json', previous)
     rows = []
     original = dict(case=identifier, method='identity', status='measured',
-                    measurement=compare_waveforms(x, x, sr),
-                    extended=measure_extended(x, x, sr), mos={'status': 'pending', 'value': None})
+                    mos={'status': 'pending', 'value': None})
     waves = output / 'waveforms' / identifier
     waves.mkdir(parents=True, exist_ok=True)
     for method in ('hnm', 'candidate', 'world_harvest'):
@@ -115,7 +114,7 @@ def collect(args, cases, contract):
     report = {'schema_version': 3, 'formal_base': base, 'comparison_reference': base['method'],
               'method_labels': LABELS, 'contract': contract, 'execution': read(args.output / 'execution.json'),
               'generated_at': now(), 'planned_cases': len(cases), 'cases': [], 'resynthesis': [],
-              'calibration': [], 'operations': [], 'decoder_only': [], 'diagnostics': [],
+              'calibration': [], 'operations': [], 'diagnostics': [],
               'corpus_counts': corpus.read_manifest(args.manifest)['counts'],
               'data_manifest': str(args.manifest.relative_to(ROOT)) if args.manifest.is_relative_to(ROOT)
                                else args.manifest.name,

@@ -7,15 +7,14 @@
 Python 3.12、uv 0.12.23、Ruff 0.17.0を使用する。`pyproject.toml` と `uv.lock` で依存を固定し、`uv sync --locked` で環境を作る。NumPyとSciPyの版は従来の比較実行から変えていない。
 
 ```sh
-uv sync --locked
-uv run --locked ruff check .
-uv run --locked python scripts/check_source_size.py
-uv run --locked python -m vocoderbench.build_world
-uv run --locked python -m vocoderbench.run --no-natural --sample-rates 16000 --output runs/local-comparison
-uv run --locked python scripts/build_site.py
+uv sync --locked --only-dev
+uv run --locked --only-dev ruff check .
+uv run --locked --only-dev python scripts/check_source_size.py
 ```
 
-テストコードは実装しない。旧 `tests/` と、合否を判定していた `scripts/audit_metrics.py` は削除した。過去の実験記録は残し、現在の手順と区別する。比較・校正CLIは音響測定値と欠測を保存する研究用の実行であり、品質を合否判定するテストへ置き換えない。通常の入力検証と、処理失敗時の非ゼロ終了は維持する。
+テストコードは実装しない。名称や合否判定の有無によらず、コードが正しく動くかを確かめるためのスモーク・回帰・自己検査も追加しない。旧 `tests/` と `scripts/audit_metrics.py` に加え、2音声のスモーク経路、再decode一致・保存読込往復・固定手作り入力のAPI確認、波形を自身と比較する自己検査を削除した。再表示・保存・一覧生成のCI予行も行わない。過去のHTML・JSON・実施記録は当時の状態で残す。
+
+研究では、固定100音声以上と自動MOSによる正式比較、既知F0信号による測定器の校正・前処理比較、位相細部・雑音成分の影響、音高・音量・時間長の操作追従を測る。人工信号は音響特性の原因分析に使い、動作確認専用のケース群やCIへ戻さない。`vocoderbench.run` の原音側の校正は既知F0との誤差だけを記録する。`vocoderbench.benchmark` も原音との自己差分・自己比較の追加指標は計算せず、原音MOSと音声保存を維持する。通常の入力検証、保存・読込API、処理失敗時のログと非ゼロ終了は維持する。
 
 ## 後から追えるログ
 
@@ -34,7 +33,9 @@ Ruffは `.cache/ruff` を使用する。行数確認はGit管理対象と未追�
 
 キャッシュ・外部ソース・ビルド成果物は `.gitignore` で除外する。実験の自動生成HTML・JSONはソース行数の対象外。将来、Git管理する自動生成ソースを追加する場合は、手編集できない生成物である根拠と生成手順を文書化してから例外を追加する。現在そのようなソースの例外はない。
 
-PRとデフォルトブランチ `main` へのpushで、依存環境の構築、静的解析、WORLDのビルド、小規模比較、Pagesの生成を行う。uvと静的解析のキャッシュを引き継ぐ。失敗時も比較出力とログをActionsの成果物へ保存する。静的解析の成功と、音質が優れていることは別の判断である。
+PRとデフォルトブランチ `main` へのpushでは、開発依存だけを用意し、Ruffとソース行数の静的解析を行う。uvと静的解析のキャッシュを引き継ぎ、ログをActionsの成果物へ保存する。音声合成・モデル取得・比較CLIはCIで実行しない。静的解析の成功と、音質が優れていることは別の判断である。
+
+Pagesの生成と内部リンク検査は `main` へのpushまたは明示的な公開実行で行い、PRの動作確認用には実行しない。本番公開のリンク検査・成果物保存・デプロイは維持する。研究実行と公開の手順は [REFERENCES.md](REFERENCES.md)、[EVALUATION.md](EVALUATION.md)、[PUBLISHING.md](PUBLISHING.md) を参照する。
 
 ## 表示と今後のGUI
 

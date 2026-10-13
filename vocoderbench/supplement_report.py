@@ -140,6 +140,8 @@ def render(report, output):
             issues.append([row['case'], labels[row['method']], '処理', row.get('error', row['status'])])
         if row.get('mos', {}).get('status') != 'measured':
             issues.append([row['case'], labels[row['method']], '予測MOS', row.get('mos', {}).get('reason', '未完了')])
+        if row['method'] == 'identity':
+            continue  # 原音はMOSの基準であり、自己比較の追加指標は測定しない。
         extended = row.get('extended', {})
         estoi = (extended.get('intelligibility') or {}).get('estoi') or {}
         if estoi.get('status') != 'measured':
