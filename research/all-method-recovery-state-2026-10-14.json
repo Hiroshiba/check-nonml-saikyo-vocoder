@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "updated_at_utc": "2026-10-14T06:22:00Z",
-  "status": "draft_source_recovered_measurements_not_started",
+  "updated_at_utc": "2026-10-14T07:18:00Z",
+  "status": "draft_preparing_official_assets_measurements_not_started",
   "base_commit": "a84d7cac887f159a9ed36e6fd31abee707423d17",
   "run_directory": "runs/all-method-metrics-recovery-20261014",
   "methods": [
@@ -39,6 +39,11 @@
     "private_backup_locators"
   ],
   "files": [
+    {
+      "path": "research/all-method-abx-plan-recovery-2026-10-14.md",
+      "bytes": 2005,
+      "sha256": "eb97377944ea92bb6b7501b180cf4fbc0f42f67f7cc50c361e58a623a098e0bd"
+    },
     {
       "path": "research/all-method-corpora-plan-recovery-2026-10-14.md",
       "bytes": 8711,
@@ -156,13 +161,18 @@
     },
     {
       "path": "scripts/all_metrics_datasets_abx.py",
-      "bytes": 6050,
-      "sha256": "7e54b9ee7e43a6d3e62c884f835418b905ac190848d5b34a6b9f01a8321967fa"
+      "bytes": 6259,
+      "sha256": "1fecd0f7ee92f3f4397a0edd6ef0f6f07f3dadd4a79c65b695568bc549bda0e3"
+    },
+    {
+      "path": "scripts/all_metrics_datasets_abx_contract.py",
+      "bytes": 4799,
+      "sha256": "aba26344cd0ee2a6064c170f3c180498b81e4456a7ec095bba4c41278d6bd85e"
     },
     {
       "path": "scripts/all_metrics_datasets_abx_sources.py",
-      "bytes": 2123,
-      "sha256": "34c785fffabe4f70778f6215bac9268c4424c32cec48d880744e94a27d58a460"
+      "bytes": 2236,
+      "sha256": "f18f06a5389622b7d444368a22d8491011faa0f421987afc9be5ed3e4f222626"
     },
     {
       "path": "scripts/all_metrics_datasets_contract.py",
@@ -485,7 +495,9 @@
       "sha256": "cad25b6078b729984cfb1237e4fc5a49519b4ad2816514788b8a403acac81539"
     }
   ],
-  "next_stage": "save_draft_pr_and_verify_exact_commit_ci_before_formal_measurement",
+  "next_stage": "complete_official_assets_then_freeze_main_inputs_and_formal_measurement_contracts",
   "private_raw_backup": "authorized_owner_only_capacity_conscious_batch_retention",
-  "new_public_audio": "no_audio_in_this_draft; future_minimal_short_examples_only_after_license_derivative_redistribution_and_attribution_review"
+  "new_public_audio": "no_audio_in_this_draft; future_minimal_short_examples_only_after_license_derivative_redistribution_and_attribution_review",
+  "source_snapshot_parent_commit": "bdfb8637849a9004e8048c5850b8d331015d490a",
+  "abx_preacquisition_contract": "independent contract added; original triplet selection and limits unchanged"
 }

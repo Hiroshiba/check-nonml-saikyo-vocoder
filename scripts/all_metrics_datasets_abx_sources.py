@@ -8,11 +8,14 @@ import logging
 import soundfile as sf
 
 from all_metrics_datasets_remote import OUT, ROOT, RemoteZip, save_json, sha
+from all_metrics_datasets_abx_contract import bind_index, require_plan
 
 
 def main():
+    require_plan()
     logging.basicConfig(level=logging.INFO, handlers=[logging.StreamHandler(), logging.FileHandler(OUT / 'abxls-source-audit.log')])
     source = RemoteZip('abxls')
+    bind_index(source)
     entries = json.loads((ROOT / 'data/clean_speech_v1.json').read_text())['entries']
     def acquire(entry):
         try:

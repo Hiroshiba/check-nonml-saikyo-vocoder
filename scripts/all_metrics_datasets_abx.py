@@ -6,7 +6,9 @@ from datetime import datetime, timezone
 import json
 import logging
 
-from all_metrics_datasets_remote import CACHE, OUT, ROOT, save_json, sha
+from all_metrics_common import freeze, read
+from all_metrics_datasets_remote import CACHE, OUT, ROOT, sha
+from all_metrics_datasets_abx_contract import PLAN, require_label
 
 SALT = 'all-method-metrics-abxls-20261014/'
 SILENCE = {'SIL', 'SPN', 'SILENCE', 'SP', 'NSN', '<eps>'}
@@ -14,6 +16,7 @@ SILENCE = {'SIL', 'SPN', 'SILENCE', 'SP', 'NSN', '<eps>'}
 
 def main():
     source = CACHE / 'abxls/members/test-clean/triphone-test-clean.item'
+    require_label(source)
     frozen_path = ROOT / 'data/clean_speech_v1.json'
     entries = json.loads(frozen_path.read_text())['entries']
     by_utterance = {e['source_utterance_id']: e for e in entries}
@@ -79,7 +82,7 @@ def main():
             'used_speakers': len({lookup[i]['speaker'] for i in ids})}
     manifest = {'id': 'abxls-clean-speech-v1-clip-triphones',
                 'created_at_utc': datetime.now(timezone.utc).isoformat(),
-                'selection_plan_sha256': sha((OUT / 'selection-plan.json').read_bytes()),
+                'selection_plan_sha256': sha(PLAN.read_bytes()),
                 'frozen_audio_manifest_sha256': sha(frozen_path.read_bytes()),
                 'label_file': str(source.relative_to(ROOT)), 'label_sha256': sha(source.read_bytes()),
                 'license': 'CC BY 4.0 (archive README.md)',
@@ -94,7 +97,10 @@ def main():
                            'selected_triplets': dict(Counter(t['condition'] for t in selected))},
                 'label_scope': 'Official abxLS v1.1 full-triphone spans, all three phones inside frozen excerpt',
                 'scope_limit': 'subset ABX, not full official abxLS leaderboard; no new ASR alignment'}
-    save_json(OUT / 'abxls120-triphones.json', manifest)
+    target = OUT / 'abxls120-triphones.json'
+    if target.exists():
+        manifest['created_at_utc'] = read(target)['created_at_utc']
+    freeze(target, manifest)
     print(json.dumps(manifest['counts'], indent=2))
 
 
