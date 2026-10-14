@@ -1,0 +1,236 @@
+<!doctype html>
+<html lang="ja"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>短い比較音声の出典・帰属・変更</title>
+<style>:root{color-scheme:light dark}body{max-width:1000px;margin:2rem auto;padding:0 1rem;font:16px/1.7 system-ui,sans-serif}pre{white-space:pre-wrap;overflow-wrap:anywhere}li{margin:.5rem 0}a{color:LinkText}</style>
+<body><h1>短い比較音声の出典・帰属・変更</h1>
+<p><a href="index.html">比較結果へ戻る</a> ／ <a href="audio_samples.json">音声と個別の出典情報（JSON）</a></p>
+<h2>出典・帰属・利用条件</h2>
+<p>出典: LibriSpeech test-clean / <a href="https://www.openslr.org/12">OpenSLR SLR12</a>。
+LibriSpeech (c) 2014 by Vassil Panayotov。
+原録音の配布条件は<a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International（CC BY 4.0）</a>です。
+<a href="https://creativecommons.org/licenses/by/4.0/legalcode.en">ライセンス法文</a>も参照してください。
+LibriSpeechはLibriVoxの朗読とProject Gutenbergのテキストに基づくコーパスです。原配布物の帰属・説明・既存加工に関する記載を下部に保持します。</p>
+<p>今回の対象は事前固定された録音ID 1089-134686-0008、1188-133604-0003だけです。
+先頭最大2秒という長さは今回の公開範囲であり、利用許諾の根拠ではありません。
+原録音の部分共有・改変物共有の根拠は上記CC BY 4.0と確認済みの方式別資料です。</p>
+<h2>今回の変更と読み方</h2>
+<ul>
+<li>原音例: 正式入力として保存された原発話の先頭から最大2秒を切り出し、WAV IEEE float32形式へ変換しています。配布FLACそのものの無変更コピーではありません。</li>
+<li>再合成例: 同じ原発話を下記の固定版ボコーダーで解析・再合成した、パラメーター未編集のnative出力です。その出力の先頭から最大2秒を切り出し、WAV IEEE float32へ変換しています。方式の前処理にはnative標本化周波数への変換が含まれる場合があります。</li>
+<li>公開書出し時には、音量正規化、クリッピング、リサンプリング、無音除去、時間位置合わせを加えていません。float32形式変換には丸めがあり得ます。各方式の出力長・標本化周波数は個別情報に示します。</li>
+<li>個別情報のstart_sample/n_samples/sample_rateは実公開WAVの区間、source_excerpt_*は正式測定入力の区間です。source_public_*は原録音側の比較用区間です。異なる方式の時間対応や全長一致を保証する表示ではありません。</li>
+<li>wav_sha256は実公開WAV bytes、native_source_sha256は切出し元NPY、original_input_sha256は原入力NPY、source_file_sha256は配布FLAC、source_decoded_pcm_sha256は元の復号PCMのSHA-256です。method_provenanceに固定合成契約、実装、checkpoint等の識別情報を記録します。</li>
+</ul>
+<p>提供元・著作者・話者が本比較の結果や用途を推奨していることを意味しません。CC BY 4.0で認められる利用を妨げる追加制限やDRMを設けません。
+CC BY 4.0は人格権・プライバシー等すべての権利を許諾するものではありません。本例は同じ原発話の比較であり、別の発言を話者に言わせたものではありません。</p>
+<h2>方式と確認済みの固定版</h2>
+<p>以下はコード・学習済みモデルに関する確認範囲です。ソフトウェアのライセンスをそのまま音声出力のライセンスとみなしていません。生成音声のすべての権利を保証する法的見解ではありません。</p>
+<ul>
+<li>HNM v3: 外部学習済みモデルのない自作解析合成。固定版の実装SHAは各例のmethod_provenanceに記録。</li>
+<li>WORLD Harvest: <a href="https://github.com/mmorise/World/blob/c794856b537758a3d300757db2e5e31685a822c2/LICENSE.txt">c794856b537758a3d300757db2e5e31685a822c2 / BSD-3-Clause</a>。</li>
+<li>FACodec v1: <a href="https://github.com/lifeiteng/naturalspeech3_facodec/blob/aac16b7268b1b96e70b9e3526b13e216984e80d0/README.md">aac16b7268b1b96e70b9e3526b13e216984e80d0 / Amphion MIT参照</a>。
+<a href="https://huggingface.co/amphion/naturalspeech3_facodec/blob/314afc3ea1455ba881a0e484ef9408b6cb996736/README.md">encoder/decoderモデル314afc3ea1455ba881a0e484ef9408b6cb996736 / Apache-2.0</a>。</li>
+<li>HiFi-Glot: <a href="https://github.com/PupuAI/HiFi-Glot/blob/78951625e8f0a113f401fef7032e98d58cfa7dac/LICENSE">78951625e8f0a113f401fef7032e98d58cfa7dac / MIT</a>。
+モデルは<a href="https://huggingface.co/Aalto-Speech-Synthesis/HiFi-Glot/commit/3a0e2fd2353e8978fce753c76343d0cca2ff3aa9">3a0e2fd2353e8978fce753c76343d0cca2ff3aa9</a>、<a href="https://huggingface.co/Aalto-Speech-Synthesis/HiFi-Glot/blob/main/README.md">公式モデルカードMIT（2026-10-14確認）</a>。</li>
+<li>LLSM2 Layer0: <a href="https://github.com/Sleepwalking/libllsm2/blob/d18cdf02b31819670e3bc23ead933ad9467da06d/LICENSE">d18cdf02b31819670e3bc23ead933ad9467da06d / GPLv3</a>。
+<a href="https://github.com/Sleepwalking/ciglet/blob/895ba9b1c0eabee83d3544208bbc82420efa3206/ciglet.c">ciglet 895ba9b1c0eabee83d3544208bbc82420efa3206 / BSD-3-Clause</a>。GPLv3 §2の出力に関する区別を維持し、入力音声の解析再合成を自動的にGPL音声としません。</li>
+<li>MagPhase: <a href="https://github.com/CSTR-Edinburgh/magphase/blob/ec6ae285c3128d3f416857f05d2a7e4be0bd5707/LICENSE">ec6ae285c3128d3f416857f05d2a7e4be0bd5707 / Apache-2.0</a>。
+<a href="https://github.com/google/REAPER/blob/1d6e9b95e6b08b500fccbc9a043989dbda747276/LICENSE">REAPER 1d6e9b95e6b08b500fccbc9a043989dbda747276 / Apache-2.0</a>。</li>
+</ul>
+<p>GOLF-ffとSiFiGANは、今回使う固定checkpointに適用される重み固有の明示的な許諾が未確認のため、音声の公開を保留します。
+GOLFのroot MITやZenodoの一般メタデータだけでcheckpointの許諾済みと推定しません。SiFiGANの固定配布archiveには独立したLICENSE/NOTICE等がありませんでした。
+公開保留を測定失敗へ置換せず、数値順位・比較対象・分母は全8方式のままです。</p>
+<h2>個別音声の出典・変更・区間・SHA-256</h2>
+<pre>{{AUDIO_RECORDS_JSON}}</pre>
+<h2>原配布物のLICENSE.TXT（原文）</h2>
+<pre>LibriSpeech (c) 2014 by Vassil Panayotov
+
+LibriSpeech ASR corpus is licensed under a
+Creative Commons Attribution 4.0 International License.
+
+See &lt;http://creativecommons.org/licenses/by/4.0/&gt;.
+</pre>
+<h2>原配布物のREADME.TXT（原文）</h2>
+<details><summary>配布時の説明・謝辞を開く</summary><pre>1. General information
+======================
+
+LibriSpeech is a corpus of read speech, based on LibriVox&#x27;s public domain
+audio books. Its purpose is to enable the training and testing of automatic
+speech recognition(ASR) systems. 
+
+
+2. Structure
+============
+
+The corpus is split into several parts to enable users to selectively download
+subsets of it, according to their needs. The subsets with &quot;clean&quot; in their name
+are supposedly &quot;cleaner&quot;(at least on average), than the rest of the audio and
+US English accented. That classification was obtained using very crude automated 
+means, and should not be considered completely reliable. The subsets are
+disjoint, i.e. the audio of each speaker is assigned to exactly one subset.
+
+The parts of the corpus are as follows:
+
+* dev-clean, test-clean - development and test set containing &quot;clean&quot; speech.
+* train-clean-100 - training set, of approximately 100 hours of &quot;clean&quot; speech
+* train-clean-360 - training set, of approximately 360 hours of &quot;clean&quot; speech
+* dev-other, test-other - development and test set, with speech which was 
+                          automatically selected to be more &quot;challenging&quot; to
+                          recognize
+* train-other-500 - training set of approximately 500 hours containing speech
+                    that was not classified as &quot;clean&quot;, for some (possibly wrong)
+                    reason
+* intro - subset containing only the LibriVox&#x27;s intro disclaimers for some of the
+          readers.
+* mp3 - the original MP3-encoded audio on which the corpus is based
+* texts - the original Project Gutenberg texts on which the reference transcripts
+          for the utterances in the corpus are based.
+* raw_metadata - SQLite databases which record various pieces of information about 
+                 the source text/audio materials used, and the alignment process.
+                 (mostly for completeness - probably not very interesting or useful)
+
+2.1 Organization of the training and test subsets
+-------------------------------------------------
+
+When extracted, each of the {dev,test,train} sets re-creates LibriSpeech&#x27;s root
+directory, containing some metadata, and a dedicated subdirectory for the subset
+itself. The audio for each individual speaker is stored under a dedicated 
+subdirectory in the subset&#x27;s directory, and each audio chapter read by this
+speaker is stored in separate subsubdirectory. The following ASCII diagram 
+depicts the directory structure:
+
+
+&lt;corpus root&gt;
+    |
+    .- README.TXT
+    |
+    .- READERS.TXT
+    |
+    .- CHAPTERS.TXT
+    |
+    .- BOOKS.TXT
+    |
+    .- train-clean-100/
+                   |
+                   .- 19/
+                       |
+                       .- 198/
+                       |    |
+                       |    .- 19-198.trans.txt
+                       |    |    
+                       |    .- 19-198-0001.flac
+                       |    |
+                       |    .- 14-208-0002.flac
+                       |    |
+                       |    ...
+                       |
+                       .- 227/
+                            | ...
+
+
+
+, where 19 is the ID of the reader, and 198 and 227 are the IDs of the chapters
+read by this speaker. The *.trans.txt files contain the transcripts for each
+of the utterances, derived from the respective chapter and the FLAC files contain
+the audio itself.
+
+The main metainfo about the speech is listed in the READERS and the CHAPTERS:
+
+- READERS.TXT contains information about speaker&#x27;s gender and total amount of
+  audio in the corpus.
+
+- CHAPTERS.TXT has information about the per-chapter audio durations.
+
+The file BOOKS.TXT makes contains the title for each book, whose text is used in
+the corpus, and its Project Gutenberg ID.
+
+2.2 Organization of the &quot;intro-disclaimers&quot; subset
+--------------------------------------------------
+
+This part of the data contains simply the LibriVox&#x27;s intro disclaimers that were
+successfully extracted, using a slight modification of the alignment algorithms
+used to derive the test training sets. The standard LibriVox disclaimer is:
+
+&quot;This is a LibriVox recording. All LibriVox recordings are in the public domain. 
+ For more information, or to volunteer, please visit: librivox DOT org&quot;
+
+As is the case for the training and test sets, there is one subdirectory for
+each reader, and a subsubdirectory for each of the chapters, read by this speaker
+for which the announcement was successfully extracted.
+
+
+2.3 Organization of the &quot;original-mp3&quot; subset
+---------------------------------------------
+
+This part contains the original MP3-compressed recordings as downloaded from the
+Internet Archive. It is intended to serve as a secure reference &quot;snapshot&quot; for 
+the original audio chapters, but also to preserve (most of) the information both
+about audio, selected for the corpus, and audio that was discarded. I decided to
+try make the corpus relatively balanced in terms of per-speaker durations, so
+part of the audio available for some of the speakers was discarded. Also for the
+speakers in the training sets, only up to 10 minutes of audio is used, to 
+introduce more speaker diversity during evaluation time. There should be enough 
+information in the &quot;mp3&quot; subset to enable the re-cutting of an extended 
+&quot;LibriSpeech+&quot; corpus, containing around 150 extra hours of speech, if needed.
+
+The directory hierarchy follows the already familiar pattern. In each
+speaker directory there is a file named &quot;utterance_map&quot; which list for each
+of the utterances in the corpus, the original &quot;raw&quot; aligned utterance.
+In the &quot;header&quot; of that file there are also 2 lines, that show if the
+sentence-aware segmentation was used in the LibriSpeech corpus(i.e. if the
+reader is assigned to a test set) and the maximum allowed duration for
+the set to which this speaker was assigned.
+
+Then in the chapter directory, besides the original audio chapter .mp3 file,
+there are two sets of &quot;.seg.txt&quot; and &quot;.trans.txt&quot; files. The former contain
+the time range(in seconds) for each of the original(that I called &quot;raw&quot; above)
+utterances. The latter contains the respective transcriptions. There are two
+sets for the two possible segmentations of each chapter. The &quot;.sents&quot;
+segmentation is &quot;sentence-aware&quot;, that is, we only split on silence intervals 
+coinciding with (automatically obtained) sentence boundaries in the text.
+The other segmentation was derived by allowing splitting on every silence
+interval longer than 300ms, which leads to better utilization of the aligned
+audio.
+
+2.4 Organization of the &quot;text&quot; subset
+-------------------------------------
+
+This part just contains one subdirectory, with name equal to the ID of the
+text in Project Gutenberg&#x27;s database, for each book. The books are also
+separated in directories by their encoding-- could be either ASCII or UTF-8.
+The sole purpose of this subset is to be a permanent snapshot of the original
+text used for LibriSpeech&#x27;s construction.
+
+
+2.5 Organization of the &quot;raw-metadata&quot; part
+-------------------------------------------
+
+Contains just few SQLite databases. Some of the more important bits of
+information from this tables are described in the README file within
+the &quot;raw_data&quot; subdirectory.
+
+
+Acknowledgments
+===============
+
+First and foremost, I would like to thank the thousands of Project Gutenberg
+and LibriVox volunteers, without whose contributions the LibriSpeech corpus 
+would not have existed.
+The successful completion of this project would have been much more difficult,
+and the quality of the finished corpus much worse, if it wasn&#x27;t for the
+generous support and the many helpful advice, provided by Daniel Povey - thanks, Dan!
+I would also like to express my gratitude to Tony Robinson, for the very
+interesting, and useful discussions on the long audio alignment problem, that
+we had some time ago.
+Thanks also to Guoguo Chen and Sanjeev Khudanpur, with whom we are collaborating
+on a (yet-to-be-published) paper on the corpus, and who helped to improve
+the LibriSpeech&#x27;s example scripts in Kaldi.
+
+---
+Vassil Panayotov,
+Oct. 2, 2014 
+</pre></details>
+<p>原文出典: <a href="https://www.openslr.org/resources/12/test-clean.tar.gz">test-clean.tar.gz</a>内のLibriSpeech/LICENSE.TXT、LibriSpeech/README.TXT。
+固定datasetに記録されたarchive SHA-256: 39fde525e59672dc6d1551919b1478f724438a95aa55f874b576be21967e6c23。
+LICENSE.TXT SHA-256: 908b0b565ae9bf61b7b41447cb0b83564f320375723bcc884ec30e5537a0d5dc。README.TXT SHA-256: 596ea41ecf75d10a0393f086d863d46d1a0b0afd6670717c352b8a46f42650bf。</p>
+</body></html>

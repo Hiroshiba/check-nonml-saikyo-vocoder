@@ -11,7 +11,8 @@ from all_metrics_rankings_core import aggregate
 from all_metrics_rankings_coverage import coverage
 from all_metrics_rankings_extra import asr_groups, special_groups, vctk_groups
 from all_metrics_rankings_html import render
-from all_metrics_rankings_inputs import Sources, imported_groups, mos_groups, native_groups, public_audio, quality_groups
+from all_metrics_rankings_inputs import (Sources, imported_groups, mos_groups, native_groups, public_audio,
+                                        quality_groups, runtime_supplement)
 from vocoderbench.logging_utils import run_cli
 from vocoderbench.quality_core import sha256, write_json
 
@@ -28,8 +29,9 @@ LIMITATIONS = [
     '読み出しは別40話者120録音で固定尺度とRidgeを学習。3種類の独立推定音響属性に対する話者等重みMAE。',
     '直接実測と、厳密に同一の復号入力・PCMに基づくanalytic_identity値を分けて計数。欠測・失敗・未対応はnull。',
     '表現量は宣言容器の実bytesと固定元入力秒による量。共有モデル等が別途必要。容器量順位と品質付き圧縮効率を混同しない。',
-    '速度は全8ともworker1・CPU上限2の独立native工程の単回。初回正式入力を除かず、初期化・前処理・保存読込は別。区間は録音構成だけ。',
-    '喪失した旧rawや会話の途中集計を復元値へ使わない。原音、全長生成波形、モデル、元人間評定CSVは公開対象外。',
+    '速度は全8とも各ライブラリのスレッド設定2・worker1の独立native工程の単回。初回正式入力を除かず、初期化・前処理・保存読込は別。区間は録音構成だけ。',
+    '速度の全120録音は保存I/O条件混在の参考値として保持。batch005–011の固定70録音24話者は別の補助比較で、品質の主120録音や比較分母を置換しない。補助分析計画はbatch005開始後の採用であり、指標値・順位による対象選別ではない。',
+    '喪失した旧rawや会話の途中集計を復元値へ使わない。原音・生成波形の全長、モデル、元人間評定CSVは公開対象外。許諾済み短例だけを帰属付きで公開する。',
 ]
 
 
@@ -64,8 +66,10 @@ def main():
             or len({s['speaker'] for s in specs}) != 40):
         raise ValueError('正式固定120録音40話者の完全manifestが必要です')
     speed, lengths = native_groups(specs, sources)
+    speed_supplement, timing = runtime_supplement(specs, sources, speed)
     raw_groups = [*mos_groups(specs, sources), *quality_groups(specs, sources), *acoustic_groups(specs, sources),
-                  *asr_groups(specs, sources), *vctk_groups(sources), *imported_groups(specs, sources), *speed]
+                  *asr_groups(specs, sources), *vctk_groups(sources), *imported_groups(specs, sources),
+                  *speed, *speed_supplement]
     groups = [aggregate(group) for group in raw_groups] + special_groups(sources)
     if len({group['id'] for group in groups}) != len(groups):
         raise ValueError('指標群IDの重複')
@@ -76,7 +80,7 @@ def main():
         for group in groups:
             group['conditional'] = None
     samples = public_audio(read(args.audio_manifest), args.output) if args.audio_manifest else []
-    if gate['terminal'] and not samples:
+    if gate['terminal'] and not any(sample.get('publication_status') == 'available' for sample in samples):
         raise ValueError('最終HTMLには許可済み2秒音声例manifestが必要です')
     derived = length_evidence(specs, sources)
     initializations = [{'path': str(path), 'record': sources.get(path)}
@@ -87,6 +91,7 @@ def main():
         'formal_base': read(ROOT / 'BASELINE.json'), 'methods': list(METHODS), 'terminal': gate['terminal'],
         'coverage': coverage(groups), 'groups': groups, 'limitations': LIMITATIONS,
         'native_length_and_timing': lengths, 'common16_derivation': derived,
+        'timing_interpretation': timing,
         'native_initializations_excluded_from_speed': initializations,
         'source_sha256': {str(path.relative_to(ROOT)): sha256(path) for path in script_paths},
         'raw_source_inventory': sources.evidence, 'final_gate': gate,

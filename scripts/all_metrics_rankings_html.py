@@ -3,9 +3,8 @@ from __future__ import annotations
 
 from html import escape
 import json
-from pathlib import PurePosixPath
-from urllib.parse import urlparse
 
+from all_metrics_audio_policy import CREDITS_NAME, PUBLIC_IDS, PUBLIC_METHODS
 from all_metrics_common import METHODS
 from all_metrics_rankings_coverage import FAMILIES
 
@@ -138,18 +137,25 @@ def audio_section(samples):
         return '<p>短い音声例はこの生成時点では未添付です。</p>'
     rows = []
     ids = {sample['case'] for sample in samples}
-    if len(ids) > 2:
+    if not ids <= set(PUBLIC_IDS):
         raise ValueError('公開音声は既存許諾の2録音までです')
     for sample in samples:
-        src = sample['src']
-        parsed = urlparse(src)
+        if sample.get('publication_status') == 'withheld':
+            rows.append([e(sample['case']), e(NAMES[sample['method']]),
+                         '公開保留: ' + e(sample['reason'])])
+            continue
+        src = sample['data_uri']
         if (sample.get('seconds', 3) > 2 or sample.get('start_seconds') != 0
                 or sample.get('existing_public_excerpt') is not True
-                or parsed.scheme or parsed.netloc or '..' in PurePosixPath(src).parts or src.startswith('/')):
-            raise ValueError('音声例は許可済み先頭2秒の公開相対pathだけ指定してください')
+                or sample['method'] not in PUBLIC_METHODS or not src.startswith('data:audio/wav;base64,')):
+            raise ValueError('音声例は許可済み先頭最大2秒の埋込WAVだけ指定してください')
         rows.append([e(sample['case']), e(NAMES.get(sample['method'], sample['method'])),
                      f'<audio controls preload="none" src="{e(src)}"></audio>'])
-    return table(['録音', '方式', '先頭2秒'], rows)
+    return (f'<p><a href="{e(CREDITS_NAME)}">音声の出典・帰属・変更・原文notice</a> ／ '
+            '<a href="audio_samples.json">区間・標本化周波数・SHA-256</a></p>'
+            '<p>音声の公開保留は数値測定の失敗ではありません。全8方式の数値順位・比較分母は維持します。'
+            '各方式の先頭最大2秒を示し、全体の品質は音声例だけで判断しません。</p>'
+            + table(['録音', '方式', '先頭最大2秒・公開状態'], rows))
 
 
 def render(report, samples=()):

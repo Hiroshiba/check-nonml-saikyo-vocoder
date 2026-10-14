@@ -49,6 +49,7 @@ def main():
     args.inputs = VCTK_RUN / 'input-batches' / f'{args.batch:02d}.json'
     args.threads, args.seed = 2, 0
     args.encode_only, args.unedited_only, args.waveform_only = False, True, True
+    args.edits_only = False
     torch.set_num_threads(2)
     torch.set_num_interop_threads(1)
     os.environ['HF_HUB_OFFLINE'] = '1'

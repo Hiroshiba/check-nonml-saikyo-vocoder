@@ -1,0 +1,215 @@
+{
+  "schema_version": 1,
+  "recorded_at_utc": "2026-10-14T11:00:44.150626+00:00",
+  "study": "all-method-metrics-recovery-20261014",
+  "overall_status": "in_progress",
+  "rankings": null,
+  "measurement_source_commit": "5d94bccfea447f6a2809a356ba5ba283567d69e0",
+  "dataset_sha256": "644f4d57483366bb20d8dbcfdaa254e354aed4af8318a6a2984bb2e8b3ddc9c1",
+  "input_contract_sha256": "317dded915456793069bf9810926f510327098f85e039e4a0905fe70af973cc2",
+  "native": {
+    "recordings": 120,
+    "speakers": 40,
+    "method_count": 8,
+    "measured_outputs": 960,
+    "measured_representations": 960,
+    "measured_feature_exports": 960,
+    "successful_processes": 96,
+    "failed_processes": 0,
+    "seed": 0,
+    "library_thread_settings": 2,
+    "worker_limit": 1,
+    "methods": [
+      {
+        "method": "hnm",
+        "planned_recordings": 120,
+        "measured": 120,
+        "failed": 0,
+        "synthesis_contract_sha256": [
+          "fe99b77bfa8ed5f7b8423d4a925a62f8d8b6028f97c20c37d5fa0153bdc85a18"
+        ]
+      },
+      {
+        "method": "world_harvest",
+        "planned_recordings": 120,
+        "measured": 120,
+        "failed": 0,
+        "synthesis_contract_sha256": [
+          "1cd58db6705502030037022b711ce9d57d2883352fff1be993e9b3c67b25e900"
+        ]
+      },
+      {
+        "method": "facodec",
+        "planned_recordings": 120,
+        "measured": 120,
+        "failed": 0,
+        "synthesis_contract_sha256": [
+          "4748bca89ef5898109862b0f5f3adca46179ec3a3c7b94d8499a7c7f5e49b2b0"
+        ]
+      },
+      {
+        "method": "hifiglot",
+        "planned_recordings": 120,
+        "measured": 120,
+        "failed": 0,
+        "synthesis_contract_sha256": [
+          "bac468a784017ca43f24dcca28ed5e786c36c0f3149f384cb8f8755c007465e4"
+        ]
+      },
+      {
+        "method": "golf",
+        "planned_recordings": 120,
+        "measured": 120,
+        "failed": 0,
+        "synthesis_contract_sha256": [
+          "025acfb1540722522a7f96c151a0025a3f9a54c13884fb1daa1de380b2c19589"
+        ]
+      },
+      {
+        "method": "sifigan",
+        "planned_recordings": 120,
+        "measured": 120,
+        "failed": 0,
+        "synthesis_contract_sha256": [
+          "6ed80e04a6abb9ff8c29f99ef3524e173c57961179fbaaa8d5e2b817808960ea"
+        ]
+      },
+      {
+        "method": "llsm2",
+        "planned_recordings": 120,
+        "measured": 120,
+        "failed": 0,
+        "synthesis_contract_sha256": [
+          "a99272dd92cc4ddeb42f96bcda97b5c64f82a19ce26824ed13633ba4f51931f5"
+        ]
+      },
+      {
+        "method": "magphase",
+        "planned_recordings": 120,
+        "measured": 120,
+        "failed": 0,
+        "synthesis_contract_sha256": [
+          "fce8635fb5455ea463d48b4a90e50068be1b803bdc4562ad40666c4cad2faa4f"
+        ]
+      }
+    ],
+    "preservation": "all 12 batches fixed-version private readback verified; no private locator published"
+  },
+  "quality_common16": {
+    "completed_batches": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "recordings": 100,
+    "methods": 8,
+    "metric_families": [
+      "SCOREQ natural/ref telephone",
+      "ECAPA cosine distance",
+      "20 ms ERB"
+    ],
+    "status_counts": {
+      "measured": 2400
+    },
+    "repetitions": "first measurement plus one repetition; not independent recordings"
+  },
+  "acoustic": {
+    "completed_batches": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "measured_method_recording_rows": 560,
+    "quiet_measured": 488,
+    "no_reference_quiet_blocks": 72
+  },
+  "calibration_features": {
+    "completed_batches": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "distinct_training_recordings": 80,
+    "measured_method_recording_rows": 640,
+    "readout_and_abx_assessment": "not_started"
+  },
+  "mos": {
+    "completed_batches": [
+      0
+    ],
+    "measured_rows": 90,
+    "scientifically_identical_prior_reuse": 40,
+    "new_measurements": 50
+  },
+  "asr": {
+    "completed_batches": [
+      0
+    ],
+    "recognitions": 27,
+    "measured_assessments": 24,
+    "ground_truth_not_applicable": 56,
+    "full_study_applicable_recordings": 55,
+    "full_study_applicable_speakers": 32
+  },
+  "supplemental_inputs": {
+    "human_similarity": {
+      "acquired": 104,
+      "planned": 105,
+      "formal_feature_extraction": "not_started"
+    },
+    "vctk48k": {
+      "acquired_sources": 16,
+      "planned": 126,
+      "frozen_final_manifest": false,
+      "formal_synthesis": "not_started"
+    },
+    "remaining_acquisition_blocker": "authorized official acquisition is blocked by executor startup error before network access"
+  },
+  "remaining": [
+    "common16 quality final20 recordings",
+    "acoustic final50 recordings",
+    "MOS and ASR batches01..11",
+    "calibration features final40 and ABX/readout",
+    "native controls, time/slope, control-quality curves",
+    "quantization, feature interpolation, representation robustness and storage curves",
+    "human similarity and VCTK48k supplemental cohorts",
+    "all-family coverage, final per-metric rankings and independent review"
+  ],
+  "timing_limits": [
+    "full120 is a single-run reference with mixed storage I/O conditions",
+    "70-record supplement uses batches05..11; operation boundary declared before batch05; analysis plan adopted after batch05 started",
+    "confidence intervals describe corpus/speaker composition, not repeated timing stability"
+  ],
+  "public_audio": {
+    "new_audio_in_this_commit": 0,
+    "future_maximum_samples": 14,
+    "case_ids": [
+      "librispeech_1089-134686-0008",
+      "librispeech_1188-133604-0003"
+    ],
+    "seconds_per_sample_max": 2,
+    "withheld_methods": [
+      "golf",
+      "sifigan"
+    ],
+    "requirement": "fixed source/weights terms, attribution, source interval/hash and finite actual WAV verification"
+  },
+  "old_unpublished_lost_raw": "not reconstructed from conversation counts; no old missing values included",
+  "completion_claim": false
+}
