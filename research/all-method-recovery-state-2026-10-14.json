@@ -1,0 +1,491 @@
+{
+  "schema_version": 1,
+  "updated_at_utc": "2026-10-14T06:22:00Z",
+  "status": "draft_source_recovered_measurements_not_started",
+  "base_commit": "a84d7cac887f159a9ed36e6fd31abee707423d17",
+  "run_directory": "runs/all-method-metrics-recovery-20261014",
+  "methods": [
+    "hnm",
+    "world_harvest",
+    "facodec",
+    "hifiglot",
+    "golf",
+    "sifigan",
+    "llsm2",
+    "magphase"
+  ],
+  "additional_metric_families": 18,
+  "main_planned_recordings": 120,
+  "main_planned_speakers": 40,
+  "new_formal_measurement_rows": 0,
+  "new_ranking_results": null,
+  "scientific_contracts_frozen": false,
+  "previous_unpublished_raw": "mostly_unavailable_not_reconstructed_from_conversation",
+  "origin": "recovered_sources_with_new_recovery_run_changes; not a byte-identical old-run snapshot",
+  "validation": {
+    "ruff": "passed 2026-10-14T05:19:16Z",
+    "source_size": "175 files passed 2026-10-14T05:19:16Z",
+    "independent_review": "static_only_no_known_major_blocker",
+    "runtime": "not_run",
+    "tests": "not_run_per_repository_instruction",
+    "report_generation": "not_run"
+  },
+  "blocker": null,
+  "not_included": [
+    "full_audio",
+    "model_weights",
+    "original_human_rating_csv",
+    "credentials",
+    "private_backup_locators"
+  ],
+  "files": [
+    {
+      "path": "research/all-method-corpora-plan-recovery-2026-10-14.md",
+      "bytes": 8711,
+      "sha256": "46b90e51cc3f90123bb5d283d10a082348bb53d710e1a60b65c5cf673a1def2d"
+    },
+    {
+      "path": "research/all-method-features-plan-recovery-2026-10-14.md",
+      "bytes": 9597,
+      "sha256": "5a7ee05b6da1e9eb70b5f347e1dcaf758892511f6592030cd688aeac0f5a4412"
+    },
+    {
+      "path": "research/all-method-rankings-plan-recovery-2026-10-14.md",
+      "bytes": 5087,
+      "sha256": "3bb553e3ace57f0b64f248313a52ba1e884e53bbf6fed86a81cbe4771f97f89c"
+    },
+    {
+      "path": "research/all-method-recovery-plan-2026-10-14.md",
+      "bytes": 13202,
+      "sha256": "07b97fe455c4cd400d20d59505d318d15e65219ae71bdff373bd0fb985463efd"
+    },
+    {
+      "path": "research/all-method-recovery-status-2026-10-14.md",
+      "bytes": 5255,
+      "sha256": "9c37e8fe43f9fa13148299064fd861fd72fc45a739beceae23dbaf52c9a54cd3"
+    },
+    {
+      "path": "scripts/all_metrics_acoustic.py",
+      "bytes": 6100,
+      "sha256": "4504db5ae90cc02f76bab8f6302b74d5d96fa0b402446609854bec195fc4e474"
+    },
+    {
+      "path": "scripts/all_metrics_asr.py",
+      "bytes": 11495,
+      "sha256": "b6521c06a7ea28d92ef4ec58fce0c92eb0cb4c10fc835c0739303faea56ba6ab"
+    },
+    {
+      "path": "scripts/all_metrics_audio.py",
+      "bytes": 3377,
+      "sha256": "594a35f0ddcde26c5b789e77648c7616b586c2bf97427c5cb5b99ef73e16cef9"
+    },
+    {
+      "path": "scripts/all_metrics_base_controls.py",
+      "bytes": 7344,
+      "sha256": "a74e26c7509eb9e7c2195d57bf8709111473d0edbffa52db164c49d67e43a8b0"
+    },
+    {
+      "path": "scripts/all_metrics_checkpoint.py",
+      "bytes": 6593,
+      "sha256": "f235d550ab393134d5f79b61cdbc0e13fbedeb168dff49fa6fea52abab457b5c"
+    },
+    {
+      "path": "scripts/all_metrics_common.py",
+      "bytes": 7015,
+      "sha256": "d9d2ea1fc7bb93a627d14db1eddda203d91cb9c0f1708d31db03b148ad67168a"
+    },
+    {
+      "path": "scripts/all_metrics_control_adapters.py",
+      "bytes": 3789,
+      "sha256": "e0683815d17fce0a2b723732d5d2aa1eb852f81c44fe2e3eadcbc26daf1a2327"
+    },
+    {
+      "path": "scripts/all_metrics_control_eval.py",
+      "bytes": 12268,
+      "sha256": "099814a22a7863ceb799593c55f7e5cf04efbb6f1a1df0675b36ed6b163c3bfc"
+    },
+    {
+      "path": "scripts/all_metrics_control_eval_curves.py",
+      "bytes": 8865,
+      "sha256": "e120bb5084cf71da167cd068c8771afd2398d13893518f8c1eb4aff78926f1f1"
+    },
+    {
+      "path": "scripts/all_metrics_control_eval_equivalence.py",
+      "bytes": 4248,
+      "sha256": "bb464d5d10b6ef1e7c28569a9f8d8a378d45582a4ca33b48c6118365efc93319"
+    },
+    {
+      "path": "scripts/all_metrics_control_eval_plan.py",
+      "bytes": 4948,
+      "sha256": "da64f73d3bc8aba020547a5bce8ec8ad216d0ea9d456e7c474e92ebbe386b6e4"
+    },
+    {
+      "path": "scripts/all_metrics_control_eval_resume.py",
+      "bytes": 3669,
+      "sha256": "1c672636c63879126eb0cc56a49fce49c8084cd0658c52c9e6c7dec31c76dd61"
+    },
+    {
+      "path": "scripts/all_metrics_control_eval_run.py",
+      "bytes": 4785,
+      "sha256": "3b92ea8ce219212402652491838e3b8000b7a967ee8719ec8fc0369eb0be7a6b"
+    },
+    {
+      "path": "scripts/all_metrics_control_eval_slope.py",
+      "bytes": 11578,
+      "sha256": "f794f03d84174ef04a66b7893f5626b65f2d4c4a7c89828a0e856b5f33aa5e6d"
+    },
+    {
+      "path": "scripts/all_metrics_control_eval_speaker.py",
+      "bytes": 9440,
+      "sha256": "ee0c81c65566f9dd6bb3f0c431edb0717768b1e16c48cd2b5a8837c04560ebce"
+    },
+    {
+      "path": "scripts/all_metrics_control_eval_summary.py",
+      "bytes": 13295,
+      "sha256": "09a52aca15f6b7bd1791a86bf193339ce2ad355fd85e6ce8befbb020a3333d61"
+    },
+    {
+      "path": "scripts/all_metrics_control_eval_time.py",
+      "bytes": 5220,
+      "sha256": "1b6ecc78d691f2cbc0405b471b410b3b6befcf800a35e21f1c82971f9b8cd86f"
+    },
+    {
+      "path": "scripts/all_metrics_controls.py",
+      "bytes": 6762,
+      "sha256": "b8a10df3a157ea5f08ddeb4b4c8b5ddb2c4f65ee933a01686ab5e907ad244729"
+    },
+    {
+      "path": "scripts/all_metrics_datasets_abx.py",
+      "bytes": 6050,
+      "sha256": "7e54b9ee7e43a6d3e62c884f835418b905ac190848d5b34a6b9f01a8321967fa"
+    },
+    {
+      "path": "scripts/all_metrics_datasets_abx_sources.py",
+      "bytes": 2123,
+      "sha256": "34c785fffabe4f70778f6215bac9268c4424c32cec48d880744e94a27d58a460"
+    },
+    {
+      "path": "scripts/all_metrics_datasets_contract.py",
+      "bytes": 5603,
+      "sha256": "4d995c8f706b51fd585b606c93e29f68c8c57c92aa4fa83c23cb375a0633a3d2"
+    },
+    {
+      "path": "scripts/all_metrics_datasets_human.py",
+      "bytes": 8693,
+      "sha256": "6e29ddd362650607e2d1898b59717dd8a6e05cbe084c4a3c8079e383e4befef7"
+    },
+    {
+      "path": "scripts/all_metrics_datasets_jvs.py",
+      "bytes": 4008,
+      "sha256": "24f1054752fe49f334cfca078be8142fd13264293008eaf8c94ce7131cbec6f1"
+    },
+    {
+      "path": "scripts/all_metrics_datasets_remote.py",
+      "bytes": 8399,
+      "sha256": "03d6b0e9249e8511cc2a7990a3fa2b7041050b6ed3c56a5b520c0065cc0566e6"
+    },
+    {
+      "path": "scripts/all_metrics_datasets_train.py",
+      "bytes": 9763,
+      "sha256": "cfbe7ee6f9da6f307d5f73f21771413903b859f806f690629aea89aa2f7b2564"
+    },
+    {
+      "path": "scripts/all_metrics_datasets_vctk.py",
+      "bytes": 7042,
+      "sha256": "7b296ba8a4d5c6bcdc027dc44e49a4970b0b0be9242fe5f614e9ab71bdf8f506"
+    },
+    {
+      "path": "scripts/all_metrics_derive.py",
+      "bytes": 7619,
+      "sha256": "6ac791c01dbe6bde9d1892f50f43796bac22904ce1c117a7989f164acd230f55"
+    },
+    {
+      "path": "scripts/all_metrics_feature_locked_run.py",
+      "bytes": 3329,
+      "sha256": "c00ef0128e474def36a86a5f7bee72a0d61d3ad777eaf04841f018d59bbfcca9"
+    },
+    {
+      "path": "scripts/all_metrics_features_abx.py",
+      "bytes": 13512,
+      "sha256": "854766030318e4325332039840dc82676c66e236e1261354923aafa6af92b6dd"
+    },
+    {
+      "path": "scripts/all_metrics_features_abx_results.py",
+      "bytes": 3991,
+      "sha256": "1f527abea484e7530ddb3deb80f5e9b59d836cebe893a4d98211d90bb672e76d"
+    },
+    {
+      "path": "scripts/all_metrics_features_abx_statistics.py",
+      "bytes": 4749,
+      "sha256": "2964800a12875e89204500023b35225c010c8bb16a3f3938cd1e2b5c9198359d"
+    },
+    {
+      "path": "scripts/all_metrics_features_common.py",
+      "bytes": 9369,
+      "sha256": "e6b3a6783ef2f2085dd694ffee30af06dac0b7705e491e2c99cc02f155d8b89f"
+    },
+    {
+      "path": "scripts/all_metrics_features_readout.py",
+      "bytes": 13048,
+      "sha256": "e20a2c269296f1aa3986232f02b449868741d2ba4e8113bad23d48b302159adf"
+    },
+    {
+      "path": "scripts/all_metrics_features_receipts.py",
+      "bytes": 1741,
+      "sha256": "6bacc0afd2fe292a9e96cbc8301e3cb3184581a3c441f8aa6e93630050770dda"
+    },
+    {
+      "path": "scripts/all_metrics_features_run.py",
+      "bytes": 6687,
+      "sha256": "7087d9de6aa8c5b7aeb35b069f792cd9587ff3c0020faf331e81692851b34096"
+    },
+    {
+      "path": "scripts/all_metrics_features_support.py",
+      "bytes": 8689,
+      "sha256": "cf924c6d5dc26196a43b5d23ca58bb68628658f8f3b08d57989855bf44b6f2c0"
+    },
+    {
+      "path": "scripts/all_metrics_features_train.py",
+      "bytes": 7078,
+      "sha256": "2bb864a20d2bc188822fd29fc6d986eed64ded9a834b2faba894f82a0cbc065e"
+    },
+    {
+      "path": "scripts/all_metrics_final_gate.py",
+      "bytes": 10722,
+      "sha256": "1437262a4cb3aa8f77d701436959d96f67d0b278f9a058f5d82cfa47baf3d43b"
+    },
+    {
+      "path": "scripts/all_metrics_golf_control.py",
+      "bytes": 3123,
+      "sha256": "883ff581ab8132a7c8d312c894a26eb29990cf9a71846223c2aa8d6434ff3b96"
+    },
+    {
+      "path": "scripts/all_metrics_human_data.py",
+      "bytes": 5711,
+      "sha256": "413edc016c33b9101d22a4b46a3e3ebc3a2276b76bb0528a396cda63b4339d05"
+    },
+    {
+      "path": "scripts/all_metrics_human_features.py",
+      "bytes": 6036,
+      "sha256": "1943b27ad7c0cb68e700e147785b4a8df117b718b33e095a6a7a5e7e9ae3427b"
+    },
+    {
+      "path": "scripts/all_metrics_human_rankings.py",
+      "bytes": 16346,
+      "sha256": "404cade43cbec39d939b0f346fb88e03584063473c6945bea7d9176fce5c9eb5"
+    },
+    {
+      "path": "scripts/all_metrics_human_run.py",
+      "bytes": 5727,
+      "sha256": "61fe1ac94cd4104a9c318806b59393ea5592afcd1d80a034f5ccf6318cb98532"
+    },
+    {
+      "path": "scripts/all_metrics_human_statistics.py",
+      "bytes": 6548,
+      "sha256": "ec998755947c516e58cb1851650b7d89fcfaf79c85a9c3b8820da0f3b62bc943"
+    },
+    {
+      "path": "scripts/all_metrics_interpolation.py",
+      "bytes": 6784,
+      "sha256": "afa53eedf0182c4611456096542b57002d1c0ff729c3f9e31b2d7e111cf89a03"
+    },
+    {
+      "path": "scripts/all_metrics_latent_evaluation.py",
+      "bytes": 17857,
+      "sha256": "73879fbb0848182a7c79ad1f01078beb70fb2ec2c6499fec2a7d3e4491907290"
+    },
+    {
+      "path": "scripts/all_metrics_latent_evaluation_common.py",
+      "bytes": 10533,
+      "sha256": "bc890a2cb0db62c5d3e5707da6dd230ab81d203ee1341f15b5eff708cbefce00"
+    },
+    {
+      "path": "scripts/all_metrics_latent_evaluation_resume.py",
+      "bytes": 4238,
+      "sha256": "bf6394881eb472135af1089165ebd73fdd90276d3dd988e9feb31bb6b4e39e5f"
+    },
+    {
+      "path": "scripts/all_metrics_latent_evaluation_storage.py",
+      "bytes": 4622,
+      "sha256": "1011459a6452ade6e29682671e1041856f6411b3ecabc6f1e439a952149deef5"
+    },
+    {
+      "path": "scripts/all_metrics_latent_evaluation_watch.py",
+      "bytes": 4861,
+      "sha256": "b35678de0b8df7a206058d71b59e3a030584943942dcaf90074deb4a671e06e8"
+    },
+    {
+      "path": "scripts/all_metrics_latent_features.py",
+      "bytes": 6393,
+      "sha256": "067fa971de819fc01982558117d692bb741d6d2916939406b15d9f354786eb91"
+    },
+    {
+      "path": "scripts/all_metrics_latent_groups.py",
+      "bytes": 15825,
+      "sha256": "5e006c23d3329d75de369f9566f6b809fa3ca77057530fe8dc3642c4bd1350c8"
+    },
+    {
+      "path": "scripts/all_metrics_latent_interpolation.py",
+      "bytes": 12103,
+      "sha256": "070200bdca42a7d92313cc9acd3447bc79cd5b06bb2143e139a97e98c42b648e"
+    },
+    {
+      "path": "scripts/all_metrics_latent_io.py",
+      "bytes": 8643,
+      "sha256": "323b2c05836b1e44400a5e412471f61a8e18194de9c26a511b8fb06c6931fa0f"
+    },
+    {
+      "path": "scripts/all_metrics_latent_provenance.py",
+      "bytes": 16399,
+      "sha256": "02691b5311f1ceb5bd8c7a2b0a6255dbe870860d6229259c49cd6bbe91909658"
+    },
+    {
+      "path": "scripts/all_metrics_latent_quantization.py",
+      "bytes": 6739,
+      "sha256": "af439e7ad3581aeee044c8daa911d09be40652fe5136cac519b93904a8cda25d"
+    },
+    {
+      "path": "scripts/all_metrics_latent_queue.py",
+      "bytes": 6807,
+      "sha256": "2c1985438d5444b6e07e7d9b45d7b0ee9496a2d6ab97098397545f0cd96d79c3"
+    },
+    {
+      "path": "scripts/all_metrics_latent_run.py",
+      "bytes": 5364,
+      "sha256": "2ad6504ae59a13eead7de5af9eb42d574877474355586c01d286970e4f6703cb"
+    },
+    {
+      "path": "scripts/all_metrics_latent_worker.py",
+      "bytes": 11968,
+      "sha256": "acdb1f43ac03af1617036b72a91c6bed29c97574ab00760e6e5cab75c2f41a49"
+    },
+    {
+      "path": "scripts/all_metrics_llsm_control.py",
+      "bytes": 5472,
+      "sha256": "6ba12b6933dfda3f9d6b57f46085de652f00acd348cf1ed5bef15eb60c7ad765"
+    },
+    {
+      "path": "scripts/all_metrics_llsm_storage.py",
+      "bytes": 7173,
+      "sha256": "c672f5f38f934ff9710a726f029a102592c3f5e9de8d25acdace76dfae64251f"
+    },
+    {
+      "path": "scripts/all_metrics_mos.py",
+      "bytes": 10556,
+      "sha256": "fbfc7e90b1c6c133b586f4a21c25361940aeafa14c876b6891b9627069783607"
+    },
+    {
+      "path": "scripts/all_metrics_neural_controls.py",
+      "bytes": 9165,
+      "sha256": "c6a3c150c448ec41a04befc6543bd25d4512bcc28d80cf0bf14b5d8481ac66ce"
+    },
+    {
+      "path": "scripts/all_metrics_process_receipts.py",
+      "bytes": 3942,
+      "sha256": "84ba1ac16a32a8e7965d5d916d5b78ed1d475913138c76a6020eecd611b80dbc"
+    },
+    {
+      "path": "scripts/all_metrics_rankings.py",
+      "bytes": 7781,
+      "sha256": "ab46368ed1d3b6990b3adae0dcf448f12928ab3d297174e3cf4a4f4cb9816c5b"
+    },
+    {
+      "path": "scripts/all_metrics_rankings_acoustic.py",
+      "bytes": 6646,
+      "sha256": "a6e306066c0c112ed2dfb72cbeb2c498d00b445cd8443cf645fddf3fccf3d405"
+    },
+    {
+      "path": "scripts/all_metrics_rankings_core.py",
+      "bytes": 10529,
+      "sha256": "77d8eca35f00f086ca3f137181fdeb36438d6606126205ce1f12993bda844159"
+    },
+    {
+      "path": "scripts/all_metrics_rankings_coverage.py",
+      "bytes": 3888,
+      "sha256": "7944e1305b673694087d758a953d1bb47ce2daee702e75fd8cd590caaf01273f"
+    },
+    {
+      "path": "scripts/all_metrics_rankings_extra.py",
+      "bytes": 10920,
+      "sha256": "a1ef04217f332217644d41ba11feb7b15a24beaa3ae8be85da468ba9f8e7578a"
+    },
+    {
+      "path": "scripts/all_metrics_rankings_html.py",
+      "bytes": 12161,
+      "sha256": "ee296710296fa9adae2d8d06ecc874be182b068c032ee263516e0b1bc75321dd"
+    },
+    {
+      "path": "scripts/all_metrics_rankings_inputs.py",
+      "bytes": 12795,
+      "sha256": "452168cf91d8aab4a80b51610d981a6bcbf8db8d5e90e73b6af271de31fb2d39"
+    },
+    {
+      "path": "scripts/all_metrics_representation.py",
+      "bytes": 5206,
+      "sha256": "973e341c131698a36fb2a2b82fd7dd4d59b97dce6c06b2f698f595771ead5da2"
+    },
+    {
+      "path": "scripts/all_metrics_resources.py",
+      "bytes": 3399,
+      "sha256": "b142bc88c83665ebb8ad1f806569deb838ade589a0d28447ec45274008aedfbd"
+    },
+    {
+      "path": "scripts/all_metrics_run.py",
+      "bytes": 10316,
+      "sha256": "6412256d4ba20bf575b25e750d4bd9a13dfcc6f000c6ac73fe4228d37ae3abef"
+    },
+    {
+      "path": "scripts/all_metrics_storage_policy.py",
+      "bytes": 5456,
+      "sha256": "81f0b90ec0d0467a5fb7767df9800fc01f713d9f5e4b5559cf6db8776ccf11ac"
+    },
+    {
+      "path": "scripts/all_metrics_synthesis.py",
+      "bytes": 22990,
+      "sha256": "1e3f791d6149322c45e94f49e14311a3f2fd31ad510258c11c7ff24ec159932f"
+    },
+    {
+      "path": "scripts/all_metrics_vctk_inputs.py",
+      "bytes": 6916,
+      "sha256": "ac71116457eab20b74414f4a1591078b6c6b09a9fa6fed3f6eb0393893232b58"
+    },
+    {
+      "path": "scripts/all_metrics_vctk_quality.py",
+      "bytes": 13991,
+      "sha256": "9f687673c295e8d735dce390c2408c19bafed689c487a2583f26a4070596925e"
+    },
+    {
+      "path": "scripts/all_metrics_vctk_quality_resume.py",
+      "bytes": 3366,
+      "sha256": "bd6855952d6cae49675282d5d1ed89c8d742762d79ff6851f06ae1e7f17366a9"
+    },
+    {
+      "path": "scripts/all_metrics_vctk_resume.py",
+      "bytes": 4481,
+      "sha256": "e665c9225ca145bc57682b1cca007091be3497b49197954fa4e8d678e0f22cc9"
+    },
+    {
+      "path": "scripts/all_metrics_vctk_run.py",
+      "bytes": 9571,
+      "sha256": "1099c927901d08bc3c68f4272ae0a884f49b2fac381b40edb494deed85d0e74f"
+    },
+    {
+      "path": "scripts/all_metrics_vctk_summary.py",
+      "bytes": 9136,
+      "sha256": "03245d68aa53f3724dbef7519e25c3c179bcef3ff5c610f5ff2e5f721bbc5e6b"
+    },
+    {
+      "path": "scripts/all_metrics_vctk_synthesis.py",
+      "bytes": 5722,
+      "sha256": "371a390e14e46dbe73fd2bc7129d1ee1a2998d11bb1ca7f21b251f914d08a3b7"
+    },
+    {
+      "path": "scripts/all_metrics_vctk_watch.py",
+      "bytes": 4261,
+      "sha256": "cad25b6078b729984cfb1237e4fc5a49519b4ad2816514788b8a403acac81539"
+    }
+  ],
+  "next_stage": "save_draft_pr_and_verify_exact_commit_ci_before_formal_measurement",
+  "private_raw_backup": "authorized_owner_only_capacity_conscious_batch_retention",
+  "new_public_audio": "no_audio_in_this_draft; future_minimal_short_examples_only_after_license_derivative_redistribution_and_attribution_review"
+}
