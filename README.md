@@ -2,6 +2,10 @@
 
 **ユーザー指示の正本は [USER_INSTRUCTIONS.md](USER_INSTRUCTIONS.md) です。** 以下の文書・コード・解釈はAI作成物です。
 
+## 最新の固定120録音・全8方式比較
+
+[音声付きの全指標・順位表をGitHub Pagesで開く](https://hiroshiba.github.io/check-nonml-saikyo-vocoder/research/all-method-final-2026-10-15/index.html) ／ [保存値・来歴・限界](research/all-method-final-2026-10-15/README.md)。2026年10月15日集計、主120録音40話者の予定工程は終端しています。元ASV105件・VCTK126件は未完で、取得可能な別補助群と区別します。現在の開発ベースはHNM v3のまま、指標別順位と対応差を示し、総合勝者は選びません。
+
 ## 標準の既存方式比較
 
 **WORLDに加えて、FACodec・HiFi-Glot・GOLF-ff・SiFi-GAN・LLSM2 Layer 0・MagPhaseを標準比較対象にします。DACは `--include-dac` 指定時のみ追加します。** 自作ベースとの近さや、改良に使えるかを選定理由にはしません。既存方式への全置換も候補です。指示変更は [PR #28](https://github.com/Hiroshiba/check-nonml-saikyo-vocoder/pull/28)、実装と結果保存は [PR #29](https://github.com/Hiroshiba/check-nonml-saikyo-vocoder/pull/29) に分けています。
