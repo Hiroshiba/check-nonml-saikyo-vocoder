@@ -791,14 +791,14 @@
         },
         {
           "title": "参考速度",
-          "note": "解析＋未編集復号の秒数÷原入力秒。初期化・入出力は別記、各ライブラリ2スレッド・合成処理1個の単回値です。主120は保存I/O条件が混在。固定70は保存処理分離方針下の後から追加した補助解析で、主群の代用や反復ベンチマークではありません。",
+          "note": "解析RTFは解析秒数÷原入力秒、復号RTFは未編集復号秒数÷同じ原入力秒。別々に保存した値と順位を示し、合計は一覧に載せません。初期化・前処理・保存読込は別記、各ライブラリ2スレッド・合成処理1個の単回値です。全120は保存I/O条件が混在。固定70は保存処理分離方針下の後から追加した補助解析で、全120の代用や反復ベンチマークではありません。",
           "expanded": false,
           "metrics": [
             {
-              "group": "speed.total",
-              "label": "解析＋復号RTF",
+              "group": "speed.analysis",
+              "label": "解析RTF",
               "view": "primary",
-              "cohort_label": "主120・参考",
+              "cohort_label": "全120・参考",
               "support": {
                 "recordings": 120,
                 "speakers": 40
@@ -815,8 +815,48 @@
               ]
             },
             {
-              "group": "speed.storage_policy70.total",
-              "label": "解析＋復号RTF",
+              "group": "speed.synthesis",
+              "label": "復号RTF（未編集）",
+              "view": "primary",
+              "cohort_label": "全120・参考",
+              "support": {
+                "recordings": 120,
+                "speakers": 40
+              },
+              "methods": [
+                "hnm",
+                "world_harvest",
+                "facodec",
+                "hifiglot",
+                "golf",
+                "sifigan",
+                "llsm2",
+                "magphase"
+              ]
+            },
+            {
+              "group": "speed.storage_policy70.analysis",
+              "label": "解析RTF",
+              "view": "primary",
+              "cohort_label": "固定70・補助",
+              "support": {
+                "recordings": 70,
+                "speakers": 24
+              },
+              "methods": [
+                "hnm",
+                "world_harvest",
+                "facodec",
+                "hifiglot",
+                "golf",
+                "sifigan",
+                "llsm2",
+                "magphase"
+              ]
+            },
+            {
+              "group": "speed.storage_policy70.synthesis",
+              "label": "復号RTF（未編集）",
               "view": "primary",
               "cohort_label": "固定70・補助",
               "support": {
