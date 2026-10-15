@@ -7,6 +7,8 @@ import json
 from pathlib import Path
 import shutil
 
+from site_metric_comparison import comparison
+
 
 def esc(value):
     return html.escape(str(value), quote=True)
@@ -70,38 +72,6 @@ def copy_artifacts(root, output, item):
     return source
 
 
-def comparison(data, item):
-    """保存済み主値・順位・対応差を表示するだけで、統計量を再計算しない。"""
-    groups = {group['id']: group for group in data['groups']}
-    chosen = [groups[metric['group']] for metric in item['metrics']]
-    methods = item['method_labels']
-    if (list(methods) != data['methods']
-            or data['formal_base']['comparison_reference'] != item['reference_method']):
-        raise ValueError('登録した比較方式・当時のベースが保存結果と一致しません')
-    for group in chosen:
-        primary = group['primary']
-        if (not primary['all_eight_methods']
-                or primary['common_valid_recordings'] != item['recordings']
-                or primary['common_valid_speakers'] != item['speakers']):
-            raise ValueError('一覧の主比較分母が登録と一致しません')
-    headings = ''.join(f'<th>{esc(metric["label"])}</th>' for metric in item['metrics'])
-    rows = []
-    for method, label in methods.items():
-        cells = []
-        for group in chosen:
-            cell = group['primary']['methods'][method]
-            value, difference = cell['value'], cell['hnm_difference']['value']
-            if value is None or difference is None:
-                text = '比較不能'
-            else:
-                text = (f'{value:.3f}（{cell["rank"]}位）'
-                        f'<br><small>HNM差 {difference:+.3f}</small>')
-            cells.append(f'<td>{text}</td>')
-        rows.append(f'<tr><th scope="row">{esc(label)}</th>{"".join(cells)}</tr>')
-    return ('<div class="scroll"><table><thead><tr><th>方式</th>' + headings
-            + '</tr></thead><tbody>' + ''.join(rows) + '</tbody></table></div>')
-
-
 def audio_preview(source, item):
     data = read_json(source / 'audio_samples.json')
     cards = []
@@ -133,7 +103,7 @@ def audio_preview(source, item):
 
 def preserved_cards(root, output, recorded_time, time_label):
     registry = read_json(root / 'research/pages-reports.json')
-    if registry['schema_version'] != 1:
+    if registry['schema_version'] != 2:
         raise ValueError('未対応の確定レポート登録形式です')
     cards, seen = [], set()
     for item in registry['reports']:
@@ -146,12 +116,17 @@ def preserved_cards(root, output, recorded_time, time_label):
             raise ValueError('記録日時が保存済み集計と一致しません')
         link = item['path'] + '/index.html'
         card = (f'<article><h2><a href="{esc(link)}">{esc(item["title"])}</a></h2>'
-                f'<small>記録：{time_label(item)}</small><p>{esc(item["summary"])}</p>'
-                + comparison(data, item)
-                + '<p><small>120録音・40話者の共通群、話者等重み。HNM差は方式−HNM。'
-                '順位は点推定の順で、優越の確証や総合順位ではありません。'
-                '予測MOSは未校正で、原音を超える知覚品質を示しません。'
+                f'<small>集計保存：{time_label(item)}</small>'
+                f'<p><small>{esc(item["measurement_note"])}</small></p>'
+                f'<p>{esc(item["summary"])}</p>'
+                + comparison(data, item, expanded=True)
+                + '<p><small>各列に比較対象と共通分母を表示しています。'
+                '順位は保存済み点推定の順で、優越の確証や総合順位ではありません。'
                 f'<a href="{esc(link)}">全指標・95%区間・欠測理由を見る</a></small></p>'
-                + audio_preview(source, item) + '</article>')
+                + audio_preview(source, item)
+                + comparison(data, item, expanded=False)
+                + f'<p><a href="{esc(item["path"])}/quantization-common-window/index.html">'
+                '量子化の共通窓補助を見る</a>（厳密同長の適用外を残した別解析）</p>'
+                + '</article>')
         cards.append((recorded_time(item), item['path'], item['id'], card))
     return cards

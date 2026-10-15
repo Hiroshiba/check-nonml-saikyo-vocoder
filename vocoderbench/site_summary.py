@@ -38,27 +38,23 @@ def brief(results):
     natural = any(row['kind'] == 'natural_speech' for row in rows)
     selected = [r for r in rows if (r['kind'] == 'natural_speech') == natural]
     reference = data['comparison_reference']
-    refs = {r['case']: r for r in selected if r['method'] == reference}
     body = []
     for method in dict.fromkeys(r['method'] for r in selected if r['method'] != 'identity'):
         records = [r for r in selected if r['method'] == method]
-        values, deltas = [], []
+        values = []
         for r in records:
             value = r.get('measurement', {}).get('mr_stft_log_magnitude_mae_db')
-            base = refs.get(r['case'], {}).get('measurement', {}).get('mr_stft_log_magnitude_mae_db')
             if value is not None:
                 values.append(value)
-                if base is not None:
-                    deltas.append(value - base)
         failed = sum(r['status'] != 'measured' or r.get('measurement', {}).get('status') != 'ok' for r in records)
         cells = [LABELS.get(method, method), f'{median(values):.3f}' if values else '未測定',
-                 f'{median(deltas):+.3f}' if deltas else '比較不能', f'{len(values)}/{len(records)}', failed]
+                 f'{len(values)}/{len(records)}', failed]
         body.append('<tr>'+''.join(f'<td>{esc(v)}</td>' for v in cells)+'</tr>')
     kind = '自然音声' if natural else '人工信号'
-    return (f'<p>{kind}の比較。差分の相手：{esc(LABELS.get(reference, reference))}。'
-            '誤差は小さいほど原音に近く、差分が負なら比較相手より小さい値です。知覚品質の順位ではありません。</p>'
+    return (f'<p>{kind}の比較。比較相手：{esc(LABELS.get(reference, reference))}。'
+            '誤差は小さいほど原音に近く、知覚品質の順位ではありません。対応差は詳細に保存しています。</p>'
             '<div class="scroll"><table><thead><tr><th>方式</th><th>スペクトル誤差中央値 dB</th>'
-            '<th>対応する差分の中央値 dB</th><th>有効／全件</th><th>処理・測定失敗</th></tr></thead>'
+            '<th>有効／全件</th><th>処理・測定失敗</th></tr></thead>'
             f'<tbody>{"".join(body)}</tbody></table></div>')
 
 
@@ -128,14 +124,14 @@ def _brief_current(data):
                     deltas.append(value - base)
         failed = sum(r['status'] != 'measured' or r.get('measurement', {}).get('status') != 'ok' for r in records)
         cells = [CURRENT_LABELS.get(method, method), f'{median(values):.3f}' if values else '—',
-                 f'{median(deltas):+.3f}' if deltas else '—', f'{len(values)}/{len(records)}',
+                 f'{len(values)}/{len(records)}',
                  f'{len(deltas)}/{len(records)}', f'{failed}/{len(records)}']
         body.append('<tr>'+''.join(f'<td>{esc(v)}</td>' for v in cells)+'</tr>')
     kind = '自然音声' if natural else '人工信号'
-    return (f'<p>{kind}の再合成。差分は{esc(CURRENT_LABELS.get(reference, reference))}比。'
+    return (f'<p>{kind}の再合成。比較相手：{esc(CURRENT_LABELS.get(reference, reference))}。対応差は詳細に保存しています。'
             '誤差は小さいほど原音に近く、知覚品質の順位ではありません。</p>'
             '<div class="scroll"><table><thead><tr><th>方式</th><th>誤差中央値 dB</th>'
-            '<th>差分中央値 dB</th><th>有効／全件</th><th>比較可能／全件</th><th>失敗／全件</th>'
+            '<th>有効／全件</th><th>比較可能／全件</th><th>失敗／全件</th>'
             f'</tr></thead><tbody>{"".join(body)}</tbody></table></div>')
 
 

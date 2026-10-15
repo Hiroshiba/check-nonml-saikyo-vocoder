@@ -1,5 +1,5 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "reports": [
     {
       "id": "all-method-final-2026-10-15",
@@ -8,8 +8,6 @@
       "title": "全8方式の品質・制御・表現比較：主集合120録音と指標別順位",
       "summary": "現在の自作ベースHNM v3と既存7方式の比較。主120録音の予定工程は終端。元ASV105件・VCTK126件は未完で、取得可能な100件・16件の補助群を分けて掲載しています。",
       "reference_method": "hnm",
-      "recordings": 120,
-      "speakers": 40,
       "artifact_count": 15,
       "artifact_manifest": {
         "bytes": 3373,
@@ -25,25 +23,917 @@
         "llsm2": "LLSM2 Layer0",
         "magphase": "MagPhase"
       },
-      "metrics": [
-        {
-          "group": "1.native_mos",
-          "label": "予測MOS ↑"
-        },
-        {
-          "group": "2.scoreq",
-          "label": "SCOREQ距離 ↓"
-        },
-        {
-          "group": "existing.erb20",
-          "label": "ERB誤差・20ms（dB）↓"
-        }
-      ],
       "audio_case": "librispeech_1089-134686-0008",
       "audio_methods": [
         "original",
         "hnm",
         "world_harvest"
+      ],
+      "measurement_note": "測定時点：2026年10月14〜15日の研究実行。無編集予測MOSの一部は、同一入力・条件を確認した過去の保存値を引用しています。以下はこの集計時点の保存結果で、毎回の測定対象を指定するものではありません。",
+      "metric_sections": [
+        {
+          "title": "音質・話者らしさ・明瞭性",
+          "note": "全8方式・120録音40話者の主比較。各値は話者等重み。予測MOSは今回の再合成に未校正の予測値で、原音を超える知覚品質を示しません。ECAPAも人の話者類似性を保証する値ではありません。",
+          "expanded": true,
+          "metrics": [
+            {
+              "group": "1.native_mos",
+              "label": "予測MOS",
+              "view": "primary",
+              "cohort_label": "主比較",
+              "support": {
+                "recordings": 120,
+                "speakers": 40
+              },
+              "methods": [
+                "hnm",
+                "world_harvest",
+                "facodec",
+                "hifiglot",
+                "golf",
+                "sifigan",
+                "llsm2",
+                "magphase"
+              ]
+            },
+            {
+              "group": "2.scoreq",
+              "label": "SCOREQ距離",
+              "view": "primary",
+              "cohort_label": "主比較",
+              "support": {
+                "recordings": 120,
+                "speakers": 40
+              },
+              "methods": [
+                "hnm",
+                "world_harvest",
+                "facodec",
+                "hifiglot",
+                "golf",
+                "sifigan",
+                "llsm2",
+                "magphase"
+              ]
+            },
+            {
+              "group": "5.ecapa",
+              "label": "ECAPA話者類似度",
+              "view": "primary",
+              "cohort_label": "主比較",
+              "support": {
+                "recordings": 120,
+                "speakers": 40
+              },
+              "methods": [
+                "hnm",
+                "world_harvest",
+                "facodec",
+                "hifiglot",
+                "golf",
+                "sifigan",
+                "llsm2",
+                "magphase"
+              ]
+            },
+            {
+              "group": "existing.estoi",
+              "label": "eSTOI明瞭性推定",
+              "view": "primary",
+              "cohort_label": "主比較",
+              "support": {
+                "recordings": 120,
+                "speakers": 40
+              },
+              "methods": [
+                "hnm",
+                "world_harvest",
+                "facodec",
+                "hifiglot",
+                "golf",
+                "sifigan",
+                "llsm2",
+                "magphase"
+              ]
+            },
+            {
+              "group": "existing.erb20",
+              "label": "ERB誤差・20ms（dB）",
+              "view": "primary",
+              "cohort_label": "主比較",
+              "support": {
+                "recordings": 120,
+                "speakers": 40
+              },
+              "methods": [
+                "hnm",
+                "world_harvest",
+                "facodec",
+                "hifiglot",
+                "golf",
+                "sifigan",
+                "llsm2",
+                "magphase"
+              ]
+            }
+          ]
+        },
+        {
+          "title": "音響的な再現性",
+          "note": "全8方式の主比較。音響的な一致を測る指標であり、知覚音質そのものの順位ではありません。音高は同じ独立測定器を原音と出力に適用した推定値です。",
+          "expanded": false,
+          "metrics": [
+            {
+              "group": "existing.mrstft_mean",
+              "label": "3窓平均スペクトル誤差（dB）",
+              "view": "primary",
+              "cohort_label": "主比較",
+              "support": {
+                "recordings": 120,
+                "speakers": 40
+              },
+              "methods": [
+                "hnm",
+                "world_harvest",
+                "facodec",
+                "hifiglot",
+                "golf",
+                "sifigan",
+                "llsm2",
+                "magphase"
+              ]
+            },
+            {
+              "group": "6.local_erb40",
+              "label": "局所ERB誤差・40ms（dB）",
+              "view": "primary",
+              "cohort_label": "主比較",
+              "support": {
+                "recordings": 120,
+                "speakers": 40
+              },
+              "methods": [
+                "hnm",
+                "world_harvest",
+                "facodec",
+                "hifiglot",
+                "golf",
+                "sifigan",
+                "llsm2",
+                "magphase"
+              ]
+            },
+            {
+              "group": "existing.rms_absolute",
+              "label": "RMS絶対差（dB）",
+              "view": "primary",
+              "cohort_label": "主比較",
+              "support": {
+                "recordings": 120,
+                "speakers": 40
+              },
+              "methods": [
+                "hnm",
+                "world_harvest",
+                "facodec",
+                "hifiglot",
+                "golf",
+                "sifigan",
+                "llsm2",
+                "magphase"
+              ]
+            },
+            {
+              "group": "existing.pitch.absolute_difference_cents_p95",
+              "label": "推定音高差・P95（cent）",
+              "view": "primary",
+              "cohort_label": "主比較",
+              "support": {
+                "recordings": 120,
+                "speakers": 40
+              },
+              "methods": [
+                "hnm",
+                "world_harvest",
+                "facodec",
+                "hifiglot",
+                "golf",
+                "sifigan",
+                "llsm2",
+                "magphase"
+              ]
+            },
+            {
+              "group": "existing.envelope.0.40.log_rms_mae_db",
+              "label": "全帯域包絡誤差・40ms（dB）",
+              "view": "primary",
+              "cohort_label": "主比較",
+              "support": {
+                "recordings": 120,
+                "speakers": 40
+              },
+              "methods": [
+                "hnm",
+                "world_harvest",
+                "facodec",
+                "hifiglot",
+                "golf",
+                "sifigan",
+                "llsm2",
+                "magphase"
+              ]
+            }
+          ]
+        },
+        {
+          "title": "音声認識",
+          "note": "公式全文を確認できた55録音の限定比較。残65録音は正解全文不足です。増分は再合成−原音の認識誤り率で、HNMとの差ではありません。負値でも人間の理解や発話内容が改善したことを意味しません。",
+          "expanded": false,
+          "metrics": [
+            {
+              "group": "4.incremental_cer",
+              "label": "増分CER（誤り率差）",
+              "view": "primary",
+              "cohort_label": "全文あり限定群",
+              "support": {
+                "recordings": 55,
+                "speakers": 32
+              },
+              "methods": [
+                "hnm",
+                "world_harvest",
+                "facodec",
+                "hifiglot",
+                "golf",
+                "sifigan",
+                "llsm2",
+                "magphase"
+              ]
+            },
+            {
+              "group": "4.incremental_wer",
+              "label": "増分WER（誤り率差）",
+              "view": "primary",
+              "cohort_label": "全文あり限定群",
+              "support": {
+                "recordings": 55,
+                "speakers": 32
+              },
+              "methods": [
+                "hnm",
+                "world_harvest",
+                "facodec",
+                "hifiglot",
+                "golf",
+                "sifigan",
+                "llsm2",
+                "magphase"
+              ]
+            }
+          ]
+        },
+        {
+          "title": "音高操作の追従",
+          "note": "対応する7方式を比較し、FACodecはこの操作に未対応です。音高誤差と有声欠落率を併記します。−3半音の2軸は共通録音数が異なり、有声が測れない録音をゼロ誤差にしません。",
+          "expanded": false,
+          "metrics": [
+            {
+              "group": "7.pitch_minus3.relative_f0_mae",
+              "label": "−3半音の相対F0誤差（cent）",
+              "view": "primary",
+              "cohort_label": "主比較",
+              "support": {
+                "recordings": 106,
+                "speakers": 40
+              },
+              "methods": [
+                "hnm",
+                "world_harvest",
+                "hifiglot",
+                "golf",
+                "sifigan",
+                "llsm2",
+                "magphase"
+              ]
+            },
+            {
+              "group": "7.pitch_minus3.missing_voiced_fraction",
+              "label": "−3半音の有声欠落率",
+              "view": "primary",
+              "cohort_label": "主比較",
+              "support": {
+                "recordings": 107,
+                "speakers": 40
+              },
+              "methods": [
+                "hnm",
+                "world_harvest",
+                "hifiglot",
+                "golf",
+                "sifigan",
+                "llsm2",
+                "magphase"
+              ]
+            },
+            {
+              "group": "7.pitch_plus3.relative_f0_mae",
+              "label": "＋3半音の相対F0誤差（cent）",
+              "view": "primary",
+              "cohort_label": "主比較",
+              "support": {
+                "recordings": 120,
+                "speakers": 40
+              },
+              "methods": [
+                "hnm",
+                "world_harvest",
+                "hifiglot",
+                "golf",
+                "sifigan",
+                "llsm2",
+                "magphase"
+              ]
+            },
+            {
+              "group": "7.pitch_plus3.missing_voiced_fraction",
+              "label": "＋3半音の有声欠落率",
+              "view": "primary",
+              "cohort_label": "主比較",
+              "support": {
+                "recordings": 120,
+                "speakers": 40
+              },
+              "methods": [
+                "hnm",
+                "world_harvest",
+                "hifiglot",
+                "golf",
+                "sifigan",
+                "llsm2",
+                "magphase"
+              ]
+            }
+          ]
+        },
+        {
+          "title": "音量操作の追従と干渉",
+          "note": "対応7方式の比較。FACodecは未対応。音高への干渉は音量操作に対する正規化応答誤差で、異なる物理単位を合算した総合点ではありません。",
+          "expanded": false,
+          "metrics": [
+            {
+              "group": "8.gain_minus6.rms_frame_mae",
+              "label": "−6dBの音量追従誤差（dB）",
+              "view": "primary",
+              "cohort_label": "主比較",
+              "support": {
+                "recordings": 120,
+                "speakers": 40
+              },
+              "methods": [
+                "hnm",
+                "world_harvest",
+                "hifiglot",
+                "golf",
+                "sifigan",
+                "llsm2",
+                "magphase"
+              ]
+            },
+            {
+              "group": "8.gain_plus6.rms_frame_mae",
+              "label": "＋6dBの音量追従誤差（dB）",
+              "view": "primary",
+              "cohort_label": "主比較",
+              "support": {
+                "recordings": 120,
+                "speakers": 40
+              },
+              "methods": [
+                "hnm",
+                "world_harvest",
+                "hifiglot",
+                "golf",
+                "sifigan",
+                "llsm2",
+                "magphase"
+              ]
+            },
+            {
+              "group": "11.gain.pitch_cents.absolute_normalized_response_error",
+              "label": "音量操作から音高への干渉（正規化）",
+              "view": "primary",
+              "cohort_label": "主比較",
+              "support": {
+                "recordings": 120,
+                "speakers": 40
+              },
+              "methods": [
+                "hnm",
+                "world_harvest",
+                "hifiglot",
+                "golf",
+                "sifigan",
+                "llsm2",
+                "magphase"
+              ]
+            }
+          ]
+        },
+        {
+          "title": "時間・スペクトル傾斜の操作",
+          "note": "今回対応したHNMとWORLDの2方式だけを比較します。他6方式の品質順位ではありません。時間1.25倍と傾斜±3dB/octは別の操作条件です。",
+          "expanded": false,
+          "metrics": [
+            {
+              "group": "9.time_scale1p25.absolute_duration_error",
+              "label": "時間1.25倍・全長誤差（秒）",
+              "view": "primary",
+              "cohort_label": "主比較",
+              "support": {
+                "recordings": 120,
+                "speakers": 40
+              },
+              "methods": [
+                "hnm",
+                "world_harvest"
+              ]
+            },
+            {
+              "group": "9.time_scale1p25.common_event_mae",
+              "label": "時間1.25倍・共通イベント誤差（ms）",
+              "view": "primary",
+              "cohort_label": "主比較",
+              "support": {
+                "recordings": 120,
+                "speakers": 40
+              },
+              "methods": [
+                "hnm",
+                "world_harvest"
+              ]
+            },
+            {
+              "group": "10.slope_minus3.native_slope_error",
+              "label": "傾斜−3dB/oct・誤差（dB/oct）",
+              "view": "primary",
+              "cohort_label": "主比較",
+              "support": {
+                "recordings": 120,
+                "speakers": 40
+              },
+              "methods": [
+                "hnm",
+                "world_harvest"
+              ]
+            },
+            {
+              "group": "10.slope_plus3.native_slope_error",
+              "label": "傾斜＋3dB/oct・誤差（dB/oct）",
+              "view": "primary",
+              "cohort_label": "主比較",
+              "support": {
+                "recordings": 120,
+                "speakers": 40
+              },
+              "methods": [
+                "hnm",
+                "world_harvest"
+              ]
+            }
+          ]
+        },
+        {
+          "title": "編集後の予測品質",
+          "note": "対応7方式の音高操作後の絶対値。予測MOSは未校正で、原音超えの知覚品質を意味しません。負方向と正方向は異なる条件・分母です。未編集からの変化、音量・時間・傾斜編集後の品質は詳細レポートに保存しています。",
+          "expanded": false,
+          "metrics": [
+            {
+              "group": "12.pitch.pitch_minus3.predicted_mos",
+              "label": "−3半音後の予測MOS",
+              "view": "primary",
+              "cohort_label": "主比較",
+              "support": {
+                "recordings": 107,
+                "speakers": 40
+              },
+              "methods": [
+                "hnm",
+                "world_harvest",
+                "hifiglot",
+                "golf",
+                "sifigan",
+                "llsm2",
+                "magphase"
+              ]
+            },
+            {
+              "group": "12.pitch.pitch_plus3.predicted_mos",
+              "label": "＋3半音後の予測MOS",
+              "view": "primary",
+              "cohort_label": "主比較",
+              "support": {
+                "recordings": 120,
+                "speakers": 40
+              },
+              "methods": [
+                "hnm",
+                "world_harvest",
+                "hifiglot",
+                "golf",
+                "sifigan",
+                "llsm2",
+                "magphase"
+              ]
+            }
+          ]
+        },
+        {
+          "title": "音素の区別：ABX",
+          "note": "A/BのどちらにXが近いかを測る誤り率。保存済みの層等重み集計で、単純な三つ組平均や話者等重みとは別です。同話者群は62録音の限定結果。別の集計法を独立した票として数えません。",
+          "expanded": false,
+          "metrics": [
+            {
+              "group": "14.within_speaker/flat_stratum",
+              "label": "同話者ABX・層等重み（誤り率）",
+              "view": "primary",
+              "cohort_label": "音素支持の限定群",
+              "support": {
+                "recordings": 62,
+                "speakers": 26,
+                "triplets": 186
+              },
+              "methods": [
+                "hnm",
+                "world_harvest",
+                "facodec",
+                "hifiglot",
+                "golf",
+                "sifigan",
+                "llsm2",
+                "magphase"
+              ]
+            },
+            {
+              "group": "14.across_speaker/flat_stratum",
+              "label": "異話者ABX・層等重み（誤り率）",
+              "view": "primary",
+              "cohort_label": "音素支持の限定群",
+              "support": {
+                "recordings": 113,
+                "speakers": 39,
+                "triplets": 4774
+              },
+              "methods": [
+                "hnm",
+                "world_harvest",
+                "facodec",
+                "hifiglot",
+                "golf",
+                "sifigan",
+                "llsm2",
+                "magphase"
+              ]
+            }
+          ]
+        },
+        {
+          "title": "特徴から音響属性を読み出す",
+          "note": "別のtrain120で固定した線形読み出しによる話者等重みMAE。対数F0の学習支持は119/120（推定なし1件）、評価は全120。RMSの目標値はdBFS、絶対誤差の単位はdBです。固定学習条件付きの結果であり、因果的制御性や復号音質とは別です。",
+          "expanded": false,
+          "metrics": [
+            {
+              "group": "15.log_f0",
+              "label": "対数F0読み出し誤差（ln(Hz)）",
+              "view": "primary",
+              "cohort_label": "主比較",
+              "support": {
+                "recordings": 120,
+                "speakers": 40
+              },
+              "methods": [
+                "hnm",
+                "world_harvest",
+                "facodec",
+                "hifiglot",
+                "golf",
+                "sifigan",
+                "llsm2",
+                "magphase"
+              ]
+            },
+            {
+              "group": "15.rms_dbfs",
+              "label": "RMS読み出し誤差（dB）",
+              "view": "primary",
+              "cohort_label": "主比較",
+              "support": {
+                "recordings": 120,
+                "speakers": 40
+              },
+              "methods": [
+                "hnm",
+                "world_harvest",
+                "facodec",
+                "hifiglot",
+                "golf",
+                "sifigan",
+                "llsm2",
+                "magphase"
+              ]
+            },
+            {
+              "group": "15.spectral_slope",
+              "label": "傾斜読み出し誤差（dB/oct）",
+              "view": "primary",
+              "cohort_label": "主比較",
+              "support": {
+                "recordings": 120,
+                "speakers": 40
+              },
+              "methods": [
+                "hnm",
+                "world_harvest",
+                "facodec",
+                "hifiglot",
+                "golf",
+                "sifigan",
+                "llsm2",
+                "magphase"
+              ]
+            }
+          ]
+        },
+        {
+          "title": "補間・量子化：条件付き補助",
+          "note": "この4軸の全8共通主比較は0件です。終端状態から固定した成功方式の補助値を表示します。補間はMagPhaseが適用外。厳密同長ERBではMagPhaseが適用外で、float16はさらにHNM/WORLDが表現検証等で失敗。音質劣位として最下位にしません。元の数値型・摂動量は方式間で異なり、同じ強さの摂動への頑健性比較ではありません。3点補間は知覚的滑らかさを証明しません。",
+          "expanded": false,
+          "metrics": [
+            {
+              "group": "16.dip.predicted_mos",
+              "label": "補間中点の予測MOS落込み",
+              "view": "conditional",
+              "cohort_label": "主比較",
+              "support": {
+                "recordings": 120,
+                "speakers": 40
+              },
+              "methods": [
+                "hnm",
+                "world_harvest",
+                "facodec",
+                "hifiglot",
+                "golf",
+                "sifigan",
+                "llsm2"
+              ]
+            },
+            {
+              "group": "16.dip.speaker_similarity",
+              "label": "補間中点の話者類似度落込み",
+              "view": "conditional",
+              "cohort_label": "主比較",
+              "support": {
+                "recordings": 120,
+                "speakers": 40
+              },
+              "methods": [
+                "hnm",
+                "world_harvest",
+                "facodec",
+                "hifiglot",
+                "golf",
+                "sifigan",
+                "llsm2"
+              ]
+            },
+            {
+              "group": "17.float16.erb",
+              "label": "float16の厳密同長ERB誤差（dB）",
+              "view": "conditional",
+              "cohort_label": "主比較",
+              "support": {
+                "recordings": 120,
+                "speakers": 40
+              },
+              "methods": [
+                "facodec",
+                "hifiglot",
+                "golf",
+                "sifigan",
+                "llsm2"
+              ]
+            },
+            {
+              "group": "17.float32.erb",
+              "label": "float32の厳密同長ERB誤差（dB）",
+              "view": "conditional",
+              "cohort_label": "主比較",
+              "support": {
+                "recordings": 120,
+                "speakers": 40
+              },
+              "methods": [
+                "hnm",
+                "world_harvest",
+                "facodec",
+                "hifiglot",
+                "golf",
+                "sifigan",
+                "llsm2"
+              ]
+            }
+          ]
+        },
+        {
+          "title": "表現量",
+          "note": "実保存した表現容器の量。NPZ等の構造を含み、必要な共有モデル等の資産は別計上です。音質を揃えた総コーデック容量の順位ではありません。float16の全8主比較は0件、HNM/WORLD失敗を除く固定6方式の条件付き補助です。",
+          "expanded": false,
+          "metrics": [
+            {
+              "group": "18.native.payload_bitrate",
+              "label": "元表現の保存量（bit/s）",
+              "view": "primary",
+              "cohort_label": "主比較",
+              "support": {
+                "recordings": 120,
+                "speakers": 40
+              },
+              "methods": [
+                "hnm",
+                "world_harvest",
+                "facodec",
+                "hifiglot",
+                "golf",
+                "sifigan",
+                "llsm2",
+                "magphase"
+              ]
+            },
+            {
+              "group": "18.quantized_float16.payload_bitrate",
+              "label": "float16表現の保存量（bit/s）",
+              "view": "conditional",
+              "cohort_label": "主比較",
+              "support": {
+                "recordings": 120,
+                "speakers": 40
+              },
+              "methods": [
+                "facodec",
+                "hifiglot",
+                "golf",
+                "sifigan",
+                "llsm2",
+                "magphase"
+              ]
+            }
+          ]
+        },
+        {
+          "title": "参考速度",
+          "note": "解析＋未編集復号の秒数÷原入力秒。初期化・入出力は別記、各ライブラリ2スレッド・合成処理1個の単回値です。主120は保存I/O条件が混在。固定70は保存処理分離方針下の後から追加した補助解析で、主群の代用や反復ベンチマークではありません。",
+          "expanded": false,
+          "metrics": [
+            {
+              "group": "speed.total",
+              "label": "解析＋復号RTF",
+              "view": "primary",
+              "cohort_label": "主120・参考",
+              "support": {
+                "recordings": 120,
+                "speakers": 40
+              },
+              "methods": [
+                "hnm",
+                "world_harvest",
+                "facodec",
+                "hifiglot",
+                "golf",
+                "sifigan",
+                "llsm2",
+                "magphase"
+              ]
+            },
+            {
+              "group": "speed.storage_policy70.total",
+              "label": "解析＋復号RTF",
+              "view": "primary",
+              "cohort_label": "固定70・補助",
+              "support": {
+                "recordings": 70,
+                "speakers": 24
+              },
+              "methods": [
+                "hnm",
+                "world_harvest",
+                "facodec",
+                "hifiglot",
+                "golf",
+                "sifigan",
+                "llsm2",
+                "magphase"
+              ]
+            }
+          ]
+        },
+        {
+          "title": "VCTK：48kHzの別集合補助",
+          "note": "取得可能な16録音4話者の事後限定群。全8共通は11録音、8秒条件では7録音です。正式126群は未完で、100録音未達・4話者の限定結果です。出力の再標本化は48kHz帯域の再現能力を保証しません。主120の値と合算しません。",
+          "expanded": false,
+          "metrics": [
+            {
+              "group": "3.availability16.all16",
+              "label": "ViSQOL（MOS-LQO）",
+              "view": "primary",
+              "cohort_label": "VCTK16・補助",
+              "support": {
+                "recordings": 11,
+                "speakers": 4
+              },
+              "methods": [
+                "hnm",
+                "world_harvest",
+                "facodec",
+                "hifiglot",
+                "golf",
+                "sifigan",
+                "llsm2",
+                "magphase"
+              ]
+            },
+            {
+              "group": "3.availability16.recommended_duration",
+              "label": "8秒以上ViSQOL（MOS-LQO）",
+              "view": "primary",
+              "cohort_label": "VCTK16長時間層・補助",
+              "support": {
+                "recordings": 7,
+                "speakers": 4
+              },
+              "methods": [
+                "hnm",
+                "world_harvest",
+                "facodec",
+                "hifiglot",
+                "golf",
+                "sifigan",
+                "llsm2",
+                "magphase"
+              ]
+            }
+          ]
+        },
+        {
+          "title": "ASV：人間の声の同一人物らしさとの対応",
+          "note": "取得可能な100録音の既存人間評定との対応。全8主群は共通0対、MagPhaseの入力範囲検査の失敗を除く固定7方式の条件付き補助です。Spearmanは対等重み、近傍一致は基準話者等重み。正式105群は未完で、新しいMOS評定ではありません。",
+          "expanded": false,
+          "metrics": [
+            {
+              "group": "13.availability100.rating_spearman",
+              "label": "人間評定とのSpearman相関",
+              "view": "conditional",
+              "cohort_label": "主比較",
+              "support": {
+                "recordings": 100,
+                "speakers": 27,
+                "pairs": 80,
+                "b_anchors": 20,
+                "b_speakers": 20
+              },
+              "methods": [
+                "hnm",
+                "world_harvest",
+                "facodec",
+                "hifiglot",
+                "golf",
+                "sifigan",
+                "llsm2"
+              ]
+            },
+            {
+              "group": "13.availability100.rated_neighbor_top1",
+              "label": "評定上の最近傍との一致率",
+              "view": "conditional",
+              "cohort_label": "主比較",
+              "support": {
+                "recordings": 100,
+                "speakers": 27,
+                "pairs": 80,
+                "b_anchors": 20,
+                "b_speakers": 20
+              },
+              "methods": [
+                "hnm",
+                "world_harvest",
+                "facodec",
+                "hifiglot",
+                "golf",
+                "sifigan",
+                "llsm2"
+              ]
+            }
+          ]
+        }
       ]
     }
   ]
