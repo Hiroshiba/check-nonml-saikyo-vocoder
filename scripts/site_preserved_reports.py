@@ -127,7 +127,7 @@ def audio_preview(source, item):
             + ''.join(cards) + '</div><p><small>LibriSpeech test-clean / CC BY 4.0。'
             '切出し・解析再合成を含みます。'
             f'<a href="{esc(link)}/audio_credits.html">出典・許諾・改変表示</a> ／ '
-            f'<a href="{esc(link)}/index.html">全14例（レポート末尾）</a>'
+            f'<a href="{esc(link)}/index.html">全14例を聴く</a>'
             '。GOLF-ff・SiFi-GANの音声は許諾確認待ちです。</small></p>')
 
 
