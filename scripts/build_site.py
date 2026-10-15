@@ -29,6 +29,15 @@ h2{margin-top:36px}a{color:var(--link);overflow-wrap:anywhere}small{color:var(--
 article,.notice{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:20px 24px;margin:18px 0}
 article h2,article h3{margin:0 0 8px;font-size:20px}.notice{border-left:5px solid var(--accent)}code{overflow-wrap:anywhere}
 .scroll{overflow:auto}table{border-collapse:collapse;width:100%;font-size:14px}th,td{border-bottom:1px solid var(--line);padding:8px;text-align:right}th:first-child,td:first-child{text-align:left}.audio-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px}audio{width:100%;max-width:100%}@media(prefers-color-scheme:dark){:root{--ink:#e6edf4;--accent:#68c8c6;--line:#3b4b60;--bg:#0f1724;--surface:#182438;--muted:#b3c1d0;--link:#7fdae8}}li{margin:8px 0}nav{font-size:14px}footer{margin-top:40px;font-size:14px}
+.metric-section{margin:18px 0}.metric-section summary{cursor:pointer;font-weight:700;text-decoration:underline;text-underline-offset:4px}
+.metric-note{font-size:14px}.metric-comparison caption{text-align:left;font-weight:700;padding:8px 0}
+.metric-comparison th{vertical-align:top}.metric-comparison small{display:inline-block;line-height:1.5;font-weight:400}
+.rank{display:inline-block;white-space:nowrap;font-size:13px;padding:0 7px;border:1px solid transparent;border-radius:5px}
+.rank-1,.rank-2,.rank-3{font-weight:800;border:2px solid currentColor}.rank-1{background:var(--rank-gold);border-style:double;border-width:3px}
+.rank-2{background:var(--rank-silver)}.rank-3{background:var(--rank-bronze)}.metric-unavailable{color:var(--muted)}
+:root{--rank-gold:#fff0b3;--rank-silver:#e8edf1;--rank-bronze:#f9e2cb}
+@media(prefers-color-scheme:dark){:root{--rank-gold:#504112;--rank-silver:#35465a;--rank-bronze:#58391e}}
+
 '''
 
 
