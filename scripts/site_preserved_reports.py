@@ -97,8 +97,8 @@ def audio_preview(source, item):
             + ''.join(cards) + '</div><p><small>LibriSpeech test-clean / CC BY 4.0。'
             '切出し・解析再合成を含みます。'
             f'<a href="{esc(link)}/audio_credits.html">出典・許諾・改変表示</a> ／ '
-            f'<a href="{esc(link)}/index.html">全14例を聴く</a>'
-            '。GOLF-ff・SiFi-GANの音声は許諾確認待ちです。</small></p>')
+            f'<a href="{esc(link)}/index.html">全18例を聴く</a>'
+            '。GOLF-ff・SiFi-GANの追加4例は、今回の研究比較用途に限った掲載判断に基づきます。</small></p>')
 
 
 def preserved_cards(root, output, recorded_time, time_label):
