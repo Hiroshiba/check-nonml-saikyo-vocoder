@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "reports": [
+    {
+      "id": "all-method-final-2026-10-15",
+      "path": "research/all-method-final-2026-10-15",
+      "recorded_at": "2026-10-15T06:07:51.018814+00:00",
+      "title": "全8方式の品質・制御・表現比較：主集合120録音と指標別順位",
+      "summary": "現在の自作ベースHNM v3と既存7方式の比較。主120録音の予定工程は終端。元ASV105件・VCTK126件は未完で、取得可能な100件・16件の補助群を分けて掲載しています。",
+      "reference_method": "hnm",
+      "recordings": 120,
+      "speakers": 40,
+      "artifact_count": 15,
+      "artifact_manifest": {
+        "bytes": 3373,
+        "sha256": "a49a272eab6b711e179439867c10a024a5c8daa55d1550f0220312e6631dc2a1"
+      },
+      "method_labels": {
+        "hnm": "HNM v3（現ベース）",
+        "world_harvest": "WORLD Harvest",
+        "facodec": "FACodec v1",
+        "hifiglot": "HiFi-Glot",
+        "golf": "GOLF-ff",
+        "sifigan": "SiFi-GAN",
+        "llsm2": "LLSM2 Layer0",
+        "magphase": "MagPhase"
+      },
+      "metrics": [
+        {
+          "group": "1.native_mos",
+          "label": "予測MOS ↑"
+        },
+        {
+          "group": "2.scoreq",
+          "label": "SCOREQ距離 ↓"
+        },
+        {
+          "group": "existing.erb20",
+          "label": "ERB誤差・20ms（dB）↓"
+        }
+      ],
+      "audio_case": "librispeech_1089-134686-0008",
+      "audio_methods": [
+        "original",
+        "hnm",
+        "world_harvest"
+      ]
+    }
+  ]
+}

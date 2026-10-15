@@ -8,7 +8,7 @@
 
 元計画のASV105件・VCTK126件は未完です。取得可能なASV100件・VCTK16件の補助研究を別集合として表示し、元計画の完了や主集合への加算とは扱いません。全体の final_gate / terminal は未完のままです。48 kHzの独立100録音以上での全方式共通評価、未使用集合での最終評価、残る来歴・依存物の開示制約が残っています。
 
-[ソース付録と元実行位置](../research/all-method-reproduction-20261014/README.md)を追加しました。既存base commitの176 sourceと追加44 sourceのSHAを対応付けますが、全入力・実行ゲートを備えた完全再現環境ではありません。[10月14日11:00の途中状態](../research/all-method-progress-2026-10-14.md)は当時の履歴として維持します。今回のGitHub保存だけでPagesへ反映される構成ではなく、この圧縮・分割形式のPages組込みは別工程です。
+[ソース付録と元実行位置](../research/all-method-reproduction-20261014/README.md)を追加しました。既存base commitの176 sourceと追加44 sourceのSHAを対応付けますが、全入力・実行ゲートを備えた完全再現環境ではありません。[10月14日11:00の途中状態](../research/all-method-progress-2026-10-14.md)は当時の履歴として維持します。PR #36で成果を保存後、別のPages登録経路を追加しています。`main` の公開処理成功後は[全指標・順位表・短い試聴例](https://hiroshiba.github.io/check-nonml-saikyo-vocoder/research/all-method-final-2026-10-15/index.html)を一覧から開けます。15成果のbyteは保持し、再計測・再集計・HTML再生成は行いません。
 
 以下は各実験の当時の記録です。
 

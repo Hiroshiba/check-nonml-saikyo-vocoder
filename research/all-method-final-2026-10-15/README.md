@@ -12,7 +12,7 @@
 - [音声の出典・許諾・改変表示](audio_credits.html)
 - [測定・集計・公開処理のソース付録](../all-method-reproduction-20261014/README.md)
 
-HTMLはダウンロードしてブラウザで開けます。関連リンクも利用する場合はこのディレクトリ構成を保ってください。この保存だけでGitHub Pagesが更新されるわけではありません。現在のPages生成器はこの圧縮・分割形式を取り込まないため、Pagesへの組込みは別工程です。
+HTMLは[GitHub Pages](https://hiroshiba.github.io/check-nonml-saikyo-vocoder/research/all-method-final-2026-10-15/index.html)の掲載対象に登録しています。`main` の公開処理が成功すると[一覧](https://hiroshiba.github.io/check-nonml-saikyo-vocoder/)から開けます。ダウンロードして開く場合は関連リンクも含めてこのディレクトリ構成を保ってください。登録経路は圧縮・分割済みの15成果をbyteそのままでコピーし、旧実験形式への変換や再集計はしません。
 
 ## 完了した範囲と残る限界
 
