@@ -1,0 +1,2175 @@
+{
+  "schema_version": 1,
+  "source_baseline_commit": "297545dfa04ce7fcf68168f17fa22db1b1789015",
+  "baseline_source_count": 176,
+  "additional_source_copy_count": 44,
+  "additional_source_groups": {
+    "executed_auxiliary_source": 22,
+    "final_export_v4": 16,
+    "final_report_bridge": 5,
+    "common_window_publisher": 1
+  },
+  "path_roots": {
+    "main-repository/": "repository root at the recorded execution layout",
+    "reconstructed/": "separate preparation root outside the repository"
+  },
+  "meaning": "公開配置と元実行位置を対応付けるsource-only保存。付録の位置からそのまま実行できることや、完全な再現環境は保証しない。",
+  "baseline_sources": [
+    {
+      "repository_path": "scripts/added_metrics_asr.py",
+      "source_commit": "297545dfa04ce7fcf68168f17fa22db1b1789015",
+      "bytes": 15188,
+      "sha256": "7ef7f8b8ff3bd3eb3d96967afad0b87e219ebeb023714f34fb786ed2a5707db1",
+      "git_blob_sha1": "1c579644cf46e09a77b97ff5bcb3734e539117e2"
+    },
+    {
+      "repository_path": "scripts/added_metrics_asr_summary.py",
+      "source_commit": "297545dfa04ce7fcf68168f17fa22db1b1789015",
+      "bytes": 11889,
+      "sha256": "80d5182d06cf3f9aca3a19ae9489ecd02d1a551d63d56255ec16fc0217845cb6",
+      "git_blob_sha1": "52f347cf068eefba931713e8d36a7aa2d964cafb"
+    },
+    {
+      "repository_path": "scripts/added_metrics_assessment.py",
+      "source_commit": "297545dfa04ce7fcf68168f17fa22db1b1789015",
+      "bytes": 19934,
+      "sha256": "9b9a008e0019f280a5b17fc8f81de0eb2903f87f522a4d0247808746ed608c80",
+      "git_blob_sha1": "a9d4742e94144a871d31c55341bf691b79f4f0fb"
+    },
+    {
+      "repository_path": "scripts/added_metrics_assessment_run.py",
+      "source_commit": "297545dfa04ce7fcf68168f17fa22db1b1789015",
+      "bytes": 2553,
+      "sha256": "af6e37f26477ac038ae5b0a45c34706907967fd07d1b820aba765195e2a10331",
+      "git_blob_sha1": "9b5a52b6a0ba2f9e6aabbe2eb62f001ff5777ed8"
+    },
+    {
+      "repository_path": "scripts/added_metrics_assessment_summary.py",
+      "source_commit": "297545dfa04ce7fcf68168f17fa22db1b1789015",
+      "bytes": 15169,
+      "sha256": "72cee89719996a1fd8f2436d11ac84b8171518835d9dc8724ea81654c2b75641",
+      "git_blob_sha1": "baf3feddf006554404b7488de45529b482985642"
+    },
+    {
+      "repository_path": "scripts/added_metrics_quality.py",
+      "source_commit": "297545dfa04ce7fcf68168f17fa22db1b1789015",
+      "bytes": 11296,
+      "sha256": "8087feec9501fc6ca8d953768a8bc1733c28dabc32b8fc719ad9599f4c3ef7cb",
+      "git_blob_sha1": "6a0d172279b9ba4cc28a4001ac6d1f0538e3fa71"
+    },
+    {
+      "repository_path": "scripts/added_metrics_report.py",
+      "source_commit": "297545dfa04ce7fcf68168f17fa22db1b1789015",
+      "bytes": 14942,
+      "sha256": "4cfca82585aa4433edb68e9e62ebbb45d6945c34281f05e5bfa966aee39f5979",
+      "git_blob_sha1": "cf3d9cde12f3e06139f971e0e1f9b0ec18edecf2"
+    },
+    {
+      "repository_path": "scripts/added_metrics_report_data.py",
+      "source_commit": "297545dfa04ce7fcf68168f17fa22db1b1789015",
+      "bytes": 16075,
+      "sha256": "3f034f800ebdcad252d8dcb9329b9e42a67f8e76a70a8b37ce219866320c3f6e",
+      "git_blob_sha1": "8d0468198e575262e00c0578c0833e46c86355ef"
+    },
+    {
+      "repository_path": "scripts/added_metrics_report_html.py",
+      "source_commit": "297545dfa04ce7fcf68168f17fa22db1b1789015",
+      "bytes": 22201,
+      "sha256": "7149edd50b78f4e4ef0bbaebf9c9888f94838a811e5274fef9057a6e3f62f015",
+      "git_blob_sha1": "85bd318c4b9af261e284d2ee33ecef2d199bf195"
+    },
+    {
+      "repository_path": "scripts/added_metrics_report_sources.py",
+      "source_commit": "297545dfa04ce7fcf68168f17fa22db1b1789015",
+      "bytes": 11609,
+      "sha256": "11d5e3d944be1621060e305a2dfd1c8d2b1d35c1aa5591512b69cad53edbacd2",
+      "git_blob_sha1": "854694e414076f9bcad25530b6260de55a935fdf"
+    },
+    {
+      "repository_path": "scripts/added_metrics_synthesize.py",
+      "source_commit": "297545dfa04ce7fcf68168f17fa22db1b1789015",
+      "bytes": 7145,
+      "sha256": "bc6234a98c517346a6562eedc09050d85bf75a11eb1195f48a42f77e13fc1ab2",
+      "git_blob_sha1": "56a0de3e159b2e61cd76bfc4e7821713e2084aff"
+    },
+    {
+      "repository_path": "scripts/all_metrics_acoustic.py",
+      "source_commit": "297545dfa04ce7fcf68168f17fa22db1b1789015",
+      "bytes": 6100,
+      "sha256": "4504db5ae90cc02f76bab8f6302b74d5d96fa0b402446609854bec195fc4e474",
+      "git_blob_sha1": "2b8a01534a504e075ad06939a2b678b2c22b9c08"
+    },
+    {
+      "repository_path": "scripts/all_metrics_asr.py",
+      "source_commit": "297545dfa04ce7fcf68168f17fa22db1b1789015",
+      "bytes": 11495,
+      "sha256": "b6521c06a7ea28d92ef4ec58fce0c92eb0cb4c10fc835c0739303faea56ba6ab",
+      "git_blob_sha1": "5b684feb87ec92758ffaee697fe9ad167b8d32b3"
+    },
+    {
+      "repository_path": "scripts/all_metrics_audio.py",
+      "source_commit": "297545dfa04ce7fcf68168f17fa22db1b1789015",
+      "bytes": 7396,
+      "sha256": "cdcab0b6e740d5525d0c89c6e5d41b8fe6cc643a1dd6fb350a2affcc52a440dc",
+      "git_blob_sha1": "ddf61c89afc00cfcd264884a3f1ce4c386149294"
+    },
+    {
+      "repository_path": "scripts/all_metrics_audio_policy.py",
+      "source_commit": "297545dfa04ce7fcf68168f17fa22db1b1789015",
+      "bytes": 1742,
+      "sha256": "890f6cc558604f7eeef82a888852ff487d9057dfd9c3957265628d112f2c0fdc",
+      "git_blob_sha1": "378ac40f1a70fd36be175f365b328a289ea6a6ae"
+    },
+    {
+      "repository_path": "scripts/all_metrics_base_controls.py",
+      "source_commit": "297545dfa04ce7fcf68168f17fa22db1b1789015",
+      "bytes": 7344,
+      "sha256": "a74e26c7509eb9e7c2195d57bf8709111473d0edbffa52db164c49d67e43a8b0",
+      "git_blob_sha1": "aed8e444178f3e028bd8d166abf62bec6e95132c"
+    },
+    {
+      "repository_path": "scripts/all_metrics_checkpoint.py",
+      "source_commit": "297545dfa04ce7fcf68168f17fa22db1b1789015",
+      "bytes": 6593,
+      "sha256": "f235d550ab393134d5f79b61cdbc0e13fbedeb168dff49fa6fea52abab457b5c",
+      "git_blob_sha1": "797ddda1e496240546b271f622acc919ffbc9d0c"
+    },
+    {
+      "repository_path": "scripts/all_metrics_common.py",
+      "source_commit": "297545dfa04ce7fcf68168f17fa22db1b1789015",
+      "bytes": 7015,
+      "sha256": "d9d2ea1fc7bb93a627d14db1eddda203d91cb9c0f1708d31db03b148ad67168a",
+      "git_blob_sha1": "6142a43e632ee941655d4cfd90ac8c78c39329ec"
+    },
+    {
+      "repository_path": "scripts/all_metrics_control_adapters.py",
+      "source_commit": "297545dfa04ce7fcf68168f17fa22db1b1789015",
+      "bytes": 3789,
+      "sha256": "e0683815d17fce0a2b723732d5d2aa1eb852f81c44fe2e3eadcbc26daf1a2327",
+      "git_blob_sha1": "821346c918e78e22397f52d5c9cfbd84abd78f29"
+    },
+    {
+      "repository_path": "scripts/all_metrics_control_eval.py",
+      "source_commit": "297545dfa04ce7fcf68168f17fa22db1b1789015",
+      "bytes": 12268,
+      "sha256": "099814a22a7863ceb799593c55f7e5cf04efbb6f1a1df0675b36ed6b163c3bfc",
+      "git_blob_sha1": "748ef5a283f5a75732793d8029daee64503adda7"
+    },
+    {
+      "repository_path": "scripts/all_metrics_control_eval_curves.py",
+      "source_commit": "297545dfa04ce7fcf68168f17fa22db1b1789015",
+      "bytes": 8865,
+      "sha256": "e120bb5084cf71da167cd068c8771afd2398d13893518f8c1eb4aff78926f1f1",
+      "git_blob_sha1": "6550d7f2927c1812d1f1dec5d655396fa3e28a4f"
+    },
+    {
+      "repository_path": "scripts/all_metrics_control_eval_equivalence.py",
+      "source_commit": "297545dfa04ce7fcf68168f17fa22db1b1789015",
+      "bytes": 4248,
+      "sha256": "bb464d5d10b6ef1e7c28569a9f8d8a378d45582a4ca33b48c6118365efc93319",
+      "git_blob_sha1": "6fc77db6f44b19cba2fb79f7076adedc8b2db525"
+    },
+    {
+      "repository_path": "scripts/all_metrics_control_eval_plan.py",
+      "source_commit": "297545dfa04ce7fcf68168f17fa22db1b1789015",
+      "bytes": 4948,
+      "sha256": "da64f73d3bc8aba020547a5bce8ec8ad216d0ea9d456e7c474e92ebbe386b6e4",
+      "git_blob_sha1": "8e60019f5d1b9d057189f0789b82c1f39e06e63f"
+    },
+    {
+      "repository_path": "scripts/all_metrics_control_eval_resume.py",
+      "source_commit": "297545dfa04ce7fcf68168f17fa22db1b1789015",
+      "bytes": 3669,
+      "sha256": "1c672636c63879126eb0cc56a49fce49c8084cd0658c52c9e6c7dec31c76dd61",
+      "git_blob_sha1": "566664c37366c5cb93f0af03c15e3ff2b90565a2"
+    },
+    {
+      "repository_path": "scripts/all_metrics_control_eval_run.py",
+      "source_commit": "297545dfa04ce7fcf68168f17fa22db1b1789015",
+      "bytes": 4785,
+      "sha256": "3b92ea8ce219212402652491838e3b8000b7a967ee8719ec8fc0369eb0be7a6b",
+      "git_blob_sha1": "a2c3756bb9ead5fd64b1a1a41d0e04a912fd8c0d"
+    },
+    {
+      "repository_path": "scripts/all_metrics_control_eval_slope.py",
+      "source_commit": "297545dfa04ce7fcf68168f17fa22db1b1789015",
+      "bytes": 11578,
+      "sha256": "f794f03d84174ef04a66b7893f5626b65f2d4c4a7c89828a0e856b5f33aa5e6d",
+      "git_blob_sha1": "c6c41b1f7a65d81eb075c0f5b9a4b038f05cfb3f"
+    },
+    {
+      "repository_path": "scripts/all_metrics_control_eval_speaker.py",
+      "source_commit": "297545dfa04ce7fcf68168f17fa22db1b1789015",
+      "bytes": 9440,
+      "sha256": "ee0c81c65566f9dd6bb3f0c431edb0717768b1e16c48cd2b5a8837c04560ebce",
+      "git_blob_sha1": "fa9e81f0df850f4087f12f8349f3fd9a89cf9c56"
+    },
+    {
+      "repository_path": "scripts/all_metrics_control_eval_summary.py",
+      "source_commit": "297545dfa04ce7fcf68168f17fa22db1b1789015",
+      "bytes": 13295,
+      "sha256": "09a52aca15f6b7bd1791a86bf193339ce2ad355fd85e6ce8befbb020a3333d61",
+      "git_blob_sha1": "ea0f0c82e2f330859ca04f3adfb29c0f0fa4d5ec"
+    },
+    {
+      "repository_path": "scripts/all_metrics_control_eval_time.py",
+      "source_commit": "297545dfa04ce7fcf68168f17fa22db1b1789015",
+      "bytes": 5220,
+      "sha256": "1b6ecc78d691f2cbc0405b471b410b3b6befcf800a35e21f1c82971f9b8cd86f",
+      "git_blob_sha1": "5f4cc4c351ed4a770e71a54378cb9fcc0f2d7626"
+    },
+    {
+      "repository_path": "scripts/all_metrics_controls.py",
+      "source_commit": "297545dfa04ce7fcf68168f17fa22db1b1789015",
+      "bytes": 6762,
+      "sha256": "b8a10df3a157ea5f08ddeb4b4c8b5ddb2c4f65ee933a01686ab5e907ad244729",
+      "git_blob_sha1": "9bc0917596722769c24bd1c178960565d4f21a28"
+    },
+    {
+      "repository_path": "scripts/all_metrics_datasets_abx.py",
+      "source_commit": "297545dfa04ce7fcf68168f17fa22db1b1789015",
+      "bytes": 6259,
+      "sha256": "1fecd0f7ee92f3f4397a0edd6ef0f6f07f3dadd4a79c65b695568bc549bda0e3",
+      "git_blob_sha1": "529c04466f6bb298beb584f72cd016c9937590c6"
+    },
+    {
+      "repository_path": "scripts/all_metrics_datasets_abx_contract.py",
+      "source_commit": "297545dfa04ce7fcf68168f17fa22db1b1789015",
+      "bytes": 4799,
+      "sha256": "aba26344cd0ee2a6064c170f3c180498b81e4456a7ec095bba4c41278d6bd85e",
+      "git_blob_sha1": "63def12d312a0e9df91a24171fd0867dd02fdd97"
+    },
+    {
+      "repository_path": "scripts/all_metrics_datasets_abx_sources.py",
+      "source_commit": "297545dfa04ce7fcf68168f17fa22db1b1789015",
+      "bytes": 2236,
+      "sha256": "f18f06a5389622b7d444368a22d8491011faa0f421987afc9be5ed3e4f222626",
+      "git_blob_sha1": "7441611a63793d9ff7d102b7041a4cdd0600635d"
+    },
+    {
+      "repository_path": "scripts/all_metrics_datasets_contract.py",
+      "source_commit": "297545dfa04ce7fcf68168f17fa22db1b1789015",
+      "bytes": 5603,
+      "sha256": "4d995c8f706b51fd585b606c93e29f68c8c57c92aa4fa83c23cb375a0633a3d2",
+      "git_blob_sha1": "2179b0a1d139d549d86d42b895b5407ca4b56a94"
+    },
+    {
+      "repository_path": "scripts/all_metrics_datasets_human.py",
+      "source_commit": "297545dfa04ce7fcf68168f17fa22db1b1789015",
+      "bytes": 8693,
+      "sha256": "6e29ddd362650607e2d1898b59717dd8a6e05cbe084c4a3c8079e383e4befef7",
+      "git_blob_sha1": "ab787f8b43a5881c35134fc0c51d8e596ddc6ca5"
+    },
+    {
+      "repository_path": "scripts/all_metrics_datasets_jvs.py",
+      "source_commit": "297545dfa04ce7fcf68168f17fa22db1b1789015",
+      "bytes": 4008,
+      "sha256": "24f1054752fe49f334cfca078be8142fd13264293008eaf8c94ce7131cbec6f1",
+      "git_blob_sha1": "fcc1621f953d03ba9dc3cffc65d3864e144a9a9b"
+    },
+    {
+      "repository_path": "scripts/all_metrics_datasets_remote.py",
+      "source_commit": "297545dfa04ce7fcf68168f17fa22db1b1789015",
+      "bytes": 8399,
+      "sha256": "03d6b0e9249e8511cc2a7990a3fa2b7041050b6ed3c56a5b520c0065cc0566e6",
+      "git_blob_sha1": "58cee51e776f13e9c1956a1a54caec6c980593ed"
+    },
+    {
+      "repository_path": "scripts/all_metrics_datasets_train.py",
+      "source_commit": "297545dfa04ce7fcf68168f17fa22db1b1789015",
+      "bytes": 9763,
+      "sha256": "cfbe7ee6f9da6f307d5f73f21771413903b859f806f690629aea89aa2f7b2564",
+      "git_blob_sha1": "8034a6da5c20d67bbc8f75b015e757ad35ec26b3"
+    },
+    {
+      "repository_path": "scripts/all_metrics_datasets_vctk.py",
+      "source_commit": "297545dfa04ce7fcf68168f17fa22db1b1789015",
+      "bytes": 7042,
+      "sha256": "7b296ba8a4d5c6bcdc027dc44e49a4970b0b0be9242fe5f614e9ab71bdf8f506",
+      "git_blob_sha1": "4d5136f12d533bd364cc7303dd8b387d8dfc0fe8"
+    },
+    {
+      "repository_path": "scripts/all_metrics_derive.py",
+      "source_commit": "297545dfa04ce7fcf68168f17fa22db1b1789015",
+      "bytes": 7619,
+      "sha256": "6ac791c01dbe6bde9d1892f50f43796bac22904ce1c117a7989f164acd230f55",
+      "git_blob_sha1": "a669d38e3e7017a43d842690490f5ad3c722fd52"
+    },
+    {
+      "repository_path": "scripts/all_metrics_feature_locked_run.py",
+      "source_commit": "297545dfa04ce7fcf68168f17fa22db1b1789015",
+      "bytes": 3329,
+      "sha256": "c00ef0128e474def36a86a5f7bee72a0d61d3ad777eaf04841f018d59bbfcca9",
+      "git_blob_sha1": "c295ea208d8f6b019dbb8ad7f963c0fb3fd76c20"
+    },
+    {
+      "repository_path": "scripts/all_metrics_features_abx.py",
+      "source_commit": "297545dfa04ce7fcf68168f17fa22db1b1789015",
+      "bytes": 13512,
+      "sha256": "854766030318e4325332039840dc82676c66e236e1261354923aafa6af92b6dd",
+      "git_blob_sha1": "a3614c4320e6052a9ee3ab3e5f56470b77fc5de2"
+    },
+    {
+      "repository_path": "scripts/all_metrics_features_abx_results.py",
+      "source_commit": "297545dfa04ce7fcf68168f17fa22db1b1789015",
+      "bytes": 3991,
+      "sha256": "1f527abea484e7530ddb3deb80f5e9b59d836cebe893a4d98211d90bb672e76d",
+      "git_blob_sha1": "1820f32015e12a8e0ccc6518b5f0d7e8e7cc9d15"
+    },
+    {
+      "repository_path": "scripts/all_metrics_features_abx_statistics.py",
+      "source_commit": "297545dfa04ce7fcf68168f17fa22db1b1789015",
+      "bytes": 4749,
+      "sha256": "2964800a12875e89204500023b35225c010c8bb16a3f3938cd1e2b5c9198359d",
+      "git_blob_sha1": "7ae1571109c87ceb8a0f34f02c0681db96c0440b"
+    },
+    {
+      "repository_path": "scripts/all_metrics_features_common.py",
+      "source_commit": "297545dfa04ce7fcf68168f17fa22db1b1789015",
+      "bytes": 9369,
+      "sha256": "e6b3a6783ef2f2085dd694ffee30af06dac0b7705e491e2c99cc02f155d8b89f",
+      "git_blob_sha1": "40c09ece4df251d35c91a0c9549a14d673045256"
+    },
+    {
+      "repository_path": "scripts/all_metrics_features_readout.py",
+      "source_commit": "297545dfa04ce7fcf68168f17fa22db1b1789015",
+      "bytes": 13048,
+      "sha256": "e20a2c269296f1aa3986232f02b449868741d2ba4e8113bad23d48b302159adf",
+      "git_blob_sha1": "422febf61a43b099ebd4c1b0739bc11759dd6671"
+    },
+    {
+      "repository_path": "scripts/all_metrics_features_receipts.py",
+      "source_commit": "297545dfa04ce7fcf68168f17fa22db1b1789015",
+      "bytes": 1741,
+      "sha256": "6bacc0afd2fe292a9e96cbc8301e3cb3184581a3c441f8aa6e93630050770dda",
+      "git_blob_sha1": "bb97f84058044c7b45afac10fc2a3cbde299fab7"
+    },
+    {
+      "repository_path": "scripts/all_metrics_features_run.py",
+      "source_commit": "297545dfa04ce7fcf68168f17fa22db1b1789015",
+      "bytes": 6687,
+      "sha256": "7087d9de6aa8c5b7aeb35b069f792cd9587ff3c0020faf331e81692851b34096",
+      "git_blob_sha1": "e971798cc0fe279a29d1bdaac7a54fd8a9f5aead"
+    },
+    {
+      "repository_path": "scripts/all_metrics_features_support.py",
+      "source_commit": "297545dfa04ce7fcf68168f17fa22db1b1789015",
+      "bytes": 8689,
+      "sha256": "cf924c6d5dc26196a43b5d23ca58bb68628658f8f3b08d57989855bf44b6f2c0",
+      "git_blob_sha1": "4a533dc1036b118d838e5091fabc3d93bd4c4f81"
+    },
+    {
+      "repository_path": "scripts/all_metrics_features_train.py",
+      "source_commit": "297545dfa04ce7fcf68168f17fa22db1b1789015",
+      "bytes": 7078,
+      "sha256": "2bb864a20d2bc188822fd29fc6d986eed64ded9a834b2faba894f82a0cbc065e",
+      "git_blob_sha1": "5684621adf8397a55dcb3db1b958f79662e9d524"
+    },
+    {
+      "repository_path": "scripts/all_metrics_final_gate.py",
+      "source_commit": "297545dfa04ce7fcf68168f17fa22db1b1789015",
+      "bytes": 10722,
+      "sha256": "1437262a4cb3aa8f77d701436959d96f67d0b278f9a058f5d82cfa47baf3d43b",
+      "git_blob_sha1": "0619aa92392bb93afebf5dda5db0892d3fb258ec"
+    },
+    {
+      "repository_path": "scripts/all_metrics_golf_control.py",
+      "source_commit": "297545dfa04ce7fcf68168f17fa22db1b1789015",
+      "bytes": 3123,
+      "sha256": "883ff581ab8132a7c8d312c894a26eb29990cf9a71846223c2aa8d6434ff3b96",
+      "git_blob_sha1": "44cb5e9efc2b8099d9848d5a395606fbd83b54ed"
+    },
+    {
+      "repository_path": "scripts/all_metrics_human_data.py",
+      "source_commit": "297545dfa04ce7fcf68168f17fa22db1b1789015",
+      "bytes": 5711,
+      "sha256": "413edc016c33b9101d22a4b46a3e3ebc3a2276b76bb0528a396cda63b4339d05",
+      "git_blob_sha1": "3aba32e2eb515a1a06efe3818b1db4de5e6dd41f"
+    },
+    {
+      "repository_path": "scripts/all_metrics_human_features.py",
+      "source_commit": "297545dfa04ce7fcf68168f17fa22db1b1789015",
+      "bytes": 6036,
+      "sha256": "1943b27ad7c0cb68e700e147785b4a8df117b718b33e095a6a7a5e7e9ae3427b",
+      "git_blob_sha1": "b4270101af0006347208ed10a29bc7c5b49fefea"
+    },
+    {
+      "repository_path": "scripts/all_metrics_human_rankings.py",
+      "source_commit": "297545dfa04ce7fcf68168f17fa22db1b1789015",
+      "bytes": 16346,
+      "sha256": "404cade43cbec39d939b0f346fb88e03584063473c6945bea7d9176fce5c9eb5",
+      "git_blob_sha1": "7351c10a21dc140c697c80ef88df07b4533a29d9"
+    },
+    {
+      "repository_path": "scripts/all_metrics_human_run.py",
+      "source_commit": "297545dfa04ce7fcf68168f17fa22db1b1789015",
+      "bytes": 5727,
+      "sha256": "61fe1ac94cd4104a9c318806b59393ea5592afcd1d80a034f5ccf6318cb98532",
+      "git_blob_sha1": "83810c63645a196b81f93e5e36c9b5b8c6588931"
+    },
+    {
+      "repository_path": "scripts/all_metrics_human_statistics.py",
+      "source_commit": "297545dfa04ce7fcf68168f17fa22db1b1789015",
+      "bytes": 6548,
+      "sha256": "ec998755947c516e58cb1851650b7d89fcfaf79c85a9c3b8820da0f3b62bc943",
+      "git_blob_sha1": "af82e952bc7241f4d151ce4125d9c57eb20dea3b"
+    },
+    {
+      "repository_path": "scripts/all_metrics_interpolation.py",
+      "source_commit": "297545dfa04ce7fcf68168f17fa22db1b1789015",
+      "bytes": 6784,
+      "sha256": "afa53eedf0182c4611456096542b57002d1c0ff729c3f9e31b2d7e111cf89a03",
+      "git_blob_sha1": "386a38f1a945477417574fdf52997d51b0e34663"
+    },
+    {
+      "repository_path": "scripts/all_metrics_latent_evaluation.py",
+      "source_commit": "297545dfa04ce7fcf68168f17fa22db1b1789015",
+      "bytes": 17857,
+      "sha256": "73879fbb0848182a7c79ad1f01078beb70fb2ec2c6499fec2a7d3e4491907290",
+      "git_blob_sha1": "003e0d09c5413498fc7315dd1aeef031c0eacacc"
+    },
+    {
+      "repository_path": "scripts/all_metrics_latent_evaluation_common.py",
+      "source_commit": "297545dfa04ce7fcf68168f17fa22db1b1789015",
+      "bytes": 10533,
+      "sha256": "bc890a2cb0db62c5d3e5707da6dd230ab81d203ee1341f15b5eff708cbefce00",
+      "git_blob_sha1": "a047525545d6e45686fdacc56f1f235d13daa0ab"
+    },
+    {
+      "repository_path": "scripts/all_metrics_latent_evaluation_resume.py",
+      "source_commit": "297545dfa04ce7fcf68168f17fa22db1b1789015",
+      "bytes": 4238,
+      "sha256": "bf6394881eb472135af1089165ebd73fdd90276d3dd988e9feb31bb6b4e39e5f",
+      "git_blob_sha1": "189141beb3b57de292a9099da30c30e4dbed3e59"
+    },
+    {
+      "repository_path": "scripts/all_metrics_latent_evaluation_storage.py",
+      "source_commit": "297545dfa04ce7fcf68168f17fa22db1b1789015",
+      "bytes": 4622,
+      "sha256": "1011459a6452ade6e29682671e1041856f6411b3ecabc6f1e439a952149deef5",
+      "git_blob_sha1": "f301b1931899fbd09158bc24e78beb1b60a7bba2"
+    },
+    {
+      "repository_path": "scripts/all_metrics_latent_evaluation_watch.py",
+      "source_commit": "297545dfa04ce7fcf68168f17fa22db1b1789015",
+      "bytes": 4861,
+      "sha256": "b35678de0b8df7a206058d71b59e3a030584943942dcaf90074deb4a671e06e8",
+      "git_blob_sha1": "b67f3f6515cd7fdcecd865ab806ddda5578527d0"
+    },
+    {
+      "repository_path": "scripts/all_metrics_latent_features.py",
+      "source_commit": "297545dfa04ce7fcf68168f17fa22db1b1789015",
+      "bytes": 6393,
+      "sha256": "067fa971de819fc01982558117d692bb741d6d2916939406b15d9f354786eb91",
+      "git_blob_sha1": "9580dbb83521c85f7c1d0b00eeb52955f07ff15d"
+    },
+    {
+      "repository_path": "scripts/all_metrics_latent_groups.py",
+      "source_commit": "297545dfa04ce7fcf68168f17fa22db1b1789015",
+      "bytes": 15825,
+      "sha256": "5e006c23d3329d75de369f9566f6b809fa3ca77057530fe8dc3642c4bd1350c8",
+      "git_blob_sha1": "be761b319274e8619ed312a6ced2cc5f18c0af59"
+    },
+    {
+      "repository_path": "scripts/all_metrics_latent_interpolation.py",
+      "source_commit": "297545dfa04ce7fcf68168f17fa22db1b1789015",
+      "bytes": 12103,
+      "sha256": "070200bdca42a7d92313cc9acd3447bc79cd5b06bb2143e139a97e98c42b648e",
+      "git_blob_sha1": "a775d55d565f831cfafed38c4c551983861fe983"
+    },
+    {
+      "repository_path": "scripts/all_metrics_latent_io.py",
+      "source_commit": "297545dfa04ce7fcf68168f17fa22db1b1789015",
+      "bytes": 8643,
+      "sha256": "323b2c05836b1e44400a5e412471f61a8e18194de9c26a511b8fb06c6931fa0f",
+      "git_blob_sha1": "879890b2a400809c4a3daf4f9969f9608a2b045f"
+    },
+    {
+      "repository_path": "scripts/all_metrics_latent_provenance.py",
+      "source_commit": "297545dfa04ce7fcf68168f17fa22db1b1789015",
+      "bytes": 16399,
+      "sha256": "02691b5311f1ceb5bd8c7a2b0a6255dbe870860d6229259c49cd6bbe91909658",
+      "git_blob_sha1": "874f63e4ae41210b9e391abfb8fc24c3037a5129"
+    },
+    {
+      "repository_path": "scripts/all_metrics_latent_quantization.py",
+      "source_commit": "297545dfa04ce7fcf68168f17fa22db1b1789015",
+      "bytes": 6739,
+      "sha256": "af439e7ad3581aeee044c8daa911d09be40652fe5136cac519b93904a8cda25d",
+      "git_blob_sha1": "f4b947f22841f38eadb04a8632e1688700dae902"
+    },
+    {
+      "repository_path": "scripts/all_metrics_latent_queue.py",
+      "source_commit": "297545dfa04ce7fcf68168f17fa22db1b1789015",
+      "bytes": 6807,
+      "sha256": "2c1985438d5444b6e07e7d9b45d7b0ee9496a2d6ab97098397545f0cd96d79c3",
+      "git_blob_sha1": "f42ce27e795aa01ddce038b8dd283bd129a9169e"
+    },
+    {
+      "repository_path": "scripts/all_metrics_latent_run.py",
+      "source_commit": "297545dfa04ce7fcf68168f17fa22db1b1789015",
+      "bytes": 5364,
+      "sha256": "2ad6504ae59a13eead7de5af9eb42d574877474355586c01d286970e4f6703cb",
+      "git_blob_sha1": "0d9fbbb84386ffb5ec85de4c56a9e3c0e8d73312"
+    },
+    {
+      "repository_path": "scripts/all_metrics_latent_worker.py",
+      "source_commit": "297545dfa04ce7fcf68168f17fa22db1b1789015",
+      "bytes": 11968,
+      "sha256": "acdb1f43ac03af1617036b72a91c6bed29c97574ab00760e6e5cab75c2f41a49",
+      "git_blob_sha1": "f3599650de6741be032b85e81893e977e86e1376"
+    },
+    {
+      "repository_path": "scripts/all_metrics_llsm_control.py",
+      "source_commit": "297545dfa04ce7fcf68168f17fa22db1b1789015",
+      "bytes": 5472,
+      "sha256": "6ba12b6933dfda3f9d6b57f46085de652f00acd348cf1ed5bef15eb60c7ad765",
+      "git_blob_sha1": "c97d8518fcac42f62c2071ed0e3ff78320c62b3b"
+    },
+    {
+      "repository_path": "scripts/all_metrics_llsm_storage.py",
+      "source_commit": "297545dfa04ce7fcf68168f17fa22db1b1789015",
+      "bytes": 7173,
+      "sha256": "c672f5f38f934ff9710a726f029a102592c3f5e9de8d25acdace76dfae64251f",
+      "git_blob_sha1": "9ee2f2831850f8dacdf81b23512011a3b28d7f5f"
+    },
+    {
+      "repository_path": "scripts/all_metrics_mos.py",
+      "source_commit": "297545dfa04ce7fcf68168f17fa22db1b1789015",
+      "bytes": 10556,
+      "sha256": "fbfc7e90b1c6c133b586f4a21c25361940aeafa14c876b6891b9627069783607",
+      "git_blob_sha1": "e39802455f56f85fc2cbc9de24333900ba6a8eb7"
+    },
+    {
+      "repository_path": "scripts/all_metrics_neural_controls.py",
+      "source_commit": "297545dfa04ce7fcf68168f17fa22db1b1789015",
+      "bytes": 9165,
+      "sha256": "c6a3c150c448ec41a04befc6543bd25d4512bcc28d80cf0bf14b5d8481ac66ce",
+      "git_blob_sha1": "69d4142cc4562c87ee1969b247d9cb753469236b"
+    },
+    {
+      "repository_path": "scripts/all_metrics_process_receipts.py",
+      "source_commit": "297545dfa04ce7fcf68168f17fa22db1b1789015",
+      "bytes": 3942,
+      "sha256": "84ba1ac16a32a8e7965d5d916d5b78ed1d475913138c76a6020eecd611b80dbc",
+      "git_blob_sha1": "27293cccc1c6e9dfda135422798eb966e434f302"
+    },
+    {
+      "repository_path": "scripts/all_metrics_rankings.py",
+      "source_commit": "297545dfa04ce7fcf68168f17fa22db1b1789015",
+      "bytes": 8470,
+      "sha256": "b8df00673e7c7130b9b1b7bb97259a1e9f2b25130adda85ce8281cdb606dc03a",
+      "git_blob_sha1": "d9c681fbca4154ce87e07f345795a11f5469e45c"
+    },
+    {
+      "repository_path": "scripts/all_metrics_rankings_acoustic.py",
+      "source_commit": "297545dfa04ce7fcf68168f17fa22db1b1789015",
+      "bytes": 6646,
+      "sha256": "a6e306066c0c112ed2dfb72cbeb2c498d00b445cd8443cf645fddf3fccf3d405",
+      "git_blob_sha1": "0f4f2b8f6647db90de41998c8773f9e391e7d0b7"
+    },
+    {
+      "repository_path": "scripts/all_metrics_rankings_core.py",
+      "source_commit": "297545dfa04ce7fcf68168f17fa22db1b1789015",
+      "bytes": 10529,
+      "sha256": "77d8eca35f00f086ca3f137181fdeb36438d6606126205ce1f12993bda844159",
+      "git_blob_sha1": "b5db29a21386140eccfe1a28b8c8ee738c02271f"
+    },
+    {
+      "repository_path": "scripts/all_metrics_rankings_coverage.py",
+      "source_commit": "297545dfa04ce7fcf68168f17fa22db1b1789015",
+      "bytes": 3888,
+      "sha256": "7944e1305b673694087d758a953d1bb47ce2daee702e75fd8cd590caaf01273f",
+      "git_blob_sha1": "51f89fe269eb3afd2a787e2ac97be3e414b946bd"
+    },
+    {
+      "repository_path": "scripts/all_metrics_rankings_extra.py",
+      "source_commit": "297545dfa04ce7fcf68168f17fa22db1b1789015",
+      "bytes": 10920,
+      "sha256": "a1ef04217f332217644d41ba11feb7b15a24beaa3ae8be85da468ba9f8e7578a",
+      "git_blob_sha1": "55947c8c32a7fe2ea158199786598fb1fed19033"
+    },
+    {
+      "repository_path": "scripts/all_metrics_rankings_html.py",
+      "source_commit": "297545dfa04ce7fcf68168f17fa22db1b1789015",
+      "bytes": 12855,
+      "sha256": "68a205a74467e6dcfa639f678cded28a7427081cc27682cad91dc3a30f225a32",
+      "git_blob_sha1": "f847ce9901cf8633b61168942b611c2924a9f619"
+    },
+    {
+      "repository_path": "scripts/all_metrics_rankings_inputs.py",
+      "source_commit": "297545dfa04ce7fcf68168f17fa22db1b1789015",
+      "bytes": 22147,
+      "sha256": "464ab0aed1af4de31e83db80c43857e517d9cf61667904144c28f8f08ecd42b5",
+      "git_blob_sha1": "d4404dee4e31ed28fbd9a6fe5c153ccf85d4c375"
+    },
+    {
+      "repository_path": "scripts/all_metrics_representation.py",
+      "source_commit": "297545dfa04ce7fcf68168f17fa22db1b1789015",
+      "bytes": 5206,
+      "sha256": "973e341c131698a36fb2a2b82fd7dd4d59b97dce6c06b2f698f595771ead5da2",
+      "git_blob_sha1": "6594d5d00ef0dd570e79a687bfc1c06b0632222b"
+    },
+    {
+      "repository_path": "scripts/all_metrics_resources.py",
+      "source_commit": "297545dfa04ce7fcf68168f17fa22db1b1789015",
+      "bytes": 3399,
+      "sha256": "b142bc88c83665ebb8ad1f806569deb838ade589a0d28447ec45274008aedfbd",
+      "git_blob_sha1": "cca95a213d297f2c23b6089b8517f99a5c152895"
+    },
+    {
+      "repository_path": "scripts/all_metrics_run.py",
+      "source_commit": "297545dfa04ce7fcf68168f17fa22db1b1789015",
+      "bytes": 10316,
+      "sha256": "6412256d4ba20bf575b25e750d4bd9a13dfcc6f000c6ac73fe4228d37ae3abef",
+      "git_blob_sha1": "cf0c621bc87757ed8d096a7e375db8d5063c1a04"
+    },
+    {
+      "repository_path": "scripts/all_metrics_storage_policy.py",
+      "source_commit": "297545dfa04ce7fcf68168f17fa22db1b1789015",
+      "bytes": 5456,
+      "sha256": "81f0b90ec0d0467a5fb7767df9800fc01f713d9f5e4b5559cf6db8776ccf11ac",
+      "git_blob_sha1": "551b36b7555da4d40e6c9c2c6f004f3df9fe15c8"
+    },
+    {
+      "repository_path": "scripts/all_metrics_synthesis.py",
+      "source_commit": "297545dfa04ce7fcf68168f17fa22db1b1789015",
+      "bytes": 22990,
+      "sha256": "1e3f791d6149322c45e94f49e14311a3f2fd31ad510258c11c7ff24ec159932f",
+      "git_blob_sha1": "e70a61f5e83dd53cabf37aeb510a2a52bf3152d0"
+    },
+    {
+      "repository_path": "scripts/all_metrics_vctk_inputs.py",
+      "source_commit": "297545dfa04ce7fcf68168f17fa22db1b1789015",
+      "bytes": 6916,
+      "sha256": "ac71116457eab20b74414f4a1591078b6c6b09a9fa6fed3f6eb0393893232b58",
+      "git_blob_sha1": "0337214bea65ff3a17f8333070dbf7bf1db9276b"
+    },
+    {
+      "repository_path": "scripts/all_metrics_vctk_quality.py",
+      "source_commit": "297545dfa04ce7fcf68168f17fa22db1b1789015",
+      "bytes": 13991,
+      "sha256": "9f687673c295e8d735dce390c2408c19bafed689c487a2583f26a4070596925e",
+      "git_blob_sha1": "01870216fdd83ff2c17c43b8b20682944f744ae3"
+    },
+    {
+      "repository_path": "scripts/all_metrics_vctk_quality_resume.py",
+      "source_commit": "297545dfa04ce7fcf68168f17fa22db1b1789015",
+      "bytes": 3366,
+      "sha256": "bd6855952d6cae49675282d5d1ed89c8d742762d79ff6851f06ae1e7f17366a9",
+      "git_blob_sha1": "bbb69c84f46e6e776db2aa71b6b586ea37ef1d0d"
+    },
+    {
+      "repository_path": "scripts/all_metrics_vctk_resume.py",
+      "source_commit": "297545dfa04ce7fcf68168f17fa22db1b1789015",
+      "bytes": 4481,
+      "sha256": "e665c9225ca145bc57682b1cca007091be3497b49197954fa4e8d678e0f22cc9",
+      "git_blob_sha1": "eb1dde203cd7c1b92ee7ce3bf5a0617c7032668a"
+    },
+    {
+      "repository_path": "scripts/all_metrics_vctk_run.py",
+      "source_commit": "297545dfa04ce7fcf68168f17fa22db1b1789015",
+      "bytes": 9571,
+      "sha256": "1099c927901d08bc3c68f4272ae0a884f49b2fac381b40edb494deed85d0e74f",
+      "git_blob_sha1": "3e5d20c08ba184f77b823d8e8465ef3944fe4cf7"
+    },
+    {
+      "repository_path": "scripts/all_metrics_vctk_summary.py",
+      "source_commit": "297545dfa04ce7fcf68168f17fa22db1b1789015",
+      "bytes": 9136,
+      "sha256": "03245d68aa53f3724dbef7519e25c3c179bcef3ff5c610f5ff2e5f721bbc5e6b",
+      "git_blob_sha1": "5119200253cd137f6ed175b1f5ab32a4548c9007"
+    },
+    {
+      "repository_path": "scripts/all_metrics_vctk_synthesis.py",
+      "source_commit": "297545dfa04ce7fcf68168f17fa22db1b1789015",
+      "bytes": 5750,
+      "sha256": "bb6977d596417bb5addb7ae660c080f4348bb5e2b942c3503a3611dcb7d8cf64",
+      "git_blob_sha1": "d10a08377df5195554a6492f3cc1b5656735cd1d"
+    },
+    {
+      "repository_path": "scripts/all_metrics_vctk_watch.py",
+      "source_commit": "297545dfa04ce7fcf68168f17fa22db1b1789015",
+      "bytes": 4261,
+      "sha256": "cad25b6078b729984cfb1237e4fc5a49519b4ad2816514788b8a403acac81539",
+      "git_blob_sha1": "8ff37b3036bbc1f2209b8ed4351dad62aa0ab5c1"
+    },
+    {
+      "repository_path": "scripts/build_site.py",
+      "source_commit": "297545dfa04ce7fcf68168f17fa22db1b1789015",
+      "bytes": 14811,
+      "sha256": "0bc435eef34118d7a13d537dab6a68432044f3c7d830fd232cf98a619ffd029e",
+      "git_blob_sha1": "22a1fb6c65b907431b8a4cc11943a3c9fa89cbb1"
+    },
+    {
+      "repository_path": "scripts/check_source_size.py",
+      "source_commit": "297545dfa04ce7fcf68168f17fa22db1b1789015",
+      "bytes": 1803,
+      "sha256": "6be81c507df2592fe1e5019171e7b5f24a06a17fe52f14c23da242bc6711216c",
+      "git_blob_sha1": "ebfc50260e50b28486dea8ebd03e5514a908021a"
+    },
+    {
+      "repository_path": "scripts/fetch_data.py",
+      "source_commit": "297545dfa04ce7fcf68168f17fa22db1b1789015",
+      "bytes": 1925,
+      "sha256": "12d25be0313296f1edc3e71dcf57b03ddfb0cedd0c58df995c02d234254ac476",
+      "git_blob_sha1": "0f918c1134c3e33bb493dcdf9e9ae9ab3324d229"
+    },
+    {
+      "repository_path": "scripts/noise_jvs_report.py",
+      "source_commit": "297545dfa04ce7fcf68168f17fa22db1b1789015",
+      "bytes": 12856,
+      "sha256": "640e9621ab4941988970cc95b8408fb0f697407bba9d3eb0b6a4067e8b22d047",
+      "git_blob_sha1": "81ffa65f8a21de0687c30ccdfd1203323f5b88f2"
+    },
+    {
+      "repository_path": "scripts/noise_report_provenance.py",
+      "source_commit": "297545dfa04ce7fcf68168f17fa22db1b1789015",
+      "bytes": 7494,
+      "sha256": "d9e75dbcde1e4a464de9362c1fe1d990a348521987ac35a12a12ad86a3703a76",
+      "git_blob_sha1": "f4dd829240c43b233c9043c3329f3d1a32cce573"
+    },
+    {
+      "repository_path": "scripts/noise_screen_report.py",
+      "source_commit": "297545dfa04ce7fcf68168f17fa22db1b1789015",
+      "bytes": 27978,
+      "sha256": "1f512461f08f40eabb0febd3a507997b100300fe4aa08babfa0e8c299a3e41c0",
+      "git_blob_sha1": "a3a2cc351b83657b1ecdd19d0ddd4be4df40f55f"
+    },
+    {
+      "repository_path": "vocoderbench/__init__.py",
+      "source_commit": "297545dfa04ce7fcf68168f17fa22db1b1789015",
+      "bytes": 79,
+      "sha256": "73738d70706824f85fdfac302306af505437a50b0ca4cdc68fd57aec211a308d",
+      "git_blob_sha1": "260c2a2f096adaadcdbdbddfa1952b1b6eba4bb7"
+    },
+    {
+      "repository_path": "vocoderbench/assessment/__init__.py",
+      "source_commit": "297545dfa04ce7fcf68168f17fa22db1b1789015",
+      "bytes": 88,
+      "sha256": "37126abeb4fe6f6ce927d264c42a1b2ab934eb9b11a25faa8165d1685c37f63c",
+      "git_blob_sha1": "fe66d5dfb6feb2a429b94e2f655f2d1b182ae049"
+    },
+    {
+      "repository_path": "vocoderbench/assessment/__main__.py",
+      "source_commit": "297545dfa04ce7fcf68168f17fa22db1b1789015",
+      "bytes": 49,
+      "sha256": "ce535ce8695e480492699a7a859ad36daea0e8cf0f192f8dbbd76ed00891a2e0",
+      "git_blob_sha1": "07d1d292147cfde9c7af586c87089cf97a78a30f"
+    },
+    {
+      "repository_path": "vocoderbench/assessment/acoustics.py",
+      "source_commit": "297545dfa04ce7fcf68168f17fa22db1b1789015",
+      "bytes": 7793,
+      "sha256": "50737f8804f433b09737442e30c224a00e5f30f12583d38c4b7465b40d9669a3",
+      "git_blob_sha1": "10a4812988dd96366f993e2181166555aaf18eb8"
+    },
+    {
+      "repository_path": "vocoderbench/assessment/common.py",
+      "source_commit": "297545dfa04ce7fcf68168f17fa22db1b1789015",
+      "bytes": 6240,
+      "sha256": "ab938071273d5d475df871e521cba4ebb21e6d352c9e52d994c04cf71a957829",
+      "git_blob_sha1": "4146911cb10951c164a7232a42f8427fba3ad56b"
+    },
+    {
+      "repository_path": "vocoderbench/assessment/controls.py",
+      "source_commit": "297545dfa04ce7fcf68168f17fa22db1b1789015",
+      "bytes": 11297,
+      "sha256": "8d632e7e95f5d674f034e865a4f532247cec41c548e27cc54dd75d09504653f3",
+      "git_blob_sha1": "18e52872ea13affa8b7d93b3d81f4db117b4be36"
+    },
+    {
+      "repository_path": "vocoderbench/assessment/curves.py",
+      "source_commit": "297545dfa04ce7fcf68168f17fa22db1b1789015",
+      "bytes": 11157,
+      "sha256": "4a794d7d7a94666f298b46ff3c6b6ac943776660ad2ea4f1174fc922140006f1",
+      "git_blob_sha1": "b5cc3672b33ea94a8e7535125184205692a6c06d"
+    },
+    {
+      "repository_path": "vocoderbench/assessment/probes.py",
+      "source_commit": "297545dfa04ce7fcf68168f17fa22db1b1789015",
+      "bytes": 5605,
+      "sha256": "b1bced34227ce72b5e5fe640cf39c761172aeaa0ef9341829f19bdaf4a984f39",
+      "git_blob_sha1": "6c1ba8adde163ab7a00336b45d0751031f2e4394"
+    },
+    {
+      "repository_path": "vocoderbench/assessment/representation.py",
+      "source_commit": "297545dfa04ce7fcf68168f17fa22db1b1789015",
+      "bytes": 9029,
+      "sha256": "84ea8e9de44e797c99066e36ce862a38759a96a4c8e0671f57c5a70c8c0b12b6",
+      "git_blob_sha1": "336ff0041489957b9ec79a555056b696769ae0f2"
+    },
+    {
+      "repository_path": "vocoderbench/assessment/runner.py",
+      "source_commit": "297545dfa04ce7fcf68168f17fa22db1b1789015",
+      "bytes": 12129,
+      "sha256": "44a522b612cbaae6f0dad91153cd315bc441964feb3b6faab24938a95fb3e677",
+      "git_blob_sha1": "446845ed3f3c9d2da571a899aee0bcb3afd3cc6d"
+    },
+    {
+      "repository_path": "vocoderbench/audio_report.py",
+      "source_commit": "297545dfa04ce7fcf68168f17fa22db1b1789015",
+      "bytes": 2397,
+      "sha256": "f46ff0cf69e7cb956ea94ee0c7013d44052c0400c5ffc64d7f9f90b4489aa980",
+      "git_blob_sha1": "1e40f854fac4364da89096e1c44df522a8492099"
+    },
+    {
+      "repository_path": "vocoderbench/audio_samples.py",
+      "source_commit": "297545dfa04ce7fcf68168f17fa22db1b1789015",
+      "bytes": 2049,
+      "sha256": "b9b975c1f305cdaff47909b99bd2a3dce64996e90774d2a8305adc1c67ed6c17",
+      "git_blob_sha1": "0a2263411f7ccf8bac3cf77572cc03c988610003"
+    },
+    {
+      "repository_path": "vocoderbench/benchmark.py",
+      "source_commit": "297545dfa04ce7fcf68168f17fa22db1b1789015",
+      "bytes": 11779,
+      "sha256": "7fdb6b4dfa4f9cf64bc8d009dd4b0b1e267ab18a5e87a9e1a7004ae45d84a244",
+      "git_blob_sha1": "a8785f933965a9dc4b6d746c84ba26efd376aee6"
+    },
+    {
+      "repository_path": "vocoderbench/benchmark_io.py",
+      "source_commit": "297545dfa04ce7fcf68168f17fa22db1b1789015",
+      "bytes": 5412,
+      "sha256": "d2fa3e56f52da225573939c92056005be47568c531b7a317a5e893e10a5d9d5c",
+      "git_blob_sha1": "352160053b16af1facca9a3ed10b0e5d5283f654"
+    },
+    {
+      "repository_path": "vocoderbench/benchmark_pipeline.py",
+      "source_commit": "297545dfa04ce7fcf68168f17fa22db1b1789015",
+      "bytes": 2062,
+      "sha256": "a049034dcd272bbafda47cbf5719cc6b1cd8dae6f80682200cd3fc7b90e522cd",
+      "git_blob_sha1": "1da13ee7188a35c595b5a75623555b5c8ed86260"
+    },
+    {
+      "repository_path": "vocoderbench/benchmark_report.py",
+      "source_commit": "297545dfa04ce7fcf68168f17fa22db1b1789015",
+      "bytes": 8589,
+      "sha256": "2a8061e8acc89dc4897d77efa206922720d6aa9843c340daea8ec78c2cb0b759",
+      "git_blob_sha1": "0731f758ed6df6001004bf1b9289a30cb64e8e24"
+    },
+    {
+      "repository_path": "vocoderbench/benchmark_summary.py",
+      "source_commit": "297545dfa04ce7fcf68168f17fa22db1b1789015",
+      "bytes": 4982,
+      "sha256": "8221086fe08bfc70cbfb9308a3a01d6fea976afb7de86af8cbacd7999e8281da",
+      "git_blob_sha1": "bc4cc4d297a5a20db47db42fb50920d0337f0e39"
+    },
+    {
+      "repository_path": "vocoderbench/build_world.py",
+      "source_commit": "297545dfa04ce7fcf68168f17fa22db1b1789015",
+      "bytes": 3720,
+      "sha256": "7d29d81c9a48d633edfeae0425c5cc055bc0a10d230232a51eab5720b2cc6974",
+      "git_blob_sha1": "f941c182144ba8f35000f57c412c54b5742ad896"
+    },
+    {
+      "repository_path": "vocoderbench/calibrate_pitch.py",
+      "source_commit": "297545dfa04ce7fcf68168f17fa22db1b1789015",
+      "bytes": 4441,
+      "sha256": "282c917bf87c6f549f32467647802852907e4b0b88128eb8017157b84566adec",
+      "git_blob_sha1": "b0c5388dd693644bc862792e47ccc20658e47e5d"
+    },
+    {
+      "repository_path": "vocoderbench/control.py",
+      "source_commit": "297545dfa04ce7fcf68168f17fa22db1b1789015",
+      "bytes": 8775,
+      "sha256": "bc41e73ff34b5f9cb52280a6f2317c989abc53f8b15f8f82db5ee3102b4b58bd",
+      "git_blob_sha1": "dc78dedfdd7840480a7b2db5fe2cb6d9355ea720"
+    },
+    {
+      "repository_path": "vocoderbench/corpus.py",
+      "source_commit": "297545dfa04ce7fcf68168f17fa22db1b1789015",
+      "bytes": 14415,
+      "sha256": "bc14cee2c3dd1a651cf2e5f0e9fe871fbd3a712d1a90d7c18a18547a625802e8",
+      "git_blob_sha1": "ef23b7a08198595eaa62ed22e8a2c816bbba286c"
+    },
+    {
+      "repository_path": "vocoderbench/extended_metrics.py",
+      "source_commit": "297545dfa04ce7fcf68168f17fa22db1b1789015",
+      "bytes": 10671,
+      "sha256": "ab3537d2c8e5d568a0cd2fa8aa36309de09c3bce7cf2f849214331a22fe3624f",
+      "git_blob_sha1": "d026ba998339287a88949ed3358db3d98f2671fc"
+    },
+    {
+      "repository_path": "vocoderbench/fixtures.py",
+      "source_commit": "297545dfa04ce7fcf68168f17fa22db1b1789015",
+      "bytes": 5341,
+      "sha256": "2b2ba922ed611abc91a29f1d270c9a91c0743bc9a8a6a131c7dcd184fcf60dc9",
+      "git_blob_sha1": "d880d6a7f68be2c64207dc8a811cfdc9424b3b2f"
+    },
+    {
+      "repository_path": "vocoderbench/hnm.py",
+      "source_commit": "297545dfa04ce7fcf68168f17fa22db1b1789015",
+      "bytes": 450,
+      "sha256": "58f0378793b7433f80bf854972882298649799d8e3d0868674816e9bf6b63f74",
+      "git_blob_sha1": "9bad6fa5a525ad9f3f5ab2757140c568eb55c581"
+    },
+    {
+      "repository_path": "vocoderbench/hnm_analysis.py",
+      "source_commit": "297545dfa04ce7fcf68168f17fa22db1b1789015",
+      "bytes": 8808,
+      "sha256": "3f45703667237333d76c4145c1513e4eb3342bd40f01a714c10303082440e26a",
+      "git_blob_sha1": "7e62b8b738fa010fabeae22b7ba6444869621dce"
+    },
+    {
+      "repository_path": "vocoderbench/hnm_control.py",
+      "source_commit": "297545dfa04ce7fcf68168f17fa22db1b1789015",
+      "bytes": 3188,
+      "sha256": "b2f5efbbb1e550569c231a08f12997d94b0bacb130bcc816fe6bd458b17a98bc",
+      "git_blob_sha1": "b4389cc5f1375db934e653bced2f4f2aa4e10755"
+    },
+    {
+      "repository_path": "vocoderbench/hnm_diagnostics.py",
+      "source_commit": "297545dfa04ce7fcf68168f17fa22db1b1789015",
+      "bytes": 2201,
+      "sha256": "076edd5a785e83540a0cf55fea06075769ef35503f210eb977efc1703dd0081e",
+      "git_blob_sha1": "97929257611c917c3a89c0f9f4f8c553e960b3ad"
+    },
+    {
+      "repository_path": "vocoderbench/hnm_parameters.py",
+      "source_commit": "297545dfa04ce7fcf68168f17fa22db1b1789015",
+      "bytes": 5956,
+      "sha256": "635bf222bac8ce41897c0977677e67be4366724f4239a9e85e153169fcea2cf0",
+      "git_blob_sha1": "9fd2438c36fba9256765a241e53ca34b4b17917b"
+    },
+    {
+      "repository_path": "vocoderbench/hnm_synthesis.py",
+      "source_commit": "297545dfa04ce7fcf68168f17fa22db1b1789015",
+      "bytes": 4518,
+      "sha256": "079057d2fba2b4ca0d189e050449aa7bc3fa20033afb0b03893300950ae13593",
+      "git_blob_sha1": "4d751dac4167196af42d06f82cf32fb9925ff447"
+    },
+    {
+      "repository_path": "vocoderbench/logging_utils.py",
+      "source_commit": "297545dfa04ce7fcf68168f17fa22db1b1789015",
+      "bytes": 2915,
+      "sha256": "c80eb5d9647516a4bc03980cb178f8b4bb130ac15877d1b3289797e7ad81e381",
+      "git_blob_sha1": "9af5d0908dfd76cf835e556e4e011d83da895407"
+    },
+    {
+      "repository_path": "vocoderbench/methods.py",
+      "source_commit": "297545dfa04ce7fcf68168f17fa22db1b1789015",
+      "bytes": 1086,
+      "sha256": "99a040b960139aa842a9a46623b34717db9c71195df21ae969fb2a9e9b9155b0",
+      "git_blob_sha1": "128147e609861ca54649329f206b9aa625222ef1"
+    },
+    {
+      "repository_path": "vocoderbench/metrics.py",
+      "source_commit": "297545dfa04ce7fcf68168f17fa22db1b1789015",
+      "bytes": 11886,
+      "sha256": "b8767feb49494058bd9ec08fd95ae2fb50ce7897fcdd6cebe319ff8a0ac51f22",
+      "git_blob_sha1": "3e9f2440cb7920e1fd57171c6c62ab49b40472ac"
+    },
+    {
+      "repository_path": "vocoderbench/mos.py",
+      "source_commit": "297545dfa04ce7fcf68168f17fa22db1b1789015",
+      "bytes": 12126,
+      "sha256": "fb632aa5440245525289962372db4f3eb007cd2b3b493b2d05ecccb878e85f03",
+      "git_blob_sha1": "e1edf527190a676f9edf5814d72d20c911394c22"
+    },
+    {
+      "repository_path": "vocoderbench/mos_batch.py",
+      "source_commit": "297545dfa04ce7fcf68168f17fa22db1b1789015",
+      "bytes": 2734,
+      "sha256": "c7a732dfe52b08fa155201a7134d2f5561a10b16d1866e9f0526f61b2b244f64",
+      "git_blob_sha1": "6106bc4fc966ddf877a54202599b1dacc17835ab"
+    },
+    {
+      "repository_path": "vocoderbench/noise_screen.py",
+      "source_commit": "297545dfa04ce7fcf68168f17fa22db1b1789015",
+      "bytes": 12996,
+      "sha256": "8eb38cfb49b315dd09f394a1a6753cd416704442b78051096c168da70bdc41f1",
+      "git_blob_sha1": "46f58502ef7af387e45101b20e3d5c8e2509694a"
+    },
+    {
+      "repository_path": "vocoderbench/noise_stability.py",
+      "source_commit": "297545dfa04ce7fcf68168f17fa22db1b1789015",
+      "bytes": 13959,
+      "sha256": "624dc434add0086c53c41b9fb7fd0e65b2c51b16c08d4485e4147a77f5534213",
+      "git_blob_sha1": "959883fe04933ac3cc35535d438c653aa1eaa9c5"
+    },
+    {
+      "repository_path": "vocoderbench/quality.py",
+      "source_commit": "297545dfa04ce7fcf68168f17fa22db1b1789015",
+      "bytes": 8685,
+      "sha256": "f6a276d9ac2acdd345e49070c51d76bfa179e82f8459d8e15dbd1a050323d63d",
+      "git_blob_sha1": "dac9f9745d011c09b099fa2673aa6e4430e92fe5"
+    },
+    {
+      "repository_path": "vocoderbench/quality_backends.py",
+      "source_commit": "297545dfa04ce7fcf68168f17fa22db1b1789015",
+      "bytes": 10198,
+      "sha256": "1f36068515bc3e218f9eb149d7fc3b2b8e62b5eee804448ff30f01624dd23a48",
+      "git_blob_sha1": "b14e1c898928405a89dec0787a1e468f2e97e04e"
+    },
+    {
+      "repository_path": "vocoderbench/quality_core.py",
+      "source_commit": "297545dfa04ce7fcf68168f17fa22db1b1789015",
+      "bytes": 8262,
+      "sha256": "66bf6c08633424f544b2ad7eef2a74283c05d809aa9a59df8fc1ba0e5ab51f4b",
+      "git_blob_sha1": "bb87c93d0b3a4757f62e9f007d5434821c9a8ada"
+    },
+    {
+      "repository_path": "vocoderbench/quality_evidence.py",
+      "source_commit": "297545dfa04ce7fcf68168f17fa22db1b1789015",
+      "bytes": 4218,
+      "sha256": "5e555c1747c41978bfb8d1a13948510e55898ab38714551d857196d2ac87052a",
+      "git_blob_sha1": "f7fc160cd8efab28a3fce9b49f3eb2a33878f24b"
+    },
+    {
+      "repository_path": "vocoderbench/quality_inputs.py",
+      "source_commit": "297545dfa04ce7fcf68168f17fa22db1b1789015",
+      "bytes": 5967,
+      "sha256": "5f71690e4daf12cf900029224c78232de34327c1ff4a23ee4376064367c40909",
+      "git_blob_sha1": "c7d7ebf083bffe3613b950aa8f0866e22de63fe1"
+    },
+    {
+      "repository_path": "vocoderbench/quality_reference_inputs.py",
+      "source_commit": "297545dfa04ce7fcf68168f17fa22db1b1789015",
+      "bytes": 5549,
+      "sha256": "215c0967258c20af5b3267a00cb90aa1d0c7f22bb11e1efef98ad55711511a42",
+      "git_blob_sha1": "1a66203e994c76973b623e257b842b7527416f24"
+    },
+    {
+      "repository_path": "vocoderbench/quality_report.py",
+      "source_commit": "297545dfa04ce7fcf68168f17fa22db1b1789015",
+      "bytes": 7376,
+      "sha256": "aae925d97a6c990ad3318899a6b14995ecbf1cf6554041344bbed708fa51dad4",
+      "git_blob_sha1": "b285e90ac4b88a701f8ced34def984fc95bcf150"
+    },
+    {
+      "repository_path": "vocoderbench/quality_similarity.py",
+      "source_commit": "297545dfa04ce7fcf68168f17fa22db1b1789015",
+      "bytes": 7652,
+      "sha256": "32b537b5eb006834a55314a5ddb2f9faa7f5c9fa8d6a4faa626d892360d965f7",
+      "git_blob_sha1": "2d9780547b1854a3f79957b8803b6e7a21a4cffa"
+    },
+    {
+      "repository_path": "vocoderbench/quality_visqol.py",
+      "source_commit": "297545dfa04ce7fcf68168f17fa22db1b1789015",
+      "bytes": 3856,
+      "sha256": "908ea7cbf6b8202a46863c4c4b66d5a0e3adce817facd6898bd666a2e806099a",
+      "git_blob_sha1": "cc6fd8ed514a6ef520c31a822d59525fa53d534f"
+    },
+    {
+      "repository_path": "vocoderbench/reference.py",
+      "source_commit": "297545dfa04ce7fcf68168f17fa22db1b1789015",
+      "bytes": 10773,
+      "sha256": "345fe4c8ae0fb107f01e7ce973daaccdc5e60e1624753de61928b3718b23672f",
+      "git_blob_sha1": "d5b24f78f0977f9ff4900c27f23b424ecc595a34"
+    },
+    {
+      "repository_path": "vocoderbench/references/__init__.py",
+      "source_commit": "297545dfa04ce7fcf68168f17fa22db1b1789015",
+      "bytes": 91,
+      "sha256": "d96022954c3cd493c7e6d7baf35e8bd33eafea192a9f9154c8470b7937d05732",
+      "git_blob_sha1": "9ce78f6721694e1d110c50e6f991c3566cf6fa43"
+    },
+    {
+      "repository_path": "vocoderbench/references/adapters_dsp.py",
+      "source_commit": "297545dfa04ce7fcf68168f17fa22db1b1789015",
+      "bytes": 3019,
+      "sha256": "ab5a0cf63085524842a0614d2ebc63adbe11521852f53bf9d561a131c37ab285",
+      "git_blob_sha1": "5b17ca1ec3ef9d115e79484c8726b6b27501568e"
+    },
+    {
+      "repository_path": "vocoderbench/references/adapters_neural.py",
+      "source_commit": "297545dfa04ce7fcf68168f17fa22db1b1789015",
+      "bytes": 4175,
+      "sha256": "cfe845d99cf0257556da99e5a1f950c9d9ac5ac490fb7d8e8cfb9b46f2c03a08",
+      "git_blob_sha1": "08acd256a4a968957f6503490f283e5ef8c63021"
+    },
+    {
+      "repository_path": "vocoderbench/references/adapters_source.py",
+      "source_commit": "297545dfa04ce7fcf68168f17fa22db1b1789015",
+      "bytes": 5274,
+      "sha256": "28b70e6680a3c8090fa5d16f696eae5c28d6b55bee5eee9e90ef4b80735f2b99",
+      "git_blob_sha1": "15970a1b94ea25bc0082af64201cc1554ec24194"
+    },
+    {
+      "repository_path": "vocoderbench/references/catalog.py",
+      "source_commit": "297545dfa04ce7fcf68168f17fa22db1b1789015",
+      "bytes": 1859,
+      "sha256": "ff03fb9f0de8ccd11d48d76773611cebbed0c6f05e45e8ff8a31f6b108c09e81",
+      "git_blob_sha1": "7e0ed0e454493487e7e4887db29b94b63f8b05a0"
+    },
+    {
+      "repository_path": "vocoderbench/references/common.py",
+      "source_commit": "297545dfa04ce7fcf68168f17fa22db1b1789015",
+      "bytes": 1777,
+      "sha256": "2d8f4418414b1abf0cfd7f15e00093b3ba1e9c637ddcbb7aef2c965d0f6e5579",
+      "git_blob_sha1": "69d9e3581e49c0c906948105bccc74254c1faca5"
+    },
+    {
+      "repository_path": "vocoderbench/references/current_base.py",
+      "source_commit": "297545dfa04ce7fcf68168f17fa22db1b1789015",
+      "bytes": 1317,
+      "sha256": "8a9161607166ab93378f6957a7fc39011e01689076f5e53094d91e7856849704",
+      "git_blob_sha1": "38ce942e43e6f90fd7eaa67f039b2b3592df2ceb"
+    },
+    {
+      "repository_path": "vocoderbench/references/evaluate.py",
+      "source_commit": "297545dfa04ce7fcf68168f17fa22db1b1789015",
+      "bytes": 5940,
+      "sha256": "f37d09a45d8f801fb68d2e9eef31c0c2aca421a64bfdc42be4d233ccc815f917",
+      "git_blob_sha1": "8cb0469cfd834dd3479096302052a0286e92966a"
+    },
+    {
+      "repository_path": "vocoderbench/references/evaluation_cache.py",
+      "source_commit": "297545dfa04ce7fcf68168f17fa22db1b1789015",
+      "bytes": 3284,
+      "sha256": "4ff288c1f4f839db9004960333e1692c47f3e28cc19b2c8781a73e65cf453e0a",
+      "git_blob_sha1": "d43ad922c0c374b77a9074ea2882a49c5def860c"
+    },
+    {
+      "repository_path": "vocoderbench/references/inputs.py",
+      "source_commit": "297545dfa04ce7fcf68168f17fa22db1b1789015",
+      "bytes": 2034,
+      "sha256": "11acdfe0b4611075f3d232161008f098f59daf2a9345d7e1e75a4e1680ada1c8",
+      "git_blob_sha1": "e1495c63fb7e256109d8b57e9dfdbc37f262e6bf"
+    },
+    {
+      "repository_path": "vocoderbench/references/integration.py",
+      "source_commit": "297545dfa04ce7fcf68168f17fa22db1b1789015",
+      "bytes": 3691,
+      "sha256": "d64e036964d4b6ef782d69b927d5d3b1ca62aedca22e2979255d0eea861a1930",
+      "git_blob_sha1": "8629f8028f4c8566743e8baceeaa1e84222eeae5"
+    },
+    {
+      "repository_path": "vocoderbench/references/native.py",
+      "source_commit": "297545dfa04ce7fcf68168f17fa22db1b1789015",
+      "bytes": 4324,
+      "sha256": "a6581f389587b85f547ba66d068ce974d8fe6d08252500f0f28788a7014780fb",
+      "git_blob_sha1": "cbe61941105b01c08b61c7b44fef796da5753ad9"
+    },
+    {
+      "repository_path": "vocoderbench/references/prepare.py",
+      "source_commit": "297545dfa04ce7fcf68168f17fa22db1b1789015",
+      "bytes": 6781,
+      "sha256": "82092abb7f8e950b0c09b08568580627e6696796d054a716824e038ed80699d4",
+      "git_blob_sha1": "a74b032bc819ffb45d33ccc326202530645bd031"
+    },
+    {
+      "repository_path": "vocoderbench/references/publish.py",
+      "source_commit": "297545dfa04ce7fcf68168f17fa22db1b1789015",
+      "bytes": 12772,
+      "sha256": "72c2dd1dd0251cd4a623f9724610d581547298ba2e6105e0bd7a99a6957319b2",
+      "git_blob_sha1": "412d7dff86dd5f997dc499c958b3be1cdf4f0665"
+    },
+    {
+      "repository_path": "vocoderbench/references/report.py",
+      "source_commit": "297545dfa04ce7fcf68168f17fa22db1b1789015",
+      "bytes": 6677,
+      "sha256": "011afb9c6453d9b215f7bc687d9e2dbafbdaddfdd9864e8925ce01ab9cb88fcc",
+      "git_blob_sha1": "b3130aaa98e8fdab1083400dabc73b8eaab3a362"
+    },
+    {
+      "repository_path": "vocoderbench/references/report_formal.py",
+      "source_commit": "297545dfa04ce7fcf68168f17fa22db1b1789015",
+      "bytes": 20630,
+      "sha256": "3eabc1892e804ff05e11c93025616cb530e4eac91eda92660058044701c6132b",
+      "git_blob_sha1": "92d8045c2a337a4e0e69b6392db5217d67bb9cd1"
+    },
+    {
+      "repository_path": "vocoderbench/references/report_metrics.py",
+      "source_commit": "297545dfa04ce7fcf68168f17fa22db1b1789015",
+      "bytes": 10382,
+      "sha256": "f4e3e1424b091433d34aae77383cbb51c6063e7803f3c5381375a6fd8b5f33f3",
+      "git_blob_sha1": "433b061449daf7b20d06b2870f2c3b57515ee2b9"
+    },
+    {
+      "repository_path": "vocoderbench/references/report_summary.py",
+      "source_commit": "297545dfa04ce7fcf68168f17fa22db1b1789015",
+      "bytes": 7279,
+      "sha256": "c92f65aca61793b5907470dacd31ef0afb2d6ca310878417b3e4ce0beb5c2bd9",
+      "git_blob_sha1": "0d47d353ce2a1af74adfc839ada8f89b5bf8afce"
+    },
+    {
+      "repository_path": "vocoderbench/references/worker.py",
+      "source_commit": "297545dfa04ce7fcf68168f17fa22db1b1789015",
+      "bytes": 7005,
+      "sha256": "5705f551bcd4eec6a44f204e3089b0cf4ddfde3408b613d7a6b2e1917e3a0115",
+      "git_blob_sha1": "4be535cf7a97ad4bbf566b6cfd8da0e04d2ba584"
+    },
+    {
+      "repository_path": "vocoderbench/report.py",
+      "source_commit": "297545dfa04ce7fcf68168f17fa22db1b1789015",
+      "bytes": 29221,
+      "sha256": "659d8406e8c1d09e29e120d6f0ef13ddc3047565915c125588a2704fb25c6737",
+      "git_blob_sha1": "9185d3c8a0f0d31d424fd94ee87dda346f481f7b"
+    },
+    {
+      "repository_path": "vocoderbench/run.py",
+      "source_commit": "297545dfa04ce7fcf68168f17fa22db1b1789015",
+      "bytes": 10797,
+      "sha256": "ac2b6c3a90dea0b9b563ddf30c94e58b8cd9b2e16fb368546ad4efd206a729a6",
+      "git_blob_sha1": "61538f0ca11cb3a3225f31be97905b6bd3f24445"
+    },
+    {
+      "repository_path": "vocoderbench/site_summary.py",
+      "source_commit": "297545dfa04ce7fcf68168f17fa22db1b1789015",
+      "bytes": 10469,
+      "sha256": "d9cc9ecaa19a4dd95e27ebde803daae5a960a983acdf7fb6e278ce440b231020",
+      "git_blob_sha1": "7202fee91c0fcf3cc73929823c5a6304fd78c7dc"
+    },
+    {
+      "repository_path": "vocoderbench/supplement.py",
+      "source_commit": "297545dfa04ce7fcf68168f17fa22db1b1789015",
+      "bytes": 4988,
+      "sha256": "8b72b63b7059f3e94ecb13f575ab93060e00fee0cb89c5abcaa51719061b890d",
+      "git_blob_sha1": "5cadbf6f99e2466bb60c27708c62f91496bfbd5b"
+    },
+    {
+      "repository_path": "vocoderbench/supplement_contract.py",
+      "source_commit": "297545dfa04ce7fcf68168f17fa22db1b1789015",
+      "bytes": 6299,
+      "sha256": "748bff65db3bd3709cdd472b02358af35518c5d1a96fbf212f6b02ba5fa45cd4",
+      "git_blob_sha1": "4db601221786b7cd2f402dc1fb9a2106255b8247"
+    },
+    {
+      "repository_path": "vocoderbench/supplement_report.py",
+      "source_commit": "297545dfa04ce7fcf68168f17fa22db1b1789015",
+      "bytes": 14995,
+      "sha256": "9146b635745c6bb10c733c090696c564d463180507809588ac377ef682c668ad",
+      "git_blob_sha1": "03778d524ed91351b29b992a05b6444df04a6f0d"
+    },
+    {
+      "repository_path": "vocoderbench/temporal_metrics.py",
+      "source_commit": "297545dfa04ce7fcf68168f17fa22db1b1789015",
+      "bytes": 16993,
+      "sha256": "ce21b6a4767071a7b98ea0cdbfe54bdba15b596bf8d6b6127281a97095e7be91",
+      "git_blob_sha1": "d5ff8be3f0c230d8ced0e9302849c145692bc86e"
+    },
+    {
+      "repository_path": "vocoderbench/world.py",
+      "source_commit": "297545dfa04ce7fcf68168f17fa22db1b1789015",
+      "bytes": 10785,
+      "sha256": "d14558eed772e07031a9183f57facc55acb1c27deccb3dd4fa098ffcbe0cde3a",
+      "git_blob_sha1": "8a753f2add7fd25d9673ec7d120fd286813a176e"
+    }
+  ],
+  "additional_sources": [
+    {
+      "public_path": "research/all-method-reproduction-20261014/source/repo/runs/all-method-metrics-recovery-20261014/operations/human_available100_conditional/conditional_gate.py",
+      "original_source": "main-repository/runs/all-method-metrics-recovery-20261014/operations/human_available100_conditional/conditional_gate.py",
+      "original_execution_location": {
+        "root": "repository_root",
+        "relative_path": "runs/all-method-metrics-recovery-20261014/operations/human_available100_conditional/conditional_gate.py",
+        "mode": "restore_same_bytes_in_separate_reproduction_checkout; runtime_inputs_protocols_and_gates_required"
+      },
+      "role": "execution_receipt_guard_no_numerical_formula",
+      "source_only_snapshot": true,
+      "bytes": 3772,
+      "sha256": "aa90238b4e342769c0edee2fb7566d6b22e298cbb8eff6fc76eb184676f4b0bf",
+      "git_blob_sha1": "834bd74ddcaf3d7f308329ed44ff8e86bc384781",
+      "earlier_proposal": {
+        "original_source": "main-repository/runs/all-method-metrics-recovery-20261014/operations/human_available100_conditional/conditional_gate.py",
+        "sha256": "aa90238b4e342769c0edee2fb7566d6b22e298cbb8eff6fc76eb184676f4b0bf",
+        "bytes": 3772
+      },
+      "changed_since_earlier_proposal": false
+    },
+    {
+      "public_path": "research/all-method-reproduction-20261014/source/repo/runs/all-method-metrics-recovery-20261014/operations/human_available100_conditional/conditional_settings.py",
+      "original_source": "main-repository/runs/all-method-metrics-recovery-20261014/operations/human_available100_conditional/conditional_settings.py",
+      "original_execution_location": {
+        "root": "repository_root",
+        "relative_path": "runs/all-method-metrics-recovery-20261014/operations/human_available100_conditional/conditional_settings.py",
+        "mode": "restore_same_bytes_in_separate_reproduction_checkout; runtime_inputs_protocols_and_gates_required"
+      },
+      "role": "science_or_support",
+      "source_only_snapshot": true,
+      "bytes": 590,
+      "sha256": "1bfc26e3d80fda7bd83ea4d0877634e0d26f057d1a28d1df68235e55321d4f99",
+      "git_blob_sha1": "d8e3b8fe7ee806d87b35dba41e109ee7a0725f77",
+      "earlier_proposal": {
+        "original_source": "main-repository/runs/all-method-metrics-recovery-20261014/operations/human_available100_conditional/conditional_settings.py",
+        "sha256": "1bfc26e3d80fda7bd83ea4d0877634e0d26f057d1a28d1df68235e55321d4f99",
+        "bytes": 590
+      },
+      "changed_since_earlier_proposal": false
+    },
+    {
+      "public_path": "research/all-method-reproduction-20261014/source/repo/runs/all-method-metrics-recovery-20261014/operations/human_available100_conditional/rankings.py",
+      "original_source": "main-repository/runs/all-method-metrics-recovery-20261014/operations/human_available100_conditional/rankings.py",
+      "original_execution_location": {
+        "root": "repository_root",
+        "relative_path": "runs/all-method-metrics-recovery-20261014/operations/human_available100_conditional/rankings.py",
+        "mode": "restore_same_bytes_in_separate_reproduction_checkout; runtime_inputs_protocols_and_gates_required"
+      },
+      "role": "science_or_support",
+      "source_only_snapshot": true,
+      "bytes": 18134,
+      "sha256": "a7a87ae12d0531972ff667925516c46d51936d416f5538594c2331cb0eabc224",
+      "git_blob_sha1": "56d881a12e240153b77f0b070aa474d48c422a8c",
+      "earlier_proposal": {
+        "original_source": "main-repository/runs/all-method-metrics-recovery-20261014/operations/human_available100_conditional/rankings.py",
+        "sha256": "a7a87ae12d0531972ff667925516c46d51936d416f5538594c2331cb0eabc224",
+        "bytes": 18134
+      },
+      "changed_since_earlier_proposal": false
+    },
+    {
+      "public_path": "research/all-method-reproduction-20261014/source/repo/runs/all-method-metrics-recovery-20261014/operations/human_available100_v3/aggregation_gate.py",
+      "original_source": "main-repository/runs/all-method-metrics-recovery-20261014/operations/human_available100_v3/aggregation_gate.py",
+      "original_execution_location": {
+        "root": "repository_root",
+        "relative_path": "runs/all-method-metrics-recovery-20261014/operations/human_available100_v3/aggregation_gate.py",
+        "mode": "restore_same_bytes_in_separate_reproduction_checkout; runtime_inputs_protocols_and_gates_required"
+      },
+      "role": "execution_receipt_guard_no_numerical_formula",
+      "source_only_snapshot": true,
+      "bytes": 1591,
+      "sha256": "7df3bff55ad600170e01a40e246df7b0b64ba4dfba6af96e77824c10d7a9293d",
+      "git_blob_sha1": "b327bdd5937b47e01f9924bd91e54ef265c2d439",
+      "earlier_proposal": {
+        "original_source": "main-repository/runs/all-method-metrics-recovery-20261014/operations/human_available100_v3/aggregation_gate.py",
+        "sha256": "7df3bff55ad600170e01a40e246df7b0b64ba4dfba6af96e77824c10d7a9293d",
+        "bytes": 1591
+      },
+      "changed_since_earlier_proposal": false
+    },
+    {
+      "public_path": "research/all-method-reproduction-20261014/source/repo/runs/all-method-metrics-recovery-20261014/operations/human_available100_v3/features.py",
+      "original_source": "main-repository/runs/all-method-metrics-recovery-20261014/operations/human_available100_v3/features.py",
+      "original_execution_location": {
+        "root": "repository_root",
+        "relative_path": "runs/all-method-metrics-recovery-20261014/operations/human_available100_v3/features.py",
+        "mode": "restore_same_bytes_in_separate_reproduction_checkout; runtime_inputs_protocols_and_gates_required"
+      },
+      "role": "science_or_support",
+      "source_only_snapshot": true,
+      "bytes": 6053,
+      "sha256": "f11495840884cb9f8ebbade143f2c476a142bd7fe136d3d308727afc4591cb5d",
+      "git_blob_sha1": "7032cd132d0ea1dc9090d3614824a52870d70777",
+      "earlier_proposal": {
+        "original_source": "main-repository/runs/all-method-metrics-recovery-20261014/operations/human_available100_v3/features.py",
+        "sha256": "f11495840884cb9f8ebbade143f2c476a142bd7fe136d3d308727afc4591cb5d",
+        "bytes": 6053
+      },
+      "changed_since_earlier_proposal": false
+    },
+    {
+      "public_path": "research/all-method-reproduction-20261014/source/repo/runs/all-method-metrics-recovery-20261014/operations/human_available100_v3/prepare.py",
+      "original_source": "main-repository/runs/all-method-metrics-recovery-20261014/operations/human_available100_v3/prepare.py",
+      "original_execution_location": {
+        "root": "repository_root",
+        "relative_path": "runs/all-method-metrics-recovery-20261014/operations/human_available100_v3/prepare.py",
+        "mode": "restore_same_bytes_in_separate_reproduction_checkout; runtime_inputs_protocols_and_gates_required"
+      },
+      "role": "science_or_support",
+      "source_only_snapshot": true,
+      "bytes": 9867,
+      "sha256": "3503afea01a3da7e6264528e8e522f5ff065bc02a80297d84b8712be813443ca",
+      "git_blob_sha1": "d4679e56441bd0f2a867e2da4e6881142327180c",
+      "earlier_proposal": {
+        "original_source": "main-repository/runs/all-method-metrics-recovery-20261014/operations/human_available100_v3/prepare.py",
+        "sha256": "3503afea01a3da7e6264528e8e522f5ff065bc02a80297d84b8712be813443ca",
+        "bytes": 9867
+      },
+      "changed_since_earlier_proposal": false
+    },
+    {
+      "public_path": "research/all-method-reproduction-20261014/source/repo/runs/all-method-metrics-recovery-20261014/operations/human_available100_v3/rankings.py",
+      "original_source": "main-repository/runs/all-method-metrics-recovery-20261014/operations/human_available100_v3/rankings.py",
+      "original_execution_location": {
+        "root": "repository_root",
+        "relative_path": "runs/all-method-metrics-recovery-20261014/operations/human_available100_v3/rankings.py",
+        "mode": "restore_same_bytes_in_separate_reproduction_checkout; runtime_inputs_protocols_and_gates_required"
+      },
+      "role": "science_or_support",
+      "source_only_snapshot": true,
+      "bytes": 16630,
+      "sha256": "7e899bf844b1f4f018e024b1080699771ec7563d834ae341a293ad9b5ff23c8a",
+      "git_blob_sha1": "3e3563afde94f93c336dde7eedc3123aef77c66d",
+      "earlier_proposal": {
+        "original_source": "main-repository/runs/all-method-metrics-recovery-20261014/operations/human_available100_v3/rankings.py",
+        "sha256": "7e899bf844b1f4f018e024b1080699771ec7563d834ae341a293ad9b5ff23c8a",
+        "bytes": 16630
+      },
+      "changed_since_earlier_proposal": false
+    },
+    {
+      "public_path": "research/all-method-reproduction-20261014/source/repo/runs/all-method-metrics-recovery-20261014/operations/human_available100_v3/release_proof.py",
+      "original_source": "main-repository/runs/all-method-metrics-recovery-20261014/operations/human_available100_v3/release_proof.py",
+      "original_execution_location": {
+        "root": "repository_root",
+        "relative_path": "runs/all-method-metrics-recovery-20261014/operations/human_available100_v3/release_proof.py",
+        "mode": "restore_same_bytes_in_separate_reproduction_checkout; runtime_inputs_protocols_and_gates_required"
+      },
+      "role": "execution_receipt_guard_no_numerical_formula",
+      "source_only_snapshot": true,
+      "bytes": 3163,
+      "sha256": "c43ee061e21198d3c9672362700ea4feb338a8ce4326ffba86245b6b2c931322",
+      "git_blob_sha1": "5a8f7628a5c138c34eb85750962ec3f6aed2375f",
+      "earlier_proposal": {
+        "original_source": "main-repository/runs/all-method-metrics-recovery-20261014/operations/human_available100_v3/release_proof.py",
+        "sha256": "c43ee061e21198d3c9672362700ea4feb338a8ce4326ffba86245b6b2c931322",
+        "bytes": 3163
+      },
+      "changed_since_earlier_proposal": false
+    },
+    {
+      "public_path": "research/all-method-reproduction-20261014/source/repo/runs/all-method-metrics-recovery-20261014/operations/human_available100_v3/settings.py",
+      "original_source": "main-repository/runs/all-method-metrics-recovery-20261014/operations/human_available100_v3/settings.py",
+      "original_execution_location": {
+        "root": "repository_root",
+        "relative_path": "runs/all-method-metrics-recovery-20261014/operations/human_available100_v3/settings.py",
+        "mode": "restore_same_bytes_in_separate_reproduction_checkout; runtime_inputs_protocols_and_gates_required"
+      },
+      "role": "science_or_support",
+      "source_only_snapshot": true,
+      "bytes": 476,
+      "sha256": "c5b73a89704c59883bba0921bad8caaa5408414075a21bb3c6422358d5a8fb14",
+      "git_blob_sha1": "0dcba23d589c34ea8feec97e5032e06301c19830",
+      "earlier_proposal": {
+        "original_source": "main-repository/runs/all-method-metrics-recovery-20261014/operations/human_available100_v3/settings.py",
+        "sha256": "c5b73a89704c59883bba0921bad8caaa5408414075a21bb3c6422358d5a8fb14",
+        "bytes": 476
+      },
+      "changed_since_earlier_proposal": false
+    },
+    {
+      "public_path": "research/all-method-reproduction-20261014/source/repo/runs/all-method-metrics-recovery-20261014/operations/human_available100_v3/supervisor.py",
+      "original_source": "main-repository/runs/all-method-metrics-recovery-20261014/operations/human_available100_v3/supervisor.py",
+      "original_execution_location": {
+        "root": "repository_root",
+        "relative_path": "runs/all-method-metrics-recovery-20261014/operations/human_available100_v3/supervisor.py",
+        "mode": "restore_same_bytes_in_separate_reproduction_checkout; runtime_inputs_protocols_and_gates_required"
+      },
+      "role": "execution_receipt_guard_no_numerical_formula",
+      "source_only_snapshot": true,
+      "bytes": 14203,
+      "sha256": "97738b5a9bd66464b614f85bbc1b94009d4d457fc0250f3f84c56a06d1473530",
+      "git_blob_sha1": "18d2114e0070b54f903c51c837b3188ae011ad49",
+      "earlier_proposal": {
+        "original_source": "main-repository/runs/all-method-metrics-recovery-20261014/operations/human_available100_v3/supervisor.py",
+        "sha256": "97738b5a9bd66464b614f85bbc1b94009d4d457fc0250f3f84c56a06d1473530",
+        "bytes": 14203
+      },
+      "changed_since_earlier_proposal": false
+    },
+    {
+      "public_path": "research/all-method-reproduction-20261014/source/repo/runs/all-method-metrics-recovery-20261014/operations/quantization-common-windows-v2/common_windows.py",
+      "original_source": "main-repository/runs/all-method-metrics-recovery-20261014/operations/quantization-common-windows-v2/common_windows.py",
+      "original_execution_location": {
+        "root": "repository_root",
+        "relative_path": "runs/all-method-metrics-recovery-20261014/operations/quantization-common-windows-v2/common_windows.py",
+        "mode": "restore_same_bytes_in_separate_reproduction_checkout; runtime_inputs_protocols_and_gates_required"
+      },
+      "role": "scientific_common_window_measurement_or_statistics",
+      "source_only_snapshot": true,
+      "bytes": 15383,
+      "sha256": "07b085bebc3b7f1a2e55a65ab97a7b8ff94208ed6e5816075e43121eb37d4a81",
+      "git_blob_sha1": "9f8521e981e644982816ce3ce995f11e3e4b1b5b",
+      "earlier_proposal": {
+        "original_source": "main-repository/runs/all-method-metrics-recovery-20261014/operations/quantization-common-windows-v2/common_windows.py",
+        "sha256": "07b085bebc3b7f1a2e55a65ab97a7b8ff94208ed6e5816075e43121eb37d4a81",
+        "bytes": 15383
+      },
+      "changed_since_earlier_proposal": false
+    },
+    {
+      "public_path": "research/all-method-reproduction-20261014/source/repo/runs/all-method-metrics-recovery-20261014/operations/quantization-common-windows-v2/run_windows.py",
+      "original_source": "main-repository/runs/all-method-metrics-recovery-20261014/operations/quantization-common-windows-v2/run_windows.py",
+      "original_execution_location": {
+        "root": "repository_root",
+        "relative_path": "runs/all-method-metrics-recovery-20261014/operations/quantization-common-windows-v2/run_windows.py",
+        "mode": "restore_same_bytes_in_separate_reproduction_checkout; runtime_inputs_protocols_and_gates_required"
+      },
+      "role": "scientific_common_window_measurement_or_statistics",
+      "source_only_snapshot": true,
+      "bytes": 12024,
+      "sha256": "69d2e5fa4225bcb9b31281c5bfe613856d9038b550c96fb936674d9753c37f7e",
+      "git_blob_sha1": "be4ff1ee49fda2abf3c38513bf8d55118090c5ed",
+      "earlier_proposal": {
+        "original_source": "main-repository/runs/all-method-metrics-recovery-20261014/operations/quantization-common-windows-v2/run_windows.py",
+        "sha256": "69d2e5fa4225bcb9b31281c5bfe613856d9038b550c96fb936674d9753c37f7e",
+        "bytes": 12024
+      },
+      "changed_since_earlier_proposal": false
+    },
+    {
+      "public_path": "research/all-method-reproduction-20261014/source/repo/runs/all-method-metrics-recovery-20261014/operations/quantization-common-windows-v2/summarize_windows.py",
+      "original_source": "main-repository/runs/all-method-metrics-recovery-20261014/operations/quantization-common-windows-v2/summarize_windows.py",
+      "original_execution_location": {
+        "root": "repository_root",
+        "relative_path": "runs/all-method-metrics-recovery-20261014/operations/quantization-common-windows-v2/summarize_windows.py",
+        "mode": "restore_same_bytes_in_separate_reproduction_checkout; runtime_inputs_protocols_and_gates_required"
+      },
+      "role": "scientific_common_window_measurement_or_statistics",
+      "source_only_snapshot": true,
+      "bytes": 13227,
+      "sha256": "bb901777601eb1db78496724cd387fa6db05edf5950898bbf2f05dc18a08aa02",
+      "git_blob_sha1": "6250eb3f7cdd1ca7a1a1b7d3075e6396f6e7ae87",
+      "earlier_proposal": {
+        "original_source": "main-repository/runs/all-method-metrics-recovery-20261014/operations/quantization-common-windows-v2/summarize_windows.py",
+        "sha256": "bb901777601eb1db78496724cd387fa6db05edf5950898bbf2f05dc18a08aa02",
+        "bytes": 13227
+      },
+      "changed_since_earlier_proposal": false
+    },
+    {
+      "public_path": "research/all-method-reproduction-20261014/source/repo/runs/all-method-metrics-recovery-20261014/operations/vctk_available16/render_report.py",
+      "original_source": "main-repository/runs/all-method-metrics-recovery-20261014/operations/vctk_available16/render_report.py",
+      "original_execution_location": {
+        "root": "repository_root",
+        "relative_path": "runs/all-method-metrics-recovery-20261014/operations/vctk_available16/render_report.py",
+        "mode": "restore_same_bytes_in_separate_reproduction_checkout; runtime_inputs_protocols_and_gates_required"
+      },
+      "role": "scientific_aggregation_and_display_calls_aggregate",
+      "source_only_snapshot": true,
+      "bytes": 12463,
+      "sha256": "43b0a52a2928f925a55c5abdd12232c06807208ff90605596cb32a9aa09a1b6c",
+      "git_blob_sha1": "c3d4bb23afb91cf446565721cfcc13ec9e740cf1",
+      "earlier_proposal": {
+        "original_source": "main-repository/runs/all-method-metrics-recovery-20261014/operations/vctk_available16/render_report.py",
+        "sha256": "43b0a52a2928f925a55c5abdd12232c06807208ff90605596cb32a9aa09a1b6c",
+        "bytes": 12463
+      },
+      "changed_since_earlier_proposal": false
+    },
+    {
+      "public_path": "research/all-method-reproduction-20261014/source/repo/runs/all-method-metrics-recovery-20261014/operations/vctk_available16/runtime/all_metrics_vctk_inputs.py",
+      "original_source": "main-repository/runs/all-method-metrics-recovery-20261014/operations/vctk_available16/runtime/all_metrics_vctk_inputs.py",
+      "original_execution_location": {
+        "root": "repository_root",
+        "relative_path": "runs/all-method-metrics-recovery-20261014/operations/vctk_available16/runtime/all_metrics_vctk_inputs.py",
+        "mode": "restore_same_bytes_in_separate_reproduction_checkout; runtime_inputs_protocols_and_gates_required"
+      },
+      "role": "science_or_support",
+      "source_only_snapshot": true,
+      "bytes": 4780,
+      "sha256": "b63d1cc6f04f3ee69d6e122ef6291e8612a7126e3063e8a9aae091fd9a0324c1",
+      "git_blob_sha1": "188a4c2d9d9657bfa16e8ca7f6440844d79bde5b",
+      "earlier_proposal": {
+        "original_source": "main-repository/runs/all-method-metrics-recovery-20261014/operations/vctk_available16/runtime/all_metrics_vctk_inputs.py",
+        "sha256": "b63d1cc6f04f3ee69d6e122ef6291e8612a7126e3063e8a9aae091fd9a0324c1",
+        "bytes": 4780
+      },
+      "changed_since_earlier_proposal": false
+    },
+    {
+      "public_path": "research/all-method-reproduction-20261014/source/repo/runs/all-method-metrics-recovery-20261014/operations/vctk_available16/runtime/all_metrics_vctk_quality.py",
+      "original_source": "main-repository/runs/all-method-metrics-recovery-20261014/operations/vctk_available16/runtime/all_metrics_vctk_quality.py",
+      "original_execution_location": {
+        "root": "repository_root",
+        "relative_path": "runs/all-method-metrics-recovery-20261014/operations/vctk_available16/runtime/all_metrics_vctk_quality.py",
+        "mode": "restore_same_bytes_in_separate_reproduction_checkout; runtime_inputs_protocols_and_gates_required"
+      },
+      "role": "science_or_support",
+      "source_only_snapshot": true,
+      "bytes": 14008,
+      "sha256": "a00ac4609172c78517f7151ec56f00801d471c381329e004ed2cdd8fcf0526a1",
+      "git_blob_sha1": "b72d3278caab3f3b81e9969b52fed5b35e536276",
+      "earlier_proposal": {
+        "original_source": "main-repository/runs/all-method-metrics-recovery-20261014/operations/vctk_available16/runtime/all_metrics_vctk_quality.py",
+        "sha256": "a00ac4609172c78517f7151ec56f00801d471c381329e004ed2cdd8fcf0526a1",
+        "bytes": 14008
+      },
+      "changed_since_earlier_proposal": false
+    },
+    {
+      "public_path": "research/all-method-reproduction-20261014/source/repo/runs/all-method-metrics-recovery-20261014/operations/vctk_available16/runtime/all_metrics_vctk_quality_resume.py",
+      "original_source": "main-repository/runs/all-method-metrics-recovery-20261014/operations/vctk_available16/runtime/all_metrics_vctk_quality_resume.py",
+      "original_execution_location": {
+        "root": "repository_root",
+        "relative_path": "runs/all-method-metrics-recovery-20261014/operations/vctk_available16/runtime/all_metrics_vctk_quality_resume.py",
+        "mode": "restore_same_bytes_in_separate_reproduction_checkout; runtime_inputs_protocols_and_gates_required"
+      },
+      "role": "execution_resume_or_evidence_guard",
+      "source_only_snapshot": true,
+      "bytes": 3378,
+      "sha256": "53d0eea078648dd798928db1c3c5d45276d08a09cb29d7e3e540c62bd7eb6f61",
+      "git_blob_sha1": "173a60e6fc77b4014d5484474ab40274ed4d1959",
+      "earlier_proposal": {
+        "original_source": "main-repository/runs/all-method-metrics-recovery-20261014/operations/vctk_available16/runtime/all_metrics_vctk_quality_resume.py",
+        "sha256": "53d0eea078648dd798928db1c3c5d45276d08a09cb29d7e3e540c62bd7eb6f61",
+        "bytes": 3378
+      },
+      "changed_since_earlier_proposal": false
+    },
+    {
+      "public_path": "research/all-method-reproduction-20261014/source/repo/runs/all-method-metrics-recovery-20261014/operations/vctk_available16/runtime/all_metrics_vctk_resume.py",
+      "original_source": "main-repository/runs/all-method-metrics-recovery-20261014/operations/vctk_available16/runtime/all_metrics_vctk_resume.py",
+      "original_execution_location": {
+        "root": "repository_root",
+        "relative_path": "runs/all-method-metrics-recovery-20261014/operations/vctk_available16/runtime/all_metrics_vctk_resume.py",
+        "mode": "restore_same_bytes_in_separate_reproduction_checkout; runtime_inputs_protocols_and_gates_required"
+      },
+      "role": "execution_resume_or_evidence_guard",
+      "source_only_snapshot": true,
+      "bytes": 4510,
+      "sha256": "a456f1f75891fa52d382db8b4e4109aa91b3faa023b0083abed43f4f233d9073",
+      "git_blob_sha1": "7a52906df6b56b72f6fd5e68b66097c90793794f",
+      "earlier_proposal": {
+        "original_source": "main-repository/runs/all-method-metrics-recovery-20261014/operations/vctk_available16/runtime/all_metrics_vctk_resume.py",
+        "sha256": "a456f1f75891fa52d382db8b4e4109aa91b3faa023b0083abed43f4f233d9073",
+        "bytes": 4510
+      },
+      "changed_since_earlier_proposal": false
+    },
+    {
+      "public_path": "research/all-method-reproduction-20261014/source/repo/runs/all-method-metrics-recovery-20261014/operations/vctk_available16/runtime/all_metrics_vctk_run.py",
+      "original_source": "main-repository/runs/all-method-metrics-recovery-20261014/operations/vctk_available16/runtime/all_metrics_vctk_run.py",
+      "original_execution_location": {
+        "root": "repository_root",
+        "relative_path": "runs/all-method-metrics-recovery-20261014/operations/vctk_available16/runtime/all_metrics_vctk_run.py",
+        "mode": "restore_same_bytes_in_separate_reproduction_checkout; runtime_inputs_protocols_and_gates_required"
+      },
+      "role": "execution_resume_or_evidence_guard",
+      "source_only_snapshot": true,
+      "bytes": 9753,
+      "sha256": "e907edbf5bc9210c0472b61565b7aa39326ecc1d8d0b19fbce329ce485d4aa57",
+      "git_blob_sha1": "af13f146790355ce3e85be734241d48340a666d5",
+      "earlier_proposal": {
+        "original_source": "main-repository/runs/all-method-metrics-recovery-20261014/operations/vctk_available16/runtime/all_metrics_vctk_run.py",
+        "sha256": "e907edbf5bc9210c0472b61565b7aa39326ecc1d8d0b19fbce329ce485d4aa57",
+        "bytes": 9753
+      },
+      "changed_since_earlier_proposal": false
+    },
+    {
+      "public_path": "research/all-method-reproduction-20261014/source/repo/runs/all-method-metrics-recovery-20261014/operations/vctk_available16/runtime/all_metrics_vctk_summary.py",
+      "original_source": "main-repository/runs/all-method-metrics-recovery-20261014/operations/vctk_available16/runtime/all_metrics_vctk_summary.py",
+      "original_execution_location": {
+        "root": "repository_root",
+        "relative_path": "runs/all-method-metrics-recovery-20261014/operations/vctk_available16/runtime/all_metrics_vctk_summary.py",
+        "mode": "restore_same_bytes_in_separate_reproduction_checkout; runtime_inputs_protocols_and_gates_required"
+      },
+      "role": "science_or_support",
+      "source_only_snapshot": true,
+      "bytes": 9198,
+      "sha256": "895dfe618c8bceea711e541e170b54d25ab3908d6b5344d179c13a862e76d314",
+      "git_blob_sha1": "698328104aee570b1ab6d27d4bb9cc6a380b1cc3",
+      "earlier_proposal": {
+        "original_source": "main-repository/runs/all-method-metrics-recovery-20261014/operations/vctk_available16/runtime/all_metrics_vctk_summary.py",
+        "sha256": "895dfe618c8bceea711e541e170b54d25ab3908d6b5344d179c13a862e76d314",
+        "bytes": 9198
+      },
+      "changed_since_earlier_proposal": false
+    },
+    {
+      "public_path": "research/all-method-reproduction-20261014/source/repo/runs/all-method-metrics-recovery-20261014/operations/vctk_available16/runtime/all_metrics_vctk_synthesis.py",
+      "original_source": "main-repository/runs/all-method-metrics-recovery-20261014/operations/vctk_available16/runtime/all_metrics_vctk_synthesis.py",
+      "original_execution_location": {
+        "root": "repository_root",
+        "relative_path": "runs/all-method-metrics-recovery-20261014/operations/vctk_available16/runtime/all_metrics_vctk_synthesis.py",
+        "mode": "restore_same_bytes_in_separate_reproduction_checkout; runtime_inputs_protocols_and_gates_required"
+      },
+      "role": "science_or_support",
+      "source_only_snapshot": true,
+      "bytes": 5780,
+      "sha256": "728b821d9febf7494d3a408550df6bb99ef6093c6dd46bd41a601176ee24f57c",
+      "git_blob_sha1": "327cef41f3cabe1600be4303599494b6e5f581a2",
+      "earlier_proposal": {
+        "original_source": "main-repository/runs/all-method-metrics-recovery-20261014/operations/vctk_available16/runtime/all_metrics_vctk_synthesis.py",
+        "sha256": "728b821d9febf7494d3a408550df6bb99ef6093c6dd46bd41a601176ee24f57c",
+        "bytes": 5780
+      },
+      "changed_since_earlier_proposal": false
+    },
+    {
+      "public_path": "research/all-method-reproduction-20261014/source/repo/runs/all-method-metrics-recovery-20261014/operations/vctk_available16/runtime/vctk16_evidence.py",
+      "original_source": "main-repository/runs/all-method-metrics-recovery-20261014/operations/vctk_available16/runtime/vctk16_evidence.py",
+      "original_execution_location": {
+        "root": "repository_root",
+        "relative_path": "runs/all-method-metrics-recovery-20261014/operations/vctk_available16/runtime/vctk16_evidence.py",
+        "mode": "restore_same_bytes_in_separate_reproduction_checkout; runtime_inputs_protocols_and_gates_required"
+      },
+      "role": "execution_resume_or_evidence_guard",
+      "source_only_snapshot": true,
+      "bytes": 4890,
+      "sha256": "d9d9eb62ec112796b4628fecdb0fa88dddce220b023167cdc50e4ad6533e786e",
+      "git_blob_sha1": "f10ba4ae829840035b0647f554c1a5c5d68bf212",
+      "earlier_proposal": {
+        "original_source": "main-repository/runs/all-method-metrics-recovery-20261014/operations/vctk_available16/runtime/vctk16_evidence.py",
+        "sha256": "d9d9eb62ec112796b4628fecdb0fa88dddce220b023167cdc50e4ad6533e786e",
+        "bytes": 4890
+      },
+      "changed_since_earlier_proposal": false
+    },
+    {
+      "public_path": "research/all-method-reproduction-20261014/source/export-v4/export_binding.py",
+      "original_source": "reconstructed/final-public-result-export-v4/source/export_binding.py",
+      "original_execution_location": {
+        "root": "standalone_export_directory",
+        "relative_path": "export_binding.py",
+        "mode": "keep_all_local_import_modules_together; separate_runtime_inputs_and_gates_required"
+      },
+      "role": "final_public_export_and_saved_value_projection",
+      "source_only_snapshot": true,
+      "bytes": 13328,
+      "sha256": "36432fd4beb86ac977e4a37bc3329047d496503ffc2f83dc82a7eeb5e4538b5b",
+      "git_blob_sha1": "b6f444fd55509d124a9e7eb434a155e60c7790ce",
+      "earlier_proposal": {
+        "original_source": "reconstructed/final-public-result-export-v2/source/export_binding.py",
+        "sha256": "36432fd4beb86ac977e4a37bc3329047d496503ffc2f83dc82a7eeb5e4538b5b",
+        "bytes": 13328
+      },
+      "changed_since_earlier_proposal": false
+    },
+    {
+      "public_path": "research/all-method-reproduction-20261014/source/export-v4/export_materialize.py",
+      "original_source": "reconstructed/final-public-result-export-v4/source/export_materialize.py",
+      "original_execution_location": {
+        "root": "standalone_export_directory",
+        "relative_path": "export_materialize.py",
+        "mode": "keep_all_local_import_modules_together; separate_runtime_inputs_and_gates_required"
+      },
+      "role": "final_public_export_and_saved_value_projection",
+      "source_only_snapshot": true,
+      "bytes": 8929,
+      "sha256": "e8ebba72f32339f9224143fd8a2bd4e12d318ffc81dfc549f6a458d568a0eb65",
+      "git_blob_sha1": "8dcbcb3ade2f8c3ee09c4690ead7cde55f909093",
+      "earlier_proposal": {
+        "original_source": "reconstructed/final-public-result-export-v2/source/export_materialize.py",
+        "sha256": "548eecb3894430a17ea6965a71bd52550becb3c98d245a2638a37f8cfe69ba3e",
+        "bytes": 7297
+      },
+      "changed_since_earlier_proposal": true
+    },
+    {
+      "public_path": "research/all-method-reproduction-20261014/source/export-v4/export_provenance.py",
+      "original_source": "reconstructed/final-public-result-export-v4/source/export_provenance.py",
+      "original_execution_location": {
+        "root": "standalone_export_directory",
+        "relative_path": "export_provenance.py",
+        "mode": "keep_all_local_import_modules_together; separate_runtime_inputs_and_gates_required"
+      },
+      "role": "final_public_export_and_saved_value_projection",
+      "source_only_snapshot": true,
+      "bytes": 8629,
+      "sha256": "72aa87b1b469c8241c2cdda49957bee147a4bc84345630641f123c7a278494e2",
+      "git_blob_sha1": "25a2be84e355814ef123cfcb56118a2f9283347b",
+      "earlier_proposal": {
+        "original_source": "reconstructed/final-public-result-export-v2/source/export_provenance.py",
+        "sha256": "72aa87b1b469c8241c2cdda49957bee147a4bc84345630641f123c7a278494e2",
+        "bytes": 8629
+      },
+      "changed_since_earlier_proposal": false
+    },
+    {
+      "public_path": "research/all-method-reproduction-20261014/source/export-v4/export_public_result.py",
+      "original_source": "reconstructed/final-public-result-export-v4/source/export_public_result.py",
+      "original_execution_location": {
+        "root": "standalone_export_directory",
+        "relative_path": "export_public_result.py",
+        "mode": "keep_all_local_import_modules_together; separate_runtime_inputs_and_gates_required"
+      },
+      "role": "final_public_export_and_saved_value_projection",
+      "source_only_snapshot": true,
+      "bytes": 12720,
+      "sha256": "3b201df5cf617ed197fb1566c34f68e3a9a8fbc61330a86af82408b6cf7531dd",
+      "git_blob_sha1": "becfdf8bc757d72e33f1cd7f3130bbfe0fdc839f",
+      "earlier_proposal": {
+        "original_source": "reconstructed/final-public-result-export-v2/source/export_public_result.py",
+        "sha256": "e767c86602181b907011ac6764c533fee06bf9b4eb9b7234e5a22c622f2e44de",
+        "bytes": 12524
+      },
+      "changed_since_earlier_proposal": true
+    },
+    {
+      "public_path": "research/all-method-reproduction-20261014/source/export-v4/export_render_constants.py",
+      "original_source": "reconstructed/final-public-result-export-v4/source/export_render_constants.py",
+      "original_execution_location": {
+        "root": "standalone_export_directory",
+        "relative_path": "export_render_constants.py",
+        "mode": "keep_all_local_import_modules_together; separate_runtime_inputs_and_gates_required"
+      },
+      "role": "final_public_export_and_saved_value_projection",
+      "source_only_snapshot": true,
+      "bytes": 827,
+      "sha256": "0c1fb0162ddb97e7c4ba101db86374de92d92d593b648c7571f594b6c4a05f72",
+      "git_blob_sha1": "0d405da95b0e40ea2c3eaeb4f964712049471b9d",
+      "earlier_proposal": {
+        "original_source": "reconstructed/final-public-result-export-v2/source/export_render_constants.py",
+        "sha256": "0c1fb0162ddb97e7c4ba101db86374de92d92d593b648c7571f594b6c4a05f72",
+        "bytes": 827
+      },
+      "changed_since_earlier_proposal": false
+    },
+    {
+      "public_path": "research/all-method-reproduction-20261014/source/export-v4/export_report_schema.py",
+      "original_source": "reconstructed/final-public-result-export-v4/source/export_report_schema.py",
+      "original_execution_location": {
+        "root": "standalone_export_directory",
+        "relative_path": "export_report_schema.py",
+        "mode": "keep_all_local_import_modules_together; separate_runtime_inputs_and_gates_required"
+      },
+      "role": "final_public_export_and_saved_value_projection",
+      "source_only_snapshot": true,
+      "bytes": 5953,
+      "sha256": "8c496c54040b3673a407a80a3eb9f67ed177872a2e0030d96c9e1fd9194e72c1",
+      "git_blob_sha1": "0c5e703d299e5974334778f14433b24730282b84",
+      "earlier_proposal": {
+        "original_source": "reconstructed/final-public-result-export-v2/source/export_report_schema.py",
+        "sha256": "8c496c54040b3673a407a80a3eb9f67ed177872a2e0030d96c9e1fd9194e72c1",
+        "bytes": 5953
+      },
+      "changed_since_earlier_proposal": false
+    },
+    {
+      "public_path": "research/all-method-reproduction-20261014/source/export-v4/export_science_schema.py",
+      "original_source": "reconstructed/final-public-result-export-v4/source/export_science_schema.py",
+      "original_execution_location": {
+        "root": "standalone_export_directory",
+        "relative_path": "export_science_schema.py",
+        "mode": "keep_all_local_import_modules_together; separate_runtime_inputs_and_gates_required"
+      },
+      "role": "final_public_export_and_saved_value_projection",
+      "source_only_snapshot": true,
+      "bytes": 9290,
+      "sha256": "34aa941480a543fc7495f34f167d20c550168828006bb7ef969aced131266249",
+      "git_blob_sha1": "60a5ddf8445814eda745391ebc0475bc34c4faf5",
+      "earlier_proposal": {
+        "original_source": "reconstructed/final-public-result-export-v2/source/export_science_schema.py",
+        "sha256": "34aa941480a543fc7495f34f167d20c550168828006bb7ef969aced131266249",
+        "bytes": 9290
+      },
+      "changed_since_earlier_proposal": false
+    },
+    {
+      "public_path": "research/all-method-reproduction-20261014/source/export-v4/export_sources.py",
+      "original_source": "reconstructed/final-public-result-export-v4/source/export_sources.py",
+      "original_execution_location": {
+        "root": "standalone_export_directory",
+        "relative_path": "export_sources.py",
+        "mode": "keep_all_local_import_modules_together; separate_runtime_inputs_and_gates_required"
+      },
+      "role": "final_public_export_and_saved_value_projection",
+      "source_only_snapshot": true,
+      "bytes": 3867,
+      "sha256": "583f1b2e425636e9a65728a350a973d1a55271116c94ef7c7057e5ca881f93ce",
+      "git_blob_sha1": "985c6b87860f8809fff7d52c9a61b16594d813bf",
+      "earlier_proposal": {
+        "original_source": "reconstructed/final-public-result-export-v2/source/export_sources.py",
+        "sha256": "583f1b2e425636e9a65728a350a973d1a55271116c94ef7c7057e5ca881f93ce",
+        "bytes": 3867
+      },
+      "changed_since_earlier_proposal": false
+    },
+    {
+      "public_path": "research/all-method-reproduction-20261014/source/export-v4/export_special_scalars.py",
+      "original_source": "reconstructed/final-public-result-export-v4/source/export_special_scalars.py",
+      "original_execution_location": {
+        "root": "standalone_export_directory",
+        "relative_path": "export_special_scalars.py",
+        "mode": "keep_all_local_import_modules_together; separate_runtime_inputs_and_gates_required"
+      },
+      "role": "final_public_export_and_saved_value_projection",
+      "source_only_snapshot": true,
+      "bytes": 7028,
+      "sha256": "8efed88fa1d5efe741873ae258d7ea9feb888ac7c1cc93d13f0b77e622e7917b",
+      "git_blob_sha1": "25836543553de6137410cdc5fe02ca15e38a9aa3",
+      "earlier_proposal": {
+        "original_source": "reconstructed/final-public-result-export-v2/source/export_special_scalars.py",
+        "sha256": "8efed88fa1d5efe741873ae258d7ea9feb888ac7c1cc93d13f0b77e622e7917b",
+        "bytes": 7028
+      },
+      "changed_since_earlier_proposal": false
+    },
+    {
+      "public_path": "research/all-method-reproduction-20261014/source/export-v4/export_types.py",
+      "original_source": "reconstructed/final-public-result-export-v4/source/export_types.py",
+      "original_execution_location": {
+        "root": "standalone_export_directory",
+        "relative_path": "export_types.py",
+        "mode": "keep_all_local_import_modules_together; separate_runtime_inputs_and_gates_required"
+      },
+      "role": "final_public_export_and_saved_value_projection",
+      "source_only_snapshot": true,
+      "bytes": 7973,
+      "sha256": "50cedaf56a6eada3c73dbe4ef30654c58da752ea187de58d8b61e8cc7d8d9a74",
+      "git_blob_sha1": "09a98afb067093baca4138aa755b4be73f70821c",
+      "earlier_proposal": {
+        "original_source": "reconstructed/final-public-result-export-v2/source/export_types.py",
+        "sha256": "3ebaa480ffd06c0544f4031fda4ab03a33d4ba10b3fb3d93373a13bba9c4176e",
+        "bytes": 7853
+      },
+      "changed_since_earlier_proposal": true
+    },
+    {
+      "public_path": "research/all-method-reproduction-20261014/source/export-v4/provenance_base.py",
+      "original_source": "reconstructed/final-public-result-export-v4/source/provenance_base.py",
+      "original_execution_location": {
+        "root": "standalone_export_directory",
+        "relative_path": "provenance_base.py",
+        "mode": "keep_all_local_import_modules_together; separate_runtime_inputs_and_gates_required"
+      },
+      "role": "final_public_export_and_saved_value_projection",
+      "source_only_snapshot": true,
+      "bytes": 11587,
+      "sha256": "94784a85eeeab67cc36bdad065cffaed987dfd272863e47e44bbd9c430aac3f7",
+      "git_blob_sha1": "956025e5d48fa8e7642e0081b611427c79d7ee37",
+      "earlier_proposal": {
+        "original_source": "reconstructed/final-public-result-export-v2/source/provenance_base.py",
+        "sha256": "94784a85eeeab67cc36bdad065cffaed987dfd272863e47e44bbd9c430aac3f7",
+        "bytes": 11587
+      },
+      "changed_since_earlier_proposal": false
+    },
+    {
+      "public_path": "research/all-method-reproduction-20261014/source/export-v4/provenance_build.py",
+      "original_source": "reconstructed/final-public-result-export-v4/source/provenance_build.py",
+      "original_execution_location": {
+        "root": "standalone_export_directory",
+        "relative_path": "provenance_build.py",
+        "mode": "keep_all_local_import_modules_together; separate_runtime_inputs_and_gates_required"
+      },
+      "role": "final_public_export_and_saved_value_projection",
+      "source_only_snapshot": true,
+      "bytes": 2678,
+      "sha256": "8e52724a602324371a5e8c164eca11f422618a8f43ac6035c8cf786abdccb30d",
+      "git_blob_sha1": "4eb148b143abfd26b3720704b3e50b077a1266a2",
+      "earlier_proposal": {
+        "original_source": "reconstructed/final-public-result-export-v2/source/provenance_build.py",
+        "sha256": "8e52724a602324371a5e8c164eca11f422618a8f43ac6035c8cf786abdccb30d",
+        "bytes": 2678
+      },
+      "changed_since_earlier_proposal": false
+    },
+    {
+      "public_path": "research/all-method-reproduction-20261014/source/export-v4/provenance_evaluators.py",
+      "original_source": "reconstructed/final-public-result-export-v4/source/provenance_evaluators.py",
+      "original_execution_location": {
+        "root": "standalone_export_directory",
+        "relative_path": "provenance_evaluators.py",
+        "mode": "keep_all_local_import_modules_together; separate_runtime_inputs_and_gates_required"
+      },
+      "role": "final_public_export_and_saved_value_projection",
+      "source_only_snapshot": true,
+      "bytes": 5654,
+      "sha256": "15af9704f9007900ce7d1cecad8ad1faf8069fd0f46efd752438026859a1ed24",
+      "git_blob_sha1": "6c2da6cc1d90e5d4a7456f1be4f46ae34ccb046b",
+      "earlier_proposal": {
+        "original_source": "reconstructed/final-public-result-export-v2/source/provenance_evaluators.py",
+        "sha256": "15af9704f9007900ce7d1cecad8ad1faf8069fd0f46efd752438026859a1ed24",
+        "bytes": 5654
+      },
+      "changed_since_earlier_proposal": false
+    },
+    {
+      "public_path": "research/all-method-reproduction-20261014/source/export-v4/provenance_links.py",
+      "original_source": "reconstructed/final-public-result-export-v4/source/provenance_links.py",
+      "original_execution_location": {
+        "root": "standalone_export_directory",
+        "relative_path": "provenance_links.py",
+        "mode": "keep_all_local_import_modules_together; separate_runtime_inputs_and_gates_required"
+      },
+      "role": "final_public_export_and_saved_value_projection",
+      "source_only_snapshot": true,
+      "bytes": 9451,
+      "sha256": "db8b8fd3a04b2f2b2d8ed203403f021c147e751bbddc2a3fb4541b5687686e3e",
+      "git_blob_sha1": "17212ad912310c722c6cac5de82185bf2e7d67c5",
+      "earlier_proposal": {
+        "original_source": "reconstructed/final-public-result-export-v2/source/provenance_links.py",
+        "sha256": "db8b8fd3a04b2f2b2d8ed203403f021c147e751bbddc2a3fb4541b5687686e3e",
+        "bytes": 9451
+      },
+      "changed_since_earlier_proposal": false
+    },
+    {
+      "public_path": "research/all-method-reproduction-20261014/source/export-v4/provenance_scientific.py",
+      "original_source": "reconstructed/final-public-result-export-v4/source/provenance_scientific.py",
+      "original_execution_location": {
+        "root": "standalone_export_directory",
+        "relative_path": "provenance_scientific.py",
+        "mode": "keep_all_local_import_modules_together; separate_runtime_inputs_and_gates_required"
+      },
+      "role": "final_public_export_and_saved_value_projection",
+      "source_only_snapshot": true,
+      "bytes": 5965,
+      "sha256": "3f6129e7fb117fe23d403aea35bd3d100824e6a628dcafa592d6a08b5a57ba9c",
+      "git_blob_sha1": "d71a33f6d46fb97b4fea2d1def908c5806cbeaaf",
+      "earlier_proposal": {
+        "original_source": "reconstructed/final-public-result-export-v2/source/provenance_scientific.py",
+        "sha256": "3f6129e7fb117fe23d403aea35bd3d100824e6a628dcafa592d6a08b5a57ba9c",
+        "bytes": 5965
+      },
+      "changed_since_earlier_proposal": false
+    },
+    {
+      "public_path": "research/all-method-reproduction-20261014/source/export-v4/public_renderer.py",
+      "original_source": "reconstructed/final-public-result-export-v4/source/public_renderer.py",
+      "original_execution_location": {
+        "root": "standalone_export_directory",
+        "relative_path": "public_renderer.py",
+        "mode": "keep_all_local_import_modules_together; separate_runtime_inputs_and_gates_required"
+      },
+      "role": "final_public_export_and_saved_value_projection",
+      "source_only_snapshot": true,
+      "bytes": 20628,
+      "sha256": "3c7b3a3abf0ef926655aa79c2d43a515e98afee179507579f878982c821a1382",
+      "git_blob_sha1": "05f59ec2006594c03986de6a53c0f6267fcbdd88",
+      "earlier_proposal": {
+        "original_source": "reconstructed/final-public-result-export-v2/source/public_renderer.py",
+        "sha256": "c21b28f0fcfefb539f421ded4f3daf473bd84ca563f96adb09ae5da4d169ade2",
+        "bytes": 19962
+      },
+      "changed_since_earlier_proposal": true
+    },
+    {
+      "public_path": "research/all-method-reproduction-20261014/source/bridge-final/scripts/all_metrics_rankings.py",
+      "original_source": "main-repository/scripts/all_metrics_rankings.py",
+      "original_execution_location": {
+        "root": "repository_root",
+        "relative_path": "scripts/all_metrics_rankings.py",
+        "mode": "same_bytes_as_current_repository_reporting_source; frozen_scientific_sources_are_not_replaced"
+      },
+      "role": "final_report_display_integration",
+      "source_only_snapshot": true,
+      "bytes": 12188,
+      "sha256": "416ad40711e2680467c0de2f0fffa53806d9b857256beeea9edf186e6ba292bf",
+      "git_blob_sha1": "49a857d317afb48406a24542e4030c1be576ad3a",
+      "earlier_proposal": {
+        "original_source": "reconstructed/final-report-integration/candidate/scripts/all_metrics_rankings.py",
+        "sha256": "416ad40711e2680467c0de2f0fffa53806d9b857256beeea9edf186e6ba292bf",
+        "bytes": 12188
+      },
+      "changed_since_earlier_proposal": false,
+      "repository_reporting_source": {
+        "path": "scripts/all_metrics_rankings.py",
+        "base_commit": "297545dfa04ce7fcf68168f17fa22db1b1789015",
+        "old_sha256": "b8df00673e7c7130b9b1b7bb97259a1e9f2b25130adda85ce8281cdb606dc03a",
+        "new_sha256": "416ad40711e2680467c0de2f0fffa53806d9b857256beeea9edf186e6ba292bf",
+        "old_file_present": true
+      }
+    },
+    {
+      "public_path": "research/all-method-reproduction-20261014/source/bridge-final/scripts/all_metrics_rankings_availability.py",
+      "original_source": "main-repository/scripts/all_metrics_rankings_availability.py",
+      "original_execution_location": {
+        "root": "repository_root",
+        "relative_path": "scripts/all_metrics_rankings_availability.py",
+        "mode": "same_bytes_as_current_repository_reporting_source; frozen_scientific_sources_are_not_replaced"
+      },
+      "role": "final_report_display_integration",
+      "source_only_snapshot": true,
+      "bytes": 19068,
+      "sha256": "e23a593a9f3e2f7d728f868a7f742bdafa7020f192824760d7aaa4cdca914822",
+      "git_blob_sha1": "446104a7121fe76bcaaa1fcc885c7ba48018e948",
+      "earlier_proposal": {
+        "original_source": "reconstructed/final-report-integration/candidate/scripts/all_metrics_rankings_availability.py",
+        "sha256": "e23a593a9f3e2f7d728f868a7f742bdafa7020f192824760d7aaa4cdca914822",
+        "bytes": 19068
+      },
+      "changed_since_earlier_proposal": false,
+      "repository_reporting_source": {
+        "path": "scripts/all_metrics_rankings_availability.py",
+        "base_commit": "297545dfa04ce7fcf68168f17fa22db1b1789015",
+        "old_sha256": null,
+        "new_sha256": "e23a593a9f3e2f7d728f868a7f742bdafa7020f192824760d7aaa4cdca914822",
+        "old_file_present": false
+      }
+    },
+    {
+      "public_path": "research/all-method-reproduction-20261014/source/bridge-final/scripts/all_metrics_rankings_coverage.py",
+      "original_source": "main-repository/scripts/all_metrics_rankings_coverage.py",
+      "original_execution_location": {
+        "root": "repository_root",
+        "relative_path": "scripts/all_metrics_rankings_coverage.py",
+        "mode": "same_bytes_as_current_repository_reporting_source; frozen_scientific_sources_are_not_replaced"
+      },
+      "role": "final_report_display_integration",
+      "source_only_snapshot": true,
+      "bytes": 7323,
+      "sha256": "5e2bf98764f53467e0f6f8f5797f7f1b5fd70b7cec26ffc58fda0a8b4ee43b66",
+      "git_blob_sha1": "2448803686d6aa136ae1b03fab7f3e1b5e5a9339",
+      "earlier_proposal": {
+        "original_source": "reconstructed/final-report-integration/candidate/scripts/all_metrics_rankings_coverage.py",
+        "sha256": "5e2bf98764f53467e0f6f8f5797f7f1b5fd70b7cec26ffc58fda0a8b4ee43b66",
+        "bytes": 7323
+      },
+      "changed_since_earlier_proposal": false,
+      "repository_reporting_source": {
+        "path": "scripts/all_metrics_rankings_coverage.py",
+        "base_commit": "297545dfa04ce7fcf68168f17fa22db1b1789015",
+        "old_sha256": "7944e1305b673694087d758a953d1bb47ce2daee702e75fd8cd590caaf01273f",
+        "new_sha256": "5e2bf98764f53467e0f6f8f5797f7f1b5fd70b7cec26ffc58fda0a8b4ee43b66",
+        "old_file_present": true
+      }
+    },
+    {
+      "public_path": "research/all-method-reproduction-20261014/source/bridge-final/scripts/all_metrics_rankings_extra.py",
+      "original_source": "main-repository/scripts/all_metrics_rankings_extra.py",
+      "original_execution_location": {
+        "root": "repository_root",
+        "relative_path": "scripts/all_metrics_rankings_extra.py",
+        "mode": "same_bytes_as_current_repository_reporting_source; frozen_scientific_sources_are_not_replaced"
+      },
+      "role": "final_report_display_integration",
+      "source_only_snapshot": true,
+      "bytes": 11878,
+      "sha256": "7b208413006fa0ddb0700eb438d0171f272bd0184237256bce3f59756818de18",
+      "git_blob_sha1": "7b1c613ad74281d8e8efe3664b0217e513eacd9b",
+      "earlier_proposal": {
+        "original_source": "reconstructed/final-report-integration/candidate/scripts/all_metrics_rankings_extra.py",
+        "sha256": "7b208413006fa0ddb0700eb438d0171f272bd0184237256bce3f59756818de18",
+        "bytes": 11878
+      },
+      "changed_since_earlier_proposal": false,
+      "repository_reporting_source": {
+        "path": "scripts/all_metrics_rankings_extra.py",
+        "base_commit": "297545dfa04ce7fcf68168f17fa22db1b1789015",
+        "old_sha256": "a1ef04217f332217644d41ba11feb7b15a24beaa3ae8be85da468ba9f8e7578a",
+        "new_sha256": "7b208413006fa0ddb0700eb438d0171f272bd0184237256bce3f59756818de18",
+        "old_file_present": true
+      }
+    },
+    {
+      "public_path": "research/all-method-reproduction-20261014/source/bridge-final/scripts/all_metrics_rankings_html.py",
+      "original_source": "main-repository/scripts/all_metrics_rankings_html.py",
+      "original_execution_location": {
+        "root": "repository_root",
+        "relative_path": "scripts/all_metrics_rankings_html.py",
+        "mode": "same_bytes_as_current_repository_reporting_source; frozen_scientific_sources_are_not_replaced"
+      },
+      "role": "final_report_display_integration",
+      "source_only_snapshot": true,
+      "bytes": 19975,
+      "sha256": "a50e284d23dfc81990a28c6550134972cbb17c01c92ddcc09b0afe9edaa5d25e",
+      "git_blob_sha1": "33564c36e52022ce1f0a0b4c5f600520216b4394",
+      "earlier_proposal": {
+        "original_source": "reconstructed/final-report-integration/candidate/scripts/all_metrics_rankings_html.py",
+        "sha256": "a50e284d23dfc81990a28c6550134972cbb17c01c92ddcc09b0afe9edaa5d25e",
+        "bytes": 19975
+      },
+      "changed_since_earlier_proposal": false,
+      "repository_reporting_source": {
+        "path": "scripts/all_metrics_rankings_html.py",
+        "base_commit": "297545dfa04ce7fcf68168f17fa22db1b1789015",
+        "old_sha256": "68a205a74467e6dcfa639f678cded28a7427081cc27682cad91dc3a30f225a32",
+        "new_sha256": "a50e284d23dfc81990a28c6550134972cbb17c01c92ddcc09b0afe9edaa5d25e",
+        "old_file_present": true
+      }
+    },
+    {
+      "public_path": "research/all-method-reproduction-20261014/source/qcommon-publication/publish_supplement.py",
+      "original_source": "reconstructed/quantization-common-report-addendum/publish_supplement.py",
+      "original_execution_location": {
+        "root": "standalone_publisher_directory",
+        "relative_path": "publish_supplement.py",
+        "mode": "keep_standalone_publisher_layout; separate_runtime_inputs_and_gates_required"
+      },
+      "role": "final_public_display_publisher",
+      "source_only_snapshot": true,
+      "bytes": 19565,
+      "sha256": "cc37e923327e1c41faed36ebc365b74b196aa64e0d36a5ed587baf2bbb50a930",
+      "git_blob_sha1": "820d74b51c8be9aadc43f149e1cb6c8e653f2217",
+      "earlier_proposal": {
+        "original_source": "reconstructed/quantization-common-report-addendum/publish_supplement.py",
+        "sha256": "cc37e923327e1c41faed36ebc365b74b196aa64e0d36a5ed587baf2bbb50a930",
+        "bytes": 19565
+      },
+      "changed_since_earlier_proposal": false
+    }
+  ],
+  "limitations": [
+    "既存176 sourceの同一性は指定base commitに対するもの。今回の報告統合5 sourceの旧・新SHAは個別に記録する。",
+    "補助群の実行条件・入力・受付証跡・許諾・再開ゲートは別途必要。ソースの公開だけでゲートを解除しない。",
+    "元の科学条件文書、全依存物、全波形、特徴配列、モデル、評定CSV、実行受付証跡を同梱しない。",
+    "評価器・重みの独立revision等、保存されていない来歴を新たに補完したとは主張しない。",
+    "付録の複製は原本のbyte/SHAを保持。コードの実行・推論・統計値の再計算・テストを今回の配置作業では行っていない。"
+  ]
+}

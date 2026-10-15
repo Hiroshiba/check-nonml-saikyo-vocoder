@@ -1,0 +1,1273 @@
+{
+  "schema_version": 1,
+  "post_hoc": true,
+  "family_ids": [
+    17,
+    18
+  ],
+  "counts_as_additional_independent_metric": false,
+  "replaces_primary": false,
+  "proposal_recorded_at_utc": "2026-10-14T12:45:00+00:00",
+  "contract_fixed_at_utc": "2026-10-14T13:07:57.946461+00:00",
+  "execution_revision": 2,
+  "v1_interruption": "値0件で計算前の時刻marker読取gate停止。運用修正後のv2を使用。",
+  "contract_sha256": "dd0a439858c3a6864346712cbd3dbed05a550fd4da8c10f49706f478d948db6f",
+  "private_summary_content_sha256": "6fbef29041db082708ef33bd5bfe9a6befb7fd2b70feef5becaa1e5484ef0f8d",
+  "interpretation_addendum_sha256": "f6f46fa692e4e5e1ae20d587ace7e9d10c91029657df317bdbdc8f0ad0db5062",
+  "notes": [
+    "事後追加の独立補助です。元strict全長比較の値・適用外を置換しません。",
+    "各精度で元入力と固定比較方式のnative＋point全波形を共通16 kHzへ変換し、同じ最短先頭窓を採用。最低1秒、各波形95%coverage。整列・伸縮・長さ合わせpaddingなし。",
+    "40 ms Hann、5 ms間隔、32 ERB帯域の絶対power dB差。小さい方が同方式nativeに近い。20 ms ERB品質群・MOS・JNDとは別です。",
+    "元nativeの対象fieldのdtype・座標・精度は方式で異なります。q32では完全恒等になる方式とfloat64からfloat32へ変化する方式が混在します。名目精度は全配列一律ではありません。",
+    "同じSNR・摂動量・有効bit削減量を与えた比較ではありません。analytic_identityの0順位を、同じ大きさの摂動に対する耐性優位とは解釈しません。",
+    "同一canonical decoder入力と実PCM証拠の差0はanalytic_identity。直接実測の0と別に数え、欠測/失敗を0に置換しません。",
+    "成功方式条件付き群は全120×8point終端後に成功waveが1件以上ある方式全てを固定。共通数を増やす再選別なし。100録音未満は限定群です。",
+    "話者内平均→話者等重み。既存seed20261014/2000話者bootstrapの記述95%区間、2話者未満CIなし、多重比較未調整。HNM差は同じ録音・同じ話者draw。",
+    "#18は同じ聴覚結果を参照します。追加の独立指標や投票ではなく、payload bit/sは元入力秒数が分母。総合勝者・平均順位なし。"
+  ],
+  "groups": [
+    {
+      "condition": "quantized_float16",
+      "primary": {
+        "common_valid_recordings": 0,
+        "common_valid_speakers": 0,
+        "limited_group": true,
+        "comparable_methods": [
+          "hnm",
+          "world_harvest",
+          "facodec",
+          "hifiglot",
+          "golf",
+          "sifigan",
+          "llsm2",
+          "magphase"
+        ],
+        "excluded_methods": [],
+        "planned_recordings_per_method": 120,
+        "planned_speakers_per_method": 40,
+        "terminal": true,
+        "unit": "dB",
+        "direction": "lower",
+        "methods": {
+          "hnm": {
+            "value": null,
+            "rank": null,
+            "ci95": null,
+            "valid_recordings": 0,
+            "valid_speakers": 0,
+            "hnm_difference": {
+              "value": null,
+              "ci95": null
+            }
+          },
+          "world_harvest": {
+            "value": null,
+            "rank": null,
+            "ci95": null,
+            "valid_recordings": 0,
+            "valid_speakers": 0,
+            "hnm_difference": {
+              "value": null,
+              "ci95": null
+            }
+          },
+          "facodec": {
+            "value": null,
+            "rank": null,
+            "ci95": null,
+            "valid_recordings": 0,
+            "valid_speakers": 0,
+            "hnm_difference": {
+              "value": null,
+              "ci95": null
+            }
+          },
+          "hifiglot": {
+            "value": null,
+            "rank": null,
+            "ci95": null,
+            "valid_recordings": 0,
+            "valid_speakers": 0,
+            "hnm_difference": {
+              "value": null,
+              "ci95": null
+            }
+          },
+          "golf": {
+            "value": null,
+            "rank": null,
+            "ci95": null,
+            "valid_recordings": 0,
+            "valid_speakers": 0,
+            "hnm_difference": {
+              "value": null,
+              "ci95": null
+            }
+          },
+          "sifigan": {
+            "value": null,
+            "rank": null,
+            "ci95": null,
+            "valid_recordings": 0,
+            "valid_speakers": 0,
+            "hnm_difference": {
+              "value": null,
+              "ci95": null
+            }
+          },
+          "llsm2": {
+            "value": null,
+            "rank": null,
+            "ci95": null,
+            "valid_recordings": 0,
+            "valid_speakers": 0,
+            "hnm_difference": {
+              "value": null,
+              "ci95": null
+            }
+          },
+          "magphase": {
+            "value": null,
+            "rank": null,
+            "ci95": null,
+            "valid_recordings": 0,
+            "valid_speakers": 0,
+            "hnm_difference": {
+              "value": null,
+              "ci95": null
+            }
+          }
+        },
+        "method_states": {
+          "hnm": {
+            "status_counts": {
+              "upstream_failed": 120
+            },
+            "direct_measured": 0,
+            "analytic_identity": 0,
+            "direct_measured_zero": 0,
+            "canonical_input_identity_counts": {
+              "unavailable": 120
+            },
+            "upstream_wave_status_counts": {
+              "native": {
+                "measured": 120
+              },
+              "point": {
+                "failed": 120
+              }
+            }
+          },
+          "world_harvest": {
+            "status_counts": {
+              "upstream_failed": 120
+            },
+            "direct_measured": 0,
+            "analytic_identity": 0,
+            "direct_measured_zero": 0,
+            "canonical_input_identity_counts": {
+              "unavailable": 120
+            },
+            "upstream_wave_status_counts": {
+              "native": {
+                "measured": 120
+              },
+              "point": {
+                "failed": 120
+              }
+            }
+          },
+          "facodec": {
+            "status_counts": {
+              "not_applicable": 120
+            },
+            "direct_measured": 0,
+            "analytic_identity": 0,
+            "direct_measured_zero": 0,
+            "canonical_input_identity_counts": {
+              "changed": 120
+            },
+            "upstream_wave_status_counts": {
+              "native": {
+                "measured": 120
+              },
+              "point": {
+                "measured": 120
+              }
+            }
+          },
+          "hifiglot": {
+            "status_counts": {
+              "not_applicable": 120
+            },
+            "direct_measured": 0,
+            "analytic_identity": 0,
+            "direct_measured_zero": 0,
+            "canonical_input_identity_counts": {
+              "changed": 120
+            },
+            "upstream_wave_status_counts": {
+              "native": {
+                "measured": 120
+              },
+              "point": {
+                "measured": 120
+              }
+            }
+          },
+          "golf": {
+            "status_counts": {
+              "not_applicable": 120
+            },
+            "direct_measured": 0,
+            "analytic_identity": 0,
+            "direct_measured_zero": 0,
+            "canonical_input_identity_counts": {
+              "changed": 120
+            },
+            "upstream_wave_status_counts": {
+              "native": {
+                "measured": 120
+              },
+              "point": {
+                "measured": 120
+              }
+            }
+          },
+          "sifigan": {
+            "status_counts": {
+              "not_applicable": 120
+            },
+            "direct_measured": 0,
+            "analytic_identity": 0,
+            "direct_measured_zero": 0,
+            "canonical_input_identity_counts": {
+              "changed": 120
+            },
+            "upstream_wave_status_counts": {
+              "native": {
+                "measured": 120
+              },
+              "point": {
+                "measured": 120
+              }
+            }
+          },
+          "llsm2": {
+            "status_counts": {
+              "not_applicable": 120
+            },
+            "direct_measured": 0,
+            "analytic_identity": 0,
+            "direct_measured_zero": 0,
+            "canonical_input_identity_counts": {
+              "changed": 120
+            },
+            "upstream_wave_status_counts": {
+              "native": {
+                "measured": 120
+              },
+              "point": {
+                "measured": 120
+              }
+            }
+          },
+          "magphase": {
+            "status_counts": {
+              "not_applicable": 120
+            },
+            "direct_measured": 0,
+            "analytic_identity": 0,
+            "direct_measured_zero": 0,
+            "canonical_input_identity_counts": {
+              "changed": 120
+            },
+            "upstream_wave_status_counts": {
+              "native": {
+                "measured": 120
+              },
+              "point": {
+                "measured": 120
+              }
+            }
+          }
+        },
+        "length_and_coverage": {
+          "hnm": {
+            "signed_length_delta_seconds_min": null,
+            "signed_length_delta_seconds_max": null,
+            "length_delta_observations": 0,
+            "minimum_pair_coverage": null,
+            "maximum_omitted_tail_seconds": {
+              "native": null,
+              "point": null
+            },
+            "strict_primary_auditory_status_counts": {
+              "failed": 120
+            }
+          },
+          "world_harvest": {
+            "signed_length_delta_seconds_min": null,
+            "signed_length_delta_seconds_max": null,
+            "length_delta_observations": 0,
+            "minimum_pair_coverage": null,
+            "maximum_omitted_tail_seconds": {
+              "native": null,
+              "point": null
+            },
+            "strict_primary_auditory_status_counts": {
+              "failed": 120
+            }
+          },
+          "facodec": {
+            "signed_length_delta_seconds_min": 0.0,
+            "signed_length_delta_seconds_max": 0.0,
+            "length_delta_observations": 120,
+            "minimum_pair_coverage": null,
+            "maximum_omitted_tail_seconds": {
+              "native": null,
+              "point": null
+            },
+            "strict_primary_auditory_status_counts": {
+              "measured": 120
+            }
+          },
+          "hifiglot": {
+            "signed_length_delta_seconds_min": 0.0,
+            "signed_length_delta_seconds_max": 0.0,
+            "length_delta_observations": 120,
+            "minimum_pair_coverage": null,
+            "maximum_omitted_tail_seconds": {
+              "native": null,
+              "point": null
+            },
+            "strict_primary_auditory_status_counts": {
+              "measured": 120
+            }
+          },
+          "golf": {
+            "signed_length_delta_seconds_min": 0.0,
+            "signed_length_delta_seconds_max": 0.0,
+            "length_delta_observations": 120,
+            "minimum_pair_coverage": null,
+            "maximum_omitted_tail_seconds": {
+              "native": null,
+              "point": null
+            },
+            "strict_primary_auditory_status_counts": {
+              "measured": 120
+            }
+          },
+          "sifigan": {
+            "signed_length_delta_seconds_min": 0.0,
+            "signed_length_delta_seconds_max": 0.0,
+            "length_delta_observations": 120,
+            "minimum_pair_coverage": null,
+            "maximum_omitted_tail_seconds": {
+              "native": null,
+              "point": null
+            },
+            "strict_primary_auditory_status_counts": {
+              "measured": 120
+            }
+          },
+          "llsm2": {
+            "signed_length_delta_seconds_min": 0.0,
+            "signed_length_delta_seconds_max": 0.0,
+            "length_delta_observations": 120,
+            "minimum_pair_coverage": null,
+            "maximum_omitted_tail_seconds": {
+              "native": null,
+              "point": null
+            },
+            "strict_primary_auditory_status_counts": {
+              "measured": 120
+            }
+          },
+          "magphase": {
+            "signed_length_delta_seconds_min": -0.008020833333333144,
+            "signed_length_delta_seconds_max": -0.0002708333333334423,
+            "length_delta_observations": 120,
+            "minimum_pair_coverage": null,
+            "maximum_omitted_tail_seconds": {
+              "native": null,
+              "point": null
+            },
+            "strict_primary_auditory_status_counts": {
+              "not_applicable": 120
+            }
+          }
+        }
+      },
+      "conditional": {
+        "common_valid_recordings": 120,
+        "common_valid_speakers": 40,
+        "limited_group": false,
+        "comparable_methods": [
+          "facodec",
+          "hifiglot",
+          "golf",
+          "sifigan",
+          "llsm2",
+          "magphase"
+        ],
+        "excluded_methods": [
+          "hnm",
+          "world_harvest"
+        ],
+        "planned_recordings_per_method": 120,
+        "planned_speakers_per_method": 40,
+        "terminal": true,
+        "unit": "dB",
+        "direction": "lower",
+        "methods": {
+          "facodec": {
+            "value": 0.022658317199775756,
+            "rank": 2,
+            "ci95": [
+              0.022161742805697205,
+              0.02318531810305594
+            ],
+            "valid_recordings": 120,
+            "valid_speakers": 40,
+            "hnm_difference": {
+              "value": null,
+              "ci95": null
+            }
+          },
+          "hifiglot": {
+            "value": 0.3622001638834872,
+            "rank": 4,
+            "ci95": [
+              0.33351528651518225,
+              0.3947885598722428
+            ],
+            "valid_recordings": 120,
+            "valid_speakers": 40,
+            "hnm_difference": {
+              "value": null,
+              "ci95": null
+            }
+          },
+          "golf": {
+            "value": 15.952676223024625,
+            "rank": 6,
+            "ci95": [
+              8.786898619822946,
+              24.32839010643853
+            ],
+            "valid_recordings": 120,
+            "valid_speakers": 40,
+            "hnm_difference": {
+              "value": null,
+              "ci95": null
+            }
+          },
+          "sifigan": {
+            "value": 0.17532907020407162,
+            "rank": 3,
+            "ci95": [
+              0.15719137305437342,
+              0.1940282427640787
+            ],
+            "valid_recordings": 120,
+            "valid_speakers": 40,
+            "hnm_difference": {
+              "value": null,
+              "ci95": null
+            }
+          },
+          "llsm2": {
+            "value": 0.02262911642976323,
+            "rank": 1,
+            "ci95": [
+              0.019124397873663167,
+              0.026194534234943067
+            ],
+            "valid_recordings": 120,
+            "valid_speakers": 40,
+            "hnm_difference": {
+              "value": null,
+              "ci95": null
+            }
+          },
+          "magphase": {
+            "value": 0.6055201614985413,
+            "rank": 5,
+            "ci95": [
+              0.5318933593894088,
+              0.6738176168542508
+            ],
+            "valid_recordings": 120,
+            "valid_speakers": 40,
+            "hnm_difference": {
+              "value": null,
+              "ci95": null
+            }
+          }
+        },
+        "method_states": {
+          "hnm": {
+            "status_counts": {
+              "excluded_method": 120
+            },
+            "direct_measured": 0,
+            "analytic_identity": 0,
+            "direct_measured_zero": 0,
+            "canonical_input_identity_counts": {
+              "unavailable": 120
+            },
+            "upstream_wave_status_counts": {
+              "native": {
+                "measured": 120
+              },
+              "point": {
+                "failed": 120
+              }
+            }
+          },
+          "world_harvest": {
+            "status_counts": {
+              "excluded_method": 120
+            },
+            "direct_measured": 0,
+            "analytic_identity": 0,
+            "direct_measured_zero": 0,
+            "canonical_input_identity_counts": {
+              "unavailable": 120
+            },
+            "upstream_wave_status_counts": {
+              "native": {
+                "measured": 120
+              },
+              "point": {
+                "failed": 120
+              }
+            }
+          },
+          "facodec": {
+            "status_counts": {
+              "measured": 120
+            },
+            "direct_measured": 120,
+            "analytic_identity": 0,
+            "direct_measured_zero": 0,
+            "canonical_input_identity_counts": {
+              "changed": 120
+            },
+            "upstream_wave_status_counts": {
+              "native": {
+                "measured": 120
+              },
+              "point": {
+                "measured": 120
+              }
+            }
+          },
+          "hifiglot": {
+            "status_counts": {
+              "measured": 120
+            },
+            "direct_measured": 120,
+            "analytic_identity": 0,
+            "direct_measured_zero": 0,
+            "canonical_input_identity_counts": {
+              "changed": 120
+            },
+            "upstream_wave_status_counts": {
+              "native": {
+                "measured": 120
+              },
+              "point": {
+                "measured": 120
+              }
+            }
+          },
+          "golf": {
+            "status_counts": {
+              "measured": 120
+            },
+            "direct_measured": 120,
+            "analytic_identity": 0,
+            "direct_measured_zero": 0,
+            "canonical_input_identity_counts": {
+              "changed": 120
+            },
+            "upstream_wave_status_counts": {
+              "native": {
+                "measured": 120
+              },
+              "point": {
+                "measured": 120
+              }
+            }
+          },
+          "sifigan": {
+            "status_counts": {
+              "measured": 120
+            },
+            "direct_measured": 120,
+            "analytic_identity": 0,
+            "direct_measured_zero": 0,
+            "canonical_input_identity_counts": {
+              "changed": 120
+            },
+            "upstream_wave_status_counts": {
+              "native": {
+                "measured": 120
+              },
+              "point": {
+                "measured": 120
+              }
+            }
+          },
+          "llsm2": {
+            "status_counts": {
+              "measured": 120
+            },
+            "direct_measured": 120,
+            "analytic_identity": 0,
+            "direct_measured_zero": 0,
+            "canonical_input_identity_counts": {
+              "changed": 120
+            },
+            "upstream_wave_status_counts": {
+              "native": {
+                "measured": 120
+              },
+              "point": {
+                "measured": 120
+              }
+            }
+          },
+          "magphase": {
+            "status_counts": {
+              "measured": 120
+            },
+            "direct_measured": 120,
+            "analytic_identity": 0,
+            "direct_measured_zero": 0,
+            "canonical_input_identity_counts": {
+              "changed": 120
+            },
+            "upstream_wave_status_counts": {
+              "native": {
+                "measured": 120
+              },
+              "point": {
+                "measured": 120
+              }
+            }
+          }
+        },
+        "length_and_coverage": {
+          "hnm": {
+            "signed_length_delta_seconds_min": null,
+            "signed_length_delta_seconds_max": null,
+            "length_delta_observations": 0,
+            "minimum_pair_coverage": null,
+            "maximum_omitted_tail_seconds": {
+              "native": null,
+              "point": null
+            },
+            "strict_primary_auditory_status_counts": {
+              "failed": 120
+            }
+          },
+          "world_harvest": {
+            "signed_length_delta_seconds_min": null,
+            "signed_length_delta_seconds_max": null,
+            "length_delta_observations": 0,
+            "minimum_pair_coverage": null,
+            "maximum_omitted_tail_seconds": {
+              "native": null,
+              "point": null
+            },
+            "strict_primary_auditory_status_counts": {
+              "failed": 120
+            }
+          },
+          "facodec": {
+            "signed_length_delta_seconds_min": 0.0,
+            "signed_length_delta_seconds_max": 0.0,
+            "length_delta_observations": 120,
+            "minimum_pair_coverage": 0.9898571428571429,
+            "maximum_omitted_tail_seconds": {
+              "native": 0.0355,
+              "point": 0.0355
+            },
+            "strict_primary_auditory_status_counts": {
+              "measured": 120
+            }
+          },
+          "hifiglot": {
+            "signed_length_delta_seconds_min": 0.0,
+            "signed_length_delta_seconds_max": 0.0,
+            "length_delta_observations": 120,
+            "minimum_pair_coverage": 0.9880926916221033,
+            "maximum_omitted_tail_seconds": {
+              "native": 0.04175,
+              "point": 0.04175
+            },
+            "strict_primary_auditory_status_counts": {
+              "measured": 120
+            }
+          },
+          "golf": {
+            "signed_length_delta_seconds_min": 0.0,
+            "signed_length_delta_seconds_max": 0.0,
+            "length_delta_observations": 120,
+            "minimum_pair_coverage": 0.9926934097421204,
+            "maximum_omitted_tail_seconds": {
+              "native": 0.0255,
+              "point": 0.0255
+            },
+            "strict_primary_auditory_status_counts": {
+              "measured": 120
+            }
+          },
+          "sifigan": {
+            "signed_length_delta_seconds_min": 0.0,
+            "signed_length_delta_seconds_max": 0.0,
+            "length_delta_observations": 120,
+            "minimum_pair_coverage": 0.9898571428571429,
+            "maximum_omitted_tail_seconds": {
+              "native": 0.0355,
+              "point": 0.0355
+            },
+            "strict_primary_auditory_status_counts": {
+              "measured": 120
+            }
+          },
+          "llsm2": {
+            "signed_length_delta_seconds_min": 0.0,
+            "signed_length_delta_seconds_max": 0.0,
+            "length_delta_observations": 120,
+            "minimum_pair_coverage": 0.9884450784593438,
+            "maximum_omitted_tail_seconds": {
+              "native": 0.0405,
+              "point": 0.0405
+            },
+            "strict_primary_auditory_status_counts": {
+              "measured": 120
+            }
+          },
+          "magphase": {
+            "signed_length_delta_seconds_min": -0.008020833333333144,
+            "signed_length_delta_seconds_max": -0.0002708333333334423,
+            "length_delta_observations": 120,
+            "minimum_pair_coverage": 0.9849642374720432,
+            "maximum_omitted_tail_seconds": {
+              "native": 0.0730625,
+              "point": 0.0711875
+            },
+            "strict_primary_auditory_status_counts": {
+              "not_applicable": 120
+            }
+          }
+        },
+        "same_as_primary": false,
+        "selection_fixed_at_utc": "2026-10-15T05:35:56.409830+00:00",
+        "point_wave_status_counts": {
+          "hnm": {
+            "failed": 120
+          },
+          "world_harvest": {
+            "failed": 120
+          },
+          "facodec": {
+            "measured": 120
+          },
+          "hifiglot": {
+            "measured": 120
+          },
+          "golf": {
+            "measured": 120
+          },
+          "sifigan": {
+            "measured": 120
+          },
+          "llsm2": {
+            "measured": 120
+          },
+          "magphase": {
+            "measured": 120
+          }
+        },
+        "excluded_reasons": {
+          "hnm": "全120予定pointの成功waveが0",
+          "world_harvest": "全120予定pointの成功waveが0"
+        }
+      },
+      "information_rate_auditory_reference": "same condition primary/conditional values, not an independent metric"
+    },
+    {
+      "condition": "quantized_float32",
+      "primary": {
+        "common_valid_recordings": 120,
+        "common_valid_speakers": 40,
+        "limited_group": false,
+        "comparable_methods": [
+          "hnm",
+          "world_harvest",
+          "facodec",
+          "hifiglot",
+          "golf",
+          "sifigan",
+          "llsm2",
+          "magphase"
+        ],
+        "excluded_methods": [],
+        "planned_recordings_per_method": 120,
+        "planned_speakers_per_method": 40,
+        "terminal": true,
+        "unit": "dB",
+        "direction": "lower",
+        "methods": {
+          "hnm": {
+            "value": 0.0006778150635087862,
+            "rank": 7,
+            "ci95": [
+              0.0006206611629597364,
+              0.0007358790739196294
+            ],
+            "valid_recordings": 120,
+            "valid_speakers": 40,
+            "hnm_difference": {
+              "value": 0.0,
+              "ci95": [
+                0.0,
+                0.0
+              ]
+            }
+          },
+          "world_harvest": {
+            "value": 1.3913716430309931e-05,
+            "rank": 6,
+            "ci95": [
+              9.197154737387839e-06,
+              2.1081993690256822e-05
+            ],
+            "valid_recordings": 120,
+            "valid_speakers": 40,
+            "hnm_difference": {
+              "value": -0.0006639013470784764,
+              "ci95": [
+                -0.0007226168146148625,
+                -0.0006042830869828373
+              ]
+            }
+          },
+          "facodec": {
+            "value": 0.0,
+            "rank": 1,
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "valid_recordings": 120,
+            "valid_speakers": 40,
+            "hnm_difference": {
+              "value": -0.0006778150635087862,
+              "ci95": [
+                -0.0007358790739196294,
+                -0.0006206611629597364
+              ]
+            }
+          },
+          "hifiglot": {
+            "value": 0.0,
+            "rank": 1,
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "valid_recordings": 120,
+            "valid_speakers": 40,
+            "hnm_difference": {
+              "value": -0.0006778150635087862,
+              "ci95": [
+                -0.0007358790739196294,
+                -0.0006206611629597364
+              ]
+            }
+          },
+          "golf": {
+            "value": 0.0,
+            "rank": 1,
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "valid_recordings": 120,
+            "valid_speakers": 40,
+            "hnm_difference": {
+              "value": -0.0006778150635087862,
+              "ci95": [
+                -0.0007358790739196294,
+                -0.0006206611629597364
+              ]
+            }
+          },
+          "sifigan": {
+            "value": 7.211057789643306e-06,
+            "rank": 5,
+            "ci95": [
+              0.0,
+              2.1633173368929917e-05
+            ],
+            "valid_recordings": 120,
+            "valid_speakers": 40,
+            "hnm_difference": {
+              "value": -0.0006706040057191429,
+              "ci95": [
+                -0.0007240377204745779,
+                -0.0006164998016372732
+              ]
+            }
+          },
+          "llsm2": {
+            "value": 0.0,
+            "rank": 1,
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "valid_recordings": 120,
+            "valid_speakers": 40,
+            "hnm_difference": {
+              "value": -0.0006778150635087862,
+              "ci95": [
+                -0.0007358790739196294,
+                -0.0006206611629597364
+              ]
+            }
+          },
+          "magphase": {
+            "value": 0.6630214596643726,
+            "rank": 8,
+            "ci95": [
+              0.5951451724378225,
+              0.7251213778855481
+            ],
+            "valid_recordings": 120,
+            "valid_speakers": 40,
+            "hnm_difference": {
+              "value": 0.6623436446008638,
+              "ci95": [
+                0.5943608862971308,
+                0.7244634311524913
+              ]
+            }
+          }
+        },
+        "method_states": {
+          "hnm": {
+            "status_counts": {
+              "measured": 120
+            },
+            "direct_measured": 120,
+            "analytic_identity": 0,
+            "direct_measured_zero": 0,
+            "canonical_input_identity_counts": {
+              "changed": 120
+            },
+            "upstream_wave_status_counts": {
+              "native": {
+                "measured": 120
+              },
+              "point": {
+                "measured": 120
+              }
+            }
+          },
+          "world_harvest": {
+            "status_counts": {
+              "measured": 120
+            },
+            "direct_measured": 120,
+            "analytic_identity": 0,
+            "direct_measured_zero": 0,
+            "canonical_input_identity_counts": {
+              "changed": 120
+            },
+            "upstream_wave_status_counts": {
+              "native": {
+                "measured": 120
+              },
+              "point": {
+                "measured": 120
+              }
+            }
+          },
+          "facodec": {
+            "status_counts": {
+              "analytic_identity": 120
+            },
+            "direct_measured": 0,
+            "analytic_identity": 120,
+            "direct_measured_zero": 0,
+            "canonical_input_identity_counts": {
+              "unchanged": 120
+            },
+            "upstream_wave_status_counts": {
+              "native": {
+                "measured": 120
+              },
+              "point": {
+                "measured": 120
+              }
+            }
+          },
+          "hifiglot": {
+            "status_counts": {
+              "analytic_identity": 120
+            },
+            "direct_measured": 0,
+            "analytic_identity": 120,
+            "direct_measured_zero": 0,
+            "canonical_input_identity_counts": {
+              "unchanged": 120
+            },
+            "upstream_wave_status_counts": {
+              "native": {
+                "measured": 120
+              },
+              "point": {
+                "measured": 120
+              }
+            }
+          },
+          "golf": {
+            "status_counts": {
+              "analytic_identity": 120
+            },
+            "direct_measured": 0,
+            "analytic_identity": 120,
+            "direct_measured_zero": 0,
+            "canonical_input_identity_counts": {
+              "unchanged": 120
+            },
+            "upstream_wave_status_counts": {
+              "native": {
+                "measured": 120
+              },
+              "point": {
+                "measured": 120
+              }
+            }
+          },
+          "sifigan": {
+            "status_counts": {
+              "measured": 120
+            },
+            "direct_measured": 120,
+            "analytic_identity": 0,
+            "direct_measured_zero": 119,
+            "canonical_input_identity_counts": {
+              "changed": 120
+            },
+            "upstream_wave_status_counts": {
+              "native": {
+                "measured": 120
+              },
+              "point": {
+                "measured": 120
+              }
+            }
+          },
+          "llsm2": {
+            "status_counts": {
+              "analytic_identity": 120
+            },
+            "direct_measured": 0,
+            "analytic_identity": 120,
+            "direct_measured_zero": 0,
+            "canonical_input_identity_counts": {
+              "unchanged": 120
+            },
+            "upstream_wave_status_counts": {
+              "native": {
+                "measured": 120
+              },
+              "point": {
+                "measured": 120
+              }
+            }
+          },
+          "magphase": {
+            "status_counts": {
+              "measured": 120
+            },
+            "direct_measured": 120,
+            "analytic_identity": 0,
+            "direct_measured_zero": 0,
+            "canonical_input_identity_counts": {
+              "changed": 120
+            },
+            "upstream_wave_status_counts": {
+              "native": {
+                "measured": 120
+              },
+              "point": {
+                "measured": 120
+              }
+            }
+          }
+        },
+        "length_and_coverage": {
+          "hnm": {
+            "signed_length_delta_seconds_min": 0.0,
+            "signed_length_delta_seconds_max": 0.0,
+            "length_delta_observations": 120,
+            "minimum_pair_coverage": 0.991362660944206,
+            "maximum_omitted_tail_seconds": {
+              "native": 0.0301875,
+              "point": 0.0301875
+            },
+            "strict_primary_auditory_status_counts": {
+              "measured": 120
+            }
+          },
+          "world_harvest": {
+            "signed_length_delta_seconds_min": 0.0,
+            "signed_length_delta_seconds_max": 0.0,
+            "length_delta_observations": 120,
+            "minimum_pair_coverage": 0.991362660944206,
+            "maximum_omitted_tail_seconds": {
+              "native": 0.0301875,
+              "point": 0.0301875
+            },
+            "strict_primary_auditory_status_counts": {
+              "measured": 120
+            }
+          },
+          "facodec": {
+            "signed_length_delta_seconds_min": 0.0,
+            "signed_length_delta_seconds_max": 0.0,
+            "length_delta_observations": 120,
+            "minimum_pair_coverage": 0.9899464285714286,
+            "maximum_omitted_tail_seconds": {
+              "native": 0.0351875,
+              "point": 0.0351875
+            },
+            "strict_primary_auditory_status_counts": {
+              "analytic_identity": 120
+            }
+          },
+          "hifiglot": {
+            "signed_length_delta_seconds_min": 0.0,
+            "signed_length_delta_seconds_max": 0.0,
+            "length_delta_observations": 120,
+            "minimum_pair_coverage": 0.9881818181818182,
+            "maximum_omitted_tail_seconds": {
+              "native": 0.0414375,
+              "point": 0.0414375
+            },
+            "strict_primary_auditory_status_counts": {
+              "analytic_identity": 120
+            }
+          },
+          "golf": {
+            "signed_length_delta_seconds_min": 0.0,
+            "signed_length_delta_seconds_max": 0.0,
+            "length_delta_observations": 120,
+            "minimum_pair_coverage": 0.9927829512893983,
+            "maximum_omitted_tail_seconds": {
+              "native": 0.0251875,
+              "point": 0.0251875
+            },
+            "strict_primary_auditory_status_counts": {
+              "analytic_identity": 120
+            }
+          },
+          "sifigan": {
+            "signed_length_delta_seconds_min": 0.0,
+            "signed_length_delta_seconds_max": 0.0,
+            "length_delta_observations": 120,
+            "minimum_pair_coverage": 0.9899464285714286,
+            "maximum_omitted_tail_seconds": {
+              "native": 0.0351875,
+              "point": 0.0351875
+            },
+            "strict_primary_auditory_status_counts": {
+              "measured": 120
+            }
+          },
+          "llsm2": {
+            "signed_length_delta_seconds_min": 0.0,
+            "signed_length_delta_seconds_max": 0.0,
+            "length_delta_observations": 120,
+            "minimum_pair_coverage": 0.9885342368045649,
+            "maximum_omitted_tail_seconds": {
+              "native": 0.0401875,
+              "point": 0.0401875
+            },
+            "strict_primary_auditory_status_counts": {
+              "analytic_identity": 120
+            }
+          },
+          "magphase": {
+            "signed_length_delta_seconds_min": -0.0075624999999996945,
+            "signed_length_delta_seconds_max": -0.0004166666666667318,
+            "length_delta_observations": 120,
+            "minimum_pair_coverage": 0.9849642374720432,
+            "maximum_omitted_tail_seconds": {
+              "native": 0.0730625,
+              "point": 0.070625
+            },
+            "strict_primary_auditory_status_counts": {
+              "not_applicable": 120
+            }
+          }
+        }
+      },
+      "conditional": {
+        "same_as_primary": true,
+        "summary_reference": "primary",
+        "new_measurements": 0,
+        "selection_fixed_at_utc": "2026-10-15T05:35:59.247353+00:00",
+        "point_wave_status_counts": {
+          "hnm": {
+            "measured": 120
+          },
+          "world_harvest": {
+            "measured": 120
+          },
+          "facodec": {
+            "measured": 120
+          },
+          "hifiglot": {
+            "measured": 120
+          },
+          "golf": {
+            "measured": 120
+          },
+          "sifigan": {
+            "measured": 120
+          },
+          "llsm2": {
+            "measured": 120
+          },
+          "magphase": {
+            "measured": 120
+          }
+        },
+        "comparable_methods": [
+          "hnm",
+          "world_harvest",
+          "facodec",
+          "hifiglot",
+          "golf",
+          "sifigan",
+          "llsm2",
+          "magphase"
+        ],
+        "excluded_reasons": {}
+      },
+      "information_rate_auditory_reference": "same condition primary/conditional values, not an independent metric"
+    }
+  ],
+  "overall_winner": null,
+  "generated_at_utc": "2026-10-15T05:54:04.785015+00:00"
+}

@@ -1,0 +1,1085 @@
+<!doctype html>
+<html lang="ja"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>短い比較音声の出典・帰属・変更</title>
+<style>:root{color-scheme:light dark}body{max-width:1000px;margin:2rem auto;padding:0 1rem;font:16px/1.7 system-ui,sans-serif}pre{white-space:pre-wrap;overflow-wrap:anywhere}li{margin:.5rem 0}a{color:LinkText}</style>
+<body><h1>短い比較音声の出典・帰属・変更</h1>
+<p><a href="index.html">比較結果へ戻る</a> ／ <a href="audio_samples.json">音声と個別の出典情報（JSON）</a></p>
+<h2>出典・帰属・利用条件</h2>
+<p>出典: LibriSpeech test-clean / <a href="https://www.openslr.org/12">OpenSLR SLR12</a>。
+LibriSpeech (c) 2014 by Vassil Panayotov。
+原録音の配布条件は<a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International（CC BY 4.0）</a>です。
+<a href="https://creativecommons.org/licenses/by/4.0/legalcode.en">ライセンス法文</a>も参照してください。
+LibriSpeechはLibriVoxの朗読とProject Gutenbergのテキストに基づくコーパスです。原配布物の帰属・説明・既存加工に関する記載を下部に保持します。</p>
+<p>今回の対象は事前固定された録音ID 1089-134686-0008、1188-133604-0003だけです。
+先頭最大2秒という長さは今回の公開範囲であり、利用許諾の根拠ではありません。
+原録音の部分共有・改変物共有の根拠は上記CC BY 4.0と確認済みの方式別資料です。</p>
+<h2>今回の変更と読み方</h2>
+<ul>
+<li>原音例: 正式入力として保存された原発話の先頭から最大2秒を切り出し、WAV IEEE float32形式へ変換しています。配布FLACそのものの無変更コピーではありません。</li>
+<li>再合成例: 同じ原発話を下記の固定版ボコーダーで解析・再合成した、パラメーター未編集のnative出力です。その出力の先頭から最大2秒を切り出し、WAV IEEE float32へ変換しています。方式の前処理にはnative標本化周波数への変換が含まれる場合があります。</li>
+<li>公開書出し時には、音量正規化、クリッピング、リサンプリング、無音除去、時間位置合わせを加えていません。float32形式変換には丸めがあり得ます。各方式の出力長・標本化周波数は個別情報に示します。</li>
+<li>個別情報のstart_sample/n_samples/sample_rateは実公開WAVの区間、source_excerpt_*は正式測定入力の区間です。source_public_*は原録音側の比較用区間です。異なる方式の時間対応や全長一致を保証する表示ではありません。</li>
+<li>wav_sha256は実公開WAV bytes、native_source_sha256は切出し元NPY、original_input_sha256は原入力NPY、source_file_sha256は配布FLAC、source_decoded_pcm_sha256は元の復号PCMのSHA-256です。method_provenanceに固定合成契約、実装、checkpoint等の識別情報を記録します。</li>
+</ul>
+<p>提供元・著作者・話者が本比較の結果や用途を推奨していることを意味しません。CC BY 4.0で認められる利用を妨げる追加制限やDRMを設けません。
+CC BY 4.0は人格権・プライバシー等すべての権利を許諾するものではありません。本例は同じ原発話の比較であり、別の発言を話者に言わせたものではありません。</p>
+<h2>方式と確認済みの固定版</h2>
+<p>以下はコード・学習済みモデルに関する確認範囲です。ソフトウェアのライセンスをそのまま音声出力のライセンスとみなしていません。生成音声のすべての権利を保証する法的見解ではありません。</p>
+<ul>
+<li>HNM v3: 外部学習済みモデルのない自作解析合成。固定版の実装SHAは各例のmethod_provenanceに記録。</li>
+<li>WORLD Harvest: <a href="https://github.com/mmorise/World/blob/c794856b537758a3d300757db2e5e31685a822c2/LICENSE.txt">c794856b537758a3d300757db2e5e31685a822c2 / BSD-3-Clause</a>。</li>
+<li>FACodec v1: <a href="https://github.com/lifeiteng/naturalspeech3_facodec/blob/aac16b7268b1b96e70b9e3526b13e216984e80d0/README.md">aac16b7268b1b96e70b9e3526b13e216984e80d0 / Amphion MIT参照</a>。
+<a href="https://huggingface.co/amphion/naturalspeech3_facodec/blob/314afc3ea1455ba881a0e484ef9408b6cb996736/README.md">encoder/decoderモデル314afc3ea1455ba881a0e484ef9408b6cb996736 / Apache-2.0</a>。</li>
+<li>HiFi-Glot: <a href="https://github.com/PupuAI/HiFi-Glot/blob/78951625e8f0a113f401fef7032e98d58cfa7dac/LICENSE">78951625e8f0a113f401fef7032e98d58cfa7dac / MIT</a>。
+モデルは<a href="https://huggingface.co/Aalto-Speech-Synthesis/HiFi-Glot/commit/3a0e2fd2353e8978fce753c76343d0cca2ff3aa9">3a0e2fd2353e8978fce753c76343d0cca2ff3aa9</a>、<a href="https://huggingface.co/Aalto-Speech-Synthesis/HiFi-Glot/blob/main/README.md">公式モデルカードMIT（2026-10-14確認）</a>。</li>
+<li>LLSM2 Layer0: <a href="https://github.com/Sleepwalking/libllsm2/blob/d18cdf02b31819670e3bc23ead933ad9467da06d/LICENSE">d18cdf02b31819670e3bc23ead933ad9467da06d / GPLv3</a>。
+<a href="https://github.com/Sleepwalking/ciglet/blob/895ba9b1c0eabee83d3544208bbc82420efa3206/ciglet.c">ciglet 895ba9b1c0eabee83d3544208bbc82420efa3206 / BSD-3-Clause</a>。GPLv3 §2の出力に関する区別を維持し、入力音声の解析再合成を自動的にGPL音声としません。</li>
+<li>MagPhase: <a href="https://github.com/CSTR-Edinburgh/magphase/blob/ec6ae285c3128d3f416857f05d2a7e4be0bd5707/LICENSE">ec6ae285c3128d3f416857f05d2a7e4be0bd5707 / Apache-2.0</a>。
+<a href="https://github.com/google/REAPER/blob/1d6e9b95e6b08b500fccbc9a043989dbda747276/LICENSE">REAPER 1d6e9b95e6b08b500fccbc9a043989dbda747276 / Apache-2.0</a>。</li>
+</ul>
+<p>GOLF-ffとSiFiGANは、今回使う固定checkpointに適用される重み固有の明示的な許諾が未確認のため、音声の公開を保留します。
+GOLFのroot MITやZenodoの一般メタデータだけでcheckpointの許諾済みと推定しません。SiFiGANの固定配布archiveには独立したLICENSE/NOTICE等がありませんでした。
+公開保留を測定失敗へ置換せず、数値順位・比較対象・分母は全8方式のままです。</p>
+<h2>個別音声の出典・変更・区間・SHA-256</h2>
+<pre>{
+  &quot;samples&quot;: [
+    {
+      &quot;case&quot;: &quot;librispeech_1089-134686-0008&quot;,
+      &quot;method&quot;: &quot;original&quot;,
+      &quot;label&quot;: &quot;LibriSpeech test-clean・固定先頭最大2秒&quot;,
+      &quot;wav_sha256&quot;: &quot;79de8ab38bcf2e67fb48a21970aa64c34d01d37129cb56a11d0d454c5a2f8187&quot;,
+      &quot;sample_rate&quot;: 16000,
+      &quot;n_samples&quot;: 32000,
+      &quot;start_sample&quot;: 0,
+      &quot;native_source_sha256&quot;: &quot;2906c24c57cf16b7a1a29dac15e0d727cb8b4679724efec0f565946723cc9fd8&quot;,
+      &quot;peak_amplitude&quot;: 0.45428466796875,
+      &quot;source_utterance_id&quot;: &quot;1089-134686-0008&quot;,
+      &quot;source&quot;: {
+        &quot;archive_url&quot;: &quot;https://www.openslr.org/resources/12/test-clean.tar.gz&quot;,
+        &quot;member&quot;: &quot;LibriSpeech/test-clean/1089/134686/1089-134686-0008.flac&quot;
+      },
+      &quot;source_file_sha256&quot;: &quot;1bdf7eede41ca2cc8883defb66bbd2e59ec93bf2d587327cb051d0ae427495ae&quot;,
+      &quot;source_decoded_pcm_sha256&quot;: &quot;40f044b90ed06d7cffc4145524ea3e1b8bd36b6599e24e1e905262fbb3e50d8d&quot;,
+      &quot;original_input_sha256&quot;: &quot;2906c24c57cf16b7a1a29dac15e0d727cb8b4679724efec0f565946723cc9fd8&quot;,
+      &quot;source_sample_rate&quot;: 16000,
+      &quot;source_excerpt_start_sample&quot;: 0,
+      &quot;source_excerpt_samples&quot;: 96000,
+      &quot;source_public_start_sample&quot;: 0,
+      &quot;source_public_n_samples&quot;: 32000,
+      &quot;method_provenance&quot;: {
+        &quot;kind&quot;: &quot;original&quot;,
+        &quot;version&quot;: &quot;LibriSpeech test-clean&quot;
+      },
+      &quot;modifications&quot;: [
+        &quot;先頭最大2秒を切出し&quot;,
+        &quot;WAV IEEE float32形式に変換&quot;
+      ],
+      &quot;format&quot;: &quot;WAV IEEE float32; fixed first &lt;=2s, no normalization, clipping or resampling&quot;
+    },
+    {
+      &quot;case&quot;: &quot;librispeech_1089-134686-0008&quot;,
+      &quot;method&quot;: &quot;hnm&quot;,
+      &quot;label&quot;: &quot;LibriSpeech test-clean・固定先頭最大2秒&quot;,
+      &quot;wav_sha256&quot;: &quot;bebf9243d4097c20fe2089d58e417043fbcc8fd7bc7f0c4569d4007c7212239b&quot;,
+      &quot;sample_rate&quot;: 16000,
+      &quot;n_samples&quot;: 32000,
+      &quot;start_sample&quot;: 0,
+      &quot;native_source_sha256&quot;: &quot;fb0de2e771eb44c1aca53337caf01155e4b5b8c8d34df49556db48037cd303b2&quot;,
+      &quot;peak_amplitude&quot;: 0.38832104206085205,
+      &quot;source_utterance_id&quot;: &quot;1089-134686-0008&quot;,
+      &quot;source&quot;: {
+        &quot;archive_url&quot;: &quot;https://www.openslr.org/resources/12/test-clean.tar.gz&quot;,
+        &quot;member&quot;: &quot;LibriSpeech/test-clean/1089/134686/1089-134686-0008.flac&quot;
+      },
+      &quot;source_file_sha256&quot;: &quot;1bdf7eede41ca2cc8883defb66bbd2e59ec93bf2d587327cb051d0ae427495ae&quot;,
+      &quot;source_decoded_pcm_sha256&quot;: &quot;40f044b90ed06d7cffc4145524ea3e1b8bd36b6599e24e1e905262fbb3e50d8d&quot;,
+      &quot;original_input_sha256&quot;: &quot;2906c24c57cf16b7a1a29dac15e0d727cb8b4679724efec0f565946723cc9fd8&quot;,
+      &quot;source_sample_rate&quot;: 16000,
+      &quot;source_excerpt_start_sample&quot;: 0,
+      &quot;source_excerpt_samples&quot;: 96000,
+      &quot;source_public_start_sample&quot;: 0,
+      &quot;source_public_n_samples&quot;: 32000,
+      &quot;method_provenance&quot;: {
+        &quot;kind&quot;: &quot;vocoder_analysis_resynthesis&quot;,
+        &quot;version&quot;: &quot;current HNM-v3&quot;,
+        &quot;synthesis_contract_sha256&quot;: &quot;fe99b77bfa8ed5f7b8423d4a925a62f8d8b6028f97c20c37d5fa0153bdc85a18&quot;,
+        &quot;native_record_sha256&quot;: &quot;f34e313d8f558b082aa5bd256254d08d34aef36ceea638d092325a6708fd4554&quot;,
+        &quot;source_revisions&quot;: {},
+        &quot;world_lock_sha256&quot;: &quot;44b8bc3adb62802ed060834d9e06ed7f5f3cc4d28583b8a44066c5959a42462b&quot;,
+        &quot;checkpoint_sha256&quot;: null,
+        &quot;implementation_sha256&quot;: {
+          &quot;scripts/all_metrics_synthesis.py&quot;: &quot;1e3f791d6149322c45e94f49e14311a3f2fd31ad510258c11c7ff24ec159932f&quot;,
+          &quot;scripts/all_metrics_common.py&quot;: &quot;d9d2ea1fc7bb93a627d14db1eddda203d91cb9c0f1708d31db03b148ad67168a&quot;,
+          &quot;vocoderbench/methods.py&quot;: &quot;99a040b960139aa842a9a46623b34717db9c71195df21ae969fb2a9e9b9155b0&quot;,
+          &quot;scripts/all_metrics_control_adapters.py&quot;: &quot;e0683815d17fce0a2b723732d5d2aa1eb852f81c44fe2e3eadcbc26daf1a2327&quot;,
+          &quot;scripts/all_metrics_representation.py&quot;: &quot;973e341c131698a36fb2a2b82fd7dd4d59b97dce6c06b2f698f595771ead5da2&quot;,
+          &quot;scripts/all_metrics_neural_controls.py&quot;: &quot;c6a3c150c448ec41a04befc6543bd25d4512bcc28d80cf0bf14b5d8481ac66ce&quot;,
+          &quot;scripts/all_metrics_golf_control.py&quot;: &quot;883ff581ab8132a7c8d312c894a26eb29990cf9a71846223c2aa8d6434ff3b96&quot;,
+          &quot;scripts/all_metrics_llsm_storage.py&quot;: &quot;c672f5f38f934ff9710a726f029a102592c3f5e9de8d25acdace76dfae64251f&quot;,
+          &quot;scripts/all_metrics_llsm_control.py&quot;: &quot;6ba12b6933dfda3f9d6b57f46085de652f00acd348cf1ed5bef15eb60c7ad765&quot;,
+          &quot;scripts/all_metrics_storage_policy.py&quot;: &quot;81f0b90ec0d0467a5fb7767df9800fc01f713d9f5e4b5559cf6db8776ccf11ac&quot;,
+          &quot;scripts/all_metrics_interpolation.py&quot;: &quot;afa53eedf0182c4611456096542b57002d1c0ff729c3f9e31b2d7e111cf89a03&quot;,
+          &quot;vocoderbench/references/adapters_dsp.py&quot;: &quot;ab5a0cf63085524842a0614d2ebc63adbe11521852f53bf9d561a131c37ab285&quot;,
+          &quot;vocoderbench/references/adapters_neural.py&quot;: &quot;cfe845d99cf0257556da99e5a1f950c9d9ac5ac490fb7d8e8cfb9b46f2c03a08&quot;,
+          &quot;vocoderbench/references/adapters_source.py&quot;: &quot;28b70e6680a3c8090fa5d16f696eae5c28d6b55bee5eee9e90ef4b80735f2b99&quot;,
+          &quot;scripts/all_metrics_base_controls.py&quot;: &quot;a74e26c7509eb9e7c2195d57bf8709111473d0edbffa52db164c49d67e43a8b0&quot;,
+          &quot;vocoderbench/world.py&quot;: &quot;d14558eed772e07031a9183f57facc55acb1c27deccb3dd4fa098ffcbe0cde3a&quot;,
+          &quot;vocoderbench/hnm.py&quot;: &quot;58f0378793b7433f80bf854972882298649799d8e3d0868674816e9bf6b63f74&quot;,
+          &quot;vocoderbench/hnm_analysis.py&quot;: &quot;3f45703667237333d76c4145c1513e4eb3342bd40f01a714c10303082440e26a&quot;,
+          &quot;vocoderbench/hnm_control.py&quot;: &quot;b2f5efbbb1e550569c231a08f12997d94b0bacb130bcc816fe6bd458b17a98bc&quot;,
+          &quot;vocoderbench/hnm_diagnostics.py&quot;: &quot;076edd5a785e83540a0cf55fea06075769ef35503f210eb977efc1703dd0081e&quot;,
+          &quot;vocoderbench/hnm_parameters.py&quot;: &quot;635bf222bac8ce41897c0977677e67be4366724f4239a9e85e153169fcea2cf0&quot;,
+          &quot;vocoderbench/hnm_synthesis.py&quot;: &quot;079057d2fba2b4ca0d189e050449aa7bc3fa20033afb0b03893300950ae13593&quot;
+        }
+      },
+      &quot;modifications&quot;: [
+        &quot;先頭最大2秒を切出し&quot;,
+        &quot;WAV IEEE float32形式に変換&quot;,
+        &quot;固定版ボコーダーによる解析再合成（方式native標本化周波数）&quot;
+      ],
+      &quot;format&quot;: &quot;WAV IEEE float32; fixed first &lt;=2s, no normalization, clipping or resampling&quot;
+    },
+    {
+      &quot;case&quot;: &quot;librispeech_1089-134686-0008&quot;,
+      &quot;method&quot;: &quot;world_harvest&quot;,
+      &quot;label&quot;: &quot;LibriSpeech test-clean・固定先頭最大2秒&quot;,
+      &quot;wav_sha256&quot;: &quot;0e868ed0e973566d4bf4b622164fc0ef9107c5d3014f8d0895944b25c25c060d&quot;,
+      &quot;sample_rate&quot;: 16000,
+      &quot;n_samples&quot;: 32000,
+      &quot;start_sample&quot;: 0,
+      &quot;native_source_sha256&quot;: &quot;b9642f806433f5df51fe8afdae3f61875accd58d811322c5149ac4a0e21327b6&quot;,
+      &quot;peak_amplitude&quot;: 0.5324006080627441,
+      &quot;source_utterance_id&quot;: &quot;1089-134686-0008&quot;,
+      &quot;source&quot;: {
+        &quot;archive_url&quot;: &quot;https://www.openslr.org/resources/12/test-clean.tar.gz&quot;,
+        &quot;member&quot;: &quot;LibriSpeech/test-clean/1089/134686/1089-134686-0008.flac&quot;
+      },
+      &quot;source_file_sha256&quot;: &quot;1bdf7eede41ca2cc8883defb66bbd2e59ec93bf2d587327cb051d0ae427495ae&quot;,
+      &quot;source_decoded_pcm_sha256&quot;: &quot;40f044b90ed06d7cffc4145524ea3e1b8bd36b6599e24e1e905262fbb3e50d8d&quot;,
+      &quot;original_input_sha256&quot;: &quot;2906c24c57cf16b7a1a29dac15e0d727cb8b4679724efec0f565946723cc9fd8&quot;,
+      &quot;source_sample_rate&quot;: 16000,
+      &quot;source_excerpt_start_sample&quot;: 0,
+      &quot;source_excerpt_samples&quot;: 96000,
+      &quot;source_public_start_sample&quot;: 0,
+      &quot;source_public_n_samples&quot;: 32000,
+      &quot;method_provenance&quot;: {
+        &quot;kind&quot;: &quot;vocoder_analysis_resynthesis&quot;,
+        &quot;version&quot;: &quot;fixed WORLD Harvest&quot;,
+        &quot;synthesis_contract_sha256&quot;: &quot;1cd58db6705502030037022b711ce9d57d2883352fff1be993e9b3c67b25e900&quot;,
+        &quot;native_record_sha256&quot;: &quot;a14cb24a62c6410bdf7754e1e139dbe257ab86f8015c73e275b0e2f968a68663&quot;,
+        &quot;source_revisions&quot;: {},
+        &quot;world_lock_sha256&quot;: &quot;44b8bc3adb62802ed060834d9e06ed7f5f3cc4d28583b8a44066c5959a42462b&quot;,
+        &quot;checkpoint_sha256&quot;: null,
+        &quot;implementation_sha256&quot;: {
+          &quot;scripts/all_metrics_synthesis.py&quot;: &quot;1e3f791d6149322c45e94f49e14311a3f2fd31ad510258c11c7ff24ec159932f&quot;,
+          &quot;scripts/all_metrics_common.py&quot;: &quot;d9d2ea1fc7bb93a627d14db1eddda203d91cb9c0f1708d31db03b148ad67168a&quot;,
+          &quot;vocoderbench/methods.py&quot;: &quot;99a040b960139aa842a9a46623b34717db9c71195df21ae969fb2a9e9b9155b0&quot;,
+          &quot;scripts/all_metrics_control_adapters.py&quot;: &quot;e0683815d17fce0a2b723732d5d2aa1eb852f81c44fe2e3eadcbc26daf1a2327&quot;,
+          &quot;scripts/all_metrics_representation.py&quot;: &quot;973e341c131698a36fb2a2b82fd7dd4d59b97dce6c06b2f698f595771ead5da2&quot;,
+          &quot;scripts/all_metrics_neural_controls.py&quot;: &quot;c6a3c150c448ec41a04befc6543bd25d4512bcc28d80cf0bf14b5d8481ac66ce&quot;,
+          &quot;scripts/all_metrics_golf_control.py&quot;: &quot;883ff581ab8132a7c8d312c894a26eb29990cf9a71846223c2aa8d6434ff3b96&quot;,
+          &quot;scripts/all_metrics_llsm_storage.py&quot;: &quot;c672f5f38f934ff9710a726f029a102592c3f5e9de8d25acdace76dfae64251f&quot;,
+          &quot;scripts/all_metrics_llsm_control.py&quot;: &quot;6ba12b6933dfda3f9d6b57f46085de652f00acd348cf1ed5bef15eb60c7ad765&quot;,
+          &quot;scripts/all_metrics_storage_policy.py&quot;: &quot;81f0b90ec0d0467a5fb7767df9800fc01f713d9f5e4b5559cf6db8776ccf11ac&quot;,
+          &quot;scripts/all_metrics_interpolation.py&quot;: &quot;afa53eedf0182c4611456096542b57002d1c0ff729c3f9e31b2d7e111cf89a03&quot;,
+          &quot;vocoderbench/references/adapters_dsp.py&quot;: &quot;ab5a0cf63085524842a0614d2ebc63adbe11521852f53bf9d561a131c37ab285&quot;,
+          &quot;vocoderbench/references/adapters_neural.py&quot;: &quot;cfe845d99cf0257556da99e5a1f950c9d9ac5ac490fb7d8e8cfb9b46f2c03a08&quot;,
+          &quot;vocoderbench/references/adapters_source.py&quot;: &quot;28b70e6680a3c8090fa5d16f696eae5c28d6b55bee5eee9e90ef4b80735f2b99&quot;,
+          &quot;scripts/all_metrics_base_controls.py&quot;: &quot;a74e26c7509eb9e7c2195d57bf8709111473d0edbffa52db164c49d67e43a8b0&quot;,
+          &quot;vocoderbench/world.py&quot;: &quot;d14558eed772e07031a9183f57facc55acb1c27deccb3dd4fa098ffcbe0cde3a&quot;,
+          &quot;vocoderbench/hnm.py&quot;: &quot;58f0378793b7433f80bf854972882298649799d8e3d0868674816e9bf6b63f74&quot;,
+          &quot;vocoderbench/hnm_analysis.py&quot;: &quot;3f45703667237333d76c4145c1513e4eb3342bd40f01a714c10303082440e26a&quot;,
+          &quot;vocoderbench/hnm_control.py&quot;: &quot;b2f5efbbb1e550569c231a08f12997d94b0bacb130bcc816fe6bd458b17a98bc&quot;,
+          &quot;vocoderbench/hnm_diagnostics.py&quot;: &quot;076edd5a785e83540a0cf55fea06075769ef35503f210eb977efc1703dd0081e&quot;,
+          &quot;vocoderbench/hnm_parameters.py&quot;: &quot;635bf222bac8ce41897c0977677e67be4366724f4239a9e85e153169fcea2cf0&quot;,
+          &quot;vocoderbench/hnm_synthesis.py&quot;: &quot;079057d2fba2b4ca0d189e050449aa7bc3fa20033afb0b03893300950ae13593&quot;
+        }
+      },
+      &quot;modifications&quot;: [
+        &quot;先頭最大2秒を切出し&quot;,
+        &quot;WAV IEEE float32形式に変換&quot;,
+        &quot;固定版ボコーダーによる解析再合成（方式native標本化周波数）&quot;
+      ],
+      &quot;format&quot;: &quot;WAV IEEE float32; fixed first &lt;=2s, no normalization, clipping or resampling&quot;
+    },
+    {
+      &quot;case&quot;: &quot;librispeech_1089-134686-0008&quot;,
+      &quot;method&quot;: &quot;facodec&quot;,
+      &quot;label&quot;: &quot;LibriSpeech test-clean・固定先頭最大2秒&quot;,
+      &quot;wav_sha256&quot;: &quot;5aad3b9b9c3cd9e9ec74125b1b8b209a10052fbe04e67d2a04e7ad3e1822c1c7&quot;,
+      &quot;sample_rate&quot;: 16000,
+      &quot;n_samples&quot;: 32000,
+      &quot;start_sample&quot;: 0,
+      &quot;native_source_sha256&quot;: &quot;2760aea8518c1813f76f72f118334e1ef2759432966ed44088d51b63ff49efd3&quot;,
+      &quot;peak_amplitude&quot;: 0.39079299569129944,
+      &quot;source_utterance_id&quot;: &quot;1089-134686-0008&quot;,
+      &quot;source&quot;: {
+        &quot;archive_url&quot;: &quot;https://www.openslr.org/resources/12/test-clean.tar.gz&quot;,
+        &quot;member&quot;: &quot;LibriSpeech/test-clean/1089/134686/1089-134686-0008.flac&quot;
+      },
+      &quot;source_file_sha256&quot;: &quot;1bdf7eede41ca2cc8883defb66bbd2e59ec93bf2d587327cb051d0ae427495ae&quot;,
+      &quot;source_decoded_pcm_sha256&quot;: &quot;40f044b90ed06d7cffc4145524ea3e1b8bd36b6599e24e1e905262fbb3e50d8d&quot;,
+      &quot;original_input_sha256&quot;: &quot;2906c24c57cf16b7a1a29dac15e0d727cb8b4679724efec0f565946723cc9fd8&quot;,
+      &quot;source_sample_rate&quot;: 16000,
+      &quot;source_excerpt_start_sample&quot;: 0,
+      &quot;source_excerpt_samples&quot;: 96000,
+      &quot;source_public_start_sample&quot;: 0,
+      &quot;source_public_n_samples&quot;: 32000,
+      &quot;method_provenance&quot;: {
+        &quot;kind&quot;: &quot;vocoder_analysis_resynthesis&quot;,
+        &quot;version&quot;: &quot;FACodec v1 all six codebooks incl. residual&quot;,
+        &quot;synthesis_contract_sha256&quot;: &quot;4748bca89ef5898109862b0f5f3adca46179ec3a3c7b94d8499a7c7f5e49b2b0&quot;,
+        &quot;native_record_sha256&quot;: &quot;986ca5f442c00a60ccc8041c81ddfe2ed1f8772fdd832af175b4846c5d71fe4e&quot;,
+        &quot;source_revisions&quot;: {
+          &quot;facodec&quot;: {
+            &quot;repository&quot;: &quot;https://github.com/lifeiteng/naturalspeech3_facodec.git&quot;,
+            &quot;revision&quot;: &quot;aac16b7268b1b96e70b9e3526b13e216984e80d0&quot;
+          }
+        },
+        &quot;world_lock_sha256&quot;: null,
+        &quot;checkpoint_sha256&quot;: [
+          &quot;c8fa7b8d79ccd915e6c3b19cd3c9d5f4cba3fbeb794a2e598d7e31db8efee47e&quot;,
+          &quot;4b8f2c9a691385c1a61542585116f52263a029758dcb4a3a955ff2c190afd536&quot;
+        ],
+        &quot;implementation_sha256&quot;: {
+          &quot;scripts/all_metrics_synthesis.py&quot;: &quot;1e3f791d6149322c45e94f49e14311a3f2fd31ad510258c11c7ff24ec159932f&quot;,
+          &quot;scripts/all_metrics_common.py&quot;: &quot;d9d2ea1fc7bb93a627d14db1eddda203d91cb9c0f1708d31db03b148ad67168a&quot;,
+          &quot;vocoderbench/methods.py&quot;: &quot;99a040b960139aa842a9a46623b34717db9c71195df21ae969fb2a9e9b9155b0&quot;,
+          &quot;scripts/all_metrics_control_adapters.py&quot;: &quot;e0683815d17fce0a2b723732d5d2aa1eb852f81c44fe2e3eadcbc26daf1a2327&quot;,
+          &quot;scripts/all_metrics_representation.py&quot;: &quot;973e341c131698a36fb2a2b82fd7dd4d59b97dce6c06b2f698f595771ead5da2&quot;,
+          &quot;scripts/all_metrics_neural_controls.py&quot;: &quot;c6a3c150c448ec41a04befc6543bd25d4512bcc28d80cf0bf14b5d8481ac66ce&quot;,
+          &quot;scripts/all_metrics_golf_control.py&quot;: &quot;883ff581ab8132a7c8d312c894a26eb29990cf9a71846223c2aa8d6434ff3b96&quot;,
+          &quot;scripts/all_metrics_llsm_storage.py&quot;: &quot;c672f5f38f934ff9710a726f029a102592c3f5e9de8d25acdace76dfae64251f&quot;,
+          &quot;scripts/all_metrics_llsm_control.py&quot;: &quot;6ba12b6933dfda3f9d6b57f46085de652f00acd348cf1ed5bef15eb60c7ad765&quot;,
+          &quot;scripts/all_metrics_storage_policy.py&quot;: &quot;81f0b90ec0d0467a5fb7767df9800fc01f713d9f5e4b5559cf6db8776ccf11ac&quot;,
+          &quot;scripts/all_metrics_interpolation.py&quot;: &quot;afa53eedf0182c4611456096542b57002d1c0ff729c3f9e31b2d7e111cf89a03&quot;,
+          &quot;vocoderbench/references/adapters_dsp.py&quot;: &quot;ab5a0cf63085524842a0614d2ebc63adbe11521852f53bf9d561a131c37ab285&quot;,
+          &quot;vocoderbench/references/adapters_neural.py&quot;: &quot;cfe845d99cf0257556da99e5a1f950c9d9ac5ac490fb7d8e8cfb9b46f2c03a08&quot;,
+          &quot;vocoderbench/references/adapters_source.py&quot;: &quot;28b70e6680a3c8090fa5d16f696eae5c28d6b55bee5eee9e90ef4b80735f2b99&quot;
+        }
+      },
+      &quot;modifications&quot;: [
+        &quot;先頭最大2秒を切出し&quot;,
+        &quot;WAV IEEE float32形式に変換&quot;,
+        &quot;固定版ボコーダーによる解析再合成（方式native標本化周波数）&quot;
+      ],
+      &quot;format&quot;: &quot;WAV IEEE float32; fixed first &lt;=2s, no normalization, clipping or resampling&quot;
+    },
+    {
+      &quot;case&quot;: &quot;librispeech_1089-134686-0008&quot;,
+      &quot;method&quot;: &quot;hifiglot&quot;,
+      &quot;label&quot;: &quot;LibriSpeech test-clean・固定先頭最大2秒&quot;,
+      &quot;wav_sha256&quot;: &quot;ae27eafb8c640be46c7c3e7d856ba660cbe9d03c2729d385b2e355cbe5fe1dca&quot;,
+      &quot;sample_rate&quot;: 44100,
+      &quot;n_samples&quot;: 88200,
+      &quot;start_sample&quot;: 0,
+      &quot;native_source_sha256&quot;: &quot;a95be5746f118e182541036e33b1750e4ddf4ee27490e85598febab3a0fdeb05&quot;,
+      &quot;peak_amplitude&quot;: 0.4072624444961548,
+      &quot;source_utterance_id&quot;: &quot;1089-134686-0008&quot;,
+      &quot;source&quot;: {
+        &quot;archive_url&quot;: &quot;https://www.openslr.org/resources/12/test-clean.tar.gz&quot;,
+        &quot;member&quot;: &quot;LibriSpeech/test-clean/1089/134686/1089-134686-0008.flac&quot;
+      },
+      &quot;source_file_sha256&quot;: &quot;1bdf7eede41ca2cc8883defb66bbd2e59ec93bf2d587327cb051d0ae427495ae&quot;,
+      &quot;source_decoded_pcm_sha256&quot;: &quot;40f044b90ed06d7cffc4145524ea3e1b8bd36b6599e24e1e905262fbb3e50d8d&quot;,
+      &quot;original_input_sha256&quot;: &quot;2906c24c57cf16b7a1a29dac15e0d727cb8b4679724efec0f565946723cc9fd8&quot;,
+      &quot;source_sample_rate&quot;: 16000,
+      &quot;source_excerpt_start_sample&quot;: 0,
+      &quot;source_excerpt_samples&quot;: 96000,
+      &quot;source_public_start_sample&quot;: 0,
+      &quot;source_public_n_samples&quot;: 32000,
+      &quot;method_provenance&quot;: {
+        &quot;kind&quot;: &quot;vocoder_analysis_resynthesis&quot;,
+        &quot;version&quot;: &quot;official HiFi-Glot44.1k inference recipe&quot;,
+        &quot;synthesis_contract_sha256&quot;: &quot;bac468a784017ca43f24dcca28ed5e786c36c0f3149f384cb8f8755c007465e4&quot;,
+        &quot;native_record_sha256&quot;: &quot;e23032890d4e42f86ec02bddcaa6bf893b9149837dbdf67e09e851414b6dbac4&quot;,
+        &quot;source_revisions&quot;: {
+          &quot;hifiglot&quot;: {
+            &quot;repository&quot;: &quot;https://github.com/PupuAI/HiFi-Glot.git&quot;,
+            &quot;revision&quot;: &quot;78951625e8f0a113f401fef7032e98d58cfa7dac&quot;
+          }
+        },
+        &quot;world_lock_sha256&quot;: null,
+        &quot;checkpoint_sha256&quot;: &quot;8955e6f43593099b912c25e2e5f9abd2120950e2927b34c5aaebbe3df9eb14c4&quot;,
+        &quot;implementation_sha256&quot;: {
+          &quot;scripts/all_metrics_synthesis.py&quot;: &quot;1e3f791d6149322c45e94f49e14311a3f2fd31ad510258c11c7ff24ec159932f&quot;,
+          &quot;scripts/all_metrics_common.py&quot;: &quot;d9d2ea1fc7bb93a627d14db1eddda203d91cb9c0f1708d31db03b148ad67168a&quot;,
+          &quot;vocoderbench/methods.py&quot;: &quot;99a040b960139aa842a9a46623b34717db9c71195df21ae969fb2a9e9b9155b0&quot;,
+          &quot;scripts/all_metrics_control_adapters.py&quot;: &quot;e0683815d17fce0a2b723732d5d2aa1eb852f81c44fe2e3eadcbc26daf1a2327&quot;,
+          &quot;scripts/all_metrics_representation.py&quot;: &quot;973e341c131698a36fb2a2b82fd7dd4d59b97dce6c06b2f698f595771ead5da2&quot;,
+          &quot;scripts/all_metrics_neural_controls.py&quot;: &quot;c6a3c150c448ec41a04befc6543bd25d4512bcc28d80cf0bf14b5d8481ac66ce&quot;,
+          &quot;scripts/all_metrics_golf_control.py&quot;: &quot;883ff581ab8132a7c8d312c894a26eb29990cf9a71846223c2aa8d6434ff3b96&quot;,
+          &quot;scripts/all_metrics_llsm_storage.py&quot;: &quot;c672f5f38f934ff9710a726f029a102592c3f5e9de8d25acdace76dfae64251f&quot;,
+          &quot;scripts/all_metrics_llsm_control.py&quot;: &quot;6ba12b6933dfda3f9d6b57f46085de652f00acd348cf1ed5bef15eb60c7ad765&quot;,
+          &quot;scripts/all_metrics_storage_policy.py&quot;: &quot;81f0b90ec0d0467a5fb7767df9800fc01f713d9f5e4b5559cf6db8776ccf11ac&quot;,
+          &quot;scripts/all_metrics_interpolation.py&quot;: &quot;afa53eedf0182c4611456096542b57002d1c0ff729c3f9e31b2d7e111cf89a03&quot;,
+          &quot;vocoderbench/references/adapters_dsp.py&quot;: &quot;ab5a0cf63085524842a0614d2ebc63adbe11521852f53bf9d561a131c37ab285&quot;,
+          &quot;vocoderbench/references/adapters_neural.py&quot;: &quot;cfe845d99cf0257556da99e5a1f950c9d9ac5ac490fb7d8e8cfb9b46f2c03a08&quot;,
+          &quot;vocoderbench/references/adapters_source.py&quot;: &quot;28b70e6680a3c8090fa5d16f696eae5c28d6b55bee5eee9e90ef4b80735f2b99&quot;
+        }
+      },
+      &quot;modifications&quot;: [
+        &quot;先頭最大2秒を切出し&quot;,
+        &quot;WAV IEEE float32形式に変換&quot;,
+        &quot;固定版ボコーダーによる解析再合成（方式native標本化周波数）&quot;
+      ],
+      &quot;format&quot;: &quot;WAV IEEE float32; fixed first &lt;=2s, no normalization, clipping or resampling&quot;
+    },
+    {
+      &quot;case&quot;: &quot;librispeech_1089-134686-0008&quot;,
+      &quot;method&quot;: &quot;llsm2&quot;,
+      &quot;label&quot;: &quot;LibriSpeech test-clean・固定先頭最大2秒&quot;,
+      &quot;wav_sha256&quot;: &quot;de0e297e817b2df878acabfa02d753f9efae87c61c44a0a5d778be29de344eab&quot;,
+      &quot;sample_rate&quot;: 24000,
+      &quot;n_samples&quot;: 48000,
+      &quot;start_sample&quot;: 0,
+      &quot;native_source_sha256&quot;: &quot;d5e5c85fd75377e6ade7c196bab1667a851d5e76420e0ceb6e622bcbbf483eea&quot;,
+      &quot;peak_amplitude&quot;: 0.4055539667606354,
+      &quot;source_utterance_id&quot;: &quot;1089-134686-0008&quot;,
+      &quot;source&quot;: {
+        &quot;archive_url&quot;: &quot;https://www.openslr.org/resources/12/test-clean.tar.gz&quot;,
+        &quot;member&quot;: &quot;LibriSpeech/test-clean/1089/134686/1089-134686-0008.flac&quot;
+      },
+      &quot;source_file_sha256&quot;: &quot;1bdf7eede41ca2cc8883defb66bbd2e59ec93bf2d587327cb051d0ae427495ae&quot;,
+      &quot;source_decoded_pcm_sha256&quot;: &quot;40f044b90ed06d7cffc4145524ea3e1b8bd36b6599e24e1e905262fbb3e50d8d&quot;,
+      &quot;original_input_sha256&quot;: &quot;2906c24c57cf16b7a1a29dac15e0d727cb8b4679724efec0f565946723cc9fd8&quot;,
+      &quot;source_sample_rate&quot;: 16000,
+      &quot;source_excerpt_start_sample&quot;: 0,
+      &quot;source_excerpt_samples&quot;: 96000,
+      &quot;source_public_start_sample&quot;: 0,
+      &quot;source_public_n_samples&quot;: 32000,
+      &quot;method_provenance&quot;: {
+        &quot;kind&quot;: &quot;vocoder_analysis_resynthesis&quot;,
+        &quot;version&quot;: &quot;LLSM2 Layer0 peak-picking; maxnhar400 npsd128 hop5ms; DIO+StoneMask&quot;,
+        &quot;synthesis_contract_sha256&quot;: &quot;a99272dd92cc4ddeb42f96bcda97b5c64f82a19ce26824ed13633ba4f51931f5&quot;,
+        &quot;native_record_sha256&quot;: &quot;5dbbf468b9f49c16829f6b673165e6ebbd5d618bdc27f704238d334b5992a82b&quot;,
+        &quot;source_revisions&quot;: {
+          &quot;llsm&quot;: {
+            &quot;repository&quot;: &quot;https://github.com/Sleepwalking/libllsm2.git&quot;,
+            &quot;revision&quot;: &quot;d18cdf02b31819670e3bc23ead933ad9467da06d&quot;
+          },
+          &quot;ciglet&quot;: {
+            &quot;repository&quot;: &quot;https://github.com/Sleepwalking/ciglet.git&quot;,
+            &quot;revision&quot;: &quot;895ba9b1c0eabee83d3544208bbc82420efa3206&quot;
+          }
+        },
+        &quot;world_lock_sha256&quot;: null,
+        &quot;checkpoint_sha256&quot;: null,
+        &quot;implementation_sha256&quot;: {
+          &quot;scripts/all_metrics_synthesis.py&quot;: &quot;1e3f791d6149322c45e94f49e14311a3f2fd31ad510258c11c7ff24ec159932f&quot;,
+          &quot;scripts/all_metrics_common.py&quot;: &quot;d9d2ea1fc7bb93a627d14db1eddda203d91cb9c0f1708d31db03b148ad67168a&quot;,
+          &quot;vocoderbench/methods.py&quot;: &quot;99a040b960139aa842a9a46623b34717db9c71195df21ae969fb2a9e9b9155b0&quot;,
+          &quot;scripts/all_metrics_control_adapters.py&quot;: &quot;e0683815d17fce0a2b723732d5d2aa1eb852f81c44fe2e3eadcbc26daf1a2327&quot;,
+          &quot;scripts/all_metrics_representation.py&quot;: &quot;973e341c131698a36fb2a2b82fd7dd4d59b97dce6c06b2f698f595771ead5da2&quot;,
+          &quot;scripts/all_metrics_neural_controls.py&quot;: &quot;c6a3c150c448ec41a04befc6543bd25d4512bcc28d80cf0bf14b5d8481ac66ce&quot;,
+          &quot;scripts/all_metrics_golf_control.py&quot;: &quot;883ff581ab8132a7c8d312c894a26eb29990cf9a71846223c2aa8d6434ff3b96&quot;,
+          &quot;scripts/all_metrics_llsm_storage.py&quot;: &quot;c672f5f38f934ff9710a726f029a102592c3f5e9de8d25acdace76dfae64251f&quot;,
+          &quot;scripts/all_metrics_llsm_control.py&quot;: &quot;6ba12b6933dfda3f9d6b57f46085de652f00acd348cf1ed5bef15eb60c7ad765&quot;,
+          &quot;scripts/all_metrics_storage_policy.py&quot;: &quot;81f0b90ec0d0467a5fb7767df9800fc01f713d9f5e4b5559cf6db8776ccf11ac&quot;,
+          &quot;scripts/all_metrics_interpolation.py&quot;: &quot;afa53eedf0182c4611456096542b57002d1c0ff729c3f9e31b2d7e111cf89a03&quot;,
+          &quot;vocoderbench/references/adapters_dsp.py&quot;: &quot;ab5a0cf63085524842a0614d2ebc63adbe11521852f53bf9d561a131c37ab285&quot;,
+          &quot;vocoderbench/references/adapters_neural.py&quot;: &quot;cfe845d99cf0257556da99e5a1f950c9d9ac5ac490fb7d8e8cfb9b46f2c03a08&quot;,
+          &quot;vocoderbench/references/adapters_source.py&quot;: &quot;28b70e6680a3c8090fa5d16f696eae5c28d6b55bee5eee9e90ef4b80735f2b99&quot;
+        }
+      },
+      &quot;modifications&quot;: [
+        &quot;先頭最大2秒を切出し&quot;,
+        &quot;WAV IEEE float32形式に変換&quot;,
+        &quot;固定版ボコーダーによる解析再合成（方式native標本化周波数）&quot;
+      ],
+      &quot;format&quot;: &quot;WAV IEEE float32; fixed first &lt;=2s, no normalization, clipping or resampling&quot;
+    },
+    {
+      &quot;case&quot;: &quot;librispeech_1089-134686-0008&quot;,
+      &quot;method&quot;: &quot;magphase&quot;,
+      &quot;label&quot;: &quot;LibriSpeech test-clean・固定先頭最大2秒&quot;,
+      &quot;wav_sha256&quot;: &quot;a479264aa949e44790233d8a2c01077f9475ae346c995183de5b1c4e87cb4147&quot;,
+      &quot;sample_rate&quot;: 48000,
+      &quot;n_samples&quot;: 96000,
+      &quot;start_sample&quot;: 0,
+      &quot;native_source_sha256&quot;: &quot;f14c52814ebae9ae538324a0cc99483121d130fadf7d63c75c7aa3c401ca8a03&quot;,
+      &quot;peak_amplitude&quot;: 0.46946272253990173,
+      &quot;source_utterance_id&quot;: &quot;1089-134686-0008&quot;,
+      &quot;source&quot;: {
+        &quot;archive_url&quot;: &quot;https://www.openslr.org/resources/12/test-clean.tar.gz&quot;,
+        &quot;member&quot;: &quot;LibriSpeech/test-clean/1089/134686/1089-134686-0008.flac&quot;
+      },
+      &quot;source_file_sha256&quot;: &quot;1bdf7eede41ca2cc8883defb66bbd2e59ec93bf2d587327cb051d0ae427495ae&quot;,
+      &quot;source_decoded_pcm_sha256&quot;: &quot;40f044b90ed06d7cffc4145524ea3e1b8bd36b6599e24e1e905262fbb3e50d8d&quot;,
+      &quot;original_input_sha256&quot;: &quot;2906c24c57cf16b7a1a29dac15e0d727cb8b4679724efec0f565946723cc9fd8&quot;,
+      &quot;source_sample_rate&quot;: 16000,
+      &quot;source_excerpt_start_sample&quot;: 0,
+      &quot;source_excerpt_samples&quot;: 96000,
+      &quot;source_public_start_sample&quot;: 0,
+      &quot;source_public_n_samples&quot;: 32000,
+      &quot;method_provenance&quot;: {
+        &quot;kind&quot;: &quot;vocoder_analysis_resynthesis&quot;,
+        &quot;version&quot;: &quot;MagPhase2 compressed100/45/45 pitch-synchronous; SPTK3.9+REAPER; Python3 compatibility patch&quot;,
+        &quot;synthesis_contract_sha256&quot;: &quot;fce8635fb5455ea463d48b4a90e50068be1b803bdc4562ad40666c4cad2faa4f&quot;,
+        &quot;native_record_sha256&quot;: &quot;68405f8316326c4bf00131e9b754a2064dc22e38e279465726122ee2bb798105&quot;,
+        &quot;source_revisions&quot;: {
+          &quot;magphase&quot;: {
+            &quot;repository&quot;: &quot;https://github.com/CSTR-Edinburgh/magphase.git&quot;,
+            &quot;revision&quot;: &quot;ec6ae285c3128d3f416857f05d2a7e4be0bd5707&quot;
+          },
+          &quot;reaper&quot;: {
+            &quot;repository&quot;: &quot;https://github.com/google/REAPER.git&quot;,
+            &quot;revision&quot;: &quot;1d6e9b95e6b08b500fccbc9a043989dbda747276&quot;
+          }
+        },
+        &quot;world_lock_sha256&quot;: null,
+        &quot;checkpoint_sha256&quot;: null,
+        &quot;implementation_sha256&quot;: {
+          &quot;scripts/all_metrics_synthesis.py&quot;: &quot;1e3f791d6149322c45e94f49e14311a3f2fd31ad510258c11c7ff24ec159932f&quot;,
+          &quot;scripts/all_metrics_common.py&quot;: &quot;d9d2ea1fc7bb93a627d14db1eddda203d91cb9c0f1708d31db03b148ad67168a&quot;,
+          &quot;vocoderbench/methods.py&quot;: &quot;99a040b960139aa842a9a46623b34717db9c71195df21ae969fb2a9e9b9155b0&quot;,
+          &quot;scripts/all_metrics_control_adapters.py&quot;: &quot;e0683815d17fce0a2b723732d5d2aa1eb852f81c44fe2e3eadcbc26daf1a2327&quot;,
+          &quot;scripts/all_metrics_representation.py&quot;: &quot;973e341c131698a36fb2a2b82fd7dd4d59b97dce6c06b2f698f595771ead5da2&quot;,
+          &quot;scripts/all_metrics_neural_controls.py&quot;: &quot;c6a3c150c448ec41a04befc6543bd25d4512bcc28d80cf0bf14b5d8481ac66ce&quot;,
+          &quot;scripts/all_metrics_golf_control.py&quot;: &quot;883ff581ab8132a7c8d312c894a26eb29990cf9a71846223c2aa8d6434ff3b96&quot;,
+          &quot;scripts/all_metrics_llsm_storage.py&quot;: &quot;c672f5f38f934ff9710a726f029a102592c3f5e9de8d25acdace76dfae64251f&quot;,
+          &quot;scripts/all_metrics_llsm_control.py&quot;: &quot;6ba12b6933dfda3f9d6b57f46085de652f00acd348cf1ed5bef15eb60c7ad765&quot;,
+          &quot;scripts/all_metrics_storage_policy.py&quot;: &quot;81f0b90ec0d0467a5fb7767df9800fc01f713d9f5e4b5559cf6db8776ccf11ac&quot;,
+          &quot;scripts/all_metrics_interpolation.py&quot;: &quot;afa53eedf0182c4611456096542b57002d1c0ff729c3f9e31b2d7e111cf89a03&quot;,
+          &quot;vocoderbench/references/adapters_dsp.py&quot;: &quot;ab5a0cf63085524842a0614d2ebc63adbe11521852f53bf9d561a131c37ab285&quot;,
+          &quot;vocoderbench/references/adapters_neural.py&quot;: &quot;cfe845d99cf0257556da99e5a1f950c9d9ac5ac490fb7d8e8cfb9b46f2c03a08&quot;,
+          &quot;vocoderbench/references/adapters_source.py&quot;: &quot;28b70e6680a3c8090fa5d16f696eae5c28d6b55bee5eee9e90ef4b80735f2b99&quot;
+        }
+      },
+      &quot;modifications&quot;: [
+        &quot;先頭最大2秒を切出し&quot;,
+        &quot;WAV IEEE float32形式に変換&quot;,
+        &quot;固定版ボコーダーによる解析再合成（方式native標本化周波数）&quot;
+      ],
+      &quot;format&quot;: &quot;WAV IEEE float32; fixed first &lt;=2s, no normalization, clipping or resampling&quot;
+    },
+    {
+      &quot;case&quot;: &quot;librispeech_1188-133604-0003&quot;,
+      &quot;method&quot;: &quot;original&quot;,
+      &quot;label&quot;: &quot;LibriSpeech test-clean・固定先頭最大2秒&quot;,
+      &quot;wav_sha256&quot;: &quot;69eecb851691c15573c6b07f49118fe0246a72deee7e3e784111c6d31870dffb&quot;,
+      &quot;sample_rate&quot;: 16000,
+      &quot;n_samples&quot;: 32000,
+      &quot;start_sample&quot;: 0,
+      &quot;native_source_sha256&quot;: &quot;d03996160873a22360bde5b073fc057837439fa39b35136ceaeb8ffda73d15c2&quot;,
+      &quot;peak_amplitude&quot;: 0.19708251953125,
+      &quot;source_utterance_id&quot;: &quot;1188-133604-0003&quot;,
+      &quot;source&quot;: {
+        &quot;archive_url&quot;: &quot;https://www.openslr.org/resources/12/test-clean.tar.gz&quot;,
+        &quot;member&quot;: &quot;LibriSpeech/test-clean/1188/133604/1188-133604-0003.flac&quot;
+      },
+      &quot;source_file_sha256&quot;: &quot;a013400c991a40062cb4f458d247cfd6dac24fa0016bf6e2eac7a3e8e08b8ae8&quot;,
+      &quot;source_decoded_pcm_sha256&quot;: &quot;81283c3eb08ea201c5ec2d52e3a8e0ed4d0258d76164b522d1ee5ec43edebe81&quot;,
+      &quot;original_input_sha256&quot;: &quot;d03996160873a22360bde5b073fc057837439fa39b35136ceaeb8ffda73d15c2&quot;,
+      &quot;source_sample_rate&quot;: 16000,
+      &quot;source_excerpt_start_sample&quot;: 0,
+      &quot;source_excerpt_samples&quot;: 96000,
+      &quot;source_public_start_sample&quot;: 0,
+      &quot;source_public_n_samples&quot;: 32000,
+      &quot;method_provenance&quot;: {
+        &quot;kind&quot;: &quot;original&quot;,
+        &quot;version&quot;: &quot;LibriSpeech test-clean&quot;
+      },
+      &quot;modifications&quot;: [
+        &quot;先頭最大2秒を切出し&quot;,
+        &quot;WAV IEEE float32形式に変換&quot;
+      ],
+      &quot;format&quot;: &quot;WAV IEEE float32; fixed first &lt;=2s, no normalization, clipping or resampling&quot;
+    },
+    {
+      &quot;case&quot;: &quot;librispeech_1188-133604-0003&quot;,
+      &quot;method&quot;: &quot;hnm&quot;,
+      &quot;label&quot;: &quot;LibriSpeech test-clean・固定先頭最大2秒&quot;,
+      &quot;wav_sha256&quot;: &quot;99da1397ec350e39fa63d551dbffc3f68d2bc0eb416a8db19fccd8c1c72028e3&quot;,
+      &quot;sample_rate&quot;: 16000,
+      &quot;n_samples&quot;: 32000,
+      &quot;start_sample&quot;: 0,
+      &quot;native_source_sha256&quot;: &quot;e533c64baefe7c3f28b4f34cbe692908f77dce2c8cbc3bd42bd8f5527702523c&quot;,
+      &quot;peak_amplitude&quot;: 0.2008262723684311,
+      &quot;source_utterance_id&quot;: &quot;1188-133604-0003&quot;,
+      &quot;source&quot;: {
+        &quot;archive_url&quot;: &quot;https://www.openslr.org/resources/12/test-clean.tar.gz&quot;,
+        &quot;member&quot;: &quot;LibriSpeech/test-clean/1188/133604/1188-133604-0003.flac&quot;
+      },
+      &quot;source_file_sha256&quot;: &quot;a013400c991a40062cb4f458d247cfd6dac24fa0016bf6e2eac7a3e8e08b8ae8&quot;,
+      &quot;source_decoded_pcm_sha256&quot;: &quot;81283c3eb08ea201c5ec2d52e3a8e0ed4d0258d76164b522d1ee5ec43edebe81&quot;,
+      &quot;original_input_sha256&quot;: &quot;d03996160873a22360bde5b073fc057837439fa39b35136ceaeb8ffda73d15c2&quot;,
+      &quot;source_sample_rate&quot;: 16000,
+      &quot;source_excerpt_start_sample&quot;: 0,
+      &quot;source_excerpt_samples&quot;: 96000,
+      &quot;source_public_start_sample&quot;: 0,
+      &quot;source_public_n_samples&quot;: 32000,
+      &quot;method_provenance&quot;: {
+        &quot;kind&quot;: &quot;vocoder_analysis_resynthesis&quot;,
+        &quot;version&quot;: &quot;current HNM-v3&quot;,
+        &quot;synthesis_contract_sha256&quot;: &quot;fe99b77bfa8ed5f7b8423d4a925a62f8d8b6028f97c20c37d5fa0153bdc85a18&quot;,
+        &quot;native_record_sha256&quot;: &quot;ae7c426b0f01971c47d61b8d53d15859da6de7d92d773c9974eab8dcccc7d643&quot;,
+        &quot;source_revisions&quot;: {},
+        &quot;world_lock_sha256&quot;: &quot;44b8bc3adb62802ed060834d9e06ed7f5f3cc4d28583b8a44066c5959a42462b&quot;,
+        &quot;checkpoint_sha256&quot;: null,
+        &quot;implementation_sha256&quot;: {
+          &quot;scripts/all_metrics_synthesis.py&quot;: &quot;1e3f791d6149322c45e94f49e14311a3f2fd31ad510258c11c7ff24ec159932f&quot;,
+          &quot;scripts/all_metrics_common.py&quot;: &quot;d9d2ea1fc7bb93a627d14db1eddda203d91cb9c0f1708d31db03b148ad67168a&quot;,
+          &quot;vocoderbench/methods.py&quot;: &quot;99a040b960139aa842a9a46623b34717db9c71195df21ae969fb2a9e9b9155b0&quot;,
+          &quot;scripts/all_metrics_control_adapters.py&quot;: &quot;e0683815d17fce0a2b723732d5d2aa1eb852f81c44fe2e3eadcbc26daf1a2327&quot;,
+          &quot;scripts/all_metrics_representation.py&quot;: &quot;973e341c131698a36fb2a2b82fd7dd4d59b97dce6c06b2f698f595771ead5da2&quot;,
+          &quot;scripts/all_metrics_neural_controls.py&quot;: &quot;c6a3c150c448ec41a04befc6543bd25d4512bcc28d80cf0bf14b5d8481ac66ce&quot;,
+          &quot;scripts/all_metrics_golf_control.py&quot;: &quot;883ff581ab8132a7c8d312c894a26eb29990cf9a71846223c2aa8d6434ff3b96&quot;,
+          &quot;scripts/all_metrics_llsm_storage.py&quot;: &quot;c672f5f38f934ff9710a726f029a102592c3f5e9de8d25acdace76dfae64251f&quot;,
+          &quot;scripts/all_metrics_llsm_control.py&quot;: &quot;6ba12b6933dfda3f9d6b57f46085de652f00acd348cf1ed5bef15eb60c7ad765&quot;,
+          &quot;scripts/all_metrics_storage_policy.py&quot;: &quot;81f0b90ec0d0467a5fb7767df9800fc01f713d9f5e4b5559cf6db8776ccf11ac&quot;,
+          &quot;scripts/all_metrics_interpolation.py&quot;: &quot;afa53eedf0182c4611456096542b57002d1c0ff729c3f9e31b2d7e111cf89a03&quot;,
+          &quot;vocoderbench/references/adapters_dsp.py&quot;: &quot;ab5a0cf63085524842a0614d2ebc63adbe11521852f53bf9d561a131c37ab285&quot;,
+          &quot;vocoderbench/references/adapters_neural.py&quot;: &quot;cfe845d99cf0257556da99e5a1f950c9d9ac5ac490fb7d8e8cfb9b46f2c03a08&quot;,
+          &quot;vocoderbench/references/adapters_source.py&quot;: &quot;28b70e6680a3c8090fa5d16f696eae5c28d6b55bee5eee9e90ef4b80735f2b99&quot;,
+          &quot;scripts/all_metrics_base_controls.py&quot;: &quot;a74e26c7509eb9e7c2195d57bf8709111473d0edbffa52db164c49d67e43a8b0&quot;,
+          &quot;vocoderbench/world.py&quot;: &quot;d14558eed772e07031a9183f57facc55acb1c27deccb3dd4fa098ffcbe0cde3a&quot;,
+          &quot;vocoderbench/hnm.py&quot;: &quot;58f0378793b7433f80bf854972882298649799d8e3d0868674816e9bf6b63f74&quot;,
+          &quot;vocoderbench/hnm_analysis.py&quot;: &quot;3f45703667237333d76c4145c1513e4eb3342bd40f01a714c10303082440e26a&quot;,
+          &quot;vocoderbench/hnm_control.py&quot;: &quot;b2f5efbbb1e550569c231a08f12997d94b0bacb130bcc816fe6bd458b17a98bc&quot;,
+          &quot;vocoderbench/hnm_diagnostics.py&quot;: &quot;076edd5a785e83540a0cf55fea06075769ef35503f210eb977efc1703dd0081e&quot;,
+          &quot;vocoderbench/hnm_parameters.py&quot;: &quot;635bf222bac8ce41897c0977677e67be4366724f4239a9e85e153169fcea2cf0&quot;,
+          &quot;vocoderbench/hnm_synthesis.py&quot;: &quot;079057d2fba2b4ca0d189e050449aa7bc3fa20033afb0b03893300950ae13593&quot;
+        }
+      },
+      &quot;modifications&quot;: [
+        &quot;先頭最大2秒を切出し&quot;,
+        &quot;WAV IEEE float32形式に変換&quot;,
+        &quot;固定版ボコーダーによる解析再合成（方式native標本化周波数）&quot;
+      ],
+      &quot;format&quot;: &quot;WAV IEEE float32; fixed first &lt;=2s, no normalization, clipping or resampling&quot;
+    },
+    {
+      &quot;case&quot;: &quot;librispeech_1188-133604-0003&quot;,
+      &quot;method&quot;: &quot;world_harvest&quot;,
+      &quot;label&quot;: &quot;LibriSpeech test-clean・固定先頭最大2秒&quot;,
+      &quot;wav_sha256&quot;: &quot;688598fad933a12c87a742b6c4efffcbaaa301d81476d15d5a6763a29725e9d7&quot;,
+      &quot;sample_rate&quot;: 16000,
+      &quot;n_samples&quot;: 32000,
+      &quot;start_sample&quot;: 0,
+      &quot;native_source_sha256&quot;: &quot;3318f4180a2a97cdd8f7b6feb8b58f99a9cd8acb69de42d49dccced7a95af027&quot;,
+      &quot;peak_amplitude&quot;: 0.2791982889175415,
+      &quot;source_utterance_id&quot;: &quot;1188-133604-0003&quot;,
+      &quot;source&quot;: {
+        &quot;archive_url&quot;: &quot;https://www.openslr.org/resources/12/test-clean.tar.gz&quot;,
+        &quot;member&quot;: &quot;LibriSpeech/test-clean/1188/133604/1188-133604-0003.flac&quot;
+      },
+      &quot;source_file_sha256&quot;: &quot;a013400c991a40062cb4f458d247cfd6dac24fa0016bf6e2eac7a3e8e08b8ae8&quot;,
+      &quot;source_decoded_pcm_sha256&quot;: &quot;81283c3eb08ea201c5ec2d52e3a8e0ed4d0258d76164b522d1ee5ec43edebe81&quot;,
+      &quot;original_input_sha256&quot;: &quot;d03996160873a22360bde5b073fc057837439fa39b35136ceaeb8ffda73d15c2&quot;,
+      &quot;source_sample_rate&quot;: 16000,
+      &quot;source_excerpt_start_sample&quot;: 0,
+      &quot;source_excerpt_samples&quot;: 96000,
+      &quot;source_public_start_sample&quot;: 0,
+      &quot;source_public_n_samples&quot;: 32000,
+      &quot;method_provenance&quot;: {
+        &quot;kind&quot;: &quot;vocoder_analysis_resynthesis&quot;,
+        &quot;version&quot;: &quot;fixed WORLD Harvest&quot;,
+        &quot;synthesis_contract_sha256&quot;: &quot;1cd58db6705502030037022b711ce9d57d2883352fff1be993e9b3c67b25e900&quot;,
+        &quot;native_record_sha256&quot;: &quot;ad2648c4940c3e2b07fec012d303076a1e8e0cc1a34942dff69dd94cfe750730&quot;,
+        &quot;source_revisions&quot;: {},
+        &quot;world_lock_sha256&quot;: &quot;44b8bc3adb62802ed060834d9e06ed7f5f3cc4d28583b8a44066c5959a42462b&quot;,
+        &quot;checkpoint_sha256&quot;: null,
+        &quot;implementation_sha256&quot;: {
+          &quot;scripts/all_metrics_synthesis.py&quot;: &quot;1e3f791d6149322c45e94f49e14311a3f2fd31ad510258c11c7ff24ec159932f&quot;,
+          &quot;scripts/all_metrics_common.py&quot;: &quot;d9d2ea1fc7bb93a627d14db1eddda203d91cb9c0f1708d31db03b148ad67168a&quot;,
+          &quot;vocoderbench/methods.py&quot;: &quot;99a040b960139aa842a9a46623b34717db9c71195df21ae969fb2a9e9b9155b0&quot;,
+          &quot;scripts/all_metrics_control_adapters.py&quot;: &quot;e0683815d17fce0a2b723732d5d2aa1eb852f81c44fe2e3eadcbc26daf1a2327&quot;,
+          &quot;scripts/all_metrics_representation.py&quot;: &quot;973e341c131698a36fb2a2b82fd7dd4d59b97dce6c06b2f698f595771ead5da2&quot;,
+          &quot;scripts/all_metrics_neural_controls.py&quot;: &quot;c6a3c150c448ec41a04befc6543bd25d4512bcc28d80cf0bf14b5d8481ac66ce&quot;,
+          &quot;scripts/all_metrics_golf_control.py&quot;: &quot;883ff581ab8132a7c8d312c894a26eb29990cf9a71846223c2aa8d6434ff3b96&quot;,
+          &quot;scripts/all_metrics_llsm_storage.py&quot;: &quot;c672f5f38f934ff9710a726f029a102592c3f5e9de8d25acdace76dfae64251f&quot;,
+          &quot;scripts/all_metrics_llsm_control.py&quot;: &quot;6ba12b6933dfda3f9d6b57f46085de652f00acd348cf1ed5bef15eb60c7ad765&quot;,
+          &quot;scripts/all_metrics_storage_policy.py&quot;: &quot;81f0b90ec0d0467a5fb7767df9800fc01f713d9f5e4b5559cf6db8776ccf11ac&quot;,
+          &quot;scripts/all_metrics_interpolation.py&quot;: &quot;afa53eedf0182c4611456096542b57002d1c0ff729c3f9e31b2d7e111cf89a03&quot;,
+          &quot;vocoderbench/references/adapters_dsp.py&quot;: &quot;ab5a0cf63085524842a0614d2ebc63adbe11521852f53bf9d561a131c37ab285&quot;,
+          &quot;vocoderbench/references/adapters_neural.py&quot;: &quot;cfe845d99cf0257556da99e5a1f950c9d9ac5ac490fb7d8e8cfb9b46f2c03a08&quot;,
+          &quot;vocoderbench/references/adapters_source.py&quot;: &quot;28b70e6680a3c8090fa5d16f696eae5c28d6b55bee5eee9e90ef4b80735f2b99&quot;,
+          &quot;scripts/all_metrics_base_controls.py&quot;: &quot;a74e26c7509eb9e7c2195d57bf8709111473d0edbffa52db164c49d67e43a8b0&quot;,
+          &quot;vocoderbench/world.py&quot;: &quot;d14558eed772e07031a9183f57facc55acb1c27deccb3dd4fa098ffcbe0cde3a&quot;,
+          &quot;vocoderbench/hnm.py&quot;: &quot;58f0378793b7433f80bf854972882298649799d8e3d0868674816e9bf6b63f74&quot;,
+          &quot;vocoderbench/hnm_analysis.py&quot;: &quot;3f45703667237333d76c4145c1513e4eb3342bd40f01a714c10303082440e26a&quot;,
+          &quot;vocoderbench/hnm_control.py&quot;: &quot;b2f5efbbb1e550569c231a08f12997d94b0bacb130bcc816fe6bd458b17a98bc&quot;,
+          &quot;vocoderbench/hnm_diagnostics.py&quot;: &quot;076edd5a785e83540a0cf55fea06075769ef35503f210eb977efc1703dd0081e&quot;,
+          &quot;vocoderbench/hnm_parameters.py&quot;: &quot;635bf222bac8ce41897c0977677e67be4366724f4239a9e85e153169fcea2cf0&quot;,
+          &quot;vocoderbench/hnm_synthesis.py&quot;: &quot;079057d2fba2b4ca0d189e050449aa7bc3fa20033afb0b03893300950ae13593&quot;
+        }
+      },
+      &quot;modifications&quot;: [
+        &quot;先頭最大2秒を切出し&quot;,
+        &quot;WAV IEEE float32形式に変換&quot;,
+        &quot;固定版ボコーダーによる解析再合成（方式native標本化周波数）&quot;
+      ],
+      &quot;format&quot;: &quot;WAV IEEE float32; fixed first &lt;=2s, no normalization, clipping or resampling&quot;
+    },
+    {
+      &quot;case&quot;: &quot;librispeech_1188-133604-0003&quot;,
+      &quot;method&quot;: &quot;facodec&quot;,
+      &quot;label&quot;: &quot;LibriSpeech test-clean・固定先頭最大2秒&quot;,
+      &quot;wav_sha256&quot;: &quot;9936304364ebdaa25a8004814b674b344345f9d19a77d19fb9278720e0043dda&quot;,
+      &quot;sample_rate&quot;: 16000,
+      &quot;n_samples&quot;: 32000,
+      &quot;start_sample&quot;: 0,
+      &quot;native_source_sha256&quot;: &quot;f664c3d2d3cb26c8953342dfdb7a2a0bc0c3ebad31e3a0bf5650b30b2551f824&quot;,
+      &quot;peak_amplitude&quot;: 0.21889381110668182,
+      &quot;source_utterance_id&quot;: &quot;1188-133604-0003&quot;,
+      &quot;source&quot;: {
+        &quot;archive_url&quot;: &quot;https://www.openslr.org/resources/12/test-clean.tar.gz&quot;,
+        &quot;member&quot;: &quot;LibriSpeech/test-clean/1188/133604/1188-133604-0003.flac&quot;
+      },
+      &quot;source_file_sha256&quot;: &quot;a013400c991a40062cb4f458d247cfd6dac24fa0016bf6e2eac7a3e8e08b8ae8&quot;,
+      &quot;source_decoded_pcm_sha256&quot;: &quot;81283c3eb08ea201c5ec2d52e3a8e0ed4d0258d76164b522d1ee5ec43edebe81&quot;,
+      &quot;original_input_sha256&quot;: &quot;d03996160873a22360bde5b073fc057837439fa39b35136ceaeb8ffda73d15c2&quot;,
+      &quot;source_sample_rate&quot;: 16000,
+      &quot;source_excerpt_start_sample&quot;: 0,
+      &quot;source_excerpt_samples&quot;: 96000,
+      &quot;source_public_start_sample&quot;: 0,
+      &quot;source_public_n_samples&quot;: 32000,
+      &quot;method_provenance&quot;: {
+        &quot;kind&quot;: &quot;vocoder_analysis_resynthesis&quot;,
+        &quot;version&quot;: &quot;FACodec v1 all six codebooks incl. residual&quot;,
+        &quot;synthesis_contract_sha256&quot;: &quot;4748bca89ef5898109862b0f5f3adca46179ec3a3c7b94d8499a7c7f5e49b2b0&quot;,
+        &quot;native_record_sha256&quot;: &quot;37c954c54157faabe8e04052cc29161848ced6fc0837c1d1f289a8475808a22b&quot;,
+        &quot;source_revisions&quot;: {
+          &quot;facodec&quot;: {
+            &quot;repository&quot;: &quot;https://github.com/lifeiteng/naturalspeech3_facodec.git&quot;,
+            &quot;revision&quot;: &quot;aac16b7268b1b96e70b9e3526b13e216984e80d0&quot;
+          }
+        },
+        &quot;world_lock_sha256&quot;: null,
+        &quot;checkpoint_sha256&quot;: [
+          &quot;c8fa7b8d79ccd915e6c3b19cd3c9d5f4cba3fbeb794a2e598d7e31db8efee47e&quot;,
+          &quot;4b8f2c9a691385c1a61542585116f52263a029758dcb4a3a955ff2c190afd536&quot;
+        ],
+        &quot;implementation_sha256&quot;: {
+          &quot;scripts/all_metrics_synthesis.py&quot;: &quot;1e3f791d6149322c45e94f49e14311a3f2fd31ad510258c11c7ff24ec159932f&quot;,
+          &quot;scripts/all_metrics_common.py&quot;: &quot;d9d2ea1fc7bb93a627d14db1eddda203d91cb9c0f1708d31db03b148ad67168a&quot;,
+          &quot;vocoderbench/methods.py&quot;: &quot;99a040b960139aa842a9a46623b34717db9c71195df21ae969fb2a9e9b9155b0&quot;,
+          &quot;scripts/all_metrics_control_adapters.py&quot;: &quot;e0683815d17fce0a2b723732d5d2aa1eb852f81c44fe2e3eadcbc26daf1a2327&quot;,
+          &quot;scripts/all_metrics_representation.py&quot;: &quot;973e341c131698a36fb2a2b82fd7dd4d59b97dce6c06b2f698f595771ead5da2&quot;,
+          &quot;scripts/all_metrics_neural_controls.py&quot;: &quot;c6a3c150c448ec41a04befc6543bd25d4512bcc28d80cf0bf14b5d8481ac66ce&quot;,
+          &quot;scripts/all_metrics_golf_control.py&quot;: &quot;883ff581ab8132a7c8d312c894a26eb29990cf9a71846223c2aa8d6434ff3b96&quot;,
+          &quot;scripts/all_metrics_llsm_storage.py&quot;: &quot;c672f5f38f934ff9710a726f029a102592c3f5e9de8d25acdace76dfae64251f&quot;,
+          &quot;scripts/all_metrics_llsm_control.py&quot;: &quot;6ba12b6933dfda3f9d6b57f46085de652f00acd348cf1ed5bef15eb60c7ad765&quot;,
+          &quot;scripts/all_metrics_storage_policy.py&quot;: &quot;81f0b90ec0d0467a5fb7767df9800fc01f713d9f5e4b5559cf6db8776ccf11ac&quot;,
+          &quot;scripts/all_metrics_interpolation.py&quot;: &quot;afa53eedf0182c4611456096542b57002d1c0ff729c3f9e31b2d7e111cf89a03&quot;,
+          &quot;vocoderbench/references/adapters_dsp.py&quot;: &quot;ab5a0cf63085524842a0614d2ebc63adbe11521852f53bf9d561a131c37ab285&quot;,
+          &quot;vocoderbench/references/adapters_neural.py&quot;: &quot;cfe845d99cf0257556da99e5a1f950c9d9ac5ac490fb7d8e8cfb9b46f2c03a08&quot;,
+          &quot;vocoderbench/references/adapters_source.py&quot;: &quot;28b70e6680a3c8090fa5d16f696eae5c28d6b55bee5eee9e90ef4b80735f2b99&quot;
+        }
+      },
+      &quot;modifications&quot;: [
+        &quot;先頭最大2秒を切出し&quot;,
+        &quot;WAV IEEE float32形式に変換&quot;,
+        &quot;固定版ボコーダーによる解析再合成（方式native標本化周波数）&quot;
+      ],
+      &quot;format&quot;: &quot;WAV IEEE float32; fixed first &lt;=2s, no normalization, clipping or resampling&quot;
+    },
+    {
+      &quot;case&quot;: &quot;librispeech_1188-133604-0003&quot;,
+      &quot;method&quot;: &quot;hifiglot&quot;,
+      &quot;label&quot;: &quot;LibriSpeech test-clean・固定先頭最大2秒&quot;,
+      &quot;wav_sha256&quot;: &quot;f77ffc37cde4d7836fa56a1177904f1ccdc31dede9d72554efd7913399ce9c24&quot;,
+      &quot;sample_rate&quot;: 44100,
+      &quot;n_samples&quot;: 88200,
+      &quot;start_sample&quot;: 0,
+      &quot;native_source_sha256&quot;: &quot;ae08fb2b1c0ac6c0b6c1e7ddf6005458ee71911f0baded5378587332aacc4648&quot;,
+      &quot;peak_amplitude&quot;: 0.2613263428211212,
+      &quot;source_utterance_id&quot;: &quot;1188-133604-0003&quot;,
+      &quot;source&quot;: {
+        &quot;archive_url&quot;: &quot;https://www.openslr.org/resources/12/test-clean.tar.gz&quot;,
+        &quot;member&quot;: &quot;LibriSpeech/test-clean/1188/133604/1188-133604-0003.flac&quot;
+      },
+      &quot;source_file_sha256&quot;: &quot;a013400c991a40062cb4f458d247cfd6dac24fa0016bf6e2eac7a3e8e08b8ae8&quot;,
+      &quot;source_decoded_pcm_sha256&quot;: &quot;81283c3eb08ea201c5ec2d52e3a8e0ed4d0258d76164b522d1ee5ec43edebe81&quot;,
+      &quot;original_input_sha256&quot;: &quot;d03996160873a22360bde5b073fc057837439fa39b35136ceaeb8ffda73d15c2&quot;,
+      &quot;source_sample_rate&quot;: 16000,
+      &quot;source_excerpt_start_sample&quot;: 0,
+      &quot;source_excerpt_samples&quot;: 96000,
+      &quot;source_public_start_sample&quot;: 0,
+      &quot;source_public_n_samples&quot;: 32000,
+      &quot;method_provenance&quot;: {
+        &quot;kind&quot;: &quot;vocoder_analysis_resynthesis&quot;,
+        &quot;version&quot;: &quot;official HiFi-Glot44.1k inference recipe&quot;,
+        &quot;synthesis_contract_sha256&quot;: &quot;bac468a784017ca43f24dcca28ed5e786c36c0f3149f384cb8f8755c007465e4&quot;,
+        &quot;native_record_sha256&quot;: &quot;ca605cb783764f4900382f970cca6ff9568cab8ea175b7320647c6cece51651c&quot;,
+        &quot;source_revisions&quot;: {
+          &quot;hifiglot&quot;: {
+            &quot;repository&quot;: &quot;https://github.com/PupuAI/HiFi-Glot.git&quot;,
+            &quot;revision&quot;: &quot;78951625e8f0a113f401fef7032e98d58cfa7dac&quot;
+          }
+        },
+        &quot;world_lock_sha256&quot;: null,
+        &quot;checkpoint_sha256&quot;: &quot;8955e6f43593099b912c25e2e5f9abd2120950e2927b34c5aaebbe3df9eb14c4&quot;,
+        &quot;implementation_sha256&quot;: {
+          &quot;scripts/all_metrics_synthesis.py&quot;: &quot;1e3f791d6149322c45e94f49e14311a3f2fd31ad510258c11c7ff24ec159932f&quot;,
+          &quot;scripts/all_metrics_common.py&quot;: &quot;d9d2ea1fc7bb93a627d14db1eddda203d91cb9c0f1708d31db03b148ad67168a&quot;,
+          &quot;vocoderbench/methods.py&quot;: &quot;99a040b960139aa842a9a46623b34717db9c71195df21ae969fb2a9e9b9155b0&quot;,
+          &quot;scripts/all_metrics_control_adapters.py&quot;: &quot;e0683815d17fce0a2b723732d5d2aa1eb852f81c44fe2e3eadcbc26daf1a2327&quot;,
+          &quot;scripts/all_metrics_representation.py&quot;: &quot;973e341c131698a36fb2a2b82fd7dd4d59b97dce6c06b2f698f595771ead5da2&quot;,
+          &quot;scripts/all_metrics_neural_controls.py&quot;: &quot;c6a3c150c448ec41a04befc6543bd25d4512bcc28d80cf0bf14b5d8481ac66ce&quot;,
+          &quot;scripts/all_metrics_golf_control.py&quot;: &quot;883ff581ab8132a7c8d312c894a26eb29990cf9a71846223c2aa8d6434ff3b96&quot;,
+          &quot;scripts/all_metrics_llsm_storage.py&quot;: &quot;c672f5f38f934ff9710a726f029a102592c3f5e9de8d25acdace76dfae64251f&quot;,
+          &quot;scripts/all_metrics_llsm_control.py&quot;: &quot;6ba12b6933dfda3f9d6b57f46085de652f00acd348cf1ed5bef15eb60c7ad765&quot;,
+          &quot;scripts/all_metrics_storage_policy.py&quot;: &quot;81f0b90ec0d0467a5fb7767df9800fc01f713d9f5e4b5559cf6db8776ccf11ac&quot;,
+          &quot;scripts/all_metrics_interpolation.py&quot;: &quot;afa53eedf0182c4611456096542b57002d1c0ff729c3f9e31b2d7e111cf89a03&quot;,
+          &quot;vocoderbench/references/adapters_dsp.py&quot;: &quot;ab5a0cf63085524842a0614d2ebc63adbe11521852f53bf9d561a131c37ab285&quot;,
+          &quot;vocoderbench/references/adapters_neural.py&quot;: &quot;cfe845d99cf0257556da99e5a1f950c9d9ac5ac490fb7d8e8cfb9b46f2c03a08&quot;,
+          &quot;vocoderbench/references/adapters_source.py&quot;: &quot;28b70e6680a3c8090fa5d16f696eae5c28d6b55bee5eee9e90ef4b80735f2b99&quot;
+        }
+      },
+      &quot;modifications&quot;: [
+        &quot;先頭最大2秒を切出し&quot;,
+        &quot;WAV IEEE float32形式に変換&quot;,
+        &quot;固定版ボコーダーによる解析再合成（方式native標本化周波数）&quot;
+      ],
+      &quot;format&quot;: &quot;WAV IEEE float32; fixed first &lt;=2s, no normalization, clipping or resampling&quot;
+    },
+    {
+      &quot;case&quot;: &quot;librispeech_1188-133604-0003&quot;,
+      &quot;method&quot;: &quot;llsm2&quot;,
+      &quot;label&quot;: &quot;LibriSpeech test-clean・固定先頭最大2秒&quot;,
+      &quot;wav_sha256&quot;: &quot;b466470a8f24687257d996d0822df8ecc20b505ae648495bbb84ddf7b88cf482&quot;,
+      &quot;sample_rate&quot;: 24000,
+      &quot;n_samples&quot;: 48000,
+      &quot;start_sample&quot;: 0,
+      &quot;native_source_sha256&quot;: &quot;7729a911e68c432b369e28a525cbef6f67ceda2380f98c80c80b14138dabad63&quot;,
+      &quot;peak_amplitude&quot;: 0.19554734230041504,
+      &quot;source_utterance_id&quot;: &quot;1188-133604-0003&quot;,
+      &quot;source&quot;: {
+        &quot;archive_url&quot;: &quot;https://www.openslr.org/resources/12/test-clean.tar.gz&quot;,
+        &quot;member&quot;: &quot;LibriSpeech/test-clean/1188/133604/1188-133604-0003.flac&quot;
+      },
+      &quot;source_file_sha256&quot;: &quot;a013400c991a40062cb4f458d247cfd6dac24fa0016bf6e2eac7a3e8e08b8ae8&quot;,
+      &quot;source_decoded_pcm_sha256&quot;: &quot;81283c3eb08ea201c5ec2d52e3a8e0ed4d0258d76164b522d1ee5ec43edebe81&quot;,
+      &quot;original_input_sha256&quot;: &quot;d03996160873a22360bde5b073fc057837439fa39b35136ceaeb8ffda73d15c2&quot;,
+      &quot;source_sample_rate&quot;: 16000,
+      &quot;source_excerpt_start_sample&quot;: 0,
+      &quot;source_excerpt_samples&quot;: 96000,
+      &quot;source_public_start_sample&quot;: 0,
+      &quot;source_public_n_samples&quot;: 32000,
+      &quot;method_provenance&quot;: {
+        &quot;kind&quot;: &quot;vocoder_analysis_resynthesis&quot;,
+        &quot;version&quot;: &quot;LLSM2 Layer0 peak-picking; maxnhar400 npsd128 hop5ms; DIO+StoneMask&quot;,
+        &quot;synthesis_contract_sha256&quot;: &quot;a99272dd92cc4ddeb42f96bcda97b5c64f82a19ce26824ed13633ba4f51931f5&quot;,
+        &quot;native_record_sha256&quot;: &quot;7ee5d84d0699c45ffc8cd6a64b0466ce12dce28455cbbf2f511d4bac3f6c8e1b&quot;,
+        &quot;source_revisions&quot;: {
+          &quot;llsm&quot;: {
+            &quot;repository&quot;: &quot;https://github.com/Sleepwalking/libllsm2.git&quot;,
+            &quot;revision&quot;: &quot;d18cdf02b31819670e3bc23ead933ad9467da06d&quot;
+          },
+          &quot;ciglet&quot;: {
+            &quot;repository&quot;: &quot;https://github.com/Sleepwalking/ciglet.git&quot;,
+            &quot;revision&quot;: &quot;895ba9b1c0eabee83d3544208bbc82420efa3206&quot;
+          }
+        },
+        &quot;world_lock_sha256&quot;: null,
+        &quot;checkpoint_sha256&quot;: null,
+        &quot;implementation_sha256&quot;: {
+          &quot;scripts/all_metrics_synthesis.py&quot;: &quot;1e3f791d6149322c45e94f49e14311a3f2fd31ad510258c11c7ff24ec159932f&quot;,
+          &quot;scripts/all_metrics_common.py&quot;: &quot;d9d2ea1fc7bb93a627d14db1eddda203d91cb9c0f1708d31db03b148ad67168a&quot;,
+          &quot;vocoderbench/methods.py&quot;: &quot;99a040b960139aa842a9a46623b34717db9c71195df21ae969fb2a9e9b9155b0&quot;,
+          &quot;scripts/all_metrics_control_adapters.py&quot;: &quot;e0683815d17fce0a2b723732d5d2aa1eb852f81c44fe2e3eadcbc26daf1a2327&quot;,
+          &quot;scripts/all_metrics_representation.py&quot;: &quot;973e341c131698a36fb2a2b82fd7dd4d59b97dce6c06b2f698f595771ead5da2&quot;,
+          &quot;scripts/all_metrics_neural_controls.py&quot;: &quot;c6a3c150c448ec41a04befc6543bd25d4512bcc28d80cf0bf14b5d8481ac66ce&quot;,
+          &quot;scripts/all_metrics_golf_control.py&quot;: &quot;883ff581ab8132a7c8d312c894a26eb29990cf9a71846223c2aa8d6434ff3b96&quot;,
+          &quot;scripts/all_metrics_llsm_storage.py&quot;: &quot;c672f5f38f934ff9710a726f029a102592c3f5e9de8d25acdace76dfae64251f&quot;,
+          &quot;scripts/all_metrics_llsm_control.py&quot;: &quot;6ba12b6933dfda3f9d6b57f46085de652f00acd348cf1ed5bef15eb60c7ad765&quot;,
+          &quot;scripts/all_metrics_storage_policy.py&quot;: &quot;81f0b90ec0d0467a5fb7767df9800fc01f713d9f5e4b5559cf6db8776ccf11ac&quot;,
+          &quot;scripts/all_metrics_interpolation.py&quot;: &quot;afa53eedf0182c4611456096542b57002d1c0ff729c3f9e31b2d7e111cf89a03&quot;,
+          &quot;vocoderbench/references/adapters_dsp.py&quot;: &quot;ab5a0cf63085524842a0614d2ebc63adbe11521852f53bf9d561a131c37ab285&quot;,
+          &quot;vocoderbench/references/adapters_neural.py&quot;: &quot;cfe845d99cf0257556da99e5a1f950c9d9ac5ac490fb7d8e8cfb9b46f2c03a08&quot;,
+          &quot;vocoderbench/references/adapters_source.py&quot;: &quot;28b70e6680a3c8090fa5d16f696eae5c28d6b55bee5eee9e90ef4b80735f2b99&quot;
+        }
+      },
+      &quot;modifications&quot;: [
+        &quot;先頭最大2秒を切出し&quot;,
+        &quot;WAV IEEE float32形式に変換&quot;,
+        &quot;固定版ボコーダーによる解析再合成（方式native標本化周波数）&quot;
+      ],
+      &quot;format&quot;: &quot;WAV IEEE float32; fixed first &lt;=2s, no normalization, clipping or resampling&quot;
+    },
+    {
+      &quot;case&quot;: &quot;librispeech_1188-133604-0003&quot;,
+      &quot;method&quot;: &quot;magphase&quot;,
+      &quot;label&quot;: &quot;LibriSpeech test-clean・固定先頭最大2秒&quot;,
+      &quot;wav_sha256&quot;: &quot;e456dd5979aeab49612036d011f7eebb71df3826eee06a3910c5cc3b5b0693c2&quot;,
+      &quot;sample_rate&quot;: 48000,
+      &quot;n_samples&quot;: 96000,
+      &quot;start_sample&quot;: 0,
+      &quot;native_source_sha256&quot;: &quot;ea5a8291d721eb9641c4e7489679a88c0d3919a8a704da554bcf2aaa74141c87&quot;,
+      &quot;peak_amplitude&quot;: 0.20633704960346222,
+      &quot;source_utterance_id&quot;: &quot;1188-133604-0003&quot;,
+      &quot;source&quot;: {
+        &quot;archive_url&quot;: &quot;https://www.openslr.org/resources/12/test-clean.tar.gz&quot;,
+        &quot;member&quot;: &quot;LibriSpeech/test-clean/1188/133604/1188-133604-0003.flac&quot;
+      },
+      &quot;source_file_sha256&quot;: &quot;a013400c991a40062cb4f458d247cfd6dac24fa0016bf6e2eac7a3e8e08b8ae8&quot;,
+      &quot;source_decoded_pcm_sha256&quot;: &quot;81283c3eb08ea201c5ec2d52e3a8e0ed4d0258d76164b522d1ee5ec43edebe81&quot;,
+      &quot;original_input_sha256&quot;: &quot;d03996160873a22360bde5b073fc057837439fa39b35136ceaeb8ffda73d15c2&quot;,
+      &quot;source_sample_rate&quot;: 16000,
+      &quot;source_excerpt_start_sample&quot;: 0,
+      &quot;source_excerpt_samples&quot;: 96000,
+      &quot;source_public_start_sample&quot;: 0,
+      &quot;source_public_n_samples&quot;: 32000,
+      &quot;method_provenance&quot;: {
+        &quot;kind&quot;: &quot;vocoder_analysis_resynthesis&quot;,
+        &quot;version&quot;: &quot;MagPhase2 compressed100/45/45 pitch-synchronous; SPTK3.9+REAPER; Python3 compatibility patch&quot;,
+        &quot;synthesis_contract_sha256&quot;: &quot;fce8635fb5455ea463d48b4a90e50068be1b803bdc4562ad40666c4cad2faa4f&quot;,
+        &quot;native_record_sha256&quot;: &quot;ca807c0658205a495a547c1ece4229ade3898182691ca306855d4facb831bbae&quot;,
+        &quot;source_revisions&quot;: {
+          &quot;magphase&quot;: {
+            &quot;repository&quot;: &quot;https://github.com/CSTR-Edinburgh/magphase.git&quot;,
+            &quot;revision&quot;: &quot;ec6ae285c3128d3f416857f05d2a7e4be0bd5707&quot;
+          },
+          &quot;reaper&quot;: {
+            &quot;repository&quot;: &quot;https://github.com/google/REAPER.git&quot;,
+            &quot;revision&quot;: &quot;1d6e9b95e6b08b500fccbc9a043989dbda747276&quot;
+          }
+        },
+        &quot;world_lock_sha256&quot;: null,
+        &quot;checkpoint_sha256&quot;: null,
+        &quot;implementation_sha256&quot;: {
+          &quot;scripts/all_metrics_synthesis.py&quot;: &quot;1e3f791d6149322c45e94f49e14311a3f2fd31ad510258c11c7ff24ec159932f&quot;,
+          &quot;scripts/all_metrics_common.py&quot;: &quot;d9d2ea1fc7bb93a627d14db1eddda203d91cb9c0f1708d31db03b148ad67168a&quot;,
+          &quot;vocoderbench/methods.py&quot;: &quot;99a040b960139aa842a9a46623b34717db9c71195df21ae969fb2a9e9b9155b0&quot;,
+          &quot;scripts/all_metrics_control_adapters.py&quot;: &quot;e0683815d17fce0a2b723732d5d2aa1eb852f81c44fe2e3eadcbc26daf1a2327&quot;,
+          &quot;scripts/all_metrics_representation.py&quot;: &quot;973e341c131698a36fb2a2b82fd7dd4d59b97dce6c06b2f698f595771ead5da2&quot;,
+          &quot;scripts/all_metrics_neural_controls.py&quot;: &quot;c6a3c150c448ec41a04befc6543bd25d4512bcc28d80cf0bf14b5d8481ac66ce&quot;,
+          &quot;scripts/all_metrics_golf_control.py&quot;: &quot;883ff581ab8132a7c8d312c894a26eb29990cf9a71846223c2aa8d6434ff3b96&quot;,
+          &quot;scripts/all_metrics_llsm_storage.py&quot;: &quot;c672f5f38f934ff9710a726f029a102592c3f5e9de8d25acdace76dfae64251f&quot;,
+          &quot;scripts/all_metrics_llsm_control.py&quot;: &quot;6ba12b6933dfda3f9d6b57f46085de652f00acd348cf1ed5bef15eb60c7ad765&quot;,
+          &quot;scripts/all_metrics_storage_policy.py&quot;: &quot;81f0b90ec0d0467a5fb7767df9800fc01f713d9f5e4b5559cf6db8776ccf11ac&quot;,
+          &quot;scripts/all_metrics_interpolation.py&quot;: &quot;afa53eedf0182c4611456096542b57002d1c0ff729c3f9e31b2d7e111cf89a03&quot;,
+          &quot;vocoderbench/references/adapters_dsp.py&quot;: &quot;ab5a0cf63085524842a0614d2ebc63adbe11521852f53bf9d561a131c37ab285&quot;,
+          &quot;vocoderbench/references/adapters_neural.py&quot;: &quot;cfe845d99cf0257556da99e5a1f950c9d9ac5ac490fb7d8e8cfb9b46f2c03a08&quot;,
+          &quot;vocoderbench/references/adapters_source.py&quot;: &quot;28b70e6680a3c8090fa5d16f696eae5c28d6b55bee5eee9e90ef4b80735f2b99&quot;
+        }
+      },
+      &quot;modifications&quot;: [
+        &quot;先頭最大2秒を切出し&quot;,
+        &quot;WAV IEEE float32形式に変換&quot;,
+        &quot;固定版ボコーダーによる解析再合成（方式native標本化周波数）&quot;
+      ],
+      &quot;format&quot;: &quot;WAV IEEE float32; fixed first &lt;=2s, no normalization, clipping or resampling&quot;
+    }
+  ],
+  &quot;excluded&quot;: [
+    {
+      &quot;case&quot;: &quot;librispeech_1089-134686-0008&quot;,
+      &quot;method&quot;: &quot;golf&quot;,
+      &quot;status&quot;: &quot;withheld_license&quot;,
+      &quot;reason&quot;: &quot;固定checkpointに適用される重み固有の許諾が未確認のため、音声の公開を保留。&quot;
+    },
+    {
+      &quot;case&quot;: &quot;librispeech_1089-134686-0008&quot;,
+      &quot;method&quot;: &quot;sifigan&quot;,
+      &quot;status&quot;: &quot;withheld_license&quot;,
+      &quot;reason&quot;: &quot;固定配布archiveに重み固有のLICENSE/NOTICEがなく、明示許諾未確認のため、音声の公開を保留。&quot;
+    },
+    {
+      &quot;case&quot;: &quot;librispeech_1188-133604-0003&quot;,
+      &quot;method&quot;: &quot;golf&quot;,
+      &quot;status&quot;: &quot;withheld_license&quot;,
+      &quot;reason&quot;: &quot;固定checkpointに適用される重み固有の許諾が未確認のため、音声の公開を保留。&quot;
+    },
+    {
+      &quot;case&quot;: &quot;librispeech_1188-133604-0003&quot;,
+      &quot;method&quot;: &quot;sifigan&quot;,
+      &quot;status&quot;: &quot;withheld_license&quot;,
+      &quot;reason&quot;: &quot;固定配布archiveに重み固有のLICENSE/NOTICEがなく、明示許諾未確認のため、音声の公開を保留。&quot;
+    }
+  ]
+}</pre>
+<h2>原配布物のLICENSE.TXT（原文）</h2>
+<pre>LibriSpeech (c) 2014 by Vassil Panayotov
+
+LibriSpeech ASR corpus is licensed under a
+Creative Commons Attribution 4.0 International License.
+
+See &lt;http://creativecommons.org/licenses/by/4.0/&gt;.
+</pre>
+<h2>原配布物のREADME.TXT（原文）</h2>
+<details><summary>配布時の説明・謝辞を開く</summary><pre>1. General information
+======================
+
+LibriSpeech is a corpus of read speech, based on LibriVox&#x27;s public domain
+audio books. Its purpose is to enable the training and testing of automatic
+speech recognition(ASR) systems. 
+
+
+2. Structure
+============
+
+The corpus is split into several parts to enable users to selectively download
+subsets of it, according to their needs. The subsets with &quot;clean&quot; in their name
+are supposedly &quot;cleaner&quot;(at least on average), than the rest of the audio and
+US English accented. That classification was obtained using very crude automated 
+means, and should not be considered completely reliable. The subsets are
+disjoint, i.e. the audio of each speaker is assigned to exactly one subset.
+
+The parts of the corpus are as follows:
+
+* dev-clean, test-clean - development and test set containing &quot;clean&quot; speech.
+* train-clean-100 - training set, of approximately 100 hours of &quot;clean&quot; speech
+* train-clean-360 - training set, of approximately 360 hours of &quot;clean&quot; speech
+* dev-other, test-other - development and test set, with speech which was 
+                          automatically selected to be more &quot;challenging&quot; to
+                          recognize
+* train-other-500 - training set of approximately 500 hours containing speech
+                    that was not classified as &quot;clean&quot;, for some (possibly wrong)
+                    reason
+* intro - subset containing only the LibriVox&#x27;s intro disclaimers for some of the
+          readers.
+* mp3 - the original MP3-encoded audio on which the corpus is based
+* texts - the original Project Gutenberg texts on which the reference transcripts
+          for the utterances in the corpus are based.
+* raw_metadata - SQLite databases which record various pieces of information about 
+                 the source text/audio materials used, and the alignment process.
+                 (mostly for completeness - probably not very interesting or useful)
+
+2.1 Organization of the training and test subsets
+-------------------------------------------------
+
+When extracted, each of the {dev,test,train} sets re-creates LibriSpeech&#x27;s root
+directory, containing some metadata, and a dedicated subdirectory for the subset
+itself. The audio for each individual speaker is stored under a dedicated 
+subdirectory in the subset&#x27;s directory, and each audio chapter read by this
+speaker is stored in separate subsubdirectory. The following ASCII diagram 
+depicts the directory structure:
+
+
+&lt;corpus root&gt;
+    |
+    .- README.TXT
+    |
+    .- READERS.TXT
+    |
+    .- CHAPTERS.TXT
+    |
+    .- BOOKS.TXT
+    |
+    .- train-clean-100/
+                   |
+                   .- 19/
+                       |
+                       .- 198/
+                       |    |
+                       |    .- 19-198.trans.txt
+                       |    |    
+                       |    .- 19-198-0001.flac
+                       |    |
+                       |    .- 14-208-0002.flac
+                       |    |
+                       |    ...
+                       |
+                       .- 227/
+                            | ...
+
+
+
+, where 19 is the ID of the reader, and 198 and 227 are the IDs of the chapters
+read by this speaker. The *.trans.txt files contain the transcripts for each
+of the utterances, derived from the respective chapter and the FLAC files contain
+the audio itself.
+
+The main metainfo about the speech is listed in the READERS and the CHAPTERS:
+
+- READERS.TXT contains information about speaker&#x27;s gender and total amount of
+  audio in the corpus.
+
+- CHAPTERS.TXT has information about the per-chapter audio durations.
+
+The file BOOKS.TXT makes contains the title for each book, whose text is used in
+the corpus, and its Project Gutenberg ID.
+
+2.2 Organization of the &quot;intro-disclaimers&quot; subset
+--------------------------------------------------
+
+This part of the data contains simply the LibriVox&#x27;s intro disclaimers that were
+successfully extracted, using a slight modification of the alignment algorithms
+used to derive the test training sets. The standard LibriVox disclaimer is:
+
+&quot;This is a LibriVox recording. All LibriVox recordings are in the public domain. 
+ For more information, or to volunteer, please visit: librivox DOT org&quot;
+
+As is the case for the training and test sets, there is one subdirectory for
+each reader, and a subsubdirectory for each of the chapters, read by this speaker
+for which the announcement was successfully extracted.
+
+
+2.3 Organization of the &quot;original-mp3&quot; subset
+---------------------------------------------
+
+This part contains the original MP3-compressed recordings as downloaded from the
+Internet Archive. It is intended to serve as a secure reference &quot;snapshot&quot; for 
+the original audio chapters, but also to preserve (most of) the information both
+about audio, selected for the corpus, and audio that was discarded. I decided to
+try make the corpus relatively balanced in terms of per-speaker durations, so
+part of the audio available for some of the speakers was discarded. Also for the
+speakers in the training sets, only up to 10 minutes of audio is used, to 
+introduce more speaker diversity during evaluation time. There should be enough 
+information in the &quot;mp3&quot; subset to enable the re-cutting of an extended 
+&quot;LibriSpeech+&quot; corpus, containing around 150 extra hours of speech, if needed.
+
+The directory hierarchy follows the already familiar pattern. In each
+speaker directory there is a file named &quot;utterance_map&quot; which list for each
+of the utterances in the corpus, the original &quot;raw&quot; aligned utterance.
+In the &quot;header&quot; of that file there are also 2 lines, that show if the
+sentence-aware segmentation was used in the LibriSpeech corpus(i.e. if the
+reader is assigned to a test set) and the maximum allowed duration for
+the set to which this speaker was assigned.
+
+Then in the chapter directory, besides the original audio chapter .mp3 file,
+there are two sets of &quot;.seg.txt&quot; and &quot;.trans.txt&quot; files. The former contain
+the time range(in seconds) for each of the original(that I called &quot;raw&quot; above)
+utterances. The latter contains the respective transcriptions. There are two
+sets for the two possible segmentations of each chapter. The &quot;.sents&quot;
+segmentation is &quot;sentence-aware&quot;, that is, we only split on silence intervals 
+coinciding with (automatically obtained) sentence boundaries in the text.
+The other segmentation was derived by allowing splitting on every silence
+interval longer than 300ms, which leads to better utilization of the aligned
+audio.
+
+2.4 Organization of the &quot;text&quot; subset
+-------------------------------------
+
+This part just contains one subdirectory, with name equal to the ID of the
+text in Project Gutenberg&#x27;s database, for each book. The books are also
+separated in directories by their encoding-- could be either ASCII or UTF-8.
+The sole purpose of this subset is to be a permanent snapshot of the original
+text used for LibriSpeech&#x27;s construction.
+
+
+2.5 Organization of the &quot;raw-metadata&quot; part
+-------------------------------------------
+
+Contains just few SQLite databases. Some of the more important bits of
+information from this tables are described in the README file within
+the &quot;raw_data&quot; subdirectory.
+
+
+Acknowledgments
+===============
+
+First and foremost, I would like to thank the thousands of Project Gutenberg
+and LibriVox volunteers, without whose contributions the LibriSpeech corpus 
+would not have existed.
+The successful completion of this project would have been much more difficult,
+and the quality of the finished corpus much worse, if it wasn&#x27;t for the
+generous support and the many helpful advice, provided by Daniel Povey - thanks, Dan!
+I would also like to express my gratitude to Tony Robinson, for the very
+interesting, and useful discussions on the long audio alignment problem, that
+we had some time ago.
+Thanks also to Guoguo Chen and Sanjeev Khudanpur, with whom we are collaborating
+on a (yet-to-be-published) paper on the corpus, and who helped to improve
+the LibriSpeech&#x27;s example scripts in Kaldi.
+
+---
+Vassil Panayotov,
+Oct. 2, 2014 
+</pre></details>
+<p>原文出典: <a href="https://www.openslr.org/resources/12/test-clean.tar.gz">test-clean.tar.gz</a>内のLibriSpeech/LICENSE.TXT、LibriSpeech/README.TXT。
+固定datasetに記録されたarchive SHA-256: 39fde525e59672dc6d1551919b1478f724438a95aa55f874b576be21967e6c23。
+LICENSE.TXT SHA-256: 908b0b565ae9bf61b7b41447cb0b83564f320375723bcc884ec30e5537a0d5dc。README.TXT SHA-256: 596ea41ecf75d10a0393f086d863d46d1a0b0afd6670717c352b8a46f42650bf。</p>
+</body></html>
