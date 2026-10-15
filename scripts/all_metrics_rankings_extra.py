@@ -131,6 +131,18 @@ def specialized_auxiliary(data, estimand, condition):
         'selection_sha256': auxiliary.get('selection_sha256')}
 
 
+def readout_train_evidence(data, path, sources):
+    """表示用の欠測理由を、結果が参照する固定契約からそのまま引き継ぐ。"""
+    if not data.get('contract_sha256'):
+        return None
+    contract_path = path.parent / 'contract.json'
+    contract = sources.get(contract_path)
+    if contract is None or sources.evidence[str(contract_path)] != data['contract_sha256']:
+        raise ValueError('読み出し学習対象の表示用契約hashが不一致')
+    return {'source_result': str(contract_path), 'source_sha256': data['contract_sha256'],
+            'records': contract['train_targets']}
+
+
 def special_groups(sources):
     output = []
     for folder, family, estimand, label, unit, direction in SPECIAL:
@@ -169,6 +181,11 @@ def special_groups(sources):
             'method_states': {method: method_state(data, method, cell, folder, sources, condition, estimand)
                               for method, cell in cells.items()},
             'uncertainty': data.get('uncertainty', data.get('limits')),
+            'limits': data.get('limits'),
+            'definitions': data.get('definitions'),
+            'train_target_support': data.get('train_target_support'),
+            'train_target_evidence': (readout_train_evidence(data, path, sources)
+                                      if folder == 'readout-rankings' else None),
             'bootstrap': (result or {}).get('bootstrap', data.get('bootstrap')),
             'extraction_exclusions': data.get('extraction_exclusions'),
             'train_failures_by_method': data.get('train_failures_by_method'),

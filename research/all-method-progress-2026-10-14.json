@@ -112,7 +112,7 @@
     "methods": 8,
     "metric_families": [
       "SCOREQ natural/ref telephone",
-      "ECAPA cosine distance",
+      "ECAPA cosine similarity",
       "20 ms ERB"
     ],
     "status_counts": {
@@ -211,5 +211,18 @@
     "requirement": "fixed source/weights terms, attribution, source interval/hash and finite actual WAV verification"
   },
   "old_unpublished_lost_raw": "not reconstructed from conversation counts; no old missing values included",
-  "completion_claim": false
+  "completion_claim": false,
+  "label_correction": {
+    "at_utc": "2026-10-14T11:33:00Z",
+    "field": "quality_common16.metric_families",
+    "clarification": "ECAPA is cosine similarity (higher), not cosine distance. Counts remain the recorded 11:00 snapshot."
+  },
+  "snapshot_notice": {
+    "record_type": "historical_progress_snapshot",
+    "superseded_for_current_status_by": "all-method-final-2026-10-15/README.md",
+    "original_counts_and_recorded_at_preserved": true,
+    "current_main_cohort": "120 recordings / 40 speakers; planned stages terminal, not all-success",
+    "original_asv105_vctk126": "incomplete; availability100/16 are separate supplements",
+    "overall_ranking": "none"
+  }
 }
