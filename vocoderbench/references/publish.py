@@ -38,25 +38,25 @@ def publish(source: Path, topic: str, title: str, provenance: dict | None = None
     if role not in {'existing_references', 'current_base_and_references'}:
         raise ValueError('このコマンドは既存方式または現ベース併記の比較結果専用です')
     names = data['selected_methods']
-    if not names or len(names) != len(set(names)) or set(names) - METHODS.keys():
+    if not names or len(names) != len(set(names)) or set(names) - (METHODS.keys() | {'hnm'}):
         raise ValueError('方式の選択が不正です')
     current_base = role == 'current_base_and_references'
     if current_base:
         formal = data['formal_base']
         contract = data['contract']
-        if (formal.get('method') != 'hnm' or not formal.get('version') or
-                formal.get('status') != 'selected' or data['comparison_reference'] != 'hnm' or
-                'hnm' not in names or len(names) < 2):
-            raise ValueError('現ベース併記には既存のHNMベース情報と参照方式が必要です')
+        if (formal.get('method') not in {'hnm', 'pml'} or not formal.get('version') or
+                formal.get('status') != 'selected' or data['comparison_reference'] != formal.get('method') or
+                formal.get('method') not in names or len(names) < 2):
+            raise ValueError('現ベース併記には既存の開発ベース情報と参照方式が必要です')
         if (contract.get('current_base', {}).get('baseline') != formal or
-                contract.get('methods') != names or contract.get('seed') != 0):
+                contract.get('methods') != names or not isinstance(contract.get('seed'), int)):
             raise ValueError('現ベース情報・選択方式・seedが測定条件と一致しません')
         if (contract.get('scope') != 'fixed_corpus' or data['planned_cases'] < 100 or
                 data['planned_cases'] != len(contract['inputs']) or
                 len({case['id'] for case in contract['inputs']}) != len(contract['inputs']) or
                 any(case['sample_rate'] != 16000 for case in contract['inputs'])):
             raise ValueError('現ベース併記は固定100音声以上・16 kHz入力の正式比較専用です')
-    elif data['formal_base']['method'] is not None or 'hnm' in names:
+    elif data['formal_base']['method'] is not None or {'hnm', 'pml'} & set(names):
         raise ValueError('既存方式だけの比較に自作ベースを設定しないでください')
     records = data['resynthesis']
     pairs = [(row['case'], row['method']) for row in records]
@@ -87,7 +87,7 @@ def publish(source: Path, topic: str, title: str, provenance: dict | None = None
                     for row in mos_rows)
     mos_note = (f'予測MOS有効{mos_valid}/{data["planned_cases"] * (len(names) + 1)}件（原音込み）。'
                 if current_base else '')
-    comparison = ('現HNMベースと既存方式の再合成比較。新方式の採用ではありません。' if current_base
+    comparison = ('現開発ベースと既存方式の再合成比較。新方式の採用ではありません。' if current_base
                   else 'WORLDを含む既存方式の再合成比較。')
     summary = (f'{comparison}{len(names)}方式・{data["planned_cases"]}音声、'
                f'合成・音響完了{completed}/{len(records)}件。{mos_note}'
@@ -138,7 +138,7 @@ def publish(source: Path, topic: str, title: str, provenance: dict | None = None
         target.parent.mkdir(exist_ok=True)
         stage.rename(target)
     if not manifest_path.exists():
-        scope_note = ('現ベースは測定時のBASELINE.jsonと一致するHNMを併記します。'
+        scope_note = ('現ベースは測定時のBASELINE.jsonと一致する方式を併記します。'
                       'この比較によって新方式を採用したり、BASELINE.jsonを変更したりしません。'
                       if current_base else 'これは既存方式の比較であり、自作ベースの測定・選定はしません。')
         source_note = ('正式集合の音声は [コーパスの説明](../../../docs/CORPUS.md) を参照してください。'

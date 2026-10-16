@@ -13,8 +13,8 @@ import numpy as np
 
 ROOT = Path(__file__).resolve().parents[1]
 BASE_VERSION = json.loads((ROOT / 'BASELINE.json').read_text(encoding='utf-8'))['version']
-LABELS = {'identity': '原音', 'hnm': f'自作HNM {BASE_VERSION.removeprefix("hnm-")}（当時のベース）',
-          'candidate': '雑音包絡を分離した候補', 'world_harvest': 'WORLD（Harvest）'}
+LABELS = {'identity': '原音', 'pml': f'自作PML {BASE_VERSION.removeprefix("pml-")}（当時のベース）',
+          'candidate': 'Git管理外の開発候補', 'world_harvest': 'WORLD（Harvest）'}
 SEEDS = tuple(range(8))
 
 
@@ -57,7 +57,7 @@ def external_candidate(path):
     module = importlib.util.module_from_spec(spec)
     sys.modules[name] = module
     spec.loader.exec_module(module)
-    return importlib.import_module(name + '.hnm')
+    return importlib.import_module(name + '.pml')
 
 
 def source_contract(manifest, candidate, criteria=None):
@@ -68,10 +68,10 @@ def source_contract(manifest, candidate, criteria=None):
     head = run_process(['git', 'rev-parse', 'HEAD'], cwd=ROOT).stdout.strip()
     selected = ['benchmark.py', 'benchmark_io.py', 'benchmark_pipeline.py', 'metrics.py', 'extended_metrics.py',
                 'temporal_metrics.py', 'corpus.py', 'mos.py', 'mos_batch.py', 'world.py', 'control.py']
-    selected += [p.name for p in (ROOT / 'vocoderbench').glob('hnm*.py')]
+    selected += [str(p.relative_to(ROOT / 'vocoderbench')) for p in (ROOT / 'vocoderbench/pml').glob('*.py')]
     return {'schema_version': 1, 'manifest_sha256': sha(manifest),
             'formal_base': read(ROOT / 'BASELINE.json'), 'baseline_sha256': sha(ROOT / 'BASELINE.json'),
-            'method_sources': {'hnm': {'repository_commit': head, 'path': 'vocoderbench/hnm*.py'},
+            'method_sources': {'pml': {'repository_commit': head, 'path': 'vocoderbench/pml/*.py'},
                                'candidate': {'path': 'Git外の候補。棄却時はコードを公開せず完全再実行はできない'},
                                'world_harvest': read(ROOT / 'vocoderbench/world.lock.json')},
             'world_binary_sha256': sha(library), 'world_build': read(library.parent / 'build.json'),
@@ -81,7 +81,7 @@ def source_contract(manifest, candidate, criteria=None):
             'dependency_lock_sha256': sha(ROOT / 'uv.lock'),
             'decision_criteria_sha256': sha(criteria if criteria is not None else
                 ROOT / 'experiments/2026-10-12/noise-envelope/reviews/criteria.md'),
-            'candidate_source_sha256': {p.name: sha(p) for p in sorted(Path(candidate).glob('*.py'))},
+            'candidate_source_sha256': {str(p.relative_to(candidate)): sha(p) for p in sorted(Path(candidate).rglob('*.py'))},
             'noise_seeds': SEEDS, 'mos_noise_seed': 0, 'mos_extraction_seed': 20261012,
             'mos_repetitions': 1, 'mos_domain': 'bvcc', 'alignment': 'none', 'normalization': 'none',
             'interpretation': '固定した開発・比較集合。未使用の最終評価集合ではない'}

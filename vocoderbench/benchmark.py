@@ -7,7 +7,7 @@ import time
 
 import numpy as np
 
-from . import audio_samples, corpus, hnm, world
+from . import audio_samples, corpus, pml, world
 from .benchmark_io import (ROOT, LABELS, SEEDS, external_candidate, now, read, seed_summary,
                            sha, source_contract, temporal_scalars, write)
 from .extended_metrics import measure_extended
@@ -29,7 +29,9 @@ def initialize(args):
     if path.exists():
         previous = read(path)
         # HEADは出典として初回値を保持する。文章だけのcommitを科学条件変更としない。
-        contract['method_sources']['hnm']['repository_commit'] = previous['method_sources']['hnm']['repository_commit']
+        if previous.get('formal_base') != contract['formal_base']:
+            raise ValueError('保存済み比較のベースが異なります。新しい出力先を指定してください')
+        contract['method_sources']['pml']['repository_commit'] = previous['method_sources']['pml']['repository_commit']
         if previous != contract:
             raise ValueError('保存済みの比較条件と一致しません。新しい出力先で別の実験にしてください')
     else:
@@ -52,12 +54,12 @@ def acoustic_case(case, candidate, output, retry_failed=False):
                     mos={'status': 'pending', 'value': None})
     waves = output / 'waveforms' / identifier
     waves.mkdir(parents=True, exist_ok=True)
-    for method in ('hnm', 'candidate', 'world_harvest'):
+    for method in ('pml', 'candidate', 'world_harvest'):
         # 前回のseed 0波形を、再試行失敗後のMOSへ流用しない。
         (waves / f'{method}.npy').unlink(missing_ok=True)
     np.save(waves / 'identity.npy', x)
-    for method in ('hnm', 'candidate', 'world_harvest'):
-        module = hnm if method == 'hnm' else candidate if method == 'candidate' else world
+    for method in ('pml', 'candidate', 'world_harvest'):
+        module = pml if method == 'pml' else candidate if method == 'candidate' else world
         row = {'case': identifier, 'kind': 'natural_speech', 'method': method,
                'language': case['language'], 'style': case['style'], 'speaker': case['speaker'], 'speaker_group': case['speaker_gender_as_distributed'],
                'status': 'failed', 'mos': {'status': 'pending', 'value': None}, 'seed_diagnostics': []}
@@ -65,10 +67,18 @@ def acoustic_case(case, candidate, output, retry_failed=False):
         begin = time.perf_counter()
         try:
             params = module.encode(x, sr)
+            analysis_seconds = time.perf_counter() - begin
+            row['analysis_seconds'] = analysis_seconds
+            row['analysis_rtf'] = analysis_seconds / (len(x) / sr)
             for seed in SEEDS if method != 'world_harvest' else (0,):
                 repetition = {'seed': seed, 'status': 'failed'}
                 try:
+                    decode_begin = time.perf_counter()
                     y = module.decode(params, seed=seed) if method != 'world_harvest' else module.decode(params)
+                    decode_seconds = time.perf_counter() - decode_begin
+                    repetition.update(decode_seconds=decode_seconds, decode_rtf=decode_seconds / (len(x) / sr))
+                    if seed == 0:
+                        row.update(decode_seconds=decode_seconds, decode_rtf=decode_seconds / (len(x) / sr))
                     basic = compare_waveforms(x, y, sr)
                     if basic['status'] != 'ok':
                         raise ValueError(f"音響比較不能: {basic['status']}")
@@ -112,7 +122,7 @@ def score_mos(args, cases):
 def collect(args, cases, contract):
     base = contract['formal_base']
     report = {'schema_version': 3, 'formal_base': base, 'comparison_reference': base['method'],
-              'method_labels': LABELS, 'contract': contract, 'execution': read(args.output / 'execution.json'),
+              'method_labels': LABELS, 'index_methods': ['candidate', 'identity', 'pml', 'world_harvest'], 'contract': contract, 'execution': read(args.output / 'execution.json'),
               'generated_at': now(), 'planned_cases': len(cases), 'cases': [], 'resynthesis': [],
               'calibration': [], 'operations': [], 'diagnostics': [],
               'corpus_counts': corpus.read_manifest(args.manifest)['counts'],
@@ -128,7 +138,7 @@ def collect(args, cases, contract):
         part = args.output / 'parts' / f"{case['id']}.json"
         if not part.exists():
             report['cases'].append({'id': case['id'], 'status': 'pending'})
-            for method in ('hnm', 'candidate', 'world_harvest'):
+            for method in ('pml', 'candidate', 'world_harvest'):
                 report['resynthesis'].append({'case': case['id'], 'kind': 'natural_speech',
                     'method': method, 'status': 'pending', 'language': case['language'],
                     'style': case['style'], 'speaker': case['speaker'],

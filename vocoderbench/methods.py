@@ -1,22 +1,28 @@
 """現在の自作ベースと既存比較対象の共通呼出し。"""
 import numpy as np
-
-from . import world, hnm
+from . import pml, world
 from .control import edit_parameters as edit_world
 
-METHODS = ('hnm', 'world_harvest')
+METHODS = ('pml', 'world_harvest')
+
+
+def implementation(method):
+    if method not in METHODS:
+        raise ValueError(f'未対応の方式です: {method}')
+    return pml if method == 'pml' else world
 
 
 def encode(method, x, sr):
-    return hnm.encode(x, sr) if method == 'hnm' else world.encode(x, sr)
+    return implementation(method).encode(x, sr)
 
 
 def decode(method, params):
-    return hnm.decode(params, seed=0) if method == 'hnm' else world.decode(params)
+    return implementation(method).decode(params)
 
 
 def edit(method, params, **kwargs):
-    return hnm.edit_parameters(params, **kwargs) if method == 'hnm' else edit_world(params, **kwargs)
+    implementation(method)
+    return pml.edit_parameters(params, **kwargs) if method == 'pml' else edit_world(params, **kwargs)
 
 
 def scalars(params):
@@ -24,7 +30,11 @@ def scalars(params):
 
 
 def metadata(method, params):
-    return {'feature_scalars': scalars(params),
-            'feature_f0_voiced_fraction': float(np.mean(params.f0 > 0)),
-            'analysis_metadata': getattr(params, 'analysis_metadata', {}),
-            'representation': 'F0・固定Hz調波振幅包絡・相対位相・雑音帯域パワー' if method == 'hnm' else 'WORLDのF0・スペクトル包絡・非周期性'}
+    result = {'feature_scalars': scalars(params), 'analysis_metadata': getattr(params, 'analysis_metadata', {}),
+              'representation': '連続F0・60 FWCEP係数・二値雑音マスク' if method == 'pml' else 'WORLDのF0・スペクトル包絡・非周期性'}
+    if method == 'pml':
+        result['feature_f0_voiced_fraction'] = None
+        result['f0_note'] = '連続F0はパルス時計であり有声判定ではありません'
+    else:
+        result['feature_f0_voiced_fraction'] = float(np.mean(params.f0 > 0))
+    return result

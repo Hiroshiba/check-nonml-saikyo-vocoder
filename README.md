@@ -1,10 +1,17 @@
 # ボコーダーの比較と開発
 
+> **追加評価中のdraftです。** このPRはPMLへのベース置換案を保存するものです。既存研究の38指標だけで全評価完了とはせず、共通の全指標・制御・速度を追加測定してから採用可否を判断します。mainのHNMはまだ置き換わっていません。
+
 **ユーザー指示の正本は [USER_INSTRUCTIONS.md](USER_INSTRUCTIONS.md) です。** 以下の文書・コード・解釈はAI作成物です。
 
-## 最新の固定120録音・全8方式比較
+## 現在の開発ベース：PML低域拡張＋60FWCEP
 
-[音声付きの全指標・順位表をGitHub Pagesで開く](https://hiroshiba.github.io/check-nonml-saikyo-vocoder/research/all-method-final-2026-10-15/index.html) ／ [保存値・来歴・限界](research/all-method-final-2026-10-15/README.md)。2026年10月15日集計、主120録音40話者の予定工程は終端しています。元ASV105件・VCTK126件は未完で、取得可能な別補助群と区別します。現在の開発ベースはHNM v3のまま、指標別順位と対応差を示し、総合勝者は選びません。
+[採用結果・短い比較音声](research/pml-fwcep-2026-10-16/index.html) ／ [特徴量と仕組みの図解](research/pml-fwcep-2026-10-16/mechanism.html) ／ [APIと実行手順](docs/PML.md)。
+16 kHz専用の非ML解析・合成です。120録音の保存結果を根拠に旧HNMを置換しました。予測MOS・ERB誤差の改善を優先した開発上の選択で、全指標の勝者ではありません。48 kHz・時間編集・全指標アダプターは未対応です。
+
+## 以前の固定120録音・全8方式比較
+
+[音声付きの全指標・順位表をGitHub Pagesで開く](https://hiroshiba.github.io/check-nonml-saikyo-vocoder/research/all-method-final-2026-10-15/index.html) ／ [保存値・来歴・限界](research/all-method-final-2026-10-15/README.md)。2026年10月15日集計、主120録音40話者の予定工程は終端しています。元ASV105件・VCTK126件は未完で、取得可能な別補助群と区別します。当時の開発ベースはHNM v3であり、指標別順位と対応差を示し、総合勝者は選びません。
 
 ## 標準の既存方式比較
 
@@ -55,7 +62,7 @@ uv run --locked python scripts/build_site.py
 
 ## 自作開発経路と過去の記録
 
-`BASELINE.json`上の現在の開発ベースは **自作HNM v3** です。固定120録音の雑音合成5案比較から選んだもので、既存方式への品質優位を確証したものではありません。この追加ではベース実装・採用状態・過去結果を変更しません。
+`BASELINE.json`上の現在の開発ベースは **PML低域拡張＋60FWCEP** です。以下のHNMの歴史的結果は当時の値を保持し、旧実装と旧専用計算CLIは削除しました。再現が必要な場合は変更前commit `bbab81f` を使います。
 
 - [雑音合成5案の比較・音声とv3採用](experiments/2026-10-12/noise-stability/results/run-001/index.html)
 - [日本語の補助比較・英語音声例とv2採用](experiments/2026-10-12/jvs-supplement/results/run-001/index.html)
@@ -64,18 +71,18 @@ uv run --locked python scripts/build_site.py
 - [5人の往復議論と出典](experiments/2026-10-11/initial-hnm/reviews/discussion.md)
 - [GitHub Pagesの一覧](https://hiroshiba.github.io/check-nonml-saikyo-vocoder/)
 
-自作HNMとWORLDの人工信号による音響特性・操作追従と、固定自然音声2区間の補助測定は次のコマンドで記録します。正式な品質採否は上記の固定120音声比較で行います。実行環境はLinux x86_64、Python 3.12、GCC/G++ 13。uv、git、C/C++コンパイラ、自然音声復号用FFmpegが必要です。
+PMLとWORLDの人工信号による音響特性・操作追従と、固定自然音声2区間の補助測定は次のコマンドで記録します。正式な品質採否は上記の固定120音声比較で行います。実行環境はLinux x86_64、Python 3.12、GCC/G++ 13。uv、git、C/C++コンパイラ、自然音声復号用FFmpegが必要です。
 
 ```sh
 uv sync --locked
 uv run --locked python -m vocoderbench.build_world
 uv run --locked python scripts/fetch_data.py
-uv run --locked python -m vocoderbench.run --output runs/local-comparison
+uv run --locked python -m vocoderbench.run --sample-rates 16000 --output runs/local-comparison
 ```
 
 人工信号だけの原因分析では `--no-natural`、対象帯域の指定には `--sample-rates` を使います。同一出力の再decode照合、保存読込往復、固定手作り入力のAPI確認、原音波形の自己比較は行いません。既知F0に対する校正と、位相細部・雑音成分・操作追従の研究測定は保持します。
 
-自作HNMとWORLDは音高・音量・時間長を編集できます。自作表現は保存・読込と手作り入力からの合成に対応しますが、声質の知覚距離や息っぽさ等の制御は未検証です。今回追加する6方式の共通入口は再合成比較であり、属性操作・下流学習の比較は未実装です。
+PMLは保存・読込と実験的な±3半音・音量編集に対応します。時間長編集は未対応として記録し、品質を保証しません。WORLDの既存操作は維持します。過去の全8方式・197指標アダプターはHNM固定研究の履歴です。PMLの標準再合成比較は `reference --include-current-base` から実施し、過去全指標をPMLへ測定済みとは扱いません。
 
 開発候補の採否比較は、上の既存方式の準備を済ませてから実行します。
 
@@ -86,7 +93,7 @@ uv run --locked python -m vocoderbench.benchmark \
   --output runs/fixed-comparison
 ```
 
-候補はHNMと同じ解析・合成APIを持つリポジトリ外のPythonパッケージです。採否条件を毎回 `--criteria` で明示し、条件を事後変更した場合は旧判定を残します。旧3方式だけの経路は `--legacy-three-methods` で明示的に選びます。これは標準の既存方式比較の完了とは区別します。
+候補はPMLと同じ解析・合成API（パッケージ内 `pml.py`）を持つリポジトリ外のPythonパッケージです。採否条件を毎回 `--criteria` で明示し、条件を事後変更した場合は旧判定を残します。旧3方式だけの経路は `--legacy-three-methods` で明示的に選びます。これは標準の既存方式比較の完了とは区別します。
 
 自作・候補の音響指標は8乱数seed、MOS・eSTOI・F0整合性はseed 0です。追加の既存方式はseed 0の結果を併記し、8反復済みとは扱いません。不採用候補コードはGitに残さず、文章・ソースハッシュ・全測定値を保持します。そのため不採用候補の出力を公開リポジトリだけから完全再生成することはできません。
 
