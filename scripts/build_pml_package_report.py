@@ -200,7 +200,7 @@ def build(evaluation, repo, output):
             method.pop('speaker_means', None)
     data = {'schema_version': 1, 'evaluation_id': 'pml-package-seed0-fixed120',
             'formal_base_at_measurement': 'hnm-v3', 'adoption': 'recommended_next_research_base_in_pr43',
-            'decision': {'recommendation': '次の研究baseとしてPML採用を推奨', 'current_main_base': 'hnm-v3',
+            'decision': {'recommendation': '次の研究baseとしてPML採用を推奨', 'base_at_measurement': 'hnm-v3',
                          'pr': 'https://github.com/Hiroshiba/check-nonml-saikyo-vocoder/pull/43',
                          'scope': '全面優越や人間による品質実証ではない。予測品質と話者保持の改善を次の研究の出発点にする。'},
             'quality': quality, 'native': native, 'timing_cohorts': timing, 'edits': edits['summary'],
@@ -214,7 +214,7 @@ def build(evaluation, repo, output):
     title = '正式PMLパッケージの全追加評価：品質・制御・特徴表現'
     body = f'<h1>{title}</h1><p>固定120録音・40話者、PML package v1 / seed 0。既存8方式との同条件比較。</p>'
     body += '<nav><a href="#quality">品質比較</a><a href="#coverage">評価範囲</a><a href="#audio">音声5例</a><a href="#extended">制御・表現</a><a href="#provenance">来歴</a></nav>'
-    body += '<section id="quality"><h2>まず、既存方式と比較</h2><p>HNM v3と比べて、予測MOS・明瞭性・話者類似度には改善が見られます。一方、スペクトル忠実度、音高、特徴の線形読み出しには弱点が残ります。総合順位は作りません。次の研究baseとしてPMLの採用を推奨します。無編集・編集後の予測品質と話者保持の改善を次の研究の出発点にします。現mainのbaseはHNMで、PR #43がPMLへの更新提案です。全非ML方式への全面優越や、人間による品質実証を意味しません。</p><ul><li>弱点：音高追従誤差は比較8方式中7位。特徴読み出しは音高8/9位、音量・傾斜9/9位。スペクトル忠実度にも課題が残ります。</li><li>未対応：native48kHz、時間伸縮、傾斜操作、特徴補間。欠測・失敗と区別して以下に示します。</li></ul><p></p><p>今回の固定120録音は継続比較用集合で、PML探索に用いた10録音等も含み、完全未使用のholdoutではありません。旧研究の設定選定に使わなかった追加108録音集計とは別です。旧研究seed 20261015の数値を置換していません。</p>'
+    body += '<section id="quality"><h2>まず、既存方式と比較</h2><p>HNM v3と比べて、予測MOS・明瞭性・話者類似度には改善が見られます。一方、スペクトル忠実度、音高、特徴の線形読み出しには弱点が残ります。総合順位は作りません。次の研究baseとしてPMLの採用を推奨します。無編集・編集後の予測品質と話者保持の改善を次の研究の出発点にします。計測時の比較基準はHNM v3です。PR #43ではPMLを次の研究baseへ更新します。全非ML方式への全面優越や、人間による品質実証を意味しません。</p><ul><li>弱点：音高追従誤差は比較8方式中7位。特徴読み出しは音高8/9位、音量・傾斜9/9位。スペクトル忠実度にも課題が残ります。</li><li>未対応：native48kHz、時間伸縮、傾斜操作、特徴補間。欠測・失敗と区別して以下に示します。</li></ul><p></p><p>今回の固定120録音は継続比較用集合で、PML探索に用いた10録音等も含み、完全未使用のholdoutではありません。旧研究の設定選定に使わなかった追加108録音集計とは別です。旧研究seed 20261015の数値を置換していません。</p>'
     prominent = ['1.native_mos', 'existing.estoi', '2.scoreq', '5.ecapa', 'existing.erb20', 'existing.stft20.spectral_convergence', 'existing.pitch.missing_fraction']
     body += '<label>指標を絞り込む <input id="filter" type="search" placeholder="例：MOS、音高、ERB"></label>'
     secondary_opened = False
@@ -307,7 +307,7 @@ def build(evaluation, repo, output):
     body += '</tr></table><p>録音RTF→話者内平均→話者等重み。固定70は旧公開と同じ70録音24話者・353.14秒、主120は120録音40話者・615.935秒です。以前示した総処理秒÷総音声秒（時間加重）とは集計式が異なり、混在させていません。</p>'
     body += '<p>初回import等を含む1回逐次測定、保存/読み込みは別計時で除外。共有ホスト負荷は制御外。旧方式は初期化を除外した別計時なので速度順位は付けません。同じ70IDでも実行条件が同じという意味ではありません。</p>'
     body += f'<p>標準形式の実保存量 {native["payload_bytes"]:,} B、{number(native["payload_kbps"])} kbps。16kHz・16bit PCMの256 kbpsより大きく、低ビットレート音声コーデックとは呼べません。</p><p>4録音60試料が|振幅|&gt;1、最大約1.427。科学計測は浮動小数でクリップせず行いました。</p></section>'
-    body += '<section id="provenance"><h2>来歴と再現</h2><p><a href="results.json.gz">集約・制御・部分欠測JSON</a> ／ <a href="quality-raw.json.gz">71軸の保存個票・集約</a> ／ <a href="provenance.json">ソース・契約SHA</a> ／ <a href="input-manifest.json">入力manifest</a> ／ <a href="REPRODUCE.md">再現手順</a></p><p>新PMLだけを今回再計測し、既存方式は同入力・同評価器を照合した保存値を引用。旧研究の図と探索経過は<a href="../pml-fwcep-2026-10-16/mechanism.html">特徴量と仕組みの説明</a>および<a href="../pml-fwcep-2026-10-16/index.html">旧研究レポート</a>へ。そちらの音声・図・seed・支持集合は今回の正式評価とは異なります。</p><p>評価実行は既存環境を再利用。PRのuv.lockから環境を完全再構築した実行ではありません。旧MOS推論は4 threads、新MOSは2 threadsで、setuptools等にも環境差があります。評価器・モデル・音声窓・seed契約は照合していますが、実行環境全体のビット単位同一性は主張しません。小さい点推定差の順位は有意優越を意味しません。依存差と固定実装SHAは来歴JSONへ記録。PRでのbase更新提案と、48kHz・未対応操作の研究完了は別です。今回の採用推奨は残る課題を解決したという意味ではありません。</p></section>'
+    body += '<section id="provenance"><h2>来歴と再現</h2><p><a href="results.json.gz">集約・制御・部分欠測JSON</a> ／ <a href="quality-raw.json.gz">71軸の保存個票・集約</a> ／ <a href="provenance.json">ソース・契約SHA</a> ／ <a href="input-manifest.json">入力manifest</a> ／ <a href="REPRODUCE.md">再現手順</a></p><p>新PMLだけを今回再計測し、既存方式は同入力・同評価器を照合した保存値を引用。旧研究の図と探索経過は<a href="../pml-fwcep-2026-10-16/mechanism.html">特徴量と仕組みの説明</a>および<a href="../pml-fwcep-2026-10-16/index.html">旧研究レポート</a>へ。そちらの音声・図・seed・支持集合は今回の正式評価とは異なります。</p><p>評価実行は既存環境を再利用。PRのuv.lockから環境を完全再構築した実行ではありません。旧MOS推論は4 threads、新MOSは2 threadsで、setuptools等にも環境差があります。評価器・モデル・音声窓・seed契約は照合していますが、実行環境全体のビット単位同一性は主張しません。小さい点推定差の順位は有意優越を意味しません。依存差と固定実装SHAは来歴JSONへ記録。PR #43でのbase更新と、48kHz・未対応操作の研究完了は別です。今回の採用推奨は残る課題を解決したという意味ではありません。</p></section>'
     body += '''<script>document.getElementById('filter').addEventListener('input',function(){const q=this.value.toLowerCase();document.querySelectorAll('.metric').forEach(x=>{x.hidden=!x.textContent.toLowerCase().includes(q);if(q)x.open=!x.hidden});if(q)document.getElementById('more-metrics').open=true})</script>'''
     (output / 'index.html').write_text(document(title,body))
     credits = '<h1>固定5例の出典・改変</h1><p>LibriSpeech test-clean / OpenSLR 12。Vassil Panayotov（Daniel Povey協力）、LibriVox由来。<a href="https://www.openslr.org/12">配布元</a>、<a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>。録音IDは各欄に記載。先頭最大6秒の抜粋です。</p><p>原音とHNMは既存許諾確認済み掲載WAVをそのまま再利用。新PMLは16kHz解析・seed 0再合成、FLOAT32 WAVへ変換。音量正規化・クリップなし。過去の掲載WAVはPCM16変換です。著者が今回の改変を推奨しているという意味ではありません。</p>'
@@ -342,13 +342,13 @@ def build(evaluation, repo, output):
     first_metrics = ['1.native_mos', '2.scoreq', '5.ecapa', 'existing.estoi', 'existing.erb20']
     metrics.sort(key=lambda m: first_metrics.index(m['key']) if m['key'] in first_metrics else len(first_metrics))
     listing = {'id': output.name, 'path': f'research/{output.name}', 'recorded_at': datetime.now(UTC).isoformat(),
-               'title': title, 'summary':'正式package seed 0の120録音評価。品質改善と制御・表現の弱点を併記。次の研究baseとしてPML採用を推奨。予測品質・話者保持の改善と、音高追従・特徴読み出し等の弱点を併記。現mainはHNM、PR #43は更新提案。',
+               'title': title, 'summary':'正式package seed 0の120録音評価。品質改善と制御・表現の弱点を併記。次の研究baseとしてPML採用を推奨。予測品質・話者保持の改善と、音高追従・特徴読み出し等の弱点を併記。計測時の比較基準はHNM v3。PR #43でPMLを次の研究baseへ更新。',
                'cohort':'品質は軸別9方式共通支持。ASR55、静音108、その他120録音。',
                'expanded_metrics': 5, 'method_labels':LABELS, 'methods':[PML,'hnm','world_harvest'], 'metrics':metrics,
                'audio': audio_previews(media, output),
                'audio_case':CASES[0], 'mechanism_path':'../pml-fwcep-2026-10-16/mechanism.html'}
     write_json(output / 'listing.json',listing)
-    manifest = {'schema_version':1, 'scope':'新正式package測定・固定5短例・保存値。次の研究baseとしてPML採用推奨、PR更新提案。',
+    manifest = {'schema_version':1, 'scope':'新正式package測定・固定5短例・保存値。次の研究baseとしてPML採用推奨、PR #43でbase更新。',
                 'files':[{'name':str(p.relative_to(output)),**digest(p)} for p in sorted(output.rglob('*')) if p.is_file() and p.name!='artifact-manifest.json']}
     write_json(output / 'artifact-manifest.json',manifest)
 

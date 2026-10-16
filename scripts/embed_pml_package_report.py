@@ -30,7 +30,7 @@ def embed(source, destination):
     note = ('<section id="previous-material"><h2>以前の説明資料について</h2>'
             '<p>旧研究の仕組み・図・探索経過は、以前お渡しした説明HTMLをご参照ください。'
             'この単体版は新正式測定の本文・固定5例音声・保存JSONを収録しています。'
-            'PRのマージ前なので、公開サイトへのリンクはまだ完成した公開先として案内していません。</p></section>')
+            'この単体版では公開サイトの状態に依存せず、本文と音声を確認できます。</p></section>')
     text = text.replace('</main>', note + '</main>')
     destination.write_text(text)
 
