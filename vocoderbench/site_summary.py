@@ -5,7 +5,7 @@ from statistics import median
 
 LABELS = {'world_harvest': 'WORLD Harvest', 'world_dio': 'WORLD DIO',
           'llsm_world_dio': 'LLSM（WORLD DIOの音高）', 'identity': '原音（再合成の正解参照）'}
-CURRENT_LABELS = {'hnm': '自作HNM', 'world_harvest': 'WORLD（Harvest）', 'identity': '原音'}
+CURRENT_LABELS = {'pml': 'PML低域拡張＋60FWCEP', 'hnm': '自作HNM', 'world_harvest': 'WORLD（Harvest）', 'identity': '原音'}
 INDEX_METRICS = (
     ('mos', '予測MOS ↑'), ('estoi', '明瞭性 eSTOI ↑'),
     ('stft', 'スペクトル誤差 dB ↓'), ('band', '帯域の音量誤差 dB ↓'),
@@ -26,7 +26,7 @@ def brief(results):
         return '<p>' + esc(data['scope']) + '</p>' + table(data)
     if data.get('study_role') == 'current_base_and_references':
         return ('<p>現ベースと既存方式の固定比較。MOSはネイティブ全長、他は方式ごとの16 kHz共通先頭区間。'
-                '単一合成seed。HNMとの差・95%区間・有効件数・被覆率は詳細に表示します。</p>'
+                '単一合成seed。当時のベースとの差・95%区間・有効件数・被覆率は詳細に表示します。</p>'
                 + _brief_expanded(data, results))
     if data.get('study_role') == 'supplement_to_completed_fixed_120':
         return _brief_supplement(data, results)
@@ -73,7 +73,7 @@ def _brief_added_metrics(data):
     return ('<p>固定120録音40話者の追加品質・制御測定。話者等重み。'
             '無編集MOSは同条件の歴史値、編集MOS・ECAPA・ERB等を追加実測。'
             f'SCOREQ有効{scoreq_count}/240件、ASRは55録音の補助集合。総合順位は作りません。</p>'
-            '<div class="scroll"><table><thead><tr><th>指標</th><th>HNM v3（現ベース）</th>'
+            '<div class="scroll"><table><thead><tr><th>指標</th><th>HNM v3（当時のベース）</th>'
             '<th>WORLD（Harvest）</th></tr></thead><tbody>' + ''.join(rows) + '</tbody></table></div>')
 
 

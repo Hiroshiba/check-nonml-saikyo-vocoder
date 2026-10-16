@@ -13,3 +13,8 @@
 自作HNMはNumPy/SciPyによる独自実装で、WORLDの解析・合成へ処理を渡さない。WORLD（Harvest）は比較対象としてのみ呼ぶ。エンコーダー・デコーダーには学習済みモデルを使わず、自動MOSの評価器だけに使用する。固定120録音の情報は `data/clean_speech_v1.json` と `data/ATTRIBUTION.md` に残す。
 
 過去の比較ではLLSM2とcigletを使用した。現在はユーザー指定により比較対象から外し、アダプターと取得・ビルド実装を削除した。当時の版・ライセンス情報は保存済みの結果JSONとGit履歴に残る。過去のコードに適用したGPL-3.0の本文 `vocoderbench/COPYING.LLSM` は帰属の記録として保持する。
+
+
+## PML低域拡張＋60FWCEP
+
+`vocoderbench/pml/` は Gilles Degottex / University of Cambridge の公開PMLとsigproc（Apache-2.0）を限定的に移植・変更したものです。上流commit・対応ファイル・変更点・同梱ライセンスは [PML実装](../vocoderbench/pml/README.md) を参照。REAPER解析は `pyreaper==0.0.11`、CheapTrick包絡は `pyworld==0.3.5` を利用します。コード・配布物のライセンスを維持し、学習済み重みは合成器に不要です。MOS評価器の依存と音声データの利用条件は別です。

@@ -1,0 +1,130 @@
+{
+  "id": "pml-fwcep-2026-10-16",
+  "path": "research/pml-fwcep-2026-10-16",
+  "recorded_at": "2026-10-16T02:15:55.456979+00:00",
+  "title": "低域変更PMLと60係数包絡：HNM置換案（追加評価中）",
+  "summary": "追加評価中のdraft。予測MOS・ERB誤差は改善するが、全指標・制御・速度を揃えてから採用可否を判断する。",
+  "cohort": "追加108録音・36話者。設定選択には不使用。7方式の保存済み順位。",
+  "method_labels": {
+    "fwcep60": "PML + 60 FWCEP（新base）",
+    "pml_unit": "PML：元の低域保護",
+    "pml_extended": "PML：低域変更・密な包絡",
+    "hnm_reference": "HNM v3（変更前base）",
+    "previous_harvest_c0n1": "旧候補 Harvest C0N1",
+    "candidate_s1t1": "旧候補 S1T1",
+    "world_reference": "WORLD Harvest（既存比較）"
+  },
+  "metrics": [
+    {
+      "key": "predicted_mos",
+      "label": "予測MOS ↑",
+      "values": {
+        "fwcep60": {
+          "mean": 3.274743468673141,
+          "rank": 2
+        },
+        "hnm_reference": {
+          "mean": 2.5664089873985008,
+          "rank": 7
+        },
+        "world_reference": {
+          "mean": 2.9918207371676413,
+          "rank": 4
+        }
+      }
+    },
+    {
+      "key": "erb40_mae_db",
+      "label": "ERB32 平均絶対誤差 [dB] ↓",
+      "values": {
+        "fwcep60": {
+          "mean": 1.9898695732876372,
+          "rank": 1
+        },
+        "hnm_reference": {
+          "mean": 2.2624883648468614,
+          "rank": 6
+        },
+        "world_reference": {
+          "mean": 2.300765978475346,
+          "rank": 7
+        }
+      }
+    },
+    {
+      "key": "spectral_magnitude_relative_l2",
+      "label": "STFT振幅 相対L2 ↓",
+      "values": {
+        "fwcep60": {
+          "mean": 0.32457367875582505,
+          "rank": 4
+        },
+        "hnm_reference": {
+          "mean": 0.2892317814875658,
+          "rank": 1
+        },
+        "world_reference": {
+          "mean": 0.34005448207008254,
+          "rank": 7
+        }
+      }
+    },
+    {
+      "key": "yin.voicing_disagreement_fraction",
+      "label": "YIN有声/無声 総不一致率 ↓",
+      "values": {
+        "fwcep60": {
+          "mean": 0.0716650720866526,
+          "rank": 3
+        },
+        "hnm_reference": {
+          "mean": 0.056099381136343975,
+          "rank": 1
+        },
+        "world_reference": {
+          "mean": 0.10299739600478368,
+          "rank": 7
+        }
+      }
+    },
+    {
+      "key": "common_voiced_yin.paired_abs_cents_mean",
+      "label": "全7方式共通有声の絶対cent差 ↓",
+      "values": {
+        "fwcep60": {
+          "mean": 36.72616008637327,
+          "rank": 6
+        },
+        "hnm_reference": {
+          "mean": 6.656114998845579,
+          "rank": 1
+        },
+        "world_reference": {
+          "mean": 35.21973110616846,
+          "rank": 4
+        }
+      }
+    }
+  ],
+  "audio": [
+    {
+      "method": "original",
+      "label": "原音",
+      "path": "assets/8ea2a45b1bb10cef7612e5a7.wav",
+      "seconds": 2
+    },
+    {
+      "method": "fwcep60",
+      "label": "PML + 60 FWCEP（新base）",
+      "path": "assets/0667753e6472039ea69ef2aa.wav",
+      "seconds": 2
+    },
+    {
+      "method": "world_reference",
+      "label": "WORLD Harvest",
+      "path": "assets/0e868ed0e973566d4bf4b622.wav",
+      "seconds": 2
+    }
+  ],
+  "audio_case": "librispeech_1089-134686-0008"
+}

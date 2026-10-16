@@ -1,10 +1,10 @@
 {
   "status": "selected",
-  "method": "hnm",
-  "version": "hnm-v3",
-  "reason": "雑音PSDの台形積分とFFT端点配分を揃える候補Dを採用。固定120録音で帯域・平均包絡・音量誤差と予測MOSが小幅改善し、制御と保存互換を確認。明瞭性・スペクトル誤差の小さな系統的悪化を許容した開発上の選択で、知覚品質の優越は未確証。",
-  "comparison_reference": "hnm",
-  "comparison_reference_meaning": "実験開始時点の唯一の自作ベース。過去結果は当時の版を保持する。既存比較対象はWORLD（Harvest）。",
-  "previous_version": "hnm-v2",
-  "selection_report": "experiments/2026-10-12/noise-stability/results/run-001/index.html"
+  "method": "pml",
+  "version": "pml-lowband-fwcep60-v1",
+  "reason": "次の研究baseとしてPML低域雑音マスク拡張＋60FWCEPへ更新。正式package seed 0・固定120録音の品質71軸と追加制御・表現評価に基づき、旧HNMからの予測MOS・明瞭性・話者類似度改善を重視する。音高追従・固定読み出し・スペクトル誤差の弱点があり、総合優越や48 kHz対応は未確証。測定時の比較基準はHNM v3。",
+  "comparison_reference": "pml",
+  "comparison_reference_meaning": "現在の唯一の開発ベース。保存済み過去結果は測定時の方式・版・比較基準を保持する。",
+  "previous_version": "hnm-v3",
+  "selection_report": "research/pml-package-evaluation-2026-10-16/index.html"
 }

@@ -183,13 +183,13 @@ def environment_note(data):
     host = contract.get('host_environment', {}).get('packages', {})
     reference_environments = set()
     for method, item in contract.get('prepared_methods', {}).items():
-        if method == 'hnm':
+        if method in {'hnm', 'pml'}:
             continue
         env = item.get('environment', {})
         packages = dict(line.split('==', 1) for line in env.get('dependencies', '').splitlines() if '==' in line)
         reference_environments.add(f"Python {env.get('python', '未記録').split()[0]} / "
                                   f"NumPy {packages.get('numpy', '未記録')} / SciPy {packages.get('scipy', '未記録')}")
-    description = (f"HNM・音響評価・MOS：Python {contract.get('host_python', '未記録')} / "
+    description = (f"現ベース・音響評価・MOS：Python {contract.get('host_python', '未記録')} / "
                    f"NumPy {host.get('numpy', '未記録')} / SciPy {host.get('scipy', '未記録')}。"
                    + '参照方式の隔離環境：' + '、'.join(sorted(reference_environments))
                    + f"。合成は{contract.get('threads', '未記録')}スレッド、"
@@ -241,7 +241,7 @@ def render(data, output):
 <p>全長一致は16 kHzへ変換後の長さが原音と一致して音響比較が成立した件数です。生成長差はネイティブの出力長−入力長。
 被覆率は共通先頭区間/各全長で、1が全体です。原音側の不足は末尾欠落、出力側の不足は末尾追加を示します。
 RTFは解析・合成秒数÷入力秒数の単回診断で、初期化・入出力変換・評価を除外します。中央値は録音間の中央値で、反復速度測定の精度を意味しません。
-HNMは本体のPython環境、参照方式は隔離環境で実行し、Python・NumPy・PyTorchなどの版も異なります。
+現ベースは本体のPython環境、参照方式は隔離環境で実行し、Python・NumPy・PyTorchなどの版も異なります。
 方式の違いだけに速度差を帰属できません。実行環境・CPU・スレッド数はresults.jsonのcontractと保存ワーカー記録を参照してください。
 上表のピークはネイティブ全長出力、振幅1以上の割合は16 kHz共通区間に由来し、別の値です。</p></section>
 <section id="attributes"><h2>配布元の男女属性別</h2>

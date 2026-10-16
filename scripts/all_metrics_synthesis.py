@@ -104,8 +104,10 @@ def save_native_representation(adapter, z, path, method):
     """HNM/WORLDは既存native容器、他方式は明示decoder-input容器へ保存する。"""
     if method not in ('hnm', 'world_harvest'):
         return save_representation(adapter, z, path)
-    from vocoderbench import hnm, world
-    module = hnm if method == 'hnm' else world
+    if method == 'hnm':
+        raise ValueError('旧HNM再計算はbbab81fをcheckoutしてください')
+    from vocoderbench import world
+    module = world
     temporary = path.with_suffix('.part')
     module.save(z, temporary)
     temporary.replace(path)

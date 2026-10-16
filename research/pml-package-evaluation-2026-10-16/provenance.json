@@ -1,0 +1,1432 @@
+{
+  "source_files": {
+    "available-comparison.json": {
+      "bytes": 34841975,
+      "sha256": "810c30dd3693c5ba93db3229607f77e44fcd2774beef7461487345e7b386e782"
+    },
+    "native-aggregate.json": {
+      "bytes": 559,
+      "sha256": "fe3e5ab050d2058d0b2c4463f564df0a6b89ecab3bd20581cf95a27c9f6f0990"
+    },
+    "timing-cohorts.json": {
+      "bytes": 59556,
+      "sha256": "48337976c79efc5bca6e75ab0ea040e33ba0eeabb929509c75b73b9b866be0e1"
+    },
+    "extended/edit-summary.json": {
+      "bytes": 13211878,
+      "sha256": "14dfa8b836e97c04871967b3d59806f42986cad6449c75e7f784ab161b6ac9b7"
+    },
+    "extended/readout-comparison/results.json": {
+      "bytes": 20260,
+      "sha256": "dcd67468eae99e77119704a35fdce520dd6073ab91ae4d09233fac22a0814e4a"
+    },
+    "extended/abx/comparison/results.json": {
+      "bytes": 16760,
+      "sha256": "75593667ebf74e34fec95fffbf3d1d7f5521382383d51f8b409ca242b1aeabed"
+    },
+    "auxiliary/human-results.json": {
+      "bytes": 60348,
+      "sha256": "c14b90d8ddc6537d4fa07e83184dc941a66885bcdc7abda3029d19c45b974eb0"
+    },
+    "extended/unsupported-coverage.json": {
+      "bytes": 112253,
+      "sha256": "b1f99e8ecc07a8a762bc0e57fe5dcdc17c62c7d9a73e350d6b0483e18ba34201"
+    },
+    "extended/preservation/aggregate.json": {
+      "bytes": 1473,
+      "sha256": "7f3e96e5584495cc8f46f94e967ab8cf049adcf82d26a10efbacf6be8100e00b"
+    },
+    "extended/quality/speaker_ecapa/aggregate.json": {
+      "bytes": 1852,
+      "sha256": "eb76854c7c7daf9ad361ea693f24497be3de27032b9fa259ffe13fdfe916b913"
+    },
+    "extended/quality/utmosv2/aggregate.json": {
+      "bytes": 1552,
+      "sha256": "c46678d7c4216fd3950a35ae634a8298fba0b467b7aaf6c67f3eac8eb68469b9"
+    },
+    "extended/common-comparison/results.json": {
+      "bytes": 2863205,
+      "sha256": "8dadc43b1270c3055e40b8dab1b57bb936528112a165cc1a4e32c926788d9821"
+    },
+    "extended/pitch-support-explanation.json": {
+      "bytes": 113957,
+      "sha256": "33d9a4393a1259e9dd22a8edaa822a85294bc316795b6a217c4ccfb73b174ab4"
+    },
+    "results/seed-variation/stability-summary.json": {
+      "bytes": 6846120,
+      "sha256": "500eaf2ac11fa6da314766a0a41fe27ad6d5d3d41580b279d9b77133afbd22ee"
+    },
+    "extended/quantization-measurements/aggregate.json": {
+      "bytes": 7143,
+      "sha256": "091129aca5d991e911b5db05fde7816c9490ed8ba2b4875299778ad900f9bcd6"
+    },
+    "extended/quantization-quality/speaker_ecapa/aggregate.json": {
+      "bytes": 977,
+      "sha256": "c8675880975871af1d8243c89f9ea1e498acb4116834ddd047ed23f57c9f6730"
+    },
+    "extended/quantization-quality/utmosv2/aggregate.json": {
+      "bytes": 970,
+      "sha256": "bf9a8e26d02d24e6add1bbc62c802cbd0c3aee7c85fb2d5b6fdf44b273cc958b"
+    },
+    "package-source-provenance.json": {
+      "bytes": 1516,
+      "sha256": "42cb9a283bb6b395433e27d370b1ec53a1d7760cf2621a05b4f5f6fd5fae4554"
+    },
+    "runtime-vs-pr-dependencies.json": {
+      "bytes": 8917,
+      "sha256": "2e58828809ba5b5167218e3229fc8f6e3c0e96806cdd84e08693ef35a96aea46"
+    },
+    "native-contract.json": {
+      "bytes": 8473,
+      "sha256": "8163d533b228a15b438b3ab0cd4703f45e29375dd774d5cf2a435645cc851ea1"
+    },
+    "extended/quantization/contract.json": {
+      "bytes": 1375,
+      "sha256": "57115d63334d15623a0fb7c7b73a2acbed06fc5b1b6bbb1dc799299440049ed2"
+    },
+    "extended/mos-reuse-provenance.json": {
+      "bytes": 49146,
+      "sha256": "3875535352d2acc51e101da2cfe2a82f0ad1f3de4703aba2a0bb132feb0f9d6b"
+    }
+  },
+  "package": {
+    "pr": "https://github.com/Hiroshiba/check-nonml-saikyo-vocoder/pull/43",
+    "commit": "48322013c9c97c1cbb857ac1f8323cce6e5ff622",
+    "files": [
+      {
+        "file": "codec.py",
+        "sha256": "4330edfe96d19d1a40647620fa6da5d9d2945fc8dc7b910751f8aaaae8c2c967",
+        "matches_pr": true
+      },
+      {
+        "file": "parameters.py",
+        "sha256": "dcc3e45c28602354ee6b06a8622ed242c876fdfe90982630ef03deb997b0b2f5",
+        "matches_pr": true
+      },
+      {
+        "file": "storage.py",
+        "sha256": "6f9da667daca00da9e31f7be436b9bc412d2510a426359a43eeb0c6add154095",
+        "matches_pr": true
+      },
+      {
+        "file": "pml_helpers.py",
+        "sha256": "1d30cb14d521b8e5a681d4223e236223cf4a2378617f1561de06be503c93612f",
+        "matches_pr": true
+      },
+      {
+        "file": "fwcep.py",
+        "sha256": "635564296ef5d1d1fcb889b2e4dc7ef5f90355568b7a926af7a0b80f089f4dad",
+        "matches_pr": true
+      },
+      {
+        "file": "pml_analysis.py",
+        "sha256": "9460b53c28d1fde3a99f66820de17b0d3f4bc18bec35ab43a349ca753b56708d",
+        "matches_pr": true
+      },
+      {
+        "file": "__init__.py",
+        "sha256": "5104033081c7bd776037b272740a608cb4dc255dc33eb632f0fbb5417d4223e3",
+        "matches_pr": true
+      },
+      {
+        "file": "pml_pdd.py",
+        "sha256": "d87f2f2cd3bdc16367e956eaa742502a6c2ebf509a4e63eb5e666c8e0ef7521c",
+        "matches_pr": true
+      },
+      {
+        "file": "pml_synthesis.py",
+        "sha256": "d0d35e3e3c7f25768fcb6052f4a7bd74734afe6514df8fc098b7a0a94f4157fc",
+        "matches_pr": true
+      }
+    ]
+  },
+  "runtime": {
+    "python": "3.12.14",
+    "interpreter": "pulse-causal-iterations-20261015/evaluation-runtime/.venv/bin/python",
+    "package_sources": "pml-full-evaluation-20261016/source frozen PR copy",
+    "native_extension_targets": [
+      "pulse-causal-iterations-20261015/dependencies/runtime-pyreaper",
+      "pulse-causal-iterations-20261015/dependencies/runtime-pyworld"
+    ],
+    "quality_additional_target": "pml-full-evaluation-20261016/dependencies",
+    "pr_dependencies": [
+      "pyreaper==0.0.11",
+      "pyworld==0.3.5",
+      "setuptools==80.9.0",
+      "numpy==2.3.5",
+      "scipy==1.17.0",
+      "pystoi==0.4.1",
+      "utmosv2",
+      "torch==2.8.0",
+      "torchaudio==2.8.0",
+      "torchvision==0.23.0",
+      "transformers==4.51.3",
+      "librosa==0.11.0",
+      "timm==1.0.15"
+    ],
+    "pr_pyproject_sha256": "f6ab6f877acd61ef43b642081d2441b8b61d80c2da599f5cffa910797884252d",
+    "pr_uv_lock_sha256": "270f89c761dc253005840f140c520795684276c44635cce16707e8611b76a0d1",
+    "known_difference": "Native synthesis PYTHONPATH extension target exposes setuptools80.9.0 matching PR. Quality-only PYTHONPATH uses existing setuptools84.0.0 and has no pyreaper/pyworld (unused by quality inference). Native primary numeric/extension versions match PR pins. Runtime reused, not full uv sync from PR lock; transitive versions recorded.",
+    "native_packages": {
+      "pyreaper": {
+        "version": "0.0.11",
+        "distribution_path": "research-run/pulse-causal-iterations-20261015/dependencies/runtime-pyreaper/pyreaper-0.0.11.dist-info"
+      },
+      "pyworld": {
+        "version": "0.3.5",
+        "distribution_path": "research-run/pulse-causal-iterations-20261015/dependencies/runtime-pyworld/pyworld-0.3.5.dist-info"
+      },
+      "setuptools": {
+        "version": "80.9.0",
+        "distribution_path": "research-run/pulse-causal-iterations-20261015/dependencies/runtime-pyworld/setuptools-80.9.0.dist-info"
+      },
+      "numpy": {
+        "version": "2.3.5",
+        "distribution_path": "research-run/pulse-causal-iterations-20261015/evaluation-runtime/.venv/lib/python3.12/site-packages/numpy-2.3.5.dist-info"
+      },
+      "scipy": {
+        "version": "1.17.0",
+        "distribution_path": "research-run/pulse-causal-iterations-20261015/evaluation-runtime/.venv/lib/python3.12/site-packages/scipy-1.17.0.dist-info"
+      },
+      "pystoi": {
+        "version": "0.4.1",
+        "distribution_path": "research-run/pulse-causal-iterations-20261015/evaluation-runtime/.venv/lib/python3.12/site-packages/pystoi-0.4.1.dist-info"
+      },
+      "utmosv2": {
+        "version": "1.3.1.dev0",
+        "distribution_path": "research-run/pulse-causal-iterations-20261015/evaluation-runtime/.venv/lib/python3.12/site-packages/utmosv2-1.3.1.dev0.dist-info"
+      },
+      "torch": {
+        "version": "2.8.0+cpu",
+        "distribution_path": "research-run/pulse-causal-iterations-20261015/evaluation-runtime/.venv/lib/python3.12/site-packages/torch-2.8.0+cpu.dist-info"
+      },
+      "torchaudio": {
+        "version": "2.8.0+cpu",
+        "distribution_path": "research-run/pulse-causal-iterations-20261015/evaluation-runtime/.venv/lib/python3.12/site-packages/torchaudio-2.8.0+cpu.dist-info"
+      },
+      "torchvision": {
+        "version": "0.23.0+cpu",
+        "distribution_path": "research-run/pulse-causal-iterations-20261015/evaluation-runtime/.venv/lib/python3.12/site-packages/torchvision-0.23.0+cpu.dist-info"
+      },
+      "transformers": {
+        "version": "4.51.3",
+        "distribution_path": "research-run/pulse-causal-iterations-20261015/evaluation-runtime/.venv/lib/python3.12/site-packages/transformers-4.51.3.dist-info"
+      },
+      "librosa": {
+        "version": "0.11.0",
+        "distribution_path": "research-run/pulse-causal-iterations-20261015/evaluation-runtime/.venv/lib/python3.12/site-packages/librosa-0.11.0.dist-info"
+      },
+      "timm": {
+        "version": "1.0.15",
+        "distribution_path": "research-run/pulse-causal-iterations-20261015/evaluation-runtime/.venv/lib/python3.12/site-packages/timm-1.0.15.dist-info"
+      },
+      "onnxruntime": {
+        "version": "1.22.0",
+        "distribution_path": "evaluation/dependencies/onnxruntime-1.22.0.dist-info"
+      },
+      "speechbrain": {
+        "version": "1.0.3",
+        "distribution_path": "evaluation/dependencies/speechbrain-1.0.3.dist-info"
+      },
+      "tokenizers": {
+        "version": "0.21.4",
+        "distribution_path": "research-run/pulse-causal-iterations-20261015/evaluation-runtime/.venv/lib/python3.12/site-packages/tokenizers-0.21.4.dist-info"
+      },
+      "safetensors": {
+        "version": "0.8.0",
+        "distribution_path": "research-run/pulse-causal-iterations-20261015/evaluation-runtime/.venv/lib/python3.12/site-packages/safetensors-0.8.0.dist-info"
+      }
+    },
+    "quality_packages": {
+      "pyreaper": {
+        "version": null
+      },
+      "pyworld": {
+        "version": null
+      },
+      "setuptools": {
+        "version": "84.0.0",
+        "distribution_path": "research-run/pulse-causal-iterations-20261015/evaluation-runtime/.venv/lib/python3.12/site-packages/setuptools-84.0.0.dist-info"
+      },
+      "numpy": {
+        "version": "2.3.5",
+        "distribution_path": "research-run/pulse-causal-iterations-20261015/evaluation-runtime/.venv/lib/python3.12/site-packages/numpy-2.3.5.dist-info"
+      },
+      "scipy": {
+        "version": "1.17.0",
+        "distribution_path": "research-run/pulse-causal-iterations-20261015/evaluation-runtime/.venv/lib/python3.12/site-packages/scipy-1.17.0.dist-info"
+      },
+      "pystoi": {
+        "version": "0.4.1",
+        "distribution_path": "research-run/pulse-causal-iterations-20261015/evaluation-runtime/.venv/lib/python3.12/site-packages/pystoi-0.4.1.dist-info"
+      },
+      "utmosv2": {
+        "version": "1.3.1.dev0",
+        "distribution_path": "research-run/pulse-causal-iterations-20261015/evaluation-runtime/.venv/lib/python3.12/site-packages/utmosv2-1.3.1.dev0.dist-info"
+      },
+      "torch": {
+        "version": "2.8.0+cpu",
+        "distribution_path": "research-run/pulse-causal-iterations-20261015/evaluation-runtime/.venv/lib/python3.12/site-packages/torch-2.8.0+cpu.dist-info"
+      },
+      "torchaudio": {
+        "version": "2.8.0+cpu",
+        "distribution_path": "research-run/pulse-causal-iterations-20261015/evaluation-runtime/.venv/lib/python3.12/site-packages/torchaudio-2.8.0+cpu.dist-info"
+      },
+      "torchvision": {
+        "version": "0.23.0+cpu",
+        "distribution_path": "research-run/pulse-causal-iterations-20261015/evaluation-runtime/.venv/lib/python3.12/site-packages/torchvision-0.23.0+cpu.dist-info"
+      },
+      "transformers": {
+        "version": "4.51.3",
+        "distribution_path": "research-run/pulse-causal-iterations-20261015/evaluation-runtime/.venv/lib/python3.12/site-packages/transformers-4.51.3.dist-info"
+      },
+      "librosa": {
+        "version": "0.11.0",
+        "distribution_path": "research-run/pulse-causal-iterations-20261015/evaluation-runtime/.venv/lib/python3.12/site-packages/librosa-0.11.0.dist-info"
+      },
+      "timm": {
+        "version": "1.0.15",
+        "distribution_path": "research-run/pulse-causal-iterations-20261015/evaluation-runtime/.venv/lib/python3.12/site-packages/timm-1.0.15.dist-info"
+      },
+      "onnxruntime": {
+        "version": "1.22.0",
+        "distribution_path": "evaluation/dependencies/onnxruntime-1.22.0.dist-info"
+      },
+      "speechbrain": {
+        "version": "1.0.3",
+        "distribution_path": "evaluation/dependencies/speechbrain-1.0.3.dist-info"
+      },
+      "tokenizers": {
+        "version": "0.21.4",
+        "distribution_path": "research-run/pulse-causal-iterations-20261015/evaluation-runtime/.venv/lib/python3.12/site-packages/tokenizers-0.21.4.dist-info"
+      },
+      "safetensors": {
+        "version": "0.8.0",
+        "distribution_path": "research-run/pulse-causal-iterations-20261015/evaluation-runtime/.venv/lib/python3.12/site-packages/safetensors-0.8.0.dist-info"
+      }
+    },
+    "historical_mos_thread_difference": {
+      "old_threads": 4,
+      "new_threads": 2,
+      "evidence": "Old published provenance-manifest.json kind=mos data.provenance.cpu_threads; new results/utmosv2/contract.json threads=2",
+      "comparison_limit": "Same checkpoint/configuration/source commit/seed and statistical support. CPU threading differs, so numerical execution is not bit-identical and predictor runtime is not compared."
+    }
+  },
+  "native_contract": {
+    "method": "pml_fwcep60_lowband_package_v1",
+    "seed": 0,
+    "input_sha256": "cc5f7418965ec35e1eb8a66c62102d6ba0cc71d6ec9ad463bcc1a2a672e35735",
+    "source_sha256": {
+      "run_native.py": "22bdacdef9dab941dfd1c0f0f1e1573f4ec86285de89ba37e46b05da0196765b",
+      "vocoderbench/__init__.py": "73738d70706824f85fdfac302306af505437a50b0ca4cdc68fd57aec211a308d",
+      "vocoderbench/assessment/__init__.py": "37126abeb4fe6f6ce927d264c42a1b2ab934eb9b11a25faa8165d1685c37f63c",
+      "vocoderbench/assessment/__main__.py": "ce535ce8695e480492699a7a859ad36daea0e8cf0f192f8dbbd76ed00891a2e0",
+      "vocoderbench/assessment/acoustics.py": "50737f8804f433b09737442e30c224a00e5f30f12583d38c4b7465b40d9669a3",
+      "vocoderbench/assessment/common.py": "ab938071273d5d475df871e521cba4ebb21e6d352c9e52d994c04cf71a957829",
+      "vocoderbench/assessment/controls.py": "8d632e7e95f5d674f034e865a4f532247cec41c548e27cc54dd75d09504653f3",
+      "vocoderbench/assessment/curves.py": "4a794d7d7a94666f298b46ff3c6b6ac943776660ad2ea4f1174fc922140006f1",
+      "vocoderbench/assessment/probes.py": "b1bced34227ce72b5e5fe640cf39c761172aeaa0ef9341829f19bdaf4a984f39",
+      "vocoderbench/assessment/representation.py": "84ea8e9de44e797c99066e36ce862a38759a96a4c8e0671f57c5a70c8c0b12b6",
+      "vocoderbench/assessment/runner.py": "44a522b612cbaae6f0dad91153cd315bc441964feb3b6faab24938a95fb3e677",
+      "vocoderbench/audio_report.py": "f46ff0cf69e7cb956ea94ee0c7013d44052c0400c5ffc64d7f9f90b4489aa980",
+      "vocoderbench/audio_samples.py": "b9b975c1f305cdaff47909b99bd2a3dce64996e90774d2a8305adc1c67ed6c17",
+      "vocoderbench/benchmark.py": "f53c6f2c40fcab2d6f8c5f9e0b1b637c9d21d7a3665b5571c733e111f62f1edc",
+      "vocoderbench/benchmark_io.py": "7bc0a304f61a3615e7d5c9cec91914a28803085f20ff52fed9d6d467dfcf8555",
+      "vocoderbench/benchmark_pipeline.py": "a049034dcd272bbafda47cbf5719cc6b1cd8dae6f80682200cd3fc7b90e522cd",
+      "vocoderbench/benchmark_report.py": "2a8061e8acc89dc4897d77efa206922720d6aa9843c340daea8ec78c2cb0b759",
+      "vocoderbench/benchmark_summary.py": "8221086fe08bfc70cbfb9308a3a01d6fea976afb7de86af8cbacd7999e8281da",
+      "vocoderbench/build_world.py": "7d29d81c9a48d633edfeae0425c5cc055bc0a10d230232a51eab5720b2cc6974",
+      "vocoderbench/calibrate_pitch.py": "282c917bf87c6f549f32467647802852907e4b0b88128eb8017157b84566adec",
+      "vocoderbench/control.py": "bc41e73ff34b5f9cb52280a6f2317c989abc53f8b15f8f82db5ee3102b4b58bd",
+      "vocoderbench/corpus.py": "bc14cee2c3dd1a651cf2e5f0e9fe871fbd3a712d1a90d7c18a18547a625802e8",
+      "vocoderbench/extended_metrics.py": "ab3537d2c8e5d568a0cd2fa8aa36309de09c3bce7cf2f849214331a22fe3624f",
+      "vocoderbench/fixtures.py": "2b2ba922ed611abc91a29f1d270c9a91c0743bc9a8a6a131c7dcd184fcf60dc9",
+      "vocoderbench/logging_utils.py": "c80eb5d9647516a4bc03980cb178f8b4bb130ac15877d1b3289797e7ad81e381",
+      "vocoderbench/methods.py": "f50d51c8559f41b8112338b681e6ec1f6382bfdda93b63f58aed9f7d8493bb77",
+      "vocoderbench/metrics.py": "b8767feb49494058bd9ec08fd95ae2fb50ce7897fcdd6cebe319ff8a0ac51f22",
+      "vocoderbench/mos.py": "fb632aa5440245525289962372db4f3eb007cd2b3b493b2d05ecccb878e85f03",
+      "vocoderbench/mos_batch.py": "c7a732dfe52b08fa155201a7134d2f5561a10b16d1866e9f0526f61b2b244f64",
+      "vocoderbench/pml/__init__.py": "5104033081c7bd776037b272740a608cb4dc255dc33eb632f0fbb5417d4223e3",
+      "vocoderbench/pml/codec.py": "4330edfe96d19d1a40647620fa6da5d9d2945fc8dc7b910751f8aaaae8c2c967",
+      "vocoderbench/pml/fwcep.py": "635564296ef5d1d1fcb889b2e4dc7ef5f90355568b7a926af7a0b80f089f4dad",
+      "vocoderbench/pml/parameters.py": "dcc3e45c28602354ee6b06a8622ed242c876fdfe90982630ef03deb997b0b2f5",
+      "vocoderbench/pml/pml_analysis.py": "9460b53c28d1fde3a99f66820de17b0d3f4bc18bec35ab43a349ca753b56708d",
+      "vocoderbench/pml/pml_helpers.py": "1d30cb14d521b8e5a681d4223e236223cf4a2378617f1561de06be503c93612f",
+      "vocoderbench/pml/pml_pdd.py": "d87f2f2cd3bdc16367e956eaa742502a6c2ebf509a4e63eb5e666c8e0ef7521c",
+      "vocoderbench/pml/pml_synthesis.py": "d0d35e3e3c7f25768fcb6052f4a7bd74734afe6514df8fc098b7a0a94f4157fc",
+      "vocoderbench/pml/storage.py": "6f9da667daca00da9e31f7be436b9bc412d2510a426359a43eeb0c6add154095",
+      "vocoderbench/pml_cli.py": "6ef4e7c783ec6ceb04ab9a9fb98e1688c7d0673b38a332b8f589ecb13438dd19",
+      "vocoderbench/quality.py": "f6a276d9ac2acdd345e49070c51d76bfa179e82f8459d8e15dbd1a050323d63d",
+      "vocoderbench/quality_backends.py": "1f36068515bc3e218f9eb149d7fc3b2b8e62b5eee804448ff30f01624dd23a48",
+      "vocoderbench/quality_core.py": "66bf6c08633424f544b2ad7eef2a74283c05d809aa9a59df8fc1ba0e5ab51f4b",
+      "vocoderbench/quality_evidence.py": "5e555c1747c41978bfb8d1a13948510e55898ab38714551d857196d2ac87052a",
+      "vocoderbench/quality_inputs.py": "5f71690e4daf12cf900029224c78232de34327c1ff4a23ee4376064367c40909",
+      "vocoderbench/quality_reference_inputs.py": "215c0967258c20af5b3267a00cb90aa1d0c7f22bb11e1efef98ad55711511a42",
+      "vocoderbench/quality_report.py": "aae925d97a6c990ad3318899a6b14995ecbf1cf6554041344bbed708fa51dad4",
+      "vocoderbench/quality_similarity.py": "32b537b5eb006834a55314a5ddb2f9faa7f5c9fa8d6a4faa626d892360d965f7",
+      "vocoderbench/quality_visqol.py": "908ea7cbf6b8202a46863c4c4b66d5a0e3adce817facd6898bd666a2e806099a",
+      "vocoderbench/reference.py": "3381b5141ad4eddaa25a90bcea778109f4040afaa3210f75f966522d716b46ad",
+      "vocoderbench/references/__init__.py": "d96022954c3cd493c7e6d7baf35e8bd33eafea192a9f9154c8470b7937d05732",
+      "vocoderbench/references/adapters_dsp.py": "ab5a0cf63085524842a0614d2ebc63adbe11521852f53bf9d561a131c37ab285",
+      "vocoderbench/references/adapters_neural.py": "cfe845d99cf0257556da99e5a1f950c9d9ac5ac490fb7d8e8cfb9b46f2c03a08",
+      "vocoderbench/references/adapters_source.py": "28b70e6680a3c8090fa5d16f696eae5c28d6b55bee5eee9e90ef4b80735f2b99",
+      "vocoderbench/references/catalog.py": "e6f98518adec991acce2aec3452ce333dbee93a3994f9d34e1fa4a2f8cbd8c63",
+      "vocoderbench/references/common.py": "faac86809af17b7a5a340a4ea8b9ba5b44c990375487b0cdfea94f59a78cabb5",
+      "vocoderbench/references/current_base.py": "edf5f29e6440897ce808911b195409a91568c733b836304832452111b3009b7d",
+      "vocoderbench/references/evaluate.py": "f37d09a45d8f801fb68d2e9eef31c0c2aca421a64bfdc42be4d233ccc815f917",
+      "vocoderbench/references/evaluation_cache.py": "4ff288c1f4f839db9004960333e1692c47f3e28cc19b2c8781a73e65cf453e0a",
+      "vocoderbench/references/inputs.py": "11acdfe0b4611075f3d232161008f098f59daf2a9345d7e1e75a4e1680ada1c8",
+      "vocoderbench/references/integration.py": "65e0917f8805b3f0ca85e463165354f2d2d1d530556f011ed21088fc61d6d2ac",
+      "vocoderbench/references/native.py": "a6581f389587b85f547ba66d068ce974d8fe6d08252500f0f28788a7014780fb",
+      "vocoderbench/references/prepare.py": "82092abb7f8e950b0c09b08568580627e6696796d054a716824e038ed80699d4",
+      "vocoderbench/references/publish.py": "618df5263723b4a94a653d3c636255af347071396a3f3c954e27a4290d37ae58",
+      "vocoderbench/references/report.py": "011afb9c6453d9b215f7bc687d9e2dbafbdaddfdd9864e8925ce01ab9cb88fcc",
+      "vocoderbench/references/report_formal.py": "b7054982d383dfc7e6aa88f27fc56ef30d0edd057b2d48d826037dc15f0e6de0",
+      "vocoderbench/references/report_metrics.py": "f4e3e1424b091433d34aae77383cbb51c6063e7803f3c5381375a6fd8b5f33f3",
+      "vocoderbench/references/report_summary.py": "c92f65aca61793b5907470dacd31ef0afb2d6ca310878417b3e4ce0beb5c2bd9",
+      "vocoderbench/references/worker.py": "9f2ad43a514b6fcaa048365908f44a73b55d0a7d37974cb6a88777cd6b80a0d7",
+      "vocoderbench/report.py": "659d8406e8c1d09e29e120d6f0ef13ddc3047565915c125588a2704fb25c6737",
+      "vocoderbench/run.py": "c9e846e0e9e39fe25fec9daa4cb5709b31734efd2e44e1614ad0722c99fd2cd2",
+      "vocoderbench/site_summary.py": "e18f4ab57f8e809006a4758cd62b054736b6208768474ff319b10a12b4cffef2",
+      "vocoderbench/supplement_report.py": "9146b635745c6bb10c733c090696c564d463180507809588ac377ef682c668ad",
+      "vocoderbench/temporal_metrics.py": "ce21b6a4767071a7b98ea0cdbfe54bdba15b596bf8d6b6127281a97095e7be91",
+      "vocoderbench/world.py": "d14558eed772e07031a9183f57facc55acb1c27deccb3dd4fa098ffcbe0cde3a"
+    },
+    "sample_rate": 16000,
+    "source_normalization": false,
+    "clip": false,
+    "worker_count": 1,
+    "blas_threads": 2,
+    "python": "3.12.14",
+    "timing": "One sequential native analysis + actual save/load + decode per recording. No warmup/repetitions. Wall/process CPU separately; not simultaneous fair speed ranking against historical methods.",
+    "formal_base": "hnm-v3",
+    "adoption": "pending"
+  },
+  "quantization_contract": {
+    "driver_sha256": "0e156fe821f91d39fb11c6f46665e7dc3bf9e4b2e43954ffc1691f636607ef22",
+    "shared_driver_sha256": "64ce0af48776477ace67386350f8849f64003089585d13e65dd65c9d1eabc84d",
+    "native_contract_sha256": "8163d533b228a15b438b3ab0cd4703f45e29375dd774d5cf2a435645cc851ea1",
+    "input_contract_sha256": "cc5f7418965ec35e1eb8a66c62102d6ba0cc71d6ec9ad463bcc1a2a672e35735",
+    "dtype": [
+      "float16",
+      "float32"
+    ],
+    "quantized_fields": [
+      "fwcep",
+      "f0"
+    ],
+    "preserved_fields": [
+      "noise_mask_bits",
+      "seed",
+      "n_samples",
+      "sample_rate",
+      "pitch_shift_semitones"
+    ],
+    "archive": "actual numpy savez NPZ, uncompressed, read back before synthesis, NM packbits bitorder big",
+    "import_types": {
+      "fwcep": "float32",
+      "f0": "float64",
+      "noise_mask": "bool"
+    },
+    "conditions": {
+      "unedited": {},
+      "pitch_minus3": {
+        "pitch_semitones": -3.0
+      },
+      "pitch_plus3": {
+        "pitch_semitones": 3.0
+      },
+      "gain_minus6": {
+        "gain_db": -6.0
+      },
+      "gain_plus6": {
+        "gain_db": 6.0
+      }
+    },
+    "interpretation": "research mixed precision NPZ sensitivity; not standard .pml format or public API change",
+    "invalid": "nonfinite or parameter-domain violation recorded failed; no clipping/normalization",
+    "seed": 0,
+    "capacity": "actual NPZ bytes/bits including headers separate from standard .pml bitrate"
+  },
+  "mos_reuse": {
+    "driver_sha256": "6a44acf8c594e92906a8c4116d337159ac8ea77f9f58d2b146f3159f1e3b127e",
+    "main_contract_sha256": "9010ac44586b7174c7a7f7d0bfdc450560817c5ff312a1a2e717b9cc8485492d",
+    "contracts": {
+      "quality": {
+        "path": "extended/quality/utmosv2/contract.json",
+        "sha256": "8a39e21bdfebb29091ae28c8f633b2ca17ef8d3c527d86c9800c6b806c6bda68",
+        "assets_options_environment_threads_seed_match": true
+      },
+      "quantization-quality": {
+        "path": "extended/quantization-quality/utmosv2/contract.json",
+        "sha256": "c036dac4672a2583fe140e483cb263952fad7b89c322492511bd131d474458f2",
+        "assets_options_environment_threads_seed_match": true
+      }
+    },
+    "rows": [
+      {
+        "case": "librispeech_1089-134686-0008",
+        "source_result_sha256": "2aeb0aebb7cc5ca19fd7978432791d9939dbf4e3b9a79cc6e72efb0a4000f80f",
+        "full_audio_sha256": "66fa9fe6bb6e0880a2213e700ec59f6dd8af48283c5c350d980d948bf12644f6",
+        "full_pcm_sha256": "773c1e5438a6578cb595e55682d3804730f002256377c6c2f66ac799fd865b97",
+        "samples": 96000,
+        "value": 3.2559711933135986
+      },
+      {
+        "case": "librispeech_1089-134686-0011",
+        "source_result_sha256": "09f75ce04a6d46cf7763e95a8118201743dae2d173f64cfc1f34a8bab3b89694",
+        "full_audio_sha256": "19db23acecafc5665e49ab0037adf2647aeebbadcee67b34b6cc67c48641b7c2",
+        "full_pcm_sha256": "bbbf369238cf5cf35327bfa81fa3c5936a938e869a4d3fd28e52057595b54c3b",
+        "samples": 96000,
+        "value": 3.2830944061279297
+      },
+      {
+        "case": "librispeech_1089-134686-0032",
+        "source_result_sha256": "729e376c4aa8f03ff394e75abc4c05ae061e747b5f36c4d3e1a8e50422edc977",
+        "full_audio_sha256": "80bf274d7883bff30b22f1eae1ea2a40cb7d3f7fdc0bc75162dc90e44faa6cc8",
+        "full_pcm_sha256": "049c6c17503297960dafeb26ff11400d1933b4853e7e41031cd7cdf34ea0c159",
+        "samples": 65440,
+        "value": 3.5099804401397705
+      },
+      {
+        "case": "librispeech_1188-133604-0003",
+        "source_result_sha256": "21043cfbfde37f9e0288c721ce50e464bee966c4219b0541746cc602b5bd4deb",
+        "full_audio_sha256": "d3e29b6ecedbb29f259d2b5da2790a9fb769b78cda50fe1daae75d47da0e9713",
+        "full_pcm_sha256": "5b3fa678fb6b81001b4e534d6f8c3199325c65ef6d7c832417fad2eab917ed0c",
+        "samples": 96000,
+        "value": 3.4258368015289307
+      },
+      {
+        "case": "librispeech_1188-133604-0031",
+        "source_result_sha256": "6e7975da76c0d94e9146695b76d95b53b06d70b1968ed2a73e99f1bfecf1e998",
+        "full_audio_sha256": "d90fa20275934a74d5cd572daa0d35336b8d0b0b5966575e038c100213b82a22",
+        "full_pcm_sha256": "6a9e5540a23f3dffc984edcb5a8e541af6c0bfc8b4f59763ca9a2c77f124434a",
+        "samples": 68000,
+        "value": 3.212555170059204
+      },
+      {
+        "case": "librispeech_1188-133604-0037",
+        "source_result_sha256": "92cad70253593e248fc17d9d7b6067fea74e965f85245e146d8f8a4df29b7cae",
+        "full_audio_sha256": "f350d7ce011e681a9b6734f653c8f322ade61c3bf7bb2803ab396e72da8aacb9",
+        "full_pcm_sha256": "0b024b3d7bf0b8297becbe7d4a7fa49340c90e47715afa828224e7440b845354",
+        "samples": 96000,
+        "value": 3.2240724563598633
+      },
+      {
+        "case": "librispeech_121-121726-0012",
+        "source_result_sha256": "d373ace49f9d80d27846a83a57c5cf95456df7252b6c7d44a0f9f0e7f1f815eb",
+        "full_audio_sha256": "bee6b53a7fe774160c03a93083e906a9b38cf640e006db02ed7ff8660b282ace",
+        "full_pcm_sha256": "c5fa4398e4c30c78ecab9da549a9f9d82b09e11db3e6a399b39613cdfbb9a161",
+        "samples": 64720,
+        "value": 3.3045575618743896
+      },
+      {
+        "case": "librispeech_121-123852-0000",
+        "source_result_sha256": "e21ead0b2eda1502af9a3de1e4ac30363532f23074ade16df258ff3b281ffd1b",
+        "full_audio_sha256": "7c61a216cfb36a25df9ba47da3929c08b360715f11b69447f7d5bf46b7a96fbc",
+        "full_pcm_sha256": "25b0166cbb94cdd8876cca89d9159e31e6c1eab7c4166ed6f1823a29d0c11716",
+        "samples": 96000,
+        "value": 3.652020215988159
+      },
+      {
+        "case": "librispeech_121-127105-0035",
+        "source_result_sha256": "0e95c2758e22c07b9d01f431a70becad7e1417586721b8f0f8511a4080b45f32",
+        "full_audio_sha256": "b18d9de4bb3e13f164f96fdef50dc414a1745d7c85d82cc6cc700cd4d9c19a53",
+        "full_pcm_sha256": "431a9441e0953a27897faafcc673888e860427cc1c851a4975ee280113771822",
+        "samples": 96000,
+        "value": 3.397416353225708
+      },
+      {
+        "case": "librispeech_1221-135766-0005",
+        "source_result_sha256": "6a0bb5f5779813c8df9e7ffce5251cff6aaac3673e242aa8d27914884eaa74d0",
+        "full_audio_sha256": "82cfae761e5c0f68551f01def9e993c41545f7fc8d731b60e1305811d7f63067",
+        "full_pcm_sha256": "156010d75fb943f8ff8c4f4c459a3e3ceb79e7741315c8413463288e44608226",
+        "samples": 96000,
+        "value": 3.517605781555176
+      },
+      {
+        "case": "librispeech_1221-135767-0006",
+        "source_result_sha256": "7d1ed6ebf01a7f50c5922ba649363c953e746a0bb05492a5ba3bf36a10f0d976",
+        "full_audio_sha256": "de08b3227225b6e6416e19645106adb92700eccd871bbf1744d47ab13a8c0676",
+        "full_pcm_sha256": "f83365b4b891babb317cd65e44e079409136667eb343974f510c293897cb14e1",
+        "samples": 96000,
+        "value": 3.0815036296844482
+      },
+      {
+        "case": "librispeech_1221-135767-0019",
+        "source_result_sha256": "cce533ba4668e59510306b5a80a0d4a6084a6a08d6ea09e0a449a7487f33bd57",
+        "full_audio_sha256": "c31127bfe56df7907aa7c1119e5435b0210007712d7498d7cb8dea1ffbf510d2",
+        "full_pcm_sha256": "db38d477d056c90edc41e61145dad423e6eba502188ae843ee808d0258ab4c31",
+        "samples": 60480,
+        "value": 3.006274700164795
+      },
+      {
+        "case": "librispeech_1284-1180-0020",
+        "source_result_sha256": "f1914d1bc751303a26cc420134f279400044a0d759eee8e16b1d9462f5759401",
+        "full_audio_sha256": "b92a8a9832836ab3198ed296f2698bef0f8abefaa941cd6631464a7c6f6581f8",
+        "full_pcm_sha256": "dd5ad5fb27b3487f21059b09e80cb620ded95b54ba33847e44589ca1373aadda",
+        "samples": 93920,
+        "value": 3.353569746017456
+      },
+      {
+        "case": "librispeech_1284-1180-0027",
+        "source_result_sha256": "511041512431289640a21d294a380dd4be36f479620e2372e05de6009039edf5",
+        "full_audio_sha256": "41f9f1cb1146aae152023700a5cab68c57cb3b30581da057a01c513f4f8193e3",
+        "full_pcm_sha256": "edefb53747468525e843692802ef63a693b4702f3c77a18bc46e540fcb823c0a",
+        "samples": 52320,
+        "value": 3.538273334503174
+      },
+      {
+        "case": "librispeech_1284-1180-0028",
+        "source_result_sha256": "e69ee749b0c09f979d21a90168ccdd41fa590f86b7ad530978f17f91aaf1e9d6",
+        "full_audio_sha256": "4e0a20c7bfc9c3a3fa8f99e8a0c062bfef948f86a69170618631b893fabe2e56",
+        "full_pcm_sha256": "cee73f8acf54d931d43c11c71d990e62257e323ea9bc5d782e3bc4ecba1e637f",
+        "samples": 96000,
+        "value": 3.68628191947937
+      },
+      {
+        "case": "librispeech_1320-122617-0019",
+        "source_result_sha256": "499873c6e61b5e282c1b16c3e58b78d9abc644166cb8a879d9cc857fa50a978a",
+        "full_audio_sha256": "11413a3331f7a2858b9f4cdfbb77d9a99099faccb3e6c41083ecb0c4bc7f9636",
+        "full_pcm_sha256": "12fd4158f9b54c39d823b46fbab39da2d049adcb957a1b069a1e19dc44300e19",
+        "samples": 96000,
+        "value": 3.197495937347412
+      },
+      {
+        "case": "librispeech_1320-122617-0023",
+        "source_result_sha256": "4fb5e93e840c19873146eb40a8fa4228f3c23b35581a9a62f98bc175105ff783",
+        "full_audio_sha256": "8f1771f95c010c40fb4c2ffe86e6fe8c34e2799a441d1f47b7d557c552c61e20",
+        "full_pcm_sha256": "cff33dd20e12620c348dfa696a8c101c22d2639484ed151a16675e30671f8f9d",
+        "samples": 96000,
+        "value": 2.7462198734283447
+      },
+      {
+        "case": "librispeech_1320-122617-0039",
+        "source_result_sha256": "c80f818293a8bbf5409e9a79ee2cc654f675995b64a4da8f3706d75443ad5450",
+        "full_audio_sha256": "4202ecbfe4c6e0db35f56ceefb52f339d489077e1539ee595d6d908a497ea37f",
+        "full_pcm_sha256": "c7e600e0284ecb438ef287f5eed93c12dba1d6d5c361e19d530447296de6abf3",
+        "samples": 96000,
+        "value": 3.293039560317993
+      },
+      {
+        "case": "librispeech_1580-141083-0010",
+        "source_result_sha256": "dcc14df5864b9b228bda1980edd3fe12896d6f00dc25294ed79e0e5808298f8d",
+        "full_audio_sha256": "cdf96c923d1d82cf37c6fdefbc730f69d4372df8039d74a05f40ec25b0701ea7",
+        "full_pcm_sha256": "393888df285e4786d7ee9905ab0e7cc608fd743a5c756bfe7468aa4a783df1bf",
+        "samples": 85120,
+        "value": 3.529728412628174
+      },
+      {
+        "case": "librispeech_1580-141084-0016",
+        "source_result_sha256": "84d9fc32d6bc7f24bfc1068554b4fb76609b98d74cd7f3d215dafbf10d6f421e",
+        "full_audio_sha256": "5292b0ba4c0d2be4726002800577e59b36ee4c531c93aa6dacb23c010d4b71e1",
+        "full_pcm_sha256": "8ea8dc79a8959fcb4ac227758e3cd208afddc555a5210d6935546f43e498bdfc",
+        "samples": 95360,
+        "value": 3.280148983001709
+      },
+      {
+        "case": "librispeech_1580-141084-0047",
+        "source_result_sha256": "b7b87bd2243f06a1b2630435c38ad73314af144e0ea327efda281c7004700bde",
+        "full_audio_sha256": "3bf12a578fa11085b79b4869a3e2b8c6efb0e1550d6473ffc1ded71bff07e6c1",
+        "full_pcm_sha256": "54ed174afad8f6ac201e43bd77bbd2a424958dc549dd8441ffc517df2dcb99a2",
+        "samples": 84000,
+        "value": 3.725656032562256
+      },
+      {
+        "case": "librispeech_1995-1836-0000",
+        "source_result_sha256": "9041e4418ce200d2ef9d399c136d8b38be5e327821499ac375fda2cd8e199569",
+        "full_audio_sha256": "aff51014b12c0b7312916eb5a1b5e6415f3924518b94032858a5a3c1bf3075ce",
+        "full_pcm_sha256": "897456bdf4d7bbee44d541a32f7eeae0d0be51d7fb16b197449f18c8f03794c5",
+        "samples": 96000,
+        "value": 3.758202075958252
+      },
+      {
+        "case": "librispeech_1995-1836-0014",
+        "source_result_sha256": "787a3a7299b92b93ff527e21be2d1a8dee74f34dba61766439c12f5d141e9143",
+        "full_audio_sha256": "1f8a3b08b0a59b7ec4aff2fa4bb4eb808d0ba142c5bc6977f886e84cc18fe204",
+        "full_pcm_sha256": "ef3f6bbcffcf7951360b679dc085c31298e15bb95b687b9ac9e4122822f48c1d",
+        "samples": 96000,
+        "value": 3.027430295944214
+      },
+      {
+        "case": "librispeech_1995-1837-0023",
+        "source_result_sha256": "4e1375fdbb17799b132b980c87a5e4ef1e9c9c153af51315bc8d0724c211b261",
+        "full_audio_sha256": "0ef342a38ef879d26fafeaf172dc01aea4ec67b6d1e8d5c6eb145b790b275e26",
+        "full_pcm_sha256": "d86f5edf442fea519fb56e869f8cc53ee89d0f414b0f9b99655974e91ea37980",
+        "samples": 96000,
+        "value": 3.7968404293060303
+      },
+      {
+        "case": "librispeech_2094-142345-0032",
+        "source_result_sha256": "2141a12fb29c7192ae1899e0fc3a4435e292929d2edc5917c288f3002b78d90c",
+        "full_audio_sha256": "dd72bd0702abe191d2d426b818dfd01a85bffd74cfa5f6f58e982f35b2770430",
+        "full_pcm_sha256": "2ef6b0acdd0f7a9f9a22551cf39e08d9a31e5a5ec1d9e87ea4d88f1a8ec367e5",
+        "samples": 51840,
+        "value": 3.6425321102142334
+      },
+      {
+        "case": "librispeech_2094-142345-0039",
+        "source_result_sha256": "30af3aa1016d523483b2f5c76acb5580cce221ebe425d7d67f2a3dd59b120c07",
+        "full_audio_sha256": "fa9cbe06d55ff69e562563935095c536e3765274f72250fedcd5c31b52f9aaf5",
+        "full_pcm_sha256": "7d0c4fc934e3417d95408e6be867d95bea23a05a27fb3f30fac8dfade3b1c828",
+        "samples": 96000,
+        "value": 3.510488986968994
+      },
+      {
+        "case": "librispeech_2094-142345-0040",
+        "source_result_sha256": "dfdb708a04a5a052bf694added87db9c9a1760990e5d9a5b36b0cfc884b32417",
+        "full_audio_sha256": "a5dee2278e77607d5de9f4a01532d789d457570e655513f55248ccfe52f6757f",
+        "full_pcm_sha256": "dada570a78fc480d506b37605ac1142187eaef936e7ee8f2c889709504b0b3fe",
+        "samples": 38160,
+        "value": 3.167686700820923
+      },
+      {
+        "case": "librispeech_2300-131720-0022",
+        "source_result_sha256": "1fb81b4d847ea2f428f00705d6f4b570ec5c8e867edda4f6956589babbf37759",
+        "full_audio_sha256": "890c3076bf2da1c0480db76aca401a6d9fabba3c257f9f48b542ee5e8820949a",
+        "full_pcm_sha256": "3f88d87ccfc8a2bfe4c07b7b568696412c3bd704bf48a46968935fff68681a2c",
+        "samples": 96000,
+        "value": 3.4414942264556885
+      },
+      {
+        "case": "librispeech_2300-131720-0028",
+        "source_result_sha256": "e0bf590636559caa9aa6078e8ccca89275d559608d64bf514bec585f366fad3b",
+        "full_audio_sha256": "888309445edeed56b0020e78538c4bc6574afbc8d88fef1bc9e0e7b43b5462de",
+        "full_pcm_sha256": "080dd1d5422526245a492ad45ec9f16d5b0221374a72c2c8a13c228916c49f74",
+        "samples": 96000,
+        "value": 3.690479040145874
+      },
+      {
+        "case": "librispeech_2300-131720-0041",
+        "source_result_sha256": "8f282ae7732d56b4c4e614fcaa818d0d6923229689d525af415498127118fe23",
+        "full_audio_sha256": "499b20551231be6c09c6f551db05fa819666d1d6e8bdd9bf5cb176d32ca9c097",
+        "full_pcm_sha256": "8662b20a97efa8dbb749108c284033bec9c50134473a003d8247ee00927c6b91",
+        "samples": 60000,
+        "value": 2.624229669570923
+      },
+      {
+        "case": "librispeech_237-126133-0003",
+        "source_result_sha256": "aaf87075326e33d40fe93a839948d4a8895407956dcbebb1df4faf15d053c096",
+        "full_audio_sha256": "e261d7aab112eedeb4dfe29ea2b106f6c6f2fe008fb613dd31f83d1ddb32d650",
+        "full_pcm_sha256": "0b8faedef2a9babaecf3a88cc1d60824668451717e46f207bc2dae61a7974de5",
+        "samples": 96000,
+        "value": 3.339540719985962
+      },
+      {
+        "case": "librispeech_237-134500-0029",
+        "source_result_sha256": "ef0d1f59cf9be4132e09ee9924aae8087d21eeb7813003ad6b8be12ebaa8ab08",
+        "full_audio_sha256": "dde6852eb61c78b58d72ce88b89b4f5a8b07e0d78e4d8f0f01cdcc44a1a5f717",
+        "full_pcm_sha256": "3744716d67b19e581544533e99f12c2886ce8261f43a01e2657b924346978002",
+        "samples": 33040,
+        "value": 2.9403069019317627
+      },
+      {
+        "case": "librispeech_237-134500-0031",
+        "source_result_sha256": "2ad74a797c492ed4a94c15ebdaf17b394085b8d19f12250e4140c0871ae85837",
+        "full_audio_sha256": "e12e6ee1149b57b1bfe6d4ee78b454c90879c9063019fedbd73782569f58772f",
+        "full_pcm_sha256": "872bd2e7e38559de7facbd7430b52204e907e3b116639fb65a3aa49ac0378b50",
+        "samples": 96000,
+        "value": 3.196310520172119
+      },
+      {
+        "case": "librispeech_260-123286-0008",
+        "source_result_sha256": "2aedf4afca88663a455205309fb24d4f515b739f74e285a6c6e8f6d14bb3e41c",
+        "full_audio_sha256": "b6317d94d61c7454064de5ab7e6276b5ec00beee2f9aca840c7330ca0c9fd171",
+        "full_pcm_sha256": "c9dc42adff34546a33f09e99e70f16f23251c610906a35bad8dedb5f151669ec",
+        "samples": 59760,
+        "value": 3.343796968460083
+      },
+      {
+        "case": "librispeech_260-123288-0003",
+        "source_result_sha256": "316467ddafb31c8a471c4cc977ed17509734c82f5bf182356d0a4060306d9ce7",
+        "full_audio_sha256": "e022e77ca354ecd7ceee0c46f8ae8158e9268bb535e626d22e6a831c157f00da",
+        "full_pcm_sha256": "f63ce40c8ad24a43ec15516580f7e41bba3c569c862871d04fc033253f23b0a9",
+        "samples": 96000,
+        "value": 3.2447397708892822
+      },
+      {
+        "case": "librispeech_260-123440-0020",
+        "source_result_sha256": "b59af139ca44ab1c79a283da46667ba4f06997abc9e8c95ae6d2e0f115200a6b",
+        "full_audio_sha256": "adfca25eb90f1620d45fae173521106e72a15a55aea3adcafdb810791420749a",
+        "full_pcm_sha256": "3e86d8b6de31720746d700267527ac301d782990d774fc01f987b45525bbf2ec",
+        "samples": 79920,
+        "value": 2.765280246734619
+      },
+      {
+        "case": "librispeech_2830-3980-0000",
+        "source_result_sha256": "16377c3b38e14e3306c98646fafe4c39adeba7ed8344ee33949c8134e5a3c03a",
+        "full_audio_sha256": "bd9c55eb7d4889f4a7089fb9f3a9ccc1b8b9e06e56d1519052b21fa40a6096fb",
+        "full_pcm_sha256": "b9b50da9e12e3843f260a1057fd428ef91d27faaecb82b060f6ce2adfc591cc3",
+        "samples": 59680,
+        "value": 3.373333215713501
+      },
+      {
+        "case": "librispeech_2830-3980-0038",
+        "source_result_sha256": "3088cf5026b024fde513efcf6016362dbc7155dc78cec43fa91a425a40a36d5a",
+        "full_audio_sha256": "16214bf79bcddfd45971495eb68b7e023bd5aa9559dff157ed4ac0eada60060f",
+        "full_pcm_sha256": "4deb544b6dc18dfee99557e06c0fcaddb69200a7d97ec7cad90aaea182b1347a",
+        "samples": 88640,
+        "value": 2.6332366466522217
+      },
+      {
+        "case": "librispeech_2830-3980-0042",
+        "source_result_sha256": "9593720ce68c67c5c9a16de70dc98eb628dc29cab6e9412b1ec14d84dfa64259",
+        "full_audio_sha256": "56f8e01783f0d628a10e6e275ebb801afd3e97968b13ee52f63285696429ead5",
+        "full_pcm_sha256": "6f7d078e36d39bede306e7e3d046654bf293bbba299792c0824b33fddb0cedbb",
+        "samples": 48320,
+        "value": 2.7354185581207275
+      },
+      {
+        "case": "librispeech_2961-960-0010",
+        "source_result_sha256": "83c6d252c2bbb9caf51cb6d5e30e652e3b649c146349afbbb9d1907262469237",
+        "full_audio_sha256": "8a2c4aa2b3768d56cec2397e875447b551db859b49e30d13f242af441e97f78d",
+        "full_pcm_sha256": "1637615539f325cae337e902f67d3d58edd3ef819a2f63820892ed97c2a485e4",
+        "samples": 96000,
+        "value": 3.3149125576019287
+      },
+      {
+        "case": "librispeech_2961-960-0019",
+        "source_result_sha256": "6386919be1fc6dfe32b8f891ea2e1dd7e32783fec4f68d588f0083034d609fae",
+        "full_audio_sha256": "af99defdb7538eab82407a18cdfe9eb0c147445b7e2cff474b78a9ea58239be0",
+        "full_pcm_sha256": "bd30aa81ebcc9c029edfbe02f1f78187e3ff822822e36c3068f7eeb8ec8170b9",
+        "samples": 96000,
+        "value": 2.855980634689331
+      },
+      {
+        "case": "librispeech_2961-961-0011",
+        "source_result_sha256": "83c8d9e5068dd0366e996b6bc4140134ebd0e08bb029d576d27f9c3d89495502",
+        "full_audio_sha256": "3e4a9cab7b3cacb3c50a159a3f0555a98f4bd2560458223a8b98816669fef5aa",
+        "full_pcm_sha256": "4b43021954be8bb7cc120000dcc09d3f842984964c26eac9772d2bd430de6b9d",
+        "samples": 96000,
+        "value": 3.6948201656341553
+      },
+      {
+        "case": "librispeech_3570-5694-0001",
+        "source_result_sha256": "30e4b3b683f07b29f1a5a94ae6f90e616defb61596f57e1dad9e5c859155247c",
+        "full_audio_sha256": "b27001f8e9739231cf9c076b27befdf54b8d5f993338c4fe9d5bdc5e290ebc67",
+        "full_pcm_sha256": "da80101b2c461aa673607fe2195fa7eb32735ee50d3394106f008bd630607975",
+        "samples": 90800,
+        "value": 4.111931800842285
+      },
+      {
+        "case": "librispeech_3570-5694-0004",
+        "source_result_sha256": "f57f5798d644c2d0ed0c126cb5fa19ebab4660d529217abc3b4c75d1ca1613c1",
+        "full_audio_sha256": "d303d41cb6ef30e534783e91a6cca760e46d2cfa744102908fa8d15ebed20806",
+        "full_pcm_sha256": "361781968ffb2ea9066a64717ad3a639b7e882f211c777f2134ca2587b0d0211",
+        "samples": 85280,
+        "value": 3.5559024810791016
+      },
+      {
+        "case": "librispeech_3570-5696-0010",
+        "source_result_sha256": "4d93df1a3d9c4dac653595dc49de836de0fe98b80451958b6b729c368cd55247",
+        "full_audio_sha256": "2a93a994a79a6e5dabe07ddd8bd8df199c89ed1755b08d059ea70ee4d660bcb2",
+        "full_pcm_sha256": "80539d241e20abcf2debd6be62f686151d75ae0d36b1cecb2ee33317e2f4ae77",
+        "samples": 96000,
+        "value": 3.768902063369751
+      },
+      {
+        "case": "librispeech_3575-170457-0034",
+        "source_result_sha256": "cd8159a8206f699d68501387c1ac8d0a0082e032311f2c6575ad400ed6170447",
+        "full_audio_sha256": "64d57ce0ea8054ede5fa50273645adc68adee78283a378f2c7feeecb15e1cb6b",
+        "full_pcm_sha256": "bfeeafd2c465eac4e36771707c4206d42e5d6abce9f71774e34d876495ec362f",
+        "samples": 55920,
+        "value": 3.094104766845703
+      },
+      {
+        "case": "librispeech_3575-170457-0041",
+        "source_result_sha256": "f9b93925ae4d0979d189e1bc034f0718c6df59e40cb4f786b8103877e44440d4",
+        "full_audio_sha256": "7609139c7f9d333e50c626c796009d9772d2ef9d0c3b51abf11dd6991936be49",
+        "full_pcm_sha256": "84544ea1b104cbeeb4d47d6623cf7158b6f419f128511596a25ba2d33ec3f451",
+        "samples": 96000,
+        "value": 3.38834547996521
+      },
+      {
+        "case": "librispeech_3575-170457-0054",
+        "source_result_sha256": "6fad3bca13b7106a54b59e6e5befce7ab9ca187ed2fcb03e61b17601a630283a",
+        "full_audio_sha256": "595f65f9c6023938ff413827e8999efe73c424cc5f39932f8f72f87e7e763fc2",
+        "full_pcm_sha256": "2b94b012fdbf5bf943aa473e0499dc53109a183672f908b8eb1208fe5f3352e4",
+        "samples": 96000,
+        "value": 3.0904972553253174
+      },
+      {
+        "case": "librispeech_3729-6852-0000",
+        "source_result_sha256": "a8d8a8feafaa15973793d2abcd227251aca7f1736ece94624937d160da4dfdc5",
+        "full_audio_sha256": "757da43e6e8bc1833a5f507a122473011433a54910f4b9bd2da8defcb9ebbb6b",
+        "full_pcm_sha256": "22e0a091b6d010e609e2d61b87f49f00acd26fe9616c7c243228e4a2b9aa694c",
+        "samples": 96000,
+        "value": 3.8052072525024414
+      },
+      {
+        "case": "librispeech_3729-6852-0007",
+        "source_result_sha256": "d7efe5d61436326660b04713e1fdbf2f00a0f5322504f12f8be1b7ec10847111",
+        "full_audio_sha256": "0c4fe6316ae1842ac43f698310e71c24dc950bb5a682727c3dbfd8b942ca6f7f",
+        "full_pcm_sha256": "4b8c5a86e81c69bd6d5c072314cac31450407a975caa05c3123ea4bd3ae9bdca",
+        "samples": 96000,
+        "value": 3.2946512699127197
+      },
+      {
+        "case": "librispeech_3729-6852-0017",
+        "source_result_sha256": "dbf1112560da65795097dedc7465322da56162ae6c24146b771d1db3ccbb15c5",
+        "full_audio_sha256": "04b1674e00aa0254e74311818bb85e0db8aa45c94d36c0dd8a742a54cb7af1d6",
+        "full_pcm_sha256": "786ed7d4e4a831f8657220bb74246f06e6d6939bfb0534df41deadd24188829f",
+        "samples": 96000,
+        "value": 3.427109956741333
+      },
+      {
+        "case": "librispeech_4077-13751-0001",
+        "source_result_sha256": "e029e73fa9297517caaeabfb6f0de76246d11194c24e7089e0b52e5d1e54593e",
+        "full_audio_sha256": "3459448d582a664218e0e0e288c72e1a4d9e2d919390ba0ba2685e36fb3941c6",
+        "full_pcm_sha256": "c52566d06742abfd13f3a0459eddeeb94855f363b38fba20c1ffda89809f62fb",
+        "samples": 96000,
+        "value": 2.9977729320526123
+      },
+      {
+        "case": "librispeech_4077-13754-0002",
+        "source_result_sha256": "8ce0ed8523e0b429b497901b9ccda34418633d5289ee4418cae10ddd3807313b",
+        "full_audio_sha256": "451148d5f940818b50fb53c7d8d768aafe2692916037f4e739df946901b3a6b1",
+        "full_pcm_sha256": "eb696dc3821511a6cf638378b86e51e11c2cf2402b3124a05db3b5ed9261079f",
+        "samples": 96000,
+        "value": 3.043950080871582
+      },
+      {
+        "case": "librispeech_4077-13754-0012",
+        "source_result_sha256": "df8df2d05e0d7888f97e95bfcd7fde67333ce709bb2563d9f183011df845a284",
+        "full_audio_sha256": "0879343cdaa44ca6da2f24886ff1c986be8348e2542583d25145672d37ee9f5f",
+        "full_pcm_sha256": "348d267240b1dc0cb181d3e210338a839476a2809032933bbb18dcf0ca8efeb4",
+        "samples": 96000,
+        "value": 3.395137071609497
+      },
+      {
+        "case": "librispeech_4446-2271-0003",
+        "source_result_sha256": "91b3d399d2774c420df8c473a685e5d642208ef82fee303681468e332e414f1d",
+        "full_audio_sha256": "a945bf9329bc03056eec851a1513207466ef4344e8fcf2f01b2c109dd79230f0",
+        "full_pcm_sha256": "386cc9e01131817c2fe383eb6b9e9298e077602f624d93a461364ccf34c5a5b5",
+        "samples": 59200,
+        "value": 2.671471357345581
+      },
+      {
+        "case": "librispeech_4446-2271-0022",
+        "source_result_sha256": "4d7b75c48b8ba807f58e13a91a3d19970ceecc79bf862272bcdb216ad0a265e4",
+        "full_audio_sha256": "bbbff73c3e3cee62f0ffafdc25025a9ec68d1cdfffe966332cd156e3c1c448d2",
+        "full_pcm_sha256": "a754e4705c26de48aa39ef46bdb744e97a85336297076fdfc9858024117ea497",
+        "samples": 37200,
+        "value": 3.1347992420196533
+      },
+      {
+        "case": "librispeech_4446-2273-0010",
+        "source_result_sha256": "4ac1ea9ae9f18c540fd130e149b1a8a57ca7f0717e6e50d3a33e79eb27126953",
+        "full_audio_sha256": "ffeea31313345c55f48c365d50db2a4eee6c3b229b3ee4a2a483bd22abad8f65",
+        "full_pcm_sha256": "bee7770d92d888266ecb0ae4ec3f9415d1f34797396b875a294798edcb6ffc39",
+        "samples": 96000,
+        "value": 3.6833112239837646
+      },
+      {
+        "case": "librispeech_4507-16021-0016",
+        "source_result_sha256": "d8390be812a28f97be584b016c716bd33d7de9a57de0a11b8126b1e089377012",
+        "full_audio_sha256": "6f432989a6135a4c249d4af6c666cdeac173df59129eb6ec6a78cf69b853f01e",
+        "full_pcm_sha256": "0680090def4f44d2a9cb44801102fe34b2c251db97e918c59022e2a407b98cee",
+        "samples": 96000,
+        "value": 2.84604811668396
+      },
+      {
+        "case": "librispeech_4507-16021-0032",
+        "source_result_sha256": "302399e38f603d337686e4e8947835c8f01326a170e0635fedcc13fcde45aed2",
+        "full_audio_sha256": "4df4b25fcde10917724542c01e0f1b8e6091a1fb2ae9f93c487ea6c36c4f26cf",
+        "full_pcm_sha256": "fadcbf8f7db4b1e148503d8daf1c01c4691badd8e5571b0915f40d0857e20b0b",
+        "samples": 96000,
+        "value": 2.4718215465545654
+      },
+      {
+        "case": "librispeech_4507-16021-0045",
+        "source_result_sha256": "d51a99dda27f78ca363494f5b6e3b3c197a4c0ded0e57761f31b425642453d19",
+        "full_audio_sha256": "feb770a7799491b5999bf98b7c4300f0074fecd844fdd9e4a8b083cef8518a12",
+        "full_pcm_sha256": "cb82c31df90d4bda6090febb2f6f64174779135224460d79ca3447b596139045",
+        "samples": 78240,
+        "value": 3.0517187118530273
+      },
+      {
+        "case": "librispeech_4970-29093-0004",
+        "source_result_sha256": "11d765f0422fe8e79fd56fce7456900c21f40131c834e13f572b4a2b88cb5f14",
+        "full_audio_sha256": "afa78692f12f8b7055c839ee07bee7040be1ecb1cc98bcd71a0c95442ddd81f4",
+        "full_pcm_sha256": "f7fc1cce58eb9ec9123c14a9ebbd20d99dcbff05f90dd555dea0b8e65537a7c5",
+        "samples": 60000,
+        "value": 2.8219974040985107
+      },
+      {
+        "case": "librispeech_4970-29093-0005",
+        "source_result_sha256": "3c2c82228fdbc88cc090d8e2b58abe4706da575200d52c2931d81ad769a35c36",
+        "full_audio_sha256": "41f8a41aadbee2afa00e81eef4faafdb02f8da96fd8064bfe500a66a0fe4ce9d",
+        "full_pcm_sha256": "6cb4209e7b988a1847e6f2bfcebe316c6128af162715f118382cbd816424e726",
+        "samples": 96000,
+        "value": 2.758685827255249
+      },
+      {
+        "case": "librispeech_4970-29095-0008",
+        "source_result_sha256": "34929595d237e75cc70ddd86ab250b746d7df246be8d2cddfb09b0acba176cd4",
+        "full_audio_sha256": "81d9f5f63343c18e9b2774f5f993361d3c97c674d42b7b032f9c12614a6b2522",
+        "full_pcm_sha256": "869aa15ef8f56ffa4d4fa26f47171663c372c057261f2262c184c688ba7e4fd3",
+        "samples": 48640,
+        "value": 3.5902183055877686
+      },
+      {
+        "case": "librispeech_4992-23283-0016",
+        "source_result_sha256": "9307741901ce9e816247c4e8c3e03f46a7891f6e158d7800c4002e9a3c1cb0d8",
+        "full_audio_sha256": "944383bd1d4cf33a2df5d0b2538f5ed5ff5b5cc6f4dca482ecb1ccea0d156f93",
+        "full_pcm_sha256": "47b3d5ad73fc1ccf81bd18e28bd20f6c09fdf235d69e55bfa7ec6cb641451bfa",
+        "samples": 71920,
+        "value": 3.6088950634002686
+      },
+      {
+        "case": "librispeech_4992-41797-0000",
+        "source_result_sha256": "0add2c9f76bc7211adf50a536915c2ca15df7b6d4832ba539bf3e9cbef7d172d",
+        "full_audio_sha256": "5c0b384ac6527500754e3164d52427001e753ba34e82ef23eb460dca70d6e643",
+        "full_pcm_sha256": "98a406b5438fc745cdc6bdb2f1953fe2c61d9636a8096b0f9616b957762640ab",
+        "samples": 87760,
+        "value": 2.6122844219207764
+      },
+      {
+        "case": "librispeech_4992-41806-0000",
+        "source_result_sha256": "5b02ff5437aefc2f9bb629b761a3ae2a10c68d7a4b80c26a8e5abe48f3e5be17",
+        "full_audio_sha256": "abd748cc2df8f8248afb62597e9eb9ccda68d24ccb5170e87bc57d86b33006c0",
+        "full_pcm_sha256": "d0fe067b7599d9b92f61ccd3942e1a0230971d2c9b8a5aaae96c15c2e666fa1f",
+        "samples": 96000,
+        "value": 3.5297763347625732
+      },
+      {
+        "case": "librispeech_5105-28240-0011",
+        "source_result_sha256": "84bc5870d5c39a31aeac45f2ccc433ea1ebe29f354845c34e6b5ebc3ef61c52d",
+        "full_audio_sha256": "782be04c49be0d2854dc209dfab19a5bac4f79c80a07d50a61cde1a7a94204c4",
+        "full_pcm_sha256": "7ebb075e9fdb5d43c0f75b1cf9be12ebe9c81a3c6784eef7313c8b7a1085d4da",
+        "samples": 96000,
+        "value": 3.1285464763641357
+      },
+      {
+        "case": "librispeech_5105-28241-0004",
+        "source_result_sha256": "3a7e6caee6002e872f39ef20449bf4b4c31ea53e726d9f6fb123d7c04a2ee3f5",
+        "full_audio_sha256": "7ad6f503e4e48b4e15e282fcff8d6900dafa32a15adafdff7ac561bd9303907e",
+        "full_pcm_sha256": "b8e4e3748da0f9de01dc79dcf2bd678c0d403b301e7da86d4136783fe1afb2eb",
+        "samples": 96000,
+        "value": 3.18790602684021
+      },
+      {
+        "case": "librispeech_5105-28241-0019",
+        "source_result_sha256": "e845cb4f40fa6c607c32ba58157ccd91bb47a7475f375ba1ffb2ad2bca3a99dc",
+        "full_audio_sha256": "bd349c1e7ff1f08b72b66788102c7522eec16b1736e08f03fa7f3664e06922e6",
+        "full_pcm_sha256": "d4fb61561d222b9143071708e4c2617c7ad3f02c4d0ea57eedd946203bacb236",
+        "samples": 84640,
+        "value": 2.818547487258911
+      },
+      {
+        "case": "librispeech_5142-33396-0019",
+        "source_result_sha256": "d77ee8f67a392fc4575d233370c749236da77f4e848511687cca5ef01e989e14",
+        "full_audio_sha256": "1c2d12d163f5c558dfcad6751891bc166f0b5d64b81609304c55af7870df8b96",
+        "full_pcm_sha256": "3ce98ee547367f7bc5bf8e67ba61cb9e7e8369af33918fb609311dc1b99647b8",
+        "samples": 79760,
+        "value": 2.928269147872925
+      },
+      {
+        "case": "librispeech_5142-33396-0030",
+        "source_result_sha256": "a671ba59f07c79373a810e62db3c20aa3e0d6791a0b4a150a764cae4f8070311",
+        "full_audio_sha256": "4bc68fe889e88696b9d7f976fd4046b968e100ec04843111316a1f03a18922e4",
+        "full_pcm_sha256": "585ef7ab0b99d6ae74c2613ee2cd255841c8b2727e8f9d9dcc36846fb1c3bc35",
+        "samples": 44240,
+        "value": 3.7935526371002197
+      },
+      {
+        "case": "librispeech_5142-33396-0065",
+        "source_result_sha256": "93b533034a8d133d27ad41a7be87e3a4c4cecb77882aa98109354db6d20e699e",
+        "full_audio_sha256": "f497469e8c969ad271cbfc63b6358e63f96b20a8bd45d8d8ba50bc6615f3da76",
+        "full_pcm_sha256": "ee584209734b0d2d4cdd29ed95bc47cb3a2620d12e5f4d3d2c6ec61b39df933c",
+        "samples": 83120,
+        "value": 3.6205999851226807
+      },
+      {
+        "case": "librispeech_5639-40744-0013",
+        "source_result_sha256": "a2b401e2dc26965a7ae53f1db1889e95d1a6b43afe7d85fe290d1819354083c5",
+        "full_audio_sha256": "e000277c448f062792c6fc638baa882e89d0fde4023819ff99723bc76471e18d",
+        "full_pcm_sha256": "b94fa4b27915d63da582440cda81dbbaf119b8db256df513b5aead98beec640c",
+        "samples": 96000,
+        "value": 3.4768741130828857
+      },
+      {
+        "case": "librispeech_5639-40744-0023",
+        "source_result_sha256": "eb37a27ac7f05b475c473af7cb8835a806c80e27cbccc87a76b21cd216a97d3a",
+        "full_audio_sha256": "59f67c311336b3a8ab8732c810671218427f21837d49a92585ba9ac82871727b",
+        "full_pcm_sha256": "7fd64abf274419783db1a799a2bd20d965dd4d5ead3bd93ab423561006970d2c",
+        "samples": 96000,
+        "value": 3.287280321121216
+      },
+      {
+        "case": "librispeech_5639-40744-0030",
+        "source_result_sha256": "971e3899cf2fb4d6e98f093300c7e38eed552cdaf1700ac08697f6f58c8bc98b",
+        "full_audio_sha256": "cc6632155ba0d2667d6e3d3e58d30bb4beb08341aafc3c7ff4c32c3a33b862f3",
+        "full_pcm_sha256": "00834a9e922b9a563d9907f9933f19bdf532af5e1daec4c47a7e45a842f3e3bc",
+        "samples": 96000,
+        "value": 3.4690897464752197
+      },
+      {
+        "case": "librispeech_5683-32865-0017",
+        "source_result_sha256": "96fa2428ac05320542e46331abf295ba7b441a5cca568df9f8afe0fb21a16152",
+        "full_audio_sha256": "8eb6fa3b09610dbe2b123d099ee495f9279f195840f7dd386377d5e6d79d301e",
+        "full_pcm_sha256": "002b7b4a5f6c26ccc262cadf8de786e922e5dd9e79b2bacd5185965fecde8e97",
+        "samples": 87280,
+        "value": 2.3272030353546143
+      },
+      {
+        "case": "librispeech_5683-32879-0009",
+        "source_result_sha256": "04d3c9338b5036c611a93464cbcc71cb483c9087bacd2d29658ca8bf9cfe75b3",
+        "full_audio_sha256": "840fd8f9407b0148eefc8960eadc86148b0247099c3000a31823ac7322729d70",
+        "full_pcm_sha256": "19444a52285da71f8246e60443154571f70487057b66f6b51e366023edcb4207",
+        "samples": 82160,
+        "value": 3.1360607147216797
+      },
+      {
+        "case": "librispeech_5683-32879-0019",
+        "source_result_sha256": "243199e911c4ae56c22b0a9b83a0e47d7f193a3ad30cd0c354804e8e7a5e92e2",
+        "full_audio_sha256": "5b795c7adc406506af4b6a3c56b4b76c56e04362f78daa1fba3e3ed6f2b69a5e",
+        "full_pcm_sha256": "67fb822070097e22da06ba49d53ace168bdcd165482e9ddad0247d0d1a7dd432",
+        "samples": 96000,
+        "value": 2.9225194454193115
+      },
+      {
+        "case": "librispeech_61-70968-0042",
+        "source_result_sha256": "63517234df990387db63e8c590c5a94e27b69401f8dda7a110fa74876bba18d4",
+        "full_audio_sha256": "49749bba3a87f500fd2d13b82c9b70062ebe882cd79d3b304450b3d4eb2b6600",
+        "full_pcm_sha256": "91e49453829b8794c38f00cd6b167893f0dfc80b31075c1dd03fa3292538cc76",
+        "samples": 44560,
+        "value": 3.028156042098999
+      },
+      {
+        "case": "librispeech_61-70968-0043",
+        "source_result_sha256": "0e5b94fc5901341f8c168fc4c53598fdb1afc15420c6773308520c68f93a7d0b",
+        "full_audio_sha256": "acc90488816536adef2330714570201689d0218d57f1169f6bccf3d58324960f",
+        "full_pcm_sha256": "b206f02ad9379e6c61975ace9c2a7dba795aedf337e5137219685cfb675164aa",
+        "samples": 96000,
+        "value": 2.799893617630005
+      },
+      {
+        "case": "librispeech_61-70968-0054",
+        "source_result_sha256": "756de7f0213d44b9a748e94987e41f5cfe85e424f5c1b234b2293e5998d5f3df",
+        "full_audio_sha256": "43fc31dad2f78243f03ad8dedeb0f8d6c3952ef3de80f9f55f3752c91f2fb227",
+        "full_pcm_sha256": "30bf37b7d42087b2fa6b51e6b7938d60e05b3e308de76f8f998445ba6cbd80f8",
+        "samples": 96000,
+        "value": 2.809220314025879
+      },
+      {
+        "case": "librispeech_672-122797-0003",
+        "source_result_sha256": "1c4cc1e4802c592ec79b6751d49f13c98ea2dd110d52b06e9bf5d9579b90ef81",
+        "full_audio_sha256": "62e487982c3813f6169c92b127d1471719c4143f972f5aff7789e4740db1515e",
+        "full_pcm_sha256": "65ebb8b437b8c6dbfaaafd7b92e042a3eb7ce20e7a80957e6f5a700d6772f0c5",
+        "samples": 76160,
+        "value": 3.3796494007110596
+      },
+      {
+        "case": "librispeech_672-122797-0044",
+        "source_result_sha256": "26903f1226c8fe73901350d3bd8c93bf55b52abf6fc52b787d731febe1095e39",
+        "full_audio_sha256": "c2aa95c856d05d387a2b59d0ab98652edb4e561502b0bd48027f5fd6a4254d81",
+        "full_pcm_sha256": "09ae87ff472e4de52784c693e532a83cd458b210d456a5c0470e2c5982be52dc",
+        "samples": 59840,
+        "value": 3.630934953689575
+      },
+      {
+        "case": "librispeech_672-122797-0056",
+        "source_result_sha256": "58dde667b4f5dcbed744923696b39335e621e12c828d1c612c86286f13d4b821",
+        "full_audio_sha256": "9adf658a509b37524bc1be74fe9d6ae7fc6871415b22c3c21ce3b24783dfa653",
+        "full_pcm_sha256": "92ae75ff56ad43b5deeba34faf8688c87c4c4659bd8cad388e032eab0145e238",
+        "samples": 83600,
+        "value": 3.326068162918091
+      },
+      {
+        "case": "librispeech_6829-68769-0014",
+        "source_result_sha256": "79bf2c2a252c7f4e14bf4cc556e51f1cb0e7f3c4ada65a71776f8acfd38cf5a1",
+        "full_audio_sha256": "9f290c32124d569f6826ee635edc8bfb079d9118b2850f12a6eebb8142c9eaaf",
+        "full_pcm_sha256": "4f6c039184b89e4e2e31c67ce509421b8cb29e26162f9a52f85a3fdfa871fa26",
+        "samples": 58480,
+        "value": 3.7480454444885254
+      },
+      {
+        "case": "librispeech_6829-68769-0038",
+        "source_result_sha256": "52e470eae2bb810e4a5e272c14dbd2a1047c44f3f11c3727fcf0cf5f1c3b24e8",
+        "full_audio_sha256": "039d679f02ef7c40d3cb2b0f07f61ecd24593f0438430dee045319cd266a3ad7",
+        "full_pcm_sha256": "f8db70ac95bbc5f2fcb5582094d289f2ced61fdff3b1f6374c766ae4a809072c",
+        "samples": 40080,
+        "value": 2.569248914718628
+      },
+      {
+        "case": "librispeech_6829-68769-0041",
+        "source_result_sha256": "22652920101833b0195f8c0e3c7c3a0a50379e6a68471c1e8fa89bf9528e7dda",
+        "full_audio_sha256": "80f6855b086738525e53ad60b01672a5f5094f9f60380a13e4984966d42e403c",
+        "full_pcm_sha256": "842f6af59a83d20e78f1ab258db8f61ef5ec4ff2f42d6710cf02d57853612b93",
+        "samples": 42560,
+        "value": 3.527843713760376
+      },
+      {
+        "case": "librispeech_6930-75918-0013",
+        "source_result_sha256": "e0a339ec2174d684e1aa4b491c809169a58f705ffeb102b827da8468e26d6bdf",
+        "full_audio_sha256": "230866810180bbeb0cfccdbd7696d3af2c7e7325a7c7c0d92b1342810a0d4d02",
+        "full_pcm_sha256": "be8fe3fa8b1d215273faf6a973a55a96e10493941b95b8cd085a95208777e237",
+        "samples": 47040,
+        "value": 3.627535581588745
+      },
+      {
+        "case": "librispeech_6930-76324-0024",
+        "source_result_sha256": "01927f635b125a64ff00c74e5a175619c4b5d5277d6ff3938ab6896b83e8b1c0",
+        "full_audio_sha256": "464e32d32f2a2dcdd6a83c32fa2ee6aef6ef673f669c3d203024d6a75698e130",
+        "full_pcm_sha256": "98bd8b9f16e1dfaae0ea3b86265f81e58d3204891b30c299e19e3de500af742e",
+        "samples": 64800,
+        "value": 2.884232759475708
+      },
+      {
+        "case": "librispeech_6930-81414-0026",
+        "source_result_sha256": "f549740802d673732ba392589c9d8a9d874e74abeb127f09ccc14bf93d1ae0e1",
+        "full_audio_sha256": "5e886c7595ca265c146edd6852603dda454e022925e8ef3a2154ce6a9ddee8c8",
+        "full_pcm_sha256": "5a9c8f0f0a6307a1d3f0fa60cf9fd8273ac04923aed45a7ba01e785c51638920",
+        "samples": 49200,
+        "value": 3.4640190601348877
+      },
+      {
+        "case": "librispeech_7021-79740-0002",
+        "source_result_sha256": "76c104c2b8c7bd58fd50954a743bccc79c8145c9deef0c8ca65e9bf930ee4861",
+        "full_audio_sha256": "9073d53bd7e07851e87b1d7d7676064970e22390a6028245e39231a104bd2b9e",
+        "full_pcm_sha256": "cf128cf0e435d95640a7de7b6ab2e65deb9508156c5eb1063625db202311aa6b",
+        "samples": 96000,
+        "value": 3.1525492668151855
+      },
+      {
+        "case": "librispeech_7021-79740-0011",
+        "source_result_sha256": "8816cdbc9f5c0dc6ae418e4ac5f1308401a98b261bf8caaa178912271475e9bc",
+        "full_audio_sha256": "6124df66b9f7655e5ac45b51d5a4f04316216dc012ee5f3919026f0c121f7218",
+        "full_pcm_sha256": "fb8f7d9bcdddda30826a8fed6e20d71a6c809fbe15775a7db5fc22a7c201963b",
+        "samples": 96000,
+        "value": 3.5889053344726562
+      },
+      {
+        "case": "librispeech_7021-85628-0025",
+        "source_result_sha256": "2c5c4847a4880d949de4bf5ebd6b2c83939317d0f29a103c77bd974925cbe0f1",
+        "full_audio_sha256": "a49b908d4f07cb3ff747b09046b05dc9ca46432cbf71e3a09353d0c2d9a8d593",
+        "full_pcm_sha256": "204d00ffbda4906bca60d509a072227ec3a077deb8fdffbe5f6b80882ebce0bd",
+        "samples": 44400,
+        "value": 3.2955729961395264
+      },
+      {
+        "case": "librispeech_7127-75946-0002",
+        "source_result_sha256": "55baf20c37f17f405273d4185c7b8f94023480a2d35bfd095e066d0e34fcdd30",
+        "full_audio_sha256": "c80f96d54c48ef3b85bdf218baff472dfb2e7835f5857aea68df6a73973461c0",
+        "full_pcm_sha256": "da7561b4ed45102e5fcd92e1c6fceb19868a21ede844eae23efc863130b1623b",
+        "samples": 96000,
+        "value": 3.158892869949341
+      },
+      {
+        "case": "librispeech_7127-75946-0029",
+        "source_result_sha256": "20b790a40aa629f17842ed5682693bc8515220b0e601a5da64f086fef342a7fb",
+        "full_audio_sha256": "f8ad5eaeceb45d4ce4d4b7c17e40a83932b48c98935b8c750f08e9c1511ac382",
+        "full_pcm_sha256": "b8997d380e42f98449d8926a4abdcb4f4fd0d6da457383e7d73bc0abdcfa9d0e",
+        "samples": 96000,
+        "value": 2.845794916152954
+      },
+      {
+        "case": "librispeech_7127-75947-0011",
+        "source_result_sha256": "e3fa8b1ad50434d96ca23fe4a801896f7ca93a37ddda1a276a04b9c54ea8e3ce",
+        "full_audio_sha256": "c62c33c479e7318a375ca783326fd8fc6a78c40ba57e57e0fe6c83c0c68b8600",
+        "full_pcm_sha256": "4dc7d3453e57754d76c1bbf314b1a64baa3af49cef8d85b608420c6458181fe6",
+        "samples": 57920,
+        "value": 3.446161985397339
+      },
+      {
+        "case": "librispeech_7176-88083-0002",
+        "source_result_sha256": "9736f6526db9e95a2d3d413cdff7c9f6051c23d134a8940f9a32dc29cf8e6887",
+        "full_audio_sha256": "fb39ff41173c1b10dac4de844aa4f5f1d9b2ce25c02bf92bd576b05c4db3ca30",
+        "full_pcm_sha256": "9f575b88eb287841fc60226297f84cbcf9366c1482ead9ad9e2ae94fb562600d",
+        "samples": 96000,
+        "value": 2.9181554317474365
+      },
+      {
+        "case": "librispeech_7176-88083-0004",
+        "source_result_sha256": "caf6cfb06cbaacae7af5ce4d2e970f83f7568449950c4ac12839c8580a29203a",
+        "full_audio_sha256": "74658bed3a1e940f3d5293ad5de1c742b457ca8b4ff35e034584071e3351c20a",
+        "full_pcm_sha256": "21342621e089fb5802cf3228b1acb58c6caad9a4525a28d4c193120710209c9b",
+        "samples": 96000,
+        "value": 3.3866238594055176
+      },
+      {
+        "case": "librispeech_7176-88083-0026",
+        "source_result_sha256": "f94be35820b157872a17aedf3502ec2bde4a04af038d0417dff384acc615d54d",
+        "full_audio_sha256": "e5b55fb2824710c6f4eb329522f80a7a35ba6cca2b3a86f141a93d85a7f0d3e2",
+        "full_pcm_sha256": "6f43a54bdb3cf9a6bd24fa08c2e271c9bff143cc58744bba59aff57628845915",
+        "samples": 88480,
+        "value": 2.916520118713379
+      },
+      {
+        "case": "librispeech_7729-102255-0028",
+        "source_result_sha256": "aabba8342dfacefbcf7245564afd632871d56c0a9e3222eacdf97e70cba59408",
+        "full_audio_sha256": "8f09fe961353589be7d826552f4807e240982737eb5d646aa41d72f6688c761d",
+        "full_pcm_sha256": "1ff1208e45f519625bd61c9c664f9e7f304f26599c0404a8fd1824cd3252b131",
+        "samples": 96000,
+        "value": 3.634458541870117
+      },
+      {
+        "case": "librispeech_7729-102255-0038",
+        "source_result_sha256": "88be24a8dff5fcf396ece39de97167c9d7a198556747de479501a29a861c294d",
+        "full_audio_sha256": "dd0bfcf22f42de0fb809855b519a2ac98fbb67bf29e539093beffd2d3b073285",
+        "full_pcm_sha256": "2c50422adf235ee7fba09e4895b5f852e2564ff79b099d4fb17e629bc9e2f79b",
+        "samples": 96000,
+        "value": 3.6996119022369385
+      },
+      {
+        "case": "librispeech_7729-102255-0042",
+        "source_result_sha256": "4baf788bfcd9199712aae391a53f4408224b1d74b3735f408e3dc69ee21880f5",
+        "full_audio_sha256": "2ef51748e1d107ce694133b94f1d6bd5b9bccdf7dad60479633938741af614dc",
+        "full_pcm_sha256": "f3fad4e2688c7eee3be485fa39652ff9656b182647033b8b955ba586a2d031e6",
+        "samples": 96000,
+        "value": 3.89264178276062
+      },
+      {
+        "case": "librispeech_8224-274381-0010",
+        "source_result_sha256": "9e8fd1f0150c8047a5b616bff1c87c70e6c2cad933f868a6ac73826dcbc817fb",
+        "full_audio_sha256": "8af097bb592f4fd8b0079e85fbcde4777e4a404e8f7a5300604b7037de7c1c64",
+        "full_pcm_sha256": "131403c0a865eadf677c5a446db3d35bb8ed1b7fbe9bb80372cb94c5d72c6ec4",
+        "samples": 96000,
+        "value": 3.0180575847625732
+      },
+      {
+        "case": "librispeech_8224-274381-0013",
+        "source_result_sha256": "917165f05861a00426f61d6040d3b8d1c0554448a514a07d197004dedc756013",
+        "full_audio_sha256": "98ac082b39c66f65a0cd59cf846a52f5f09dc29b5078bad65fbe796aec2fd41c",
+        "full_pcm_sha256": "a4c69bb2fe4f2fc124d74a8868e87fe7b13f552aff33750b665ac4e62e0b0dd9",
+        "samples": 96000,
+        "value": 3.4214699268341064
+      },
+      {
+        "case": "librispeech_8224-274384-0010",
+        "source_result_sha256": "d75e7df6fc9624c7d5074794835a351b66dc5f9f1271ef368a4b5fcdadf7665d",
+        "full_audio_sha256": "5607d10f754ec9b00df4953df1b104e5df75fa65ebb47041bd9e598558b4a1f0",
+        "full_pcm_sha256": "d48dbe64afa7db947c1fd1a09ec604b1ec3a67cdd9481848dc36a88757c9fd99",
+        "samples": 96000,
+        "value": 3.8075220584869385
+      },
+      {
+        "case": "librispeech_8230-279154-0018",
+        "source_result_sha256": "267fafe29c675a74f0c6a8ce46e5b5666736bcdba34245d6fdf8bd74f99844d1",
+        "full_audio_sha256": "6cf321e8b3c6758238e5a654da304d210304b8722b36dea23829f5b2748ae476",
+        "full_pcm_sha256": "6f4bfcd6b36eb769d714521b1e25c8c0fe2d995222d6204f7766dbc7a821c47c",
+        "samples": 96000,
+        "value": 2.7089319229125977
+      },
+      {
+        "case": "librispeech_8230-279154-0032",
+        "source_result_sha256": "8068208fd1047fc13ba142eeacd3e71119eb4fbcc5562b6914355de6e209331b",
+        "full_audio_sha256": "0077d9bd61ab674ef2eef0786814af24fe6fcce2da7023e37450f7f35fdd316b",
+        "full_pcm_sha256": "6c2584a22beea8471cd5ab409b9dc1ad906a31adfd4f268162aa168e3ab15823",
+        "samples": 62080,
+        "value": 2.8519489765167236
+      },
+      {
+        "case": "librispeech_8230-279154-0033",
+        "source_result_sha256": "4af85b6e8e0e85d09547be93e91e88045fcec63c64b3542797ea6b9a15fdf208",
+        "full_audio_sha256": "0e9a027528145a6384b260a0b58e5fd61de244525f543ae080da606c0706cedc",
+        "full_pcm_sha256": "a668bc97d32fe9b8cf088e993b9630153b844e84b3cb4c87674662f173956acd",
+        "samples": 96000,
+        "value": 2.8739237785339355
+      },
+      {
+        "case": "librispeech_8455-210777-0010",
+        "source_result_sha256": "c765122d1e8fcaecb96d2758d1b0d8ac783158172e61b2d8e690b4cf2068d6f2",
+        "full_audio_sha256": "5774e18a059101a7d1286a7d9fcdbc748c56169958ffa04c4bf1048e87d791f9",
+        "full_pcm_sha256": "744f60e01228a1efd062ab2f26cf7a2a8543403b30fb5e95555cd87c00ce91b6",
+        "samples": 49600,
+        "value": 3.208872079849243
+      },
+      {
+        "case": "librispeech_8455-210777-0049",
+        "source_result_sha256": "9d60bb6f9994ce8c50f4ff9628c284d5de32d43ba1305ea07e82b463ef2af321",
+        "full_audio_sha256": "4c98278928a200ccd52b6bc5cb1fb461bdecb268b131b3bed1383d4664f740c0",
+        "full_pcm_sha256": "9a5de4b84a036e1a3689eeeb681f95ef1b321b29b21283ce5b720ba9d0bc7963",
+        "samples": 65760,
+        "value": 3.732196092605591
+      },
+      {
+        "case": "librispeech_8455-210777-0060",
+        "source_result_sha256": "271863e8b1da3cb1c6762b127238d0eed0d775ecc64889acb7bff39b164d7773",
+        "full_audio_sha256": "3f0283ecd38cdcc76e72e6c58974cb53375c4baa93110809ab2520e54d7d3d0c",
+        "full_pcm_sha256": "f9d77f6bfad7bda0050333c71b34bb1e7f5170f35e34939dd32a16f94b55e915",
+        "samples": 96000,
+        "value": 3.680368423461914
+      },
+      {
+        "case": "librispeech_8463-294828-0003",
+        "source_result_sha256": "e661a4077c799b28153c0b3c054d5c0ad28a06d3f0a6f344033b61835fdb0f73",
+        "full_audio_sha256": "ac47e69f1133bcc6939e1c3e84ec5242356572fc37d5e83e95b9d0b9b4d5e064",
+        "full_pcm_sha256": "58948a74a8b2af4f7eb8e8190272787b9c5fa8529f1d05241f4bec21ed4b9147",
+        "samples": 96000,
+        "value": 3.631559133529663
+      },
+      {
+        "case": "librispeech_8463-294828-0014",
+        "source_result_sha256": "be14ea88ec71afb5aa820a13c1e0983c8fef443c6d936008dac4055e1af69ed9",
+        "full_audio_sha256": "852f45433766f78f1c1ba600c1874572a6d8026e874f7098a5c26c02d9a6a8ba",
+        "full_pcm_sha256": "9722426a6670b3218faa6512036ebdbf2e6c245a3625ca952c16f8b76804fa5d",
+        "samples": 91600,
+        "value": 3.5744988918304443
+      },
+      {
+        "case": "librispeech_8463-294828-0022",
+        "source_result_sha256": "27ef72112a1812d4c61e08d8d93911f8d1334e71f4e3135090f3f0ca800fab8b",
+        "full_audio_sha256": "ceba4beb8e8efb5975ae04376f3ff2f519787946b2bed621dee6bc2aabfdcb64",
+        "full_pcm_sha256": "c65f7fb1bc011d7717bd684abd2e4991bbe2f119843846813dde28a5a6b3bc71",
+        "samples": 37680,
+        "value": 3.368593454360962
+      },
+      {
+        "case": "librispeech_8555-284447-0007",
+        "source_result_sha256": "6be9df4bd11b8d30e65e63fde8c93e2a295c892c53a104938aa5c3938c3ed3fa",
+        "full_audio_sha256": "3c2b424d7e3556ddc71045293789000402cc538366beaed32a79684ef6a548f3",
+        "full_pcm_sha256": "ef295b4374964808bbcd04c3d1ed290fbb3d0ba660d0649847a0deea47474af2",
+        "samples": 96000,
+        "value": 3.7489402294158936
+      },
+      {
+        "case": "librispeech_8555-284449-0020",
+        "source_result_sha256": "02ef928a7239f37cf342527337dca05bd54649c9705921301a84723b425e7d1c",
+        "full_audio_sha256": "80e1a2dd0903fc9673ab5c096504ef1e19ef928ea9c1b4a6ebac4173ffbd49f3",
+        "full_pcm_sha256": "c3b8872955ada8031042eaef135e580eb47151eb504f0b5f1e946528345945a2",
+        "samples": 81520,
+        "value": 3.461932420730591
+      },
+      {
+        "case": "librispeech_8555-292519-0001",
+        "source_result_sha256": "419f5f2a701c9df5e3dfe5d69e04d28d1ebc56a4986463c50761176093f05197",
+        "full_audio_sha256": "2b98f54679b6b210db75a5e88934f7c70325294aec317cb9d98989503a69bb5f",
+        "full_pcm_sha256": "28e3d0892fecb1cfa985d18579c7ed0cf5f4005050424e49fad2e88dc8c8ae29",
+        "samples": 96000,
+        "value": 3.0037505626678467
+      },
+      {
+        "case": "librispeech_908-157963-0018",
+        "source_result_sha256": "ad34d01f92eacce27bb883f27f04f6474fa62cee326cb0904cf389ccd87f0378",
+        "full_audio_sha256": "af2d40bd62989ba8dfaf0d0265d7cb850244eeabfcdaaad0b8056a824c7e8425",
+        "full_pcm_sha256": "2bc75273dc893e91f95285a8ebdb0782a82149206b1265df8609aaa8f00f0b2c",
+        "samples": 68080,
+        "value": 3.4066245555877686
+      },
+      {
+        "case": "librispeech_908-31957-0002",
+        "source_result_sha256": "c079fac531143eb921c91b73f4b15e727fdeca08f64d5287c2a1de8f701ffd00",
+        "full_audio_sha256": "07a80b9748f11b927b6094466c04e3053e8e2b733ac73b2e5b0cd8b86e86c819",
+        "full_pcm_sha256": "9d721feca1bc8f87b2f177f7c16af6cc09fdc5a5ad6d8602a564f22b1da49bcb",
+        "samples": 76640,
+        "value": 3.4715254306793213
+      },
+      {
+        "case": "librispeech_908-31957-0016",
+        "source_result_sha256": "7bcaa6bda7eecad26c4ea8e87af9a93d16af56fd49cb21b66c6dc12c908338f4",
+        "full_audio_sha256": "6a9674ea6087cb334a7e981b2e87f17f4b3651a08bc2bcac9f425aac3238a4a6",
+        "full_pcm_sha256": "f7bd4c97561a76bff92a56b894cfb9551164b80f25b410d023dbf94eda389a72",
+        "samples": 96000,
+        "value": 3.1915740966796875
+      }
+    ],
+    "scope": "120 full-length native UTMOS results reused for edited/precision delta baselines; no duplicate inference",
+    "historical_comparison": "Old models/config/preprocessor and sources match compatibility-check; historical CPU threads4 versus new2 disclosed."
+  },
+  "publication": "固定5例の短音声のみ。全長コーパス・重み・私有保存先は含めない。"
+}

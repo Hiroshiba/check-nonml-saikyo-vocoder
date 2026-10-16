@@ -19,6 +19,7 @@ from vocoderbench.logging_utils import LoggedArgumentParser, configure_logging, 
 configure_logging('build-site')
 from vocoderbench.site_summary import brief, short_audio  # noqa: E402
 from site_preserved_reports import preserved_cards  # noqa: E402
+from site_pml_report import pml_cards  # noqa: E402
 
 REPO = 'https://github.com/Hiroshiba/check-nonml-saikyo-vocoder'
 CSS = '''
@@ -224,7 +225,7 @@ def build(output):
     shutil.copy2(ROOT / 'BASELINE.json', output / 'BASELINE.json')
     method = baseline['method']
     current = ('自作HNM ' + baseline['version'].removeprefix('hnm-') if method == 'hnm'
-               else method or '未選定')
+               else 'PML低域拡張＋60FWCEP' if method == 'pml' else method or '未選定')
     cards = []
     for _, rel, meta, run in sorted(reports, key=lambda item: (item[0], str(item[1]), item[3]['id']), reverse=True):
         results = ROOT / rel / run['path']
@@ -236,6 +237,7 @@ def build(output):
                      + '</article>')
         cards.append((recorded_time(run), str(rel), run['id'], card))
     cards.extend(preserved_cards(ROOT, output, recorded_time, time_label))
+    cards.extend(pml_cards(ROOT, output, recorded_time, time_label))
     cards = [item[3] for item in sorted(cards, key=lambda item: item[:3], reverse=True)]
     for rel, meta in groups:
         if not meta['runs']:

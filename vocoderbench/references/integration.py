@@ -30,7 +30,7 @@ def execute(args):
     argv = ['--methods', *EXTRA_METHODS, '--manifest', str(args.manifest),
             '--corpus-cache', str(args.cache), '--runtime-cache', str(args.reference_cache),
             '--mos-cache', str(args.mos_cache), '--output', str(args.output / 'references'),
-            '--stage', args.stage]
+            '--stage', args.stage, '--seed', '0']
     if args.include_dac:
         argv.append('--include-dac')
     if args.retry_failed:

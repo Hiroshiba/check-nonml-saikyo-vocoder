@@ -1,0 +1,53 @@
+{
+  "version": "portable-quality-v1",
+  "changes": [
+    "Absolute workspace paths replaced by run-root, model-cache, dataset and historical-root arguments.",
+    "Native verification uses public native driver hash and repository-relative PML source hashes.",
+    "Existing quality functions, model settings, case selection and aggregation formulas preserved.",
+    "Public CLI is a post-measurement portability adaptation; only static syntax and cached lint reviewed, no new full-cohort run."
+  ],
+  "files": [
+    {
+      "public_file": "scripts/pml_evaluation/aggregate_available.py",
+      "public_sha256": "5ab43a60989cc469f5e99382bd3631e92b4e63d97fee67fb5d6997f5b82e17f7",
+      "executed_driver_sha256": "ef38611178e023018c140135a06eb17648c265aab0ffac9adac9a901608feeeb",
+      "executed_as_this_file": false
+    },
+    {
+      "public_file": "scripts/pml_evaluation/aggregate_seed_variation.py",
+      "public_sha256": "b0e42381615bb8aab9dcaa632ee02cb1ec9d76519cbb9bff7d848aafe4b8c8f0",
+      "executed_driver_sha256": "af095f0d37e27383f827b24ca49a723df097b5ca5b5463816a0b8b713b43f330",
+      "executed_as_this_file": false
+    },
+    {
+      "public_file": "scripts/pml_evaluation/aggregate_timing_cohorts.py",
+      "public_sha256": "e91c3e4f4209ccfbb0f688495e435ea4b2c5054cce5fe79cf11431d431fbdf2b",
+      "executed_driver_sha256": "5d34ba00a9c465675b493b5db22bd02e4f4af5d265730597cdfe23a7874c9bea",
+      "executed_as_this_file": false
+    },
+    {
+      "public_file": "scripts/pml_evaluation/prepare_assets.py",
+      "public_sha256": "b616cfabc48693ac260329e7994d74a057a88162ee1b0a0d8604f08500ec6f24",
+      "executed_driver_sha256": null,
+      "executed_as_this_file": false
+    },
+    {
+      "public_file": "scripts/pml_evaluation/run_asr.py",
+      "public_sha256": "b7b16fe379335ecad13bd9ce64a8c02612ec92a03d13a441d7b3c2d370b4c1f8",
+      "executed_driver_sha256": "7e1b93a67caa3deea5b6167b1c5b5bcf6d150e03f7f2ed3b7e00a9949a1b7b0f",
+      "executed_as_this_file": false
+    },
+    {
+      "public_file": "scripts/pml_evaluation/run_quality.py",
+      "public_sha256": "8ea982cbe9d07fcd0f730b541567985f5512cadd9c6365237a6ae9edf989d11b",
+      "executed_driver_sha256": "eac14930ae35263576c6ff1adbd2cd962c9eb91c0411beaf26f2817741448924",
+      "executed_as_this_file": false
+    },
+    {
+      "public_file": "scripts/pml_evaluation/run_seed_variation.py",
+      "public_sha256": "cc820d7eba5ddf9377d92b5e4804f460af28d937efb0f528421398a0e840279d",
+      "executed_driver_sha256": "ac7b0888729fae869e3fd106d524dd11fcdf1bd05c305378c4627519e0d62561",
+      "executed_as_this_file": false
+    }
+  ]
+}

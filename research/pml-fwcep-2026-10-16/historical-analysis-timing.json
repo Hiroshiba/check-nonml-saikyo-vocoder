@@ -1,0 +1,153 @@
+{
+  "source_sha256": "21aecb9f5cb4c2d4d89ace7ede31dda36edde9c2e77bf1b824f7fddd79fb8a59",
+  "source": "iteration24-pml-broad120/postprocess/summary-view.json",
+  "selection": "groups.all120.timing.methods.pml_extended.current_run",
+  "saved_fields": {
+    "planned_recordings": 110,
+    "phases": {
+      "analysis_timing": {
+        "wall_seconds": {
+          "estimate": {
+            "recordings": 110,
+            "speakers": 37,
+            "mean": 3.061716709008439,
+            "ci95": [
+              2.8945623013355126,
+              3.2205214955508126
+            ],
+            "ci_unavailable_reason": null
+          },
+          "exclusions": [],
+          "sum_saved_seconds": 336.7777546539364
+        },
+        "cpu_seconds": {
+          "estimate": {
+            "recordings": 110,
+            "speakers": 37,
+            "mean": 3.0599256512882906,
+            "ci95": [
+              2.8930802928963946,
+              3.2188256514297335
+            ],
+            "ci_unavailable_reason": null
+          },
+          "exclusions": [],
+          "sum_saved_seconds": 336.5795239620002
+        },
+        "rtf": {
+          "estimate": {
+            "recordings": 110,
+            "speakers": 37,
+            "mean": 0.5998069415535352,
+            "ci95": [
+              0.5890477554484771,
+              0.6103344144172316
+            ],
+            "ci_unavailable_reason": null
+          },
+          "exclusions": [],
+          "sum_saved_seconds": null
+        }
+      },
+      "decode_timing": {
+        "wall_seconds": {
+          "estimate": {
+            "recordings": 110,
+            "speakers": 37,
+            "mean": 0.4642680242792627,
+            "ci95": [
+              0.42469699542835926,
+              0.5053926290397055
+            ],
+            "ci_unavailable_reason": null
+          },
+          "exclusions": [],
+          "sum_saved_seconds": 50.93548800099961
+        },
+        "cpu_seconds": {
+          "estimate": {
+            "recordings": 110,
+            "speakers": 37,
+            "mean": 0.46417725277477434,
+            "ci95": [
+              0.4245914408164433,
+              0.505310373005406
+            ],
+            "ci_unavailable_reason": null
+          },
+          "exclusions": [],
+          "sum_saved_seconds": 50.92544424499995
+        },
+        "rtf": {
+          "estimate": {
+            "recordings": 110,
+            "speakers": 37,
+            "mean": 0.09076118795987899,
+            "ci95": [
+              0.0840189370597076,
+              0.09734406705774473
+            ],
+            "ci_unavailable_reason": null
+          },
+          "exclusions": [],
+          "sum_saved_seconds": null
+        }
+      }
+    },
+    "required_analysis_stages_seconds": {
+      "pml_analysis_seconds": {
+        "estimate": {
+          "recordings": 110,
+          "speakers": 37,
+          "mean": 2.9744041445129525,
+          "ci95": [
+            2.811675126667189,
+            3.127825212166984
+          ],
+          "ci_unavailable_reason": null
+        },
+        "sum_saved_seconds": 327.1722141009377,
+        "exclusions": []
+      },
+      "reaper_f0_seconds": {
+        "estimate": {
+          "recordings": 110,
+          "speakers": 37,
+          "mean": 0.08731256449548686,
+          "ci95": [
+            0.0815174845570279,
+            0.09304256596835395
+          ],
+          "ci_unavailable_reason": null
+        },
+        "sum_saved_seconds": 9.605540552998718,
+        "exclusions": []
+      }
+    },
+    "required_analysis_plus_decode": {
+      "wall_seconds": {
+        "recordings": 110,
+        "speakers": 37,
+        "mean": 3.525984733287702,
+        "ci95": [
+          3.321464668033788,
+          3.7159346011752596
+        ],
+        "ci_unavailable_reason": null
+      },
+      "rtf": {
+        "recordings": 110,
+        "speakers": 37,
+        "mean": 0.6905681295134142,
+        "ci95": [
+          0.6739778104959872,
+          0.7069027431611844
+        ],
+        "ci_unavailable_reason": null
+      },
+      "sum_saved_wall_seconds": 387.71324265493604,
+      "exclusions": []
+    },
+    "competition_rank": null
+  }
+}

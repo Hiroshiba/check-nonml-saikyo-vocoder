@@ -1,4 +1,4 @@
-"""HNM/WORLDのnativeスペクトル表現を±3dB/oct操作する独立正式stage。"""
+"""WORLDのnativeスペクトル表現を±3dB/oct操作する独立正式stage。"""
 from __future__ import annotations
 
 import argparse
@@ -17,7 +17,7 @@ from all_metrics_common import ROOT, RUN, freeze, now, read, save_audio
 from all_metrics_control_eval_equivalence import verified_record
 from all_metrics_controls import checked_audio
 from all_metrics_resources import shared_stage
-from vocoderbench import hnm, methods, world
+from vocoderbench import world
 from vocoderbench.assessment.acoustics import timbre
 from vocoderbench.assessment.common import Inputs, NotApplicable
 from vocoderbench.logging_utils import run_cli
@@ -25,8 +25,7 @@ from vocoderbench.quality_core import environment, sha256, write_json
 
 SOURCE_FILES = [Path(__file__), ROOT / 'scripts/all_metrics_common.py', ROOT / 'vocoderbench/methods.py', ROOT / 'vocoderbench/world.py',
     ROOT / 'vocoderbench/assessment/acoustics.py', ROOT / 'vocoderbench/assessment/common.py',
-    ROOT / 'scripts/all_metrics_controls.py', ROOT / 'scripts/all_metrics_control_eval_equivalence.py',
-    *sorted((ROOT / 'vocoderbench').glob('hnm*.py'))]
+    ROOT / 'scripts/all_metrics_controls.py', ROOT / 'scripts/all_metrics_control_eval_equivalence.py']
 
 
 def arrays(params):
@@ -36,17 +35,15 @@ def arrays(params):
 
 
 def edit_native(params, method, delta):
+    if method != 'world_harvest':
+        raise ValueError('旧HNM傾斜研究の再計算はbbab81fをcheckoutしてください')
     edited = copy.deepcopy(params)
-    frequencies = params.frequency_grid if method == 'hnm' else np.linspace(
+    frequencies = np.linspace(
         0, params.sample_rate / 2, params.spectral_envelope.shape[1])
     amplitude = 10 ** (delta * np.log2(np.clip(frequencies, 300., 5000.) / 1000.) / 20)
-    if method == 'hnm':
-        edited.harmonic_envelope *= amplitude[None, :]
-        edited.noise_psd *= amplitude[None, :] ** 2
-    else:
-        edited.spectral_envelope *= amplitude[None, :] ** 2
-    (hnm if method == 'hnm' else world).validate(edited)
-    permitted = {'harmonic_envelope', 'noise_psd'} if method == 'hnm' else {'spectral_envelope'}
+    edited.spectral_envelope *= amplitude[None, :] ** 2
+    world.validate(edited)
+    permitted = {'spectral_envelope'}
     before, after = arrays(params), arrays(edited)
     if set(before) != set(after) or any(before[key] != after[key] for key in before if key not in permitted):
         raise ValueError('傾斜の操作対象外arrayが変化しました')
@@ -56,6 +53,8 @@ def edit_native(params, method, delta):
 
 
 def evaluate_point(spec, method, condition, delta, signature, retry_failed):
+    if method == 'hnm':
+        raise ValueError('旧HNM傾斜研究の再計算はbbab81fをcheckoutしてください')
     folder = RUN / 'native' / method / spec['id']
     path = folder / f'{condition}.json'
     result_path = RUN / 'controls-slope/measurements' / f'{spec["id"]}__{method}__{condition}.json'
@@ -98,7 +97,7 @@ def evaluate_point(spec, method, condition, delta, signature, retry_failed):
                 else:
                     if path.exists():
                         write_json(folder / 'failure_history' / f'{condition}-{time.time_ns()}.json', read(path))
-                    params = (hnm if method == 'hnm' else world).load(source)
+                    params = world.load(source)
                     edited = edit_native(params, method, delta)
                     native = {**row, 'origin': 'explicit_native_spectral_field_operation',
                         'native_representation': {'path': str(source), 'sha256': representation['sha256'],
@@ -109,7 +108,7 @@ def evaluate_point(spec, method, condition, delta, signature, retry_failed):
                     np.random.seed(0)
                     ctypes.CDLL(None).srand(ctypes.c_uint(0))
                     inference_start, inference_cpu = time.perf_counter(), time.process_time()
-                    wave = methods.decode(method, edited)
+                    wave = world.decode(edited)
                     native.update(synthesis_seconds=time.perf_counter() - inference_start,
                         synthesis_process_cpu_seconds=time.process_time() - inference_cpu,
                         audio=save_audio(folder / f'{condition}.npy', wave, params.sample_rate),

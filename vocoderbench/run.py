@@ -20,7 +20,7 @@ from scipy.io import wavfile
 
 from .fixtures import make_synthetic_cases
 from .metrics import compare_waveforms, pitch_metrics, estimate_f0_yin, _band_metrics
-from . import world, audio_samples, methods, hnm_diagnostics
+from . import world, audio_samples, methods
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -101,11 +101,11 @@ def run(args):
     except (OSError,subprocess.CalledProcessError):
         logging.exception('実行版の取得に失敗')
         head = None
-    report = dict(schema_version=2, formal_base=base,
+    report = dict(schema_version=2, formal_base=base, index_methods=['identity', 'pml', 'world_harvest'],
                   environment={'python':platform.python_version(),'numpy':np.__version__,
                                'scipy':scipy.__version__,'platform':platform.platform()},
                   parent_commit=head, source_sha256={str(p.relative_to(ROOT)):hashlib.sha256(p.read_bytes()).hexdigest()
-                          for p in sorted((ROOT/'vocoderbench').glob('*.py'))},
+                          for p in sorted((ROOT/'vocoderbench').rglob('*.py'))},
                   alignment='none', normalization='none', data_status=data_status,
                   fixture_seed=20261011, comparison_reference=comparison_reference,
                   cases=[], resynthesis=[], operations=[], calibration=[], diagnostics=[])
@@ -120,19 +120,21 @@ def run(args):
         audio_samples.collect(saved_audio, case, 'identity', x)
         for method in selected_methods:
             row = dict(case=case['id'],kind=case['kind'],method=method,base_method=base['method'],
-                       decoder_family='自作HNM' if method == 'hnm' else 'WORLD',
-                       f0_source='正規化自己相関' if method == 'hnm' else 'WORLD Harvest')
+                       decoder_family='PML低域拡張＋60FWCEP' if method == 'pml' else 'WORLD',
+                       f0_source='REAPER由来の連続パルス時計' if method == 'pml' else 'WORLD Harvest')
             begin = time.perf_counter()
             try:
                 params = methods.encode(method, x, sr)
+                analysis_seconds = time.perf_counter() - begin
+                decode_begin = time.perf_counter()
                 y = methods.decode(method, params)
+                decode_seconds = time.perf_counter() - decode_begin
                 elapsed = time.perf_counter()-begin
                 row.update(methods.metadata(method, params))
-                row['analysis_pitch_against_truth'] = hnm_diagnostics.feature_pitch(params, case['f0_truth'], sr)
-                if method == 'hnm':
-                    report['diagnostics'].extend(hnm_diagnostics.inspect(case, params))
                 audio_samples.collect(saved_audio, case, method, y)
                 row.update(status='measured',seconds=elapsed,rtf=elapsed/(len(x)/sr),
+                           analysis_seconds=analysis_seconds, analysis_rtf=analysis_seconds/(len(x)/sr),
+                           decode_seconds=decode_seconds, decode_rtf=decode_seconds/(len(x)/sr),
                            output_sha256=digest(y),
                            measurement=compare_waveforms(x,y,sr,case['f0_truth']))
                 if case['kind']=='transient_diagnostic':
@@ -157,6 +159,9 @@ def run(args):
                                     op['pitch_against_known_truth']=pitch_metrics(ey,sr,case['f0_truth']*2**(kwargs.get('pitch_semitones',0)/12))
                             if case['kind']=='transient_diagnostic':
                                 op['event']=event_diagnostic(ey,sr,.3*kwargs.get('time_scale',1))
+                        except NotImplementedError as e:
+                            logging.exception('未対応の操作: %s / %s', method, name)
+                            op.update(status='unsupported', error=str(e))
                         except Exception as e:
                             logging.exception('操作に失敗: %s / %s / %s', case['id'], method, name)
                             op.update(status='failed',error=f'{type(e).__name__}: {e}')
