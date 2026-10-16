@@ -1,0 +1,20 @@
+{
+  "measured_driver_sha256": "22bdacdef9dab941dfd1c0f0f1e1573f4ec86285de89ba37e46b05da0196765b",
+  "public_driver": "run_native.py",
+  "public_driver_sha256": "79ded7fc92c76a0c8d1cd14a22fe93f38071423ddbab37fa85b450ddcce233ea",
+  "measurement_source_commit": "48322013c9c97c1cbb857ac1f8323cce6e5ff622",
+  "public_cli_execution": "not_run; static review and cached Ruff only",
+  "changes": [
+    "CLI input-manifest/input-root/output instead of workspace ROOT",
+    "repo-relative PML source hashes and separate driver hash",
+    "resolved input-contract preserved for downstream stages",
+    "logging and input/resume error handling; failed records require a fresh output"
+  ],
+  "unchanged": [
+    "PML source",
+    "seed 0",
+    "16000 Hz",
+    "encode then save/load then decode",
+    "wall/CPU analysis and decode separately; save/load separate"
+  ]
+}

@@ -1,0 +1,803 @@
+{
+  "id": "pml-package-evaluation-2026-10-16",
+  "path": "research/pml-package-evaluation-2026-10-16",
+  "recorded_at": "2026-10-16T08:28:15.607696+00:00",
+  "title": "正式PMLパッケージの全追加評価：品質・制御・特徴表現",
+  "summary": "正式package seed 0の120録音評価。品質改善と制御・表現の弱点を併記。次の研究baseとしてPML採用を推奨。予測品質・話者保持の改善と、音高追従・特徴読み出し等の弱点を併記。現mainはHNM、PR #43は更新提案。",
+  "cohort": "品質は軸別9方式共通支持。ASR55、静音108、その他120録音。",
+  "expanded_metrics": 5,
+  "method_labels": {
+    "hnm": "HNM v3（比較時のベース）",
+    "world_harvest": "WORLD Harvest",
+    "facodec": "FACodec",
+    "hifiglot": "HiFi-Glot",
+    "golf": "GOLF-ff",
+    "sifigan": "SiFi-GAN",
+    "llsm2": "LLSM2 Layer0",
+    "magphase": "MagPhase",
+    "pml_fwcep60_lowband_package_v1": "PML 低域変更＋60 FWCEP",
+    "pml": "PML 低域変更＋60 FWCEP",
+    "time_preservation": "無編集の時間保持（ms）",
+    "slope_preservation": "無編集の傾斜保持（dB/oct）",
+    "unedited": "無編集",
+    "pitch_minus3": "音高 −3半音",
+    "pitch_plus3": "音高 ＋3半音",
+    "gain_minus6": "音量 −6dB",
+    "gain_plus6": "音量 ＋6dB",
+    "pitch_cents": "音高の絶対変化（cent）",
+    "level_db": "音量の絶対変化（dB）",
+    "slope_db_per_octave": "傾斜の絶対変化（dB/oct）",
+    "duration_seconds": "長さの絶対変化（秒）",
+    "log_f0": "対数F0の読み出し誤差",
+    "rms_dbfs": "RMSの読み出し誤差（dBFS）",
+    "spectral_slope": "傾斜の読み出し誤差（dB/oct）",
+    "rating_spearman": "声同一性評定との順位相関",
+    "rated_neighbor_top1": "評定候補内の近傍一致率",
+    "within_speaker/flat_stratum": "同一話者内・層平均",
+    "within_speaker/x_speaker_macro": "同一話者内・X話者等重み",
+    "within_speaker/nested_phone_context": "同一話者内・音素文脈の入れ子平均",
+    "across_speaker/flat_stratum": "話者間・層平均",
+    "across_speaker/x_speaker_macro": "話者間・X話者等重み",
+    "across_speaker/nested_phone_context": "話者間・音素文脈の入れ子平均"
+  },
+  "methods": [
+    "pml_fwcep60_lowband_package_v1",
+    "hnm",
+    "world_harvest"
+  ],
+  "metrics": [
+    {
+      "key": "1.native_mos",
+      "label": "native全長UTMOSv2予測MOS",
+      "values": {
+        "hnm": {
+          "mean": 2.5767596522967025,
+          "rank": 9
+        },
+        "world_harvest": {
+          "mean": 3.045394027233124,
+          "rank": 7
+        },
+        "facodec": {
+          "mean": 3.98601024945577,
+          "rank": 1
+        },
+        "hifiglot": {
+          "mean": 3.3759332299232483,
+          "rank": 2
+        },
+        "golf": {
+          "mean": 2.9630787829558063,
+          "rank": 8
+        },
+        "sifigan": {
+          "mean": 3.1532473762830096,
+          "rank": 5
+        },
+        "llsm2": {
+          "mean": 3.083770475784937,
+          "rank": 6
+        },
+        "magphase": {
+          "mean": 3.262071500221888,
+          "rank": 4
+        },
+        "pml_fwcep60_lowband_package_v1": {
+          "mean": 3.2755198220411943,
+          "rank": 3
+        }
+      }
+    },
+    {
+      "key": "2.scoreq",
+      "label": "SCOREQ参照あり距離",
+      "values": {
+        "hnm": {
+          "mean": 0.5849500053872664,
+          "rank": 9
+        },
+        "world_harvest": {
+          "mean": 0.37906736197570956,
+          "rank": 6
+        },
+        "facodec": {
+          "mean": 0.16570086553692814,
+          "rank": 1
+        },
+        "hifiglot": {
+          "mean": 0.4777188849945862,
+          "rank": 7
+        },
+        "golf": {
+          "mean": 0.5122055577735105,
+          "rank": 8
+        },
+        "sifigan": {
+          "mean": 0.2362471409142018,
+          "rank": 3
+        },
+        "llsm2": {
+          "mean": 0.24101364978899556,
+          "rank": 4
+        },
+        "magphase": {
+          "mean": 0.22502544435362024,
+          "rank": 2
+        },
+        "pml_fwcep60_lowband_package_v1": {
+          "mean": 0.29478914054731525,
+          "rank": 5
+        }
+      }
+    },
+    {
+      "key": "5.ecapa",
+      "label": "ECAPA話者類似度",
+      "values": {
+        "hnm": {
+          "mean": 0.9069253380099933,
+          "rank": 6
+        },
+        "world_harvest": {
+          "mean": 0.9305355081955593,
+          "rank": 5
+        },
+        "facodec": {
+          "mean": 0.8566322391231855,
+          "rank": 7
+        },
+        "hifiglot": {
+          "mean": 0.4600453581660986,
+          "rank": 9
+        },
+        "golf": {
+          "mean": 0.8250581627090773,
+          "rank": 8
+        },
+        "sifigan": {
+          "mean": 0.9514489581187565,
+          "rank": 2
+        },
+        "llsm2": {
+          "mean": 0.9569091806809105,
+          "rank": 1
+        },
+        "magphase": {
+          "mean": 0.9498684505621593,
+          "rank": 3
+        },
+        "pml_fwcep60_lowband_package_v1": {
+          "mean": 0.9486277167995768,
+          "rank": 4
+        }
+      }
+    },
+    {
+      "key": "existing.estoi",
+      "label": "eSTOI明瞭性推定",
+      "values": {
+        "hnm": {
+          "mean": 0.8667246487224949,
+          "rank": 7
+        },
+        "world_harvest": {
+          "mean": 0.9051909631965218,
+          "rank": 3
+        },
+        "facodec": {
+          "mean": 0.8898429551541112,
+          "rank": 4
+        },
+        "hifiglot": {
+          "mean": 0.7343443273008549,
+          "rank": 9
+        },
+        "golf": {
+          "mean": 0.870755708456582,
+          "rank": 6
+        },
+        "sifigan": {
+          "mean": 0.8788226561104893,
+          "rank": 5
+        },
+        "llsm2": {
+          "mean": 0.9324487773632611,
+          "rank": 1
+        },
+        "magphase": {
+          "mean": 0.7800995189781978,
+          "rank": 8
+        },
+        "pml_fwcep60_lowband_package_v1": {
+          "mean": 0.9076383577467448,
+          "rank": 2
+        }
+      }
+    },
+    {
+      "key": "existing.erb20",
+      "label": "20ms ERB帯域距離",
+      "values": {
+        "hnm": {
+          "mean": 2.1033667139204177,
+          "rank": 3
+        },
+        "world_harvest": {
+          "mean": 2.172121690483564,
+          "rank": 5
+        },
+        "facodec": {
+          "mean": 2.0342221289960922,
+          "rank": 2
+        },
+        "hifiglot": {
+          "mean": 3.5563322618480493,
+          "rank": 9
+        },
+        "golf": {
+          "mean": 2.3894101517060555,
+          "rank": 6
+        },
+        "sifigan": {
+          "mean": 2.573844091943074,
+          "rank": 7
+        },
+        "llsm2": {
+          "mean": 1.3666561033216191,
+          "rank": 1
+        },
+        "magphase": {
+          "mean": 2.994853985555828,
+          "rank": 8
+        },
+        "pml_fwcep60_lowband_package_v1": {
+          "mean": 2.1094251051967223,
+          "rank": 4
+        }
+      }
+    },
+    {
+      "key": "existing.stft20.spectral_convergence",
+      "label": "20ms STFT スペクトル相対誤差",
+      "values": {
+        "hnm": {
+          "mean": 0.27760753975694585,
+          "rank": 3
+        },
+        "world_harvest": {
+          "mean": 0.32879102105754576,
+          "rank": 6
+        },
+        "facodec": {
+          "mean": 0.2734850502708065,
+          "rank": 2
+        },
+        "hifiglot": {
+          "mean": 0.4104435555253289,
+          "rank": 9
+        },
+        "golf": {
+          "mean": 0.32663445098559507,
+          "rank": 5
+        },
+        "sifigan": {
+          "mean": 0.32943106055944094,
+          "rank": 7
+        },
+        "llsm2": {
+          "mean": 0.20490778595316422,
+          "rank": 1
+        },
+        "magphase": {
+          "mean": 0.3737985689902418,
+          "rank": 8
+        },
+        "pml_fwcep60_lowband_package_v1": {
+          "mean": 0.3230372311809983,
+          "rank": 4
+        }
+      }
+    },
+    {
+      "key": "existing.pitch.missing_fraction",
+      "label": "原音推定有声に対する出力有声未検出率",
+      "values": {
+        "hnm": {
+          "mean": 0.10164138771051574,
+          "rank": 5
+        },
+        "world_harvest": {
+          "mean": 0.0979349434755004,
+          "rank": 4
+        },
+        "facodec": {
+          "mean": 0.07001084063467017,
+          "rank": 1
+        },
+        "hifiglot": {
+          "mean": 0.18473511568951065,
+          "rank": 9
+        },
+        "golf": {
+          "mean": 0.10380410580074291,
+          "rank": 6
+        },
+        "sifigan": {
+          "mean": 0.09667888115412615,
+          "rank": 3
+        },
+        "llsm2": {
+          "mean": 0.10702714772510606,
+          "rank": 7
+        },
+        "magphase": {
+          "mean": 0.16511659751808,
+          "rank": 8
+        },
+        "pml_fwcep60_lowband_package_v1": {
+          "mean": 0.07623797556567039,
+          "rank": 2
+        }
+      }
+    },
+    {
+      "key": "4.incremental_cer",
+      "label": "増分CER",
+      "values": {
+        "hnm": {
+          "mean": 0.004586536567546897,
+          "rank": 7
+        },
+        "world_harvest": {
+          "mean": 0.004033850174230939,
+          "rank": 6
+        },
+        "facodec": {
+          "mean": 0.0028267656060181287,
+          "rank": 4
+        },
+        "hifiglot": {
+          "mean": 0.08690845698065844,
+          "rank": 9
+        },
+        "golf": {
+          "mean": 0.003582074593430797,
+          "rank": 5
+        },
+        "sifigan": {
+          "mean": -0.0014697706628411652,
+          "rank": 2
+        },
+        "llsm2": {
+          "mean": 0.00024877344313667935,
+          "rank": 3
+        },
+        "magphase": {
+          "mean": 0.010278233231932747,
+          "rank": 8
+        },
+        "pml_fwcep60_lowband_package_v1": {
+          "mean": -0.002111043461784381,
+          "rank": 1
+        }
+      }
+    },
+    {
+      "key": "4.incremental_wer",
+      "label": "増分WER",
+      "values": {
+        "hnm": {
+          "mean": 0.01723727661227661,
+          "rank": 6
+        },
+        "world_harvest": {
+          "mean": 0.020194692460317458,
+          "rank": 8
+        },
+        "facodec": {
+          "mean": 0.005729166666666666,
+          "rank": 4
+        },
+        "hifiglot": {
+          "mean": 0.16162104677729677,
+          "rank": 9
+        },
+        "golf": {
+          "mean": 0.016048693783068783,
+          "rank": 5
+        },
+        "sifigan": {
+          "mean": -0.0007455065359477115,
+          "rank": 1
+        },
+        "llsm2": {
+          "mean": 0.005636665723981902,
+          "rank": 3
+        },
+        "magphase": {
+          "mean": 0.01818576388888889,
+          "rank": 7
+        },
+        "pml_fwcep60_lowband_package_v1": {
+          "mean": 0.001715097096530921,
+          "rank": 2
+        }
+      }
+    },
+    {
+      "key": "readout.log_f0",
+      "label": "対数F0の読み出し誤差（120録音・9法）",
+      "values": {
+        "hnm": {
+          "mean": 0.13713591475976847,
+          "rank": 3
+        },
+        "world_harvest": {
+          "mean": 0.2081252211850541,
+          "rank": 9
+        },
+        "facodec": {
+          "mean": 0.1601037240943387,
+          "rank": 7
+        },
+        "hifiglot": {
+          "mean": 0.08449307686234965,
+          "rank": 1
+        },
+        "golf": {
+          "mean": 0.1447686037248831,
+          "rank": 5
+        },
+        "sifigan": {
+          "mean": 0.14223876816874986,
+          "rank": 4
+        },
+        "llsm2": {
+          "mean": 0.12006880319232376,
+          "rank": 2
+        },
+        "magphase": {
+          "mean": 0.15985402417352362,
+          "rank": 6
+        },
+        "pml_fwcep60_lowband_package_v1": {
+          "mean": 0.17984003124727993,
+          "rank": 8
+        }
+      }
+    },
+    {
+      "key": "readout.rms_dbfs",
+      "label": "RMSの読み出し誤差（dBFS）（120録音・9法）",
+      "values": {
+        "hnm": {
+          "mean": 2.827839087838721,
+          "rank": 6
+        },
+        "world_harvest": {
+          "mean": 3.8231189350864816,
+          "rank": 8
+        },
+        "facodec": {
+          "mean": 1.2692183805779496,
+          "rank": 1
+        },
+        "hifiglot": {
+          "mean": 1.8735402034618454,
+          "rank": 2
+        },
+        "golf": {
+          "mean": 2.0729986018482043,
+          "rank": 3
+        },
+        "sifigan": {
+          "mean": 3.769163383255621,
+          "rank": 7
+        },
+        "llsm2": {
+          "mean": 2.2627770544811656,
+          "rank": 4
+        },
+        "magphase": {
+          "mean": 2.653865622483275,
+          "rank": 5
+        },
+        "pml_fwcep60_lowband_package_v1": {
+          "mean": 4.228148102228171,
+          "rank": 9
+        }
+      }
+    },
+    {
+      "key": "readout.spectral_slope",
+      "label": "傾斜の読み出し誤差（dB/oct）（120録音・9法）",
+      "values": {
+        "hnm": {
+          "mean": 1.6103591324721716,
+          "rank": 7
+        },
+        "world_harvest": {
+          "mean": 1.863724083762288,
+          "rank": 8
+        },
+        "facodec": {
+          "mean": 1.301096299397393,
+          "rank": 4
+        },
+        "hifiglot": {
+          "mean": 1.2689953215768985,
+          "rank": 3
+        },
+        "golf": {
+          "mean": 1.5366296934235992,
+          "rank": 6
+        },
+        "sifigan": {
+          "mean": 1.3888145158751992,
+          "rank": 5
+        },
+        "llsm2": {
+          "mean": 1.2479329941778434,
+          "rank": 2
+        },
+        "magphase": {
+          "mean": 1.2241263064159116,
+          "rank": 1
+        },
+        "pml_fwcep60_lowband_package_v1": {
+          "mean": 1.8772991945723576,
+          "rank": 9
+        }
+      }
+    },
+    {
+      "key": "abx.within_speaker/flat_stratum",
+      "label": "ABX 同一話者内・層平均（9法）",
+      "values": {
+        "hnm": {
+          "mean": 0.3538647342995169,
+          "rank": 8
+        },
+        "world_harvest": {
+          "mean": 0.34541062801932365,
+          "rank": 7
+        },
+        "facodec": {
+          "mean": 0.4335748792270531,
+          "rank": 9
+        },
+        "hifiglot": {
+          "mean": 0.17995169082125606,
+          "rank": 2
+        },
+        "golf": {
+          "mean": 0.20048309178743964,
+          "rank": 3
+        },
+        "sifigan": {
+          "mean": 0.20048309178743962,
+          "rank": 3
+        },
+        "llsm2": {
+          "mean": 0.3272946859903382,
+          "rank": 6
+        },
+        "magphase": {
+          "mean": 0.15579710144927536,
+          "rank": 1
+        },
+        "pml_fwcep60_lowband_package_v1": {
+          "mean": 0.322463768115942,
+          "rank": 5
+        }
+      }
+    },
+    {
+      "key": "abx.across_speaker/flat_stratum",
+      "label": "ABX 話者間・層平均（9法）",
+      "values": {
+        "hnm": {
+          "mean": 0.4729921355743473,
+          "rank": 8
+        },
+        "world_harvest": {
+          "mean": 0.44098200925636,
+          "rank": 5
+        },
+        "facodec": {
+          "mean": 0.477772558026238,
+          "rank": 9
+        },
+        "hifiglot": {
+          "mean": 0.3445079514215124,
+          "rank": 1
+        },
+        "golf": {
+          "mean": 0.36852315829766513,
+          "rank": 2
+        },
+        "sifigan": {
+          "mean": 0.40452204475066983,
+          "rank": 3
+        },
+        "llsm2": {
+          "mean": 0.44590162508264614,
+          "rank": 7
+        },
+        "magphase": {
+          "mean": 0.41384800083516027,
+          "rank": 4
+        },
+        "pml_fwcep60_lowband_package_v1": {
+          "mean": 0.44286546960364676,
+          "rank": 6
+        }
+      }
+    },
+    {
+      "key": "asv.rating_spearman",
+      "label": "声同一性評定との順位相関（80対・8法）",
+      "values": {
+        "hnm": {
+          "mean": 0.5521031314407968,
+          "rank": 2
+        },
+        "world_harvest": {
+          "mean": 0.4494754943549279,
+          "rank": 4
+        },
+        "facodec": {
+          "mean": 0.6869844983024808,
+          "rank": 1
+        },
+        "hifiglot": {
+          "mean": 0.29886031460515083,
+          "rank": 7
+        },
+        "golf": {
+          "mean": 0.1910819363873856,
+          "rank": 8
+        },
+        "sifigan": {
+          "mean": 0.5333774301959076,
+          "rank": 3
+        },
+        "llsm2": {
+          "mean": 0.39149152471066534,
+          "rank": 5
+        },
+        "pml_fwcep60_lowband_package_v1": {
+          "mean": 0.33782526061660284,
+          "rank": 6
+        }
+      }
+    },
+    {
+      "key": "asv.rated_neighbor_top1",
+      "label": "評定候補内の近傍一致率（80対・8法）",
+      "values": {
+        "hnm": {
+          "mean": 0.45,
+          "rank": 6
+        },
+        "world_harvest": {
+          "mean": 0.45,
+          "rank": 6
+        },
+        "facodec": {
+          "mean": 0.5,
+          "rank": 2
+        },
+        "hifiglot": {
+          "mean": 0.5,
+          "rank": 2
+        },
+        "golf": {
+          "mean": 0.4,
+          "rank": 8
+        },
+        "sifigan": {
+          "mean": 0.65,
+          "rank": 1
+        },
+        "llsm2": {
+          "mean": 0.5,
+          "rank": 2
+        },
+        "pml_fwcep60_lowband_package_v1": {
+          "mean": 0.5,
+          "rank": 2
+        }
+      }
+    },
+    {
+      "key": "fixed70.analysis",
+      "label": "固定70・解析RTF（話者等重み）",
+      "missing_label": "別計時・順位なし",
+      "values": {
+        "pml_fwcep60_lowband_package_v1": {
+          "mean": 0.6028153016321803,
+          "rank": null
+        }
+      }
+    },
+    {
+      "key": "fixed70.decode",
+      "label": "固定70・復号RTF（話者等重み）",
+      "missing_label": "別計時・順位なし",
+      "values": {
+        "pml_fwcep60_lowband_package_v1": {
+          "mean": 0.0912575224913132,
+          "rank": null
+        }
+      }
+    },
+    {
+      "key": "main120.analysis",
+      "label": "主120・解析RTF（話者等重み）",
+      "missing_label": "別計時・順位なし",
+      "values": {
+        "pml_fwcep60_lowband_package_v1": {
+          "mean": 0.6038887399003791,
+          "rank": null
+        }
+      }
+    },
+    {
+      "key": "main120.decode",
+      "label": "主120・復号RTF（話者等重み）",
+      "missing_label": "別計時・順位なし",
+      "values": {
+        "pml_fwcep60_lowband_package_v1": {
+          "mean": 0.09474731819202417,
+          "rank": null
+        }
+      }
+    },
+    {
+      "key": "payload_kbps",
+      "label": "標準実容量 kbps",
+      "missing_label": "詳細の容量比較を参照",
+      "values": {
+        "pml_fwcep60_lowband_package_v1": {
+          "mean": 804.8872169952999,
+          "rank": null
+        }
+      }
+    }
+  ],
+  "audio": [
+    {
+      "case": "librispeech_1089-134686-0008",
+      "method": "original",
+      "label": "原音",
+      "path": "assets/preview-original.wav",
+      "seconds": 2,
+      "parent_wav_sha256": "cf2033d5f036076f2dc9613fd5c90f7a2bf4cc31293bf2e680a201914ad4a5f1",
+      "bytes": 64044,
+      "sha256": "8ea2a45b1bb10cef7612e5a74184868a6c832a5c2bc48a885139e7b5c44ddaf4"
+    },
+    {
+      "case": "librispeech_1089-134686-0008",
+      "method": "hnm",
+      "label": "HNM v3（比較時のベース）",
+      "path": "assets/preview-hnm.wav",
+      "seconds": 2,
+      "parent_wav_sha256": "bb467732df95418b8784be883797a15f537b46d771b8f622d21775cc0ca9e3d6",
+      "bytes": 64044,
+      "sha256": "9102e10cc47534b73b24ddca3477c2c17c3c64f344dd025275161b0a1fc7ad75"
+    },
+    {
+      "case": "librispeech_1089-134686-0008",
+      "method": "pml_fwcep60_lowband_package_v1",
+      "label": "PML 低域変更＋60 FWCEP",
+      "path": "assets/preview-pml_fwcep60_lowband_package_v1.wav",
+      "seconds": 2,
+      "parent_wav_sha256": "f8d183c39d885d1bc0724e9ed8d7625d552c780724aab7a43b89b68ee2a3573f",
+      "bytes": 128058,
+      "sha256": "2d9d5f79d31316f805e91d299ec79bd43866048955afbb6b327e4cc7b898b33c"
+    }
+  ],
+  "audio_case": "librispeech_1089-134686-0008",
+  "mechanism_path": "../pml-fwcep-2026-10-16/mechanism.html"
+}
