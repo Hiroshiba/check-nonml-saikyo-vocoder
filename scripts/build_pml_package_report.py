@@ -348,6 +348,11 @@ def build(evaluation, repo, output):
                'audio': audio_previews(media, output),
                'audio_case':CASES[0], 'mechanism_path':'../pml-fwcep-2026-10-16/mechanism.html'}
     write_json(output / 'listing.json',listing)
+    reproduction = output / 'REPRODUCE.md'
+    if reproduction.exists():
+        reproduction.write_text(reproduction.read_text().replace(
+            '/blob/feat/pml-fwcep-baseline/',
+            '/blob/cb1d06f4b0b145e731a4f90644d4c7868321a0e8/'))
     manifest = {'schema_version':1, 'scope':'新正式package測定・固定5短例・保存値。次の研究baseとしてPML採用推奨、PR #43でbase更新。',
                 'files':[{'name':str(p.relative_to(output)),**digest(p)} for p in sorted(output.rglob('*')) if p.is_file() and p.name!='artifact-manifest.json']}
     write_json(output / 'artifact-manifest.json',manifest)

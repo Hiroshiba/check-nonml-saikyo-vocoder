@@ -42,10 +42,10 @@ ASRは全文正解のある55録音だけが対象です。独立trainの読み�
 
 ## 追加品質・認識・seed反復
 
-モデル取得、主120の音響/MOS/SCOREQ/ECAPA、55録音のASR、seed 1〜7、既存8方式との順位再集計、固定70/主120の速度集約は [品質再現手順](https://github.com/Hiroshiba/check-nonml-saikyo-vocoder/blob/feat/pml-fwcep-baseline/scripts/pml_evaluation/QUALITY_REPRODUCTION.md) を参照してください。そこに示す `RUN` を上の `runs/pml-formal` へ揃え、各コマンドに同じ `--run-root` を渡します。旧方式の数値は公開済みのrawから引用し、前処理契約・共通支持が成立する範囲で比較します。
+モデル取得、主120の音響/MOS/SCOREQ/ECAPA、55録音のASR、seed 1〜7、既存8方式との順位再集計、固定70/主120の速度集約は [品質再現手順](https://github.com/Hiroshiba/check-nonml-saikyo-vocoder/blob/cb1d06f4b0b145e731a4f90644d4c7868321a0e8/scripts/pml_evaluation/QUALITY_REPRODUCTION.md) を参照してください。そこに示す `RUN` を上の `runs/pml-formal` へ揃え、各コマンドに同じ `--run-root` を渡します。旧方式の数値は公開済みのrawから引用し、前処理契約・共通支持が成立する範囲で比較します。
 
-元の実測driverと公開用driverの対応は [native来歴](https://github.com/Hiroshiba/check-nonml-saikyo-vocoder/blob/feat/pml-fwcep-baseline/scripts/pml_evaluation/native-driver-provenance.json) と [品質来歴](https://github.com/Hiroshiba/check-nonml-saikyo-vocoder/blob/feat/pml-fwcep-baseline/scripts/pml_evaluation/portable-driver-provenance.json) に記録しています。いずれも公開用の可搬化後に全測定を再実行したものではありません。
+元の実測driverと公開用driverの対応は [native来歴](https://github.com/Hiroshiba/check-nonml-saikyo-vocoder/blob/cb1d06f4b0b145e731a4f90644d4c7868321a0e8/scripts/pml_evaluation/native-driver-provenance.json) と [品質来歴](https://github.com/Hiroshiba/check-nonml-saikyo-vocoder/blob/cb1d06f4b0b145e731a4f90644d4c7868321a0e8/scripts/pml_evaluation/portable-driver-provenance.json) に記録しています。いずれも公開用の可搬化後に全測定を再実行したものではありません。
 
 ## 編集・量子化・ABX・読み出し・ASV
 
-[拡張評価の再現手順](https://github.com/Hiroshiba/check-nonml-saikyo-vocoder/blob/feat/pml-fwcep-baseline/scripts/pml_evaluation/EXTENDED_REPRODUCTION.md) は `run_extended.py --run-root ... --corpora-root ... --historical-root ...` の入口、実行順、必要な別集合/旧特徴/評定の配置を記録しています。旧方式の全比較を再計算するための非公開入力・復元済み特徴が全てこのリポジトリに入っているわけではありません。必要資源が未入手なら該当ランキングの完全再実行はできず、公開済み保存値の閲覧・集約と区別してください。元driverのSHA、可搬化した箇所、各入力の出典は同手順の来歴/入力一覧へ対応付けています。
+[拡張評価の再現手順](https://github.com/Hiroshiba/check-nonml-saikyo-vocoder/blob/cb1d06f4b0b145e731a4f90644d4c7868321a0e8/scripts/pml_evaluation/EXTENDED_REPRODUCTION.md) は `run_extended.py --run-root ... --corpora-root ... --historical-root ...` の入口、実行順、必要な別集合/旧特徴/評定の配置を記録しています。旧方式の全比較を再計算するための非公開入力・復元済み特徴が全てこのリポジトリに入っているわけではありません。必要資源が未入手なら該当ランキングの完全再実行はできず、公開済み保存値の閲覧・集約と区別してください。元driverのSHA、可搬化した箇所、各入力の出典は同手順の来歴/入力一覧へ対応付けています。
