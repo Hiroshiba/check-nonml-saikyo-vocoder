@@ -1,0 +1,41 @@
+<section lang="ja" id="audio-attribution">
+<h2>固定短音声の出典・帰属・変更</h2>
+<p>LibriSpeech (c) 2014 by Vassil Panayotov。コーパス作成者はVassil Panayotov、Guoguo Chen、Daniel Povey、Sanjeev Khudanpurです。
+<a href="https://www.openslr.org/12/">LibriSpeech / OpenSLR SLR12</a>のtest-cleanから、固定録音1089-134686-0008と1188-133604-0003を使用しています。
+元の朗読はLibriVoxのボランティアによる録音、原テキストはProject Gutenbergに由来します。
+原録音の配布条件は<a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International（CC BY 4.0）</a>です。
+<a href="https://creativecommons.org/licenses/by/4.0/legalcode.en">ライセンス法文</a>、
+<a href="https://www.openslr.org/resources/12/test-clean.tar.gz">公式test-clean配布物</a>を参照してください。公式SLR12のCC BY 4.0表示は2026年10月17日に再確認しました。</p>
+<p>各録音につき原音・現ベースPML・WORLD Harvest・候補aHM＋Cartesian編集の無編集例のみ、計8例です。
+開始0、終了32,000標本（終端を含まない）、16 kHz・モノラル、各2秒です。評点による録音・区間の差替えはしていません。
+短い長さは今回の掲載範囲であり、利用許諾の根拠ではありません。</p>
+<h3>保存音声からの変更</h3>
+<p>原音例は正式入力の先頭2秒を抜粋しています。再合成例は同じ入力からすでに生成・保存された各方式のnative出力を抜粋しています。
+候補のnativeはCartesian q=0の実測出力で、別の直接復号例ではありません。PMLはpml-lowband-fwcep60-v1です。
+この準備で解析・合成・評価をやり直していません。</p>
+<p>ブラウザーと凍結済みレポートのWAV読取形式に合わせ、全例を16-bit符号付きPCM little-endian WAV（形式タグ1）にしました。
+保存されたfloat64標本xを、固定フルスケールでround(x×32768)へ変換しています。最近接への丸めで同距離なら偶数、ディザなしです。
+復号値は整数値÷32768、量子化の絶対誤差は最大1/65536（0.5 LSB）以下です。
+原音2例の標本値は変化せず、再合成6例にはこの量子化があります。これは音量正規化ではありません。
+非有限値またはPCM16範囲外なら処理を拒否し、クリップしません。今回の8例に該当標本はありません。</p>
+<p>書出し時の音量正規化、クリッピング、フィルター、リサンプリング、無音除去、時間位置合わせは行っていません。
+標本の順序と先頭時刻を保持しています。測定用NPYは変更していません。
+各方式の遅延・時間対応を補正した比較ではなく、全測定区間を代表する聴感上の保証もありません。</p>
+<p>方式のソフトウェアライセンスを入力由来の音声出力へ機械的に同一適用する判断ではありません。
+aHM関連依存には複数のライセンスがあり、LGPLだけとは表示しません。
+著作者・配布元・LibriVox・話者が本比較や用途を推奨していることを意味しません。
+CC BY 4.0で認められる利用を妨げる追加制限やDRMを設けません。人格権・プライバシー等すべての権利を保証するものではありません。</p>
+<h3>録音・方式・実ファイルSHA-256</h3>
+<ul>
+<li>librispeech_1089-134686-0008 / 原音：WAV SHA-256 <code>8ea2a45b1bb10cef7612e5a74184868a6c832a5c2bc48a885139e7b5c44ddaf4</code>。元出力NPY SHA-256 <code>2906c24c57cf16b7a1a29dac15e0d727cb8b4679724efec0f565946723cc9fd8</code>。</li>
+<li>librispeech_1089-134686-0008 / 現ベース PML：WAV SHA-256 <code>2609fb0f90307b278de93202a76494ba69cd16bef6e074a5f146473b98e868d5</code>。元出力NPY SHA-256 <code>66fa9fe6bb6e0880a2213e700ec59f6dd8af48283c5c350d980d948bf12644f6</code>。</li>
+<li>librispeech_1089-134686-0008 / WORLD Harvest：WAV SHA-256 <code>f066a53b706abb33f533754c1a4e13b04b3216970f0a841e0d7de6cff2cc8599</code>。元出力NPY SHA-256 <code>b9642f806433f5df51fe8afdae3f61875accd58d811322c5149ac4a0e21327b6</code>。</li>
+<li>librispeech_1089-134686-0008 / 候補 aHM＋Cartesian編集：WAV SHA-256 <code>1043528edc2e52a57f250921c392ad0d401db6c0fc5556ec2ceca30c3a7f6b93</code>。元出力NPY SHA-256 <code>a7718120ea3d8e8f80c72c57bf0ad34d1e8459dfcef13e85316b1ad535b45e2a</code>。</li>
+<li>librispeech_1188-133604-0003 / 原音：WAV SHA-256 <code>9a645533825d42fc594515ad881bd553f67ddd2c8cab0e7bf62a1dbe32dae461</code>。元出力NPY SHA-256 <code>d03996160873a22360bde5b073fc057837439fa39b35136ceaeb8ffda73d15c2</code>。</li>
+<li>librispeech_1188-133604-0003 / 現ベース PML：WAV SHA-256 <code>4abe479493c337df648ec49bf07fec6535260aa057519090562155c4ba93bd87</code>。元出力NPY SHA-256 <code>d3e29b6ecedbb29f259d2b5da2790a9fb769b78cda50fe1daae75d47da0e9713</code>。</li>
+<li>librispeech_1188-133604-0003 / WORLD Harvest：WAV SHA-256 <code>e4bd231126ba8b83b666424e2c977a5f155c5304b29f60d7c7f8fae54f08002b</code>。元出力NPY SHA-256 <code>3318f4180a2a97cdd8f7b6feb8b58f99a9cd8acb69de42d49dccced7a95af027</code>。</li>
+<li>librispeech_1188-133604-0003 / 候補 aHM＋Cartesian編集：WAV SHA-256 <code>13b7dd37e31ff62be82c223747f80dc912d40bba12db3e46e96be25d883986ed</code>。元出力NPY SHA-256 <code>e1416621841c54beb3f1cb1a59ad3b71a7021d0801154b547676491a87478ab3</code>。</li>
+</ul>
+<p>8組すべて保存済み終端出力を使用でき、掲載対象内の上流生成失敗は0組です。この件数から全120録音や編集条件の成功を推定しないでください。
+実WAVと同じbytesを音声JSONに収録しています。ブラウザーでの実再生と最終レポート組立てはこの準備では未実施です。</p>
+</section>

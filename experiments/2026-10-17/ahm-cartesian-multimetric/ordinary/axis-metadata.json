@@ -1,0 +1,479 @@
+{
+  "axes": [
+    {
+      "id": "existing.stft5.log_magnitude_mae_db",
+      "condition": "native",
+      "label": "5ms STFT 対数振幅MAE",
+      "unit": "dB"
+    },
+    {
+      "id": "existing.stft5.spectral_convergence",
+      "condition": "native",
+      "label": "5ms STFT スペクトル相対誤差",
+      "unit": "ratio"
+    },
+    {
+      "id": "existing.stft20.log_magnitude_mae_db",
+      "condition": "native",
+      "label": "20ms STFT 対数振幅MAE",
+      "unit": "dB"
+    },
+    {
+      "id": "existing.stft20.spectral_convergence",
+      "condition": "native",
+      "label": "20ms STFT スペクトル相対誤差",
+      "unit": "ratio"
+    },
+    {
+      "id": "existing.stft80.log_magnitude_mae_db",
+      "condition": "native",
+      "label": "80ms STFT 対数振幅MAE",
+      "unit": "dB"
+    },
+    {
+      "id": "existing.stft80.spectral_convergence",
+      "condition": "native",
+      "label": "80ms STFT スペクトル相対誤差",
+      "unit": "ratio"
+    },
+    {
+      "id": "existing.band_mae",
+      "condition": "native",
+      "label": "全時間帯域エネルギーMAE",
+      "unit": "dB"
+    },
+    {
+      "id": "existing.mrstft_mean",
+      "condition": "native",
+      "label": "3窓平均MR-STFT対数振幅MAE",
+      "unit": "dB"
+    },
+    {
+      "id": "existing.rms_signed",
+      "condition": "native",
+      "label": "符号付きRMS差（診断）",
+      "unit": "dB"
+    },
+    {
+      "id": "existing.rms_absolute",
+      "condition": "native",
+      "label": "RMS絶対差",
+      "unit": "dB"
+    },
+    {
+      "id": "existing.estoi",
+      "condition": "native",
+      "label": "eSTOI明瞭性推定",
+      "unit": "score"
+    },
+    {
+      "id": "existing.quiet.output_energy_fraction",
+      "condition": "native",
+      "label": "低エネルギー区間の出力エネルギー比（診断）",
+      "unit": "fraction"
+    },
+    {
+      "id": "existing.quiet.output_rms_dbfs",
+      "condition": "native",
+      "label": "低エネルギー区間の出力RMS（診断）",
+      "unit": "dBFS"
+    },
+    {
+      "id": "existing.quiet.output_peak",
+      "condition": "native",
+      "label": "低エネルギー区間の出力peak（診断）",
+      "unit": "amplitude"
+    },
+    {
+      "id": "existing.level.rms_dbfs",
+      "condition": "native",
+      "label": "共通区間RMS（診断）",
+      "unit": "dBFS"
+    },
+    {
+      "id": "existing.level.peak",
+      "condition": "native",
+      "label": "peak（診断）",
+      "unit": "amplitude"
+    },
+    {
+      "id": "existing.level.crest_factor_db",
+      "condition": "native",
+      "label": "波高率（診断）",
+      "unit": "dB"
+    },
+    {
+      "id": "existing.fullscale.at_or_above_full_scale_fraction",
+      "condition": "native",
+      "label": "振幅1以上の比率（診断）",
+      "unit": "fraction"
+    },
+    {
+      "id": "existing.fullscale.near_full_scale_fraction",
+      "condition": "native",
+      "label": "振幅0.999以上の比率（診断）",
+      "unit": "fraction"
+    },
+    {
+      "id": "existing.fullscale.longest_full_scale_run_samples",
+      "condition": "native",
+      "label": "振幅1以上の最長連続長（診断）",
+      "unit": "samples"
+    },
+    {
+      "id": "existing.pitch.absolute_difference_cents_median",
+      "condition": "native",
+      "label": "推定音高差中央値",
+      "unit": "cent"
+    },
+    {
+      "id": "existing.pitch.absolute_difference_cents_p95",
+      "condition": "native",
+      "label": "推定音高差P95",
+      "unit": "cent"
+    },
+    {
+      "id": "existing.pitch.paired_voiced_fraction",
+      "condition": "native",
+      "label": "推定有声対応率",
+      "unit": "fraction"
+    },
+    {
+      "id": "existing.pitch.missing_fraction",
+      "condition": "native",
+      "label": "原音推定有声に対する出力有声未検出率",
+      "unit": "fraction"
+    },
+    {
+      "id": "6.local_erb40",
+      "condition": "native",
+      "label": "40ms局所聴覚帯域距離",
+      "unit": "dB"
+    },
+    {
+      "id": "existing.envelope.0.10.log_rms_mae_db",
+      "condition": "native",
+      "label": "全帯域 10ms 対数RMS MAE",
+      "unit": "dB"
+    },
+    {
+      "id": "existing.envelope.0.10.rms_envelope_nrmse",
+      "condition": "native",
+      "label": "全帯域 10ms RMS包絡正規化RMSE",
+      "unit": "ratio"
+    },
+    {
+      "id": "existing.envelope.0.10.envelope_correlation",
+      "condition": "native",
+      "label": "全帯域 10ms 包絡相関",
+      "unit": "correlation"
+    },
+    {
+      "id": "existing.envelope.0.10.rms_gain_error_db",
+      "condition": "native",
+      "label": "全帯域 10ms 符号付き包絡RMS差（診断）",
+      "unit": "dB"
+    },
+    {
+      "id": "existing.modulation.0.10",
+      "condition": "native",
+      "label": "全帯域 10ms 変調帯域MAE",
+      "unit": "dB"
+    },
+    {
+      "id": "existing.envelope.0.40.log_rms_mae_db",
+      "condition": "native",
+      "label": "全帯域 40ms 対数RMS MAE",
+      "unit": "dB"
+    },
+    {
+      "id": "existing.envelope.0.40.rms_envelope_nrmse",
+      "condition": "native",
+      "label": "全帯域 40ms RMS包絡正規化RMSE",
+      "unit": "ratio"
+    },
+    {
+      "id": "existing.envelope.0.40.envelope_correlation",
+      "condition": "native",
+      "label": "全帯域 40ms 包絡相関",
+      "unit": "correlation"
+    },
+    {
+      "id": "existing.envelope.0.40.rms_gain_error_db",
+      "condition": "native",
+      "label": "全帯域 40ms 符号付き包絡RMS差（診断）",
+      "unit": "dB"
+    },
+    {
+      "id": "existing.modulation.0.40",
+      "condition": "native",
+      "label": "全帯域 40ms 変調帯域MAE",
+      "unit": "dB"
+    },
+    {
+      "id": "existing.envelope.1.10.log_rms_mae_db",
+      "condition": "native",
+      "label": "300–1000Hz 10ms 対数RMS MAE",
+      "unit": "dB"
+    },
+    {
+      "id": "existing.envelope.1.10.rms_envelope_nrmse",
+      "condition": "native",
+      "label": "300–1000Hz 10ms RMS包絡正規化RMSE",
+      "unit": "ratio"
+    },
+    {
+      "id": "existing.envelope.1.10.envelope_correlation",
+      "condition": "native",
+      "label": "300–1000Hz 10ms 包絡相関",
+      "unit": "correlation"
+    },
+    {
+      "id": "existing.envelope.1.10.rms_gain_error_db",
+      "condition": "native",
+      "label": "300–1000Hz 10ms 符号付き包絡RMS差（診断）",
+      "unit": "dB"
+    },
+    {
+      "id": "existing.modulation.1.10",
+      "condition": "native",
+      "label": "300–1000Hz 10ms 変調帯域MAE",
+      "unit": "dB"
+    },
+    {
+      "id": "existing.envelope.1.40.log_rms_mae_db",
+      "condition": "native",
+      "label": "300–1000Hz 40ms 対数RMS MAE",
+      "unit": "dB"
+    },
+    {
+      "id": "existing.envelope.1.40.rms_envelope_nrmse",
+      "condition": "native",
+      "label": "300–1000Hz 40ms RMS包絡正規化RMSE",
+      "unit": "ratio"
+    },
+    {
+      "id": "existing.envelope.1.40.envelope_correlation",
+      "condition": "native",
+      "label": "300–1000Hz 40ms 包絡相関",
+      "unit": "correlation"
+    },
+    {
+      "id": "existing.envelope.1.40.rms_gain_error_db",
+      "condition": "native",
+      "label": "300–1000Hz 40ms 符号付き包絡RMS差（診断）",
+      "unit": "dB"
+    },
+    {
+      "id": "existing.modulation.1.40",
+      "condition": "native",
+      "label": "300–1000Hz 40ms 変調帯域MAE",
+      "unit": "dB"
+    },
+    {
+      "id": "existing.envelope.2.10.log_rms_mae_db",
+      "condition": "native",
+      "label": "1000–3000Hz 10ms 対数RMS MAE",
+      "unit": "dB"
+    },
+    {
+      "id": "existing.envelope.2.10.rms_envelope_nrmse",
+      "condition": "native",
+      "label": "1000–3000Hz 10ms RMS包絡正規化RMSE",
+      "unit": "ratio"
+    },
+    {
+      "id": "existing.envelope.2.10.envelope_correlation",
+      "condition": "native",
+      "label": "1000–3000Hz 10ms 包絡相関",
+      "unit": "correlation"
+    },
+    {
+      "id": "existing.envelope.2.10.rms_gain_error_db",
+      "condition": "native",
+      "label": "1000–3000Hz 10ms 符号付き包絡RMS差（診断）",
+      "unit": "dB"
+    },
+    {
+      "id": "existing.modulation.2.10",
+      "condition": "native",
+      "label": "1000–3000Hz 10ms 変調帯域MAE",
+      "unit": "dB"
+    },
+    {
+      "id": "existing.envelope.2.40.log_rms_mae_db",
+      "condition": "native",
+      "label": "1000–3000Hz 40ms 対数RMS MAE",
+      "unit": "dB"
+    },
+    {
+      "id": "existing.envelope.2.40.rms_envelope_nrmse",
+      "condition": "native",
+      "label": "1000–3000Hz 40ms RMS包絡正規化RMSE",
+      "unit": "ratio"
+    },
+    {
+      "id": "existing.envelope.2.40.envelope_correlation",
+      "condition": "native",
+      "label": "1000–3000Hz 40ms 包絡相関",
+      "unit": "correlation"
+    },
+    {
+      "id": "existing.envelope.2.40.rms_gain_error_db",
+      "condition": "native",
+      "label": "1000–3000Hz 40ms 符号付き包絡RMS差（診断）",
+      "unit": "dB"
+    },
+    {
+      "id": "existing.modulation.2.40",
+      "condition": "native",
+      "label": "1000–3000Hz 40ms 変調帯域MAE",
+      "unit": "dB"
+    },
+    {
+      "id": "existing.envelope.3.10.log_rms_mae_db",
+      "condition": "native",
+      "label": "3000–6000Hz 10ms 対数RMS MAE",
+      "unit": "dB"
+    },
+    {
+      "id": "existing.envelope.3.10.rms_envelope_nrmse",
+      "condition": "native",
+      "label": "3000–6000Hz 10ms RMS包絡正規化RMSE",
+      "unit": "ratio"
+    },
+    {
+      "id": "existing.envelope.3.10.envelope_correlation",
+      "condition": "native",
+      "label": "3000–6000Hz 10ms 包絡相関",
+      "unit": "correlation"
+    },
+    {
+      "id": "existing.envelope.3.10.rms_gain_error_db",
+      "condition": "native",
+      "label": "3000–6000Hz 10ms 符号付き包絡RMS差（診断）",
+      "unit": "dB"
+    },
+    {
+      "id": "existing.modulation.3.10",
+      "condition": "native",
+      "label": "3000–6000Hz 10ms 変調帯域MAE",
+      "unit": "dB"
+    },
+    {
+      "id": "existing.envelope.3.40.log_rms_mae_db",
+      "condition": "native",
+      "label": "3000–6000Hz 40ms 対数RMS MAE",
+      "unit": "dB"
+    },
+    {
+      "id": "existing.envelope.3.40.rms_envelope_nrmse",
+      "condition": "native",
+      "label": "3000–6000Hz 40ms RMS包絡正規化RMSE",
+      "unit": "ratio"
+    },
+    {
+      "id": "existing.envelope.3.40.envelope_correlation",
+      "condition": "native",
+      "label": "3000–6000Hz 40ms 包絡相関",
+      "unit": "correlation"
+    },
+    {
+      "id": "existing.envelope.3.40.rms_gain_error_db",
+      "condition": "native",
+      "label": "3000–6000Hz 40ms 符号付き包絡RMS差（診断）",
+      "unit": "dB"
+    },
+    {
+      "id": "existing.modulation.3.40",
+      "condition": "native",
+      "label": "3000–6000Hz 40ms 変調帯域MAE",
+      "unit": "dB"
+    },
+    {
+      "id": "existing.erb20",
+      "condition": "native",
+      "label": "20ms ERB距離",
+      "unit": "dB"
+    },
+    {
+      "id": "2.scoreq",
+      "condition": "native",
+      "label": "SCOREQ参照距離",
+      "unit": "score"
+    },
+    {
+      "id": "1.native_mos",
+      "condition": "native",
+      "label": "予測MOS",
+      "unit": "predicted MOS"
+    },
+    {
+      "id": "1.native_mos.pitch_minus3",
+      "condition": "pitch_minus3",
+      "label": "予測MOS",
+      "unit": "predicted MOS"
+    },
+    {
+      "id": "1.native_mos.pitch_plus3",
+      "condition": "pitch_plus3",
+      "label": "予測MOS",
+      "unit": "predicted MOS"
+    },
+    {
+      "id": "5.ecapa",
+      "condition": "native",
+      "label": "ECAPA話者類似度",
+      "unit": "cosine"
+    },
+    {
+      "id": "5.ecapa.pitch_minus3",
+      "condition": "pitch_minus3",
+      "label": "ECAPA話者類似度",
+      "unit": "cosine"
+    },
+    {
+      "id": "5.ecapa.pitch_plus3",
+      "condition": "pitch_plus3",
+      "label": "ECAPA話者類似度",
+      "unit": "cosine"
+    },
+    {
+      "id": "7.pitch.pitch_minus3",
+      "condition": "pitch_minus3",
+      "label": "音高追従MAE",
+      "unit": "cent"
+    },
+    {
+      "id": "7.pitch_missing.pitch_minus3",
+      "condition": "pitch_minus3",
+      "label": "有声未検出率",
+      "unit": "fraction"
+    },
+    {
+      "id": "7.pitch.pitch_plus3",
+      "condition": "pitch_plus3",
+      "label": "音高追従MAE",
+      "unit": "cent"
+    },
+    {
+      "id": "7.pitch_missing.pitch_plus3",
+      "condition": "pitch_plus3",
+      "label": "有声未検出率",
+      "unit": "fraction"
+    },
+    {
+      "id": "4.incremental_cer",
+      "condition": "native",
+      "label": "増分CER",
+      "unit": "rate"
+    },
+    {
+      "id": "4.incremental_wer",
+      "condition": "native",
+      "label": "増分WER",
+      "unit": "rate"
+    }
+  ],
+  "run_plan_sha256": "7ef77aa4a486709a03ea7ebf273b0675c47949d34f08424e34a6ecc8440b9ee8"
+}
