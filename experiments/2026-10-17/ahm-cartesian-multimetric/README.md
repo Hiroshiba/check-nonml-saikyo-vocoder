@@ -1,8 +1,8 @@
 # aHMと固定Cartesian編集の再合成・制御・特徴空間比較
 
-**固定120録音のうち96録音を測定・保存したDraftです。全体の順位・採否は未確定です。** 2026年10月17日（日本時間）の記録。復旧した固定入力・候補ソースから、12録音ずつ同じ条件で候補・現PML・WORLDと主71軸／編集8軸を直列測定しています。
+**固定120録音のうち108録音を測定・保存したDraftです。全体の順位・採否は未確定です。** 2026年10月17日（日本時間）の記録。復旧した固定入力・候補ソースから、12録音ずつ同じ条件で候補・現PML・WORLDと主71軸／編集8軸を直列測定しています。
 
-保存済みの全予定行と失敗状態：[区間01](checkpoints/chunk-01.json.gz)、[区間02](checkpoints/chunk-02.json.gz)、[区間03](checkpoints/chunk-03.json.gz)、[区間04](checkpoints/chunk-04.json.gz)、[区間05](checkpoints/chunk-05.json.gz)、[区間06](checkpoints/chunk-06.json.gz)、[区間07](checkpoints/chunk-07.json.gz)、[区間08](checkpoints/chunk-08.json.gz)。各gzipは同名のstorage.jsonに圧縮前後のSHA・サイズを記録した可逆圧縮です。以下の評価予定を全件実測済みとは扱いません。
+保存済みの全予定行と失敗状態：[区間01](checkpoints/chunk-01.json.gz)、[区間02](checkpoints/chunk-02.json.gz)、[区間03](checkpoints/chunk-03.json.gz)、[区間04](checkpoints/chunk-04.json.gz)、[区間05](checkpoints/chunk-05.json.gz)、[区間06](checkpoints/chunk-06.json.gz)、[区間07](checkpoints/chunk-07.json.gz)、[区間08](checkpoints/chunk-08.json.gz)、[区間09](checkpoints/chunk-09.json.gz)。各gzipは同名のstorage.jsonに圧縮前後のSHA・サイズを記録した可逆圧縮です。以下の評価予定を全件実測済みとは扱いません。
 
 ## 今回の問いと現在のベース
 
@@ -94,3 +94,7 @@ native aHM解析と固定Cartesian音高編集を一つの凍結候補として�
 固定順の次の12録音を測定しました。2856予定行の内訳は測定値あり2736、未対応96、対象外・支持不足等24です。全予定枠を保持し、96/120録音まで保存しました。全体順位・採否は未確定です。
 
 待機中の[PMLの風音・ポップ様現象の原因調査](research/wind-pop-followup.md)を記録します。原因確定や新手法の品質改善を実測した資料ではありません。
+
+## 区間09の保存状態
+
+固定順の次の12録音を測定しました。2856予定行の内訳は測定値あり2700、未対応96、対象外・支持不足等60です。全予定枠を保持し、108/120録音まで保存しました。全体順位・採否は未確定です。
