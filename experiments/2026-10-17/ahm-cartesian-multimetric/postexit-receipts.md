@@ -1,0 +1,17 @@
+# 一時ファイルの終了時削除と保存証跡の事後修復
+
+2026年10月17日。これは元のevaluator凍結後に追加した保存上の事後処理です。事前計画に含まれていたようには扱いません。科学コード、モデル、入力、前処理、測定値、失敗状態は変更・再計算していません。
+
+最初の12録音の予測MOS計算では、process内で証跡を作る時点に存在したTorch生成モジュールとbytecodeが、終了時のTemporaryDirectory cleanupで削除されました。元のnative MOS receiptの54 artifact中52件は現在の実SHAと一致し、欠落は指定2件だけでした。48個票とsummaryの完全一致も確認しました。編集MOSでも同じ終了時削除が発生しています。
+
+元receiptは書き換えず保持し、独立レビュー済み[限定修復helper](../../../scripts/measurement_receipts/repair_postexit_receipt.py)で別のreceiptを作成しました。helper SHA256は a4c13f0cf54cf4e3bdefc529c09eee88f1317d10f3707c6c564427c69548e569 です。
+
+- 許す欠落は、同一一時directory内の既知Torch生成.py（内容SHA固定）と対応CPython3.12 bytecodeの2件だけ
+- 元receipt・計画・helperのSHA、stage、区間、欠落2件の旧SHAを明示した個別認可が必要
+- 存続する全artifactのSHAと個票・summaryの一致を再照合
+- 元receiptと欠落の旧SHA、helper、認可、固定Torch sourceを新証跡から辿れるように保存
+- 任意のwork file、科学個票、波形、モデル等の欠落を許容するものではない
+
+区間01で使用するnative MOS修復receipt SHA256は1296dcb2202d3945c159cfa74c8d3ea39f1f661f8c818d0c4af058b57052e0e7、編集MOSは27c9af17e83d1a07aa2e13637d9d92a024f2e5f93af3eaf20d09c3571b808b7cです。元の科学計画SHA256 7ef77aa4a486709a03ea7ebf273b0675c47949d34f08424e34a6ecc8440b9ee8 は維持します。
+
+後続区間でも同じ限定条件に該当する場合だけ、process終了後の保存監査として適用します。合成失敗や指標失敗の救済再測定ではありません。元のmeasured/upstream_failed/unsupported等と全数値をそのまま保持します。
