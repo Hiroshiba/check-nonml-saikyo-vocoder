@@ -2,7 +2,7 @@
   "schema": "raw-full-120-public-plan-v1",
   "run_id": "raw-full-120-broad-risk-v1-20261019",
   "snapshot_date_utc": "2026-10-18",
-  "status": "preparing_no_new_120_measurements",
+  "status": "checkpoint_blocked_before_generation",
   "publication_scope": "reviewed_plan_only",
   "current_base": "pml-lowband-fwcep60-v1",
   "raw_full_adopted": false,
@@ -159,5 +159,49 @@
     "existing_PML_evaluation_commit": "48322013c9c97c1cbb857ac1f8323cce6e5ff622",
     "reviewed_design_sha256": "62b9592f486e18d92e887cf712157cc3990ec4fec6f99bdf60b3b4812f73e80c"
   },
-  "legacy_formal_120_expansion_record": "unchanged_false"
+  "legacy_formal_120_expansion_record": "unchanged_false",
+  "progress": {
+    "recorded_at": "2026-10-18T21:11:00Z",
+    "evidence_basis": "execution_environment_terminal_records",
+    "references": {
+      "completed": 120,
+      "planned": 120,
+      "exit_code": 0
+    },
+    "encode": {
+      "completed": 120,
+      "planned": 120,
+      "exit_code": 0
+    },
+    "generated_outputs": {
+      "completed": 0,
+      "planned": 1440
+    },
+    "quality_metrics": "not_measured",
+    "events_freeze_sha256": "1f8601d116bc443fb49bde4642ca734b59406d0b8d5d77a67ec35c1795f64768",
+    "decoder_manifest_sha256": "e6e75f473e27c00938fb75a0c12a59c8abaef0b44f49b887b0a6df496310c232",
+    "reference_feature_checkpoint": {
+      "status": "blocked_before_prepare",
+      "http_status": 401,
+      "failure_stage": "tools/list",
+      "save_reached": false,
+      "same_official_helper_new_invocation_retry_count": 1,
+      "retry_result": "same_http_401",
+      "originals_retained_in_execution_environment": true,
+      "official_persistence_complete": false,
+      "fixed_version_readback_complete": false,
+      "coordinator_artifact_bytes_readback_complete": false,
+      "alternate_transfer_used": false
+    },
+    "bulk_generation": "on_hold_until_checkpoint_succeeds",
+    "generation_source": {
+      "final_static_review": "complete",
+      "private_preservation": "complete"
+    },
+    "quality_source": {
+      "final_review": "in_progress"
+    },
+    "current_base": "pml-lowband-fwcep60-v1",
+    "raw_full_adopted": false
+  }
 }
