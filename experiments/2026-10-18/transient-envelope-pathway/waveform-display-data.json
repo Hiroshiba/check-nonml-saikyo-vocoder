@@ -1,0 +1,147 @@
+{
+  "schema": "single-case-envelope-pathway-explanation-v1",
+  "scope": "Replace only saved FWCEP row419 with fixed-F0 future-suffix analysis from cutoff2.103. All other saved features, pulse clocks, masks and RNG seed0 unchanged. Native and minus3 are descriptive controls. No gain normalization or quality claim.",
+  "source_sha256": {
+    "summary.json": "d8022a78bfdceb338420e26d2927be1e5966deb981f64a47c2f090741986ce2d",
+    "band-observations.json": "c061376b854fbf937257dbd66a4ca082a4abecd33e50251268f481cfc44176c8",
+    "baseline-provenance-comparison.json": "9071dbb63537351909356b760d487588b281cc6f41a730f426fc51b1f7e2ef6e"
+  },
+  "first_exact_output_difference_s": 2.0874375,
+  "modified_input_suffix_start_s": 2.103,
+  "temporal_difference_ms": 15.562500000000146,
+  "region_band_changes": [
+    {
+      "variant": "hold_2.103",
+      "center_start_s": 2.08,
+      "center_end_s": 2.094,
+      "frame_count": 14,
+      "bands_hz": [
+        [
+          1500,
+          3000
+        ],
+        [
+          3000,
+          8000
+        ]
+      ],
+      "band_power_change_db": [
+        -12.641296935035003,
+        -12.543630162251468
+      ]
+    },
+    {
+      "variant": "hold_2.103",
+      "center_start_s": 2.094,
+      "center_end_s": 2.103,
+      "frame_count": 9,
+      "bands_hz": [
+        [
+          1500,
+          3000
+        ],
+        [
+          3000,
+          8000
+        ]
+      ],
+      "band_power_change_db": [
+        -0.0821669791281593,
+        -0.1597336094360642
+      ]
+    },
+    {
+      "variant": "hold_2.103",
+      "center_start_s": 2.103,
+      "center_end_s": 2.126,
+      "frame_count": 23,
+      "bands_hz": [
+        [
+          1500,
+          3000
+        ],
+        [
+          3000,
+          8000
+        ]
+      ],
+      "band_power_change_db": [
+        9.472182788457217e-07,
+        5.141124480245732e-05
+      ]
+    },
+    {
+      "variant": "past_reflect_2.103",
+      "center_start_s": 2.08,
+      "center_end_s": 2.094,
+      "frame_count": 14,
+      "bands_hz": [
+        [
+          1500,
+          3000
+        ],
+        [
+          3000,
+          8000
+        ]
+      ],
+      "band_power_change_db": [
+        -12.620121095871433,
+        -12.504332757504631
+      ]
+    },
+    {
+      "variant": "past_reflect_2.103",
+      "center_start_s": 2.094,
+      "center_end_s": 2.103,
+      "frame_count": 9,
+      "bands_hz": [
+        [
+          1500,
+          3000
+        ],
+        [
+          3000,
+          8000
+        ]
+      ],
+      "band_power_change_db": [
+        -0.08170132718069908,
+        -0.16007024853957375
+      ]
+    },
+    {
+      "variant": "past_reflect_2.103",
+      "center_start_s": 2.103,
+      "center_end_s": 2.126,
+      "frame_count": 23,
+      "bands_hz": [
+        [
+          1500,
+          3000
+        ],
+        [
+          3000,
+          8000
+        ]
+      ],
+      "band_power_change_db": [
+        8.54639238743978e-05,
+        6.20119768028448e-05
+      ]
+    }
+  ],
+  "plot_reference": "Original +3 output mean band power for centers [2.103,2.126), fixed for all variants and times.",
+  "plot_reference_power": [
+    8.118502981041078e-05,
+    4.452432011157635e-05
+  ],
+  "plot_definition": "5ms periodic Hann,1ms hop,FFT128; one-sided bin power sum/(FFTsize*sum(window squared)); bands half-open1.5–3k and3–8k. Region membership by frame center; a centered window extends2.5ms each side. Exact first waveform difference is not auditory onset. No gain normalization.",
+  "source_caveat": "Copied pml_ablation source with default reference_mode=edited; ablation branch inactive. No claim of source-byte identity with published source.",
+  "limits": [
+    "Only FWCEP row419 replaced. Both spectral envelope and derived minimum phase can change.",
+    "First exact waveform difference is not an auditory onset.",
+    "Near-zero later high-band mean change is not proof that the whole attack waveform is preserved.",
+    "One known recording; not a quality method, adoption decision or isolated-burst ground truth."
+  ]
+}

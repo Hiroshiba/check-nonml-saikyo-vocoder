@@ -1,0 +1,15 @@
+{
+  "purpose": "Scientific provenance only; no adoption claim",
+  "analysis_input_npy_sha256": "d7b6a60f190aeff3e64279914fcc2517ac55145c4993566d15cb7fa6c01169ef",
+  "pml_input_sha256": "131e720fd96d9619a67580d1dbf6728285453c3a75112dbbb053f9d84771736c",
+  "future_analysis_result_sha256": "11b7d4bf07bc084e120fbad8b4858be5d293359eec826586a8aadb0b414d62ed",
+  "pathway_result_sha256": "d8022a78bfdceb338420e26d2927be1e5966deb981f64a47c2f090741986ce2d",
+  "pathway_source_freeze_sha256": "670794e19d9a47425baa73f6b55d6b77a3745a4496ce654ca80163a727b40296",
+  "runtime": {
+    "python": "3.12.14",
+    "numpy": "2.3.5",
+    "scipy": "1.17.0"
+  },
+  "command": "env PYTHONDONTWRITEBYTECODE=1 OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 MKL_NUM_THREADS=1 NUMEXPR_NUM_THREADS=1 python -B observe.py --analysis-results <fixed future analysis results> --output <new output directory>",
+  "source_note": "The measured synthesis copy contains inactive prior lowband ablation branches. Defaults were used. This is not a claim of byte identity with public base. Frozen measurement package retained separately; original PML and full-precision waves are not included in the public report."
+}

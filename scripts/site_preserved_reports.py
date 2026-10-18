@@ -4,9 +4,11 @@ from datetime import date
 import gzip
 import hashlib
 import html
+import io
 import json
 from pathlib import Path
 import shutil
+import wave
 
 from site_metric_comparison import comparison
 
@@ -65,12 +67,19 @@ def copy_artifacts(root, output, item):
         raise ValueError('一覧に必要な公開成果物がありません')
     for record in records:
         name = record['name']
-        if not name.endswith(('.html', '.json', '.json.gz')):
+        allowed = (('.html', '.json', '.json.gz', '.svg', '.wav') if navigation
+                   else ('.html', '.json', '.json.gz'))
+        if not name.endswith(allowed):
             raise ValueError(f'未定義の公開形式です: {name}')
         file = relative_file(source, name)
         content = checked_bytes(file, record)
         if len(content) >= 10 * 1024 * 1024:
             raise ValueError(f'公開単体サイズが10 MiB以上です: {name}')
+        if navigation and name.endswith('.wav'):
+            with wave.open(io.BytesIO(content), 'rb') as sample:
+                if (sample.getnframes() < 1 or sample.getframerate() < 1
+                        or sample.getnframes() / sample.getframerate() > 5):
+                    raise ValueError(f'公開WAVは5秒以下の短例に限ります: {name}')
         target = output / item['path'] / name
         if target.exists():
             raise ValueError(f'既存の公開先と衝突します: {target}')
@@ -161,3 +170,4 @@ def preserved_cards(root, output, recorded_time, time_label):
                 + '</article>')
         cards.append((recorded_time(item), item['path'], item['id'], card))
     return cards
+
