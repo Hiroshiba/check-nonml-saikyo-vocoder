@@ -1,0 +1,163 @@
+{
+  "schema": "raw-full-120-public-plan-v1",
+  "run_id": "raw-full-120-broad-risk-v1-20261019",
+  "snapshot_date_utc": "2026-10-18",
+  "status": "preparing_no_new_120_measurements",
+  "publication_scope": "reviewed_plan_only",
+  "current_base": "pml-lowband-fwcep60-v1",
+  "raw_full_adopted": false,
+  "adoption_evaluation_complete": false,
+  "all_79_axes_complete": false,
+  "dataset": {
+    "corpus": "LibriSpeech test-clean fixed120",
+    "recordings": 120,
+    "speakers": 40,
+    "recordings_per_speaker": 3,
+    "sample_rate_hz": 16000,
+    "duration_seconds": 615.935,
+    "untouched_holdout": false,
+    "includes_discovery_recordings": 5,
+    "input_manifest_sha256": "1f392fc60fbca4003c236f03ffd9edba82b048737f23cf250295c1b4c6c85193"
+  },
+  "conditions": {
+    "methods": ["PML", "RAW_FULL"],
+    "pitch_semitones": [0, -3, 3],
+    "seeds": [0, 20261015],
+    "planned_waveforms": 1440,
+    "planned_paired_comparisons": 720,
+    "formal_eight_seed_evaluation": false
+  },
+  "chunks": {
+    "count": 10,
+    "order": "frozen_input_manifest_order",
+    "recordings_each": 12,
+    "speakers_each": 4,
+    "waveforms_each": 144,
+    "pairs_each": 72,
+    "checkpoint_and_fixed_version_readback_before_next": true
+  },
+  "decoder_contract": {
+    "inputs": ["saved_PML_parameters", "saved_A_raw", "saved_L_raw", "pitch", "seed"],
+    "original_audio_access": "encoder_and_explicit_reference_metrics_only",
+    "source_am_separated": false,
+    "existing_numerics_and_rng_order_frozen": true
+  },
+  "metrics": {
+    "UTMOSv2": {
+      "outputs": 1440,
+      "originals": 120,
+      "window": "full_length",
+      "settings": "fold0/bvcc; extraction_seed=20261012; draws=1; batch=1; CPU=2; no_silence_removal"
+    },
+    "ECAPA": {
+      "native_outputs": 480,
+      "native_window": "frozen_common_prefix",
+      "edited_outputs": 960,
+      "edited_window": "full_length",
+      "aggregate_windows_separately": true
+    },
+    "native_acoustics": {
+      "outputs_per_metric": 480,
+      "window": "frozen_common_prefix",
+      "metrics": ["eSTOI", "MR-STFT_5_20_80ms", "ERB40_40ms_Hann_5ms_hop_32bands_40Hz_to_Nyquist"]
+    },
+    "native_vs_original_F0": {
+      "outputs": 480,
+      "window": "full_length",
+      "estimator": "existing_controls.pitch_target_cents_0",
+      "original_estimate_is_ground_truth": false
+    },
+    "edited_self_native_F0": {
+      "outputs": 960,
+      "paired_differences": 480,
+      "window": "full_length",
+      "reference": "same_method_same_seed_native",
+      "estimator": "existing_YIN_65_700Hz_80ms_10ms_2kHz_filter",
+      "expected_common_missing_extra_voiced_counts_and_positions_required": true,
+      "identical_voiced_support_across_methods": false
+    },
+    "ASR": {
+      "ground_truth_recordings": 55,
+      "speakers": 32,
+      "maximum_outputs": 660,
+      "original_recognitions": 55,
+      "without_full_ground_truth_outputs": 780,
+      "model": "wav2vec2-base-960h",
+      "decoder": "greedy_CTC",
+      "maximum_reference_cer": 0.20,
+      "gate_after_output_inference": true,
+      "over_gate_raw_values_status": "partial"
+    },
+    "signal_and_local_observations": {
+      "outputs": 1440,
+      "originals": 120,
+      "global_low_band_hz": [0, 1000],
+      "local_bands_hz": [[1500, 3000], [3000, 8000]],
+      "bands_are_left_closed_right_open": true,
+      "events": "one_per_original_per_band_frozen_before_candidate_generation",
+      "legacy_five_recording_events": "separate_tracking"
+    },
+    "cost": {
+      "feature_bytes": true,
+      "timing_components": ["incremental_A_L_encoder", "instrumented_decode", "observation", "IO"],
+      "current_run_PML_encoder_timing": "not_measured_existing_features",
+      "pure_decode_RTF": "unmeasured_unless_separately_identified"
+    }
+  },
+  "fixed_flags_relative_to_PML": {
+    "MOS_delta_lt": -0.15,
+    "edited_F0_MAE_delta_cent_gt": 10,
+    "edited_F0_miss_delta_percentage_points_gt": 2,
+    "strong_power_loss_dB_gt": 1,
+    "minus10dB_crossing_delay_ms_gt": 2,
+    "newly_unreached_crossing": true,
+    "absolute_RMS_change_dB_gt": 1,
+    "global_low_band_power_loss_dB_gt": 1,
+    "early_power_reduction_dB_ge_effect_only": 3,
+    "new_harm_thresholds": false
+  },
+  "aggregation": {
+    "order": ["paired_difference_per_pitch_seed", "recording", "equal_weight_speaker"],
+    "conditions_per_recording": {"all": 6, "edited": 4, "native": 2},
+    "primary_120_support": "all_three_recordings_and_all_expected_pairs_per_speaker",
+    "bootstrap": {"unit": "speaker", "draws": 2000, "seed": 20261012, "interval": 0.95},
+    "ECAPA_native_and_edited_separate": true,
+    "ASR_support": "all_predeclared_GT_recordings_1_to_3_and_six_pairs_available_per_speaker",
+    "ASR_partial_values": "supplement_only",
+    "ASR_bootstrap_interval": false,
+    "missing_values_as_zero": false,
+    "all_pair_tails_and_harm_counts_required": true
+  },
+  "reuse": {
+    "saved_originals_PML_and_assets": true,
+    "values_require_full_metric_identity": true,
+    "decide_before_results": true,
+    "unmatched_legacy_values": "historical_reference_only"
+  },
+  "storage": {
+    "planned_float64_wave_body_bytes": 946076160,
+    "canonical_evidence_cap_bytes": 2147483648,
+    "working_area_cap_bytes": 4294967296,
+    "minimum_free_disk_bytes": 6442450944,
+    "official_private_checkpoint_only": true,
+    "all_wave_persistence_guaranteed": false,
+    "durable_only_after_fixed_version_readback": true,
+    "preserve_attempt_and_failure_records": true
+  },
+  "stop_conditions": ["input_or_asset_identity_mismatch", "rng_contract_mismatch", "nonfinite_output", "capacity_failure", "official_checkpoint_failure", "runtime_initialization_failure"],
+  "scientific_harm_is_operational_stop": false,
+  "limitations": ["selected_metrics_not_all79", "two_seeds_not_eight", "development_used_corpus_not_holdout", "source_AM_unseparated", "automatic_MOS_not_human_listening", "local_events_not_all_consonants", "48kHz_not_evaluated", "arbitrary_absolute_Hz_not_evaluated", "no_automatic_adoption"],
+  "postcolor": {
+    "included": false,
+    "adopted": false,
+    "legacy_MOS_harm_conditions": 10,
+    "legacy_total_conditions": 30,
+    "legacy_MOS_drop_threshold": 0.15,
+    "public_PR": "https://github.com/Hiroshiba/check-nonml-saikyo-vocoder/pull/49"
+  },
+  "identity": {
+    "existing_PML_evaluation_commit": "48322013c9c97c1cbb857ac1f8323cce6e5ff622",
+    "reviewed_design_sha256": "62b9592f486e18d92e887cf712157cc3990ec4fec6f99bdf60b3b4812f73e80c"
+  },
+  "legacy_formal_120_expansion_record": "unchanged_false"
+}
