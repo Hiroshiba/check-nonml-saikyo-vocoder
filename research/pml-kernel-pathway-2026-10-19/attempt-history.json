@@ -1,0 +1,240 @@
+{
+  "attempt001": {
+    "failure_cause": "All seven native post-taper kernels are float32, but contract and capture.py require float64",
+    "stored_artifact_sha256": {
+      "identity.json": "c689c914a84f6fcb230ef94552ca2abe6c07f7678f8a3faaf6e2a0c67b4436a2",
+      "raw-kernel-capture.json": "cb969ab3a101744057bee38e04749efd3c18091fbc5b71e4bb15731f178367ab",
+      "raw-kernel-capture.npz": "ef3003645ccead220839e20ba7a3878b50e916a3448f67711662c7c5fe881c5e",
+      "full-stacktrace.txt": "9a372c5fd45f314112488bcfe7fdf653cdeedbe3112eb210b01b4ee138d93a9c",
+      "status.json": "362d5dca985a1d47e4a30aaaac69360e61b0c399e78d49454db2efb6027605fa"
+    },
+    "wave_exact": true,
+    "trace_arrays_equal": 22,
+    "trace_arrays_total": 22,
+    "global_rng_unchanged": true,
+    "input_features_unchanged": true,
+    "captures": [
+      {
+        "pulse": 442,
+        "samples_dtype": "<f4",
+        "samples_shape": [
+          801
+        ],
+        "indices_dtype": "<i8",
+        "indices_shape": [
+          801
+        ],
+        "expected_samples_dtype": "<f8",
+        "samples_dtype_matches_contract": false,
+        "all_samples_finite": true,
+        "coordinates_match": true,
+        "length_matches": true,
+        "position_matches": true,
+        "nonzero_outside_possible_support_count": 0,
+        "actual_nonzero_bounds": [
+          32819,
+          33515
+        ],
+        "expected_possible_bounds": [
+          32819,
+          33515
+        ]
+      },
+      {
+        "pulse": 443,
+        "samples_dtype": "<f4",
+        "samples_shape": [
+          801
+        ],
+        "indices_dtype": "<i8",
+        "indices_shape": [
+          801
+        ],
+        "expected_samples_dtype": "<f8",
+        "samples_dtype_matches_contract": false,
+        "all_samples_finite": true,
+        "coordinates_match": true,
+        "length_matches": true,
+        "position_matches": true,
+        "nonzero_outside_possible_support_count": 0,
+        "actual_nonzero_bounds": [
+          32971,
+          33660
+        ],
+        "expected_possible_bounds": [
+          32971,
+          33660
+        ]
+      },
+      {
+        "pulse": 444,
+        "samples_dtype": "<f4",
+        "samples_shape": [
+          801
+        ],
+        "indices_dtype": "<i8",
+        "indices_shape": [
+          801
+        ],
+        "expected_samples_dtype": "<f8",
+        "samples_dtype_matches_contract": false,
+        "all_samples_finite": true,
+        "coordinates_match": true,
+        "length_matches": true,
+        "position_matches": true,
+        "nonzero_outside_possible_support_count": 0,
+        "actual_nonzero_bounds": [
+          33115,
+          33803
+        ],
+        "expected_possible_bounds": [
+          33115,
+          33803
+        ]
+      },
+      {
+        "pulse": 445,
+        "samples_dtype": "<f4",
+        "samples_shape": [
+          801
+        ],
+        "indices_dtype": "<i8",
+        "indices_shape": [
+          801
+        ],
+        "expected_samples_dtype": "<f8",
+        "samples_dtype_matches_contract": false,
+        "all_samples_finite": true,
+        "coordinates_match": true,
+        "length_matches": true,
+        "position_matches": true,
+        "nonzero_outside_possible_support_count": 0,
+        "actual_nonzero_bounds": [
+          33257,
+          33944
+        ],
+        "expected_possible_bounds": [
+          33257,
+          33944
+        ]
+      },
+      {
+        "pulse": 446,
+        "samples_dtype": "<f4",
+        "samples_shape": [
+          801
+        ],
+        "indices_dtype": "<i8",
+        "indices_shape": [
+          801
+        ],
+        "expected_samples_dtype": "<f8",
+        "samples_dtype_matches_contract": false,
+        "all_samples_finite": true,
+        "coordinates_match": true,
+        "length_matches": true,
+        "position_matches": true,
+        "nonzero_outside_possible_support_count": 0,
+        "actual_nonzero_bounds": [
+          33399,
+          34085
+        ],
+        "expected_possible_bounds": [
+          33399,
+          34085
+        ]
+      },
+      {
+        "pulse": 447,
+        "samples_dtype": "<f4",
+        "samples_shape": [
+          801
+        ],
+        "indices_dtype": "<i8",
+        "indices_shape": [
+          801
+        ],
+        "expected_samples_dtype": "<f8",
+        "samples_dtype_matches_contract": false,
+        "all_samples_finite": true,
+        "coordinates_match": true,
+        "length_matches": true,
+        "position_matches": true,
+        "nonzero_outside_possible_support_count": 0,
+        "actual_nonzero_bounds": [
+          33538,
+          34223
+        ],
+        "expected_possible_bounds": [
+          33538,
+          34223
+        ]
+      },
+      {
+        "pulse": 448,
+        "samples_dtype": "<f4",
+        "samples_shape": [
+          801
+        ],
+        "indices_dtype": "<i8",
+        "indices_shape": [
+          801
+        ],
+        "expected_samples_dtype": "<f8",
+        "samples_dtype_matches_contract": false,
+        "all_samples_finite": true,
+        "coordinates_match": true,
+        "length_matches": true,
+        "position_matches": true,
+        "nonzero_outside_possible_support_count": 0,
+        "actual_nonzero_bounds": [
+          33675,
+          34359
+        ],
+        "expected_possible_bounds": [
+          33675,
+          34359
+        ]
+      }
+    ],
+    "unreached": [
+      "208-sample exact reconstruction",
+      "post-replay source-file hash recheck",
+      "contribution STFT/Gram/power decomposition"
+    ]
+  },
+  "attempt002": {
+    "native_kernel_dtype": "float32",
+    "gates": {
+      "source_and_input_freeze": "passed",
+      "runtime": "passed",
+      "full_waveform": "passed",
+      "full_trace": "passed",
+      "global_rng": "passed",
+      "seven_captures": "passed",
+      "208_sample_reconstruction": "passed",
+      "source_and_input_unchanged": "passed",
+      "decomposition": "passed"
+    },
+    "wave": {
+      "shape": [
+        64720
+      ],
+      "dtype": "float64",
+      "valid_shape_dtype_finite": true,
+      "expected_array_sha256": "18e5e3fd1f46a29e71e7a328270b76d785d3a644343a9aa9e2db55fcec17726a",
+      "actual_array_sha256": "18e5e3fd1f46a29e71e7a328270b76d785d3a644343a9aa9e2db55fcec17726a",
+      "identical_array_bytes": true
+    },
+    "union": {
+      "bounds": [
+        33472,
+        33680
+      ],
+      "exact_sample_bytes": true,
+      "expected_array_sha256": "f8561373274e2c009616bf8affac97080148f149013cd2e846f894d69e1bc517",
+      "actual_array_sha256": "f8561373274e2c009616bf8affac97080148f149013cd2e846f894d69e1bc517"
+    }
+  },
+  "source_failure_diagnosis_sha256": "7620d26601c9a06ad3b306171d5e3b0cdb50e1833c92257482a135e6f5a9d9d7"
+}

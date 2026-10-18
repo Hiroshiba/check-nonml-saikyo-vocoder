@@ -1,0 +1,29 @@
+{
+  "description_ja": "保存F0と理想対称3周期窓の幾何。新しいF0推定・波形解析ではない。",
+  "rows": [
+    {
+      "row": 419,
+      "analysis_center_s": 2.095,
+      "saved_analysis_f0_hz": 97.32718106858442,
+      "doubled_analysis_f0_hz": 194.65436213716885,
+      "ideal_right_original_s": 2.110411933064649,
+      "ideal_right_doubled_s": 2.1027059665323247,
+      "fixed_cutoff_s": 2.103,
+      "ideal_minimum_f0_to_not_exceed_cutoff_hz": 187.5,
+      "exact_implementation_support_measured": false
+    },
+    {
+      "row": 420,
+      "analysis_center_s": 2.1,
+      "saved_analysis_f0_hz": 99.82274096508216,
+      "doubled_analysis_f0_hz": 199.64548193016432,
+      "ideal_right_original_s": 2.1150266360700787,
+      "ideal_right_doubled_s": 2.107513318035039,
+      "fixed_cutoff_s": 2.103,
+      "ideal_minimum_f0_to_not_exceed_cutoff_hz": 500.0,
+      "exact_implementation_support_measured": false
+    }
+  ],
+  "formula": "ideal_right = t + 1.5/F0; F0 >= 1.5/(cutoff-t)",
+  "cutoff_is_phoneme_ground_truth": false
+}

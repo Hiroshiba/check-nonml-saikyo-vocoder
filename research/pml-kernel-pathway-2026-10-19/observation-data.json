@@ -1,0 +1,224 @@
+{
+  "manifest_rows_verified": 24,
+  "pulse_indices": [
+    442,
+    443,
+    444,
+    445,
+    446,
+    447,
+    448
+  ],
+  "frame_indices": [
+    411,
+    413,
+    415,
+    417,
+    419,
+    420,
+    422
+  ],
+  "centers_s": [
+    2.0945,
+    2.0955,
+    2.0965,
+    2.0975,
+    2.0985,
+    2.0995,
+    2.1005,
+    2.1015,
+    2.1025
+  ],
+  "bands_hz": [
+    [
+      1500,
+      3000
+    ],
+    [
+      3000,
+      8000
+    ]
+  ],
+  "mean_self_terms": [
+    [
+      3.586423524037305e-15,
+      2.6321810393321e-13,
+      9.42291585812068e-12,
+      8.64872405872477e-11,
+      1.0589159274968033e-06,
+      2.8151602522975955e-05,
+      4.196641410998042e-20
+    ],
+    [
+      2.889633532176271e-15,
+      7.815923184553516e-13,
+      1.9516847763477237e-13,
+      7.347623627725717e-12,
+      6.762879395019362e-07,
+      1.5753816070866997e-05,
+      6.793701859314515e-17
+    ]
+  ],
+  "mean_all_signed_cross": [
+    -2.875019293906706e-07,
+    -9.001969044371242e-08
+  ],
+  "mean_cross_row419_row420": [
+    -2.8941625467535e-07,
+    -9.014706710852715e-08
+  ],
+  "mean_other_five_self_terms": [
+    9.617696101479204e-11,
+    8.32734199436661e-12
+  ],
+  "saved_mean_direct_power": [
+    2.8923112698043105e-05,
+    1.6340092647267214e-05
+  ],
+  "largest_self_row_each_center_band": [
+    [
+      419,
+      419
+    ],
+    [
+      419,
+      419
+    ],
+    [
+      420,
+      420
+    ],
+    [
+      420,
+      420
+    ],
+    [
+      420,
+      420
+    ],
+    [
+      420,
+      420
+    ],
+    [
+      420,
+      420
+    ],
+    [
+      420,
+      420
+    ],
+    [
+      420,
+      420
+    ]
+  ],
+  "saved_direct_interval_rms": [
+    4.644053041966595e-06,
+    0.00033555906426154414,
+    0.0027852332553435877,
+    0.00832717089217942,
+    0.014608556249456827,
+    0.007996615184969687,
+    0.0
+  ],
+  "saved_actual_nonzero_support": [
+    [
+      32819,
+      33515
+    ],
+    [
+      32971,
+      33660
+    ],
+    [
+      33115,
+      33803
+    ],
+    [
+      33257,
+      33944
+    ],
+    [
+      33399,
+      34085
+    ],
+    [
+      33538,
+      34223
+    ],
+    [
+      33675,
+      34359
+    ]
+  ],
+  "kernel_storage_dtype": "float32",
+  "residuals": {
+    "Z_residual": {
+      "maximum_absolute_residual": 1.5085363209261804e-16,
+      "maximum_fraction_of_fixed_tolerance": 0.03927307603828837
+    },
+    "power_residual": {
+      "maximum_absolute_residual": 2.0328790734103208e-20,
+      "maximum_fraction_of_fixed_tolerance": 0.00037889994616513396
+    },
+    "saved_power_residual": {
+      "maximum_absolute_residual": 2.371692252312041e-20,
+      "maximum_fraction_of_fixed_tolerance": 0.0004112769101634411
+    },
+    "hermitian_residual": {
+      "maximum_absolute_residual": 1.1863790904493606e-21,
+      "exact_equality_saved_check": false,
+      "note": "Exact equality is a supplementary diagnostic, not a predefined acceptance gate. No symmetrization is performed."
+    }
+  },
+  "identity_wave": {
+    "shape": [
+      64720
+    ],
+    "dtype": "float64",
+    "valid_shape_dtype_finite": true,
+    "expected_array_sha256": "18e5e3fd1f46a29e71e7a328270b76d785d3a644343a9aa9e2db55fcec17726a",
+    "actual_array_sha256": "18e5e3fd1f46a29e71e7a328270b76d785d3a644343a9aa9e2db55fcec17726a",
+    "identical_array_bytes": true
+  },
+  "identity_union": {
+    "bounds": [
+      33472,
+      33680
+    ],
+    "exact_sample_bytes": true,
+    "expected_array_sha256": "f8561373274e2c009616bf8affac97080148f149013cd2e846f894d69e1bc517",
+    "actual_array_sha256": "f8561373274e2c009616bf8affac97080148f149013cd2e846f894d69e1bc517"
+  },
+  "cross_term_pair_index_row419_row420": 18,
+  "all_terms_csv_rows": 504,
+  "condition": {
+    "recording": "121-121726-0012",
+    "pitch_semitones": 3,
+    "seed": 0,
+    "variant": "PML/SAVED",
+    "sample_rate_hz": 16000
+  },
+  "gates": {
+    "source_and_input_freeze": "passed",
+    "runtime": "passed",
+    "full_waveform": "passed",
+    "full_trace": "passed",
+    "global_rng": "passed",
+    "seven_captures": "passed",
+    "208_sample_reconstruction": "passed",
+    "source_and_input_unchanged": "passed",
+    "decomposition": "passed"
+  },
+  "completed_utc": "2026-10-18T18:49:42.928172+00:00",
+  "source_zip_sha256": "9d5ff42caaef88c56fa766086f83ce3de29f634de76a5b73d7417ca21213452b",
+  "source_artifact_manifest_sha256": "0f8bfebaf86bd705c7de0798c675a9f5359109ea26b5c396fb318d92bfed4eb0",
+  "source_summary_sha256": "568a5419c3d0b06dcf612628ef1f1d8d24a34f72c31969d0175e4b7093c8247c",
+  "source_analysis_sha256": "0ea0c8e2a108bf523a58d6b866a25234ad74005e0a0b077be08c3cc1543fc832",
+  "scope_ja": "保存値の説明資料。新しい合成・FFT・品質評価を行わない。",
+  "pending_27_conditions": {
+    "state": "stopped_at_reconstruction_check_not_accepted",
+    "interpretation_ja": "27条件の観測は一部の再構成確認で停止。全体成功と扱わず、寄与の比較結果は本稿に含めない。数値診断と根拠照合後に別節として追記する。"
+  }
+}
