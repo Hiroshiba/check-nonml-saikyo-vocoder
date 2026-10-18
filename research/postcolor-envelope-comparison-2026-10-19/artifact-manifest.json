@@ -1,0 +1,331 @@
+{
+  "schema_version": 1,
+  "schema": "postcolor-comparison-public-artifacts-v1",
+  "scope": "navigation-only",
+  "created_at": "2026-10-18T20:28:20Z",
+  "self_excluded": "artifact-manifest.json",
+  "compressed_tables": [
+    {
+      "file": "data/all-periodic-knots.json.gz",
+      "source_csv_sha256": "f448bade98fb734de7569e741fd1136abc3d3e04fe52919f7688aad65f41de53",
+      "rows": 62784,
+      "columns": 17,
+      "all_cell_strings_exact": true,
+      "original_csv_reconstructed_bytes_exact": true
+    },
+    {
+      "file": "data/all-periodic-paired-knots.json.gz",
+      "source_csv_sha256": "418e29e34d3e56c02402022f18a7a8688ff9b6531ed9c7d4933dddccf677c83f",
+      "rows": 47088,
+      "columns": 14,
+      "all_cell_strings_exact": true,
+      "original_csv_reconstructed_bytes_exact": true
+    },
+    {
+      "file": "data/all-coverage-regions.json.gz",
+      "source_csv_sha256": "2ef5808a87e6c81d0ca2bfc8d3b9c5eac508340043b674a04c6c96e65edb8b3c",
+      "rows": 648,
+      "columns": 20,
+      "all_cell_strings_exact": true,
+      "original_csv_reconstructed_bytes_exact": true
+    }
+  ],
+  "scope_ja": "後掛け30条件の音響・周期・品質保存数値、9本の最大5秒音声。既存音声はURL参照のみ。未採用実装・全長波形を含めない。",
+  "files": [
+    {
+      "name": "README-ja.md",
+      "bytes": 19690,
+      "sha256": "22af30e8bd5f40cc6766762fb27ba000b17618d2a5f5a93fbf021e2e24daf565"
+    },
+    {
+      "name": "audio/1089-134686-0008__pitch+0__seed0__RAW_POSTCOLOR_M1.wav",
+      "bytes": 160044,
+      "sha256": "f2820245982df2dc9ecbc6089331029bee58b7a7e1789a8ded4e0b5e6596ad1f"
+    },
+    {
+      "name": "audio/1089-134686-0032__pitch+0__seed0__RAW_POSTCOLOR_M1.wav",
+      "bytes": 130924,
+      "sha256": "fc0bad1ea4e3e20c3440dec3b9d2f0941a6d25d5879a7628c531ac2d26099f2f"
+    },
+    {
+      "name": "audio/1188-133604-0003__pitch+0__seed0__RAW_POSTCOLOR_M1.wav",
+      "bytes": 160044,
+      "sha256": "fddc422f733af73aae0daaba9b5e375a6c1bd03779153ddc168d5b4897a70a64"
+    },
+    {
+      "name": "audio/121-121726-0012__pitch+0__seed0__RAW_POSTCOLOR_M1.wav",
+      "bytes": 129484,
+      "sha256": "22bc6b3e792aabdc57646a1980a728396a885849c2719cafcca97662b7b09db0"
+    },
+    {
+      "name": "audio/121-121726-0012__pitch+3__seed0__RAW_POSTCOLOR_M1.wav",
+      "bytes": 129484,
+      "sha256": "ab394a1783b9f9e38a22c4f913c47c7dc46ad67efa959f8ab1367b773439a613"
+    },
+    {
+      "name": "audio/121-121726-0012__pitch+3__seed20261015__RAW_POSTCOLOR_M1.wav",
+      "bytes": 129484,
+      "sha256": "dbea73251a46a295264687dabaf5e0531c86399a104aeb93689b9f429b734b0a"
+    },
+    {
+      "name": "audio/121-121726-0012__pitch-3__seed0__RAW_POSTCOLOR_M1.wav",
+      "bytes": 129484,
+      "sha256": "bb6dfa009caffffba2968e9994769f0b90801fd1ff3d66024cf9859242140c91"
+    },
+    {
+      "name": "audio/121-121726-0012__pitch-3__seed20261015__RAW_POSTCOLOR_M1.wav",
+      "bytes": 129484,
+      "sha256": "d5e1c38c17eb684078da2578754b71a226f8ebccf3eb5d81a92bed2961f6f329"
+    },
+    {
+      "name": "audio/1221-135766-0005__pitch+0__seed0__RAW_POSTCOLOR_M1.wav",
+      "bytes": 160044,
+      "sha256": "6d05f6730cde91454334b7d4a62c30d559b950e9b559b217bb8f13a541d62005"
+    },
+    {
+      "name": "audio-manifest.json",
+      "bytes": 89193,
+      "sha256": "51f5fb397ac7b918b71763c69c8ecc5eb77b97a01d5463aec31287e9dab63e98"
+    },
+    {
+      "name": "data/COMPRESSED-TABLE-FORMAT-ja.md",
+      "bytes": 1800,
+      "sha256": "573baaf7890c4413f00a385624c514ee18dc09fd7173f1aeec4546fd536b0563"
+    },
+    {
+      "name": "data/all-180-event-comparisons.csv",
+      "bytes": 27473,
+      "sha256": "da39e9acb3850fb6e5aceeca5d1da3cf466cb6dc2c4579f7e60c4de28ee3584e"
+    },
+    {
+      "name": "data/all-180-periodic-condition-comparisons.csv",
+      "bytes": 26738,
+      "sha256": "38bb3d26d6b2eafec2d0120021c252f88bb0a0639844a31955613b903b38f46f"
+    },
+    {
+      "name": "data/all-30-waveforms.csv",
+      "bytes": 8012,
+      "sha256": "42393041fb4a4a7756316379e220813d78f6c7f0dc72835fc067c03253943e41"
+    },
+    {
+      "name": "data/all-30-wide-comparisons.csv",
+      "bytes": 17695,
+      "sha256": "c460fde8d372b0152317406b573e74d31643e3318bb358b85686a217cd6742eb"
+    },
+    {
+      "name": "data/all-90-global-comparisons.csv",
+      "bytes": 22933,
+      "sha256": "337bb901753882b38126f34dabb6ccf9d41caa99be8d1b2f9a3fadb33d87fb48"
+    },
+    {
+      "name": "data/all-absolute-event-values.csv",
+      "bytes": 68277,
+      "sha256": "9bc9f6ceec28d282c98830ca23f62c1de91c32d7f18a981c41229c3769f30fd0"
+    },
+    {
+      "name": "data/all-coverage-regions.json.gz",
+      "bytes": 25001,
+      "sha256": "278c5788797079b244403bf664934d6e3f964ed810816cb722ba359eddf3142d"
+    },
+    {
+      "name": "data/all-crossing-comparisons.csv",
+      "bytes": 52778,
+      "sha256": "42db8bb2aa745f5b5f215c686ea007b7c972d92c0f1fe3b04bc2a13a05b7c76f"
+    },
+    {
+      "name": "data/all-periodic-knots.json.gz",
+      "bytes": 2599558,
+      "sha256": "4bf238bc6ff5fd7d00c0cc9429ef77c5cc034227abc62ffe6328c7600a93a8f2"
+    },
+    {
+      "name": "data/all-periodic-paired-knots.json.gz",
+      "bytes": 1408185,
+      "sha256": "e2e250531150321c295724cf18445ba997e58b75fcfa5ca4847339ce4dffc636"
+    },
+    {
+      "name": "data/all-periodic-summaries.csv",
+      "bytes": 74283,
+      "sha256": "e58e14dd735bcaa0df0e21dbde6a9b7bb7321aaef3d91bbbea2fa200d7577d17"
+    },
+    {
+      "name": "data/known-eight-strong-losses.csv",
+      "bytes": 995,
+      "sha256": "f191dcf07b30fa22b29b73cef297f9f84bf92db25ab9f647366e8f8140a6ae2f"
+    },
+    {
+      "name": "data/periodic-descriptive-summary.json",
+      "bytes": 2086,
+      "sha256": "7662a70038eebce714385c0f3c29e9b67be110a6aa11a13cedf8588eaf598632"
+    },
+    {
+      "name": "data/provenance.json",
+      "bytes": 10372,
+      "sha256": "4280a82bae5f8138c04cc894fbf9265480db6a51cddc3638a3137cf737929d91"
+    },
+    {
+      "name": "data/sample3-residual-comparisons.csv",
+      "bytes": 6428,
+      "sha256": "2ae152153ed61854ecdcf0bacdd579fc0a3b5439c7f642f8e840fe34dd6ce2c4"
+    },
+    {
+      "name": "data/summary.json",
+      "bytes": 3637,
+      "sha256": "30c46173d9a0aa6828d099adf0d6cc0e8e79ac65d5c1564dda94b3bbd57363be"
+    },
+    {
+      "name": "figures/figure-01-all30-vs-full.png",
+      "bytes": 281411,
+      "sha256": "3524388c57ad1d533ef166cea26ac1fb69ed81f198847974a72ee78cd82853a8"
+    },
+    {
+      "name": "figures/figure-01-all30-vs-full.svg",
+      "bytes": 265623,
+      "sha256": "8402d2c6208440c301c4e6bcb95f8302ecb79f4bcc0ccd4e1fe339874512bf70"
+    },
+    {
+      "name": "figures/figure-02-all30-vs-pml-shape.png",
+      "bytes": 387532,
+      "sha256": "52874e38e9f7aa2c738d7ebd5560ee4fe97a211545743f19ef1bda3eb8e5a984"
+    },
+    {
+      "name": "figures/figure-02-all30-vs-pml-shape.svg",
+      "bytes": 292154,
+      "sha256": "84075259b3d26bb69fcc41c62943858b1e140457c2118ebaa1c669ca9fc83f7c"
+    },
+    {
+      "name": "figures/figure-03-sample3.png",
+      "bytes": 142588,
+      "sha256": "edb8950589d88dc284f545b3c50f8223a0e9378d3e257383bc9ef58086c29dbe"
+    },
+    {
+      "name": "figures/figure-03-sample3.svg",
+      "bytes": 120853,
+      "sha256": "d0fc9c8cf301145bf668ad8a789ad45fec22a1f3ea57a9e1653f2f9371158783"
+    },
+    {
+      "name": "figures/figure-04-known-eight.png",
+      "bytes": 169642,
+      "sha256": "27dd9270c93cae792b18a983ecba4e1b95b8722cca9b13ca064506c54c7254e0"
+    },
+    {
+      "name": "figures/figure-04-known-eight.svg",
+      "bytes": 120647,
+      "sha256": "4c296ce451160a9d743698dc248eae4c2f7120dee5f973801fbb4bfbe10616a4"
+    },
+    {
+      "name": "figures/figure-05-all30-periodic.png",
+      "bytes": 402707,
+      "sha256": "753fceb24c132614eea46dd0df4734e2945b48631b3c3cc3d2346013f38be8ce"
+    },
+    {
+      "name": "figures/figure-05-all30-periodic.svg",
+      "bytes": 293984,
+      "sha256": "190c6bc113b4c0b2004ae07bf3e6eecb0c71f1cd498a590679221f89581352bb"
+    },
+    {
+      "name": "index.html",
+      "bytes": 84409,
+      "sha256": "ee22e867008d716110e46856651dc7eb9bff3b7258599ebdb106b598d8d906c9"
+    },
+    {
+      "name": "quality/ASR-pairs-90.csv",
+      "bytes": 24461,
+      "sha256": "cd557487ef42ec17b9eab4079779c7e3bd5683c65a0683a5ebc867fc13f0fee8"
+    },
+    {
+      "name": "quality/F0-denominators-60.csv",
+      "bytes": 29319,
+      "sha256": "873814c5f67ce3d05b61ecf84d2bb8823e04ef28049b5c089c3b56c6f7b9d5ce"
+    },
+    {
+      "name": "quality/PML-harm-30.csv",
+      "bytes": 5199,
+      "sha256": "92fbb8f1991f8d4ef566c6ec9c5c180a0623f8b2b56e50f6ad7e420ebc8f8a3e"
+    },
+    {
+      "name": "quality/README-ja.md",
+      "bytes": 554,
+      "sha256": "319609ab55253c998ad2adad89a43b69a1aacbd3c45280c15b105085f74b29a4"
+    },
+    {
+      "name": "quality/REPORT-ja.md",
+      "bytes": 15054,
+      "sha256": "162adefd1c38c5f5c83bf8d7bce3eac44f58347fbf7374b7731932e808718263"
+    },
+    {
+      "name": "quality/artifact-manifest.json",
+      "bytes": 2864,
+      "sha256": "25fbf885ce5f2c0f93641343ef68d62e6706c7c1ddf5e841fd76b5537e4895f5"
+    },
+    {
+      "name": "quality/figures/ASR-full-transcript-pairs.png",
+      "bytes": 202624,
+      "sha256": "db199596d5ce852f33ad95188f47584b34c3c4d33c048a2b347e2de45f733c94"
+    },
+    {
+      "name": "quality/figures/ASR-full-transcript-pairs.svg",
+      "bytes": 212392,
+      "sha256": "539004186783f4ffc94ba118391c5bd2ca8e483c9ac1ce5017d1ea6048d93a32"
+    },
+    {
+      "name": "quality/figures/F0-denominator-differences.png",
+      "bytes": 152328,
+      "sha256": "3f7a5bfb712033f1d4fb0496bdc5d36ae4ed5556a9b53e940a6d74704ea6c72a"
+    },
+    {
+      "name": "quality/figures/F0-denominator-differences.svg",
+      "bytes": 186977,
+      "sha256": "86656b0fafd1fa608f5303846f20ec51f7497794a9d6481d20e9f5d149172d1e"
+    },
+    {
+      "name": "quality/figures/PML-paired-deltas.png",
+      "bytes": 265693,
+      "sha256": "7c02a73da3943fbd0455b2b86aac2fcf7d6e7ffba41e94bdf001cd6b0448a655"
+    },
+    {
+      "name": "quality/figures/PML-paired-deltas.svg",
+      "bytes": 245784,
+      "sha256": "5a6e473ef8b404a12fb8e45baeaf3e75826cbff6e4f37cd8ec847fb3b2fd4363"
+    },
+    {
+      "name": "quality/figures/all90-MOS-deltas.png",
+      "bytes": 258796,
+      "sha256": "f435d82cb8a5efe30bda963ae25992f5e6b05dfe2d856ff6c6dcf51405d918e9"
+    },
+    {
+      "name": "quality/figures/all90-MOS-deltas.svg",
+      "bytes": 234166,
+      "sha256": "eb769567b1867c746b8094dfb1c23f89b9e54832bb59a85356642703be82ff85"
+    },
+    {
+      "name": "quality/index.html",
+      "bytes": 21949,
+      "sha256": "544740442df1ed9a0cca3aaa1096dcba722958e9b1122e0e6065cdf07dcc0f00"
+    },
+    {
+      "name": "quality/paired-360-metrics.csv",
+      "bytes": 160632,
+      "sha256": "2e0c920eb23a666a75c01cf5bcc728b31b2a324c55861c1d18d619f8931ce343"
+    },
+    {
+      "name": "quality/paired-90-wide.csv",
+      "bytes": 77540,
+      "sha256": "da0c77b7566a5af1b09a3c66270369e8f5ce06e4ac4e8330f1369902cd43e06a"
+    },
+    {
+      "name": "quality/quality-values.json",
+      "bytes": 576351,
+      "sha256": "a641429891c3c75c678f2adb8d71c45d768c9b8a62c99af830ab2f8bf413249a"
+    },
+    {
+      "name": "quality/recording-pitch-means-45.csv",
+      "bytes": 9295,
+      "sha256": "275b3318c6991ec8d72bfc3cb24cb65f20aa5aabf39ba0dfdec2507bbf9ecf26"
+    },
+    {
+      "name": "quality-status.json",
+      "bytes": 1552,
+      "sha256": "aaf2baff64274b63d7c76337d7f78507eb954d425d0da26c833729f29c2e2b95"
+    }
+  ]
+}

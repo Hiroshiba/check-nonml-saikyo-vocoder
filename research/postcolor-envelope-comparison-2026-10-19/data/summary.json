@@ -1,0 +1,128 @@
+{
+  "new_conditions": 30,
+  "independent_recordings": 5,
+  "existing_reference_conditions": 90,
+  "quality_metrics": "not_yet_acquired",
+  "source_AM_separation": "not_attempted",
+  "old_eight_harms_remaining": 8,
+  "old_eight_exact_unchanged": 7,
+  "periodic_baseline_available": true,
+  "tables": {
+    "all-30-waveforms.csv": 30,
+    "all-180-event-comparisons.csv": 180,
+    "all-crossing-comparisons.csv": 720,
+    "all-90-global-comparisons.csv": 90,
+    "all-absolute-event-values.csv": 300,
+    "all-coverage-regions.csv": 648,
+    "sample3-residual-comparisons.csv": 48,
+    "known-eight-strong-losses.csv": 8,
+    "all-periodic-knots.csv": 62784,
+    "all-periodic-summaries.csv": 240,
+    "all-periodic-paired-knots.csv": 47088
+  },
+  "eligible_kernel_fraction": {
+    "count": 15,
+    "min": 0.03459637561779242,
+    "median": 0.12207792207792208,
+    "mean": 0.12466453165688587,
+    "max": 0.2490170380078637
+  },
+  "reference_comparisons": {
+    "PML": {
+      "early_delta_db": {
+        "count": 60,
+        "min": -24.53002073725509,
+        "median": -14.07852019560432,
+        "mean": -12.738123477088516,
+        "max": 0.622375753562805
+      },
+      "strong_delta_db": {
+        "count": 60,
+        "min": -2.2251696305312674,
+        "median": 0.4530883486330328,
+        "mean": 0.5069539489542535,
+        "max": 3.0917428090819365
+      },
+      "strong_drop_events": 8,
+      "strong_delay_events": 38,
+      "rms_delta_db": {
+        "count": 30,
+        "min": -0.0653924219155666,
+        "median": -0.0007597349140864296,
+        "mean": 0.006925874526239569,
+        "max": 0.24388836702417205
+      },
+      "lowband_delta_db": {
+        "count": 30,
+        "min": -0.059189650108835146,
+        "median": 0.0048628829553942765,
+        "mean": 0.02162857211225318,
+        "max": 0.4938988254747301
+      }
+    },
+    "RAW_SHAPE": {
+      "early_delta_db": {
+        "count": 60,
+        "min": -21.646067702105654,
+        "median": -2.7105309156549184,
+        "mean": -6.170180579087717,
+        "max": 1.1676565590416832
+      },
+      "strong_delta_db": {
+        "count": 60,
+        "min": -2.0985562442568106,
+        "median": 0.17313196756132854,
+        "mean": 0.20180508552499862,
+        "max": 1.9852389012510763
+      },
+      "strong_drop_events": 4,
+      "strong_delay_events": 8,
+      "rms_delta_db": {
+        "count": 30,
+        "min": -0.037575019580842195,
+        "median": 0.002033445925213595,
+        "mean": 0.010204536803618325,
+        "max": 0.24423157732348155
+      },
+      "lowband_delta_db": {
+        "count": 30,
+        "min": -0.04133627573752463,
+        "median": 0.005665770049128049,
+        "mean": 0.023665850541673066,
+        "max": 0.48674803329391114
+      }
+    },
+    "RAW_FULL": {
+      "early_delta_db": {
+        "count": 60,
+        "min": -0.2003031278959888,
+        "median": 0.0,
+        "mean": 0.09206157007396894,
+        "max": 1.5260746472352515
+      },
+      "strong_delta_db": {
+        "count": 60,
+        "min": -0.31568963967008035,
+        "median": 0.0,
+        "mean": 0.03932276511423546,
+        "max": 0.7685964677747403
+      },
+      "strong_drop_events": 0,
+      "strong_delay_events": 0,
+      "rms_delta_db": {
+        "count": 30,
+        "min": -0.02684835429549004,
+        "median": 0.001855355963362726,
+        "mean": 0.015543573917355058,
+        "max": 0.24448425917892092
+      },
+      "lowband_delta_db": {
+        "count": 30,
+        "min": -0.02817819095149776,
+        "median": 0.0052681197380621825,
+        "mean": 0.029063034813106608,
+        "max": 0.48370312114852876
+      }
+    }
+  }
+}
