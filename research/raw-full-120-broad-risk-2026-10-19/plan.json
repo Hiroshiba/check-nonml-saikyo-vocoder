@@ -2,7 +2,7 @@
   "schema": "raw-full-120-public-plan-v1",
   "run_id": "raw-full-120-broad-risk-v1-20261019",
   "snapshot_date_utc": "2026-10-18",
-  "status": "chunk01_generated_quality_preparing_checkpoint_blocked",
+  "status": "chunk01_quality_running_checkpoint_blocked",
   "publication_scope": "reviewed_plan_only",
   "current_base": "pml-lowband-fwcep60-v1",
   "raw_full_adopted": false,
@@ -161,8 +161,8 @@
   },
   "legacy_formal_120_expansion_record": "unchanged_false",
   "progress": {
-    "recorded_at": "2026-10-18T21:49:00Z",
-    "evidence_basis": "execution_environment_terminal_record_confirmed_through_official_read",
+    "recorded_at": "2026-10-18T22:33:00Z",
+    "evidence_basis": "quality_run_launch_confirmed_through_official_read",
     "references": {
       "completed": 120,
       "planned": 120,
@@ -177,7 +177,7 @@
       "completed": 144,
       "planned": 1440
     },
-    "quality_metrics": "not_run",
+    "quality_metrics": "running_results_not_finalized",
     "events_freeze_sha256": "1f8601d116bc443fb49bde4642ca734b59406d0b8d5d77a67ec35c1795f64768",
     "decoder_manifest_sha256": "e6e75f473e27c00938fb75a0c12a59c8abaef0b44f49b887b0a6df496310c232",
     "reference_feature_checkpoint": {
@@ -211,10 +211,20 @@
     "raw_full_adopted": false,
     "preparatory_observations_file": "preparation-observations.json",
     "checkpoint_adapters_source": {
-      "generation_and_quality_checkpoint_gates": true,
-      "independent_static_review": "complete",
-      "private_preservation": "complete",
-      "freeze_sha256": "2c13b642c93c34a30c8e6414067d3355c938503a5cc660ca118d844501a98943"
+      "initial_reviewed_revision": {
+        "generation_and_quality_checkpoint_gates": true,
+        "independent_static_review": "complete",
+        "private_preservation": "complete",
+        "freeze_sha256": "2c13b642c93c34a30c8e6414067d3355c938503a5cc660ca118d844501a98943"
+      },
+      "current_repair_revision": "rev2",
+      "repair_scope": "non_scientific_saved_checkpoint_verification_adapter",
+      "previous_requirement": "JSON_completion_schema_absent_from_official_helper",
+      "repaired": true,
+      "scientific_generation_source_unchanged": true,
+      "scientific_quality_source_unchanged": true,
+      "scientific_plan_unchanged": true,
+      "scientific_improvement_claimed": false
     },
     "static_review_implies_measurement_success_or_checkpoint_guarantee": false,
     "chunk01": {
@@ -229,8 +239,10 @@
       "waveform_location": "execution_environment_local_only",
       "official_waveform_checkpoint_complete": false,
       "waveform_bytes_readback_by_coordinator_complete": false,
-      "quality_evaluation": "not_run",
-      "quality_job_source_and_binding_preparation": "started"
+      "quality_evaluation": "running_results_not_finalized",
+      "quality_job_source_and_binding_preparation": "run_launched",
+      "quality_run_launch_confirmed_via_official_read": true,
+      "official_quality_checkpoint_complete": false
     },
     "checkpoint_contract": {
       "first_chunk_generation_and_measurement_allowed_with_saved_bootstrap": true,
@@ -239,6 +251,12 @@
       "upload_http401_unresolved": true,
       "additional_upload_retry_since_previous_snapshot": false,
       "alternate_transfer_or_environment_used": false
+    },
+    "bootstrap_readback": {
+      "existing_input_archive_count": 14,
+      "new_official_readback": "complete",
+      "bootstrap_audit": "complete",
+      "covers_new_waveform_or_quality_checkpoint": false
     }
   }
 }
