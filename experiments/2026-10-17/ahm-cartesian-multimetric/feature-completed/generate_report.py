@@ -49,7 +49,7 @@ def render(data):
     doc += '<p><a href="../feature-partial/index.html">旧部分結果・v1失敗記録</a> ／ <a href="scalar-projection.json">元精度の数値・支持・SHA</a></p>'
     reps = data['representations']
     for kind, field, title, desc in (
-        ('abx', 'value', '音素ABX', '4,960三つ組。固定集合のカバレッジは113録音・39話者です。120録音すべてを覆う比較ではありません。'),
+        ('abx', 'value', '音素ABX', '全体4,960三つ組（同一話者186、異話者4,774）。各ABX行の対応支持はこの条件別の件数です。固定集合のカバレッジは113録音・39話者です。120録音すべてを覆う比較ではありません。'),
         ('readout', 'speaker_macro_mae', '固定線形readout', '独立train120とtest120録音・40話者。log F0の有効教師値は119件、他は120件。録音単位の時間平均から読み出す固定ridgeの誤差です。対数F0の教師値は原音で推定できた有声フレームの平均であり、保存F0そのものや絶対F0真値ではありません。')):
         doc += '<h2>' + title + '</h2><p>' + desc + ' 小さいほど誤差が小さく、順位は点推定の記述的順序です。95%区間は差の区間ではありません。</p>'
         rows = []
@@ -170,7 +170,27 @@ def main():
         s = c['support']['abx' if metric.startswith('abx/') else metric]
         paired[metric].update(source=cname, planned=s['planned'], paired_measured=s['paired_measured'])
     projection['paired_comparisons'][VIEW] = paired
-    projection['schema'] = 'feature-completed-scalar-projection-v2'
+    raw_abx_path = args.v2_results / f'abx/candidate/{VIEW}/raw-triplets.json'
+    raw_abx = raw_abx_path.read_bytes()
+    require(digest(raw_abx) == a['raw_sha256'], 'ABX raw linkage mismatch')
+    raw_triplets = json.loads(raw_abx)
+    require(len(raw_triplets) == 4960 and all(v['status'] == 'measured' for v in raw_triplets), 'ABX support incomplete')
+    condition_counts = {condition: sum(v['condition'] == condition for v in raw_triplets)
+                        for condition in ('within_speaker', 'across_speaker')}
+    require(condition_counts == {'within_speaker': 186, 'across_speaker': 4774}, 'Fixed condition support changed')
+    projection['scope_counts']['abx_triplets_by_condition'] = condition_counts
+    for comparisons in projection['paired_comparisons'].values():
+        for metric, value in comparisons.items():
+            if not metric.startswith('abx/'):
+                continue
+            require(value['planned'] == value['paired_measured'] == 4960, 'Prior full ABX support changed')
+            value['whole_run_planned'] = value['planned']
+            value['whole_run_paired_measured'] = value['paired_measured']
+            value['support_scope'] = 'abx_condition'
+            count = condition_counts[metric.split('/')[1]]
+            value['planned'] = value['paired_measured'] = count
+    projection['abx_support_source'] = {'path': f'abx/candidate/{VIEW}/raw-triplets.json', 'sha256': digest(raw_abx)}
+    projection['schema'] = 'feature-completed-scalar-projection-v3' 
     projection['state'] = 'completed_with_separate_canonical_v2'
     projection['canonical_v1_history'] = projection.pop('canonical_complex4099')
     projection['new_canonical_v2'] = {'train_measured': 120, 'test_measured': 120,

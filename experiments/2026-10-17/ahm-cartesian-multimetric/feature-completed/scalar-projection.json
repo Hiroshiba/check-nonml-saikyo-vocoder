@@ -1,5 +1,5 @@
 {
-  "schema": "feature-completed-scalar-projection-v2",
+  "schema": "feature-completed-scalar-projection-v3",
   "state": "completed_with_separate_canonical_v2",
   "scope_counts": {
     "test_recordings": 120,
@@ -12,6 +12,10 @@
       "log_f0": 119,
       "rms_dbfs": 120,
       "spectral_slope": 120
+    },
+    "abx_triplets_by_condition": {
+      "within_speaker": 186,
+      "across_speaker": 4774
     }
   },
   "representations": {
@@ -556,8 +560,11 @@
         ],
         "lower_better": true,
         "source": "comparison/amp3075",
-        "planned": 4960,
-        "paired_measured": 4960
+        "planned": 186,
+        "paired_measured": 186,
+        "whole_run_planned": 4960,
+        "whole_run_paired_measured": 4960,
+        "support_scope": "abx_condition"
       },
       "abx/within_speaker/x_speaker_macro": {
         "candidate": 0.3909340659340659,
@@ -569,8 +576,11 @@
         ],
         "lower_better": true,
         "source": "comparison/amp3075",
-        "planned": 4960,
-        "paired_measured": 4960
+        "planned": 186,
+        "paired_measured": 186,
+        "whole_run_planned": 4960,
+        "whole_run_paired_measured": 4960,
+        "support_scope": "abx_condition"
       },
       "abx/within_speaker/nested_phone_context": {
         "candidate": 0.33918128654970764,
@@ -582,8 +592,11 @@
         ],
         "lower_better": true,
         "source": "comparison/amp3075",
-        "planned": 4960,
-        "paired_measured": 4960
+        "planned": 186,
+        "paired_measured": 186,
+        "whole_run_planned": 4960,
+        "whole_run_paired_measured": 4960,
+        "support_scope": "abx_condition"
       },
       "abx/across_speaker/flat_stratum": {
         "candidate": 0.481813515676654,
@@ -595,8 +608,11 @@
         ],
         "lower_better": true,
         "source": "comparison/amp3075",
-        "planned": 4960,
-        "paired_measured": 4960
+        "planned": 4774,
+        "paired_measured": 4774,
+        "whole_run_planned": 4960,
+        "whole_run_paired_measured": 4960,
+        "support_scope": "abx_condition"
       },
       "abx/across_speaker/x_speaker_macro": {
         "candidate": 0.48219402914820475,
@@ -608,8 +624,11 @@
         ],
         "lower_better": true,
         "source": "comparison/amp3075",
-        "planned": 4960,
-        "paired_measured": 4960
+        "planned": 4774,
+        "paired_measured": 4774,
+        "whole_run_planned": 4960,
+        "whole_run_paired_measured": 4960,
+        "support_scope": "abx_condition"
       },
       "abx/across_speaker/nested_phone_context": {
         "candidate": 0.4819041860233016,
@@ -621,8 +640,11 @@
         ],
         "lower_better": true,
         "source": "comparison/amp3075",
-        "planned": 4960,
-        "paired_measured": 4960
+        "planned": 4774,
+        "paired_measured": 4774,
+        "whole_run_planned": 4960,
+        "whole_run_paired_measured": 4960,
+        "support_scope": "abx_condition"
       },
       "readout/log_f0": {
         "candidate": 0.24173736100342982,
@@ -675,8 +697,11 @@
         ],
         "lower_better": true,
         "source": "comparison/rawcomplex4099",
-        "planned": 4960,
-        "paired_measured": 4960
+        "planned": 186,
+        "paired_measured": 186,
+        "whole_run_planned": 4960,
+        "whole_run_paired_measured": 4960,
+        "support_scope": "abx_condition"
       },
       "abx/within_speaker/x_speaker_macro": {
         "candidate": 0.4588869463869463,
@@ -688,8 +713,11 @@
         ],
         "lower_better": true,
         "source": "comparison/rawcomplex4099",
-        "planned": 4960,
-        "paired_measured": 4960
+        "planned": 186,
+        "paired_measured": 186,
+        "whole_run_planned": 4960,
+        "whole_run_paired_measured": 4960,
+        "support_scope": "abx_condition"
       },
       "abx/within_speaker/nested_phone_context": {
         "candidate": 0.3961988304093568,
@@ -701,8 +729,11 @@
         ],
         "lower_better": true,
         "source": "comparison/rawcomplex4099",
-        "planned": 4960,
-        "paired_measured": 4960
+        "planned": 186,
+        "paired_measured": 186,
+        "whole_run_planned": 4960,
+        "whole_run_paired_measured": 4960,
+        "support_scope": "abx_condition"
       },
       "abx/across_speaker/flat_stratum": {
         "candidate": 0.4906827435014094,
@@ -714,8 +745,11 @@
         ],
         "lower_better": true,
         "source": "comparison/rawcomplex4099",
-        "planned": 4960,
-        "paired_measured": 4960
+        "planned": 4774,
+        "paired_measured": 4774,
+        "whole_run_planned": 4960,
+        "whole_run_paired_measured": 4960,
+        "support_scope": "abx_condition"
       },
       "abx/across_speaker/x_speaker_macro": {
         "candidate": 0.49278703727854595,
@@ -727,8 +761,11 @@
         ],
         "lower_better": true,
         "source": "comparison/rawcomplex4099",
-        "planned": 4960,
-        "paired_measured": 4960
+        "planned": 4774,
+        "paired_measured": 4774,
+        "whole_run_planned": 4960,
+        "whole_run_paired_measured": 4960,
+        "support_scope": "abx_condition"
       },
       "abx/across_speaker/nested_phone_context": {
         "candidate": 0.5070646572463681,
@@ -740,8 +777,11 @@
         ],
         "lower_better": true,
         "source": "comparison/rawcomplex4099",
-        "planned": 4960,
-        "paired_measured": 4960
+        "planned": 4774,
+        "paired_measured": 4774,
+        "whole_run_planned": 4960,
+        "whole_run_paired_measured": 4960,
+        "support_scope": "abx_condition"
       },
       "readout/log_f0": {
         "candidate": 0.1715975009247674,
@@ -794,8 +834,11 @@
         ],
         "lower_better": true,
         "source": "comparison/canonical_complex4099/summary.json",
-        "planned": 4960,
-        "paired_measured": 4960
+        "planned": 186,
+        "paired_measured": 186,
+        "whole_run_planned": 4960,
+        "whole_run_paired_measured": 4960,
+        "support_scope": "abx_condition"
       },
       "abx/within_speaker/x_speaker_macro": {
         "candidate": 0.4717490842490842,
@@ -807,8 +850,11 @@
         ],
         "lower_better": true,
         "source": "comparison/canonical_complex4099/summary.json",
-        "planned": 4960,
-        "paired_measured": 4960
+        "planned": 186,
+        "paired_measured": 186,
+        "whole_run_planned": 4960,
+        "whole_run_paired_measured": 4960,
+        "support_scope": "abx_condition"
       },
       "abx/within_speaker/nested_phone_context": {
         "candidate": 0.41228070175438597,
@@ -820,8 +866,11 @@
         ],
         "lower_better": true,
         "source": "comparison/canonical_complex4099/summary.json",
-        "planned": 4960,
-        "paired_measured": 4960
+        "planned": 186,
+        "paired_measured": 186,
+        "whole_run_planned": 4960,
+        "whole_run_paired_measured": 4960,
+        "support_scope": "abx_condition"
       },
       "abx/across_speaker/flat_stratum": {
         "candidate": 0.49237046316595345,
@@ -833,8 +882,11 @@
         ],
         "lower_better": true,
         "source": "comparison/canonical_complex4099/summary.json",
-        "planned": 4960,
-        "paired_measured": 4960
+        "planned": 4774,
+        "paired_measured": 4774,
+        "whole_run_planned": 4960,
+        "whole_run_paired_measured": 4960,
+        "support_scope": "abx_condition"
       },
       "abx/across_speaker/x_speaker_macro": {
         "candidate": 0.49523245283588835,
@@ -846,8 +898,11 @@
         ],
         "lower_better": true,
         "source": "comparison/canonical_complex4099/summary.json",
-        "planned": 4960,
-        "paired_measured": 4960
+        "planned": 4774,
+        "paired_measured": 4774,
+        "whole_run_planned": 4960,
+        "whole_run_paired_measured": 4960,
+        "support_scope": "abx_condition"
       },
       "abx/across_speaker/nested_phone_context": {
         "candidate": 0.5031582973145132,
@@ -859,8 +914,11 @@
         ],
         "lower_better": true,
         "source": "comparison/canonical_complex4099/summary.json",
-        "planned": 4960,
-        "paired_measured": 4960
+        "planned": 4774,
+        "paired_measured": 4774,
+        "whole_run_planned": 4960,
+        "whole_run_paired_measured": 4960,
+        "support_scope": "abx_condition"
       },
       "readout/log_f0": {
         "candidate": 0.19368896691044446,
@@ -950,6 +1008,10 @@
       "録音平均に対する固定線形readout。情報の不存在、因果的操作性、音声品質を直接証明しない。",
       "既存開発集合であり、独立した最終検証ではない。ホスト間の数値同一性は未証明。"
     ]
+  },
+  "abx_support_source": {
+    "path": "abx/candidate/canonical_complex4099/raw-triplets.json",
+    "sha256": "9a719a65c209371f1e777bd30feabaea2ee44a41ecd12daecf8c11f3bc003d17"
   },
   "canonical_v1_history": {
     "state": "not_evaluated",
