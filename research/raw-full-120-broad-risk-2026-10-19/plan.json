@@ -2,8 +2,8 @@
   "schema": "raw-full-120-public-plan-v1",
   "run_id": "raw-full-120-broad-risk-v1-20261019",
   "snapshot_date_utc": "2026-10-18",
-  "status": "chunk01_quality_running_checkpoint_blocked",
-  "publication_scope": "reviewed_plan_only",
+  "status": "chunk01_interim_quality_terminal_checkpoint_blocked",
+  "publication_scope": "reviewed_plan_and_limited_chunk01_interim_observations",
   "current_base": "pml-lowband-fwcep60-v1",
   "raw_full_adopted": false,
   "adoption_evaluation_complete": false,
@@ -161,8 +161,8 @@
   },
   "legacy_formal_120_expansion_record": "unchanged_false",
   "progress": {
-    "recorded_at": "2026-10-18T22:33:00Z",
-    "evidence_basis": "quality_run_launch_confirmed_through_official_read",
+    "recorded_at": "2026-10-18T23:20:00Z",
+    "evidence_basis": "official_quality_completion_read_and_short_machine_aggregates_from_saved_execution_results",
     "references": {
       "completed": 120,
       "planned": 120,
@@ -177,7 +177,7 @@
       "completed": 144,
       "planned": 1440
     },
-    "quality_metrics": "running_results_not_finalized",
+    "quality_metrics": "completed_with_expected_missingness",
     "events_freeze_sha256": "1f8601d116bc443fb49bde4642ca734b59406d0b8d5d77a67ec35c1795f64768",
     "decoder_manifest_sha256": "e6e75f473e27c00938fb75a0c12a59c8abaef0b44f49b887b0a6df496310c232",
     "reference_feature_checkpoint": {
@@ -239,10 +239,20 @@
       "waveform_location": "execution_environment_local_only",
       "official_waveform_checkpoint_complete": false,
       "waveform_bytes_readback_by_coordinator_complete": false,
-      "quality_evaluation": "running_results_not_finalized",
+      "quality_evaluation": "completed_with_expected_missingness",
       "quality_job_source_and_binding_preparation": "run_launched",
       "quality_run_launch_confirmed_via_official_read": true,
-      "official_quality_checkpoint_complete": false
+      "official_quality_checkpoint_complete": false,
+      "quality_exit_code": 2,
+      "quality_unexpected_failures": 0,
+      "quality_completion_sha256": "5b46ffce50339dd9892f3ead15b92a9827c6e55d76c53d3769aecf1ed135f9ac",
+      "quality_plan_terminal": true,
+      "quality_eligible_for_next_chunk": true,
+      "quality_eligibility_implies_checkpoint_satisfaction": false,
+      "interim_report": "chunk01-interim-report-ja.md",
+      "interim_observations": "chunk01-interim-observations.json",
+      "full_raw_artifacts_transferred": false,
+      "all_raw_values_independently_recomputed_by_coordinator": false
     },
     "checkpoint_contract": {
       "first_chunk_generation_and_measurement_allowed_with_saved_bootstrap": true,
