@@ -89,15 +89,19 @@ def copy_artifacts(root, output, item):
     return source
 
 
-def navigation_card(item):
-    """案内作成日と比較範囲だけを表示し、元の測定日時とは区別する。"""
+def navigation_card(item, time_label):
+    """案内作成日時と比較範囲だけを表示し、元の測定日時とは区別する。"""
     created_on = date.fromisoformat(item['created_on']).isoformat()
     if created_on != item['created_on']:
         raise ValueError('案内作成日はYYYY-MM-DDで指定してください')
+    created_label = (f'案内作成：<time datetime="{created_on}">{created_on}</time>'
+                     '（UTCの日付。各レポートの測定・集計日時とは別）')
+    if 'created_at' in item:
+        created_label = ('案内作成（測定時刻とは別）：'
+                         + time_label({'recorded_at': item['created_at']}))
     link = item['path'] + '/index.html'
     return (f'<article><h2><a href="{esc(link)}">{esc(item["title"])}</a></h2>'
-            f'<small>案内作成：<time datetime="{created_on}">{created_on}</time>'
-            '（UTCの日付。各レポートの測定・集計日時とは別）</small>'
+            f'<small>{created_label}</small>'
             f'<p>{esc(item["comparison_scope"])}</p>'
             f'<p><a href="{esc(link)}">比較範囲・完了状態と元レポートを見る</a></p>'
             '</article>')
@@ -146,9 +150,12 @@ def preserved_cards(root, output, recorded_time, time_label):
         seen.add(item['path'])
         source = copy_artifacts(root, output, item)
         if kind == 'navigation-only':
-            card = navigation_card(item)
-            # 日単位の案内を並べるためだけのキー。測定時刻を補完しない。
-            sort_time = recorded_time({'recorded_at': item['created_on'] + 'T00:00:00+00:00'})
+            # 実際の案内作成日時が未登録の場合だけ、従来の日単位キーを維持する。
+            timestamp = item.get('created_at', item['created_on'] + 'T00:00:00+00:00')
+            sort_time = recorded_time({'recorded_at': timestamp})
+            if 'created_at' in item and sort_time.date().isoformat() != item['created_on']:
+                raise ValueError('案内作成日時のUTC日付がcreated_onと一致しません')
+            card = navigation_card(item, time_label)
             cards.append((sort_time, item['path'], item['id'], card))
             continue
         data = read_json(source / 'results.json.gz')
