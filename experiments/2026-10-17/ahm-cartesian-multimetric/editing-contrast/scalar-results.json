@@ -1,0 +1,162 @@
+{
+  "scope": "post-hoc same-support editing contrasts; not causal evidence or a new model evaluation",
+  "source_summary_sha256": "3f3dff136fba05860c3cb2ac965724b40e4528a17aaf71257afd717ac18eeda2",
+  "cohort_sha256": "1f392fc60fbca4003c236f03ffd9edba82b048737f23cf250295c1b4c6c85193",
+  "sources": [
+    {
+      "chunk": "chunk-01",
+      "uncompressed_sha256": "41d1591cacee2daf82eabdf88978e07a722b8a1000949ba14e2c96bbfbf20300"
+    },
+    {
+      "chunk": "chunk-02",
+      "uncompressed_sha256": "2c5275859de4eaf7007a65afa38b10d5ea5826e6adb6f62f137cf79f1f8112f3"
+    },
+    {
+      "chunk": "chunk-03",
+      "uncompressed_sha256": "6b98cad0c0758c67c727a83f5cf324a3dcc673ad9fe4bbb331760d9b32083cf0"
+    },
+    {
+      "chunk": "chunk-04",
+      "uncompressed_sha256": "c67aa6411beac56e0e3b520c9160f589866ea6e0f89031cde7df548d105899a6"
+    },
+    {
+      "chunk": "chunk-05",
+      "uncompressed_sha256": "80c8ad3c1cc433cbcccd08992c8f7991bad61cfadd149a3da84283d264fb9981"
+    },
+    {
+      "chunk": "chunk-06",
+      "uncompressed_sha256": "154097644a651643eead73fd589e04983d49c84e45c03d2262e98e14ea1883a0"
+    },
+    {
+      "chunk": "chunk-07",
+      "uncompressed_sha256": "503bf4e2722c7b0c052aff1814508c95b640c8c5fb3f95c8d0bd72bf302d5395"
+    },
+    {
+      "chunk": "chunk-08",
+      "uncompressed_sha256": "19282422d8e0c11af1fe4626e67d08cb56fdf81f270faeabb75f49395b70a716"
+    },
+    {
+      "chunk": "chunk-09",
+      "uncompressed_sha256": "f01f5809d7fd920909243cd83b2855c5e74343a64c921823263122528df6884f"
+    },
+    {
+      "chunk": "chunk-10",
+      "uncompressed_sha256": "42cc56f0bcec537eb391dd8e2055f3f6a2b23681b5b7fc3da17977476a7ea7d3"
+    }
+  ],
+  "bootstrap": {
+    "seed": 20261018,
+    "replicates": 2000,
+    "unit": "speaker",
+    "point": "recording mean within speaker, then speaker equal weight"
+  },
+  "plan_sha256": "f05c5071efded6e632d1ffe82403bf7591fbc959f6cf3dda4ea1afbb8ddb0f92",
+  "script_sha256": "91c06ae06b2b99c009103c9da45dec47775a000b6795ae275816fcf8c4834972",
+  "numpy_version": "2.3.5",
+  "results": [
+    {
+      "metric": "1.native_mos",
+      "condition": "pitch_minus3",
+      "planned_recordings": 120,
+      "paired_recordings": 117,
+      "paired_speakers": 40,
+      "value_order": [
+        "candidate_native",
+        "candidate_edited",
+        "pml_native",
+        "pml_edited"
+      ],
+      "speaker_equal_means": [
+        3.5506269375483184,
+        3.247909125685691,
+        3.2698899249235795,
+        3.261108024915059
+      ],
+      "candidate_edit_change": -0.3027178118626277,
+      "pml_edit_change": -0.008781900008519417,
+      "difference_of_changes": -0.2939359118541082,
+      "difference_ci95": [
+        -0.3829841618984938,
+        -0.20996902264654657
+      ]
+    },
+    {
+      "metric": "5.ecapa",
+      "condition": "pitch_minus3",
+      "planned_recordings": 120,
+      "paired_recordings": 117,
+      "paired_speakers": 40,
+      "value_order": [
+        "candidate_native",
+        "candidate_edited",
+        "pml_native",
+        "pml_edited"
+      ],
+      "speaker_equal_means": [
+        0.9690852766235667,
+        0.8140096642076969,
+        0.948765102525552,
+        0.8443063075343769
+      ],
+      "candidate_edit_change": -0.15507561241587003,
+      "pml_edit_change": -0.10445879499117534,
+      "difference_of_changes": -0.05061681742469469,
+      "difference_ci95": [
+        -0.05976470173026125,
+        -0.041275400184094924
+      ]
+    },
+    {
+      "metric": "1.native_mos",
+      "condition": "pitch_plus3",
+      "planned_recordings": 120,
+      "paired_recordings": 115,
+      "paired_speakers": 40,
+      "value_order": [
+        "candidate_native",
+        "candidate_edited",
+        "pml_native",
+        "pml_edited"
+      ],
+      "speaker_equal_means": [
+        3.5542204191287348,
+        3.03447180489699,
+        3.2786976973215745,
+        3.1564647475878393
+      ],
+      "candidate_edit_change": -0.5197486142317453,
+      "pml_edit_change": -0.12223294973373408,
+      "difference_of_changes": -0.3975156644980113,
+      "difference_ci95": [
+        -0.49648970551788807,
+        -0.30426402804752206
+      ]
+    },
+    {
+      "metric": "5.ecapa",
+      "condition": "pitch_plus3",
+      "planned_recordings": 120,
+      "paired_recordings": 115,
+      "paired_speakers": 40,
+      "value_order": [
+        "candidate_native",
+        "candidate_edited",
+        "pml_native",
+        "pml_edited"
+      ],
+      "speaker_equal_means": [
+        0.9690523825585841,
+        0.8353508507212002,
+        0.9487848197420437,
+        0.8842517592012881
+      ],
+      "candidate_edit_change": -0.1337015318373839,
+      "pml_edit_change": -0.06453306054075561,
+      "difference_of_changes": -0.0691684712966283,
+      "difference_ci95": [
+        -0.07704342675084867,
+        -0.06067268293350933
+      ]
+    }
+  ]
+}
