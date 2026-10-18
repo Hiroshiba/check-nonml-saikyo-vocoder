@@ -2,7 +2,7 @@
   "schema": "raw-full-120-public-plan-v1",
   "run_id": "raw-full-120-broad-risk-v1-20261019",
   "snapshot_date_utc": "2026-10-18",
-  "status": "checkpoint_blocked_before_generation",
+  "status": "chunk01_generated_quality_preparing_checkpoint_blocked",
   "publication_scope": "reviewed_plan_only",
   "current_base": "pml-lowband-fwcep60-v1",
   "raw_full_adopted": false,
@@ -161,8 +161,8 @@
   },
   "legacy_formal_120_expansion_record": "unchanged_false",
   "progress": {
-    "recorded_at": "2026-10-18T21:29:00Z",
-    "evidence_basis": "execution_environment_terminal_records_and_reported_saved_receipt_summary",
+    "recorded_at": "2026-10-18T21:49:00Z",
+    "evidence_basis": "execution_environment_terminal_record_confirmed_through_official_read",
     "references": {
       "completed": 120,
       "planned": 120,
@@ -174,10 +174,10 @@
       "exit_code": 0
     },
     "generated_outputs": {
-      "completed": 0,
+      "completed": 144,
       "planned": 1440
     },
-    "quality_metrics": "not_measured",
+    "quality_metrics": "not_run",
     "events_freeze_sha256": "1f8601d116bc443fb49bde4642ca734b59406d0b8d5d77a67ec35c1795f64768",
     "decoder_manifest_sha256": "e6e75f473e27c00938fb75a0c12a59c8abaef0b44f49b887b0a6df496310c232",
     "reference_feature_checkpoint": {
@@ -193,9 +193,10 @@
       "coordinator_artifact_bytes_readback_complete": false,
       "alternate_transfer_used": false,
       "same_official_helper_version_and_route": true,
-      "alternate_environment_transfer_used": false
+      "alternate_environment_transfer_used": false,
+      "additional_retry_since_previous_snapshot": false
     },
-    "bulk_generation": "on_hold_until_checkpoint_succeeds",
+    "bulk_generation": "chunk01_complete_chunk02_blocked_until_new_official_checkpoint",
     "generation_source": {
       "final_static_review": "complete",
       "private_preservation": "complete",
@@ -215,6 +216,29 @@
       "private_preservation": "complete",
       "freeze_sha256": "2c13b642c93c34a30c8e6414067d3355c938503a5cc660ca118d844501a98943"
     },
-    "static_review_implies_measurement_success_or_checkpoint_guarantee": false
+    "static_review_implies_measurement_success_or_checkpoint_guarantee": false,
+    "chunk01": {
+      "recordings": 12,
+      "generated_waveforms": 144,
+      "planned_waveforms": 144,
+      "generation_status": "completed",
+      "generation_exit_code": 0,
+      "receipt_sha256": "020525f23c710cd5326b781e0d989675427a09d6067a0b9765d16fb521e1b8f4",
+      "rows_sha256": "4239ce50f2edb324b31db5a9899a77b784f240fa58c3ae7b8f9c43053ee4f312",
+      "terminal_record_confirmed_via_official_read": true,
+      "waveform_location": "execution_environment_local_only",
+      "official_waveform_checkpoint_complete": false,
+      "waveform_bytes_readback_by_coordinator_complete": false,
+      "quality_evaluation": "not_run",
+      "quality_job_source_and_binding_preparation": "started"
+    },
+    "checkpoint_contract": {
+      "first_chunk_generation_and_measurement_allowed_with_saved_bootstrap": true,
+      "new_official_checkpoint_required_before_chunk02": true,
+      "new_official_checkpoint_complete": false,
+      "upload_http401_unresolved": true,
+      "additional_upload_retry_since_previous_snapshot": false,
+      "alternate_transfer_or_environment_used": false
+    }
   }
 }
