@@ -1,0 +1,391 @@
+{
+  "schema": "single-case-future-dependence-explanation-v1",
+  "case": "librispeech_121-121726-0012",
+  "scope": "Analysis-envelope future-sample dependence only; not waveform, audible-noise, quality or a candidate-method result.",
+  "target_frame": 419,
+  "target_time_s": 2.095,
+  "fixed_f0": "Original StoneMask F0 used for every variant; not reestimated after continuation changes.",
+  "delta_reference": "10*log10(variant band power / unmodified-original band power at the SAME frame), separately for fresh and FWCEP roundtrip.",
+  "time_reference": "All fresh relative-time values use original frame 421 (2.105 seconds) as denominator; never re-normalized per variant.",
+  "frame419": [
+    {
+      "name": "hold_2.100",
+      "mode": "hold",
+      "cut_s": 2.1,
+      "cut_sample": 33600,
+      "row": {
+        "frame_index": 419,
+        "time_s": 2.095,
+        "effective_f0_hz": 97.32718106858442,
+        "ideal_window_end_s": 2.110411933064649,
+        "fresh_max_abs_difference_from_original": 0.043553169995601874,
+        "bands": [
+          {
+            "band_hz": [
+              1500,
+              3000
+            ],
+            "fresh_mean_power": 2.793980377753115e-07,
+            "roundtrip_mean_power": 2.56437543162172e-07,
+            "original_frame421_fresh_mean_power": 0.0006264781754658268,
+            "fresh_db_change_from_original": -18.47605092334434,
+            "roundtrip_db_change_from_original": -18.850454402431897,
+            "fresh_db_relative_to_original_frame421": -33.50682594416808
+          },
+          {
+            "band_hz": [
+              3000,
+              8000
+            ],
+            "fresh_mean_power": 9.097201197982711e-08,
+            "roundtrip_mean_power": 7.858708658357755e-08,
+            "original_frame421_fresh_mean_power": 5.801303979530803e-05,
+            "fresh_db_change_from_original": -14.46502347302756,
+            "roundtrip_db_change_from_original": -15.072807947832391,
+            "fresh_db_relative_to_original_frame421": -28.04617822557935
+          }
+        ]
+      }
+    },
+    {
+      "name": "past_reflect_2.100",
+      "mode": "past_reflect",
+      "cut_s": 2.1,
+      "cut_sample": 33600,
+      "row": {
+        "frame_index": 419,
+        "time_s": 2.095,
+        "effective_f0_hz": 97.32718106858442,
+        "ideal_window_end_s": 2.110411933064649,
+        "fresh_max_abs_difference_from_original": 0.05278291266683221,
+        "bands": [
+          {
+            "band_hz": [
+              1500,
+              3000
+            ],
+            "fresh_mean_power": 4.095254568410096e-07,
+            "roundtrip_mean_power": 3.9411879488791574e-07,
+            "original_frame421_fresh_mean_power": 0.0006264781754658268,
+            "fresh_db_change_from_original": -16.81547540590261,
+            "roundtrip_db_change_from_original": -16.983999014913636,
+            "fresh_db_relative_to_original_frame421": -31.84625042672635
+          },
+          {
+            "band_hz": [
+              3000,
+              8000
+            ],
+            "fresh_mean_power": 1.0686887159617669e-07,
+            "roundtrip_mean_power": 9.277557578234417e-08,
+            "original_frame421_fresh_mean_power": 5.801303979530803e-05,
+            "fresh_db_change_from_original": -13.765589233817238,
+            "roundtrip_db_change_from_original": -14.35198325150454,
+            "fresh_db_relative_to_original_frame421": -27.34674398636903
+          }
+        ]
+      }
+    },
+    {
+      "name": "zero_2.100",
+      "mode": "zero",
+      "cut_s": 2.1,
+      "cut_sample": 33600,
+      "row": {
+        "frame_index": 419,
+        "time_s": 2.095,
+        "effective_f0_hz": 97.32718106858442,
+        "ideal_window_end_s": 2.110411933064649,
+        "fresh_max_abs_difference_from_original": 0.04712090785733683,
+        "bands": [
+          {
+            "band_hz": [
+              1500,
+              3000
+            ],
+            "fresh_mean_power": 1.1226374008689419e-06,
+            "roundtrip_mean_power": 1.1201034014087796e-06,
+            "original_frame421_fresh_mean_power": 0.0006264781754658268,
+            "fresh_db_change_from_original": -12.435889373298629,
+            "roundtrip_db_change_from_original": -12.447689315995593,
+            "fresh_db_relative_to_original_frame421": -27.46666439412237
+          },
+          {
+            "band_hz": [
+              3000,
+              8000
+            ],
+            "fresh_mean_power": 3.5390172057329213e-07,
+            "roundtrip_mean_power": 3.192943924848721e-07,
+            "original_frame421_fresh_mean_power": 5.801303979530803e-05,
+            "fresh_db_change_from_original": -8.565274731173396,
+            "roundtrip_db_change_from_original": -8.984406920557513,
+            "fresh_db_relative_to_original_frame421": -22.146429483725186
+          }
+        ]
+      }
+    },
+    {
+      "name": "hold_2.103",
+      "mode": "hold",
+      "cut_s": 2.103,
+      "cut_sample": 33648,
+      "row": {
+        "frame_index": 419,
+        "time_s": 2.095,
+        "effective_f0_hz": 97.32718106858442,
+        "ideal_window_end_s": 2.110411933064649,
+        "fresh_max_abs_difference_from_original": 0.026204625629576962,
+        "bands": [
+          {
+            "band_hz": [
+              1500,
+              3000
+            ],
+            "fresh_mean_power": 3.044715767052829e-07,
+            "roundtrip_mean_power": 2.7433162267321877e-07,
+            "original_frame421_fresh_mean_power": 0.0006264781754658268,
+            "fresh_db_change_from_original": -18.10281687828095,
+            "roundtrip_db_change_from_original": -18.557511752978055,
+            "fresh_db_relative_to_original_frame421": -33.13359189910469
+          },
+          {
+            "band_hz": [
+              3000,
+              8000
+            ],
+            "fresh_mean_power": 9.951930683152463e-08,
+            "roundtrip_mean_power": 8.373782616908613e-08,
+            "original_frame421_fresh_mean_power": 5.801303979530803e-05,
+            "fresh_db_change_from_original": -14.075028047566867,
+            "roundtrip_db_change_from_original": -14.79710301058703,
+            "fresh_db_relative_to_original_frame421": -27.656182800118657
+          }
+        ]
+      }
+    },
+    {
+      "name": "past_reflect_2.103",
+      "mode": "past_reflect",
+      "cut_s": 2.103,
+      "cut_sample": 33648,
+      "row": {
+        "frame_index": 419,
+        "time_s": 2.095,
+        "effective_f0_hz": 97.32718106858442,
+        "ideal_window_end_s": 2.110411933064649,
+        "fresh_max_abs_difference_from_original": 0.011012839299298957,
+        "bands": [
+          {
+            "band_hz": [
+              1500,
+              3000
+            ],
+            "fresh_mean_power": 3.244221040640355e-07,
+            "roundtrip_mean_power": 2.81650735448324e-07,
+            "original_frame421_fresh_mean_power": 0.0006264781754658268,
+            "fresh_db_change_from_original": -17.827180074360555,
+            "roundtrip_db_change_from_original": -18.443161580467002,
+            "fresh_db_relative_to_original_frame421": -32.85795509518429
+          },
+          {
+            "band_hz": [
+              3000,
+              8000
+            ],
+            "fresh_mean_power": 1.023625304702526e-07,
+            "roundtrip_mean_power": 8.546994763779235e-08,
+            "original_frame421_fresh_mean_power": 5.801303979530803e-05,
+            "fresh_db_change_from_original": -13.952691337828123,
+            "roundtrip_db_change_from_original": -14.708185455977752,
+            "fresh_db_relative_to_original_frame421": -27.53384609037991
+          }
+        ]
+      }
+    },
+    {
+      "name": "zero_2.103",
+      "mode": "zero",
+      "cut_s": 2.103,
+      "cut_sample": 33648,
+      "row": {
+        "frame_index": 419,
+        "time_s": 2.095,
+        "effective_f0_hz": 97.32718106858442,
+        "ideal_window_end_s": 2.110411933064649,
+        "fresh_max_abs_difference_from_original": 0.02348931152246221,
+        "bands": [
+          {
+            "band_hz": [
+              1500,
+              3000
+            ],
+            "fresh_mean_power": 1.3052978212745181e-06,
+            "roundtrip_mean_power": 1.2677235227621663e-06,
+            "original_frame421_fresh_mean_power": 0.0006264781754658268,
+            "fresh_db_change_from_original": -11.781188309396223,
+            "roundtrip_db_change_from_original": -11.910024988629367,
+            "fresh_db_relative_to_original_frame421": -26.81196333021996
+          },
+          {
+            "band_hz": [
+              3000,
+              8000
+            ],
+            "fresh_mean_power": 3.3414303353099753e-07,
+            "roundtrip_mean_power": 3.196433274263205e-07,
+            "original_frame421_fresh_mean_power": 5.801303979530803e-05,
+            "fresh_db_change_from_original": -8.814777361296208,
+            "roundtrip_db_change_from_original": -8.979663405502533,
+            "fresh_db_relative_to_original_frame421": -22.395932113848
+          }
+        ]
+      }
+    },
+    {
+      "name": "hold_2.106",
+      "mode": "hold",
+      "cut_s": 2.106,
+      "cut_sample": 33696,
+      "row": {
+        "frame_index": 419,
+        "time_s": 2.095,
+        "effective_f0_hz": 97.32718106858442,
+        "ideal_window_end_s": 2.110411933064649,
+        "fresh_max_abs_difference_from_original": 0.0036069090466006246,
+        "bands": [
+          {
+            "band_hz": [
+              1500,
+              3000
+            ],
+            "fresh_mean_power": 1.846864700725452e-05,
+            "roundtrip_mean_power": 1.844173456258964e-05,
+            "original_frame421_fresh_mean_power": 0.0006264781754658268,
+            "fresh_db_change_from_original": -0.27393363384084446,
+            "roundtrip_db_change_from_original": -0.2822528085150964,
+            "fresh_db_relative_to_original_frame421": -15.30470865466458
+          },
+          {
+            "band_hz": [
+              3000,
+              8000
+            ],
+            "fresh_mean_power": 2.105419360616607e-06,
+            "roundtrip_mean_power": 2.094533630827579e-06,
+            "original_frame421_fresh_mean_power": 5.801303979530803e-05,
+            "fresh_db_change_from_original": -0.8207153496052249,
+            "roundtrip_db_change_from_original": -0.8154464549948025,
+            "fresh_db_relative_to_original_frame421": -14.401870102157018
+          }
+        ]
+      }
+    },
+    {
+      "name": "past_reflect_2.106",
+      "mode": "past_reflect",
+      "cut_s": 2.106,
+      "cut_sample": 33696,
+      "row": {
+        "frame_index": 419,
+        "time_s": 2.095,
+        "effective_f0_hz": 97.32718106858442,
+        "ideal_window_end_s": 2.110411933064649,
+        "fresh_max_abs_difference_from_original": 0.020035011782105663,
+        "bands": [
+          {
+            "band_hz": [
+              1500,
+              3000
+            ],
+            "fresh_mean_power": 2.758158477442005e-05,
+            "roundtrip_mean_power": 2.7680477048652882e-05,
+            "original_frame421_fresh_mean_power": 0.0006264781754658268,
+            "fresh_db_change_from_original": 1.467907720646543,
+            "roundtrip_db_change_from_original": 1.4814652288000516,
+            "fresh_db_relative_to_original_frame421": -13.562867300177196
+          },
+          {
+            "band_hz": [
+              3000,
+              8000
+            ],
+            "fresh_mean_power": 2.701332957010764e-06,
+            "roundtrip_mean_power": 2.7327413452436622e-06,
+            "original_frame421_fresh_mean_power": 5.801303979530803e-05,
+            "fresh_db_change_from_original": 0.2616796995014258,
+            "roundtrip_db_change_from_original": 0.33966544048606906,
+            "fresh_db_relative_to_original_frame421": -13.319475053050366
+          }
+        ]
+      }
+    },
+    {
+      "name": "zero_2.106",
+      "mode": "zero",
+      "cut_s": 2.106,
+      "cut_sample": 33696,
+      "row": {
+        "frame_index": 419,
+        "time_s": 2.095,
+        "effective_f0_hz": 97.32718106858442,
+        "ideal_window_end_s": 2.110411933064649,
+        "fresh_max_abs_difference_from_original": 0.0011686242795783328,
+        "bands": [
+          {
+            "band_hz": [
+              1500,
+              3000
+            ],
+            "fresh_mean_power": 1.6656347499466676e-05,
+            "roundtrip_mean_power": 1.664013491945799e-05,
+            "original_frame421_fresh_mean_power": 0.0006264781754658268,
+            "fresh_db_change_from_original": -0.7224867115716864,
+            "roundtrip_db_change_from_original": -0.7287020439115861,
+            "fresh_db_relative_to_original_frame421": -15.753261732395423
+          },
+          {
+            "band_hz": [
+              3000,
+              8000
+            ],
+            "fresh_mean_power": 2.604494580668986e-06,
+            "roundtrip_mean_power": 2.613232391236612e-06,
+            "original_frame421_fresh_mean_power": 5.801303979530803e-05,
+            "fresh_db_change_from_original": 0.10313310925712299,
+            "roundtrip_db_change_from_original": 0.14546049176650752,
+            "fresh_db_relative_to_original_frame421": -13.47802164329467
+          }
+        ]
+      }
+    }
+  ],
+  "controls": {
+    "original_repeat_saved_rows_identical": true,
+    "frame416_fresh_max_abs_difference_all9": {
+      "hold_2.100": 0.0,
+      "past_reflect_2.100": 0.0,
+      "zero_2.100": 0.0,
+      "hold_2.103": 0.0,
+      "past_reflect_2.103": 0.0,
+      "zero_2.103": 0.0,
+      "hold_2.106": 0.0,
+      "past_reflect_2.106": 0.0,
+      "zero_2.106": 0.0
+    },
+    "frame418_cut2106_fresh_max_abs_difference": {
+      "hold_2.106": 0.0,
+      "past_reflect_2.106": 0.0,
+      "zero_2.106": 0.0
+    }
+  },
+  "source_sha256": {
+    "result.json": "11b7d4bf07bc084e120fbad8b4858be5d293359eec826586a8aadb0b414d62ed",
+    "observations.npz": "7d51596613e6e6d1920b6f9e376e5950a38fe2cfa64051b1eaa3cb5272b96738"
+  },
+  "runtime": {
+    "pyworld": "0.3.5",
+    "numpy": "2.3.5"
+  },
+  "waveform_section": "Included separately in waveform-results.json, waveform-display-data.json and the waveform-propagation HTML section; five full-length licensed playback copies in audio-manifest.json."
+}

@@ -1,0 +1,266 @@
+{
+  "state": "completed_single_case_pathway_observation",
+  "runtime": {
+    "python": "3.12.14",
+    "numpy": "2.3.5",
+    "scipy": "1.17.0"
+  },
+  "source_freeze_sha256": "670794e19d9a47425baa73f6b55d6b77a3745a4496ce654ca80163a727b40296",
+  "analysis_result_sha256": "11b7d4bf07bc084e120fbad8b4858be5d293359eec826586a8aadb0b414d62ed",
+  "original_row_reencoding_max_abs_difference": 0.0,
+  "intervention": "Replace only saved FWCEP row419 with fixed-F0 future-suffix analysis from cutoff2.103. All other saved features, pulse clocks, masks and RNG seed0 unchanged. Native and minus3 are descriptive controls. No gain normalization or quality claim.",
+  "observations": [
+    {
+      "shift": 0,
+      "variant": "original",
+      "regions": [
+        {
+          "start_s": 2.08,
+          "end_s": 2.094,
+          "wave_rms": 0.01359743831664481,
+          "difference_rms": 0.0
+        },
+        {
+          "start_s": 2.094,
+          "end_s": 2.126,
+          "wave_rms": 0.05640894967350449,
+          "difference_rms": 0.0
+        },
+        {
+          "start_s": 2.08,
+          "end_s": 2.17,
+          "wave_rms": 0.06804575920275062,
+          "difference_rms": 0.0
+        }
+      ],
+      "wave_float64_sha256": "c5fa4398e4c30c78ecab9da549a9f9d82b09e11db3e6a399b39613cdfbb9a161",
+      "artifact": "+0__original.npz",
+      "artifact_sha256": "fe6aad6893a409964e00991639f41643b7bf1f9922f89bb6715a9b3296770d2e",
+      "max_abs_wave_difference": 0.0
+    },
+    {
+      "shift": 0,
+      "variant": "hold_2.103",
+      "regions": [
+        {
+          "start_s": 2.08,
+          "end_s": 2.094,
+          "wave_rms": 0.01359743831664481,
+          "difference_rms": 0.0
+        },
+        {
+          "start_s": 2.094,
+          "end_s": 2.126,
+          "wave_rms": 0.05640894967350449,
+          "difference_rms": 0.0
+        },
+        {
+          "start_s": 2.08,
+          "end_s": 2.17,
+          "wave_rms": 0.06804575920275062,
+          "difference_rms": 0.0
+        }
+      ],
+      "wave_float64_sha256": "c5fa4398e4c30c78ecab9da549a9f9d82b09e11db3e6a399b39613cdfbb9a161",
+      "artifact": "+0__hold_2.103.npz",
+      "artifact_sha256": "fe6aad6893a409964e00991639f41643b7bf1f9922f89bb6715a9b3296770d2e",
+      "max_abs_wave_difference": 0.0
+    },
+    {
+      "shift": 0,
+      "variant": "past_reflect_2.103",
+      "regions": [
+        {
+          "start_s": 2.08,
+          "end_s": 2.094,
+          "wave_rms": 0.01359743831664481,
+          "difference_rms": 0.0
+        },
+        {
+          "start_s": 2.094,
+          "end_s": 2.126,
+          "wave_rms": 0.05640894967350449,
+          "difference_rms": 0.0
+        },
+        {
+          "start_s": 2.08,
+          "end_s": 2.17,
+          "wave_rms": 0.06804575920275062,
+          "difference_rms": 0.0
+        }
+      ],
+      "wave_float64_sha256": "c5fa4398e4c30c78ecab9da549a9f9d82b09e11db3e6a399b39613cdfbb9a161",
+      "artifact": "+0__past_reflect_2.103.npz",
+      "artifact_sha256": "fe6aad6893a409964e00991639f41643b7bf1f9922f89bb6715a9b3296770d2e",
+      "max_abs_wave_difference": 0.0
+    },
+    {
+      "shift": -3,
+      "variant": "original",
+      "regions": [
+        {
+          "start_s": 2.08,
+          "end_s": 2.094,
+          "wave_rms": 0.00907987369595566,
+          "difference_rms": 0.0
+        },
+        {
+          "start_s": 2.094,
+          "end_s": 2.126,
+          "wave_rms": 0.06631751328042186,
+          "difference_rms": 0.0
+        },
+        {
+          "start_s": 2.08,
+          "end_s": 2.17,
+          "wave_rms": 0.06852136463540497,
+          "difference_rms": 0.0
+        }
+      ],
+      "wave_float64_sha256": "f3087925f56b09960a87b81f89c5ddfc401027a2c8eab215cee1059b33c5136d",
+      "artifact": "-3__original.npz",
+      "artifact_sha256": "e735075a91bed1112215cb5ebf01961170ea22200219608e20f4c7082bc32e7b",
+      "max_abs_wave_difference": 0.0
+    },
+    {
+      "shift": -3,
+      "variant": "hold_2.103",
+      "regions": [
+        {
+          "start_s": 2.08,
+          "end_s": 2.094,
+          "wave_rms": 0.00907987369595566,
+          "difference_rms": 0.0
+        },
+        {
+          "start_s": 2.094,
+          "end_s": 2.126,
+          "wave_rms": 0.06631751328042186,
+          "difference_rms": 0.0
+        },
+        {
+          "start_s": 2.08,
+          "end_s": 2.17,
+          "wave_rms": 0.06852136463540497,
+          "difference_rms": 0.0
+        }
+      ],
+      "wave_float64_sha256": "f3087925f56b09960a87b81f89c5ddfc401027a2c8eab215cee1059b33c5136d",
+      "artifact": "-3__hold_2.103.npz",
+      "artifact_sha256": "e735075a91bed1112215cb5ebf01961170ea22200219608e20f4c7082bc32e7b",
+      "max_abs_wave_difference": 0.0
+    },
+    {
+      "shift": -3,
+      "variant": "past_reflect_2.103",
+      "regions": [
+        {
+          "start_s": 2.08,
+          "end_s": 2.094,
+          "wave_rms": 0.00907987369595566,
+          "difference_rms": 0.0
+        },
+        {
+          "start_s": 2.094,
+          "end_s": 2.126,
+          "wave_rms": 0.06631751328042186,
+          "difference_rms": 0.0
+        },
+        {
+          "start_s": 2.08,
+          "end_s": 2.17,
+          "wave_rms": 0.06852136463540497,
+          "difference_rms": 0.0
+        }
+      ],
+      "wave_float64_sha256": "f3087925f56b09960a87b81f89c5ddfc401027a2c8eab215cee1059b33c5136d",
+      "artifact": "-3__past_reflect_2.103.npz",
+      "artifact_sha256": "e735075a91bed1112215cb5ebf01961170ea22200219608e20f4c7082bc32e7b",
+      "max_abs_wave_difference": 0.0
+    },
+    {
+      "shift": 3,
+      "variant": "original",
+      "regions": [
+        {
+          "start_s": 2.08,
+          "end_s": 2.094,
+          "wave_rms": 0.02061951631370366,
+          "difference_rms": 0.0
+        },
+        {
+          "start_s": 2.094,
+          "end_s": 2.126,
+          "wave_rms": 0.06459749563772266,
+          "difference_rms": 0.0
+        },
+        {
+          "start_s": 2.08,
+          "end_s": 2.17,
+          "wave_rms": 0.06729208013777169,
+          "difference_rms": 0.0
+        }
+      ],
+      "wave_float64_sha256": "18e5e3fd1f46a29e71e7a328270b76d785d3a644343a9aa9e2db55fcec17726a",
+      "artifact": "+3__original.npz",
+      "artifact_sha256": "6c9ce223470a3e7306fedbf66cdc4c77ebc56ce72665c17ad9ccd0091c62a264",
+      "max_abs_wave_difference": 0.0
+    },
+    {
+      "shift": 3,
+      "variant": "hold_2.103",
+      "regions": [
+        {
+          "start_s": 2.08,
+          "end_s": 2.094,
+          "wave_rms": 0.019833788352326596,
+          "difference_rms": 0.0024979780963058276
+        },
+        {
+          "start_s": 2.094,
+          "end_s": 2.126,
+          "wave_rms": 0.06471238455176886,
+          "difference_rms": 0.008274917970942784
+        },
+        {
+          "start_s": 2.08,
+          "end_s": 2.17,
+          "wave_rms": 0.06729628226587596,
+          "difference_rms": 0.005031808414866808
+        }
+      ],
+      "wave_float64_sha256": "6229e00a7bac641aff9ea803459e52dd722f0776261b298d414c6e9d9e3af8fb",
+      "artifact": "+3__hold_2.103.npz",
+      "artifact_sha256": "fcdd64037a8b120536c738b24ce2f975302242ff884e60d078f6b1c703724f5b",
+      "max_abs_wave_difference": 0.022700554691255093
+    },
+    {
+      "shift": 3,
+      "variant": "past_reflect_2.103",
+      "regions": [
+        {
+          "start_s": 2.08,
+          "end_s": 2.094,
+          "wave_rms": 0.02017617822254906,
+          "difference_rms": 0.00170178170027761
+        },
+        {
+          "start_s": 2.094,
+          "end_s": 2.126,
+          "wave_rms": 0.06474162387450842,
+          "difference_rms": 0.003045404204515276
+        },
+        {
+          "start_s": 2.08,
+          "end_s": 2.17,
+          "wave_rms": 0.06732099440098943,
+          "difference_rms": 0.0019360966541603882
+        }
+      ],
+      "wave_float64_sha256": "55eb4f87049a9b2c10ffe5e6e8cd92fd47b71782c8d695815eb7657f62dd4956",
+      "artifact": "+3__past_reflect_2.103.npz",
+      "artifact_sha256": "fa4da62b57b4b1e85c82b0e623a7cadb298952a0d6b5c472657ed655ecf9e2bd",
+      "max_abs_wave_difference": 0.00865160534158349
+    }
+  ]
+}
