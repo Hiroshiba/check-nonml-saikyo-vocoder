@@ -1,0 +1,43 @@
+{
+  "schema": "raw-full-120-preparation-observations-v1",
+  "snapshot_at": "2026-10-18T21:29:00Z",
+  "status": "executor_reported_preparatory_measurements_no_output_synthesis",
+  "scope": "original_reference_preparation_and_feature_extraction_only",
+  "recordings": 120,
+  "raw_npz_payload_bytes": 10373997,
+  "existing_PML_bytes": 61969776,
+  "additional_percent": 16.740413907579722,
+  "shared_coefficient_bytes": 1301,
+  "shared_coefficient_in_raw_npz_total": false,
+  "metadata_and_audit_bytes_included": false,
+  "A_L_encoder_seconds": 4.415094,
+  "audio_seconds": 615.935,
+  "incremental_encoder_rtf": 0.007168116765567795,
+  "timing_excludes": [
+    "existing_PML_analysis",
+    "input_read",
+    "feature_write"
+  ],
+  "events": {
+    "1500_3000": {
+      "fixed": 120,
+      "missing": 0
+    },
+    "3000_8000": {
+      "fixed": 120,
+      "missing": 0
+    }
+  },
+  "generated_outputs": {
+    "completed": 0,
+    "planned": 1440
+  },
+  "new_quality_metrics": "not_measured",
+  "provenance": {
+    "basis": "execution_environment_reported_aggregate_of_saved_decoder_manifest_per_recording_encoder_receipts_and_general_events",
+    "underlying_artifact_bytes_readback_by_coordinator": false,
+    "official_reference_feature_checkpoint_complete": false
+  },
+  "current_base": "pml-lowband-fwcep60-v1",
+  "raw_full_adopted": false
+}

@@ -161,8 +161,8 @@
   },
   "legacy_formal_120_expansion_record": "unchanged_false",
   "progress": {
-    "recorded_at": "2026-10-18T21:11:00Z",
-    "evidence_basis": "execution_environment_terminal_records",
+    "recorded_at": "2026-10-18T21:29:00Z",
+    "evidence_basis": "execution_environment_terminal_records_and_reported_saved_receipt_summary",
     "references": {
       "completed": 120,
       "planned": 120,
@@ -191,17 +191,30 @@
       "official_persistence_complete": false,
       "fixed_version_readback_complete": false,
       "coordinator_artifact_bytes_readback_complete": false,
-      "alternate_transfer_used": false
+      "alternate_transfer_used": false,
+      "same_official_helper_version_and_route": true,
+      "alternate_environment_transfer_used": false
     },
     "bulk_generation": "on_hold_until_checkpoint_succeeds",
     "generation_source": {
       "final_static_review": "complete",
-      "private_preservation": "complete"
+      "private_preservation": "complete",
+      "freeze_sha256": "d1dc61a3152a9b57b763f5e1c50bc39fa760f7141715aa65546fbcbc4236c6c5"
     },
     "quality_source": {
-      "final_review": "in_progress"
+      "final_static_review": "complete",
+      "private_preservation": "complete",
+      "freeze_sha256": "3bda0469a722b12eee0f6fd36a488397e63fdc8897b5b0cf30638ca449eaa6f6"
     },
     "current_base": "pml-lowband-fwcep60-v1",
-    "raw_full_adopted": false
+    "raw_full_adopted": false,
+    "preparatory_observations_file": "preparation-observations.json",
+    "checkpoint_adapters_source": {
+      "generation_and_quality_checkpoint_gates": true,
+      "independent_static_review": "complete",
+      "private_preservation": "complete",
+      "freeze_sha256": "2c13b642c93c34a30c8e6414067d3355c938503a5cc660ca118d844501a98943"
+    },
+    "static_review_implies_measurement_success_or_checkpoint_guarantee": false
   }
 }
