@@ -47,10 +47,11 @@ def copy_artifacts(root, output, item):
         raise ValueError('公開先はresearch内の相対パスで指定してください')
     navigation = item.get('kind') == 'navigation-only'
     source_relative = Path(item['source_path']) if navigation else relative
-    source_area = 'experiments' if navigation else 'research'
+    source_areas = ('experiments', 'research') if navigation else ('research',)
     if (source_relative.is_absolute() or '..' in source_relative.parts
-            or not source_relative.parts or source_relative.parts[0] != source_area):
+            or not source_relative.parts or source_relative.parts[0] not in source_areas):
         raise ValueError('公開元の相対パスが不正です')
+    source_area = source_relative.parts[0]
     source = root / source_relative
     if (not source.resolve().is_relative_to((root / source_area).resolve())
             or source.is_symlink()):
@@ -67,8 +68,8 @@ def copy_artifacts(root, output, item):
         raise ValueError('一覧に必要な公開成果物がありません')
     for record in records:
         name = record['name']
-        allowed = (('.html', '.json', '.json.gz', '.svg', '.wav') if navigation
-                   else ('.html', '.json', '.json.gz'))
+        allowed = (('.html', '.json', '.json.gz', '.svg', '.wav', '.md', '.csv', '.png')
+                   if navigation else ('.html', '.json', '.json.gz'))
         if not name.endswith(allowed):
             raise ValueError(f'未定義の公開形式です: {name}')
         file = relative_file(source, name)
