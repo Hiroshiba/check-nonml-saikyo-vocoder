@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>aHM・Cartesian編集の比較：保存済みレポート案内</title>
+<style>
+:root{color-scheme:light dark;font-family:system-ui,sans-serif;line-height:1.7}body{max-width:1120px;margin:auto;padding:24px}h1{font-size:1.8rem}h2{margin-top:2rem}a{color:light-dark(#165da5,#96c5ff)}.note{border-left:4px solid #738ca9;padding:12px 18px;background:#8881}.scroll{overflow-x:auto}table{border-collapse:collapse;width:100%}th,td{border:1px solid #8886;padding:12px;vertical-align:top;text-align:left}thead{background:#8882}small{color:light-dark(#555,#bbb)}code{overflow-wrap:anywhere}li{margin:.35em 0}
+</style>
+</head>
+<body>
+<header><h1>aHM・Cartesian編集の比較：保存済みレポート案内</h1>
+<p><strong>現ベースはPML（pml-lowband-fwcep60-v1）を維持しています。</strong>元候補は無編集で上位の指標がある一方、＋3半音では予測MOS・話者類似度に弱点があります。境界保持修正版の生成成功と、全指標での品質改善・採用は別の判断です。</p>
+<p><small>案内の整理日：2026年10月18日（UTC）。これは新しい測定日時ではありません。参照した旧レポートの保存版：<code>b19a5cb1c21ab07fbfc18c98fa37c9f3382af995</code>。</small></p></header>
+<div class="note"><p>通常品質・編集の79軸、別環境で再計算した境界保持修正版の2指標、旧3表現の特徴評価とcanonical v2補完を分けて閲覧します。異なるホスト・比較方式・分母を混ぜず、総合点・総合順位を作りません。ここでは既存の結論と保存状態を案内するだけで、新たな統計計算は行っていません。</p></div>
+<h2>比較範囲と保存状態</h2>
+<div class="scroll"><table><thead><tr><th scope="col">レポート</th><th scope="col">対象・状態</th><th scope="col">主要な読み取りと限界</th></tr></thead><tbody>
+<tr><th scope="row"><a href="ordinary/ordinary.html">通常品質・音高編集：79軸</a></th><td>元候補・現PML・WORLD Harvest。固定120録音・40話者、無編集71軸と編集8軸の予定行を保存済み。失敗・未対応・対象外も保持。</td><td>無編集では元候補の予測MOS・ERB・SCOREQ・ECAPAなどに上位の保存値があります。一方、＋3半音の予測MOS・話者類似度はPMLが上回ります。元候補の生成成功は0／−3／＋3半音で117／117／115件。指標ごとの共通支持を参照し、特徴評価や採用の完了とは扱いません。</td></tr>
+<tr><th scope="row"><a href="costs/costs.html">解析・編集・復号の保存済み費用観測</a></th><td>元候補・PML・WORLDの全120件の生成記録。9438観測・79項目の集約を保存済み。ただし費用評価は部分測定。</td><td>候補の全解析純時間、観測負荷を除いた純復号時間、正式編集の独立時間は未測定です。スレッド条件・観測範囲が異なるため、速度順位や合算RTFを作りません。この79項目は左記の品質79軸とは別です。</td></tr>
+<tr><th scope="row"><a href="boundary-primary/report.html">境界保持修正版：主指標2種</a></th><td>修正版・元候補・PMLを別の単一ホストで再計算。UTMOSv2とECAPA、120録音×3条件×3方式×2指標。2160予定行を保存済み。</td><td>測定成功2138行、元候補の生成失敗11条件に由来する22行を保持。修正版は120×3条件が両指標とも成功。無編集の点推定は元候補とほぼ同じで、音高変更時のPMLに対する弱点は残ります。3方式共通117／117／115件と修正版・PML全120件を分離。全79軸・速度の再測定ではありません。</td></tr>
+<tr><th scope="row"><a href="feature-partial/index.html">特徴量評価：旧3表現の保存結果</a></th><td>PML pml2110と候補amp3075・rawcomplex4099。ABXは4960三つ組、113録音・39話者の固定支持。線形読み出しはtest120録音・40話者。canonical v1は未評価。</td><td>ABXの保存点推定ではPMLの誤りが小さく、線形読み出しは目的変数により順序が異なります。対応差の区間と各表現自身の区間を区別してください。音質・因果的制御性の証明ではなく、train-cloud／test-dot／evaluation-cloud間の数値同一性も未証明です。</td></tr>
+<tr><th><a href="feature-completed/index.html">特徴量評価：canonical v2補完</a></th><td>旧3表現と新canonical v2。新train/test moments各120件、ABX4,960三つ組、読み出しtest120件。</td><td>4表現の記述的順位、PMLとの対応差、定数予測・次元診断を表示。旧3表現は再計算せず、v1の失敗を残して新v2を追加しました。音声品質や因果的制御性の証明ではありません。</td></tr>
+<tr><th><a href="editing-contrast/index.html">編集前後の差：保存値の補助診断</a></th><td>旧主評価の候補/PML×無編集/編集が揃う−3半音117件、＋3半音115件、各40話者。</td><td>同じ支持で編集前後差を比較。事後的な再集約であり、新しい音声・モデル推論ではありません。元の主評価や順位は上書きしていません。</td></tr><tr><th><a href="boundary-pitch/index.html">境界保持修正版：音高追従の補完</a></th><td>3方式×120録音×±3半音の720枠。712測定、旧候補の生成失敗8を保持。短い試聴コピー付き。</td><td>各方式の無編集出力を基準とするYIN追従。修正版と旧候補の主要4比較の区間は0を含む。絶対F0真値・音質や同等性の証明ではありません。</td></tr></tbody></table></div>
+<h2>旧失敗・今回の補完・残る範囲を区別する</h2>
+<ul>
+<li><strong>canonical v1（canonical_complex4099）：欠測を保持。</strong>特徴観測はtrain115/120、test117/120成功。外挿域の負F0による計8件の失敗があり、全train120の事前条件を満たさないためABX・読み出しの比較値は未評価です。欠測の0補完や例数を減らした再学習はしていません。</li>
+<li><strong>canonical v2：別runの固定評価を完了。</strong>train/test各120件の新しいmoments、固定4,960三つ組のABX、test120件の読み出しとPML対応比較を別runで完了しました。v1の失敗は履歴として残し、旧3表現の保存値を引用して4表現を表示します。</li>
+<li><strong>PMLベース維持・採用判断は未完。</strong>通常79軸、境界保持修正版2指標、特徴4表現の固定観測評価は、それぞれ異なる完了範囲です。未対応の48kHz・他の操作や独立最終評価を完了したとは扱いません。</li>
+</ul>
+<h2>数値・支持数・出典を確認する</h2>
+<ul>
+<li>通常79軸：<a href="ordinary/ordinary-summary.json.gz">保存集約JSON（gzip）</a> ／ <a href="ordinary/ordinary-summary.storage.json">圧縮前後のSHA・サイズ</a> ／ <a href="ordinary/axis-metadata.json">軸の定義</a> ／ <a href="ordinary/generation-record.json">元の記録日時</a> ／ <a href="ordinary/audio-attribution.html">既存短例の帰属</a></li>
+<li>費用観測：<a href="costs/full120-saved-cost-summary.json">保存集約JSONと未測定範囲</a></li>
+<li>修正版2指標：<a href="boundary-primary/statistics.json">共通集合・全120件を分けた記述統計</a> ／ <a href="boundary-primary/input-sha256.json">入力summaryのSHA</a></li>
+<li>特徴部分評価：<a href="feature-partial/scalar-projection.json">保存スカラー値</a> ／ <a href="feature-partial/source-summary-sha256.json">出典summaryのSHA</a></li>
+</ul>
+<h2>解釈の注意</h2>
+<p>自動MOSは人が聴いて付けたMOSではありません。ECAPAは話者類似度の代理指標で、音高変更自体にも影響されます。記述的区間や個別の保存順位を、全指標での優越や採用の根拠に置き換えません。通常評価の固定120録音は開発履歴のある集合で、独立した未使用最終評価ではありません。</p>
+<p>この案内に音声は追加していません。既存レポートの数値・音声・欠測状態は当時の保存物のままです。</p>
+</body></html>

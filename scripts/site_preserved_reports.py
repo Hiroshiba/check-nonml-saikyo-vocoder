@@ -1,5 +1,6 @@
 """圧縮・分割済みの確定レポートを変換せず掲載し、保存値から一覧を作る。"""
 import base64
+from datetime import date
 import gzip
 import hashlib
 import html
@@ -42,8 +43,14 @@ def copy_artifacts(root, output, item):
     relative = Path(item['path'])
     if relative.is_absolute() or '..' in relative.parts or relative.parts[0] != 'research':
         raise ValueError('公開先はresearch内の相対パスで指定してください')
-    source = root / item['path']
-    if (not source.resolve().is_relative_to((root / 'research').resolve())
+    navigation = item.get('kind') == 'navigation-only'
+    source_relative = Path(item['source_path']) if navigation else relative
+    source_area = 'experiments' if navigation else 'research'
+    if (source_relative.is_absolute() or '..' in source_relative.parts
+            or not source_relative.parts or source_relative.parts[0] != source_area):
+        raise ValueError('公開元の相対パスが不正です')
+    source = root / source_relative
+    if (not source.resolve().is_relative_to((root / source_area).resolve())
             or source.is_symlink()):
         raise ValueError(f'研究成果の公開位置が不正です: {source}')
     manifest_path = relative_file(source, 'artifact-manifest.json')
@@ -52,7 +59,8 @@ def copy_artifacts(root, output, item):
     names = [record['name'] for record in records]
     if len(names) != len(set(names)) or len(names) != item['artifact_count']:
         raise ValueError('公開成果物の重複・件数不一致があります')
-    required = {'index.html', 'results.json.gz', 'audio_samples.json', 'audio_credits.html'}
+    required = ({'index.html'} if navigation else
+                {'index.html', 'results.json.gz', 'audio_samples.json', 'audio_credits.html'})
     if not required.issubset(names):
         raise ValueError('一覧に必要な公開成果物がありません')
     for record in records:
@@ -70,6 +78,20 @@ def copy_artifacts(root, output, item):
         shutil.copy2(file, target)
         checked_bytes(target, record)
     return source
+
+
+def navigation_card(item):
+    """案内作成日と比較範囲だけを表示し、元の測定日時とは区別する。"""
+    created_on = date.fromisoformat(item['created_on']).isoformat()
+    if created_on != item['created_on']:
+        raise ValueError('案内作成日はYYYY-MM-DDで指定してください')
+    link = item['path'] + '/index.html'
+    return (f'<article><h2><a href="{esc(link)}">{esc(item["title"])}</a></h2>'
+            f'<small>案内作成：<time datetime="{created_on}">{created_on}</time>'
+            '（UTCの日付。各レポートの測定・集計日時とは別）</small>'
+            f'<p>{esc(item["comparison_scope"])}</p>'
+            f'<p><a href="{esc(link)}">比較範囲・完了状態と元レポートを見る</a></p>'
+            '</article>')
 
 
 def audio_preview(source, item):
@@ -107,10 +129,19 @@ def preserved_cards(root, output, recorded_time, time_label):
         raise ValueError('未対応の確定レポート登録形式です')
     cards, seen = [], set()
     for item in registry['reports']:
+        kind = item.get('kind', 'comparison')
+        if kind not in ('comparison', 'navigation-only'):
+            raise ValueError('未対応の確定レポート種別です')
         if item['path'] in seen:
             raise ValueError('確定レポートの公開位置が重複しています')
         seen.add(item['path'])
         source = copy_artifacts(root, output, item)
+        if kind == 'navigation-only':
+            card = navigation_card(item)
+            # 日単位の案内を並べるためだけのキー。測定時刻を補完しない。
+            sort_time = recorded_time({'recorded_at': item['created_on'] + 'T00:00:00+00:00'})
+            cards.append((sort_time, item['path'], item['id'], card))
+            continue
         data = read_json(source / 'results.json.gz')
         if data['generated_at_utc'] != item['recorded_at']:
             raise ValueError('記録日時が保存済み集計と一致しません')
