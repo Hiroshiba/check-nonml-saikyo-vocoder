@@ -1,0 +1,638 @@
+{
+  "schema": "feature-partial-scalar-projection-v1",
+  "state": "partial_complete_canonical_incomplete",
+  "scope_counts": {
+    "test_recordings": 120,
+    "test_speakers": 40,
+    "train_feature_recordings": 120,
+    "abx_planned_triplets": 4960,
+    "abx_covered_recordings": 113,
+    "abx_covered_speakers": 39,
+    "readout_valid_train_targets": {
+      "log_f0": 119,
+      "rms_dbfs": 120,
+      "spectral_slope": 120
+    }
+  },
+  "canonical_complex4099": {
+    "state": "not_evaluated",
+    "train_success": 115,
+    "train_failed": 5,
+    "test_success": 117,
+    "test_failed": 3,
+    "reason": "外挿域の負F0による8件の特徴観測失敗。全train120規約によりABX/readout未評価。ゼロ補完なし。"
+  },
+  "representations": {
+    "pml2110": {
+      "method": "pml",
+      "abx": {
+        "within_speaker/flat_stratum": {
+          "value": 0.322463768115942,
+          "ci95": [
+            0.22821732954545454,
+            0.4362136676747311
+          ],
+          "source": "abx/pml/pml2110",
+          "descriptive_rank": 1
+        },
+        "within_speaker/x_speaker_macro": {
+          "value": 0.31115551115551116,
+          "ci95": [
+            0.20947677322677324,
+            0.4128319597069597
+          ],
+          "source": "abx/pml/pml2110",
+          "descriptive_rank": 1
+        },
+        "within_speaker/nested_phone_context": {
+          "value": 0.3299220272904484,
+          "ci95": [
+            0.24186483739837397,
+            0.42361556267806266
+          ],
+          "source": "abx/pml/pml2110",
+          "descriptive_rank": 1
+        },
+        "across_speaker/flat_stratum": {
+          "value": 0.4428654696036468,
+          "ci95": [
+            0.402706890394459,
+            0.4848140136076651
+          ],
+          "source": "abx/pml/pml2110",
+          "descriptive_rank": 1
+        },
+        "across_speaker/x_speaker_macro": {
+          "value": 0.44395993582542914,
+          "ci95": [
+            0.4042891431447725,
+            0.48408047308147145
+          ],
+          "source": "abx/pml/pml2110",
+          "descriptive_rank": 1
+        },
+        "across_speaker/nested_phone_context": {
+          "value": 0.4206833329437428,
+          "ci95": [
+            0.39032832522453814,
+            0.46300477081962216
+          ],
+          "source": "abx/pml/pml2110",
+          "descriptive_rank": 1
+        }
+      },
+      "readout": {
+        "log_f0": {
+          "status": "measured",
+          "recordings": 120,
+          "speakers": 40,
+          "planned_recordings": 120,
+          "speaker_macro_mae": 0.1798400312472799,
+          "ci95": [
+            0.1515173010041734,
+            0.2116794457675557
+          ],
+          "constant_train_mean_speaker_macro_mae": 0.26682660591919866,
+          "valid_train_targets": 119,
+          "source": "readout/pml/pml2110",
+          "descriptive_rank": 2
+        },
+        "rms_dbfs": {
+          "status": "measured",
+          "recordings": 120,
+          "speakers": 40,
+          "planned_recordings": 120,
+          "speaker_macro_mae": 4.228148102228173,
+          "ci95": [
+            3.551452666833525,
+            5.0759497135622755
+          ],
+          "constant_train_mean_speaker_macro_mae": 2.4088802338973148,
+          "valid_train_targets": 120,
+          "source": "readout/pml/pml2110",
+          "descriptive_rank": 2
+        },
+        "spectral_slope": {
+          "status": "measured",
+          "recordings": 120,
+          "speakers": 40,
+          "planned_recordings": 120,
+          "speaker_macro_mae": 1.8772991945723576,
+          "ci95": [
+            1.5441647106155671,
+            2.2375644010072726
+          ],
+          "constant_train_mean_speaker_macro_mae": 1.800605719473387,
+          "valid_train_targets": 120,
+          "source": "readout/pml/pml2110",
+          "descriptive_rank": 1
+        }
+      },
+      "abx_planned": 4960,
+      "abx_measured": 4960
+    },
+    "amp3075": {
+      "method": "candidate",
+      "abx": {
+        "within_speaker/flat_stratum": {
+          "value": 0.35386473429951687,
+          "ci95": [
+            0.2618995405179616,
+            0.46751608600125555
+          ],
+          "source": "abx/candidate/amp3075",
+          "descriptive_rank": 2
+        },
+        "within_speaker/x_speaker_macro": {
+          "value": 0.39093406593406593,
+          "ci95": [
+            0.2708653846153847,
+            0.5227564102564103
+          ],
+          "source": "abx/candidate/amp3075",
+          "descriptive_rank": 2
+        },
+        "within_speaker/nested_phone_context": {
+          "value": 0.3391812865497076,
+          "ci95": [
+            0.2644855484189723,
+            0.45128472222222216
+          ],
+          "source": "abx/candidate/amp3075",
+          "descriptive_rank": 2
+        },
+        "across_speaker/flat_stratum": {
+          "value": 0.4818135156766538,
+          "ci95": [
+            0.4471623343627815,
+            0.5207866208108896
+          ],
+          "source": "abx/candidate/amp3075",
+          "descriptive_rank": 2
+        },
+        "across_speaker/x_speaker_macro": {
+          "value": 0.48219402914820475,
+          "ci95": [
+            0.44408171792724394,
+            0.5207457695634351
+          ],
+          "source": "abx/candidate/amp3075",
+          "descriptive_rank": 2
+        },
+        "across_speaker/nested_phone_context": {
+          "value": 0.4819041860233016,
+          "ci95": [
+            0.44236059553046053,
+            0.5132915022614736
+          ],
+          "source": "abx/candidate/amp3075",
+          "descriptive_rank": 2
+        }
+      },
+      "readout": {
+        "log_f0": {
+          "status": "measured",
+          "recordings": 120,
+          "speakers": 40,
+          "planned_recordings": 120,
+          "speaker_macro_mae": 0.24173736100342985,
+          "ci95": [
+            0.09538875600695283,
+            0.5046752304991001
+          ],
+          "constant_train_mean_speaker_macro_mae": 0.26682660591919866,
+          "valid_train_targets": 119,
+          "source": "readout/candidate/amp3075",
+          "descriptive_rank": 3
+        },
+        "rms_dbfs": {
+          "status": "measured",
+          "recordings": 120,
+          "speakers": 40,
+          "planned_recordings": 120,
+          "speaker_macro_mae": 2.979433358928931,
+          "ci95": [
+            2.1154747919942314,
+            4.24440291268653
+          ],
+          "constant_train_mean_speaker_macro_mae": 2.4088802338973148,
+          "valid_train_targets": 120,
+          "source": "readout/candidate/amp3075",
+          "descriptive_rank": 1
+        },
+        "spectral_slope": {
+          "status": "measured",
+          "recordings": 120,
+          "speakers": 40,
+          "planned_recordings": 120,
+          "speaker_macro_mae": 2.162019284632861,
+          "ci95": [
+            1.5768573262479373,
+            2.992788107742557
+          ],
+          "constant_train_mean_speaker_macro_mae": 1.800605719473387,
+          "valid_train_targets": 120,
+          "source": "readout/candidate/amp3075",
+          "descriptive_rank": 2
+        }
+      },
+      "abx_planned": 4960,
+      "abx_measured": 4960
+    },
+    "rawcomplex4099": {
+      "method": "candidate",
+      "abx": {
+        "within_speaker/flat_stratum": {
+          "value": 0.4082125603864734,
+          "ci95": [
+            0.3175634273979862,
+            0.5287525354969572
+          ],
+          "source": "abx/candidate/rawcomplex4099",
+          "descriptive_rank": 3
+        },
+        "within_speaker/x_speaker_macro": {
+          "value": 0.4588869463869463,
+          "ci95": [
+            0.33741258741258745,
+            0.5880718240093239
+          ],
+          "source": "abx/candidate/rawcomplex4099",
+          "descriptive_rank": 3
+        },
+        "within_speaker/nested_phone_context": {
+          "value": 0.3961988304093567,
+          "ci95": [
+            0.3209197695035461,
+            0.5179613095238095
+          ],
+          "source": "abx/candidate/rawcomplex4099",
+          "descriptive_rank": 3
+        },
+        "across_speaker/flat_stratum": {
+          "value": 0.49068274350140934,
+          "ci95": [
+            0.45553441017663115,
+            0.5285472745475767
+          ],
+          "source": "abx/candidate/rawcomplex4099",
+          "descriptive_rank": 3
+        },
+        "across_speaker/x_speaker_macro": {
+          "value": 0.49278703727854595,
+          "ci95": [
+            0.45452433325978586,
+            0.5314140190394144
+          ],
+          "source": "abx/candidate/rawcomplex4099",
+          "descriptive_rank": 3
+        },
+        "across_speaker/nested_phone_context": {
+          "value": 0.507064657246368,
+          "ci95": [
+            0.4640868815180738,
+            0.5398368604187924
+          ],
+          "source": "abx/candidate/rawcomplex4099",
+          "descriptive_rank": 3
+        }
+      },
+      "readout": {
+        "log_f0": {
+          "status": "measured",
+          "recordings": 120,
+          "speakers": 40,
+          "planned_recordings": 120,
+          "speaker_macro_mae": 0.1715975009247674,
+          "ci95": [
+            0.14039682709078116,
+            0.2076360901517057
+          ],
+          "constant_train_mean_speaker_macro_mae": 0.26682660591919866,
+          "valid_train_targets": 119,
+          "source": "readout/candidate/rawcomplex4099",
+          "descriptive_rank": 1
+        },
+        "rms_dbfs": {
+          "status": "measured",
+          "recordings": 120,
+          "speakers": 40,
+          "planned_recordings": 120,
+          "speaker_macro_mae": 10.726583220847044,
+          "ci95": [
+            8.90158597297654,
+            12.549241660613138
+          ],
+          "constant_train_mean_speaker_macro_mae": 2.4088802338973148,
+          "valid_train_targets": 120,
+          "source": "readout/candidate/rawcomplex4099",
+          "descriptive_rank": 3
+        },
+        "spectral_slope": {
+          "status": "measured",
+          "recordings": 120,
+          "speakers": 40,
+          "planned_recordings": 120,
+          "speaker_macro_mae": 4.98315569801378,
+          "ci95": [
+            3.9013251753849114,
+            6.267288235040229
+          ],
+          "constant_train_mean_speaker_macro_mae": 1.800605719473387,
+          "valid_train_targets": 120,
+          "source": "readout/candidate/rawcomplex4099",
+          "descriptive_rank": 3
+        }
+      },
+      "abx_planned": 4960,
+      "abx_measured": 4960
+    }
+  },
+  "paired_comparisons": {
+    "amp3075": {
+      "abx/within_speaker/flat_stratum": {
+        "candidate": 0.3538647342995169,
+        "pml": 0.322463768115942,
+        "candidate_minus_pml": 0.03140096618357491,
+        "delta_ci95": [
+          -0.10527294799498746,
+          0.1827897536394175
+        ],
+        "lower_better": true,
+        "source": "comparison/amp3075",
+        "planned": 4960,
+        "paired_measured": 4960
+      },
+      "abx/within_speaker/x_speaker_macro": {
+        "candidate": 0.3909340659340659,
+        "pml": 0.31115551115551116,
+        "candidate_minus_pml": 0.07977855477855472,
+        "delta_ci95": [
+          -0.09358974358974353,
+          0.25737980769230767
+        ],
+        "lower_better": true,
+        "source": "comparison/amp3075",
+        "planned": 4960,
+        "paired_measured": 4960
+      },
+      "abx/within_speaker/nested_phone_context": {
+        "candidate": 0.33918128654970764,
+        "pml": 0.3299220272904484,
+        "candidate_minus_pml": 0.009259259259259245,
+        "delta_ci95": [
+          -0.0996396166233123,
+          0.15277777777777773
+        ],
+        "lower_better": true,
+        "source": "comparison/amp3075",
+        "planned": 4960,
+        "paired_measured": 4960
+      },
+      "abx/across_speaker/flat_stratum": {
+        "candidate": 0.481813515676654,
+        "pml": 0.44286546960364676,
+        "candidate_minus_pml": 0.038948046073007225,
+        "delta_ci95": [
+          -0.006285412125836734,
+          0.08287603731088321
+        ],
+        "lower_better": true,
+        "source": "comparison/amp3075",
+        "planned": 4960,
+        "paired_measured": 4960
+      },
+      "abx/across_speaker/x_speaker_macro": {
+        "candidate": 0.48219402914820475,
+        "pml": 0.44395993582542925,
+        "candidate_minus_pml": 0.0382340933227755,
+        "delta_ci95": [
+          -0.011876897219766163,
+          0.08158057345632773
+        ],
+        "lower_better": true,
+        "source": "comparison/amp3075",
+        "planned": 4960,
+        "paired_measured": 4960
+      },
+      "abx/across_speaker/nested_phone_context": {
+        "candidate": 0.4819041860233016,
+        "pml": 0.4206833329437427,
+        "candidate_minus_pml": 0.06122085307955888,
+        "delta_ci95": [
+          0.005566027444920023,
+          0.10158895876880741
+        ],
+        "lower_better": true,
+        "source": "comparison/amp3075",
+        "planned": 4960,
+        "paired_measured": 4960
+      },
+      "readout/log_f0": {
+        "candidate": 0.24173736100342982,
+        "pml": 0.17984003124727993,
+        "candidate_minus_pml": 0.061897329756149894,
+        "delta_ci95": [
+          -0.09675348727570278,
+          0.3299094731916103
+        ],
+        "lower_better": true,
+        "source": "comparison/amp3075",
+        "planned": 120,
+        "paired_measured": 120
+      },
+      "readout/rms_dbfs": {
+        "candidate": 2.9794333589289312,
+        "pml": 4.228148102228171,
+        "candidate_minus_pml": -1.2487147432992396,
+        "delta_ci95": [
+          -2.4784827623652497,
+          0.1303559262982569
+        ],
+        "lower_better": true,
+        "source": "comparison/amp3075",
+        "planned": 120,
+        "paired_measured": 120
+      },
+      "readout/spectral_slope": {
+        "candidate": 2.162019284632861,
+        "pml": 1.8772991945723576,
+        "candidate_minus_pml": 0.2847200900605036,
+        "delta_ci95": [
+          -0.3255423919987117,
+          1.1336565008192048
+        ],
+        "lower_better": true,
+        "source": "comparison/amp3075",
+        "planned": 120,
+        "paired_measured": 120
+      }
+    },
+    "rawcomplex4099": {
+      "abx/within_speaker/flat_stratum": {
+        "candidate": 0.40821256038647347,
+        "pml": 0.322463768115942,
+        "candidate_minus_pml": 0.08574879227053145,
+        "delta_ci95": [
+          -0.05688210227272727,
+          0.23758016557835818
+        ],
+        "lower_better": true,
+        "source": "comparison/rawcomplex4099",
+        "planned": 4960,
+        "paired_measured": 4960
+      },
+      "abx/within_speaker/x_speaker_macro": {
+        "candidate": 0.4588869463869463,
+        "pml": 0.31115551115551116,
+        "candidate_minus_pml": 0.14773143523143517,
+        "delta_ci95": [
+          -0.01798971861471864,
+          0.31377882534132523
+        ],
+        "lower_better": true,
+        "source": "comparison/rawcomplex4099",
+        "planned": 4960,
+        "paired_measured": 4960
+      },
+      "abx/within_speaker/nested_phone_context": {
+        "candidate": 0.3961988304093568,
+        "pml": 0.3299220272904484,
+        "candidate_minus_pml": 0.06627680311890838,
+        "delta_ci95": [
+          -0.04439234270060095,
+          0.21527777777777773
+        ],
+        "lower_better": true,
+        "source": "comparison/rawcomplex4099",
+        "planned": 4960,
+        "paired_measured": 4960
+      },
+      "abx/across_speaker/flat_stratum": {
+        "candidate": 0.4906827435014094,
+        "pml": 0.44286546960364676,
+        "candidate_minus_pml": 0.047817273897762635,
+        "delta_ci95": [
+          -0.0020846598963316114,
+          0.09259203545021373
+        ],
+        "lower_better": true,
+        "source": "comparison/rawcomplex4099",
+        "planned": 4960,
+        "paired_measured": 4960
+      },
+      "abx/across_speaker/x_speaker_macro": {
+        "candidate": 0.49278703727854595,
+        "pml": 0.44395993582542925,
+        "candidate_minus_pml": 0.048827101453116695,
+        "delta_ci95": [
+          -0.0024147138918952154,
+          0.09462099628191382
+        ],
+        "lower_better": true,
+        "source": "comparison/rawcomplex4099",
+        "planned": 4960,
+        "paired_measured": 4960
+      },
+      "abx/across_speaker/nested_phone_context": {
+        "candidate": 0.5070646572463681,
+        "pml": 0.4206833329437427,
+        "candidate_minus_pml": 0.08638132430262535,
+        "delta_ci95": [
+          0.026915257446993777,
+          0.1271289262703568
+        ],
+        "lower_better": true,
+        "source": "comparison/rawcomplex4099",
+        "planned": 4960,
+        "paired_measured": 4960
+      },
+      "readout/log_f0": {
+        "candidate": 0.1715975009247674,
+        "pml": 0.17984003124727993,
+        "candidate_minus_pml": -0.008242530322512542,
+        "delta_ci95": [
+          -0.055697530396600206,
+          0.037004874002229474
+        ],
+        "lower_better": true,
+        "source": "comparison/rawcomplex4099",
+        "planned": 120,
+        "paired_measured": 120
+      },
+      "readout/rms_dbfs": {
+        "candidate": 10.726583220847045,
+        "pml": 4.228148102228171,
+        "candidate_minus_pml": 6.4984351186188745,
+        "delta_ci95": [
+          4.441479291101659,
+          8.612368486809574
+        ],
+        "lower_better": true,
+        "source": "comparison/rawcomplex4099",
+        "planned": 120,
+        "paired_measured": 120
+      },
+      "readout/spectral_slope": {
+        "candidate": 4.98315569801378,
+        "pml": 1.8772991945723576,
+        "candidate_minus_pml": 3.1058565034414225,
+        "delta_ci95": [
+          2.030874378983227,
+          4.335590688182503
+        ],
+        "lower_better": true,
+        "source": "comparison/rawcomplex4099",
+        "planned": 120,
+        "paired_measured": 120
+      }
+    }
+  },
+  "sources": {
+    "abx/pml/pml2110": {
+      "summary_label": "abx/pml/pml2110/summary.json",
+      "sha256": "2659ff61c2631ee7c13f596c905e51ec8a6bd3673685ce1152b9730754bd15c2"
+    },
+    "readout/pml/pml2110": {
+      "summary_label": "readout/pml/pml2110/summary.json",
+      "sha256": "cfec3c5bd14684fbaa14b41a7d2fa455b738286982821ef29f4a40878d4d48fb"
+    },
+    "abx/candidate/amp3075": {
+      "summary_label": "abx/candidate/amp3075/summary.json",
+      "sha256": "a0abb613454516ff788b163769457e0a259b7d721b2e6dd964cbae064e407a14"
+    },
+    "readout/candidate/amp3075": {
+      "summary_label": "readout/candidate/amp3075/summary.json",
+      "sha256": "0e8ce4adedb1e898699336a2bdf033da552297f1d5efb1cedb6fade269b71e2c"
+    },
+    "abx/candidate/rawcomplex4099": {
+      "summary_label": "abx/candidate/rawcomplex4099/summary.json",
+      "sha256": "4d6e57f931323023b61cf6a0eb0f1783d33be13df28d081519c195a04e0d202d"
+    },
+    "readout/candidate/rawcomplex4099": {
+      "summary_label": "readout/candidate/rawcomplex4099/summary.json",
+      "sha256": "988c75faecd5da726acc534f6ecf675404f5438f864d2599eb908fbb4fa2ba6f"
+    },
+    "comparison/amp3075": {
+      "summary_label": "comparison/amp3075/summary.json",
+      "sha256": "8e6492969c2afad1cdbcdfc8b196aea8d509625780ba288b079422a8348653c3"
+    },
+    "comparison/rawcomplex4099": {
+      "summary_label": "comparison/rawcomplex4099/summary.json",
+      "sha256": "dca05b2dd5a7755930ab8592531aa552440e9157206b493bd4c764f155a2624a"
+    }
+  },
+  "interpretation": {
+    "runtime_design": "train-cloud/test-dot/evaluation-cloud",
+    "host_numerical_identity_proven": false,
+    "rank_rule": "各指標の自身の点推定を小さい順に記述的順位付け。同値同順位。差の確証とは別。総合順位なし。",
+    "own_intervals": "元ABX/readout summaryのci95。各表現自身の区間。",
+    "paired_intervals": "元comparison summaryのdelta_ci95。candidate−PMLの対応差の区間。",
+    "limits": [
+      "固定ABX集合のカバレッジは113録音39話者。120全録音の音素比較ではない。",
+      "音声品質そのもの、因果的な操作性、任意のニューラルreadout能力を証明しない。",
+      "音素タイミング誤差やPPG指標ではない。",
+      "canonical未完の部分結果。未評価を0点や最下位に置換しない。"
+    ]
+  }
+}
