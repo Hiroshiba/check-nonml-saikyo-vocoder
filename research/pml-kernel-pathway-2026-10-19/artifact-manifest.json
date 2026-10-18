@@ -1,121 +1,251 @@
 {
-  "schema": "kernel-explanation-artifact-manifest-v1",
-  "scope_ja": "本一覧自身を除く追加資料案の全ファイル。新音声・実行コードなし。",
+  "schema_version": 1,
+  "schema": "pml-kernel-pathway-public-artifacts-v2",
+  "scope": "navigation-only",
+  "created_on": "2026-10-18",
+  "created_at": "2026-10-18T19:59:11Z",
+  "scope_ja": "本一覧自身を除く全公開資料。固定7kernel・別9条件の原因説明・実行前研究計画。新音声・実行コード・全native kernel/S/Z配列は含めない。",
+  "self_excluded": "artifact-manifest.json",
   "files": [
     {
-      "file": "NUMERICAL-EVIDENCE-ja.md",
-      "bytes": 6801,
-      "sha256": "c345da6fd93e9942f059b5cab0d323a5ceb92165f820f8edf08065a4ac1b5666"
+      "name": "NUMERICAL-EVIDENCE-ja.md",
+      "bytes": 8371,
+      "sha256": "cb9d0987f5fcd22f4a586dd803e709ba74341653abfe5d328688fce6522a8385"
     },
     {
-      "file": "README-ja.md",
-      "bytes": 21136,
-      "sha256": "bd9ba6b2037ffa85186175ee2ef71d5671165c8b35afdda5e574a335bab3b9fa"
+      "name": "README-ja.md",
+      "bytes": 25806,
+      "sha256": "7b5360a2264c8a9ec010cba7f8e424cf25e865f54a7100ecb9eace86866efb41"
     },
     {
-      "file": "additional-mask-cell-counts.csv",
+      "name": "additional-mask-cell-counts.csv",
       "bytes": 85676,
       "sha256": "af8777214fc552f858b139c83a4c0692453249da6297628b449dd84a997bfd0c"
     },
     {
-      "file": "additional-mask-region-counts.csv",
+      "name": "additional-mask-region-counts.csv",
       "bytes": 8041,
       "sha256": "adc99b506bc8e75058b9c6bf19146e4c7a9dc949d3a99b4a47c0e49e4f63f7db"
     },
     {
-      "file": "additional-mask-summary.json",
+      "name": "additional-mask-summary.json",
       "bytes": 45639,
       "sha256": "40a1493cd0894556fb43fc81def5b0ec119de37f87f4c0b2dbca61d2ef73bd41"
     },
     {
-      "file": "attempt-history.json",
+      "name": "attempt-history.json",
       "bytes": 6704,
       "sha256": "69c3373c3c0ee9a6119c64ac08ea1f310181280b2164b781dfb371670198d261"
     },
     {
-      "file": "earlier-row419-data.json",
+      "name": "earlier-row419-data.json",
       "bytes": 6138,
       "sha256": "326ab19ea66e191e75db922888d50dcaa84f54f101f8bbbf83dee6891b50da51"
     },
     {
-      "file": "existing-audio-links.json",
+      "name": "existing-audio-links.json",
       "bytes": 5062,
       "sha256": "17b8b3d3b2e41798bfc76fbe801ff407041082d821589b16059c97044c7e7d92"
     },
     {
-      "file": "fft-four-point-diagnosis.json",
+      "name": "fft-four-point-diagnosis.json",
       "bytes": 22710,
       "sha256": "a32468bfe2d99bbaf22b98b5e554e7e1425e1b464b2bcf3115eb905a1195d1de"
     },
     {
-      "file": "figures/mean-gram.png",
+      "name": "figures/mean-gram.png",
       "bytes": 271710,
       "sha256": "ef21acb5ae18f5dee1048995d0d83a4c688fab8f92ba6926ccf91b3847a5e554"
     },
     {
-      "file": "figures/mean-gram.svg",
+      "name": "figures/mean-gram.svg",
       "bytes": 206605,
       "sha256": "65b238c8c4a75d233eac189297237464e3c434c774ba4efaa10ecf6db86c96a6"
     },
     {
-      "file": "figures/time-terms.png",
+      "name": "figures/time-terms.png",
       "bytes": 269634,
       "sha256": "37a099d2b9fc2e9f0eb80681602807d623a21f491babb58bf4ffb26da490b13f"
     },
     {
-      "file": "figures/time-terms.svg",
+      "name": "figures/time-terms.svg",
       "bytes": 200032,
       "sha256": "d5909c5bf714333b96f0782158dfc8d0fdd8aa0d5aa227efaab0bd57269268ce"
     },
     {
-      "file": "full-table-ja.md",
+      "name": "full-table-ja.md",
       "bytes": 11712,
       "sha256": "a4ace4857c9499995a7c84b7b7e5d507e1aa2798dec12bd4e14eac99b8cda4e9"
     },
     {
-      "file": "full-terms.csv",
+      "name": "full-terms.csv",
       "bytes": 31466,
       "sha256": "910cc2872cdfd737d6e6fa73e65f1498ad13396683e3f34754ccd97adb0ecd73"
     },
     {
-      "file": "full-totals.csv",
+      "name": "full-totals.csv",
       "bytes": 2503,
       "sha256": "250ced79aa795baa6c8b30e3238faeba799ec69a31c60f87bede305e329bb08a"
     },
     {
-      "file": "geometry-data.json",
+      "name": "geometry-data.json",
       "bytes": 1057,
       "sha256": "0945661262b8a8bc3dcd584b3dbcef6205ad2cfec090ccd2fb54bb18965886f4"
     },
     {
-      "file": "index.html",
-      "bytes": 30000,
-      "sha256": "106a3a45e6f1abbabfe5f112a65f489bb68ab89421f2dec62ae39687c12d5716"
+      "name": "index.html",
+      "bytes": 35850,
+      "sha256": "ecfd7e11fe133f860e431cd8b998aa5faffef860e060b639e6303d904850d1c3"
     },
     {
-      "file": "mask-counts.csv",
+      "name": "mask-counts.csv",
       "bytes": 2256,
       "sha256": "105364cf90951efc88f47dfb1ee9a2ba03bd08047e69d0cd832921050bacaa2f"
     },
     {
-      "file": "mask-counts.json",
+      "name": "mask-counts.json",
       "bytes": 12586,
       "sha256": "85df031c2ba4c0c0ee8f92600e731b464b16c7add2be25cd1bce138fda3b8810"
     },
     {
-      "file": "observation-data.json",
-      "bytes": 4959,
-      "sha256": "834733cfbc6227f8a37573c2f4ef928f00eccba87959a791c4c0f678d6b68019"
+      "name": "observation-data.json",
+      "bytes": 5318,
+      "sha256": "496097cc5f8bcfdcdded886081f246361521df9092557dc46c88723feca4f93a"
     },
     {
-      "file": "phonetic-observation-status-ja.md",
+      "name": "phonetic-observation-status-ja.md",
       "bytes": 2874,
       "sha256": "5373a43bb4b4077f034d69dd6f6ffdde621b774c2c9de1f970cd649451d78dc1"
     },
     {
-      "file": "saved-terms.json",
+      "name": "research-notes/README-ja.md",
+      "bytes": 11709,
+      "sha256": "ec17c478e3e7c8141e73996b133c9d85756a9e40ae598f29307ae431dd1f91ac"
+    },
+    {
+      "name": "research-notes/index.html",
+      "bytes": 15885,
+      "sha256": "2c493a74f5d7f086769d84951cfc0f5944e189beeea2fb78d66f3e15d91976dd"
+    },
+    {
+      "name": "saved-terms.json",
       "bytes": 19153,
       "sha256": "b47bae6c4a72defd1d76764ac9d233e5a76a5b2d8d4a583f6d526a1b2b81c015"
+    },
+    {
+      "name": "stage-b/README-ja.md",
+      "bytes": 18501,
+      "sha256": "357942228d0c9acdf23d5fb3c5fd55d44aa4eac004f7ece647208f5c05a8776d"
+    },
+    {
+      "name": "stage-b/all-175-cell-descriptors.csv",
+      "bytes": 37787,
+      "sha256": "6251c525a8df2be36a961f9fd4631fdd07c17ab02cf7de1aed8b2a85e10aa826"
+    },
+    {
+      "name": "stage-b/all-18-legacy-Z-failures.csv",
+      "bytes": 4021,
+      "sha256": "3f6793ecc63a87510691842fbfb1d6c2918da1f15508fd5901aae80b42a23ed1"
+    },
+    {
+      "name": "stage-b/all-18-strong-events.csv",
+      "bytes": 8537,
+      "sha256": "75e70dda831fd3fca0109dfb2f518baa4d862dd4a297c437290a61bffc06ae98"
+    },
+    {
+      "name": "stage-b/all-27-numerical-status.csv",
+      "bytes": 2947,
+      "sha256": "ae1e36d1fb766bb162cb50cb385153be4f1ac9be77d0ca5931b600d68ace654b"
+    },
+    {
+      "name": "stage-b/all-region-self-terms.csv",
+      "bytes": 165173,
+      "sha256": "fe33b6c73a9e84c25230dce0fe0ec4304d6078ddb80455f87c7292bed0c689af"
+    },
+    {
+      "name": "stage-b/all-region-signed-pairs.csv",
+      "bytes": 1989637,
+      "sha256": "1f19eca1be6fe3e3604ea62cbdae31df43d918c147ae8836d11a4c1a79b1da35"
+    },
+    {
+      "name": "stage-b/all-strong-deltas-band0.png",
+      "bytes": 201657,
+      "sha256": "fa1a6d12c452c18ea413aee67131bdfb84fe27efea6e907c2498c09f7d6f44e3"
+    },
+    {
+      "name": "stage-b/all-strong-deltas-band0.svg",
+      "bytes": 214883,
+      "sha256": "21f816bc267b074f4c045cd96a4979c18105e6e159837d887923a432e89fcdc8"
+    },
+    {
+      "name": "stage-b/all-strong-deltas-band1.png",
+      "bytes": 197016,
+      "sha256": "a87dbbf95df604d9eca53dfc9c3eee6131e5f4c65cbbafad2b7ca03212ddd19d"
+    },
+    {
+      "name": "stage-b/all-strong-deltas-band1.svg",
+      "bytes": 216269,
+      "sha256": "63c0b3651149ac5ff6fdf911a45c319472972e783781904f1f3bc317f48143ee"
+    },
+    {
+      "name": "stage-b/center-differences.csv",
+      "bytes": 967789,
+      "sha256": "b5db2925af9e4c97eeb6d72cc11e2e0209be682f1262f131fdd8c0a323e37b45"
+    },
+    {
+      "name": "stage-b/center-observations.csv",
+      "bytes": 1435447,
+      "sha256": "f79b95f40b937e51cb40cf49324a87c9797c3c7582fb7c90246832c96b04bcee"
+    },
+    {
+      "name": "stage-b/fixed-crossing-centers.csv",
+      "bytes": 94171,
+      "sha256": "dc70c4cef73c4ba620d7be2de2aa2bcdc008153382ff0ca37adb773c1dfdda21"
+    },
+    {
+      "name": "stage-b/id09-fixed-crossing-and-signed-deltas.png",
+      "bytes": 430173,
+      "sha256": "b3e85f4cd5ab3be9ea4d74c54b8f4d3207eec12f46ec0150ed465cc01e9f6cd0"
+    },
+    {
+      "name": "stage-b/id09-fixed-crossing-and-signed-deltas.svg",
+      "bytes": 196796,
+      "sha256": "68691993b95731cb58d32cf71e8481a7a042436c71e7c9573058d1e13e9055ef"
+    },
+    {
+      "name": "stage-b/index.html",
+      "bytes": 26872,
+      "sha256": "dc552253e1c93ced08bee27e2767b79948a721a0d7e2b002e6f3a2f6616bcc21"
+    },
+    {
+      "name": "stage-b/observation-contract.json",
+      "bytes": 192211,
+      "sha256": "ea7aa574a782e37a65b5f57e48e5d4cc5587c68bba59ad932c66b29bbf3b693d"
+    },
+    {
+      "name": "stage-b/region-differences.csv",
+      "bytes": 31925,
+      "sha256": "240b9e24f5570a53da61267d480d5164b481e8ec9ab3048888c8f2e0736a46ac"
+    },
+    {
+      "name": "stage-b/region-observations.csv",
+      "bytes": 53623,
+      "sha256": "9a93093181b3f76e335507ef8b9ddd4f0d2c1388a7b753a61c48d3c8aba97a40"
+    },
+    {
+      "name": "stage-b/source-array-hashes.json",
+      "bytes": 461253,
+      "sha256": "cfc0ad525987ab59d612bc0e84c6d69e503250e1f580d9fad235240e626e99ee"
+    },
+    {
+      "name": "stage-b/source-evidence.json",
+      "bytes": 63936,
+      "sha256": "fb3edef5ea92dd01276d86564166220171c6316b4615c53a2fecb6bc0069b788"
+    },
+    {
+      "name": "stage-b/summary.json",
+      "bytes": 34526,
+      "sha256": "00e3c89754be3d97523961bf51a0960f3e2a59a9d8e36d30bd583432040a0a5d"
     }
   ]
 }

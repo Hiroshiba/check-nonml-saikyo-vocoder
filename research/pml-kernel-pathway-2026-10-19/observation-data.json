@@ -218,7 +218,12 @@
   "source_analysis_sha256": "0ea0c8e2a108bf523a58d6b866a25234ad74005e0a0b077be08c3cc1543fc832",
   "scope_ja": "保存値の説明資料。新しい合成・FFT・品質評価を行わない。",
   "pending_27_conditions": {
-    "state": "stopped_at_reconstruction_check_not_accepted",
-    "interpretation_ja": "27条件の観測は一部の再構成確認で停止。全体成功と扱わず、寄与の比較結果は本稿に含めない。数値診断と根拠照合後に別節として追記する。"
+    "initial_checkpoint": {
+      "state": "stopped_at_reconstruction_check_not_accepted",
+      "interpretation_ja": "27条件の観測は一部の再構成確認で停止。全体成功と扱わず、寄与の比較結果は本稿に含めない。数値診断と根拠照合後に別節として追記する。"
+    },
+    "current_state": "completed_saved_capture_derived_observation_with_post_failure_contract_revision",
+    "public_evidence": "stage-b/source-evidence.json",
+    "interpretation_ja": "旧runは失敗のまま保持。新尺度の派生結果と解釈を別節へ掲載し、固定7kernelの数値は変更しない。"
   }
 }

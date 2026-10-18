@@ -1,5 +1,7 @@
 # 数値根拠対応表
 
+初版の「保留」「結果待ち」は当時の記録。追加の確定値は末尾の段階B追補を参照。
+
 帯域が2値で並ぶ箇所は1.5–3 kHz、3–8 kHzの順。出典ファイルはこの資料内の公開用投影で、全精度の保存値を残す。私用の実行パスや内部識別子は含めない。
 
 |根拠ID|本文の主張|値・状態|出典ファイル|対応キー|解釈上の制約|
@@ -37,3 +39,18 @@
 |E31|全周波数M1のセル枠|38/175。残り137に分数Mあり|additional-mask-summary.json|conditions[].all_spectrum_M_one_cell_ids|sample3 +3固定7kernelを一般化しない。独立標本数ではない|
 |E32|条件09の強部3–8kHz|12セル×1280bin=15360binすべてM1、全周波数M1は4セルのみ|additional-mask-summary.json|region_support_counts[condition-09, own_band_strong_potential_support, band_index=1]|8セルの低域M<1由来の帯域混合を除けず、完成帯域の平均0は言えない|
 |E33|停止4点の補助診断|80桁直接DFT。窓掛け・FFT差約1e−17～1e−16、OLAと最終減算0、Z加算約1e−21|fft-four-point-diagnosis.json|rows[0:4]; formal_interval_guarantee=false|旧失敗不変。全9条件の新契約合格やFFT実装の形式証明ではない|
+
+## 段階B追補：別9条件・27方式行
+
+|根拠|値・対応|出典|限定|
+|---|---|---|---|
+|E34 新契約の完了|9条件・27行・終了コード0|stage-b/source-evidence.json|旧失敗後の尺度改訂|
+|E35 観測一致|η最大3.0547323575163517e−16、閾値1e−12|stage-b/summary.json|notch相対精度や理論誤差上界ではない|
+|E36 旧false保持|18点、条件順4/1/4/3/1/0/3/2/0|stage-b/all-18-legacy-Z-failures.csv|初回停止4点を含む|
+|E37 固定8強部損失|全8件ΔS<0、絶対ΔS>絶対ΔC、ΔC<0が6、正が2|stage-b/all-18-strong-events.csv|因果割合ではない|
+|E38 尺度復元の条件付き差|FULL−SHAPEで6件低下、ID06/08は上昇|stage-b/all-18-strong-events.csv|未採用|
+|E39 ID09 band0|強部FULL−SHAPE +0.7645564120491599dB、交差+12ms|stage-b/all-18-strong-events.csv|原音曲線はなし、閾値・交差だけ|
+|E40 全符号付き項|1,050自己項行・11,820 pair-region行|stage-b/all-region-self-terms.csv、stage-b/all-region-signed-pairs.csv|負・正・零を保持|
+|E41 原音交差|ID01〜08は−1〜+1ms、ID09は+7/+4ms|stage-b/all-18-strong-events.csv|PML相対差と分離|
+|E42 全27入力OLA|byte一致、旧condition01の182配列も一致|stage-b/source-evidence.json|旧全波形証拠を再利用、再合成なし|
+|E43 元配列の対応|型・形状・SHAを保存|stage-b/source-array-hashes.json|NPZ・全native kernel・S/Z本体は非同梱|

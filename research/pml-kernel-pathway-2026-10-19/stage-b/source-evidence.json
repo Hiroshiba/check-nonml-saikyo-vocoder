@@ -1,0 +1,1867 @@
+{
+  "schema": "public-saved-kernel-evidence-v1",
+  "scope_ja": "公開用の来歴投影。元の終端記録・保存結果のSHAと条件対応を保持し、実行位置・内部識別子・実行コードは除外。",
+  "terminal_state": "completed_fixed_27_saved_kernel_derived_observation",
+  "numeric_exit_code": 0,
+  "completed_conditions": 9,
+  "completed_rows": 27,
+  "resynthesis_performed": false,
+  "contract_revision_after_failure": true,
+  "old_attempt_still_failed": true,
+  "source_terminal_receipt_sha256": "c9702e90c80d7274132c198ecefa9194757a734ac6897051ab78cebdefa1eac3",
+  "source_result_archive_sha256": "b11045e8ff57526e6370a8af8f6d339d5d0da4aa49cb1fb38f175c8e130e5fb7",
+  "source_analysis_manifest_sha256": "bbe67f3313d25ddcf00282233997c5996f94d37b6042f9e4feee65bfe4e688e4",
+  "source_interpretation_sha256": "aa1a11181509d47bda58fcfdea1ecb0197e53f2df33334f5a0e38708483e54ce",
+  "source_summary_sha256": "00e3c89754be3d97523961bf51a0960f3e2a59a9d8e36d30bd583432040a0a5d",
+  "source_result_summary_sha256": "17089dd8c12c9e97b3dad61300a91bee6a2848b7867eb888c64208d82e65aaa6",
+  "source_saved_input_verification_sha256": "5bde645c7733b3c03b3e8957c5b268f8bf0cbfe57862bfdc3a1348665e525112",
+  "source_identity_sha256": "ac1d9dfa144a17cde6cbcfa51173e7e3041b96606d414f801d4e40ce7b40a73c",
+  "source_artifacts_verified": 54,
+  "copied_public_tables_and_figures": [
+    {
+      "name": "all-175-cell-descriptors.csv",
+      "bytes": 37787,
+      "sha256": "6251c525a8df2be36a961f9fd4631fdd07c17ab02cf7de1aed8b2a85e10aa826"
+    },
+    {
+      "name": "all-18-legacy-Z-failures.csv",
+      "bytes": 4021,
+      "sha256": "3f6793ecc63a87510691842fbfb1d6c2918da1f15508fd5901aae80b42a23ed1"
+    },
+    {
+      "name": "all-18-strong-events.csv",
+      "bytes": 8537,
+      "sha256": "75e70dda831fd3fca0109dfb2f518baa4d862dd4a297c437290a61bffc06ae98"
+    },
+    {
+      "name": "all-27-numerical-status.csv",
+      "bytes": 2947,
+      "sha256": "ae1e36d1fb766bb162cb50cb385153be4f1ac9be77d0ca5931b600d68ace654b"
+    },
+    {
+      "name": "all-region-self-terms.csv",
+      "bytes": 165173,
+      "sha256": "fe33b6c73a9e84c25230dce0fe0ec4304d6078ddb80455f87c7292bed0c689af"
+    },
+    {
+      "name": "all-region-signed-pairs.csv",
+      "bytes": 1989637,
+      "sha256": "1f19eca1be6fe3e3604ea62cbdae31df43d918c147ae8836d11a4c1a79b1da35"
+    },
+    {
+      "name": "all-strong-deltas-band0.png",
+      "bytes": 201657,
+      "sha256": "fa1a6d12c452c18ea413aee67131bdfb84fe27efea6e907c2498c09f7d6f44e3"
+    },
+    {
+      "name": "all-strong-deltas-band0.svg",
+      "bytes": 214883,
+      "sha256": "21f816bc267b074f4c045cd96a4979c18105e6e159837d887923a432e89fcdc8"
+    },
+    {
+      "name": "all-strong-deltas-band1.png",
+      "bytes": 197016,
+      "sha256": "a87dbbf95df604d9eca53dfc9c3eee6131e5f4c65cbbafad2b7ca03212ddd19d"
+    },
+    {
+      "name": "all-strong-deltas-band1.svg",
+      "bytes": 216269,
+      "sha256": "63c0b3651149ac5ff6fdf911a45c319472972e783781904f1f3bc317f48143ee"
+    },
+    {
+      "name": "center-differences.csv",
+      "bytes": 967789,
+      "sha256": "b5db2925af9e4c97eeb6d72cc11e2e0209be682f1262f131fdd8c0a323e37b45"
+    },
+    {
+      "name": "center-observations.csv",
+      "bytes": 1435447,
+      "sha256": "f79b95f40b937e51cb40cf49324a87c9797c3c7582fb7c90246832c96b04bcee"
+    },
+    {
+      "name": "fixed-crossing-centers.csv",
+      "bytes": 94171,
+      "sha256": "dc70c4cef73c4ba620d7be2de2aa2bcdc008153382ff0ca37adb773c1dfdda21"
+    },
+    {
+      "name": "id09-fixed-crossing-and-signed-deltas.png",
+      "bytes": 430173,
+      "sha256": "b3e85f4cd5ab3be9ea4d74c54b8f4d3207eec12f46ec0150ed465cc01e9f6cd0"
+    },
+    {
+      "name": "id09-fixed-crossing-and-signed-deltas.svg",
+      "bytes": 196796,
+      "sha256": "68691993b95731cb58d32cf71e8481a7a042436c71e7c9573058d1e13e9055ef"
+    },
+    {
+      "name": "region-differences.csv",
+      "bytes": 31925,
+      "sha256": "240b9e24f5570a53da61267d480d5164b481e8ec9ab3048888c8f2e0736a46ac"
+    },
+    {
+      "name": "region-observations.csv",
+      "bytes": 53623,
+      "sha256": "9a93093181b3f76e335507ef8b9ddd4f0d2c1388a7b753a61c48d3c8aba97a40"
+    },
+    {
+      "name": "summary.json",
+      "bytes": 34526,
+      "sha256": "00e3c89754be3d97523961bf51a0960f3e2a59a9d8e36d30bd583432040a0a5d"
+    }
+  ],
+  "capture_files": [
+    {
+      "capture_sha256": "a72101b8cc8ee3e5aab6dc367b1e86ff6375e96d273b8da17cdf21c169e86f65",
+      "capture_source": "prior_attempt_001_byte_identical_copy",
+      "id": "condition-01"
+    },
+    {
+      "capture_sha256": "6100b402624c3d3c5972bb311d8d0a57f725397b9079df941df48aab6dea6799",
+      "capture_source": "prior_attempt_001_byte_identical_copy",
+      "id": "condition-02"
+    },
+    {
+      "capture_sha256": "a422b8c4f51affdde5a20090548d24e6663a4c0da15ec8cea1fc1af86b11db4d",
+      "capture_source": "prior_attempt_001_byte_identical_copy",
+      "id": "condition-03"
+    },
+    {
+      "capture_sha256": "8bd0c0033363cd62a118d97df55146bec9671725fa576de8af53eb7e656c57be",
+      "capture_source": "prior_attempt_001_byte_identical_copy",
+      "id": "condition-04"
+    },
+    {
+      "capture_sha256": "f5586a36a147bd5a17a0003e5ccb599545f09d2844e2c562943dfa49d558abbb",
+      "capture_source": "prior_attempt_001_byte_identical_copy",
+      "id": "condition-05"
+    },
+    {
+      "capture_sha256": "df851572d738b74e1a0e8a83a65f661e29a88b43dd6d81e06c22a838b512ce1e",
+      "capture_source": "prior_attempt_001_byte_identical_copy",
+      "id": "condition-06"
+    },
+    {
+      "capture_sha256": "248c403c1d9ca2a4472fe3d1b16523fcac7652eaf15d920c9e67865b30df913f",
+      "capture_source": "prior_attempt_001_byte_identical_copy",
+      "id": "condition-07"
+    },
+    {
+      "capture_sha256": "6d4d7674c8bf9cdbb6cd521001bd5334f280c31791831660a918c7084fe8dfd0",
+      "capture_source": "prior_attempt_001_byte_identical_copy",
+      "id": "condition-08"
+    },
+    {
+      "capture_sha256": "6091819368c37d9bafffad6630c93844b4a3f62438ff491918653fc4364f44ab",
+      "capture_source": "prior_attempt_001_byte_identical_copy",
+      "id": "condition-09"
+    }
+  ],
+  "prior_full_wave_clock_RNG_proofs": [
+    {
+      "checks": {
+        "all_cell_diagnostics_equal": "passed",
+        "all_draws": "passed",
+        "all_pulse_geometry_and_calls": "passed",
+        "capture_order": "passed",
+        "global_RNG_unchanged": "passed",
+        "master_buffers_unchanged": "passed",
+        "native_capture_valid": "passed",
+        "native_packing": "passed",
+        "observer_input_OLA_bytes": "passed",
+        "wave_npy_bytes": "passed",
+        "wave_sample_bytes": "passed",
+        "wave_shape_dtype_finite": "passed"
+      },
+      "fresh_replay_or_RNG_measurement": false,
+      "key": [
+        "librispeech_1188-133604-0003",
+        0,
+        20261015,
+        "PML"
+      ],
+      "old_identity_sha256": "49ca2ef544995fa9d9098976039fe9a5b5a4a62c8ec8a863e84827f54e7d3f3a",
+      "status": "verified_prior_evidence"
+    },
+    {
+      "checks": {
+        "all_cell_diagnostics_equal": "passed",
+        "all_draws": "passed",
+        "all_pulse_geometry_and_calls": "passed",
+        "capture_order": "passed",
+        "global_RNG_unchanged": "passed",
+        "master_buffers_unchanged": "passed",
+        "native_capture_valid": "passed",
+        "native_packing": "passed",
+        "observer_input_OLA_bytes": "passed",
+        "wave_npy_bytes": "passed",
+        "wave_sample_bytes": "passed",
+        "wave_shape_dtype_finite": "passed"
+      },
+      "fresh_replay_or_RNG_measurement": false,
+      "key": [
+        "librispeech_1188-133604-0003",
+        0,
+        20261015,
+        "RAW_SHAPE"
+      ],
+      "old_identity_sha256": "49ca2ef544995fa9d9098976039fe9a5b5a4a62c8ec8a863e84827f54e7d3f3a",
+      "status": "verified_prior_evidence"
+    },
+    {
+      "checks": {
+        "all_cell_diagnostics_equal": "passed",
+        "all_draws": "passed",
+        "all_pulse_geometry_and_calls": "passed",
+        "capture_order": "passed",
+        "global_RNG_unchanged": "passed",
+        "master_buffers_unchanged": "passed",
+        "native_capture_valid": "passed",
+        "native_packing": "passed",
+        "observer_input_OLA_bytes": "passed",
+        "wave_npy_bytes": "passed",
+        "wave_sample_bytes": "passed",
+        "wave_shape_dtype_finite": "passed"
+      },
+      "fresh_replay_or_RNG_measurement": false,
+      "key": [
+        "librispeech_1188-133604-0003",
+        0,
+        20261015,
+        "RAW_FULL"
+      ],
+      "old_identity_sha256": "49ca2ef544995fa9d9098976039fe9a5b5a4a62c8ec8a863e84827f54e7d3f3a",
+      "status": "verified_prior_evidence"
+    },
+    {
+      "checks": {
+        "all_cell_diagnostics_equal": "passed",
+        "all_draws": "passed",
+        "all_pulse_geometry_and_calls": "passed",
+        "capture_order": "passed",
+        "global_RNG_unchanged": "passed",
+        "master_buffers_unchanged": "passed",
+        "native_capture_valid": "passed",
+        "native_packing": "passed",
+        "observer_input_OLA_bytes": "passed",
+        "wave_npy_bytes": "passed",
+        "wave_sample_bytes": "passed",
+        "wave_shape_dtype_finite": "passed"
+      },
+      "fresh_replay_or_RNG_measurement": false,
+      "key": [
+        "librispeech_1188-133604-0003",
+        -3,
+        0,
+        "PML"
+      ],
+      "old_identity_sha256": "49ca2ef544995fa9d9098976039fe9a5b5a4a62c8ec8a863e84827f54e7d3f3a",
+      "status": "verified_prior_evidence"
+    },
+    {
+      "checks": {
+        "all_cell_diagnostics_equal": "passed",
+        "all_draws": "passed",
+        "all_pulse_geometry_and_calls": "passed",
+        "capture_order": "passed",
+        "global_RNG_unchanged": "passed",
+        "master_buffers_unchanged": "passed",
+        "native_capture_valid": "passed",
+        "native_packing": "passed",
+        "observer_input_OLA_bytes": "passed",
+        "wave_npy_bytes": "passed",
+        "wave_sample_bytes": "passed",
+        "wave_shape_dtype_finite": "passed"
+      },
+      "fresh_replay_or_RNG_measurement": false,
+      "key": [
+        "librispeech_1188-133604-0003",
+        -3,
+        0,
+        "RAW_SHAPE"
+      ],
+      "old_identity_sha256": "49ca2ef544995fa9d9098976039fe9a5b5a4a62c8ec8a863e84827f54e7d3f3a",
+      "status": "verified_prior_evidence"
+    },
+    {
+      "checks": {
+        "all_cell_diagnostics_equal": "passed",
+        "all_draws": "passed",
+        "all_pulse_geometry_and_calls": "passed",
+        "capture_order": "passed",
+        "global_RNG_unchanged": "passed",
+        "master_buffers_unchanged": "passed",
+        "native_capture_valid": "passed",
+        "native_packing": "passed",
+        "observer_input_OLA_bytes": "passed",
+        "wave_npy_bytes": "passed",
+        "wave_sample_bytes": "passed",
+        "wave_shape_dtype_finite": "passed"
+      },
+      "fresh_replay_or_RNG_measurement": false,
+      "key": [
+        "librispeech_1188-133604-0003",
+        -3,
+        0,
+        "RAW_FULL"
+      ],
+      "old_identity_sha256": "49ca2ef544995fa9d9098976039fe9a5b5a4a62c8ec8a863e84827f54e7d3f3a",
+      "status": "verified_prior_evidence"
+    },
+    {
+      "checks": {
+        "all_cell_diagnostics_equal": "passed",
+        "all_draws": "passed",
+        "all_pulse_geometry_and_calls": "passed",
+        "capture_order": "passed",
+        "global_RNG_unchanged": "passed",
+        "master_buffers_unchanged": "passed",
+        "native_capture_valid": "passed",
+        "native_packing": "passed",
+        "observer_input_OLA_bytes": "passed",
+        "wave_npy_bytes": "passed",
+        "wave_sample_bytes": "passed",
+        "wave_shape_dtype_finite": "passed"
+      },
+      "fresh_replay_or_RNG_measurement": false,
+      "key": [
+        "librispeech_1188-133604-0003",
+        3,
+        0,
+        "PML"
+      ],
+      "old_identity_sha256": "49ca2ef544995fa9d9098976039fe9a5b5a4a62c8ec8a863e84827f54e7d3f3a",
+      "status": "verified_prior_evidence"
+    },
+    {
+      "checks": {
+        "all_cell_diagnostics_equal": "passed",
+        "all_draws": "passed",
+        "all_pulse_geometry_and_calls": "passed",
+        "capture_order": "passed",
+        "global_RNG_unchanged": "passed",
+        "master_buffers_unchanged": "passed",
+        "native_capture_valid": "passed",
+        "native_packing": "passed",
+        "observer_input_OLA_bytes": "passed",
+        "wave_npy_bytes": "passed",
+        "wave_sample_bytes": "passed",
+        "wave_shape_dtype_finite": "passed"
+      },
+      "fresh_replay_or_RNG_measurement": false,
+      "key": [
+        "librispeech_1188-133604-0003",
+        3,
+        0,
+        "RAW_SHAPE"
+      ],
+      "old_identity_sha256": "49ca2ef544995fa9d9098976039fe9a5b5a4a62c8ec8a863e84827f54e7d3f3a",
+      "status": "verified_prior_evidence"
+    },
+    {
+      "checks": {
+        "all_cell_diagnostics_equal": "passed",
+        "all_draws": "passed",
+        "all_pulse_geometry_and_calls": "passed",
+        "capture_order": "passed",
+        "global_RNG_unchanged": "passed",
+        "master_buffers_unchanged": "passed",
+        "native_capture_valid": "passed",
+        "native_packing": "passed",
+        "observer_input_OLA_bytes": "passed",
+        "wave_npy_bytes": "passed",
+        "wave_sample_bytes": "passed",
+        "wave_shape_dtype_finite": "passed"
+      },
+      "fresh_replay_or_RNG_measurement": false,
+      "key": [
+        "librispeech_1188-133604-0003",
+        3,
+        0,
+        "RAW_FULL"
+      ],
+      "old_identity_sha256": "49ca2ef544995fa9d9098976039fe9a5b5a4a62c8ec8a863e84827f54e7d3f3a",
+      "status": "verified_prior_evidence"
+    },
+    {
+      "checks": {
+        "all_cell_diagnostics_equal": "passed",
+        "all_draws": "passed",
+        "all_pulse_geometry_and_calls": "passed",
+        "capture_order": "passed",
+        "global_RNG_unchanged": "passed",
+        "master_buffers_unchanged": "passed",
+        "native_capture_valid": "passed",
+        "native_packing": "passed",
+        "observer_input_OLA_bytes": "passed",
+        "wave_npy_bytes": "passed",
+        "wave_sample_bytes": "passed",
+        "wave_shape_dtype_finite": "passed"
+      },
+      "fresh_replay_or_RNG_measurement": false,
+      "key": [
+        "librispeech_1188-133604-0003",
+        3,
+        20261015,
+        "PML"
+      ],
+      "old_identity_sha256": "49ca2ef544995fa9d9098976039fe9a5b5a4a62c8ec8a863e84827f54e7d3f3a",
+      "status": "verified_prior_evidence"
+    },
+    {
+      "checks": {
+        "all_cell_diagnostics_equal": "passed",
+        "all_draws": "passed",
+        "all_pulse_geometry_and_calls": "passed",
+        "capture_order": "passed",
+        "global_RNG_unchanged": "passed",
+        "master_buffers_unchanged": "passed",
+        "native_capture_valid": "passed",
+        "native_packing": "passed",
+        "observer_input_OLA_bytes": "passed",
+        "wave_npy_bytes": "passed",
+        "wave_sample_bytes": "passed",
+        "wave_shape_dtype_finite": "passed"
+      },
+      "fresh_replay_or_RNG_measurement": false,
+      "key": [
+        "librispeech_1188-133604-0003",
+        3,
+        20261015,
+        "RAW_SHAPE"
+      ],
+      "old_identity_sha256": "49ca2ef544995fa9d9098976039fe9a5b5a4a62c8ec8a863e84827f54e7d3f3a",
+      "status": "verified_prior_evidence"
+    },
+    {
+      "checks": {
+        "all_cell_diagnostics_equal": "passed",
+        "all_draws": "passed",
+        "all_pulse_geometry_and_calls": "passed",
+        "capture_order": "passed",
+        "global_RNG_unchanged": "passed",
+        "master_buffers_unchanged": "passed",
+        "native_capture_valid": "passed",
+        "native_packing": "passed",
+        "observer_input_OLA_bytes": "passed",
+        "wave_npy_bytes": "passed",
+        "wave_sample_bytes": "passed",
+        "wave_shape_dtype_finite": "passed"
+      },
+      "fresh_replay_or_RNG_measurement": false,
+      "key": [
+        "librispeech_1188-133604-0003",
+        3,
+        20261015,
+        "RAW_FULL"
+      ],
+      "old_identity_sha256": "49ca2ef544995fa9d9098976039fe9a5b5a4a62c8ec8a863e84827f54e7d3f3a",
+      "status": "verified_prior_evidence"
+    },
+    {
+      "checks": {
+        "all_cell_diagnostics_equal": "passed",
+        "all_draws": "passed",
+        "all_pulse_geometry_and_calls": "passed",
+        "capture_order": "passed",
+        "global_RNG_unchanged": "passed",
+        "master_buffers_unchanged": "passed",
+        "native_capture_valid": "passed",
+        "native_packing": "passed",
+        "observer_input_OLA_bytes": "passed",
+        "wave_npy_bytes": "passed",
+        "wave_sample_bytes": "passed",
+        "wave_shape_dtype_finite": "passed"
+      },
+      "fresh_replay_or_RNG_measurement": false,
+      "key": [
+        "librispeech_121-121726-0012",
+        -3,
+        0,
+        "PML"
+      ],
+      "old_identity_sha256": "49ca2ef544995fa9d9098976039fe9a5b5a4a62c8ec8a863e84827f54e7d3f3a",
+      "status": "verified_prior_evidence"
+    },
+    {
+      "checks": {
+        "all_cell_diagnostics_equal": "passed",
+        "all_draws": "passed",
+        "all_pulse_geometry_and_calls": "passed",
+        "capture_order": "passed",
+        "global_RNG_unchanged": "passed",
+        "master_buffers_unchanged": "passed",
+        "native_capture_valid": "passed",
+        "native_packing": "passed",
+        "observer_input_OLA_bytes": "passed",
+        "wave_npy_bytes": "passed",
+        "wave_sample_bytes": "passed",
+        "wave_shape_dtype_finite": "passed"
+      },
+      "fresh_replay_or_RNG_measurement": false,
+      "key": [
+        "librispeech_121-121726-0012",
+        -3,
+        0,
+        "RAW_SHAPE"
+      ],
+      "old_identity_sha256": "49ca2ef544995fa9d9098976039fe9a5b5a4a62c8ec8a863e84827f54e7d3f3a",
+      "status": "verified_prior_evidence"
+    },
+    {
+      "checks": {
+        "all_cell_diagnostics_equal": "passed",
+        "all_draws": "passed",
+        "all_pulse_geometry_and_calls": "passed",
+        "capture_order": "passed",
+        "global_RNG_unchanged": "passed",
+        "master_buffers_unchanged": "passed",
+        "native_capture_valid": "passed",
+        "native_packing": "passed",
+        "observer_input_OLA_bytes": "passed",
+        "wave_npy_bytes": "passed",
+        "wave_sample_bytes": "passed",
+        "wave_shape_dtype_finite": "passed"
+      },
+      "fresh_replay_or_RNG_measurement": false,
+      "key": [
+        "librispeech_121-121726-0012",
+        -3,
+        0,
+        "RAW_FULL"
+      ],
+      "old_identity_sha256": "49ca2ef544995fa9d9098976039fe9a5b5a4a62c8ec8a863e84827f54e7d3f3a",
+      "status": "verified_prior_evidence"
+    },
+    {
+      "checks": {
+        "all_cell_diagnostics_equal": "passed",
+        "all_draws": "passed",
+        "all_pulse_geometry_and_calls": "passed",
+        "capture_order": "passed",
+        "global_RNG_unchanged": "passed",
+        "master_buffers_unchanged": "passed",
+        "native_capture_valid": "passed",
+        "native_packing": "passed",
+        "observer_input_OLA_bytes": "passed",
+        "wave_npy_bytes": "passed",
+        "wave_sample_bytes": "passed",
+        "wave_shape_dtype_finite": "passed"
+      },
+      "fresh_replay_or_RNG_measurement": false,
+      "key": [
+        "librispeech_1089-134686-0032",
+        0,
+        20261015,
+        "PML"
+      ],
+      "old_identity_sha256": "49ca2ef544995fa9d9098976039fe9a5b5a4a62c8ec8a863e84827f54e7d3f3a",
+      "status": "verified_prior_evidence"
+    },
+    {
+      "checks": {
+        "all_cell_diagnostics_equal": "passed",
+        "all_draws": "passed",
+        "all_pulse_geometry_and_calls": "passed",
+        "capture_order": "passed",
+        "global_RNG_unchanged": "passed",
+        "master_buffers_unchanged": "passed",
+        "native_capture_valid": "passed",
+        "native_packing": "passed",
+        "observer_input_OLA_bytes": "passed",
+        "wave_npy_bytes": "passed",
+        "wave_sample_bytes": "passed",
+        "wave_shape_dtype_finite": "passed"
+      },
+      "fresh_replay_or_RNG_measurement": false,
+      "key": [
+        "librispeech_1089-134686-0032",
+        0,
+        20261015,
+        "RAW_SHAPE"
+      ],
+      "old_identity_sha256": "49ca2ef544995fa9d9098976039fe9a5b5a4a62c8ec8a863e84827f54e7d3f3a",
+      "status": "verified_prior_evidence"
+    },
+    {
+      "checks": {
+        "all_cell_diagnostics_equal": "passed",
+        "all_draws": "passed",
+        "all_pulse_geometry_and_calls": "passed",
+        "capture_order": "passed",
+        "global_RNG_unchanged": "passed",
+        "master_buffers_unchanged": "passed",
+        "native_capture_valid": "passed",
+        "native_packing": "passed",
+        "observer_input_OLA_bytes": "passed",
+        "wave_npy_bytes": "passed",
+        "wave_sample_bytes": "passed",
+        "wave_shape_dtype_finite": "passed"
+      },
+      "fresh_replay_or_RNG_measurement": false,
+      "key": [
+        "librispeech_1089-134686-0032",
+        0,
+        20261015,
+        "RAW_FULL"
+      ],
+      "old_identity_sha256": "49ca2ef544995fa9d9098976039fe9a5b5a4a62c8ec8a863e84827f54e7d3f3a",
+      "status": "verified_prior_evidence"
+    },
+    {
+      "checks": {
+        "all_cell_diagnostics_equal": "passed",
+        "all_draws": "passed",
+        "all_pulse_geometry_and_calls": "passed",
+        "capture_order": "passed",
+        "global_RNG_unchanged": "passed",
+        "master_buffers_unchanged": "passed",
+        "native_capture_valid": "passed",
+        "native_packing": "passed",
+        "observer_input_OLA_bytes": "passed",
+        "wave_npy_bytes": "passed",
+        "wave_sample_bytes": "passed",
+        "wave_shape_dtype_finite": "passed"
+      },
+      "fresh_replay_or_RNG_measurement": false,
+      "key": [
+        "librispeech_1089-134686-0032",
+        -3,
+        0,
+        "PML"
+      ],
+      "old_identity_sha256": "49ca2ef544995fa9d9098976039fe9a5b5a4a62c8ec8a863e84827f54e7d3f3a",
+      "status": "verified_prior_evidence"
+    },
+    {
+      "checks": {
+        "all_cell_diagnostics_equal": "passed",
+        "all_draws": "passed",
+        "all_pulse_geometry_and_calls": "passed",
+        "capture_order": "passed",
+        "global_RNG_unchanged": "passed",
+        "master_buffers_unchanged": "passed",
+        "native_capture_valid": "passed",
+        "native_packing": "passed",
+        "observer_input_OLA_bytes": "passed",
+        "wave_npy_bytes": "passed",
+        "wave_sample_bytes": "passed",
+        "wave_shape_dtype_finite": "passed"
+      },
+      "fresh_replay_or_RNG_measurement": false,
+      "key": [
+        "librispeech_1089-134686-0032",
+        -3,
+        0,
+        "RAW_SHAPE"
+      ],
+      "old_identity_sha256": "49ca2ef544995fa9d9098976039fe9a5b5a4a62c8ec8a863e84827f54e7d3f3a",
+      "status": "verified_prior_evidence"
+    },
+    {
+      "checks": {
+        "all_cell_diagnostics_equal": "passed",
+        "all_draws": "passed",
+        "all_pulse_geometry_and_calls": "passed",
+        "capture_order": "passed",
+        "global_RNG_unchanged": "passed",
+        "master_buffers_unchanged": "passed",
+        "native_capture_valid": "passed",
+        "native_packing": "passed",
+        "observer_input_OLA_bytes": "passed",
+        "wave_npy_bytes": "passed",
+        "wave_sample_bytes": "passed",
+        "wave_shape_dtype_finite": "passed"
+      },
+      "fresh_replay_or_RNG_measurement": false,
+      "key": [
+        "librispeech_1089-134686-0032",
+        -3,
+        0,
+        "RAW_FULL"
+      ],
+      "old_identity_sha256": "49ca2ef544995fa9d9098976039fe9a5b5a4a62c8ec8a863e84827f54e7d3f3a",
+      "status": "verified_prior_evidence"
+    },
+    {
+      "checks": {
+        "all_cell_diagnostics_equal": "passed",
+        "all_draws": "passed",
+        "all_pulse_geometry_and_calls": "passed",
+        "capture_order": "passed",
+        "global_RNG_unchanged": "passed",
+        "master_buffers_unchanged": "passed",
+        "native_capture_valid": "passed",
+        "native_packing": "passed",
+        "observer_input_OLA_bytes": "passed",
+        "wave_npy_bytes": "passed",
+        "wave_sample_bytes": "passed",
+        "wave_shape_dtype_finite": "passed"
+      },
+      "fresh_replay_or_RNG_measurement": false,
+      "key": [
+        "librispeech_1089-134686-0032",
+        -3,
+        20261015,
+        "PML"
+      ],
+      "old_identity_sha256": "49ca2ef544995fa9d9098976039fe9a5b5a4a62c8ec8a863e84827f54e7d3f3a",
+      "status": "verified_prior_evidence"
+    },
+    {
+      "checks": {
+        "all_cell_diagnostics_equal": "passed",
+        "all_draws": "passed",
+        "all_pulse_geometry_and_calls": "passed",
+        "capture_order": "passed",
+        "global_RNG_unchanged": "passed",
+        "master_buffers_unchanged": "passed",
+        "native_capture_valid": "passed",
+        "native_packing": "passed",
+        "observer_input_OLA_bytes": "passed",
+        "wave_npy_bytes": "passed",
+        "wave_sample_bytes": "passed",
+        "wave_shape_dtype_finite": "passed"
+      },
+      "fresh_replay_or_RNG_measurement": false,
+      "key": [
+        "librispeech_1089-134686-0032",
+        -3,
+        20261015,
+        "RAW_SHAPE"
+      ],
+      "old_identity_sha256": "49ca2ef544995fa9d9098976039fe9a5b5a4a62c8ec8a863e84827f54e7d3f3a",
+      "status": "verified_prior_evidence"
+    },
+    {
+      "checks": {
+        "all_cell_diagnostics_equal": "passed",
+        "all_draws": "passed",
+        "all_pulse_geometry_and_calls": "passed",
+        "capture_order": "passed",
+        "global_RNG_unchanged": "passed",
+        "master_buffers_unchanged": "passed",
+        "native_capture_valid": "passed",
+        "native_packing": "passed",
+        "observer_input_OLA_bytes": "passed",
+        "wave_npy_bytes": "passed",
+        "wave_sample_bytes": "passed",
+        "wave_shape_dtype_finite": "passed"
+      },
+      "fresh_replay_or_RNG_measurement": false,
+      "key": [
+        "librispeech_1089-134686-0032",
+        -3,
+        20261015,
+        "RAW_FULL"
+      ],
+      "old_identity_sha256": "49ca2ef544995fa9d9098976039fe9a5b5a4a62c8ec8a863e84827f54e7d3f3a",
+      "status": "verified_prior_evidence"
+    },
+    {
+      "checks": {
+        "all_cell_diagnostics_equal": "passed",
+        "all_draws": "passed",
+        "all_pulse_geometry_and_calls": "passed",
+        "capture_order": "passed",
+        "global_RNG_unchanged": "passed",
+        "master_buffers_unchanged": "passed",
+        "native_capture_valid": "passed",
+        "native_packing": "passed",
+        "observer_input_OLA_bytes": "passed",
+        "wave_npy_bytes": "passed",
+        "wave_sample_bytes": "passed",
+        "wave_shape_dtype_finite": "passed"
+      },
+      "fresh_replay_or_RNG_measurement": false,
+      "key": [
+        "librispeech_1221-135766-0005",
+        0,
+        0,
+        "PML"
+      ],
+      "old_identity_sha256": "49ca2ef544995fa9d9098976039fe9a5b5a4a62c8ec8a863e84827f54e7d3f3a",
+      "status": "verified_prior_evidence"
+    },
+    {
+      "checks": {
+        "all_cell_diagnostics_equal": "passed",
+        "all_draws": "passed",
+        "all_pulse_geometry_and_calls": "passed",
+        "capture_order": "passed",
+        "global_RNG_unchanged": "passed",
+        "master_buffers_unchanged": "passed",
+        "native_capture_valid": "passed",
+        "native_packing": "passed",
+        "observer_input_OLA_bytes": "passed",
+        "wave_npy_bytes": "passed",
+        "wave_sample_bytes": "passed",
+        "wave_shape_dtype_finite": "passed"
+      },
+      "fresh_replay_or_RNG_measurement": false,
+      "key": [
+        "librispeech_1221-135766-0005",
+        0,
+        0,
+        "RAW_SHAPE"
+      ],
+      "old_identity_sha256": "49ca2ef544995fa9d9098976039fe9a5b5a4a62c8ec8a863e84827f54e7d3f3a",
+      "status": "verified_prior_evidence"
+    },
+    {
+      "checks": {
+        "all_cell_diagnostics_equal": "passed",
+        "all_draws": "passed",
+        "all_pulse_geometry_and_calls": "passed",
+        "capture_order": "passed",
+        "global_RNG_unchanged": "passed",
+        "master_buffers_unchanged": "passed",
+        "native_capture_valid": "passed",
+        "native_packing": "passed",
+        "observer_input_OLA_bytes": "passed",
+        "wave_npy_bytes": "passed",
+        "wave_sample_bytes": "passed",
+        "wave_shape_dtype_finite": "passed"
+      },
+      "fresh_replay_or_RNG_measurement": false,
+      "key": [
+        "librispeech_1221-135766-0005",
+        0,
+        0,
+        "RAW_FULL"
+      ],
+      "old_identity_sha256": "49ca2ef544995fa9d9098976039fe9a5b5a4a62c8ec8a863e84827f54e7d3f3a",
+      "status": "verified_prior_evidence"
+    }
+  ],
+  "current_27_saved_input_OLA_identity": [
+    {
+      "id": "condition-01",
+      "case": "librispeech_1188-133604-0003",
+      "pitch_semitones": 0,
+      "seed": 20261015,
+      "variant": "PML",
+      "observer_input_OLA_bytes": {
+        "computed_from_saved_native_capture": true,
+        "disjoint_input_union": true,
+        "full_wave_resynthesis_performed": false,
+        "input_sample_indices_sha256": "5b6fc17f555981bb486209f9be12bc4cce7de5b96c047ad2585ac17ce3051ba9",
+        "prior_union_proof_identical": true,
+        "reconstructed": {
+          "bytes": 8448,
+          "dtype": "float64",
+          "sha256": "fbbfe87d3cd43fcf1dfc316c656d85fb364a51253145b7ed9e6d2553354e7cff",
+          "shape": [
+            1056
+          ]
+        },
+        "reference": {
+          "bytes": 8448,
+          "dtype": "float64",
+          "sha256": "fbbfe87d3cd43fcf1dfc316c656d85fb364a51253145b7ed9e6d2553354e7cff",
+          "shape": [
+            1056
+          ]
+        },
+        "sample_count": 1056,
+        "status": "passed"
+      },
+      "prior_identity_reused": {
+        "full_wave_clock_draw_remeasured": false,
+        "prior_identity_sha256": "49ca2ef544995fa9d9098976039fe9a5b5a4a62c8ec8a863e84827f54e7d3f3a",
+        "status": "verified_prior_evidence"
+      },
+      "decomposition_status": "passed"
+    },
+    {
+      "id": "condition-01",
+      "case": "librispeech_1188-133604-0003",
+      "pitch_semitones": 0,
+      "seed": 20261015,
+      "variant": "RAW_SHAPE",
+      "observer_input_OLA_bytes": {
+        "computed_from_saved_native_capture": true,
+        "disjoint_input_union": true,
+        "full_wave_resynthesis_performed": false,
+        "input_sample_indices_sha256": "5b6fc17f555981bb486209f9be12bc4cce7de5b96c047ad2585ac17ce3051ba9",
+        "prior_union_proof_identical": true,
+        "reconstructed": {
+          "bytes": 8448,
+          "dtype": "float64",
+          "sha256": "d41fde9efc28b242fbefa3218957055ff710b790afb650ad04479918bc97f58e",
+          "shape": [
+            1056
+          ]
+        },
+        "reference": {
+          "bytes": 8448,
+          "dtype": "float64",
+          "sha256": "d41fde9efc28b242fbefa3218957055ff710b790afb650ad04479918bc97f58e",
+          "shape": [
+            1056
+          ]
+        },
+        "sample_count": 1056,
+        "status": "passed"
+      },
+      "prior_identity_reused": {
+        "full_wave_clock_draw_remeasured": false,
+        "prior_identity_sha256": "49ca2ef544995fa9d9098976039fe9a5b5a4a62c8ec8a863e84827f54e7d3f3a",
+        "status": "verified_prior_evidence"
+      },
+      "decomposition_status": "passed"
+    },
+    {
+      "id": "condition-01",
+      "case": "librispeech_1188-133604-0003",
+      "pitch_semitones": 0,
+      "seed": 20261015,
+      "variant": "RAW_FULL",
+      "observer_input_OLA_bytes": {
+        "computed_from_saved_native_capture": true,
+        "disjoint_input_union": true,
+        "full_wave_resynthesis_performed": false,
+        "input_sample_indices_sha256": "5b6fc17f555981bb486209f9be12bc4cce7de5b96c047ad2585ac17ce3051ba9",
+        "prior_union_proof_identical": true,
+        "reconstructed": {
+          "bytes": 8448,
+          "dtype": "float64",
+          "sha256": "0f3b4e1b644d30412df4693724def280ca198a6a72658b5798f97993a159a875",
+          "shape": [
+            1056
+          ]
+        },
+        "reference": {
+          "bytes": 8448,
+          "dtype": "float64",
+          "sha256": "0f3b4e1b644d30412df4693724def280ca198a6a72658b5798f97993a159a875",
+          "shape": [
+            1056
+          ]
+        },
+        "sample_count": 1056,
+        "status": "passed"
+      },
+      "prior_identity_reused": {
+        "full_wave_clock_draw_remeasured": false,
+        "prior_identity_sha256": "49ca2ef544995fa9d9098976039fe9a5b5a4a62c8ec8a863e84827f54e7d3f3a",
+        "status": "verified_prior_evidence"
+      },
+      "decomposition_status": "passed"
+    },
+    {
+      "id": "condition-02",
+      "case": "librispeech_1188-133604-0003",
+      "pitch_semitones": -3,
+      "seed": 0,
+      "variant": "PML",
+      "observer_input_OLA_bytes": {
+        "computed_from_saved_native_capture": true,
+        "disjoint_input_union": true,
+        "full_wave_resynthesis_performed": false,
+        "input_sample_indices_sha256": "5b6fc17f555981bb486209f9be12bc4cce7de5b96c047ad2585ac17ce3051ba9",
+        "prior_union_proof_identical": true,
+        "reconstructed": {
+          "bytes": 8448,
+          "dtype": "float64",
+          "sha256": "76fb858a0713aa45864fe66d2fe8d3201b0e17e0524b40aa1c357eb57257f120",
+          "shape": [
+            1056
+          ]
+        },
+        "reference": {
+          "bytes": 8448,
+          "dtype": "float64",
+          "sha256": "76fb858a0713aa45864fe66d2fe8d3201b0e17e0524b40aa1c357eb57257f120",
+          "shape": [
+            1056
+          ]
+        },
+        "sample_count": 1056,
+        "status": "passed"
+      },
+      "prior_identity_reused": {
+        "full_wave_clock_draw_remeasured": false,
+        "prior_identity_sha256": "49ca2ef544995fa9d9098976039fe9a5b5a4a62c8ec8a863e84827f54e7d3f3a",
+        "status": "verified_prior_evidence"
+      },
+      "decomposition_status": "passed"
+    },
+    {
+      "id": "condition-02",
+      "case": "librispeech_1188-133604-0003",
+      "pitch_semitones": -3,
+      "seed": 0,
+      "variant": "RAW_SHAPE",
+      "observer_input_OLA_bytes": {
+        "computed_from_saved_native_capture": true,
+        "disjoint_input_union": true,
+        "full_wave_resynthesis_performed": false,
+        "input_sample_indices_sha256": "5b6fc17f555981bb486209f9be12bc4cce7de5b96c047ad2585ac17ce3051ba9",
+        "prior_union_proof_identical": true,
+        "reconstructed": {
+          "bytes": 8448,
+          "dtype": "float64",
+          "sha256": "9657e43ac357c69c0765541995adf0af8c2d3cd07cfc66aab65a401e14dcaba4",
+          "shape": [
+            1056
+          ]
+        },
+        "reference": {
+          "bytes": 8448,
+          "dtype": "float64",
+          "sha256": "9657e43ac357c69c0765541995adf0af8c2d3cd07cfc66aab65a401e14dcaba4",
+          "shape": [
+            1056
+          ]
+        },
+        "sample_count": 1056,
+        "status": "passed"
+      },
+      "prior_identity_reused": {
+        "full_wave_clock_draw_remeasured": false,
+        "prior_identity_sha256": "49ca2ef544995fa9d9098976039fe9a5b5a4a62c8ec8a863e84827f54e7d3f3a",
+        "status": "verified_prior_evidence"
+      },
+      "decomposition_status": "passed"
+    },
+    {
+      "id": "condition-02",
+      "case": "librispeech_1188-133604-0003",
+      "pitch_semitones": -3,
+      "seed": 0,
+      "variant": "RAW_FULL",
+      "observer_input_OLA_bytes": {
+        "computed_from_saved_native_capture": true,
+        "disjoint_input_union": true,
+        "full_wave_resynthesis_performed": false,
+        "input_sample_indices_sha256": "5b6fc17f555981bb486209f9be12bc4cce7de5b96c047ad2585ac17ce3051ba9",
+        "prior_union_proof_identical": true,
+        "reconstructed": {
+          "bytes": 8448,
+          "dtype": "float64",
+          "sha256": "a0e07c6b80a10ed0a6a4737e54ed32c878c703b3d8f7e7bc8be0526df9de110a",
+          "shape": [
+            1056
+          ]
+        },
+        "reference": {
+          "bytes": 8448,
+          "dtype": "float64",
+          "sha256": "a0e07c6b80a10ed0a6a4737e54ed32c878c703b3d8f7e7bc8be0526df9de110a",
+          "shape": [
+            1056
+          ]
+        },
+        "sample_count": 1056,
+        "status": "passed"
+      },
+      "prior_identity_reused": {
+        "full_wave_clock_draw_remeasured": false,
+        "prior_identity_sha256": "49ca2ef544995fa9d9098976039fe9a5b5a4a62c8ec8a863e84827f54e7d3f3a",
+        "status": "verified_prior_evidence"
+      },
+      "decomposition_status": "passed"
+    },
+    {
+      "id": "condition-03",
+      "case": "librispeech_1188-133604-0003",
+      "pitch_semitones": 3,
+      "seed": 0,
+      "variant": "PML",
+      "observer_input_OLA_bytes": {
+        "computed_from_saved_native_capture": true,
+        "disjoint_input_union": true,
+        "full_wave_resynthesis_performed": false,
+        "input_sample_indices_sha256": "5b6fc17f555981bb486209f9be12bc4cce7de5b96c047ad2585ac17ce3051ba9",
+        "prior_union_proof_identical": true,
+        "reconstructed": {
+          "bytes": 8448,
+          "dtype": "float64",
+          "sha256": "f6c70225a854c5b122744c81e0a6e8dbf8460f5dfea6c4d7e2ce09894f9bcf84",
+          "shape": [
+            1056
+          ]
+        },
+        "reference": {
+          "bytes": 8448,
+          "dtype": "float64",
+          "sha256": "f6c70225a854c5b122744c81e0a6e8dbf8460f5dfea6c4d7e2ce09894f9bcf84",
+          "shape": [
+            1056
+          ]
+        },
+        "sample_count": 1056,
+        "status": "passed"
+      },
+      "prior_identity_reused": {
+        "full_wave_clock_draw_remeasured": false,
+        "prior_identity_sha256": "49ca2ef544995fa9d9098976039fe9a5b5a4a62c8ec8a863e84827f54e7d3f3a",
+        "status": "verified_prior_evidence"
+      },
+      "decomposition_status": "passed"
+    },
+    {
+      "id": "condition-03",
+      "case": "librispeech_1188-133604-0003",
+      "pitch_semitones": 3,
+      "seed": 0,
+      "variant": "RAW_SHAPE",
+      "observer_input_OLA_bytes": {
+        "computed_from_saved_native_capture": true,
+        "disjoint_input_union": true,
+        "full_wave_resynthesis_performed": false,
+        "input_sample_indices_sha256": "5b6fc17f555981bb486209f9be12bc4cce7de5b96c047ad2585ac17ce3051ba9",
+        "prior_union_proof_identical": true,
+        "reconstructed": {
+          "bytes": 8448,
+          "dtype": "float64",
+          "sha256": "5f24bb7ac0a73852fc606027d31e794a616eaae56118429cd8a8abddcbc42902",
+          "shape": [
+            1056
+          ]
+        },
+        "reference": {
+          "bytes": 8448,
+          "dtype": "float64",
+          "sha256": "5f24bb7ac0a73852fc606027d31e794a616eaae56118429cd8a8abddcbc42902",
+          "shape": [
+            1056
+          ]
+        },
+        "sample_count": 1056,
+        "status": "passed"
+      },
+      "prior_identity_reused": {
+        "full_wave_clock_draw_remeasured": false,
+        "prior_identity_sha256": "49ca2ef544995fa9d9098976039fe9a5b5a4a62c8ec8a863e84827f54e7d3f3a",
+        "status": "verified_prior_evidence"
+      },
+      "decomposition_status": "passed"
+    },
+    {
+      "id": "condition-03",
+      "case": "librispeech_1188-133604-0003",
+      "pitch_semitones": 3,
+      "seed": 0,
+      "variant": "RAW_FULL",
+      "observer_input_OLA_bytes": {
+        "computed_from_saved_native_capture": true,
+        "disjoint_input_union": true,
+        "full_wave_resynthesis_performed": false,
+        "input_sample_indices_sha256": "5b6fc17f555981bb486209f9be12bc4cce7de5b96c047ad2585ac17ce3051ba9",
+        "prior_union_proof_identical": true,
+        "reconstructed": {
+          "bytes": 8448,
+          "dtype": "float64",
+          "sha256": "aa4a1aeb120ca51b26acd76acdfa7367002ac4a529b6a59eaedb0c875974115a",
+          "shape": [
+            1056
+          ]
+        },
+        "reference": {
+          "bytes": 8448,
+          "dtype": "float64",
+          "sha256": "aa4a1aeb120ca51b26acd76acdfa7367002ac4a529b6a59eaedb0c875974115a",
+          "shape": [
+            1056
+          ]
+        },
+        "sample_count": 1056,
+        "status": "passed"
+      },
+      "prior_identity_reused": {
+        "full_wave_clock_draw_remeasured": false,
+        "prior_identity_sha256": "49ca2ef544995fa9d9098976039fe9a5b5a4a62c8ec8a863e84827f54e7d3f3a",
+        "status": "verified_prior_evidence"
+      },
+      "decomposition_status": "passed"
+    },
+    {
+      "id": "condition-04",
+      "case": "librispeech_1188-133604-0003",
+      "pitch_semitones": 3,
+      "seed": 20261015,
+      "variant": "PML",
+      "observer_input_OLA_bytes": {
+        "computed_from_saved_native_capture": true,
+        "disjoint_input_union": true,
+        "full_wave_resynthesis_performed": false,
+        "input_sample_indices_sha256": "5b6fc17f555981bb486209f9be12bc4cce7de5b96c047ad2585ac17ce3051ba9",
+        "prior_union_proof_identical": true,
+        "reconstructed": {
+          "bytes": 8448,
+          "dtype": "float64",
+          "sha256": "e63bbed334c7958745c13d43b6d3aafb127fa08f5523e2f53743e55d7238bbea",
+          "shape": [
+            1056
+          ]
+        },
+        "reference": {
+          "bytes": 8448,
+          "dtype": "float64",
+          "sha256": "e63bbed334c7958745c13d43b6d3aafb127fa08f5523e2f53743e55d7238bbea",
+          "shape": [
+            1056
+          ]
+        },
+        "sample_count": 1056,
+        "status": "passed"
+      },
+      "prior_identity_reused": {
+        "full_wave_clock_draw_remeasured": false,
+        "prior_identity_sha256": "49ca2ef544995fa9d9098976039fe9a5b5a4a62c8ec8a863e84827f54e7d3f3a",
+        "status": "verified_prior_evidence"
+      },
+      "decomposition_status": "passed"
+    },
+    {
+      "id": "condition-04",
+      "case": "librispeech_1188-133604-0003",
+      "pitch_semitones": 3,
+      "seed": 20261015,
+      "variant": "RAW_SHAPE",
+      "observer_input_OLA_bytes": {
+        "computed_from_saved_native_capture": true,
+        "disjoint_input_union": true,
+        "full_wave_resynthesis_performed": false,
+        "input_sample_indices_sha256": "5b6fc17f555981bb486209f9be12bc4cce7de5b96c047ad2585ac17ce3051ba9",
+        "prior_union_proof_identical": true,
+        "reconstructed": {
+          "bytes": 8448,
+          "dtype": "float64",
+          "sha256": "d91b9a3ee0013b993210c7c6938bf01effedd11043d64758bc3d1aa599f3cb4f",
+          "shape": [
+            1056
+          ]
+        },
+        "reference": {
+          "bytes": 8448,
+          "dtype": "float64",
+          "sha256": "d91b9a3ee0013b993210c7c6938bf01effedd11043d64758bc3d1aa599f3cb4f",
+          "shape": [
+            1056
+          ]
+        },
+        "sample_count": 1056,
+        "status": "passed"
+      },
+      "prior_identity_reused": {
+        "full_wave_clock_draw_remeasured": false,
+        "prior_identity_sha256": "49ca2ef544995fa9d9098976039fe9a5b5a4a62c8ec8a863e84827f54e7d3f3a",
+        "status": "verified_prior_evidence"
+      },
+      "decomposition_status": "passed"
+    },
+    {
+      "id": "condition-04",
+      "case": "librispeech_1188-133604-0003",
+      "pitch_semitones": 3,
+      "seed": 20261015,
+      "variant": "RAW_FULL",
+      "observer_input_OLA_bytes": {
+        "computed_from_saved_native_capture": true,
+        "disjoint_input_union": true,
+        "full_wave_resynthesis_performed": false,
+        "input_sample_indices_sha256": "5b6fc17f555981bb486209f9be12bc4cce7de5b96c047ad2585ac17ce3051ba9",
+        "prior_union_proof_identical": true,
+        "reconstructed": {
+          "bytes": 8448,
+          "dtype": "float64",
+          "sha256": "d5647c0c27087657a12c27f281f4dab36e8e48e7e859defd03a710367e1761fe",
+          "shape": [
+            1056
+          ]
+        },
+        "reference": {
+          "bytes": 8448,
+          "dtype": "float64",
+          "sha256": "d5647c0c27087657a12c27f281f4dab36e8e48e7e859defd03a710367e1761fe",
+          "shape": [
+            1056
+          ]
+        },
+        "sample_count": 1056,
+        "status": "passed"
+      },
+      "prior_identity_reused": {
+        "full_wave_clock_draw_remeasured": false,
+        "prior_identity_sha256": "49ca2ef544995fa9d9098976039fe9a5b5a4a62c8ec8a863e84827f54e7d3f3a",
+        "status": "verified_prior_evidence"
+      },
+      "decomposition_status": "passed"
+    },
+    {
+      "id": "condition-05",
+      "case": "librispeech_121-121726-0012",
+      "pitch_semitones": -3,
+      "seed": 0,
+      "variant": "PML",
+      "observer_input_OLA_bytes": {
+        "computed_from_saved_native_capture": true,
+        "disjoint_input_union": true,
+        "full_wave_resynthesis_performed": false,
+        "input_sample_indices_sha256": "677b1ac1ec087ec89973e3f33b897c6eb01a255bce62f3a6e2cda43784cd7324",
+        "prior_union_proof_identical": true,
+        "reconstructed": {
+          "bytes": 6400,
+          "dtype": "float64",
+          "sha256": "edf8fa8d7ffddbefd0a742799406c98db34b06e5c0444fd106f03f9e172386f9",
+          "shape": [
+            800
+          ]
+        },
+        "reference": {
+          "bytes": 6400,
+          "dtype": "float64",
+          "sha256": "edf8fa8d7ffddbefd0a742799406c98db34b06e5c0444fd106f03f9e172386f9",
+          "shape": [
+            800
+          ]
+        },
+        "sample_count": 800,
+        "status": "passed"
+      },
+      "prior_identity_reused": {
+        "full_wave_clock_draw_remeasured": false,
+        "prior_identity_sha256": "49ca2ef544995fa9d9098976039fe9a5b5a4a62c8ec8a863e84827f54e7d3f3a",
+        "status": "verified_prior_evidence"
+      },
+      "decomposition_status": "passed"
+    },
+    {
+      "id": "condition-05",
+      "case": "librispeech_121-121726-0012",
+      "pitch_semitones": -3,
+      "seed": 0,
+      "variant": "RAW_SHAPE",
+      "observer_input_OLA_bytes": {
+        "computed_from_saved_native_capture": true,
+        "disjoint_input_union": true,
+        "full_wave_resynthesis_performed": false,
+        "input_sample_indices_sha256": "677b1ac1ec087ec89973e3f33b897c6eb01a255bce62f3a6e2cda43784cd7324",
+        "prior_union_proof_identical": true,
+        "reconstructed": {
+          "bytes": 6400,
+          "dtype": "float64",
+          "sha256": "70fc7c7c04a6026d803096d9800ac41a1dafb85dd25b1c1fb48160f9dab0f1b4",
+          "shape": [
+            800
+          ]
+        },
+        "reference": {
+          "bytes": 6400,
+          "dtype": "float64",
+          "sha256": "70fc7c7c04a6026d803096d9800ac41a1dafb85dd25b1c1fb48160f9dab0f1b4",
+          "shape": [
+            800
+          ]
+        },
+        "sample_count": 800,
+        "status": "passed"
+      },
+      "prior_identity_reused": {
+        "full_wave_clock_draw_remeasured": false,
+        "prior_identity_sha256": "49ca2ef544995fa9d9098976039fe9a5b5a4a62c8ec8a863e84827f54e7d3f3a",
+        "status": "verified_prior_evidence"
+      },
+      "decomposition_status": "passed"
+    },
+    {
+      "id": "condition-05",
+      "case": "librispeech_121-121726-0012",
+      "pitch_semitones": -3,
+      "seed": 0,
+      "variant": "RAW_FULL",
+      "observer_input_OLA_bytes": {
+        "computed_from_saved_native_capture": true,
+        "disjoint_input_union": true,
+        "full_wave_resynthesis_performed": false,
+        "input_sample_indices_sha256": "677b1ac1ec087ec89973e3f33b897c6eb01a255bce62f3a6e2cda43784cd7324",
+        "prior_union_proof_identical": true,
+        "reconstructed": {
+          "bytes": 6400,
+          "dtype": "float64",
+          "sha256": "9ec48a7e126757fab3c8666ec648611f6a7e72fc8deaf00adc87cf6fe9d25fdb",
+          "shape": [
+            800
+          ]
+        },
+        "reference": {
+          "bytes": 6400,
+          "dtype": "float64",
+          "sha256": "9ec48a7e126757fab3c8666ec648611f6a7e72fc8deaf00adc87cf6fe9d25fdb",
+          "shape": [
+            800
+          ]
+        },
+        "sample_count": 800,
+        "status": "passed"
+      },
+      "prior_identity_reused": {
+        "full_wave_clock_draw_remeasured": false,
+        "prior_identity_sha256": "49ca2ef544995fa9d9098976039fe9a5b5a4a62c8ec8a863e84827f54e7d3f3a",
+        "status": "verified_prior_evidence"
+      },
+      "decomposition_status": "passed"
+    },
+    {
+      "id": "condition-06",
+      "case": "librispeech_1089-134686-0032",
+      "pitch_semitones": 0,
+      "seed": 20261015,
+      "variant": "PML",
+      "observer_input_OLA_bytes": {
+        "computed_from_saved_native_capture": true,
+        "disjoint_input_union": true,
+        "full_wave_resynthesis_performed": false,
+        "input_sample_indices_sha256": "dec4cc67d2cd7f436c9552bd628477658f12ef296ffa14c32d66eb64178f863b",
+        "prior_union_proof_identical": true,
+        "reconstructed": {
+          "bytes": 16384,
+          "dtype": "float64",
+          "sha256": "105afbb417d3f6ab103b6531be89491a5f81cb392870b5fe1437580d6e21a89c",
+          "shape": [
+            2048
+          ]
+        },
+        "reference": {
+          "bytes": 16384,
+          "dtype": "float64",
+          "sha256": "105afbb417d3f6ab103b6531be89491a5f81cb392870b5fe1437580d6e21a89c",
+          "shape": [
+            2048
+          ]
+        },
+        "sample_count": 2048,
+        "status": "passed"
+      },
+      "prior_identity_reused": {
+        "full_wave_clock_draw_remeasured": false,
+        "prior_identity_sha256": "49ca2ef544995fa9d9098976039fe9a5b5a4a62c8ec8a863e84827f54e7d3f3a",
+        "status": "verified_prior_evidence"
+      },
+      "decomposition_status": "passed"
+    },
+    {
+      "id": "condition-06",
+      "case": "librispeech_1089-134686-0032",
+      "pitch_semitones": 0,
+      "seed": 20261015,
+      "variant": "RAW_SHAPE",
+      "observer_input_OLA_bytes": {
+        "computed_from_saved_native_capture": true,
+        "disjoint_input_union": true,
+        "full_wave_resynthesis_performed": false,
+        "input_sample_indices_sha256": "dec4cc67d2cd7f436c9552bd628477658f12ef296ffa14c32d66eb64178f863b",
+        "prior_union_proof_identical": true,
+        "reconstructed": {
+          "bytes": 16384,
+          "dtype": "float64",
+          "sha256": "90c08f7c1daf81870bbb54492b83e5a3bf63ddadfd11f1ba62f1ae14c513a0b5",
+          "shape": [
+            2048
+          ]
+        },
+        "reference": {
+          "bytes": 16384,
+          "dtype": "float64",
+          "sha256": "90c08f7c1daf81870bbb54492b83e5a3bf63ddadfd11f1ba62f1ae14c513a0b5",
+          "shape": [
+            2048
+          ]
+        },
+        "sample_count": 2048,
+        "status": "passed"
+      },
+      "prior_identity_reused": {
+        "full_wave_clock_draw_remeasured": false,
+        "prior_identity_sha256": "49ca2ef544995fa9d9098976039fe9a5b5a4a62c8ec8a863e84827f54e7d3f3a",
+        "status": "verified_prior_evidence"
+      },
+      "decomposition_status": "passed"
+    },
+    {
+      "id": "condition-06",
+      "case": "librispeech_1089-134686-0032",
+      "pitch_semitones": 0,
+      "seed": 20261015,
+      "variant": "RAW_FULL",
+      "observer_input_OLA_bytes": {
+        "computed_from_saved_native_capture": true,
+        "disjoint_input_union": true,
+        "full_wave_resynthesis_performed": false,
+        "input_sample_indices_sha256": "dec4cc67d2cd7f436c9552bd628477658f12ef296ffa14c32d66eb64178f863b",
+        "prior_union_proof_identical": true,
+        "reconstructed": {
+          "bytes": 16384,
+          "dtype": "float64",
+          "sha256": "4d275ddf3c755780a5ce4628a90f01de01e326f0dd28ef53c48c7b151d5f633d",
+          "shape": [
+            2048
+          ]
+        },
+        "reference": {
+          "bytes": 16384,
+          "dtype": "float64",
+          "sha256": "4d275ddf3c755780a5ce4628a90f01de01e326f0dd28ef53c48c7b151d5f633d",
+          "shape": [
+            2048
+          ]
+        },
+        "sample_count": 2048,
+        "status": "passed"
+      },
+      "prior_identity_reused": {
+        "full_wave_clock_draw_remeasured": false,
+        "prior_identity_sha256": "49ca2ef544995fa9d9098976039fe9a5b5a4a62c8ec8a863e84827f54e7d3f3a",
+        "status": "verified_prior_evidence"
+      },
+      "decomposition_status": "passed"
+    },
+    {
+      "id": "condition-07",
+      "case": "librispeech_1089-134686-0032",
+      "pitch_semitones": -3,
+      "seed": 0,
+      "variant": "PML",
+      "observer_input_OLA_bytes": {
+        "computed_from_saved_native_capture": true,
+        "disjoint_input_union": true,
+        "full_wave_resynthesis_performed": false,
+        "input_sample_indices_sha256": "dec4cc67d2cd7f436c9552bd628477658f12ef296ffa14c32d66eb64178f863b",
+        "prior_union_proof_identical": true,
+        "reconstructed": {
+          "bytes": 16384,
+          "dtype": "float64",
+          "sha256": "c9ff6637fd2374a84de602fb8d066cc59431f6c2fc27922b6419607ab992d92b",
+          "shape": [
+            2048
+          ]
+        },
+        "reference": {
+          "bytes": 16384,
+          "dtype": "float64",
+          "sha256": "c9ff6637fd2374a84de602fb8d066cc59431f6c2fc27922b6419607ab992d92b",
+          "shape": [
+            2048
+          ]
+        },
+        "sample_count": 2048,
+        "status": "passed"
+      },
+      "prior_identity_reused": {
+        "full_wave_clock_draw_remeasured": false,
+        "prior_identity_sha256": "49ca2ef544995fa9d9098976039fe9a5b5a4a62c8ec8a863e84827f54e7d3f3a",
+        "status": "verified_prior_evidence"
+      },
+      "decomposition_status": "passed"
+    },
+    {
+      "id": "condition-07",
+      "case": "librispeech_1089-134686-0032",
+      "pitch_semitones": -3,
+      "seed": 0,
+      "variant": "RAW_SHAPE",
+      "observer_input_OLA_bytes": {
+        "computed_from_saved_native_capture": true,
+        "disjoint_input_union": true,
+        "full_wave_resynthesis_performed": false,
+        "input_sample_indices_sha256": "dec4cc67d2cd7f436c9552bd628477658f12ef296ffa14c32d66eb64178f863b",
+        "prior_union_proof_identical": true,
+        "reconstructed": {
+          "bytes": 16384,
+          "dtype": "float64",
+          "sha256": "df67fd9b359d697e2ac3ee791c1876646f81cd5a0542de253f20447e480345ae",
+          "shape": [
+            2048
+          ]
+        },
+        "reference": {
+          "bytes": 16384,
+          "dtype": "float64",
+          "sha256": "df67fd9b359d697e2ac3ee791c1876646f81cd5a0542de253f20447e480345ae",
+          "shape": [
+            2048
+          ]
+        },
+        "sample_count": 2048,
+        "status": "passed"
+      },
+      "prior_identity_reused": {
+        "full_wave_clock_draw_remeasured": false,
+        "prior_identity_sha256": "49ca2ef544995fa9d9098976039fe9a5b5a4a62c8ec8a863e84827f54e7d3f3a",
+        "status": "verified_prior_evidence"
+      },
+      "decomposition_status": "passed"
+    },
+    {
+      "id": "condition-07",
+      "case": "librispeech_1089-134686-0032",
+      "pitch_semitones": -3,
+      "seed": 0,
+      "variant": "RAW_FULL",
+      "observer_input_OLA_bytes": {
+        "computed_from_saved_native_capture": true,
+        "disjoint_input_union": true,
+        "full_wave_resynthesis_performed": false,
+        "input_sample_indices_sha256": "dec4cc67d2cd7f436c9552bd628477658f12ef296ffa14c32d66eb64178f863b",
+        "prior_union_proof_identical": true,
+        "reconstructed": {
+          "bytes": 16384,
+          "dtype": "float64",
+          "sha256": "b58713e84da890963709008c7f5fc2e884b6a7e92e8f1eaa8a2a8470b7a4f454",
+          "shape": [
+            2048
+          ]
+        },
+        "reference": {
+          "bytes": 16384,
+          "dtype": "float64",
+          "sha256": "b58713e84da890963709008c7f5fc2e884b6a7e92e8f1eaa8a2a8470b7a4f454",
+          "shape": [
+            2048
+          ]
+        },
+        "sample_count": 2048,
+        "status": "passed"
+      },
+      "prior_identity_reused": {
+        "full_wave_clock_draw_remeasured": false,
+        "prior_identity_sha256": "49ca2ef544995fa9d9098976039fe9a5b5a4a62c8ec8a863e84827f54e7d3f3a",
+        "status": "verified_prior_evidence"
+      },
+      "decomposition_status": "passed"
+    },
+    {
+      "id": "condition-08",
+      "case": "librispeech_1089-134686-0032",
+      "pitch_semitones": -3,
+      "seed": 20261015,
+      "variant": "PML",
+      "observer_input_OLA_bytes": {
+        "computed_from_saved_native_capture": true,
+        "disjoint_input_union": true,
+        "full_wave_resynthesis_performed": false,
+        "input_sample_indices_sha256": "dec4cc67d2cd7f436c9552bd628477658f12ef296ffa14c32d66eb64178f863b",
+        "prior_union_proof_identical": true,
+        "reconstructed": {
+          "bytes": 16384,
+          "dtype": "float64",
+          "sha256": "e082e31081edde6de207237e3906d5bfc89f849c634abc04a69afbe283ae8bdd",
+          "shape": [
+            2048
+          ]
+        },
+        "reference": {
+          "bytes": 16384,
+          "dtype": "float64",
+          "sha256": "e082e31081edde6de207237e3906d5bfc89f849c634abc04a69afbe283ae8bdd",
+          "shape": [
+            2048
+          ]
+        },
+        "sample_count": 2048,
+        "status": "passed"
+      },
+      "prior_identity_reused": {
+        "full_wave_clock_draw_remeasured": false,
+        "prior_identity_sha256": "49ca2ef544995fa9d9098976039fe9a5b5a4a62c8ec8a863e84827f54e7d3f3a",
+        "status": "verified_prior_evidence"
+      },
+      "decomposition_status": "passed"
+    },
+    {
+      "id": "condition-08",
+      "case": "librispeech_1089-134686-0032",
+      "pitch_semitones": -3,
+      "seed": 20261015,
+      "variant": "RAW_SHAPE",
+      "observer_input_OLA_bytes": {
+        "computed_from_saved_native_capture": true,
+        "disjoint_input_union": true,
+        "full_wave_resynthesis_performed": false,
+        "input_sample_indices_sha256": "dec4cc67d2cd7f436c9552bd628477658f12ef296ffa14c32d66eb64178f863b",
+        "prior_union_proof_identical": true,
+        "reconstructed": {
+          "bytes": 16384,
+          "dtype": "float64",
+          "sha256": "32d5e157d4b3fefabf33aeb0ad54c6bc6cc0ac6ab6a5f26bc14595f806e152c4",
+          "shape": [
+            2048
+          ]
+        },
+        "reference": {
+          "bytes": 16384,
+          "dtype": "float64",
+          "sha256": "32d5e157d4b3fefabf33aeb0ad54c6bc6cc0ac6ab6a5f26bc14595f806e152c4",
+          "shape": [
+            2048
+          ]
+        },
+        "sample_count": 2048,
+        "status": "passed"
+      },
+      "prior_identity_reused": {
+        "full_wave_clock_draw_remeasured": false,
+        "prior_identity_sha256": "49ca2ef544995fa9d9098976039fe9a5b5a4a62c8ec8a863e84827f54e7d3f3a",
+        "status": "verified_prior_evidence"
+      },
+      "decomposition_status": "passed"
+    },
+    {
+      "id": "condition-08",
+      "case": "librispeech_1089-134686-0032",
+      "pitch_semitones": -3,
+      "seed": 20261015,
+      "variant": "RAW_FULL",
+      "observer_input_OLA_bytes": {
+        "computed_from_saved_native_capture": true,
+        "disjoint_input_union": true,
+        "full_wave_resynthesis_performed": false,
+        "input_sample_indices_sha256": "dec4cc67d2cd7f436c9552bd628477658f12ef296ffa14c32d66eb64178f863b",
+        "prior_union_proof_identical": true,
+        "reconstructed": {
+          "bytes": 16384,
+          "dtype": "float64",
+          "sha256": "8698e251269bae537203f0532e8e020cd88da45d05ef859d99a5cc1c30d0160e",
+          "shape": [
+            2048
+          ]
+        },
+        "reference": {
+          "bytes": 16384,
+          "dtype": "float64",
+          "sha256": "8698e251269bae537203f0532e8e020cd88da45d05ef859d99a5cc1c30d0160e",
+          "shape": [
+            2048
+          ]
+        },
+        "sample_count": 2048,
+        "status": "passed"
+      },
+      "prior_identity_reused": {
+        "full_wave_clock_draw_remeasured": false,
+        "prior_identity_sha256": "49ca2ef544995fa9d9098976039fe9a5b5a4a62c8ec8a863e84827f54e7d3f3a",
+        "status": "verified_prior_evidence"
+      },
+      "decomposition_status": "passed"
+    },
+    {
+      "id": "condition-09",
+      "case": "librispeech_1221-135766-0005",
+      "pitch_semitones": 0,
+      "seed": 0,
+      "variant": "PML",
+      "observer_input_OLA_bytes": {
+        "computed_from_saved_native_capture": true,
+        "disjoint_input_union": true,
+        "full_wave_resynthesis_performed": false,
+        "input_sample_indices_sha256": "627747ad3892e6e991223b5320d67a475c42ddf136515e152c521484ed4ed776",
+        "prior_union_proof_identical": true,
+        "reconstructed": {
+          "bytes": 16384,
+          "dtype": "float64",
+          "sha256": "5ac6d0b6546f418fcad450a03747b0c194acfdbae3679dae07f023e3d6541169",
+          "shape": [
+            2048
+          ]
+        },
+        "reference": {
+          "bytes": 16384,
+          "dtype": "float64",
+          "sha256": "5ac6d0b6546f418fcad450a03747b0c194acfdbae3679dae07f023e3d6541169",
+          "shape": [
+            2048
+          ]
+        },
+        "sample_count": 2048,
+        "status": "passed"
+      },
+      "prior_identity_reused": {
+        "full_wave_clock_draw_remeasured": false,
+        "prior_identity_sha256": "49ca2ef544995fa9d9098976039fe9a5b5a4a62c8ec8a863e84827f54e7d3f3a",
+        "status": "verified_prior_evidence"
+      },
+      "decomposition_status": "passed"
+    },
+    {
+      "id": "condition-09",
+      "case": "librispeech_1221-135766-0005",
+      "pitch_semitones": 0,
+      "seed": 0,
+      "variant": "RAW_SHAPE",
+      "observer_input_OLA_bytes": {
+        "computed_from_saved_native_capture": true,
+        "disjoint_input_union": true,
+        "full_wave_resynthesis_performed": false,
+        "input_sample_indices_sha256": "627747ad3892e6e991223b5320d67a475c42ddf136515e152c521484ed4ed776",
+        "prior_union_proof_identical": true,
+        "reconstructed": {
+          "bytes": 16384,
+          "dtype": "float64",
+          "sha256": "0bc80d7f20aec43c3a6819d56d792062743fd0e0a333961bcd52a223c0aef9a9",
+          "shape": [
+            2048
+          ]
+        },
+        "reference": {
+          "bytes": 16384,
+          "dtype": "float64",
+          "sha256": "0bc80d7f20aec43c3a6819d56d792062743fd0e0a333961bcd52a223c0aef9a9",
+          "shape": [
+            2048
+          ]
+        },
+        "sample_count": 2048,
+        "status": "passed"
+      },
+      "prior_identity_reused": {
+        "full_wave_clock_draw_remeasured": false,
+        "prior_identity_sha256": "49ca2ef544995fa9d9098976039fe9a5b5a4a62c8ec8a863e84827f54e7d3f3a",
+        "status": "verified_prior_evidence"
+      },
+      "decomposition_status": "passed"
+    },
+    {
+      "id": "condition-09",
+      "case": "librispeech_1221-135766-0005",
+      "pitch_semitones": 0,
+      "seed": 0,
+      "variant": "RAW_FULL",
+      "observer_input_OLA_bytes": {
+        "computed_from_saved_native_capture": true,
+        "disjoint_input_union": true,
+        "full_wave_resynthesis_performed": false,
+        "input_sample_indices_sha256": "627747ad3892e6e991223b5320d67a475c42ddf136515e152c521484ed4ed776",
+        "prior_union_proof_identical": true,
+        "reconstructed": {
+          "bytes": 16384,
+          "dtype": "float64",
+          "sha256": "4017947d0efb7049df5d0e88ab6e78ab6173d6b960444acc819692ab696b51c2",
+          "shape": [
+            2048
+          ]
+        },
+        "reference": {
+          "bytes": 16384,
+          "dtype": "float64",
+          "sha256": "4017947d0efb7049df5d0e88ab6e78ab6173d6b960444acc819692ab696b51c2",
+          "shape": [
+            2048
+          ]
+        },
+        "sample_count": 2048,
+        "status": "passed"
+      },
+      "prior_identity_reused": {
+        "full_wave_clock_draw_remeasured": false,
+        "prior_identity_sha256": "49ca2ef544995fa9d9098976039fe9a5b5a4a62c8ec8a863e84827f54e7d3f3a",
+        "status": "verified_prior_evidence"
+      },
+      "decomposition_status": "passed"
+    }
+  ],
+  "condition01_prior_arrays_byte_identical": 182,
+  "summary_scope_ja": "summary.jsonは保存値集計の結果。new_FFT_synthesis_ML_or_tests=falseは当該集計で新しいFFT等を追加していない意味で、先行する派生数値計算のFFT実施を否定するものではない。",
+  "nonterminal_identity_record_note_ja": "元identityの途中状態欄は終端判定に使わない。完了の根拠は最終保存一覧付き終端記録。"
+}

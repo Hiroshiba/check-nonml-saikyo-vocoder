@@ -1,0 +1,6438 @@
+{
+  "schema": "public-kernel-observation-contract-v1",
+  "definitions": {
+    "Z_normwise_criterion": "r_m=max(abs(Z_residual[m,0:65])); require r_m <= 1e-12*C_m with finite scale, residual and eta and C_m>=0",
+    "Z_normwise_eta": "r_m/C_m when C_m>0; exactly 0 when C_m=0 and all residual bins are exactly 0; otherwise infinity and failure, never an epsilon substitution",
+    "Z_residual_and_scale": "Z_ref - Z_sum, and original-pulse-order sum(abs(Z_i)); full complex residual and real scale saved",
+    "Z_time_L1_scale": "C_m: original-pulse-order binary64 scalar sum of np.sum(np.abs(weighted_input), dtype=np.float64); weighted_input is the identical rounded observer_input*h buffer passed to each FFT",
+    "auxiliary_values": "Center-band values outside search_membership_by_band are auxiliary only and cannot be interpreted as fixed-event measurements",
+    "axes": {
+      "G_region": [
+        "region",
+        "cell_i",
+        "cell_j"
+      ],
+      "Z_ref_Z_sum_Z_residual_Z_scale": [
+        "saved_center",
+        "FFT_bin_0_through_64"
+      ],
+      "Z_sparse": [
+        "sparse_cell_center_row",
+        "FFT_bin_0_through_64"
+      ],
+      "Z_time_L1_scale_Z_residual_inf_Z_normwise_eta_Z_normwise_valid": [
+        "saved_center"
+      ],
+      "center_power": [
+        "saved_center",
+        "band"
+      ],
+      "region_cross_terms": [
+        "region",
+        "pair"
+      ],
+      "region_self_terms": [
+        "region",
+        "cell"
+      ]
+    },
+    "delta_definition": "SHAPE-PML, FULL-SHAPE, FULL-PML; delta_P_ref=delta_self_sum+delta_cross_sum+delta_power_residual, with floating balance residual retained",
+    "failure_locations": "Boolean gate arrays retain every coordinate; false saved_power_valid values are failures only within search_membership_by_band",
+    "gram": "G_ij = sum_k(a_k * Z_i * conjugate(Z_j)) / D over the fixed band",
+    "kernel_alignment": "Native post-taper samples copied into float64 input [center-40,center+40) at their absolute sample positions",
+    "legacy_Z_valid": "All old per-bin booleans, scales and residuals retained unchanged; false counts and coordinates reported with required=false",
+    "new_scale_limitation": "Post-failure observation-contract revision, not an FFT theoretical error bound, interval proof, or weak-bin relative-accuracy guarantee; the coefficient remains 1e-12",
+    "no_S_final_algebra_gate": "The captured complex64 S arrays are retained separately; no 1e-12 test of S_FULL=c**M*S_SHAPE is imposed",
+    "observer": "h is the SHA-fixed float64[80] saved by prior condition-01, never regenerated; FFT length 128, Fs 16000, all 65 bins; internal weights 2 and DC/Nyquist 1; D=128*sum(h**2)",
+    "pair_allocation": "No signed cross term allocated to either cell; no output-power percentage or signed-term dB conversion",
+    "power_residual": "P_ref - (self_sum + cross_sum)",
+    "power_scale": "P_ref + self_sum + abs_cross_sum",
+    "region_abs_cross_sum": "Sum of absolute region-mean pair terms; center_mean_abs_cross_sum separately preserves mean center-wise absolute pair sum",
+    "region_gram": "Unweighted arithmetic mean of each center Gram in the fixed region; no cell rows removed",
+    "region_order": [
+      {
+        "band_index": 0,
+        "kind": "early"
+      },
+      {
+        "band_index": 0,
+        "kind": "strong"
+      },
+      {
+        "band_index": 0,
+        "kind": "search"
+      },
+      {
+        "band_index": 1,
+        "kind": "early"
+      },
+      {
+        "band_index": 1,
+        "kind": "strong"
+      },
+      {
+        "band_index": 1,
+        "kind": "search"
+      }
+    ],
+    "saved_power_comparison": "P_ref-P_saved; scale=abs(P_ref)+abs(P_saved); evaluated only at that band's saved search membership",
+    "self_and_cross": "d_i=real(G_ii); q_ij=2*real(G_ij) only for original pulse-order i<j; all pairs including exact zeros retained",
+    "sparse_order": "Cell-major, then saved-center order; cells are in original pulse order",
+    "sparse_reconstruction": "Initialize dense (N, m, 65) complex128 zeros; assign Z_sparse at sparse_cell_center_index[:,0], sparse_cell_center_index[:,1]",
+    "sparse_rule": "Keep every pair with a_i < center+40 and b_i > center-40 and a_i < b_i; all other Z are exact geometric zero",
+    "variant_order": [
+      "PML",
+      "RAW_SHAPE",
+      "RAW_FULL"
+    ]
+  },
+  "fixed_events": [
+    {
+      "id": "condition-01",
+      "original_fixed_events": {
+        "bands": [
+          {
+            "band_Hz": [
+              1500,
+              3000
+            ],
+            "early_s": [
+              3.9575,
+              3.9675
+            ],
+            "early_samples": [
+              63320,
+              63480
+            ],
+            "original_crossing_status": {
+              "-10": "available",
+              "-20": "available",
+              "-30": "available"
+            },
+            "original_first_crossing_s": {
+              "-10": 3.9695,
+              "-20": 3.9695,
+              "-30": 3.9635
+            },
+            "reference_P_star": 6.093954566114945e-05,
+            "search_s": [
+              3.9425,
+              4.0025
+            ],
+            "search_samples": [
+              63080,
+              64040
+            ],
+            "selected_t_star_s": 3.9725,
+            "status": "fixed",
+            "strong_s": [
+              3.9725,
+              3.9925
+            ],
+            "strong_samples": [
+              63560,
+              63880
+            ]
+          },
+          {
+            "band_Hz": [
+              3000,
+              8000
+            ],
+            "early_s": [
+              3.9555,
+              3.9655
+            ],
+            "early_samples": [
+              63288,
+              63448
+            ],
+            "original_crossing_status": {
+              "-10": "available",
+              "-20": "available",
+              "-30": "available"
+            },
+            "original_first_crossing_s": {
+              "-10": 3.9695,
+              "-20": 3.9695,
+              "-30": 3.9685
+            },
+            "reference_P_star": 1.5796949091754338e-05,
+            "search_s": [
+              3.9405,
+              4.0005
+            ],
+            "search_samples": [
+              63048,
+              64008
+            ],
+            "selected_t_star_s": 3.9705,
+            "status": "fixed",
+            "strong_s": [
+              3.9705,
+              3.9905
+            ],
+            "strong_samples": [
+              63528,
+              63848
+            ]
+          }
+        ],
+        "case": "librispeech_1188-133604-0003",
+        "crossing": "first_observer_center_at_or_above_threshold; no_interpolation",
+        "region_membership": "left_closed_right_open"
+      },
+      "saved_event_records": [
+        {
+          "saved_comparison_to_PML_local": null,
+          "saved_events": [
+            {
+              "band_Hz": [
+                1500,
+                3000
+              ],
+              "crossings": {
+                "-10": {
+                  "sample": 63528,
+                  "status": "available",
+                  "threshold_power": 6.093954566114945e-06,
+                  "time_s": 3.9705
+                },
+                "-20": {
+                  "sample": 63400,
+                  "status": "available",
+                  "threshold_power": 6.093954566114945e-07,
+                  "time_s": 3.9625
+                },
+                "-30": {
+                  "sample": 63304,
+                  "status": "available",
+                  "threshold_power": 6.093954566114945e-08,
+                  "time_s": 3.9565
+                }
+              },
+              "early": {
+                "mean_power": 1.0852179822783643e-06,
+                "observer_center_count": 10,
+                "samples": [
+                  63320,
+                  63480
+                ],
+                "status": "available"
+              },
+              "onset_status": "fixed",
+              "reference_P_star": 6.093954566114945e-05,
+              "search": {
+                "mean_power": 1.4491564316323789e-05,
+                "observer_center_count": 60,
+                "samples": [
+                  63080,
+                  64040
+                ],
+                "status": "available"
+              },
+              "selected_t_star_s": 3.9725,
+              "status": "observed",
+              "strong": {
+                "mean_power": 3.609716923102189e-05,
+                "observer_center_count": 20,
+                "samples": [
+                  63560,
+                  63880
+                ],
+                "status": "available"
+              }
+            },
+            {
+              "band_Hz": [
+                3000,
+                8000
+              ],
+              "crossings": {
+                "-10": {
+                  "sample": 63496,
+                  "status": "available",
+                  "threshold_power": 1.5796949091754338e-06,
+                  "time_s": 3.9685
+                },
+                "-20": {
+                  "sample": 63416,
+                  "status": "available",
+                  "threshold_power": 1.579694909175434e-07,
+                  "time_s": 3.9635
+                },
+                "-30": {
+                  "sample": 63384,
+                  "status": "available",
+                  "threshold_power": 1.5796949091754337e-08,
+                  "time_s": 3.9615
+                }
+              },
+              "early": {
+                "mean_power": 1.5838809073664522e-07,
+                "observer_center_count": 10,
+                "samples": [
+                  63288,
+                  63448
+                ],
+                "status": "available"
+              },
+              "onset_status": "fixed",
+              "reference_P_star": 1.5796949091754338e-05,
+              "search": {
+                "mean_power": 1.290387452023548e-06,
+                "observer_center_count": 60,
+                "samples": [
+                  63048,
+                  64008
+                ],
+                "status": "available"
+              },
+              "selected_t_star_s": 3.9705,
+              "status": "observed",
+              "strong": {
+                "mean_power": 2.664667333925005e-06,
+                "observer_center_count": 20,
+                "samples": [
+                  63528,
+                  63848
+                ],
+                "status": "available"
+              }
+            }
+          ],
+          "variant": "PML",
+          "waveform_identity": {
+            "bytes": 768128,
+            "dtype": "float64",
+            "normalization_or_clipping": "none",
+            "path": "librispeech_1188-133604-0003/pitch+0__seed20261015__PML.npy",
+            "sample_rate": 16000,
+            "samples": 96000,
+            "sha256": "ce73d360c6561f425030780b9bb41936ba0db8217858c516d53dc30f465c65c5"
+          }
+        },
+        {
+          "saved_comparison_to_PML_local": [
+            {
+              "band_Hz": [
+                1500,
+                3000
+              ],
+              "crossing_delays": {
+                "-10": {
+                  "milliseconds": -1.0,
+                  "samples": -16,
+                  "status": "available"
+                },
+                "-20": {
+                  "milliseconds": 6.0,
+                  "samples": 96,
+                  "status": "available"
+                },
+                "-30": {
+                  "milliseconds": 0.0,
+                  "samples": 0,
+                  "status": "available"
+                }
+              },
+              "early_at_least_3dB_drop": {
+                "delta": {
+                  "status": "available",
+                  "value_db": -10.989272261639265
+                },
+                "flag": true,
+                "status": "available"
+              },
+              "early_delta_db": {
+                "status": "available",
+                "value_db": -10.989272261639265
+              },
+              "strong_delta_db": {
+                "status": "available",
+                "value_db": -0.8225150529982894
+              }
+            },
+            {
+              "band_Hz": [
+                3000,
+                8000
+              ],
+              "crossing_delays": {
+                "-10": {
+                  "milliseconds": 1.0,
+                  "samples": 16,
+                  "status": "available"
+                },
+                "-20": {
+                  "milliseconds": 5.0,
+                  "samples": 80,
+                  "status": "available"
+                },
+                "-30": {
+                  "milliseconds": 6.0,
+                  "samples": 96,
+                  "status": "available"
+                }
+              },
+              "early_at_least_3dB_drop": {
+                "delta": {
+                  "status": "available",
+                  "value_db": -12.579429001593976
+                },
+                "flag": true,
+                "status": "available"
+              },
+              "early_delta_db": {
+                "status": "available",
+                "value_db": -12.579429001593976
+              },
+              "strong_delta_db": {
+                "status": "available",
+                "value_db": 0.5274361478950329
+              }
+            }
+          ],
+          "saved_events": [
+            {
+              "band_Hz": [
+                1500,
+                3000
+              ],
+              "crossings": {
+                "-10": {
+                  "sample": 63512,
+                  "status": "available",
+                  "threshold_power": 6.093954566114945e-06,
+                  "time_s": 3.9695
+                },
+                "-20": {
+                  "sample": 63496,
+                  "status": "available",
+                  "threshold_power": 6.093954566114945e-07,
+                  "time_s": 3.9685
+                },
+                "-30": {
+                  "sample": 63304,
+                  "status": "available",
+                  "threshold_power": 6.093954566114945e-08,
+                  "time_s": 3.9565
+                }
+              },
+              "early": {
+                "mean_power": 8.641512357515095e-08,
+                "observer_center_count": 10,
+                "samples": [
+                  63320,
+                  63480
+                ],
+                "status": "available"
+              },
+              "onset_status": "fixed",
+              "reference_P_star": 6.093954566114945e-05,
+              "search": {
+                "mean_power": 1.3175222360746134e-05,
+                "observer_center_count": 60,
+                "samples": [
+                  63080,
+                  64040
+                ],
+                "status": "available"
+              },
+              "selected_t_star_s": 3.9725,
+              "status": "observed",
+              "strong": {
+                "mean_power": 2.9869065842406896e-05,
+                "observer_center_count": 20,
+                "samples": [
+                  63560,
+                  63880
+                ],
+                "status": "available"
+              }
+            },
+            {
+              "band_Hz": [
+                3000,
+                8000
+              ],
+              "crossings": {
+                "-10": {
+                  "sample": 63512,
+                  "status": "available",
+                  "threshold_power": 1.5796949091754338e-06,
+                  "time_s": 3.9695
+                },
+                "-20": {
+                  "sample": 63496,
+                  "status": "available",
+                  "threshold_power": 1.579694909175434e-07,
+                  "time_s": 3.9685
+                },
+                "-30": {
+                  "sample": 63480,
+                  "status": "available",
+                  "threshold_power": 1.5796949091754337e-08,
+                  "time_s": 3.9675
+                }
+              },
+              "early": {
+                "mean_power": 8.745398899986857e-09,
+                "observer_center_count": 10,
+                "samples": [
+                  63288,
+                  63448
+                ],
+                "status": "available"
+              },
+              "onset_status": "fixed",
+              "reference_P_star": 1.5796949091754338e-05,
+              "search": {
+                "mean_power": 1.2372858331845509e-06,
+                "observer_center_count": 60,
+                "samples": [
+                  63048,
+                  64008
+                ],
+                "status": "available"
+              },
+              "selected_t_star_s": 3.9705,
+              "status": "observed",
+              "strong": {
+                "mean_power": 3.0087535295079066e-06,
+                "observer_center_count": 20,
+                "samples": [
+                  63528,
+                  63848
+                ],
+                "status": "available"
+              }
+            }
+          ],
+          "variant": "RAW_SHAPE",
+          "waveform_identity": {
+            "bytes": 768128,
+            "dtype": "float64",
+            "normalization_or_clipping": "none",
+            "path": "librispeech_1188-133604-0003/pitch+0__seed20261015__RAW_SHAPE.npy",
+            "sample_rate": 16000,
+            "samples": 96000,
+            "sha256": "a015d2fcc1eec56bfa3722ede0fb22d357d17264b5bbdaf28a79d04b866edec0"
+          }
+        },
+        {
+          "saved_comparison_to_PML_local": [
+            {
+              "band_Hz": [
+                1500,
+                3000
+              ],
+              "crossing_delays": {
+                "-10": {
+                  "milliseconds": -1.0,
+                  "samples": -16,
+                  "status": "available"
+                },
+                "-20": {
+                  "milliseconds": 6.0,
+                  "samples": 96,
+                  "status": "available"
+                },
+                "-30": {
+                  "milliseconds": 0.0,
+                  "samples": 0,
+                  "status": "available"
+                }
+              },
+              "early_at_least_3dB_drop": {
+                "delta": {
+                  "status": "available",
+                  "value_db": -11.646874728165955
+                },
+                "flag": true,
+                "status": "available"
+              },
+              "early_delta_db": {
+                "status": "available",
+                "value_db": -11.646874728165955
+              },
+              "strong_delta_db": {
+                "status": "available",
+                "value_db": -2.016980160571089
+              }
+            },
+            {
+              "band_Hz": [
+                3000,
+                8000
+              ],
+              "crossing_delays": {
+                "-10": {
+                  "milliseconds": 1.0,
+                  "samples": 16,
+                  "status": "available"
+                },
+                "-20": {
+                  "milliseconds": 5.0,
+                  "samples": 80,
+                  "status": "available"
+                },
+                "-30": {
+                  "milliseconds": 6.0,
+                  "samples": 96,
+                  "status": "available"
+                }
+              },
+              "early_at_least_3dB_drop": {
+                "delta": {
+                  "status": "available",
+                  "value_db": -13.869780061405024
+                },
+                "flag": true,
+                "status": "available"
+              },
+              "early_delta_db": {
+                "status": "available",
+                "value_db": -13.869780061405024
+              },
+              "strong_delta_db": {
+                "status": "available",
+                "value_db": 1.882596306093225
+              }
+            }
+          ],
+          "saved_events": [
+            {
+              "band_Hz": [
+                1500,
+                3000
+              ],
+              "crossings": {
+                "-10": {
+                  "sample": 63512,
+                  "status": "available",
+                  "threshold_power": 6.093954566114945e-06,
+                  "time_s": 3.9695
+                },
+                "-20": {
+                  "sample": 63496,
+                  "status": "available",
+                  "threshold_power": 6.093954566114945e-07,
+                  "time_s": 3.9685
+                },
+                "-30": {
+                  "sample": 63304,
+                  "status": "available",
+                  "threshold_power": 6.093954566114945e-08,
+                  "time_s": 3.9565
+                }
+              },
+              "early": {
+                "mean_power": 7.427275075445753e-08,
+                "observer_center_count": 10,
+                "samples": [
+                  63320,
+                  63480
+                ],
+                "status": "available"
+              },
+              "onset_status": "fixed",
+              "reference_P_star": 6.093954566114945e-05,
+              "search": {
+                "mean_power": 1.1338135102110132e-05,
+                "observer_center_count": 60,
+                "samples": [
+                  63080,
+                  64040
+                ],
+                "status": "available"
+              },
+              "selected_t_star_s": 3.9725,
+              "status": "observed",
+              "strong": {
+                "mean_power": 2.2686898574291068e-05,
+                "observer_center_count": 20,
+                "samples": [
+                  63560,
+                  63880
+                ],
+                "status": "available"
+              }
+            },
+            {
+              "band_Hz": [
+                3000,
+                8000
+              ],
+              "crossings": {
+                "-10": {
+                  "sample": 63512,
+                  "status": "available",
+                  "threshold_power": 1.5796949091754338e-06,
+                  "time_s": 3.9695
+                },
+                "-20": {
+                  "sample": 63496,
+                  "status": "available",
+                  "threshold_power": 1.579694909175434e-07,
+                  "time_s": 3.9685
+                },
+                "-30": {
+                  "sample": 63480,
+                  "status": "available",
+                  "threshold_power": 1.5796949091754337e-08,
+                  "time_s": 3.9675
+                }
+              },
+              "early": {
+                "mean_power": 6.497473509923085e-09,
+                "observer_center_count": 10,
+                "samples": [
+                  63288,
+                  63448
+                ],
+                "status": "available"
+              },
+              "onset_status": "fixed",
+              "reference_P_star": 1.5796949091754338e-05,
+              "search": {
+                "mean_power": 1.6036090779993707e-06,
+                "observer_center_count": 60,
+                "samples": [
+                  63048,
+                  64008
+                ],
+                "status": "available"
+              },
+              "selected_t_star_s": 3.9705,
+              "status": "observed",
+              "strong": {
+                "mean_power": 4.110575491974988e-06,
+                "observer_center_count": 20,
+                "samples": [
+                  63528,
+                  63848
+                ],
+                "status": "available"
+              }
+            }
+          ],
+          "variant": "RAW_FULL",
+          "waveform_identity": {
+            "bytes": 768128,
+            "dtype": "float64",
+            "normalization_or_clipping": "none",
+            "path": "librispeech_1188-133604-0003/pitch+0__seed20261015__RAW_FULL.npy",
+            "sample_rate": 16000,
+            "samples": 96000,
+            "sha256": "69b6cc09a19df04c7917894c44a2e69314ec8cb40ea0cd5a6a6cf505992bd07c"
+          }
+        }
+      ],
+      "regions": [
+        {
+          "region_index": 0,
+          "band_Hz": [
+            1500,
+            3000
+          ],
+          "band_index": 0,
+          "kind": "early",
+          "center_count": 10
+        },
+        {
+          "region_index": 1,
+          "band_Hz": [
+            1500,
+            3000
+          ],
+          "band_index": 0,
+          "kind": "strong",
+          "center_count": 20
+        },
+        {
+          "region_index": 2,
+          "band_Hz": [
+            1500,
+            3000
+          ],
+          "band_index": 0,
+          "kind": "search",
+          "center_count": 60
+        },
+        {
+          "region_index": 3,
+          "band_Hz": [
+            3000,
+            8000
+          ],
+          "band_index": 1,
+          "kind": "early",
+          "center_count": 10
+        },
+        {
+          "region_index": 4,
+          "band_Hz": [
+            3000,
+            8000
+          ],
+          "band_index": 1,
+          "kind": "strong",
+          "center_count": 20
+        },
+        {
+          "region_index": 5,
+          "band_Hz": [
+            3000,
+            8000
+          ],
+          "band_index": 1,
+          "kind": "search",
+          "center_count": 60
+        }
+      ]
+    },
+    {
+      "id": "condition-02",
+      "original_fixed_events": {
+        "bands": [
+          {
+            "band_Hz": [
+              1500,
+              3000
+            ],
+            "early_s": [
+              3.9575,
+              3.9675
+            ],
+            "early_samples": [
+              63320,
+              63480
+            ],
+            "original_crossing_status": {
+              "-10": "available",
+              "-20": "available",
+              "-30": "available"
+            },
+            "original_first_crossing_s": {
+              "-10": 3.9695,
+              "-20": 3.9695,
+              "-30": 3.9635
+            },
+            "reference_P_star": 6.093954566114945e-05,
+            "search_s": [
+              3.9425,
+              4.0025
+            ],
+            "search_samples": [
+              63080,
+              64040
+            ],
+            "selected_t_star_s": 3.9725,
+            "status": "fixed",
+            "strong_s": [
+              3.9725,
+              3.9925
+            ],
+            "strong_samples": [
+              63560,
+              63880
+            ]
+          },
+          {
+            "band_Hz": [
+              3000,
+              8000
+            ],
+            "early_s": [
+              3.9555,
+              3.9655
+            ],
+            "early_samples": [
+              63288,
+              63448
+            ],
+            "original_crossing_status": {
+              "-10": "available",
+              "-20": "available",
+              "-30": "available"
+            },
+            "original_first_crossing_s": {
+              "-10": 3.9695,
+              "-20": 3.9695,
+              "-30": 3.9685
+            },
+            "reference_P_star": 1.5796949091754338e-05,
+            "search_s": [
+              3.9405,
+              4.0005
+            ],
+            "search_samples": [
+              63048,
+              64008
+            ],
+            "selected_t_star_s": 3.9705,
+            "status": "fixed",
+            "strong_s": [
+              3.9705,
+              3.9905
+            ],
+            "strong_samples": [
+              63528,
+              63848
+            ]
+          }
+        ],
+        "case": "librispeech_1188-133604-0003",
+        "crossing": "first_observer_center_at_or_above_threshold; no_interpolation",
+        "region_membership": "left_closed_right_open"
+      },
+      "saved_event_records": [
+        {
+          "saved_comparison_to_PML_local": null,
+          "saved_events": [
+            {
+              "band_Hz": [
+                1500,
+                3000
+              ],
+              "crossings": {
+                "-10": {
+                  "sample": 63448,
+                  "status": "available",
+                  "threshold_power": 6.093954566114945e-06,
+                  "time_s": 3.9655
+                },
+                "-20": {
+                  "sample": 63432,
+                  "status": "available",
+                  "threshold_power": 6.093954566114945e-07,
+                  "time_s": 3.9645
+                },
+                "-30": {
+                  "sample": 63272,
+                  "status": "available",
+                  "threshold_power": 6.093954566114945e-08,
+                  "time_s": 3.9545
+                }
+              },
+              "early": {
+                "mean_power": 5.396064985068298e-06,
+                "observer_center_count": 10,
+                "samples": [
+                  63320,
+                  63480
+                ],
+                "status": "available"
+              },
+              "onset_status": "fixed",
+              "reference_P_star": 6.093954566114945e-05,
+              "search": {
+                "mean_power": 9.938278448522175e-06,
+                "observer_center_count": 60,
+                "samples": [
+                  63080,
+                  64040
+                ],
+                "status": "available"
+              },
+              "selected_t_star_s": 3.9725,
+              "status": "observed",
+              "strong": {
+                "mean_power": 1.4062275444105714e-05,
+                "observer_center_count": 20,
+                "samples": [
+                  63560,
+                  63880
+                ],
+                "status": "available"
+              }
+            },
+            {
+              "band_Hz": [
+                3000,
+                8000
+              ],
+              "crossings": {
+                "-10": {
+                  "sample": 63448,
+                  "status": "available",
+                  "threshold_power": 1.5796949091754338e-06,
+                  "time_s": 3.9655
+                },
+                "-20": {
+                  "sample": 63432,
+                  "status": "available",
+                  "threshold_power": 1.579694909175434e-07,
+                  "time_s": 3.9645
+                },
+                "-30": {
+                  "sample": 63432,
+                  "status": "available",
+                  "threshold_power": 1.5796949091754337e-08,
+                  "time_s": 3.9645
+                }
+              },
+              "early": {
+                "mean_power": 3.403244074925569e-08,
+                "observer_center_count": 10,
+                "samples": [
+                  63288,
+                  63448
+                ],
+                "status": "available"
+              },
+              "onset_status": "fixed",
+              "reference_P_star": 1.5796949091754338e-05,
+              "search": {
+                "mean_power": 1.1790811634698547e-06,
+                "observer_center_count": 60,
+                "samples": [
+                  63048,
+                  64008
+                ],
+                "status": "available"
+              },
+              "selected_t_star_s": 3.9705,
+              "status": "observed",
+              "strong": {
+                "mean_power": 1.9211707706739447e-06,
+                "observer_center_count": 20,
+                "samples": [
+                  63528,
+                  63848
+                ],
+                "status": "available"
+              }
+            }
+          ],
+          "variant": "PML",
+          "waveform_identity": {
+            "bytes": 768128,
+            "dtype": "float64",
+            "normalization_or_clipping": "none",
+            "path": "librispeech_1188-133604-0003/pitch-3__seed0__PML.npy",
+            "sample_rate": 16000,
+            "samples": 96000,
+            "sha256": "1bc1d3429be451315e5be2fe6196e4bd6667a0145169ab797717f13c9adc67ca"
+          }
+        },
+        {
+          "saved_comparison_to_PML_local": [
+            {
+              "band_Hz": [
+                1500,
+                3000
+              ],
+              "crossing_delays": {
+                "-10": {
+                  "milliseconds": 4.0,
+                  "samples": 64,
+                  "status": "available"
+                },
+                "-20": {
+                  "milliseconds": 4.0,
+                  "samples": 64,
+                  "status": "available"
+                },
+                "-30": {
+                  "milliseconds": 0.0,
+                  "samples": 0,
+                  "status": "available"
+                }
+              },
+              "early_at_least_3dB_drop": {
+                "delta": {
+                  "status": "available",
+                  "value_db": -19.49534932491516
+                },
+                "flag": true,
+                "status": "available"
+              },
+              "early_delta_db": {
+                "status": "available",
+                "value_db": -19.49534932491516
+              },
+              "strong_delta_db": {
+                "status": "available",
+                "value_db": -1.0804683111045321
+              }
+            },
+            {
+              "band_Hz": [
+                3000,
+                8000
+              ],
+              "crossing_delays": {
+                "-10": {
+                  "milliseconds": 5.0,
+                  "samples": 80,
+                  "status": "available"
+                },
+                "-20": {
+                  "milliseconds": 5.0,
+                  "samples": 80,
+                  "status": "available"
+                },
+                "-30": {
+                  "milliseconds": 4.0,
+                  "samples": 64,
+                  "status": "available"
+                }
+              },
+              "early_at_least_3dB_drop": {
+                "delta": {
+                  "status": "available",
+                  "value_db": -6.771077537832948
+                },
+                "flag": true,
+                "status": "available"
+              },
+              "early_delta_db": {
+                "status": "available",
+                "value_db": -6.771077537832948
+              },
+              "strong_delta_db": {
+                "status": "available",
+                "value_db": 1.0153719957898044
+              }
+            }
+          ],
+          "saved_events": [
+            {
+              "band_Hz": [
+                1500,
+                3000
+              ],
+              "crossings": {
+                "-10": {
+                  "sample": 63512,
+                  "status": "available",
+                  "threshold_power": 6.093954566114945e-06,
+                  "time_s": 3.9695
+                },
+                "-20": {
+                  "sample": 63496,
+                  "status": "available",
+                  "threshold_power": 6.093954566114945e-07,
+                  "time_s": 3.9685
+                },
+                "-30": {
+                  "sample": 63272,
+                  "status": "available",
+                  "threshold_power": 6.093954566114945e-08,
+                  "time_s": 3.9545
+                }
+              },
+              "early": {
+                "mean_power": 6.060971456749028e-08,
+                "observer_center_count": 10,
+                "samples": [
+                  63320,
+                  63480
+                ],
+                "status": "available"
+              },
+              "onset_status": "fixed",
+              "reference_P_star": 6.093954566114945e-05,
+              "search": {
+                "mean_power": 6.31975634305012e-06,
+                "observer_center_count": 60,
+                "samples": [
+                  63080,
+                  64040
+                ],
+                "status": "available"
+              },
+              "selected_t_star_s": 3.9725,
+              "status": "observed",
+              "strong": {
+                "mean_power": 1.0965003365027069e-05,
+                "observer_center_count": 20,
+                "samples": [
+                  63560,
+                  63880
+                ],
+                "status": "available"
+              }
+            },
+            {
+              "band_Hz": [
+                3000,
+                8000
+              ],
+              "crossings": {
+                "-10": {
+                  "sample": 63528,
+                  "status": "available",
+                  "threshold_power": 1.5796949091754338e-06,
+                  "time_s": 3.9705
+                },
+                "-20": {
+                  "sample": 63512,
+                  "status": "available",
+                  "threshold_power": 1.579694909175434e-07,
+                  "time_s": 3.9695
+                },
+                "-30": {
+                  "sample": 63496,
+                  "status": "available",
+                  "threshold_power": 1.5796949091754337e-08,
+                  "time_s": 3.9685
+                }
+              },
+              "early": {
+                "mean_power": 7.157895328202412e-09,
+                "observer_center_count": 10,
+                "samples": [
+                  63288,
+                  63448
+                ],
+                "status": "available"
+              },
+              "onset_status": "fixed",
+              "reference_P_star": 1.5796949091754338e-05,
+              "search": {
+                "mean_power": 1.0363986338189682e-06,
+                "observer_center_count": 60,
+                "samples": [
+                  63048,
+                  64008
+                ],
+                "status": "available"
+              },
+              "selected_t_star_s": 3.9705,
+              "status": "observed",
+              "strong": {
+                "mean_power": 2.4271866240218306e-06,
+                "observer_center_count": 20,
+                "samples": [
+                  63528,
+                  63848
+                ],
+                "status": "available"
+              }
+            }
+          ],
+          "variant": "RAW_SHAPE",
+          "waveform_identity": {
+            "bytes": 768128,
+            "dtype": "float64",
+            "normalization_or_clipping": "none",
+            "path": "librispeech_1188-133604-0003/pitch-3__seed0__RAW_SHAPE.npy",
+            "sample_rate": 16000,
+            "samples": 96000,
+            "sha256": "feb1ee37fd381b6aba4acae0489a8c7079ba7dd637745b8c055d541bac4468e3"
+          }
+        },
+        {
+          "saved_comparison_to_PML_local": [
+            {
+              "band_Hz": [
+                1500,
+                3000
+              ],
+              "crossing_delays": {
+                "-10": {
+                  "milliseconds": 4.0,
+                  "samples": 64,
+                  "status": "available"
+                },
+                "-20": {
+                  "milliseconds": 4.0,
+                  "samples": 64,
+                  "status": "available"
+                },
+                "-30": {
+                  "milliseconds": 0.0,
+                  "samples": 0,
+                  "status": "available"
+                }
+              },
+              "early_at_least_3dB_drop": {
+                "delta": {
+                  "status": "available",
+                  "value_db": -19.70525036081397
+                },
+                "flag": true,
+                "status": "available"
+              },
+              "early_delta_db": {
+                "status": "available",
+                "value_db": -19.70525036081397
+              },
+              "strong_delta_db": {
+                "status": "available",
+                "value_db": -1.128665182268982
+              }
+            },
+            {
+              "band_Hz": [
+                3000,
+                8000
+              ],
+              "crossing_delays": {
+                "-10": {
+                  "milliseconds": 4.0,
+                  "samples": 64,
+                  "status": "available"
+                },
+                "-20": {
+                  "milliseconds": 5.0,
+                  "samples": 80,
+                  "status": "available"
+                },
+                "-30": {
+                  "milliseconds": 4.0,
+                  "samples": 64,
+                  "status": "available"
+                }
+              },
+              "early_at_least_3dB_drop": {
+                "delta": {
+                  "status": "available",
+                  "value_db": -7.076658966338165
+                },
+                "flag": true,
+                "status": "available"
+              },
+              "early_delta_db": {
+                "status": "available",
+                "value_db": -7.076658966338165
+              },
+              "strong_delta_db": {
+                "status": "available",
+                "value_db": 1.0123517749536326
+              }
+            }
+          ],
+          "saved_events": [
+            {
+              "band_Hz": [
+                1500,
+                3000
+              ],
+              "crossings": {
+                "-10": {
+                  "sample": 63512,
+                  "status": "available",
+                  "threshold_power": 6.093954566114945e-06,
+                  "time_s": 3.9695
+                },
+                "-20": {
+                  "sample": 63496,
+                  "status": "available",
+                  "threshold_power": 6.093954566114945e-07,
+                  "time_s": 3.9685
+                },
+                "-30": {
+                  "sample": 63272,
+                  "status": "available",
+                  "threshold_power": 6.093954566114945e-08,
+                  "time_s": 3.9545
+                }
+              },
+              "early": {
+                "mean_power": 5.775001949602424e-08,
+                "observer_center_count": 10,
+                "samples": [
+                  63320,
+                  63480
+                ],
+                "status": "available"
+              },
+              "onset_status": "fixed",
+              "reference_P_star": 6.093954566114945e-05,
+              "search": {
+                "mean_power": 6.289345247550386e-06,
+                "observer_center_count": 60,
+                "samples": [
+                  63080,
+                  64040
+                ],
+                "status": "available"
+              },
+              "selected_t_star_s": 3.9725,
+              "status": "observed",
+              "strong": {
+                "mean_power": 1.0843989344844578e-05,
+                "observer_center_count": 20,
+                "samples": [
+                  63560,
+                  63880
+                ],
+                "status": "available"
+              }
+            },
+            {
+              "band_Hz": [
+                3000,
+                8000
+              ],
+              "crossings": {
+                "-10": {
+                  "sample": 63512,
+                  "status": "available",
+                  "threshold_power": 1.5796949091754338e-06,
+                  "time_s": 3.9695
+                },
+                "-20": {
+                  "sample": 63512,
+                  "status": "available",
+                  "threshold_power": 1.579694909175434e-07,
+                  "time_s": 3.9695
+                },
+                "-30": {
+                  "sample": 63496,
+                  "status": "available",
+                  "threshold_power": 1.5796949091754337e-08,
+                  "time_s": 3.9685
+                }
+              },
+              "early": {
+                "mean_power": 6.671556993457522e-09,
+                "observer_center_count": 10,
+                "samples": [
+                  63288,
+                  63448
+                ],
+                "status": "available"
+              },
+              "onset_status": "fixed",
+              "reference_P_star": 1.5796949091754338e-05,
+              "search": {
+                "mean_power": 1.0220569315377775e-06,
+                "observer_center_count": 60,
+                "samples": [
+                  63048,
+                  64008
+                ],
+                "status": "available"
+              },
+              "selected_t_star_s": 3.9705,
+              "status": "observed",
+              "strong": {
+                "mean_power": 2.4254992686599134e-06,
+                "observer_center_count": 20,
+                "samples": [
+                  63528,
+                  63848
+                ],
+                "status": "available"
+              }
+            }
+          ],
+          "variant": "RAW_FULL",
+          "waveform_identity": {
+            "bytes": 768128,
+            "dtype": "float64",
+            "normalization_or_clipping": "none",
+            "path": "librispeech_1188-133604-0003/pitch-3__seed0__RAW_FULL.npy",
+            "sample_rate": 16000,
+            "samples": 96000,
+            "sha256": "e9e7cf6d978ef93e71fc7009d1de5523516949eb8174f493ee618e3d6073d6bb"
+          }
+        }
+      ],
+      "regions": [
+        {
+          "region_index": 0,
+          "band_Hz": [
+            1500,
+            3000
+          ],
+          "band_index": 0,
+          "kind": "early",
+          "center_count": 10
+        },
+        {
+          "region_index": 1,
+          "band_Hz": [
+            1500,
+            3000
+          ],
+          "band_index": 0,
+          "kind": "strong",
+          "center_count": 20
+        },
+        {
+          "region_index": 2,
+          "band_Hz": [
+            1500,
+            3000
+          ],
+          "band_index": 0,
+          "kind": "search",
+          "center_count": 60
+        },
+        {
+          "region_index": 3,
+          "band_Hz": [
+            3000,
+            8000
+          ],
+          "band_index": 1,
+          "kind": "early",
+          "center_count": 10
+        },
+        {
+          "region_index": 4,
+          "band_Hz": [
+            3000,
+            8000
+          ],
+          "band_index": 1,
+          "kind": "strong",
+          "center_count": 20
+        },
+        {
+          "region_index": 5,
+          "band_Hz": [
+            3000,
+            8000
+          ],
+          "band_index": 1,
+          "kind": "search",
+          "center_count": 60
+        }
+      ]
+    },
+    {
+      "id": "condition-03",
+      "original_fixed_events": {
+        "bands": [
+          {
+            "band_Hz": [
+              1500,
+              3000
+            ],
+            "early_s": [
+              3.9575,
+              3.9675
+            ],
+            "early_samples": [
+              63320,
+              63480
+            ],
+            "original_crossing_status": {
+              "-10": "available",
+              "-20": "available",
+              "-30": "available"
+            },
+            "original_first_crossing_s": {
+              "-10": 3.9695,
+              "-20": 3.9695,
+              "-30": 3.9635
+            },
+            "reference_P_star": 6.093954566114945e-05,
+            "search_s": [
+              3.9425,
+              4.0025
+            ],
+            "search_samples": [
+              63080,
+              64040
+            ],
+            "selected_t_star_s": 3.9725,
+            "status": "fixed",
+            "strong_s": [
+              3.9725,
+              3.9925
+            ],
+            "strong_samples": [
+              63560,
+              63880
+            ]
+          },
+          {
+            "band_Hz": [
+              3000,
+              8000
+            ],
+            "early_s": [
+              3.9555,
+              3.9655
+            ],
+            "early_samples": [
+              63288,
+              63448
+            ],
+            "original_crossing_status": {
+              "-10": "available",
+              "-20": "available",
+              "-30": "available"
+            },
+            "original_first_crossing_s": {
+              "-10": 3.9695,
+              "-20": 3.9695,
+              "-30": 3.9685
+            },
+            "reference_P_star": 1.5796949091754338e-05,
+            "search_s": [
+              3.9405,
+              4.0005
+            ],
+            "search_samples": [
+              63048,
+              64008
+            ],
+            "selected_t_star_s": 3.9705,
+            "status": "fixed",
+            "strong_s": [
+              3.9705,
+              3.9905
+            ],
+            "strong_samples": [
+              63528,
+              63848
+            ]
+          }
+        ],
+        "case": "librispeech_1188-133604-0003",
+        "crossing": "first_observer_center_at_or_above_threshold; no_interpolation",
+        "region_membership": "left_closed_right_open"
+      },
+      "saved_event_records": [
+        {
+          "saved_comparison_to_PML_local": null,
+          "saved_events": [
+            {
+              "band_Hz": [
+                1500,
+                3000
+              ],
+              "crossings": {
+                "-10": {
+                  "sample": 63368,
+                  "status": "available",
+                  "threshold_power": 6.093954566114945e-06,
+                  "time_s": 3.9605
+                },
+                "-20": {
+                  "sample": 63352,
+                  "status": "available",
+                  "threshold_power": 6.093954566114945e-07,
+                  "time_s": 3.9595
+                },
+                "-30": {
+                  "sample": 63336,
+                  "status": "available",
+                  "threshold_power": 6.093954566114945e-08,
+                  "time_s": 3.9585
+                }
+              },
+              "early": {
+                "mean_power": 1.2893686758568786e-05,
+                "observer_center_count": 10,
+                "samples": [
+                  63320,
+                  63480
+                ],
+                "status": "available"
+              },
+              "onset_status": "fixed",
+              "reference_P_star": 6.093954566114945e-05,
+              "search": {
+                "mean_power": 1.4011677706714805e-05,
+                "observer_center_count": 60,
+                "samples": [
+                  63080,
+                  64040
+                ],
+                "status": "available"
+              },
+              "selected_t_star_s": 3.9725,
+              "status": "observed",
+              "strong": {
+                "mean_power": 1.9623634365397795e-05,
+                "observer_center_count": 20,
+                "samples": [
+                  63560,
+                  63880
+                ],
+                "status": "available"
+              }
+            },
+            {
+              "band_Hz": [
+                3000,
+                8000
+              ],
+              "crossings": {
+                "-10": {
+                  "sample": 63400,
+                  "status": "available",
+                  "threshold_power": 1.5796949091754338e-06,
+                  "time_s": 3.9625
+                },
+                "-20": {
+                  "sample": 63352,
+                  "status": "available",
+                  "threshold_power": 1.579694909175434e-07,
+                  "time_s": 3.9595
+                },
+                "-30": {
+                  "sample": 63336,
+                  "status": "available",
+                  "threshold_power": 1.5796949091754337e-08,
+                  "time_s": 3.9585
+                }
+              },
+              "early": {
+                "mean_power": 7.015856865384591e-07,
+                "observer_center_count": 10,
+                "samples": [
+                  63288,
+                  63448
+                ],
+                "status": "available"
+              },
+              "onset_status": "fixed",
+              "reference_P_star": 1.5796949091754338e-05,
+              "search": {
+                "mean_power": 1.5025755669664825e-06,
+                "observer_center_count": 60,
+                "samples": [
+                  63048,
+                  64008
+                ],
+                "status": "available"
+              },
+              "selected_t_star_s": 3.9705,
+              "status": "observed",
+              "strong": {
+                "mean_power": 2.4825661110829586e-06,
+                "observer_center_count": 20,
+                "samples": [
+                  63528,
+                  63848
+                ],
+                "status": "available"
+              }
+            }
+          ],
+          "variant": "PML",
+          "waveform_identity": {
+            "bytes": 768128,
+            "dtype": "float64",
+            "normalization_or_clipping": "none",
+            "path": "librispeech_1188-133604-0003/pitch+3__seed0__PML.npy",
+            "sample_rate": 16000,
+            "samples": 96000,
+            "sha256": "65085023011d3842b8018ac786d6928eb5668e00256ac74ce689082a6751bae7"
+          }
+        },
+        {
+          "saved_comparison_to_PML_local": [
+            {
+              "band_Hz": [
+                1500,
+                3000
+              ],
+              "crossing_delays": {
+                "-10": {
+                  "milliseconds": 4.0,
+                  "samples": 64,
+                  "status": "available"
+                },
+                "-20": {
+                  "milliseconds": 0.0,
+                  "samples": 0,
+                  "status": "available"
+                },
+                "-30": {
+                  "milliseconds": 0.0,
+                  "samples": 0,
+                  "status": "available"
+                }
+              },
+              "early_at_least_3dB_drop": {
+                "delta": {
+                  "status": "available",
+                  "value_db": -3.5793802348741366
+                },
+                "flag": true,
+                "status": "available"
+              },
+              "early_delta_db": {
+                "status": "available",
+                "value_db": -3.5793802348741366
+              },
+              "strong_delta_db": {
+                "status": "available",
+                "value_db": -1.3986041766655166
+              }
+            },
+            {
+              "band_Hz": [
+                3000,
+                8000
+              ],
+              "crossing_delays": {
+                "-10": {
+                  "milliseconds": 0.0,
+                  "samples": 0,
+                  "status": "available"
+                },
+                "-20": {
+                  "milliseconds": 1.0,
+                  "samples": 16,
+                  "status": "available"
+                },
+                "-30": {
+                  "milliseconds": 1.0,
+                  "samples": 16,
+                  "status": "available"
+                }
+              },
+              "early_at_least_3dB_drop": {
+                "delta": {
+                  "status": "available",
+                  "value_db": -0.6322921065522724
+                },
+                "flag": false,
+                "status": "available"
+              },
+              "early_delta_db": {
+                "status": "available",
+                "value_db": -0.6322921065522724
+              },
+              "strong_delta_db": {
+                "status": "available",
+                "value_db": 2.3852442816542485
+              }
+            }
+          ],
+          "saved_events": [
+            {
+              "band_Hz": [
+                1500,
+                3000
+              ],
+              "crossings": {
+                "-10": {
+                  "sample": 63432,
+                  "status": "available",
+                  "threshold_power": 6.093954566114945e-06,
+                  "time_s": 3.9645
+                },
+                "-20": {
+                  "sample": 63352,
+                  "status": "available",
+                  "threshold_power": 6.093954566114945e-07,
+                  "time_s": 3.9595
+                },
+                "-30": {
+                  "sample": 63336,
+                  "status": "available",
+                  "threshold_power": 6.093954566114945e-08,
+                  "time_s": 3.9585
+                }
+              },
+              "early": {
+                "mean_power": 5.655084409119708e-06,
+                "observer_center_count": 10,
+                "samples": [
+                  63320,
+                  63480
+                ],
+                "status": "available"
+              },
+              "onset_status": "fixed",
+              "reference_P_star": 6.093954566114945e-05,
+              "search": {
+                "mean_power": 8.70045762489529e-06,
+                "observer_center_count": 60,
+                "samples": [
+                  63080,
+                  64040
+                ],
+                "status": "available"
+              },
+              "selected_t_star_s": 3.9725,
+              "status": "observed",
+              "strong": {
+                "mean_power": 1.4220636182570592e-05,
+                "observer_center_count": 20,
+                "samples": [
+                  63560,
+                  63880
+                ],
+                "status": "available"
+              }
+            },
+            {
+              "band_Hz": [
+                3000,
+                8000
+              ],
+              "crossings": {
+                "-10": {
+                  "sample": 63400,
+                  "status": "available",
+                  "threshold_power": 1.5796949091754338e-06,
+                  "time_s": 3.9625
+                },
+                "-20": {
+                  "sample": 63368,
+                  "status": "available",
+                  "threshold_power": 1.579694909175434e-07,
+                  "time_s": 3.9605
+                },
+                "-30": {
+                  "sample": 63352,
+                  "status": "available",
+                  "threshold_power": 1.5796949091754337e-08,
+                  "time_s": 3.9595
+                }
+              },
+              "early": {
+                "mean_power": 6.065289146052928e-07,
+                "observer_center_count": 10,
+                "samples": [
+                  63288,
+                  63448
+                ],
+                "status": "available"
+              },
+              "onset_status": "fixed",
+              "reference_P_star": 1.5796949091754338e-05,
+              "search": {
+                "mean_power": 1.9081276895499297e-06,
+                "observer_center_count": 60,
+                "samples": [
+                  63048,
+                  64008
+                ],
+                "status": "available"
+              },
+              "selected_t_star_s": 3.9705,
+              "status": "observed",
+              "strong": {
+                "mean_power": 4.299572245843045e-06,
+                "observer_center_count": 20,
+                "samples": [
+                  63528,
+                  63848
+                ],
+                "status": "available"
+              }
+            }
+          ],
+          "variant": "RAW_SHAPE",
+          "waveform_identity": {
+            "bytes": 768128,
+            "dtype": "float64",
+            "normalization_or_clipping": "none",
+            "path": "librispeech_1188-133604-0003/pitch+3__seed0__RAW_SHAPE.npy",
+            "sample_rate": 16000,
+            "samples": 96000,
+            "sha256": "7f6495887d5f5d47e2cbd5728681bcf0343669b8ba4f5f086823412ee6e031c8"
+          }
+        },
+        {
+          "saved_comparison_to_PML_local": [
+            {
+              "band_Hz": [
+                1500,
+                3000
+              ],
+              "crossing_delays": {
+                "-10": {
+                  "milliseconds": 9.0,
+                  "samples": 144,
+                  "status": "available"
+                },
+                "-20": {
+                  "milliseconds": 9.0,
+                  "samples": 144,
+                  "status": "available"
+                },
+                "-30": {
+                  "milliseconds": 4.0,
+                  "samples": 64,
+                  "status": "available"
+                }
+              },
+              "early_at_least_3dB_drop": {
+                "delta": {
+                  "status": "available",
+                  "value_db": -20.108152489262665
+                },
+                "flag": true,
+                "status": "available"
+              },
+              "early_delta_db": {
+                "status": "available",
+                "value_db": -20.108152489262665
+              },
+              "strong_delta_db": {
+                "status": "available",
+                "value_db": -1.6197760919183768
+              }
+            },
+            {
+              "band_Hz": [
+                3000,
+                8000
+              ],
+              "crossing_delays": {
+                "-10": {
+                  "milliseconds": 7.0,
+                  "samples": 112,
+                  "status": "available"
+                },
+                "-20": {
+                  "milliseconds": 9.0,
+                  "samples": 144,
+                  "status": "available"
+                },
+                "-30": {
+                  "milliseconds": 10.0,
+                  "samples": 160,
+                  "status": "available"
+                }
+              },
+              "early_at_least_3dB_drop": {
+                "delta": {
+                  "status": "available",
+                  "value_db": -22.278359808657928
+                },
+                "flag": true,
+                "status": "available"
+              },
+              "early_delta_db": {
+                "status": "available",
+                "value_db": -22.278359808657928
+              },
+              "strong_delta_db": {
+                "status": "available",
+                "value_db": 1.8344264341913874
+              }
+            }
+          ],
+          "saved_events": [
+            {
+              "band_Hz": [
+                1500,
+                3000
+              ],
+              "crossings": {
+                "-10": {
+                  "sample": 63512,
+                  "status": "available",
+                  "threshold_power": 6.093954566114945e-06,
+                  "time_s": 3.9695
+                },
+                "-20": {
+                  "sample": 63496,
+                  "status": "available",
+                  "threshold_power": 6.093954566114945e-07,
+                  "time_s": 3.9685
+                },
+                "-30": {
+                  "sample": 63400,
+                  "status": "available",
+                  "threshold_power": 6.093954566114945e-08,
+                  "time_s": 3.9625
+                }
+              },
+              "early": {
+                "mean_power": 1.2576559976108633e-07,
+                "observer_center_count": 10,
+                "samples": [
+                  63320,
+                  63480
+                ],
+                "status": "available"
+              },
+              "onset_status": "fixed",
+              "reference_P_star": 6.093954566114945e-05,
+              "search": {
+                "mean_power": 7.39270189627679e-06,
+                "observer_center_count": 60,
+                "samples": [
+                  63080,
+                  64040
+                ],
+                "status": "available"
+              },
+              "selected_t_star_s": 3.9725,
+              "status": "observed",
+              "strong": {
+                "mean_power": 1.3514557616938507e-05,
+                "observer_center_count": 20,
+                "samples": [
+                  63560,
+                  63880
+                ],
+                "status": "available"
+              }
+            },
+            {
+              "band_Hz": [
+                3000,
+                8000
+              ],
+              "crossings": {
+                "-10": {
+                  "sample": 63512,
+                  "status": "available",
+                  "threshold_power": 1.5796949091754338e-06,
+                  "time_s": 3.9695
+                },
+                "-20": {
+                  "sample": 63496,
+                  "status": "available",
+                  "threshold_power": 1.579694909175434e-07,
+                  "time_s": 3.9685
+                },
+                "-30": {
+                  "sample": 63496,
+                  "status": "available",
+                  "threshold_power": 1.5796949091754337e-08,
+                  "time_s": 3.9685
+                }
+              },
+              "early": {
+                "mean_power": 4.151879488445856e-09,
+                "observer_center_count": 10,
+                "samples": [
+                  63288,
+                  63448
+                ],
+                "status": "available"
+              },
+              "onset_status": "fixed",
+              "reference_P_star": 1.5796949091754338e-05,
+              "search": {
+                "mean_power": 1.666860631300292e-06,
+                "observer_center_count": 60,
+                "samples": [
+                  63048,
+                  64008
+                ],
+                "status": "available"
+              },
+              "selected_t_star_s": 3.9705,
+              "status": "observed",
+              "strong": {
+                "mean_power": 3.7874199813956354e-06,
+                "observer_center_count": 20,
+                "samples": [
+                  63528,
+                  63848
+                ],
+                "status": "available"
+              }
+            }
+          ],
+          "variant": "RAW_FULL",
+          "waveform_identity": {
+            "bytes": 768128,
+            "dtype": "float64",
+            "normalization_or_clipping": "none",
+            "path": "librispeech_1188-133604-0003/pitch+3__seed0__RAW_FULL.npy",
+            "sample_rate": 16000,
+            "samples": 96000,
+            "sha256": "c6c06a298030eca3f7adb7fdf9851e5323bd99bf8813b2cc79fccfaaa810569f"
+          }
+        }
+      ],
+      "regions": [
+        {
+          "region_index": 0,
+          "band_Hz": [
+            1500,
+            3000
+          ],
+          "band_index": 0,
+          "kind": "early",
+          "center_count": 10
+        },
+        {
+          "region_index": 1,
+          "band_Hz": [
+            1500,
+            3000
+          ],
+          "band_index": 0,
+          "kind": "strong",
+          "center_count": 20
+        },
+        {
+          "region_index": 2,
+          "band_Hz": [
+            1500,
+            3000
+          ],
+          "band_index": 0,
+          "kind": "search",
+          "center_count": 60
+        },
+        {
+          "region_index": 3,
+          "band_Hz": [
+            3000,
+            8000
+          ],
+          "band_index": 1,
+          "kind": "early",
+          "center_count": 10
+        },
+        {
+          "region_index": 4,
+          "band_Hz": [
+            3000,
+            8000
+          ],
+          "band_index": 1,
+          "kind": "strong",
+          "center_count": 20
+        },
+        {
+          "region_index": 5,
+          "band_Hz": [
+            3000,
+            8000
+          ],
+          "band_index": 1,
+          "kind": "search",
+          "center_count": 60
+        }
+      ]
+    },
+    {
+      "id": "condition-04",
+      "original_fixed_events": {
+        "bands": [
+          {
+            "band_Hz": [
+              1500,
+              3000
+            ],
+            "early_s": [
+              3.9575,
+              3.9675
+            ],
+            "early_samples": [
+              63320,
+              63480
+            ],
+            "original_crossing_status": {
+              "-10": "available",
+              "-20": "available",
+              "-30": "available"
+            },
+            "original_first_crossing_s": {
+              "-10": 3.9695,
+              "-20": 3.9695,
+              "-30": 3.9635
+            },
+            "reference_P_star": 6.093954566114945e-05,
+            "search_s": [
+              3.9425,
+              4.0025
+            ],
+            "search_samples": [
+              63080,
+              64040
+            ],
+            "selected_t_star_s": 3.9725,
+            "status": "fixed",
+            "strong_s": [
+              3.9725,
+              3.9925
+            ],
+            "strong_samples": [
+              63560,
+              63880
+            ]
+          },
+          {
+            "band_Hz": [
+              3000,
+              8000
+            ],
+            "early_s": [
+              3.9555,
+              3.9655
+            ],
+            "early_samples": [
+              63288,
+              63448
+            ],
+            "original_crossing_status": {
+              "-10": "available",
+              "-20": "available",
+              "-30": "available"
+            },
+            "original_first_crossing_s": {
+              "-10": 3.9695,
+              "-20": 3.9695,
+              "-30": 3.9685
+            },
+            "reference_P_star": 1.5796949091754338e-05,
+            "search_s": [
+              3.9405,
+              4.0005
+            ],
+            "search_samples": [
+              63048,
+              64008
+            ],
+            "selected_t_star_s": 3.9705,
+            "status": "fixed",
+            "strong_s": [
+              3.9705,
+              3.9905
+            ],
+            "strong_samples": [
+              63528,
+              63848
+            ]
+          }
+        ],
+        "case": "librispeech_1188-133604-0003",
+        "crossing": "first_observer_center_at_or_above_threshold; no_interpolation",
+        "region_membership": "left_closed_right_open"
+      },
+      "saved_event_records": [
+        {
+          "saved_comparison_to_PML_local": null,
+          "saved_events": [
+            {
+              "band_Hz": [
+                1500,
+                3000
+              ],
+              "crossings": {
+                "-10": {
+                  "sample": 63384,
+                  "status": "available",
+                  "threshold_power": 6.093954566114945e-06,
+                  "time_s": 3.9615
+                },
+                "-20": {
+                  "sample": 63352,
+                  "status": "available",
+                  "threshold_power": 6.093954566114945e-07,
+                  "time_s": 3.9595
+                },
+                "-30": {
+                  "sample": 63336,
+                  "status": "available",
+                  "threshold_power": 6.093954566114945e-08,
+                  "time_s": 3.9585
+                }
+              },
+              "early": {
+                "mean_power": 1.3902129469252466e-05,
+                "observer_center_count": 10,
+                "samples": [
+                  63320,
+                  63480
+                ],
+                "status": "available"
+              },
+              "onset_status": "fixed",
+              "reference_P_star": 6.093954566114945e-05,
+              "search": {
+                "mean_power": 1.4642869263269514e-05,
+                "observer_center_count": 60,
+                "samples": [
+                  63080,
+                  64040
+                ],
+                "status": "available"
+              },
+              "selected_t_star_s": 3.9725,
+              "status": "observed",
+              "strong": {
+                "mean_power": 2.512437598618711e-05,
+                "observer_center_count": 20,
+                "samples": [
+                  63560,
+                  63880
+                ],
+                "status": "available"
+              }
+            },
+            {
+              "band_Hz": [
+                3000,
+                8000
+              ],
+              "crossings": {
+                "-10": {
+                  "sample": 63448,
+                  "status": "available",
+                  "threshold_power": 1.5796949091754338e-06,
+                  "time_s": 3.9655
+                },
+                "-20": {
+                  "sample": 63352,
+                  "status": "available",
+                  "threshold_power": 1.579694909175434e-07,
+                  "time_s": 3.9595
+                },
+                "-30": {
+                  "sample": 63336,
+                  "status": "available",
+                  "threshold_power": 1.5796949091754337e-08,
+                  "time_s": 3.9585
+                }
+              },
+              "early": {
+                "mean_power": 8.029435365443352e-07,
+                "observer_center_count": 10,
+                "samples": [
+                  63288,
+                  63448
+                ],
+                "status": "available"
+              },
+              "onset_status": "fixed",
+              "reference_P_star": 1.5796949091754338e-05,
+              "search": {
+                "mean_power": 1.6136610960247882e-06,
+                "observer_center_count": 60,
+                "samples": [
+                  63048,
+                  64008
+                ],
+                "status": "available"
+              },
+              "selected_t_star_s": 3.9705,
+              "status": "observed",
+              "strong": {
+                "mean_power": 2.5776831010829075e-06,
+                "observer_center_count": 20,
+                "samples": [
+                  63528,
+                  63848
+                ],
+                "status": "available"
+              }
+            }
+          ],
+          "variant": "PML",
+          "waveform_identity": {
+            "bytes": 768128,
+            "dtype": "float64",
+            "normalization_or_clipping": "none",
+            "path": "librispeech_1188-133604-0003/pitch+3__seed20261015__PML.npy",
+            "sample_rate": 16000,
+            "samples": 96000,
+            "sha256": "09f09ae312805ea0f54ca68227aea0ca8c306e6f44376919ecd16456b1289267"
+          }
+        },
+        {
+          "saved_comparison_to_PML_local": [
+            {
+              "band_Hz": [
+                1500,
+                3000
+              ],
+              "crossing_delays": {
+                "-10": {
+                  "milliseconds": 1.0,
+                  "samples": 16,
+                  "status": "available"
+                },
+                "-20": {
+                  "milliseconds": 1.0,
+                  "samples": 16,
+                  "status": "available"
+                },
+                "-30": {
+                  "milliseconds": 0.0,
+                  "samples": 0,
+                  "status": "available"
+                }
+              },
+              "early_at_least_3dB_drop": {
+                "delta": {
+                  "status": "available",
+                  "value_db": -1.4802759915524977
+                },
+                "flag": false,
+                "status": "available"
+              },
+              "early_delta_db": {
+                "status": "available",
+                "value_db": -1.4802759915524977
+              },
+              "strong_delta_db": {
+                "status": "available",
+                "value_db": -0.1902761775966333
+              }
+            },
+            {
+              "band_Hz": [
+                3000,
+                8000
+              ],
+              "crossing_delays": {
+                "-10": {
+                  "milliseconds": -2.0,
+                  "samples": -32,
+                  "status": "available"
+                },
+                "-20": {
+                  "milliseconds": 0.0,
+                  "samples": 0,
+                  "status": "available"
+                },
+                "-30": {
+                  "milliseconds": 0.0,
+                  "samples": 0,
+                  "status": "available"
+                }
+              },
+              "early_at_least_3dB_drop": {
+                "delta": {
+                  "status": "available",
+                  "value_db": -0.648594570792671
+                },
+                "flag": false,
+                "status": "available"
+              },
+              "early_delta_db": {
+                "status": "available",
+                "value_db": -0.648594570792671
+              },
+              "strong_delta_db": {
+                "status": "available",
+                "value_db": 1.7550959967142177
+              }
+            }
+          ],
+          "saved_events": [
+            {
+              "band_Hz": [
+                1500,
+                3000
+              ],
+              "crossings": {
+                "-10": {
+                  "sample": 63400,
+                  "status": "available",
+                  "threshold_power": 6.093954566114945e-06,
+                  "time_s": 3.9625
+                },
+                "-20": {
+                  "sample": 63368,
+                  "status": "available",
+                  "threshold_power": 6.093954566114945e-07,
+                  "time_s": 3.9605
+                },
+                "-30": {
+                  "sample": 63336,
+                  "status": "available",
+                  "threshold_power": 6.093954566114945e-08,
+                  "time_s": 3.9585
+                }
+              },
+              "early": {
+                "mean_power": 9.886754029805418e-06,
+                "observer_center_count": 10,
+                "samples": [
+                  63320,
+                  63480
+                ],
+                "status": "available"
+              },
+              "onset_status": "fixed",
+              "reference_P_star": 6.093954566114945e-05,
+              "search": {
+                "mean_power": 1.2104620137762845e-05,
+                "observer_center_count": 60,
+                "samples": [
+                  63080,
+                  64040
+                ],
+                "status": "available"
+              },
+              "selected_t_star_s": 3.9725,
+              "status": "observed",
+              "strong": {
+                "mean_power": 2.404737446388715e-05,
+                "observer_center_count": 20,
+                "samples": [
+                  63560,
+                  63880
+                ],
+                "status": "available"
+              }
+            },
+            {
+              "band_Hz": [
+                3000,
+                8000
+              ],
+              "crossings": {
+                "-10": {
+                  "sample": 63416,
+                  "status": "available",
+                  "threshold_power": 1.5796949091754338e-06,
+                  "time_s": 3.9635
+                },
+                "-20": {
+                  "sample": 63352,
+                  "status": "available",
+                  "threshold_power": 1.579694909175434e-07,
+                  "time_s": 3.9595
+                },
+                "-30": {
+                  "sample": 63336,
+                  "status": "available",
+                  "threshold_power": 1.5796949091754337e-08,
+                  "time_s": 3.9585
+                }
+              },
+              "early": {
+                "mean_power": 6.915531270284209e-07,
+                "observer_center_count": 10,
+                "samples": [
+                  63288,
+                  63448
+                ],
+                "status": "available"
+              },
+              "onset_status": "fixed",
+              "reference_P_star": 1.5796949091754338e-05,
+              "search": {
+                "mean_power": 1.8233530404227074e-06,
+                "observer_center_count": 60,
+                "samples": [
+                  63048,
+                  64008
+                ],
+                "status": "available"
+              },
+              "selected_t_star_s": 3.9705,
+              "status": "observed",
+              "strong": {
+                "mean_power": 3.8613496032457745e-06,
+                "observer_center_count": 20,
+                "samples": [
+                  63528,
+                  63848
+                ],
+                "status": "available"
+              }
+            }
+          ],
+          "variant": "RAW_SHAPE",
+          "waveform_identity": {
+            "bytes": 768128,
+            "dtype": "float64",
+            "normalization_or_clipping": "none",
+            "path": "librispeech_1188-133604-0003/pitch+3__seed20261015__RAW_SHAPE.npy",
+            "sample_rate": 16000,
+            "samples": 96000,
+            "sha256": "653056c6e110bfae7b79eafd8b68096b60900b42b7ea51adf633d36242001a34"
+          }
+        },
+        {
+          "saved_comparison_to_PML_local": [
+            {
+              "band_Hz": [
+                1500,
+                3000
+              ],
+              "crossing_delays": {
+                "-10": {
+                  "milliseconds": 9.0,
+                  "samples": 144,
+                  "status": "available"
+                },
+                "-20": {
+                  "milliseconds": 9.0,
+                  "samples": 144,
+                  "status": "available"
+                },
+                "-30": {
+                  "milliseconds": 1.0,
+                  "samples": 16,
+                  "status": "available"
+                }
+              },
+              "early_at_least_3dB_drop": {
+                "delta": {
+                  "status": "available",
+                  "value_db": -18.489427424716183
+                },
+                "flag": true,
+                "status": "available"
+              },
+              "early_delta_db": {
+                "status": "available",
+                "value_db": -18.489427424716183
+              },
+              "strong_delta_db": {
+                "status": "available",
+                "value_db": -2.2251696305312674
+              }
+            },
+            {
+              "band_Hz": [
+                3000,
+                8000
+              ],
+              "crossing_delays": {
+                "-10": {
+                  "milliseconds": 4.0,
+                  "samples": 64,
+                  "status": "available"
+                },
+                "-20": {
+                  "milliseconds": 9.0,
+                  "samples": 144,
+                  "status": "available"
+                },
+                "-30": {
+                  "milliseconds": 9.0,
+                  "samples": 144,
+                  "status": "available"
+                }
+              },
+              "early_at_least_3dB_drop": {
+                "delta": {
+                  "status": "available",
+                  "value_db": -22.017890975480093
+                },
+                "flag": true,
+                "status": "available"
+              },
+              "early_delta_db": {
+                "status": "available",
+                "value_db": -22.017890975480093
+              },
+              "strong_delta_db": {
+                "status": "available",
+                "value_db": -0.34346024754259297
+              }
+            }
+          ],
+          "saved_events": [
+            {
+              "band_Hz": [
+                1500,
+                3000
+              ],
+              "crossings": {
+                "-10": {
+                  "sample": 63528,
+                  "status": "available",
+                  "threshold_power": 6.093954566114945e-06,
+                  "time_s": 3.9705
+                },
+                "-20": {
+                  "sample": 63496,
+                  "status": "available",
+                  "threshold_power": 6.093954566114945e-07,
+                  "time_s": 3.9685
+                },
+                "-30": {
+                  "sample": 63352,
+                  "status": "available",
+                  "threshold_power": 6.093954566114945e-08,
+                  "time_s": 3.9595
+                }
+              },
+              "early": {
+                "mean_power": 1.968514355549914e-07,
+                "observer_center_count": 10,
+                "samples": [
+                  63320,
+                  63480
+                ],
+                "status": "available"
+              },
+              "onset_status": "fixed",
+              "reference_P_star": 6.093954566114945e-05,
+              "search": {
+                "mean_power": 7.242677940620342e-06,
+                "observer_center_count": 60,
+                "samples": [
+                  63080,
+                  64040
+                ],
+                "status": "available"
+              },
+              "selected_t_star_s": 3.9725,
+              "status": "observed",
+              "strong": {
+                "mean_power": 1.5051449331216086e-05,
+                "observer_center_count": 20,
+                "samples": [
+                  63560,
+                  63880
+                ],
+                "status": "available"
+              }
+            },
+            {
+              "band_Hz": [
+                3000,
+                8000
+              ],
+              "crossings": {
+                "-10": {
+                  "sample": 63512,
+                  "status": "available",
+                  "threshold_power": 1.5796949091754338e-06,
+                  "time_s": 3.9695
+                },
+                "-20": {
+                  "sample": 63496,
+                  "status": "available",
+                  "threshold_power": 1.579694909175434e-07,
+                  "time_s": 3.9685
+                },
+                "-30": {
+                  "sample": 63480,
+                  "status": "available",
+                  "threshold_power": 1.5796949091754337e-08,
+                  "time_s": 3.9675
+                }
+              },
+              "early": {
+                "mean_power": 5.045403556114832e-09,
+                "observer_center_count": 10,
+                "samples": [
+                  63288,
+                  63448
+                ],
+                "status": "available"
+              },
+              "onset_status": "fixed",
+              "reference_P_star": 1.5796949091754338e-05,
+              "search": {
+                "mean_power": 1.1477139561314206e-06,
+                "observer_center_count": 60,
+                "samples": [
+                  63048,
+                  64008
+                ],
+                "status": "available"
+              },
+              "selected_t_star_s": 3.9705,
+              "status": "observed",
+              "strong": {
+                "mean_power": 2.3816804930365214e-06,
+                "observer_center_count": 20,
+                "samples": [
+                  63528,
+                  63848
+                ],
+                "status": "available"
+              }
+            }
+          ],
+          "variant": "RAW_FULL",
+          "waveform_identity": {
+            "bytes": 768128,
+            "dtype": "float64",
+            "normalization_or_clipping": "none",
+            "path": "librispeech_1188-133604-0003/pitch+3__seed20261015__RAW_FULL.npy",
+            "sample_rate": 16000,
+            "samples": 96000,
+            "sha256": "9a89cff025a29917a37ef97f4c3544043d2d5ecb3070ecaceadfeac91bf9435d"
+          }
+        }
+      ],
+      "regions": [
+        {
+          "region_index": 0,
+          "band_Hz": [
+            1500,
+            3000
+          ],
+          "band_index": 0,
+          "kind": "early",
+          "center_count": 10
+        },
+        {
+          "region_index": 1,
+          "band_Hz": [
+            1500,
+            3000
+          ],
+          "band_index": 0,
+          "kind": "strong",
+          "center_count": 20
+        },
+        {
+          "region_index": 2,
+          "band_Hz": [
+            1500,
+            3000
+          ],
+          "band_index": 0,
+          "kind": "search",
+          "center_count": 60
+        },
+        {
+          "region_index": 3,
+          "band_Hz": [
+            3000,
+            8000
+          ],
+          "band_index": 1,
+          "kind": "early",
+          "center_count": 10
+        },
+        {
+          "region_index": 4,
+          "band_Hz": [
+            3000,
+            8000
+          ],
+          "band_index": 1,
+          "kind": "strong",
+          "center_count": 20
+        },
+        {
+          "region_index": 5,
+          "band_Hz": [
+            3000,
+            8000
+          ],
+          "band_index": 1,
+          "kind": "search",
+          "center_count": 60
+        }
+      ]
+    },
+    {
+      "id": "condition-05",
+      "original_fixed_events": {
+        "bands": [
+          {
+            "band_Hz": [
+              1500,
+              3000
+            ],
+            "early_s": [
+              2.08,
+              2.094
+            ],
+            "early_samples": [
+              33280,
+              33504
+            ],
+            "original_crossing_status": {
+              "-10": "available",
+              "-20": "available",
+              "-30": "available"
+            },
+            "original_first_crossing_s": {
+              "-10": 2.1045,
+              "-20": 2.1035,
+              "-30": 2.1035
+            },
+            "reference_P_star": 0.00023110287204681324,
+            "search_s": [
+              2.08,
+              2.126
+            ],
+            "search_samples": [
+              33280,
+              34016
+            ],
+            "selected_t_star_s": null,
+            "status": "fixed",
+            "strong_s": [
+              2.103,
+              2.126
+            ],
+            "strong_samples": [
+              33648,
+              34016
+            ]
+          },
+          {
+            "band_Hz": [
+              3000,
+              8000
+            ],
+            "early_s": [
+              2.08,
+              2.094
+            ],
+            "early_samples": [
+              33280,
+              33504
+            ],
+            "original_crossing_status": {
+              "-10": "available",
+              "-20": "available",
+              "-30": "available"
+            },
+            "original_first_crossing_s": {
+              "-10": 2.1045,
+              "-20": 2.1035,
+              "-30": 2.1035
+            },
+            "reference_P_star": 0.00016880355314127733,
+            "search_s": [
+              2.08,
+              2.126
+            ],
+            "search_samples": [
+              33280,
+              34016
+            ],
+            "selected_t_star_s": null,
+            "status": "fixed",
+            "strong_s": [
+              2.103,
+              2.126
+            ],
+            "strong_samples": [
+              33648,
+              34016
+            ]
+          }
+        ],
+        "case": "librispeech_121-121726-0012",
+        "crossing": "first_observer_center_at_or_above_threshold; no_interpolation",
+        "region_membership": "left_closed_right_open"
+      },
+      "saved_event_records": [
+        {
+          "saved_comparison_to_PML_local": null,
+          "saved_events": [
+            {
+              "band_Hz": [
+                1500,
+                3000
+              ],
+              "crossings": {
+                "-10": {
+                  "sample": 33496,
+                  "status": "available",
+                  "threshold_power": 2.3110287204681326e-05,
+                  "time_s": 2.0935
+                },
+                "-20": {
+                  "sample": 33480,
+                  "status": "available",
+                  "threshold_power": 2.3110287204681326e-06,
+                  "time_s": 2.0925
+                },
+                "-30": {
+                  "sample": 33480,
+                  "status": "available",
+                  "threshold_power": 2.3110287204681325e-07,
+                  "time_s": 2.0925
+                }
+              },
+              "early": {
+                "mean_power": 2.564867413072192e-06,
+                "observer_center_count": 14,
+                "samples": [
+                  33280,
+                  33504
+                ],
+                "status": "available"
+              },
+              "onset_status": "fixed",
+              "reference_P_star": 0.00023110287204681324,
+              "search": {
+                "mean_power": 5.434174951517429e-05,
+                "observer_center_count": 46,
+                "samples": [
+                  33280,
+                  34016
+                ],
+                "status": "available"
+              },
+              "selected_t_star_s": null,
+              "status": "observed",
+              "strong": {
+                "mean_power": 8.564203752653032e-05,
+                "observer_center_count": 23,
+                "samples": [
+                  33648,
+                  34016
+                ],
+                "status": "available"
+              }
+            },
+            {
+              "band_Hz": [
+                3000,
+                8000
+              ],
+              "crossings": {
+                "-10": {
+                  "sample": 33496,
+                  "status": "available",
+                  "threshold_power": 1.6880355314127734e-05,
+                  "time_s": 2.0935
+                },
+                "-20": {
+                  "sample": 33480,
+                  "status": "available",
+                  "threshold_power": 1.6880355314127734e-06,
+                  "time_s": 2.0925
+                },
+                "-30": {
+                  "sample": 33464,
+                  "status": "available",
+                  "threshold_power": 1.6880355314127734e-07,
+                  "time_s": 2.0915
+                }
+              },
+              "early": {
+                "mean_power": 1.9541163860374693e-06,
+                "observer_center_count": 14,
+                "samples": [
+                  33280,
+                  33504
+                ],
+                "status": "available"
+              },
+              "onset_status": "fixed",
+              "reference_P_star": 0.00016880355314127733,
+              "search": {
+                "mean_power": 3.380048709532814e-05,
+                "observer_center_count": 46,
+                "samples": [
+                  33280,
+                  34016
+                ],
+                "status": "available"
+              },
+              "selected_t_star_s": null,
+              "status": "observed",
+              "strong": {
+                "mean_power": 6.006702999732471e-05,
+                "observer_center_count": 23,
+                "samples": [
+                  33648,
+                  34016
+                ],
+                "status": "available"
+              }
+            }
+          ],
+          "variant": "PML",
+          "waveform_identity": {
+            "bytes": 517888,
+            "dtype": "float64",
+            "normalization_or_clipping": "none",
+            "path": "librispeech_121-121726-0012/pitch-3__seed0__PML.npy",
+            "sample_rate": 16000,
+            "samples": 64720,
+            "sha256": "b5d58d1a3452c7cced18f708f3b23c109acb016e90f0ab159606d447fa2a8ba2"
+          }
+        },
+        {
+          "saved_comparison_to_PML_local": [
+            {
+              "band_Hz": [
+                1500,
+                3000
+              ],
+              "crossing_delays": {
+                "-10": {
+                  "milliseconds": 10.0,
+                  "samples": 160,
+                  "status": "available"
+                },
+                "-20": {
+                  "milliseconds": 11.0,
+                  "samples": 176,
+                  "status": "available"
+                },
+                "-30": {
+                  "milliseconds": 2.0,
+                  "samples": 32,
+                  "status": "available"
+                }
+              },
+              "early_at_least_3dB_drop": {
+                "delta": {
+                  "status": "available",
+                  "value_db": -16.965051131384037
+                },
+                "flag": true,
+                "status": "available"
+              },
+              "early_delta_db": {
+                "status": "available",
+                "value_db": -16.965051131384037
+              },
+              "strong_delta_db": {
+                "status": "available",
+                "value_db": -0.9810516482069875
+              }
+            },
+            {
+              "band_Hz": [
+                3000,
+                8000
+              ],
+              "crossing_delays": {
+                "-10": {
+                  "milliseconds": 10.0,
+                  "samples": 160,
+                  "status": "available"
+                },
+                "-20": {
+                  "milliseconds": 11.0,
+                  "samples": 176,
+                  "status": "available"
+                },
+                "-30": {
+                  "milliseconds": 11.0,
+                  "samples": 176,
+                  "status": "available"
+                }
+              },
+              "early_at_least_3dB_drop": {
+                "delta": {
+                  "status": "available",
+                  "value_db": -15.599496123192269
+                },
+                "flag": true,
+                "status": "available"
+              },
+              "early_delta_db": {
+                "status": "available",
+                "value_db": -15.599496123192269
+              },
+              "strong_delta_db": {
+                "status": "available",
+                "value_db": 0.727126018373756
+              }
+            }
+          ],
+          "saved_events": [
+            {
+              "band_Hz": [
+                1500,
+                3000
+              ],
+              "crossings": {
+                "-10": {
+                  "sample": 33656,
+                  "status": "available",
+                  "threshold_power": 2.3110287204681326e-05,
+                  "time_s": 2.1035
+                },
+                "-20": {
+                  "sample": 33656,
+                  "status": "available",
+                  "threshold_power": 2.3110287204681326e-06,
+                  "time_s": 2.1035
+                },
+                "-30": {
+                  "sample": 33512,
+                  "status": "available",
+                  "threshold_power": 2.3110287204681325e-07,
+                  "time_s": 2.0945
+                }
+              },
+              "early": {
+                "mean_power": 5.158932038369231e-08,
+                "observer_center_count": 14,
+                "samples": [
+                  33280,
+                  33504
+                ],
+                "status": "available"
+              },
+              "onset_status": "fixed",
+              "reference_P_star": 0.00023110287204681324,
+              "search": {
+                "mean_power": 3.429343395107164e-05,
+                "observer_center_count": 46,
+                "samples": [
+                  33280,
+                  34016
+                ],
+                "status": "available"
+              },
+              "selected_t_star_s": null,
+              "status": "observed",
+              "strong": {
+                "mean_power": 6.832534390278564e-05,
+                "observer_center_count": 23,
+                "samples": [
+                  33648,
+                  34016
+                ],
+                "status": "available"
+              }
+            },
+            {
+              "band_Hz": [
+                3000,
+                8000
+              ],
+              "crossings": {
+                "-10": {
+                  "sample": 33656,
+                  "status": "available",
+                  "threshold_power": 1.6880355314127734e-05,
+                  "time_s": 2.1035
+                },
+                "-20": {
+                  "sample": 33656,
+                  "status": "available",
+                  "threshold_power": 1.6880355314127734e-06,
+                  "time_s": 2.1035
+                },
+                "-30": {
+                  "sample": 33640,
+                  "status": "available",
+                  "threshold_power": 1.6880355314127734e-07,
+                  "time_s": 2.1025
+                }
+              },
+              "early": {
+                "mean_power": 5.382707915982e-08,
+                "observer_center_count": 14,
+                "samples": [
+                  33280,
+                  33504
+                ],
+                "status": "available"
+              },
+              "onset_status": "fixed",
+              "reference_P_star": 0.00016880355314127733,
+              "search": {
+                "mean_power": 3.5571877729180884e-05,
+                "observer_center_count": 46,
+                "samples": [
+                  33280,
+                  34016
+                ],
+                "status": "available"
+              },
+              "selected_t_star_s": null,
+              "status": "observed",
+              "strong": {
+                "mean_power": 7.101478241096869e-05,
+                "observer_center_count": 23,
+                "samples": [
+                  33648,
+                  34016
+                ],
+                "status": "available"
+              }
+            }
+          ],
+          "variant": "RAW_SHAPE",
+          "waveform_identity": {
+            "bytes": 517888,
+            "dtype": "float64",
+            "normalization_or_clipping": "none",
+            "path": "librispeech_121-121726-0012/pitch-3__seed0__RAW_SHAPE.npy",
+            "sample_rate": 16000,
+            "samples": 64720,
+            "sha256": "758b0ed995d72ee4715440ce181c32f90ce018986d8010890368718a09bae037"
+          }
+        },
+        {
+          "saved_comparison_to_PML_local": [
+            {
+              "band_Hz": [
+                1500,
+                3000
+              ],
+              "crossing_delays": {
+                "-10": {
+                  "milliseconds": 11.0,
+                  "samples": 176,
+                  "status": "available"
+                },
+                "-20": {
+                  "milliseconds": 11.0,
+                  "samples": 176,
+                  "status": "available"
+                },
+                "-30": {
+                  "milliseconds": 10.0,
+                  "samples": 160,
+                  "status": "available"
+                }
+              },
+              "early_at_least_3dB_drop": {
+                "delta": {
+                  "status": "available",
+                  "value_db": -17.743931019978298
+                },
+                "flag": true,
+                "status": "available"
+              },
+              "early_delta_db": {
+                "status": "available",
+                "value_db": -17.743931019978298
+              },
+              "strong_delta_db": {
+                "status": "available",
+                "value_db": -1.2653531810733742
+              }
+            },
+            {
+              "band_Hz": [
+                3000,
+                8000
+              ],
+              "crossing_delays": {
+                "-10": {
+                  "milliseconds": 11.0,
+                  "samples": 176,
+                  "status": "available"
+                },
+                "-20": {
+                  "milliseconds": 11.0,
+                  "samples": 176,
+                  "status": "available"
+                },
+                "-30": {
+                  "milliseconds": 11.0,
+                  "samples": 176,
+                  "status": "available"
+                }
+              },
+              "early_at_least_3dB_drop": {
+                "delta": {
+                  "status": "available",
+                  "value_db": -16.253709740332933
+                },
+                "flag": true,
+                "status": "available"
+              },
+              "early_delta_db": {
+                "status": "available",
+                "value_db": -16.253709740332933
+              },
+              "strong_delta_db": {
+                "status": "available",
+                "value_db": 0.4374036852476948
+              }
+            }
+          ],
+          "saved_events": [
+            {
+              "band_Hz": [
+                1500,
+                3000
+              ],
+              "crossings": {
+                "-10": {
+                  "sample": 33672,
+                  "status": "available",
+                  "threshold_power": 2.3110287204681326e-05,
+                  "time_s": 2.1045
+                },
+                "-20": {
+                  "sample": 33656,
+                  "status": "available",
+                  "threshold_power": 2.3110287204681326e-06,
+                  "time_s": 2.1035
+                },
+                "-30": {
+                  "sample": 33640,
+                  "status": "available",
+                  "threshold_power": 2.3110287204681325e-07,
+                  "time_s": 2.1025
+                }
+              },
+              "early": {
+                "mean_power": 4.3119311512181415e-08,
+                "observer_center_count": 14,
+                "samples": [
+                  33280,
+                  33504
+                ],
+                "status": "available"
+              },
+              "onset_status": "fixed",
+              "reference_P_star": 0.00023110287204681324,
+              "search": {
+                "mean_power": 3.2049896185294626e-05,
+                "observer_center_count": 46,
+                "samples": [
+                  33280,
+                  34016
+                ],
+                "status": "available"
+              },
+              "selected_t_star_s": null,
+              "status": "observed",
+              "strong": {
+                "mean_power": 6.39958295522031e-05,
+                "observer_center_count": 23,
+                "samples": [
+                  33648,
+                  34016
+                ],
+                "status": "available"
+              }
+            },
+            {
+              "band_Hz": [
+                3000,
+                8000
+              ],
+              "crossings": {
+                "-10": {
+                  "sample": 33672,
+                  "status": "available",
+                  "threshold_power": 1.6880355314127734e-05,
+                  "time_s": 2.1045
+                },
+                "-20": {
+                  "sample": 33656,
+                  "status": "available",
+                  "threshold_power": 1.6880355314127734e-06,
+                  "time_s": 2.1035
+                },
+                "-30": {
+                  "sample": 33640,
+                  "status": "available",
+                  "threshold_power": 1.6880355314127734e-07,
+                  "time_s": 2.1025
+                }
+              },
+              "early": {
+                "mean_power": 4.629983597371758e-08,
+                "observer_center_count": 14,
+                "samples": [
+                  33280,
+                  33504
+                ],
+                "status": "available"
+              },
+              "onset_status": "fixed",
+              "reference_P_star": 0.00016880355314127733,
+              "search": {
+                "mean_power": 3.324635873370978e-05,
+                "observer_center_count": 46,
+                "samples": [
+                  33280,
+                  34016
+                ],
+                "status": "available"
+              },
+              "selected_t_star_s": null,
+              "status": "observed",
+              "strong": {
+                "mean_power": 6.64318776125557e-05,
+                "observer_center_count": 23,
+                "samples": [
+                  33648,
+                  34016
+                ],
+                "status": "available"
+              }
+            }
+          ],
+          "variant": "RAW_FULL",
+          "waveform_identity": {
+            "bytes": 517888,
+            "dtype": "float64",
+            "normalization_or_clipping": "none",
+            "path": "librispeech_121-121726-0012/pitch-3__seed0__RAW_FULL.npy",
+            "sample_rate": 16000,
+            "samples": 64720,
+            "sha256": "c8da7838eee5e846ea1ea3e638a4f7270f7be433fc9c893642421fd34bbe512e"
+          }
+        }
+      ],
+      "regions": [
+        {
+          "region_index": 0,
+          "band_Hz": [
+            1500,
+            3000
+          ],
+          "band_index": 0,
+          "kind": "early",
+          "center_count": 14
+        },
+        {
+          "region_index": 1,
+          "band_Hz": [
+            1500,
+            3000
+          ],
+          "band_index": 0,
+          "kind": "strong",
+          "center_count": 23
+        },
+        {
+          "region_index": 2,
+          "band_Hz": [
+            1500,
+            3000
+          ],
+          "band_index": 0,
+          "kind": "search",
+          "center_count": 46
+        },
+        {
+          "region_index": 3,
+          "band_Hz": [
+            3000,
+            8000
+          ],
+          "band_index": 1,
+          "kind": "early",
+          "center_count": 14
+        },
+        {
+          "region_index": 4,
+          "band_Hz": [
+            3000,
+            8000
+          ],
+          "band_index": 1,
+          "kind": "strong",
+          "center_count": 23
+        },
+        {
+          "region_index": 5,
+          "band_Hz": [
+            3000,
+            8000
+          ],
+          "band_index": 1,
+          "kind": "search",
+          "center_count": 46
+        }
+      ]
+    },
+    {
+      "id": "condition-06",
+      "original_fixed_events": {
+        "bands": [
+          {
+            "band_Hz": [
+              1500,
+              3000
+            ],
+            "early_s": [
+              2.1935,
+              2.2035
+            ],
+            "early_samples": [
+              35096,
+              35256
+            ],
+            "original_crossing_status": {
+              "-10": "available",
+              "-20": "available",
+              "-30": "available"
+            },
+            "original_first_crossing_s": {
+              "-10": 2.2075,
+              "-20": 2.2065,
+              "-30": 2.2065
+            },
+            "reference_P_star": 0.00012098284621227853,
+            "search_s": [
+              2.1785,
+              2.2385
+            ],
+            "search_samples": [
+              34856,
+              35816
+            ],
+            "selected_t_star_s": 2.2085,
+            "status": "fixed",
+            "strong_s": [
+              2.2085,
+              2.2285
+            ],
+            "strong_samples": [
+              35336,
+              35656
+            ]
+          },
+          {
+            "band_Hz": [
+              3000,
+              8000
+            ],
+            "early_s": [
+              2.4665,
+              2.4765
+            ],
+            "early_samples": [
+              39464,
+              39624
+            ],
+            "original_crossing_status": {
+              "-10": "available",
+              "-20": "available",
+              "-30": "available"
+            },
+            "original_first_crossing_s": {
+              "-10": 2.4785,
+              "-20": 2.4785,
+              "-30": 2.4775
+            },
+            "reference_P_star": 1.6307703620992395e-05,
+            "search_s": [
+              2.4515,
+              2.5115
+            ],
+            "search_samples": [
+              39224,
+              40184
+            ],
+            "selected_t_star_s": 2.4815,
+            "status": "fixed",
+            "strong_s": [
+              2.4815,
+              2.5015
+            ],
+            "strong_samples": [
+              39704,
+              40024
+            ]
+          }
+        ],
+        "case": "librispeech_1089-134686-0032",
+        "crossing": "first_observer_center_at_or_above_threshold; no_interpolation",
+        "region_membership": "left_closed_right_open"
+      },
+      "saved_event_records": [
+        {
+          "saved_comparison_to_PML_local": null,
+          "saved_events": [
+            {
+              "band_Hz": [
+                1500,
+                3000
+              ],
+              "crossings": {
+                "-10": {
+                  "sample": 35320,
+                  "status": "available",
+                  "threshold_power": 1.2098284621227853e-05,
+                  "time_s": 2.2075
+                },
+                "-20": {
+                  "sample": 35192,
+                  "status": "available",
+                  "threshold_power": 1.2098284621227852e-06,
+                  "time_s": 2.1995
+                },
+                "-30": {
+                  "sample": 35144,
+                  "status": "available",
+                  "threshold_power": 1.2098284621227854e-07,
+                  "time_s": 2.1965
+                }
+              },
+              "early": {
+                "mean_power": 9.4275743075676e-07,
+                "observer_center_count": 10,
+                "samples": [
+                  35096,
+                  35256
+                ],
+                "status": "available"
+              },
+              "onset_status": "fixed",
+              "reference_P_star": 0.00012098284621227853,
+              "search": {
+                "mean_power": 2.514049795798031e-05,
+                "observer_center_count": 60,
+                "samples": [
+                  34856,
+                  35816
+                ],
+                "status": "available"
+              },
+              "selected_t_star_s": 2.2085,
+              "status": "observed",
+              "strong": {
+                "mean_power": 4.690433946190223e-05,
+                "observer_center_count": 20,
+                "samples": [
+                  35336,
+                  35656
+                ],
+                "status": "available"
+              }
+            },
+            {
+              "band_Hz": [
+                3000,
+                8000
+              ],
+              "crossings": {
+                "-10": {
+                  "sample": 39560,
+                  "status": "available",
+                  "threshold_power": 1.6307703620992396e-06,
+                  "time_s": 2.4725
+                },
+                "-20": {
+                  "sample": 39544,
+                  "status": "available",
+                  "threshold_power": 1.6307703620992396e-07,
+                  "time_s": 2.4715
+                },
+                "-30": {
+                  "sample": 39464,
+                  "status": "available",
+                  "threshold_power": 1.6307703620992396e-08,
+                  "time_s": 2.4665
+                }
+              },
+              "early": {
+                "mean_power": 4.005770804617519e-06,
+                "observer_center_count": 10,
+                "samples": [
+                  39464,
+                  39624
+                ],
+                "status": "available"
+              },
+              "onset_status": "fixed",
+              "reference_P_star": 1.6307703620992395e-05,
+              "search": {
+                "mean_power": 5.5460459481126394e-06,
+                "observer_center_count": 60,
+                "samples": [
+                  39224,
+                  40184
+                ],
+                "status": "available"
+              },
+              "selected_t_star_s": 2.4815,
+              "status": "observed",
+              "strong": {
+                "mean_power": 7.91172035221059e-06,
+                "observer_center_count": 20,
+                "samples": [
+                  39704,
+                  40024
+                ],
+                "status": "available"
+              }
+            }
+          ],
+          "variant": "PML",
+          "waveform_identity": {
+            "bytes": 523648,
+            "dtype": "float64",
+            "normalization_or_clipping": "none",
+            "path": "librispeech_1089-134686-0032/pitch+0__seed20261015__PML.npy",
+            "sample_rate": 16000,
+            "samples": 65440,
+            "sha256": "d72575fda7a9e8db365de1c65a8e9b355296ef98e347a1c3226524f9593f4159"
+          }
+        },
+        {
+          "saved_comparison_to_PML_local": [
+            {
+              "band_Hz": [
+                1500,
+                3000
+              ],
+              "crossing_delays": {
+                "-10": {
+                  "milliseconds": 0.0,
+                  "samples": 0,
+                  "status": "available"
+                },
+                "-20": {
+                  "milliseconds": 4.0,
+                  "samples": 64,
+                  "status": "available"
+                },
+                "-30": {
+                  "milliseconds": 0.0,
+                  "samples": 0,
+                  "status": "available"
+                }
+              },
+              "early_at_least_3dB_drop": {
+                "delta": {
+                  "status": "available",
+                  "value_db": -3.134177898704733
+                },
+                "flag": true,
+                "status": "available"
+              },
+              "early_delta_db": {
+                "status": "available",
+                "value_db": -3.134177898704733
+              },
+              "strong_delta_db": {
+                "status": "available",
+                "value_db": 0.38997747248473935
+              }
+            },
+            {
+              "band_Hz": [
+                3000,
+                8000
+              ],
+              "crossing_delays": {
+                "-10": {
+                  "milliseconds": 6.0,
+                  "samples": 96,
+                  "status": "available"
+                },
+                "-20": {
+                  "milliseconds": 1.0,
+                  "samples": 16,
+                  "status": "available"
+                },
+                "-30": {
+                  "milliseconds": 0.0,
+                  "samples": 0,
+                  "status": "available"
+                }
+              },
+              "early_at_least_3dB_drop": {
+                "delta": {
+                  "status": "available",
+                  "value_db": -12.721789327975923
+                },
+                "flag": true,
+                "status": "available"
+              },
+              "early_delta_db": {
+                "status": "available",
+                "value_db": -12.721789327975923
+              },
+              "strong_delta_db": {
+                "status": "available",
+                "value_db": -2.3704002712594185
+              }
+            }
+          ],
+          "saved_events": [
+            {
+              "band_Hz": [
+                1500,
+                3000
+              ],
+              "crossings": {
+                "-10": {
+                  "sample": 35320,
+                  "status": "available",
+                  "threshold_power": 1.2098284621227853e-05,
+                  "time_s": 2.2075
+                },
+                "-20": {
+                  "sample": 35256,
+                  "status": "available",
+                  "threshold_power": 1.2098284621227852e-06,
+                  "time_s": 2.2035
+                },
+                "-30": {
+                  "sample": 35144,
+                  "status": "available",
+                  "threshold_power": 1.2098284621227854e-07,
+                  "time_s": 2.1965
+                }
+              },
+              "early": {
+                "mean_power": 4.581230825827252e-07,
+                "observer_center_count": 10,
+                "samples": [
+                  35096,
+                  35256
+                ],
+                "status": "available"
+              },
+              "onset_status": "fixed",
+              "reference_P_star": 0.00012098284621227853,
+              "search": {
+                "mean_power": 2.6806465138329695e-05,
+                "observer_center_count": 60,
+                "samples": [
+                  34856,
+                  35816
+                ],
+                "status": "available"
+              },
+              "selected_t_star_s": 2.2085,
+              "status": "observed",
+              "strong": {
+                "mean_power": 5.131103460130507e-05,
+                "observer_center_count": 20,
+                "samples": [
+                  35336,
+                  35656
+                ],
+                "status": "available"
+              }
+            },
+            {
+              "band_Hz": [
+                3000,
+                8000
+              ],
+              "crossings": {
+                "-10": {
+                  "sample": 39656,
+                  "status": "available",
+                  "threshold_power": 1.6307703620992396e-06,
+                  "time_s": 2.4785
+                },
+                "-20": {
+                  "sample": 39560,
+                  "status": "available",
+                  "threshold_power": 1.6307703620992396e-07,
+                  "time_s": 2.4725
+                },
+                "-30": {
+                  "sample": 39464,
+                  "status": "available",
+                  "threshold_power": 1.6307703620992396e-08,
+                  "time_s": 2.4665
+                }
+              },
+              "early": {
+                "mean_power": 2.1404602356398512e-07,
+                "observer_center_count": 10,
+                "samples": [
+                  39464,
+                  39624
+                ],
+                "status": "available"
+              },
+              "onset_status": "fixed",
+              "reference_P_star": 1.6307703620992395e-05,
+              "search": {
+                "mean_power": 3.8015780727957555e-06,
+                "observer_center_count": 60,
+                "samples": [
+                  39224,
+                  40184
+                ],
+                "status": "available"
+              },
+              "selected_t_star_s": 2.4815,
+              "status": "observed",
+              "strong": {
+                "mean_power": 4.5838553157225395e-06,
+                "observer_center_count": 20,
+                "samples": [
+                  39704,
+                  40024
+                ],
+                "status": "available"
+              }
+            }
+          ],
+          "variant": "RAW_SHAPE",
+          "waveform_identity": {
+            "bytes": 523648,
+            "dtype": "float64",
+            "normalization_or_clipping": "none",
+            "path": "librispeech_1089-134686-0032/pitch+0__seed20261015__RAW_SHAPE.npy",
+            "sample_rate": 16000,
+            "samples": 65440,
+            "sha256": "4be53edf46fd57f9609b6ce92a1aab70cdacb467ad6343ff715c09f767c2a743"
+          }
+        },
+        {
+          "saved_comparison_to_PML_local": [
+            {
+              "band_Hz": [
+                1500,
+                3000
+              ],
+              "crossing_delays": {
+                "-10": {
+                  "milliseconds": 0.0,
+                  "samples": 0,
+                  "status": "available"
+                },
+                "-20": {
+                  "milliseconds": 7.0,
+                  "samples": 112,
+                  "status": "available"
+                },
+                "-30": {
+                  "milliseconds": 9.0,
+                  "samples": 144,
+                  "status": "available"
+                }
+              },
+              "early_at_least_3dB_drop": {
+                "delta": {
+                  "status": "available",
+                  "value_db": -20.643508847925432
+                },
+                "flag": true,
+                "status": "available"
+              },
+              "early_delta_db": {
+                "status": "available",
+                "value_db": -20.643508847925432
+              },
+              "strong_delta_db": {
+                "status": "available",
+                "value_db": 1.533179003031453
+              }
+            },
+            {
+              "band_Hz": [
+                3000,
+                8000
+              ],
+              "crossing_delays": {
+                "-10": {
+                  "milliseconds": 6.0,
+                  "samples": 96,
+                  "status": "available"
+                },
+                "-20": {
+                  "milliseconds": 1.0,
+                  "samples": 16,
+                  "status": "available"
+                },
+                "-30": {
+                  "milliseconds": 5.0,
+                  "samples": 80,
+                  "status": "available"
+                }
+              },
+              "early_at_least_3dB_drop": {
+                "delta": {
+                  "status": "available",
+                  "value_db": -13.579263060848925
+                },
+                "flag": true,
+                "status": "available"
+              },
+              "early_delta_db": {
+                "status": "available",
+                "value_db": -13.579263060848925
+              },
+              "strong_delta_db": {
+                "status": "available",
+                "value_db": -1.3325797865752786
+              }
+            }
+          ],
+          "saved_events": [
+            {
+              "band_Hz": [
+                1500,
+                3000
+              ],
+              "crossings": {
+                "-10": {
+                  "sample": 35320,
+                  "status": "available",
+                  "threshold_power": 1.2098284621227853e-05,
+                  "time_s": 2.2075
+                },
+                "-20": {
+                  "sample": 35304,
+                  "status": "available",
+                  "threshold_power": 1.2098284621227852e-06,
+                  "time_s": 2.2065
+                },
+                "-30": {
+                  "sample": 35288,
+                  "status": "available",
+                  "threshold_power": 1.2098284621227854e-07,
+                  "time_s": 2.2055
+                }
+              },
+              "early": {
+                "mean_power": 8.12922378885703e-09,
+                "observer_center_count": 10,
+                "samples": [
+                  35096,
+                  35256
+                ],
+                "status": "available"
+              },
+              "onset_status": "fixed",
+              "reference_P_star": 0.00012098284621227853,
+              "search": {
+                "mean_power": 3.187947164892671e-05,
+                "observer_center_count": 60,
+                "samples": [
+                  34856,
+                  35816
+                ],
+                "status": "available"
+              },
+              "selected_t_star_s": 2.2085,
+              "status": "observed",
+              "strong": {
+                "mean_power": 6.676224383767913e-05,
+                "observer_center_count": 20,
+                "samples": [
+                  35336,
+                  35656
+                ],
+                "status": "available"
+              }
+            },
+            {
+              "band_Hz": [
+                3000,
+                8000
+              ],
+              "crossings": {
+                "-10": {
+                  "sample": 39656,
+                  "status": "available",
+                  "threshold_power": 1.6307703620992396e-06,
+                  "time_s": 2.4785
+                },
+                "-20": {
+                  "sample": 39560,
+                  "status": "available",
+                  "threshold_power": 1.6307703620992396e-07,
+                  "time_s": 2.4725
+                },
+                "-30": {
+                  "sample": 39544,
+                  "status": "available",
+                  "threshold_power": 1.6307703620992396e-08,
+                  "time_s": 2.4715
+                }
+              },
+              "early": {
+                "mean_power": 1.7569515717637164e-07,
+                "observer_center_count": 10,
+                "samples": [
+                  39464,
+                  39624
+                ],
+                "status": "available"
+              },
+              "onset_status": "fixed",
+              "reference_P_star": 1.6307703620992395e-05,
+              "search": {
+                "mean_power": 4.972329489870598e-06,
+                "observer_center_count": 60,
+                "samples": [
+                  39224,
+                  40184
+                ],
+                "status": "available"
+              },
+              "selected_t_star_s": 2.4815,
+              "status": "observed",
+              "strong": {
+                "mean_power": 5.821205749563017e-06,
+                "observer_center_count": 20,
+                "samples": [
+                  39704,
+                  40024
+                ],
+                "status": "available"
+              }
+            }
+          ],
+          "variant": "RAW_FULL",
+          "waveform_identity": {
+            "bytes": 523648,
+            "dtype": "float64",
+            "normalization_or_clipping": "none",
+            "path": "librispeech_1089-134686-0032/pitch+0__seed20261015__RAW_FULL.npy",
+            "sample_rate": 16000,
+            "samples": 65440,
+            "sha256": "36fdb8b277d1d4bbbecea19a534132c8cf66a9df5d90aad10e00c30fbc1497f3"
+          }
+        }
+      ],
+      "regions": [
+        {
+          "region_index": 0,
+          "band_Hz": [
+            1500,
+            3000
+          ],
+          "band_index": 0,
+          "kind": "early",
+          "center_count": 10
+        },
+        {
+          "region_index": 1,
+          "band_Hz": [
+            1500,
+            3000
+          ],
+          "band_index": 0,
+          "kind": "strong",
+          "center_count": 20
+        },
+        {
+          "region_index": 2,
+          "band_Hz": [
+            1500,
+            3000
+          ],
+          "band_index": 0,
+          "kind": "search",
+          "center_count": 60
+        },
+        {
+          "region_index": 3,
+          "band_Hz": [
+            3000,
+            8000
+          ],
+          "band_index": 1,
+          "kind": "early",
+          "center_count": 10
+        },
+        {
+          "region_index": 4,
+          "band_Hz": [
+            3000,
+            8000
+          ],
+          "band_index": 1,
+          "kind": "strong",
+          "center_count": 20
+        },
+        {
+          "region_index": 5,
+          "band_Hz": [
+            3000,
+            8000
+          ],
+          "band_index": 1,
+          "kind": "search",
+          "center_count": 60
+        }
+      ]
+    },
+    {
+      "id": "condition-07",
+      "original_fixed_events": {
+        "bands": [
+          {
+            "band_Hz": [
+              1500,
+              3000
+            ],
+            "early_s": [
+              2.1935,
+              2.2035
+            ],
+            "early_samples": [
+              35096,
+              35256
+            ],
+            "original_crossing_status": {
+              "-10": "available",
+              "-20": "available",
+              "-30": "available"
+            },
+            "original_first_crossing_s": {
+              "-10": 2.2075,
+              "-20": 2.2065,
+              "-30": 2.2065
+            },
+            "reference_P_star": 0.00012098284621227853,
+            "search_s": [
+              2.1785,
+              2.2385
+            ],
+            "search_samples": [
+              34856,
+              35816
+            ],
+            "selected_t_star_s": 2.2085,
+            "status": "fixed",
+            "strong_s": [
+              2.2085,
+              2.2285
+            ],
+            "strong_samples": [
+              35336,
+              35656
+            ]
+          },
+          {
+            "band_Hz": [
+              3000,
+              8000
+            ],
+            "early_s": [
+              2.4665,
+              2.4765
+            ],
+            "early_samples": [
+              39464,
+              39624
+            ],
+            "original_crossing_status": {
+              "-10": "available",
+              "-20": "available",
+              "-30": "available"
+            },
+            "original_first_crossing_s": {
+              "-10": 2.4785,
+              "-20": 2.4785,
+              "-30": 2.4775
+            },
+            "reference_P_star": 1.6307703620992395e-05,
+            "search_s": [
+              2.4515,
+              2.5115
+            ],
+            "search_samples": [
+              39224,
+              40184
+            ],
+            "selected_t_star_s": 2.4815,
+            "status": "fixed",
+            "strong_s": [
+              2.4815,
+              2.5015
+            ],
+            "strong_samples": [
+              39704,
+              40024
+            ]
+          }
+        ],
+        "case": "librispeech_1089-134686-0032",
+        "crossing": "first_observer_center_at_or_above_threshold; no_interpolation",
+        "region_membership": "left_closed_right_open"
+      },
+      "saved_event_records": [
+        {
+          "saved_comparison_to_PML_local": null,
+          "saved_events": [
+            {
+              "band_Hz": [
+                1500,
+                3000
+              ],
+              "crossings": {
+                "-10": {
+                  "sample": 35240,
+                  "status": "available",
+                  "threshold_power": 1.2098284621227853e-05,
+                  "time_s": 2.2025
+                },
+                "-20": {
+                  "sample": 35224,
+                  "status": "available",
+                  "threshold_power": 1.2098284621227852e-06,
+                  "time_s": 2.2015
+                },
+                "-30": {
+                  "sample": 35224,
+                  "status": "available",
+                  "threshold_power": 1.2098284621227854e-07,
+                  "time_s": 2.2015
+                }
+              },
+              "early": {
+                "mean_power": 2.040623720588609e-06,
+                "observer_center_count": 10,
+                "samples": [
+                  35096,
+                  35256
+                ],
+                "status": "available"
+              },
+              "onset_status": "fixed",
+              "reference_P_star": 0.00012098284621227853,
+              "search": {
+                "mean_power": 2.7403867688076237e-05,
+                "observer_center_count": 60,
+                "samples": [
+                  34856,
+                  35816
+                ],
+                "status": "available"
+              },
+              "selected_t_star_s": 2.2085,
+              "status": "observed",
+              "strong": {
+                "mean_power": 3.5652336435153835e-05,
+                "observer_center_count": 20,
+                "samples": [
+                  35336,
+                  35656
+                ],
+                "status": "available"
+              }
+            },
+            {
+              "band_Hz": [
+                3000,
+                8000
+              ],
+              "crossings": {
+                "-10": {
+                  "sample": 39624,
+                  "status": "available",
+                  "threshold_power": 1.6307703620992396e-06,
+                  "time_s": 2.4765
+                },
+                "-20": {
+                  "sample": 39608,
+                  "status": "available",
+                  "threshold_power": 1.6307703620992396e-07,
+                  "time_s": 2.4755
+                },
+                "-30": {
+                  "sample": 39496,
+                  "status": "available",
+                  "threshold_power": 1.6307703620992396e-08,
+                  "time_s": 2.4685
+                }
+              },
+              "early": {
+                "mean_power": 1.0316044435379309e-07,
+                "observer_center_count": 10,
+                "samples": [
+                  39464,
+                  39624
+                ],
+                "status": "available"
+              },
+              "onset_status": "fixed",
+              "reference_P_star": 1.6307703620992395e-05,
+              "search": {
+                "mean_power": 6.046203992186448e-06,
+                "observer_center_count": 60,
+                "samples": [
+                  39224,
+                  40184
+                ],
+                "status": "available"
+              },
+              "selected_t_star_s": 2.4815,
+              "status": "observed",
+              "strong": {
+                "mean_power": 6.7096393049098146e-06,
+                "observer_center_count": 20,
+                "samples": [
+                  39704,
+                  40024
+                ],
+                "status": "available"
+              }
+            }
+          ],
+          "variant": "PML",
+          "waveform_identity": {
+            "bytes": 523648,
+            "dtype": "float64",
+            "normalization_or_clipping": "none",
+            "path": "librispeech_1089-134686-0032/pitch-3__seed0__PML.npy",
+            "sample_rate": 16000,
+            "samples": 65440,
+            "sha256": "5f8ac38b5291f8debac169ad194b32c2528998f3b21c63de76ea4fcad1970559"
+          }
+        },
+        {
+          "saved_comparison_to_PML_local": [
+            {
+              "band_Hz": [
+                1500,
+                3000
+              ],
+              "crossing_delays": {
+                "-10": {
+                  "milliseconds": 4.0,
+                  "samples": 64,
+                  "status": "available"
+                },
+                "-20": {
+                  "milliseconds": 5.0,
+                  "samples": 80,
+                  "status": "available"
+                },
+                "-30": {
+                  "milliseconds": 4.0,
+                  "samples": 64,
+                  "status": "available"
+                }
+              },
+              "early_at_least_3dB_drop": {
+                "delta": {
+                  "status": "available",
+                  "value_db": -15.004777266699856
+                },
+                "flag": true,
+                "status": "available"
+              },
+              "early_delta_db": {
+                "status": "available",
+                "value_db": -15.004777266699856
+              },
+              "strong_delta_db": {
+                "status": "available",
+                "value_db": 1.7638717557614036
+              }
+            },
+            {
+              "band_Hz": [
+                3000,
+                8000
+              ],
+              "crossing_delays": {
+                "-10": {
+                  "milliseconds": 1.0,
+                  "samples": 16,
+                  "status": "available"
+                },
+                "-20": {
+                  "milliseconds": 0.0,
+                  "samples": 0,
+                  "status": "available"
+                },
+                "-30": {
+                  "milliseconds": -1.0,
+                  "samples": -16,
+                  "status": "available"
+                }
+              },
+              "early_at_least_3dB_drop": {
+                "delta": {
+                  "status": "available",
+                  "value_db": -4.09309452894691
+                },
+                "flag": true,
+                "status": "available"
+              },
+              "early_delta_db": {
+                "status": "available",
+                "value_db": -4.09309452894691
+              },
+              "strong_delta_db": {
+                "status": "available",
+                "value_db": -1.018107249133946
+              }
+            }
+          ],
+          "saved_events": [
+            {
+              "band_Hz": [
+                1500,
+                3000
+              ],
+              "crossings": {
+                "-10": {
+                  "sample": 35304,
+                  "status": "available",
+                  "threshold_power": 1.2098284621227853e-05,
+                  "time_s": 2.2065
+                },
+                "-20": {
+                  "sample": 35304,
+                  "status": "available",
+                  "threshold_power": 1.2098284621227852e-06,
+                  "time_s": 2.2065
+                },
+                "-30": {
+                  "sample": 35288,
+                  "status": "available",
+                  "threshold_power": 1.2098284621227854e-07,
+                  "time_s": 2.2055
+                }
+              },
+              "early": {
+                "mean_power": 6.445924345721173e-08,
+                "observer_center_count": 10,
+                "samples": [
+                  35096,
+                  35256
+                ],
+                "status": "available"
+              },
+              "onset_status": "fixed",
+              "reference_P_star": 0.00012098284621227853,
+              "search": {
+                "mean_power": 2.914674997924146e-05,
+                "observer_center_count": 60,
+                "samples": [
+                  34856,
+                  35816
+                ],
+                "status": "available"
+              },
+              "selected_t_star_s": 2.2085,
+              "status": "observed",
+              "strong": {
+                "mean_power": 5.351495587724112e-05,
+                "observer_center_count": 20,
+                "samples": [
+                  35336,
+                  35656
+                ],
+                "status": "available"
+              }
+            },
+            {
+              "band_Hz": [
+                3000,
+                8000
+              ],
+              "crossings": {
+                "-10": {
+                  "sample": 39640,
+                  "status": "available",
+                  "threshold_power": 1.6307703620992396e-06,
+                  "time_s": 2.4775
+                },
+                "-20": {
+                  "sample": 39608,
+                  "status": "available",
+                  "threshold_power": 1.6307703620992396e-07,
+                  "time_s": 2.4755
+                },
+                "-30": {
+                  "sample": 39480,
+                  "status": "available",
+                  "threshold_power": 1.6307703620992396e-08,
+                  "time_s": 2.4675
+                }
+              },
+              "early": {
+                "mean_power": 4.0197935708447395e-08,
+                "observer_center_count": 10,
+                "samples": [
+                  39464,
+                  39624
+                ],
+                "status": "available"
+              },
+              "onset_status": "fixed",
+              "reference_P_star": 1.6307703620992395e-05,
+              "search": {
+                "mean_power": 5.202461275239401e-06,
+                "observer_center_count": 60,
+                "samples": [
+                  39224,
+                  40184
+                ],
+                "status": "available"
+              },
+              "selected_t_star_s": 2.4815,
+              "status": "observed",
+              "strong": {
+                "mean_power": 5.307481012951694e-06,
+                "observer_center_count": 20,
+                "samples": [
+                  39704,
+                  40024
+                ],
+                "status": "available"
+              }
+            }
+          ],
+          "variant": "RAW_SHAPE",
+          "waveform_identity": {
+            "bytes": 523648,
+            "dtype": "float64",
+            "normalization_or_clipping": "none",
+            "path": "librispeech_1089-134686-0032/pitch-3__seed0__RAW_SHAPE.npy",
+            "sample_rate": 16000,
+            "samples": 65440,
+            "sha256": "4996340607c4cc19fc9ac2b9c3af1076d309a22c436c13e51e71de4be9774c34"
+          }
+        },
+        {
+          "saved_comparison_to_PML_local": [
+            {
+              "band_Hz": [
+                1500,
+                3000
+              ],
+              "crossing_delays": {
+                "-10": {
+                  "milliseconds": 5.0,
+                  "samples": 80,
+                  "status": "available"
+                },
+                "-20": {
+                  "milliseconds": 5.0,
+                  "samples": 80,
+                  "status": "available"
+                },
+                "-30": {
+                  "milliseconds": 4.0,
+                  "samples": 64,
+                  "status": "available"
+                }
+              },
+              "early_at_least_3dB_drop": {
+                "delta": {
+                  "status": "available",
+                  "value_db": -18.39520902225682
+                },
+                "flag": true,
+                "status": "available"
+              },
+              "early_delta_db": {
+                "status": "available",
+                "value_db": -18.39520902225682
+              },
+              "strong_delta_db": {
+                "status": "available",
+                "value_db": 1.4564285383214681
+              }
+            },
+            {
+              "band_Hz": [
+                3000,
+                8000
+              ],
+              "crossing_delays": {
+                "-10": {
+                  "milliseconds": 1.0,
+                  "samples": 16,
+                  "status": "available"
+                },
+                "-20": {
+                  "milliseconds": 0.0,
+                  "samples": 0,
+                  "status": "available"
+                },
+                "-30": {
+                  "milliseconds": 7.0,
+                  "samples": 112,
+                  "status": "available"
+                }
+              },
+              "early_at_least_3dB_drop": {
+                "delta": {
+                  "status": "available",
+                  "value_db": -5.883389489243651
+                },
+                "flag": true,
+                "status": "available"
+              },
+              "early_delta_db": {
+                "status": "available",
+                "value_db": -5.883389489243651
+              },
+              "strong_delta_db": {
+                "status": "available",
+                "value_db": -1.6541459834226746
+              }
+            }
+          ],
+          "saved_events": [
+            {
+              "band_Hz": [
+                1500,
+                3000
+              ],
+              "crossings": {
+                "-10": {
+                  "sample": 35320,
+                  "status": "available",
+                  "threshold_power": 1.2098284621227853e-05,
+                  "time_s": 2.2075
+                },
+                "-20": {
+                  "sample": 35304,
+                  "status": "available",
+                  "threshold_power": 1.2098284621227852e-06,
+                  "time_s": 2.2065
+                },
+                "-30": {
+                  "sample": 35288,
+                  "status": "available",
+                  "threshold_power": 1.2098284621227854e-07,
+                  "time_s": 2.2055
+                }
+              },
+              "early": {
+                "mean_power": 2.952854367603898e-08,
+                "observer_center_count": 10,
+                "samples": [
+                  35096,
+                  35256
+                ],
+                "status": "available"
+              },
+              "onset_status": "fixed",
+              "reference_P_star": 0.00012098284621227853,
+              "search": {
+                "mean_power": 2.776449288097713e-05,
+                "observer_center_count": 60,
+                "samples": [
+                  34856,
+                  35816
+                ],
+                "status": "available"
+              },
+              "selected_t_star_s": 2.2085,
+              "status": "observed",
+              "strong": {
+                "mean_power": 4.985754041228859e-05,
+                "observer_center_count": 20,
+                "samples": [
+                  35336,
+                  35656
+                ],
+                "status": "available"
+              }
+            },
+            {
+              "band_Hz": [
+                3000,
+                8000
+              ],
+              "crossings": {
+                "-10": {
+                  "sample": 39640,
+                  "status": "available",
+                  "threshold_power": 1.6307703620992396e-06,
+                  "time_s": 2.4775
+                },
+                "-20": {
+                  "sample": 39608,
+                  "status": "available",
+                  "threshold_power": 1.6307703620992396e-07,
+                  "time_s": 2.4755
+                },
+                "-30": {
+                  "sample": 39608,
+                  "status": "available",
+                  "threshold_power": 1.6307703620992396e-08,
+                  "time_s": 2.4755
+                }
+              },
+              "early": {
+                "mean_power": 2.6617928566482623e-08,
+                "observer_center_count": 10,
+                "samples": [
+                  39464,
+                  39624
+                ],
+                "status": "available"
+              },
+              "onset_status": "fixed",
+              "reference_P_star": 1.6307703620992395e-05,
+              "search": {
+                "mean_power": 4.891405580628077e-06,
+                "observer_center_count": 60,
+                "samples": [
+                  39224,
+                  40184
+                ],
+                "status": "available"
+              },
+              "selected_t_star_s": 2.4815,
+              "status": "observed",
+              "strong": {
+                "mean_power": 4.58442187100915e-06,
+                "observer_center_count": 20,
+                "samples": [
+                  39704,
+                  40024
+                ],
+                "status": "available"
+              }
+            }
+          ],
+          "variant": "RAW_FULL",
+          "waveform_identity": {
+            "bytes": 523648,
+            "dtype": "float64",
+            "normalization_or_clipping": "none",
+            "path": "librispeech_1089-134686-0032/pitch-3__seed0__RAW_FULL.npy",
+            "sample_rate": 16000,
+            "samples": 65440,
+            "sha256": "4813534b07e440e59d21780658c3e525df5c694ba786c2940867140d6113e5d0"
+          }
+        }
+      ],
+      "regions": [
+        {
+          "region_index": 0,
+          "band_Hz": [
+            1500,
+            3000
+          ],
+          "band_index": 0,
+          "kind": "early",
+          "center_count": 10
+        },
+        {
+          "region_index": 1,
+          "band_Hz": [
+            1500,
+            3000
+          ],
+          "band_index": 0,
+          "kind": "strong",
+          "center_count": 20
+        },
+        {
+          "region_index": 2,
+          "band_Hz": [
+            1500,
+            3000
+          ],
+          "band_index": 0,
+          "kind": "search",
+          "center_count": 60
+        },
+        {
+          "region_index": 3,
+          "band_Hz": [
+            3000,
+            8000
+          ],
+          "band_index": 1,
+          "kind": "early",
+          "center_count": 10
+        },
+        {
+          "region_index": 4,
+          "band_Hz": [
+            3000,
+            8000
+          ],
+          "band_index": 1,
+          "kind": "strong",
+          "center_count": 20
+        },
+        {
+          "region_index": 5,
+          "band_Hz": [
+            3000,
+            8000
+          ],
+          "band_index": 1,
+          "kind": "search",
+          "center_count": 60
+        }
+      ]
+    },
+    {
+      "id": "condition-08",
+      "original_fixed_events": {
+        "bands": [
+          {
+            "band_Hz": [
+              1500,
+              3000
+            ],
+            "early_s": [
+              2.1935,
+              2.2035
+            ],
+            "early_samples": [
+              35096,
+              35256
+            ],
+            "original_crossing_status": {
+              "-10": "available",
+              "-20": "available",
+              "-30": "available"
+            },
+            "original_first_crossing_s": {
+              "-10": 2.2075,
+              "-20": 2.2065,
+              "-30": 2.2065
+            },
+            "reference_P_star": 0.00012098284621227853,
+            "search_s": [
+              2.1785,
+              2.2385
+            ],
+            "search_samples": [
+              34856,
+              35816
+            ],
+            "selected_t_star_s": 2.2085,
+            "status": "fixed",
+            "strong_s": [
+              2.2085,
+              2.2285
+            ],
+            "strong_samples": [
+              35336,
+              35656
+            ]
+          },
+          {
+            "band_Hz": [
+              3000,
+              8000
+            ],
+            "early_s": [
+              2.4665,
+              2.4765
+            ],
+            "early_samples": [
+              39464,
+              39624
+            ],
+            "original_crossing_status": {
+              "-10": "available",
+              "-20": "available",
+              "-30": "available"
+            },
+            "original_first_crossing_s": {
+              "-10": 2.4785,
+              "-20": 2.4785,
+              "-30": 2.4775
+            },
+            "reference_P_star": 1.6307703620992395e-05,
+            "search_s": [
+              2.4515,
+              2.5115
+            ],
+            "search_samples": [
+              39224,
+              40184
+            ],
+            "selected_t_star_s": 2.4815,
+            "status": "fixed",
+            "strong_s": [
+              2.4815,
+              2.5015
+            ],
+            "strong_samples": [
+              39704,
+              40024
+            ]
+          }
+        ],
+        "case": "librispeech_1089-134686-0032",
+        "crossing": "first_observer_center_at_or_above_threshold; no_interpolation",
+        "region_membership": "left_closed_right_open"
+      },
+      "saved_event_records": [
+        {
+          "saved_comparison_to_PML_local": null,
+          "saved_events": [
+            {
+              "band_Hz": [
+                1500,
+                3000
+              ],
+              "crossings": {
+                "-10": {
+                  "sample": 35240,
+                  "status": "available",
+                  "threshold_power": 1.2098284621227853e-05,
+                  "time_s": 2.2025
+                },
+                "-20": {
+                  "sample": 35224,
+                  "status": "available",
+                  "threshold_power": 1.2098284621227852e-06,
+                  "time_s": 2.2015
+                },
+                "-30": {
+                  "sample": 35144,
+                  "status": "available",
+                  "threshold_power": 1.2098284621227854e-07,
+                  "time_s": 2.1965
+                }
+              },
+              "early": {
+                "mean_power": 5.181714891926579e-06,
+                "observer_center_count": 10,
+                "samples": [
+                  35096,
+                  35256
+                ],
+                "status": "available"
+              },
+              "onset_status": "fixed",
+              "reference_P_star": 0.00012098284621227853,
+              "search": {
+                "mean_power": 2.7025906472475867e-05,
+                "observer_center_count": 60,
+                "samples": [
+                  34856,
+                  35816
+                ],
+                "status": "available"
+              },
+              "selected_t_star_s": 2.2085,
+              "status": "observed",
+              "strong": {
+                "mean_power": 3.8370704856292934e-05,
+                "observer_center_count": 20,
+                "samples": [
+                  35336,
+                  35656
+                ],
+                "status": "available"
+              }
+            },
+            {
+              "band_Hz": [
+                3000,
+                8000
+              ],
+              "crossings": {
+                "-10": {
+                  "sample": 39624,
+                  "status": "available",
+                  "threshold_power": 1.6307703620992396e-06,
+                  "time_s": 2.4765
+                },
+                "-20": {
+                  "sample": 39608,
+                  "status": "available",
+                  "threshold_power": 1.6307703620992396e-07,
+                  "time_s": 2.4755
+                },
+                "-30": {
+                  "sample": 39480,
+                  "status": "available",
+                  "threshold_power": 1.6307703620992396e-08,
+                  "time_s": 2.4675
+                }
+              },
+              "early": {
+                "mean_power": 6.710603542293943e-08,
+                "observer_center_count": 10,
+                "samples": [
+                  39464,
+                  39624
+                ],
+                "status": "available"
+              },
+              "onset_status": "fixed",
+              "reference_P_star": 1.6307703620992395e-05,
+              "search": {
+                "mean_power": 6.34334922472122e-06,
+                "observer_center_count": 60,
+                "samples": [
+                  39224,
+                  40184
+                ],
+                "status": "available"
+              },
+              "selected_t_star_s": 2.4815,
+              "status": "observed",
+              "strong": {
+                "mean_power": 9.42991897603793e-06,
+                "observer_center_count": 20,
+                "samples": [
+                  39704,
+                  40024
+                ],
+                "status": "available"
+              }
+            }
+          ],
+          "variant": "PML",
+          "waveform_identity": {
+            "bytes": 523648,
+            "dtype": "float64",
+            "normalization_or_clipping": "none",
+            "path": "librispeech_1089-134686-0032/pitch-3__seed20261015__PML.npy",
+            "sample_rate": 16000,
+            "samples": 65440,
+            "sha256": "b1c6a99b922e64084c3bcbd428cc3fce45a43dd63410c1ccc7b2189d87daa79c"
+          }
+        },
+        {
+          "saved_comparison_to_PML_local": [
+            {
+              "band_Hz": [
+                1500,
+                3000
+              ],
+              "crossing_delays": {
+                "-10": {
+                  "milliseconds": 5.0,
+                  "samples": 80,
+                  "status": "available"
+                },
+                "-20": {
+                  "milliseconds": 5.0,
+                  "samples": 80,
+                  "status": "available"
+                },
+                "-30": {
+                  "milliseconds": 0.0,
+                  "samples": 0,
+                  "status": "available"
+                }
+              },
+              "early_at_least_3dB_drop": {
+                "delta": {
+                  "status": "available",
+                  "value_db": -16.020356690090853
+                },
+                "flag": true,
+                "status": "available"
+              },
+              "early_delta_db": {
+                "status": "available",
+                "value_db": -16.020356690090853
+              },
+              "strong_delta_db": {
+                "status": "available",
+                "value_db": -0.44779441424240396
+              }
+            },
+            {
+              "band_Hz": [
+                3000,
+                8000
+              ],
+              "crossing_delays": {
+                "-10": {
+                  "milliseconds": 2.0,
+                  "samples": 32,
+                  "status": "available"
+                },
+                "-20": {
+                  "milliseconds": 2.0,
+                  "samples": 32,
+                  "status": "available"
+                },
+                "-30": {
+                  "milliseconds": 0.0,
+                  "samples": 0,
+                  "status": "available"
+                }
+              },
+              "early_at_least_3dB_drop": {
+                "delta": {
+                  "status": "available",
+                  "value_db": -1.9832444500901936
+                },
+                "flag": false,
+                "status": "available"
+              },
+              "early_delta_db": {
+                "status": "available",
+                "value_db": -1.9832444500901936
+              },
+              "strong_delta_db": {
+                "status": "available",
+                "value_db": -2.1632066231261593
+              }
+            }
+          ],
+          "saved_events": [
+            {
+              "band_Hz": [
+                1500,
+                3000
+              ],
+              "crossings": {
+                "-10": {
+                  "sample": 35320,
+                  "status": "available",
+                  "threshold_power": 1.2098284621227853e-05,
+                  "time_s": 2.2075
+                },
+                "-20": {
+                  "sample": 35304,
+                  "status": "available",
+                  "threshold_power": 1.2098284621227852e-06,
+                  "time_s": 2.2065
+                },
+                "-30": {
+                  "sample": 35144,
+                  "status": "available",
+                  "threshold_power": 1.2098284621227854e-07,
+                  "time_s": 2.1965
+                }
+              },
+              "early": {
+                "mean_power": 1.2955012744740016e-07,
+                "observer_center_count": 10,
+                "samples": [
+                  35096,
+                  35256
+                ],
+                "status": "available"
+              },
+              "onset_status": "fixed",
+              "reference_P_star": 0.00012098284621227853,
+              "search": {
+                "mean_power": 2.3025929813156524e-05,
+                "observer_center_count": 60,
+                "samples": [
+                  34856,
+                  35816
+                ],
+                "status": "available"
+              },
+              "selected_t_star_s": 2.2085,
+              "status": "observed",
+              "strong": {
+                "mean_power": 3.461149318136332e-05,
+                "observer_center_count": 20,
+                "samples": [
+                  35336,
+                  35656
+                ],
+                "status": "available"
+              }
+            },
+            {
+              "band_Hz": [
+                3000,
+                8000
+              ],
+              "crossings": {
+                "-10": {
+                  "sample": 39656,
+                  "status": "available",
+                  "threshold_power": 1.6307703620992396e-06,
+                  "time_s": 2.4785
+                },
+                "-20": {
+                  "sample": 39640,
+                  "status": "available",
+                  "threshold_power": 1.6307703620992396e-07,
+                  "time_s": 2.4775
+                },
+                "-30": {
+                  "sample": 39480,
+                  "status": "available",
+                  "threshold_power": 1.6307703620992396e-08,
+                  "time_s": 2.4675
+                }
+              },
+              "early": {
+                "mean_power": 4.2504717763481003e-08,
+                "observer_center_count": 10,
+                "samples": [
+                  39464,
+                  39624
+                ],
+                "status": "available"
+              },
+              "onset_status": "fixed",
+              "reference_P_star": 1.6307703620992395e-05,
+              "search": {
+                "mean_power": 5.71904899117532e-06,
+                "observer_center_count": 60,
+                "samples": [
+                  39224,
+                  40184
+                ],
+                "status": "available"
+              },
+              "selected_t_star_s": 2.4815,
+              "status": "observed",
+              "strong": {
+                "mean_power": 5.73043114935882e-06,
+                "observer_center_count": 20,
+                "samples": [
+                  39704,
+                  40024
+                ],
+                "status": "available"
+              }
+            }
+          ],
+          "variant": "RAW_SHAPE",
+          "waveform_identity": {
+            "bytes": 523648,
+            "dtype": "float64",
+            "normalization_or_clipping": "none",
+            "path": "librispeech_1089-134686-0032/pitch-3__seed20261015__RAW_SHAPE.npy",
+            "sample_rate": 16000,
+            "samples": 65440,
+            "sha256": "ec944cdc276ea33c8b75991ecfa6164d17c52ca1ccf47b9ddae76f197078e162"
+          }
+        },
+        {
+          "saved_comparison_to_PML_local": [
+            {
+              "band_Hz": [
+                1500,
+                3000
+              ],
+              "crossing_delays": {
+                "-10": {
+                  "milliseconds": 5.0,
+                  "samples": 80,
+                  "status": "available"
+                },
+                "-20": {
+                  "milliseconds": 5.0,
+                  "samples": 80,
+                  "status": "available"
+                },
+                "-30": {
+                  "milliseconds": 4.0,
+                  "samples": 64,
+                  "status": "available"
+                }
+              },
+              "early_at_least_3dB_drop": {
+                "delta": {
+                  "status": "available",
+                  "value_db": -19.83996718534584
+                },
+                "flag": true,
+                "status": "available"
+              },
+              "early_delta_db": {
+                "status": "available",
+                "value_db": -19.83996718534584
+              },
+              "strong_delta_db": {
+                "status": "available",
+                "value_db": -0.7913660829334113
+              }
+            },
+            {
+              "band_Hz": [
+                3000,
+                8000
+              ],
+              "crossing_delays": {
+                "-10": {
+                  "milliseconds": 2.0,
+                  "samples": 32,
+                  "status": "available"
+                },
+                "-20": {
+                  "milliseconds": 2.0,
+                  "samples": 32,
+                  "status": "available"
+                },
+                "-30": {
+                  "milliseconds": 2.0,
+                  "samples": 32,
+                  "status": "available"
+                }
+              },
+              "early_at_least_3dB_drop": {
+                "delta": {
+                  "status": "available",
+                  "value_db": -7.045298234367454
+                },
+                "flag": true,
+                "status": "available"
+              },
+              "early_delta_db": {
+                "status": "available",
+                "value_db": -7.045298234367454
+              },
+              "strong_delta_db": {
+                "status": "available",
+                "value_db": -2.062219242950265
+              }
+            }
+          ],
+          "saved_events": [
+            {
+              "band_Hz": [
+                1500,
+                3000
+              ],
+              "crossings": {
+                "-10": {
+                  "sample": 35320,
+                  "status": "available",
+                  "threshold_power": 1.2098284621227853e-05,
+                  "time_s": 2.2075
+                },
+                "-20": {
+                  "sample": 35304,
+                  "status": "available",
+                  "threshold_power": 1.2098284621227852e-06,
+                  "time_s": 2.2065
+                },
+                "-30": {
+                  "sample": 35208,
+                  "status": "available",
+                  "threshold_power": 1.2098284621227854e-07,
+                  "time_s": 2.2005
+                }
+              },
+              "early": {
+                "mean_power": 5.3762170647954314e-08,
+                "observer_center_count": 10,
+                "samples": [
+                  35096,
+                  35256
+                ],
+                "status": "available"
+              },
+              "onset_status": "fixed",
+              "reference_P_star": 0.00012098284621227853,
+              "search": {
+                "mean_power": 2.200607304544422e-05,
+                "observer_center_count": 60,
+                "samples": [
+                  34856,
+                  35816
+                ],
+                "status": "available"
+              },
+              "selected_t_star_s": 2.2085,
+              "status": "observed",
+              "strong": {
+                "mean_power": 3.1978874071247636e-05,
+                "observer_center_count": 20,
+                "samples": [
+                  35336,
+                  35656
+                ],
+                "status": "available"
+              }
+            },
+            {
+              "band_Hz": [
+                3000,
+                8000
+              ],
+              "crossings": {
+                "-10": {
+                  "sample": 39656,
+                  "status": "available",
+                  "threshold_power": 1.6307703620992396e-06,
+                  "time_s": 2.4785
+                },
+                "-20": {
+                  "sample": 39640,
+                  "status": "available",
+                  "threshold_power": 1.6307703620992396e-07,
+                  "time_s": 2.4775
+                },
+                "-30": {
+                  "sample": 39512,
+                  "status": "available",
+                  "threshold_power": 1.6307703620992396e-08,
+                  "time_s": 2.4695
+                }
+              },
+              "early": {
+                "mean_power": 1.3250484497438096e-08,
+                "observer_center_count": 10,
+                "samples": [
+                  39464,
+                  39624
+                ],
+                "status": "available"
+              },
+              "onset_status": "fixed",
+              "reference_P_star": 1.6307703620992395e-05,
+              "search": {
+                "mean_power": 5.583135023159069e-06,
+                "observer_center_count": 60,
+                "samples": [
+                  39224,
+                  40184
+                ],
+                "status": "available"
+              },
+              "selected_t_star_s": 2.4815,
+              "status": "observed",
+              "strong": {
+                "mean_power": 5.865243365154107e-06,
+                "observer_center_count": 20,
+                "samples": [
+                  39704,
+                  40024
+                ],
+                "status": "available"
+              }
+            }
+          ],
+          "variant": "RAW_FULL",
+          "waveform_identity": {
+            "bytes": 523648,
+            "dtype": "float64",
+            "normalization_or_clipping": "none",
+            "path": "librispeech_1089-134686-0032/pitch-3__seed20261015__RAW_FULL.npy",
+            "sample_rate": 16000,
+            "samples": 65440,
+            "sha256": "3ab764980d96f338357e648a94fd46a5c0d8fb8e3b014786b4dbd5b4503240a5"
+          }
+        }
+      ],
+      "regions": [
+        {
+          "region_index": 0,
+          "band_Hz": [
+            1500,
+            3000
+          ],
+          "band_index": 0,
+          "kind": "early",
+          "center_count": 10
+        },
+        {
+          "region_index": 1,
+          "band_Hz": [
+            1500,
+            3000
+          ],
+          "band_index": 0,
+          "kind": "strong",
+          "center_count": 20
+        },
+        {
+          "region_index": 2,
+          "band_Hz": [
+            1500,
+            3000
+          ],
+          "band_index": 0,
+          "kind": "search",
+          "center_count": 60
+        },
+        {
+          "region_index": 3,
+          "band_Hz": [
+            3000,
+            8000
+          ],
+          "band_index": 1,
+          "kind": "early",
+          "center_count": 10
+        },
+        {
+          "region_index": 4,
+          "band_Hz": [
+            3000,
+            8000
+          ],
+          "band_index": 1,
+          "kind": "strong",
+          "center_count": 20
+        },
+        {
+          "region_index": 5,
+          "band_Hz": [
+            3000,
+            8000
+          ],
+          "band_index": 1,
+          "kind": "search",
+          "center_count": 60
+        }
+      ]
+    },
+    {
+      "id": "condition-09",
+      "original_fixed_events": {
+        "bands": [
+          {
+            "band_Hz": [
+              1500,
+              3000
+            ],
+            "early_s": [
+              4.6945,
+              4.7045
+            ],
+            "early_samples": [
+              75112,
+              75272
+            ],
+            "original_crossing_status": {
+              "-10": "available",
+              "-20": "available",
+              "-30": "available"
+            },
+            "original_first_crossing_s": {
+              "-10": 4.7085,
+              "-20": 4.6795,
+              "-30": 4.6795
+            },
+            "reference_P_star": 0.00016578989120493595,
+            "search_s": [
+              4.6795,
+              4.7395
+            ],
+            "search_samples": [
+              74872,
+              75832
+            ],
+            "selected_t_star_s": 4.7095,
+            "status": "fixed",
+            "strong_s": [
+              4.7095,
+              4.7295
+            ],
+            "strong_samples": [
+              75352,
+              75672
+            ]
+          },
+          {
+            "band_Hz": [
+              3000,
+              8000
+            ],
+            "early_s": [
+              2.9825,
+              2.9925
+            ],
+            "early_samples": [
+              47720,
+              47880
+            ],
+            "original_crossing_status": {
+              "-10": "available",
+              "-20": "available",
+              "-30": "available"
+            },
+            "original_first_crossing_s": {
+              "-10": 2.9975,
+              "-20": 2.9965,
+              "-30": 2.9955
+            },
+            "reference_P_star": 0.003840301680168101,
+            "search_s": [
+              2.9675,
+              3.0275
+            ],
+            "search_samples": [
+              47480,
+              48440
+            ],
+            "selected_t_star_s": 2.9975,
+            "status": "fixed",
+            "strong_s": [
+              2.9975,
+              3.0175
+            ],
+            "strong_samples": [
+              47960,
+              48280
+            ]
+          }
+        ],
+        "case": "librispeech_1221-135766-0005",
+        "crossing": "first_observer_center_at_or_above_threshold; no_interpolation",
+        "region_membership": "left_closed_right_open"
+      },
+      "saved_event_records": [
+        {
+          "saved_comparison_to_PML_local": null,
+          "saved_events": [
+            {
+              "band_Hz": [
+                1500,
+                3000
+              ],
+              "crossings": {
+                "-10": {
+                  "sample": 75256,
+                  "status": "available",
+                  "threshold_power": 1.6578989120493596e-05,
+                  "time_s": 4.7035
+                },
+                "-20": {
+                  "sample": 74872,
+                  "status": "available",
+                  "threshold_power": 1.6578989120493595e-06,
+                  "time_s": 4.6795
+                },
+                "-30": {
+                  "sample": 74872,
+                  "status": "available",
+                  "threshold_power": 1.6578989120493595e-07,
+                  "time_s": 4.6795
+                }
+              },
+              "early": {
+                "mean_power": 4.436182038734224e-06,
+                "observer_center_count": 10,
+                "samples": [
+                  75112,
+                  75272
+                ],
+                "status": "available"
+              },
+              "onset_status": "fixed",
+              "reference_P_star": 0.00016578989120493595,
+              "search": {
+                "mean_power": 1.2200460387469968e-05,
+                "observer_center_count": 60,
+                "samples": [
+                  74872,
+                  75832
+                ],
+                "status": "available"
+              },
+              "selected_t_star_s": 4.7095,
+              "status": "observed",
+              "strong": {
+                "mean_power": 1.5325216350018602e-05,
+                "observer_center_count": 20,
+                "samples": [
+                  75352,
+                  75672
+                ],
+                "status": "available"
+              }
+            },
+            {
+              "band_Hz": [
+                3000,
+                8000
+              ],
+              "crossings": {
+                "-10": {
+                  "sample": 47928,
+                  "status": "available",
+                  "threshold_power": 0.00038403016801681015,
+                  "time_s": 2.9955
+                },
+                "-20": {
+                  "sample": 47864,
+                  "status": "available",
+                  "threshold_power": 3.840301680168101e-05,
+                  "time_s": 2.9915
+                },
+                "-30": {
+                  "sample": 47832,
+                  "status": "available",
+                  "threshold_power": 3.840301680168101e-06,
+                  "time_s": 2.9895
+                }
+              },
+              "early": {
+                "mean_power": 7.978571421171511e-06,
+                "observer_center_count": 10,
+                "samples": [
+                  47720,
+                  47880
+                ],
+                "status": "available"
+              },
+              "onset_status": "fixed",
+              "reference_P_star": 0.003840301680168101,
+              "search": {
+                "mean_power": 0.000713072126091838,
+                "observer_center_count": 60,
+                "samples": [
+                  47480,
+                  48440
+                ],
+                "status": "available"
+              },
+              "selected_t_star_s": 2.9975,
+              "status": "observed",
+              "strong": {
+                "mean_power": 0.0018143649424229187,
+                "observer_center_count": 20,
+                "samples": [
+                  47960,
+                  48280
+                ],
+                "status": "available"
+              }
+            }
+          ],
+          "variant": "PML",
+          "waveform_identity": {
+            "bytes": 768128,
+            "dtype": "float64",
+            "normalization_or_clipping": "none",
+            "path": "librispeech_1221-135766-0005/pitch+0__seed0__PML.npy",
+            "sample_rate": 16000,
+            "samples": 96000,
+            "sha256": "82cfae761e5c0f68551f01def9e993c41545f7fc8d731b60e1305811d7f63067"
+          }
+        },
+        {
+          "saved_comparison_to_PML_local": [
+            {
+              "band_Hz": [
+                1500,
+                3000
+              ],
+              "crossing_delays": {
+                "-10": {
+                  "milliseconds": 0.0,
+                  "samples": 0,
+                  "status": "available"
+                },
+                "-20": {
+                  "milliseconds": 0.0,
+                  "samples": 0,
+                  "status": "available"
+                },
+                "-30": {
+                  "milliseconds": 0.0,
+                  "samples": 0,
+                  "status": "available"
+                }
+              },
+              "early_at_least_3dB_drop": {
+                "delta": {
+                  "status": "available",
+                  "value_db": -0.012555339743212102
+                },
+                "flag": false,
+                "status": "available"
+              },
+              "early_delta_db": {
+                "status": "available",
+                "value_db": -0.012555339743212102
+              },
+              "strong_delta_db": {
+                "status": "available",
+                "value_db": -0.24992422020408966
+              }
+            },
+            {
+              "band_Hz": [
+                3000,
+                8000
+              ],
+              "crossing_delays": {
+                "-10": {
+                  "milliseconds": 2.0,
+                  "samples": 32,
+                  "status": "available"
+                },
+                "-20": {
+                  "milliseconds": 0.0,
+                  "samples": 0,
+                  "status": "available"
+                },
+                "-30": {
+                  "milliseconds": 0.0,
+                  "samples": 0,
+                  "status": "available"
+                }
+              },
+              "early_at_least_3dB_drop": {
+                "delta": {
+                  "status": "available",
+                  "value_db": 0.39762220366395873
+                },
+                "flag": false,
+                "status": "available"
+              },
+              "early_delta_db": {
+                "status": "available",
+                "value_db": 0.39762220366395873
+              },
+              "strong_delta_db": {
+                "status": "available",
+                "value_db": 0.1459540855981789
+              }
+            }
+          ],
+          "saved_events": [
+            {
+              "band_Hz": [
+                1500,
+                3000
+              ],
+              "crossings": {
+                "-10": {
+                  "sample": 75256,
+                  "status": "available",
+                  "threshold_power": 1.6578989120493596e-05,
+                  "time_s": 4.7035
+                },
+                "-20": {
+                  "sample": 74872,
+                  "status": "available",
+                  "threshold_power": 1.6578989120493595e-06,
+                  "time_s": 4.6795
+                },
+                "-30": {
+                  "sample": 74872,
+                  "status": "available",
+                  "threshold_power": 1.6578989120493595e-07,
+                  "time_s": 4.6795
+                }
+              },
+              "early": {
+                "mean_power": 4.423375672983807e-06,
+                "observer_center_count": 10,
+                "samples": [
+                  75112,
+                  75272
+                ],
+                "status": "available"
+              },
+              "onset_status": "fixed",
+              "reference_P_star": 0.00016578989120493595,
+              "search": {
+                "mean_power": 9.88577327438219e-06,
+                "observer_center_count": 60,
+                "samples": [
+                  74872,
+                  75832
+                ],
+                "status": "available"
+              },
+              "selected_t_star_s": 4.7095,
+              "status": "observed",
+              "strong": {
+                "mean_power": 1.4468189629081237e-05,
+                "observer_center_count": 20,
+                "samples": [
+                  75352,
+                  75672
+                ],
+                "status": "available"
+              }
+            },
+            {
+              "band_Hz": [
+                3000,
+                8000
+              ],
+              "crossings": {
+                "-10": {
+                  "sample": 47960,
+                  "status": "available",
+                  "threshold_power": 0.00038403016801681015,
+                  "time_s": 2.9975
+                },
+                "-20": {
+                  "sample": 47864,
+                  "status": "available",
+                  "threshold_power": 3.840301680168101e-05,
+                  "time_s": 2.9915
+                },
+                "-30": {
+                  "sample": 47832,
+                  "status": "available",
+                  "threshold_power": 3.840301680168101e-06,
+                  "time_s": 2.9895
+                }
+              },
+              "early": {
+                "mean_power": 8.743541131626644e-06,
+                "observer_center_count": 10,
+                "samples": [
+                  47720,
+                  47880
+                ],
+                "status": "available"
+              },
+              "onset_status": "fixed",
+              "reference_P_star": 0.003840301680168101,
+              "search": {
+                "mean_power": 0.0007094204466126893,
+                "observer_center_count": 60,
+                "samples": [
+                  47480,
+                  48440
+                ],
+                "status": "available"
+              },
+              "selected_t_star_s": 2.9975,
+              "status": "observed",
+              "strong": {
+                "mean_power": 0.0018763767988544812,
+                "observer_center_count": 20,
+                "samples": [
+                  47960,
+                  48280
+                ],
+                "status": "available"
+              }
+            }
+          ],
+          "variant": "RAW_SHAPE",
+          "waveform_identity": {
+            "bytes": 768128,
+            "dtype": "float64",
+            "normalization_or_clipping": "none",
+            "path": "librispeech_1221-135766-0005/pitch+0__seed0__RAW_SHAPE.npy",
+            "sample_rate": 16000,
+            "samples": 96000,
+            "sha256": "546be5acbc36a76c03db15837211519607b7c74777715eba9bb6794184b556ca"
+          }
+        },
+        {
+          "saved_comparison_to_PML_local": [
+            {
+              "band_Hz": [
+                1500,
+                3000
+              ],
+              "crossing_delays": {
+                "-10": {
+                  "milliseconds": 12.0,
+                  "samples": 192,
+                  "status": "available"
+                },
+                "-20": {
+                  "milliseconds": 0.0,
+                  "samples": 0,
+                  "status": "available"
+                },
+                "-30": {
+                  "milliseconds": 0.0,
+                  "samples": 0,
+                  "status": "available"
+                }
+              },
+              "early_at_least_3dB_drop": {
+                "delta": {
+                  "status": "available",
+                  "value_db": -3.055964668854614
+                },
+                "flag": true,
+                "status": "available"
+              },
+              "early_delta_db": {
+                "status": "available",
+                "value_db": -3.055964668854614
+              },
+              "strong_delta_db": {
+                "status": "available",
+                "value_db": 0.5146321918450703
+              }
+            },
+            {
+              "band_Hz": [
+                3000,
+                8000
+              ],
+              "crossing_delays": {
+                "-10": {
+                  "milliseconds": 6.0,
+                  "samples": 96,
+                  "status": "available"
+                },
+                "-20": {
+                  "milliseconds": 5.0,
+                  "samples": 80,
+                  "status": "available"
+                },
+                "-30": {
+                  "milliseconds": 6.0,
+                  "samples": 96,
+                  "status": "available"
+                }
+              },
+              "early_at_least_3dB_drop": {
+                "delta": {
+                  "status": "available",
+                  "value_db": -14.086957201907628
+                },
+                "flag": true,
+                "status": "available"
+              },
+              "early_delta_db": {
+                "status": "available",
+                "value_db": -14.086957201907628
+              },
+              "strong_delta_db": {
+                "status": "available",
+                "value_db": -0.03718824572099155
+              }
+            }
+          ],
+          "saved_events": [
+            {
+              "band_Hz": [
+                1500,
+                3000
+              ],
+              "crossings": {
+                "-10": {
+                  "sample": 75448,
+                  "status": "available",
+                  "threshold_power": 1.6578989120493596e-05,
+                  "time_s": 4.7155
+                },
+                "-20": {
+                  "sample": 74872,
+                  "status": "available",
+                  "threshold_power": 1.6578989120493595e-06,
+                  "time_s": 4.6795
+                },
+                "-30": {
+                  "sample": 74872,
+                  "status": "available",
+                  "threshold_power": 1.6578989120493595e-07,
+                  "time_s": 4.6795
+                }
+              },
+              "early": {
+                "mean_power": 2.1948906690744625e-06,
+                "observer_center_count": 10,
+                "samples": [
+                  75112,
+                  75272
+                ],
+                "status": "available"
+              },
+              "onset_status": "fixed",
+              "reference_P_star": 0.00016578989120493595,
+              "search": {
+                "mean_power": 9.629379752377043e-06,
+                "observer_center_count": 60,
+                "samples": [
+                  74872,
+                  75832
+                ],
+                "status": "available"
+              },
+              "selected_t_star_s": 4.7095,
+              "status": "observed",
+              "strong": {
+                "mean_power": 1.72532070219038e-05,
+                "observer_center_count": 20,
+                "samples": [
+                  75352,
+                  75672
+                ],
+                "status": "available"
+              }
+            },
+            {
+              "band_Hz": [
+                3000,
+                8000
+              ],
+              "crossings": {
+                "-10": {
+                  "sample": 48024,
+                  "status": "available",
+                  "threshold_power": 0.00038403016801681015,
+                  "time_s": 3.0015
+                },
+                "-20": {
+                  "sample": 47944,
+                  "status": "available",
+                  "threshold_power": 3.840301680168101e-05,
+                  "time_s": 2.9965
+                },
+                "-30": {
+                  "sample": 47928,
+                  "status": "available",
+                  "threshold_power": 3.840301680168101e-06,
+                  "time_s": 2.9955
+                }
+              },
+              "early": {
+                "mean_power": 3.113360541115263e-07,
+                "observer_center_count": 10,
+                "samples": [
+                  47720,
+                  47880
+                ],
+                "status": "available"
+              },
+              "onset_status": "fixed",
+              "reference_P_star": 0.003840301680168101,
+              "search": {
+                "mean_power": 0.0006875683022336353,
+                "observer_center_count": 60,
+                "samples": [
+                  47480,
+                  48440
+                ],
+                "status": "available"
+              },
+              "selected_t_star_s": 2.9975,
+              "status": "observed",
+              "strong": {
+                "mean_power": 0.0017988950269443899,
+                "observer_center_count": 20,
+                "samples": [
+                  47960,
+                  48280
+                ],
+                "status": "available"
+              }
+            }
+          ],
+          "variant": "RAW_FULL",
+          "waveform_identity": {
+            "bytes": 768128,
+            "dtype": "float64",
+            "normalization_or_clipping": "none",
+            "path": "librispeech_1221-135766-0005/pitch+0__seed0__RAW_FULL.npy",
+            "sample_rate": 16000,
+            "samples": 96000,
+            "sha256": "b45a6380b5c8f17818af0dfae734ac4982a0ee6a4490f8dfa38759fe2f4e2cb5"
+          }
+        }
+      ],
+      "regions": [
+        {
+          "region_index": 0,
+          "band_Hz": [
+            1500,
+            3000
+          ],
+          "band_index": 0,
+          "kind": "early",
+          "center_count": 10
+        },
+        {
+          "region_index": 1,
+          "band_Hz": [
+            1500,
+            3000
+          ],
+          "band_index": 0,
+          "kind": "strong",
+          "center_count": 20
+        },
+        {
+          "region_index": 2,
+          "band_Hz": [
+            1500,
+            3000
+          ],
+          "band_index": 0,
+          "kind": "search",
+          "center_count": 60
+        },
+        {
+          "region_index": 3,
+          "band_Hz": [
+            3000,
+            8000
+          ],
+          "band_index": 1,
+          "kind": "early",
+          "center_count": 10
+        },
+        {
+          "region_index": 4,
+          "band_Hz": [
+            3000,
+            8000
+          ],
+          "band_index": 1,
+          "kind": "strong",
+          "center_count": 20
+        },
+        {
+          "region_index": 5,
+          "band_Hz": [
+            3000,
+            8000
+          ],
+          "band_index": 1,
+          "kind": "search",
+          "center_count": 60
+        }
+      ]
+    }
+  ],
+  "contract_revision_after_failure": true,
+  "legacy_failure_kept": true
+}
