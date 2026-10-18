@@ -1,5 +1,17 @@
 # 現在の状態と次の作業
 
+## 現状（2026-10-19 日本時間）
+
+2026-10-19 01:50 JST（2026-10-18 16:50 UTC）確認。現在の唯一の開発ベースはPMLです。以下の公開・原因診断によるベース変更や、新方式の採用はありません。
+
+- [PR #44](https://github.com/Hiroshiba/check-nonml-saikyo-vocoder/pull/44)は日本時間10月19日00:35にmainへ反映済み（f91a93a）。aHM＋Cartesian候補の120録音評価・特徴評価・追加音高追従の[公開案内](https://hiroshiba.github.io/check-nonml-saikyo-vocoder/research/ahm-cartesian-multimetric-2026-10-17/index.html)を掲載しました。[main静的解析](https://github.com/Hiroshiba/check-nonml-saikyo-vocoder/actions/runs/39141207250)・[Pages公開処理](https://github.com/Hiroshiba/check-nonml-saikyo-vocoder/actions/runs/39141207233)は成功しています。欠測や品質・制御上の弱点は元の記録どおり保持します。
+- [PR #45](https://github.com/Hiroshiba/check-nonml-saikyo-vocoder/pull/45)は同日01:35にmainへ反映済み（1db2b6f）。[サンプル3の未来依存・特徴1行の伝播](https://hiroshiba.github.io/check-nonml-saikyo-vocoder/research/transient-envelope-pathway-2026-10-18/index.html)と同一録音の5音声を掲載し、[main静的解析](https://github.com/Hiroshiba/check-nonml-saikyo-vocoder/actions/runs/39145678024)・[Pages公開処理](https://github.com/Hiroshiba/check-nonml-saikyo-vocoder/actions/runs/39145678003)も成功しています。固定F0の11解析とFWCEP 1行だけを変えた9合成から、＋3半音で最初の標本差が2.0874375秒に現れる経路を確認しました。既知1録音の原因診断であり、約12.5–12.6dBの早期高域低下を音質改善量とは扱いません。
+- [ABXの距離設計と原因診断](../experiments/2026-10-17/ahm-cartesian-multimetric/research-discussion/ABX-GEOMETRY-ja.md)では、train定数Hz列が変化した1録音を含む全三つ組の誤りを仮に0にしても、canonical v2の跨話者nested誤り率の下限は0.496681で、PMLの保存値0.420683を上回ります。この1録音だけでは劣位全体を説明・解消できません。仮想上限の診断であり、実測ABX値・順位の修正ではありません。該当フレームと音素区間の重なりは引き続き未確認です。
+
+次はPR #45で確認した経路の対処研究を続けます。正式採用の判断には、既存の固定120録音・現base・既存比較方式による評価が別に必要です。
+
+以下は各時点の履歴です。直後のaHM節にある「Draft」「公開未実施」は2026-10-18の公開前記録であり、現在の公開状態は上記を参照してください。過去の測定値・リンク・判断は変更していません。
+
 ## aHM＋Cartesian候補の多指標評価（2026-10-18）
 
 現在の唯一の開発ベースはPMLです。[Draft PR #44](https://github.com/Hiroshiba/check-nonml-saikyo-vocoder/pull/44)で候補を比較しており、採用・ベース切り替えはしていません。
