@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="light dark"><title>後掛け30条件：品質・悪化・欠測の全記録</title><style>*{box-sizing:border-box}html{color-scheme:light dark;scroll-behavior:smooth}body{--bg:#f7f8fb;--panel:#fff;--fg:#182435;--muted:#546273;--line:#d6dee8;--accent:#145da0;--warn:#fff3d6;--harm:#fff0eb;background:var(--bg);color:var(--fg);font:16px/1.75 system-ui,-apple-system,"Noto Sans JP",sans-serif;margin:0}main{max-width:1220px;margin:auto;padding:28px 22px 70px}h1{font-size:clamp(1.7rem,3vw,2.5rem);line-height:1.35}h2{margin-top:2.8rem;padding-top:.5rem;border-top:2px solid var(--line)}h3{line-height:1.5}h4{font-size:.95rem;margin:.5em 0}a{color:var(--accent);text-underline-offset:.18em}a:focus-visible,summary:focus-visible{outline:3px solid var(--accent)}nav{display:flex;gap:14px;flex-wrap:wrap;padding:10px 0}.lead{font-size:1.1rem}.tag{display:inline-block;border:1px solid var(--line);padding:3px 9px;border-radius:6px;font-size:.85rem;background:var(--panel)}.notice{border-left:5px solid #b87900;background:var(--warn);padding:14px 18px;border-radius:7px}.recording{padding:18px;margin:18px 0;background:var(--panel);border:1px solid var(--line);border-radius:12px}.recording h3{margin-top:0}.players{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}.player{min-width:0;padding:8px 0}audio{width:100%;height:42px}.small{font-size:.85rem;color:var(--muted)}details{border:1px solid var(--line);border-radius:7px;padding:9px 12px;margin:12px 0;background:var(--panel)}details details{margin:5px 0}summary{cursor:pointer;font-weight:650}.hash summary{font-size:.8rem;font-weight:400}.hash p{font-size:.78rem}.scroll{overflow:auto;border:1px solid var(--line);border-radius:8px;margin:18px 0}table{border-collapse:collapse;width:100%;font-variant-numeric:tabular-nums;font-size:.86rem;background:var(--panel)}th,td{border-bottom:1px solid var(--line);padding:9px 11px;vertical-align:top;text-align:left;white-space:nowrap}th{background:var(--bg)}tr.harm{background:var(--harm)}code{overflow-wrap:anywhere;white-space:normal;font-size:.86em}img{display:block;max-width:100%;height:auto;background:white;border:1px solid var(--line);border-radius:8px}li{margin:.4em 0}.scientific p{max-width:100ch}footer{margin-top:45px;padding-top:20px;border-top:1px solid var(--line)}@media(max-width:760px){.players{grid-template-columns:1fr}main{padding:18px 12px 50px}h3 .small{display:block}}@media(prefers-color-scheme:dark){body{--bg:#111923;--panel:#192534;--fg:#e6edf5;--muted:#b1c0d3;--line:#384b61;--accent:#82b9ff;--warn:#352b16;--harm:#3d2723}}</style></head><body><main><nav><a href="../index.html">音響・音声を含む比較へ戻る</a><a href="REPORT-ja.md">日本語本文</a><a href="quality-values.json">全品質値JSON</a><a href="../artifact-manifest.json">公開全ファイルSHA</a></nav><p class="notice">現在のベースはPML。今回試行は未採用。予測MOS・編集F0・有声欠落・ASRを別々に記述し、一般的な品質改善や総合順位を主張しません。</p><h1>RAW_POSTCOLOR_M1：固定30波形の品質値は一貫した改善ではない</h1>
+<p>2026-10-18 UTC。保存済み数値だけの解釈。現ベースはPML。新しい推論・合成・波形再測定・テスト・閾値調整は行っていない。採用判断と音響・周期観測との統合は別工程。</p>
+<h2>先に結論</h2>
+<ul>
+<li>PML比で予測MOSが15/30条件で上昇、15/30条件で低下した。低下0.15超の固定害判定は10/30条件、3/5録音で発火した。全条件平均差−0.0148だけではこの集中した悪化を表せない。</li>
+<li>1221-135766-0005は全6条件で固定MOS害（差−0.1666～−0.4073）。121-121726-0012は元音高のseed20261015と+3半音の両seed、1089-134686-0032は+3半音seed20261015で発火した。</li>
+<li>有益な差もある。1188-133604-0003は全6条件でMOS上昇（+0.0239～+0.2940）。同録音の+3半音seed20261015では有声欠落数12→7、率8.1633%→4.8951%だった。ただし各方式自身のnative由来の分母も147→143で異なる。</li>
+<li>編集20条件のPML比F0 MAE増加&gt;10cent、欠落率増加&gt;2ppという固定害判定はともに0件。ただしF0 MAE増加は7条件、欠落率増加は5条件あり、閾値内の悪化は残る。native10条件は適用外なので、この判定で元音高のF0誤差を保証しない。</li>
+<li>ASRは評価可能な12条件でPML・RAW_FULLとCER/WER同値。RAW_SHAPE比では121-121726-0012／−3半音／seed0の文字誤りが2/20→3/20、CER差+0.05（+5pp）。WERは全比較で同値。残り18候補条件は部分GT未整備で欠測。</li>
+</ul>
+<p><a href="figures/PML-paired-deltas.png"><img loading="lazy" src="figures/PML-paired-deltas.png" alt="PMLに対する全30条件の差"></a></p>
+<p>青は当該指標の改善方向、赤は悪化方向。!は事前固定のPML比害判定。灰色はnative適用外。図は全条件を表示し、複数指標を混ぜた平均順位や総合点は作らない。</p>
+<h2>計測の終端と被覆</h2>
+<p>数値プロセスはexit2、state=completed_with_missing_observations、complete=true。30行はすべてrecordedで、failedは0。入力閉包は処理前後にSHA照合済み。exit2は以下の予定欠測・適用外が残ることを表し、途中停止ではない。</p>
+<div class="scroll"><table><thead><tr><th>指標</th><th>available</th><th>適用外</th><th>固定欠測</th></tr></thead><tbody>
+<tr><td>UTMOSv2予測MOS</td><td>30</td><td>0</td><td>0</td></tr>
+<tr><td>相対F0 MAE</td><td>20</td><td>native10</td><td>0</td></tr>
+<tr><td>有声欠落率</td><td>20</td><td>native10</td><td>0</td></tr>
+<tr><td>ASR CER/WER</td><td>12</td><td>0</td><td>部分GT未整備18</td></tr>
+</tbody></table></div>
+<p>4指標すべてavailableは8/30条件のみ（全文GT2録音×編集2音高×2seed）。残り22条件を0誤差や完全観測として扱わない。旧90品質は再計算せず、30×PML/RAW_SHAPE/RAW_FULLの全90対応ペアへ保存値を接続した。</p>
+<h2>固定害判定：発火した全10条件</h2>
+<p>規則は新方式−PMLでMOS&lt;−0.15、F0 MAE&gt;+10cent、欠落率&gt;+2pp。等号では発火しない。ASRの害閾値は未設定。SHAPE/FULLへ同じ閾値を後付けしない。</p>
+<div class="scroll"><table><thead><tr><th>録音ID</th><th>音高</th><th>seed</th><th>MOS差</th><th>F0 MAE差 cent</th><th>欠落率差 pp</th><th>発火</th></tr></thead><tbody>
+<tr><td>121-121726-0012</td><td>+0</td><td>20261015</td><td>-0.2720</td><td>native適用外</td><td>native適用外</td><td>MOS</td></tr>
+<tr><td>121-121726-0012</td><td>+3</td><td>0</td><td>-0.2240</td><td>+0.4719</td><td>+1.7094</td><td>MOS</td></tr>
+<tr><td>121-121726-0012</td><td>+3</td><td>20261015</td><td>-0.2071</td><td>-0.2298</td><td>+1.5756</td><td>MOS</td></tr>
+<tr><td>1221-135766-0005</td><td>+0</td><td>0</td><td>-0.3566</td><td>native適用外</td><td>native適用外</td><td>MOS</td></tr>
+<tr><td>1221-135766-0005</td><td>+0</td><td>20261015</td><td>-0.2822</td><td>native適用外</td><td>native適用外</td><td>MOS</td></tr>
+<tr><td>1221-135766-0005</td><td>-3</td><td>0</td><td>-0.3379</td><td>-0.0711</td><td>-0.1504</td><td>MOS</td></tr>
+<tr><td>1221-135766-0005</td><td>-3</td><td>20261015</td><td>-0.1666</td><td>-0.1825</td><td>-0.1543</td><td>MOS</td></tr>
+<tr><td>1221-135766-0005</td><td>+3</td><td>0</td><td>-0.4073</td><td>+0.0351</td><td>-0.8939</td><td>MOS</td></tr>
+<tr><td>1221-135766-0005</td><td>+3</td><td>20261015</td><td>-0.1739</td><td>-0.0255</td><td>-0.2708</td><td>MOS</td></tr>
+<tr><td>1089-134686-0032</td><td>+3</td><td>20261015</td><td>-0.1801</td><td>+0.1538</td><td>-3.6362</td><td>MOS</td></tr>
+</tbody></table></div>
+<p>全30条件のfalse／適用外も<a href="PML-harm-30.csv">PML-harm-30.csv</a>へ保存した。これらは機械的な固定判定であり、人間の聴取で害を確定したものではない。</p>
+<h2>録音・音高別：2seed平均でも残る違い</h2>
+<p>各行は同一録音・音高の2seed平均。以下はPML比だけを示す。全3比較先の45行は<a href="recording-pitch-means-45.csv">recording-pitch-means-45.csv</a>に保持。2seedは録音内の反復であり、独立録音数を増やさない。</p>
+<div class="scroll"><table><thead><tr><th>録音ID</th><th>音高</th><th>MOS差</th><th>F0 MAE差 cent</th><th>欠落率差 pp</th><th>原音比CER差の差</th></tr></thead><tbody>
+<tr><td>1089-134686-0008</td><td>+0</td><td>+0.1674</td><td>native適用外</td><td>native適用外</td><td>部分GT欠測</td></tr>
+<tr><td>1089-134686-0008</td><td>-3</td><td>+0.0221</td><td>-0.0423</td><td>+0.5371</td><td>部分GT欠測</td></tr>
+<tr><td>1089-134686-0008</td><td>+3</td><td>+0.0269</td><td>-0.0843</td><td>+0.0520</td><td>部分GT欠測</td></tr>
+<tr><td>1188-133604-0003</td><td>+0</td><td>+0.0964</td><td>native適用外</td><td>native適用外</td><td>部分GT欠測</td></tr>
+<tr><td>1188-133604-0003</td><td>-3</td><td>+0.2359</td><td>-0.0096</td><td>-0.3758</td><td>部分GT欠測</td></tr>
+<tr><td>1188-133604-0003</td><td>+3</td><td>+0.2593</td><td>+0.0868</td><td>-1.9887</td><td>部分GT欠測</td></tr>
+<tr><td>121-121726-0012</td><td>+0</td><td>-0.1678</td><td>native適用外</td><td>native適用外</td><td>+0.0000</td></tr>
+<tr><td>121-121726-0012</td><td>-3</td><td>+0.1180</td><td>+1.7710</td><td>-0.5909</td><td>+0.0000</td></tr>
+<tr><td>121-121726-0012</td><td>+3</td><td>-0.2156</td><td>+0.1210</td><td>+1.6425</td><td>+0.0000</td></tr>
+<tr><td>1221-135766-0005</td><td>+0</td><td>-0.3194</td><td>native適用外</td><td>native適用外</td><td>部分GT欠測</td></tr>
+<tr><td>1221-135766-0005</td><td>-3</td><td>-0.2522</td><td>-0.1268</td><td>-0.1524</td><td>部分GT欠測</td></tr>
+<tr><td>1221-135766-0005</td><td>+3</td><td>-0.2906</td><td>+0.0048</td><td>-0.5823</td><td>部分GT欠測</td></tr>
+<tr><td>1089-134686-0032</td><td>+0</td><td>+0.1029</td><td>native適用外</td><td>native適用外</td><td>+0.0000</td></tr>
+<tr><td>1089-134686-0032</td><td>-3</td><td>+0.0055</td><td>-0.1545</td><td>-0.4922</td><td>+0.0000</td></tr>
+<tr><td>1089-134686-0032</td><td>+3</td><td>-0.0111</td><td>+0.0779</td><td>-2.3034</td><td>+0.0000</td></tr>
+</tbody></table></div>
+<p><strong>seedで方向が変わる例</strong>：1089-134686-0032の+3半音は、MOS差がseed0で+0.1579607、seed20261015で−0.1801009。2seed平均−0.0110701だけを見ると、後者の固定害を隠してしまう。全seed値は図と90行CSVへ残した。</p>
+<h2>他の固定比較先を含む全90ペア</h2>
+<p><a href="figures/all90-MOS-deltas.png"><img loading="lazy" src="figures/all90-MOS-deltas.png" alt="PML・SHAPE・FULLへのMOS差"></a></p>
+<p>次表は指標ごとの記述的集計であり、総合優勝や平均順位ではない。差は新方式−比較先。MOSは正、誤差・欠落・CERは負が減少方向。「減少／改善」数は厳密な符号で数え、微小差を統計的改善と解釈しない。平均は、被覆の揃う録音内反復→録音等重みの記述で、推測統計・有意差検定・閾値探索は行わない。</p>
+<div class="scroll"><table><thead><tr><th>比較先</th><th>指標</th><th>有効ペア</th><th>平均差</th><th>最小差</th><th>最大差</th><th>改善方向</th><th>悪化方向</th><th>同値</th></tr></thead><tbody>
+<tr><td>PML</td><td>予測MOS</td><td>30/30</td><td>-0.0148</td><td>-0.4073</td><td>+0.2940</td><td>15</td><td>15</td><td>0</td></tr>
+<tr><td>PML</td><td>相対F0 MAE cent</td><td>20/30</td><td>+0.1644</td><td>-0.2487</td><td>+3.5991</td><td>13</td><td>7</td><td>0</td></tr>
+<tr><td>PML</td><td>有声欠落率 pp</td><td>20/30</td><td>-0.4254</td><td>-3.6362</td><td>+1.7094</td><td>14</td><td>5</td><td>1</td></tr>
+<tr><td>PML</td><td>原音比CER差</td><td>12/30</td><td>+0.0000</td><td>+0.0000</td><td>+0.0000</td><td>0</td><td>0</td><td>12</td></tr>
+<tr><td>RAW_SHAPE</td><td>予測MOS</td><td>30/30</td><td>-0.0794</td><td>-0.5262</td><td>+0.2291</td><td>12</td><td>18</td><td>0</td></tr>
+<tr><td>RAW_SHAPE</td><td>相対F0 MAE cent</td><td>20/30</td><td>-0.3395</td><td>-4.8737</td><td>+0.1788</td><td>13</td><td>7</td><td>0</td></tr>
+<tr><td>RAW_SHAPE</td><td>有声欠落率 pp</td><td>20/30</td><td>-0.0341</td><td>-1.7094</td><td>+2.5641</td><td>7</td><td>8</td><td>5</td></tr>
+<tr><td>RAW_SHAPE</td><td>原音比CER差</td><td>12/30</td><td>+0.0042</td><td>+0.0000</td><td>+0.0500</td><td>0</td><td>1</td><td>11</td></tr>
+<tr><td>RAW_FULL</td><td>予測MOS</td><td>30/30</td><td>-0.1142</td><td>-0.5126</td><td>+0.2528</td><td>7</td><td>23</td><td>0</td></tr>
+<tr><td>RAW_FULL</td><td>相対F0 MAE cent</td><td>20/30</td><td>-0.3058</td><td>-4.4598</td><td>+0.0287</td><td>14</td><td>6</td><td>0</td></tr>
+<tr><td>RAW_FULL</td><td>有声欠落率 pp</td><td>20/30</td><td>-0.0559</td><td>-1.7094</td><td>+1.7094</td><td>4</td><td>8</td><td>8</td></tr>
+<tr><td>RAW_FULL</td><td>原音比CER差</td><td>12/30</td><td>+0.0000</td><td>+0.0000</td><td>+0.0000</td><td>0</td><td>0</td><td>12</td></tr>
+</tbody></table></div>
+<p>1221-135766-0005のMOSは、PMLだけでなくSHAPE・FULLに対しても全6条件で低下した。SHAPE比18/30、FULL比23/30の条件でMOSが低下する一方、それぞれ12/30・7/30の上昇も残る。比較先を都合よく選んで優位を主張しない。</p>
+<h3>予測MOSの方式別絶対値（順位付けなし）</h3>
+<p>3音高×2seedを録音内で平均し、5録音を等重み平均した値。全条件が揃うため30条件平均と一致するが、独立標本数は30とはしない。PMLとの対応差・害判定を先に示した上で、再集計可能な絶対値を残す。単一指標だけで総合品質や採用を決めない。</p>
+<div class="scroll"><table><thead><tr><th>方式</th><th>5録音等重みMOS</th><th>元音高</th><th>−3半音</th><th>+3半音</th></tr></thead><tbody>
+<tr><td>PML</td><td>3.333237</td><td>3.360338</td><td>3.446730</td><td>3.192643</td></tr>
+<tr><td>RAW_POSTCOLOR_M1</td><td>3.318425</td><td>3.336249</td><td>3.472584</td><td>3.146442</td></tr>
+<tr><td>RAW_SHAPE</td><td>3.397873</td><td>3.413184</td><td>3.545730</td><td>3.234707</td></tr>
+<tr><td>RAW_FULL</td><td>3.432596</td><td>3.440560</td><td>3.561859</td><td>3.295369</td></tr>
+</tbody></table></div>
+<h2>F0・有声欠落率：分母と適用範囲</h2>
+<p><a href="figures/F0-denominator-differences.png"><img loading="lazy" src="figures/F0-denominator-differences.png" alt="有声分母の全60編集ペア差"></a></p>
+<p>F0と有声欠落率は、各方式の同一録音・同一seedのnative出力を基準にした±300cent編集追従である。原音の絶対F0真値ではなく、各nativeが既に外れている場合を直接検出できない。native10条件で自己比較を計算していない。</p>
+<ul>
+<li>有声分母が異なるペアはPML比16/20（新−PMLは−4～+2frame）、SHAPE比10/20（−3～0）、FULL比10/20（−4～0）。分母数が同じでも有声位置集合の同一までは保証しない。</li>
+<li>121-121726-0012／−3半音／seed20261015：PMLの欠落22/115=19.1304%に対して新方式22/117=18.8034%。率は0.3270pp下がるが、欠落数は減っていない。同条件のF0 MAEは2.4627→6.0617cent（+3.5991）。これは固定10cent閾値未満でも見落とすべきでない悪化。</li>
+<li>121-121726-0012／+3半音：seed0は欠落10/117→12/117（+1.7094pp）、seed20261015は9/115→11/117（+1.5756pp）。両方とも固定2pp閾値未満で、同条件ではMOS害が発火している。</li>
+<li>1089-134686-0032／+3半音／seed20261015：欠落9/106→5/103、率8.4906%→4.8544%（−3.6362pp）。一方MOSは−0.1801で固定害。欠落率の改善をMOS害の取消しに使わない。</li>
+</ul>
+<p><a href="F0-denominators-60.csv">F0-denominators-60.csv</a>に各側のnative波形SHA、期待有声数・欠落数・F0誤差の評価フレーム数・誤有声数を保持した。比較波形同士を再解析して共通マスクへ作り直すことはしていない。</p>
+<h2>ASR：原音ゲート、離散的誤り数、欠測</h2>
+<p><a href="figures/ASR-full-transcript-pairs.png"><img loading="lazy" src="figures/ASR-full-transcript-pairs.png" alt="全文GT2録音のCER/WER誤り数"></a></p>
+<p>公式全文GTを使える121-121726-0012（64,720標本）と1089-134686-0032（65,440標本）だけを評価した。両原音のCERは0、原音CER上限0.20のゲートを通過し、12候補条件はすべてavailable、partialは0。原音ゲートは原音ASRの可用性を確認するもので、新方式の明瞭性を保証するものではない。</p>
+<ul>
+<li>121-121726-0012：正解20文字・5単語。新方式のCERは−3半音seed0だけ3/20=0.15、それ以外は1/20=0.05。WERは全6条件1/5=0.20。原音は誤り0。したがって「PMLと同値」は「誤認識ゼロ」を意味しない。</li>
+<li>同録音−3半音seed0のRAW_SHAPEは文字2/20=0.10。新方式は1文字多い3/20で+5pp。WERは双方1/5なので変わらない。新しいASR害閾値は設定しない。</li>
+<li>1089-134686-0032：正解40文字・11単語。新方式と3比較先は全条件CER/WERとも0。この短い2全文だけから、部分GTのない3録音や他言語・発声へ一般化しない。</li>
+<li>残る3録音は先頭96,000標本の切出しで、元全文の標本数は1089-134686-0008=107,680、1188-133604-0003=201,760、1221-135766-0005=266,320。公式の切出し範囲GTが未整備なので18候補条件をofficial_excerpt_ground_truth_not_preparedとした。全文転記を短い切出しへ流用していない。</li>
+</ul>
+<p><a href="ASR-pairs-90.csv">ASR-pairs-90.csv</a>はavailable36ペアに加えて欠測54ペアも含め、公式GT・原音/候補/比較のASR文字列、各側CER/WERの誤り数・分母・率、原音usableを保持する。</p>
+<h2>来歴・固定設定・残る限界</h2>
+<ul>
+<li>UTMOSv2-fusion_stage3-fold0、抽出seed20261012、1反復、CPU2thread。予測MOSであり、この新方式に対する人間評定校正ではない。</li>
+<li>相対F0は既存YIN 65–700Hz、80ms窓・10ms間隔。同方式native基準。欠落率はmissing_voiced_frames / expected_voiced_frames、差は100倍したpercentage point。</li>
+<li>ASRはfacebook/wav2vec2-base-960h revision 22aad52d435eb6dbaf354bdad9b0da84ce7d6156、既存資産SHA、float32/CPU2thread/interop1、greedy CTC、batch1、言語モデルなし。NFKC/casefold/whitespace、句読点除去なし、原音CER上限0.20は不変。</li>
+<li>backend・integrity・runtime-files・corpus・ASR設定は旧90評価版とbyte同一。5原音と新30wave・旧90参照・モデル/runtimeの固定閉包を前後照合。旧90値を再計算していない。科学計測ログには既存依存の非推奨警告やCPU上のCUDA無効化警告が記録されており、警告が無かったとは扱わない。数値failedは0。</li>
+<li>5録音・4話者、3音高・2seedという限定条件。旧90＋新30は120個の条件出力であり、正式120録音評価ではない。同一録音の2seedやA/B実行を独立標本に増やさない。</li>
+<li>source-periodic AM分離、native絶対F0、知覚的総合品質、48kHz等は今回で確定しない。保存波形の生成来歴では旧Bの過去runtime binary完全同一は未検証という限界も保持する。音響・周期観測の悪化と固定品質の悪化は別々に残し、採用判断は統合して行う。</li>
+</ul>
+<h2>ファイル案内</h2>
+<div class="scroll"><table><thead><tr><th>ファイル</th><th>行数・内容</th></tr></thead><tbody>
+<tr><td><a href="paired-90-wide.csv">paired-90-wide.csv</a></td><td>全90ペア、4指標の両側値・状態・差・固定害・wave/品質row/evaluation/generation SHA</td></tr>
+<tr><td><a href="paired-360-metrics.csv">paired-360-metrics.csv</a></td><td>全90ペア×4指標、method ID、欠測理由、状態を含む縦形式</td></tr>
+<tr><td><a href="PML-harm-30.csv">PML-harm-30.csv</a></td><td>全30PML対応の固定害true/false/適用外、ASR値</td></tr>
+<tr><td><a href="recording-pitch-means-45.csv">recording-pitch-means-45.csv</a></td><td>5録音×3音高×3比較先、2seed平均と有効数</td></tr>
+<tr><td><a href="F0-denominators-60.csv">F0-denominators-60.csv</a></td><td>編集20条件×3比較先、native SHAと各側フレーム分母・欠落数</td></tr>
+<tr><td><a href="ASR-pairs-90.csv">ASR-pairs-90.csv</a></td><td>全90ペア、GT・ASR文字列・CER/WER誤り数/分母・原音ゲート・欠測</td></tr>
+<tr><td><a href="quality-values.json">quality-values.json</a></td><td>元の全90paired記録を保持、要約と全録音別集計、出典</td></tr>
+</tbody></table></div>
+<p>CSVはUTF-8 BOM付き。値の空欄は適用外・欠測を示し、対応する状態/理由列で判別する。0へ補完しない。CSVは丸めず保存し、本資料と図のみ表示桁を丸めた。元の記録順（録音→音高0/−3/+3→seed0/20261015→PML/SHAPE/FULL）を維持する。図のSVG版も同梱。</p>
+<h2>出典SHA</h2>
+<ul>
+<li>新summary: ba6b98e9ab6ecc4be1e9c71d5ae7c6ead062e33980fe928510a361a3ab42ff07</li>
+<li>新completion: 18c0d248a2d988f4002a1b486f9295ef1f6ee8fcdfa606315d4c4f30f8589819</li>
+<li>旧90summary: 1bee17075fc78e939cb4e36fe10ff23e5be87ff12585bf9758f8e6c0136b7f14</li>
+<li>新品質freeze: ae5e2ab11825397ec61fcf2e2764e93fa0b30488ac46a28eec8b4b9cdf0ea390</li>
+<li>旧品質freeze: 62b8d6680fa61c29ce983b3a27cdb00696010e04276b16e14cc58f96c2476baf</li>
+</ul></main></body></html>

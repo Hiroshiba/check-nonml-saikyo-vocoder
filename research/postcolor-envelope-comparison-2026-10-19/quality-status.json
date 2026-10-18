@@ -1,0 +1,34 @@
+{
+  "schema": "postcolor-quality-publication-status-v2",
+  "state": "completed_with_missing_observations",
+  "state_ja": "固定30条件の品質計測完了。適用外・固定欠測を保持。",
+  "measurement_failures": 0,
+  "candidate_conditions": 30,
+  "quality_status_counts": {
+    "relative_f0_mae_cents": {
+      "not_applicable": 10,
+      "available": 20
+    },
+    "unvoiced_miss_rate": {
+      "not_applicable": 10,
+      "available": 20
+    },
+    "automatic_mos": {
+      "available": 30
+    },
+    "recognition": {
+      "unavailable": 18,
+      "available": 12
+    }
+  },
+  "all_four_available": 8,
+  "independent_recordings": 5,
+  "speakers": 4,
+  "mos_ranking": "全30が揃う5録音等重みの単指標記述順位。採用順位・総合順位ではない。",
+  "f0_miss_ranking": "方式ごとのnative支持分母が異なるため順位なし。native絶対F0の正解は未測定。",
+  "asr_scope": "同じ2録音12条件の全CER/WER分子・分母を表示。18候補条件は欠測。順位なし。",
+  "quality_values_file": "quality/quality-values.json",
+  "quality_values_sha256": "a641429891c3c75c678f2adb8d71c45d768c9b8a62c99af830ab2f8bf413249a",
+  "source_public_manifest_sha256": "25fbf885ce5f2c0f93641343ef68d62e6706c7c1ddf5e841fd76b5537e4895f5",
+  "quality_artifact_review": "公開用の全30候補・90対応・16,695 CSVフィールド・ASR・平均・4図を独立照合し、図題と本文の軽微修正後の差分も確認済み。採用または一般的な品質改善の承認ではない。"
+}

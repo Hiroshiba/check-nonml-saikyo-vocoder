@@ -1,0 +1,217 @@
+{
+  "schema": "postcolor-public-saved-observation-provenance-v1",
+  "analysis_manifest_sha256": "274ff0fbc43e6f281ecdd5ac8c9c3714dc2fe99426b745e8344c8deb45c0cdb1",
+  "analysis_interpretation_sha256": "c4f8e1178ff544642406b18a7d47ec8df442c439a5f793b69c1664b1b0a5745b",
+  "independent_saved_value_review_sha256": "bb0710aaaf1c858ba7992a527837c74d49f0fcafc22964cb7aed76728a6daf99",
+  "review_result": "保存値・全条件・日本語5図の独立確認済み。採用または品質改善を意味しない。",
+  "source_terminal_receipt_sha256": "56cfc77a7ee958570970ef52ab9c38df5bb45b8ef9a92f3af94464059afa9dc9",
+  "old_reference_receipt_sha256": "f0fb857bda6041d7a174c67266a643015347a981c14938dcfd29cbb2ad14337b",
+  "old_90_waveform_and_observation_identity": "旧90参照の波形SHAと保存観測・PML比較は固定参照と全件一致。再合成なし。",
+  "historical_runtime_binary_identity": "旧実行のbinary hashが未保存で、新旧バイナリの同一性は未確認。",
+  "quality_snapshot_note": "data/summary.jsonは音響集計時点の品質未取得状態を元bytesで保持。後から品質を計測し、quality/へ別証拠として統合。",
+  "projection": [
+    {
+      "source_file": "all-180-event-comparisons.csv",
+      "source_bytes": 27473,
+      "source_sha256": "da39e9acb3850fb6e5aceeca5d1da3cf466cb6dc2c4579f7e60c4de28ee3584e",
+      "public_file": "data/all-180-event-comparisons.csv",
+      "transformation": "byte-identical"
+    },
+    {
+      "source_file": "all-180-periodic-condition-comparisons.csv",
+      "source_bytes": 26738,
+      "source_sha256": "38bb3d26d6b2eafec2d0120021c252f88bb0a0639844a31955613b903b38f46f",
+      "public_file": "data/all-180-periodic-condition-comparisons.csv",
+      "transformation": "byte-identical"
+    },
+    {
+      "source_file": "all-30-wide-comparisons.csv",
+      "source_bytes": 17695,
+      "source_sha256": "c460fde8d372b0152317406b573e74d31643e3318bb358b85686a217cd6742eb",
+      "public_file": "data/all-30-wide-comparisons.csv",
+      "transformation": "byte-identical"
+    },
+    {
+      "source_file": "all-90-global-comparisons.csv",
+      "source_bytes": 22933,
+      "source_sha256": "337bb901753882b38126f34dabb6ccf9d41caa99be8d1b2f9a3fadb33d87fb48",
+      "public_file": "data/all-90-global-comparisons.csv",
+      "transformation": "byte-identical"
+    },
+    {
+      "source_file": "all-absolute-event-values.csv",
+      "source_bytes": 68277,
+      "source_sha256": "9bc9f6ceec28d282c98830ca23f62c1de91c32d7f18a981c41229c3769f30fd0",
+      "public_file": "data/all-absolute-event-values.csv",
+      "transformation": "byte-identical"
+    },
+    {
+      "source_file": "all-crossing-comparisons.csv",
+      "source_bytes": 52778,
+      "source_sha256": "42db8bb2aa745f5b5f215c686ea007b7c972d92c0f1fe3b04bc2a13a05b7c76f",
+      "public_file": "data/all-crossing-comparisons.csv",
+      "transformation": "byte-identical"
+    },
+    {
+      "source_file": "all-periodic-summaries.csv",
+      "source_bytes": 74283,
+      "source_sha256": "e58e14dd735bcaa0df0e21dbde6a9b7bb7321aaef3d91bbbea2fa200d7577d17",
+      "public_file": "data/all-periodic-summaries.csv",
+      "transformation": "byte-identical"
+    },
+    {
+      "source_file": "known-eight-strong-losses.csv",
+      "source_bytes": 995,
+      "source_sha256": "f191dcf07b30fa22b29b73cef297f9f84bf92db25ab9f647366e8f8140a6ae2f",
+      "public_file": "data/known-eight-strong-losses.csv",
+      "transformation": "byte-identical"
+    },
+    {
+      "source_file": "sample3-residual-comparisons.csv",
+      "source_bytes": 6428,
+      "source_sha256": "2ae152153ed61854ecdcf0bacdd579fc0a3b5439c7f642f8e840fe34dd6ce2c4",
+      "public_file": "data/sample3-residual-comparisons.csv",
+      "transformation": "byte-identical"
+    },
+    {
+      "source_file": "all-30-waveforms.csv",
+      "source_bytes": 10096,
+      "source_sha256": "e49c4bd59d6e7503a007225aef60652606366f66bb439a25e24248ad938582fc",
+      "public_file": "data/all-30-waveforms.csv",
+      "transformation": "保存先path列だけを除去。全30行とその他の値・元NPY SHAを保持。"
+    },
+    {
+      "source_file": "all-periodic-knots.csv",
+      "source_bytes": 11119564,
+      "source_sha256": "f448bade98fb734de7569e741fd1136abc3d3e04fe52919f7688aad65f41de53",
+      "public_file": "data/all-periodic-knots.json.gz",
+      "public_bytes": 2599558,
+      "public_sha256": "4bf238bc6ff5fd7d00c0cc9429ef77c5cc034227abc62ffe6328c7600a93a8f2",
+      "columns": 17,
+      "data_rows": 62784,
+      "transformation": "全列・全行・元のセル文字列・順序をgzip圧縮JSON表として保持。数値変換・丸め・欠測補完なし。",
+      "all_column_names_and_cell_strings_exact": true,
+      "reconstructed_original_csv_bytes_exact": true,
+      "reconstructed_csv_sha256": "f448bade98fb734de7569e741fd1136abc3d3e04fe52919f7688aad65f41de53"
+    },
+    {
+      "source_file": "all-periodic-paired-knots.csv",
+      "source_bytes": 6947499,
+      "source_sha256": "418e29e34d3e56c02402022f18a7a8688ff9b6531ed9c7d4933dddccf677c83f",
+      "public_file": "data/all-periodic-paired-knots.json.gz",
+      "public_bytes": 1408185,
+      "public_sha256": "e2e250531150321c295724cf18445ba997e58b75fcfa5ca4847339ce4dffc636",
+      "columns": 14,
+      "data_rows": 47088,
+      "transformation": "全列・全行・元のセル文字列・順序をgzip圧縮JSON表として保持。数値変換・丸め・欠測補完なし。",
+      "all_column_names_and_cell_strings_exact": true,
+      "reconstructed_original_csv_bytes_exact": true,
+      "reconstructed_csv_sha256": "418e29e34d3e56c02402022f18a7a8688ff9b6531ed9c7d4933dddccf677c83f"
+    },
+    {
+      "source_file": "all-coverage-regions.csv",
+      "source_bytes": 604729,
+      "source_sha256": "2ef5808a87e6c81d0ca2bfc8d3b9c5eac508340043b674a04c6c96e65edb8b3c",
+      "public_file": "data/all-coverage-regions.json.gz",
+      "public_bytes": 25001,
+      "public_sha256": "278c5788797079b244403bf664934d6e3f964ed810816cb722ba359eddf3142d",
+      "columns": 20,
+      "data_rows": 648,
+      "transformation": "全列・全行・元のセル文字列・順序をgzip圧縮JSON表として保持。数値変換・丸め・欠測補完なし。",
+      "all_column_names_and_cell_strings_exact": true,
+      "reconstructed_original_csv_bytes_exact": true,
+      "reconstructed_csv_sha256": "2ef5808a87e6c81d0ca2bfc8d3b9c5eac508340043b674a04c6c96e65edb8b3c"
+    },
+    {
+      "source_file": "summary.json",
+      "source_bytes": 3637,
+      "source_sha256": "30c46173d9a0aa6828d099adf0d6cc0e8e79ac65d5c1564dda94b3bbd57363be",
+      "public_file": "data/summary.json",
+      "transformation": "byte-identical"
+    },
+    {
+      "source_file": "periodic-descriptive-summary.json",
+      "source_bytes": 2086,
+      "source_sha256": "7662a70038eebce714385c0f3c29e9b67be110a6aa11a13cedf8588eaf598632",
+      "public_file": "data/periodic-descriptive-summary.json",
+      "transformation": "byte-identical"
+    },
+    {
+      "source_file": "figure-01-all30-vs-full.png",
+      "source_bytes": 281411,
+      "source_sha256": "3524388c57ad1d533ef166cea26ac1fb69ed81f198847974a72ee78cd82853a8",
+      "public_file": "figures/figure-01-all30-vs-full.png",
+      "transformation": "byte-identical"
+    },
+    {
+      "source_file": "figure-01-all30-vs-full.svg",
+      "source_bytes": 265623,
+      "source_sha256": "8402d2c6208440c301c4e6bcb95f8302ecb79f4bcc0ccd4e1fe339874512bf70",
+      "public_file": "figures/figure-01-all30-vs-full.svg",
+      "transformation": "byte-identical"
+    },
+    {
+      "source_file": "figure-02-all30-vs-pml-shape.png",
+      "source_bytes": 387532,
+      "source_sha256": "52874e38e9f7aa2c738d7ebd5560ee4fe97a211545743f19ef1bda3eb8e5a984",
+      "public_file": "figures/figure-02-all30-vs-pml-shape.png",
+      "transformation": "byte-identical"
+    },
+    {
+      "source_file": "figure-02-all30-vs-pml-shape.svg",
+      "source_bytes": 292154,
+      "source_sha256": "84075259b3d26bb69fcc41c62943858b1e140457c2118ebaa1c669ca9fc83f7c",
+      "public_file": "figures/figure-02-all30-vs-pml-shape.svg",
+      "transformation": "byte-identical"
+    },
+    {
+      "source_file": "figure-03-sample3.png",
+      "source_bytes": 142588,
+      "source_sha256": "edb8950589d88dc284f545b3c50f8223a0e9378d3e257383bc9ef58086c29dbe",
+      "public_file": "figures/figure-03-sample3.png",
+      "transformation": "byte-identical"
+    },
+    {
+      "source_file": "figure-03-sample3.svg",
+      "source_bytes": 120853,
+      "source_sha256": "d0fc9c8cf301145bf668ad8a789ad45fec22a1f3ea57a9e1653f2f9371158783",
+      "public_file": "figures/figure-03-sample3.svg",
+      "transformation": "byte-identical"
+    },
+    {
+      "source_file": "figure-04-known-eight.png",
+      "source_bytes": 169642,
+      "source_sha256": "27dd9270c93cae792b18a983ecba4e1b95b8722cca9b13ca064506c54c7254e0",
+      "public_file": "figures/figure-04-known-eight.png",
+      "transformation": "byte-identical"
+    },
+    {
+      "source_file": "figure-04-known-eight.svg",
+      "source_bytes": 120647,
+      "source_sha256": "4c296ce451160a9d743698dc248eae4c2f7120dee5f973801fbb4bfbe10616a4",
+      "public_file": "figures/figure-04-known-eight.svg",
+      "transformation": "byte-identical"
+    },
+    {
+      "source_file": "figure-05-all30-periodic.png",
+      "source_bytes": 402707,
+      "source_sha256": "753fceb24c132614eea46dd0df4734e2945b48631b3c3cc3d2346013f38be8ce",
+      "public_file": "figures/figure-05-all30-periodic.png",
+      "transformation": "byte-identical"
+    },
+    {
+      "source_file": "figure-05-all30-periodic.svg",
+      "source_bytes": 293984,
+      "source_sha256": "190c6bc113b4c0b2004ae07bf3e6eecb0c71f1cd498a590679221f89581352bb",
+      "public_file": "figures/figure-05-all30-periodic.svg",
+      "transformation": "byte-identical"
+    }
+  ],
+  "frozen_quality_public_source": {
+    "files": 18,
+    "quality_values_sha256": "a641429891c3c75c678f2adb8d71c45d768c9b8a62c99af830ab2f8bf413249a",
+    "manifest_sha256": "25fbf885ce5f2c0f93641343ef68d62e6706c7c1ddf5e841fd76b5537e4895f5",
+    "copy": "公開用18成果物をquality/へbyte-identicalで保持。HTML入口だけ追加。私用来歴は不掲載。",
+    "review_result": "保存数値・図および最終の図題/本文差分を独立確認済み。"
+  }
+}
