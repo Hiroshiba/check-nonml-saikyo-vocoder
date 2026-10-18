@@ -243,3 +243,12 @@ sample3のWERは全方式・全音高・両seedで20%（5語中1誤り）、1089
 - 後段評価完了receipt SHA-256：`ff07641c19cb6a6ef2ab4e8807d4b6abc50a2a49ff82258a74c1b9954b6df142`
 
 初回のpreliminary-observations.jsonとreproducibility.jsonの内容は変更していない。新JSONは公開用のscalar投影で、F0のフレーム別配列3種、認識文字列、実装コード、音声、モデル重みを含めない。元の各条件metrics JSONのSHAを付け、収録した保存値・null・欠測理由を丸めず保持する。この公開追記の作成自体では音声の再計測やモデル再実行をしていない。
+
+## 11. 原因分析と次の評価の調査記録
+
+- [解析F0の1行変更と残る先行成分](notes/01-analysis-f0-and-residual-pathway-ja.md)
+- [保存セルの尺度と時間形状：全18イベント](notes/02-saved-cell-scale-and-shape-ja.md)
+- [不確実な音高と複数の発声機構](notes/03-uncertain-pitch-and-physical-sources-ja.md)
+- [音素時刻・PPGによる補助評価の設計](notes/04-phonetic-timing-evaluation-ja.md)
+
+[公開用の比較HTMLと短音声](../../experiments/2026-10-19/raw-envelope-risk/index.html)は別の掲載成果物として同梱する。数値は既存公開投影と同じで、5秒以下の試聴コピーを使う。PPG・自動音素境界の新規評価は未実施。調査案を実測成果や採用判断と混同しない。
