@@ -1032,6 +1032,25 @@
       "created_at": "2026-10-18T18:27:34Z",
       "title": "生高域包絡の移送リスク対照：5録音・90条件と予測品質",
       "comparison_scope": "現PMLと未採用2変種。固定5録音・4話者の90条件、予測MOS90・編集F0/miss60・認識36と欠測54。強部低下と時刻差を保持。5秒以下の27試聴例。正式120録音評価・採用ではない。",
+      "audio_listing": {
+        "caption": "サンプル3（121-121726-0012）の全区間4.045秒。原音と、音高無編集・seed 0のPML／RAW_FULLを聞き比べます。",
+        "note": "PMLを維持し、RAW_FULLは未採用。5録音の品質指標・欠測と全27音声は詳細へ。音量倍率1、音量正規化なし。LibriSpeech / CC BY 4.0、PCM16変換・解析再合成を含みます。",
+        "attribution_path": "index.html",
+        "samples": [
+          {
+            "path": "audio/121-121726-0012__original.wav",
+            "label": "原音"
+          },
+          {
+            "path": "audio/121-121726-0012__pitch+0__seed0__PML.wav",
+            "label": "現PML（基準）"
+          },
+          {
+            "path": "audio/121-121726-0012__pitch+0__seed0__RAW_FULL.wav",
+            "label": "RAW_FULL（未採用）"
+          }
+        ]
+      },
       "artifact_count": 34,
       "artifact_manifest": {
         "bytes": 6205,
