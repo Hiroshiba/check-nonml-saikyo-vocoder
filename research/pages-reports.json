@@ -1306,13 +1306,13 @@
       "path": "research/clock-event-mean-gain-2026-10-20",
       "source_path": "experiments/2026-10-20/clock-event-variance/results/run-002",
       "created_on": "2026-10-19",
-      "created_at": "2026-10-19T19:55:29.293664+00:00",
+      "created_at": "2026-10-19T20:25:37.728061+00:00",
       "title": "声の音量変化を雑音へ逃がさない：初回モデルとの24人工条件比較",
       "comparison_scope": "C5全4例で誤q消失、σ²比7.13–7.18→0.976–1.028、140 Hzの平均KL 0.928339→0.00560181。C0–C4は旧分布・seed 0波形同一。既知位相・Hの人工機構比較で、自然音声品質の採用判断ではない。PML/WORLDは初回引用・再計測なし。現PML維持。",
       "artifact_count": 395,
       "artifact_manifest": {
         "bytes": 66190,
-        "sha256": "3d49add9f47e2b95c9d79139f46af3ad09a70c101445f53435c75e9e78b067fa"
+        "sha256": "a14e8056240763d2a3d8c4b218c4982bea2f64234c3b6d607890fcff81364565"
       },
       "audio_listing": {
         "caption": "人工音C5・入力seed 0。原入力、現PML、平均変動対応版の無編集120 Hz・復号seed 0、各0.256秒。",
@@ -1340,13 +1340,13 @@
       "path": "research/clock-event-coupling-2026-10-20",
       "source_path": "experiments/2026-10-20/clock-event-variance/results/run-003",
       "created_on": "2026-10-19",
-      "created_at": "2026-10-19T20:18:27.336744+00:00",
+      "created_at": "2026-10-19T20:25:39.313297+00:00",
       "title": "周期ノイズと局在ノイズの結合：改善例と誤判定例",
       "comparison_scope": "C4 target局所KL 0.0310446→0.0112895、C3は0.000642280→0.00832401へ悪化。結合選択はC4で2/4、C3で誤選択1/4。人工oracle機構比較であり正式音質評価・自然音改善ではない。PML現base維持、既存方式は初回引用。",
       "artifact_count": 397,
       "artifact_manifest": {
         "bytes": 66500,
-        "sha256": "68e29861a7df701db93c3a41cfcdac1e2ae68ee1e5801d48963c3faf4c496f19"
+        "sha256": "948621731358eece2a89df1604e3c03ba5aea0a5a6fc5d3b57e57c57ddd7c6dc"
       },
       "audio_listing": {
         "caption": "人工音の失敗例C3・入力seed 104729。原入力／PML／v3の無編集120 Hz、各0.256秒。",
