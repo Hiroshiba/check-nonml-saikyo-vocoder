@@ -1,0 +1,386 @@
+{
+  "schema": "raw-full-yin-fixed104-public-provenance-v1",
+  "rendered_at_utc": "2026-10-19T16:53:06.232859+00:00",
+  "scope": {
+    "saved_unvoiced_miss_flag_conditions": 28,
+    "recordings": 22,
+    "native_case_seed_keys": 24,
+    "edited_method_rows": 56,
+    "native_method_rows": 48,
+    "total_method_rows": 104,
+    "edited_condition_pairs": 28,
+    "native_condition_pairs": 24,
+    "total_condition_pairs": 52,
+    "seeds": [
+      0,
+      20261015
+    ],
+    "post_hoc_saved_flag_selection": true,
+    "full_104_diagnostic_completed": true,
+    "formal_warning_retraction": false,
+    "existing12_included_in104_not_extra": true,
+    "all_full120_conditions": false,
+    "population_generalization": false
+  },
+  "source_diagnostic_time": {
+    "started_at_utc": "2026-10-19T16:39:07.120626+00:00",
+    "completed_at_utc": "2026-10-19T16:39:19.856301+00:00"
+  },
+  "source_diagnostic_completion_sha256": "e397f6ecb3e8c349ad1c29c5eda6a0b5ba46285a4604fc37df0e2c9193294a26",
+  "diagnostic_source_manifest_sha256": "2a761c409a966ea96cf5e0b5972e1e7fc1f9686804642e4b5f11c77f3d7aeeab",
+  "restoration_completion_sha256": "430e0db940c63638c2086acb9aa4c3d42ed72ce58bf309b51b03475f40b81b2d",
+  "frames_sha256": "4da1a0522d5dec59aad14a757f214c6add98553b31647c0d675f691fd3f4b224",
+  "source_report_sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+  "source_frame_selection_sha256": "d3a13da74dbf95551c5df8666f4c00a93169e06df9b3ea6e64b7919c14393d58",
+  "saved_summary_completion": {
+    "sha256": "68640301c1ef59358d2101169c65047b26d09e59fa46eea1e1e79605cdf57ba7",
+    "bytes": 1251,
+    "started_at_utc": "2026-10-19T16:43:55.284365+00:00",
+    "completed_at_utc": "2026-10-19T16:43:56.033973+00:00",
+    "complete": true,
+    "all104_row_SHA_and_binary64_verified": true,
+    "all52_pairs_included": true,
+    "all28_formal_warnings_retained": true,
+    "public_inputs": [
+      {
+        "name": "summary.json",
+        "bytes": 1732126,
+        "sha256": "82a0154c35428b20f5b938498be61acc424fc08b573c215c55330fa74de43d30"
+      },
+      {
+        "name": "definitions.json",
+        "bytes": 3100,
+        "sha256": "7bef64c88381c3624826a86f71a54c7035a1bc8656d5d8395fcc582a1403fc06"
+      },
+      {
+        "name": "README-ja.md",
+        "bytes": 5713,
+        "sha256": "fd1c14148cc08fd2750c872a48d610d716e29e5ddbeed348a2e14c0c70d77e90"
+      }
+    ]
+  },
+  "summary_source_manifest_sha256": "1f2edcf9977ac0951743eec9be9dac36f4cfcf4990926c36b1922dd4c01f5551",
+  "renderer_source_manifest": {
+    "bytes": 1385,
+    "sha256": "388f5e9f45277f3049f3d2f2a6bd9270e285f0e18504c9c1f828ecdeeb17c0c3"
+  },
+  "prior_three_example_report": {
+    "name": "artifact-manifest.json",
+    "bytes": 6932,
+    "sha256": "3daa4b908cc2a18eb36e8970d8c0f485eee9e0d1ef7293a569122968c9aebb6c",
+    "manifest_self_excluded": true,
+    "verified_member_count": 39,
+    "copied_member_count": 37,
+    "base_rendered_at_utc": "2026-10-19T16:04:42.906239+00:00",
+    "historical_diagnostic_scope": {
+      "run_label": "run002",
+      "recordings": 3,
+      "output_rows": 12,
+      "diagnostic_files": [
+        "diagnostic-series.json",
+        "quoted-frames.json",
+        "quoted-frames.csv",
+        "three-example-provenance.json"
+      ],
+      "distinct_from_new_full_104_diagnostic": true,
+      "note": "These preserved diagnostic JSON/CSV files describe prior run002's three examples and twelve outputs, not the new 104-output diagnosis. Clip completion/manifest and audio provenance retain their original lineage.",
+      "historical_source_hashes_recomputed": false
+    }
+  },
+  "byte_identical_reused_members": [
+    {
+      "name": "audio/librispeech_1188-133604-0037__ORIGINAL.wav",
+      "source_name": "audio/librispeech_1188-133604-0037__ORIGINAL.wav",
+      "bytes": 153644,
+      "sha256": "b3639f140a72ffea428ba6da55573b370301cc90457af3e649ed0114315ac72e",
+      "byte_identical": true
+    },
+    {
+      "name": "audio/librispeech_1188-133604-0037__pitch+0__seed0__PML.wav",
+      "source_name": "audio/librispeech_1188-133604-0037__pitch+0__seed0__PML.wav",
+      "bytes": 153644,
+      "sha256": "a6eaaae5e427523643085d60dcd6ab7dffd5ffd763b9bb9cf50577ac73c09445",
+      "byte_identical": true
+    },
+    {
+      "name": "audio/librispeech_1188-133604-0037__pitch+0__seed0__RAW_FULL.wav",
+      "source_name": "audio/librispeech_1188-133604-0037__pitch+0__seed0__RAW_FULL.wav",
+      "bytes": 153644,
+      "sha256": "709f3f1d732c740a3fafe01e3237853bd996db49c23d171385f7927c9d879b75",
+      "byte_identical": true
+    },
+    {
+      "name": "audio/librispeech_1188-133604-0037__pitch-3__seed0__PML.wav",
+      "source_name": "audio/librispeech_1188-133604-0037__pitch-3__seed0__PML.wav",
+      "bytes": 153644,
+      "sha256": "1caf953a93f0a657e56940962b015e99c530bde6ee716e6d7005602e61018ddc",
+      "byte_identical": true
+    },
+    {
+      "name": "audio/librispeech_1188-133604-0037__pitch-3__seed0__RAW_FULL.wav",
+      "source_name": "audio/librispeech_1188-133604-0037__pitch-3__seed0__RAW_FULL.wav",
+      "bytes": 153644,
+      "sha256": "e3d10a56991e048a6898bd474b11af5e05a985485153e6ee225a8c1f574d6a32",
+      "byte_identical": true
+    },
+    {
+      "name": "audio/librispeech_61-70968-0043__ORIGINAL.wav",
+      "source_name": "audio/librispeech_61-70968-0043__ORIGINAL.wav",
+      "bytes": 160044,
+      "sha256": "734e5b914aa0ef1a6e0f4b3b905332b800217176d29237b44858d85b63c9c909",
+      "byte_identical": true
+    },
+    {
+      "name": "audio/librispeech_61-70968-0043__pitch+0__seed0__PML.wav",
+      "source_name": "audio/librispeech_61-70968-0043__pitch+0__seed0__PML.wav",
+      "bytes": 160044,
+      "sha256": "3b8ba1b4d559055e4b3f3f68ac2b85986f1791fb4be360a1ed412e272a65ad28",
+      "byte_identical": true
+    },
+    {
+      "name": "audio/librispeech_61-70968-0043__pitch+0__seed0__RAW_FULL.wav",
+      "source_name": "audio/librispeech_61-70968-0043__pitch+0__seed0__RAW_FULL.wav",
+      "bytes": 160044,
+      "sha256": "b9192b1488851327ec7d5193a428c9718d3989b2ec975b383eee2cdbb16801f3",
+      "byte_identical": true
+    },
+    {
+      "name": "audio/librispeech_61-70968-0043__pitch+3__seed0__PML.wav",
+      "source_name": "audio/librispeech_61-70968-0043__pitch+3__seed0__PML.wav",
+      "bytes": 160044,
+      "sha256": "195708e6865204e4e672cc377ead87cd0c605bbbebfc02b15f778b4a0e6354bd",
+      "byte_identical": true
+    },
+    {
+      "name": "audio/librispeech_61-70968-0043__pitch+3__seed0__RAW_FULL.wav",
+      "source_name": "audio/librispeech_61-70968-0043__pitch+3__seed0__RAW_FULL.wav",
+      "bytes": 160044,
+      "sha256": "642addccec2b18d2fb82fafb1732143619503d7742a0cdbe432ca509fea44a07",
+      "byte_identical": true
+    },
+    {
+      "name": "audio/librispeech_6829-68769-0041__ORIGINAL.wav",
+      "source_name": "audio/librispeech_6829-68769-0041__ORIGINAL.wav",
+      "bytes": 85164,
+      "sha256": "19429d3c0040f7598d6637ec966fec264a5e9f923e22df2a174a7614b3088e0a",
+      "byte_identical": true
+    },
+    {
+      "name": "audio/librispeech_6829-68769-0041__pitch+0__seed0__PML.wav",
+      "source_name": "audio/librispeech_6829-68769-0041__pitch+0__seed0__PML.wav",
+      "bytes": 85164,
+      "sha256": "8df2ff0f1059273de4c807ead9f6775f79a283f63925942e59c205e54ccc7d5d",
+      "byte_identical": true
+    },
+    {
+      "name": "audio/librispeech_6829-68769-0041__pitch+0__seed0__RAW_FULL.wav",
+      "source_name": "audio/librispeech_6829-68769-0041__pitch+0__seed0__RAW_FULL.wav",
+      "bytes": 85164,
+      "sha256": "892b3922b360ebab340ddd54de292fa94e262089a9cfad502a55473dbd5d7fdd",
+      "byte_identical": true
+    },
+    {
+      "name": "audio/librispeech_6829-68769-0041__pitch-3__seed0__PML.wav",
+      "source_name": "audio/librispeech_6829-68769-0041__pitch-3__seed0__PML.wav",
+      "bytes": 85164,
+      "sha256": "b9820d3bef4fbdde86ce569008f7611c236940c8a3dbd77f48e68639b34f594c",
+      "byte_identical": true
+    },
+    {
+      "name": "audio/librispeech_6829-68769-0041__pitch-3__seed0__RAW_FULL.wav",
+      "source_name": "audio/librispeech_6829-68769-0041__pitch-3__seed0__RAW_FULL.wav",
+      "bytes": 85164,
+      "sha256": "193825e4c85a7d3b6e127566e69cee07ee885e0737d75295f154ba241895d514",
+      "byte_identical": true
+    },
+    {
+      "name": "audio-credits.html",
+      "source_name": "audio-credits.html",
+      "bytes": 3204,
+      "sha256": "2a653895f9eaca9484875ba449bca4bb3b53dd404ce9b04b1e8c396d9286718a",
+      "byte_identical": true
+    },
+    {
+      "name": "clip-completion.json",
+      "source_name": "clip-completion.json",
+      "bytes": 4038,
+      "sha256": "828feb2dcf78bdbffa1cde71a924eac8d92fd65476ec6bddb66f18a379824cbc",
+      "byte_identical": true
+    },
+    {
+      "name": "clip-manifest.json",
+      "source_name": "clip-manifest.json",
+      "bytes": 63359,
+      "sha256": "063e710e1811f69dc72cb7cc730e052deac85840cc1944045adc2b6014968060",
+      "byte_identical": true
+    },
+    {
+      "name": "diagnostic-series.json",
+      "source_name": "diagnostic-series.json",
+      "bytes": 2661215,
+      "sha256": "c9278139ef9505ab4eb4c9d1c7aa3d2ff118c778ce3f0bc8f2354c7a65bb4bd8",
+      "byte_identical": true
+    },
+    {
+      "name": "figures/example-A-edited-full.svg",
+      "source_name": "figures/example-A-edited-full.svg",
+      "bytes": 1665566,
+      "sha256": "3fb888209f4991119a804c0c9be3875a6be0acbdc314a3499cf52bb9a62b66ee",
+      "byte_identical": true
+    },
+    {
+      "name": "figures/example-A-edited.svg",
+      "source_name": "figures/example-A-edited.svg",
+      "bytes": 1343668,
+      "sha256": "6e4d09227ef0ea049d0349b1176ea7eb33bfd5e4dbfa173b789d8f330b949ed0",
+      "byte_identical": true
+    },
+    {
+      "name": "figures/example-A-focus-1.svg",
+      "source_name": "figures/example-A-focus-1.svg",
+      "bytes": 57149,
+      "sha256": "10dd3c9e8e25c7b24983cd2939ac5c6340d45fe80add84e6fc7c25fbba05b088",
+      "byte_identical": true
+    },
+    {
+      "name": "figures/example-A-native.svg",
+      "source_name": "figures/example-A-native.svg",
+      "bytes": 1542365,
+      "sha256": "fa6b9068b617d71d01f678e5324fa05617603c788ad50964fc0080e27739c31b",
+      "byte_identical": true
+    },
+    {
+      "name": "figures/example-B-edited-full.svg",
+      "source_name": "figures/example-B-edited-full.svg",
+      "bytes": 1676351,
+      "sha256": "fbde019969e744e81e8254a8ccf592b0366526329d7b09258f496717e1a03dac",
+      "byte_identical": true
+    },
+    {
+      "name": "figures/example-B-edited.svg",
+      "source_name": "figures/example-B-edited.svg",
+      "bytes": 1403474,
+      "sha256": "b02192828745644881095c04818c91d1ab317987172ebe3f95aa5cad3da0b731",
+      "byte_identical": true
+    },
+    {
+      "name": "figures/example-B-focus-1.svg",
+      "source_name": "figures/example-B-focus-1.svg",
+      "bytes": 57424,
+      "sha256": "0840275aca7b52c9c2c0785475b44f7d009212a7c38f6bc8d5155fe0b659a887",
+      "byte_identical": true
+    },
+    {
+      "name": "figures/example-B-native-focus.svg",
+      "source_name": "figures/example-B-native-focus.svg",
+      "bytes": 54235,
+      "sha256": "608a399e8899a6b641470be8c0b006d09e5415e8520787e725c71d660e48c5c0",
+      "byte_identical": true
+    },
+    {
+      "name": "figures/example-B-native.svg",
+      "source_name": "figures/example-B-native.svg",
+      "bytes": 1557920,
+      "sha256": "45493ee4197dbe32a8810c90b4b4576d4cec4c66006c74dc66f56a88747a22bc",
+      "byte_identical": true
+    },
+    {
+      "name": "figures/example-C-edited.svg",
+      "source_name": "figures/example-C-edited.svg",
+      "bytes": 733291,
+      "sha256": "da58f33aa3f22d2bcb52438992343c7cb8bac78a2935f616a94c47058b874896",
+      "byte_identical": true
+    },
+    {
+      "name": "figures/example-C-focus-1.svg",
+      "source_name": "figures/example-C-focus-1.svg",
+      "bytes": 57491,
+      "sha256": "4ddc8adaec065601729075d53f44a7d4aff648c734f991a5fa8421d91959afaf",
+      "byte_identical": true
+    },
+    {
+      "name": "figures/example-C-focus-2.svg",
+      "source_name": "figures/example-C-focus-2.svg",
+      "bytes": 52706,
+      "sha256": "d6b8d99f94359f43e94bc376a6fb04e113dbffce6fc994bbca89e9af3e53cb97",
+      "byte_identical": true
+    },
+    {
+      "name": "figures/example-C-focus-3.svg",
+      "source_name": "figures/example-C-focus-3.svg",
+      "bytes": 57157,
+      "sha256": "6e85c31d50372104a6a9cb158b186904e879a66a7ef288d328b515389230652f",
+      "byte_identical": true
+    },
+    {
+      "name": "figures/example-C-native.svg",
+      "source_name": "figures/example-C-native.svg",
+      "bytes": 676844,
+      "sha256": "9e8096d0b3333d8b500fcf6236288708468a0edc571eb3cbc1fb11f0f4c6f389",
+      "byte_identical": true
+    },
+    {
+      "name": "three-example-provenance.json",
+      "source_name": "public-provenance.json",
+      "bytes": 12411,
+      "sha256": "87f02607f070474dc3e602a00b1bc3110254ecc6bc150d1fa5412d28df258adb",
+      "byte_identical": true
+    },
+    {
+      "name": "quoted-frames.csv",
+      "source_name": "quoted-frames.csv",
+      "bytes": 4069,
+      "sha256": "5acabce83dbb549c9f1d3f75a075d69ad7a6b53451d2387a42f658d66bed0d46",
+      "byte_identical": true
+    },
+    {
+      "name": "quoted-frames.json",
+      "source_name": "quoted-frames.json",
+      "bytes": 17706,
+      "sha256": "fc4fb716218777330f05276f183b3c8b5b7bb11c6236033a528722ea94b6460c",
+      "byte_identical": true
+    },
+    {
+      "name": "base.css",
+      "source_name": "report.css",
+      "bytes": 2423,
+      "sha256": "06a750a55391f94b0c95cb1358a6f114c47f59c85ef8078d22ee9498be630eb9",
+      "byte_identical": true
+    }
+  ],
+  "links": {
+    "interpretation": "https://hiroshiba.github.io/check-nonml-saikyo-vocoder/research/raw-full-full120-comparison-2026-10-19/interpretation.html",
+    "full120": "https://hiroshiba.github.io/check-nonml-saikyo-vocoder/research/raw-full-full120-comparison-2026-10-19/index.html",
+    "ranks": "https://hiroshiba.github.io/check-nonml-saikyo-vocoder/research/raw-full-full120-comparison-2026-10-19/index.html#historical",
+    "pitch": "https://hiroshiba.github.io/check-nonml-saikyo-vocoder/research/raw-full-full120-comparison-2026-10-19/quality-relative_f0_mae_cents.html",
+    "missing": "https://hiroshiba.github.io/check-nonml-saikyo-vocoder/research/raw-full-full120-comparison-2026-10-19/quality-unvoiced_miss_rate.html",
+    "vuv": "https://hiroshiba.github.io/check-nonml-saikyo-vocoder/research/raw-full-vuv-frame-diagnostic-2026-10-19/"
+  },
+  "new_overview_source": "full104 diagnostic run001 completed saved summary",
+  "retained_figures_and_quotes_source": "prior three-example diagnostic run002, 12 outputs",
+  "prior12_between_diagnostic_runs_trace_equality": {
+    "source_verification_sha256": "0446057f3fd9295fb0b10c6122f7acf59694346cf13e0e1175bd9d5d78b6b70a",
+    "source_verification_bytes": 2768,
+    "source_checked_at_utc": "2026-10-19T16:46:16.653684+00:00",
+    "renderer_independently_verified_12_current_row_SHA": true,
+    "all12_trace_canonical_JSON_equal": true,
+    "signed_zero_rendering_distinguished": true,
+    "old_and_new_whole_row_JSON_claimed_identical": false,
+    "historical_unsaved_CMND_or_branch_bits_restored": false
+  },
+  "historical_unsaved_CMND_or_branch_bits_restored": false,
+  "full104_NPY_received_or_reverified_by_this_renderer": false,
+  "full104_NPY_gate_basis": "diagnostic execution environment completion; no full104 waveform publication",
+  "public_audio_files": 15,
+  "audio_usual_players": 9,
+  "audio_native_details_players": 6,
+  "byte_identical_reused_figures": 14,
+  "new_scientific_measurements_by_renderer": 0,
+  "formal_28_warnings_retained": true,
+  "PML_maintain_decision_changed": false,
+  "new_quality_rates_thresholds_or_ranks": false,
+  "vuv_navigation_status": "planned_public_route_not_verified_live",
+  "publication_performed": false,
+  "browser_or_audio_playback_QA_performed": false,
+  "tests_or_fixtures_used": false
+}

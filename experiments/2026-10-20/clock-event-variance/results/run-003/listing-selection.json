@@ -1,0 +1,54 @@
+{
+  "case_id": "C3_seed104729",
+  "selection": "post-hoc failure example, not a fixed representative or quality ranking",
+  "condition": "artificial additive-truth C3; v3 falsely selected eta1",
+  "duration_seconds": 0.256,
+  "sample_rate": 16000,
+  "target_hz": 120,
+  "clips": [
+    {
+      "path": "v2/audio/e1573f23f9194c38de3b.wav",
+      "case_id": "C3_seed104729",
+      "condition": 3,
+      "input_seed": 104729,
+      "method": "original",
+      "source_version": "v2",
+      "target_hz": 120,
+      "decode_seed": null,
+      "historical_reference": false,
+      "sha256": "14613f98b5434511609b1e01fc62d8b603a4447a4bc3b3ea85bb7aedb17607df",
+      "bytes": 8236,
+      "source_sha256": "884e55829ebd1a6f610c267420a87671227a9c546ee67bacb5546b772d6b7a0f"
+    },
+    {
+      "path": "v1/audio/d320c392b8a6fdb2a149.wav",
+      "case_id": "C3_seed104729",
+      "condition": 3,
+      "input_seed": 104729,
+      "method": "pml",
+      "source_version": "v1",
+      "target_hz": 120.0,
+      "decode_seed": 0,
+      "historical_reference": true,
+      "sha256": "14ca39f754798109b74fbd2acadc7b593401f8ff203d04e954b8d5336504dd2a",
+      "bytes": 8236,
+      "source_sha256": "4a7cfdbaacc69f33fe6a168ba90d62438036432a7626be00a46d5608ab875708"
+    },
+    {
+      "path": "v3/audio/9930c4aa84d2e31f05b6.wav",
+      "case_id": "C3_seed104729",
+      "condition": 3,
+      "input_seed": 104729,
+      "method": "candidate",
+      "source_version": "v3",
+      "target_hz": 120.0,
+      "decode_seed": 0,
+      "historical_reference": false,
+      "sha256": "4890e1f01846a12a23303d5c77dedf378bf064facd6eaac1a6e9ef0dab8c512c",
+      "bytes": 8236,
+      "source_sha256": "80b3ed4c496a9427f083ba7be1d3119a833717b80e68459ddcd3d966fd199821"
+    }
+  ],
+  "report_contrast": "C4_seed0 improvement is also prominently shown in full report",
+  "browser_playback": "unverified"
+}

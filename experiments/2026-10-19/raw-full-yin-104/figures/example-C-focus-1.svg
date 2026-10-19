@@ -1,0 +1,352 @@
+<svg xmlns="http://www.w3.org/2000/svg" class="yin-figure" viewBox="0 0 1280 1160" role="img" aria-labelledby="title-ff5ff88eb9b4 desc-ff5ff88eb9b4">
+<title id="title-ff5ff88eb9b4">例C 編集出力・注目時刻の拡大</title>
+<desc id="desc-ff5ff88eb9b4">保存済みYIN診断のPMLとRAW_FULL。F0、計算済みCMND、平均減算前後のRMS、保存判定理由を同じ時刻で表示。点にマウスを合わせると保存値とフレーム番号を確認できます。</desc>
+<style>
+.yin-figure{background:#fff;color:#172634;font:14px 'Noto Sans JP','Noto Sans CJK JP',
+ 'Hiragino Kaku Gothic ProN','Yu Gothic',sans-serif}
+.yin-figure text{fill:#172634} .yin-figure .muted{fill:#516273}
+.yin-figure .canvas{fill:#fff}
+.yin-figure .heading{font-size:17px;font-weight:700}
+.yin-figure .small{font-size:12px} .yin-figure .grid{stroke:#dce3ea;stroke-width:1}
+.yin-figure .trace{fill:none;stroke-linejoin:round;stroke-linecap:round}
+.yin-figure .pml{stroke:#1769aa;color:#1769aa}
+.yin-figure .raw{stroke:#bd4b08;color:#bd4b08}
+.yin-figure .expected{stroke:#556577;color:#556577}
+.yin-figure .gate{stroke:#a33b4b;stroke-width:1.3;stroke-dasharray:5 4}
+.yin-figure .point{fill:#fff;stroke:currentColor;stroke-width:1.2}
+.yin-figure .point:hover{stroke-width:3}
+.yin-figure .accepted{color:#087f5b} .yin-figure .no-cmnd{color:#8a439f}
+.yin-figure .before{color:#b5272e} .yin-figure .after{color:#8e6b00}
+@media(prefers-color-scheme:dark){
+ .yin-figure{background:#111922;color:#e6edf3} .yin-figure text{fill:#e6edf3}
+ .yin-figure .canvas,.yin-figure .point{fill:#111922} .yin-figure .muted{fill:#b2c2d0}
+ .yin-figure .grid{stroke:#344354} .yin-figure .pml{stroke:#69c4ff;color:#69c4ff}
+ .yin-figure .raw{stroke:#ffae69;color:#ffae69}
+ .yin-figure .expected{stroke:#c2ccd7;color:#c2ccd7} .yin-figure .gate{stroke:#ff9aa6}
+ .yin-figure .accepted{color:#72e4b5} .yin-figure .no-cmnd{color:#e6a5ff}
+ .yin-figure .before{color:#ff8b91} .yin-figure .after{color:#efce70}}
+</style>
+<rect width="1280" height="1160" class="canvas"/>
+<text x="32.00" y="38.00" class="heading" text-anchor="start">例C 編集出力・注目時刻の拡大</text>
+<text x="32.00" y="64.00" class="muted" text-anchor="start">librispeech_6829-68769-0041 · primary · pitch -3 · seed 0</text>
+<text x="32.00" y="87.00" class="small muted" text-anchor="start">元抜粋の時刻 [0.48, 0.64) 秒 · 窓 80 ms / hop 10 ms · 横軸は窓中心</text>
+<line x1="38.00" y1="111.00" x2="73.00" y2="111.00" class="trace pml" stroke-width="2" stroke-dasharray=""/>
+<circle cx="55.00" cy="111.00" r="3" class="point pml"><title></title></circle>
+<text x="82.00" y="116.00" class="" text-anchor="start">PML</text>
+<line x1="225.00" y1="111.00" x2="260.00" y2="111.00" class="trace raw" stroke-width="2" stroke-dasharray="6 4"/>
+<polygon points="242.00,108.00 245.00,111.00 242.00,114.00 239.00,111.00" class="point raw"><title></title></polygon>
+<text x="269.00" y="116.00" class="" text-anchor="start">RAW_FULL</text>
+<text x="445.00" y="116.00" class="small muted" text-anchor="start">全パネルで共通時刻。各パネル内の縦軸は両方式で共通。</text>
+<line x1="112.00" y1="160.00" x2="112.00" y2="322.00" class="grid" />
+<text x="112.00" y="342.00" class="small muted" text-anchor="middle">0.48</text>
+<line x1="252.00" y1="160.00" x2="252.00" y2="322.00" class="grid" />
+<text x="252.00" y="342.00" class="small muted" text-anchor="middle">0.5</text>
+<line x1="602.00" y1="160.00" x2="602.00" y2="322.00" class="grid" />
+<text x="602.00" y="342.00" class="small muted" text-anchor="middle">0.55</text>
+<line x1="952.00" y1="160.00" x2="952.00" y2="322.00" class="grid" />
+<text x="952.00" y="342.00" class="small muted" text-anchor="middle">0.6</text>
+<line x1="1232.00" y1="160.00" x2="1232.00" y2="322.00" class="grid" />
+<text x="1232.00" y="342.00" class="small muted" text-anchor="middle">0.64</text>
+<line x1="112.00" y1="407.00" x2="112.00" y2="569.00" class="grid" />
+<text x="112.00" y="589.00" class="small muted" text-anchor="middle">0.48</text>
+<line x1="252.00" y1="407.00" x2="252.00" y2="569.00" class="grid" />
+<text x="252.00" y="589.00" class="small muted" text-anchor="middle">0.5</text>
+<line x1="602.00" y1="407.00" x2="602.00" y2="569.00" class="grid" />
+<text x="602.00" y="589.00" class="small muted" text-anchor="middle">0.55</text>
+<line x1="952.00" y1="407.00" x2="952.00" y2="569.00" class="grid" />
+<text x="952.00" y="589.00" class="small muted" text-anchor="middle">0.6</text>
+<line x1="1232.00" y1="407.00" x2="1232.00" y2="569.00" class="grid" />
+<text x="1232.00" y="589.00" class="small muted" text-anchor="middle">0.64</text>
+<line x1="112.00" y1="675.00" x2="112.00" y2="837.00" class="grid" />
+<text x="112.00" y="857.00" class="small muted" text-anchor="middle">0.48</text>
+<line x1="252.00" y1="675.00" x2="252.00" y2="837.00" class="grid" />
+<text x="252.00" y="857.00" class="small muted" text-anchor="middle">0.5</text>
+<line x1="602.00" y1="675.00" x2="602.00" y2="837.00" class="grid" />
+<text x="602.00" y="857.00" class="small muted" text-anchor="middle">0.55</text>
+<line x1="952.00" y1="675.00" x2="952.00" y2="837.00" class="grid" />
+<text x="952.00" y="857.00" class="small muted" text-anchor="middle">0.6</text>
+<line x1="1232.00" y1="675.00" x2="1232.00" y2="837.00" class="grid" />
+<text x="1232.00" y="857.00" class="small muted" text-anchor="middle">0.64</text>
+<line x1="112.00" y1="322.00" x2="1232.00" y2="322.00" class="grid" />
+<text x="100.00" y="326.00" class="small muted" text-anchor="end">0</text>
+<line x1="112.00" y1="281.50" x2="1232.00" y2="281.50" class="grid" />
+<text x="100.00" y="285.50" class="small muted" text-anchor="end">50</text>
+<line x1="112.00" y1="241.00" x2="1232.00" y2="241.00" class="grid" />
+<text x="100.00" y="245.00" class="small muted" text-anchor="end">100</text>
+<line x1="112.00" y1="200.50" x2="1232.00" y2="200.50" class="grid" />
+<text x="100.00" y="204.50" class="small muted" text-anchor="end">150</text>
+<line x1="112.00" y1="160.00" x2="1232.00" y2="160.00" class="grid" />
+<text x="100.00" y="164.00" class="small muted" text-anchor="end">200</text>
+<line x1="112.00" y1="569.00" x2="1232.00" y2="569.00" class="grid" />
+<text x="100.00" y="573.00" class="small muted" text-anchor="end">0</text>
+<line x1="112.00" y1="528.50" x2="1232.00" y2="528.50" class="grid" />
+<text x="100.00" y="532.50" class="small muted" text-anchor="end">0.125</text>
+<line x1="112.00" y1="488.00" x2="1232.00" y2="488.00" class="grid" />
+<text x="100.00" y="492.00" class="small muted" text-anchor="end">0.25</text>
+<line x1="112.00" y1="447.50" x2="1232.00" y2="447.50" class="grid" />
+<text x="100.00" y="451.50" class="small muted" text-anchor="end">0.375</text>
+<line x1="112.00" y1="407.00" x2="1232.00" y2="407.00" class="grid" />
+<text x="100.00" y="411.00" class="small muted" text-anchor="end">0.5</text>
+<text x="32.00" y="145.00" class="heading" text-anchor="start">1  出力 F0（Hz）</text>
+<text x="340.00" y="145.00" class="small muted" text-anchor="start">0 は基線の点で表示し、正値の折れ線をつながない</text>
+<text x="32.00" y="391.00" class="heading" text-anchor="start">2  計算済み最小 CMND</text>
+<line x1="112.00" y1="520.40" x2="1232.00" y2="520.40" class="gate" />
+<text x="1228.00" y="513.40" class="small" text-anchor="end">固定閾値 0.15</text>
+<text x="100.00" y="600.00" class="small muted" text-anchor="end">未計算</text>
+<line x1="112.00" y1="596.00" x2="1232.00" y2="596.00" class="grid" />
+<text x="32.00" y="626.00" class="small muted" text-anchor="start">null は折れ線を切って未計算レーンへ。返却値の 1.0 センチネルは実測点として描かない。</text>
+<text x="32.00" y="655.00" class="heading" text-anchor="start">3  RMS（平均減算前 / 後）</text>
+<text x="405.00" y="655.00" class="small muted" text-anchor="start">正値は対数軸・全範囲表示。0 と未計算は独立レーン。</text>
+<line x1="112.00" y1="832.42" x2="1232.00" y2="832.42" class="grid" />
+<text x="100.00" y="836.42" class="small muted" text-anchor="end">1e-5</text>
+<line x1="112.00" y1="801.85" x2="1232.00" y2="801.85" class="grid" />
+<text x="100.00" y="805.85" class="small muted" text-anchor="end">1e-4</text>
+<line x1="112.00" y1="771.28" x2="1232.00" y2="771.28" class="grid" />
+<text x="100.00" y="775.28" class="small muted" text-anchor="end">1e-3</text>
+<line x1="112.00" y1="740.72" x2="1232.00" y2="740.72" class="grid" />
+<text x="100.00" y="744.72" class="small muted" text-anchor="end">1e-2</text>
+<line x1="112.00" y1="710.15" x2="1232.00" y2="710.15" class="grid" />
+<text x="100.00" y="714.15" class="small muted" text-anchor="end">1e-1</text>
+<line x1="112.00" y1="679.58" x2="1232.00" y2="679.58" class="grid" />
+<text x="100.00" y="683.58" class="small muted" text-anchor="end">1e+0</text>
+<line x1="112.00" y1="832.42" x2="1232.00" y2="832.42" class="gate" />
+<text x="1228.00" y="825.42" class="small" text-anchor="end">固定閾値 1e-5</text>
+<line x1="112.00" y1="871.00" x2="1232.00" y2="871.00" class="grid" />
+<text x="100.00" y="875.00" class="small muted" text-anchor="end">実値 0</text>
+<line x1="112.00" y1="893.00" x2="1232.00" y2="893.00" class="grid" />
+<text x="100.00" y="897.00" class="small muted" text-anchor="end">未計算</text>
+<text x="112.00" y="922.00" class="small muted" text-anchor="start">RMS：減算前は細い点線、減算後は太線。RAW_FULL の減算後は破線。</text>
+<polyline points="112.00,189.82" class="trace pml" stroke-width="1.9" stroke-dasharray=""/>
+<polyline points="392.00,177.52 462.00,177.07 532.00,176.59 602.00,176.04 672.00,175.42" class="trace pml" stroke-width="1.9" stroke-dasharray=""/>
+<circle cx="112.00" cy="189.82" r="2.05" class="point pml"><title>PML / frame_index=44 / center_sample=7680 / t=0.48 s / f0_hz=163.1792963504393 / decision=accepted</title></circle>
+<circle cx="182.00" cy="322.00" r="2.05" class="point pml"><title>PML / frame_index=45 / center_sample=7840 / t=0.49 s / f0_hz=0.0 / decision=no_cmnd_below_threshold</title></circle>
+<circle cx="252.00" cy="322.00" r="2.05" class="point pml"><title>PML / frame_index=46 / center_sample=8000 / t=0.5 s / f0_hz=0.0 / decision=no_cmnd_below_threshold</title></circle>
+<circle cx="322.00" cy="322.00" r="2.05" class="point pml"><title>PML / frame_index=47 / center_sample=8160 / t=0.51 s / f0_hz=0.0 / decision=no_cmnd_below_threshold</title></circle>
+<circle cx="392.00" cy="177.52" r="2.05" class="point pml"><title>PML / frame_index=48 / center_sample=8320 / t=0.52 s / f0_hz=178.3692096243625 / decision=accepted</title></circle>
+<circle cx="462.00" cy="177.07" r="2.05" class="point pml"><title>PML / frame_index=49 / center_sample=8480 / t=0.53 s / f0_hz=178.92315075050573 / decision=accepted</title></circle>
+<circle cx="532.00" cy="176.59" r="2.05" class="point pml"><title>PML / frame_index=50 / center_sample=8640 / t=0.54 s / f0_hz=179.51380998264062 / decision=accepted</title></circle>
+<circle cx="602.00" cy="176.04" r="2.05" class="point pml"><title>PML / frame_index=51 / center_sample=8800 / t=0.55 s / f0_hz=180.20215771690928 / decision=accepted</title></circle>
+<circle cx="672.00" cy="175.42" r="2.05" class="point pml"><title>PML / frame_index=52 / center_sample=8960 / t=0.56 s / f0_hz=180.95808546753747 / decision=accepted</title></circle>
+<circle cx="742.00" cy="322.00" r="2.05" class="point pml"><title>PML / frame_index=53 / center_sample=9120 / t=0.57 s / f0_hz=0.0 / decision=no_cmnd_below_threshold</title></circle>
+<circle cx="812.00" cy="322.00" r="2.05" class="point pml"><title>PML / frame_index=54 / center_sample=9280 / t=0.58 s / f0_hz=0.0 / decision=no_cmnd_below_threshold</title></circle>
+<circle cx="882.00" cy="322.00" r="2.05" class="point pml"><title>PML / frame_index=55 / center_sample=9440 / t=0.59 s / f0_hz=0.0 / decision=no_cmnd_below_threshold</title></circle>
+<circle cx="952.00" cy="322.00" r="2.05" class="point pml"><title>PML / frame_index=56 / center_sample=9600 / t=0.6 s / f0_hz=0.0 / decision=no_cmnd_below_threshold</title></circle>
+<circle cx="1022.00" cy="322.00" r="2.05" class="point pml"><title>PML / frame_index=57 / center_sample=9760 / t=0.61 s / f0_hz=0.0 / decision=no_cmnd_below_threshold</title></circle>
+<circle cx="1092.00" cy="322.00" r="2.05" class="point pml"><title>PML / frame_index=58 / center_sample=9920 / t=0.62 s / f0_hz=0.0 / decision=no_cmnd_below_threshold</title></circle>
+<circle cx="1162.00" cy="322.00" r="2.05" class="point pml"><title>PML / frame_index=59 / center_sample=10080 / t=0.63 s / f0_hz=0.0 / decision=no_cmnd_below_threshold</title></circle>
+<polyline points="112.00,562.36 182.00,445.27 252.00,495.39 322.00,515.37 392.00,527.12 462.00,532.52 532.00,536.78 602.00,532.68 672.00,520.44 742.00,513.84 812.00,505.89 882.00,485.33 952.00,469.72 1022.00,461.97 1092.00,452.48 1162.00,428.99" class="trace pml" stroke-width="1.7" stroke-dasharray=""/>
+<circle cx="112.00" cy="562.36" r="2.05" class="point pml"><title>PML / frame_index=44 / center_sample=7680 / t=0.48 s / computed_min_cmnd=0.02050184696396438 / decision=accepted</title></circle>
+<circle cx="182.00" cy="445.27" r="2.05" class="point pml"><title>PML / frame_index=45 / center_sample=7840 / t=0.49 s / computed_min_cmnd=0.3818901382999774 / decision=no_cmnd_below_threshold</title></circle>
+<circle cx="252.00" cy="495.39" r="2.05" class="point pml"><title>PML / frame_index=46 / center_sample=8000 / t=0.5 s / computed_min_cmnd=0.22719888057102852 / decision=no_cmnd_below_threshold</title></circle>
+<circle cx="322.00" cy="515.37" r="2.05" class="point pml"><title>PML / frame_index=47 / center_sample=8160 / t=0.51 s / computed_min_cmnd=0.16553023734401515 / decision=no_cmnd_below_threshold</title></circle>
+<circle cx="392.00" cy="527.12" r="2.05" class="point pml"><title>PML / frame_index=48 / center_sample=8320 / t=0.52 s / computed_min_cmnd=0.12926057175317146 / decision=accepted</title></circle>
+<circle cx="462.00" cy="532.52" r="2.05" class="point pml"><title>PML / frame_index=49 / center_sample=8480 / t=0.53 s / computed_min_cmnd=0.11259510120001384 / decision=accepted</title></circle>
+<circle cx="532.00" cy="536.78" r="2.05" class="point pml"><title>PML / frame_index=50 / center_sample=8640 / t=0.54 s / computed_min_cmnd=0.0994348380215641 / decision=accepted</title></circle>
+<circle cx="602.00" cy="532.68" r="2.05" class="point pml"><title>PML / frame_index=51 / center_sample=8800 / t=0.55 s / computed_min_cmnd=0.11209583515417816 / decision=accepted</title></circle>
+<circle cx="672.00" cy="520.44" r="2.05" class="point pml"><title>PML / frame_index=52 / center_sample=8960 / t=0.56 s / computed_min_cmnd=0.14988746802067265 / decision=accepted</title></circle>
+<circle cx="742.00" cy="513.84" r="2.05" class="point pml"><title>PML / frame_index=53 / center_sample=9120 / t=0.57 s / computed_min_cmnd=0.17025257375898667 / decision=no_cmnd_below_threshold</title></circle>
+<circle cx="812.00" cy="505.89" r="2.05" class="point pml"><title>PML / frame_index=54 / center_sample=9280 / t=0.58 s / computed_min_cmnd=0.19479572231431797 / decision=no_cmnd_below_threshold</title></circle>
+<circle cx="882.00" cy="485.33" r="2.05" class="point pml"><title>PML / frame_index=55 / center_sample=9440 / t=0.59 s / computed_min_cmnd=0.25825527337919296 / decision=no_cmnd_below_threshold</title></circle>
+<circle cx="952.00" cy="469.72" r="2.05" class="point pml"><title>PML / frame_index=56 / center_sample=9600 / t=0.6 s / computed_min_cmnd=0.30640697476504286 / decision=no_cmnd_below_threshold</title></circle>
+<circle cx="1022.00" cy="461.97" r="2.05" class="point pml"><title>PML / frame_index=57 / center_sample=9760 / t=0.61 s / computed_min_cmnd=0.33034797524397863 / decision=no_cmnd_below_threshold</title></circle>
+<circle cx="1092.00" cy="452.48" r="2.05" class="point pml"><title>PML / frame_index=58 / center_sample=9920 / t=0.62 s / computed_min_cmnd=0.35962780761903934 / decision=no_cmnd_below_threshold</title></circle>
+<circle cx="1162.00" cy="428.99" r="2.05" class="point pml"><title>PML / frame_index=59 / center_sample=10080 / t=0.63 s / computed_min_cmnd=0.43213372159523744 / decision=no_cmnd_below_threshold</title></circle>
+<polyline points="112.00,719.24 182.00,715.36 252.00,710.78 322.00,708.75 392.00,707.39 462.00,706.36 532.00,705.59 602.00,704.90 672.00,704.35 742.00,704.43 812.00,705.36 882.00,706.02 952.00,706.95 1022.00,708.14 1092.00,709.40 1162.00,710.92" class="trace pml" stroke-width="1.0" stroke-dasharray="1 4"/>
+<circle cx="112.00" cy="719.24" r="1.55" class="point pml"><title>PML / frame_index=44 / center_sample=7680 / t=0.48 s / rms_before_mean=0.05044232767548273 / decision=accepted</title></circle>
+<circle cx="182.00" cy="715.36" r="1.55" class="point pml"><title>PML / frame_index=45 / center_sample=7840 / t=0.49 s / rms_before_mean=0.06751968955719818 / decision=no_cmnd_below_threshold</title></circle>
+<circle cx="252.00" cy="710.78" r="1.55" class="point pml"><title>PML / frame_index=46 / center_sample=8000 / t=0.5 s / rms_before_mean=0.0953380596853654 / decision=no_cmnd_below_threshold</title></circle>
+<circle cx="322.00" cy="708.75" r="1.55" class="point pml"><title>PML / frame_index=47 / center_sample=8160 / t=0.51 s / rms_before_mean=0.11113314231694897 / decision=no_cmnd_below_threshold</title></circle>
+<circle cx="392.00" cy="707.39" r="1.55" class="point pml"><title>PML / frame_index=48 / center_sample=8320 / t=0.52 s / rms_before_mean=0.12308318493717696 / decision=accepted</title></circle>
+<circle cx="462.00" cy="706.36" r="1.55" class="point pml"><title>PML / frame_index=49 / center_sample=8480 / t=0.53 s / rms_before_mean=0.13310054031050242 / decision=accepted</title></circle>
+<circle cx="532.00" cy="705.59" r="1.55" class="point pml"><title>PML / frame_index=50 / center_sample=8640 / t=0.54 s / rms_before_mean=0.14103799537349115 / decision=accepted</title></circle>
+<circle cx="602.00" cy="704.90" r="1.55" class="point pml"><title>PML / frame_index=51 / center_sample=8800 / t=0.55 s / rms_before_mean=0.14849799637162284 / decision=accepted</title></circle>
+<circle cx="672.00" cy="704.35" r="1.55" class="point pml"><title>PML / frame_index=52 / center_sample=8960 / t=0.56 s / rms_before_mean=0.1547922003806199 / decision=accepted</title></circle>
+<circle cx="742.00" cy="704.43" r="1.55" class="point pml"><title>PML / frame_index=53 / center_sample=9120 / t=0.57 s / rms_before_mean=0.15391279444512151 / decision=no_cmnd_below_threshold</title></circle>
+<circle cx="812.00" cy="705.36" r="1.55" class="point pml"><title>PML / frame_index=54 / center_sample=9280 / t=0.58 s / rms_before_mean=0.14342104736124428 / decision=no_cmnd_below_threshold</title></circle>
+<circle cx="882.00" cy="706.02" r="1.55" class="point pml"><title>PML / frame_index=55 / center_sample=9440 / t=0.59 s / rms_before_mean=0.13654930466280782 / decision=no_cmnd_below_threshold</title></circle>
+<circle cx="952.00" cy="706.95" r="1.55" class="point pml"><title>PML / frame_index=56 / center_sample=9600 / t=0.6 s / rms_before_mean=0.12724351454628657 / decision=no_cmnd_below_threshold</title></circle>
+<circle cx="1022.00" cy="708.14" r="1.55" class="point pml"><title>PML / frame_index=57 / center_sample=9760 / t=0.61 s / rms_before_mean=0.11633271279265434 / decision=no_cmnd_below_threshold</title></circle>
+<circle cx="1092.00" cy="709.40" r="1.55" class="point pml"><title>PML / frame_index=58 / center_sample=9920 / t=0.62 s / rms_before_mean=0.1058416504829253 / decision=no_cmnd_below_threshold</title></circle>
+<circle cx="1162.00" cy="710.92" r="1.55" class="point pml"><title>PML / frame_index=59 / center_sample=10080 / t=0.63 s / rms_before_mean=0.09436748239933265 / decision=no_cmnd_below_threshold</title></circle>
+<polyline points="112.00,719.24 182.00,715.37 252.00,710.78 322.00,708.75 392.00,707.39 462.00,706.36 532.00,705.59 602.00,704.90 672.00,704.35 742.00,704.43 812.00,705.36 882.00,706.02 952.00,706.95 1022.00,708.14 1092.00,709.40 1162.00,710.92" class="trace pml" stroke-width="1.8" stroke-dasharray=""/>
+<circle cx="112.00" cy="719.24" r="2.05" class="point pml"><title>PML / frame_index=44 / center_sample=7680 / t=0.48 s / rms_after_mean=0.050442192225756494 / decision=accepted</title></circle>
+<circle cx="182.00" cy="715.37" r="2.05" class="point pml"><title>PML / frame_index=45 / center_sample=7840 / t=0.49 s / rms_after_mean=0.0675085722509607 / decision=no_cmnd_below_threshold</title></circle>
+<circle cx="252.00" cy="710.78" r="2.05" class="point pml"><title>PML / frame_index=46 / center_sample=8000 / t=0.5 s / rms_after_mean=0.09533783200302766 / decision=no_cmnd_below_threshold</title></circle>
+<circle cx="322.00" cy="708.75" r="2.05" class="point pml"><title>PML / frame_index=47 / center_sample=8160 / t=0.51 s / rms_after_mean=0.11111108071214501 / decision=no_cmnd_below_threshold</title></circle>
+<circle cx="392.00" cy="707.39" r="2.05" class="point pml"><title>PML / frame_index=48 / center_sample=8320 / t=0.52 s / rms_after_mean=0.12307513361583809 / decision=accepted</title></circle>
+<circle cx="462.00" cy="706.36" r="2.05" class="point pml"><title>PML / frame_index=49 / center_sample=8480 / t=0.53 s / rms_after_mean=0.13310040338501047 / decision=accepted</title></circle>
+<circle cx="532.00" cy="705.59" r="2.05" class="point pml"><title>PML / frame_index=50 / center_sample=8640 / t=0.54 s / rms_after_mean=0.141035323377446 / decision=accepted</title></circle>
+<circle cx="602.00" cy="704.90" r="2.05" class="point pml"><title>PML / frame_index=51 / center_sample=8800 / t=0.55 s / rms_after_mean=0.14849797217752075 / decision=accepted</title></circle>
+<circle cx="672.00" cy="704.35" r="2.05" class="point pml"><title>PML / frame_index=52 / center_sample=8960 / t=0.56 s / rms_after_mean=0.15479206778089155 / decision=accepted</title></circle>
+<circle cx="742.00" cy="704.43" r="2.05" class="point pml"><title>PML / frame_index=53 / center_sample=9120 / t=0.57 s / rms_after_mean=0.15391242933935198 / decision=no_cmnd_below_threshold</title></circle>
+<circle cx="812.00" cy="705.36" r="2.05" class="point pml"><title>PML / frame_index=54 / center_sample=9280 / t=0.58 s / rms_after_mean=0.14341623852540403 / decision=no_cmnd_below_threshold</title></circle>
+<circle cx="882.00" cy="706.02" r="2.05" class="point pml"><title>PML / frame_index=55 / center_sample=9440 / t=0.59 s / rms_after_mean=0.1365367781828508 / decision=no_cmnd_below_threshold</title></circle>
+<circle cx="952.00" cy="706.95" r="2.05" class="point pml"><title>PML / frame_index=56 / center_sample=9600 / t=0.6 s / rms_after_mean=0.12724248845704714 / decision=no_cmnd_below_threshold</title></circle>
+<circle cx="1022.00" cy="708.14" r="2.05" class="point pml"><title>PML / frame_index=57 / center_sample=9760 / t=0.61 s / rms_after_mean=0.11633234643934018 / decision=no_cmnd_below_threshold</title></circle>
+<circle cx="1092.00" cy="709.40" r="2.05" class="point pml"><title>PML / frame_index=58 / center_sample=9920 / t=0.62 s / rms_after_mean=0.10583655353079012 / decision=no_cmnd_below_threshold</title></circle>
+<circle cx="1162.00" cy="710.92" r="2.05" class="point pml"><title>PML / frame_index=59 / center_sample=10080 / t=0.63 s / rms_after_mean=0.09436732467449682 / decision=no_cmnd_below_threshold</title></circle>
+<polyline points="112.00,189.82" class="trace raw" stroke-width="1.9" stroke-dasharray="6 4"/>
+<polyline points="392.00,177.53 462.00,177.08 532.00,176.60 602.00,176.04" class="trace raw" stroke-width="1.9" stroke-dasharray="6 4"/>
+<polygon points="112.00,187.77 114.05,189.82 112.00,191.87 109.95,189.82" class="point raw"><title>RAW_FULL / frame_index=44 / center_sample=7680 / t=0.48 s / f0_hz=163.18056414248275 / decision=accepted</title></polygon>
+<polygon points="182.00,319.95 184.05,322.00 182.00,324.05 179.95,322.00" class="point raw"><title>RAW_FULL / frame_index=45 / center_sample=7840 / t=0.49 s / f0_hz=0.0 / decision=no_cmnd_below_threshold</title></polygon>
+<polygon points="252.00,319.95 254.05,322.00 252.00,324.05 249.95,322.00" class="point raw"><title>RAW_FULL / frame_index=46 / center_sample=8000 / t=0.5 s / f0_hz=0.0 / decision=no_cmnd_below_threshold</title></polygon>
+<polygon points="322.00,319.95 324.05,322.00 322.00,324.05 319.95,322.00" class="point raw"><title>RAW_FULL / frame_index=47 / center_sample=8160 / t=0.51 s / f0_hz=0.0 / decision=no_cmnd_below_threshold</title></polygon>
+<polygon points="392.00,175.48 394.05,177.53 392.00,179.58 389.95,177.53" class="point raw"><title>RAW_FULL / frame_index=48 / center_sample=8320 / t=0.52 s / f0_hz=178.361548677696 / decision=accepted</title></polygon>
+<polygon points="462.00,175.03 464.05,177.08 462.00,179.13 459.95,177.08" class="point raw"><title>RAW_FULL / frame_index=49 / center_sample=8480 / t=0.53 s / f0_hz=178.91778237141847 / decision=accepted</title></polygon>
+<polygon points="532.00,174.55 534.05,176.60 532.00,178.65 529.95,176.60" class="point raw"><title>RAW_FULL / frame_index=50 / center_sample=8640 / t=0.54 s / f0_hz=179.51010655217127 / decision=accepted</title></polygon>
+<polygon points="602.00,173.99 604.05,176.04 602.00,178.09 599.95,176.04" class="point raw"><title>RAW_FULL / frame_index=51 / center_sample=8800 / t=0.55 s / f0_hz=180.19960117198204 / decision=accepted</title></polygon>
+<polygon points="672.00,319.95 674.05,322.00 672.00,324.05 669.95,322.00" class="point raw"><title>RAW_FULL / frame_index=52 / center_sample=8960 / t=0.56 s / f0_hz=0.0 / decision=no_cmnd_below_threshold</title></polygon>
+<polygon points="742.00,319.95 744.05,322.00 742.00,324.05 739.95,322.00" class="point raw"><title>RAW_FULL / frame_index=53 / center_sample=9120 / t=0.57 s / f0_hz=0.0 / decision=no_cmnd_below_threshold</title></polygon>
+<polygon points="812.00,319.95 814.05,322.00 812.00,324.05 809.95,322.00" class="point raw"><title>RAW_FULL / frame_index=54 / center_sample=9280 / t=0.58 s / f0_hz=0.0 / decision=no_cmnd_below_threshold</title></polygon>
+<polygon points="882.00,319.95 884.05,322.00 882.00,324.05 879.95,322.00" class="point raw"><title>RAW_FULL / frame_index=55 / center_sample=9440 / t=0.59 s / f0_hz=0.0 / decision=no_cmnd_below_threshold</title></polygon>
+<polygon points="952.00,319.95 954.05,322.00 952.00,324.05 949.95,322.00" class="point raw"><title>RAW_FULL / frame_index=56 / center_sample=9600 / t=0.6 s / f0_hz=0.0 / decision=no_cmnd_below_threshold</title></polygon>
+<polygon points="1022.00,319.95 1024.05,322.00 1022.00,324.05 1019.95,322.00" class="point raw"><title>RAW_FULL / frame_index=57 / center_sample=9760 / t=0.61 s / f0_hz=0.0 / decision=no_cmnd_below_threshold</title></polygon>
+<polygon points="1092.00,319.95 1094.05,322.00 1092.00,324.05 1089.95,322.00" class="point raw"><title>RAW_FULL / frame_index=58 / center_sample=9920 / t=0.62 s / f0_hz=0.0 / decision=no_cmnd_below_threshold</title></polygon>
+<polygon points="1162.00,319.95 1164.05,322.00 1162.00,324.05 1159.95,322.00" class="point raw"><title>RAW_FULL / frame_index=59 / center_sample=10080 / t=0.63 s / f0_hz=0.0 / decision=no_cmnd_below_threshold</title></polygon>
+<polyline points="112.00,562.39 182.00,444.98 252.00,495.06 322.00,515.17 392.00,526.96 462.00,532.33 532.00,536.62 602.00,532.53 672.00,520.30 742.00,513.81 812.00,506.17 882.00,487.35 952.00,473.30 1022.00,466.46 1092.00,460.55 1162.00,439.85" class="trace raw" stroke-width="1.7" stroke-dasharray="6 4"/>
+<polygon points="112.00,560.34 114.05,562.39 112.00,564.44 109.95,562.39" class="point raw"><title>RAW_FULL / frame_index=44 / center_sample=7680 / t=0.48 s / computed_min_cmnd=0.02038933602722292 / decision=accepted</title></polygon>
+<polygon points="182.00,442.93 184.05,444.98 182.00,447.03 179.95,444.98" class="point raw"><title>RAW_FULL / frame_index=45 / center_sample=7840 / t=0.49 s / computed_min_cmnd=0.3827753169932598 / decision=no_cmnd_below_threshold</title></polygon>
+<polygon points="252.00,493.01 254.05,495.06 252.00,497.11 249.95,495.06" class="point raw"><title>RAW_FULL / frame_index=46 / center_sample=8000 / t=0.5 s / computed_min_cmnd=0.22821067874660905 / decision=no_cmnd_below_threshold</title></polygon>
+<polygon points="322.00,513.12 324.05,515.17 322.00,517.22 319.95,515.17" class="point raw"><title>RAW_FULL / frame_index=47 / center_sample=8160 / t=0.51 s / computed_min_cmnd=0.16613240220091172 / decision=no_cmnd_below_threshold</title></polygon>
+<polygon points="392.00,524.91 394.05,526.96 392.00,529.01 389.95,526.96" class="point raw"><title>RAW_FULL / frame_index=48 / center_sample=8320 / t=0.52 s / computed_min_cmnd=0.1297548678576969 / decision=accepted</title></polygon>
+<polygon points="462.00,530.28 464.05,532.33 462.00,534.38 459.95,532.33" class="point raw"><title>RAW_FULL / frame_index=49 / center_sample=8480 / t=0.53 s / computed_min_cmnd=0.11317226706251321 / decision=accepted</title></polygon>
+<polygon points="532.00,534.57 534.05,536.62 532.00,538.67 529.95,536.62" class="point raw"><title>RAW_FULL / frame_index=50 / center_sample=8640 / t=0.54 s / computed_min_cmnd=0.09995148766029864 / decision=accepted</title></polygon>
+<polygon points="602.00,530.48 604.05,532.53 602.00,534.58 599.95,532.53" class="point raw"><title>RAW_FULL / frame_index=51 / center_sample=8800 / t=0.55 s / computed_min_cmnd=0.11256029277615187 / decision=accepted</title></polygon>
+<polygon points="672.00,518.25 674.05,520.30 672.00,522.35 669.95,520.30" class="point raw"><title>RAW_FULL / frame_index=52 / center_sample=8960 / t=0.56 s / computed_min_cmnd=0.150316230168476 / decision=no_cmnd_below_threshold</title></polygon>
+<polygon points="742.00,511.76 744.05,513.81 742.00,515.86 739.95,513.81" class="point raw"><title>RAW_FULL / frame_index=53 / center_sample=9120 / t=0.57 s / computed_min_cmnd=0.17032517631839272 / decision=no_cmnd_below_threshold</title></polygon>
+<polygon points="812.00,504.12 814.05,506.17 812.00,508.22 809.95,506.17" class="point raw"><title>RAW_FULL / frame_index=54 / center_sample=9280 / t=0.58 s / computed_min_cmnd=0.19391047681591136 / decision=no_cmnd_below_threshold</title></polygon>
+<polygon points="882.00,485.30 884.05,487.35 882.00,489.40 879.95,487.35" class="point raw"><title>RAW_FULL / frame_index=55 / center_sample=9440 / t=0.59 s / computed_min_cmnd=0.2519929442709307 / decision=no_cmnd_below_threshold</title></polygon>
+<polygon points="952.00,471.25 954.05,473.30 952.00,475.35 949.95,473.30" class="point raw"><title>RAW_FULL / frame_index=56 / center_sample=9600 / t=0.6 s / computed_min_cmnd=0.2953668824719365 / decision=no_cmnd_below_threshold</title></polygon>
+<polygon points="1022.00,464.41 1024.05,466.46 1022.00,468.51 1019.95,466.46" class="point raw"><title>RAW_FULL / frame_index=57 / center_sample=9760 / t=0.61 s / computed_min_cmnd=0.31647815236281873 / decision=no_cmnd_below_threshold</title></polygon>
+<polygon points="1092.00,458.50 1094.05,460.55 1092.00,462.60 1089.95,460.55" class="point raw"><title>RAW_FULL / frame_index=58 / center_sample=9920 / t=0.62 s / computed_min_cmnd=0.3347370683483443 / decision=no_cmnd_below_threshold</title></polygon>
+<polygon points="1162.00,437.80 1164.05,439.85 1162.00,441.90 1159.95,439.85" class="point raw"><title>RAW_FULL / frame_index=59 / center_sample=10080 / t=0.63 s / computed_min_cmnd=0.39859699361278317 / decision=no_cmnd_below_threshold</title></polygon>
+<polyline points="112.00,719.24 182.00,715.36 252.00,710.78 322.00,708.75 392.00,707.39 462.00,706.35 532.00,705.59 602.00,704.90 672.00,704.35 742.00,704.43 812.00,705.35 882.00,706.11 952.00,707.05 1022.00,708.28 1092.00,709.48 1162.00,711.05" class="trace raw" stroke-width="1.0" stroke-dasharray="1 4"/>
+<polygon points="112.00,717.69 113.55,719.24 112.00,720.79 110.45,719.24" class="point raw"><title>RAW_FULL / frame_index=44 / center_sample=7680 / t=0.48 s / rms_before_mean=0.05043785394553789 / decision=accepted</title></polygon>
+<polygon points="182.00,713.81 183.55,715.36 182.00,716.91 180.45,715.36" class="point raw"><title>RAW_FULL / frame_index=45 / center_sample=7840 / t=0.49 s / rms_before_mean=0.06753688660598578 / decision=no_cmnd_below_threshold</title></polygon>
+<polygon points="252.00,709.23 253.55,710.78 252.00,712.33 250.45,710.78" class="point raw"><title>RAW_FULL / frame_index=46 / center_sample=8000 / t=0.5 s / rms_before_mean=0.09536389076498293 / decision=no_cmnd_below_threshold</title></polygon>
+<polygon points="322.00,707.20 323.55,708.75 322.00,710.30 320.45,708.75" class="point raw"><title>RAW_FULL / frame_index=47 / center_sample=8160 / t=0.51 s / rms_before_mean=0.11114736689435575 / decision=no_cmnd_below_threshold</title></polygon>
+<polygon points="392.00,705.84 393.55,707.39 392.00,708.94 390.45,707.39" class="point raw"><title>RAW_FULL / frame_index=48 / center_sample=8320 / t=0.52 s / rms_before_mean=0.1230975961132016 / decision=accepted</title></polygon>
+<polygon points="462.00,704.80 463.55,706.35 462.00,707.90 460.45,706.35" class="point raw"><title>RAW_FULL / frame_index=49 / center_sample=8480 / t=0.53 s / rms_before_mean=0.13311514409115233 / decision=accepted</title></polygon>
+<polygon points="532.00,704.04 533.55,705.59 532.00,707.14 530.45,705.59" class="point raw"><title>RAW_FULL / frame_index=50 / center_sample=8640 / t=0.54 s / rms_before_mean=0.14105177096418944 / decision=accepted</title></polygon>
+<polygon points="602.00,703.35 603.55,704.90 602.00,706.45 600.45,704.90" class="point raw"><title>RAW_FULL / frame_index=51 / center_sample=8800 / t=0.55 s / rms_before_mean=0.14851129921872716 / decision=accepted</title></polygon>
+<polygon points="672.00,702.80 673.55,704.35 672.00,705.90 670.45,704.35" class="point raw"><title>RAW_FULL / frame_index=52 / center_sample=8960 / t=0.56 s / rms_before_mean=0.15480577519135305 / decision=no_cmnd_below_threshold</title></polygon>
+<polygon points="742.00,702.88 743.55,704.43 742.00,705.98 740.45,704.43" class="point raw"><title>RAW_FULL / frame_index=53 / center_sample=9120 / t=0.57 s / rms_before_mean=0.15391785582620177 / decision=no_cmnd_below_threshold</title></polygon>
+<polygon points="812.00,703.80 813.55,705.35 812.00,706.90 810.45,705.35" class="point raw"><title>RAW_FULL / frame_index=54 / center_sample=9280 / t=0.58 s / rms_before_mean=0.14352440815953313 / decision=no_cmnd_below_threshold</title></polygon>
+<polygon points="882.00,704.56 883.55,706.11 882.00,707.66 880.45,706.11" class="point raw"><title>RAW_FULL / frame_index=55 / center_sample=9440 / t=0.59 s / rms_before_mean=0.13562556092727157 / decision=no_cmnd_below_threshold</title></polygon>
+<polygon points="952.00,705.50 953.55,707.05 952.00,708.60 950.45,707.05" class="point raw"><title>RAW_FULL / frame_index=56 / center_sample=9600 / t=0.6 s / rms_before_mean=0.12632615585520893 / decision=no_cmnd_below_threshold</title></polygon>
+<polygon points="1022.00,706.73 1023.55,708.28 1022.00,709.83 1020.45,708.28" class="point raw"><title>RAW_FULL / frame_index=57 / center_sample=9760 / t=0.61 s / rms_before_mean=0.11516472451668348 / decision=no_cmnd_below_threshold</title></polygon>
+<polygon points="1092.00,707.93 1093.55,709.48 1092.00,711.03 1090.45,709.48" class="point raw"><title>RAW_FULL / frame_index=58 / center_sample=9920 / t=0.62 s / rms_before_mean=0.10515360311096389 / decision=no_cmnd_below_threshold</title></polygon>
+<polygon points="1162.00,709.50 1163.55,711.05 1162.00,712.60 1160.45,711.05" class="point raw"><title>RAW_FULL / frame_index=59 / center_sample=10080 / t=0.63 s / rms_before_mean=0.09343182952572178 / decision=no_cmnd_below_threshold</title></polygon>
+<polyline points="112.00,719.24 182.00,715.36 252.00,710.78 322.00,708.75 392.00,707.39 462.00,706.35 532.00,705.59 602.00,704.90 672.00,704.35 742.00,704.43 812.00,705.35 882.00,706.11 952.00,707.05 1022.00,708.28 1092.00,709.48 1162.00,711.05" class="trace raw" stroke-width="1.8" stroke-dasharray="6 4"/>
+<polygon points="112.00,717.19 114.05,719.24 112.00,721.29 109.95,719.24" class="point raw"><title>RAW_FULL / frame_index=44 / center_sample=7680 / t=0.48 s / rms_after_mean=0.050437717103238335 / decision=accepted</title></polygon>
+<polygon points="182.00,713.31 184.05,715.36 182.00,717.41 179.95,715.36" class="point raw"><title>RAW_FULL / frame_index=45 / center_sample=7840 / t=0.49 s / rms_after_mean=0.06752573290961707 / decision=no_cmnd_below_threshold</title></polygon>
+<polygon points="252.00,708.73 254.05,710.78 252.00,712.83 249.95,710.78" class="point raw"><title>RAW_FULL / frame_index=46 / center_sample=8000 / t=0.5 s / rms_after_mean=0.09536365982850374 / decision=no_cmnd_below_threshold</title></polygon>
+<polygon points="322.00,706.70 324.05,708.75 322.00,710.80 319.95,708.75" class="point raw"><title>RAW_FULL / frame_index=47 / center_sample=8160 / t=0.51 s / rms_after_mean=0.1111252579263488 / decision=no_cmnd_below_threshold</title></polygon>
+<polygon points="392.00,705.34 394.05,707.39 392.00,709.44 389.95,707.39" class="point raw"><title>RAW_FULL / frame_index=48 / center_sample=8320 / t=0.52 s / rms_after_mean=0.12308958188423359 / decision=accepted</title></polygon>
+<polygon points="462.00,704.30 464.05,706.35 462.00,708.40 459.95,706.35" class="point raw"><title>RAW_FULL / frame_index=49 / center_sample=8480 / t=0.53 s / rms_after_mean=0.13311500388802944 / decision=accepted</title></polygon>
+<polygon points="532.00,703.54 534.05,705.59 532.00,707.64 529.95,705.59" class="point raw"><title>RAW_FULL / frame_index=50 / center_sample=8640 / t=0.54 s / rms_after_mean=0.14104911267061618 / decision=accepted</title></polygon>
+<polygon points="602.00,702.85 604.05,704.90 602.00,706.95 599.95,704.90" class="point raw"><title>RAW_FULL / frame_index=51 / center_sample=8800 / t=0.55 s / rms_after_mean=0.1485112736317817 / decision=accepted</title></polygon>
+<polygon points="672.00,702.30 674.05,704.35 672.00,706.40 669.95,704.35" class="point raw"><title>RAW_FULL / frame_index=52 / center_sample=8960 / t=0.56 s / rms_after_mean=0.15480563905052797 / decision=no_cmnd_below_threshold</title></polygon>
+<polygon points="742.00,702.38 744.05,704.43 742.00,706.48 739.95,704.43" class="point raw"><title>RAW_FULL / frame_index=53 / center_sample=9120 / t=0.57 s / rms_after_mean=0.15391748035485053 / decision=no_cmnd_below_threshold</title></polygon>
+<polygon points="812.00,703.30 814.05,705.35 812.00,707.40 809.95,705.35" class="point raw"><title>RAW_FULL / frame_index=54 / center_sample=9280 / t=0.58 s / rms_after_mean=0.1435193618125291 / decision=no_cmnd_below_threshold</title></polygon>
+<polygon points="882.00,704.06 884.05,706.11 882.00,708.16 879.95,706.11" class="point raw"><title>RAW_FULL / frame_index=55 / center_sample=9440 / t=0.59 s / rms_after_mean=0.1356114501047898 / decision=no_cmnd_below_threshold</title></polygon>
+<polygon points="952.00,705.00 954.05,707.05 952.00,709.10 949.95,707.05" class="point raw"><title>RAW_FULL / frame_index=56 / center_sample=9600 / t=0.6 s / rms_after_mean=0.126325591696787 / decision=no_cmnd_below_threshold</title></polygon>
+<polygon points="1022.00,706.23 1024.05,708.28 1022.00,710.33 1019.95,708.28" class="point raw"><title>RAW_FULL / frame_index=57 / center_sample=9760 / t=0.61 s / rms_after_mean=0.11516451299212038 / decision=no_cmnd_below_threshold</title></polygon>
+<polygon points="1092.00,707.43 1094.05,709.48 1092.00,711.53 1089.95,709.48" class="point raw"><title>RAW_FULL / frame_index=58 / center_sample=9920 / t=0.62 s / rms_after_mean=0.10514888403576203 / decision=no_cmnd_below_threshold</title></polygon>
+<polygon points="1162.00,709.00 1164.05,711.05 1162.00,713.10 1159.95,711.05" class="point raw"><title>RAW_FULL / frame_index=59 / center_sample=10080 / t=0.63 s / rms_after_mean=0.09343180957560962 / decision=no_cmnd_below_threshold</title></polygon>
+<polyline points="112.00,189.78" class="trace pml" stroke-width="1.4" stroke-dasharray="3 5"/>
+<polyline points="322.00,177.70 392.00,177.46 462.00,176.99 532.00,176.55 602.00,175.92 672.00,175.26 742.00,174.67 812.00,173.27" class="trace pml" stroke-width="1.4" stroke-dasharray="3 5"/>
+<path d="M109.70,187.48l4.6,4.6m0,-4.6l-4.6,4.6" class="point pml"><title>PML 保存済み期待 F0 / frame_index=44 / center_sample=7680 / t=0.48 s / saved_expected_f0_hz=163.23438004812772 / decision=accepted</title></path>
+<path d="M179.70,319.70l4.6,4.6m0,-4.6l-4.6,4.6" class="point pml"><title>PML 保存済み期待 F0 / frame_index=45 / center_sample=7840 / t=0.49 s / saved_expected_f0_hz=0.0 / decision=no_cmnd_below_threshold</title></path>
+<path d="M249.70,319.70l4.6,4.6m0,-4.6l-4.6,4.6" class="point pml"><title>PML 保存済み期待 F0 / frame_index=46 / center_sample=8000 / t=0.5 s / saved_expected_f0_hz=0.0 / decision=no_cmnd_below_threshold</title></path>
+<path d="M319.70,175.40l4.6,4.6m0,-4.6l-4.6,4.6" class="point pml"><title>PML 保存済み期待 F0 / frame_index=47 / center_sample=8160 / t=0.51 s / saved_expected_f0_hz=178.15225335441295 / decision=no_cmnd_below_threshold</title></path>
+<path d="M389.70,175.16l4.6,4.6m0,-4.6l-4.6,4.6" class="point pml"><title>PML 保存済み期待 F0 / frame_index=48 / center_sample=8320 / t=0.52 s / saved_expected_f0_hz=178.44669786766767 / decision=accepted</title></path>
+<path d="M459.70,174.69l4.6,4.6m0,-4.6l-4.6,4.6" class="point pml"><title>PML 保存済み期待 F0 / frame_index=49 / center_sample=8480 / t=0.53 s / saved_expected_f0_hz=179.03037922367 / decision=accepted</title></path>
+<path d="M529.70,174.25l4.6,4.6m0,-4.6l-4.6,4.6" class="point pml"><title>PML 保存済み期待 F0 / frame_index=50 / center_sample=8640 / t=0.54 s / saved_expected_f0_hz=179.57158844347632 / decision=accepted</title></path>
+<path d="M599.70,173.62l4.6,4.6m0,-4.6l-4.6,4.6" class="point pml"><title>PML 保存済み期待 F0 / frame_index=51 / center_sample=8800 / t=0.55 s / saved_expected_f0_hz=180.34412979361647 / decision=accepted</title></path>
+<path d="M669.70,172.96l4.6,4.6m0,-4.6l-4.6,4.6" class="point pml"><title>PML 保存済み期待 F0 / frame_index=52 / center_sample=8960 / t=0.56 s / saved_expected_f0_hz=181.1585852552873 / decision=accepted</title></path>
+<path d="M739.70,172.37l4.6,4.6m0,-4.6l-4.6,4.6" class="point pml"><title>PML 保存済み期待 F0 / frame_index=53 / center_sample=9120 / t=0.57 s / saved_expected_f0_hz=181.88319884694621 / decision=no_cmnd_below_threshold</title></path>
+<path d="M809.70,170.97l4.6,4.6m0,-4.6l-4.6,4.6" class="point pml"><title>PML 保存済み期待 F0 / frame_index=54 / center_sample=9280 / t=0.58 s / saved_expected_f0_hz=183.6130925372532 / decision=no_cmnd_below_threshold</title></path>
+<path d="M879.70,319.70l4.6,4.6m0,-4.6l-4.6,4.6" class="point pml"><title>PML 保存済み期待 F0 / frame_index=55 / center_sample=9440 / t=0.59 s / saved_expected_f0_hz=0.0 / decision=no_cmnd_below_threshold</title></path>
+<path d="M949.70,319.70l4.6,4.6m0,-4.6l-4.6,4.6" class="point pml"><title>PML 保存済み期待 F0 / frame_index=56 / center_sample=9600 / t=0.6 s / saved_expected_f0_hz=0.0 / decision=no_cmnd_below_threshold</title></path>
+<path d="M1019.70,319.70l4.6,4.6m0,-4.6l-4.6,4.6" class="point pml"><title>PML 保存済み期待 F0 / frame_index=57 / center_sample=9760 / t=0.61 s / saved_expected_f0_hz=0.0 / decision=no_cmnd_below_threshold</title></path>
+<path d="M1089.70,319.70l4.6,4.6m0,-4.6l-4.6,4.6" class="point pml"><title>PML 保存済み期待 F0 / frame_index=58 / center_sample=9920 / t=0.62 s / saved_expected_f0_hz=0.0 / decision=no_cmnd_below_threshold</title></path>
+<path d="M1159.70,319.70l4.6,4.6m0,-4.6l-4.6,4.6" class="point pml"><title>PML 保存済み期待 F0 / frame_index=59 / center_sample=10080 / t=0.63 s / saved_expected_f0_hz=0.0 / decision=no_cmnd_below_threshold</title></path>
+<polyline points="112.00,189.79" class="trace raw" stroke-width="1.4" stroke-dasharray="3 5"/>
+<polyline points="322.00,177.69 392.00,177.45 462.00,176.98 532.00,176.54 602.00,175.92 672.00,175.26 742.00,174.67 812.00,173.27" class="trace raw" stroke-width="1.4" stroke-dasharray="3 5"/>
+<path d="M109.70,187.49l4.6,4.6m0,-4.6l-4.6,4.6" class="point raw"><title>RAW_FULL 保存済み期待 F0 / frame_index=44 / center_sample=7680 / t=0.48 s / saved_expected_f0_hz=163.22048001496344 / decision=accepted</title></path>
+<path d="M179.70,319.70l4.6,4.6m0,-4.6l-4.6,4.6" class="point raw"><title>RAW_FULL 保存済み期待 F0 / frame_index=45 / center_sample=7840 / t=0.49 s / saved_expected_f0_hz=0.0 / decision=no_cmnd_below_threshold</title></path>
+<path d="M249.70,319.70l4.6,4.6m0,-4.6l-4.6,4.6" class="point raw"><title>RAW_FULL 保存済み期待 F0 / frame_index=46 / center_sample=8000 / t=0.5 s / saved_expected_f0_hz=0.0 / decision=no_cmnd_below_threshold</title></path>
+<path d="M319.70,175.39l4.6,4.6m0,-4.6l-4.6,4.6" class="point raw"><title>RAW_FULL 保存済み期待 F0 / frame_index=47 / center_sample=8160 / t=0.51 s / saved_expected_f0_hz=178.16026081692803 / decision=no_cmnd_below_threshold</title></path>
+<path d="M389.70,175.15l4.6,4.6m0,-4.6l-4.6,4.6" class="point raw"><title>RAW_FULL 保存済み期待 F0 / frame_index=48 / center_sample=8320 / t=0.52 s / saved_expected_f0_hz=178.45328932915356 / decision=accepted</title></path>
+<path d="M459.70,174.68l4.6,4.6m0,-4.6l-4.6,4.6" class="point raw"><title>RAW_FULL 保存済み期待 F0 / frame_index=49 / center_sample=8480 / t=0.53 s / saved_expected_f0_hz=179.03566690102036 / decision=accepted</title></path>
+<path d="M529.70,174.24l4.6,4.6m0,-4.6l-4.6,4.6" class="point raw"><title>RAW_FULL 保存済み期待 F0 / frame_index=50 / center_sample=8640 / t=0.54 s / saved_expected_f0_hz=179.5764785785876 / decision=accepted</title></path>
+<path d="M599.70,173.62l4.6,4.6m0,-4.6l-4.6,4.6" class="point raw"><title>RAW_FULL 保存済み期待 F0 / frame_index=51 / center_sample=8800 / t=0.55 s / saved_expected_f0_hz=180.34909440144824 / decision=accepted</title></path>
+<path d="M669.70,172.96l4.6,4.6m0,-4.6l-4.6,4.6" class="point raw"><title>RAW_FULL 保存済み期待 F0 / frame_index=52 / center_sample=8960 / t=0.56 s / saved_expected_f0_hz=181.16365756774377 / decision=no_cmnd_below_threshold</title></path>
+<path d="M739.70,172.37l4.6,4.6m0,-4.6l-4.6,4.6" class="point raw"><title>RAW_FULL 保存済み期待 F0 / frame_index=53 / center_sample=9120 / t=0.57 s / saved_expected_f0_hz=181.88350550921874 / decision=no_cmnd_below_threshold</title></path>
+<path d="M809.70,170.97l4.6,4.6m0,-4.6l-4.6,4.6" class="point raw"><title>RAW_FULL 保存済み期待 F0 / frame_index=54 / center_sample=9280 / t=0.58 s / saved_expected_f0_hz=183.6203214882315 / decision=no_cmnd_below_threshold</title></path>
+<path d="M879.70,319.70l4.6,4.6m0,-4.6l-4.6,4.6" class="point raw"><title>RAW_FULL 保存済み期待 F0 / frame_index=55 / center_sample=9440 / t=0.59 s / saved_expected_f0_hz=0.0 / decision=no_cmnd_below_threshold</title></path>
+<path d="M949.70,319.70l4.6,4.6m0,-4.6l-4.6,4.6" class="point raw"><title>RAW_FULL 保存済み期待 F0 / frame_index=56 / center_sample=9600 / t=0.6 s / saved_expected_f0_hz=0.0 / decision=no_cmnd_below_threshold</title></path>
+<path d="M1019.70,319.70l4.6,4.6m0,-4.6l-4.6,4.6" class="point raw"><title>RAW_FULL 保存済み期待 F0 / frame_index=57 / center_sample=9760 / t=0.61 s / saved_expected_f0_hz=0.0 / decision=no_cmnd_below_threshold</title></path>
+<path d="M1089.70,319.70l4.6,4.6m0,-4.6l-4.6,4.6" class="point raw"><title>RAW_FULL 保存済み期待 F0 / frame_index=58 / center_sample=9920 / t=0.62 s / saved_expected_f0_hz=0.0 / decision=no_cmnd_below_threshold</title></path>
+<path d="M1159.70,319.70l4.6,4.6m0,-4.6l-4.6,4.6" class="point raw"><title>RAW_FULL 保存済み期待 F0 / frame_index=59 / center_sample=10080 / t=0.63 s / saved_expected_f0_hz=0.0 / decision=no_cmnd_below_threshold</title></path>
+<text x="112.00" y="364.00" class="small muted" text-anchor="start">期待 F0：保存値を ×・点線で表示。0 は基線の × で、正値と線でつながない。各方式の参照は方式色。</text>
+<text x="32.00" y="956.00" class="heading" text-anchor="start">4  保存された判定理由（カテゴリ）</text>
+<text x="100.00" y="989.00" class="small" text-anchor="end">PML</text>
+<line x1="112.00" y1="985.00" x2="1232.00" y2="985.00" class="grid" />
+<circle cx="112.00" cy="985.00" r="3" class="point accepted"><title>PML / frame_index=44 / center_sample=7680 / t=0.48 s / decision=&#x27;accepted&#x27; / decision=accepted</title></circle>
+<rect x="179.00" y="982.00" width="6" height="6" class="point no-cmnd"><title>PML / frame_index=45 / center_sample=7840 / t=0.49 s / decision=&#x27;no_cmnd_below_threshold&#x27; / decision=no_cmnd_below_threshold</title></rect>
+<rect x="249.00" y="982.00" width="6" height="6" class="point no-cmnd"><title>PML / frame_index=46 / center_sample=8000 / t=0.5 s / decision=&#x27;no_cmnd_below_threshold&#x27; / decision=no_cmnd_below_threshold</title></rect>
+<rect x="319.00" y="982.00" width="6" height="6" class="point no-cmnd"><title>PML / frame_index=47 / center_sample=8160 / t=0.51 s / decision=&#x27;no_cmnd_below_threshold&#x27; / decision=no_cmnd_below_threshold</title></rect>
+<circle cx="392.00" cy="985.00" r="3" class="point accepted"><title>PML / frame_index=48 / center_sample=8320 / t=0.52 s / decision=&#x27;accepted&#x27; / decision=accepted</title></circle>
+<circle cx="462.00" cy="985.00" r="3" class="point accepted"><title>PML / frame_index=49 / center_sample=8480 / t=0.53 s / decision=&#x27;accepted&#x27; / decision=accepted</title></circle>
+<circle cx="532.00" cy="985.00" r="3" class="point accepted"><title>PML / frame_index=50 / center_sample=8640 / t=0.54 s / decision=&#x27;accepted&#x27; / decision=accepted</title></circle>
+<circle cx="602.00" cy="985.00" r="3" class="point accepted"><title>PML / frame_index=51 / center_sample=8800 / t=0.55 s / decision=&#x27;accepted&#x27; / decision=accepted</title></circle>
+<circle cx="672.00" cy="985.00" r="3" class="point accepted"><title>PML / frame_index=52 / center_sample=8960 / t=0.56 s / decision=&#x27;accepted&#x27; / decision=accepted</title></circle>
+<rect x="739.00" y="982.00" width="6" height="6" class="point no-cmnd"><title>PML / frame_index=53 / center_sample=9120 / t=0.57 s / decision=&#x27;no_cmnd_below_threshold&#x27; / decision=no_cmnd_below_threshold</title></rect>
+<rect x="809.00" y="982.00" width="6" height="6" class="point no-cmnd"><title>PML / frame_index=54 / center_sample=9280 / t=0.58 s / decision=&#x27;no_cmnd_below_threshold&#x27; / decision=no_cmnd_below_threshold</title></rect>
+<rect x="879.00" y="982.00" width="6" height="6" class="point no-cmnd"><title>PML / frame_index=55 / center_sample=9440 / t=0.59 s / decision=&#x27;no_cmnd_below_threshold&#x27; / decision=no_cmnd_below_threshold</title></rect>
+<rect x="949.00" y="982.00" width="6" height="6" class="point no-cmnd"><title>PML / frame_index=56 / center_sample=9600 / t=0.6 s / decision=&#x27;no_cmnd_below_threshold&#x27; / decision=no_cmnd_below_threshold</title></rect>
+<rect x="1019.00" y="982.00" width="6" height="6" class="point no-cmnd"><title>PML / frame_index=57 / center_sample=9760 / t=0.61 s / decision=&#x27;no_cmnd_below_threshold&#x27; / decision=no_cmnd_below_threshold</title></rect>
+<rect x="1089.00" y="982.00" width="6" height="6" class="point no-cmnd"><title>PML / frame_index=58 / center_sample=9920 / t=0.62 s / decision=&#x27;no_cmnd_below_threshold&#x27; / decision=no_cmnd_below_threshold</title></rect>
+<rect x="1159.00" y="982.00" width="6" height="6" class="point no-cmnd"><title>PML / frame_index=59 / center_sample=10080 / t=0.63 s / decision=&#x27;no_cmnd_below_threshold&#x27; / decision=no_cmnd_below_threshold</title></rect>
+<text x="100.00" y="1019.00" class="small" text-anchor="end">RAW_FULL</text>
+<line x1="112.00" y1="1015.00" x2="1232.00" y2="1015.00" class="grid" />
+<circle cx="112.00" cy="1015.00" r="3" class="point accepted"><title>RAW_FULL / frame_index=44 / center_sample=7680 / t=0.48 s / decision=&#x27;accepted&#x27; / decision=accepted</title></circle>
+<rect x="179.00" y="1012.00" width="6" height="6" class="point no-cmnd"><title>RAW_FULL / frame_index=45 / center_sample=7840 / t=0.49 s / decision=&#x27;no_cmnd_below_threshold&#x27; / decision=no_cmnd_below_threshold</title></rect>
+<rect x="249.00" y="1012.00" width="6" height="6" class="point no-cmnd"><title>RAW_FULL / frame_index=46 / center_sample=8000 / t=0.5 s / decision=&#x27;no_cmnd_below_threshold&#x27; / decision=no_cmnd_below_threshold</title></rect>
+<rect x="319.00" y="1012.00" width="6" height="6" class="point no-cmnd"><title>RAW_FULL / frame_index=47 / center_sample=8160 / t=0.51 s / decision=&#x27;no_cmnd_below_threshold&#x27; / decision=no_cmnd_below_threshold</title></rect>
+<circle cx="392.00" cy="1015.00" r="3" class="point accepted"><title>RAW_FULL / frame_index=48 / center_sample=8320 / t=0.52 s / decision=&#x27;accepted&#x27; / decision=accepted</title></circle>
+<circle cx="462.00" cy="1015.00" r="3" class="point accepted"><title>RAW_FULL / frame_index=49 / center_sample=8480 / t=0.53 s / decision=&#x27;accepted&#x27; / decision=accepted</title></circle>
+<circle cx="532.00" cy="1015.00" r="3" class="point accepted"><title>RAW_FULL / frame_index=50 / center_sample=8640 / t=0.54 s / decision=&#x27;accepted&#x27; / decision=accepted</title></circle>
+<circle cx="602.00" cy="1015.00" r="3" class="point accepted"><title>RAW_FULL / frame_index=51 / center_sample=8800 / t=0.55 s / decision=&#x27;accepted&#x27; / decision=accepted</title></circle>
+<rect x="669.00" y="1012.00" width="6" height="6" class="point no-cmnd"><title>RAW_FULL / frame_index=52 / center_sample=8960 / t=0.56 s / decision=&#x27;no_cmnd_below_threshold&#x27; / decision=no_cmnd_below_threshold</title></rect>
+<rect x="739.00" y="1012.00" width="6" height="6" class="point no-cmnd"><title>RAW_FULL / frame_index=53 / center_sample=9120 / t=0.57 s / decision=&#x27;no_cmnd_below_threshold&#x27; / decision=no_cmnd_below_threshold</title></rect>
+<rect x="809.00" y="1012.00" width="6" height="6" class="point no-cmnd"><title>RAW_FULL / frame_index=54 / center_sample=9280 / t=0.58 s / decision=&#x27;no_cmnd_below_threshold&#x27; / decision=no_cmnd_below_threshold</title></rect>
+<rect x="879.00" y="1012.00" width="6" height="6" class="point no-cmnd"><title>RAW_FULL / frame_index=55 / center_sample=9440 / t=0.59 s / decision=&#x27;no_cmnd_below_threshold&#x27; / decision=no_cmnd_below_threshold</title></rect>
+<rect x="949.00" y="1012.00" width="6" height="6" class="point no-cmnd"><title>RAW_FULL / frame_index=56 / center_sample=9600 / t=0.6 s / decision=&#x27;no_cmnd_below_threshold&#x27; / decision=no_cmnd_below_threshold</title></rect>
+<rect x="1019.00" y="1012.00" width="6" height="6" class="point no-cmnd"><title>RAW_FULL / frame_index=57 / center_sample=9760 / t=0.61 s / decision=&#x27;no_cmnd_below_threshold&#x27; / decision=no_cmnd_below_threshold</title></rect>
+<rect x="1089.00" y="1012.00" width="6" height="6" class="point no-cmnd"><title>RAW_FULL / frame_index=58 / center_sample=9920 / t=0.62 s / decision=&#x27;no_cmnd_below_threshold&#x27; / decision=no_cmnd_below_threshold</title></rect>
+<rect x="1159.00" y="1012.00" width="6" height="6" class="point no-cmnd"><title>RAW_FULL / frame_index=59 / center_sample=10080 / t=0.63 s / decision=&#x27;no_cmnd_below_threshold&#x27; / decision=no_cmnd_below_threshold</title></rect>
+<line x1="112.00" y1="974.00" x2="112.00" y2="1025.00" class="grid" />
+<text x="112.00" y="1045.00" class="small muted" text-anchor="middle">0.48</text>
+<line x1="252.00" y1="974.00" x2="252.00" y2="1025.00" class="grid" />
+<text x="252.00" y="1045.00" class="small muted" text-anchor="middle">0.5</text>
+<line x1="602.00" y1="974.00" x2="602.00" y2="1025.00" class="grid" />
+<text x="602.00" y="1045.00" class="small muted" text-anchor="middle">0.55</text>
+<line x1="952.00" y1="974.00" x2="952.00" y2="1025.00" class="grid" />
+<text x="952.00" y="1045.00" class="small muted" text-anchor="middle">0.6</text>
+<line x1="1232.00" y1="974.00" x2="1232.00" y2="1025.00" class="grid" />
+<text x="1232.00" y="1045.00" class="small muted" text-anchor="middle">0.64</text>
+<text x="1232.00" y="1066.00" class="small muted" text-anchor="end">元抜粋の時刻（秒）</text>
+<circle cx="120.00" cy="1087.00" r="4" class="point accepted"><title>accepted</title></circle>
+<text x="133.00" y="1092.00" class="small" text-anchor="start">採用</text>
+<rect x="276.00" y="1083.00" width="8" height="8" class="point no-cmnd"><title>no_cmnd_below_threshold</title></rect>
+<text x="293.00" y="1092.00" class="small" text-anchor="start">CMND &lt; 0.15 なし</text>
+<polygon points="580.00,1083.00 584.00,1091.00 576.00,1091.00" class="point before"><title>rms_before_mean_below_threshold</title></polygon>
+<text x="593.00" y="1092.00" class="small" text-anchor="start">RMS 減算前</text>
+<path d="M811.00,1083.00l8,8m0,-8l-8,8" class="point after"><title>rms_after_mean_below_threshold</title></path>
+<text x="828.00" y="1092.00" class="small" text-anchor="start">RMS 減算後</text>
+<text x="32.00" y="1123.00" class="small muted" text-anchor="start">表示は保存済み診断値の再配置のみ。CMND / RMS の新規計算・閾値変更・率の算出はしていない。</text>
+<text x="32.00" y="1145.00" class="small muted" text-anchor="start">全ての点に保存値・フレーム番号・元時刻のツールチップ。判定レーンは保存 decision をそのまま表示。</text>
+</svg>
