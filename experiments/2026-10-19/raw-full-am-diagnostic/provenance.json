@@ -1,0 +1,201 @@
+{
+  "schema": "saved-am-comparison-brief-provenance-v1",
+  "scientific_run": {
+    "started_utc": "2026-10-19T10:42:48.140572+00:00",
+    "finished_utc": "2026-10-19T10:43:44.410357+00:00",
+    "source_lock_sha256": "53c7246e3dc1e5014930a71640ba2f2c38f638686c2ad6a274d425e2237452a9",
+    "completion_receipt_sha256": "0cfdb65c6f18a3767417593aadcaac9650c0ea8aae30236f7efb4d750a466203",
+    "source_results_sha256": "01c89e4fd45bf3d82a7b3ff66ec6e55c12124c20202b841572fbac0f39147e88",
+    "all_raw_files_included": false,
+    "raw_data_retention": "Stored separately; not published by this brief."
+  },
+  "presentation": {
+    "from_actual_saved_observations": true,
+    "new_scientific_measurements": false,
+    "new_audio": false,
+    "F0_estimation": false,
+    "tests": false,
+    "browser_execution": false,
+    "git_actions": false,
+    "big_viewer_included": false
+  },
+  "formal_base": "pml-lowband-fwcep60-v1",
+  "input_audio": "published PCM16/32768; not original float precision",
+  "independent_recordings": 1,
+  "independent_noise_seeds": 1,
+  "source_clock": "saved 5ms PML F0 -> 0.5ms linear interpolation -> trapezoid integral; full-rate piecewise-linear integral",
+  "input_sources": [
+    {
+      "role": "original_design",
+      "file": "saved-am-observation-design-20261019.md",
+      "sha256": "052531054c70310ba8b44885ed4b68b616ff594930aa65d7fb2cf53eb6d0d79b",
+      "bytes": 25246
+    },
+    {
+      "role": "input_inventory",
+      "file": "saved-am-input-inventory-20261019.json",
+      "sha256": "e96d155a045d128baedcfb8cc7ff95e56e24f28ddf9f7394873cb188cddd5afb",
+      "bytes": 2804
+    },
+    {
+      "role": "audio_manifest",
+      "file": "input-manifest.json",
+      "sha256": "50833628a6b851f4f7457feccab829ae0c083740270932362a6ee7a8a026ddec",
+      "bytes": 3670
+    },
+    {
+      "role": "pml",
+      "file": "librispeech_121-121726-0012.pml",
+      "sha256": "131e720fd96d9619a67580d1dbf6728285453c3a75112dbbb053f9d84771736c",
+      "bytes": 406261
+    },
+    {
+      "role": "legacy_windows",
+      "file": "windows.csv",
+      "sha256": "116b169b5c657e9bca27c25a21c60c8859979d2167d984b5491e9cd62ab44cb1",
+      "bytes": 11395362
+    },
+    {
+      "role": "legacy_observe",
+      "file": "observe.py",
+      "sha256": "b8e7120554bdb4fbfbd3add983f7024b69e175f2868f92ceefb75732788ac489",
+      "bytes": 7127
+    },
+    {
+      "role": "legacy_design",
+      "file": "design-ja.md",
+      "sha256": "8da03919dbe1608c3dd8e26822097a6ee3e7bce27b28340b2b9fdb218e9bdb1f",
+      "bytes": 3273
+    },
+    {
+      "role": "legacy_interpretation",
+      "file": "interpretation-ja.md",
+      "sha256": "5f23c9dbd56133f69be076b0aefb1c77f3455d834e6e0f310eac6599c74ad3df",
+      "bytes": 2317
+    },
+    {
+      "role": "legacy_source_lock",
+      "file": "source-lock.json",
+      "sha256": "34daee67c84e2d3eda804ca647130f44e292878397807382d9f2700780280c63",
+      "bytes": 313
+    },
+    {
+      "role": "legacy_recovered_rows",
+      "file": "sample3-reference-overlap-string-rows.json",
+      "sha256": "81f2b93a73d7c6bc2829559c43324a4acb9e7c3e0c5720017d3d99a9bf9971a3",
+      "bytes": 144849
+    },
+    {
+      "role": "generator_features",
+      "file": "features.py",
+      "sha256": "d68ac4c3af3de5e13750104201b91ddae205921f3bbcd818a0371feb43efe174",
+      "bytes": 2670
+    },
+    {
+      "role": "generator_plan",
+      "file": "design-plan.json",
+      "sha256": "df04600dbec640c98200ca0520cdd971f4c4f2670deb6ee565ce6d74320845bb",
+      "bytes": 95595
+    },
+    {
+      "role": "generator_source_freeze",
+      "file": "source-freeze.json",
+      "sha256": "d1dc61a3152a9b57b763f5e1c50bc39fa760f7141715aa65546fbcbc4236c6c5",
+      "bytes": 3475
+    },
+    {
+      "role": "bandwidth_design",
+      "file": "design-ja.md",
+      "sha256": "f0da5c104671eb521c82227e466187d91739000da25efa3125aa8f6d600a2f72",
+      "bytes": 1438
+    },
+    {
+      "role": "bandwidth_interpretation",
+      "file": "interpretation-ja.md",
+      "sha256": "f6512d664714cb2f6e78d8e89182806f718b6d6a7314d8b288f564e556a67146",
+      "bytes": 1597
+    },
+    {
+      "role": "bandwidth_response",
+      "file": "response.json",
+      "sha256": "bae3ff79a4b42aab9f0673d030a6265e33fcf491c7512801b0bf3a964f9793a2",
+      "bytes": 2391
+    },
+    {
+      "role": "research_context",
+      "file": "raw-full-source-pitch-envelope-research-20261019.md",
+      "sha256": "b5e8b9326eeccce87a24803eea8017238fdacde80e95b6c360d7fbffd07fdcc9",
+      "bytes": 10954
+    },
+    {
+      "role": "prior_time_manifest",
+      "file": "run_manifest.json",
+      "sha256": "a240d6cb48b0ad141cc7c90190f8e0adbb954ffb75c9f8ae798cef2ec741f446",
+      "bytes": 4792
+    },
+    {
+      "role": "PCM_wave",
+      "file": "121-121726-0012__pitch+0__seed0__PML.wav",
+      "sha256": "0e7bc2ec7d16b6c31fc971104a7f09ed9c6134f6279fabb63241bb11541fd2ce",
+      "bytes": 129484,
+      "wave_id": "PML_+0"
+    },
+    {
+      "role": "PCM_wave",
+      "file": "121-121726-0012__pitch+0__seed0__RAW_FULL.wav",
+      "sha256": "be4ef209bb6cb8195b1b8a633cff5a7671f803e38526d011f4a54aba6335560f",
+      "bytes": 129484,
+      "wave_id": "RAW_FULL_+0"
+    },
+    {
+      "role": "PCM_wave",
+      "file": "121-121726-0012__pitch-3__seed0__PML.wav",
+      "sha256": "18e7dd0140ad704e8dc15069a7e7466d77983d1a8e0bd32aecdde1a983e5b53f",
+      "bytes": 129484,
+      "wave_id": "PML_-3"
+    },
+    {
+      "role": "PCM_wave",
+      "file": "121-121726-0012__pitch-3__seed0__RAW_FULL.wav",
+      "sha256": "8d8f880ea646a1a25e7555afdf936d47ac4371be2e538c12cb41de2a33540666",
+      "bytes": 129484,
+      "wave_id": "RAW_FULL_-3"
+    },
+    {
+      "role": "PCM_wave",
+      "file": "121-121726-0012__pitch+3__seed0__PML.wav",
+      "sha256": "d1fcaee4b6a8981f09e6b6b8583ad741e7ceaeb766e1a8b913b64f13dc88746a",
+      "bytes": 129484,
+      "wave_id": "PML_+3"
+    },
+    {
+      "role": "PCM_wave",
+      "file": "121-121726-0012__pitch+3__seed0__RAW_FULL.wav",
+      "sha256": "8b97a060d79d1f74bee0a6cd3f3e267d400be0c988b5890eba436bddcc21ccee",
+      "bytes": 129484,
+      "wave_id": "RAW_FULL_+3"
+    },
+    {
+      "role": "PCM_wave",
+      "file": "121-121726-0012__original.wav",
+      "sha256": "f509e04154bfad1df61d2b56feaa41a3b1474f35d986aa225d05a5b9e9cef1b6",
+      "bytes": 129484,
+      "wave_id": "original"
+    }
+  ],
+  "summary_source_sha256": "6cfcbe3dffbfe1ca2fc0e19b65df01d955ba9f180633e328518d7185adf2994c",
+  "figure_source": "figure-provenance.json",
+  "audio_source": "audio-manifest.json",
+  "methods": {
+    "source": "Saved CSV tables only; no waveform, F0, synthesis, fit, SVD, or test was executed.",
+    "group_weights": "Equal overlapping window descriptions. Means, medians and quantiles are descriptive, not population estimates. Neither repeated windows nor source-cycle folds are independent samples.",
+    "scopes": "All scheduled windows; fixed reference overlap with [2.08,2.13); complement. D applies only to guard-overlapping windows and retains unavailable states.",
+    "power_units": {
+      "mu": "full-scale amplitude squared",
+      "V0_Vs_Vt_Vst_Us_Ut": "full-scale amplitude to fourth power"
+    },
+    "fractions": "Us/V0 and Ut/V0 within each wave; paired changes are RAW_FULL fraction minus PML fraction, not ratio of power differences.",
+    "original": "The same original waveform is evaluated against counterfactual +/-3 target templates; it is not an edited original or an independent replicate.",
+    "holdout": "Main configuration, 80/160ms only; leave one complete saved-source-clock cycle out. Extra prediction benefit of source = MSE(target)-MSE(joint); of target = MSE(source)-MSE(joint). Folds and windows overlap. Positive values mean smaller held-out prediction error."
+  }
+}
