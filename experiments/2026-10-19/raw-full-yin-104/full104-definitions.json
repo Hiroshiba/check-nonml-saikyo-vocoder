@@ -1,0 +1,18 @@
+{
+  "output_voiced": "V_m(i) = [saved estimated_output_f0_hz_m(i) > 0]; no output-side 65-700 Hz restriction.",
+  "expected_voiced": "E_m(i) = [65 <= saved expected_relative_f0_hz_m(i) <= 700]. Expected==0 is unvoiced; other values are out_of_range. All 104 saved unmapped counts must reconcile to zero before aggregation; otherwise stop.",
+  "common_expected": "E_PML & E_RAW_FULL. Equal membership does not mean equal expected Hz. Edited references are method-specific; native references are the same original recording.",
+  "one_sided_expected": "E_PML & !E_RAW_FULL, or !E_PML & E_RAW_FULL; neither partition retains unvoiced/out_of_range joint state.",
+  "output_disagreement": "D(i) = [V_PML(i) != V_RAW_FULL(i)] over every paired frame, regardless of expected membership.",
+  "own_expected_missing": "M_m(i) = E_m(i) & !V_m(i). Own miss difference can occur even when both outputs are zero, if expected membership differs.",
+  "count_formula": "For any listed set S and group G, count = sum_i [i in S and i in G]. Denominator is explicit total_paired_frames or expected_partitions[G].frames; no p-value/CI, no new ranking.",
+  "miss_integer_identity": "RAW_miss - PML_miss = (RAW_common_miss - PML_common_miss) + RAW_only_expected_miss - PML_only_expected_miss. This is a count identity; it does not decompose a difference of ratios with unequal denominators.",
+  "temporal_runs": "Maximal sequences of adjacent integer frame indices (exactly 160 samples = 10 ms). No selected temporal gap threshold. Stored center time = (start_sample + 640)/16000.",
+  "window_union": "Union of [start_sample, start_sample+1280) for selected indices. Overlapping or touching intervals are merged by exact sample coordinates. 80 ms windows overlap at 10 ms hops; counts and runs are not independent trials and union support is not causal event duration.",
+  "branch": "Copy trace decision: accepted, no_cmnd_below_threshold, rms_before_mean_below_threshold, rms_after_mean_below_threshold; not inferred from a threshold sweep.",
+  "computed_min_cmnd": "Copied stored computed_min_cmnd, not a probability, SNR, ground-truth voicing, or perceptual-quality score.",
+  "scope_denominators": "104 output rows = 56 edited + 48 native; 52 paired conditions = 28 edited + 24 native. There are 22 distinct recordings and two seed values; seed, pitch and frame repetitions are not independent recordings. Previously diagnosed twelve are part of104, never added again.",
+  "fixed_selection": "All 28 original saved unvoiced_miss_rate warnings remain. Selection is post hoc from prior warnings, not representative of all120 recordings or all full120 output conditions.",
+  "missing_CMND": "RMS rejection leaves computed_min_cmnd=null and cmnd_evaluated=false; returned_min_cmnd=1.0 is the original sentinel. Do not treat sentinel as a computed measurement or replace null.",
+  "summary_computation": "No estimator, waveform loading, metric or threshold execution. Only counts, exact saved-value reconciliation, set membership, lists and consecutive integer-frame runs. Saved metric scalar values are copied unchanged."
+}

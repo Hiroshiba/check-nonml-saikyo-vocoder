@@ -60,6 +60,13 @@ def copy_artifacts(root, output, item):
     manifest_path = relative_file(source, 'artifact-manifest.json')
     manifest = json.loads(checked_bytes(manifest_path, item['artifact_manifest']))
     records = [dict(item['artifact_manifest'], name='artifact-manifest.json'), *manifest['files']]
+    # 公開束のname/path表記を受け付け、元manifestのbytesは変更しない。
+    for record in records:
+        if 'name' in record and 'path' in record and record['name'] != record['path']:
+            raise ValueError('公開成果物のname/pathが一致しません')
+        record['name'] = record.get('name', record.get('path'))
+        if not isinstance(record['name'], str) or not record['name']:
+            raise ValueError('公開成果物の相対ファイル名がありません')
     names = [record['name'] for record in records]
     if len(names) != len(set(names)) or len(names) != item['artifact_count']:
         raise ValueError('公開成果物の重複・件数不一致があります')
@@ -69,7 +76,7 @@ def copy_artifacts(root, output, item):
         raise ValueError('一覧に必要な公開成果物がありません')
     for record in records:
         name = record['name']
-        allowed = (('.html', '.json', '.json.gz', '.svg', '.wav', '.md', '.csv', '.png')
+        allowed = (('.html', '.json', '.json.gz', '.svg', '.wav', '.md', '.csv', '.png', '.css')
                    if navigation else ('.html', '.json', '.json.gz'))
         if not name.endswith(allowed):
             raise ValueError(f'未定義の公開形式です: {name}')
