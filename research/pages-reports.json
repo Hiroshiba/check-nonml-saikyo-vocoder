@@ -1265,6 +1265,74 @@
           }
         ]
       }
+    },
+    {
+      "kind": "navigation-only",
+      "id": "raw-full-yin-104-2026-10-19",
+      "path": "research/raw-full-yin-104-2026-10-19",
+      "source_path": "experiments/2026-10-19/raw-full-yin-104",
+      "created_on": "2026-10-19",
+      "title": "固定YINの分岐観測：全104出力と先行3例",
+      "comparison_scope": "正式28警告から事後選択した22録音・52対104出力。保存F0・時刻は全件完全一致。固定推定器の分岐観測であり、新しい正式品質値や真のVUV判定ではない。15比較音声。PML維持。",
+      "artifact_count": 46,
+      "artifact_manifest": {
+        "bytes": 7895,
+        "sha256": "fd0d8c738e37eb1136b7dcc8addc8e05846d11525a8c26f15e6dc6d7eef6ba21"
+      },
+      "audio_listing": {
+        "caption": "例Aの同一区間4.8秒。原音と−3半音・seed 0のPML／RAW_FULL。",
+        "note": "LibriSpeech / CC BY 4.0。既存PCM16のbyte同一コピー。詳細に全15音声と出典・限界を記載。",
+        "attribution_path": "audio-credits.html",
+        "samples": [
+          {
+            "path": "audio/librispeech_1188-133604-0037__ORIGINAL.wav",
+            "label": "原音"
+          },
+          {
+            "path": "audio/librispeech_1188-133604-0037__pitch-3__seed0__PML.wav",
+            "label": "PML（現base）"
+          },
+          {
+            "path": "audio/librispeech_1188-133604-0037__pitch-3__seed0__RAW_FULL.wav",
+            "label": "RAW_FULL（候補）"
+          }
+        ]
+      },
+      "created_at": "2026-10-19T16:53:06.232859+00:00"
+    },
+    {
+      "kind": "navigation-only",
+      "id": "raw-full-pure-rtf-2026-10-19",
+      "path": "research/raw-full-pure-rtf-2026-10-19",
+      "source_path": "experiments/2026-10-19/raw-full-pure-rtf",
+      "created_on": "2026-10-19",
+      "title": "PML / RAW_FULL：解析・復号RTFと比較試聴",
+      "comparison_scope": "単回順次計測・話者等重みwall RTF。主120の解析はPML 1.040211／RAW_FULL 1.016540、復号は0.183301／0.192903。固定70の解析は1.025511／1.029484、復号は0.177797／0.189247。検証時間を除外。方式順・host負荷の影響は残り、PML維持・候補置換保留。",
+      "artifact_count": 22,
+      "artifact_manifest": {
+        "bytes": 3899,
+        "sha256": "cc86216962292702da17b254dddd5fe60b6040e267e22aa2af788360444181dd"
+      },
+      "audio_listing": {
+        "caption": "同じ録音の先頭5秒。原音と無編集・seed 0のPML／RAW_FULL。",
+        "note": "LibriSpeech / CC BY 4.0。既存PCM16のbyte同一コピー。詳細に全15音声と出典・限界を記載。",
+        "attribution_path": "audio-credits.html",
+        "samples": [
+          {
+            "path": "audio/librispeech_1089-134686-0008__ORIGINAL.wav",
+            "label": "原音"
+          },
+          {
+            "path": "audio/librispeech_1089-134686-0008__pitch+0__seed0__PML.wav",
+            "label": "PML（現base）"
+          },
+          {
+            "path": "audio/librispeech_1089-134686-0008__pitch+0__seed0__RAW_FULL.wav",
+            "label": "RAW_FULL（候補）"
+          }
+        ]
+      },
+      "created_at": "2026-10-19T18:50:15.213860+00:00"
     }
   ]
 }
