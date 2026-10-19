@@ -1,0 +1,29 @@
+{
+  "schema": "raw-full-reference-identities-v1",
+  "case_count": 120,
+  "columns": [
+    "case",
+    "speaker",
+    "samples",
+    "common_samples",
+    "original_file_sha256",
+    "reference_full_pcm_sha256",
+    "reference_common_prefix_pcm_sha256"
+  ],
+  "definition": {
+    "original_file_sha256": "SHA256 of the original NPY file bytes",
+    "reference_full_pcm_sha256": "SHA256 of all decoded samples converted to little-endian float64, C-order PCM bytes without header",
+    "reference_common_prefix_pcm_sha256": "Same PCM encoding for samples [0, common_samples), using the original fixed input-manifest prefix",
+    "loading": "numpy.load(..., allow_pickle=False); no alignment, gain adjustment, clipping or resynthesis"
+  },
+  "input_manifest": {
+    "sha256": "1f392fc60fbca4003c236f03ffd9edba82b048737f23cf250295c1b4c6c85193",
+    "url": "https://github.com/Hiroshiba/check-nonml-saikyo-vocoder/blob/d1c8fe95f9b33766c8df5ae0f2bba87ab2261b46/research/pml-package-evaluation-2026-10-16/input-manifest.json"
+  },
+  "output": {
+    "file": "identities.json",
+    "bytes": 53272,
+    "sha256": "e1a985e906690efeee995daf7b24ba5aa678d022a392049e1b8340b32bf233be"
+  },
+  "numpy_version": "2.3.5"
+}
