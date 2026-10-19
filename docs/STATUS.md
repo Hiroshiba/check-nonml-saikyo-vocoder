@@ -1,5 +1,11 @@
 # 現在の状態と次の作業
 
+## 確率的F0・H0診断：固定5録音の保存結果をDraftへ（2026-10-20 日本時間）
+
+[実行経過と研究文書](../experiments/2026-10-20/probabilistic-pitch-diagnostic/README.md)に、5/5録音・2540 valid・74 energy-floor・24.328秒の固定診断と保存解析を記録した。初回解析のJSON bool直列化失敗、初回描画の厳密範囲検査失敗を経て、報告のnormal/subnormal/zero層別と生値保持の表示を修正した。推定器の再実行・変更はない。最終公開132ファイルをnavigation-onlyとして登録し、実描画日時2026-10-19T21:47:23.432775+00:00とmanifest SHA/bytesを保持する。
+
+現在のbaseはPML。公開参照clockはPSHF観測格子に補間したPML由来の時計であり、真F0や元PML格子ではない。新候補音声は生成せず品質指標は未測定、旧PSHF/PML/RAW_FULL比較へ案内する。H0・entropy・octave対の存在数を生理的VUVや音質改善と解釈しない。Draft PRのレビューとCIが次の確認で、マージ・Pages実行は未実施。以下は以前の確認時点の記録を保持する。
+
 ## PSHF残差包絡：5録音の実行・独立解析・掲載版が完了（2026-10-20 日本時間）
 
 [実行記録と比較](../experiments/2026-10-20/pshf-residual-envelope/README.md)に、run-001の事前検査停止（0/5観測・0/30復号）とrun-002の完了（5/5観測・30/30復号）を保存した。保存PML／RAW_FULLとの比較と独立数値照合が完了し、renderer v3で図の余白を修正した公開用188成果物（manifestを含む）を独立Draft PR用に登録する。95音声はCC BY 4.0・PCM16・5秒以下。サンプル3の低閾値到達はRAW_FULLより6–10 ms早く、一律な先行抑制ではない。強い部分の変化も小さく両方向にある。品質指標は未測定、候補未採用で、baseはPMLを維持する。全120評価の更新ではない。
