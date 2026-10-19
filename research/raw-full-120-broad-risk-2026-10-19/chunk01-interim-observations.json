@@ -1,0 +1,655 @@
+{
+  "schema": "raw-full-chunk01-limited-interim-observations-v1",
+  "snapshot_at": "2026-10-18T23:20:00Z",
+  "status": "chunk01_quality_terminal_expected_missingness_checkpoint_incomplete",
+  "scope": {
+    "recordings": 12,
+    "speakers": 4,
+    "generated_waveforms": 144,
+    "total_planned_waveforms": 1440,
+    "paired_conditions": 72,
+    "condition_repetitions_not_independent_recordings": true,
+    "all120_complete": false
+  },
+  "evidence": {
+    "basis": "short_machine_aggregates_from_existing_saved_execution_results",
+    "official_completion_record_read_confirmed": true,
+    "overall_completion_sha256": "5b46ffce50339dd9892f3ead15b92a9827c6e55d76c53d3769aecf1ed135f9ac",
+    "generation_chunk_receipt_sha256": "020525f23c710cd5326b781e0d989675427a09d6067a0b9765d16fb521e1b8f4",
+    "generation_rows_sha256": "4239ce50f2edb324b31db5a9899a77b784f240fa58c3ae7b8f9c43053ee4f312",
+    "full_raw_artifacts_transferred": false,
+    "all_raw_values_independently_recomputed_by_coordinator": false,
+    "generation_pair_differences_reported_SHA_bytes_keys_checked": 72
+  },
+  "completion": {
+    "quality_status": "completed",
+    "exit_code": 2,
+    "exit_code_meaning": "expected_missingness",
+    "unexpected_failures": 0,
+    "plan_terminal": true,
+    "eligible_for_next_chunk": true,
+    "eligibility_is_checkpoint_satisfaction": false,
+    "primary": {
+      "completed": 144,
+      "planned": 144
+    },
+    "native": {
+      "completed": 48,
+      "planned": 48
+    },
+    "ECAPA": {
+      "completed": 144,
+      "planned": 144
+    }
+  },
+  "missingness": {
+    "native_primary_F0_and_miss_metric_cells_not_applicable": 96,
+    "ASR_available": {
+      "output_rows": 48,
+      "paired_conditions": 24,
+      "recordings": 4
+    },
+    "ASR_full_transcript_not_prepared": {
+      "output_rows": 96,
+      "paired_conditions": 48,
+      "recordings": 8
+    },
+    "ASR_missingness_due_to_quality_exclusion": false
+  },
+  "MOS": {
+    "descriptive_condition_delta_mean": 0.083006,
+    "descriptive_condition_delta_median": 0.082273,
+    "conditions_with_negative_delta": 16,
+    "recordings_with_negative_delta": 8,
+    "paired_conditions": 72,
+    "mean_unit": "RAW_FULL_minus_PML_condition_pair_including_repeated_pitch_and_seed",
+    "all120_ranking_or_speaker_bootstrap_inference": false,
+    "largest_decreases": [
+      {
+        "case": "librispeech_121-123852-0000",
+        "pitch_semitones": -3,
+        "seed": 0,
+        "PML": 3.833726,
+        "RAW_FULL": 3.670013,
+        "delta": -0.163713
+      },
+      {
+        "case": "librispeech_121-121726-0012",
+        "pitch_semitones": 0,
+        "seed": 20261015,
+        "PML": 3.310622,
+        "RAW_FULL": 3.18938,
+        "delta": -0.121242
+      },
+      {
+        "case": "librispeech_1221-135767-0006",
+        "pitch_semitones": -3,
+        "seed": 0,
+        "PML": 3.332321,
+        "RAW_FULL": 3.213209,
+        "delta": -0.119112
+      }
+    ]
+  },
+  "quality_fixed_warning_flags": {
+    "MOS_drop_gt_0_15": {
+      "flagged_pairs": 1,
+      "eligible_pairs": 72
+    },
+    "edited_F0_MAE_worsening_gt_10cent": {
+      "flagged_pairs": 0,
+      "eligible_pairs": 48
+    },
+    "edited_miss_rate_worsening_gt_2pp": {
+      "flagged_pairs": 2,
+      "eligible_pairs": 48
+    },
+    "union": {
+      "flagged_pairs": 3,
+      "recordings": 3
+    }
+  },
+  "general_local_events": {
+    "recordings": 12,
+    "speakers": 4,
+    "eligible_pairs_per_band": 72,
+    "bands": [
+      {
+        "id": "band0",
+        "Hz": [
+          1500,
+          3000
+        ],
+        "strong_power_loss_gt_1dB": {
+          "pairs": 8,
+          "recordings": 5
+        },
+        "minus10dB_crossing_delay_gt_2ms_or_new_nonreach": {
+          "pairs": 31,
+          "recordings": 10
+        },
+        "early_power_reduction_ge_3dB": {
+          "pairs": 65,
+          "recordings": 12
+        }
+      },
+      {
+        "id": "band1",
+        "Hz": [
+          3000,
+          8000
+        ],
+        "strong_power_loss_gt_1dB": {
+          "pairs": 4,
+          "recordings": 2
+        },
+        "minus10dB_crossing_delay_gt_2ms_or_new_nonreach": {
+          "pairs": 30,
+          "recordings": 10
+        },
+        "early_power_reduction_ge_3dB": {
+          "pairs": 63,
+          "recordings": 11
+        }
+      }
+    ],
+    "strong_loss_union": {
+      "pairs": 12,
+      "recordings": 6
+    },
+    "crossing_warning_union": {
+      "pairs": 46,
+      "recordings": 12
+    },
+    "early_reduction_union": {
+      "pairs": 68,
+      "recordings": 12
+    },
+    "absolute_RMS_change_gt_1dB": {
+      "pairs": 0,
+      "eligible_pairs": 72
+    },
+    "global_0_1kHz_power_loss_gt_1dB": {
+      "pairs": 0,
+      "eligible_pairs": 72
+    },
+    "strong_or_crossing_warning_union": {
+      "pairs": 48,
+      "recordings": 12
+    },
+    "strong_or_crossing_warning_intersection_early_reduction": {
+      "pairs": 47,
+      "recordings": 11
+    },
+    "all_strong_loss_pairs_also_early_reduction": true,
+    "strong_loss_intersection_early_reduction_pairs": 12
+  },
+  "crossing_original_reference_diagnostic": {
+    "threshold_dB": -10,
+    "all72_pairs_per_band_original_PML_FULL_reached_and_available": true,
+    "warning_true_band_comparisons": 61,
+    "warning_pair_union": 46,
+    "by_band": [
+      {
+        "id": "band0",
+        "warning_true_band_comparisons": 31,
+        "absolute_original_time_error_smaller": 28,
+        "same": 0,
+        "larger": 3,
+        "incomparable": 0
+      },
+      {
+        "id": "band1",
+        "warning_true_band_comparisons": 30,
+        "absolute_original_time_error_smaller": 29,
+        "same": 0,
+        "larger": 1,
+        "incomparable": 0
+      }
+    ],
+    "total": {
+      "smaller": 57,
+      "same": 0,
+      "larger": 4,
+      "incomparable": 0
+    },
+    "example": {
+      "case": "librispeech_1089-134686-0008",
+      "pitch_semitones": 0,
+      "seed": 0,
+      "band": "band0",
+      "PML_minus_original_ms": -3,
+      "RAW_FULL_minus_original_ms": 0
+    },
+    "existing_PML_relative_warning_flag_preserved": true,
+    "interpretation": "57_band_comparisons_are_consistent_with_reduced_early_energy_and_closer_original_threshold_timing",
+    "threshold_crossing_is_phoneme_boundary": false,
+    "perceptual_improvement_proven": false
+  },
+  "warning_overlap": {
+    "quality_and_general_signal": {
+      "pairs": 2,
+      "recordings": 2
+    },
+    "all_fixed_warning_union": {
+      "pairs": 49,
+      "eligible_pairs": 72,
+      "recordings": 12
+    },
+    "warning_union_is_perceptual_quality_failure_count": false
+  },
+  "legacy_fixed_events": {
+    "recordings": 5,
+    "eligible_pairs_per_band": 30,
+    "separate_from_general_aggregation": true,
+    "bands": [
+      {
+        "id": "band0",
+        "strong_power_loss_gt_1dB": {
+          "pairs": 5,
+          "recordings": 2
+        },
+        "minus10dB_crossing_delay_gt_2ms_or_new_nonreach": {
+          "pairs": 19,
+          "recordings": 5
+        },
+        "early_power_reduction_ge_3dB": {
+          "pairs": 23,
+          "recordings": 5
+        }
+      },
+      {
+        "id": "band1",
+        "strong_power_loss_gt_1dB": {
+          "pairs": 3,
+          "recordings": 1
+        },
+        "minus10dB_crossing_delay_gt_2ms_or_new_nonreach": {
+          "pairs": 19,
+          "recordings": 5
+        },
+        "early_power_reduction_ge_3dB": {
+          "pairs": 26,
+          "recordings": 5
+        }
+      }
+    ],
+    "strong_loss_union": {
+      "pairs": 8,
+      "recordings": 3
+    },
+    "crossing_warning_union": {
+      "pairs": 24,
+      "recordings": 5
+    },
+    "early_reduction_union": {
+      "pairs": 26,
+      "recordings": 5
+    },
+    "absolute_RMS_change_gt_1dB": {
+      "pairs": 0,
+      "eligible_pairs": 30
+    },
+    "global_0_1kHz_power_loss_gt_1dB": {
+      "pairs": 0,
+      "eligible_pairs": 30
+    },
+    "strong_or_crossing_warning_union_pairs": 25,
+    "strong_or_crossing_warning_intersection_early_reduction_pairs": 23
+  },
+  "checkpoint": {
+    "new_waveform_and_quality_checkpoint_complete": false,
+    "upload_HTTP401_unresolved": true,
+    "additional_upload_retry": false,
+    "chunk02": "stopped",
+    "alternate_transfer_or_environment_used": false
+  },
+  "decision": {
+    "current_base": "pml-lowband-fwcep60-v1",
+    "RAW_FULL_adopted": false,
+    "Draft": true,
+    "merge": false
+  },
+  "all_existing_quality_metric_summary": {
+    "added_at": "2026-10-18T23:28:39Z",
+    "basis": "short_machine_summary_of_all_metric_categories_in_existing_saved_pairings",
+    "metric_categories": [
+      "automatic_mos",
+      "recognition",
+      "relative_f0_mae_cents",
+      "unvoiced_miss_rate",
+      "estoi",
+      "mr_stft",
+      "erb40",
+      "native_original_f0",
+      "speaker_ecapa"
+    ],
+    "category_count": 9,
+    "scope_row_count": 21,
+    "aggregation": "arithmetic_means_over_comparable_condition_pairs_only",
+    "delta_definition": "RAW_FULL_minus_PML",
+    "reported_delta_mean_has_priority_over_subtraction_of_rounded_variant_means": true,
+    "maximum_rounding_disagreement_at_display_precision": 1e-06,
+    "rows": [
+      {
+        "metric_category": "automatic_mos",
+        "label_ja": "予測MOS",
+        "scope": "native",
+        "pitch_semitones": 0,
+        "reference_or_extent": "model_prediction",
+        "available_pairs": 24,
+        "mean_unit": "score",
+        "delta_unit": "score",
+        "PML_mean": 3.325256,
+        "RAW_FULL_mean": 3.392428,
+        "RAW_FULL_minus_PML_mean": 0.067172
+      },
+      {
+        "metric_category": "automatic_mos",
+        "label_ja": "予測MOS",
+        "scope": "edited",
+        "pitch_semitones": -3,
+        "reference_or_extent": "model_prediction",
+        "available_pairs": 24,
+        "mean_unit": "score",
+        "delta_unit": "score",
+        "PML_mean": 3.381594,
+        "RAW_FULL_mean": 3.457838,
+        "RAW_FULL_minus_PML_mean": 0.076244
+      },
+      {
+        "metric_category": "automatic_mos",
+        "label_ja": "予測MOS",
+        "scope": "edited",
+        "pitch_semitones": 3,
+        "reference_or_extent": "model_prediction",
+        "available_pairs": 24,
+        "mean_unit": "score",
+        "delta_unit": "score",
+        "PML_mean": 3.182124,
+        "RAW_FULL_mean": 3.287727,
+        "RAW_FULL_minus_PML_mean": 0.105603
+      },
+      {
+        "metric_category": "relative_f0_mae_cents",
+        "label_ja": "F0 MAE（cent）",
+        "scope": "edited",
+        "pitch_semitones": -3,
+        "reference_or_extent": "self_native_voiced_support",
+        "available_pairs": 24,
+        "mean_unit": "cent",
+        "delta_unit": "cent",
+        "PML_mean": 19.995589,
+        "RAW_FULL_mean": 20.143793,
+        "RAW_FULL_minus_PML_mean": 0.148204
+      },
+      {
+        "metric_category": "relative_f0_mae_cents",
+        "label_ja": "F0 MAE（cent）",
+        "scope": "edited",
+        "pitch_semitones": 3,
+        "reference_or_extent": "self_native_voiced_support",
+        "available_pairs": 24,
+        "mean_unit": "cent",
+        "delta_unit": "cent",
+        "PML_mean": 18.045554,
+        "RAW_FULL_mean": 18.0931,
+        "RAW_FULL_minus_PML_mean": 0.047546
+      },
+      {
+        "metric_category": "unvoiced_miss_rate",
+        "label_ja": "miss（%）",
+        "scope": "edited",
+        "pitch_semitones": -3,
+        "reference_or_extent": "self_native_voiced_support",
+        "available_pairs": 24,
+        "mean_unit": "percent",
+        "delta_unit": "percentage_point",
+        "PML_mean": 18.139622,
+        "RAW_FULL_mean": 18.607905,
+        "RAW_FULL_minus_PML_mean": 0.468283
+      },
+      {
+        "metric_category": "unvoiced_miss_rate",
+        "label_ja": "miss（%）",
+        "scope": "edited",
+        "pitch_semitones": 3,
+        "reference_or_extent": "self_native_voiced_support",
+        "available_pairs": 24,
+        "mean_unit": "percent",
+        "delta_unit": "percentage_point",
+        "PML_mean": 5.094976,
+        "RAW_FULL_mean": 4.83721,
+        "RAW_FULL_minus_PML_mean": -0.257766
+      },
+      {
+        "metric_category": "native_original_f0",
+        "label_ja": "native F0 MAE（cent）",
+        "scope": "native",
+        "pitch_semitones": 0,
+        "reference_or_extent": "original_YIN_full_length",
+        "available_pairs": 24,
+        "mean_unit": "cent",
+        "delta_unit": "cent",
+        "PML_mean": 22.400231,
+        "RAW_FULL_mean": 22.375742,
+        "RAW_FULL_minus_PML_mean": -0.024489
+      },
+      {
+        "metric_category": "native_original_f0",
+        "label_ja": "native miss（%）¹",
+        "scope": "native",
+        "pitch_semitones": 0,
+        "reference_or_extent": "original_YIN_full_length",
+        "available_pairs": 24,
+        "mean_unit": "percent",
+        "delta_unit": "percentage_point",
+        "PML_mean": 6.684114,
+        "RAW_FULL_mean": 6.630585,
+        "RAW_FULL_minus_PML_mean": -0.053529,
+        "derivation": "arithmetic_mean_of_per_condition_missing_voiced_frames_divided_by_expected_voiced_frames_times_100"
+      },
+      {
+        "metric_category": "estoi",
+        "label_ja": "eSTOI",
+        "scope": "native",
+        "pitch_semitones": 0,
+        "reference_or_extent": "common_prefix",
+        "available_pairs": 24,
+        "mean_unit": "score",
+        "delta_unit": "score",
+        "PML_mean": 0.889069,
+        "RAW_FULL_mean": 0.889508,
+        "RAW_FULL_minus_PML_mean": 0.000439
+      },
+      {
+        "metric_category": "mr_stft",
+        "label_ja": "MRSTFT（5/20/80 ms複合値）",
+        "scope": "native",
+        "pitch_semitones": 0,
+        "reference_or_extent": "common_prefix",
+        "available_pairs": 24,
+        "mean_unit": "composite_value",
+        "delta_unit": "composite_value",
+        "PML_mean": 5.684462,
+        "RAW_FULL_mean": 5.631437,
+        "RAW_FULL_minus_PML_mean": -0.053025,
+        "resolution_ms": [
+          5,
+          20,
+          80
+        ],
+        "composite_only": true,
+        "separate_resolution_values_available_in_pairing": false
+      },
+      {
+        "metric_category": "erb40",
+        "label_ja": "ERB40",
+        "scope": "native",
+        "pitch_semitones": 0,
+        "reference_or_extent": "common_prefix",
+        "available_pairs": 24,
+        "mean_unit": "saved_metric_value",
+        "delta_unit": "saved_metric_value",
+        "PML_mean": 2.065962,
+        "RAW_FULL_mean": 2.054472,
+        "RAW_FULL_minus_PML_mean": -0.011489
+      },
+      {
+        "metric_category": "speaker_ecapa",
+        "label_ja": "ECAPA",
+        "scope": "native",
+        "pitch_semitones": 0,
+        "reference_or_extent": "common_prefix",
+        "available_pairs": 24,
+        "mean_unit": "score",
+        "delta_unit": "score",
+        "PML_mean": 0.948933,
+        "RAW_FULL_mean": 0.953508,
+        "RAW_FULL_minus_PML_mean": 0.004575
+      },
+      {
+        "metric_category": "speaker_ecapa",
+        "label_ja": "ECAPA",
+        "scope": "edited",
+        "pitch_semitones": -3,
+        "reference_or_extent": "full_length",
+        "available_pairs": 24,
+        "mean_unit": "score",
+        "delta_unit": "score",
+        "PML_mean": 0.834527,
+        "RAW_FULL_mean": 0.841166,
+        "RAW_FULL_minus_PML_mean": 0.006639
+      },
+      {
+        "metric_category": "speaker_ecapa",
+        "label_ja": "ECAPA",
+        "scope": "edited",
+        "pitch_semitones": 3,
+        "reference_or_extent": "full_length",
+        "available_pairs": 24,
+        "mean_unit": "score",
+        "delta_unit": "score",
+        "PML_mean": 0.873788,
+        "RAW_FULL_mean": 0.873068,
+        "RAW_FULL_minus_PML_mean": -0.000721
+      },
+      {
+        "metric_category": "recognition",
+        "label_ja": "ASR CER（率）",
+        "scope": "native",
+        "pitch_semitones": 0,
+        "reference_or_extent": "available_transcript",
+        "available_pairs": 8,
+        "mean_unit": "CER_rate",
+        "delta_unit": "CER_rate",
+        "PML_mean": 0.017819,
+        "RAW_FULL_mean": 0.020479,
+        "RAW_FULL_minus_PML_mean": 0.00266,
+        "component": "CER"
+      },
+      {
+        "metric_category": "recognition",
+        "label_ja": "ASR CER（率）",
+        "scope": "edited",
+        "pitch_semitones": -3,
+        "reference_or_extent": "available_transcript",
+        "available_pairs": 8,
+        "mean_unit": "CER_rate",
+        "delta_unit": "CER_rate",
+        "PML_mean": 0.02766,
+        "RAW_FULL_mean": 0.032979,
+        "RAW_FULL_minus_PML_mean": 0.005319,
+        "component": "CER"
+      },
+      {
+        "metric_category": "recognition",
+        "label_ja": "ASR CER（率）",
+        "scope": "edited",
+        "pitch_semitones": 3,
+        "reference_or_extent": "available_transcript",
+        "available_pairs": 8,
+        "mean_unit": "CER_rate",
+        "delta_unit": "CER_rate",
+        "PML_mean": 0.0125,
+        "RAW_FULL_mean": 0.0125,
+        "RAW_FULL_minus_PML_mean": 0.0,
+        "component": "CER"
+      },
+      {
+        "metric_category": "recognition",
+        "label_ja": "ASR WER（率）",
+        "scope": "native",
+        "pitch_semitones": 0,
+        "reference_or_extent": "available_transcript",
+        "available_pairs": 8,
+        "mean_unit": "WER_rate",
+        "delta_unit": "WER_rate",
+        "PML_mean": 0.0625,
+        "RAW_FULL_mean": 0.075,
+        "RAW_FULL_minus_PML_mean": 0.0125,
+        "component": "WER"
+      },
+      {
+        "metric_category": "recognition",
+        "label_ja": "ASR WER（率）",
+        "scope": "edited",
+        "pitch_semitones": -3,
+        "reference_or_extent": "available_transcript",
+        "available_pairs": 8,
+        "mean_unit": "WER_rate",
+        "delta_unit": "WER_rate",
+        "PML_mean": 0.0625,
+        "RAW_FULL_mean": 0.0875,
+        "RAW_FULL_minus_PML_mean": 0.025,
+        "component": "WER"
+      },
+      {
+        "metric_category": "recognition",
+        "label_ja": "ASR WER（率）",
+        "scope": "edited",
+        "pitch_semitones": 3,
+        "reference_or_extent": "available_transcript",
+        "available_pairs": 8,
+        "mean_unit": "WER_rate",
+        "delta_unit": "WER_rate",
+        "PML_mean": 0.05,
+        "RAW_FULL_mean": 0.05,
+        "RAW_FULL_minus_PML_mean": 0.0,
+        "component": "WER"
+      }
+    ],
+    "applicability_and_missingness": {
+      "primary_F0_and_miss_native_pairs_not_applicable_per_metric": 24,
+      "native_supplement_edited_pairs_not_applicable_per_metric": 48,
+      "ASR_available_pairs": 24,
+      "ASR_available_recordings": 4,
+      "ASR_available_pairs_per_pitch": 8,
+      "ASR_transcript_not_prepared_pairs": 48,
+      "ASR_transcript_not_prepared_recordings": 8,
+      "ASR_transcript_not_prepared_pairs_per_pitch": 16,
+      "ASR_other_quality_exclusions_or_incomparable_pairs": 0,
+      "other_missing_or_incomparable_pairs_within_applicable_scope": 0
+    },
+    "limitations": {
+      "relative_F0_self_native_voiced_support_differs_by_variant": true,
+      "relative_F0_compares_accuracy_on_fixed_identical_support": false,
+      "original_YIN_is_ground_truth": false,
+      "native_miss_independent_metric_key": false,
+      "native_miss_pooled_frame_rate": false,
+      "native_miss_basis": "arithmetic_mean_of_per_condition_saved_missing_and_expected_frame_count_ratios",
+      "ASR_saved_output_rates_equal_original_relative_deltas_in_this_summary": true,
+      "repeated_conditions_recordings": 12,
+      "repeated_conditions_speakers": 4,
+      "independent_pair_inference": false,
+      "confidence_intervals": false,
+      "adoption_ranking": false,
+      "new_measurement": false,
+      "new_scientific_metric": false,
+      "scientific_source_or_plan_changed": false,
+      "full_raw_artifacts_transferred": false,
+      "all_raw_values_independently_recomputed_by_coordinator": false,
+      "MRSTFT_only_composite_5_20_80ms_available_in_pairing": true
+    }
+  }
+}

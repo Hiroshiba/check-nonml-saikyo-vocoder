@@ -1,0 +1,61 @@
+{
+  "source_commit": "da5337f0e06c5bba48424e109657dfe5667490ea",
+  "input_files": [
+    {
+      "path": "chunk01-interim-observations.json",
+      "sha256": "67d88d942995a3721000707bd7d1ed712dbf1727337b45978062f00c80ca46cf",
+      "git_blob_sha1": "e2d2268ffaadad413188504e1c1175b7c2bcc945",
+      "bytes": 19880
+    },
+    {
+      "path": "plan.json",
+      "sha256": "5571f57eb599bf9742d221be7913fb6cbf76b9c6dfdc5e75815977188b4ab958",
+      "git_blob_sha1": "b27f2d2f053ada954bd69dc4c260cdc3eb01eb63",
+      "bytes": 11479
+    },
+    {
+      "path": "preparation-observations.json",
+      "sha256": "b9fe51b0e6cd708f9bf2bd00705f38098fc289ef2a4ff3cd59dcc4eac141d9ff",
+      "git_blob_sha1": "de1518e1dc08d23de4f340b85fa6872a780978bc",
+      "bytes": 1338
+    },
+    {
+      "path": "chunk01-interim-report-ja.md",
+      "sha256": "edccb1a890a3b91986bcc853654c7d22d626fef5a4f6e29da7893b6e6eb35ee3",
+      "git_blob_sha1": "2b3eea8dd5710dfb2d15409284f288a72d0a5e99",
+      "bytes": 13063
+    }
+  ],
+  "scope": "main_tables_from_public_saved_aggregates; separate_posthoc_supplement_from_short_execution_reports; no_new_measurements",
+  "publication": "navigation_only_chunk01_fixed_snapshot_v1",
+  "supplement": {
+    "file": "diagnostic-supplement.json",
+    "sha256": "775e4949d0da16f1645c7f8281e18eff1c45b92bcbc5f44051d6d4dca5bf443b",
+    "evidence": "short_execution_reports; complete_summary_bytes_not_transferred"
+  },
+  "publication_preparation_date_utc": "2026-10-19",
+  "reviewed_branch_head_before_changes": "042bdd0d4313dca8ed702316d8f3d7828c476c03",
+  "audio_metadata": {
+    "file": "public-audio-map.json",
+    "sha256": "9c363eb4d4816dff29bd36d35f568f400ed038c5e8fbed202c429435aed69f77",
+    "current_identity_receipt_received": true,
+    "receipt": "audio-public-verification.json",
+    "receipt_bytes": 9991,
+    "receipt_sha256": "0501422802d60d79e448c4cc56f3913012c496d8a508a2bc03a58c78d954c4df",
+    "condition_and_hash_rows_reconciled": 23,
+    "new_audio_downloaded": false,
+    "new_audio_copied": false,
+    "URL_delivery_bytes_and_playback_verified": false
+  },
+  "operational_progress": {
+    "file": "chunk02-progress.json",
+    "sha256": "35e6696b9f2b931715e6071ea41ab295e48acd9f25edd866af96263ae61b6db0",
+    "separate_from_chunk01_quality_snapshot": true
+  },
+  "verification_limits": [
+    "No complete scalar export or chunk02 metric aggregates included.",
+    "Browser visual inspection and audio playback not performed.",
+    "No PR site build rehearsal; production build and link verification run on main.",
+    "External backup incomplete; local checkpoint only."
+  ]
+}
