@@ -1299,6 +1299,40 @@
           }
         ]
       }
+    },
+    {
+      "kind": "navigation-only",
+      "id": "clock-event-mean-gain-2026-10-20",
+      "path": "research/clock-event-mean-gain-2026-10-20",
+      "source_path": "experiments/2026-10-20/clock-event-variance/results/run-002",
+      "created_on": "2026-10-19",
+      "created_at": "2026-10-19T19:55:29.293664+00:00",
+      "title": "声の音量変化を雑音へ逃がさない：初回モデルとの24人工条件比較",
+      "comparison_scope": "C5全4例で誤q消失、σ²比7.13–7.18→0.976–1.028、140 Hzの平均KL 0.928339→0.00560181。C0–C4は旧分布・seed 0波形同一。既知位相・Hの人工機構比較で、自然音声品質の採用判断ではない。PML/WORLDは初回引用・再計測なし。現PML維持。",
+      "artifact_count": 395,
+      "artifact_manifest": {
+        "bytes": 66190,
+        "sha256": "3d49add9f47e2b95c9d79139f46af3ad09a70c101445f53435c75e9e78b067fa"
+      },
+      "audio_listing": {
+        "caption": "人工音C5・入力seed 0。原入力、現PML、平均変動対応版の無編集120 Hz・復号seed 0、各0.256秒。",
+        "note": "PMLは初回保存値の引用。PCM16試聴コピー。人工oracle機構比較であり、自然音声の品質優位や採用を示さない。",
+        "attribution_path": "audio_credits.html",
+        "samples": [
+          {
+            "path": "v1/audio/40da4c79198b8bf8d00b.wav",
+            "label": "原入力（人工音）"
+          },
+          {
+            "path": "v1/audio/261f8032fe39a9e80aef.wav",
+            "label": "現PML・無編集"
+          },
+          {
+            "path": "v2/audio/11df9a3464232eb8866e.wav",
+            "label": "平均変動対応・無編集"
+          }
+        ]
+      }
     }
   ]
 }

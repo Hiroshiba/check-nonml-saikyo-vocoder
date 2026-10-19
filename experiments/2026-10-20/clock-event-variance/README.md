@@ -57,3 +57,7 @@
 公開登録の正本は `research/pages-reports.json` の既存 `navigation-only` 経路であり、当PRの `experiment.json` は取り除いた。独自のcompact数値を標準results schemaとして登録しない。[公開先](https://hiroshiba.github.io/check-nonml-saikyo-vocoder/research/clock-event-variance-2026-10-20/index.html)（マージ・公開後）へmanifestに固定した成果物のみを掲載する。案内作成日時はbundle作成の2026-10-19T19:38:44.700599+00:00で、測定時刻とは別。
 
 元bundleの293公開ファイルはbyte不変。artifact-manifestだけ各recordの `path` を既存形式の `name` に変換し、音声帰属ページ `audio_credits.html` を追加してmanifestのbytes/SHAを再固定した（manifest込み295成果物）。CLI source・元NPZ・floatWAV・params・logsはGitへ追加しない。一覧のC5 seed 0の3音声はcompact数値のケース対応と音声来歴の元波形SHA／公開SHAを照合して選定した。
+
+## 共通mean gainを追加した比較
+
+[run-002の比較HTML](results/run-002/index.html)（[公開先](https://hiroshiba.github.io/check-nonml-saikyo-vocoder/research/clock-event-mean-gain-2026-10-20/index.html)、マージ・公開後）を追加した。C5全4例で誤qが消失し、σ²比は7.13–7.18から0.976–1.028、140 Hzの平均KLは0.928339から0.00560181へ改善。C0–C4の旧分布・seed 0波形は同一だった。これは既知位相・Hの人工機構比較で、自然音声品質の採用結果ではない。PML/WORLDは初回値を引用し再計測していない。現base PMLを維持する。初回run-001は保持し、run-002も既存navigation-only登録で公開する。
