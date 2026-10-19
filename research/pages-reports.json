@@ -998,6 +998,25 @@
       "created_on": "2026-10-18",
       "title": "サンプル3の先行成分：解析窓・未来依存・特徴1行の伝播",
       "comparison_scope": "既知1録音の固定11解析と9再合成。PML native/±3半音との原因切り分け。音質順位・新base採用ではない。",
+      "audio_listing": {
+        "caption": "同じ録音の全区間4.045秒。原音と、＋3半音の元の保存特徴・診断用の1行置換を聞き比べます。",
+        "note": "音質指標は未測定、採用未判定。原因切り分け用の既存音声です。全例の音量倍率は1、注目箇所は約2.08秒付近。PML無編集と過去反射の診断例を含む全5例は詳細へ。LibriSpeech / CC BY 4.0、PCM16変換・解析再合成を含みます。",
+        "attribution_path": "audio-attribution.html",
+        "samples": [
+          {
+            "path": "audio/original-input.wav",
+            "label": "原音"
+          },
+          {
+            "path": "audio/pml-plus3.wav",
+            "label": "PML ＋3半音・元の保存特徴"
+          },
+          {
+            "path": "audio/diagnostic-plus3-hold.wav",
+            "label": "診断：＋3半音・直前値保持由来の1行"
+          }
+        ]
+      },
       "artifact_count": 19,
       "artifact_manifest": {
         "bytes": 2951,
