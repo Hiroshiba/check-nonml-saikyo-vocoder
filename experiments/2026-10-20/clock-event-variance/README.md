@@ -61,3 +61,7 @@
 ## 共通mean gainを追加した比較
 
 [run-002の比較HTML](results/run-002/index.html)（[公開先](https://hiroshiba.github.io/check-nonml-saikyo-vocoder/research/clock-event-mean-gain-2026-10-20/index.html)、マージ・公開後）を追加した。C5全4例で誤qが消失し、σ²比は7.13–7.18から0.976–1.028、140 Hzの平均KLは0.928339から0.00560181へ改善。C0–C4の旧分布・seed 0波形は同一だった。これは既知位相・Hの人工機構比較で、自然音声品質の採用結果ではない。PML/WORLDは初回値を引用し再計測していない。現base PMLを維持する。初回run-001は保持し、run-002も既存navigation-only登録で公開する。
+
+## 周期・局在分散の結合を追加した比較
+
+[run-003の比較HTML](results/run-003/index.html)（[公開先](https://hiroshiba.github.io/check-nonml-saikyo-vocoder/research/clock-event-coupling-2026-10-20/index.html)、マージ・公開後）を追加した。3段階の実測は、初回のC5平均変化の誤帰属、v2共通mean gainによる改善、v3結合flagによる改善と誤判定を記録する。v3ではC4 target局所KLが0.0310446→0.0112895、一方C3は0.000642280→0.00832401に悪化した。C4の結合選択2/4、C3の誤選択1/4であり、追加自由度を一律の改善としない。一覧音声は事後選択した人工音の失敗例C3_seed104729 native。正式音質評価・自然音改善・採用判断ではなく、現base PMLを維持する。

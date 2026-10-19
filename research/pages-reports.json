@@ -1333,6 +1333,40 @@
           }
         ]
       }
+    },
+    {
+      "kind": "navigation-only",
+      "id": "clock-event-coupling-2026-10-20",
+      "path": "research/clock-event-coupling-2026-10-20",
+      "source_path": "experiments/2026-10-20/clock-event-variance/results/run-003",
+      "created_on": "2026-10-19",
+      "created_at": "2026-10-19T20:18:27.336744+00:00",
+      "title": "周期ノイズと局在ノイズの結合：改善例と誤判定例",
+      "comparison_scope": "C4 target局所KL 0.0310446→0.0112895、C3は0.000642280→0.00832401へ悪化。結合選択はC4で2/4、C3で誤選択1/4。人工oracle機構比較であり正式音質評価・自然音改善ではない。PML現base維持、既存方式は初回引用。",
+      "artifact_count": 397,
+      "artifact_manifest": {
+        "bytes": 66500,
+        "sha256": "68e29861a7df701db93c3a41cfcdac1e2ae68ee1e5801d48963c3faf4c496f19"
+      },
+      "audio_listing": {
+        "caption": "人工音の失敗例C3・入力seed 104729。原入力／PML／v3の無編集120 Hz、各0.256秒。",
+        "note": "事後選択した誤結合例であり、固定代表例・品質順位ではない。PMLは初回引用、復号seed 0。詳細にはC4改善例も掲載。",
+        "attribution_path": "audio_credits.html",
+        "samples": [
+          {
+            "path": "v2/audio/e1573f23f9194c38de3b.wav",
+            "label": "原入力（人工音）"
+          },
+          {
+            "path": "v1/audio/d320c392b8a6fdb2a149.wav",
+            "label": "現PML（初回引用）"
+          },
+          {
+            "path": "v3/audio/9930c4aa84d2e31f05b6.wav",
+            "label": "v3（誤結合例）"
+          }
+        ]
+      }
     }
   ]
 }
