@@ -1268,6 +1268,108 @@
     },
     {
       "kind": "navigation-only",
+      "id": "clock-event-variance-2026-10-20",
+      "path": "research/clock-event-variance-2026-10-20",
+      "source_path": "experiments/2026-10-20/clock-event-variance/results/run-001",
+      "created_on": "2026-10-19",
+      "created_at": "2026-10-19T19:38:44.700599+00:00",
+      "title": "周期雑音と短い雑音の分離：平均変化の誤帰属と24人工条件",
+      "comparison_scope": "24ケース・240合成出力は全ok。C5平均変化を周期雑音へ誤帰属。PML raw F0 fallback 5/24。提案の既知位相・HとPML/WORLD通常APIの条件差があり品質順位ではない。現PML維持。",
+      "artifact_count": 295,
+      "artifact_manifest": {
+        "bytes": 48631,
+        "sha256": "e562cd8a930df6e324a65edcdf8f0c5d63d76a7612518cfcec5c1f11c4fe5fec"
+      },
+      "audio_listing": {
+        "caption": "人工音C5・入力seed 0、各0.256秒。平均変化の帰属失敗例を原入力・PML・提案で比較。",
+        "note": "無編集120 Hz・復号seed 0。PCM16量子化のみ、clip・正規化なし。WORLDを含む全条件は詳細へ。",
+        "attribution_path": "audio_credits.html",
+        "samples": [
+          {
+            "path": "audio/40da4c79198b8bf8d00b.wav",
+            "label": "原入力（人工音）"
+          },
+          {
+            "path": "audio/261f8032fe39a9e80aef.wav",
+            "label": "現PML・無編集 seed 0"
+          },
+          {
+            "path": "audio/11df9a3464232eb8866e.wav",
+            "label": "提案・無編集 seed 0（帰属失敗例）"
+          }
+        ]
+      }
+    },
+    {
+      "kind": "navigation-only",
+      "id": "clock-event-mean-gain-2026-10-20",
+      "path": "research/clock-event-mean-gain-2026-10-20",
+      "source_path": "experiments/2026-10-20/clock-event-variance/results/run-002",
+      "created_on": "2026-10-19",
+      "created_at": "2026-10-19T20:25:37.728061+00:00",
+      "title": "声の音量変化を雑音へ逃がさない：初回モデルとの24人工条件比較",
+      "comparison_scope": "C5全4例で誤q消失、σ²比7.13–7.18→0.976–1.028、140 Hzの平均KL 0.928339→0.00560181。C0–C4は旧分布・seed 0波形同一。既知位相・Hの人工機構比較で、自然音声品質の採用判断ではない。PML/WORLDは初回引用・再計測なし。現PML維持。",
+      "artifact_count": 395,
+      "artifact_manifest": {
+        "bytes": 66190,
+        "sha256": "a14e8056240763d2a3d8c4b218c4982bea2f64234c3b6d607890fcff81364565"
+      },
+      "audio_listing": {
+        "caption": "人工音C5・入力seed 0。原入力、現PML、平均変動対応版の無編集120 Hz・復号seed 0、各0.256秒。",
+        "note": "PMLは初回保存値の引用。PCM16試聴コピー。人工oracle機構比較であり、自然音声の品質優位や採用を示さない。",
+        "attribution_path": "audio_credits.html",
+        "samples": [
+          {
+            "path": "v1/audio/40da4c79198b8bf8d00b.wav",
+            "label": "原入力（人工音）"
+          },
+          {
+            "path": "v1/audio/261f8032fe39a9e80aef.wav",
+            "label": "現PML・無編集"
+          },
+          {
+            "path": "v2/audio/11df9a3464232eb8866e.wav",
+            "label": "平均変動対応・無編集"
+          }
+        ]
+      }
+    },
+    {
+      "kind": "navigation-only",
+      "id": "clock-event-coupling-2026-10-20",
+      "path": "research/clock-event-coupling-2026-10-20",
+      "source_path": "experiments/2026-10-20/clock-event-variance/results/run-003",
+      "created_on": "2026-10-19",
+      "created_at": "2026-10-19T20:25:39.313297+00:00",
+      "title": "周期ノイズと局在ノイズの結合：改善例と誤判定例",
+      "comparison_scope": "C4 target局所KL 0.0310446→0.0112895、C3は0.000642280→0.00832401へ悪化。結合選択はC4で2/4、C3で誤選択1/4。人工oracle機構比較であり正式音質評価・自然音改善ではない。PML現base維持、既存方式は初回引用。",
+      "artifact_count": 397,
+      "artifact_manifest": {
+        "bytes": 66500,
+        "sha256": "948621731358eece2a89df1604e3c03ba5aea0a5a6fc5d3b57e57c57ddd7c6dc"
+      },
+      "audio_listing": {
+        "caption": "人工音の失敗例C3・入力seed 104729。原入力／PML／v3の無編集120 Hz、各0.256秒。",
+        "note": "事後選択した誤結合例であり、固定代表例・品質順位ではない。PMLは初回引用、復号seed 0。詳細にはC4改善例も掲載。",
+        "attribution_path": "audio_credits.html",
+        "samples": [
+          {
+            "path": "v2/audio/e1573f23f9194c38de3b.wav",
+            "label": "原入力（人工音）"
+          },
+          {
+            "path": "v1/audio/d320c392b8a6fdb2a149.wav",
+            "label": "現PML（初回引用）"
+          },
+          {
+            "path": "v3/audio/9930c4aa84d2e31f05b6.wav",
+            "label": "v3（誤結合例）"
+          }
+        ]
+      }
+    },
+    {
+      "kind": "navigation-only",
       "id": "raw-full-yin-104-2026-10-19",
       "path": "research/raw-full-yin-104-2026-10-19",
       "source_path": "experiments/2026-10-19/raw-full-yin-104",
