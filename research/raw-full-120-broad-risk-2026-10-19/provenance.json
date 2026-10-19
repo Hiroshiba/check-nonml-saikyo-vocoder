@@ -1,0 +1,36 @@
+{
+  "source_commit": "da5337f0e06c5bba48424e109657dfe5667490ea",
+  "input_files": [
+    {
+      "path": "chunk01-interim-observations.json",
+      "sha256": "67d88d942995a3721000707bd7d1ed712dbf1727337b45978062f00c80ca46cf",
+      "git_blob_sha1": "e2d2268ffaadad413188504e1c1175b7c2bcc945",
+      "bytes": 19880
+    },
+    {
+      "path": "plan.json",
+      "sha256": "5571f57eb599bf9742d221be7913fb6cbf76b9c6dfdc5e75815977188b4ab958",
+      "git_blob_sha1": "b27f2d2f053ada954bd69dc4c260cdc3eb01eb63",
+      "bytes": 11479
+    },
+    {
+      "path": "preparation-observations.json",
+      "sha256": "b9fe51b0e6cd708f9bf2bd00705f38098fc289ef2a4ff3cd59dcc4eac141d9ff",
+      "git_blob_sha1": "de1518e1dc08d23de4f340b85fa6872a780978bc",
+      "bytes": 1338
+    },
+    {
+      "path": "chunk01-interim-report-ja.md",
+      "sha256": "edccb1a890a3b91986bcc853654c7d22d626fef5a4f6e29da7893b6e6eb35ee3",
+      "git_blob_sha1": "2b3eea8dd5710dfb2d15409284f288a72d0a5e99",
+      "bytes": 13063
+    }
+  ],
+  "scope": "main_tables_from_public_saved_aggregates; separate_posthoc_supplement_from_short_execution_reports; no_new_measurements",
+  "publication": "local_document_only",
+  "supplement": {
+    "file": "diagnostic-supplement.json",
+    "sha256": "775e4949d0da16f1645c7f8281e18eff1c45b92bcbc5f44051d6d4dca5bf443b",
+    "evidence": "short_execution_reports; complete_summary_bytes_not_transferred"
+  }
+}

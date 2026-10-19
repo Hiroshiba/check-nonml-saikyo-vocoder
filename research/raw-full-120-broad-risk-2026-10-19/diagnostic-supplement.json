@@ -1,0 +1,162 @@
+{
+  "status": "supplementary_saved_value_diagnosis_not_formal_metric_replacement",
+  "evidence": {
+    "basis": "short_report_from_execution_environment",
+    "reported_summary_bytes": 28548,
+    "reported_summary_sha256": "7bd577e8ccf85e530de5171c05783a2c937532abfb145007ea928ccee9fe594d",
+    "reported_reference_files_sha_checked": 106,
+    "complete_summary_bytes_read_back_for_this_html": false,
+    "full_raw_artifacts_transferred": false,
+    "new_measurement": false
+  },
+  "miss_flagged_conditions": [
+    {
+      "case": "librispeech_1188-133604-0037",
+      "seed": 0,
+      "pitch_semitones": -3,
+      "total_frames": 593,
+      "expected_voiced": {
+        "PML": 178,
+        "RAW_FULL": 180
+      },
+      "missing": {
+        "PML": 15,
+        "RAW_FULL": 20
+      },
+      "support_intersection": 176,
+      "PML_only_support": 2,
+      "RAW_FULL_only_support": 4,
+      "common_support_missing": {
+        "PML": 15,
+        "RAW_FULL": 16
+      },
+      "RAW_FULL_only_support_missing": 4,
+      "formal_miss_delta_pp": 2.684145
+    },
+    {
+      "case": "librispeech_121-127105-0035",
+      "seed": 20261015,
+      "pitch_semitones": -3,
+      "total_frames": 593,
+      "expected_voiced": {
+        "PML": 174,
+        "RAW_FULL": 178
+      },
+      "missing": {
+        "PML": 36,
+        "RAW_FULL": 41
+      },
+      "support_intersection": 174,
+      "PML_only_support": 0,
+      "RAW_FULL_only_support": 4,
+      "common_support_missing": {
+        "PML": 36,
+        "RAW_FULL": 37
+      },
+      "RAW_FULL_only_support_missing": 4,
+      "formal_miss_delta_pp": 2.344053
+    }
+  ],
+  "ASR_worsened_conditions": [
+    {
+      "case": "librispeech_1188-133604-0031",
+      "seed": 0,
+      "pitch_semitones": 0,
+      "CER": {
+        "PML": 0,
+        "RAW_FULL": 0.021277
+      },
+      "WER": {
+        "PML": 0,
+        "RAW_FULL": 0.1
+      },
+      "character_error_increase": 1,
+      "word_error_increase": 1
+    },
+    {
+      "case": "librispeech_1188-133604-0031",
+      "seed": 0,
+      "pitch_semitones": -3,
+      "CER": {
+        "PML": 0,
+        "RAW_FULL": 0.042553
+      },
+      "WER": {
+        "PML": 0,
+        "RAW_FULL": 0.2
+      },
+      "character_error_increase": 2,
+      "word_error_increase": 2
+    }
+  ],
+  "ASR_denominators": {
+    "characters": 47,
+    "words": 10,
+    "available_recordings": 4,
+    "available_pairs": 24,
+    "missing_pairs": 48
+  },
+  "interpretation_limits": [
+    "support_change_explains_much_but_not_all_missing_increase",
+    "two_flagged_cases_are_selected_examples",
+    "common_support_not_new_formal_metric",
+    "formal_values_and_flags_preserved",
+    "original_YIN_not_ground_truth"
+  ],
+  "all_edited_support_diagnosis": {
+    "basis": "short_report_from_execution_environment",
+    "reported_input_files_sha_checked": 194,
+    "reported_summary_bytes": 67485,
+    "reported_summary_sha256": "ca63cd827e818dcc8b833cabec47f852432961317fca1b19b08ab0c3010c3e61",
+    "full_summary_read_back": false,
+    "empty_intersections": 0,
+    "rows": [
+      {
+        "pitch": "all_edited",
+        "pairs": 48,
+        "identical_masks": 2,
+        "different_masks": 46,
+        "original_rate_delta_pp": 0.105259,
+        "common_support_rate_delta_pp": -0.03285,
+        "composition_adjustment_pp": 0.138108,
+        "missing_PML": 854,
+        "missing_RAW_FULL": 864,
+        "common_missing_delta": -1,
+        "unique_missing_delta": 11
+      },
+      {
+        "pitch": -3,
+        "pairs": 24,
+        "identical_masks": 1,
+        "different_masks": 23,
+        "original_rate_delta_pp": 0.468283,
+        "common_support_rate_delta_pp": 0.123833,
+        "composition_adjustment_pp": 0.34445,
+        "missing_PML": 673,
+        "missing_RAW_FULL": 692,
+        "common_missing_delta": 5,
+        "unique_missing_delta": 14
+      },
+      {
+        "pitch": 3,
+        "pairs": 24,
+        "identical_masks": 1,
+        "different_masks": 23,
+        "original_rate_delta_pp": -0.257766,
+        "common_support_rate_delta_pp": -0.189532,
+        "composition_adjustment_pp": -0.068233,
+        "missing_PML": 181,
+        "missing_RAW_FULL": 172,
+        "common_missing_delta": -6,
+        "unique_missing_delta": -3
+      }
+    ],
+    "limits": [
+      "posthoc_arithmetic_not_causal_effect",
+      "common_support_selection_may_hide_harm_on_disagreement_frames",
+      "reference_F0_values_can_differ_on_same_support",
+      "formal_metrics_and_flags_preserved",
+      "no_true_F0"
+    ]
+  }
+}
