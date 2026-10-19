@@ -1,0 +1,60 @@
+{
+  "schema": "raw-full-vuv-report-public-provenance-v1",
+  "rendered_at_utc": "2026-10-19T15:37:47.822441+00:00",
+  "scientific_observation_complete": true,
+  "scientific_completed_at_utc": "2026-10-19T14:29:06.048261+00:00",
+  "input_hashes": {
+    "saved_frames": {
+      "sha256": "4da1a0522d5dec59aad14a757f214c6add98553b31647c0d675f691fd3f4b224",
+      "bytes": 3309176
+    },
+    "observation": {
+      "sha256": "8c98310c243eb9f84235bb78895bc5df5871daae5cdd32b00c0b6e06c50c7803",
+      "bytes": 1340652
+    },
+    "observation_completion": {
+      "sha256": "09f592604d4fa217dcc86dc74adc77bcefc5bf9b3bf45dc6017fad58e3e30f77",
+      "bytes": 1012
+    }
+  },
+  "observer_source_manifest_sha256": "8f959483ff7e9256a86cea825cf0abdedf51696ec2410aa50b5b6c0f0306a2e2",
+  "paired_report_sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+  "extraction_receipt_sha256": "654f09bba009ff5340867bebe75276882c4c82c8e00fcb20b3dac676dbf63008",
+  "actual_saved_method_rows": 104,
+  "metric_references_verified": 160,
+  "selected_conditions": 28,
+  "no_new_scientific_measurement": true,
+  "no_new_rates_or_rankings": true,
+  "private_source_paths_published": false,
+  "selection_published": false,
+  "extraction_receipt_published": false,
+  "links": {
+    "interpretation": "https://hiroshiba.github.io/check-nonml-saikyo-vocoder/research/raw-full-full120-comparison-2026-10-19/interpretation.html",
+    "full120": "https://hiroshiba.github.io/check-nonml-saikyo-vocoder/research/raw-full-full120-comparison-2026-10-19/index.html",
+    "ranks": "https://hiroshiba.github.io/check-nonml-saikyo-vocoder/research/raw-full-full120-comparison-2026-10-19/index.html#historical",
+    "pitch": "https://hiroshiba.github.io/check-nonml-saikyo-vocoder/research/raw-full-full120-comparison-2026-10-19/quality-relative_f0_mae_cents.html",
+    "missing": "https://hiroshiba.github.io/check-nonml-saikyo-vocoder/research/raw-full-full120-comparison-2026-10-19/quality-unvoiced_miss_rate.html"
+  },
+  "audio_status": "provided_recovered_verified",
+  "figure_format": "SVG",
+  "figures": 32,
+  "representatives_are_not_ranked": true,
+  "audio_recovery": {
+    "schema": "raw-full-posthoc-vuv-recovered-listening-clips-v1",
+    "recovery_run_id": "raw-full-vuv-exact-restoration:raw-full-vuv-exact-restoration-run-001-20261019:2026-10-19T15:25:18.780955+00:00",
+    "original_run_id": "raw-full-120-broad-risk-v1-20261019",
+    "wrapper_manifest_sha256": "f17fb78fb3b0cc81720202478bb7fc36f06657e26b3c80d0bbe4cac2387e1991",
+    "selection_sha256": "065056b3fc244ff12859b8c5774846630401933d3ba6c18e8be0eef456c88295",
+    "completion_sha256": "4a90188a43806ceed93864a67f5f7a73d52c2b1726dde4124bfa5991d331e1c6",
+    "started_at_utc": "2026-10-19T15:25:18.780955+00:00",
+    "completed_at_utc": "2026-10-19T15:25:27.739396+00:00",
+    "full_npy_sha_matches": 15,
+    "backup_npy_bytes_sha_matches": 9,
+    "separately_regenerated_raw_matches": 6,
+    "raw_original_expected_bytes": null,
+    "raw_original_expected_bytes_status": "not_recovered",
+    "original_array_pcm_rng_comparison": "not_performed_expected_values_unavailable",
+    "quality_metrics_recomputed": false,
+    "rendering_synthesis_performed": false
+  }
+}

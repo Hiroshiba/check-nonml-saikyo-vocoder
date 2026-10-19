@@ -1,0 +1,23 @@
+<!doctype html><html lang="ja"><meta charset="utf-8"><meta name="viewport" content="width=device-width">
+<title>事後診断3例の比較試聴：出典・復元・加工</title>
+<style>body{max-width:850px;margin:2rem auto;padding:0 1rem;font:16px/1.8 system-ui;color-scheme:light dark}a{color:inherit}</style>
+<h1>事後診断3例の比較試聴：出典・復元・加工</h1>
+<p>原音はLibriSpeech ASR corpusに由来します。提供元：Vassil Panayotov（Daniel Povey協力）。LibriVoxの朗読に由来する録音です。
+<a href="https://www.openslr.org/12/">OpenSLR 12の配布・帰属情報</a>、
+<a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>。作者・朗読者による本比較の推奨を意味しません。</p>
+<p>既定VUV警告の異なる集合パターンを示す3録音を、結果確認後に選んだ事後診断例です。
+聴覚上の悪化が確定した例、無作為な代表例、品質順位とは扱いません。品質測定や閾値は追加していません。</p>
+<p>各例で原音、無編集PML、無編集RAW_FULL、指定音高のPML、指定音高のRAW_FULLの5音声を比較します。
+原音3本とPML6本は既存バックアップから全長NPYのbytes・SHA256一致を確認しています。RAW_FULL6本は元のfull120評価とは別の復元runで再生成し、
+固定された元波形の全長NPY SHA256と完全一致したものを使用しています。復元で実行した合成と、このクリップ書出し工程を区別します。
+書出し自体は合成しません。全長NPY一致は元の実行履歴の再現を意味せず、古いreceiptを再発行しません。合成seedは全て0です。</p>
+<ul><li>1188-133604-0037：−3半音、元時刻 [1.2, 6.0) 秒（4.8秒）</li>
+<li>61-70968-0043：＋3半音、元時刻 [0, 5.0) 秒（5秒）</li>
+<li>6829-68769-0041：−3半音、元時刻 [0, 2.66) 秒（全長2.66秒）</li></ul>
+<p>全て16 kHzモノラルです。全長float64 NPYから各例で同じ指定区間を取り出し、np.rint(x×32768)（ちょうど中間は偶数丸め）でPCM16 WAVへ変換します。
+ゲイン変更、正規化、クリッピング、ディザ、再サンプリング、時間整列、無音削除はしません。PCM16範囲外なら停止します。
+第1例のプレーヤー時刻0秒は元録音の1.2秒です。元時刻はクリップ時刻にこのoffsetを加えて読んでください。</p>
+<p>原音は未編集の参考であり、±3半音の正解波形ではありません。品質計測に使った全長NPY・共通窓と、今回の試聴範囲は区別してください。
+元NPY全体の期待・観測SHA、観測bytes、復元runの実開始・完了時刻と新completion SHA、float64 array/PCM・切出し・PCM16・WAVの新しい識別子と最大量子化差FSを
+<a href="clip-manifest.json">試聴来歴</a>に記録します。RAW_FULL6本の元NPY期待bytesは独立metadataが未回収のためnullです。
+古いarray/PCM/RNG期待値は利用できず、元値との照合を主張しません。新しい復元receiptとのRAW_FULL array/PCM照合とは区別しています。</p></html>

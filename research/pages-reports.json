@@ -1231,6 +1231,40 @@
         "bytes": 2937,
         "sha256": "2f7e0ceb23c4dbd7280a63833b1314a44ee9365a390736217fdee63560da59ef"
       }
+    },
+    {
+      "kind": "navigation-only",
+      "id": "raw-full-vuv-frame-diagnostic-2026-10-19",
+      "path": "research/raw-full-vuv-frame-diagnostic-2026-10-19",
+      "source_path": "experiments/2026-10-19/raw-full-vuv-frame-diagnostic",
+      "created_on": "2026-10-19",
+      "created_at": "2026-10-19T15:37:47.822441+00:00",
+      "title": "有声取りこぼし警告を読む：参照集合の差と共通フレームの判定",
+      "comparison_scope": "保存104系列・警告28条件の比較と3例15音声。共通フレームのmissing差は17条件で正、11条件で零。真のVUVや聴覚消失は未確定。PML維持。",
+      "artifact_count": 58,
+      "artifact_manifest": {
+        "bytes": 10781,
+        "sha256": "63ee107842cafb4c3677729e4c528b047a2304d4433036895dbe2ccc156b61d7"
+      },
+      "audio_listing": {
+        "caption": "例A：1188-133604-0037の1.2–6.0秒（4.8秒）。原音と−3半音・seed 0のPML／RAW_FULL。",
+        "note": "LibriSpeech / CC BY 4.0。元全NPYのSHA一致を確認した波形を切出し・PCM16変換。音量倍率1。",
+        "attribution_path": "audio-credits.html",
+        "samples": [
+          {
+            "path": "audio/librispeech_1188-133604-0037__ORIGINAL.wav",
+            "label": "原音"
+          },
+          {
+            "path": "audio/librispeech_1188-133604-0037__pitch-3__seed0__PML.wav",
+            "label": "PML −3半音"
+          },
+          {
+            "path": "audio/librispeech_1188-133604-0037__pitch-3__seed0__RAW_FULL.wav",
+            "label": "RAW_FULL −3半音"
+          }
+        ]
+      }
     }
   ]
 }

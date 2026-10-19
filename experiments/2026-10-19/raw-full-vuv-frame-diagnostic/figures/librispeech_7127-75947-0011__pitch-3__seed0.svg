@@ -1,0 +1,1672 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="710" viewBox="0 0 1120 710" role="img">
+<title>保存F0と期待集合・二値出力判定。横軸は元抜粋の80 ms窓中心時刻。</title>
+<style>
+:root{--bg:#fff;--ink:#172638;--muted:#4b6179;--grid:#cbd5e1;--zero:#bac3ce;
+--expected:#596d81;--p:#1264b4;--r:#b45000;--common:#8275ba;--missing:#a62b6b;--faint:#e9edf2;--outside:#b72c3c}
+@media(prefers-color-scheme:dark){:root{--bg:#172332;--ink:#eef5ff;--muted:#bfd0e3;--grid:#465b71;--zero:#6b7d91;
+--expected:#c4d3e1;--p:#65baff;--r:#ffb264;--common:#a79ae6;--missing:#f18cbe;--faint:#2c3c4f;--outside:#ff8b96}}
+text{font-family:'Noto Sans CJK JP',system-ui,sans-serif;fill:var(--ink);font-size:12px}
+.small{font-size:10px;fill:var(--muted)} .grid{stroke:var(--grid);stroke-width:.7}
+.expected{fill:none;stroke:var(--expected);stroke-width:1.4;stroke-dasharray:5 3}
+.output{fill:none;stroke-width:1.5}.zero{stroke:var(--zero);stroke-width:1}
+</style><rect width="100%" height="100%" fill="var(--bg)"/>
+<text x="18" y="24" font-weight="700">librispeech_7127-75947-0011 / -3 半音 / seed 0</text>
+<text x="18" y="45" class="small">元抜粋の 0–3.62 s ｜ 80 ms窓中心・10 ms間隔 ｜ 破線：方式別nativeからの期待F0　実線：edited出力F0</text>
+<text x="18" y="90" font-weight="700">PML</text>
+<text x="18" y="109" class="small">F0 (Hz)</text>
+<line class="grid" x1="135" x2="1095" y1="211.00" y2="211.00"/>
+<text x="127" y="215.00" text-anchor="end" class="small">0</text>
+<line class="grid" x1="135" x2="1095" y1="176.25" y2="176.25"/>
+<text x="127" y="180.25" text-anchor="end" class="small">50</text>
+<line class="grid" x1="135" x2="1095" y1="141.50" y2="141.50"/>
+<text x="127" y="145.50" text-anchor="end" class="small">100</text>
+<line class="grid" x1="135" x2="1095" y1="106.75" y2="106.75"/>
+<text x="127" y="110.75" text-anchor="end" class="small">150</text>
+<line class="grid" x1="135" x2="1095" y1="72.00" y2="72.00"/>
+<text x="127" y="76.00" text-anchor="end" class="small">200</text>
+<line class="grid" x1="135.00" x2="135.00" y1="72" y2="211"/>
+<line class="grid" x1="255.00" x2="255.00" y1="72" y2="211"/>
+<line class="grid" x1="375.00" x2="375.00" y1="72" y2="211"/>
+<line class="grid" x1="495.00" x2="495.00" y1="72" y2="211"/>
+<line class="grid" x1="615.00" x2="615.00" y1="72" y2="211"/>
+<line class="grid" x1="735.00" x2="735.00" y1="72" y2="211"/>
+<line class="grid" x1="855.00" x2="855.00" y1="72" y2="211"/>
+<line class="grid" x1="975.00" x2="975.00" y1="72" y2="211"/>
+<line class="grid" x1="1095.00" x2="1095.00" y1="72" y2="211"/>
+<circle cx="145.61" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="148.26" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="150.91" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="153.56" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="156.22" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="158.87" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="161.52" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="164.17" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="166.82" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="169.48" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="172.13" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="174.78" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="177.43" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="180.08" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="182.73" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="185.39" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="188.04" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="190.69" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="193.34" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="195.99" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="198.65" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="201.30" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="203.95" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="206.60" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="209.25" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="211.91" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="214.56" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="217.21" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="219.86" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="222.51" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="225.17" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="227.82" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="230.47" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="233.12" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="235.77" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="238.43" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="241.08" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="243.73" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="246.38" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="249.03" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="251.69" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="254.34" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="256.99" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="259.64" cy="113.74" r="1.5" fill="var(--expected)"/>
+<circle cx="262.29" cy="113.19" r="1.5" fill="var(--expected)"/>
+<circle cx="264.94" cy="112.76" r="1.5" fill="var(--expected)"/>
+<circle cx="267.60" cy="112.10" r="1.5" fill="var(--expected)"/>
+<circle cx="270.25" cy="111.56" r="1.5" fill="var(--expected)"/>
+<circle cx="272.90" cy="110.86" r="1.5" fill="var(--expected)"/>
+<circle cx="275.55" cy="109.67" r="1.5" fill="var(--expected)"/>
+<polyline class="expected" stroke="var(--expected)" points="259.64,113.74 262.29,113.19 264.94,112.76 267.60,112.10 270.25,111.56 272.90,110.86 275.55,109.67"/>
+<circle cx="278.20" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="280.86" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="283.51" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="286.16" cy="102.18" r="1.5" fill="var(--expected)"/>
+<circle cx="288.81" cy="102.48" r="1.5" fill="var(--expected)"/>
+<polyline class="expected" stroke="var(--expected)" points="286.16,102.18 288.81,102.48"/>
+<circle cx="291.46" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="294.12" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="296.77" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="299.42" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="302.07" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="304.72" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="307.38" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="310.03" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="312.68" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="315.33" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="317.98" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="320.64" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="323.29" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="325.94" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="328.59" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="331.24" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="333.90" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="336.55" cy="153.93" r="1.5" fill="var(--expected)"/>
+<circle cx="339.20" cy="154.45" r="1.5" fill="var(--expected)"/>
+<circle cx="341.85" cy="154.75" r="1.5" fill="var(--expected)"/>
+<polyline class="expected" stroke="var(--expected)" points="336.55,153.93 339.20,154.45 341.85,154.75"/>
+<circle cx="344.50" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="347.15" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="349.81" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="352.46" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="355.11" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="357.76" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="360.41" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="363.07" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="365.72" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="368.37" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="371.02" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="373.67" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="376.33" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="378.98" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="381.63" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="384.28" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="386.93" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="389.59" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="392.24" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="394.89" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="397.54" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="400.19" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="402.85" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="405.50" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="408.15" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="410.80" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="413.45" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="416.10" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="418.76" cy="156.88" r="1.5" fill="var(--expected)"/>
+<circle cx="421.41" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="424.06" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="426.71" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="429.36" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="432.02" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="434.67" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="437.32" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="439.97" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="442.62" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="445.28" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="447.93" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="450.58" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="453.23" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="455.88" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="458.54" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="461.19" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="463.84" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="466.49" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="469.14" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="471.80" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="474.45" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="477.10" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="479.75" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="482.40" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="485.06" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="487.71" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="490.36" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="493.01" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="495.66" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="498.31" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="500.97" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="503.62" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="506.27" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="508.92" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="511.57" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="514.23" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="516.88" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="519.53" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="522.18" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="524.83" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="527.49" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="530.14" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="532.79" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="535.44" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="538.09" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="540.75" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="543.40" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="546.05" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="548.70" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="551.35" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="554.01" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="556.66" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="559.31" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="561.96" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="564.61" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="567.27" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="569.92" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="572.57" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="575.22" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="577.87" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="580.52" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="583.18" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="585.83" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="588.48" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="591.13" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="593.78" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="596.44" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="599.09" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="601.74" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="604.39" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="607.04" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="609.70" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="612.35" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="615.00" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="617.65" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="620.30" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="622.96" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="625.61" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="628.26" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="630.91" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="633.56" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="636.22" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="638.87" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="641.52" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="644.17" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="646.82" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="649.48" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="652.13" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="654.78" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="657.43" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="660.08" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="662.73" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="665.39" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="668.04" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="670.69" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="673.34" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="675.99" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="678.65" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="681.30" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="683.95" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="686.60" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="689.25" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="691.91" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="694.56" cy="95.48" r="1.5" fill="var(--expected)"/>
+<circle cx="697.21" cy="94.64" r="1.5" fill="var(--expected)"/>
+<circle cx="699.86" cy="93.95" r="1.5" fill="var(--expected)"/>
+<circle cx="702.51" cy="93.36" r="1.5" fill="var(--expected)"/>
+<circle cx="705.17" cy="93.11" r="1.5" fill="var(--expected)"/>
+<circle cx="707.82" cy="92.93" r="1.5" fill="var(--expected)"/>
+<circle cx="710.47" cy="92.59" r="1.5" fill="var(--expected)"/>
+<circle cx="713.12" cy="92.32" r="1.5" fill="var(--expected)"/>
+<circle cx="715.77" cy="92.60" r="1.5" fill="var(--expected)"/>
+<circle cx="718.43" cy="93.34" r="1.5" fill="var(--expected)"/>
+<polyline class="expected" stroke="var(--expected)" points="694.56,95.48 697.21,94.64 699.86,93.95 702.51,93.36 705.17,93.11 707.82,92.93 710.47,92.59 713.12,92.32 715.77,92.60 718.43,93.34"/>
+<circle cx="721.08" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="723.73" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="726.38" cy="112.15" r="1.5" fill="var(--expected)"/>
+<circle cx="729.03" cy="114.55" r="1.5" fill="var(--expected)"/>
+<circle cx="731.69" cy="116.31" r="1.5" fill="var(--expected)"/>
+<polyline class="expected" stroke="var(--expected)" points="726.38,112.15 729.03,114.55 731.69,116.31"/>
+<circle cx="734.34" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="736.99" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="739.64" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="742.29" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="744.94" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="747.60" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="750.25" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="752.90" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="755.55" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="758.20" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="760.86" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="763.51" cy="142.17" r="1.5" fill="var(--expected)"/>
+<circle cx="766.16" cy="143.03" r="1.5" fill="var(--expected)"/>
+<circle cx="768.81" cy="143.59" r="1.5" fill="var(--expected)"/>
+<circle cx="771.46" cy="143.97" r="1.5" fill="var(--expected)"/>
+<circle cx="774.12" cy="144.28" r="1.5" fill="var(--expected)"/>
+<circle cx="776.77" cy="144.79" r="1.5" fill="var(--expected)"/>
+<polyline class="expected" stroke="var(--expected)" points="763.51,142.17 766.16,143.03 768.81,143.59 771.46,143.97 774.12,144.28 776.77,144.79"/>
+<circle cx="779.42" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="782.07" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="784.72" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="787.38" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="790.03" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="792.68" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="795.33" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="797.98" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="800.64" cy="151.37" r="1.5" fill="var(--expected)"/>
+<circle cx="803.29" cy="152.02" r="1.5" fill="var(--expected)"/>
+<circle cx="805.94" cy="152.86" r="1.5" fill="var(--expected)"/>
+<circle cx="808.59" cy="153.63" r="1.5" fill="var(--expected)"/>
+<polyline class="expected" stroke="var(--expected)" points="800.64,151.37 803.29,152.02 805.94,152.86 808.59,153.63"/>
+<circle cx="811.24" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="813.90" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="816.55" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="819.20" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="821.85" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="824.50" cy="149.39" r="1.5" fill="var(--expected)"/>
+<circle cx="827.15" cy="148.81" r="1.5" fill="var(--expected)"/>
+<circle cx="829.81" cy="148.28" r="1.5" fill="var(--expected)"/>
+<circle cx="832.46" cy="147.66" r="1.5" fill="var(--expected)"/>
+<circle cx="835.11" cy="146.81" r="1.5" fill="var(--expected)"/>
+<polyline class="expected" stroke="var(--expected)" points="824.50,149.39 827.15,148.81 829.81,148.28 832.46,147.66 835.11,146.81"/>
+<circle cx="837.76" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="840.41" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="843.07" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="845.72" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="848.37" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="851.02" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="853.67" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="856.33" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="858.98" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="861.63" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="864.28" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="866.93" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="869.59" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="872.24" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="874.89" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="877.54" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="880.19" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="882.85" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="885.50" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="888.15" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="890.80" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="893.45" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="896.10" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="898.76" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="901.41" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="904.06" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="906.71" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="909.36" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="912.02" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="914.67" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="917.32" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="919.97" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="922.62" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="925.28" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="927.93" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="930.58" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="933.23" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="935.88" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="938.54" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="941.19" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="943.84" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="946.49" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="949.14" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="951.80" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="954.45" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="957.10" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="959.75" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="962.40" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="965.06" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="967.71" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="970.36" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="973.01" cy="135.79" r="1.5" fill="var(--expected)"/>
+<circle cx="975.66" cy="135.76" r="1.5" fill="var(--expected)"/>
+<circle cx="978.31" cy="135.69" r="1.5" fill="var(--expected)"/>
+<circle cx="980.97" cy="135.62" r="1.5" fill="var(--expected)"/>
+<circle cx="983.62" cy="135.38" r="1.5" fill="var(--expected)"/>
+<circle cx="986.27" cy="135.39" r="1.5" fill="var(--expected)"/>
+<polyline class="expected" stroke="var(--expected)" points="973.01,135.79 975.66,135.76 978.31,135.69 980.97,135.62 983.62,135.38 986.27,135.39"/>
+<circle cx="988.92" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="991.57" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="994.23" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="996.88" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="999.53" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="1002.18" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="1004.83" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="1007.49" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="1010.14" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="1012.79" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="1015.44" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="1018.09" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="1020.75" cy="138.51" r="1.5" fill="var(--expected)"/>
+<circle cx="1023.40" cy="140.12" r="1.5" fill="var(--expected)"/>
+<polyline class="expected" stroke="var(--expected)" points="1020.75,138.51 1023.40,140.12"/>
+<circle cx="1026.05" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="1028.70" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="1031.35" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="1034.01" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="1036.66" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="1039.31" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="1041.96" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="1044.61" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="1047.27" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="1049.92" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="1052.57" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="1055.22" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="1057.87" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="1060.52" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="1063.18" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="1065.83" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="1068.48" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="1071.13" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="1073.78" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="1076.44" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="1079.09" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="1081.74" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="1084.39" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="145.61" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="148.26" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="150.91" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="153.56" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="156.22" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="158.87" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="161.52" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="164.17" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="166.82" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="169.48" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="172.13" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="174.78" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="177.43" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="180.08" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="182.73" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="185.39" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="188.04" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="190.69" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="193.34" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="195.99" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="198.65" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="201.30" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="203.95" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="206.60" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="209.25" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="211.91" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="214.56" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="217.21" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="219.86" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="222.51" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="225.17" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="227.82" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="230.47" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="233.12" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="235.77" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="238.43" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="241.08" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="243.73" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="246.38" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="249.03" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="251.69" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="254.34" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="256.99" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="259.64" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="262.29" cy="113.29" r="1.5" fill="var(--p)"/>
+<circle cx="264.94" cy="112.71" r="1.5" fill="var(--p)"/>
+<circle cx="267.60" cy="112.26" r="1.5" fill="var(--p)"/>
+<circle cx="270.25" cy="111.69" r="1.5" fill="var(--p)"/>
+<circle cx="272.90" cy="111.03" r="1.5" fill="var(--p)"/>
+<circle cx="275.55" cy="109.89" r="1.5" fill="var(--p)"/>
+<polyline class="output" stroke="var(--p)" points="262.29,113.29 264.94,112.71 267.60,112.26 270.25,111.69 272.90,111.03 275.55,109.89"/>
+<circle cx="278.20" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="280.86" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="283.51" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="286.16" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="288.81" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="291.46" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="294.12" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="296.77" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="299.42" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="302.07" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="304.72" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="307.38" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="310.03" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="312.68" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="315.33" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="317.98" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="320.64" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="323.29" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="325.94" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="328.59" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="331.24" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="333.90" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="336.55" cy="153.53" r="1.5" fill="var(--p)"/>
+<circle cx="339.20" cy="154.35" r="1.5" fill="var(--p)"/>
+<circle cx="341.85" cy="154.67" r="1.5" fill="var(--p)"/>
+<polyline class="output" stroke="var(--p)" points="336.55,153.53 339.20,154.35 341.85,154.67"/>
+<circle cx="344.50" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="347.15" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="349.81" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="352.46" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="355.11" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="357.76" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="360.41" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="363.07" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="365.72" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="368.37" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="371.02" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="373.67" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="376.33" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="378.98" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="381.63" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="384.28" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="386.93" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="389.59" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="392.24" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="394.89" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="397.54" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="400.19" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="402.85" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="405.50" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="408.15" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="410.80" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="413.45" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="416.10" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="418.76" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="421.41" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="424.06" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="426.71" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="429.36" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="432.02" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="434.67" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="437.32" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="439.97" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="442.62" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="445.28" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="447.93" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="450.58" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="453.23" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="455.88" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="458.54" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="461.19" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="463.84" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="466.49" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="469.14" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="471.80" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="474.45" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="477.10" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="479.75" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="482.40" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="485.06" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="487.71" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="490.36" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="493.01" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="495.66" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="498.31" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="500.97" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="503.62" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="506.27" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="508.92" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="511.57" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="514.23" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="516.88" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="519.53" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="522.18" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="524.83" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="527.49" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="530.14" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="532.79" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="535.44" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="538.09" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="540.75" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="543.40" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="546.05" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="548.70" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="551.35" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="554.01" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="556.66" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="559.31" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="561.96" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="564.61" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="567.27" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="569.92" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="572.57" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="575.22" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="577.87" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="580.52" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="583.18" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="585.83" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="588.48" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="591.13" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="593.78" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="596.44" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="599.09" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="601.74" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="604.39" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="607.04" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="609.70" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="612.35" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="615.00" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="617.65" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="620.30" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="622.96" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="625.61" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="628.26" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="630.91" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="633.56" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="636.22" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="638.87" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="641.52" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="644.17" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="646.82" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="649.48" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="652.13" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="654.78" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="657.43" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="660.08" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="662.73" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="665.39" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="668.04" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="670.69" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="673.34" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="675.99" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="678.65" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="681.30" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="683.95" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="686.60" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="689.25" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="691.91" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="694.56" cy="95.85" r="1.5" fill="var(--p)"/>
+<circle cx="697.21" cy="94.64" r="1.5" fill="var(--p)"/>
+<circle cx="699.86" cy="93.80" r="1.5" fill="var(--p)"/>
+<circle cx="702.51" cy="93.15" r="1.5" fill="var(--p)"/>
+<circle cx="705.17" cy="92.81" r="1.5" fill="var(--p)"/>
+<circle cx="707.82" cy="92.96" r="1.5" fill="var(--p)"/>
+<circle cx="710.47" cy="92.68" r="1.5" fill="var(--p)"/>
+<circle cx="713.12" cy="92.45" r="1.5" fill="var(--p)"/>
+<circle cx="715.77" cy="92.73" r="1.5" fill="var(--p)"/>
+<circle cx="718.43" cy="93.53" r="1.5" fill="var(--p)"/>
+<polyline class="output" stroke="var(--p)" points="694.56,95.85 697.21,94.64 699.86,93.80 702.51,93.15 705.17,92.81 707.82,92.96 710.47,92.68 713.12,92.45 715.77,92.73 718.43,93.53"/>
+<circle cx="721.08" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="723.73" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="726.38" cy="111.85" r="1.5" fill="var(--p)"/>
+<circle cx="729.03" cy="113.64" r="1.5" fill="var(--p)"/>
+<polyline class="output" stroke="var(--p)" points="726.38,111.85 729.03,113.64"/>
+<circle cx="731.69" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="734.34" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="736.99" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="739.64" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="742.29" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="744.94" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="747.60" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="750.25" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="752.90" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="755.55" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="758.20" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="760.86" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="763.51" cy="142.41" r="1.5" fill="var(--p)"/>
+<circle cx="766.16" cy="143.00" r="1.5" fill="var(--p)"/>
+<circle cx="768.81" cy="143.52" r="1.5" fill="var(--p)"/>
+<circle cx="771.46" cy="143.89" r="1.5" fill="var(--p)"/>
+<circle cx="774.12" cy="144.38" r="1.5" fill="var(--p)"/>
+<polyline class="output" stroke="var(--p)" points="763.51,142.41 766.16,143.00 768.81,143.52 771.46,143.89 774.12,144.38"/>
+<circle cx="776.77" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="779.42" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="782.07" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="784.72" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="787.38" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="790.03" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="792.68" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="795.33" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="797.98" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="800.64" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="803.29" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="805.94" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="808.59" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="811.24" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="813.90" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="816.55" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="819.20" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="821.85" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="824.50" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="827.15" cy="149.18" r="1.5" fill="var(--p)"/>
+<circle cx="829.81" cy="148.78" r="1.5" fill="var(--p)"/>
+<circle cx="832.46" cy="148.14" r="1.5" fill="var(--p)"/>
+<circle cx="835.11" cy="147.34" r="1.5" fill="var(--p)"/>
+<polyline class="output" stroke="var(--p)" points="827.15,149.18 829.81,148.78 832.46,148.14 835.11,147.34"/>
+<circle cx="837.76" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="840.41" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="843.07" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="845.72" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="848.37" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="851.02" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="853.67" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="856.33" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="858.98" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="861.63" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="864.28" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="866.93" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="869.59" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="872.24" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="874.89" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="877.54" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="880.19" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="882.85" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="885.50" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="888.15" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="890.80" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="893.45" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="896.10" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="898.76" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="901.41" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="904.06" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="906.71" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="909.36" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="912.02" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="914.67" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="917.32" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="919.97" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="922.62" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="925.28" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="927.93" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="930.58" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="933.23" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="935.88" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="938.54" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="941.19" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="943.84" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="946.49" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="949.14" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="951.80" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="954.45" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="957.10" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="959.75" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="962.40" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="965.06" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="967.71" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="970.36" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="973.01" cy="135.83" r="1.5" fill="var(--p)"/>
+<circle cx="975.66" cy="135.84" r="1.5" fill="var(--p)"/>
+<circle cx="978.31" cy="135.77" r="1.5" fill="var(--p)"/>
+<circle cx="980.97" cy="135.76" r="1.5" fill="var(--p)"/>
+<circle cx="983.62" cy="135.57" r="1.5" fill="var(--p)"/>
+<circle cx="986.27" cy="135.39" r="1.5" fill="var(--p)"/>
+<polyline class="output" stroke="var(--p)" points="973.01,135.83 975.66,135.84 978.31,135.77 980.97,135.76 983.62,135.57 986.27,135.39"/>
+<circle cx="988.92" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="991.57" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="994.23" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="996.88" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="999.53" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="1002.18" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="1004.83" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="1007.49" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="1010.14" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="1012.79" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="1015.44" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="1018.09" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="1020.75" cy="139.48" r="1.5" fill="var(--p)"/>
+<circle cx="1023.40" cy="140.06" r="1.5" fill="var(--p)"/>
+<polyline class="output" stroke="var(--p)" points="1020.75,139.48 1023.40,140.06"/>
+<circle cx="1026.05" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="1028.70" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="1031.35" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="1034.01" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="1036.66" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="1039.31" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="1041.96" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="1044.61" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="1047.27" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="1049.92" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="1052.57" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="1055.22" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="1057.87" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="1060.52" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="1063.18" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="1065.83" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="1068.48" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="1071.13" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="1073.78" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="1076.44" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="1079.09" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="1081.74" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="1084.39" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<text x="18" y="257" font-weight="700">RAW_FULL</text>
+<text x="18" y="276" class="small">F0 (Hz)</text>
+<line class="grid" x1="135" x2="1095" y1="378.00" y2="378.00"/>
+<text x="127" y="382.00" text-anchor="end" class="small">0</text>
+<line class="grid" x1="135" x2="1095" y1="343.25" y2="343.25"/>
+<text x="127" y="347.25" text-anchor="end" class="small">50</text>
+<line class="grid" x1="135" x2="1095" y1="308.50" y2="308.50"/>
+<text x="127" y="312.50" text-anchor="end" class="small">100</text>
+<line class="grid" x1="135" x2="1095" y1="273.75" y2="273.75"/>
+<text x="127" y="277.75" text-anchor="end" class="small">150</text>
+<line class="grid" x1="135" x2="1095" y1="239.00" y2="239.00"/>
+<text x="127" y="243.00" text-anchor="end" class="small">200</text>
+<line class="grid" x1="135.00" x2="135.00" y1="239" y2="378"/>
+<line class="grid" x1="255.00" x2="255.00" y1="239" y2="378"/>
+<line class="grid" x1="375.00" x2="375.00" y1="239" y2="378"/>
+<line class="grid" x1="495.00" x2="495.00" y1="239" y2="378"/>
+<line class="grid" x1="615.00" x2="615.00" y1="239" y2="378"/>
+<line class="grid" x1="735.00" x2="735.00" y1="239" y2="378"/>
+<line class="grid" x1="855.00" x2="855.00" y1="239" y2="378"/>
+<line class="grid" x1="975.00" x2="975.00" y1="239" y2="378"/>
+<line class="grid" x1="1095.00" x2="1095.00" y1="239" y2="378"/>
+<circle cx="145.61" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="148.26" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="150.91" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="153.56" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="156.22" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="158.87" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="161.52" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="164.17" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="166.82" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="169.48" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="172.13" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="174.78" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="177.43" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="180.08" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="182.73" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="185.39" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="188.04" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="190.69" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="193.34" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="195.99" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="198.65" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="201.30" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="203.95" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="206.60" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="209.25" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="211.91" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="214.56" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="217.21" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="219.86" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="222.51" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="225.17" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="227.82" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="230.47" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="233.12" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="235.77" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="238.43" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="241.08" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="243.73" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="246.38" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="249.03" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="251.69" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="254.34" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="256.99" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="259.64" cy="280.72" r="1.5" fill="var(--expected)"/>
+<circle cx="262.29" cy="280.18" r="1.5" fill="var(--expected)"/>
+<circle cx="264.94" cy="279.75" r="1.5" fill="var(--expected)"/>
+<circle cx="267.60" cy="279.09" r="1.5" fill="var(--expected)"/>
+<circle cx="270.25" cy="278.55" r="1.5" fill="var(--expected)"/>
+<circle cx="272.90" cy="277.86" r="1.5" fill="var(--expected)"/>
+<circle cx="275.55" cy="276.68" r="1.5" fill="var(--expected)"/>
+<polyline class="expected" stroke="var(--expected)" points="259.64,280.72 262.29,280.18 264.94,279.75 267.60,279.09 270.25,278.55 272.90,277.86 275.55,276.68"/>
+<circle cx="278.20" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="280.86" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="283.51" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="286.16" cy="269.18" r="1.5" fill="var(--expected)"/>
+<circle cx="288.81" cy="269.48" r="1.5" fill="var(--expected)"/>
+<polyline class="expected" stroke="var(--expected)" points="286.16,269.18 288.81,269.48"/>
+<circle cx="291.46" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="294.12" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="296.77" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="299.42" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="302.07" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="304.72" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="307.38" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="310.03" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="312.68" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="315.33" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="317.98" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="320.64" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="323.29" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="325.94" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="328.59" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="331.24" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="333.90" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="336.55" cy="320.93" r="1.5" fill="var(--expected)"/>
+<circle cx="339.20" cy="321.46" r="1.5" fill="var(--expected)"/>
+<circle cx="341.85" cy="321.75" r="1.5" fill="var(--expected)"/>
+<polyline class="expected" stroke="var(--expected)" points="336.55,320.93 339.20,321.46 341.85,321.75"/>
+<circle cx="344.50" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="347.15" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="349.81" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="352.46" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="355.11" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="357.76" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="360.41" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="363.07" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="365.72" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="368.37" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="371.02" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="373.67" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="376.33" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="378.98" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="381.63" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="384.28" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="386.93" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="389.59" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="392.24" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="394.89" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="397.54" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="400.19" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="402.85" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="405.50" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="408.15" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="410.80" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="413.45" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="416.10" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="418.76" cy="323.89" r="1.5" fill="var(--expected)"/>
+<circle cx="421.41" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="424.06" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="426.71" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="429.36" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="432.02" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="434.67" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="437.32" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="439.97" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="442.62" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="445.28" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="447.93" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="450.58" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="453.23" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="455.88" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="458.54" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="461.19" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="463.84" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="466.49" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="469.14" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="471.80" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="474.45" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="477.10" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="479.75" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="482.40" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="485.06" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="487.71" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="490.36" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="493.01" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="495.66" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="498.31" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="500.97" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="503.62" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="506.27" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="508.92" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="511.57" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="514.23" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="516.88" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="519.53" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="522.18" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="524.83" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="527.49" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="530.14" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="532.79" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="535.44" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="538.09" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="540.75" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="543.40" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="546.05" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="548.70" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="551.35" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="554.01" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="556.66" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="559.31" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="561.96" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="564.61" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="567.27" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="569.92" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="572.57" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="575.22" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="577.87" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="580.52" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="583.18" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="585.83" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="588.48" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="591.13" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="593.78" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="596.44" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="599.09" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="601.74" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="604.39" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="607.04" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="609.70" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="612.35" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="615.00" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="617.65" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="620.30" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="622.96" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="625.61" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="628.26" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="630.91" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="633.56" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="636.22" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="638.87" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="641.52" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="644.17" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="646.82" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="649.48" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="652.13" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="654.78" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="657.43" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="660.08" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="662.73" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="665.39" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="668.04" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="670.69" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="673.34" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="675.99" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="678.65" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="681.30" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="683.95" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="686.60" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="689.25" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="691.91" cy="263.97" r="1.5" fill="var(--expected)"/>
+<circle cx="694.56" cy="262.55" r="1.5" fill="var(--expected)"/>
+<circle cx="697.21" cy="261.66" r="1.5" fill="var(--expected)"/>
+<circle cx="699.86" cy="260.95" r="1.5" fill="var(--expected)"/>
+<circle cx="702.51" cy="260.36" r="1.5" fill="var(--expected)"/>
+<circle cx="705.17" cy="260.11" r="1.5" fill="var(--expected)"/>
+<circle cx="707.82" cy="259.94" r="1.5" fill="var(--expected)"/>
+<circle cx="710.47" cy="259.60" r="1.5" fill="var(--expected)"/>
+<circle cx="713.12" cy="259.33" r="1.5" fill="var(--expected)"/>
+<circle cx="715.77" cy="259.61" r="1.5" fill="var(--expected)"/>
+<circle cx="718.43" cy="260.36" r="1.5" fill="var(--expected)"/>
+<polyline class="expected" stroke="var(--expected)" points="691.91,263.97 694.56,262.55 697.21,261.66 699.86,260.95 702.51,260.36 705.17,260.11 707.82,259.94 710.47,259.60 713.12,259.33 715.77,259.61 718.43,260.36"/>
+<circle cx="721.08" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="723.73" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="726.38" cy="279.15" r="1.5" fill="var(--expected)"/>
+<circle cx="729.03" cy="281.55" r="1.5" fill="var(--expected)"/>
+<circle cx="731.69" cy="283.31" r="1.5" fill="var(--expected)"/>
+<polyline class="expected" stroke="var(--expected)" points="726.38,279.15 729.03,281.55 731.69,283.31"/>
+<circle cx="734.34" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="736.99" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="739.64" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="742.29" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="744.94" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="747.60" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="750.25" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="752.90" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="755.55" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="758.20" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="760.86" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="763.51" cy="309.17" r="1.5" fill="var(--expected)"/>
+<circle cx="766.16" cy="310.03" r="1.5" fill="var(--expected)"/>
+<circle cx="768.81" cy="310.59" r="1.5" fill="var(--expected)"/>
+<circle cx="771.46" cy="310.97" r="1.5" fill="var(--expected)"/>
+<circle cx="774.12" cy="311.28" r="1.5" fill="var(--expected)"/>
+<circle cx="776.77" cy="311.79" r="1.5" fill="var(--expected)"/>
+<polyline class="expected" stroke="var(--expected)" points="763.51,309.17 766.16,310.03 768.81,310.59 771.46,310.97 774.12,311.28 776.77,311.79"/>
+<circle cx="779.42" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="782.07" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="784.72" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="787.38" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="790.03" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="792.68" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="795.33" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="797.98" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="800.64" cy="318.37" r="1.5" fill="var(--expected)"/>
+<circle cx="803.29" cy="319.02" r="1.5" fill="var(--expected)"/>
+<circle cx="805.94" cy="319.86" r="1.5" fill="var(--expected)"/>
+<circle cx="808.59" cy="320.63" r="1.5" fill="var(--expected)"/>
+<polyline class="expected" stroke="var(--expected)" points="800.64,318.37 803.29,319.02 805.94,319.86 808.59,320.63"/>
+<circle cx="811.24" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="813.90" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="816.55" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="819.20" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="821.85" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="824.50" cy="316.39" r="1.5" fill="var(--expected)"/>
+<circle cx="827.15" cy="315.81" r="1.5" fill="var(--expected)"/>
+<circle cx="829.81" cy="315.28" r="1.5" fill="var(--expected)"/>
+<circle cx="832.46" cy="314.66" r="1.5" fill="var(--expected)"/>
+<circle cx="835.11" cy="313.81" r="1.5" fill="var(--expected)"/>
+<polyline class="expected" stroke="var(--expected)" points="824.50,316.39 827.15,315.81 829.81,315.28 832.46,314.66 835.11,313.81"/>
+<circle cx="837.76" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="840.41" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="843.07" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="845.72" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="848.37" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="851.02" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="853.67" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="856.33" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="858.98" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="861.63" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="864.28" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="866.93" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="869.59" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="872.24" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="874.89" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="877.54" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="880.19" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="882.85" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="885.50" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="888.15" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="890.80" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="893.45" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="896.10" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="898.76" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="901.41" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="904.06" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="906.71" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="909.36" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="912.02" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="914.67" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="917.32" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="919.97" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="922.62" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="925.28" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="927.93" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="930.58" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="933.23" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="935.88" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="938.54" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="941.19" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="943.84" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="946.49" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="949.14" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="951.80" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="954.45" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="957.10" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="959.75" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="962.40" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="965.06" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="967.71" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="970.36" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="973.01" cy="302.80" r="1.5" fill="var(--expected)"/>
+<circle cx="975.66" cy="302.77" r="1.5" fill="var(--expected)"/>
+<circle cx="978.31" cy="302.69" r="1.5" fill="var(--expected)"/>
+<circle cx="980.97" cy="302.60" r="1.5" fill="var(--expected)"/>
+<circle cx="983.62" cy="302.40" r="1.5" fill="var(--expected)"/>
+<circle cx="986.27" cy="302.41" r="1.5" fill="var(--expected)"/>
+<polyline class="expected" stroke="var(--expected)" points="973.01,302.80 975.66,302.77 978.31,302.69 980.97,302.60 983.62,302.40 986.27,302.41"/>
+<circle cx="988.92" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="991.57" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="994.23" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="996.88" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="999.53" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="1002.18" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="1004.83" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="1007.49" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="1010.14" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="1012.79" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="1015.44" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="1018.09" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="1020.75" cy="305.48" r="1.5" fill="var(--expected)"/>
+<circle cx="1023.40" cy="307.12" r="1.5" fill="var(--expected)"/>
+<polyline class="expected" stroke="var(--expected)" points="1020.75,305.48 1023.40,307.12"/>
+<circle cx="1026.05" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="1028.70" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="1031.35" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="1034.01" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="1036.66" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="1039.31" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="1041.96" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="1044.61" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="1047.27" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="1049.92" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="1052.57" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="1055.22" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="1057.87" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="1060.52" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="1063.18" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="1065.83" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="1068.48" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="1071.13" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="1073.78" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="1076.44" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="1079.09" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="1081.74" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="1084.39" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="145.61" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="148.26" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="150.91" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="153.56" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="156.22" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="158.87" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="161.52" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="164.17" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="166.82" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="169.48" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="172.13" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="174.78" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="177.43" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="180.08" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="182.73" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="185.39" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="188.04" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="190.69" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="193.34" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="195.99" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="198.65" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="201.30" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="203.95" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="206.60" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="209.25" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="211.91" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="214.56" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="217.21" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="219.86" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="222.51" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="225.17" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="227.82" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="230.47" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="233.12" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="235.77" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="238.43" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="241.08" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="243.73" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="246.38" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="249.03" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="251.69" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="254.34" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="256.99" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="259.64" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="262.29" cy="280.28" r="1.5" fill="var(--r)"/>
+<circle cx="264.94" cy="279.71" r="1.5" fill="var(--r)"/>
+<circle cx="267.60" cy="279.26" r="1.5" fill="var(--r)"/>
+<circle cx="270.25" cy="278.70" r="1.5" fill="var(--r)"/>
+<circle cx="272.90" cy="278.04" r="1.5" fill="var(--r)"/>
+<circle cx="275.55" cy="276.89" r="1.5" fill="var(--r)"/>
+<polyline class="output" stroke="var(--r)" points="262.29,280.28 264.94,279.71 267.60,279.26 270.25,278.70 272.90,278.04 275.55,276.89"/>
+<circle cx="278.20" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="280.86" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="283.51" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="286.16" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="288.81" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="291.46" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="294.12" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="296.77" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="299.42" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="302.07" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="304.72" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="307.38" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="310.03" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="312.68" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="315.33" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="317.98" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="320.64" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="323.29" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="325.94" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="328.59" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="331.24" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="333.90" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="336.55" cy="320.53" r="1.5" fill="var(--r)"/>
+<circle cx="339.20" cy="321.36" r="1.5" fill="var(--r)"/>
+<circle cx="341.85" cy="321.67" r="1.5" fill="var(--r)"/>
+<polyline class="output" stroke="var(--r)" points="336.55,320.53 339.20,321.36 341.85,321.67"/>
+<circle cx="344.50" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="347.15" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="349.81" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="352.46" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="355.11" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="357.76" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="360.41" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="363.07" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="365.72" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="368.37" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="371.02" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="373.67" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="376.33" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="378.98" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="381.63" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="384.28" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="386.93" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="389.59" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="392.24" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="394.89" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="397.54" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="400.19" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="402.85" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="405.50" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="408.15" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="410.80" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="413.45" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="416.10" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="418.76" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="421.41" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="424.06" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="426.71" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="429.36" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="432.02" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="434.67" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="437.32" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="439.97" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="442.62" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="445.28" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="447.93" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="450.58" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="453.23" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="455.88" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="458.54" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="461.19" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="463.84" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="466.49" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="469.14" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="471.80" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="474.45" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="477.10" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="479.75" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="482.40" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="485.06" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="487.71" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="490.36" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="493.01" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="495.66" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="498.31" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="500.97" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="503.62" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="506.27" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="508.92" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="511.57" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="514.23" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="516.88" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="519.53" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="522.18" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="524.83" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="527.49" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="530.14" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="532.79" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="535.44" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="538.09" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="540.75" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="543.40" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="546.05" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="548.70" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="551.35" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="554.01" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="556.66" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="559.31" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="561.96" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="564.61" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="567.27" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="569.92" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="572.57" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="575.22" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="577.87" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="580.52" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="583.18" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="585.83" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="588.48" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="591.13" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="593.78" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="596.44" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="599.09" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="601.74" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="604.39" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="607.04" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="609.70" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="612.35" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="615.00" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="617.65" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="620.30" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="622.96" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="625.61" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="628.26" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="630.91" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="633.56" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="636.22" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="638.87" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="641.52" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="644.17" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="646.82" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="649.48" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="652.13" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="654.78" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="657.43" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="660.08" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="662.73" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="665.39" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="668.04" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="670.69" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="673.34" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="675.99" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="678.65" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="681.30" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="683.95" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="686.60" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="689.25" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="691.91" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="694.56" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="697.21" cy="261.55" r="1.5" fill="var(--r)"/>
+<circle cx="699.86" cy="260.80" r="1.5" fill="var(--r)"/>
+<circle cx="702.51" cy="260.15" r="1.5" fill="var(--r)"/>
+<circle cx="705.17" cy="259.81" r="1.5" fill="var(--r)"/>
+<circle cx="707.82" cy="259.96" r="1.5" fill="var(--r)"/>
+<circle cx="710.47" cy="259.68" r="1.5" fill="var(--r)"/>
+<circle cx="713.12" cy="259.45" r="1.5" fill="var(--r)"/>
+<circle cx="715.77" cy="259.73" r="1.5" fill="var(--r)"/>
+<circle cx="718.43" cy="260.53" r="1.5" fill="var(--r)"/>
+<polyline class="output" stroke="var(--r)" points="697.21,261.55 699.86,260.80 702.51,260.15 705.17,259.81 707.82,259.96 710.47,259.68 713.12,259.45 715.77,259.73 718.43,260.53"/>
+<circle cx="721.08" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="723.73" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="726.38" cy="278.84" r="1.5" fill="var(--r)"/>
+<circle cx="729.03" cy="280.64" r="1.5" fill="var(--r)"/>
+<polyline class="output" stroke="var(--r)" points="726.38,278.84 729.03,280.64"/>
+<circle cx="731.69" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="734.34" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="736.99" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="739.64" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="742.29" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="744.94" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="747.60" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="750.25" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="752.90" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="755.55" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="758.20" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="760.86" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="763.51" cy="309.41" r="1.5" fill="var(--r)"/>
+<circle cx="766.16" cy="310.00" r="1.5" fill="var(--r)"/>
+<circle cx="768.81" cy="310.52" r="1.5" fill="var(--r)"/>
+<circle cx="771.46" cy="310.89" r="1.5" fill="var(--r)"/>
+<circle cx="774.12" cy="311.38" r="1.5" fill="var(--r)"/>
+<polyline class="output" stroke="var(--r)" points="763.51,309.41 766.16,310.00 768.81,310.52 771.46,310.89 774.12,311.38"/>
+<circle cx="776.77" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="779.42" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="782.07" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="784.72" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="787.38" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="790.03" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="792.68" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="795.33" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="797.98" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="800.64" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="803.29" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="805.94" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="808.59" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="811.24" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="813.90" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="816.55" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="819.20" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="821.85" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="824.50" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="827.15" cy="316.18" r="1.5" fill="var(--r)"/>
+<circle cx="829.81" cy="315.78" r="1.5" fill="var(--r)"/>
+<circle cx="832.46" cy="315.14" r="1.5" fill="var(--r)"/>
+<circle cx="835.11" cy="314.34" r="1.5" fill="var(--r)"/>
+<polyline class="output" stroke="var(--r)" points="827.15,316.18 829.81,315.78 832.46,315.14 835.11,314.34"/>
+<circle cx="837.76" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="840.41" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="843.07" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="845.72" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="848.37" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="851.02" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="853.67" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="856.33" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="858.98" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="861.63" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="864.28" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="866.93" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="869.59" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="872.24" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="874.89" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="877.54" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="880.19" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="882.85" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="885.50" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="888.15" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="890.80" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="893.45" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="896.10" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="898.76" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="901.41" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="904.06" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="906.71" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="909.36" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="912.02" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="914.67" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="917.32" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="919.97" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="922.62" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="925.28" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="927.93" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="930.58" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="933.23" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="935.88" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="938.54" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="941.19" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="943.84" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="946.49" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="949.14" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="951.80" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="954.45" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="957.10" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="959.75" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="962.40" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="965.06" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="967.71" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="970.36" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="973.01" cy="302.83" r="1.5" fill="var(--r)"/>
+<circle cx="975.66" cy="302.84" r="1.5" fill="var(--r)"/>
+<circle cx="978.31" cy="302.78" r="1.5" fill="var(--r)"/>
+<circle cx="980.97" cy="302.77" r="1.5" fill="var(--r)"/>
+<circle cx="983.62" cy="302.58" r="1.5" fill="var(--r)"/>
+<circle cx="986.27" cy="302.38" r="1.5" fill="var(--r)"/>
+<polyline class="output" stroke="var(--r)" points="973.01,302.83 975.66,302.84 978.31,302.78 980.97,302.77 983.62,302.58 986.27,302.38"/>
+<circle cx="988.92" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="991.57" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="994.23" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="996.88" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="999.53" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="1002.18" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="1004.83" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="1007.49" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="1010.14" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="1012.79" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="1015.44" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="1018.09" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="1020.75" cy="306.47" r="1.5" fill="var(--r)"/>
+<circle cx="1023.40" cy="307.06" r="1.5" fill="var(--r)"/>
+<polyline class="output" stroke="var(--r)" points="1020.75,306.47 1023.40,307.06"/>
+<circle cx="1026.05" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="1028.70" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="1031.35" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="1034.01" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="1036.66" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="1039.31" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="1041.96" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="1044.61" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="1047.27" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="1049.92" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="1052.57" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="1055.22" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="1057.87" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="1060.52" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="1063.18" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="1065.83" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="1068.48" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="1071.13" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="1073.78" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="1076.44" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="1079.09" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="1081.74" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="1084.39" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<text x="126" y="416" text-anchor="end" class="small">期待 PML</text>
+<rect x="135" y="403" width="960" height="17" fill="var(--bg)"/>
+<rect x="144.28" y="403" width="114.03" height="17" fill="var(--faint)"/>
+<rect x="258.31" y="403" width="18.56" height="17" fill="var(--common)"/>
+<rect x="276.88" y="403" width="7.96" height="17" fill="var(--faint)"/>
+<rect x="284.83" y="403" width="5.30" height="17" fill="var(--common)"/>
+<rect x="290.14" y="403" width="45.08" height="17" fill="var(--faint)"/>
+<rect x="335.22" y="403" width="7.96" height="17" fill="var(--common)"/>
+<rect x="343.18" y="403" width="74.25" height="17" fill="var(--faint)"/>
+<rect x="417.43" y="403" width="2.65" height="17" fill="var(--common)"/>
+<rect x="420.08" y="403" width="273.15" height="17" fill="var(--faint)"/>
+<rect x="693.23" y="403" width="26.52" height="17" fill="var(--common)"/>
+<rect x="719.75" y="403" width="5.30" height="17" fill="var(--faint)"/>
+<rect x="725.06" y="403" width="7.96" height="17" fill="var(--common)"/>
+<rect x="733.01" y="403" width="29.17" height="17" fill="var(--faint)"/>
+<rect x="762.18" y="403" width="15.91" height="17" fill="var(--common)"/>
+<rect x="778.09" y="403" width="21.22" height="17" fill="var(--faint)"/>
+<rect x="799.31" y="403" width="10.61" height="17" fill="var(--common)"/>
+<rect x="809.92" y="403" width="13.26" height="17" fill="var(--faint)"/>
+<rect x="823.18" y="403" width="13.26" height="17" fill="var(--common)"/>
+<rect x="836.44" y="403" width="135.25" height="17" fill="var(--faint)"/>
+<rect x="971.69" y="403" width="15.91" height="17" fill="var(--common)"/>
+<rect x="987.60" y="403" width="31.82" height="17" fill="var(--faint)"/>
+<rect x="1019.42" y="403" width="5.30" height="17" fill="var(--common)"/>
+<rect x="1024.72" y="403" width="60.99" height="17" fill="var(--faint)"/>
+<text x="126" y="441" text-anchor="end" class="small">期待 RAW_FULL</text>
+<rect x="135" y="428" width="960" height="17" fill="var(--bg)"/>
+<rect x="144.28" y="428" width="114.03" height="17" fill="var(--faint)"/>
+<rect x="258.31" y="428" width="18.56" height="17" fill="var(--common)"/>
+<rect x="276.88" y="428" width="7.96" height="17" fill="var(--faint)"/>
+<rect x="284.83" y="428" width="5.30" height="17" fill="var(--common)"/>
+<rect x="290.14" y="428" width="45.08" height="17" fill="var(--faint)"/>
+<rect x="335.22" y="428" width="7.96" height="17" fill="var(--common)"/>
+<rect x="343.18" y="428" width="74.25" height="17" fill="var(--faint)"/>
+<rect x="417.43" y="428" width="2.65" height="17" fill="var(--common)"/>
+<rect x="420.08" y="428" width="270.50" height="17" fill="var(--faint)"/>
+<rect x="690.58" y="428" width="29.17" height="17" fill="var(--common)"/>
+<rect x="719.75" y="428" width="5.30" height="17" fill="var(--faint)"/>
+<rect x="725.06" y="428" width="7.96" height="17" fill="var(--common)"/>
+<rect x="733.01" y="428" width="29.17" height="17" fill="var(--faint)"/>
+<rect x="762.18" y="428" width="15.91" height="17" fill="var(--common)"/>
+<rect x="778.09" y="428" width="21.22" height="17" fill="var(--faint)"/>
+<rect x="799.31" y="428" width="10.61" height="17" fill="var(--common)"/>
+<rect x="809.92" y="428" width="13.26" height="17" fill="var(--faint)"/>
+<rect x="823.18" y="428" width="13.26" height="17" fill="var(--common)"/>
+<rect x="836.44" y="428" width="135.25" height="17" fill="var(--faint)"/>
+<rect x="971.69" y="428" width="15.91" height="17" fill="var(--common)"/>
+<rect x="987.60" y="428" width="31.82" height="17" fill="var(--faint)"/>
+<rect x="1019.42" y="428" width="5.30" height="17" fill="var(--common)"/>
+<rect x="1024.72" y="428" width="60.99" height="17" fill="var(--faint)"/>
+<text x="126" y="466" text-anchor="end" class="small">期待集合の区分</text>
+<rect x="135" y="453" width="960" height="17" fill="var(--bg)"/>
+<rect x="144.28" y="453" width="114.03" height="17" fill="var(--faint)"/>
+<rect x="258.31" y="453" width="18.56" height="17" fill="var(--common)"/>
+<rect x="276.88" y="453" width="7.96" height="17" fill="var(--faint)"/>
+<rect x="284.83" y="453" width="5.30" height="17" fill="var(--common)"/>
+<rect x="290.14" y="453" width="45.08" height="17" fill="var(--faint)"/>
+<rect x="335.22" y="453" width="7.96" height="17" fill="var(--common)"/>
+<rect x="343.18" y="453" width="74.25" height="17" fill="var(--faint)"/>
+<rect x="417.43" y="453" width="2.65" height="17" fill="var(--common)"/>
+<rect x="420.08" y="453" width="270.50" height="17" fill="var(--faint)"/>
+<rect x="690.58" y="453" width="2.65" height="17" fill="var(--r)"/>
+<rect x="693.23" y="453" width="26.52" height="17" fill="var(--common)"/>
+<rect x="719.75" y="453" width="5.30" height="17" fill="var(--faint)"/>
+<rect x="725.06" y="453" width="7.96" height="17" fill="var(--common)"/>
+<rect x="733.01" y="453" width="29.17" height="17" fill="var(--faint)"/>
+<rect x="762.18" y="453" width="15.91" height="17" fill="var(--common)"/>
+<rect x="778.09" y="453" width="21.22" height="17" fill="var(--faint)"/>
+<rect x="799.31" y="453" width="10.61" height="17" fill="var(--common)"/>
+<rect x="809.92" y="453" width="13.26" height="17" fill="var(--faint)"/>
+<rect x="823.18" y="453" width="13.26" height="17" fill="var(--common)"/>
+<rect x="836.44" y="453" width="135.25" height="17" fill="var(--faint)"/>
+<rect x="971.69" y="453" width="15.91" height="17" fill="var(--common)"/>
+<rect x="987.60" y="453" width="31.82" height="17" fill="var(--faint)"/>
+<rect x="1019.42" y="453" width="5.30" height="17" fill="var(--common)"/>
+<rect x="1024.72" y="453" width="60.99" height="17" fill="var(--faint)"/>
+<text x="126" y="491" text-anchor="end" class="small">出力>0 PML</text>
+<rect x="135" y="478" width="960" height="17" fill="var(--bg)"/>
+<rect x="144.28" y="478" width="116.69" height="17" fill="var(--faint)"/>
+<rect x="260.97" y="478" width="15.91" height="17" fill="var(--p)"/>
+<rect x="276.88" y="478" width="58.34" height="17" fill="var(--faint)"/>
+<rect x="335.22" y="478" width="7.96" height="17" fill="var(--p)"/>
+<rect x="343.18" y="478" width="350.06" height="17" fill="var(--faint)"/>
+<rect x="693.23" y="478" width="26.52" height="17" fill="var(--p)"/>
+<rect x="719.75" y="478" width="5.30" height="17" fill="var(--faint)"/>
+<rect x="725.06" y="478" width="5.30" height="17" fill="var(--p)"/>
+<rect x="730.36" y="478" width="31.82" height="17" fill="var(--faint)"/>
+<rect x="762.18" y="478" width="13.26" height="17" fill="var(--p)"/>
+<rect x="775.44" y="478" width="50.39" height="17" fill="var(--faint)"/>
+<rect x="825.83" y="478" width="10.61" height="17" fill="var(--p)"/>
+<rect x="836.44" y="478" width="135.25" height="17" fill="var(--faint)"/>
+<rect x="971.69" y="478" width="15.91" height="17" fill="var(--p)"/>
+<rect x="987.60" y="478" width="31.82" height="17" fill="var(--faint)"/>
+<rect x="1019.42" y="478" width="5.30" height="17" fill="var(--p)"/>
+<rect x="1024.72" y="478" width="60.99" height="17" fill="var(--faint)"/>
+<text x="126" y="516" text-anchor="end" class="small">出力>0 RAW_FULL</text>
+<rect x="135" y="503" width="960" height="17" fill="var(--bg)"/>
+<rect x="144.28" y="503" width="116.69" height="17" fill="var(--faint)"/>
+<rect x="260.97" y="503" width="15.91" height="17" fill="var(--r)"/>
+<rect x="276.88" y="503" width="58.34" height="17" fill="var(--faint)"/>
+<rect x="335.22" y="503" width="7.96" height="17" fill="var(--r)"/>
+<rect x="343.18" y="503" width="352.71" height="17" fill="var(--faint)"/>
+<rect x="695.88" y="503" width="23.87" height="17" fill="var(--r)"/>
+<rect x="719.75" y="503" width="5.30" height="17" fill="var(--faint)"/>
+<rect x="725.06" y="503" width="5.30" height="17" fill="var(--r)"/>
+<rect x="730.36" y="503" width="31.82" height="17" fill="var(--faint)"/>
+<rect x="762.18" y="503" width="13.26" height="17" fill="var(--r)"/>
+<rect x="775.44" y="503" width="50.39" height="17" fill="var(--faint)"/>
+<rect x="825.83" y="503" width="10.61" height="17" fill="var(--r)"/>
+<rect x="836.44" y="503" width="135.25" height="17" fill="var(--faint)"/>
+<rect x="971.69" y="503" width="15.91" height="17" fill="var(--r)"/>
+<rect x="987.60" y="503" width="31.82" height="17" fill="var(--faint)"/>
+<rect x="1019.42" y="503" width="5.30" height="17" fill="var(--r)"/>
+<rect x="1024.72" y="503" width="60.99" height="17" fill="var(--faint)"/>
+<text x="126" y="541" text-anchor="end" class="small">共通部の出力判定</text>
+<rect x="135" y="528" width="960" height="17" fill="var(--bg)"/>
+<rect x="144.28" y="528" width="114.03" height="17" fill="var(--faint)"/>
+<rect x="258.31" y="528" width="2.65" height="17" fill="var(--missing)"/>
+<rect x="260.97" y="528" width="15.91" height="17" fill="var(--common)"/>
+<rect x="276.88" y="528" width="7.96" height="17" fill="var(--faint)"/>
+<rect x="284.83" y="528" width="5.30" height="17" fill="var(--missing)"/>
+<rect x="290.14" y="528" width="45.08" height="17" fill="var(--faint)"/>
+<rect x="335.22" y="528" width="7.96" height="17" fill="var(--common)"/>
+<rect x="343.18" y="528" width="74.25" height="17" fill="var(--faint)"/>
+<rect x="417.43" y="528" width="2.65" height="17" fill="var(--missing)"/>
+<rect x="420.08" y="528" width="273.15" height="17" fill="var(--faint)"/>
+<rect x="693.23" y="528" width="2.65" height="17" fill="var(--p)"/>
+<rect x="695.88" y="528" width="23.87" height="17" fill="var(--common)"/>
+<rect x="719.75" y="528" width="5.30" height="17" fill="var(--faint)"/>
+<rect x="725.06" y="528" width="5.30" height="17" fill="var(--common)"/>
+<rect x="730.36" y="528" width="2.65" height="17" fill="var(--missing)"/>
+<rect x="733.01" y="528" width="29.17" height="17" fill="var(--faint)"/>
+<rect x="762.18" y="528" width="13.26" height="17" fill="var(--common)"/>
+<rect x="775.44" y="528" width="2.65" height="17" fill="var(--missing)"/>
+<rect x="778.09" y="528" width="21.22" height="17" fill="var(--faint)"/>
+<rect x="799.31" y="528" width="10.61" height="17" fill="var(--missing)"/>
+<rect x="809.92" y="528" width="13.26" height="17" fill="var(--faint)"/>
+<rect x="823.18" y="528" width="2.65" height="17" fill="var(--missing)"/>
+<rect x="825.83" y="528" width="10.61" height="17" fill="var(--common)"/>
+<rect x="836.44" y="528" width="135.25" height="17" fill="var(--faint)"/>
+<rect x="971.69" y="528" width="15.91" height="17" fill="var(--common)"/>
+<rect x="987.60" y="528" width="31.82" height="17" fill="var(--faint)"/>
+<rect x="1019.42" y="528" width="5.30" height="17" fill="var(--common)"/>
+<rect x="1024.72" y="528" width="60.99" height="17" fill="var(--faint)"/>
+<text x="135.00" y="567" text-anchor="middle" class="small">0.00</text>
+<text x="255.00" y="567" text-anchor="middle" class="small">0.45</text>
+<text x="375.00" y="567" text-anchor="middle" class="small">0.91</text>
+<text x="495.00" y="567" text-anchor="middle" class="small">1.36</text>
+<text x="615.00" y="567" text-anchor="middle" class="small">1.81</text>
+<text x="735.00" y="567" text-anchor="middle" class="small">2.26</text>
+<text x="855.00" y="567" text-anchor="middle" class="small">2.71</text>
+<text x="975.00" y="567" text-anchor="middle" class="small">3.17</text>
+<text x="1095.00" y="567" text-anchor="middle" class="small">3.62</text>
+<text x="615" y="588" text-anchor="middle">元抜粋内の窓中心時刻 (s) — crop開始を0へ移していない</text>
+<text x="18" y="610" class="small">期待 PML / RAW_FULL：紫=当該方式の期待有声、灰=期待無声、赤=期待範囲外。</text>
+<text x="18" y="630" class="small">期待集合の区分：紫=共通、青=PMLのみ、橙=RAW_FULLのみ、灰=どちらにも属さない。</text>
+<text x="18" y="650" class="small">出力&gt;0 PML / RAW_FULL：青／橙=当該方式の出力F0&gt;0、灰=出力F0=0。</text>
+<text x="18" y="670" class="small">共通部の出力判定：紫=両方&gt;0、青=PMLのみ&gt;0、橙=RAWのみ&gt;0、桃=両方0、灰=共通集合外。</text>
+<text x="18" y="690" class="small">帯幅10 msは表示用。点のない両端はframe未配置。実音の有声境界ではない。0 Hz点は線で結ばない。保存時間支持外は全条件0。</text>
+</svg>
