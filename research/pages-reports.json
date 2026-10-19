@@ -1265,6 +1265,40 @@
           }
         ]
       }
+    },
+    {
+      "kind": "navigation-only",
+      "id": "clock-event-variance-2026-10-20",
+      "path": "research/clock-event-variance-2026-10-20",
+      "source_path": "experiments/2026-10-20/clock-event-variance/results/run-001",
+      "created_on": "2026-10-19",
+      "created_at": "2026-10-19T19:38:44.700599+00:00",
+      "title": "周期雑音と短い雑音の分離：平均変化の誤帰属と24人工条件",
+      "comparison_scope": "24ケース・240合成出力は全ok。C5平均変化を周期雑音へ誤帰属。PML raw F0 fallback 5/24。提案の既知位相・HとPML/WORLD通常APIの条件差があり品質順位ではない。現PML維持。",
+      "artifact_count": 295,
+      "artifact_manifest": {
+        "bytes": 48631,
+        "sha256": "e562cd8a930df6e324a65edcdf8f0c5d63d76a7612518cfcec5c1f11c4fe5fec"
+      },
+      "audio_listing": {
+        "caption": "人工音C5・入力seed 0、各0.256秒。平均変化の帰属失敗例を原入力・PML・提案で比較。",
+        "note": "無編集120 Hz・復号seed 0。PCM16量子化のみ、clip・正規化なし。WORLDを含む全条件は詳細へ。",
+        "attribution_path": "audio_credits.html",
+        "samples": [
+          {
+            "path": "audio/40da4c79198b8bf8d00b.wav",
+            "label": "原入力（人工音）"
+          },
+          {
+            "path": "audio/261f8032fe39a9e80aef.wav",
+            "label": "現PML・無編集 seed 0"
+          },
+          {
+            "path": "audio/11df9a3464232eb8866e.wav",
+            "label": "提案・無編集 seed 0（帰属失敗例）"
+          }
+        ]
+      }
     }
   ]
 }

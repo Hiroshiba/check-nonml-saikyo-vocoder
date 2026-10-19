@@ -2,7 +2,7 @@
 
 2026-10-19 UTC（2026-10-20 JST）。対象：[Hiroshiba/check-nonml-saikyo-vocoder](https://github.com/Hiroshiba/check-nonml-saikyo-vocoder)。基点は[PR #63](https://github.com/Hiroshiba/check-nonml-saikyo-vocoder/pull/63)マージ後の[main 113ac2dc](https://github.com/Hiroshiba/check-nonml-saikyo-vocoder/commit/113ac2dc65a7ac8fd383097802b4715139f847ce)。
 
-**本記録は文献・公開実装の調査を整理した方式選定である。新しい音声実験の結果ではない。現base `pml-lowband-fwcep60-v1` を維持し、RAW_FULLは採用していない。** 以下の試作は計画段階で、完成codec、音質改善、自然音声での分離成功、48 kHz対応を主張しない。
+**本記録は文献・公開実装の調査を整理した方式選定である。新しい音声実験の結果ではない。現base `pml-lowband-fwcep60-v1` を維持し、RAW_FULLは採用していない。** 以下の初期計画に対する初回結果は末尾に追記した。完成codecとしての採用はなく、完成codec、音質改善、自然音声での分離成功、48 kHz対応を主張しない。
 
 ## 決定
 
@@ -49,3 +49,11 @@
 - [一次資料・参照実装](bibliography.md)：根拠と確認範囲
 
 5役の検討は科学的論点を点検する仮想レビューであり、独立した人間専門家5名の査読や追加の実測ではない。
+
+## 初回結果と公開登録
+
+[初回HTML](results/run-001/index.html)・[分析](results/run-001/analysis-ja.md)を保存した。計測は2026-10-19 19:28:57.800–19:30:17.655 UTC、24ケース・240合成出力は全ok。ただしPML raw F0 fallbackは5/24、提案のC5では平均変化を周期雑音へ誤帰属した。正常終了は品質成功を意味しない。提案にはoracle位相・既知Hを与え、PML/WORLDは通常F0推定を使う条件差がある。PML現baseを維持し、次は調波meanに共通するgainだけを変更する計画とする。次版の実装・計測は未実施。
+
+公開登録の正本は `research/pages-reports.json` の既存 `navigation-only` 経路であり、当PRの `experiment.json` は取り除いた。独自のcompact数値を標準results schemaとして登録しない。[公開先](https://hiroshiba.github.io/check-nonml-saikyo-vocoder/research/clock-event-variance-2026-10-20/index.html)（マージ・公開後）へmanifestに固定した成果物のみを掲載する。案内作成日時はbundle作成の2026-10-19T19:38:44.700599+00:00で、測定時刻とは別。
+
+元bundleの293公開ファイルはbyte不変。artifact-manifestだけ各recordの `path` を既存形式の `name` に変換し、音声帰属ページ `audio_credits.html` を追加してmanifestのbytes/SHAを再固定した（manifest込み295成果物）。CLI source・元NPZ・floatWAV・params・logsはGitへ追加しない。一覧のC5 seed 0の3音声はcompact数値のケース対応と音声来歴の元波形SHA／公開SHAを照合して選定した。
