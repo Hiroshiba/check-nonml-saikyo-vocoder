@@ -1,0 +1,151 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="710" viewBox="0 0 1120 710" role="img">
+<title>保存F0と期待集合・二値出力判定。横軸は元抜粋の80 ms窓中心時刻。</title>
+<style>
+:root{--bg:#fff;--ink:#172638;--muted:#4b6179;--grid:#cbd5e1;--zero:#bac3ce;
+--expected:#596d81;--p:#1264b4;--r:#b45000;--common:#8275ba;--missing:#a62b6b;--faint:#e9edf2;--outside:#b72c3c}
+@media(prefers-color-scheme:dark){:root{--bg:#172332;--ink:#eef5ff;--muted:#bfd0e3;--grid:#465b71;--zero:#6b7d91;
+--expected:#c4d3e1;--p:#65baff;--r:#ffb264;--common:#a79ae6;--missing:#f18cbe;--faint:#2c3c4f;--outside:#ff8b96}}
+text{font-family:'Noto Sans CJK JP',system-ui,sans-serif;fill:var(--ink);font-size:12px}
+.small{font-size:10px;fill:var(--muted)} .grid{stroke:var(--grid);stroke-width:.7}
+.expected{fill:none;stroke:var(--expected);stroke-width:1.4;stroke-dasharray:5 3}
+.output{fill:none;stroke-width:1.5}.zero{stroke:var(--zero);stroke-width:1}
+</style><rect width="100%" height="100%" fill="var(--bg)"/>
+<text x="18" y="24" font-weight="700">librispeech_6829-68769-0041 / -3 半音 / seed 0</text>
+<text x="18" y="45" class="small">元抜粋の 0.79–0.91 s ｜ 80 ms窓中心・10 ms間隔 ｜ 破線：方式別nativeからの期待F0　実線：edited出力F0</text>
+<line x1="455.00" x2="455.00" y1="60" y2="550" stroke="var(--missing)" stroke-width="1" stroke-dasharray="3 3"/>
+<text x="462.00" y="64" class="small">本文の注目時刻 0.83 s</text>
+<text x="18" y="90" font-weight="700">PML</text>
+<text x="18" y="109" class="small">F0 (Hz)</text>
+<line class="grid" x1="135" x2="1095" y1="211.00" y2="211.00"/>
+<text x="127" y="215.00" text-anchor="end" class="small">0</text>
+<line class="grid" x1="135" x2="1095" y1="176.25" y2="176.25"/>
+<text x="127" y="180.25" text-anchor="end" class="small">50</text>
+<line class="grid" x1="135" x2="1095" y1="141.50" y2="141.50"/>
+<text x="127" y="145.50" text-anchor="end" class="small">100</text>
+<line class="grid" x1="135" x2="1095" y1="106.75" y2="106.75"/>
+<text x="127" y="110.75" text-anchor="end" class="small">150</text>
+<line class="grid" x1="135" x2="1095" y1="72.00" y2="72.00"/>
+<text x="127" y="76.00" text-anchor="end" class="small">200</text>
+<line class="grid" x1="135.00" x2="135.00" y1="72" y2="211"/>
+<line class="grid" x1="255.00" x2="255.00" y1="72" y2="211"/>
+<line class="grid" x1="375.00" x2="375.00" y1="72" y2="211"/>
+<line class="grid" x1="495.00" x2="495.00" y1="72" y2="211"/>
+<line class="grid" x1="615.00" x2="615.00" y1="72" y2="211"/>
+<line class="grid" x1="735.00" x2="735.00" y1="72" y2="211"/>
+<line class="grid" x1="855.00" x2="855.00" y1="72" y2="211"/>
+<line class="grid" x1="975.00" x2="975.00" y1="72" y2="211"/>
+<line class="grid" x1="1095.00" x2="1095.00" y1="72" y2="211"/>
+<circle cx="135.00" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="215.00" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="295.00" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="375.00" cy="209.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="455.00" cy="99.71" r="1.5" fill="var(--expected)"/>
+<circle cx="535.00" cy="99.16" r="1.5" fill="var(--expected)"/>
+<circle cx="615.00" cy="99.67" r="1.5" fill="var(--expected)"/>
+<circle cx="695.00" cy="99.60" r="1.5" fill="var(--expected)"/>
+<circle cx="775.00" cy="99.41" r="1.5" fill="var(--expected)"/>
+<circle cx="855.00" cy="98.70" r="1.5" fill="var(--expected)"/>
+<circle cx="935.00" cy="96.73" r="1.5" fill="var(--expected)"/>
+<circle cx="1015.00" cy="95.07" r="1.5" fill="var(--expected)"/>
+<polyline class="expected" stroke="var(--expected)" points="455.00,99.71 535.00,99.16 615.00,99.67 695.00,99.60 775.00,99.41 855.00,98.70 935.00,96.73 1015.00,95.07"/>
+<circle cx="135.00" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="215.00" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="295.00" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="375.00" cy="212.5" r="1.2" fill="var(--p)" opacity=".6"/>
+<circle cx="455.00" cy="155.31" r="1.5" fill="var(--p)"/>
+<circle cx="535.00" cy="99.27" r="1.5" fill="var(--p)"/>
+<circle cx="615.00" cy="99.62" r="1.5" fill="var(--p)"/>
+<circle cx="695.00" cy="99.61" r="1.5" fill="var(--p)"/>
+<circle cx="775.00" cy="99.36" r="1.5" fill="var(--p)"/>
+<circle cx="855.00" cy="98.80" r="1.5" fill="var(--p)"/>
+<circle cx="935.00" cy="96.38" r="1.5" fill="var(--p)"/>
+<circle cx="1015.00" cy="95.13" r="1.5" fill="var(--p)"/>
+<polyline class="output" stroke="var(--p)" points="455.00,155.31 535.00,99.27 615.00,99.62 695.00,99.61 775.00,99.36 855.00,98.80 935.00,96.38 1015.00,95.13"/>
+<text x="18" y="257" font-weight="700">RAW_FULL</text>
+<text x="18" y="276" class="small">F0 (Hz)</text>
+<line class="grid" x1="135" x2="1095" y1="378.00" y2="378.00"/>
+<text x="127" y="382.00" text-anchor="end" class="small">0</text>
+<line class="grid" x1="135" x2="1095" y1="343.25" y2="343.25"/>
+<text x="127" y="347.25" text-anchor="end" class="small">50</text>
+<line class="grid" x1="135" x2="1095" y1="308.50" y2="308.50"/>
+<text x="127" y="312.50" text-anchor="end" class="small">100</text>
+<line class="grid" x1="135" x2="1095" y1="273.75" y2="273.75"/>
+<text x="127" y="277.75" text-anchor="end" class="small">150</text>
+<line class="grid" x1="135" x2="1095" y1="239.00" y2="239.00"/>
+<text x="127" y="243.00" text-anchor="end" class="small">200</text>
+<line class="grid" x1="135.00" x2="135.00" y1="239" y2="378"/>
+<line class="grid" x1="255.00" x2="255.00" y1="239" y2="378"/>
+<line class="grid" x1="375.00" x2="375.00" y1="239" y2="378"/>
+<line class="grid" x1="495.00" x2="495.00" y1="239" y2="378"/>
+<line class="grid" x1="615.00" x2="615.00" y1="239" y2="378"/>
+<line class="grid" x1="735.00" x2="735.00" y1="239" y2="378"/>
+<line class="grid" x1="855.00" x2="855.00" y1="239" y2="378"/>
+<line class="grid" x1="975.00" x2="975.00" y1="239" y2="378"/>
+<line class="grid" x1="1095.00" x2="1095.00" y1="239" y2="378"/>
+<circle cx="135.00" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="215.00" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="295.00" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="375.00" cy="376.5" r="1.2" fill="var(--expected)" opacity=".6"/>
+<circle cx="455.00" cy="266.85" r="1.5" fill="var(--expected)"/>
+<circle cx="535.00" cy="266.17" r="1.5" fill="var(--expected)"/>
+<circle cx="615.00" cy="266.67" r="1.5" fill="var(--expected)"/>
+<circle cx="695.00" cy="266.60" r="1.5" fill="var(--expected)"/>
+<circle cx="775.00" cy="266.41" r="1.5" fill="var(--expected)"/>
+<circle cx="855.00" cy="265.70" r="1.5" fill="var(--expected)"/>
+<circle cx="935.00" cy="263.73" r="1.5" fill="var(--expected)"/>
+<circle cx="1015.00" cy="262.07" r="1.5" fill="var(--expected)"/>
+<polyline class="expected" stroke="var(--expected)" points="455.00,266.85 535.00,266.17 615.00,266.67 695.00,266.60 775.00,266.41 855.00,265.70 935.00,263.73 1015.00,262.07"/>
+<circle cx="135.00" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="215.00" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="295.00" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="375.00" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="455.00" cy="379.5" r="1.2" fill="var(--r)" opacity=".6"/>
+<circle cx="535.00" cy="266.27" r="1.5" fill="var(--r)"/>
+<circle cx="615.00" cy="266.62" r="1.5" fill="var(--r)"/>
+<circle cx="695.00" cy="266.62" r="1.5" fill="var(--r)"/>
+<circle cx="775.00" cy="266.36" r="1.5" fill="var(--r)"/>
+<circle cx="855.00" cy="265.80" r="1.5" fill="var(--r)"/>
+<circle cx="935.00" cy="263.38" r="1.5" fill="var(--r)"/>
+<circle cx="1015.00" cy="262.13" r="1.5" fill="var(--r)"/>
+<polyline class="output" stroke="var(--r)" points="535.00,266.27 615.00,266.62 695.00,266.62 775.00,266.36 855.00,265.80 935.00,263.38 1015.00,262.13"/>
+<text x="126" y="416" text-anchor="end" class="small">期待 PML</text>
+<rect x="135" y="403" width="960" height="17" fill="var(--bg)"/>
+<rect x="135.00" y="403" width="280.00" height="17" fill="var(--faint)"/>
+<rect x="415.00" y="403" width="640.00" height="17" fill="var(--common)"/>
+<text x="126" y="441" text-anchor="end" class="small">期待 RAW_FULL</text>
+<rect x="135" y="428" width="960" height="17" fill="var(--bg)"/>
+<rect x="135.00" y="428" width="280.00" height="17" fill="var(--faint)"/>
+<rect x="415.00" y="428" width="640.00" height="17" fill="var(--common)"/>
+<text x="126" y="466" text-anchor="end" class="small">期待集合の区分</text>
+<rect x="135" y="453" width="960" height="17" fill="var(--bg)"/>
+<rect x="135.00" y="453" width="280.00" height="17" fill="var(--faint)"/>
+<rect x="415.00" y="453" width="640.00" height="17" fill="var(--common)"/>
+<text x="126" y="491" text-anchor="end" class="small">出力>0 PML</text>
+<rect x="135" y="478" width="960" height="17" fill="var(--bg)"/>
+<rect x="135.00" y="478" width="280.00" height="17" fill="var(--faint)"/>
+<rect x="415.00" y="478" width="640.00" height="17" fill="var(--p)"/>
+<text x="126" y="516" text-anchor="end" class="small">出力>0 RAW_FULL</text>
+<rect x="135" y="503" width="960" height="17" fill="var(--bg)"/>
+<rect x="135.00" y="503" width="360.00" height="17" fill="var(--faint)"/>
+<rect x="495.00" y="503" width="560.00" height="17" fill="var(--r)"/>
+<text x="126" y="541" text-anchor="end" class="small">共通部の出力判定</text>
+<rect x="135" y="528" width="960" height="17" fill="var(--bg)"/>
+<rect x="135.00" y="528" width="280.00" height="17" fill="var(--faint)"/>
+<rect x="415.00" y="528" width="80.00" height="17" fill="var(--p)"/>
+<rect x="495.00" y="528" width="560.00" height="17" fill="var(--common)"/>
+<text x="135.00" y="567" text-anchor="middle" class="small">0.79</text>
+<text x="255.00" y="567" text-anchor="middle" class="small">0.81</text>
+<text x="375.00" y="567" text-anchor="middle" class="small">0.82</text>
+<text x="495.00" y="567" text-anchor="middle" class="small">0.84</text>
+<text x="615.00" y="567" text-anchor="middle" class="small">0.85</text>
+<text x="735.00" y="567" text-anchor="middle" class="small">0.86</text>
+<text x="855.00" y="567" text-anchor="middle" class="small">0.88</text>
+<text x="975.00" y="567" text-anchor="middle" class="small">0.90</text>
+<text x="1095.00" y="567" text-anchor="middle" class="small">0.91</text>
+<text x="615" y="588" text-anchor="middle">元抜粋内の窓中心時刻 (s) — crop開始を0へ移していない</text>
+<text x="18" y="610" class="small">期待 PML / RAW_FULL：紫=当該方式の期待有声、灰=期待無声、赤=期待範囲外。</text>
+<text x="18" y="630" class="small">期待集合の区分：紫=共通、青=PMLのみ、橙=RAW_FULLのみ、灰=どちらにも属さない。</text>
+<text x="18" y="650" class="small">出力&gt;0 PML / RAW_FULL：青／橙=当該方式の出力F0&gt;0、灰=出力F0=0。</text>
+<text x="18" y="670" class="small">共通部の出力判定：紫=両方&gt;0、青=PMLのみ&gt;0、橙=RAWのみ&gt;0、桃=両方0、灰=共通集合外。</text>
+<text x="18" y="690" class="small">帯幅10 msは表示用。点のない両端はframe未配置。実音の有声境界ではない。0 Hz点は線で結ばない。保存時間支持外は全条件0。</text>
+</svg>
