@@ -1265,6 +1265,40 @@
           }
         ]
       }
+    },
+    {
+      "kind": "navigation-only",
+      "id": "pshf-residual-envelope-2026-10-20",
+      "path": "research/pshf-residual-envelope-2026-10-20",
+      "source_path": "experiments/2026-10-20/pshf-residual-envelope/results/run-002",
+      "created_on": "2026-10-19",
+      "created_at": "2026-10-19T21:02:33.268394+00:00",
+      "title": "周期成分を引いた残差包絡：先行成分と実音声5録音の比較",
+      "comparison_scope": "固定5録音・5観測・30候補復号と保存PML／RAW_FULLの比較。独立解析で数値を照合。サンプル3の低閾値到達はRAW_FULLより6–10 ms早く、一律な先行抑制ではない。品質指標は未測定・候補未採用、PML維持。",
+      "artifact_count": 188,
+      "artifact_manifest": {
+        "bytes": 35364,
+        "sha256": "b39b06d147d0fb46a81dce8bb002b9f1d6bae67f4df8bed8a495d841dac47582"
+      },
+      "audio_listing": {
+        "caption": "サンプル3（121-121726-0012）、0–4.045秒。原音と無編集・seed 0のPML／PSHF残差包絡。",
+        "note": "LibriSpeech / CC BY 4.0。保存波形をPCM16化、音量倍率1、正規化・clipなし。品質指標は未測定、候補は未採用。5録音の原因診断であり全120評価とは別。",
+        "attribution_path": "audio_credits.html",
+        "samples": [
+          {
+            "path": "librispeech_121-121726-0012__original.wav",
+            "label": "原音"
+          },
+          {
+            "path": "librispeech_121-121726-0012__p+0__s0__PML.wav",
+            "label": "PML 無編集"
+          },
+          {
+            "path": "librispeech_121-121726-0012__p+0__s0__PSHF_RESIDUAL_ENVELOPE.wav",
+            "label": "PSHF残差包絡 無編集"
+          }
+        ]
+      }
     }
   ]
 }

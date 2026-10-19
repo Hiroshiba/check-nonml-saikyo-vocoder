@@ -1,0 +1,54 @@
+{
+  "source_manifest_sha256": "b22f8e684830dd96b8637b3da899f218d00a4302460c48f86cd793ceb03b9a03",
+  "receipt_sha256": "e43bf1402e58daec3baa0483de04772138455fb62db014af47e1c6d4967d3128",
+  "inventory_sha256": "813989a2c9cad0c365316cf21230d5f4d7cea127ba686b3531808725e16c2987",
+  "all_input_source_artifact_sha_gates": "passed",
+  "plot_contract": {
+    "sample_rate": 16000,
+    "window": "periodic Hann 512",
+    "hop": 80,
+    "nfft": 512,
+    "power": "one-sided |FFT|^2/(512*sum(window^2)); interior bins doubled",
+    "mel": "80 triangular bands, HTK 2595*log10(1+Hz/700), each row normalized to sum 1",
+    "db": "10log10(power / 1); display floor -100 dB, ceiling 0 dB; no peak normalization",
+    "axes": "time seconds; full same recording extent / sample3 fixed [2.08,2.13]; frequency 0–8000 Hz",
+    "waveform_gain": 1,
+    "interpolation": "nearest display only",
+    "padding": "no padding",
+    "note": "STFT and mel are display diagnostics, not new objective quality measurements"
+  },
+  "run_provenance": {
+    "base": "PML",
+    "estimated_output_bytes": 495304704,
+    "historical_RNG": "numpy.random.RandomState MT19937; no extra random calls",
+    "historical_receipt_sha256": "b4bf35744446638591e9c8f7bff3f255b08315c47ca6b52687ed1801caeb5956",
+    "historical_runtime_match": {
+      "numpy": true,
+      "platform": true,
+      "python": true,
+      "scipy": true,
+      "thread_environment": true
+    },
+    "output_limit_bytes": 1073741824,
+    "references": "historical; never synthesized again",
+    "runtime": {
+      "numpy": "2.3.5",
+      "platform": "Linux-6.18.55-x86_64-with-glibc2.41",
+      "pyreaper": "0.0.11",
+      "python": "3.12.14",
+      "scipy": "1.17.0",
+      "thread_environment": {
+        "MKL_NUM_THREADS": "1",
+        "OMP_NUM_THREADS": "1",
+        "OPENBLAS_NUM_THREADS": "1"
+      }
+    },
+    "working_disk_budget_bytes": 2147483648
+  },
+  "status": "completed",
+  "counts": {
+    "completed_observations": 5,
+    "completed_decodes": 30
+  },
+  "reference_provenance": "Historical frozen saved waveforms, no resynthesis; separate from toy v1/v2/v3"
+}
