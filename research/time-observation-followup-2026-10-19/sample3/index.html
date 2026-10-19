@@ -1,0 +1,723 @@
+<!doctype html>
+<html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="light dark"><title>sample3の実波形と時間表示：7条件の追加観測</title><style>
+:root{color-scheme:light dark;--bg:#f6f8fb;--panel:#fff;--text:#172739;--muted:#536579;--line:#c8d5e1;--link:#005e8d;--soft:#eaf4f8;--warn:#fff1d7;--head:#e6edf4;--accent:#007f80}
+@media(prefers-color-scheme:dark){:root{--bg:#101821;--panel:#19242f;--text:#e8eff5;--muted:#b4c4d2;--line:#455c6e;--link:#7ed4ff;--soft:#183842;--warn:#49391d;--head:#293d50;--accent:#69d7cd}}
+*{box-sizing:border-box}body{margin:0 auto;max-width:1460px;padding:30px 24px 60px;background:var(--bg);color:var(--text);font:16px/1.8 system-ui,'Noto Sans CJK JP','Noto Sans JP',sans-serif}
+a{color:var(--link);text-underline-offset:.18em}a:hover{text-decoration-thickness:2px}a:focus-visible,summary:focus-visible{outline:3px solid var(--accent);outline-offset:4px}h1,h2,h3{line-height:1.45}h1{font-size:clamp(1.65rem,3vw,2.5rem);margin:.45em 0}h2{margin-top:1.4em}h3{font-size:1.08rem}.eyebrow,.muted,small{color:var(--muted)}.eyebrow{font-weight:700;letter-spacing:.08em}.lead{font-size:1.15rem;max-width:60em}.note,.warn,.notice,.summary-card{padding:18px 22px;border:1px solid var(--line);border-radius:10px;background:var(--soft);margin:18px 0}.warn,.notice,.negative{background:var(--warn)}.summary-card{border-left:5px solid var(--accent)}section{background:var(--panel);border:1px solid var(--line);border-radius:12px;margin:24px 0;padding:22px}nav,.links{display:flex;gap:12px 24px;flex-wrap:wrap;margin:18px 0}.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px}.cards section{margin:0}.scroll{overflow:auto;max-width:100%;border:1px solid var(--line);border-radius:7px}table{border-collapse:collapse;font-size:.9rem;width:100%;font-variant-numeric:tabular-nums}td,th{padding:9px 12px;border:1px solid var(--line);text-align:right;white-space:nowrap}th{background:var(--head)}th:first-child,td:first-child{text-align:left}caption{text-align:left;padding:8px;color:var(--muted)}img{display:block;max-width:100%;height:auto;background:#fff;border:1px solid var(--line);border-radius:6px;margin:16px auto}figure{margin:18px 0}figcaption{color:var(--muted);font-size:.94rem}pre{white-space:pre-wrap;overflow-wrap:anywhere;font-size:.8rem;background:var(--panel);padding:12px;border:1px solid var(--line)}code{overflow-wrap:anywhere;font-size:.9em}details{margin:14px 0}summary{cursor:pointer;font-weight:650}dl{display:grid;grid-template-columns:minmax(100px,220px) 1fr;gap:12px}dt{font-weight:700}dd{margin:0}.missing{color:var(--muted)}footer{margin-top:36px;border-top:1px solid var(--line);padding-top:18px;color:var(--muted)}.badge{display:inline-block;border:1px solid var(--line);padding:1px 9px;border-radius:20px;font-size:.85rem}.wrap td,.wrap th{white-space:normal}li{margin:.4em 0}@media(max-width:650px){body{padding:18px 12px 40px}section{padding:16px}dl{display:block}dd{margin:0 0 12px}th,td{padding:7px 9px}}
+</style></head><body><nav aria-label="資料内の移動"><a href="../index.html">追加観測の入口</a><a href="https://hiroshiba.github.io/check-nonml-saikyo-vocoder/research/raw-full-120-broad-risk-2026-10-19/index.html">現PML・RAW_FULLの比較と既存音声</a></nav><main><p class="eyebrow">実音声の観測 · 7条件 · 測定完了</p><h1>sample3の前に見える成分：実波形と時間表示を分ける</h1><section class="summary-card"><h2>原音にも前半の小さな波形があり、再割当で減る量は一律ではない</h2><p>原音にも2.08秒より前の波形と二乗量があります。前に見える量をすべて40ms窓のにじみとする説明は成り立ちません。一方、40msの周波数表示では10msより早め・なだらかに広がって見える箇所があり、窓による広がりと実際の波形を分けて読む必要があります。</p><p>同じ40ms係数を時間再割当すると、前半の係数量はPML/RAW_FULLの0・−3半音で増え、原音と＋3半音で減りました。現PMLと未採用RAW_FULLの参考枠内の波形量は、0半音ではPMLが大きく、＋3半音では大小が逆です。品質の順位は付けられません。</p></section><section><h2>現PML・RAW_FULLと原音の既存音声</h2><div class="links"><a href="https://hiroshiba.github.io/check-nonml-saikyo-vocoder/research/raw-envelope-risk-2026-10-19/audio/121-121726-0012__original.wav">原音の既存WAV</a><a href="https://hiroshiba.github.io/check-nonml-saikyo-vocoder/research/raw-envelope-risk-2026-10-19/audio/121-121726-0012__pitch+0__seed0__PML.wav">PML 0半音の既存WAV</a><a href="https://hiroshiba.github.io/check-nonml-saikyo-vocoder/research/raw-envelope-risk-2026-10-19/audio/121-121726-0012__pitch+0__seed0__RAW_FULL.wav">RAW_FULL 0半音の既存WAV</a><a href="https://hiroshiba.github.io/check-nonml-saikyo-vocoder/research/raw-envelope-risk-2026-10-19/audio/121-121726-0012__pitch-3__seed0__PML.wav">PML −3半音の既存WAV</a><a href="https://hiroshiba.github.io/check-nonml-saikyo-vocoder/research/raw-envelope-risk-2026-10-19/audio/121-121726-0012__pitch-3__seed0__RAW_FULL.wav">RAW_FULL −3半音の既存WAV</a><a href="https://hiroshiba.github.io/check-nonml-saikyo-vocoder/research/raw-envelope-risk-2026-10-19/audio/121-121726-0012__pitch+3__seed0__PML.wav">PML ＋3半音の既存WAV</a><a href="https://hiroshiba.github.io/check-nonml-saikyo-vocoder/research/raw-envelope-risk-2026-10-19/audio/121-121726-0012__pitch+3__seed0__RAW_FULL.wav">RAW_FULL ＋3半音の既存WAV</a></div><p class="muted">同じsample3（LibriSpeech 121-121726-0012）の既存公開PCM16、各4.045秒。加工条件はseed 0。ここで聴けるのは既存音声です。A/Bはその同じ音の表示方法で、再割当後の新音声はありません。</p></section><section><h2>保存値の比較</h2><div class="scroll"><table><caption>波形二乗積分（10⁻⁶ FS²s）。区間長が異なるため、列の積分量だけで強さを直接比較しません。</caption><thead><tr><th scope="col">条件</th><th scope="col">2.00–2.08秒</th><th scope="col">2.08–2.13秒：参考枠</th><th scope="col">2.13–2.22秒</th><th scope="col">2.00–2.22秒全体</th></tr></thead><tbody><tr><td>原音</td><td>12.018</td><td>205.213</td><td>423.027</td><td>640.258</td></tr><tr><td>PML 0半音</td><td>15.951</td><td>160.867</td><td>482.225</td><td>659.043</td></tr><tr><td>RAW_FULL 0半音</td><td>15.759</td><td>144.127</td><td>482.350</td><td>642.236</td></tr><tr><td>PML −3半音</td><td>11.984</td><td>199.394</td><td>435.022</td><td>646.400</td></tr><tr><td>RAW_FULL −3半音</td><td>14.995</td><td>195.333</td><td>433.528</td><td>643.856</td></tr><tr><td>PML ＋3半音</td><td>10.395</td><td>184.257</td><td>414.194</td><td>608.846</td></tr><tr><td>RAW_FULL ＋3半音</td><td>9.932</td><td>197.675</td><td>414.218</td><td>621.825</td></tr></tbody></table></div><h3>時間再割当で前半の係数量はどう変わったか</h3><div class="scroll"><table><caption>前半2.00–2.08秒・全帯域の重複窓係数量（10⁻⁶ FS²s）。波形積分とは別の母数です。差は保存値の引き算で、改善率ではありません。</caption><thead><tr><th scope="col">条件</th><th scope="col">A：窓中心</th><th scope="col">B：時間再割当</th><th scope="col">B−A</th></tr></thead><tbody><tr><td>原音</td><td>76.006</td><td>72.892</td><td>-3.114</td></tr><tr><td>PML 0半音</td><td>89.379</td><td>92.371</td><td>+2.993</td></tr><tr><td>RAW_FULL 0半音</td><td>87.135</td><td>90.865</td><td>+3.731</td></tr><tr><td>PML −3半音</td><td>72.973</td><td>74.536</td><td>+1.563</td></tr><tr><td>RAW_FULL −3半音</td><td>89.701</td><td>92.876</td><td>+3.175</td></tr><tr><td>PML ＋3半音</td><td>67.274</td><td>60.162</td><td>-7.112</td></tr><tr><td>RAW_FULL ＋3半音</td><td>63.278</td><td>57.806</td><td>-5.472</td></tr></tbody></table></div><p>すべて左端を含み右端を含まない区間です。表示だけを変更しており、同じ音声の波形は変えていません。</p></section><section id="interpretation"><h2>読図で分かったこと、まだ分からないこと</h2><ol><li>原音・加工音の全7条件で2.00–2.08秒の波形二乗量はゼロではありません。ただし、その量がどの音素・成分に属するかは不明です。</li><li>40ms表示の時間的な広がりと、10ms表示にも残る弱い低域構造は区別します。10ms窓は周波数方向が粗くなり、真の開始時刻の正解にはなりません。</li><li>Aの縦縞は2.5ms間隔の係数を0.25ms区切りへ置いた規約です。Bの薄さ・集中・細さだけで、音が消えた、正しくなったとは判断できません。</li><li>2.00–2.22秒全体のB係数量は全7条件でAより小さくなりました。同じ量が表示枠外へ正味で再配置された結果であり、全記録の量の消失ではありません。参考枠内も全条件で減少しますが、＋3半音では後半の量が増えています。</li><li>全表示内の係数量の約98.5–98.7%は周波数区切りの中心が0–2000 Hzの範囲にあります。目立つ高域の縦の形が総量を支配するとは限りません。</li></ol><p>共通の振幅・色・軸を守り、条件ごとの音量合わせや時刻整列はしていません。生成器の遅延・位相・振幅差も混在します。1録音・seed 0の観測から、多録音の一般的傾向、品質改善、成分分離、F0編集の有効性、採用へは進めません。</p><p>黒く見えることはゼロの証拠ではありません。色床以下の正の量、表示外への割当、低係数は全条件の帳簿に残しています。公開PCM16から失われた弱い成分は復元できず、係数閾値は物理的な雑音床や音素の検出限界ではありません。</p></section>
+<h2 id="saved-report">固定した観測条件と全7条件の詳細</h2>
+<p class='note'>対象は121-121726-0012の既存公開PCM16短例7条件、各4.045秒。元のfloat精度波形ではありません。
+無正規化・無再標本化・無時間整列で、PCM16を32768で割った値を観測します。新しい音声は生成していません。</p>
+<p>float64化しても1/32768 FSの元量子化格子で失われた弱成分は復元できません。係数閾値1e−16 FS²sはPCMの物理雑音床や音素の検出限界ではありません。</p>
+<p>主表示は2.00–2.22秒。2.08–2.13秒の破線枠はユーザーが気にした参考範囲であり、音素境界・真の発生時刻・既知成分の支持ではありません。
+原音も混合音声で、原音に表示された時刻を生成音の正解時刻へ自動的に置き換えません。</p>
+<p>40ms Hannの同じ係数を、Aでは窓中心、Bでは時間再割当先へ配置します。周波数は再割当しません。
+10ms窓は結果前に固定した副対照です。長窓と短窓で見え方が違っても、短窓を正解とはしません。</p>
+<h2>図の読み方と限界</h2><ul>
+<li>PSDはFS²/Hz、A/Bの0.25msの時間区切り図は重複窓係数量（FS²s/bin）。別の母数・色尺度です。異なる種類の図の色を直接比較できません。</li>
+<li>同じ種類の図は7条件で固定尺度です。条件ごとのピーク・実効値合わせや時間ずらしはありません。40msと10msはゼロ詰めFFTの周波数区切り間隔が同じでも実際の分解能が異なります。</li>
+<li>Aの縦縞は2.5msの窓移動を0.25msの時間区切りへ配置する規約によります。Bの局在・鮮明さは音質改善や先行成分の保持を証明しません。</li>
+<li>1e-16 FS²s以下の係数をA/Bとも時刻比較から除き、量と個数を下の帳簿に残します。全係数PSDとA全有限係数の監査も保存します。</li>
+<li>記録外・表示枠外への割当、数値異常、色範囲外を黙って消しません。画像内の非有限セルは水色です。色範囲外の個数・量の集計は公開JSONに保持します。各配列の実値は元の保存資料に残し、配列ファイルは公開対象に含めません。</li>
+<li>画像は記述資料です。音素同定、真の先行p検出、音質順位、採用判断、F0編集・再合成の有効性は結論しません。</li></ul>
+<p>参考：先の人工混合H1では単独イベントの局在改善があっても弱い先行成分の対差が負となる条件がありました。
+その結果を実例の分離・識別の保証へ外挿しません。本ページは新しい仮説検定や合否判定を行いません。</p>
+<h2>全7条件の同一尺度表示</h2>
+<p><img src='figures/all_conditions_8000Hz.png' alt='全7条件A/B比較'></p>
+<p><img src='figures/all_conditions_2000Hz.png' alt='全7条件A/B比較'></p>
+<section><h2>原音（公開PCM16）</h2>
+<p><a href='https://hiroshiba.github.io/check-nonml-saikyo-vocoder/research/raw-envelope-risk-2026-10-19/audio/121-121726-0012__original.wav'>既存公開WAVを開く</a>（既存ファイルへのリンク。時間再割当版の音声ではありません）</p>
+<img src='figures/ORIGINAL.png' alt='原音（公開PCM16）の固定観測図'>
+<h3>全供給元の帳簿：重複窓係数量、全帯域</h3>
+<div class='scroll'><table><thead><tr><th>表示</th><th>供給元</th><th>分母・全係数量</th><th>量が不明な係数数</th><th>低係数個数</th><th>低係数小計</th><th>数値時刻不明個数</th><th>数値時刻不明小計</th><th>記録前小計</th><th>記録後小計</th><th>表示枠内小計</th><th>表示枠外小計</th></tr></thead><tbody><tr><td>A共通マスク</td><td>全1619フレーム</td><td>0.081338298</td><td>0</td><td>2501</td><td>1.2540271e-13</td><td>0</td><td>0</td><td>9.2600491e-11</td><td>0</td><td>0.0039247401</td><td>0.077413558</td></tr><tr><td>B時間再割当</td><td>全1619フレーム</td><td>0.081338298</td><td>0</td><td>2501</td><td>1.2540271e-13</td><td>0</td><td>0</td><td>2.7505863e-10</td><td>4.733792e-12</td><td>0.0038055801</td><td>0.077532718</td></tr><tr><td>A全有限係数</td><td>全1619フレーム</td><td>0.081338298</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>9.2600631e-11</td><td>0</td><td>0.0039247401</td><td>0.077413558</td></tr><tr><td>A共通マスク</td><td>参考の供給元枠1.96–2.26秒</td><td>0.007433437</td><td>0</td><td>9</td><td>5.5902434e-16</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0.0039247401</td><td>0.0035086969</td></tr><tr><td>B時間再割当</td><td>参考の供給元枠1.96–2.26秒</td><td>0.007433437</td><td>0</td><td>9</td><td>5.5902434e-16</td><td>0</td><td>0</td><td>0</td><td>2.1115955e-16</td><td>0.003805574</td><td>0.0036278629</td></tr><tr><td>A全有限係数</td><td>参考の供給元枠1.96–2.26秒</td><td>0.007433437</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0.0039247401</td><td>0.0035086969</td></tr><tr><td>A共通マスク</td><td>供給元枠外</td><td>0.073904861</td><td>0</td><td>2492</td><td>1.2484369e-13</td><td>0</td><td>0</td><td>9.2600491e-11</td><td>0</td><td>0</td><td>0.073904861</td></tr><tr><td>B時間再割当</td><td>供給元枠外</td><td>0.073904861</td><td>0</td><td>2492</td><td>1.2484369e-13</td><td>0</td><td>0</td><td>2.7505863e-10</td><td>4.7335808e-12</td><td>6.0625497e-09</td><td>0.073904855</td></tr><tr><td>A全有限係数</td><td>供給元枠外</td><td>0.073904861</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>9.2600631e-11</td><td>0</td><td>0</td><td>0.073904861</td></tr></tbody></table></div>
+<p>供給元枠外から表示内に入るBの量も別行で確認します。全1619フレームが主表示の供給元で、1.96–2.26秒枠は監査分類にだけ使います。</p>
+<h3>固定参考区間の波形量（係数量とは別母数）</h3>
+<div class='scroll'><table><thead><tr><th>区間</th><th>開始秒</th><th>終了秒</th><th>標本数</th><th>波形二乗積分 FS²s</th><th>平均二乗 FS²</th></tr></thead><tbody><tr><td>表示枠前半</td><td>2</td><td>2.08</td><td>1280</td><td>1.2018052e-05</td><td>0.00015022566</td></tr><tr><td>ユーザー参考枠</td><td>2.08</td><td>2.13</td><td>800</td><td>0.00020521326</td><td>0.0041042653</td></tr><tr><td>表示枠後半</td><td>2.13</td><td>2.22</td><td>1440</td><td>0.00042302684</td><td>0.0047002982</td></tr><tr><td>表示枠全体</td><td>2</td><td>2.22</td><td>3520</td><td>0.00064025816</td><td>0.0029102643</td></tr></tbody></table></div>
+<details><summary>表示の下限・上限、保存則、異常の詳細</summary><pre>{
+  &quot;display_censoring&quot;: {
+    &quot;40ms_PSD&quot;: {
+      &quot;unit&quot;: &quot;FS²/Hz&quot;,
+      &quot;finite_cells&quot;: 45657,
+      &quot;invalid_cells&quot;: 0,
+      &quot;below_color_floor_cells_including_zero&quot;: 14721,
+      &quot;above_color_ceiling_cells&quot;: 0,
+      &quot;below_floor_value_sum&quot;: 3.4360646521186955e-08,
+      &quot;above_ceiling_value_sum&quot;: 0.0
+    },
+    &quot;10ms_PSD&quot;: {
+      &quot;unit&quot;: &quot;FS²/Hz&quot;,
+      &quot;finite_cells&quot;: 45657,
+      &quot;invalid_cells&quot;: 0,
+      &quot;below_color_floor_cells_including_zero&quot;: 15622,
+      &quot;above_color_ceiling_cells&quot;: 0,
+      &quot;below_floor_value_sum&quot;: 3.5744867870499705e-08,
+      &quot;above_ceiling_value_sum&quot;: 0.0
+    },
+    &quot;A_hist&quot;: {
+      &quot;unit&quot;: &quot;FS²s/bin&quot;,
+      &quot;finite_cells&quot;: 451440,
+      &quot;invalid_cells&quot;: 0,
+      &quot;below_color_floor_cells_including_zero&quot;: 410313,
+      &quot;above_color_ceiling_cells&quot;: 0,
+      &quot;below_floor_value_sum&quot;: 1.7288784882702372e-10,
+      &quot;above_ceiling_value_sum&quot;: 0.0
+    },
+    &quot;B_hist&quot;: {
+      &quot;unit&quot;: &quot;FS²s/bin&quot;,
+      &quot;finite_cells&quot;: 451440,
+      &quot;invalid_cells&quot;: 0,
+      &quot;below_color_floor_cells_including_zero&quot;: 413900,
+      &quot;above_color_ceiling_cells&quot;: 0,
+      &quot;below_floor_value_sum&quot;: 1.5876565086446763e-10,
+      &quot;above_ceiling_value_sum&quot;: 0.0
+    },
+    &quot;waveform_power&quot;: {
+      &quot;unit&quot;: &quot;FS²&quot;,
+      &quot;finite_cells&quot;: 220,
+      &quot;invalid_cells&quot;: 0,
+      &quot;below_color_floor_cells_including_zero&quot;: 0,
+      &quot;above_color_ceiling_cells&quot;: 0,
+      &quot;below_floor_value_sum&quot;: 0.0,
+      &quot;above_ceiling_value_sum&quot;: 0.0
+    },
+    &quot;A_frequency_sum_8000Hz&quot;: {
+      &quot;unit&quot;: &quot;FS²s/bin&quot;,
+      &quot;fixed_ymax&quot;: 0.001,
+      &quot;above_axis_ceiling_bins&quot;: 0,
+      &quot;above_ceiling_value_sum&quot;: 0.0,
+      &quot;ピーク_value&quot;: 0.00016339539490482918
+    },
+    &quot;B_frequency_sum_8000Hz&quot;: {
+      &quot;unit&quot;: &quot;FS²s/bin&quot;,
+      &quot;fixed_ymax&quot;: 0.001,
+      &quot;above_axis_ceiling_bins&quot;: 0,
+      &quot;above_ceiling_value_sum&quot;: 0.0,
+      &quot;ピーク_value&quot;: 5.786455039495195e-05
+    },
+    &quot;A_frequency_sum_2000Hz&quot;: {
+      &quot;unit&quot;: &quot;FS²s/bin&quot;,
+      &quot;fixed_ymax&quot;: 0.001,
+      &quot;above_axis_ceiling_bins&quot;: 0,
+      &quot;above_ceiling_value_sum&quot;: 0.0,
+      &quot;ピーク_value&quot;: 0.00016240984587140783
+    },
+    &quot;B_frequency_sum_2000Hz&quot;: {
+      &quot;unit&quot;: &quot;FS²s/bin&quot;,
+      &quot;fixed_ymax&quot;: 0.001,
+      &quot;above_axis_ceiling_bins&quot;: 0,
+      &quot;above_ceiling_value_sum&quot;: 0.0,
+      &quot;ピーク_value&quot;: 5.781700496723562e-05
+    }
+  },
+  &quot;parseval&quot;: {
+    &quot;parseval_40ms&quot;: {
+      &quot;max_absolute&quot;: 8.131516293641283e-20,
+      &quot;nonfinite_count&quot;: 0
+    },
+    &quot;parseval_10ms&quot;: {
+      &quot;max_absolute&quot;: 2.710505431213761e-20,
+      &quot;nonfinite_count&quot;: 0
+    }
+  },
+  &quot;audit_failures&quot;: [],
+  &quot;numeric_issues_40ms&quot;: [],
+  &quot;numeric_issues_10ms&quot;: []
+}</pre></details></section>
+<section><h2>PML / 音高 +0 半音 半音 半音 半音 半音 半音 半音 / seed 0</h2>
+<p><a href='https://hiroshiba.github.io/check-nonml-saikyo-vocoder/research/raw-envelope-risk-2026-10-19/audio/121-121726-0012__pitch+0__seed0__PML.wav'>既存公開WAVを開く</a>（既存ファイルへのリンク。時間再割当版の音声ではありません）</p>
+<img src='figures/PML_p0.png' alt='PML / 音高 +0 半音 半音 半音 半音 半音 半音 半音 / seed 0の固定観測図'>
+<h3>全供給元の帳簿：重複窓係数量、全帯域</h3>
+<div class='scroll'><table><thead><tr><th>表示</th><th>供給元</th><th>分母・全係数量</th><th>量が不明な係数数</th><th>低係数個数</th><th>低係数小計</th><th>数値時刻不明個数</th><th>数値時刻不明小計</th><th>記録前小計</th><th>記録後小計</th><th>表示枠内小計</th><th>表示枠外小計</th></tr></thead><tbody><tr><td>A共通マスク</td><td>全1619フレーム</td><td>0.093463647</td><td>0</td><td>2445</td><td>1.1699857e-13</td><td>0</td><td>0</td><td>3.8454038e-11</td><td>0</td><td>0.0041329165</td><td>0.089330731</td></tr><tr><td>B時間再割当</td><td>全1619フレーム</td><td>0.093463647</td><td>0</td><td>2445</td><td>1.1699857e-13</td><td>0</td><td>0</td><td>5.332879e-11</td><td>4.2821024e-12</td><td>0.0039899502</td><td>0.089473697</td></tr><tr><td>A全有限係数</td><td>全1619フレーム</td><td>0.093463647</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>3.8454196e-11</td><td>0</td><td>0.0041329165</td><td>0.089330731</td></tr><tr><td>A共通マスク</td><td>参考の供給元枠1.96–2.26秒</td><td>0.0090627724</td><td>0</td><td>10</td><td>4.4899094e-16</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0.0041329165</td><td>0.0049298559</td></tr><tr><td>B時間再割当</td><td>参考の供給元枠1.96–2.26秒</td><td>0.0090627724</td><td>0</td><td>10</td><td>4.4899094e-16</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0.0039899379</td><td>0.0050728345</td></tr><tr><td>A全有限係数</td><td>参考の供給元枠1.96–2.26秒</td><td>0.0090627724</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0.0041329165</td><td>0.0049298559</td></tr><tr><td>A共通マスク</td><td>供給元枠外</td><td>0.084400875</td><td>0</td><td>2435</td><td>1.1654958e-13</td><td>0</td><td>0</td><td>3.8454038e-11</td><td>0</td><td>0</td><td>0.084400875</td></tr><tr><td>B時間再割当</td><td>供給元枠外</td><td>0.084400875</td><td>0</td><td>2435</td><td>1.1654958e-13</td><td>0</td><td>0</td><td>5.332879e-11</td><td>4.2821024e-12</td><td>1.2271219e-08</td><td>0.084400863</td></tr><tr><td>A全有限係数</td><td>供給元枠外</td><td>0.084400875</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>3.8454196e-11</td><td>0</td><td>0</td><td>0.084400875</td></tr></tbody></table></div>
+<p>供給元枠外から表示内に入るBの量も別行で確認します。全1619フレームが主表示の供給元で、1.96–2.26秒枠は監査分類にだけ使います。</p>
+<h3>固定参考区間の波形量（係数量とは別母数）</h3>
+<div class='scroll'><table><thead><tr><th>区間</th><th>開始秒</th><th>終了秒</th><th>標本数</th><th>波形二乗積分 FS²s</th><th>平均二乗 FS²</th></tr></thead><tbody><tr><td>表示枠前半</td><td>2</td><td>2.08</td><td>1280</td><td>1.5950928e-05</td><td>0.0001993866</td></tr><tr><td>ユーザー参考枠</td><td>2.08</td><td>2.13</td><td>800</td><td>0.00016086684</td><td>0.0032173368</td></tr><tr><td>表示枠後半</td><td>2.13</td><td>2.22</td><td>1440</td><td>0.0004822251</td><td>0.0053580567</td></tr><tr><td>表示枠全体</td><td>2</td><td>2.22</td><td>3520</td><td>0.00065904287</td><td>0.0029956494</td></tr></tbody></table></div>
+<details><summary>表示の下限・上限、保存則、異常の詳細</summary><pre>{
+  &quot;display_censoring&quot;: {
+    &quot;40ms_PSD&quot;: {
+      &quot;unit&quot;: &quot;FS²/Hz&quot;,
+      &quot;finite_cells&quot;: 45657,
+      &quot;invalid_cells&quot;: 0,
+      &quot;below_color_floor_cells_including_zero&quot;: 14620,
+      &quot;above_color_ceiling_cells&quot;: 0,
+      &quot;below_floor_value_sum&quot;: 3.210631192391769e-08,
+      &quot;above_ceiling_value_sum&quot;: 0.0
+    },
+    &quot;10ms_PSD&quot;: {
+      &quot;unit&quot;: &quot;FS²/Hz&quot;,
+      &quot;finite_cells&quot;: 45657,
+      &quot;invalid_cells&quot;: 0,
+      &quot;below_color_floor_cells_including_zero&quot;: 15193,
+      &quot;above_color_ceiling_cells&quot;: 0,
+      &quot;below_floor_value_sum&quot;: 3.17036148832366e-08,
+      &quot;above_ceiling_value_sum&quot;: 0.0
+    },
+    &quot;A_hist&quot;: {
+      &quot;unit&quot;: &quot;FS²s/bin&quot;,
+      &quot;finite_cells&quot;: 451440,
+      &quot;invalid_cells&quot;: 0,
+      &quot;below_color_floor_cells_including_zero&quot;: 410819,
+      &quot;above_color_ceiling_cells&quot;: 0,
+      &quot;below_floor_value_sum&quot;: 1.840662787168047e-10,
+      &quot;above_ceiling_value_sum&quot;: 0.0
+    },
+    &quot;B_hist&quot;: {
+      &quot;unit&quot;: &quot;FS²s/bin&quot;,
+      &quot;finite_cells&quot;: 451440,
+      &quot;invalid_cells&quot;: 0,
+      &quot;below_color_floor_cells_including_zero&quot;: 414184,
+      &quot;above_color_ceiling_cells&quot;: 0,
+      &quot;below_floor_value_sum&quot;: 1.6442391826314307e-10,
+      &quot;above_ceiling_value_sum&quot;: 0.0
+    },
+    &quot;waveform_power&quot;: {
+      &quot;unit&quot;: &quot;FS²&quot;,
+      &quot;finite_cells&quot;: 220,
+      &quot;invalid_cells&quot;: 0,
+      &quot;below_color_floor_cells_including_zero&quot;: 0,
+      &quot;above_color_ceiling_cells&quot;: 0,
+      &quot;below_floor_value_sum&quot;: 0.0,
+      &quot;above_ceiling_value_sum&quot;: 0.0
+    },
+    &quot;A_frequency_sum_8000Hz&quot;: {
+      &quot;unit&quot;: &quot;FS²s/bin&quot;,
+      &quot;fixed_ymax&quot;: 0.001,
+      &quot;above_axis_ceiling_bins&quot;: 0,
+      &quot;above_ceiling_value_sum&quot;: 0.0,
+      &quot;ピーク_value&quot;: 0.00015111494800840929
+    },
+    &quot;B_frequency_sum_8000Hz&quot;: {
+      &quot;unit&quot;: &quot;FS²s/bin&quot;,
+      &quot;fixed_ymax&quot;: 0.001,
+      &quot;above_axis_ceiling_bins&quot;: 0,
+      &quot;above_ceiling_value_sum&quot;: 0.0,
+      &quot;ピーク_value&quot;: 4.2584413000823845e-05
+    },
+    &quot;A_frequency_sum_2000Hz&quot;: {
+      &quot;unit&quot;: &quot;FS²s/bin&quot;,
+      &quot;fixed_ymax&quot;: 0.001,
+      &quot;above_axis_ceiling_bins&quot;: 0,
+      &quot;above_ceiling_value_sum&quot;: 0.0,
+      &quot;ピーク_value&quot;: 0.00015015775354909323
+    },
+    &quot;B_frequency_sum_2000Hz&quot;: {
+      &quot;unit&quot;: &quot;FS²s/bin&quot;,
+      &quot;fixed_ymax&quot;: 0.001,
+      &quot;above_axis_ceiling_bins&quot;: 0,
+      &quot;above_ceiling_value_sum&quot;: 0.0,
+      &quot;ピーク_value&quot;: 4.250350614611469e-05
+    }
+  },
+  &quot;parseval&quot;: {
+    &quot;parseval_40ms&quot;: {
+      &quot;max_absolute&quot;: 1.0842021724855044e-19,
+      &quot;nonfinite_count&quot;: 0
+    },
+    &quot;parseval_10ms&quot;: {
+      &quot;max_absolute&quot;: 2.710505431213761e-20,
+      &quot;nonfinite_count&quot;: 0
+    }
+  },
+  &quot;audit_failures&quot;: [],
+  &quot;numeric_issues_40ms&quot;: [],
+  &quot;numeric_issues_10ms&quot;: []
+}</pre></details></section>
+<section><h2>RAW_FULL / 音高 +0 半音 半音 半音 半音 半音 半音 半音 / seed 0</h2>
+<p><a href='https://hiroshiba.github.io/check-nonml-saikyo-vocoder/research/raw-envelope-risk-2026-10-19/audio/121-121726-0012__pitch+0__seed0__RAW_FULL.wav'>既存公開WAVを開く</a>（既存ファイルへのリンク。時間再割当版の音声ではありません）</p>
+<img src='figures/RAW_FULL_p0.png' alt='RAW_FULL / 音高 +0 半音 半音 半音 半音 半音 半音 半音 / seed 0の固定観測図'>
+<h3>全供給元の帳簿：重複窓係数量、全帯域</h3>
+<div class='scroll'><table><thead><tr><th>表示</th><th>供給元</th><th>分母・全係数量</th><th>量が不明な係数数</th><th>低係数個数</th><th>低係数小計</th><th>数値時刻不明個数</th><th>数値時刻不明小計</th><th>記録前小計</th><th>記録後小計</th><th>表示枠内小計</th><th>表示枠外小計</th></tr></thead><tbody><tr><td>A共通マスク</td><td>全1619フレーム</td><td>0.093024292</td><td>0</td><td>2334</td><td>1.1328584e-13</td><td>0</td><td>0</td><td>3.8449839e-11</td><td>0</td><td>0.0040318897</td><td>0.088992402</td></tr><tr><td>B時間再割当</td><td>全1619フレーム</td><td>0.093024292</td><td>0</td><td>2334</td><td>1.1328584e-13</td><td>0</td><td>0</td><td>4.4041454e-11</td><td>3.0584958e-12</td><td>0.0038890087</td><td>0.089135283</td></tr><tr><td>A全有限係数</td><td>全1619フレーム</td><td>0.093024292</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>3.84502e-11</td><td>0</td><td>0.0040318897</td><td>0.088992402</td></tr><tr><td>A共通マスク</td><td>参考の供給元枠1.96–2.26秒</td><td>0.0089644473</td><td>0</td><td>13</td><td>6.7527932e-16</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0.0040318897</td><td>0.0049325576</td></tr><tr><td>B時間再割当</td><td>参考の供給元枠1.96–2.26秒</td><td>0.0089644473</td><td>0</td><td>13</td><td>6.7527932e-16</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0.0038889964</td><td>0.0050754509</td></tr><tr><td>A全有限係数</td><td>参考の供給元枠1.96–2.26秒</td><td>0.0089644473</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0.0040318897</td><td>0.0049325576</td></tr><tr><td>A共通マスク</td><td>供給元枠外</td><td>0.084059844</td><td>0</td><td>2321</td><td>1.1261056e-13</td><td>0</td><td>0</td><td>3.8449839e-11</td><td>0</td><td>0</td><td>0.084059844</td></tr><tr><td>B時間再割当</td><td>供給元枠外</td><td>0.084059844</td><td>0</td><td>2321</td><td>1.1261056e-13</td><td>0</td><td>0</td><td>4.4041454e-11</td><td>3.0584958e-12</td><td>1.2334967e-08</td><td>0.084059832</td></tr><tr><td>A全有限係数</td><td>供給元枠外</td><td>0.084059844</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>3.84502e-11</td><td>0</td><td>0</td><td>0.084059844</td></tr></tbody></table></div>
+<p>供給元枠外から表示内に入るBの量も別行で確認します。全1619フレームが主表示の供給元で、1.96–2.26秒枠は監査分類にだけ使います。</p>
+<h3>固定参考区間の波形量（係数量とは別母数）</h3>
+<div class='scroll'><table><thead><tr><th>区間</th><th>開始秒</th><th>終了秒</th><th>標本数</th><th>波形二乗積分 FS²s</th><th>平均二乗 FS²</th></tr></thead><tbody><tr><td>表示枠前半</td><td>2</td><td>2.08</td><td>1280</td><td>1.5759491e-05</td><td>0.00019699363</td></tr><tr><td>ユーザー参考枠</td><td>2.08</td><td>2.13</td><td>800</td><td>0.00014412687</td><td>0.0028825374</td></tr><tr><td>表示枠後半</td><td>2.13</td><td>2.22</td><td>1440</td><td>0.00048234972</td><td>0.0053594414</td></tr><tr><td>表示枠全体</td><td>2</td><td>2.22</td><td>3520</td><td>0.00064223608</td><td>0.0029192549</td></tr></tbody></table></div>
+<details><summary>表示の下限・上限、保存則、異常の詳細</summary><pre>{
+  &quot;display_censoring&quot;: {
+    &quot;40ms_PSD&quot;: {
+      &quot;unit&quot;: &quot;FS²/Hz&quot;,
+      &quot;finite_cells&quot;: 45657,
+      &quot;invalid_cells&quot;: 0,
+      &quot;below_color_floor_cells_including_zero&quot;: 15360,
+      &quot;above_color_ceiling_cells&quot;: 0,
+      &quot;below_floor_value_sum&quot;: 3.279437681128964e-08,
+      &quot;above_ceiling_value_sum&quot;: 0.0
+    },
+    &quot;10ms_PSD&quot;: {
+      &quot;unit&quot;: &quot;FS²/Hz&quot;,
+      &quot;finite_cells&quot;: 45657,
+      &quot;invalid_cells&quot;: 0,
+      &quot;below_color_floor_cells_including_zero&quot;: 15983,
+      &quot;above_color_ceiling_cells&quot;: 0,
+      &quot;below_floor_value_sum&quot;: 3.3213724382135917e-08,
+      &quot;above_ceiling_value_sum&quot;: 0.0
+    },
+    &quot;A_hist&quot;: {
+      &quot;unit&quot;: &quot;FS²s/bin&quot;,
+      &quot;finite_cells&quot;: 451440,
+      &quot;invalid_cells&quot;: 0,
+      &quot;below_color_floor_cells_including_zero&quot;: 411283,
+      &quot;above_color_ceiling_cells&quot;: 0,
+      &quot;below_floor_value_sum&quot;: 1.978445488013431e-10,
+      &quot;above_ceiling_value_sum&quot;: 0.0
+    },
+    &quot;B_hist&quot;: {
+      &quot;unit&quot;: &quot;FS²s/bin&quot;,
+      &quot;finite_cells&quot;: 451440,
+      &quot;invalid_cells&quot;: 0,
+      &quot;below_color_floor_cells_including_zero&quot;: 414910,
+      &quot;above_color_ceiling_cells&quot;: 0,
+      &quot;below_floor_value_sum&quot;: 1.7819548341503213e-10,
+      &quot;above_ceiling_value_sum&quot;: 0.0
+    },
+    &quot;waveform_power&quot;: {
+      &quot;unit&quot;: &quot;FS²&quot;,
+      &quot;finite_cells&quot;: 220,
+      &quot;invalid_cells&quot;: 0,
+      &quot;below_color_floor_cells_including_zero&quot;: 0,
+      &quot;above_color_ceiling_cells&quot;: 0,
+      &quot;below_floor_value_sum&quot;: 0.0,
+      &quot;above_ceiling_value_sum&quot;: 0.0
+    },
+    &quot;A_frequency_sum_8000Hz&quot;: {
+      &quot;unit&quot;: &quot;FS²s/bin&quot;,
+      &quot;fixed_ymax&quot;: 0.001,
+      &quot;above_axis_ceiling_bins&quot;: 0,
+      &quot;above_ceiling_value_sum&quot;: 0.0,
+      &quot;ピーク_value&quot;: 0.00015214563835133313
+    },
+    &quot;B_frequency_sum_8000Hz&quot;: {
+      &quot;unit&quot;: &quot;FS²s/bin&quot;,
+      &quot;fixed_ymax&quot;: 0.001,
+      &quot;above_axis_ceiling_bins&quot;: 0,
+      &quot;above_ceiling_value_sum&quot;: 0.0,
+      &quot;ピーク_value&quot;: 3.9191793792386414e-05
+    },
+    &quot;A_frequency_sum_2000Hz&quot;: {
+      &quot;unit&quot;: &quot;FS²s/bin&quot;,
+      &quot;fixed_ymax&quot;: 0.001,
+      &quot;above_axis_ceiling_bins&quot;: 0,
+      &quot;above_ceiling_value_sum&quot;: 0.0,
+      &quot;ピーク_value&quot;: 0.00015122920015245333
+    },
+    &quot;B_frequency_sum_2000Hz&quot;: {
+      &quot;unit&quot;: &quot;FS²s/bin&quot;,
+      &quot;fixed_ymax&quot;: 0.001,
+      &quot;above_axis_ceiling_bins&quot;: 0,
+      &quot;above_ceiling_value_sum&quot;: 0.0,
+      &quot;ピーク_value&quot;: 3.915580554959121e-05
+    }
+  },
+  &quot;parseval&quot;: {
+    &quot;parseval_40ms&quot;: {
+      &quot;max_absolute&quot;: 1.6263032587282567e-19,
+      &quot;nonfinite_count&quot;: 0
+    },
+    &quot;parseval_10ms&quot;: {
+      &quot;max_absolute&quot;: 2.710505431213761e-20,
+      &quot;nonfinite_count&quot;: 0
+    }
+  },
+  &quot;audit_failures&quot;: [],
+  &quot;numeric_issues_40ms&quot;: [],
+  &quot;numeric_issues_10ms&quot;: []
+}</pre></details></section>
+<section><h2>PML / 音高 -3 半音 半音 半音 半音 半音 半音 半音 / seed 0</h2>
+<p><a href='https://hiroshiba.github.io/check-nonml-saikyo-vocoder/research/raw-envelope-risk-2026-10-19/audio/121-121726-0012__pitch-3__seed0__PML.wav'>既存公開WAVを開く</a>（既存ファイルへのリンク。時間再割当版の音声ではありません）</p>
+<img src='figures/PML_pm3.png' alt='PML / 音高 -3 半音 半音 半音 半音 半音 半音 半音 / seed 0の固定観測図'>
+<h3>全供給元の帳簿：重複窓係数量、全帯域</h3>
+<div class='scroll'><table><thead><tr><th>表示</th><th>供給元</th><th>分母・全係数量</th><th>量が不明な係数数</th><th>低係数個数</th><th>低係数小計</th><th>数値時刻不明個数</th><th>数値時刻不明小計</th><th>記録前小計</th><th>記録後小計</th><th>表示枠内小計</th><th>表示枠外小計</th></tr></thead><tbody><tr><td>A共通マスク</td><td>全1619フレーム</td><td>0.084518447</td><td>0</td><td>2340</td><td>1.1309024e-13</td><td>0</td><td>0</td><td>4.7395425e-11</td><td>0</td><td>0.0040004723</td><td>0.080517975</td></tr><tr><td>B時間再割当</td><td>全1619フレーム</td><td>0.084518447</td><td>0</td><td>2340</td><td>1.1309024e-13</td><td>0</td><td>0</td><td>8.0175356e-11</td><td>7.215977e-11</td><td>0.0038883989</td><td>0.080630049</td></tr><tr><td>A全有限係数</td><td>全1619フレーム</td><td>0.084518447</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>4.7395632e-11</td><td>0</td><td>0.0040004723</td><td>0.080517975</td></tr><tr><td>A共通マスク</td><td>参考の供給元枠1.96–2.26秒</td><td>0.0084286767</td><td>0</td><td>12</td><td>5.669628e-16</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0.0040004723</td><td>0.0044282043</td></tr><tr><td>B時間再割当</td><td>参考の供給元枠1.96–2.26秒</td><td>0.0084286767</td><td>0</td><td>12</td><td>5.669628e-16</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0.003888377</td><td>0.0045402996</td></tr><tr><td>A全有限係数</td><td>参考の供給元枠1.96–2.26秒</td><td>0.0084286767</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0.0040004723</td><td>0.0044282043</td></tr><tr><td>A共通マスク</td><td>供給元枠外</td><td>0.076089771</td><td>0</td><td>2328</td><td>1.1252328e-13</td><td>0</td><td>0</td><td>4.7395425e-11</td><td>0</td><td>0</td><td>0.076089771</td></tr><tr><td>B時間再割当</td><td>供給元枠外</td><td>0.076089771</td><td>0</td><td>2328</td><td>1.1252328e-13</td><td>0</td><td>0</td><td>8.0175356e-11</td><td>7.215977e-11</td><td>2.1882852e-08</td><td>0.076089749</td></tr><tr><td>A全有限係数</td><td>供給元枠外</td><td>0.076089771</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>4.7395632e-11</td><td>0</td><td>0</td><td>0.076089771</td></tr></tbody></table></div>
+<p>供給元枠外から表示内に入るBの量も別行で確認します。全1619フレームが主表示の供給元で、1.96–2.26秒枠は監査分類にだけ使います。</p>
+<h3>固定参考区間の波形量（係数量とは別母数）</h3>
+<div class='scroll'><table><thead><tr><th>区間</th><th>開始秒</th><th>終了秒</th><th>標本数</th><th>波形二乗積分 FS²s</th><th>平均二乗 FS²</th></tr></thead><tbody><tr><td>表示枠前半</td><td>2</td><td>2.08</td><td>1280</td><td>1.1984084e-05</td><td>0.00014980106</td></tr><tr><td>ユーザー参考枠</td><td>2.08</td><td>2.13</td><td>800</td><td>0.00019939433</td><td>0.0039878867</td></tr><tr><td>表示枠後半</td><td>2.13</td><td>2.22</td><td>1440</td><td>0.00043502151</td><td>0.0048335723</td></tr><tr><td>表示枠全体</td><td>2</td><td>2.22</td><td>3520</td><td>0.00064639993</td><td>0.0029381815</td></tr></tbody></table></div>
+<details><summary>表示の下限・上限、保存則、異常の詳細</summary><pre>{
+  &quot;display_censoring&quot;: {
+    &quot;40ms_PSD&quot;: {
+      &quot;unit&quot;: &quot;FS²/Hz&quot;,
+      &quot;finite_cells&quot;: 45657,
+      &quot;invalid_cells&quot;: 0,
+      &quot;below_color_floor_cells_including_zero&quot;: 14068,
+      &quot;above_color_ceiling_cells&quot;: 0,
+      &quot;below_floor_value_sum&quot;: 3.002256507394393e-08,
+      &quot;above_ceiling_value_sum&quot;: 0.0
+    },
+    &quot;10ms_PSD&quot;: {
+      &quot;unit&quot;: &quot;FS²/Hz&quot;,
+      &quot;finite_cells&quot;: 45657,
+      &quot;invalid_cells&quot;: 0,
+      &quot;below_color_floor_cells_including_zero&quot;: 14830,
+      &quot;above_color_ceiling_cells&quot;: 0,
+      &quot;below_floor_value_sum&quot;: 3.026411589939106e-08,
+      &quot;above_ceiling_value_sum&quot;: 0.0
+    },
+    &quot;A_hist&quot;: {
+      &quot;unit&quot;: &quot;FS²s/bin&quot;,
+      &quot;finite_cells&quot;: 451440,
+      &quot;invalid_cells&quot;: 0,
+      &quot;below_color_floor_cells_including_zero&quot;: 410719,
+      &quot;above_color_ceiling_cells&quot;: 0,
+      &quot;below_floor_value_sum&quot;: 1.763586603937242e-10,
+      &quot;above_ceiling_value_sum&quot;: 0.0
+    },
+    &quot;B_hist&quot;: {
+      &quot;unit&quot;: &quot;FS²s/bin&quot;,
+      &quot;finite_cells&quot;: 451440,
+      &quot;invalid_cells&quot;: 0,
+      &quot;below_color_floor_cells_including_zero&quot;: 414147,
+      &quot;above_color_ceiling_cells&quot;: 0,
+      &quot;below_floor_value_sum&quot;: 1.5780522271079376e-10,
+      &quot;above_ceiling_value_sum&quot;: 0.0
+    },
+    &quot;waveform_power&quot;: {
+      &quot;unit&quot;: &quot;FS²&quot;,
+      &quot;finite_cells&quot;: 220,
+      &quot;invalid_cells&quot;: 0,
+      &quot;below_color_floor_cells_including_zero&quot;: 0,
+      &quot;above_color_ceiling_cells&quot;: 0,
+      &quot;below_floor_value_sum&quot;: 0.0,
+      &quot;above_ceiling_value_sum&quot;: 0.0
+    },
+    &quot;A_frequency_sum_8000Hz&quot;: {
+      &quot;unit&quot;: &quot;FS²s/bin&quot;,
+      &quot;fixed_ymax&quot;: 0.001,
+      &quot;above_axis_ceiling_bins&quot;: 0,
+      &quot;above_ceiling_value_sum&quot;: 0.0,
+      &quot;ピーク_value&quot;: 0.00015703022302746117
+    },
+    &quot;B_frequency_sum_8000Hz&quot;: {
+      &quot;unit&quot;: &quot;FS²s/bin&quot;,
+      &quot;fixed_ymax&quot;: 0.001,
+      &quot;above_axis_ceiling_bins&quot;: 0,
+      &quot;above_ceiling_value_sum&quot;: 0.0,
+      &quot;ピーク_value&quot;: 4.010389786099869e-05
+    },
+    &quot;A_frequency_sum_2000Hz&quot;: {
+      &quot;unit&quot;: &quot;FS²s/bin&quot;,
+      &quot;fixed_ymax&quot;: 0.001,
+      &quot;above_axis_ceiling_bins&quot;: 0,
+      &quot;above_ceiling_value_sum&quot;: 0.0,
+      &quot;ピーク_value&quot;: 0.00015541377263934662
+    },
+    &quot;B_frequency_sum_2000Hz&quot;: {
+      &quot;unit&quot;: &quot;FS²s/bin&quot;,
+      &quot;fixed_ymax&quot;: 0.001,
+      &quot;above_axis_ceiling_bins&quot;: 0,
+      &quot;above_ceiling_value_sum&quot;: 0.0,
+      &quot;ピーク_value&quot;: 3.9809139141451634e-05
+    }
+  },
+  &quot;parseval&quot;: {
+    &quot;parseval_40ms&quot;: {
+      &quot;max_absolute&quot;: 1.0842021724855044e-19,
+      &quot;nonfinite_count&quot;: 0
+    },
+    &quot;parseval_10ms&quot;: {
+      &quot;max_absolute&quot;: 4.0657581468206416e-20,
+      &quot;nonfinite_count&quot;: 0
+    }
+  },
+  &quot;audit_failures&quot;: [],
+  &quot;numeric_issues_40ms&quot;: [],
+  &quot;numeric_issues_10ms&quot;: []
+}</pre></details></section>
+<section><h2>RAW_FULL / 音高 -3 半音 半音 半音 半音 半音 半音 半音 / seed 0</h2>
+<p><a href='https://hiroshiba.github.io/check-nonml-saikyo-vocoder/research/raw-envelope-risk-2026-10-19/audio/121-121726-0012__pitch-3__seed0__RAW_FULL.wav'>既存公開WAVを開く</a>（既存ファイルへのリンク。時間再割当版の音声ではありません）</p>
+<img src='figures/RAW_FULL_pm3.png' alt='RAW_FULL / 音高 -3 半音 半音 半音 半音 半音 半音 半音 / seed 0の固定観測図'>
+<h3>全供給元の帳簿：重複窓係数量、全帯域</h3>
+<div class='scroll'><table><thead><tr><th>表示</th><th>供給元</th><th>分母・全係数量</th><th>量が不明な係数数</th><th>低係数個数</th><th>低係数小計</th><th>数値時刻不明個数</th><th>数値時刻不明小計</th><th>記録前小計</th><th>記録後小計</th><th>表示枠内小計</th><th>表示枠外小計</th></tr></thead><tbody><tr><td>A共通マスク</td><td>全1619フレーム</td><td>0.084475014</td><td>0</td><td>2342</td><td>1.149829e-13</td><td>0</td><td>0</td><td>4.8341204e-11</td><td>0</td><td>0.0039850833</td><td>0.080489931</td></tr><tr><td>B時間再割当</td><td>全1619フレーム</td><td>0.084475014</td><td>0</td><td>2342</td><td>1.149829e-13</td><td>0</td><td>0</td><td>7.3575214e-11</td><td>7.3662845e-11</td><td>0.0038732994</td><td>0.080601715</td></tr><tr><td>A全有限係数</td><td>全1619フレーム</td><td>0.084475014</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>4.8341373e-11</td><td>0</td><td>0.0039850833</td><td>0.080489931</td></tr><tr><td>A共通マスク</td><td>参考の供給元枠1.96–2.26秒</td><td>0.0084136322</td><td>0</td><td>12</td><td>6.118715e-16</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0.0039850833</td><td>0.0044285489</td></tr><tr><td>B時間再割当</td><td>参考の供給元枠1.96–2.26秒</td><td>0.0084136322</td><td>0</td><td>12</td><td>6.118715e-16</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0.0038732779</td><td>0.0045403543</td></tr><tr><td>A全有限係数</td><td>参考の供給元枠1.96–2.26秒</td><td>0.0084136322</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0.0039850833</td><td>0.0044285489</td></tr><tr><td>A共通マスク</td><td>供給元枠外</td><td>0.076061382</td><td>0</td><td>2330</td><td>1.1437103e-13</td><td>0</td><td>0</td><td>4.8341204e-11</td><td>0</td><td>0</td><td>0.076061382</td></tr><tr><td>B時間再割当</td><td>供給元枠外</td><td>0.076061382</td><td>0</td><td>2330</td><td>1.1437103e-13</td><td>0</td><td>0</td><td>7.3575214e-11</td><td>7.3662845e-11</td><td>2.1523627e-08</td><td>0.07606136</td></tr><tr><td>A全有限係数</td><td>供給元枠外</td><td>0.076061382</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>4.8341373e-11</td><td>0</td><td>0</td><td>0.076061382</td></tr></tbody></table></div>
+<p>供給元枠外から表示内に入るBの量も別行で確認します。全1619フレームが主表示の供給元で、1.96–2.26秒枠は監査分類にだけ使います。</p>
+<h3>固定参考区間の波形量（係数量とは別母数）</h3>
+<div class='scroll'><table><thead><tr><th>区間</th><th>開始秒</th><th>終了秒</th><th>標本数</th><th>波形二乗積分 FS²s</th><th>平均二乗 FS²</th></tr></thead><tbody><tr><td>表示枠前半</td><td>2</td><td>2.08</td><td>1280</td><td>1.4995003e-05</td><td>0.00018743753</td></tr><tr><td>ユーザー参考枠</td><td>2.08</td><td>2.13</td><td>800</td><td>0.00019533304</td><td>0.0039066608</td></tr><tr><td>表示枠後半</td><td>2.13</td><td>2.22</td><td>1440</td><td>0.00043352829</td><td>0.004816981</td></tr><tr><td>表示枠全体</td><td>2</td><td>2.22</td><td>3520</td><td>0.00064385633</td><td>0.0029266197</td></tr></tbody></table></div>
+<details><summary>表示の下限・上限、保存則、異常の詳細</summary><pre>{
+  &quot;display_censoring&quot;: {
+    &quot;40ms_PSD&quot;: {
+      &quot;unit&quot;: &quot;FS²/Hz&quot;,
+      &quot;finite_cells&quot;: 45657,
+      &quot;invalid_cells&quot;: 0,
+      &quot;below_color_floor_cells_including_zero&quot;: 15129,
+      &quot;above_color_ceiling_cells&quot;: 0,
+      &quot;below_floor_value_sum&quot;: 3.220441164252199e-08,
+      &quot;above_ceiling_value_sum&quot;: 0.0
+    },
+    &quot;10ms_PSD&quot;: {
+      &quot;unit&quot;: &quot;FS²/Hz&quot;,
+      &quot;finite_cells&quot;: 45657,
+      &quot;invalid_cells&quot;: 0,
+      &quot;below_color_floor_cells_including_zero&quot;: 16119,
+      &quot;above_color_ceiling_cells&quot;: 0,
+      &quot;below_floor_value_sum&quot;: 3.31011612199097e-08,
+      &quot;above_ceiling_value_sum&quot;: 0.0
+    },
+    &quot;A_hist&quot;: {
+      &quot;unit&quot;: &quot;FS²s/bin&quot;,
+      &quot;finite_cells&quot;: 451440,
+      &quot;invalid_cells&quot;: 0,
+      &quot;below_color_floor_cells_including_zero&quot;: 411072,
+      &quot;above_color_ceiling_cells&quot;: 0,
+      &quot;below_floor_value_sum&quot;: 1.8777802489136687e-10,
+      &quot;above_ceiling_value_sum&quot;: 0.0
+    },
+    &quot;B_hist&quot;: {
+      &quot;unit&quot;: &quot;FS²s/bin&quot;,
+      &quot;finite_cells&quot;: 451440,
+      &quot;invalid_cells&quot;: 0,
+      &quot;below_color_floor_cells_including_zero&quot;: 414494,
+      &quot;above_color_ceiling_cells&quot;: 0,
+      &quot;below_floor_value_sum&quot;: 1.6835317387377997e-10,
+      &quot;above_ceiling_value_sum&quot;: 0.0
+    },
+    &quot;waveform_power&quot;: {
+      &quot;unit&quot;: &quot;FS²&quot;,
+      &quot;finite_cells&quot;: 220,
+      &quot;invalid_cells&quot;: 0,
+      &quot;below_color_floor_cells_including_zero&quot;: 0,
+      &quot;above_color_ceiling_cells&quot;: 0,
+      &quot;below_floor_value_sum&quot;: 0.0,
+      &quot;above_ceiling_value_sum&quot;: 0.0
+    },
+    &quot;A_frequency_sum_8000Hz&quot;: {
+      &quot;unit&quot;: &quot;FS²s/bin&quot;,
+      &quot;fixed_ymax&quot;: 0.001,
+      &quot;above_axis_ceiling_bins&quot;: 0,
+      &quot;above_ceiling_value_sum&quot;: 0.0,
+      &quot;ピーク_value&quot;: 0.0001500820281074366
+    },
+    &quot;B_frequency_sum_8000Hz&quot;: {
+      &quot;unit&quot;: &quot;FS²s/bin&quot;,
+      &quot;fixed_ymax&quot;: 0.001,
+      &quot;above_axis_ceiling_bins&quot;: 0,
+      &quot;above_ceiling_value_sum&quot;: 0.0,
+      &quot;ピーク_value&quot;: 3.6689142392050036e-05
+    },
+    &quot;A_frequency_sum_2000Hz&quot;: {
+      &quot;unit&quot;: &quot;FS²s/bin&quot;,
+      &quot;fixed_ymax&quot;: 0.001,
+      &quot;above_axis_ceiling_bins&quot;: 0,
+      &quot;above_ceiling_value_sum&quot;: 0.0,
+      &quot;ピーク_value&quot;: 0.00014870605059186742
+    },
+    &quot;B_frequency_sum_2000Hz&quot;: {
+      &quot;unit&quot;: &quot;FS²s/bin&quot;,
+      &quot;fixed_ymax&quot;: 0.001,
+      &quot;above_axis_ceiling_bins&quot;: 0,
+      &quot;above_ceiling_value_sum&quot;: 0.0,
+      &quot;ピーク_value&quot;: 3.662400661856817e-05
+    }
+  },
+  &quot;parseval&quot;: {
+    &quot;parseval_40ms&quot;: {
+      &quot;max_absolute&quot;: 1.0842021724855044e-19,
+      &quot;nonfinite_count&quot;: 0
+    },
+    &quot;parseval_10ms&quot;: {
+      &quot;max_absolute&quot;: 2.710505431213761e-20,
+      &quot;nonfinite_count&quot;: 0
+    }
+  },
+  &quot;audit_failures&quot;: [],
+  &quot;numeric_issues_40ms&quot;: [],
+  &quot;numeric_issues_10ms&quot;: []
+}</pre></details></section>
+<section><h2>PML / 音高 +3 半音 半音 半音 半音 半音 半音 半音 / seed 0</h2>
+<p><a href='https://hiroshiba.github.io/check-nonml-saikyo-vocoder/research/raw-envelope-risk-2026-10-19/audio/121-121726-0012__pitch+3__seed0__PML.wav'>既存公開WAVを開く</a>（既存ファイルへのリンク。時間再割当版の音声ではありません）</p>
+<img src='figures/PML_pp3.png' alt='PML / 音高 +3 半音 半音 半音 半音 半音 半音 半音 / seed 0の固定観測図'>
+<h3>全供給元の帳簿：重複窓係数量、全帯域</h3>
+<div class='scroll'><table><thead><tr><th>表示</th><th>供給元</th><th>分母・全係数量</th><th>量が不明な係数数</th><th>低係数個数</th><th>低係数小計</th><th>数値時刻不明個数</th><th>数値時刻不明小計</th><th>記録前小計</th><th>記録後小計</th><th>表示枠内小計</th><th>表示枠外小計</th></tr></thead><tbody><tr><td>A共通マスク</td><td>全1619フレーム</td><td>0.08084716</td><td>0</td><td>2364</td><td>1.1514006e-13</td><td>0</td><td>0</td><td>2.8858425e-11</td><td>0</td><td>0.0037844414</td><td>0.077062719</td></tr><tr><td>B時間再割当</td><td>全1619フレーム</td><td>0.08084716</td><td>0</td><td>2364</td><td>1.1514006e-13</td><td>0</td><td>0</td><td>5.8345587e-11</td><td>4.1093271e-12</td><td>0.0036627604</td><td>0.0771844</td></tr><tr><td>A全有限係数</td><td>全1619フレーム</td><td>0.08084716</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>2.8858663e-11</td><td>0</td><td>0.0037844414</td><td>0.077062719</td></tr><tr><td>A共通マスク</td><td>参考の供給元枠1.96–2.26秒</td><td>0.0073958551</td><td>0</td><td>12</td><td>5.1210891e-16</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0.0037844414</td><td>0.0036114137</td></tr><tr><td>B時間再割当</td><td>参考の供給元枠1.96–2.26秒</td><td>0.0073958551</td><td>0</td><td>12</td><td>5.1210891e-16</td><td>0</td><td>0</td><td>1.8846468e-16</td><td>3.336421e-16</td><td>0.0036627541</td><td>0.003733101</td></tr><tr><td>A全有限係数</td><td>参考の供給元枠1.96–2.26秒</td><td>0.0073958551</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0.0037844414</td><td>0.0036114137</td></tr><tr><td>A共通マスク</td><td>供給元枠外</td><td>0.073451305</td><td>0</td><td>2352</td><td>1.1462795e-13</td><td>0</td><td>0</td><td>2.8858425e-11</td><td>0</td><td>0</td><td>0.073451305</td></tr><tr><td>B時間再割当</td><td>供給元枠外</td><td>0.073451305</td><td>0</td><td>2352</td><td>1.1462795e-13</td><td>0</td><td>0</td><td>5.8345398e-11</td><td>4.1089934e-12</td><td>6.3202086e-09</td><td>0.073451299</td></tr><tr><td>A全有限係数</td><td>供給元枠外</td><td>0.073451305</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>2.8858663e-11</td><td>0</td><td>0</td><td>0.073451305</td></tr></tbody></table></div>
+<p>供給元枠外から表示内に入るBの量も別行で確認します。全1619フレームが主表示の供給元で、1.96–2.26秒枠は監査分類にだけ使います。</p>
+<h3>固定参考区間の波形量（係数量とは別母数）</h3>
+<div class='scroll'><table><thead><tr><th>区間</th><th>開始秒</th><th>終了秒</th><th>標本数</th><th>波形二乗積分 FS²s</th><th>平均二乗 FS²</th></tr></thead><tbody><tr><td>表示枠前半</td><td>2</td><td>2.08</td><td>1280</td><td>1.0394546e-05</td><td>0.00012993182</td></tr><tr><td>ユーザー参考枠</td><td>2.08</td><td>2.13</td><td>800</td><td>0.00018425715</td><td>0.0036851429</td></tr><tr><td>表示枠後半</td><td>2.13</td><td>2.22</td><td>1440</td><td>0.00041419424</td><td>0.0046021582</td></tr><tr><td>表示枠全体</td><td>2</td><td>2.22</td><td>3520</td><td>0.00060884593</td><td>0.0027674815</td></tr></tbody></table></div>
+<details><summary>表示の下限・上限、保存則、異常の詳細</summary><pre>{
+  &quot;display_censoring&quot;: {
+    &quot;40ms_PSD&quot;: {
+      &quot;unit&quot;: &quot;FS²/Hz&quot;,
+      &quot;finite_cells&quot;: 45657,
+      &quot;invalid_cells&quot;: 0,
+      &quot;below_color_floor_cells_including_zero&quot;: 14519,
+      &quot;above_color_ceiling_cells&quot;: 0,
+      &quot;below_floor_value_sum&quot;: 3.2318956564810264e-08,
+      &quot;above_ceiling_value_sum&quot;: 0.0
+    },
+    &quot;10ms_PSD&quot;: {
+      &quot;unit&quot;: &quot;FS²/Hz&quot;,
+      &quot;finite_cells&quot;: 45657,
+      &quot;invalid_cells&quot;: 0,
+      &quot;below_color_floor_cells_including_zero&quot;: 14506,
+      &quot;above_color_ceiling_cells&quot;: 0,
+      &quot;below_floor_value_sum&quot;: 2.9245045148262552e-08,
+      &quot;above_ceiling_value_sum&quot;: 0.0
+    },
+    &quot;A_hist&quot;: {
+      &quot;unit&quot;: &quot;FS²s/bin&quot;,
+      &quot;finite_cells&quot;: 451440,
+      &quot;invalid_cells&quot;: 0,
+      &quot;below_color_floor_cells_including_zero&quot;: 410853,
+      &quot;above_color_ceiling_cells&quot;: 0,
+      &quot;below_floor_value_sum&quot;: 1.8741575721861883e-10,
+      &quot;above_ceiling_value_sum&quot;: 0.0
+    },
+    &quot;B_hist&quot;: {
+      &quot;unit&quot;: &quot;FS²s/bin&quot;,
+      &quot;finite_cells&quot;: 451440,
+      &quot;invalid_cells&quot;: 0,
+      &quot;below_color_floor_cells_including_zero&quot;: 414134,
+      &quot;above_color_ceiling_cells&quot;: 0,
+      &quot;below_floor_value_sum&quot;: 1.6997219330956658e-10,
+      &quot;above_ceiling_value_sum&quot;: 0.0
+    },
+    &quot;waveform_power&quot;: {
+      &quot;unit&quot;: &quot;FS²&quot;,
+      &quot;finite_cells&quot;: 220,
+      &quot;invalid_cells&quot;: 0,
+      &quot;below_color_floor_cells_including_zero&quot;: 0,
+      &quot;above_color_ceiling_cells&quot;: 0,
+      &quot;below_floor_value_sum&quot;: 0.0,
+      &quot;above_ceiling_value_sum&quot;: 0.0
+    },
+    &quot;A_frequency_sum_8000Hz&quot;: {
+      &quot;unit&quot;: &quot;FS²s/bin&quot;,
+      &quot;fixed_ymax&quot;: 0.001,
+      &quot;above_axis_ceiling_bins&quot;: 0,
+      &quot;above_ceiling_value_sum&quot;: 0.0,
+      &quot;ピーク_value&quot;: 0.00015351439871772466
+    },
+    &quot;B_frequency_sum_8000Hz&quot;: {
+      &quot;unit&quot;: &quot;FS²s/bin&quot;,
+      &quot;fixed_ymax&quot;: 0.001,
+      &quot;above_axis_ceiling_bins&quot;: 0,
+      &quot;above_ceiling_value_sum&quot;: 0.0,
+      &quot;ピーク_value&quot;: 5.508230583207591e-05
+    },
+    &quot;A_frequency_sum_2000Hz&quot;: {
+      &quot;unit&quot;: &quot;FS²s/bin&quot;,
+      &quot;fixed_ymax&quot;: 0.001,
+      &quot;above_axis_ceiling_bins&quot;: 0,
+      &quot;above_ceiling_value_sum&quot;: 0.0,
+      &quot;ピーク_value&quot;: 0.0001525805766360275
+    },
+    &quot;B_frequency_sum_2000Hz&quot;: {
+      &quot;unit&quot;: &quot;FS²s/bin&quot;,
+      &quot;fixed_ymax&quot;: 0.001,
+      &quot;above_axis_ceiling_bins&quot;: 0,
+      &quot;above_ceiling_value_sum&quot;: 0.0,
+      &quot;ピーク_value&quot;: 5.4888550425531184e-05
+    }
+  },
+  &quot;parseval&quot;: {
+    &quot;parseval_40ms&quot;: {
+      &quot;max_absolute&quot;: 1.0842021724855044e-19,
+      &quot;nonfinite_count&quot;: 0
+    },
+    &quot;parseval_10ms&quot;: {
+      &quot;max_absolute&quot;: 1.3552527156068805e-20,
+      &quot;nonfinite_count&quot;: 0
+    }
+  },
+  &quot;audit_failures&quot;: [],
+  &quot;numeric_issues_40ms&quot;: [],
+  &quot;numeric_issues_10ms&quot;: []
+}</pre></details></section>
+<section><h2>RAW_FULL / 音高 +3 半音 半音 半音 半音 半音 半音 半音 / seed 0</h2>
+<p><a href='https://hiroshiba.github.io/check-nonml-saikyo-vocoder/research/raw-envelope-risk-2026-10-19/audio/121-121726-0012__pitch+3__seed0__RAW_FULL.wav'>既存公開WAVを開く</a>（既存ファイルへのリンク。時間再割当版の音声ではありません）</p>
+<img src='figures/RAW_FULL_pp3.png' alt='RAW_FULL / 音高 +3 半音 半音 半音 半音 半音 半音 半音 / seed 0の固定観測図'>
+<h3>全供給元の帳簿：重複窓係数量、全帯域</h3>
+<div class='scroll'><table><thead><tr><th>表示</th><th>供給元</th><th>分母・全係数量</th><th>量が不明な係数数</th><th>低係数個数</th><th>低係数小計</th><th>数値時刻不明個数</th><th>数値時刻不明小計</th><th>記録前小計</th><th>記録後小計</th><th>表示枠内小計</th><th>表示枠外小計</th></tr></thead><tbody><tr><td>A共通マスク</td><td>全1619フレーム</td><td>0.080713139</td><td>0</td><td>2509</td><td>1.2176111e-13</td><td>0</td><td>0</td><td>3.604567e-11</td><td>0</td><td>0.0038625492</td><td>0.07685059</td></tr><tr><td>B時間再割当</td><td>全1619フレーム</td><td>0.080713139</td><td>0</td><td>2509</td><td>1.2176111e-13</td><td>0</td><td>0</td><td>1.2528168e-11</td><td>5.197126e-12</td><td>0.0037409398</td><td>0.076972199</td></tr><tr><td>A全有限係数</td><td>全1619フレーム</td><td>0.080713139</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>3.604585e-11</td><td>0</td><td>0.0038625492</td><td>0.07685059</td></tr><tr><td>A共通マスク</td><td>参考の供給元枠1.96–2.26秒</td><td>0.007481997</td><td>0</td><td>18</td><td>9.1008832e-16</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0.0038625492</td><td>0.0036194478</td></tr><tr><td>B時間再割当</td><td>参考の供給元枠1.96–2.26秒</td><td>0.007481997</td><td>0</td><td>18</td><td>9.1008832e-16</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0.0037409334</td><td>0.0037410636</td></tr><tr><td>A全有限係数</td><td>参考の供給元枠1.96–2.26秒</td><td>0.007481997</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0.0038625492</td><td>0.0036194478</td></tr><tr><td>A共通マスク</td><td>供給元枠外</td><td>0.073231142</td><td>0</td><td>2491</td><td>1.2085102e-13</td><td>0</td><td>0</td><td>3.604567e-11</td><td>0</td><td>0</td><td>0.073231142</td></tr><tr><td>B時間再割当</td><td>供給元枠外</td><td>0.073231142</td><td>0</td><td>2491</td><td>1.2085102e-13</td><td>0</td><td>0</td><td>1.2528168e-11</td><td>5.197126e-12</td><td>6.4154369e-09</td><td>0.073231136</td></tr><tr><td>A全有限係数</td><td>供給元枠外</td><td>0.073231142</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>3.604585e-11</td><td>0</td><td>0</td><td>0.073231142</td></tr></tbody></table></div>
+<p>供給元枠外から表示内に入るBの量も別行で確認します。全1619フレームが主表示の供給元で、1.96–2.26秒枠は監査分類にだけ使います。</p>
+<h3>固定参考区間の波形量（係数量とは別母数）</h3>
+<div class='scroll'><table><thead><tr><th>区間</th><th>開始秒</th><th>終了秒</th><th>標本数</th><th>波形二乗積分 FS²s</th><th>平均二乗 FS²</th></tr></thead><tbody><tr><td>表示枠前半</td><td>2</td><td>2.08</td><td>1280</td><td>9.9318012e-06</td><td>0.00012414751</td></tr><tr><td>ユーザー参考枠</td><td>2.08</td><td>2.13</td><td>800</td><td>0.00019767522</td><td>0.0039535044</td></tr><tr><td>表示枠後半</td><td>2.13</td><td>2.22</td><td>1440</td><td>0.00041421786</td><td>0.0046024206</td></tr><tr><td>表示枠全体</td><td>2</td><td>2.22</td><td>3520</td><td>0.00062182488</td><td>0.0028264767</td></tr></tbody></table></div>
+<details><summary>表示の下限・上限、保存則、異常の詳細</summary><pre>{
+  &quot;display_censoring&quot;: {
+    &quot;40ms_PSD&quot;: {
+      &quot;unit&quot;: &quot;FS²/Hz&quot;,
+      &quot;finite_cells&quot;: 45657,
+      &quot;invalid_cells&quot;: 0,
+      &quot;below_color_floor_cells_including_zero&quot;: 15581,
+      &quot;above_color_ceiling_cells&quot;: 0,
+      &quot;below_floor_value_sum&quot;: 3.328190419532648e-08,
+      &quot;above_ceiling_value_sum&quot;: 0.0
+    },
+    &quot;10ms_PSD&quot;: {
+      &quot;unit&quot;: &quot;FS²/Hz&quot;,
+      &quot;finite_cells&quot;: 45657,
+      &quot;invalid_cells&quot;: 0,
+      &quot;below_color_floor_cells_including_zero&quot;: 16118,
+      &quot;above_color_ceiling_cells&quot;: 0,
+      &quot;below_floor_value_sum&quot;: 3.260991817500176e-08,
+      &quot;above_ceiling_value_sum&quot;: 0.0
+    },
+    &quot;A_hist&quot;: {
+      &quot;unit&quot;: &quot;FS²s/bin&quot;,
+      &quot;finite_cells&quot;: 451440,
+      &quot;invalid_cells&quot;: 0,
+      &quot;below_color_floor_cells_including_zero&quot;: 411353,
+      &quot;above_color_ceiling_cells&quot;: 0,
+      &quot;below_floor_value_sum&quot;: 2.025227478241639e-10,
+      &quot;above_ceiling_value_sum&quot;: 0.0
+    },
+    &quot;B_hist&quot;: {
+      &quot;unit&quot;: &quot;FS²s/bin&quot;,
+      &quot;finite_cells&quot;: 451440,
+      &quot;invalid_cells&quot;: 0,
+      &quot;below_color_floor_cells_including_zero&quot;: 414972,
+      &quot;above_color_ceiling_cells&quot;: 0,
+      &quot;below_floor_value_sum&quot;: 1.8344384964958652e-10,
+      &quot;above_ceiling_value_sum&quot;: 0.0
+    },
+    &quot;waveform_power&quot;: {
+      &quot;unit&quot;: &quot;FS²&quot;,
+      &quot;finite_cells&quot;: 220,
+      &quot;invalid_cells&quot;: 0,
+      &quot;below_color_floor_cells_including_zero&quot;: 0,
+      &quot;above_color_ceiling_cells&quot;: 0,
+      &quot;below_floor_value_sum&quot;: 0.0,
+      &quot;above_ceiling_value_sum&quot;: 0.0
+    },
+    &quot;A_frequency_sum_8000Hz&quot;: {
+      &quot;unit&quot;: &quot;FS²s/bin&quot;,
+      &quot;fixed_ymax&quot;: 0.001,
+      &quot;above_axis_ceiling_bins&quot;: 0,
+      &quot;above_ceiling_value_sum&quot;: 0.0,
+      &quot;ピーク_value&quot;: 0.00015492399367612845
+    },
+    &quot;B_frequency_sum_8000Hz&quot;: {
+      &quot;unit&quot;: &quot;FS²s/bin&quot;,
+      &quot;fixed_ymax&quot;: 0.001,
+      &quot;above_axis_ceiling_bins&quot;: 0,
+      &quot;above_ceiling_value_sum&quot;: 0.0,
+      &quot;ピーク_value&quot;: 4.83076564829959e-05
+    },
+    &quot;A_frequency_sum_2000Hz&quot;: {
+      &quot;unit&quot;: &quot;FS²s/bin&quot;,
+      &quot;fixed_ymax&quot;: 0.001,
+      &quot;above_axis_ceiling_bins&quot;: 0,
+      &quot;above_ceiling_value_sum&quot;: 0.0,
+      &quot;ピーク_value&quot;: 0.00015387078170578278
+    },
+    &quot;B_frequency_sum_2000Hz&quot;: {
+      &quot;unit&quot;: &quot;FS²s/bin&quot;,
+      &quot;fixed_ymax&quot;: 0.001,
+      &quot;above_axis_ceiling_bins&quot;: 0,
+      &quot;above_ceiling_value_sum&quot;: 0.0,
+      &quot;ピーク_value&quot;: 4.821248585968729e-05
+    }
+  },
+  &quot;parseval&quot;: {
+    &quot;parseval_40ms&quot;: {
+      &quot;max_absolute&quot;: 1.6263032587282567e-19,
+      &quot;nonfinite_count&quot;: 0
+    },
+    &quot;parseval_10ms&quot;: {
+      &quot;max_absolute&quot;: 2.710505431213761e-20,
+      &quot;nonfinite_count&quot;: 0
+    }
+  },
+  &quot;audit_failures&quot;: [],
+  &quot;numeric_issues_40ms&quot;: [],
+  &quot;numeric_issues_10ms&quot;: []
+}</pre></details></section>
+<h2>再現用ファイルと次の解釈</h2><p>
+<a href='public-results.json'>全結果JSON</a> / <a href='ledger.csv'>全帳簿CSV</a> / 
+<a href='waveform_regions.csv'>波形量CSV</a> / <a href='coefficient_regions.csv'>係数量CSV</a> / 
+<a href='public-provenance.json'>公開用の実行来歴</a></p>
+<p>独立した読図に基づく説明を本掲載版の冒頭へ追加しました。実行完了と仮説支持は別です。既定尺度で見えなくても結果に合わせて尺度・枠・閾値を変えません。
+必要なら元の結果を残し、別研究として設計します。</p>
+<h2>出典</h2><p>既存公開短例：<a href='https://hiroshiba.github.io/check-nonml-saikyo-vocoder/research/raw-envelope-risk-2026-10-19/'>check-nonml-saikyo-vocoder既存研究ページ</a>。
+元音声資料：<a href='https://www.openslr.org/12'>LibriSpeech（OpenSLR 12）</a>。
+ライセンス：<a href='https://creativecommons.org/licenses/by/4.0/'>CC BY 4.0</a>。既存公開加工音を含むPCM16を観測用に数値変換・図示し、新しい加工音は作成していません。</p>
+</main><footer>掲載版作成：2026年10月19日 14:13:27 日本時間（05:13:27 UTC）。測定時刻とは別です。保存済みの結果から説明と表示を追加しました。<br><a href="../publication-notes.html">公開範囲・表示変更・確認状況</a></footer></body></html>
