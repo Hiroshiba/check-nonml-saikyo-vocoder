@@ -1129,6 +1129,40 @@
         "bytes": 4886,
         "sha256": "81ea8a826f257384ba1ab408f52a1f4e80fc6e7dbfde5dfb9533b145f89fb868"
       }
+    },
+    {
+      "kind": "navigation-only",
+      "id": "frame-color-pf-comparison-2026-10-19",
+      "path": "research/frame-color-pf-comparison-2026-10-19",
+      "source_path": "experiments/2026-10-19/frame-color-pf-comparison",
+      "created_on": "2026-10-19",
+      "created_at": "2026-10-19T11:32:43.798811+00:00",
+      "title": "包絡の参照時刻を変えるPML候補：5音声の比較と残る先行成分",
+      "comparison_scope": "5録音・3音高・2seedの30対応60生成波形。品質未評価・未採用で、RAW_FULL120の正式評価とは別。原音・現PML（P）・候補Fを比較し、旧HNMは参考として提示。",
+      "audio_listing": {
+        "caption": "サンプル3の全区間4.045秒。原音を参考に、＋3半音・seed 0の現PMLと候補Fを比較します。",
+        "note": "品質未評価・未採用。原音は未編集で編集音高の正解ではありません。無正規化PCM16。LibriSpeech / CC BY 4.0。",
+        "attribution_path": "index.html",
+        "samples": [
+          {
+            "path": "audio/librispeech_121-121726-0012__original.wav",
+            "label": "原音"
+          },
+          {
+            "path": "audio/librispeech_121-121726-0012__pitch+3__seed0__P.wav",
+            "label": "現PML ＋3半音"
+          },
+          {
+            "path": "audio/librispeech_121-121726-0012__pitch+3__seed0__F.wav",
+            "label": "時刻参照の候補F ＋3半音"
+          }
+        ]
+      },
+      "artifact_count": 169,
+      "artifact_manifest": {
+        "bytes": 33455,
+        "sha256": "cb6d4a5a38c2697619e0a357df52034d059be7731cceec319b2943f3eca95d5d"
+      }
     }
   ]
 }

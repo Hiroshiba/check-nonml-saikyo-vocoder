@@ -1,0 +1,191 @@
+{
+  "schema": "frame-color-pf-spectrogram-display-v1",
+  "source": "Full-length saved float64 NPY and full-length archived original PCM16; independent of <=5s listening crop",
+  "sample_rate": 16000,
+  "fft_samples": 1024,
+  "window": "periodic Hann, 1024 samples (64ms)",
+  "hop_samples": 128,
+  "hop_ms": 8.0,
+  "edge_padding": "none; complete frames only",
+  "spectral_quantity": "one-sided PSD: abs(rfft(window*x))^2/(sample_rate*sum(window^2)); interior positive-frequency bins doubled",
+  "normalization": "No filewise or pairwise gain normalization",
+  "db_reference": "1 FS^2/Hz",
+  "fixed_db_range": [
+    -120.0,
+    -20.0
+  ],
+  "zero_display_floor": "Values below 1e-12 FS^2/Hz map to fixed color floor only; audio and saved observations unchanged",
+  "mel": {
+    "bands": 80,
+    "convention": "HTK: 2595*log10(1+f/700)",
+    "filters": "Triangular; each filter sums to 1 over FFT bins",
+    "quantity": "Weighted average PSD, not a quality score"
+  },
+  "sample3_zoom": {
+    "interval_seconds": [
+      2.0,
+      2.2
+    ],
+    "reference_mark_seconds": [
+      2.08,
+      2.13
+    ],
+    "window_samples": 320,
+    "window_ms": 20,
+    "fft_samples": 512,
+    "hop_samples": 32,
+    "hop_ms": 2,
+    "zero_padding": "FFT only, window320 zero-padded to512; no boundary padding",
+    "center_time_support": "Each plotted frame center uses +/-10ms of waveform",
+    "mel_bands": 40,
+    "purpose": "Display only; original is native, not pitch-edited truth"
+  },
+  "waveform_plots": "Native full waveform and all sample3 zooms, shared amplitude axis without normalization",
+  "plots": {
+    "librispeech_1089-134686-0008__pitch+0__seed0": {
+      "linear": "spectrograms/librispeech_1089-134686-0008__pitch+0__seed0__linear.png",
+      "mel": "spectrograms/librispeech_1089-134686-0008__pitch+0__seed0__mel.png",
+      "waveform": "spectrograms/librispeech_1089-134686-0008__pitch+0__seed0__waveform.png"
+    },
+    "librispeech_1089-134686-0008__pitch+0__seed20261015": {
+      "linear": "spectrograms/librispeech_1089-134686-0008__pitch+0__seed20261015__linear.png",
+      "mel": "spectrograms/librispeech_1089-134686-0008__pitch+0__seed20261015__mel.png"
+    },
+    "librispeech_1089-134686-0008__pitch-3__seed0": {
+      "linear": "spectrograms/librispeech_1089-134686-0008__pitch-3__seed0__linear.png",
+      "mel": "spectrograms/librispeech_1089-134686-0008__pitch-3__seed0__mel.png"
+    },
+    "librispeech_1089-134686-0008__pitch-3__seed20261015": {
+      "linear": "spectrograms/librispeech_1089-134686-0008__pitch-3__seed20261015__linear.png",
+      "mel": "spectrograms/librispeech_1089-134686-0008__pitch-3__seed20261015__mel.png"
+    },
+    "librispeech_1089-134686-0008__pitch+3__seed0": {
+      "linear": "spectrograms/librispeech_1089-134686-0008__pitch+3__seed0__linear.png",
+      "mel": "spectrograms/librispeech_1089-134686-0008__pitch+3__seed0__mel.png"
+    },
+    "librispeech_1089-134686-0008__pitch+3__seed20261015": {
+      "linear": "spectrograms/librispeech_1089-134686-0008__pitch+3__seed20261015__linear.png",
+      "mel": "spectrograms/librispeech_1089-134686-0008__pitch+3__seed20261015__mel.png"
+    },
+    "librispeech_1089-134686-0032__pitch+0__seed0": {
+      "linear": "spectrograms/librispeech_1089-134686-0032__pitch+0__seed0__linear.png",
+      "mel": "spectrograms/librispeech_1089-134686-0032__pitch+0__seed0__mel.png",
+      "waveform": "spectrograms/librispeech_1089-134686-0032__pitch+0__seed0__waveform.png"
+    },
+    "librispeech_1089-134686-0032__pitch+0__seed20261015": {
+      "linear": "spectrograms/librispeech_1089-134686-0032__pitch+0__seed20261015__linear.png",
+      "mel": "spectrograms/librispeech_1089-134686-0032__pitch+0__seed20261015__mel.png"
+    },
+    "librispeech_1089-134686-0032__pitch-3__seed0": {
+      "linear": "spectrograms/librispeech_1089-134686-0032__pitch-3__seed0__linear.png",
+      "mel": "spectrograms/librispeech_1089-134686-0032__pitch-3__seed0__mel.png"
+    },
+    "librispeech_1089-134686-0032__pitch-3__seed20261015": {
+      "linear": "spectrograms/librispeech_1089-134686-0032__pitch-3__seed20261015__linear.png",
+      "mel": "spectrograms/librispeech_1089-134686-0032__pitch-3__seed20261015__mel.png"
+    },
+    "librispeech_1089-134686-0032__pitch+3__seed0": {
+      "linear": "spectrograms/librispeech_1089-134686-0032__pitch+3__seed0__linear.png",
+      "mel": "spectrograms/librispeech_1089-134686-0032__pitch+3__seed0__mel.png"
+    },
+    "librispeech_1089-134686-0032__pitch+3__seed20261015": {
+      "linear": "spectrograms/librispeech_1089-134686-0032__pitch+3__seed20261015__linear.png",
+      "mel": "spectrograms/librispeech_1089-134686-0032__pitch+3__seed20261015__mel.png"
+    },
+    "librispeech_1188-133604-0003__pitch+0__seed0": {
+      "linear": "spectrograms/librispeech_1188-133604-0003__pitch+0__seed0__linear.png",
+      "mel": "spectrograms/librispeech_1188-133604-0003__pitch+0__seed0__mel.png",
+      "waveform": "spectrograms/librispeech_1188-133604-0003__pitch+0__seed0__waveform.png"
+    },
+    "librispeech_1188-133604-0003__pitch+0__seed20261015": {
+      "linear": "spectrograms/librispeech_1188-133604-0003__pitch+0__seed20261015__linear.png",
+      "mel": "spectrograms/librispeech_1188-133604-0003__pitch+0__seed20261015__mel.png"
+    },
+    "librispeech_1188-133604-0003__pitch-3__seed0": {
+      "linear": "spectrograms/librispeech_1188-133604-0003__pitch-3__seed0__linear.png",
+      "mel": "spectrograms/librispeech_1188-133604-0003__pitch-3__seed0__mel.png"
+    },
+    "librispeech_1188-133604-0003__pitch-3__seed20261015": {
+      "linear": "spectrograms/librispeech_1188-133604-0003__pitch-3__seed20261015__linear.png",
+      "mel": "spectrograms/librispeech_1188-133604-0003__pitch-3__seed20261015__mel.png"
+    },
+    "librispeech_1188-133604-0003__pitch+3__seed0": {
+      "linear": "spectrograms/librispeech_1188-133604-0003__pitch+3__seed0__linear.png",
+      "mel": "spectrograms/librispeech_1188-133604-0003__pitch+3__seed0__mel.png"
+    },
+    "librispeech_1188-133604-0003__pitch+3__seed20261015": {
+      "linear": "spectrograms/librispeech_1188-133604-0003__pitch+3__seed20261015__linear.png",
+      "mel": "spectrograms/librispeech_1188-133604-0003__pitch+3__seed20261015__mel.png"
+    },
+    "librispeech_121-121726-0012__pitch+0__seed0": {
+      "linear": "spectrograms/librispeech_121-121726-0012__pitch+0__seed0__linear.png",
+      "mel": "spectrograms/librispeech_121-121726-0012__pitch+0__seed0__mel.png",
+      "waveform": "spectrograms/librispeech_121-121726-0012__pitch+0__seed0__waveform.png",
+      "linear_zoom": "spectrograms/librispeech_121-121726-0012__pitch+0__seed0__linear_zoom.png",
+      "mel_zoom": "spectrograms/librispeech_121-121726-0012__pitch+0__seed0__mel_zoom.png",
+      "waveform_zoom": "spectrograms/librispeech_121-121726-0012__pitch+0__seed0__waveform_zoom.png"
+    },
+    "librispeech_121-121726-0012__pitch+0__seed20261015": {
+      "linear": "spectrograms/librispeech_121-121726-0012__pitch+0__seed20261015__linear.png",
+      "mel": "spectrograms/librispeech_121-121726-0012__pitch+0__seed20261015__mel.png",
+      "linear_zoom": "spectrograms/librispeech_121-121726-0012__pitch+0__seed20261015__linear_zoom.png",
+      "mel_zoom": "spectrograms/librispeech_121-121726-0012__pitch+0__seed20261015__mel_zoom.png",
+      "waveform_zoom": "spectrograms/librispeech_121-121726-0012__pitch+0__seed20261015__waveform_zoom.png"
+    },
+    "librispeech_121-121726-0012__pitch-3__seed0": {
+      "linear": "spectrograms/librispeech_121-121726-0012__pitch-3__seed0__linear.png",
+      "mel": "spectrograms/librispeech_121-121726-0012__pitch-3__seed0__mel.png",
+      "linear_zoom": "spectrograms/librispeech_121-121726-0012__pitch-3__seed0__linear_zoom.png",
+      "mel_zoom": "spectrograms/librispeech_121-121726-0012__pitch-3__seed0__mel_zoom.png",
+      "waveform_zoom": "spectrograms/librispeech_121-121726-0012__pitch-3__seed0__waveform_zoom.png"
+    },
+    "librispeech_121-121726-0012__pitch-3__seed20261015": {
+      "linear": "spectrograms/librispeech_121-121726-0012__pitch-3__seed20261015__linear.png",
+      "mel": "spectrograms/librispeech_121-121726-0012__pitch-3__seed20261015__mel.png",
+      "linear_zoom": "spectrograms/librispeech_121-121726-0012__pitch-3__seed20261015__linear_zoom.png",
+      "mel_zoom": "spectrograms/librispeech_121-121726-0012__pitch-3__seed20261015__mel_zoom.png",
+      "waveform_zoom": "spectrograms/librispeech_121-121726-0012__pitch-3__seed20261015__waveform_zoom.png"
+    },
+    "librispeech_121-121726-0012__pitch+3__seed0": {
+      "linear": "spectrograms/librispeech_121-121726-0012__pitch+3__seed0__linear.png",
+      "mel": "spectrograms/librispeech_121-121726-0012__pitch+3__seed0__mel.png",
+      "linear_zoom": "spectrograms/librispeech_121-121726-0012__pitch+3__seed0__linear_zoom.png",
+      "mel_zoom": "spectrograms/librispeech_121-121726-0012__pitch+3__seed0__mel_zoom.png",
+      "waveform_zoom": "spectrograms/librispeech_121-121726-0012__pitch+3__seed0__waveform_zoom.png"
+    },
+    "librispeech_121-121726-0012__pitch+3__seed20261015": {
+      "linear": "spectrograms/librispeech_121-121726-0012__pitch+3__seed20261015__linear.png",
+      "mel": "spectrograms/librispeech_121-121726-0012__pitch+3__seed20261015__mel.png",
+      "linear_zoom": "spectrograms/librispeech_121-121726-0012__pitch+3__seed20261015__linear_zoom.png",
+      "mel_zoom": "spectrograms/librispeech_121-121726-0012__pitch+3__seed20261015__mel_zoom.png",
+      "waveform_zoom": "spectrograms/librispeech_121-121726-0012__pitch+3__seed20261015__waveform_zoom.png"
+    },
+    "librispeech_1221-135766-0005__pitch+0__seed0": {
+      "linear": "spectrograms/librispeech_1221-135766-0005__pitch+0__seed0__linear.png",
+      "mel": "spectrograms/librispeech_1221-135766-0005__pitch+0__seed0__mel.png",
+      "waveform": "spectrograms/librispeech_1221-135766-0005__pitch+0__seed0__waveform.png"
+    },
+    "librispeech_1221-135766-0005__pitch+0__seed20261015": {
+      "linear": "spectrograms/librispeech_1221-135766-0005__pitch+0__seed20261015__linear.png",
+      "mel": "spectrograms/librispeech_1221-135766-0005__pitch+0__seed20261015__mel.png"
+    },
+    "librispeech_1221-135766-0005__pitch-3__seed0": {
+      "linear": "spectrograms/librispeech_1221-135766-0005__pitch-3__seed0__linear.png",
+      "mel": "spectrograms/librispeech_1221-135766-0005__pitch-3__seed0__mel.png"
+    },
+    "librispeech_1221-135766-0005__pitch-3__seed20261015": {
+      "linear": "spectrograms/librispeech_1221-135766-0005__pitch-3__seed20261015__linear.png",
+      "mel": "spectrograms/librispeech_1221-135766-0005__pitch-3__seed20261015__mel.png"
+    },
+    "librispeech_1221-135766-0005__pitch+3__seed0": {
+      "linear": "spectrograms/librispeech_1221-135766-0005__pitch+3__seed0__linear.png",
+      "mel": "spectrograms/librispeech_1221-135766-0005__pitch+3__seed0__mel.png"
+    },
+    "librispeech_1221-135766-0005__pitch+3__seed20261015": {
+      "linear": "spectrograms/librispeech_1221-135766-0005__pitch+3__seed20261015__linear.png",
+      "mel": "spectrograms/librispeech_1221-135766-0005__pitch+3__seed20261015__mel.png"
+    }
+  },
+  "new_quality_metrics": false,
+  "geometry_embedded": false
+}
