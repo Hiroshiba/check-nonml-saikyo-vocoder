@@ -1,0 +1,39 @@
+<!doctype html><html lang="ja"><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>既存8方式との比較条件</title><style>:root { color-scheme: light dark; --bg:#f7f8fb; --fg:#182435; --panel:#fff; --line:#bbc5d4; --muted:#4a5d74; --link:#124c9b; --accent:#e7effb; }
+@media (prefers-color-scheme: dark) { :root { --bg:#111824; --fg:#edf2fa; --panel:#1c2736; --line:#52657d; --muted:#b8c6d8; --link:#a8ceff; --accent:#283f5d; } }
+* { box-sizing:border-box; }
+body { margin:0; background:var(--bg); color:var(--fg); font:16px/1.7 system-ui,sans-serif; }
+main { max-width:1500px; margin:auto; padding:clamp(16px,3vw,48px); }
+h1 { font-size:clamp(1.7rem,4vw,2.5rem); line-height:1.4; }
+h2 { margin-top:2.8rem; border-bottom:2px solid var(--line); padding-bottom:.4rem; }
+h3 { margin-top:1.8rem; }
+a { color:var(--link); text-underline-offset:.2em; overflow-wrap:anywhere; }
+a:focus-visible, input:focus-visible, summary:focus-visible, .table-scroll:focus-visible { outline:3px solid var(--link); outline-offset:3px; }
+.notice { background:var(--accent); border-left:5px solid var(--link); padding:1rem; }
+.table-block { margin:1.5rem 0; }
+.table-scroll { overflow:auto; border:1px solid var(--line); border-radius:.4rem; }
+table { border-collapse:collapse; min-width:100%; background:var(--panel); font-size:.9rem; }
+caption { text-align:left; font-weight:700; padding:.8rem; background:var(--accent); }
+th, td { text-align:left; vertical-align:top; padding:.7rem; border:1px solid var(--line); min-width:7rem; }
+thead th { background:var(--accent); }
+tbody th { font-weight:600; }
+tbody tr:focus-within { outline:2px solid var(--link); outline-offset:-2px; }
+details { border:1px solid var(--line); border-radius:.3rem; padding:.6rem; margin:.8rem 0; background:var(--panel); }
+summary { cursor:pointer; font-weight:600; }
+details > :not(summary) { margin-top:.8rem; }
+.saved-fields { display:grid; grid-template-columns:minmax(10rem,1fr) minmax(12rem,2fr); gap:.3rem 1rem; min-width:30rem; }
+dt { color:var(--muted); }
+dd { margin:0; overflow-wrap:anywhere; }
+.missing { color:var(--muted); }
+.top-rank { display:inline-block; padding:.1rem .5rem; border:2px solid currentColor; font-weight:800; border-radius:.25rem; }
+.audio-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:1rem; }
+.audio-grid section { border:1px solid var(--line); border-radius:.4rem; padding:1rem; background:var(--panel); }
+audio { width:100%; }
+.filter { display:flex; flex-wrap:wrap; gap:.6rem; align-items:center; padding:.5rem 0; }
+.filter[hidden], tr[hidden] { display:none; }
+input { font:inherit; padding:.3rem; border:1px solid var(--line); border-radius:.2rem; max-width:100%; background:var(--panel); color:var(--fg); }
+.skip { position:absolute; top:-100px; left:1rem; background:var(--panel); padding:.6rem; z-index:3; }
+.skip:focus { top:1rem; }
+.hash { overflow-wrap:anywhere; font-size:.85rem; }
+@media (max-width:700px) { .audio-grid { grid-template-columns:1fr; } main { padding:14px; } th, td { padding:.5rem; } }
+@media print { .filter, .skip { display:none; } .table-scroll { overflow:visible; } body { background:white; color:black; } a { color:inherit; } }
+</style><main><h1>既存8方式との比較条件</h1><p><a href="index.html">主比較へ戻る</a></p><p>今回のPML・RAW_FULLと、過去に保存したHNM・WORLD Harvest・FACodec・HiFi-Glot・GOLF-ff・SiFi-GAN・LLSM2・MagPhaseの10方式を、無編集・合成seed 0だけで比較します。現在の両seedによる対応差の主比較へ、過去のseed 0だけの値を混ぜません。</p><h2>同じ支持集合と軸別順位</h2><p>4軸とも120録音・40話者が成立しました。原音と全方式の共通先頭16 kHz区間を使い、各話者の3録音を平均してから40話者を等重みで平均します。軸ごとに全方式共通の成功支持を要求し、現在の参照PCM・評価標本数・出力identityの矛盾はありませんでした。旧PMLの数値を今回PMLの代用にはしていません。</p><ul><li>eSTOI：大きい方が良い。pystoi 0.4.1、extended、内部10 kHz・40 dB無音除去・評価seed 0。</li><li>MR-STFT：小さい方が良い。5/20/80 ms窓のlog-magnitude絶対誤差(dB)の平均。</li><li>ERB40：小さい方が良い。40 ms窓・5 ms hop・32 ERB帯域。ERB20とは別。</li><li>ECAPA：大きい方が良い。共通先頭区間のraw embedding cosine。編集後の全長ECAPAとは別。</li></ul><p>順位は保存されたbinary64値の正確な有理数平均に対する競争順位です。同率は1,1,3のように表示し、表示丸めで同率を作りません。総合順位・順位平均・歴史対照との信頼区間は作っていません。</p><h2>根拠と限界</h2><p>旧eSTOIの全960元記録と公開値をSHA・キー・値・状態で結び、測定時バージョンを確認しました。旧ECAPAの全960値は正しいquality_result来歴へ結び、今回の保存runtime・モデルSHA・主要依存との対応を確認しました。</p><p>実装・条件・保存version等の一致を確認した比較です。過去の全波形やパッケージ実体を今回もう一度読み直したわけではなく、全バイナリの同一性も保証しません。今回の元JSON検証は計測環境の保存記録に基づき、親側は受領公開表・証拠のbytes/SHAと比較identityを照合しました。計測の独立再実行ではありません。</p><ul><li><a href="provenance/current-runtime.json">今回の保存runtime・観測来歴</a></li><li><a href="provenance/historical-estoi.json">旧eSTOI 960件の版証拠</a></li><li><a href="data/historical-comparison.json.gz">全4,800観測と軸別支持・順位</a></li></ul><h2>信号・工程コスト</h2><p>3exportの実監査から抜粋した生成receiptのpath・bytes・SHAを全10区間で照合しました。信号・コスト・品質は同じ生成receiptへ対応します。ただし表示集計が元receipt全体や波形を独立に再認証したものではなく、外部の実読取記録に基づく対応確認です。一般120録音の事象集合と発見用5録音の事象集合を分け、固定flagを可聴失敗や採否に読み替えません。工程時間は計測処理を含み、純解析・純復号RTFは未測定です。</p></main></html>
