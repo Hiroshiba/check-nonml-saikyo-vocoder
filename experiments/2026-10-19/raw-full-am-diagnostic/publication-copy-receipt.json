@@ -1,0 +1,188 @@
+{
+  "schema": "saved-am-publication-copy-receipt-v1",
+  "publication_prepared_at": "2026-10-19T13:44:13Z",
+  "original_presentation_generated_utc": "2026-10-19T10:55:05.449619+00:00",
+  "scientific_observation_finished_utc": "2026-10-19T10:43:44.410357+00:00",
+  "scientific_observation_repeated": false,
+  "additional_statistics": false,
+  "synthesis": false,
+  "audio_processing": false,
+  "tests": false,
+  "git_actions": false,
+  "scope": "既知の LibriSpeech 121-121726-0012、1発話・seed 0。120録音の品質評価とは独立した保存観測。",
+  "interpretation": "主設定の全窓8群ではRAW_FULL−PMLのsource-unique比率差の平均・中央値がすべて正。一方、固定参考区間 [2.08,2.13) と重なる窓では中央値が7/8群で負。音質や因果的な成分分離の証明ではない。",
+  "original_report_file_count": 14,
+  "original_artifact_manifest": {
+    "name": "artifact-manifest.json",
+    "bytes": 2247,
+    "sha256": "5ac0860dacd2ad194bf5933a1e3de1369447bdd44e4f68a32e6584624a8882f5"
+  },
+  "original_files_preserved_byte_for_byte": [
+    {
+      "name": "README-ja.md",
+      "bytes": 2314,
+      "sha256": "8902a0946624f85fac7ed09ecbcca15676fec98fe2d1838b267adcfffd7599ea"
+    },
+    {
+      "name": "all-groups.csv",
+      "bytes": 168597,
+      "sha256": "efc66a13f30607b6a8a3a69683ddfcaa950b73ad2d4a4238f8c216a45975a6a5"
+    },
+    {
+      "name": "audio-manifest.json",
+      "bytes": 3670,
+      "sha256": "50833628a6b851f4f7457feccab829ae0c083740270932362a6ee7a8a026ddec"
+    },
+    {
+      "name": "completion-receipt.json",
+      "bytes": 2150,
+      "sha256": "0cfdb65c6f18a3767417593aadcaac9650c0ea8aae30236f7efb4d750a466203"
+    },
+    {
+      "name": "figure-provenance.json",
+      "bytes": 698,
+      "sha256": "871ad896942e8e6bccefba943bbf3df3b15c731c6bbe6346be1b1732b2024c9b"
+    },
+    {
+      "name": "highband-power-hp1500.png",
+      "bytes": 216413,
+      "sha256": "83fb8a6f1ea178a18491128d179b2fd01e3e8bdc85f17328ce5f0d4c9af74639"
+    },
+    {
+      "name": "highband-power-hp3000.png",
+      "bytes": 268655,
+      "sha256": "399e76cd25dca5819ef973c2803fd5ed8b6971f4d1e73997e8fdb6f0c8ccce99"
+    },
+    {
+      "name": "holdout-groups.csv",
+      "bytes": 34147,
+      "sha256": "f5ea85ac07da69d2000f19adc57e17e41a4f7e782625ec3207a254543d1195e0"
+    },
+    {
+      "name": "holdout-per-window.csv",
+      "bytes": 524115,
+      "sha256": "e0e248c21dcf8d6abe24da1d4370ea2a421913a97ee80a06f029cddbbbe52110"
+    },
+    {
+      "name": "index.html",
+      "bytes": 131515,
+      "sha256": "e0f185eabdc48954cc7472eca00458863205625792d18974a9dce7612bf104d6"
+    },
+    {
+      "name": "provenance.json",
+      "bytes": 7697,
+      "sha256": "090884e6e9177a6bf11f9c25d2ce20a650d519b3720232832df01c38d3616c2e"
+    },
+    {
+      "name": "source-verification.json",
+      "bytes": 1894,
+      "sha256": "894802dbf6f6fd0661cc2f0a18de250ba4751e495aa88ee0d14cf4f27e198281"
+    },
+    {
+      "name": "summary.json",
+      "bytes": 1163356,
+      "sha256": "b0effb70475191bb1baab8f357f1fcad2e28a8b6e4839a84b16001606f636012"
+    }
+  ],
+  "original_nonmanifest_files_unchanged": true,
+  "manifest_change": "Publication copy changes files[].file to files[].name and includes the three unchanged PCM16 copies plus this receipt; the original report directory is unchanged.",
+  "copied_audio": [
+    {
+      "name": "audio/121-121726-0012__original.wav",
+      "case": "librispeech_121-121726-0012",
+      "variant": "ORIGINAL",
+      "pitch_semitones": null,
+      "seed": null,
+      "source_url": "https://hiroshiba.github.io/check-nonml-saikyo-vocoder/research/raw-envelope-risk-2026-10-19/audio/121-121726-0012__original.wav",
+      "source_file_bytes": 129484,
+      "source_file_sha256": "f509e04154bfad1df61d2b56feaa41a3b1474f35d986aa225d05a5b9e9cef1b6",
+      "copied_file_bytes": 129484,
+      "copied_file_sha256": "f509e04154bfad1df61d2b56feaa41a3b1474f35d986aa225d05a5b9e9cef1b6",
+      "source_audio_manifest": "audio-manifest.json",
+      "source_audio_manifest_sha256": "50833628a6b851f4f7457feccab829ae0c083740270932362a6ee7a8a026ddec",
+      "reuse": "previously published PCM16 file, matched against the original report audio manifest",
+      "copy_byte_identical": true,
+      "processing": "none",
+      "crop": false,
+      "requantization": false,
+      "duration_seconds": 4.045,
+      "interval_seconds": [
+        0.0,
+        4.045
+      ],
+      "channels": 1,
+      "sample_width_bytes": 2,
+      "sample_rate": 16000,
+      "samples": 64720,
+      "compression": "NONE"
+    },
+    {
+      "name": "audio/121-121726-0012__pitch+3__seed0__PML.wav",
+      "case": "librispeech_121-121726-0012",
+      "variant": "PML",
+      "pitch_semitones": 3,
+      "seed": 0,
+      "source_url": "https://hiroshiba.github.io/check-nonml-saikyo-vocoder/research/raw-envelope-risk-2026-10-19/audio/121-121726-0012__pitch+3__seed0__PML.wav",
+      "source_file_bytes": 129484,
+      "source_file_sha256": "d1fcaee4b6a8981f09e6b6b8583ad741e7ceaeb766e1a8b913b64f13dc88746a",
+      "copied_file_bytes": 129484,
+      "copied_file_sha256": "d1fcaee4b6a8981f09e6b6b8583ad741e7ceaeb766e1a8b913b64f13dc88746a",
+      "source_audio_manifest": "audio-manifest.json",
+      "source_audio_manifest_sha256": "50833628a6b851f4f7457feccab829ae0c083740270932362a6ee7a8a026ddec",
+      "reuse": "previously published PCM16 file, matched against the original report audio manifest",
+      "copy_byte_identical": true,
+      "processing": "none",
+      "crop": false,
+      "requantization": false,
+      "duration_seconds": 4.045,
+      "interval_seconds": [
+        0.0,
+        4.045
+      ],
+      "channels": 1,
+      "sample_width_bytes": 2,
+      "sample_rate": 16000,
+      "samples": 64720,
+      "compression": "NONE"
+    },
+    {
+      "name": "audio/121-121726-0012__pitch+3__seed0__RAW_FULL.wav",
+      "case": "librispeech_121-121726-0012",
+      "variant": "RAW_FULL",
+      "pitch_semitones": 3,
+      "seed": 0,
+      "source_url": "https://hiroshiba.github.io/check-nonml-saikyo-vocoder/research/raw-envelope-risk-2026-10-19/audio/121-121726-0012__pitch+3__seed0__RAW_FULL.wav",
+      "source_file_bytes": 129484,
+      "source_file_sha256": "8b97a060d79d1f74bee0a6cd3f3e267d400be0c988b5890eba436bddcc21ccee",
+      "copied_file_bytes": 129484,
+      "copied_file_sha256": "8b97a060d79d1f74bee0a6cd3f3e267d400be0c988b5890eba436bddcc21ccee",
+      "source_audio_manifest": "audio-manifest.json",
+      "source_audio_manifest_sha256": "50833628a6b851f4f7457feccab829ae0c083740270932362a6ee7a8a026ddec",
+      "reuse": "previously published PCM16 file, matched against the original report audio manifest",
+      "copy_byte_identical": true,
+      "processing": "none",
+      "crop": false,
+      "requantization": false,
+      "duration_seconds": 4.045,
+      "interval_seconds": [
+        0.0,
+        4.045
+      ],
+      "channels": 1,
+      "sample_width_bytes": 2,
+      "sample_rate": 16000,
+      "samples": 64720,
+      "compression": "NONE"
+    }
+  ],
+  "attribution": {
+    "path": "index.html",
+    "section_id": "sources",
+    "existing_content_verified": true,
+    "source": "LibriSpeech / OpenSLR SLR12",
+    "license": "CC BY 4.0"
+  },
+  "index_audio_links_unchanged": true,
+  "index_audio_links_note": "The unchanged report body retains its seven original remote audio URLs. The navigation listing refers to the three local byte-identical copies.",
+  "full120_audio_substitution": false
+}
