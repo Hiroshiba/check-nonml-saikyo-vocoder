@@ -1,0 +1,266 @@
+{
+  "schema": "pml-raw-pure-rtf-public-summary-v1",
+  "status": "completed",
+  "completed_at_utc": "2026-10-19T18:28:15.089188+00:00",
+  "native_pitch_semitones": 0,
+  "seed": 0,
+  "sample_rate_hz": 16000,
+  "workers": 1,
+  "threads_requested": 2,
+  "measurement_environment": {
+    "python_version": "3.12.14 (main, Sep 29 2026, 15:01:18) [Clang 22.1.3 ]",
+    "versions": {
+      "numpy": "2.3.5",
+      "pyreaper": "0.0.11",
+      "pyworld": "0.3.5",
+      "scipy": "1.17.0"
+    },
+    "cpu_model": "INTEL(R) XEON(R) PLATINUM 8573C",
+    "affinity": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "cpu_quota": "400000 100000",
+    "runtime_fingerprint_sha256": "4a1bbf0b965cd58948321c66111bb62c9e3a4f6c80eb547553fb531f933c280c"
+  },
+  "actual_thread_count_measured": false,
+  "warmup": false,
+  "repetitions": 1,
+  "primary_formula": "mean_speaker(mean_case_in_speaker(seconds / original_seconds))",
+  "method_order": [
+    "PML",
+    "RAW_FULL"
+  ],
+  "validation_outputs": 240,
+  "timing_outputs": 240,
+  "all_full_npy_exact": true,
+  "current_base": "PML",
+  "candidate_replacement": "held",
+  "variants": {
+    "PML": {
+      "cohorts": {
+        "main120": {
+          "recordings": 120,
+          "speakers": 40,
+          "original_input_seconds": 615.935,
+          "analysis": {
+            "cpu_seconds": {
+              "duration_weighted_rtf": 1.0488401848717805,
+              "recording_equal_weight_rtf": 1.037684394178805,
+              "speaker_equal_weight_rtf": 1.0376843941788052,
+              "total_seconds": 646.0173792690001
+            },
+            "wall_seconds": {
+              "duration_weighted_rtf": 1.0514895914795983,
+              "recording_equal_weight_rtf": 1.0402107147462065,
+              "speaker_equal_weight_rtf": 1.0402107147462065,
+              "total_seconds": 647.6492415279863
+            }
+          },
+          "decode": {
+            "cpu_seconds": {
+              "duration_weighted_rtf": 0.18619355977497584,
+              "recording_equal_weight_rtf": 0.1827378676871372,
+              "speaker_equal_weight_rtf": 0.1827378676871372,
+              "total_seconds": 114.68313023999974
+            },
+            "wall_seconds": {
+              "duration_weighted_rtf": 0.18682047884919512,
+              "recording_equal_weight_rtf": 0.18330100549968464,
+              "speaker_equal_weight_rtf": 0.18330100549968464,
+              "total_seconds": 115.06927163997898
+            }
+          }
+        },
+        "fixed70": {
+          "recordings": 70,
+          "speakers": 24,
+          "original_input_seconds": 353.14,
+          "analysis": {
+            "cpu_seconds": {
+              "duration_weighted_rtf": 1.0343659407203947,
+              "recording_equal_weight_rtf": 1.0236748336445267,
+              "speaker_equal_weight_rtf": 1.021965660228475,
+              "total_seconds": 365.27598830600016
+            },
+            "wall_seconds": {
+              "duration_weighted_rtf": 1.0383282421476665,
+              "recording_equal_weight_rtf": 1.0273088494941405,
+              "speaker_equal_weight_rtf": 1.0255113798044677,
+              "total_seconds": 366.67523543202697
+            }
+          },
+          "decode": {
+            "cpu_seconds": {
+              "duration_weighted_rtf": 0.17950903398935186,
+              "recording_equal_weight_rtf": 0.17676987831937022,
+              "speaker_equal_weight_rtf": 0.1774666939679064,
+              "total_seconds": 63.391820262999715
+            },
+            "wall_seconds": {
+              "duration_weighted_rtf": 0.17987892616805037,
+              "recording_equal_weight_rtf": 0.1771025081015548,
+              "speaker_equal_weight_rtf": 0.17779651623301912,
+              "total_seconds": 63.52244398698531
+            }
+          }
+        }
+      },
+      "new_parameters_full_file_equal_count": 120,
+      "parameter_comparison_denominator": 120,
+      "new_payload_validation_vs_timing": {
+        "new_RAW_A_L_comparison_applicable": false,
+        "new_RAW_A_L_equal": null,
+        "new_parameter_scalars_equal": 120,
+        "new_parameters_equal": 120
+      },
+      "new_payload_validation_vs_timing_denominator": 120
+    },
+    "RAW_FULL": {
+      "cohorts": {
+        "main120": {
+          "recordings": 120,
+          "speakers": 40,
+          "original_input_seconds": 615.935,
+          "analysis": {
+            "cpu_seconds": {
+              "duration_weighted_rtf": 1.018261471190953,
+              "recording_equal_weight_rtf": 1.0151579867887033,
+              "speaker_equal_weight_rtf": 1.0151579867887033,
+              "total_seconds": 627.1828792579996
+            },
+            "wall_seconds": {
+              "duration_weighted_rtf": 1.0196856226809414,
+              "recording_equal_weight_rtf": 1.0165404049159603,
+              "speaker_equal_weight_rtf": 1.0165404049159603,
+              "total_seconds": 628.0600640059856
+            }
+          },
+          "decode": {
+            "cpu_seconds": {
+              "duration_weighted_rtf": 0.19275473730020276,
+              "recording_equal_weight_rtf": 0.19245777281847373,
+              "speaker_equal_weight_rtf": 0.19245777281847373,
+              "total_seconds": 118.72438911900038
+            },
+            "wall_seconds": {
+              "duration_weighted_rtf": 0.19324880071765105,
+              "recording_equal_weight_rtf": 0.1929033522864625,
+              "speaker_equal_weight_rtf": 0.1929033522864625,
+              "total_seconds": 119.02870007002639
+            }
+          }
+        },
+        "fixed70": {
+          "recordings": 70,
+          "speakers": 24,
+          "original_input_seconds": 353.14,
+          "analysis": {
+            "cpu_seconds": {
+              "duration_weighted_rtf": 1.03538159183893,
+              "recording_equal_weight_rtf": 1.0306503755899095,
+              "speaker_equal_weight_rtf": 1.0278481770087082,
+              "total_seconds": 365.63465534199975
+            },
+            "wall_seconds": {
+              "duration_weighted_rtf": 1.0371486321118875,
+              "recording_equal_weight_rtf": 1.0323094334031433,
+              "speaker_equal_weight_rtf": 1.0294836711604645,
+              "total_seconds": 366.2586679439919
+            }
+          },
+          "decode": {
+            "cpu_seconds": {
+              "duration_weighted_rtf": 0.18914798922240555,
+              "recording_equal_weight_rtf": 0.18880326936107467,
+              "speaker_equal_weight_rtf": 0.1889736042306745,
+              "total_seconds": 66.7957209140003
+            },
+            "wall_seconds": {
+              "duration_weighted_rtf": 0.18943292007991044,
+              "recording_equal_weight_rtf": 0.18904694460975843,
+              "speaker_equal_weight_rtf": 0.18924667579652474,
+              "total_seconds": 66.89634139701957
+            }
+          }
+        }
+      },
+      "new_parameters_full_file_equal_count": 120,
+      "parameter_comparison_denominator": 120,
+      "new_payload_validation_vs_timing": {
+        "new_RAW_A_L_comparison_applicable": true,
+        "new_RAW_A_L_equal": 120,
+        "new_parameter_scalars_equal": 120,
+        "new_parameters_equal": 120
+      },
+      "new_payload_validation_vs_timing_denominator": 120
+    }
+  },
+  "storage_ledger": {
+    "scope": "Saved container ledger arithmetic only, not new codec measurement",
+    "source_sha256": "6cd10fc3ad6c46ee0e48ff10792645764f5784857ca896b569eb36b4c500b591",
+    "recordings": 120,
+    "speakers": 40,
+    "audio_seconds": 615.935,
+    "sum_bytes": {
+      "PML_file_bytes": 61969776,
+      "raw_NPZ_file_bytes": 10373997,
+      "metadata_file_bytes": 235693,
+      "shared_asset_bytes_allocated": 0
+    },
+    "additional_payload_percent_of_PML": 16.740413907579722,
+    "additional_payload_and_metadata_percent_of_PML": 17.120749314956374,
+    "storage_bytes_per_original_second": {
+      "PML": 100610.90212441249,
+      "RAW_FULL_including_metadata": 117836.24246064927
+    },
+    "limitations": [
+      "Container bytes, not memory use or theoretical array size.",
+      "Metadata is recorded separately from added RAW payload.",
+      "Existing analysis/decode time columns are not substituted for pure RTF."
+    ]
+  },
+  "quality_comparison_url": "https://hiroshiba.github.io/check-nonml-saikyo-vocoder/research/raw-full-full120-comparison-2026-10-19/index.html",
+  "quality_status": "Existing full120 comparison remains controlling; speed is not an adoption decision.",
+  "old_internal_A_L_array_PCM_RNG": "not_compared_no_independent_expectations",
+  "limits": [
+    "Single sequential pass per method; host load and fixed method order remain confounds.",
+    "No cross-run speed ranking, steady-state claim or adoption decision.",
+    "Full NPY identity proves output correspondence, not old internal A/L identity.",
+    "Fresh process is not a cold-cache measurement.",
+    "Requested thread limits are not measured threadpool counts.",
+    "Do not compare directly with old instrumented timing."
+  ],
+  "provenance": {
+    "completion_receipt_sha256": "a1803fa3837d8a5238e4ba2eea3f94c57b738783a4675e81b8a06d95d6e1ddb5",
+    "timing_summary_sha256": "0ebbfd55e93ba26a010c5d5608049b42287f8cb8aefb376fa436daaed1e016a7",
+    "rtf_source_manifest_sha256": "1bd45c50eda35ec98ce2a09e7cf41b48dd7f900332ad34b5ca06b1df3c6ecd7a",
+    "existing_quality_report_sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+    "storage_ledger_derived_sha256": "10b32ae4bbca74d8526d5e20419c87e0163d306861d08eab0a31711e48fbb81a"
+  },
+  "run_history": [
+    {
+      "run": "001",
+      "source": "v1",
+      "status": "failed",
+      "timing_started": false,
+      "reason": "Own distribution metadata confused with vendored metadata; before any recording."
+    },
+    {
+      "run": "002",
+      "source": "v2",
+      "status": "failed",
+      "timing_started": false,
+      "reason": "First validation PML output matched; natural setuptools vendor sys.path tail was rejected."
+    },
+    {
+      "run": "003",
+      "source": "v3",
+      "status": "completed",
+      "reason": "Captured source-bound vendor-tail observation and fixed metadata search scope."
+    }
+  ]
+}

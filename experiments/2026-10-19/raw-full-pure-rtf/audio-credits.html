@@ -1,0 +1,7 @@
+<!doctype html>
+<html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="light dark"><meta name="description" content="PMLとRAW_FULLの解析・復号RTF。保存測定の比較と既存音声の試聴。"><title>音声の帰属と加工履歴 — PML / RAW_FULL</title><link rel="stylesheet" href="assets/report.css"></head><body><a class="skip" href="#main">本文へ</a><main id="main" class="credits"><p><a href="index.html">← RTFと比較試聴へ</a></p><p class="eyebrow">AUDIO ATTRIBUTION</p><h1>音声の帰属と加工履歴</h1>
+<p>原音はLibriSpeech ASR corpusに由来します。提供元: Vassil Panayotov（Daniel Povey協力）。LibriVoxの朗読に由来する録音です。<a href="https://www.openslr.org/12/">OpenSLR 12の配布・帰属情報</a>、<a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>。作者・朗読者・配布元による本比較の推奨を意味しません。</p>
+<p>既存の<a href="https://hiroshiba.github.io/check-nonml-saikyo-vocoder/research/raw-full-full120-comparison-2026-10-19/index.html">正式120品質比較</a>に掲載済みの固定5録音・4話者から、原音5本と音高無変更・seed 0のPML／RAW_FULL各5本を再利用しました。PML／RAW_FULLは再合成を含む派生音声です。このページ作成では既存15 WAVをbyte同一コピーし、新しい合成・変換はしていません。</p>
+<h2>以前のクリップ書出しで行った処理</h2><p>保存済み全長float64 NPYの先頭最大5秒を切り出し、round(x×32768)（ちょうど中間は偶数丸め）でPCM16 WAVに変換しています。ゲイン変更、正規化、クリッピング、ディザ、再サンプリング、時間整列は行っていません。WAVは元全長NPYとは別のファイル・PCM identityです。</p>
+<h2>今回の対応照合</h2><p>元全長NPY file SHAが、run003の保存receiptのnative入力／出力SHAと一致することを照合しました。今回の全長波形本体を再読したものではなく、旧内部A/LやRNGの同一性も示しません。原音のarray hashについて生成音と同じproducer receiptがあるとは扱いません。</p>
+<p>全長の計時・品質統計と、先頭最大5秒の試聴範囲を区別してください。試聴音声の掲載を品質優越や採用判断として扱いません。</p><p><a href="clip-manifest.json">各WAVのSHA・元全長NPY SHA・切出し範囲</a></p></main></body></html>

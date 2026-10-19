@@ -1,0 +1,264 @@
+{
+  "completion": {
+    "sha256": "72bd3de0face1cefa3b991331da034f701067896f519b8e52be0f651a616778c",
+    "bytes": 1283072
+  },
+  "diagnostic_index": {
+    "sha256": "43b7036b29f098e1dae1faf8ebbbe686219a37c2dc3b1244defe3bfba08a8452",
+    "bytes": 6141
+  },
+  "saved_frames": {
+    "sha256": "4da1a0522d5dec59aad14a757f214c6add98553b31647c0d675f691fd3f4b224",
+    "bytes": 3309176
+  },
+  "quoted_frames": {
+    "sha256": "ffb5d4267f005f5458e16c85b22a8a78fb4658bbaa3f645939d10b72253c3bdc",
+    "bytes": 53548
+  },
+  "diagnostic_source_manifest_sha256": "5bddce78c826867a753bde22348c236e70e024b33f0b425690e31c735f1262dd",
+  "diagnostic_started_at_utc": "2026-10-19T15:48:14.890434+00:00",
+  "diagnostic_completed_at_utc": "2026-10-19T15:48:22.246273+00:00",
+  "restoration_completion_sha256": "4a90188a43806ceed93864a67f5f7a73d52c2b1726dde4124bfa5991d331e1c6",
+  "saved_f0_and_times_binary64_exact": true,
+  "signed_zero_distinguished": true,
+  "diagnostic_is_new_recomputation": true,
+  "historical_unsaved_cmnd_branch_identity_established": false,
+  "post_hoc_recordings": 3,
+  "diagnostic_output_rows": 12,
+  "full_104_diagnostic_completed": false,
+  "renderer_performed_scientific_measurements": false,
+  "new_rates_or_rankings": false,
+  "private_receipt_and_paths_published": false,
+  "schema": "raw-full-yin-three-public-provenance-v1",
+  "rendered_at_utc": "2026-10-19T16:04:42.906239+00:00",
+  "renderer_source_manifest": {
+    "sha256": "d13537d7c0ab563390fd26746a50c128f2670752ace276bc0320d2c3671e2277",
+    "bytes": 1249
+  },
+  "links": {
+    "interpretation": "https://hiroshiba.github.io/check-nonml-saikyo-vocoder/research/raw-full-full120-comparison-2026-10-19/interpretation.html",
+    "full120": "https://hiroshiba.github.io/check-nonml-saikyo-vocoder/research/raw-full-full120-comparison-2026-10-19/index.html",
+    "ranks": "https://hiroshiba.github.io/check-nonml-saikyo-vocoder/research/raw-full-full120-comparison-2026-10-19/index.html#historical",
+    "pitch": "https://hiroshiba.github.io/check-nonml-saikyo-vocoder/research/raw-full-full120-comparison-2026-10-19/quality-relative_f0_mae_cents.html",
+    "missing": "https://hiroshiba.github.io/check-nonml-saikyo-vocoder/research/raw-full-full120-comparison-2026-10-19/quality-unvoiced_miss_rate.html",
+    "vuv": "https://hiroshiba.github.io/check-nonml-saikyo-vocoder/research/raw-full-vuv-frame-diagnostic-2026-10-19/"
+  },
+  "audio": {
+    "completion": {
+      "sha256": "828feb2dcf78bdbffa1cde71a924eac8d92fd65476ec6bddb66f18a379824cbc",
+      "bytes": 4038
+    },
+    "manifest": {
+      "sha256": "063e710e1811f69dc72cb7cc730e052deac85840cc1944045adc2b6014968060",
+      "bytes": 63359
+    },
+    "previous_report_provenance": {
+      "sha256": "96131c4f82ab3330aeaadef7508721115d46764cb4b21f1a102ddd7b06bd5693",
+      "bytes": 3219
+    },
+    "wav_files": 15,
+    "all_wav_bytes_identical": true,
+    "renderer_audio_processing": false,
+    "source_recovery": {
+      "completed_at_utc": "2026-10-19T15:25:27.739396+00:00",
+      "completion_sha256": "4a90188a43806ceed93864a67f5f7a73d52c2b1726dde4124bfa5991d331e1c6",
+      "limitations": [
+        "Original and recovery run IDs and times are distinct; full NPY equality does not recreate old execution history.",
+        "Old array, PCM and RNG expected identities are unavailable; newly measured identities do not claim historical comparison.",
+        "Every preserved artifact, all 78 recovery members and all 15 source NPY files were byte/SHA verified. 52 unpreserved historical input-read records remain recovery-time evidence only; those files were not reread here.",
+        "Recovery runtime artifacts and final checks are verified evidence; historical runtime binaries were not re-executed or revalidated here."
+      ],
+      "original_run_id": "raw-full-120-broad-risk-v1-20261019",
+      "recovery_run_id": "raw-full-vuv-exact-restoration:raw-full-vuv-exact-restoration-run-001-20261019:2026-10-19T15:25:18.780955+00:00",
+      "selection_sha256": "065056b3fc244ff12859b8c5774846630401933d3ba6c18e8be0eef456c88295",
+      "sources": [
+        {
+          "case": "librispeech_1188-133604-0037",
+          "exact_original_full_npy_sha_match": true,
+          "expected_bytes": 768128,
+          "expected_sha256": "9f907edaf27e98e2faf5d93890f689b570be9341564ab553dac6f0a537616da3",
+          "observed_bytes": 768128,
+          "observed_sha256": "9f907edaf27e98e2faf5d93890f689b570be9341564ab553dac6f0a537616da3",
+          "pitch_semitones": null,
+          "provenance_kind": "byte_identical_backup",
+          "role": "ORIGINAL",
+          "seed": null
+        },
+        {
+          "case": "librispeech_1188-133604-0037",
+          "exact_original_full_npy_sha_match": true,
+          "expected_bytes": 768128,
+          "expected_sha256": "f350d7ce011e681a9b6734f653c8f322ade61c3bf7bb2803ab396e72da8aacb9",
+          "observed_bytes": 768128,
+          "observed_sha256": "f350d7ce011e681a9b6734f653c8f322ade61c3bf7bb2803ab396e72da8aacb9",
+          "pitch_semitones": 0,
+          "provenance_kind": "byte_identical_backup",
+          "role": "native_PML",
+          "seed": 0
+        },
+        {
+          "case": "librispeech_1188-133604-0037",
+          "exact_original_full_npy_sha_match": true,
+          "expected_bytes": 768128,
+          "expected_sha256": "5117bb9c09485adb9a9e0ce31fd683f9266957ce082c0eca07e046d7ac14deb2",
+          "observed_bytes": 768128,
+          "observed_sha256": "5117bb9c09485adb9a9e0ce31fd683f9266957ce082c0eca07e046d7ac14deb2",
+          "pitch_semitones": -3,
+          "provenance_kind": "byte_identical_backup",
+          "role": "edited_PML",
+          "seed": 0
+        },
+        {
+          "case": "librispeech_61-70968-0043",
+          "exact_original_full_npy_sha_match": true,
+          "expected_bytes": 768128,
+          "expected_sha256": "11395567141c5a03808579bb9837eae0b644cb0d8d9e75b3474c4e55832698e7",
+          "observed_bytes": 768128,
+          "observed_sha256": "11395567141c5a03808579bb9837eae0b644cb0d8d9e75b3474c4e55832698e7",
+          "pitch_semitones": null,
+          "provenance_kind": "byte_identical_backup",
+          "role": "ORIGINAL",
+          "seed": null
+        },
+        {
+          "case": "librispeech_61-70968-0043",
+          "exact_original_full_npy_sha_match": true,
+          "expected_bytes": 768128,
+          "expected_sha256": "acc90488816536adef2330714570201689d0218d57f1169f6bccf3d58324960f",
+          "observed_bytes": 768128,
+          "observed_sha256": "acc90488816536adef2330714570201689d0218d57f1169f6bccf3d58324960f",
+          "pitch_semitones": 0,
+          "provenance_kind": "byte_identical_backup",
+          "role": "native_PML",
+          "seed": 0
+        },
+        {
+          "case": "librispeech_61-70968-0043",
+          "exact_original_full_npy_sha_match": true,
+          "expected_bytes": 768128,
+          "expected_sha256": "89d680645979cdd321966e736960ab947f6e26e04d1c5af5cb869ef763dc7c9b",
+          "observed_bytes": 768128,
+          "observed_sha256": "89d680645979cdd321966e736960ab947f6e26e04d1c5af5cb869ef763dc7c9b",
+          "pitch_semitones": 3,
+          "provenance_kind": "byte_identical_backup",
+          "role": "edited_PML",
+          "seed": 0
+        },
+        {
+          "case": "librispeech_6829-68769-0041",
+          "exact_original_full_npy_sha_match": true,
+          "expected_bytes": 340608,
+          "expected_sha256": "0d776c98d75836f78dcbf836cd371840458d509810ee9e94758fbd26584e9d1f",
+          "observed_bytes": 340608,
+          "observed_sha256": "0d776c98d75836f78dcbf836cd371840458d509810ee9e94758fbd26584e9d1f",
+          "pitch_semitones": null,
+          "provenance_kind": "byte_identical_backup",
+          "role": "ORIGINAL",
+          "seed": null
+        },
+        {
+          "case": "librispeech_6829-68769-0041",
+          "exact_original_full_npy_sha_match": true,
+          "expected_bytes": 340608,
+          "expected_sha256": "80f6855b086738525e53ad60b01672a5f5094f9f60380a13e4984966d42e403c",
+          "observed_bytes": 340608,
+          "observed_sha256": "80f6855b086738525e53ad60b01672a5f5094f9f60380a13e4984966d42e403c",
+          "pitch_semitones": 0,
+          "provenance_kind": "byte_identical_backup",
+          "role": "native_PML",
+          "seed": 0
+        },
+        {
+          "case": "librispeech_6829-68769-0041",
+          "exact_original_full_npy_sha_match": true,
+          "expected_bytes": 340608,
+          "expected_sha256": "728df9a4530c295320f0a9e8e7aaebf51ade8f84bdca562fda8b9cc380f10e67",
+          "observed_bytes": 340608,
+          "observed_sha256": "728df9a4530c295320f0a9e8e7aaebf51ade8f84bdca562fda8b9cc380f10e67",
+          "pitch_semitones": -3,
+          "provenance_kind": "byte_identical_backup",
+          "role": "edited_PML",
+          "seed": 0
+        },
+        {
+          "case": "librispeech_1188-133604-0037",
+          "exact_original_full_npy_sha_match": true,
+          "expected_bytes": null,
+          "expected_sha256": "98f1d3c37acb7dc9d01ddf2ab8d43ac9bc08874b052b64936373d16bdb589d56",
+          "observed_bytes": 768128,
+          "observed_sha256": "98f1d3c37acb7dc9d01ddf2ab8d43ac9bc08874b052b64936373d16bdb589d56",
+          "pitch_semitones": 0,
+          "provenance_kind": "separate_run_exact_regeneration",
+          "role": "native_RAW_FULL",
+          "seed": 0
+        },
+        {
+          "case": "librispeech_1188-133604-0037",
+          "exact_original_full_npy_sha_match": true,
+          "expected_bytes": null,
+          "expected_sha256": "1dcb01a5c10dee1760b27e0e946793abbff9dfe081d928a1481512e9c077b0e9",
+          "observed_bytes": 768128,
+          "observed_sha256": "1dcb01a5c10dee1760b27e0e946793abbff9dfe081d928a1481512e9c077b0e9",
+          "pitch_semitones": -3,
+          "provenance_kind": "separate_run_exact_regeneration",
+          "role": "edited_RAW_FULL",
+          "seed": 0
+        },
+        {
+          "case": "librispeech_61-70968-0043",
+          "exact_original_full_npy_sha_match": true,
+          "expected_bytes": null,
+          "expected_sha256": "48388af2dfb78e4a64dd3ac55cdcdcff88316b5e80580b5d67036b7363eb389b",
+          "observed_bytes": 768128,
+          "observed_sha256": "48388af2dfb78e4a64dd3ac55cdcdcff88316b5e80580b5d67036b7363eb389b",
+          "pitch_semitones": 0,
+          "provenance_kind": "separate_run_exact_regeneration",
+          "role": "native_RAW_FULL",
+          "seed": 0
+        },
+        {
+          "case": "librispeech_61-70968-0043",
+          "exact_original_full_npy_sha_match": true,
+          "expected_bytes": null,
+          "expected_sha256": "ab978c6f3501880e3e621d235917c236264493256e06dafd83c9042c3607118e",
+          "observed_bytes": 768128,
+          "observed_sha256": "ab978c6f3501880e3e621d235917c236264493256e06dafd83c9042c3607118e",
+          "pitch_semitones": 3,
+          "provenance_kind": "separate_run_exact_regeneration",
+          "role": "edited_RAW_FULL",
+          "seed": 0
+        },
+        {
+          "case": "librispeech_6829-68769-0041",
+          "exact_original_full_npy_sha_match": true,
+          "expected_bytes": null,
+          "expected_sha256": "0277d18563be68b524d335f91e3b185c7cab2475635d1eb923f99135802b704b",
+          "observed_bytes": 340608,
+          "observed_sha256": "0277d18563be68b524d335f91e3b185c7cab2475635d1eb923f99135802b704b",
+          "pitch_semitones": 0,
+          "provenance_kind": "separate_run_exact_regeneration",
+          "role": "native_RAW_FULL",
+          "seed": 0
+        },
+        {
+          "case": "librispeech_6829-68769-0041",
+          "exact_original_full_npy_sha_match": true,
+          "expected_bytes": null,
+          "expected_sha256": "c29f32f9deec31c3a50fd1b96ea415f0bf2f7225351b6f0924a0a0a82ed0d070",
+          "observed_bytes": 340608,
+          "observed_sha256": "c29f32f9deec31c3a50fd1b96ea415f0bf2f7225351b6f0924a0a0a82ed0d070",
+          "pitch_semitones": -3,
+          "provenance_kind": "separate_run_exact_regeneration",
+          "role": "edited_RAW_FULL",
+          "seed": 0
+        }
+      ],
+      "started_at_utc": "2026-10-19T15:25:18.780955+00:00",
+      "wrapper_manifest_sha256": "f17fb78fb3b0cc81720202478bb7fc36f06657e26b3c80d0bbe4cac2387e1991"
+    }
+  },
+  "vuv_navigation_status": "planned_public_route_not_verified_live",
+  "publication_performed": false,
+  "tests_or_fixtures_used": false,
+  "figures": 14
+}
