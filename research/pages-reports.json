@@ -1197,6 +1197,40 @@
         "bytes": 21385,
         "sha256": "2f2a882f0f2fdcdb3f38fb1a03cf7300e281506a98fa23af77888760725d1519"
       }
+    },
+    {
+      "kind": "navigation-only",
+      "id": "raw-full-am-diagnostic-2026-10-19",
+      "path": "research/raw-full-am-diagnostic-2026-10-19",
+      "source_path": "experiments/2026-10-19/raw-full-am-diagnostic",
+      "created_on": "2026-10-19",
+      "created_at": "2026-10-19T13:44:13Z",
+      "title": "既知1発話・1 seedのAM診断：全窓8群と局所7/8群の符号差",
+      "comparison_scope": "サンプル3の既存公開PCM16、0・±3半音、seed 0を保存観測。主設定の全窓8群でsource-unique比率差（RAW_FULL−PML）の平均・中央値は正、固定参考区間 [2.08,2.13) と重なる窓では中央値が7/8群で負。全固定条件・欠測・cycle holdoutを保持。音質や因果分離の証明ではなく、120録音の品質評価とは別。",
+      "audio_listing": {
+        "caption": "サンプル3、同じ4.045秒。原音と＋3半音・seed 0のPML／RAW_FULLを聞き比べます。",
+        "note": "AM診断で観測した既存公開PCM16の完全同一コピー。原音は未編集の参考で、＋3半音の正解音声ではありません。音質改善・採用の判定なし。LibriSpeech / CC BY 4.0。既存の再合成・音高編集・PCM16変換を含み、今回の追加加工はありません。",
+        "attribution_path": "index.html",
+        "samples": [
+          {
+            "path": "audio/121-121726-0012__original.wav",
+            "label": "原音（未編集の参考）"
+          },
+          {
+            "path": "audio/121-121726-0012__pitch+3__seed0__PML.wav",
+            "label": "PML ＋3半音・seed 0"
+          },
+          {
+            "path": "audio/121-121726-0012__pitch+3__seed0__RAW_FULL.wav",
+            "label": "RAW_FULL ＋3半音・seed 0"
+          }
+        ]
+      },
+      "artifact_count": 18,
+      "artifact_manifest": {
+        "bytes": 2937,
+        "sha256": "2f7e0ceb23c4dbd7280a63833b1314a44ee9365a390736217fdee63560da59ef"
+      }
     }
   ]
 }
