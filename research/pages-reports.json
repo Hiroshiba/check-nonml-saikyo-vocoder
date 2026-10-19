@@ -998,6 +998,25 @@
       "created_on": "2026-10-18",
       "title": "サンプル3の先行成分：解析窓・未来依存・特徴1行の伝播",
       "comparison_scope": "既知1録音の固定11解析と9再合成。PML native/±3半音との原因切り分け。音質順位・新base採用ではない。",
+      "audio_listing": {
+        "caption": "同じ録音の全区間4.045秒。原音と、＋3半音の元の保存特徴・診断用の1行置換を聞き比べます。",
+        "note": "音質指標は未測定、採用未判定。原因切り分け用の既存音声です。全例の音量倍率は1、注目箇所は約2.08秒付近。PML無編集と過去反射の診断例を含む全5例は詳細へ。LibriSpeech / CC BY 4.0、PCM16変換・解析再合成を含みます。",
+        "attribution_path": "audio-attribution.html",
+        "samples": [
+          {
+            "path": "audio/original-input.wav",
+            "label": "原音"
+          },
+          {
+            "path": "audio/pml-plus3.wav",
+            "label": "PML ＋3半音・元の保存特徴"
+          },
+          {
+            "path": "audio/diagnostic-plus3-hold.wav",
+            "label": "診断：＋3半音・直前値保持由来の1行"
+          }
+        ]
+      },
       "artifact_count": 19,
       "artifact_manifest": {
         "bytes": 2951,
@@ -1013,6 +1032,25 @@
       "created_at": "2026-10-18T18:27:34Z",
       "title": "生高域包絡の移送リスク対照：5録音・90条件と予測品質",
       "comparison_scope": "現PMLと未採用2変種。固定5録音・4話者の90条件、予測MOS90・編集F0/miss60・認識36と欠測54。強部低下と時刻差を保持。5秒以下の27試聴例。正式120録音評価・採用ではない。",
+      "audio_listing": {
+        "caption": "サンプル3（121-121726-0012）の全区間4.045秒。原音と、音高無編集・seed 0のPML／RAW_FULLを聞き比べます。",
+        "note": "PMLを維持し、RAW_FULLは未採用。5録音の品質指標・欠測と全27音声は詳細へ。音量倍率1、音量正規化なし。LibriSpeech / CC BY 4.0、PCM16変換・解析再合成を含みます。",
+        "attribution_path": "index.html",
+        "samples": [
+          {
+            "path": "audio/121-121726-0012__original.wav",
+            "label": "原音"
+          },
+          {
+            "path": "audio/121-121726-0012__pitch+0__seed0__PML.wav",
+            "label": "現PML（基準）"
+          },
+          {
+            "path": "audio/121-121726-0012__pitch+0__seed0__RAW_FULL.wav",
+            "label": "RAW_FULL（未採用）"
+          }
+        ]
+      },
       "artifact_count": 34,
       "artifact_manifest": {
         "bytes": 6205,
@@ -1090,6 +1128,40 @@
       "artifact_manifest": {
         "bytes": 4886,
         "sha256": "81ea8a826f257384ba1ab408f52a1f4e80fc6e7dbfde5dfb9533b145f89fb868"
+      }
+    },
+    {
+      "kind": "navigation-only",
+      "id": "frame-color-pf-comparison-2026-10-19",
+      "path": "research/frame-color-pf-comparison-2026-10-19",
+      "source_path": "experiments/2026-10-19/frame-color-pf-comparison",
+      "created_on": "2026-10-19",
+      "created_at": "2026-10-19T11:32:43.798811+00:00",
+      "title": "包絡の参照時刻を変えるPML候補：5音声の比較と残る先行成分",
+      "comparison_scope": "5録音・3音高・2seedの30対応60生成波形。品質未評価・未採用で、RAW_FULL120の正式評価とは別。原音・現PML（P）・候補Fを比較し、旧HNMは参考として提示。",
+      "audio_listing": {
+        "caption": "サンプル3の全区間4.045秒。原音を参考に、＋3半音・seed 0の現PMLと候補Fを比較します。",
+        "note": "品質未評価・未採用。原音は未編集で編集音高の正解ではありません。無正規化PCM16。LibriSpeech / CC BY 4.0。",
+        "attribution_path": "index.html",
+        "samples": [
+          {
+            "path": "audio/librispeech_121-121726-0012__original.wav",
+            "label": "原音"
+          },
+          {
+            "path": "audio/librispeech_121-121726-0012__pitch+3__seed0__P.wav",
+            "label": "現PML ＋3半音"
+          },
+          {
+            "path": "audio/librispeech_121-121726-0012__pitch+3__seed0__F.wav",
+            "label": "時刻参照の候補F ＋3半音"
+          }
+        ]
+      },
+      "artifact_count": 206,
+      "artifact_manifest": {
+        "bytes": 40968,
+        "sha256": "c70b68810fed046b06a1372b21bcee9d273ae4ee374fb1e3288bc1bee602bde7"
       }
     }
   ]

@@ -1,0 +1,346 @@
+{
+  "F_actual_spec_row_changed_injection_count": {
+    "block": "intervention",
+    "context_denominator_columns": [
+      "F_all_kernel_injection_count",
+      "F_target_injection_count"
+    ],
+    "denominator_column": null,
+    "meaning_ja": "元pulseと参照行IDが異なる断片の注入数",
+    "source_key": "actual_spec_row_changed_injection_count",
+    "unit": "injection sample"
+  },
+  "F_actual_spec_row_changed_kernel_count": {
+    "block": "intervention",
+    "context_denominator_columns": [
+      "F_kernel_count",
+      "F_target_kernel_count"
+    ],
+    "denominator_column": null,
+    "meaning_ja": "参照行IDが異なる断片を含むkernel数。値差とは別",
+    "source_key": "actual_spec_row_changed_kernel_count",
+    "unit": "kernel"
+  },
+  "F_actual_spec_value_changed_fragment_count": {
+    "block": "intervention",
+    "context_denominator_columns": [
+      "F_fragment_count"
+    ],
+    "denominator_column": null,
+    "meaning_ja": "SPEC実値が1bin以上異なる断片数",
+    "source_key": "actual_spec_value_changed_fragment_count",
+    "unit": "fragment"
+  },
+  "F_actual_spec_value_changed_injection_count": {
+    "block": "intervention",
+    "context_denominator_columns": [
+      "F_all_kernel_injection_count",
+      "F_target_injection_count"
+    ],
+    "denominator_column": null,
+    "meaning_ja": "SPEC実値が1bin以上異なる断片だけの注入数",
+    "source_key": "actual_spec_value_changed_injection_count",
+    "unit": "injection sample"
+  },
+  "F_actual_spec_value_changed_injection_fraction_all": {
+    "block": "intervention",
+    "denominator_column": "F_all_kernel_injection_count",
+    "meaning_ja": "実値差注入 / 全注入。分母0はnull",
+    "source_key": "actual_spec_value_changed_injection_fraction_all",
+    "unit": "ratio"
+  },
+  "F_actual_spec_value_changed_injection_fraction_target": {
+    "block": "intervention",
+    "denominator_column": "F_target_injection_count",
+    "meaning_ja": "実値差注入 / M1対象注入。分母0はnull",
+    "source_key": "actual_spec_value_changed_injection_fraction_target",
+    "unit": "ratio"
+  },
+  "F_actual_spec_value_changed_kernel_count": {
+    "block": "intervention",
+    "context_denominator_columns": [
+      "F_kernel_count",
+      "F_target_kernel_count"
+    ],
+    "denominator_column": null,
+    "meaning_ja": "1断片以上でSPEC実値が異なるkernel数",
+    "source_key": "actual_spec_value_changed_kernel_count",
+    "unit": "kernel"
+  },
+  "F_actual_spec_value_changed_nominal_in_wave_fraction_all": {
+    "block": "intervention",
+    "denominator_column": "F_all_kernel_nominal_in_wave_injection_count",
+    "meaning_ja": "波形内名目時刻の実値差注入 / 同じ条件の全注入。分母0はnull",
+    "source_key": "actual_spec_value_changed_nominal_in_wave_fraction_all",
+    "unit": "ratio"
+  },
+  "F_actual_spec_value_changed_nominal_in_wave_fraction_target": {
+    "block": "intervention",
+    "denominator_column": "F_target_nominal_in_wave_injection_count",
+    "meaning_ja": "波形内名目時刻の実値差注入 / 同じ条件のM1対象注入。分母0はnull",
+    "source_key": "actual_spec_value_changed_nominal_in_wave_fraction_target",
+    "unit": "ratio"
+  },
+  "F_actual_spec_value_changed_nominal_in_wave_injection_count": {
+    "block": "intervention",
+    "context_denominator_columns": [
+      "F_all_kernel_nominal_in_wave_injection_count",
+      "F_target_nominal_in_wave_injection_count"
+    ],
+    "denominator_column": null,
+    "meaning_ja": "実値差あり断片のうち名目時刻が波形内の注入数",
+    "source_key": "actual_spec_value_changed_nominal_in_wave_injection_count",
+    "unit": "injection sample"
+  },
+  "F_all_kernel_injection_count": {
+    "block": "intervention",
+    "denominator_column": null,
+    "meaning_ja": "全kernelのGaussian注入数。重なる出力位置も別注入",
+    "source_key": "all_kernel_injection_count",
+    "unit": "injection sample"
+  },
+  "F_all_kernel_nominal_in_wave_injection_count": {
+    "block": "intervention",
+    "denominator_column": null,
+    "meaning_ja": "名目時刻が波形内にある全kernelの注入数",
+    "source_key": "all_kernel_nominal_in_wave_injection_count",
+    "unit": "injection sample"
+  },
+  "F_fragment_count": {
+    "block": "intervention",
+    "denominator_column": null,
+    "meaning_ja": "M1分割断片数",
+    "source_key": "fragment_count",
+    "unit": "fragment"
+  },
+  "F_injection_weighted_log_spec_delta_rms_nepers": {
+    "block": "intervention",
+    "denominator_column": "F_injection_weighted_spec_element_comparison_count",
+    "meaning_ja": "HP前の自然対数SPEC差のbin×注入sample重み付きRMS",
+    "source_key": "injection_weighted_log_spec_delta_rms_nepers",
+    "unit": "neper"
+  },
+  "F_injection_weighted_spec_element_comparison_count": {
+    "block": "intervention",
+    "denominator_column": null,
+    "meaning_ja": "断片bin数×注入sample数の合計",
+    "source_key": "injection_weighted_spec_element_comparison_count",
+    "unit": "injection-bin exposure"
+  },
+  "F_injection_weighted_spec_value_changed_element_count": {
+    "block": "intervention",
+    "context_denominator_columns": [
+      "F_injection_weighted_spec_element_comparison_count"
+    ],
+    "denominator_column": null,
+    "meaning_ja": "実値差bin数×その断片の注入sample数の合計",
+    "source_key": "injection_weighted_spec_value_changed_element_count",
+    "unit": "injection-bin exposure"
+  },
+  "F_instrumented_synthesis_seconds": {
+    "block": "F",
+    "denominator_column": null,
+    "meaning_ja": "F合成呼出し時間。観測器込み、純粋な合成時間やRTFではない",
+    "source_key": "instrumented_synthesis_call_wall_time_seconds",
+    "unit": "s"
+  },
+  "F_kernel_count": {
+    "block": "intervention",
+    "denominator_column": null,
+    "meaning_ja": "全kernel数",
+    "source_key": "kernel_count",
+    "unit": "kernel"
+  },
+  "F_maximum_abs_log_spec_delta_nepers": {
+    "block": "intervention",
+    "denominator_column": null,
+    "meaning_ja": "HP前の自然対数SPEC差の最大絶対値。0から元SPEC同値は推定しない",
+    "source_key": "maximum_abs_log_spec_delta_nepers",
+    "unit": "neper"
+  },
+  "F_partition_observed_kernel_count": {
+    "block": "intervention",
+    "denominator_column": null,
+    "meaning_ja": "断片の参照値を記録したkernel数",
+    "source_key": "partition_observed_kernel_count",
+    "unit": "kernel"
+  },
+  "F_partitioned_no_spec_value_change_kernel_count": {
+    "block": "intervention",
+    "denominator_column": null,
+    "meaning_ja": "分割対象だがSPEC実値差がないkernel数",
+    "source_key": "partitioned_no_spec_value_change_kernel_count",
+    "unit": "kernel"
+  },
+  "F_peak_absolute_FS": {
+    "block": "F",
+    "denominator_column": null,
+    "meaning_ja": "F波形の最大絶対値",
+    "source_key": "peak_absolute_FS",
+    "unit": "FS"
+  },
+  "F_rms_FS": {
+    "block": "F",
+    "denominator_column": null,
+    "meaning_ja": "F波形のRMS。品質指標ではない",
+    "source_key": "rms_FS",
+    "unit": "FS"
+  },
+  "F_sample_rate": {
+    "block": "F",
+    "denominator_column": null,
+    "meaning_ja": "F波形のsample rate",
+    "source_key": "sample_rate",
+    "unit": "Hz"
+  },
+  "F_samples": {
+    "block": "F",
+    "denominator_column": null,
+    "meaning_ja": "F波形のsample数",
+    "source_key": "samples",
+    "unit": "sample"
+  },
+  "F_spec_element_comparison_count": {
+    "block": "intervention",
+    "denominator_column": null,
+    "meaning_ja": "断片ごとの2049bin比較数の合計。固有bin数ではない",
+    "source_key": "spec_element_comparison_count",
+    "unit": "fragment-bin exposure"
+  },
+  "F_spec_value_changed_element_comparison_count": {
+    "block": "intervention",
+    "context_denominator_columns": [
+      "F_spec_element_comparison_count"
+    ],
+    "denominator_column": null,
+    "meaning_ja": "断片ごとのSPEC実値差bin数の合計",
+    "source_key": "spec_value_changed_element_comparison_count",
+    "unit": "fragment-bin exposure"
+  },
+  "F_target_injection_count": {
+    "block": "intervention",
+    "denominator_column": null,
+    "meaning_ja": "M1対象kernelのGaussian注入数",
+    "source_key": "target_injection_count",
+    "unit": "injection sample"
+  },
+  "F_target_kernel_count": {
+    "block": "intervention",
+    "denominator_column": null,
+    "meaning_ja": "mask全binが厳密1のM1対象kernel数",
+    "source_key": "target_kernel_count",
+    "unit": "kernel"
+  },
+  "F_target_kernel_potential_support_fraction": {
+    "block": "intervention",
+    "denominator_column": "F_waveform_samples",
+    "meaning_ja": "M1全kernel潜在支持域の和集合 / 波形長。分母0はnull",
+    "source_key": "target_kernel_potential_support_fraction",
+    "unit": "ratio"
+  },
+  "F_target_kernel_potential_support_union_samples": {
+    "block": "intervention",
+    "denominator_column": null,
+    "meaning_ja": "全M1 kernel窓の波形内clip和集合の長さ",
+    "source_key": "target_kernel_potential_support_union_samples",
+    "unit": "sample"
+  },
+  "F_target_nominal_in_wave_injection_count": {
+    "block": "intervention",
+    "denominator_column": null,
+    "meaning_ja": "名目時刻が波形内にあるM1対象の注入数",
+    "source_key": "target_nominal_in_wave_injection_count",
+    "unit": "injection sample"
+  },
+  "F_value_changed_kernel_potential_support_fraction": {
+    "block": "intervention",
+    "denominator_column": "F_waveform_samples",
+    "meaning_ja": "実値差kernel潜在支持域の和集合 / 波形長。分母0はnull",
+    "source_key": "value_changed_kernel_potential_support_fraction",
+    "unit": "ratio"
+  },
+  "F_value_changed_kernel_potential_support_union_samples": {
+    "block": "intervention",
+    "denominator_column": null,
+    "meaning_ja": "実値差kernel全窓を波形内clipした和集合の長さ。効果時間ではない",
+    "source_key": "value_changed_kernel_potential_support_union_samples",
+    "unit": "sample"
+  },
+  "F_waveform_samples": {
+    "block": "intervention",
+    "denominator_column": null,
+    "meaning_ja": "支持域時間率の分母となる波形sample数",
+    "source_key": "waveform_samples",
+    "unit": "sample"
+  },
+  "P_instrumented_synthesis_seconds": {
+    "block": "P",
+    "denominator_column": null,
+    "meaning_ja": "P合成呼出し時間。観測器込み、純粋な合成時間やRTFではない",
+    "source_key": "instrumented_synthesis_call_wall_time_seconds",
+    "unit": "s"
+  },
+  "P_peak_absolute_FS": {
+    "block": "P",
+    "denominator_column": null,
+    "meaning_ja": "P波形の最大絶対値",
+    "source_key": "peak_absolute_FS",
+    "unit": "FS"
+  },
+  "P_rms_FS": {
+    "block": "P",
+    "denominator_column": null,
+    "meaning_ja": "P波形のRMS。品質指標ではない",
+    "source_key": "rms_FS",
+    "unit": "FS"
+  },
+  "P_sample_rate": {
+    "block": "P",
+    "denominator_column": null,
+    "meaning_ja": "P波形のsample rate",
+    "source_key": "sample_rate",
+    "unit": "Hz"
+  },
+  "P_samples": {
+    "block": "P",
+    "denominator_column": null,
+    "meaning_ja": "P波形のsample数",
+    "source_key": "samples",
+    "unit": "sample"
+  },
+  "condition_wall_time_seconds": {
+    "block": "observation",
+    "denominator_column": null,
+    "meaning_ja": "最終observations保存直前までの条件全体時間。復号・既存保存を含む",
+    "source_key": "condition_wall_time_seconds_before_final_observation_write",
+    "unit": "s"
+  },
+  "difference_difference_rms_FS": {
+    "block": "difference",
+    "denominator_column": null,
+    "meaning_ja": "同じsample位置のF−PのRMS",
+    "source_key": "difference_rms_FS",
+    "unit": "FS"
+  },
+  "difference_maximum_absolute_difference_FS": {
+    "block": "difference",
+    "denominator_column": null,
+    "meaning_ja": "同じsample位置のF−Pの最大絶対値",
+    "source_key": "maximum_absolute_difference_FS",
+    "unit": "FS"
+  },
+  "difference_reference_rms_FS": {
+    "block": "difference",
+    "denominator_column": null,
+    "meaning_ja": "差分計算で使ったPのRMS",
+    "source_key": "reference_rms_FS",
+    "unit": "FS"
+  },
+  "difference_relative_rms": {
+    "block": "difference",
+    "denominator_column": "difference_reference_rms_FS",
+    "meaning_ja": "F−P RMS / P RMS。P RMS=0なら定義しない",
+    "source_key": "relative_rms",
+    "unit": "ratio"
+  }
+}

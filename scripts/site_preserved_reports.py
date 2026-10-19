@@ -6,8 +6,9 @@ import hashlib
 import html
 import io
 import json
-from pathlib import Path
+from pathlib import Path, PurePosixPath
 import shutil
+from urllib.parse import quote
 import wave
 
 from site_metric_comparison import comparison
@@ -87,11 +88,57 @@ def copy_artifacts(root, output, item):
         target.parent.mkdir(parents=True, exist_ok=True)
         shutil.copy2(file, target)
         checked_bytes(target, record)
-    return source
+    return source, set(names)
 
 
-def navigation_card(item, time_label):
-    """案内作成日時と比較範囲だけを表示し、元の測定日時とは区別する。"""
+def audio_listing_link(item, name, artifact_names, suffix):
+    """コピー済み成果物内の、URLとしても安全な相対ファイルだけを参照する。"""
+    if not isinstance(name, str) or not name:
+        raise ValueError('一覧音声の参照先には相対ファイル名が必要です')
+    relative = PurePosixPath(name)
+    if (relative.is_absolute() or '..' in relative.parts or name != relative.as_posix()
+            or any(char in name for char in '\\:?#%')
+            or any(ord(char) < 32 or ord(char) == 127 for char in name)):
+        raise ValueError(f'一覧音声の公開相対パスが不正です: {name}')
+    if name not in artifact_names or not name.endswith(suffix):
+        raise ValueError(f'一覧音声の参照先が公開成果物にありません: {name}')
+    return quote(item['path'] + '/' + name, safe='/')
+
+
+def navigation_audio_listing(item, artifact_names):
+    """指標の有無と独立に、保存済み短音声と帰属への参照を表示する。"""
+    if 'audio_listing' not in item:
+        return ''
+    listing = item['audio_listing']
+    if not isinstance(listing, dict):
+        raise ValueError('一覧音声の登録形式が不正です')
+    for key in ('caption', 'note'):
+        if not isinstance(listing.get(key), str) or not listing[key].strip():
+            raise ValueError(f'一覧音声の説明がありません: {key}')
+    samples = listing.get('samples')
+    if not isinstance(samples, list) or not samples:
+        raise ValueError('一覧音声には1件以上の短例が必要です')
+    attribution = audio_listing_link(item, listing.get('attribution_path'), artifact_names, '.html')
+    cards, seen = [], set()
+    for sample in samples:
+        if not isinstance(sample, dict):
+            raise ValueError('一覧音声の短例登録が不正です')
+        link = audio_listing_link(item, sample.get('path'), artifact_names, '.wav')
+        if sample['path'] in seen:
+            raise ValueError('一覧音声の短例が重複しています')
+        seen.add(sample['path'])
+        label = sample.get('label')
+        if not isinstance(label, str) or not label.strip():
+            raise ValueError('一覧音声の短例に表示名がありません')
+        cards.append(f'<div><p>{esc(label)}</p><audio controls preload="none" '
+                     f'aria-label="{esc(label)}" src="{esc(link)}"></audio></div>')
+    return (f'<p>{esc(listing["caption"])}</p><div class="audio-grid">'
+            + ''.join(cards) + f'</div><p><small>{esc(listing["note"])} '
+            f'<a href="{esc(attribution)}">出典・許諾・改変表示</a></small></p>')
+
+
+def navigation_card(item, time_label, artifact_names):
+    """案内作成日時・比較範囲と任意の音声を示し、測定日時とは区別する。"""
     created_on = date.fromisoformat(item['created_on']).isoformat()
     if created_on != item['created_on']:
         raise ValueError('案内作成日はYYYY-MM-DDで指定してください')
@@ -104,8 +151,9 @@ def navigation_card(item, time_label):
     return (f'<article><h2><a href="{esc(link)}">{esc(item["title"])}</a></h2>'
             f'<small>{created_label}</small>'
             f'<p>{esc(item["comparison_scope"])}</p>'
-            f'<p><a href="{esc(link)}">比較範囲・完了状態と元レポートを見る</a></p>'
-            '</article>')
+            + navigation_audio_listing(item, artifact_names)
+            + f'<p><a href="{esc(link)}">比較範囲・完了状態と元レポートを見る</a></p>'
+            + '</article>')
 
 
 def audio_preview(source, item):
@@ -149,14 +197,14 @@ def preserved_cards(root, output, recorded_time, time_label):
         if item['path'] in seen:
             raise ValueError('確定レポートの公開位置が重複しています')
         seen.add(item['path'])
-        source = copy_artifacts(root, output, item)
+        source, artifact_names = copy_artifacts(root, output, item)
         if kind == 'navigation-only':
             # 実際の案内作成日時が未登録の場合だけ、従来の日単位キーを維持する。
             timestamp = item.get('created_at', item['created_on'] + 'T00:00:00+00:00')
             sort_time = recorded_time({'recorded_at': timestamp})
             if 'created_at' in item and sort_time.date().isoformat() != item['created_on']:
                 raise ValueError('案内作成日時のUTC日付がcreated_onと一致しません')
-            card = navigation_card(item, time_label)
+            card = navigation_card(item, time_label, artifact_names)
             cards.append((sort_time, item['path'], item['id'], card))
             continue
         data = read_json(source / 'results.json.gz')

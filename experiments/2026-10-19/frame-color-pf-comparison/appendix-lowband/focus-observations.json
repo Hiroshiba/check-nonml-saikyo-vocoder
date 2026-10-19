@@ -1,0 +1,182 @@
+{
+  "source_summary_sha256": "7bc3f851402178e5541d893eef40cba79abd5f43683af978e68080762f5a5b9f",
+  "case": "librispeech_121-121726-0012",
+  "range_s": [
+    2.08,
+    2.17
+  ],
+  "window_ms": 5,
+  "hop_ms": 1,
+  "fft": 128,
+  "thresholds_dbfs": [
+    -50,
+    -40
+  ],
+  "scope": "fixed known sample; comparing interventions at identical shift; no original-ground-truth or quality claim",
+  "rows": [
+    {
+      "shift": -3,
+      "mode": "edited",
+      "band_hz": [
+        1500,
+        3000
+      ],
+      "first_window_center_above_dbfs_s": {
+        "-50": 2.0935,
+        "-40": 2.1095
+      },
+      "mean_window_power_dbfs": -44.293953664186745
+    },
+    {
+      "shift": -3,
+      "mode": "edited",
+      "band_hz": [
+        3000,
+        8000
+      ],
+      "first_window_center_above_dbfs_s": {
+        "-50": 2.0935,
+        "-40": 2.1215
+      },
+      "mean_window_power_dbfs": -44.39982181135062
+    },
+    {
+      "shift": -3,
+      "mode": "source_value",
+      "band_hz": [
+        1500,
+        3000
+      ],
+      "first_window_center_above_dbfs_s": {
+        "-50": 2.0935,
+        "-40": 2.1095
+      },
+      "mean_window_power_dbfs": -44.29395208006086,
+      "maximum_abs_db_change_vs_edited_in_region": 0.059979562937940045
+    },
+    {
+      "shift": -3,
+      "mode": "source_value",
+      "band_hz": [
+        3000,
+        8000
+      ],
+      "first_window_center_above_dbfs_s": {
+        "-50": 2.0935,
+        "-40": 2.1215
+      },
+      "mean_window_power_dbfs": -44.39982209472908,
+      "maximum_abs_db_change_vs_edited_in_region": 0.0060450027717138255
+    },
+    {
+      "shift": -3,
+      "mode": "source_mask",
+      "band_hz": [
+        1500,
+        3000
+      ],
+      "first_window_center_above_dbfs_s": {
+        "-50": 2.0935,
+        "-40": 2.1095
+      },
+      "mean_window_power_dbfs": -44.293953563584694,
+      "maximum_abs_db_change_vs_edited_in_region": 0.007899306443349019
+    },
+    {
+      "shift": -3,
+      "mode": "source_mask",
+      "band_hz": [
+        3000,
+        8000
+      ],
+      "first_window_center_above_dbfs_s": {
+        "-50": 2.0935,
+        "-40": 2.1215
+      },
+      "mean_window_power_dbfs": -44.39982186828162,
+      "maximum_abs_db_change_vs_edited_in_region": 0.0017288050040065173
+    },
+    {
+      "shift": 3,
+      "mode": "edited",
+      "band_hz": [
+        1500,
+        3000
+      ],
+      "first_window_center_above_dbfs_s": {
+        "-50": 2.0975,
+        "-40": 2.1065
+      },
+      "mean_window_power_dbfs": -45.00642067444531
+    },
+    {
+      "shift": 3,
+      "mode": "edited",
+      "band_hz": [
+        3000,
+        8000
+      ],
+      "first_window_center_above_dbfs_s": {
+        "-50": 2.0975,
+        "-40": 2.1185
+      },
+      "mean_window_power_dbfs": -44.97600914969226
+    },
+    {
+      "shift": 3,
+      "mode": "source_value",
+      "band_hz": [
+        1500,
+        3000
+      ],
+      "first_window_center_above_dbfs_s": {
+        "-50": 2.0975,
+        "-40": 2.1065
+      },
+      "mean_window_power_dbfs": -45.00567729227194,
+      "maximum_abs_db_change_vs_edited_in_region": 0.234034743796812
+    },
+    {
+      "shift": 3,
+      "mode": "source_value",
+      "band_hz": [
+        3000,
+        8000
+      ],
+      "first_window_center_above_dbfs_s": {
+        "-50": 2.0975,
+        "-40": 2.1185
+      },
+      "mean_window_power_dbfs": -44.976052273593,
+      "maximum_abs_db_change_vs_edited_in_region": 0.0028575201793330507
+    },
+    {
+      "shift": 3,
+      "mode": "source_mask",
+      "band_hz": [
+        1500,
+        3000
+      ],
+      "first_window_center_above_dbfs_s": {
+        "-50": 2.0975,
+        "-40": 2.1065
+      },
+      "mean_window_power_dbfs": -45.00550547751969,
+      "maximum_abs_db_change_vs_edited_in_region": 0.4020449759465805
+    },
+    {
+      "shift": 3,
+      "mode": "source_mask",
+      "band_hz": [
+        3000,
+        8000
+      ],
+      "first_window_center_above_dbfs_s": {
+        "-50": 2.0975,
+        "-40": 2.1185
+      },
+      "mean_window_power_dbfs": -44.976051492153594,
+      "maximum_abs_db_change_vs_edited_in_region": 0.0031721322931872464
+    }
+  ]
+}
