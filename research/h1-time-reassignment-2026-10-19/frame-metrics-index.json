@@ -1,0 +1,29 @@
+{
+  "format": "h1-csv-string-table-v1",
+  "original_filename": "frame_metrics.csv",
+  "original_sha256": "fb1f43c7f7e1197916595018b9e8d9fca89df246cfbf6b97bd26e7c8c2aed654",
+  "original_bytes": 16925995,
+  "data_row_count": 32912,
+  "column_count": 67,
+  "csv_encoding": "utf-8",
+  "utf8_bom_hex": "efbbbf",
+  "csv_dialect": {
+    "delimiter": ",",
+    "quotechar": "\"",
+    "doublequote": true,
+    "quoting": "QUOTE_MINIMAL",
+    "lineterminator": "\r\n",
+    "escapechar": null
+  },
+  "cell_semantics": "Every cell is a string copied from the original CSV. Empty strings preserve missing/not-applicable cells and are distinct from \"0\" and \"0.0\". No numeric parsing or rounding.",
+  "distributed_file": "frame_metrics.json.gz",
+  "compressed_bytes": 1799163,
+  "compressed_sha256": "ed30af91fbb50eb31107769a9d94be0b66a24153bb3d217f3bf4b43c27fc5711",
+  "uncompressed_json_bytes": 21369874,
+  "uncompressed_json_sha256": "1cc577a6e631955fd313d68274651d121cfea80b4c1c42cd6a37568c140b58f2",
+  "gzip_mtime": 0,
+  "exact_byte_reconstruction_verified": true,
+  "reconstructed_csv_sha256": "fb1f43c7f7e1197916595018b9e8d9fca89df246cfbf6b97bd26e7c8c2aed654",
+  "reconstruction_ja": "gzipを展開してJSONを読む。columnsを先頭行、その後rowsを順にCSV QUOTE_MINIMALで出力する。区切りはカンマ、quoteは二重引用符、doublequote=true、各行末CRLF、最終行にもCRLF。UTF-8にencodeし、先頭にefbbbfを付ける。全セルは文字列のままで数値変換しない。",
+  "publication_conversion_scope": "Packaging only; no new measurement or scientific aggregation."
+}

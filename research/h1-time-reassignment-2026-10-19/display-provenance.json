@@ -1,0 +1,200 @@
+{
+  "study_id": "h1-reassignment-observation-20261019",
+  "publication_date": "2026-10-19",
+  "publication_role": "Japanese explanation and display-only rendition of the completed frozen run",
+  "science_data_policy": "No changes to source, parameters, measurement results, or original figures. No new synthesis, measurement, aggregation, or tests were run to prepare this display.",
+  "copied_files": [
+    {
+      "file": "results.json",
+      "sha256": "8784fd587b9999e4d7d04ed7f634958ccf29f9e4411c4993178839cbb4f03a91",
+      "bytes": 1991208,
+      "transformation": "byte-identical copy"
+    },
+    {
+      "file": "summary.json",
+      "sha256": "fbfe67b8d890a9451905c8203f8e37dcf7646094641cac433c52f240a5e39212",
+      "bytes": 175968,
+      "transformation": "byte-identical copy"
+    },
+    {
+      "file": "all_conditions.csv",
+      "sha256": "3ef31ab30717eb5d6df6411e45e78d0f5b3f286d9c23159c36f305b6774c78c2",
+      "bytes": 269726,
+      "transformation": "byte-identical copy"
+    },
+    {
+      "file": "mixture_metrics.csv",
+      "sha256": "2dcd07be0089f5d2af153cd7ea631c2f2ceb8225fb96dc44faacffe94962db76",
+      "bytes": 86744,
+      "transformation": "byte-identical copy"
+    },
+    {
+      "file": "diagnostic_metrics.csv",
+      "sha256": "0e02c7475b7ad4ec1585075d0c387d20a0d62ebf97f2697c5c266108894f5ea0",
+      "bytes": 94369,
+      "transformation": "byte-identical copy"
+    },
+    {
+      "file": "paired_contrasts.csv",
+      "sha256": "b84142f9dc63faf6c1c386deae3b2c1f907d94c568663b03e765602a2f198d44",
+      "bytes": 21490,
+      "transformation": "byte-identical copy"
+    },
+    {
+      "file": "measurement-formulas-prerun.md",
+      "sha256": "236fb3609e207f5b15309e1f9da6bc339d1450c79fbbeaa4cf20b7fb47561ce0",
+      "bytes": 9187,
+      "transformation": "byte-identical copy of historical pre-measurement document"
+    },
+    {
+      "file": "background-research-prerun-ja.md",
+      "sha256": "a27754adda8e7a99f5b3c0461cbbfe6d8464d4ce670deeb0f71d81d15aa56f6e",
+      "bytes": 22025,
+      "transformation": "byte-identical copy of historical pre-measurement document"
+    }
+  ],
+  "display_only": {
+    "source_plotting_sha256": "c57b30be52c6896de7c108923e975d86a10d7e99214663453099557f641bbd14",
+    "presentation_script_sha256": "2f1edc4a0169444276afd7ec206c738689cff0667d1cdc2181ce0561b3dbca31",
+    "font": "Noto Sans CJK JP (NotoSansCJK-Regular.ttc)",
+    "font_sha256": "b76b0433203017ca80401b2ee0dd69350349871c4b19d504c34dbdd80541690a",
+    "changes": [
+      "English titles, axes and colorbar labels translated to Japanese",
+      "Font changed to Noto Sans CJK JP",
+      "Figure dimensions enlarged to prevent clipped labels",
+      "Data arrays, selected rows, line styles, marker choices, log color normalization, and placement positions follow the original plotting-only code"
+    ],
+    "inputs": [
+      "results.json",
+      "paired_contrasts.csv",
+      "frame_metrics.csv",
+      "saved per-record observation arrays, which are not distributed"
+    ],
+    "outputs": [
+      {
+        "file": "figures/ja/comparison_all_seeds.png",
+        "sha256": "9dc0ddcd3a1185162e1deb804dac9c7115af586a39358cb397cfe0d2a76ce8e3"
+      },
+      {
+        "file": "figures/ja/energy_maps_seed_1.png",
+        "sha256": "273aa488f3f055bda07177fcc2a3be98c82d47121ddf575fc64f9c1087082887"
+      },
+      {
+        "file": "figures/ja/energy_maps_seed_2.png",
+        "sha256": "0aac67003fed22690fefc5ff967e94249f8d836ffa889e3058f98355b2cf9e0f"
+      },
+      {
+        "file": "figures/ja/energy_maps_seed_3.png",
+        "sha256": "8edeb1ac9d8234f73ee49da2c1c2249e22e8fc75017701b6858e12ceed313314"
+      },
+      {
+        "file": "figures/ja/energy_maps_seed_4.png",
+        "sha256": "f80c6b49278341f11a3d5ffa72c0a03d785d9cdc377d56d84c5b1562f8dcf2c8"
+      },
+      {
+        "file": "figures/ja/frame_position_diagnostics.png",
+        "sha256": "6431263c53adb76eb3c235ded1799775a060a6ca75f76ad1f7a0995eda0ed35a"
+      }
+    ],
+    "visual_review_ja": "日本語PNG全6枚を原寸相当で目視し、タイトル・軸・色尺度ラベルの欠けがないことを確認。HTMLの実ブラウザ表示確認は未実施。"
+  },
+  "historical_documents_note": "Files with prerun in the name retain pre-measurement tense and are archived without editing; current interpretation is in index.html and research-ja.md.",
+  "non_distributed_relative_paths_note": "input_file and histogram_file in original JSON/CSV are historical record identifiers, not download links. Inputs and observations are deliberately outside the publication whitelist.",
+  "original_figures_not_distributed": [
+    {
+      "sha256": "b53191d369d773626e24353d21bf474c43c42052d19a96e996e8f901b37a33f0",
+      "bytes": 268123,
+      "transformation": "byte-identical copy",
+      "public": false,
+      "reason": "Original figure bytes remain in the unchanged measurement archive; only Japanese display versions are published.",
+      "original_filename": "comparison_all_seeds.png",
+      "japanese_display_file": "figures/ja/comparison_all_seeds.png"
+    },
+    {
+      "sha256": "c244078a6a892478259fea19717730bc53a8ed2b3b3786963e67e886f608af0f",
+      "bytes": 328800,
+      "transformation": "byte-identical copy",
+      "public": false,
+      "reason": "Original figure bytes remain in the unchanged measurement archive; only Japanese display versions are published.",
+      "original_filename": "energy_maps_seed_1.png",
+      "japanese_display_file": "figures/ja/energy_maps_seed_1.png"
+    },
+    {
+      "sha256": "59a1c65196df71063bd4c765738844431759037e26bcfe9d9d7a03a51bf75974",
+      "bytes": 325111,
+      "transformation": "byte-identical copy",
+      "public": false,
+      "reason": "Original figure bytes remain in the unchanged measurement archive; only Japanese display versions are published.",
+      "original_filename": "energy_maps_seed_2.png",
+      "japanese_display_file": "figures/ja/energy_maps_seed_2.png"
+    },
+    {
+      "sha256": "9d9d8deb179487dd2c3685d3e05e0f5b6b4be59e5227cc7cbb7fcc09ef55799d",
+      "bytes": 321696,
+      "transformation": "byte-identical copy",
+      "public": false,
+      "reason": "Original figure bytes remain in the unchanged measurement archive; only Japanese display versions are published.",
+      "original_filename": "energy_maps_seed_3.png",
+      "japanese_display_file": "figures/ja/energy_maps_seed_3.png"
+    },
+    {
+      "sha256": "b4f341859c58cef6d766ec248fe6a66c63b7ccd8da9483fac34cd11a3c3abd71",
+      "bytes": 327512,
+      "transformation": "byte-identical copy",
+      "public": false,
+      "reason": "Original figure bytes remain in the unchanged measurement archive; only Japanese display versions are published.",
+      "original_filename": "energy_maps_seed_4.png",
+      "japanese_display_file": "figures/ja/energy_maps_seed_4.png"
+    },
+    {
+      "sha256": "443f535507fb2260bea3e0698b41313ea2c8f3a972e2be63ffe39987a8b2b8f6",
+      "bytes": 207303,
+      "transformation": "byte-identical copy",
+      "public": false,
+      "reason": "Original figure bytes remain in the unchanged measurement archive; only Japanese display versions are published.",
+      "original_filename": "frame_position_diagnostics.png",
+      "japanese_display_file": "figures/ja/frame_position_diagnostics.png"
+    }
+  ],
+  "frame_csv_lossless_json_index": "frame-metrics-index.json",
+  "frame_csv_lossless_json": {
+    "format": "h1-csv-string-table-v1",
+    "original_filename": "frame_metrics.csv",
+    "original_sha256": "fb1f43c7f7e1197916595018b9e8d9fca89df246cfbf6b97bd26e7c8c2aed654",
+    "original_bytes": 16925995,
+    "data_row_count": 32912,
+    "column_count": 67,
+    "csv_encoding": "utf-8",
+    "utf8_bom_hex": "efbbbf",
+    "csv_dialect": {
+      "delimiter": ",",
+      "quotechar": "\"",
+      "doublequote": true,
+      "quoting": "QUOTE_MINIMAL",
+      "lineterminator": "\r\n",
+      "escapechar": null
+    },
+    "cell_semantics": "Every cell is a string copied from the original CSV. Empty strings preserve missing/not-applicable cells and are distinct from \"0\" and \"0.0\". No numeric parsing or rounding.",
+    "distributed_file": "frame_metrics.json.gz",
+    "compressed_bytes": 1799163,
+    "compressed_sha256": "ed30af91fbb50eb31107769a9d94be0b66a24153bb3d217f3bf4b43c27fc5711",
+    "uncompressed_json_bytes": 21369874,
+    "uncompressed_json_sha256": "1cc577a6e631955fd313d68274651d121cfea80b4c1c42cd6a37568c140b58f2",
+    "gzip_mtime": 0,
+    "exact_byte_reconstruction_verified": true,
+    "reconstructed_csv_sha256": "fb1f43c7f7e1197916595018b9e8d9fca89df246cfbf6b97bd26e7c8c2aed654",
+    "reconstruction_ja": "gzipを展開してJSONを読む。columnsを先頭行、その後rowsを順にCSV QUOTE_MINIMALで出力する。区切りはカンマ、quoteは二重引用符、doublequote=true、各行末CRLF、最終行にもCRLF。UTF-8にencodeし、先頭にefbbbfを付ける。全セルは文字列のままで数値変換しない。",
+    "publication_conversion_scope": "Packaging only; no new measurement or scientific aggregation."
+  },
+  "original_figure_reference_note": "Paths listed for original figures are archival names, not download links.",
+  "lossless_packaging_script_sha256": "e6bf1907cefffb6c8535dc520cfb04633198dccfb433d419a83e6e75bf3c8a95",
+  "html_presentation_script_sha256": "84fa510da40fd34203450eb87c535e450602718bbb45b7a5e236a6509fe56e79",
+  "publication_review_display_revision": {
+    "date_utc": "2026-10-19",
+    "scope_ja": "システム追従の明暗配色、日本語の冒頭ラベル、既存PML比較音声への冒頭導線だけを追加。測定値・図・全条件表は変更しない。",
+    "prior_index_html_sha256": "d7c5b111633c55a87988d530297d81468d02b360d4ea2bd1ca4635cb030360ef",
+    "revised_index_html_sha256": "f77e4b994e81d93a787de1908c97b41e4f99df51d94be8954d6b30f3f275b066",
+    "original_publication_manifest_sha256": "66893a42464ce225a5bbd1331ec586835f6a908bf2afe8a48b2b89dba8e61ad6",
+    "browser_visual_review": "pending until public HTTP deployment; prior denied local browser routes were not retried"
+  }
+}

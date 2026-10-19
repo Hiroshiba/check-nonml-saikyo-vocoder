@@ -1,0 +1,183 @@
+{
+  "study_id": "h1-reassignment-observation-20261019",
+  "measurement_status": "completed; interpretation is provided separately in this publication",
+  "measurement_started_utc": "2026-10-19T04:46:50.918232+00:00",
+  "measurement_finished_utc": "2026-10-19T04:47:04.366683+00:00",
+  "measurement_exit_code": 0,
+  "measurement_elapsed_seconds": 13.448201844999858,
+  "runtime": {
+    "python": "3.12.14",
+    "platform": "Linux-6.18.55-x86_64-with-glibc2.41",
+    "numpy": "2.3.5",
+    "scipy": "1.17.0",
+    "matplotlib": "3.10.8"
+  },
+  "counts": {
+    "mixture_conditions": 64,
+    "component_records": 72,
+    "pair_count": 32,
+    "frame_metric_rows": 32912
+  },
+  "timings": {
+    "generation_seconds": 0.034749849008221645,
+    "analysis_seconds": 6.710524763000649,
+    "writing_seconds": 1.0828774429846817,
+    "figure_seconds": 5.577643021999393
+  },
+  "frozen_protocol": {
+    "study_id": "h1-reassignment-observation-20261019",
+    "protocol_version": "1.0.2-prerun",
+    "status": "implementation_only_not_measured",
+    "scope": "既知混合による時間観測研究。音質、実音声、再合成、F0編集を評価しない。",
+    "source_documents": [
+      {
+        "filename": "burst-preserving-h1-minimal-experiment-proposal-20261019.md",
+        "sha256": "caefc832905776ce9511394dcf9ae7f21d24fdc55f5ae8c7f7bebd7efb36c937"
+      },
+      {
+        "filename": "burst-preserving-research-20261019.md",
+        "sha256": "a27754adda8e7a99f5b3c0461cbbfe6d8464d4ce670deeb0f71d81d15aa56f6e"
+      }
+    ],
+    "dependencies": {
+      "numpy": "2.3.5",
+      "scipy": "1.17.0",
+      "matplotlib": "3.10.8"
+    },
+    "signal": {
+      "sample_rate_hz": 48000,
+      "samples": 14400,
+      "dtype": "float64",
+      "harmonic_f0_hz": 100,
+      "harmonic_count": 20,
+      "harmonic_rms": 0.02,
+      "harmonic_waveform": "fixed_gain*sum(sin(2*pi*k*100*(n-offset)/fs)/k); zero phases at translated time origin",
+      "harmonic_gain": "calculate once from offset=0 whole-record RMS=0.02; reuse exactly for all offsets without renormalization",
+      "burst_start_sample": 7200,
+      "burst_length_samples": 144,
+      "burst_support_rms": 0.2,
+      "precursor_lead_samples": 480,
+      "precursor_length_samples": 192,
+      "precursor_energy_db_re_burst": -18,
+      "gate_ramp_samples": 24,
+      "gate": "half-sample centered raised-cosine: sin(pi*(j+0.5)/(2*24))**2; reverse for falling ramp",
+      "color_cutoff_hz": 3000,
+      "warmup_samples": 4800,
+      "color_filter": "causal lfilter([1-a],[1,-a]), a=exp(-2*pi*3000/48000), zero initial state",
+      "rng": "numpy.random.Generator(numpy.random.PCG64(seed)).standard_normal",
+      "burst_seeds": [
+        1001,
+        1002,
+        1003,
+        1004
+      ],
+      "precursor_seeds": [
+        2001,
+        2002,
+        2003,
+        2004
+      ],
+      "offset_samples": [
+        0,
+        15,
+        30,
+        45,
+        60,
+        75,
+        90,
+        105
+      ],
+      "precursor_present": [
+        false,
+        true
+      ],
+      "mixture_count": 64,
+      "offset_handling": "translate h, b and p together relative to the fixed frame grid; h is evaluated analytically at (n-offset)/fs; event-relative harmonic phases stay fixed",
+      "level_handling": "normalize components once; never normalize mixtures or clip"
+    },
+    "analysis": {
+      "window_length_samples": 1920,
+      "hop_samples": 120,
+      "fft_length": 2048,
+      "window": "symmetric Hann: 0.5-0.5*cos(2*pi*l/(L-1))",
+      "window_center_samples": 959.5,
+      "frame_index_first": 0,
+      "frame_index_last_inclusive": 120,
+      "frame_start": "m*120-960",
+      "frame_center_samples": "m*120-0.5",
+      "fft_convention": "sum_l x[s_m+l]*w[l]*exp(-2j*pi*k*l/2048); right zero padding",
+      "time_weighted_window": "((l-959.5)/48000)*w[l]",
+      "reassigned_time": "t_m + real(X_tw/X)",
+      "one_sided_weights": "1 at DC/Nyquist, 2 elsewhere",
+      "coefficient_energy": "alpha_k*abs(X)**2/(2048*48000)",
+      "threshold_relative_to_max_full_record_coefficient_energy": 1e-12,
+      "eligible": "finite nonnegative coefficient energy strictly greater than threshold",
+      "low_energy_policy": "common A/B undefined ledger; supplementary A_all uses every finite-energy coefficient",
+      "main_frame_center_roi_seconds": [
+        0.1,
+        0.2
+      ],
+      "roi_interval": "left closed, right open; identical frame indices for every signal/method",
+      "edge_exclusion_seconds": 0.04,
+      "display_bin_width_samples": 12,
+      "display_interval_seconds": [
+        0,
+        0.3
+      ],
+      "histogram_rule": "floor(t*fs/12); left closed, right open; t=0.3 is outside",
+      "timing_metrics_use": "all finite defined times, including outside display interval; no clipping",
+      "quantile_rule": "inverse weighted empirical CDF: smallest time with cumulative energy >= q*defined_energy",
+      "onset_quantile": 0.01,
+      "width_quantiles": [
+        0.05,
+        0.95
+      ],
+      "quantile_interpolation": "none",
+      "ground_truth": "sample time n/fs weighted by component amplitude squared/fs; same quantiles",
+      "support_regions": "half-open sample support intervals, computed on exact assigned times before histogramming",
+      "unknown_energy_policy": "retain raw anomaly counts and explicitly named finite subtotals; unknown total makes official region energies and percentages null; incomplete baseline/present makes paired deltas null and their diagnostic finite-subtotal difference is excluded from formal summaries",
+      "confidence_intervals": "none; four independent seeds, eight dependent placements per seed"
+    },
+    "storage": {
+      "save_inputs": "eight h offset records shared across seeds; each b/p shifted component and each mixture as float64 .npy",
+      "save_coefficients": false,
+      "retained_observations": "six 1200-bin energy arrays per record, all 121 frame ledgers per method, ROI/full summaries",
+      "reconstruction": "input samples + pinned source + manifest + dependency versions reconstruct complex coefficients",
+      "logical_record_count": 136,
+      "component_record_count": 72,
+      "frame_metric_rows": 32912,
+      "raw_input_bytes": 15667200,
+      "histogram_float_bytes": 7833600,
+      "full_complex_coefficient_arrays_avoided_bytes": 539756800,
+      "expected_total_output": "approximately 50–100 MB, depending on CSV/JSON formatting and PNG sizes"
+    },
+    "decision": {
+      "primary": "continuous metrics and paired differences; no tuned detection threshold or automatic pass/fail",
+      "interpretation": "burst smearing reduction alone is insufficient; inspect precursor contrast, baseline false energy, undefined/outside energy and placement reversals",
+      "posthoc_changes": "retain original run; record old/new values, reason, seen results and affected scope; use new source lock and output directory"
+    }
+  },
+  "source_sha256": {
+    "CHANGELOG.md": "223d1019a12c5a99bd7f1abb86e1a0800ecb2076dd58e3b88feeb2a9166fbcf6",
+    "FORMULAS.md": "236fb3609e207f5b15309e1f9da6bc339d1450c79fbbeaa4cf20b7fb47561ce0",
+    "README.md": "24c64ebc51cb3095399d26ac823cf86eb9d6738f92a25a6425478e2b18b3bbd7",
+    "STATIC_REVIEW.md": "908efd84720451819ef5d02ac1506290887e6f8a98351890ecd9d467aca39203",
+    "aggregate.py": "e4508d497cf7b02522498c16865261c4c3c09f26babcd2d37375133b9ce64a94",
+    "freeze.py": "42ca1a8934e59e0f7c69958ef4c7d93b97313c64889eb14cea6c5bbed20acdb7",
+    "generate.py": "c141e815d9e18046fe0bfa28934f15b27fb9eb5ed4d1aec358163909aa5e32e5",
+    "manifest.json": "32576a42fde401055f1cb88fceb83266ec7c449dc53bc68ac9170a644f010e9c",
+    "metrics.py": "be318dec3435b04c00237b633204eb1f562ccb8b95a8374405e8db6185589309",
+    "plotting.py": "c57b30be52c6896de7c108923e975d86a10d7e99214663453099557f641bbd14",
+    "report.py": "1f26437d48e86aaffec110aded3fef3c74f1568d7b5ec0e38e686e223a33a081",
+    "run.py": "07bb433e12e4b2007b40bd467a4fc457ccf99a55b71e8e6fc1d03ecad338c297",
+    "spec.py": "f2a0c7b9341856abb2db48911f738774b23907b8ac7fe190a9287ba099aad04c",
+    "transform.py": "37b46a1fb13c28a44a39c1c033c991894f95c4e5e5780b7213563cee8d755e0d"
+  },
+  "archived_protocol_status_note_ja": "frozen_protocol内のimplementation_only_not_measuredは測定前に固定した履歴の状態。今回の実行完了状態とは別。",
+  "measurement_stderr": {
+    "bytes": 1907,
+    "sha256": "e66fb37bf1cccc0f29c5ca4f5c1aa8282f0c67469e509f8a40ccface7f53ba0a",
+    "summary_ja": "Matplotlib/Fontconfigの書込み可能キャッシュに関する警告。元stderrは保存。測定プロセスの終了コードは0。原記録の非公開環境パスを含むため本公開物には複製しない。"
+  },
+  "publication_scope_ja": "数値結果と表示成果物のみ。実装、入力波形、保存分布配列、原ログは配布しない。この公開物だけで元の測定を再実行できるとは主張しない。"
+}
