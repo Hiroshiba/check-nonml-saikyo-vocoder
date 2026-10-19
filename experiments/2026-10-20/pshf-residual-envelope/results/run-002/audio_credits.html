@@ -1,0 +1,10 @@
+<!doctype html><html lang="ja"><meta charset="utf-8"><meta name="color-scheme" content="light dark">
+<title>音声出典と加工</title><h1>LibriSpeech録音の比較</h1>
+<p>原音はLibriSpeech ASR corpus、Vassil Panayotov（Daniel Povey協力）、LibriVox由来の朗読です。
+<a href="https://www.openslr.org/12/">OpenSLR 12</a>・<a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>。
+原録音コーパスfile path/SHAは今回の保存inventoryでは不明。保存original.npyのSHAで同一入力を確認しています。作者・朗読者による推奨を意味しません。</p>
+<p>保存原音、PML、RAW_FULL、新規PSHF残差包絡の派生音声。pitch 0/−3/+3、seed 0/20261015。
+full120の再合成物ではなく、固定5録音の凍結PML経路です。歴史的参照の波形は再合成していません。</p>
+<p>全音声をrint(x×32768)（偶数丸め）でPCM16化。gain=1、peak正規化・clip・dither・resample・整列なし。
+範囲外なら公開音声は作らず欠測を表示し、float64 WAVはprivate版だけに残します。計測は元の全長floatです。公開版は先頭min(5秒,全長)、private版は全長。
+<a href="audio-provenance.json">各録音のSHA・切出し・過大振幅</a>、<a href="index.html">比較</a>。</p></html>
