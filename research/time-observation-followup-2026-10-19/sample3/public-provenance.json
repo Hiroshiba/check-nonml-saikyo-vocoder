@@ -1,0 +1,124 @@
+{
+  "schema": "sample3-public-provenance-v1",
+  "study_id": "sample3-time-observation-20261019",
+  "saved_run_status": "observation_complete_interpretation_pending",
+  "status_note_ja": "元実行記録の状態文字列を保持。解釈は本掲載版で追加。",
+  "started_utc": "2026-10-19T05:04:11.318486+00:00",
+  "finished_utc": "2026-10-19T05:04:46.007831+00:00",
+  "source_lock_sha256": "eb12643408c4a883a95ca972baab294b8cbe2b36259f1183bb63e36f9d4dfb46",
+  "source_run_manifest_sha256": "a240d6cb48b0ad141cc7c90190f8e0adbb954ffb75c9f8ae798cef2ec741f446",
+  "source_output_hash_inventory_sha256": "b32b6a918aee9a3808839dc63c164e67726c540dab35b65e5d5e6925325d532b",
+  "input_manifest_sha256": "50833628a6b851f4f7457feccab829ae0c083740270932362a6ee7a8a026ddec",
+  "protocol": {
+    "study_id": "sample3-time-observation-20261019",
+    "protocol_version": "0.1.0-premeasurement",
+    "sample_rate": 16000,
+    "samples": 64720,
+    "pcm_divisor": 32768.0,
+    "window_lengths": [
+      640,
+      160
+    ],
+    "hop_samples": 40,
+    "nfft": 1024,
+    "frame_first": 0,
+    "frame_last": 1618,
+    "display_samples": [
+      32000,
+      35520
+    ],
+    "reference_samples": [
+      33280,
+      34080
+    ],
+    "donor_guard_samples": [
+      31360,
+      36160
+    ],
+    "histogram_bin_samples": 4,
+    "waveform_power_bin_samples": 16,
+    "coefficient_energy_threshold": 1e-16,
+    "psd_db_range": [
+      -110.0,
+      -10.0
+    ],
+    "histogram_energy_db_range": [
+      -130.0,
+      -25.0
+    ],
+    "waveform_power_db_range": [
+      -100.0,
+      0.0
+    ],
+    "integrated_hist_energy_ymax": 0.001,
+    "audit_absolute_tolerance": 1e-14,
+    "audit_relative_tolerance": 1e-10,
+    "frequency_views_hz": [
+      8000.0,
+      2000.0
+    ],
+    "condition_order": [
+      "ORIGINAL",
+      "PML_p0",
+      "RAW_FULL_p0",
+      "PML_pm3",
+      "RAW_FULL_pm3",
+      "PML_pp3",
+      "RAW_FULL_pp3"
+    ],
+    "normalization": "none",
+    "resampling": "none",
+    "alignment": "none",
+    "audio_output": "none; refer only to existing public URLs",
+    "interpretation": "descriptive time-display diagnostic, no phoneme labels or ground truth onset, no quality ranking or adoption"
+  },
+  "runtime": {
+    "python": "3.12.14",
+    "numpy": "2.3.5",
+    "matplotlib": "3.10.8"
+  },
+  "audio_generated": false,
+  "records": 7,
+  "numeric_issue_count": 0,
+  "audit_failure_count": 0,
+  "quantitative_use": "descriptive_only",
+  "figures": [
+    {
+      "condition": "ORIGINAL",
+      "path": "figures/ORIGINAL.png"
+    },
+    {
+      "condition": "PML_p0",
+      "path": "figures/PML_p0.png"
+    },
+    {
+      "condition": "RAW_FULL_p0",
+      "path": "figures/RAW_FULL_p0.png"
+    },
+    {
+      "condition": "PML_pm3",
+      "path": "figures/PML_pm3.png"
+    },
+    {
+      "condition": "RAW_FULL_pm3",
+      "path": "figures/RAW_FULL_pm3.png"
+    },
+    {
+      "condition": "PML_pp3",
+      "path": "figures/PML_pp3.png"
+    },
+    {
+      "condition": "RAW_FULL_pp3",
+      "path": "figures/RAW_FULL_pp3.png"
+    },
+    {
+      "condition": "ALL",
+      "path": "figures/all_conditions_8000Hz.png"
+    },
+    {
+      "condition": "ALL",
+      "path": "figures/all_conditions_2000Hz.png"
+    }
+  ],
+  "excluded_fields_ja": "実行用ディレクトリ、レビュー参照の私有パス、フォントの実行環境パス、実装ファイル別情報を公開しない。これは元来歴とは別の公開用投影。"
+}

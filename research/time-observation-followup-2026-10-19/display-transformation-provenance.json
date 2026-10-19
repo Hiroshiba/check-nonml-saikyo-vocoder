@@ -1,0 +1,185 @@
+{
+  "schema": "time-observation-publication-transform-v1",
+  "created_at": "2026-10-19T05:13:27Z",
+  "measurement_rerun": false,
+  "new_audio_generated": false,
+  "ranking_calculated": false,
+  "sample3_projection": {
+    "source_sha256": "7d941a6c4622c0f4a2a422334c91a19eb41fff2af5a7a42b8dc4753cfc5c1896",
+    "retained_row_count": 7,
+    "retained_keys": [
+      "condition",
+      "ledgers",
+      "raw_regions",
+      "coefficient_regions",
+      "display_censoring",
+      "parseval",
+      "audit_failures",
+      "numeric_issues_40ms",
+      "numeric_issues_10ms",
+      "input"
+    ],
+    "omitted_keys": [
+      "observation_file",
+      "observation_sha256"
+    ],
+    "note_ja": "全数値・文字列・欠測を保持。ローカル配列への参照だけを公開用schemaで省略。"
+  },
+  "byte_preserved_files": [
+    {
+      "name": "sample3/ledger.csv",
+      "source_document": "ledger.csv",
+      "sha256": "cbf4fd327c0f39734da30817dad00b1324d9e40e4d49cff2089e176d7c168e9d",
+      "bytes": 39462
+    },
+    {
+      "name": "sample3/waveform_regions.csv",
+      "source_document": "waveform_regions.csv",
+      "sha256": "84ba5266363effb838ba884a3ea0459af54b64fcde52d6612bd240bc23e13e99",
+      "bytes": 4270
+    },
+    {
+      "name": "sample3/coefficient_regions.csv",
+      "source_document": "coefficient_regions.csv",
+      "sha256": "8037af19e816f9cffa0130b7944f7799e0073039c60c17db90bc46595693d30b",
+      "bytes": 21324
+    },
+    {
+      "name": "sample3/input-manifest.json",
+      "source_document": "source/input-manifest.json",
+      "sha256": "50833628a6b851f4f7457feccab829ae0c083740270932362a6ee7a8a026ddec",
+      "bytes": 3670
+    },
+    {
+      "name": "sample3/figures/ORIGINAL.png",
+      "source_document": "figures/ORIGINAL.png",
+      "sha256": "52f1662f84b03e46185bf1d31c400ddf4d31d4fdabddb2724c2107b4d5fc481a",
+      "bytes": 990390
+    },
+    {
+      "name": "sample3/figures/PML_p0.png",
+      "source_document": "figures/PML_p0.png",
+      "sha256": "15b2a174ff1af99d64e39655ee920e86d4b8e997c23157ff1fb4f54c3ca34602",
+      "bytes": 993355
+    },
+    {
+      "name": "sample3/figures/RAW_FULL_p0.png",
+      "source_document": "figures/RAW_FULL_p0.png",
+      "sha256": "def5673a06b3f541ef316cd5ae40a6fb439761fbbcc7f531a865f02796e02c92",
+      "bytes": 987760
+    },
+    {
+      "name": "sample3/figures/PML_pm3.png",
+      "source_document": "figures/PML_pm3.png",
+      "sha256": "551b6c50fa8caa79deec0739b25541ee28059ff2375ee42415d471a5f8f27516",
+      "bytes": 992197
+    },
+    {
+      "name": "sample3/figures/RAW_FULL_pm3.png",
+      "source_document": "figures/RAW_FULL_pm3.png",
+      "sha256": "b2f65075ccfb6c34675082287d157eead4c7e3281ada37d6ef833ae6e5006181",
+      "bytes": 987977
+    },
+    {
+      "name": "sample3/figures/PML_pp3.png",
+      "source_document": "figures/PML_pp3.png",
+      "sha256": "c8a80497baced7a79ca64bbc6a24aacef71cea61ca33dab4773cefd0880e017c",
+      "bytes": 997932
+    },
+    {
+      "name": "sample3/figures/RAW_FULL_pp3.png",
+      "source_document": "figures/RAW_FULL_pp3.png",
+      "sha256": "87f1a4b6c162e930d80513e7d4b37f874e01172fc499ccb8b9ed5530825513bf",
+      "bytes": 987801
+    },
+    {
+      "name": "sample3/figures/all_conditions_8000Hz.png",
+      "source_document": "figures/all_conditions_8000Hz.png",
+      "sha256": "f62f5068147f27c08d65d6a04584a5e346aa783b16e27d6f7fa5b9ce3be51a31",
+      "bytes": 1593681
+    },
+    {
+      "name": "sample3/figures/all_conditions_2000Hz.png",
+      "source_document": "figures/all_conditions_2000Hz.png",
+      "sha256": "dc05d03b7f6b07a31fbe49d2fe11ae9e1e870a6253957f18ac20fc5743b6a78c",
+      "bytes": 1115161
+    },
+    {
+      "name": "decomposition/decomposition.json",
+      "source_document": "decomposition.json",
+      "sha256": "17fa9241f0a61c85b3a142f114629fe313197cff40752a9a0b01b112f8d915a3",
+      "bytes": 1003436
+    },
+    {
+      "name": "decomposition/decomposition.csv",
+      "source_document": "decomposition.csv",
+      "sha256": "877ec3b6694974d6a4cb05eaae0e11961fa72ada9881f74cfef9108dde517f68",
+      "bytes": 134219
+    },
+    {
+      "name": "decomposition/saved_scalar_comparisons.csv",
+      "source_document": "saved_scalar_comparisons.csv",
+      "sha256": "0da5d173fb43fda411098385612caa9bf43419b356e519ae6d766e344fdc05eb",
+      "bytes": 187817
+    },
+    {
+      "name": "decomposition/seed_summaries.csv",
+      "source_document": "seed_summaries.csv",
+      "sha256": "86cd36a0efc77160e6145ccd66c5ee6491ef03e7bc96927787fd06b70023c2cc",
+      "bytes": 2867
+    },
+    {
+      "name": "decomposition/all_pairs_decomposition.png",
+      "source_document": "all_pairs_decomposition.png",
+      "sha256": "98e35d6505f56039e1c86b880d32096ef2257ede5f74a2d6e21145219d9519b3",
+      "bytes": 375509
+    }
+  ],
+  "html_source_hashes": {
+    "sample3_report": "1b581dd6790c728868ae2bb3cfce3340184d39e9d63194f2152ec9a1932e7d76",
+    "decomposition_report": "a2427f552d974413f82e9518f0b46c6157ee212cc8acbbfd2646d980eb5579ba"
+  },
+  "display_changes_ja": [
+    "新しい入口と2つの掲載版を作成。元HTMLは変更していない。",
+    "掲載版の冒頭へ結論・比較・既存公開音声へのリンクを追加。",
+    "システムに追従するライト/ダーク配色、表の横スクロール、見出しと日本語の補足を追加。",
+    "保存済み表の数値は保持し、日本語見出しを補足。主な要約表は保存値を指定桁へ丸め、B−Aのみ保存値同士の差として表示。",
+    "PNGは再生成せず固定byteをコピー。画像の配色・軸・数値は変更しない。",
+    "実行用パスを含む来歴は別schemaへ限定投影し、元文書と混同しない。"
+  ],
+  "excluded_categories_ja": [
+    "実装",
+    "NPY/NPZ配列",
+    "新しい音声ファイル",
+    "ログ",
+    "私有実行環境パス",
+    "私有成果物参照"
+  ],
+  "source_rules": {
+    "USER_INSTRUCTIONS.md": "6eeedc15b3ca4fdd74fd190fbdd23fe4cb5b13bb",
+    "docs/WORKFLOW.md": "current main read on 2026-10-19",
+    "docs/PUBLISHING.md": "current main read on 2026-10-19"
+  },
+  "browser_visual_check": {
+    "completed": false,
+    "note_ja": "HTMLのブラウザ表示は未確認。既知の起動・ローカル表示制限を迂回していない。本番HTTPでの正規ブラウザ確認は公開後の工程。"
+  },
+  "png_visual_review": {
+    "all_figures": 10,
+    "completed": true,
+    "note_ja": "全図の条件、軸、凡例、日本語文字を画像として目視。重大な欠け・文字化けを認めず。図は元byte保持。"
+  },
+  "finalized_at": "2026-10-19T05:21:18.319354+00:00",
+  "completion_note_ja": "保存済みの作成途中資料を引き継ぎ、独立考察・公開範囲文書・manifest・リンク確認を追加。科学データを再計算せず。",
+  "additional_interpretations": [
+    {
+      "name": "sample3/independent-interpretation-ja.md",
+      "source_sha256": "b9c03b2c865d35a8ab690cfacd7cd3879727668bec295a89733ea1a17b2dd4b9",
+      "change": "one private absolute path line replaced by a public description"
+    },
+    {
+      "name": "decomposition/independent-interpretation-ja.md",
+      "source_sha256": "4936f921d900c658a45c1b0ebbaafbd0201ba77b883d5046799bc24895debe10"
+    }
+  ]
+}
