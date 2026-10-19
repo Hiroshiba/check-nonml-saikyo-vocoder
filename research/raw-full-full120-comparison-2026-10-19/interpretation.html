@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>RAW_FULLとPML：120録音の比較結果の読み方</title>
+<style>:root { color-scheme: light dark; --bg:#f7f8fb; --fg:#182435; --panel:#fff; --line:#bbc5d4; --muted:#4a5d74; --link:#124c9b; --accent:#e7effb; }
+@media (prefers-color-scheme: dark) { :root { --bg:#111824; --fg:#edf2fa; --panel:#1c2736; --line:#52657d; --muted:#b8c6d8; --link:#a8ceff; --accent:#283f5d; } }
+* { box-sizing:border-box; }
+body { margin:0; background:var(--bg); color:var(--fg); font:16px/1.7 system-ui,sans-serif; }
+main { max-width:1500px; margin:auto; padding:clamp(16px,3vw,48px); }
+h1 { font-size:clamp(1.7rem,4vw,2.5rem); line-height:1.4; }
+h2 { margin-top:2.8rem; border-bottom:2px solid var(--line); padding-bottom:.4rem; }
+h3 { margin-top:1.8rem; }
+a { color:var(--link); text-underline-offset:.2em; overflow-wrap:anywhere; }
+a:focus-visible, input:focus-visible, summary:focus-visible, .table-scroll:focus-visible { outline:3px solid var(--link); outline-offset:3px; }
+.notice { background:var(--accent); border-left:5px solid var(--link); padding:1rem; }
+.table-block { margin:1.5rem 0; }
+.table-scroll { overflow:auto; border:1px solid var(--line); border-radius:.4rem; }
+table { border-collapse:collapse; min-width:100%; background:var(--panel); font-size:.9rem; }
+caption { text-align:left; font-weight:700; padding:.8rem; background:var(--accent); }
+th, td { text-align:left; vertical-align:top; padding:.7rem; border:1px solid var(--line); min-width:7rem; }
+thead th { background:var(--accent); }
+tbody th { font-weight:600; }
+tbody tr:focus-within { outline:2px solid var(--link); outline-offset:-2px; }
+details { border:1px solid var(--line); border-radius:.3rem; padding:.6rem; margin:.8rem 0; background:var(--panel); }
+summary { cursor:pointer; font-weight:600; }
+details > :not(summary) { margin-top:.8rem; }
+.saved-fields { display:grid; grid-template-columns:minmax(10rem,1fr) minmax(12rem,2fr); gap:.3rem 1rem; min-width:30rem; }
+dt { color:var(--muted); }
+dd { margin:0; overflow-wrap:anywhere; }
+.missing { color:var(--muted); }
+.top-rank { display:inline-block; padding:.1rem .5rem; border:2px solid currentColor; font-weight:800; border-radius:.25rem; }
+.audio-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:1rem; }
+.audio-grid section { border:1px solid var(--line); border-radius:.4rem; padding:1rem; background:var(--panel); }
+audio { width:100%; }
+.filter { display:flex; flex-wrap:wrap; gap:.6rem; align-items:center; padding:.5rem 0; }
+.filter[hidden], tr[hidden] { display:none; }
+input { font:inherit; padding:.3rem; border:1px solid var(--line); border-radius:.2rem; max-width:100%; background:var(--panel); color:var(--fg); }
+.skip { position:absolute; top:-100px; left:1rem; background:var(--panel); padding:.6rem; z-index:3; }
+.skip:focus { top:1rem; }
+.hash { overflow-wrap:anywhere; font-size:.85rem; }
+@media (max-width:700px) { .audio-grid { grid-template-columns:1fr; } main { padding:14px; } th, td { padding:.5rem; } }
+@media print { .filter, .skip { display:none; } .table-scroll { overflow:visible; } body { background:white; color:black; } a { color:inherit; } }
+</style>
+</head>
+<body><main>
+<h1>RAW_FULLとPML：120録音の比較結果の読み方</h1>
+<p class="notice"><strong>自動MOS・一部のスペクトル指標・話者類似度の平均改善と、有声取りこぼし・認識の平均悪化が併存しています。現baseはPMLを維持し、RAW_FULLへの置換は保留します。</strong></p>
+<p>2026年10月19日。対応差はすべてRAW_FULL−PMLです。保存済み集計を説明したもので、新しい指標・閾値・検定を追加していません。</p>
+<nav aria-label="関連ページ"><a href="index.html">比較レポートへ戻る</a> ／ <a href="data/quality-report.json.gz">品質対応差の元データ（JSON・gzip）</a></nav>
+<section><h2>評価の要点</h2>
+<ul>
+<li>自動MOS、native eSTOI・MRSTFT・ERB、ECAPAは平均が改善方向。一方、編集有声取りこぼしは平均+0.154538百分率ポイントで悪化し、既定95%区間も正側です。編集F0 MAEは+0.181570 centで区間は0を跨ぎます。CER/WER増分の方式差も正で、全面的改善ではありません。</li>
+<li>既定悪化フラグはMOS 22/720、編集F0 2/480、編集取りこぼし28/480。全件が発見5例以外にあります。発見5例で見えた取りこぼし改善は、残り115例では悪化へ反転しました。</li>
+<li>編集ECAPA改善は−3半音側に偏ります。+3の平均は+0.000387で、240対中121対が悪化方向です。平均MOS改善だけで、知覚的な非劣性や局所的な風音の解消を判断しません。</li>
+</ul>
+</section>
+<section><h2>母数と平均の単位</h2>
+<ul>
+<li>16 kHz・英語の固定120録音・40話者からなる開発集合、1話者3録音。半音0/−3/+3×生成seed 0/20261015。各方式720出力、両方式1440出力。対応差は一貫してRAW_FULL−PML。各録音で予定条件を平均し、その後話者内録音平均→話者等重み。720対を独立した720話者として扱わない。</li>
+<li>MOSは720対、編集軸480対、native軸240対。ASRのみ固定55録音・32話者・330対で、残り65録音×6条件=390対は正解文未準備による予定対象外。ASRの主平均も32話者等重みで、55録音単純平均ではない。</li>
+<li>報告の7,200行は10指標×720条件対の台帳。測定可能4,020、予定対象外3,180で、適用対象の片側欠測・対応条件不一致は記録されていない。7,200音声という意味ではない。</li>
+<li>MOSは全長。native eSTOI/MRSTFT/ERB/ECAPAは固定共通先頭区間、編集ECAPAは原音全長、native対原音F0は全長、編集F0/取りこぼしは各方式自身のnative全長を参照。異なる時間支持の値を同じ測定としない。</li>
+</ul>
+</section>
+<section><h2>主集計：対応差と保存95%区間</h2>
+<p>95%は既存の話者bootstrap 2,000回、再標本化seed 20261012、NumPy 2.3.5。指標別の未多重補正区間であり、全指標同時の95%保証ではない。0を跨ぐ区間も、同等性や許容幅内の非劣性を保証しない。ASRおよび層別には元から区間を付けていない。</p>
+<div class="table-block"><div class="table-scroll" tabindex="0" role="region" aria-label="主集計：対応差と保存95%区間"><table><caption>主集計：対応差と保存95%区間</caption><thead><tr><th scope="col">指標・支持</th><th scope="col">話者等重み差</th><th scope="col">保存95%区間</th><th scope="col">測定可能な対</th><th scope="col">悪化方向対</th><th scope="col">既定悪化フラグ</th></tr></thead><tbody><tr><th scope="row">自動MOS・全音高</th><td>+0.07676039 予測MOS</td><td>[+0.06511338, +0.08782151]</td><td>720</td><td>195</td><td>22</td></tr><tr><th scope="row">編集F0 MAE</th><td>+0.18156970 cent</td><td>[-0.09917439, +0.51663095]</td><td>480</td><td>230</td><td>2</td></tr><tr><th scope="row">編集有声取りこぼし</th><td>+0.15453813 百分率ポイント</td><td>[+0.03261191, +0.28844573]</td><td>480</td><td>219</td><td>28</td></tr><tr><th scope="row">native対原音F0</th><td>+0.23500109 cent</td><td>[-0.01059974, +0.57778481]</td><td>240</td><td>95</td><td>未定義</td></tr><tr><th scope="row">native eSTOI</th><td>+0.00076752 指数</td><td>[+0.00033667, +0.00127177]</td><td>240</td><td>92</td><td>未定義</td></tr><tr><th scope="row">native MRSTFT</th><td>-0.05697578 dB</td><td>[-0.07234710, -0.04361181]</td><td>240</td><td>29</td><td>未定義</td></tr><tr><th scope="row">native ERB40</th><td>-0.00736015 dB</td><td>[-0.01550596, -0.00015751]</td><td>240</td><td>115</td><td>未定義</td></tr><tr><th scope="row">ECAPA 無編集</th><td>+0.00435303 コサイン類似度</td><td>[+0.00328265, +0.00549126]</td><td>240</td><td>48</td><td>未定義</td></tr><tr><th scope="row">ECAPA 編集</th><td>+0.00355023 コサイン類似度</td><td>[+0.00256547, +0.00456306]</td><td>480</td><td>171</td><td>未定義</td></tr><tr><th scope="row">CER増分の方式差</th><td>+0.00128590 率の差</td><td>なし（規定）</td><td>330</td><td>23</td><td>未定義</td></tr><tr><th scope="row">WER増分の方式差</th><td>+0.00419128 率の差</td><td>なし（規定）</td><td>330</td><td>20</td><td>未定義</td></tr></tbody></table></div></div>
+<p>取りこぼし差だけ率の差差を100倍して百分率ポイントに換算。CER +0.00128590、WER +0.00419128は率の差のまま（表示換算なら各+0.128590、+0.419128百分率ポイント）。原音からの増分同士の方式差で、RAW_FULLの絶対CER/WERではない。55録音単純平均のCER +0.00148599/WER +0.00472702と主平均を混同しない。 悪化フラグの既定条件はMOS差&lt;−0.15、編集F0差&gt;10 cent、取りこぼし差&gt;2百分率ポイント。境界値は厳密不等号。その他の悪化フラグはnull/未定義であり、「害0件」ではない。悪化方向対は差の符号による既存集計で、悪化フラグ件数とも独立録音件数とも異なる。異なる軸の悪化フラグを合計した独自判定は作らない。</p>
+</section>
+<section><h2>音高・生成seed別の偏り</h2>
+<ul>
+<li>MOS差：seed 0/+0.084726、20261015/+0.068795。native/+0.072566、−3/+0.072982、+3/+0.084733。どの保存seed×音高層も平均は正だが、各層に悪化フラグが残る。</li>
+<li>編集F0：seed 0/+0.396178 cent、20261015/−0.033039 cent。とくに+3はseed 0/+0.658152、20261015/−0.219875と符号が異なる。平均の微小差をseed頑健な改善と呼ばない。</li>
+<li>編集取りこぼし：seed 0/+0.108293、20261015/+0.200783ポイント。−3/+0.163654、+3/+0.145422。4つの音高×seed層すべて平均悪化、各120対中7悪化フラグ。</li>
+<li>編集ECAPA：−3/+0.00671327、+3/+0.00038718。+3 seed 0は+0.00009119、20261015は+0.00068317。音高を混ぜた+0.00355023だけでは偏りを隠す。</li>
+<li>WER：native −0.00128630 率の差、編集+0.00693008。−3/+0.01103416、+3/+0.00282599で、全音高の微悪化は主に編集側。層別の有意差は判定していない。</li>
+</ul>
+</section>
+<section><h2>発見5例と残り115例</h2>
+<p>以下は各部分集合内の話者等重み。発見5例は4話者、残り115例は40話者で、話者は重なる。独立した検証集合ではなく、部分集合の平均を5:115で足して主平均には戻せない。区間推定なし。</p>
+<div class="table-block"><div class="table-scroll" tabindex="0" role="region" aria-label="発見5例と残り115例"><table><caption>発見5例と残り115例</caption><thead><tr><th scope="col">保存軸</th><th scope="col">発見5例</th><th scope="col">残り115例</th></tr></thead><tbody><tr><th scope="row">MOS</th><td>+0.09682236、悪化フラグ 0/30</td><td>+0.07622194、悪化フラグ 22/690</td></tr><tr><th scope="row">編集F0 cent</th><td>+0.59597800、悪化フラグ 0/20</td><td>+0.15923617、悪化フラグ 2/460</td></tr><tr><th scope="row">編集取りこぼしポイント</th><td>−0.34861443、悪化フラグ 0/20</td><td>+0.19427227、悪化フラグ 28/460</td></tr><tr><th scope="row">native eSTOI</th><td>−0.00006526</td><td>+0.00081380</td></tr><tr><th scope="row">native MRSTFT dB</th><td>−0.05308708</td><td>−0.05695852</td></tr><tr><th scope="row">編集ECAPA</th><td>+0.00551986</td><td>+0.00350906</td></tr><tr><th scope="row">CER/WER 率の差</th><td>CER 0、WER 0（ASR対象2録音2話者、12対）</td><td>+0.00137162/+0.00447070（53録音30話者、318対）</td></tr></tbody></table></div></div>
+</section>
+<section><h2>保存された最大悪化の条件</h2>
+<p>新しい悪化ランキングは作成していない。各主集計が既に保存した最大悪化の条件をそのまま抜き出した。録音IDのlibrispeech_を省略。</p>
+<div class="table-block"><div class="table-scroll" tabindex="0" role="region" aria-label="保存された最大悪化の条件"><table><caption>保存された最大悪化の条件</caption><thead><tr><th scope="col">軸</th><th scope="col">録音 / 半音 / seed</th><th scope="col">差（主集計と同単位）</th></tr></thead><tbody><tr><th scope="row">自動MOS・全音高</th><td>61-70968-0042 / +3 / 0</td><td>-0.50930452</td></tr><tr><th scope="row">編集F0 MAE</th><td>908-31957-0016 / +3 / 0</td><td>+57.65530148</td></tr><tr><th scope="row">編集有声取りこぼし</th><td>6829-68769-0038 / +3 / 20261015</td><td>+6.95804196</td></tr><tr><th scope="row">native対原音F0</th><td>908-31957-0016 / +0 / 20261015</td><td>+34.76517385</td></tr><tr><th scope="row">native eSTOI</th><td>2094-142345-0040 / +0 / 20261015</td><td>-0.00409210</td></tr><tr><th scope="row">native MRSTFT</th><td>8455-210777-0010 / +0 / 0</td><td>+0.02168660</td></tr><tr><th scope="row">native ERB40</th><td>61-70968-0043 / +0 / 0</td><td>+0.05270612</td></tr><tr><th scope="row">ECAPA 無編集</th><td>6829-68769-0038 / +0 / 20261015</td><td>-0.01022893</td></tr><tr><th scope="row">ECAPA 編集</th><td>8555-284449-0020 / +3 / 20261015</td><td>-0.01716125</td></tr><tr><th scope="row">CER増分の方式差</th><td>5142-33396-0030 / +3 / 0</td><td>+0.10256410</td></tr><tr><th scope="row">WER増分の方式差</th><td>1188-133604-0031 / -3 / 0</td><td>+0.20000000</td></tr></tbody></table></div></div>
+<ul>
+<li>MOS最大悪化の条件はPML 3.446552→RAW_FULL 2.937247。編集F0最大悪化の条件は385.377730→443.033032 centで、差だけでなく双方の絶対誤差も大きい。</li>
+<li>取りこぼし最大悪化の条件はPML 3/52→RAW_FULL 7/55。参照は各方式自身のnative推定で分母が違う。編集F0最大悪化の条件もboth-voicedはPML35/RAW36、expected-voicedは48/46。共通正解有声mask上の同一frame誤差と解釈しない。公開スカラーデータにF0 mask自体はない。</li>
+<li>CER最大悪化の条件は正解39文字でPML誤り1→RAW誤り5（原音誤り1）。WER最大悪化の条件は正解10語で0→2（原音0）。全体平均が小さくても、局所の認識差がないとは言えない。</li>
+</ul>
+</section>
+<section><h2>計測処理込みのRTFと未測定の速度</h2>
+<p>RTFは処理時間を音声時間で割った値です。保存されたinstrumented RTFは、計測処理込みの実行範囲に対応します。純粋な解析器・復号器の速度とは区別します。</p>
+<ul>
+<li>追加A/L解析は別計時です。instrumented decodeはpayload読込後の編集・補間・合成に加え、callback、D1/a観測、hash計算、終了処理などを含みます。PML側とRAW_FULL側はいずれも保存A/Lの読込・補間経路を使います。</li>
+<li>純decode RTF、純粋なPML解析時間、総encoder RTFは未測定です。特徴保存時間も特徴以外のmetadata作成・保存などを含みます。</li>
+<li>この説明ページでは新しい時間集計や速度順位を作らず、過去の実行時間で欠測を補いません。品質平均の改善を、計算効率や圧縮効率の改善と同一視しません。</li>
+</ul>
+</section>
+<section><h2>言える範囲と未達成の項目</h2>
+<ul>
+<li>今回の評価範囲は16 kHzの英語120録音の開発集合です。計画全79軸の達成確認、48 kHzでの成立確認、ABX評価、任意の絶対Hzを指定する音高制御の達成を示すものではありません。音高条件は無編集と±3半音です。</li>
+<li>固定集合・固定推定器では複数の平均品質軸に改善があります。同時に編集取りこぼしの平均悪化と既定悪化フラグも残ります。予測器の差の知覚的な大きさ、許容できる劣化幅、ヒトによる声質同一性や自然さの判断、未見話者・別言語への一般化は確定していません。</li>
+<li>同じ録音・生成seed・条件を対応付けても、編集F0の参照支持が方式依存という限界は残ります。2個のseedでの層別結果を、一般的な乱数への頑健性の保証にはしません。</li>
+<li>品質対応差の元データは、信号の変化・容量・速度・過去方式の順位をまとめた総合点ではありません。局所/b/の風音・ポップが解消したこと、全帯域での無害性、過去のaHM等に対する優位を、この品質表だけから主張しません。</li>
+</ul>
+</section>
+<footer><p>数値の出典：<a href="data/quality-report.json.gz">品質対応差の元データ</a>の主集計、層別集計、発見5例・残り115例の保存集計、および最大悪化条件。対応する音声とその他の測定範囲は<a href="index.html">比較レポート</a>を参照してください。</p></footer>
+</main></body>
+</html>
