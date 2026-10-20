@@ -1,0 +1,102 @@
+{
+  "source_and_1908_input_hashes_unchanged": true,
+  "old_2500_scores_unchanged": true,
+  "integral_counts": {
+    "converged": 392,
+    "not_attempted": 4510,
+    "not_converged": 96,
+    "time_budget_exhausted": 2
+  },
+  "integrals_by_kind_model": {
+    "train/W": {
+      "converged": 49,
+      "not_attempted": 451
+    },
+    "train/A": {
+      "converged": 49,
+      "not_attempted": 451
+    },
+    "train/V": {
+      "not_converged": 47,
+      "converged": 2,
+      "not_attempted": 451
+    },
+    "train/S": {
+      "converged": 49,
+      "not_attempted": 451
+    },
+    "train/J": {
+      "converged": 49,
+      "not_attempted": 451
+    },
+    "joint/W": {
+      "converged": 49,
+      "not_attempted": 451
+    },
+    "joint/A": {
+      "converged": 49,
+      "not_attempted": 451
+    },
+    "joint/V": {
+      "not_converged": 49,
+      "not_attempted": 451
+    },
+    "joint/S": {
+      "converged": 48,
+      "time_budget_exhausted": 1,
+      "not_attempted": 451
+    },
+    "joint/J": {
+      "converged": 48,
+      "time_budget_exhausted": 1,
+      "not_attempted": 451
+    }
+  },
+  "nonconvergence_reasons": {
+    "train/V: evaluation_budget_exhausted": 47,
+    "joint/V: diagnostic_gate_without_reason_field": 4,
+    "joint/V: evaluation_budget_exhausted": 45,
+    "joint/S: time_budget_exhausted": 1,
+    "joint/J: time_budget_exhausted": 1
+  },
+  "bootstrap_status_counts": {
+    "no_successful_pairs": 25
+  },
+  "bootstrap_replicates_completed": 0,
+  "output_bytes": 2740824,
+  "logs_bytes": 190206,
+  "terminal_process_check": "",
+  "external_monitor_limitation": "/proc/PID/task/PID/children was not available to external lookup; external monitor worker_pids=[] is not evidence of no worker. Actual parent-child relationship was independently confirmed by ps before SIGUSR1. Worker and supervisor RSS are from their own receipts.",
+  "artifacts": {
+    "receipt-worker.json": {
+      "path": "/workspace/oracle-evidence-results-run-001-20261020/receipt-worker.json",
+      "bytes": 97234,
+      "sha256": "746ef4e176cdaa1da53bc68e751ebfa12a53459b0f0b60f3722e9d28ad047f10"
+    },
+    "receipt-supervisor.json": {
+      "path": "/workspace/oracle-evidence-results-run-001-20261020/receipt-supervisor.json",
+      "bytes": 105853,
+      "sha256": "f3c8b7a7adae54491446a06a0b9cce237b377e15b9179a5908ee1e5ee187e523"
+    },
+    "results.json": {
+      "path": "/workspace/oracle-evidence-results-run-001-20261020/results.json",
+      "bytes": 1172818,
+      "sha256": "7b819eb2308e1310c636c5ce6f76f3313f25814653d058bc7417978aa2140e3d"
+    },
+    "summary-progress.json": {
+      "path": "/workspace/oracle-evidence-results-run-001-20261020/summary-progress.json",
+      "bytes": 223557,
+      "sha256": "4ae3e18749bb87f73f4da86c64ea1afec33a6e2f2d2a763d1cb2afad46974879"
+    },
+    "run.log": {
+      "path": "/workspace/oracle-evidence-results-run-001-20261020/run.log",
+      "bytes": 96043,
+      "sha256": "82f24b8b674b11aeb2635274c60c9167f8b2b6bc682e4c89ec9118511dec1059"
+    },
+    "external-stderr.log": {
+      "path": "/workspace/oracle-evidence-results-run-001-20261020/external-stderr.log",
+      "bytes": 94163,
+      "sha256": "431f3bc0e7962060c771abdc4d9be0d1ba64d8cd8dccd53051a010e4615b7d69"
+    }
+  }
+}

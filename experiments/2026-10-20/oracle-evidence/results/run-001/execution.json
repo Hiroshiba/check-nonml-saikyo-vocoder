@@ -1,0 +1,33 @@
+{
+  "started_utc": "2026-10-20T05:42:37.128986+00:00",
+  "command": [
+    "/workspace/pshf-report-venv-20261019/bin/python",
+    "/workspace/oracle-evidence-source-v2-20261020/run_reanalysis.py",
+    "--input-index",
+    "/workspace/oracle-input-index-20261020.json",
+    "--index-sha256",
+    "79c47c6b1926359d636d63eca6b6bab161e2b2d5f28015bc16d5209a100350d2",
+    "--manifest-sha256",
+    "1b54832860d9744576e071d36cc70256291c145571bc3f372b1cbeefa17e0cec",
+    "--output",
+    "/workspace/oracle-evidence-results-run-001-20261020"
+  ],
+  "status": "exited",
+  "worker_RLIMIT_AS_bytes": 1073741824,
+  "aggregate_memory_limit_claimed": false,
+  "supervisor_pid": 2428,
+  "ended_utc": "2026-10-20T05:56:20.596984+00:00",
+  "elapsed_seconds": 823.4680592619998,
+  "exit_code": 2,
+  "forced_stop_reason": null,
+  "worker_pids": [],
+  "sampled_peak_rss_by_pid_bytes": {
+    "2428": 17317888
+  },
+  "external_monitor_peak_rss_bytes": 10092544,
+  "supervisor_peak_rss_wait4_bytes": 93765632,
+  "external_log_seen_bytes": 0,
+  "external_log_retained_bytes": 0,
+  "output_bytes": 2740824,
+  "worker_processes_still_present": []
+}
