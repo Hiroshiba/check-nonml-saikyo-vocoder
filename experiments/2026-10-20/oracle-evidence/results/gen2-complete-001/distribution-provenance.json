@@ -1,0 +1,355 @@
+{
+  "operation": "saved-value transcription and reversible distribution compression only",
+  "inputs": [
+    {
+      "library_file_id": "libfile_b1e7c8b472c08191991701be0cd450c0",
+      "file_id": "file_00000000bae481f8bd44cc6f24e47f32",
+      "version": 0,
+      "bytes": 5731267,
+      "sha256": "80eb285ba29c990e87aad00a5acd71282b037c69409a92ef563b1627c784f150"
+    },
+    {
+      "library_file_id": "libfile_dc0fd86d0c8c8191b579a79f978d0900",
+      "file_id": "file_0000000066e481f8af25fc25a30f6866",
+      "version": 0,
+      "bytes": 206238,
+      "sha256": "f99772dd6d134def56b1d3a3e3efb5689ef21db85c5af5e3c948d1f8190c68d4"
+    }
+  ],
+  "raw_gzip": {
+    "file": "raw/merged-slots.json.gz",
+    "mtime": 0,
+    "level": 9,
+    "bytes": 4667064,
+    "sha256": "11bb8deac652bb30a6f8b406d4b78ae7bec8c5d46aafda694ea5673ed519d6a2",
+    "decoded_bytes": 54543195,
+    "decoded_sha256": "b0167bd1a937b7dc28d1cfde99415a463023663c9240f70f205795e94122dd04",
+    "round_trip_exact": true
+  },
+  "copied_originals": [
+    {
+      "source_group": "union",
+      "member": "artifact-manifest.json",
+      "path": "original/union/artifact-manifest.json",
+      "bytes": 3699,
+      "sha256": "90317afef6f7b20779b5b9dfd1fe0ac792c7a0369b5b0973a95feea70fdc23dd"
+    },
+    {
+      "source_group": "union",
+      "member": "external/external-wait.json",
+      "path": "original/union/external/external-wait.json",
+      "bytes": 2460,
+      "sha256": "3de86cd368385582173c6db79155e7d049cc1c9c58e33124540651f08e23a003"
+    },
+    {
+      "source_group": "union",
+      "member": "external/post-run-preservation.json",
+      "path": "original/union/external/post-run-preservation.json",
+      "bytes": 1784,
+      "sha256": "de83441100b6d6524260db1204701c74f18cab9797a6c0252d4a42d54188f6ee"
+    },
+    {
+      "source_group": "union",
+      "member": "external/pre-run-pins.json",
+      "path": "original/union/external/pre-run-pins.json",
+      "bytes": 9981,
+      "sha256": "be194b6c888505d8283e52084c5186c11d8b7f602c83047ad91e3d15b49ca56b"
+    },
+    {
+      "source_group": "union",
+      "member": "output/ledger-initial.json",
+      "path": "original/union/output/ledger-initial.json",
+      "bytes": 57002,
+      "sha256": "afd20b402b6fcc7609c7286209f30a1e3d65f5ffef0cbc7d88e0b74abc271e45"
+    },
+    {
+      "source_group": "union",
+      "member": "output/ledger.json",
+      "path": "original/union/output/ledger.json",
+      "bytes": 53502,
+      "sha256": "e45334abce0ce7657209099ae0554ad45aeda4dbbde80170e306804ee2cd91b3"
+    },
+    {
+      "source_group": "union",
+      "member": "output/parent/input-index.json",
+      "path": "original/union/output/parent/input-index.json",
+      "bytes": 1561,
+      "sha256": "dd8f5d535cae2aeda953aa2e99ed30e9d9ee00db6e7593a0877f06b23dc888a6"
+    },
+    {
+      "source_group": "union",
+      "member": "output/parent/provenance.json",
+      "path": "original/union/output/parent/provenance.json",
+      "bytes": 22883,
+      "sha256": "d6d844a382191261225e8572e41c5a5e373b467a9ee80174a5552e3ab8ad7126"
+    },
+    {
+      "source_group": "union",
+      "member": "output/parent/union-index.json",
+      "path": "original/union/output/parent/union-index.json",
+      "bytes": 4904,
+      "sha256": "cca181945f8e08d51840ac5b6b7c477f59a6053d2023f81179a975f3d61cd9dd"
+    },
+    {
+      "source_group": "union",
+      "member": "output/provenance/gen2-receipts.json",
+      "path": "original/union/output/provenance/gen2-receipts.json",
+      "bytes": 617824,
+      "sha256": "2acef6daff5eba4909b538413e09cd9e31f33055517a2b194188f5b2ca65f44a"
+    },
+    {
+      "source_group": "union",
+      "member": "output/provenance/gen2-union-input-index.json",
+      "path": "original/union/output/provenance/gen2-union-input-index.json",
+      "bytes": 4064,
+      "sha256": "c77d76dd65b77213d48a7e3cc440f9371a5f52070be5e5f8b5b946a0339eeec0"
+    },
+    {
+      "source_group": "union",
+      "member": "output/receipt-gen2-union-supervisor.json",
+      "path": "original/union/output/receipt-gen2-union-supervisor.json",
+      "bytes": 1185,
+      "sha256": "c5c1efd4fd2db922f6115fa637a1fbe8b3497c501dbbafe512ae823f899411cf"
+    },
+    {
+      "source_group": "union",
+      "member": "output/receipt-gen2-union-worker.json",
+      "path": "original/union/output/receipt-gen2-union-worker.json",
+      "bytes": 63173,
+      "sha256": "204ac59fda8b533a1525b05def44b9c5ecce587d465bb862a1d334737c6d7c69"
+    },
+    {
+      "source_group": "union",
+      "member": "pins/gen2-union-input-index.json",
+      "path": "original/union/pins/gen2-union-input-index.json",
+      "bytes": 4064,
+      "sha256": "c77d76dd65b77213d48a7e3cc440f9371a5f52070be5e5f8b5b946a0339eeec0"
+    },
+    {
+      "source_group": "union",
+      "member": "pins/original-external-A.json",
+      "path": "original/union/pins/original-external-A.json",
+      "bytes": 3235,
+      "sha256": "81ccc63d14d54a2bd20409b6330e95888070bdeb4368ba45c7060a60c96b1e6e"
+    },
+    {
+      "source_group": "union",
+      "member": "pins/original-external-B.json",
+      "path": "original/union/pins/original-external-B.json",
+      "bytes": 2710,
+      "sha256": "71824fd1e77fef660f1ff779bed511767ef82a0e09ddb35dea0af36236bf1524"
+    },
+    {
+      "source_group": "union",
+      "member": "pins/original-external-C.json",
+      "path": "original/union/pins/original-external-C.json",
+      "bytes": 1083,
+      "sha256": "64996ab24ee2a41ff25b76ba2ace5f3200e9e6fdb0932806da9115ffb97bd194"
+    },
+    {
+      "source_group": "union",
+      "member": "pins/placement-receipt.json",
+      "path": "original/union/pins/placement-receipt.json",
+      "bytes": 3540,
+      "sha256": "803390b64ee1df2f681f24aa19032e7c3fbff7968019c7907c2a8aa9e55f5a40"
+    },
+    {
+      "source_group": "union",
+      "member": "pins/source-manifest.json",
+      "path": "original/union/pins/source-manifest.json",
+      "bytes": 7979,
+      "sha256": "21365529d0fe65bcb994e91c460e4ac262792e912311d92297b6af124ee1c85a"
+    },
+    {
+      "source_group": "union",
+      "member": "pins/terminal-A.json",
+      "path": "original/union/pins/terminal-A.json",
+      "bytes": 1507,
+      "sha256": "b1d0a0b3447267aa5c9ccf727c350d58fdc62710459699407c654875257f021b"
+    },
+    {
+      "source_group": "union",
+      "member": "pins/terminal-B.json",
+      "path": "original/union/pins/terminal-B.json",
+      "bytes": 1548,
+      "sha256": "de1552151eac1824ca16223c135a46e951834e11f1d7e21ae6c614fd8f432945"
+    },
+    {
+      "source_group": "union",
+      "member": "pins/terminal-C.json",
+      "path": "original/union/pins/terminal-C.json",
+      "bytes": 1735,
+      "sha256": "f3faf7be3def13b04e48f79d42bb003313d5e368ee4564ee9083a53854f9c027"
+    },
+    {
+      "source_group": "compact",
+      "member": "artifact-manifest.json",
+      "path": "original/compact/artifact-manifest.json",
+      "bytes": 2414,
+      "sha256": "bcf81c5b683c13b69314feea3ab70c045b156ee3d2c375c55dab0b1bf698cf68"
+    },
+    {
+      "source_group": "compact",
+      "member": "external/external-wait.json",
+      "path": "original/compact/external/external-wait.json",
+      "bytes": 2470,
+      "sha256": "0c7a584d66fbc660dfe05c83f95870c901436d98526bfa533f7cc70532a1b682"
+    },
+    {
+      "source_group": "compact",
+      "member": "external/post-run-preservation.json",
+      "path": "original/compact/external/post-run-preservation.json",
+      "bytes": 398,
+      "sha256": "8a7ca13dc542cfa52c15411211b64abf6c7666a06ce8843817a74e7f27fbe9f1"
+    },
+    {
+      "source_group": "compact",
+      "member": "external/pre-run-pins.json",
+      "path": "original/compact/external/pre-run-pins.json",
+      "bytes": 2133,
+      "sha256": "67997cbf88c8cbbed76ebfb43ae7f12b5c5bfc11053167511c55d0b446a24546"
+    },
+    {
+      "source_group": "compact",
+      "member": "output/derived.json",
+      "path": "original/compact/output/derived.json",
+      "bytes": 703359,
+      "sha256": "3dacfb80310c63291ac753ede2966368efeff2fe5cd080fe3f03cec89d97b82c"
+    },
+    {
+      "source_group": "compact",
+      "member": "output/finalization-provenance.json",
+      "path": "original/compact/output/finalization-provenance.json",
+      "bytes": 1745,
+      "sha256": "e411a7fa95da2c221bb083a631193879b963d4ad0c1b74b0492dce2ba5f76d72"
+    },
+    {
+      "source_group": "compact",
+      "member": "output/index.html",
+      "path": "original/compact/output/index.html",
+      "bytes": 806,
+      "sha256": "be4cdde1b8313387b6a071e449b5b109e666a0a645aa9a84b246576b47f9fb0d"
+    },
+    {
+      "source_group": "compact",
+      "member": "output/original-failure-receipts.json",
+      "path": "original/compact/output/original-failure-receipts.json",
+      "bytes": 73289,
+      "sha256": "469f3a4f30eb65565ed9c6919ae80b507304242e47a198e0aa483399f696562c"
+    },
+    {
+      "source_group": "compact",
+      "member": "output/parent-input-manifest.json",
+      "path": "original/compact/output/parent-input-manifest.json",
+      "bytes": 4860,
+      "sha256": "52d1249b28e639eca0ec5b9471811d99d2060e939e854c184d66f0ea5ef0e739"
+    },
+    {
+      "source_group": "compact",
+      "member": "output/receipt-derived-rebuild.json",
+      "path": "original/compact/output/receipt-derived-rebuild.json",
+      "bytes": 1046,
+      "sha256": "bc5413af8e2563a75ff9a8bc1d3c76223e3aa53cf689fb118dee4b961efef543"
+    },
+    {
+      "source_group": "compact",
+      "member": "output/receipt-finalization-supervisor.json",
+      "path": "original/compact/output/receipt-finalization-supervisor.json",
+      "bytes": 1059,
+      "sha256": "1e0fa9a5a2f5b021aca2f90799db1cefdea875d2f6625d398f1713743eab586a"
+    },
+    {
+      "source_group": "compact",
+      "member": "output/receipt-finalization-worker.json",
+      "path": "original/compact/output/receipt-finalization-worker.json",
+      "bytes": 856,
+      "sha256": "3bfdec323ad8f7af4fb3938e349772ce62d23220969e4bf54ec8e4c4b231fc5b"
+    },
+    {
+      "source_group": "compact",
+      "member": "output/results.json",
+      "path": "original/compact/output/results.json",
+      "bytes": 3843,
+      "sha256": "021d895237a337ab21f94f60ce8da5370ee5528d8749f093a8008d542abae267"
+    },
+    {
+      "source_group": "compact",
+      "member": "output/summary.json",
+      "path": "original/compact/output/summary.json",
+      "bytes": 384100,
+      "sha256": "eba5228576b9f7b671825a5374416c33deaed5f879af1c1496fe313b920f2869"
+    },
+    {
+      "source_group": "compact",
+      "member": "pins/parent-input-manifest.json",
+      "path": "original/compact/pins/parent-input-manifest.json",
+      "bytes": 4860,
+      "sha256": "52d1249b28e639eca0ec5b9471811d99d2060e939e854c184d66f0ea5ef0e739"
+    },
+    {
+      "source_group": "compact",
+      "member": "pins/source-manifest.json",
+      "path": "original/compact/pins/source-manifest.json",
+      "bytes": 2174,
+      "sha256": "c1fcc59f7dd64858facc8b55d9a7e012f3717336901007b7b796aa97a5235de2"
+    }
+  ],
+  "omissions": {
+    "union": [
+      "output/merged-slots.json",
+      "output/parent/merged-slots.json",
+      "output/summary-progress.json"
+    ],
+    "compact": []
+  },
+  "summary_byte_reused": true,
+  "new_scientific_calculations": false,
+  "compact_independent_audit": "passed per parent report on 2026-10-20: derived500, 2500 saved differences exact, summary original bytes, worker/supervisor receipts and external wait 0",
+  "browser_rendering": "not checked",
+  "presentation_revision": {
+    "date": "2026-10-20",
+    "previous_library_version": 0,
+    "reason": "compact独立監査通過を反映し、未公開の記述を作成時点の履歴に限定。科学値・表・科学ファイルは不変。",
+    "previous_files": {
+      "index.html": {
+        "bytes": 11461,
+        "sha256": "5d9b171c65efcd01a3c4b060a667f9575a5eaccde3b21cdc0a2070f7875d7120"
+      },
+      "README-ja.md": {
+        "bytes": 6323,
+        "sha256": "6d67b2f60eaf580e9647af47bd143fa27397da41092556e4b4b9d2a6e3725ca3"
+      },
+      "artifact-manifest.json": {
+        "bytes": 8079,
+        "sha256": "4b1f9911607e51b425a1a7a49d32d0c5ba0f02687326feff9a787c8bb9d52ec7"
+      },
+      "distribution-provenance.json": {
+        "bytes": 11274,
+        "sha256": "59978d7724376a30f88b8700ddbf0cd80364cdf1ffbd5e69b2b332f3e7524888"
+      }
+    },
+    "updated_display_files": {
+      "index.html": {
+        "bytes": 11822,
+        "sha256": "f8b5d3a6b8a3721c70ea6a47ce935f1790c18796f6496860b51243afe2410f51"
+      },
+      "README-ja.md": {
+        "bytes": 6849,
+        "sha256": "7059a3479ac61717f46358b5079f69bcc3ccbb5fee229a4c4b05f0719ba6b8ad"
+      }
+    }
+  },
+  "ranking_display_transformation": {
+    "date": "2026-10-20",
+    "previous_library_version": 1,
+    "source": "original/compact/output/summary.json: comparisons[*].mean_all_100",
+    "rule": "順位はtruthごとに保存mean(BMA−旧model)とBMA自身の差0を小さい順へ並べた、固定人工条件100組の平均log-scoreの記述的順位です。1位を事前に仮定せず保存値から決めます。同率は保存meanが完全一致するときだけで、順位は1,1,3の競技順位です（epsilon不使用）。統計的優越確率・品質順位・PMLや自然音声の順位ではありません。新しい平均・CI・BF・bootstrapは計算していません。",
+    "bma_self_difference": 0,
+    "sort": "ascending saved mean difference",
+    "ties": "exact equality only, competition ranks",
+    "output": "ranking.csv",
+    "rows": 30,
+    "new_scientific_calculations": false,
+    "original_comparison_csv_unchanged": true
+  }
+}

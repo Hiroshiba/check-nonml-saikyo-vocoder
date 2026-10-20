@@ -1,0 +1,97 @@
+{
+  "placement_hash_checked_utc": "2026-10-20T07:44:28.224369+00:00",
+  "source_directory": "/workspace/oracle-gen2-union-inputs-dL0Hdx/source/oracle-recovery-gen2",
+  "source_manifest": {
+    "path": "/workspace/oracle-gen2-union-inputs-dL0Hdx/source/oracle-recovery-gen2/source-manifest.json",
+    "bytes": 7979,
+    "sha256": "21365529d0fe65bcb994e91c460e4ac262792e912311d92297b6af124ee1c85a"
+  },
+  "archives": [
+    {
+      "label": "A",
+      "path": "/workspace/oracle-gen2-A-completed-20261020.zip",
+      "bytes": 5848135,
+      "sha256": "9ca4aa2b8fc8b2c82ce9252e155d394a8a819df08a259ab87b4437d6c1d30bf2",
+      "library_file_id": "libfile_fc06a3ba19ec8191b7a5ffd32305fc1c",
+      "version": "0"
+    },
+    {
+      "label": "B",
+      "path": "/workspace/oracle-gen2-union-inputs-dL0Hdx/oracle-gen2-B-33-65-20261020.zip",
+      "bytes": 5586318,
+      "sha256": "6a44438d9aa3aa299768d5ad463ae662e697438cd83a43cf89e4a44a06fab2df",
+      "library_file_id": "libfile_2e6d62f7bcfc8191b36a9d00d4ec1646",
+      "version": "0"
+    },
+    {
+      "label": "C",
+      "path": "/workspace/oracle-gen2-union-inputs-dL0Hdx/oracle-gen2-C-001-20261020.zip",
+      "bytes": 5827541,
+      "sha256": "0827d74a75e9a4ed27a1df101280274a87387e530a15a9678a2d747b5a1d44b1",
+      "library_file_id": "libfile_c322c497dfa4819198d567d6f8628e86",
+      "version": "0"
+    },
+    {
+      "label": "source",
+      "path": "/workspace/oracle-gen2-union-inputs-dL0Hdx/oracle-recovery-gen2.zip",
+      "bytes": 178113,
+      "sha256": "23af0d03d3ac8d9a9f694c304f57e70e53c1111f1287f3d3a851c42e1630465a",
+      "library_file_id": "libfile_561ea76a23e48191aeaad38c8f4f6c27",
+      "version": "1"
+    }
+  ],
+  "manifest_entries_verified": {
+    "A": 519,
+    "B": 523,
+    "C": 523
+  },
+  "all_zip_member_bytes_identical": true,
+  "parent_index_unchanged": {
+    "path": "/workspace/oracle-gen2-parent-fixed/parent-index.json",
+    "bytes": 1561,
+    "sha256": "dd8f5d535cae2aeda953aa2e99ed30e9d9ee00db6e7593a0877f06b23dc888a6"
+  },
+  "parent_results_unchanged": {
+    "path": "/workspace/oracle-gen2-parent-fixed/results.json",
+    "bytes": 13220296,
+    "sha256": "e1b9122441e5d62f73ee0ad3dda45450517b5731851c8bda144906723b47a269"
+  },
+  "original_external_evidence": {
+    "A": {
+      "path": "/workspace/oracle-gen2-union-inputs-dL0Hdx/A/external/execution.json",
+      "bytes": 3235,
+      "sha256": "81ccc63d14d54a2bd20409b6330e95888070bdeb4368ba45c7060a60c96b1e6e"
+    },
+    "B": {
+      "path": "/workspace/oracle-gen2-union-inputs-dL0Hdx/B/gen2-B/external-evidence/external-execution.json",
+      "bytes": 2710,
+      "sha256": "71824fd1e77fef660f1ff779bed511767ef82a0e09ddb35dea0af36236bf1524"
+    },
+    "C": {
+      "path": "/workspace/oracle-gen2-union-inputs-dL0Hdx/C/oracle-gen2-C-external-001/external-exit-evidence.json",
+      "bytes": 1083,
+      "sha256": "64996ab24ee2a41ff25b76ba2ace5f3200e9e6fdb0932806da9115ffb97bd194"
+    }
+  },
+  "index": {
+    "path": "/workspace/oracle-gen2-union-inputs-dL0Hdx/fixed-index/gen2-union-input-index.json",
+    "bytes": 4064,
+    "sha256": "c77d76dd65b77213d48a7e3cc440f9371a5f52070be5e5f8b5b946a0339eeec0"
+  },
+  "operations_not_performed": [
+    "source import",
+    "tests",
+    "quadrature",
+    "derive",
+    "bootstrap",
+    "union"
+  ],
+  "ancestor_execution_complete": false,
+  "ancestor_external_exit_unconfirmed_ranges": [
+    [
+      33,
+      65
+    ]
+  ],
+  "notes": "terminal checked_utc cites original observations; placement_hash_checked_utc is only the present file verification time."
+}

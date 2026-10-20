@@ -38,3 +38,12 @@ Pages予定先は `research/oracle-evidence-run-001-2026-10-20/index.html`。reg
 [初回run-001](results/run-001/index.html)と[初代回収union](results/recovery-union-001/index.html)を別の実行記録として参照できます。[回収unionの説明](results/recovery-union-001/README-ja.md)は3675成功積分・完全36/500組（W22/A14）を記録し、全25比較の全100平均・CIは未確定です。Bは固定snapshotで外部終了unknown、A/Cは保存終了確認あり。世代2B担当280の全件成功は報告受領・独立監査中、A/C未受領という本文作成時点の記録です。全体完了や品質改善を意味しません。
 
 監査済みLibrary v1のpublic17ファイルをそのまま保存しました。元resultsはmtime=0の可逆gzipで、解凍SHAを確認済み。以前の「回収run未統合」等は初回文書作成時点の経過として保持しています。新しい公開先は `research/oracle-evidence-recovery-union-001-2026-10-20/index.html`。PR76はmain `8f62e1c1b0755979a027dea2ff366b7293b94ce4` へマージされ、Pagesは公開済みです（2026-10-20、親のlive確認報告）。作成環境のChromiumはsandbox不備で描画できませんでしたが、親が別クラウドブラウザーで表示確認中です。[公開表記の変更来歴](reviews/recovery-union-publication-status-20261020.json)に旧/新SHAを保持します。
+
+
+## Gen2全500組の保存記録（2026-10-20追記）
+
+[初回の部分run](results/run-001/index.html) → [世代1回収の36組](results/recovery-union-001/index.html) → [Gen2全500組](results/gen2-complete-001/index.html)を別記録として参照します。[今回の説明](results/gen2-complete-001/README-ja.md)は承認済みLibrary v2の48ファイルを原bytesで保持しています。5000積分・500組・truth各100組が揃い、全25比較の保存平均・pointwise 95% CIと保存平均に基づく記述的順位を表示します。PML維持、自然音声の品質・MOS・採用判断とは別です。
+
+元unionの容量guardによるexit2/unresolved、compact保存の終了0、今回3shardの終了確認、祖先Bの終了unknownを区別します。compactの再構成500組・保存2500差exact・summary原bytes・両receiptと外部wait0は独立監査通過の報告を受領済み。全derived項目の失敗前未保存値との一致を主張しません。rawは可逆gzip一件に保存し、解凍原SHAを確認しました。
+
+公開予定先は `research/oracle-evidence-gen2-complete-2026-10-20/index.html`。この追記の作成時点ではDraft保存までで、レビュー・マージ・配信確認は親の別工程です。ブラウザー描画は未確認。PR77の表記修正は取り込まず、旧report原本・旧数値・PR67・USER_INSTRUCTIONSは変更していません。

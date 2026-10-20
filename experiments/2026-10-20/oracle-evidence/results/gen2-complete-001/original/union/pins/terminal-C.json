@@ -1,0 +1,32 @@
+{
+  "schema": "oracle-gen2-shard-terminal",
+  "schema_version": 1,
+  "status": "exited",
+  "generation": 2,
+  "source_manifest_sha256": "2278c3e1c03e651e21ef68ab2f6b4daa7974e044d9654bcb8c598f7332a319c1",
+  "input_index_sha256": "79c47c6b1926359d636d63eca6b6bab161e2b2d5f28015bc16d5209a100350d2",
+  "parent_index_sha256": "dd8f5d535cae2aeda953aa2e99ed30e9d9ee00db6e7593a0877f06b23dc888a6",
+  "parent_results_sha256": "e1b9122441e5d62f73ee0ad3dda45450517b5731851c8bda144906723b47a269",
+  "shard_pair_id_range": [
+    66,
+    99
+  ],
+  "ancestor_execution_complete": false,
+  "ancestor_external_exit_unconfirmed_ranges": [
+    [
+      33,
+      65
+    ]
+  ],
+  "worker_returncode": 0,
+  "supervisor_returncode": 0,
+  "worker_alive": false,
+  "supervisor_alive": false,
+  "checked_utc": "2026-10-20T07:39:35.610469+00:00",
+  "evidence": "Original external wait/tool record /workspace/oracle-gen2-union-inputs-dL0Hdx/C/oracle-gen2-C-external-001/external-exit-evidence.json (SHA256 64996ab24ee2a41ff25b76ba2ace5f3200e9e6fdb0932806da9115ffb97bd194): session50752 chunk c3c0ba Process exited with code0; shell waited timeout PID1167 returncode0, running supervisor PID1168 and worker PID1169; external end 2026-10-20T07:38:54.019564925Z; worker wait0 from supervisor receipt. Original PID observation 2026-10-20T07:39:35.610469+00:00. Outer timeout command completion0 is preserved as supervisor_returncode0; no new process exit observed here.",
+  "artifacts_sha256": {
+    "results": "ae060c6d3ff27b65f3b42c39e64c2fa1b03c7ec3da4f82567faa46415e0dcc4c",
+    "worker_receipt": "b463a1bc9967ee6a584a8a18158319d3399be73731caf3ed691f5963f11ac259",
+    "supervisor_receipt": "0bbc0465c4b8608e04f032bb77e9f92db827bc49225dad061c61e2b705f2ea0f"
+  }
+}

@@ -1,0 +1,77 @@
+{
+  "input_and_source_pins_unchanged": true,
+  "parent_success_entries_preserved": 3675,
+  "old_scores_preserved": 2500,
+  "coverage": {
+    "retained_success_by_generation": {
+      "legacy": 392,
+      "v3": 3283
+    },
+    "retained_V_success_by_generation": {
+      "legacy": 2,
+      "v3": 125
+    },
+    "new_gen2_success_by_model": {
+      "W": 112,
+      "A": 112,
+      "V": 873,
+      "S": 114,
+      "J": 114
+    },
+    "checked_copy_counts": {
+      "parent_success": 11025,
+      "nonowner_parent_failure": 2650
+    },
+    "total_slots": 5000,
+    "retained_parent_success": 3675,
+    "planned_targets": 1325,
+    "selection_counts": {
+      "parent_success_retained": 3675,
+      "new_success": 1325
+    },
+    "canonical_status_counts": {
+      "converged": 5000
+    },
+    "attempted_slots_by_range": [
+      {
+        "range": [
+          0,
+          32
+        ],
+        "planned": 610,
+        "observed_attempts": 610
+      },
+      {
+        "range": [
+          33,
+          65
+        ],
+        "planned": 280,
+        "observed_attempts": 280
+      },
+      {
+        "range": [
+          66,
+          99
+        ],
+        "planned": 435,
+        "observed_attempts": 435
+      }
+    ],
+    "canonical_complete_pairs_by_truth": {
+      "W": 100,
+      "A": 100,
+      "V": 100,
+      "S": 100,
+      "J": 100
+    },
+    "outside_current_scope_policy": "nonowner copies exact parent; never counted as new attempts"
+  },
+  "summary_progress_comparisons": 25,
+  "complete_10000_comparisons": 25,
+  "saved_full100_mean_CI_count": 25,
+  "completed_replicates": 250000,
+  "final_results_exists": false,
+  "union_state": "unresolved",
+  "note": "Counts read from saved summary-progress; no recomputation. Final results.json write failed output budget check."
+}

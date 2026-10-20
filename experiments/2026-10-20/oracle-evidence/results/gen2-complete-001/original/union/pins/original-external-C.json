@@ -1,0 +1,32 @@
+{
+  "external_start_utc": "2026-10-20T07:25:03.401400547Z",
+  "external_end_utc": "2026-10-20T07:38:54.019564925Z",
+  "external_shell_wait_returncode": 0,
+  "session_id": 50752,
+  "tool_terminal_chunk_id": "c3c0ba",
+  "tool_terminal_raw": "Process exited with code 0\nexternal shell wait completed: pid=1167 returncode=0",
+  "supervisor_pid": 1168,
+  "worker_pid": 1169,
+  "supervisor_waited_worker_returncode": 0,
+  "supervisor_receipt_started_utc": "2026-10-20T07:25:03.588341+00:00",
+  "supervisor_receipt_ended_utc": "2026-10-20T07:38:53.947032+00:00",
+  "current_pid_observation_utc": "2026-10-20T07:39:35.610469+00:00",
+  "current_pid_states": {
+    "1161": {
+      "proc_exists": false
+    },
+    "1167": {
+      "proc_exists": false
+    },
+    "1168": {
+      "proc_exists": false
+    },
+    "1169": {
+      "proc_exists": false
+    }
+  },
+  "process_relationship_raw_evidence": "process-start.json",
+  "worker_wait_evidence": "../oracle-gen2-C-run-001/receipt-supervisor.json",
+  "worker_reason": "shard_complete_unintegrated",
+  "ancestor_B_exit_unknown_unchanged": true
+}

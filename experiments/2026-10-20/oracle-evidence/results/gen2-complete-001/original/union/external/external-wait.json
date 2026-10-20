@@ -1,0 +1,48 @@
+{
+  "command": [
+    "/workspace/pshf-report-venv-20261019/bin/python",
+    "-B",
+    "/workspace/oracle-gen2-union-inputs-dL0Hdx/source/oracle-recovery-gen2/run_gen2_union.py",
+    "--input-index",
+    "/workspace/oracle-gen2-union-inputs-dL0Hdx/fixed-index/gen2-union-input-index.json",
+    "--index-sha256",
+    "c77d76dd65b77213d48a7e3cc440f9371a5f52070be5e5f8b5b946a0339eeec0",
+    "--union-source-sha256",
+    "21365529d0fe65bcb994e91c460e4ac262792e912311d92297b6af124ee1c85a",
+    "--output",
+    "/workspace/oracle-gen2-union-results-001-20261020"
+  ],
+  "started_utc": "2026-10-20T07:47:53.733413+00:00",
+  "external_monitor_pid": 6376,
+  "status": "exited",
+  "worker_address_space_limit_bytes": 1073741824,
+  "aggregate_memory_limit_claimed": false,
+  "supervisor_pid": 6380,
+  "ended_utc": "2026-10-20T07:48:31.706956+00:00",
+  "elapsed_seconds": 37.973554439999134,
+  "returncode": 2,
+  "forced_timeout": false,
+  "worker_pids": [
+    6382
+  ],
+  "process_observations": [
+    {
+      "pid": 6380,
+      "ppid": 6376,
+      "observed_utc": "2026-10-20T07:47:53.739675+00:00",
+      "ps": "   6380    6376  3376 /workspace/pshf-report-venv-20261019/bin/python -B /workspace/oracle-gen2-union-inputs-dL0Hdx/source/oracle-recovery-gen2/run_gen2_union.py --input-index /workspace/oracle-gen2-union-inputs-dL0Hdx/fixed-index/gen2-union-input-index.json --index-sha256 c77d76dd65b77213d48a7e3cc440f9371a5f52070be5e5f8b5b946a0339eeec0 --union-source-sha256 21365529d0fe65bcb994e91c460e4ac262792e912311d92297b6af124ee1c85a --output /workspace/oracle-gen2-union-results-001-20261020"
+    },
+    {
+      "pid": 6382,
+      "ppid": 6380,
+      "observed_utc": "2026-10-20T07:47:53.848005+00:00",
+      "ps": "   6382    6380 11296 /workspace/pshf-report-venv-20261019/bin/python -B /workspace/oracle-gen2-union-inputs-dL0Hdx/source/oracle-recovery-gen2/gen2_union_worker.py --input-index /workspace/oracle-gen2-union-inputs-dL0Hdx/fixed-index/gen2-union-input-index.json --index-sha256 c77d76dd65b77213d48a7e3cc440f9371a5f52070be5e5f8b5b946a0339eeec0 --union-source-sha256 21365529d0fe65bcb994e91c460e4ac262792e912311d92297b6af124ee1c85a --output /workspace/oracle-gen2-union-results-001-20261020 --started-monotonic 14201.038667254 --started-utc 2026-10-20T07:47:53.781482+00:00"
+    }
+  ],
+  "sampled_peak_rss_bytes": {
+    "6380": 12988416,
+    "6382": 547598336
+  },
+  "external_monitor_peak_rss_bytes": 9961472,
+  "worker_processes_still_present": []
+}

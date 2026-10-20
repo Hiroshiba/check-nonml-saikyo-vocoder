@@ -1,0 +1,103 @@
+{
+  "schema": "oracle-gen2-union-index",
+  "schema_version": 1,
+  "generation": 2,
+  "gen2_source_manifest_sha256": "2278c3e1c03e651e21ef68ab2f6b4daa7974e044d9654bcb8c598f7332a319c1",
+  "input_index_sha256": "79c47c6b1926359d636d63eca6b6bab161e2b2d5f28015bc16d5209a100350d2",
+  "parent_index": {
+    "path": "/workspace/oracle-gen2-parent-fixed/parent-index.json",
+    "bytes": 1561,
+    "sha256": "dd8f5d535cae2aeda953aa2e99ed30e9d9ee00db6e7593a0877f06b23dc888a6"
+  },
+  "parent_results_sha256": "e1b9122441e5d62f73ee0ad3dda45450517b5731851c8bda144906723b47a269",
+  "supersedes_results_sha256": "e1b9122441e5d62f73ee0ad3dda45450517b5731851c8bda144906723b47a269",
+  "shards": [
+    {
+      "pair_id_range": [
+        0,
+        32
+      ],
+      "availability": "terminal_artifacts",
+      "artifacts": {
+        "results": {
+          "path": "/workspace/oracle-gen2-union-inputs-dL0Hdx/A/results/results.json",
+          "bytes": 25466529,
+          "sha256": "73c378bffd5ff6defb71ce40ca762c6ab564b20cbc7d2a0d8b52fa31703c27bf"
+        },
+        "worker_receipt": {
+          "path": "/workspace/oracle-gen2-union-inputs-dL0Hdx/A/results/receipt-worker.json",
+          "bytes": 96644,
+          "sha256": "06da9d76c56f79a0832d88e3b0d109151e87044d37e8c38af71327835ad2bf4e"
+        },
+        "supervisor_receipt": {
+          "path": "/workspace/oracle-gen2-union-inputs-dL0Hdx/A/results/receipt-supervisor.json",
+          "bytes": 62575,
+          "sha256": "dfa89811faae917c51b5823fd569443d505f3e918f4a11a249cf74b68c96375d"
+        },
+        "terminal": {
+          "path": "/workspace/oracle-gen2-union-inputs-dL0Hdx/fixed-index/terminal-A.json",
+          "bytes": 1507,
+          "sha256": "b1d0a0b3447267aa5c9ccf727c350d58fdc62710459699407c654875257f021b"
+        }
+      }
+    },
+    {
+      "pair_id_range": [
+        33,
+        65
+      ],
+      "availability": "terminal_artifacts",
+      "artifacts": {
+        "results": {
+          "path": "/workspace/oracle-gen2-union-inputs-dL0Hdx/B/gen2-B/results.json",
+          "bytes": 24623538,
+          "sha256": "28946d84fd321433250c76ae922e92932db2efaef107d3c00e66d134f89c5202"
+        },
+        "worker_receipt": {
+          "path": "/workspace/oracle-gen2-union-inputs-dL0Hdx/B/gen2-B/receipt-worker.json",
+          "bytes": 79155,
+          "sha256": "3ae70ba17db60579ad7b56610346b7f8d8513cd8ea4d3e31db1f79286f51107d"
+        },
+        "supervisor_receipt": {
+          "path": "/workspace/oracle-gen2-union-inputs-dL0Hdx/B/gen2-B/receipt-supervisor.json",
+          "bytes": 62577,
+          "sha256": "ad4cb47f8d54d1f4828c6cdb322d0cbdf8449506e6faaa13d9d8f25cef84ec0a"
+        },
+        "terminal": {
+          "path": "/workspace/oracle-gen2-union-inputs-dL0Hdx/fixed-index/terminal-B.json",
+          "bytes": 1548,
+          "sha256": "de1552151eac1824ca16223c135a46e951834e11f1d7e21ae6c614fd8f432945"
+        }
+      }
+    },
+    {
+      "pair_id_range": [
+        66,
+        99
+      ],
+      "availability": "terminal_artifacts",
+      "artifacts": {
+        "results": {
+          "path": "/workspace/oracle-gen2-union-inputs-dL0Hdx/C/oracle-gen2-C-run-001/results.json",
+          "bytes": 25317808,
+          "sha256": "ae060c6d3ff27b65f3b42c39e64c2fa1b03c7ec3da4f82567faa46415e0dcc4c"
+        },
+        "worker_receipt": {
+          "path": "/workspace/oracle-gen2-union-inputs-dL0Hdx/C/oracle-gen2-C-run-001/receipt-worker.json",
+          "bytes": 147275,
+          "sha256": "b463a1bc9967ee6a584a8a18158319d3399be73731caf3ed691f5963f11ac259"
+        },
+        "supervisor_receipt": {
+          "path": "/workspace/oracle-gen2-union-inputs-dL0Hdx/C/oracle-gen2-C-run-001/receipt-supervisor.json",
+          "bytes": 62552,
+          "sha256": "0bbc0465c4b8608e04f032bb77e9f92db827bc49225dad061c61e2b705f2ea0f"
+        },
+        "terminal": {
+          "path": "/workspace/oracle-gen2-union-inputs-dL0Hdx/fixed-index/terminal-C.json",
+          "bytes": 1735,
+          "sha256": "f3faf7be3def13b04e48f79d42bb003313d5e368ee4564ee9083a53854f9c027"
+        }
+      }
+    }
+  ]
+}
