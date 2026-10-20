@@ -1,0 +1,28 @@
+{
+  "owner": 2,
+  "command": [
+    "/workspace/check-nonml-saikyo-vocoder/.venv/bin/python",
+    "-B",
+    "/workspace/bf-stage1-v1/source/source/external.py",
+    "--authorized-owner-once",
+    "2",
+    "--output",
+    "/workspace/bf-stage1-owner-2",
+    "--index",
+    "/workspace/bf-stage1-preparation/index",
+    "--input-zip",
+    "/workspace/bf-stage1-preparation/input/pitch-bf-selected-input-v1-20261020.zip",
+    "--claims-dir",
+    "/workspace/bf-stage1-claims",
+    "--expected-manifest-sha256",
+    "035680bb789c45729d6cf54aa0d2cf491cf438f517ea2f8550e0b9a3a6f11197"
+  ],
+  "started_utc": "2026-10-20T09:30:07.202613+00:00",
+  "started_monotonic": 8796.475166204,
+  "outer_pid": 3134,
+  "outer_ppid": 3128,
+  "external_limit_seconds": 900,
+  "signals": [],
+  "external_pid": 3139,
+  "external_ppid": 3134
+}
