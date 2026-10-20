@@ -75,6 +75,7 @@ AIが自動で作る。
 
 ### 実験結果
 
+- レポートHTMLとレポート一覧の文面を作成・更新するときは、[natural-japaneseスキル](https://github.com/Hiroshiba/hiho_ai_coding/blob/main/base/skills/natural-japanese/SKILL.md)を必ず適用する
 - 実験結果はHTMLにし、Git管理するファイルに含める
 - HTMLはGitHub Pagesで閲覧できるようにする
 - 実験結果には、現在のbase手法との比較を必ず載せる
