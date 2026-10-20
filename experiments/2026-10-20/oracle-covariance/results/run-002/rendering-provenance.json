@@ -1,0 +1,45 @@
+{
+  "rendered_at": "2026-10-20T04:54:56.419458+00:00",
+  "source_head": "f0f63cc3187d5e20fb7439937515afcdec8a5c90",
+  "reason": "図の日本語化と、全100保存値・重複値を反映した右連続の経験累積分布への表示修正。HTMLに日本語図説明を追加。",
+  "operations": "保存CSV/JSONのみから描画。新fit・score・乱数生成・bootstrapなし。",
+  "font": "Noto Sans CJK JP",
+  "ecdf": {
+    "n": 100,
+    "below_zero": 3,
+    "at_zero": 24,
+    "at_or_below_zero": 27,
+    "definition": "F(x) = count(value <= x) / 100",
+    "drawing": "unique sorted values with multiplicities; cumulative counts; steps-post"
+  },
+  "figures": [
+    {
+      "name": "winner-counts.png",
+      "previous_sha256": "7ac9c7a6c1cc601c616a921935793cfe4b0bb685830a891a6354f4158c2f13f1",
+      "sha256": "9b505e0d53d344bf652c4f74e2e24b87eb721e7d944073a4a31dd33b303764fc",
+      "bytes": 54538
+    },
+    {
+      "name": "white-score-differences.png",
+      "previous_sha256": "d4c8070be5a9bd53e347525b1e8b5c4ddb3c7b04a856757f551bfaf31fc71e86",
+      "sha256": "cedc29562be976aab331cd129b73ec29fb7aa7a68f365fded79d50eeac994924",
+      "bytes": 55033
+    },
+    {
+      "name": "structured-score-differences.png",
+      "previous_sha256": "e0bc182e41a0472614ef3585fa2e7ec3a92d5352e7c0b04025ab6051a652d730",
+      "sha256": "2f5875fdf84bd29f13217f04861772721ba2b04905ab382b3ef3956d786f7520",
+      "bytes": 70244
+    },
+    {
+      "name": "white-selection.png",
+      "previous_sha256": "4281d88c3eb5f310a6ff1533346f1e93262301ee0ddfe3ba640f15ccb2dd4d4c",
+      "sha256": "8d86e4781284eaaaa3e2622a5cfea149a985a6e597aa84dd08431af6998aa146",
+      "bytes": 106526
+    }
+  ],
+  "previous_html_sha256": "fbcdfc7dee08099df5ab88c332d4001955f02d54f1a0ae6d895f8627d41da665",
+  "previous_manifest_sha256": "5ea6452bdbe4149414201b301ca47abe7c5f9396b74490cd124aba6ea0dde918",
+  "html_updated_at": "2026-10-20T04:55:20.042370+00:00",
+  "html_label_change": "一般読者向け用語を生成条件・組・対数予測密度・完全同点・パラメータ・学習用/評価用・首位へ統一。量、Wilson区間、保存bootstrap結果と解釈は保持。"
+}
