@@ -5,10 +5,11 @@
   "topic": "natural-heldout-prediction",
   "timezone": "Asia/Tokyo",
   "title": "候補を混合すると、直後の音声を予測しやすくなるか",
-  "summary": "自然音声の直後区間を、候補の混合・最大重みの単一モデル・雑音だけのモデルで予測して比べる未実行計画。入力の全件照合・ソースレビュー・実行判断は別工程です。PMLを維持します。",
-  "status": "計画・独立数式レビュー保存：未実行",
+  "summary": "1,440区間中1,431成功、訓練PCM全零9区間、数値失敗0と報告。計算とCloud内照合は完了、原結果未受領で正式な得点レポートは未公開です。量子化と密度得点の条件を文書で整理し、PMLを維持します。",
+  "status": "計算・Cloud内照合完了／原結果未受領・正式レポート未公開",
   "notes": [
-    "README.md"
+    "README.md",
+    "followup-design/execution-and-quantization-20261021/README.md"
   ],
   "runs": []
 }
