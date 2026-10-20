@@ -37,7 +37,7 @@ Pages予定先は `research/oracle-evidence-run-001-2026-10-20/index.html`。reg
 
 [初回run-001](results/run-001/index.html)と[初代回収union](results/recovery-union-001/index.html)を別の実行記録として参照できます。[回収unionの説明](results/recovery-union-001/README-ja.md)は3675成功積分・完全36/500組（W22/A14）を記録し、全25比較の全100平均・CIは未確定です。Bは固定snapshotで外部終了unknown、A/Cは保存終了確認あり。世代2B担当280の全件成功は報告受領・独立監査中、A/C未受領という本文作成時点の記録です。全体完了や品質改善を意味しません。
 
-監査済みLibrary v1のpublic17ファイルをそのまま保存しました。元resultsはmtime=0の可逆gzipで、解凍SHAを確認済み。以前の「回収run未統合」等は初回文書作成時点の経過として保持しています。新しい公開先は `research/oracle-evidence-recovery-union-001-2026-10-20/index.html`。本追記はDraft保存時点で、マージ・Pages反映は未実施です。既存ChromiumのSUID sandbox設定不備によりブラウザー描画は未確認です。
+監査済みLibrary v1のpublic17ファイルをそのまま保存しました。元resultsはmtime=0の可逆gzipで、解凍SHAを確認済み。以前の「回収run未統合」等は初回文書作成時点の経過として保持しています。新しい公開先は `research/oracle-evidence-recovery-union-001-2026-10-20/index.html`。PR76はmain `8f62e1c1b0755979a027dea2ff366b7293b94ce4` へマージされ、Pagesは公開済みです（2026-10-20、親のlive確認報告）。作成環境のChromiumはsandbox不備で描画できませんでしたが、親が別クラウドブラウザーで表示確認中です。[公開表記の変更来歴](reviews/recovery-union-publication-status-20261020.json)に旧/新SHAを保持します。
 
 
 ## Gen2全500組の保存記録（2026-10-20追記）

@@ -1,4 +1,4 @@
-# 初代回収unionの報告案（2026-10-20）
+# 初代回収unionの公開記録（2026-10-20）
 
 現baseはPMLを維持します。人工信号500組の保存値による記述的再解析です。自然音声の品質・MOSは未測定。成功部分集合は選択的であり、全体改善・品質改善・VUV校正・モデル採用を示しません。
 
@@ -71,22 +71,25 @@ merged-slots.json（12503398 bytes、SHA256 `1486fb61b4664aaa10d69b4c7b1780e6493
 
 original/input-artifact-manifest.jsonは入力ZIPのmanifest原本で、省略したファイルも列挙します。このbundleの実在一覧はルートartifact-manifest.jsonです。親の独立監査通過は依頼時の報告を引用し、今回再計算・float監査を行ったとは主張しません。
 
-## 公開案と未確認
+## 公開状態と作成時点の履歴
 
-新パス案：`research/oracle-evidence-recovery-union-001-2026-10-20/index.html`。現公開の初回reportを上書きしません。本案から旧reportへリンク済みで、将来公開する際は初回reportの案内に新パスへのリンクを追加すれば相互に移動できます。旧reportは今回変更していません。
+公開先：`research/oracle-evidence-recovery-union-001-2026-10-20/index.html`。PR76はmain `8f62e1c1b0755979a027dea2ff366b7293b94ce4` へマージ済みで、親からliveページの公開確認と別クラウドブラウザーでの表示確認中との報告を受領しました（2026-10-20）。親READMEには初回reportと回収unionの相互案内があります。旧reportの原HTMLは変更していません。
 
 統合resultsは圧縮原本 results.json.gz として配布します。gzip mtime=0、level=9。解凍後13220296 bytes、SHA256 e1b9122441e5d62f73ee0ad3dda45450517b5731851c8bda144906723b47a269 に完全一致します。圧縮は配布処理のみで科学計算ではありません。
 
 既存Pages builderはnavigation-onlyの.json.gzを許可し、圧縮後サイズは10 MiB未満です。builder変更は不要です。public/artifact-manifest.jsonを公開用一覧とします。元の計算用HTMLはリンク先が未圧縮results.jsonのままなので、原bytesでpreserved/に保管し、公開対象から除外します。元Library v0と元resultsは保持しています。
 
-Git書込み・PR・公開なし。ブラウザーによる描画・画面確認は未実施。Bの外部終了はunknown、Gen2 Bは担当280全件成功の報告を受領し独立監査中、A/Cは未受領です。未確認を成功と補完していません。未採用ソース、個人音声、内部メモ・coordination文は追加していません。
+以下はLibrary v1作成時点の履歴です：当時はGit書込み・PR・公開前で、作成環境のブラウザーによる描画・画面確認は未実施でした。Bの外部終了はunknown、Gen2 Bは担当280全件成功の報告を受領し独立監査中、A/Cは未受領です。未確認を成功と補完していません。未採用ソース、個人音声、内部メモ・coordination文は追加していません。
 
 
-## 次段階の報告受領状況
+## 作成時点の次段階の報告受領状況
 
 世代2の更新（2026-10-20）：Gen2 Bの担当280は全件成功との報告を受領し、独立artifact監査中です。A/Cは結果未受領です。これは報告受領時点の事実であり、Gen2全体完了・独立監査合格・品質改善を示しません。
 
 
-## 描画確認の結果
+## 作成環境での描画確認の履歴
 
 既存Chromiumをsandbox有効で起動したが、SUID sandbox helperの設定不備で起動失敗。追加install・権限変更・sandbox無効化は行わず停止。描画・画面確認とスクリーンショットは未実施。
+
+
+公開状態の表記のみを修正しました。世代1の科学値・表・CSV・原JSON/gzip・receiptは変更していません。上記Gen2受領状況は作成時点の履歴であり、世代1集計に後続結果を混ぜていません。
