@@ -1,0 +1,23 @@
+{
+  "started_utc": "2026-10-20T09:52:32.193765+00:00",
+  "started_monotonic": 10141.46631687,
+  "outer_pid": 3714,
+  "command": [
+    "/workspace/check-nonml-saikyo-vocoder/.venv/bin/python",
+    "-B",
+    "/workspace/bf-stage2-manifest-v2/source/source/run.py",
+    "--authorized-stage2-once",
+    "--input-manifest",
+    "/workspace/bf-stage2-manifest-v2/review/INPUT-MANIFEST.candidate.json",
+    "--expected-input-sha256",
+    "4531e90f76d1246f56162bb7a34f713be129310aff90d94054ef7edf2d819c31",
+    "--expected-source-sha256",
+    "036bd46cc3bb33999040810c5a05df864ccedad68451cd01f00e3c215a298812",
+    "--output",
+    "/workspace/bf-stage2-once-v2/output",
+    "--claims-dir",
+    "/workspace/bf-stage2-claims-v2"
+  ],
+  "signals": [],
+  "pid": 3719
+}

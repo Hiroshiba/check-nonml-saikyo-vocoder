@@ -1,0 +1,390 @@
+{
+  "sign_order": [
+    "negative",
+    "zero",
+    "positive"
+  ],
+  "strict_reversal_definition": "negative->positive or positive->negative; zero cells kept separate; no threshold",
+  "frame_count": 309,
+  "input": {
+    "canonical": {
+      "path": "/workspace/bf-stage2-once-v2/output/frame-results.jsonl",
+      "bytes": 14159962,
+      "sha256": "b5b5199bb71001106c9d65bc9c8637c4c2ce81a98ec1a0f03b7473ac5c2f57a6"
+    },
+    "summary": {
+      "path": "/workspace/bf-stage2-once-v2/output/summary.json",
+      "bytes": 5722,
+      "sha256": "46e71efffa424c36f21dfe54d8d5ee0082ee9780fcdb1a1a6d8cde64c454e2b8"
+    },
+    "archive": {
+      "path": "/workspace/pitch-stage2-once-v2-results-20261020.zip",
+      "bytes": 4786179,
+      "sha256": "1caa151838a24d9c15326c455ff1d174e9d44514c0f8b22a6448c70520b694e5"
+    },
+    "library": {
+      "library_file_id": "libfile_81d872dde6b0819188f2c9cadbe42082",
+      "version": 0,
+      "file_id": "file_0000000026fc81f6bf615ba03a21bdf1"
+    }
+  },
+  "results": {
+    "static_frame0": {
+      "S->L": {
+        "matrix_row_source_column_target": [
+          [
+            154,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            155
+          ]
+        ],
+        "finite_pairs": 309,
+        "excluded_pairs": 0,
+        "excluded_kind_pairs": {},
+        "source_kind_counts": {
+          "finite": 309,
+          "positive_infinity": 0,
+          "negative_infinity": 0,
+          "undefined": 0,
+          "missing": 0
+        },
+        "target_kind_counts": {
+          "finite": 309,
+          "positive_infinity": 0,
+          "negative_infinity": 0,
+          "undefined": 0,
+          "missing": 0
+        },
+        "strict_reversals": 0,
+        "reversal_frames": []
+      },
+      "L->E": {
+        "matrix_row_source_column_target": [
+          [
+            154,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            155
+          ]
+        ],
+        "finite_pairs": 309,
+        "excluded_pairs": 0,
+        "excluded_kind_pairs": {},
+        "source_kind_counts": {
+          "finite": 309,
+          "positive_infinity": 0,
+          "negative_infinity": 0,
+          "undefined": 0,
+          "missing": 0
+        },
+        "target_kind_counts": {
+          "finite": 309,
+          "positive_infinity": 0,
+          "negative_infinity": 0,
+          "undefined": 0,
+          "missing": 0
+        },
+        "strict_reversals": 0,
+        "reversal_frames": []
+      },
+      "S->E": {
+        "matrix_row_source_column_target": [
+          [
+            154,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            155
+          ]
+        ],
+        "finite_pairs": 309,
+        "excluded_pairs": 0,
+        "excluded_kind_pairs": {},
+        "source_kind_counts": {
+          "finite": 309,
+          "positive_infinity": 0,
+          "negative_infinity": 0,
+          "undefined": 0,
+          "missing": 0
+        },
+        "target_kind_counts": {
+          "finite": 309,
+          "positive_infinity": 0,
+          "negative_infinity": 0,
+          "undefined": 0,
+          "missing": 0
+        },
+        "strict_reversals": 0,
+        "reversal_frames": []
+      }
+    },
+    "A_prediction_frozen": {
+      "S->L": {
+        "matrix_row_source_column_target": [
+          [
+            95,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            9
+          ]
+        ],
+        "finite_pairs": 104,
+        "excluded_pairs": 205,
+        "excluded_kind_pairs": {
+          "positive_infinity->positive_infinity": 141,
+          "negative_infinity->negative_infinity": 64
+        },
+        "source_kind_counts": {
+          "finite": 104,
+          "positive_infinity": 141,
+          "negative_infinity": 64,
+          "undefined": 0,
+          "missing": 0
+        },
+        "target_kind_counts": {
+          "finite": 104,
+          "positive_infinity": 141,
+          "negative_infinity": 64,
+          "undefined": 0,
+          "missing": 0
+        },
+        "strict_reversals": 0,
+        "reversal_frames": []
+      },
+      "L->E": {
+        "matrix_row_source_column_target": [
+          [
+            95,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            9
+          ]
+        ],
+        "finite_pairs": 104,
+        "excluded_pairs": 205,
+        "excluded_kind_pairs": {
+          "positive_infinity->positive_infinity": 141,
+          "negative_infinity->negative_infinity": 64
+        },
+        "source_kind_counts": {
+          "finite": 104,
+          "positive_infinity": 141,
+          "negative_infinity": 64,
+          "undefined": 0,
+          "missing": 0
+        },
+        "target_kind_counts": {
+          "finite": 104,
+          "positive_infinity": 141,
+          "negative_infinity": 64,
+          "undefined": 0,
+          "missing": 0
+        },
+        "strict_reversals": 0,
+        "reversal_frames": []
+      },
+      "S->E": {
+        "matrix_row_source_column_target": [
+          [
+            95,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            9
+          ]
+        ],
+        "finite_pairs": 104,
+        "excluded_pairs": 205,
+        "excluded_kind_pairs": {
+          "positive_infinity->positive_infinity": 141,
+          "negative_infinity->negative_infinity": 64
+        },
+        "source_kind_counts": {
+          "finite": 104,
+          "positive_infinity": 141,
+          "negative_infinity": 64,
+          "undefined": 0,
+          "missing": 0
+        },
+        "target_kind_counts": {
+          "finite": 104,
+          "positive_infinity": 141,
+          "negative_infinity": 64,
+          "undefined": 0,
+          "missing": 0
+        },
+        "strict_reversals": 0,
+        "reversal_frames": []
+      }
+    },
+    "B_log_prediction_frozen": {
+      "S->L": {
+        "matrix_row_source_column_target": [
+          [
+            159,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            150
+          ]
+        ],
+        "finite_pairs": 309,
+        "excluded_pairs": 0,
+        "excluded_kind_pairs": {},
+        "source_kind_counts": {
+          "finite": 309,
+          "positive_infinity": 0,
+          "negative_infinity": 0,
+          "undefined": 0,
+          "missing": 0
+        },
+        "target_kind_counts": {
+          "finite": 309,
+          "positive_infinity": 0,
+          "negative_infinity": 0,
+          "undefined": 0,
+          "missing": 0
+        },
+        "strict_reversals": 0,
+        "reversal_frames": []
+      },
+      "L->E": {
+        "matrix_row_source_column_target": [
+          [
+            159,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            150
+          ]
+        ],
+        "finite_pairs": 309,
+        "excluded_pairs": 0,
+        "excluded_kind_pairs": {},
+        "source_kind_counts": {
+          "finite": 309,
+          "positive_infinity": 0,
+          "negative_infinity": 0,
+          "undefined": 0,
+          "missing": 0
+        },
+        "target_kind_counts": {
+          "finite": 309,
+          "positive_infinity": 0,
+          "negative_infinity": 0,
+          "undefined": 0,
+          "missing": 0
+        },
+        "strict_reversals": 0,
+        "reversal_frames": []
+      },
+      "S->E": {
+        "matrix_row_source_column_target": [
+          [
+            159,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            150
+          ]
+        ],
+        "finite_pairs": 309,
+        "excluded_pairs": 0,
+        "excluded_kind_pairs": {},
+        "source_kind_counts": {
+          "finite": 309,
+          "positive_infinity": 0,
+          "negative_infinity": 0,
+          "undefined": 0,
+          "missing": 0
+        },
+        "target_kind_counts": {
+          "finite": 309,
+          "positive_infinity": 0,
+          "negative_infinity": 0,
+          "undefined": 0,
+          "missing": 0
+        },
+        "strict_reversals": 0,
+        "reversal_frames": []
+      }
+    }
+  }
+}
