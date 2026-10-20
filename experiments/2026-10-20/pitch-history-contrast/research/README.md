@@ -39,4 +39,3 @@ proper-scaleの2文書は今回の結果とは別の未実装の理論検討で�
 
 - [固定二候補レポート：公開ブラウザー確認](pitch-fixed-candidate-browser-review-20261020.md)
 - [前報の公開ファイル検証記録](pitch-fixed-candidate-public-verification-20261020.json)
-
