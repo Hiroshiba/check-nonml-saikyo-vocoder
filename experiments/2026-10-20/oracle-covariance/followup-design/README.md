@@ -71,3 +71,14 @@ E は元設計どおり tr(Σ)/N、すなわち一標本当たりに各成分を
 - [選択入力の読取監査](pitch-bf-selected-input-audit-20261020.md)：309 frame・6180固定候補の保存字段を確認しました。prediction_prior は旧 A の更新前 H1 joint 質量で2056セルに保存zeroがあります。後続 frame の initial_prior_payload のzeroは帳簿用であり、これとは別です。計画適用時はこの監査の限定を優先し、zeroをfloorで補いません。
 
 上記は紙上導出・保存値の読取・計画で、309 frame に新しい BF を適用していません。数値 kernel の固定1080点診断は別工程で、原成功548点と回収532点の保存照合が済み、専用集約を準備しています。有限支持の照合を全領域誤差保証やF0品質改善とはしません。PML base、PR67 Draft、既存比較結果は維持します。
+
+## 弱信号極限と固定候補計画の監査記録（2026-10-20）
+
+次の8文書を原文のまま保存しました。紙上導出・計画・静的監査の記録であり、固定候補のBF計算を実行した結果ではありません。「未開始」「未実行」などは各文書の執筆時点の状態です。実行の成功や品質改善を示すものではなく、PML baseと既存の比較結果は変更しません。
+
+- [弱信号極限の導出](pitch-weak-signal-laplace-limit-20261020.md)と[独立レビュー](pitch-weak-signal-laplace-independent-review-20261020.md)：弱信号スケーリングで残るLaplace近似差と、証明の適用範囲。
+- [Bの保存priorの入力監査](pitch-bf-b-prior-input-audit-20261020.md)と[保存候補の重複構造監査](pitch-bf-selected-deduplication-audit-20261020.md)：保存入力の対応と、同一ビット列の入力だけを共有する条件。
+- [固定候補の凍結計画](pitch-fixed-candidate-frozen-plan-20261020.md)と[独立レビュー](pitch-fixed-candidate-plan-independent-review-20261020.md)：固定2候補の比較範囲、priorの扱い、実行前に確認すべき条件。
+- [stage1のindex照合](pitch-fixed-candidate-stage1-index-review-20261020.md)と[数値呼出しの静的レビュー](pitch-fixed-bf-stage1-numerical-review-20261020.md)：保存入力との対応と呼出し条件の確認。実測一致や実行全体の承認とは区別します。
+
+保存元はLibrary `libfile_9692652c9d848191a7aeca16c48125f8` v0の `pitch-reviewed-followup-docs-20261020.zip`（40587 bytes、SHA256 `0f2788ea9675c0b9dce0b1d19b76319ebbd915871407f9c8b39867969bd07f75`）です。8文書のサイズとSHAを同梱MANIFESTに照合しました。科学コードとZIP原本はGitに含めていません。
