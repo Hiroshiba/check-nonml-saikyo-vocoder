@@ -1,4 +1,20 @@
-# 位相原点校正の計測前研究とv0監査（2026-10-20）
+# 位相原点校正の理論・参照資料と監査記録（2026-10-20）
+
+## 数値積分案とMOCHAの時刻調査を追補し、採用・集計は保留
+
+[数値設計とMOCHAの時刻情報の文書束](numerics-and-mocha-timing-20261020/README.md)に、7研究・レビュー文書とREADME・MANIFESTの計9ファイルを原bytesで保存しました。Library `libfile_503bc72fa93881919d12c3349ab0100e` v0の文書だけを収録しています。前の文書束は変更していません。
+
+今回のREADMEの説明に対応する原文は、次のリンクから参照できます。
+
+- 数値積分：[安定計算と誤差評価の設計](numerics-and-mocha-timing-20261020/phase-origin-circle-integral-numerical-design-20261020.md)、[指摘と修正後の独立確認](numerics-and-mocha-timing-20261020/phase-origin-circle-integral-numerical-independent-review-20261020.md)、[検証付き積分APIの静的監査](numerics-and-mocha-timing-20261020/phase-origin-verified-integration-api-review-20261020.md)。
+- 期待得点：[局所線形モデルの参照式](numerics-and-mocha-timing-20261020/phase-origin-local-predictive-score-reference-20261020.md)と[独立レビュー](numerics-and-mocha-timing-20261020/phase-origin-local-predictive-score-independent-review-20261020.md)。
+- MOCHA：[音声・EGGの時刻と長さの来歴](numerics-and-mocha-timing-20261020/mocha-fsew0-timing-provenance-followup-20261020.md)と[独立レビュー](numerics-and-mocha-timing-20261020/mocha-fsew0-timing-independent-review-20261020.md)。
+
+数値積分案は2点の指摘を修正し、独立確認を受けた紙上設計です。具体的な方式・閾値・実装・実験は未採用です。局所線形Gaussianモデルの3つの期待得点式も独立レビュー済みですが、properな円周事前分布を使う有限標本や実500には適用しません。python-flint 0.9.0／FLINT 3.6.0のAPI監査は静的資料の確認だけです。Python側の呼出し口はC側の停止状態を公開しないため、指定した許容誤差ではなく返却区間の幅を判定する必要があります。実環境への導入や動作確認は行っていません。
+
+MOCHAは別Cloudが公式fsew0_v1.1 archiveのheaderだけを監査し、音声wavと喉頭信号larの460対・920headerの容量整合と、全対のsample_count不一致を報告しました。原inventoryはLibraryのHTTP403で未転送であり、保存データの独立照合は未完了です。元論文には逆フィルタ残差の相関を使った同期の説明がありますが、現配布の各時刻ずれ・端点・長さ差の原因は不明です。波形解析・補正やコーパス採用は行っていません。前の文書の「コーパス未取得」は、当時の調査記録として保持します。
+
+実500は全計算workerが終了0、外側が終了2、167・167・166組完了との報告のままです。過去の全子終了unknown、`immutable=false`、通常packing拒否を保持し、正式集計も担当ごとの暫定集計も保留します。拒否された科学成果・MOCHA原データの転送再試行や別経路転送は行っていません。PMLを維持します。
 
 ## 予測理論と参照資料を保存し、実500の集計保留を維持
 

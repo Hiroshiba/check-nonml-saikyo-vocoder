@@ -1,5 +1,14 @@
 # 現在の状態と次の作業
 
+## 数値積分案とMOCHAの時刻調査を追補、採用・集計は保留（2026-10-20）
+
+[数値設計・期待得点式・MOCHAの時刻調査の案内](../experiments/2026-10-20/phase-origin-fixed-truth/followup-design/README.md)を追補し、Library v0の9ファイルを原bytesで保存しました。数値積分案は2点修正後に独立確認済みの紙上設計で、方式・閾値・実装・実験は未採用です。局所線形Gaussianの3期待得点式を、proper円周の有限標本や実500へ適用しません。python-flint 0.9.0／FLINT 3.6.0のAPI監査は静的資料確認のみです。Python側はC側の停止状態を公開せず、指定した許容誤差ではなく返却区間幅の判定が必要です。導入・動作確認は行っていません。
+
+MOCHAの別Cloudによるheader監査は、460 wav/lar対・920headerの容量整合と全対sample_count不一致の報告です。原inventoryはLibraryのHTTP403で未転送で、保存データの独立照合は未完了です。元論文の同期説明だけでは、現配布の各時刻ずれ・端点・長さ差の原因は確定しません。波形解析・補正・コーパス採用は行っていません。
+
+実500は全計算workerが終了0、外側が終了2、全子終了unknown・`immutable=false`のまま、正式集計も担当ごとの暫定集計も保留します。拒否された科学成果・MOCHA原データの転送再試行や別経路転送は行っていません。PMLを維持します。新案内と原文の差分・CI確認、マージは親の工程です。以下は以前の記録です。
+
+
 ## 理想Wの予測理論と参照資料を保存、実500は集計保留（2026-10-20）
 
 [予測理論・コーパス一次資料・失敗原因調査の案内](../experiments/2026-10-20/phase-origin-fixed-truth/followup-design/README.md)を追加し、指定Library v0の全12ファイルを原bytesで保存しました。理想Wでの連続位相混合予測の固定φ期待logscore優越は、理想global OLSとの紙上比較です。現行数値500組や音質の改善を意味しません。MOCHA-TIMIT・CMU ARCTIC・Keeleは当時コーパス未取得の調査で、EGGやpitchmarkは完全GCI真値ではありません。別CloudのMOCHA実体header調査とは区別して原文を保持し、PMLを維持します。
