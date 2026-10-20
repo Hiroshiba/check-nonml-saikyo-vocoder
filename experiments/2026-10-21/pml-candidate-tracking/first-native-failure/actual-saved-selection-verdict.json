@@ -1,0 +1,202 @@
+{
+  "schema_version": 1,
+  "kind": "failure_scoped_actual_saved_selection_replay",
+  "native_scientific_status": "native_incomplete_scientific_failures",
+  "actual_native_exit_code": 2,
+  "successful_native_audit_run": false,
+  "native_audit_passed": false,
+  "approved_for_quality": false,
+  "phase_B_permitted": false,
+  "quality_evaluated": false,
+  "waveform_reanalyzed_or_resynthesized": false,
+  "local_likelihood_independently_measured": false,
+  "result_scope": "diagnostic consistency of already saved potentials/paths only",
+  "selection_replay_status": "matched_failure_scope_only",
+  "records": [
+    {
+      "id": "librispeech_1089-134686-0008",
+      "frames": 1200,
+      "saved_selection_replay": "bitwise_matched_L_and_F_paths_offsets_objectives",
+      "window_zero_duplicate_batch_consistency": "matched",
+      "branches": {
+        "pml": {
+          "status": "native_succeeded",
+          "frames": 1194
+        },
+        "L": {
+          "status": "scientific_stage_failed",
+          "record": "librispeech_1089-134686-0008",
+          "branch_or_stage": "L",
+          "no_repair_or_drop": true
+        },
+        "F": {
+          "status": "scientific_stage_failed",
+          "record": "librispeech_1089-134686-0008",
+          "branch_or_stage": "F",
+          "no_repair_or_drop": true
+        }
+      },
+      "scientific_status": "native_incomplete_scientific_failures"
+    },
+    {
+      "id": "librispeech_1089-134686-0011",
+      "frames": 1200,
+      "saved_selection_replay": "bitwise_matched_L_and_F_paths_offsets_objectives",
+      "window_zero_duplicate_batch_consistency": "matched",
+      "branches": {
+        "pml": {
+          "status": "native_succeeded",
+          "frames": 1195
+        },
+        "L": {
+          "status": "scientific_stage_failed",
+          "record": "librispeech_1089-134686-0011",
+          "branch_or_stage": "L",
+          "no_repair_or_drop": true
+        },
+        "F": {
+          "status": "scientific_stage_failed",
+          "record": "librispeech_1089-134686-0011",
+          "branch_or_stage": "F",
+          "no_repair_or_drop": true
+        }
+      },
+      "scientific_status": "native_incomplete_scientific_failures"
+    },
+    {
+      "id": "librispeech_1089-134686-0032",
+      "frames": 818,
+      "saved_selection_replay": "bitwise_matched_L_and_F_paths_offsets_objectives",
+      "window_zero_duplicate_batch_consistency": "matched",
+      "branches": {
+        "pml": {
+          "status": "native_succeeded",
+          "frames": 814
+        },
+        "L": {
+          "status": "scientific_stage_failed",
+          "record": "librispeech_1089-134686-0032",
+          "branch_or_stage": "L",
+          "no_repair_or_drop": true
+        },
+        "F": {
+          "status": "scientific_stage_failed",
+          "record": "librispeech_1089-134686-0032",
+          "branch_or_stage": "F",
+          "no_repair_or_drop": true
+        }
+      },
+      "scientific_status": "native_incomplete_scientific_failures"
+    }
+  ],
+  "diagnostic_source_manifest_sha256": "cd75a85cc631eafce301b9bf241e5afd26790f543d9e8fde6abffd51aa42c9a2",
+  "diagnostic_source_file_shas": {
+    "README-ja.md": "daad9a0014c4f05f4695dd979e5c5b333582d304f07af319e685a186e42c3bf4",
+    "SOURCE_LINEAGE.json": "679039ed5471c4cdc20c4a61317322327fdb7e40f12b913f6bd135f6266ccb79",
+    "audit_io.py": "18a8410b00f55b05a50fb11e3408b02cbc68cf36352d09a6eb685dbd2377c567",
+    "audit_replay.py": "dea9691d5a9207f777164f5593bc1096eee2a9a2397164473fca9266b57ec5a2",
+    "audit_saved_arrays.py": "b242b51c72467be4732d39596cf5c5d2181ba3d8e9feae5cdd7d3b47eef85512",
+    "run_failure_replay.py": "44b6ce68d284765c6fd93ee08fc9cc71ca392ff67bc6c7bff75b76fccfd27759"
+  },
+  "diagnostic_runtime": {
+    "numpy": "2.3.5",
+    "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]"
+  },
+  "envelope": {
+    "bytes": 19922354,
+    "sha256": "a78bc6019de20a8ff702165b60121c5263324cb0c8c47514a1777498149d0a7a"
+  },
+  "native_archive": {
+    "bytes": 19911267,
+    "sha256": "8c402790d826825d87dbadcc7cd908d7747e629c2ea9342dc9408d2c5264dc96"
+  },
+  "native_FILES_sha256": "12e38db01ed45e964d361024516e4cae3ad21298822317c699a6e72884f4d5e1",
+  "delivery_manifest_sha256": "a65d93614ddb1b54c60facfad5ddb8af48f7f8fc9076780d17f214b0a4ec27ab",
+  "verified_file_counts": {
+    "outer": 6,
+    "inner": 211
+  },
+  "materialized_receipt_sha256": "57e6b6368081e59d933a8ec17769a391f761ef234e8df5a929bb02e4c8d15bf1",
+  "library_identity": {
+    "library_file_id": "libfile_c4a085e9297481918bae5d8bbbea6e0f",
+    "version_number": 0,
+    "file_id": "file_0000000005448230bd4455e2b6278054"
+  },
+  "actual_execution": {
+    "actual_exit_code": 2,
+    "argv": [
+      "/workspace/check-nonml-saikyo-vocoder/.venv/bin/python",
+      "-B",
+      "/workspace/check-nonml-saikyo-vocoder/runs/pml-candidate-sequence-first-speaker-20261021-v1/source/run_native.py",
+      "--input-root",
+      "/workspace/check-nonml-saikyo-vocoder/runs/fixed120-input-preparation-20261020/inputs",
+      "--speaker",
+      "librispeech_1089",
+      "--output",
+      "/workspace/check-nonml-saikyo-vocoder/runs/pml-candidate-sequence-first-speaker-20261021-v1/native",
+      "--source-receipt",
+      "/workspace/check-nonml-saikyo-vocoder/runs/pml-candidate-sequence-first-speaker-20261021-v1/receipts/source-receipt.json"
+    ],
+    "elapsed_seconds": 86.1231812570004,
+    "evidence_ref": "execution/launcher-result.json",
+    "finished_at_utc": "2026-10-20T17:54:13.908970+00:00",
+    "kind": "actual_tool_receipt",
+    "limits": {
+      "address_space_bytes": 4294967296,
+      "observed_rss_stage_budget_bytes": 3221225472,
+      "terminate_grace_seconds": 10,
+      "threads": 1,
+      "wall_seconds": 1800
+    },
+    "max_rss_kib": 292076,
+    "native_archive": {
+      "bytes": 19911267,
+      "sha256": "8c402790d826825d87dbadcc7cd908d7747e629c2ea9342dc9408d2c5264dc96"
+    },
+    "packing_status": "succeeded",
+    "reaped_by_launcher": true,
+    "schema_version": 1,
+    "scientific_status": "native_incomplete_scientific_failures",
+    "signal": null,
+    "started_at_utc": "2026-10-20T17:52:47.785806+00:00",
+    "stderr": {
+      "bytes": 0,
+      "complete": true,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "stdout": {
+      "bytes": 573,
+      "complete": true,
+      "sha256": "fcb39b5852c907577540d38d489c6eca08200bdfa92f23c9213eebe06b06317a"
+    },
+    "timed_out": false,
+    "tool": "exec_command"
+  },
+  "native_source_pin": {
+    "schema_version": 1,
+    "status": "parent_finalized_native_source_pin",
+    "native_version": "pml-candidate-sequence-native-v2-20261021",
+    "source_manifest_sha256": "06b86cbafc3556e5bee25752ee1f592d592554298524a2762264483e97e38eae",
+    "source_zip": {
+      "bytes": 289642,
+      "sha256": "605a7f510fccb146376fc0e7bf4d49ac72257d02044f8f192710cc8127416130"
+    },
+    "dependency_manifest_sha256": "90fdeacbb4212323b78e991dab2ff4ac6772025e0f6ea534aaa7f3b5e65b7115",
+    "source_library": {
+      "library_file_id": "libfile_4dd8f83935ec81918c10345ab38be597",
+      "version_number": 0,
+      "file_id": "file_00000000d01481f896878af91f8c1587"
+    },
+    "source_library_status": "actual_parent_source_library_receipt_verified",
+    "scientific_execution_authorized": false,
+    "scientific_execution_or_results_exist": false,
+    "pin_source": "parent final native-v2 pin and actual source Library receipt; ZIP35members independently read-only checked; no science receipt"
+  },
+  "causal_boundary": "Saved L/F selection replay matches canonical arithmetic; downstream native PML parameter failures remain unrepaired and are diagnosed separately.",
+  "limitations": [
+    "No independent local-likelihood measurement or R/Q/weights recomputation.",
+    "No filtering, PML reanalysis, resynthesis, quality or waveform metrics.",
+    "This diagnostic does not certify native success or approve quality."
+  ],
+  "recorded_at_utc": "2026-10-20T18:01:16.607442+00:00"
+}
