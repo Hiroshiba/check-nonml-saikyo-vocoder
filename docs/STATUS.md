@@ -1,5 +1,9 @@
 # 現在の状態と次の作業
 
+## F0の履歴と数値表現：人工3入力の研究記録（2026-10-20T04:15:12.887016+00:00）
+
+[統合記録](../experiments/2026-10-20/pitch-history-log/README.md)に履歴比較・帳簿分解・log領域比較を保存。309窓でjoint MAP不変、共通suffix53–55の履歴差も不変だがposteriorは変化。PML維持、品質比較・採用なし。測定時刻と公開準備時刻を分離し、既存人工音3本と数値・図を保持。reset等の追加条件は未実施。
+
 ## 確率的F0・H0診断：固定5録音の保存結果をDraftへ（2026-10-20 日本時間）
 
 [実行経過と研究文書](../experiments/2026-10-20/probabilistic-pitch-diagnostic/README.md)に、5/5録音・2540 valid・74 energy-floor・24.328秒の固定診断と保存解析を記録した。初回解析のJSON bool直列化失敗、初回描画の厳密範囲検査失敗を経て、報告のnormal/subnormal/zero層別と生値保持の表示を修正した。推定器の再実行・変更はない。最終公開132ファイルをnavigation-onlyとして登録し、実描画日時2026-10-19T21:47:23.432775+00:00とmanifest SHA/bytesを保持する。
