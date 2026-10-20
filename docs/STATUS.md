@@ -2,7 +2,7 @@
 
 ## 雑音尺度の校正とPMLの位相契約（2026-10-20）
 
-[一次資料とbase契約の3文書](../experiments/2026-10-20/oracle-covariance/followup-design/calibration-and-base-contract/README.md)を保存しました。全録音RMS正規化・経験的正則化を外部校正済みpriorと同一視せず、PMLの合成パルス時刻を測定GCIやoracle位相と区別します。既知q・一定F0で学習側だけを使う位相原点校正の残る契約を文書上で検討中です。実装・数値prior選択・測定・採用は未決定、PMLを維持します。以下は以前の記録です。
+[一次資料とbase契約の3文書](../experiments/2026-10-20/oracle-covariance/followup-design/calibration-and-base-contract/README.md)を保存しました。全録音RMS正規化・経験的正則化を、今回の雑音の事前分布の校正根拠としてそのまま流用しません。校正方法・パラメーターは未決定です。PMLの合成パルス時刻を測定GCIやoracle位相と区別します。既知q・一定F0で学習側だけを使う位相原点校正の残る契約を文書上で検討中です。実装・数値prior選択・測定・採用は未決定、PMLを維持します。以下は以前の記録です。
 
 
 ## 同じ現在観測で履歴を比べる（2026-10-20）
