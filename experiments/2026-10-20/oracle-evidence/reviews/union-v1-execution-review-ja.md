@@ -1,0 +1,75 @@
+# 固定3shard unionの実行・保存契約 静的レビュー v1
+
+2026-10-20 06:28 UTC。対象は UNION-ja.md、run_union.py、union_io.py、union_merge.py、union_validation.py、union_worker.py。親確認済み配布ZIP SHA256: 8ff487c41c12e9543e3165aa9b045396e1d5440e1d10b6d983ce2354b2da0db2。union source manifest SHA256: 4f6b037c98c0dbb9b583190fdc44491c0b76864283569d0142ee3724feaf2a9c。入力shardの固定source SHAは11b308a02d96cd3e55ef407006131a7677ff57604185f3ca83fb93660ea094ad。
+
+## 判定
+
+3者すべてが固定sourceの通常terminal（returncode 0または2）で、各原results・worker receipt・supervisor receipt・外部terminalが揃う入力に限定すれば、条件付き静的通過。担当範囲に新たな重大code blockerは認めない。これは今すぐunionを実行できる判定ではない。現在A/Cは計測中、Bは開始/終了状態不明という親通知があるため、実入力・終了確認はまだ実行前blockerである。
+
+重要な仕様縮小: missing shard/成果物欠損/異常終了snapshotからの部分unionは本版では未対応。先の3shardチェックリストにある「欠けた担当をnullで残すpartial union」より狭い。以下U1を親が明示的に受け入れるか、別版で実装して再審査する必要がある。未知の終了を捏造したterminalやダミーshardで通してはならない。
+
+## U1: partialの受理範囲とmissingの拒否
+
+union_io.load_indexはexactly3 descriptor、各descriptorにresults/worker_receipt/supervisor_receipt/terminal全4artifactを要求（60–86行）。load_shardは各実fileのbytes/SHAを確認し、全terminalのworker/supervisor returncodeを0/2に限定する（148–150行）。各receiptの厳密schemaと全500row/resultとの一致も要求する。
+
+受理できるpartial: 全3shardが通常終了して完全なresults snapshotを作成したが、owner内にnot_attempted・time_budget_exhausted・parent_explicit_early_stop・external_stop_signal・not_converged・invalid_inputが残る場合。これらは5000slot中の未確定として保持され、成功へ昇格しない。
+
+受理できないもの: shard自体が未起動/生存不明/欠損、SIGKILL等でreturncodeが0/2以外、resultsがなくcheckpointだけ、receiptが未完成・missing、入力verification不成立。これらをfail-closedにするのは安全だが、欠損担当を表現するpartial union機能ではない。
+
+現在のBは不明なので本版の入力を作れない。許される次の選択肢は、Bの実状態と成果物を確認して本版の受理条件を満たすか判断すること、または明示的missing/abnormal terminalを扱う別契約/実装を静的レビューすること。既存不明状態をoutside_shardやnot_attemptedで捏造してはならない。
+
+## 1. Terminal artifactとsource/input pinning
+
+union index自体のSHAを必須にし、schema/version/keys、固定input-index SHA、固定shard source SHA、root archive bytes/SHA、3範囲各1個を検証。descriptorは絶対path/positive bytes/lowercase SHA、実bytes/SHA一致。resolved path重複を拒否。JSON duplicate keys/NaN/Infinity literalを拒否する。root archive/results/embedded legacy manifestも独立固定SHAで照合。
+
+外部terminalはalive両false・status exited・各artifact SHA・範囲/source/input/root SHA・returncode・timezone付き時刻を要求。worker/supervisor receiptと時刻範囲、入力検証済marker、result開始時刻、ledger内容も照合する。停止要求だけをterminalに扱わない。
+
+terminalの真実性自体をファイル検査で証明できるわけではない。親は実プロセス終了を確認し、immutable artifactsを固定してからterminal/indexを作ること。実行中のdirectory、GUI切断、停止signal送信だけを「終了確認」にしない。別source/source互換性を名称だけで推測しない。
+
+union自身のmanifest SHAと入力計測source SHAは別変数/fieldで扱う。compatible_sourcesは同梱shard manifest原bytesのSHAと旧18deliverable descriptorのtype/value一致を検査し、union validate_manifestは現在の全fileを検査する。二つのmanifest SHA同一を誤要求しない。union追加版で計測入口を再実行しない旨も文書化。
+
+## 2. 392 exact reuse、旧2500、所有権
+
+rootの固定500ID/round-robin、旧392success、V2 exact IDを検査。exact_equalは再帰type/value一致に加えfloat binary64 bit比較でsigned zeroも区別する。共通旧392entry全diagnosticsは全3copyをrootと一致させ、origin=reused・attempt fieldなしを要求。root正本を1回だけ採用する。
+
+new4608slotはpair_id所属の唯一ownerからのみ採用。非ownerは空outside_shard entryと未試行provenanceのexact一致を要求。owner外new、旧successの再計算、new二重所有、未知model/key、precomputed derived/summaryを拒否する。同値だから重複newを許す経路なし。
+
+旧2500scoreはrootと全3shardを型/値完全一致で照合。nats/record、PML、PR67 Draft、geometry来歴、固定runtime版、source/入力/root回収来歴も一致を要求。merged rowは旧score/root再利用entryをdeepcopyするだけで書換えない。
+
+slot出力には採用artifact SHA、JSON pointer、source SHA、owner range、元slot provenanceを保存。new_output_manifest_sha256の紛らわしい名称はsource SHAとして明示解釈し、実artifact SHAには別fieldを使う。
+
+## 3. canonical statusと成功検証
+
+union_validation.common_entry/validate_newはfield集合と型を検査。成功entryの数値型/finite、model別保存gate、record数/energy、V final_checks/last_mesh/Cartesian次数・各値と対応点数/GL32分母等を確認する。旧V2は旧gateでのみ受理し、新small分類/新64・96を遡及適用しない。
+
+owner origin=newならattempted=trueとstart/end/result_status存在、pendingならattemptedなしと非convergedを要求。finite降格前で古くなり得るslot_provenance.result_statusを成功判定には使わず、Integral.statusを正本とする。失敗の非有限文字列は元記録のまま保持して成功へ昇格しない。
+
+provenance内start/end値は存在検査中心で、attempt timestampの時刻順序までは検査しない。計算結果のgateは別に確認し、artifact SHAと固定sourceから由来を追えるので今回の数値merge blockerとはしないが、実行時間の解釈はterminal/receiptを正本にする。
+
+## 4. derive/25bootstrapと保存
+
+mergeは5000slot inventory（reused/new_success/failed_or_missing合計5000、reused392）を作り、全検証成功後merged-slots.jsonを保存。これにより後段派生/集計停止時も原slot unionを回収できる。root原bytesとunion-input-indexも保存する。
+
+union_workerは残差/geometryを新規読取・再生成せず、statistics/Budget/求積/solverを呼ばない。coreのIntegral/deriveとreportのみを全入力検査後にimportし、各500pairの独立コピーからderiveを1回呼ぶ。原raw entryは変更しない。全10gate、train5のweights、モデル別predictiveのpartial規則を保持する。
+
+report.write_reportsは1回だけ呼び、25比較bootstrapをunionのvalid pair集合から計算する。元各truth100/全500を保持、欠測時主mean/CI=null、成功subset条件付き欄を分離。0成功はno_successful_pairs/CI=null。shard CI・平均・posteriorを平均する処理なし。requested/completed replicatesとsummary-progressを凍結reportから継承する。
+
+注意: refinement_bmaは旧/new solver各levelsの混合段階であり、同一mesh/refinementによる誤差保証ではない。slot source来歴は出力に残るが、公開時にこの解釈を明記すること。certified_error=Falseは維持される。
+
+派生途中で例外/時間切れなら、未派生rowはunresolved、部分ledgerとworker receiptにderived_pair_callsを残す。全5000slot成功だけでexit0にせず、全pair derived成功と必要CI完了を要求する。partialを完成版の科学結果として紹介しない。
+
+## 5. 5分/128MiB資源と終了処理
+
+run_unionのmonotonic開始は監督入口。workerは270秒で新派生/新bootstrap chunkを停止。監督は280秒TERM、287秒KILL、292秒監視終了＋最長1秒waitと終端保存枠。停止不能状態はuncertainとして記録する。科学積分の開始/再試行経路なし。
+
+通常writeは凍結runtimeの116MiB判定（置換中old/tmpの両方を保守的算入）、terminal receipt各512KiB以内、stdout/stderr末尾4MiB。unionは内部循環logを増やさないため128MiB枠の予約に収まる設計。監督は120MiB超でTERMを要求。usageのrename競合対策を維持し、I/O/権限エラーを黙殺しない。出力先新規only、入力read-only。
+
+hard behaviorの境界: 通常のworker計算停滞は外部監督がkill可能。監督自身のOS非割込みI/O・実行環境全体のkill・終端書込故障まで厳密300秒内の完了をsourceだけで保証するものではない。既定の外部実行監督/receiptを残す。起動/receiptを含む監督timeは記録する。unionに1GiBのRLIMIT_ASは設定されていないが、親が固定したunion予算は5分/128MiB出力であり、workerメモリ上限の実装済みとは主張しない。
+
+全union成果物の最終SHA/bytes manifestはこのsource内では生成しない。実終了後に外側で確定し、partial filesとcompleted成果物を区別する。
+
+## 作業範囲と次のゲート
+
+新5source/UNION契約と接続先凍結sourceをテキストで静的読取したのみ。候補の実行/import、tests/smoke、科学run、ソース編集、実index/terminal作成は行っていない。AST/Ruff通過はD報告、旧18file byte一致/ZIP hashは親検証を前提とする。
+
+現sourceを変えずに進む場合の次のゲートは、親がU1の限定入力契約を明示受理し、全3shardの通常terminalと原成果物を確定してindex/terminalを作り、その実schema/SHAを読取確認することである。Bが不明なままならunion開始を保留する。

@@ -1,0 +1,16 @@
+{
+  "requested_utc": "2026-10-20T05:56:05.221180+00:00",
+  "reason": "親の計算効率診断による明示的早期停止。27分の時計上限には未到達",
+  "worker_pid": 2429,
+  "supervisor_pid": 2428,
+  "external_monitor_pid": 2424,
+  "process_evidence": [
+    "   2428    2424 /workspace/pshf-report-venv-20261019/bin/python /workspace/oracle-evidence-source-v2-20261020/run_reanalysis.py --input-index /workspace/oracle-input-index-20261020.json --index-sha256 79c47c6b1926359d636d63eca6b6bab161e2b2d5f28015bc16d5209a100350d2 --manifest-sha256 1b54832860d9744576e071d36cc70256291c145571bc3f372b1cbeefa17e0cec --output /workspace/oracle-evidence-results-run-001-20261020",
+    "   2429    2428 /workspace/pshf-report-venv-20261019/bin/python /workspace/oracle-evidence-source-v2-20261020/worker.py --input-index /workspace/oracle-input-index-20261020.json --index-sha256 79c47c6b1926359d636d63eca6b6bab161e2b2d5f28015bc16d5209a100350d2 --manifest-sha256 1b54832860d9744576e071d36cc70256291c145571bc3f372b1cbeefa17e0cec --output /workspace/oracle-evidence-results-run-001-20261020 --started-monotonic 6684.492681026 --started-utc 2026-10-20T05:42:37.235495+00:00"
+  ],
+  "signal": "SIGUSR1",
+  "signal_count": 1,
+  "status": "sent",
+  "label_interpretation": "time_budget_exhausted/no_new_integrations_after_27_minutes are shared stop labels; this run uses explicitly requested early SIGUSR1, not elapsed 27 minutes.",
+  "sent_utc": "2026-10-20T05:56:05.221569+00:00"
+}
