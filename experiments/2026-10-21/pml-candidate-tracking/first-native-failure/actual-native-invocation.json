@@ -1,0 +1,50 @@
+{
+  "actual_exit_code": 2,
+  "argv": [
+    "/workspace/check-nonml-saikyo-vocoder/.venv/bin/python",
+    "-B",
+    "/workspace/check-nonml-saikyo-vocoder/runs/pml-candidate-sequence-first-speaker-20261021-v1/source/run_native.py",
+    "--input-root",
+    "/workspace/check-nonml-saikyo-vocoder/runs/fixed120-input-preparation-20261020/inputs",
+    "--speaker",
+    "librispeech_1089",
+    "--output",
+    "/workspace/check-nonml-saikyo-vocoder/runs/pml-candidate-sequence-first-speaker-20261021-v1/native",
+    "--source-receipt",
+    "/workspace/check-nonml-saikyo-vocoder/runs/pml-candidate-sequence-first-speaker-20261021-v1/receipts/source-receipt.json"
+  ],
+  "elapsed_seconds": 86.1231812570004,
+  "evidence_ref": "execution/launcher-result.json",
+  "finished_at_utc": "2026-10-20T17:54:13.908970+00:00",
+  "kind": "actual_tool_receipt",
+  "limits": {
+    "address_space_bytes": 4294967296,
+    "observed_rss_stage_budget_bytes": 3221225472,
+    "terminate_grace_seconds": 10,
+    "threads": 1,
+    "wall_seconds": 1800
+  },
+  "max_rss_kib": 292076,
+  "native_archive": {
+    "bytes": 19911267,
+    "sha256": "8c402790d826825d87dbadcc7cd908d7747e629c2ea9342dc9408d2c5264dc96"
+  },
+  "packing_status": "succeeded",
+  "reaped_by_launcher": true,
+  "schema_version": 1,
+  "scientific_status": "native_incomplete_scientific_failures",
+  "signal": null,
+  "started_at_utc": "2026-10-20T17:52:47.785806+00:00",
+  "stderr": {
+    "bytes": 0,
+    "complete": true,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "stdout": {
+    "bytes": 573,
+    "complete": true,
+    "sha256": "fcb39b5852c907577540d38d489c6eca08200bdfa92f23c9213eebe06b06317a"
+  },
+  "timed_out": false,
+  "tool": "exec_command"
+}

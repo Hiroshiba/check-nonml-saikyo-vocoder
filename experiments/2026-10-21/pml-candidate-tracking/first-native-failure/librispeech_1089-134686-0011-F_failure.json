@@ -1,0 +1,7 @@
+{
+  "status": "scientific_stage_failed",
+  "record": "librispeech_1089-134686-0011",
+  "branch_or_stage": "F",
+  "traceback": "Traceback (most recent call last):\n  File \"/workspace/check-nonml-saikyo-vocoder/runs/pml-candidate-sequence-first-speaker-20261021-v1/source/run_native.py\", line 126, in process_record\n    posts[name] = run_branch(name, x, selections.get(name), output, case_id,\n                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/check-nonml-saikyo-vocoder/runs/pml-candidate-sequence-first-speaker-20261021-v1/source/native_adapter.py\", line 84, in run_branch\n    else encode_external(x, raw_f0, trace))\n         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/check-nonml-saikyo-vocoder/runs/pml-candidate-sequence-first-speaker-20261021-v1/source/native_adapter.py\", line 49, in encode_external\n    return PMLParameters(fwcep=fwcep.encode_log(np.log(spec), FS, 59).astype(np.float32),\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<string>\", line 10, in __init__\n  File \"/workspace/check-nonml-saikyo-vocoder/runs/pml-candidate-sequence-first-speaker-20261021-v1/source/dependencies/vocoderbench/pml/parameters.py\", line 50, in __post_init__\n    raise ValueError(\"合成用連続 F0 の対応範囲は 50 Hz 超・700 Hz 未満です\")\nValueError: 合成用連続 F0 の対応範囲は 50 Hz 超・700 Hz 未満です\n",
+  "no_repair_or_drop": true
+}
