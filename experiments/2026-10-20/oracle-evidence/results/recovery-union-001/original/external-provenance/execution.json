@@ -1,0 +1,38 @@
+{
+  "started_utc": "2026-10-20T07:01:14.837472+00:00",
+  "command": [
+    "/workspace/pshf-report-venv-20261019/bin/python",
+    "/workspace/oracle-union-v6-n3vWu4/source/run_union.py",
+    "--input-index",
+    "/workspace/oracle-union-index-v3-20261020/union-input-index.json",
+    "--index-sha256",
+    "cca181945f8e08d51840ac5b6b7c477f59a6053d2023f81179a975f3d61cd9dd",
+    "--union-source-sha256",
+    "5ba5e987786d8e31eacb5b549e42b90ebb921681376755e5027517e5c8d54ded",
+    "--output",
+    "/workspace/oracle-union-results-run-001-20261020"
+  ],
+  "status": "exited",
+  "worker_RLIMIT_AS_bytes": null,
+  "aggregate_memory_limit_claimed": false,
+  "external_monitor_pid": 5162,
+  "supervisor_pid": 5166,
+  "ended_utc": "2026-10-20T07:01:21.125719+00:00",
+  "elapsed_seconds": 6.288264975999482,
+  "exit_code": 2,
+  "forced_stop_reason": null,
+  "worker_pids": [
+    5168
+  ],
+  "sampled_peak_rss_by_pid_bytes": {
+    "5166": 12926976,
+    "5168": 229130240
+  },
+  "external_monitor_peak_rss_bytes": 9961472,
+  "supervisor_peak_rss_wait4_bytes": 229130240,
+  "external_log_seen_bytes": 0,
+  "external_log_retained_bytes": 0,
+  "output_bytes": 27335718,
+  "worker_processes_still_present": [],
+  "terminal_ps": ""
+}

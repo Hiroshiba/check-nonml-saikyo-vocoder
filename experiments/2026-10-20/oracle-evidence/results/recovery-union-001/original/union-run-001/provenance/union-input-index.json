@@ -1,0 +1,116 @@
+{
+  "schema": "oracle-union-index",
+  "schema_version": 3,
+  "input_index_sha256": "79c47c6b1926359d636d63eca6b6bab161e2b2d5f28015bc16d5209a100350d2",
+  "shard_source_manifest_sha256": "11b308a02d96cd3e55ef407006131a7677ff57604185f3ca83fb93660ea094ad",
+  "root_archive": {
+    "path": "/workspace/oracle-evidence-run-001-preserved-20261020.zip",
+    "bytes": 514502,
+    "sha256": "f06e7bd1f1ae7a2f2e4e8e22aeb66dcc1fd76928c78c45a27406ed297d41e3d8"
+  },
+  "shards": [
+    {
+      "pair_id_range": [
+        0,
+        32
+      ],
+      "availability": "terminal_artifacts",
+      "artifacts": {
+        "results": {
+          "path": "/workspace/oracle-evidence-results-shard-a-run-002-20261020/results.json",
+          "bytes": 6391586,
+          "sha256": "41af34a4413af7e42cfb3ca9b087b6b55c41101179bc50b378a59e0a5cb7b9c6"
+        },
+        "worker_receipt": {
+          "path": "/workspace/oracle-evidence-results-shard-a-run-002-20261020/receipt-worker.json",
+          "bytes": 79923,
+          "sha256": "78256cec9067033f76183efefb4701c64db6bad4a46e09625266b71c1b41a8f0"
+        },
+        "supervisor_receipt": {
+          "path": "/workspace/oracle-evidence-results-shard-a-run-002-20261020/receipt-supervisor.json",
+          "bytes": 86690,
+          "sha256": "6b1e9f525f2ab651c9d0e98609acb80769c915f8c33740ec67da6664efad8960"
+        },
+        "terminal": {
+          "path": "/workspace/oracle-union-index-v3-20261020/terminal-A.json",
+          "bytes": 1364,
+          "sha256": "8cf305fc6567d887b0855aad7229f4d513e731fe7eb52308ce9940255649b79f"
+        }
+      }
+    },
+    {
+      "pair_id_range": [
+        33,
+        65
+      ],
+      "availability": "immutable_snapshot",
+      "artifacts": {
+        "results": {
+          "path": "/workspace/oracle-union-inputs-P7gcME/B/shard-B/results.json",
+          "bytes": 7338485,
+          "sha256": "63646c090e6a6573f3deea2ffc32e76d38a29e94bc8bd1c683183897e5ccb63c"
+        },
+        "worker_receipt": {
+          "path": "/workspace/oracle-union-inputs-P7gcME/B/shard-B/receipt-worker.json",
+          "bytes": 81318,
+          "sha256": "ff1e445d6a8700d05485bab240c73ba052d8cd5089642484730296216af4e97a"
+        },
+        "supervisor_receipt": {
+          "path": "/workspace/oracle-union-inputs-P7gcME/B/shard-B/receipt-supervisor.json",
+          "bytes": 88033,
+          "sha256": "ae68ae1300be9f1cac4a71b8b490dcedf686cbc36571e33ce5ff8f97ee87f85d"
+        }
+      },
+      "snapshot": {
+        "archive": {
+          "path": "/workspace/oracle-union-inputs-P7gcME/oracle-evidence-shard-B-33-65-20261020.zip",
+          "bytes": 1863927,
+          "sha256": "8e8b568d82085079889f29b4ab3843abdaf95a92aaaaec93ed4989411661822e"
+        },
+        "members": {
+          "results": "shard-B/results.json",
+          "worker_receipt": "shard-B/receipt-worker.json",
+          "supervisor_receipt": "shard-B/receipt-supervisor.json"
+        },
+        "observed_utc": "2026-10-20T06:58:37.943753+00:00",
+        "execution_state": "unknown",
+        "reason": "External supervisor wait record is unavailable; /proc observations do not establish normal termination. B is not terminal.",
+        "evidence": "Official Library version-pinned materialization into /workspace/oracle-union-inputs-P7gcME; archive SHA/bytes and all three explicit members were rechecked byte-for-byte against the extracted artifacts at observed_utc. Prior complete extraction inventory is /workspace/oracle-union-inputs-P7gcME/verified-path-inventory.json. This is snapshot verification, not a live process observation.",
+        "library_materialization": {
+          "library_file_id": "libfile_ba0cf9a040188191aebf7ba81b26ca2e",
+          "version": 0
+        }
+      }
+    },
+    {
+      "pair_id_range": [
+        66,
+        99
+      ],
+      "availability": "terminal_artifacts",
+      "artifacts": {
+        "results": {
+          "path": "/workspace/oracle-union-inputs-P7gcME/C/oracle-reanalysis-C-66-99/results.json",
+          "bytes": 7139338,
+          "sha256": "c675b9600999e20366f5599c3947f3cd58beb94cc83269a33d17afff729aeb22"
+        },
+        "worker_receipt": {
+          "path": "/workspace/oracle-union-inputs-P7gcME/C/oracle-reanalysis-C-66-99/receipt-worker.json",
+          "bytes": 81489,
+          "sha256": "bf52f516dab0cf9cb320f59e749f66a4d18d124641b995bdc5084ab7d1769e67"
+        },
+        "supervisor_receipt": {
+          "path": "/workspace/oracle-union-inputs-P7gcME/C/oracle-reanalysis-C-66-99/receipt-supervisor.json",
+          "bytes": 88258,
+          "sha256": "f0f11e482ef31797c707894d453b4ddf7f395adc81b237813afc3e6ada37e3a3"
+        },
+        "terminal": {
+          "path": "/workspace/oracle-union-index-v3-20261020/terminal-C.json",
+          "bytes": 1516,
+          "sha256": "37da0751e50c80e0549e8e708c67815fbdd2788e7e32a7f23cf17c25cda0ba99"
+        }
+      }
+    }
+  ],
+  "supersedes_union_sha256": null
+}
