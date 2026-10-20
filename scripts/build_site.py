@@ -1,7 +1,7 @@
 """保存済みの記録からGitHub Pages用一覧を生成し、内部リンクを検査する。"""
 from __future__ import annotations
 
-from datetime import date, datetime, timezone
+from datetime import date, datetime, time, timezone
 from zoneinfo import ZoneInfo
 import html
 from html.parser import HTMLParser
@@ -118,6 +118,28 @@ def time_label(run):
     local = recorded_time(run).astimezone(ZoneInfo('Asia/Tokyo'))
     return (f'<time datetime="{esc(run["recorded_at"])}">'
             f'{local:%Y年%m月%d日 %H:%M}（日本時間）</time>')
+
+
+def group_listing_time(meta):
+    """初回公開、案内作成、明示されたzoneのグループ日付の順で使う。"""
+    if 'published_at' in meta:
+        run = {'recorded_at': meta['published_at']}
+        return (recorded_time(run),
+                '初回公開（Pagesデプロイ完了）：' + time_label(run))
+    if 'created_at' in meta:
+        run = {'recorded_at': meta['created_at']}
+        return (recorded_time(run),
+                '案内作成（測定時刻とは別）：' + time_label(run))
+    day = date.fromisoformat(meta['date'])
+    zone_name = meta['timezone']
+    zone = ZoneInfo(zone_name)
+    # 日頭は内部の並べ替え専用で、実時刻として保存・表示しない。
+    sort_time = datetime.combine(day, time.min, tzinfo=zone).astimezone(timezone.utc)
+    zone_label = '日本時間' if zone_name == 'Asia/Tokyo' else zone_name
+    label = (f'研究グループの日付：<time datetime="{esc(meta["date"])}">'
+             f'{day:%Y年%m月%d日}</time>'
+             f'（{esc(zone_label)}、時刻未記録。同日内の厳密な前後は不明）')
+    return sort_time, label
 
 
 def build(output):
@@ -238,14 +260,19 @@ def build(output):
         cards.append((recorded_time(run), str(rel), run['id'], card))
     cards.extend(preserved_cards(ROOT, output, recorded_time, time_label))
     cards.extend(pml_cards(ROOT, output, recorded_time, time_label))
-    cards = [item[3] for item in sorted(cards, key=lambda item: item[:3], reverse=True)]
     for rel, meta in groups:
         if not meta['runs']:
-            cards.append(f'<article><h2><a href="{esc(rel)}/index.html">{esc(meta["title"])}</a></h2>'
-                         f'<p>{esc(meta["summary"])}（調査中・比較結果なし）</p></article>')
-    body = ('<h1>非MLボコーダーの調査・実験記録</h1><p>初回公開日時を登録した案内はその日時を、'
-            '未登録の旧記録は従来の作成・記録日時を使い、新しい順に並べています。'
-            '時刻は日本時間で表示し、日付だけの案内にはUTCと明記しています。</p>'
+            sort_time, label = group_listing_time(meta)
+            card = (f'<article><h2><a href="{esc(rel)}/index.html">{esc(meta["title"])}</a></h2>'
+                    f'<small>{label}</small>'
+                    f'<p>{esc(meta["summary"])}（調査中・比較結果なし）</p></article>')
+            cards.append((sort_time, str(rel), meta['id'], card))
+    cards = [item[3] for item in sorted(cards, key=lambda item: item[:3], reverse=True)]
+    body = ('<h1>非MLボコーダーの調査・実験記録</h1><p>初回公開日時を優先し、'
+            '未登録なら案内作成・記録日時を使い、新しい順に並べています。'
+            '時刻は日本時間です。日付だけの既存案内はUTCの日付、'
+            '公開・案内作成の時刻がない研究グループは登録タイムゾーンのグループ日付を表示します。'
+            '日付だけの研究グループは時刻未記録で、同日内の厳密な前後は不明です。</p>'
             f'<div class="notice"><strong>現在の正式ベース：{esc(current)}</strong><br>'
             f'{esc(baseline["reason"])}<br><a href="BASELINE.json">現在のベース情報（JSON）</a></div>'
             f'<p>{repo_link("README.md", "プロジェクトの説明")} ／ '
