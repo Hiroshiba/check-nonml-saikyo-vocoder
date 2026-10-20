@@ -5,11 +5,12 @@
   "topic": "natural-heldout-prediction",
   "timezone": "Asia/Tokyo",
   "title": "候補を混合すると、直後の音声を予測しやすくなるか",
-  "summary": "1,440区間中1,431成功、訓練PCM全零9区間、数値失敗0と報告。計算とCloud内照合は完了、原結果未受領で正式な得点レポートは未公開です。量子化と密度得点の条件を文書で整理し、PMLを維持します。",
-  "status": "計算・Cloud内照合完了／原結果未受領・正式レポート未公開",
+  "summary": "内部丸めセルのfloat64参考算術もCloud内で完了との報告。厳密包含保証はなく、原結果未受領・正式得点公開保留です。1,431成功・訓練PCM全零9・数値失敗0を保持し、PMLを維持します。",
+  "status": "参考算術もCloud内完了／厳密包含保証なし・原結果未受領・正式公開保留",
   "notes": [
     "README.md",
-    "followup-design/execution-and-quantization-20261021/README.md"
+    "followup-design/execution-and-quantization-20261021/README.md",
+    "cell-reference-status-link-20261021.md"
   ],
   "runs": []
 }
