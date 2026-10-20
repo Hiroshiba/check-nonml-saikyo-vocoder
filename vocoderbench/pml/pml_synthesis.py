@@ -9,6 +9,8 @@ Modified 2026-10-16: local RandomState replaces global RNG with identical MT1993
 sequence; package imports; remove plotting/debugger; select measured lowband extension.
 Source: gillesdegottex/pulsemodel@f1d0fbb397368e019efa4dfc96bde09482cd734b.
 No file-output convenience wrapper or its peak normalization is included.
+Modified 2026-10-19: required RAW GN callback after the original normalization, before
+noise placement. Counterfactual reference modes removed; edited path retained. RNG calls, pulse clock, envelope, mask, and OLA are unchanged.
 """
 
 import numpy as np
@@ -22,7 +24,7 @@ def getwinlen(f0, fs, nbper):
 
 
 def synthesize(
-    fs, f0s, SPEC, NM, wavlen, *, ener_multT0=True, verbose=0, trace=None, seed=20261015
+    fs, f0s, SPEC, NM, wavlen, *, ener_multT0=True, verbose=0, trace=None, seed=20261015, noise_modifier
 ):
     """固定の既測定設定。外部呼出しには codec.decode を使う。"""
     nm_lowpasswinlen = 9
@@ -88,7 +90,8 @@ def synthesize(
         )
         if np.any(cuts < 0) or np.any(cuts >= NM.shape[1]):
             raise ValueError("Cut outside saved mask bins")
-        replacement = NM[np.arange(len(NM)), cuts].copy()
+        lookup_cuts = cuts
+        replacement = NM[np.arange(len(NM)), lookup_cuts].copy()
         for n, k in enumerate(cuts):
             NM[n, :k] = replacement[n]
         if trace is not None:
@@ -245,7 +248,14 @@ def synthesize(
                     parseval_error=q - (dftlen * energy + endpoint) / (dftlen + 2),
                 )
             )
-        GN /= np.sqrt(np.mean(np.abs(GN) ** 2))
+        D0 = np.sqrt(np.mean(np.abs(GN) ** 2))
+        GN /= D0
+        GN = noise_modifier(
+            noise=gaussnoise4win, normalized_GN=GN, D0=D0,
+            nfft=dftlen, pulse_index=n, pulse_time=t,
+            leftbnd=leftbnd, rightbnd=rightbnd,
+            spec_row=int(np.clip(int(np.round(t / shift)), 0, SPEC.shape[0] - 1)),
+        )
         # Place the noise within the pulse's window
         delay = pulseposinwin - (leftbnd - winidx[0])
         GN *= np.exp((delay * 2j * np.pi / dftlen) * np.arange(dftlen // 2 + 1))

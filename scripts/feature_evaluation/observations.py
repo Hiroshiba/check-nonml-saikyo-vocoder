@@ -28,7 +28,7 @@ def observe(context, method, view, record, base):
     if method != "pml" or view != "pml2110":
         raise ValueError("Method/view mismatch")
     sys.path.insert(0, str(Path(context.config["repository"]).resolve()))
-    from vocoderbench.pml import load
+    from vocoderbench.pml.storage import load_parameters as load
 
     params = load(resolve(base, record["payload"]))
     if params.n_samples != record["samples"] or params.sample_rate != 16000:

@@ -1,14 +1,18 @@
 # ボコーダーの比較と開発
 
-> **本変更で次の研究ベースをPMLへ更新します。** 対応可能な追加評価を終え、品質改善と制御・表現の弱点を比較した開発上の選択です。計測時の比較基準はHNM v3で、未対応と部分欠測は完了扱いせず残します。
+本変更では、限定16 kHz・今回評価した0/±3半音の研究baseとして **RAW_FULL（family/packageキー `pml`、version `raw-full-fwcep60-v1`）を選択します**。比較相手は前base PML / `pml-lowband-fwcep60-v1` です。固定120録音・40話者・2seedの既存結果に基づく事後の工学的選択であり、統計的な採用証明・普遍的最良ではありません。
 
 **ユーザー指示の正本は [USER_INSTRUCTIONS.md](USER_INSTRUCTIONS.md) です。** 以下の文書・コード・解釈はAI作成物です。
 
-## 研究ベース：PML低域拡張＋60FWCEP
+## 研究ベース：RAW_FULL
 
-[正式パッケージの追加評価・比較音声](research/pml-package-evaluation-2026-10-16/index.html) ／ [探索時の比較](research/pml-fwcep-2026-10-16/index.html) ／ [特徴量の図解](research/pml-fwcep-2026-10-16/mechanism.html) ／ [APIと実行手順](docs/PML.md)。
-16 kHz専用の非ML解析・合成です。正式120録音seed 0の品質71軸、編集・量子化61群、ABX・独立読み出し・ASV等を評価し、予測MOS・明瞭性・話者類似度の改善を重視して次の研究ベースへの採用を推奨します。音高追従や固定線形読み出しに弱点があり、全非ML方式・全指標への優越は主張しません。48 kHz・時間伸縮・傾斜操作・特徴補間は未対応です。
-本変更では新実装と結果HTML、旧HNM実装の削除を一緒に反映します。旧結果の値・版は保持します。追加評価の状態と制約は[評価記録](docs/PML_EVALUATION_PLAN.md)、再実行は[正式評価手順](research/pml-package-evaluation-2026-10-16/REPRODUCE.md)を参照してください。
+[採用判断・厳密値・比較音声](research/raw-full-adoption-selection-2026-10-20/index.html) ／ [全120録音の保存比較・順位](research/raw-full-full120-comparison-2026-10-19/index.html) ／ [純解析・復号RTF](research/raw-full-pure-rtf-2026-10-19/index.html) ／ [APIと実行手順](docs/PML.md)。
+
+予測MOS平均差+0.07676と小さいnative忠実度・話者類似度の利得を、MOS負差195/720・警告22/720、編集有声取りこぼし+0.1545ポイント・警告28/480、GT付き55録音のCER/WERの不利、保存約17.1%増・純復号wall RTF約5.24%増と交換します。単回・固定順の速度測定を普遍的性能比とはせず、新統合packageを計時済みとはしません。
+
+RAWのgain追従性能、A/Lを含む全特徴の距離・補間・因子分離、任意target音高、native 48 kHzは未測定・未達のままです。確率的F0/VUVと生物・音響モデルの研究課題も解決済みとはしません。
+
+公開save/loadは `parameters.pml` と `raw.npz` を含むdirectoryへ変更します。旧単体PMLからの自動変換・旧独立復号は提供しません。新実装、consumer、保存/API文書と今回判断を同じ変更に含め、過去の方式ラベル・測定値・`adoption_evaluation_complete=false` は保持します。
 
 ## 以前の固定120録音・全8方式比較
 
@@ -63,7 +67,7 @@ uv run --locked python scripts/build_site.py
 
 ## 自作開発経路と過去の記録
 
-`BASELINE.json`上の現在の開発ベースは **PML低域拡張＋60FWCEP** です。以下のHNMの歴史的結果は当時の値を保持し、旧実装と旧専用計算CLIは削除しました。再現が必要な場合は変更前commit `bbab81f` を使います。
+`BASELINE.json`で本変更が選択する研究ベースは **RAW_FULL / raw-full-fwcep60-v1** です。前base PMLの測定・採用記録は[旧評価記録](docs/PML_EVALUATION_PLAN.md)に保持します。以下のHNMの歴史的結果は当時の値を保持し、旧実装と旧専用計算CLIは削除しました。再現が必要な場合は変更前commit `bbab81f` を使います。
 
 - [雑音合成5案の比較・音声とv3採用](experiments/2026-10-12/noise-stability/results/run-001/index.html)
 - [日本語の補助比較・英語音声例とv2採用](experiments/2026-10-12/jvs-supplement/results/run-001/index.html)
@@ -72,7 +76,7 @@ uv run --locked python scripts/build_site.py
 - [5人の往復議論と出典](experiments/2026-10-11/initial-hnm/reviews/discussion.md)
 - [GitHub Pagesの一覧](https://hiroshiba.github.io/check-nonml-saikyo-vocoder/)
 
-PMLとWORLDの人工信号による音響特性・操作追従と、固定自然音声2区間の補助測定は次のコマンドで記録します。正式な品質採否は上記の固定120音声比較で行います。実行環境はLinux x86_64、Python 3.12、GCC/G++ 13。uv、git、C/C++コンパイラ、自然音声復号用FFmpegが必要です。
+RAW_FULLとWORLDの人工信号による音響特性・操作追従と、固定自然音声2区間の補助測定は次のコマンドで記録します。正式な品質採否は上記の固定120音声比較で行います。実行環境はLinux x86_64、Python 3.12、GCC/G++ 13。uv、git、C/C++コンパイラ、自然音声復号用FFmpegが必要です。
 
 ```sh
 uv sync --locked
@@ -83,7 +87,7 @@ uv run --locked python -m vocoderbench.run --sample-rates 16000 --output runs/lo
 
 人工信号だけの原因分析では `--no-natural`、対象帯域の指定には `--sample-rates` を使います。同一出力の再decode照合、保存読込往復、固定手作り入力のAPI確認、原音波形の自己比較は行いません。既知F0に対する校正と、位相細部・雑音成分・操作追従の研究測定は保持します。
 
-PMLは保存・読込と実験的な±3半音・音量編集に対応します。時間長編集は未対応として記録し、品質を保証しません。WORLDの既存操作は維持します。過去の全8方式・197指標アダプターはHNM固定研究の履歴です。PMLの標準再合成比較は `reference --include-current-base` から実施し、過去全指標をPMLへ測定済みとは扱いません。
+RAW_FULLはdirectoryへの保存・読込と実験的な±3半音・音量編集APIを維持します。RAWのgain追従性能は未測定です。時間長編集は未対応として記録し、品質を保証しません。WORLDの既存操作は維持します。過去の全8方式・197指標アダプターはHNM固定研究の履歴です。選択baseの標準再合成比較は `reference --include-current-base` から実施し、過去全指標をRAW_FULLへ測定済みとは扱いません。
 
 開発候補の採否比較は、上の既存方式の準備を済ませてから実行します。
 
@@ -94,7 +98,7 @@ uv run --locked python -m vocoderbench.benchmark \
   --output runs/fixed-comparison
 ```
 
-候補はPMLと同じ解析・合成API（パッケージ内 `pml.py`）を持つリポジトリ外のPythonパッケージです。採否条件を毎回 `--criteria` で明示し、条件を事後変更した場合は旧判定を残します。旧3方式だけの経路は `--legacy-three-methods` で明示的に選びます。これは標準の既存方式比較の完了とは区別します。
+候補は選択baseと同じ解析・合成API（パッケージ内 `pml.py`）を持つリポジトリ外のPythonパッケージです。採否条件を毎回 `--criteria` で明示し、条件を事後変更した場合は旧判定を残します。旧3方式だけの経路は `--legacy-three-methods` で明示的に選びます。これは標準の既存方式比較の完了とは区別します。
 
 自作・候補の音響指標は8乱数seed、MOS・eSTOI・F0整合性はseed 0です。追加の既存方式はseed 0の結果を併記し、8反復済みとは扱いません。不採用候補コードはGitに残さず、文章・ソースハッシュ・全測定値を保持します。そのため不採用候補の出力を公開リポジトリだけから完全再生成することはできません。
 

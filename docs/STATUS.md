@@ -1,5 +1,19 @@
 # 現在の状態と次の作業
 
+## 本変更の研究base選択：RAW_FULL（2026-10-20 日本時間）
+
+本変更では、限定16 kHz・今回評価した0/±3半音の研究baseとして **RAW_FULL（family/packageキー `pml`、version `raw-full-fwcep60-v1`）を選択します**。比較相手は前base PML / `pml-lowband-fwcep60-v1` です。固定120録音・40話者・2seedの既存結果に基づく事後の工学的選択であり、統計的な採用証明・普遍的最良ではありません。
+
+[採用判断・厳密値・比較音声](../research/raw-full-adoption-selection-2026-10-20/index.html) ／ [全120録音の保存比較・順位](../research/raw-full-full120-comparison-2026-10-19/index.html) ／ [純解析・復号RTF](../research/raw-full-pure-rtf-2026-10-19/index.html)
+
+予測MOS平均差+0.07676と小さいnative忠実度・話者類似度の利得を、MOS負差195/720・警告22/720、編集有声取りこぼし+0.1545ポイント・警告28/480、GT付き55録音のCER/WERの不利、保存約17.1%増・純復号wall RTF約5.24%増と交換します。単回・固定順の速度測定を普遍的性能比とはせず、新統合packageを計時済みとはしません。
+
+RAWのgain追従性能、A/Lを含む全特徴の距離・補間・因子分離、任意target音高、native 48 kHzは未測定・未達のままです。確率的F0/VUVと生物・音響モデルの研究課題も解決済みとはしません。
+
+公開保存先は2ファイル入りdirectoryに変わります。旧独立PML復号・旧版専用生成入口を整理し、保存結果の旧ラベルと旧source-freezeは維持します。静的なAPI/gain/保存/consumer経路の読取りと実測性能保証は区別します。新測定・テスト・スモーク・回帰・自己比較は追加していません。全79軸・8seed再測定・ゼロ警告を新たな採用gateにはしません。
+
+以下は各確認時点の履歴です。「PML維持」「RAW_FULL未採用」「置換保留」は当時の判断であり、この変更の選択とは区別します。既存の `adoption_evaluation_complete=false` は遡及変更しません。PSHF候補未採用等、別候補の判断もそのまま保持します。
+
 ## 確率的F0・H0診断：固定5録音の保存結果をDraftへ（2026-10-20 日本時間）
 
 [実行経過と研究文書](../experiments/2026-10-20/probabilistic-pitch-diagnostic/README.md)に、5/5録音・2540 valid・74 energy-floor・24.328秒の固定診断と保存解析を記録した。初回解析のJSON bool直列化失敗、初回描画の厳密範囲検査失敗を経て、報告のnormal/subnormal/zero層別と生値保持の表示を修正した。推定器の再実行・変更はない。最終公開132ファイルをnavigation-onlyとして登録し、実描画日時2026-10-19T21:47:23.432775+00:00とmanifest SHA/bytesを保持する。

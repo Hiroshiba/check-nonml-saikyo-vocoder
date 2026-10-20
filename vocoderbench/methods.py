@@ -31,7 +31,7 @@ def scalars(params):
 
 def metadata(method, params):
     result = {'feature_scalars': scalars(params), 'analysis_metadata': getattr(params, 'analysis_metadata', {}),
-              'representation': '連続F0・60 FWCEP係数・二値雑音マスク' if method == 'pml' else 'WORLDのF0・スペクトル包絡・非周期性'}
+              'representation': 'RAW_FULL: 連続F0・60 FWCEP係数・二値雑音マスク・A_raw・L_raw' if method == 'pml' else 'WORLDのF0・スペクトル包絡・非周期性'}
     if method == 'pml':
         result['feature_f0_voiced_fraction'] = None
         result['f0_note'] = '連続F0はパルス時計であり有声判定ではありません'

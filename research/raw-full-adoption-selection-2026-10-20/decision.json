@@ -1,0 +1,3404 @@
+{
+  "schema": "raw-full-adoption-selection-v1",
+  "status": "selected_for_research_base_in_this_change",
+  "selection_report": "research/raw-full-adoption-selection-2026-10-20/index.html",
+  "decision_type": "posthoc_engineering_tradeoff",
+  "recommendation": "Select RAW_FULL as the limited 16 kHz research base in this change, accepting the documented tradeoffs against previous PML.",
+  "historical_adoption_evaluation_complete": false,
+  "historical_completion_source": {
+    "source_file": "SPECIFICATION-ja.md",
+    "sha256": "62b9592f486e18d92e887cf712157cc3990ec4fec6f99bdf60b3b4812f73e80c",
+    "line": 17,
+    "quote": "- 旧記録のformal_120_expansion:false等は変更しない。新runにはscope=broad_risk_120、adoption_evaluation_complete=falseを新たに持たせる。"
+  },
+  "quality_source_provenance": {
+    "accepted_terminal_chunks": 10,
+    "bootstrap_source_sha256": "1f512461f08f40eabb0febd3a507997b100300fe4aa08babfa0e8c299a3e41c0",
+    "export_manifest_sha256": "785321ad9884278005d7e8dd960f5ed6495b3e9de58238d0994b017a2cf95fab",
+    "exporter_version_attestation": "not_in_public_manifest; external accepted-artifact provenance required",
+    "fixed_support_sha256": "212921a4de7b5a68d3a389634cd52f0d03ed4eb4c3a2d0c1f5a684cda1a6ee6f",
+    "numpy_version": "2.3.5",
+    "scalar_schema_v3_sha256": "d7d23b06804de9981b70173a47f88108d1533296cfa3af4d65f0995822a955ab",
+    "source_freeze_sha256": {
+      "generator": "d1dc61a3152a9b57b763f5e1c50bc39fa760f7141715aa65546fbcbc4236c6c5",
+      "quality": "3bda0469a722b12eee0f6fd36a488397e63fdc8897b5b0cf30638ca449eaa6f6"
+    }
+  },
+  "quality_metrics": [
+    {
+      "adverse_pairs": 195,
+      "applicable_output_observations": 1440,
+      "applicable_pairs": 720,
+      "available_pairs": 720,
+      "available_pml": 720,
+      "available_raw_full": 720,
+      "bootstrap_repetitions": 2000,
+      "bootstrap_seed": 20261012,
+      "ci_status": "available",
+      "complete_recording_descriptive_mean": 0.07676038675838046,
+      "complete_recordings": 120,
+      "complete_speaker_mean": 0.07676038675838046,
+      "complete_speakers": 40,
+      "expected_recordings": 120,
+      "expected_speakers": 40,
+      "favorable_direction": "higher",
+      "flag_evaluable_pairs": 720,
+      "flag_unknown_or_undefined_pairs": 0,
+      "flagged_pairs": 22,
+      "maximum_adverse_delta": {
+        "case": "librispeech_61-70968-0042",
+        "delta": -0.5093045234680176,
+        "pitch_semitones": 3,
+        "seed": 0
+      },
+      "metric": "automatic_mos",
+      "pair_status_counts": {
+        "available": 720
+      },
+      "planned_output_observations": 1440,
+      "planned_pairs": 720,
+      "primary": true,
+      "scope": "all_pitches",
+      "speaker_bootstrap_95": [
+        0.06511337539388073,
+        0.08782150588929653
+      ],
+      "unit": "predicted_mos",
+      "source": {
+        "source_file": "report.json",
+        "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+        "json_pointer": "/summaries/0"
+      },
+      "field_provenance": {
+        "adverse_pairs": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/0/adverse_pairs"
+        },
+        "applicable_output_observations": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/0/applicable_output_observations"
+        },
+        "applicable_pairs": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/0/applicable_pairs"
+        },
+        "available_pairs": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/0/available_pairs"
+        },
+        "available_pml": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/0/available_pml"
+        },
+        "available_raw_full": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/0/available_raw_full"
+        },
+        "bootstrap_repetitions": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/0/bootstrap_repetitions"
+        },
+        "bootstrap_seed": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/0/bootstrap_seed"
+        },
+        "ci_status": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/0/ci_status"
+        },
+        "complete_recording_descriptive_mean": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/0/complete_recording_descriptive_mean"
+        },
+        "complete_recordings": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/0/complete_recordings"
+        },
+        "complete_speaker_mean": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/0/complete_speaker_mean"
+        },
+        "complete_speakers": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/0/complete_speakers"
+        },
+        "expected_recordings": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/0/expected_recordings"
+        },
+        "expected_speakers": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/0/expected_speakers"
+        },
+        "favorable_direction": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/0/favorable_direction"
+        },
+        "flag_evaluable_pairs": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/0/flag_evaluable_pairs"
+        },
+        "flag_unknown_or_undefined_pairs": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/0/flag_unknown_or_undefined_pairs"
+        },
+        "flagged_pairs": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/0/flagged_pairs"
+        },
+        "maximum_adverse_delta": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/0/maximum_adverse_delta"
+        },
+        "metric": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/0/metric"
+        },
+        "pair_status_counts": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/0/pair_status_counts"
+        },
+        "planned_output_observations": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/0/planned_output_observations"
+        },
+        "planned_pairs": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/0/planned_pairs"
+        },
+        "primary": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/0/primary"
+        },
+        "scope": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/0/scope"
+        },
+        "speaker_bootstrap_95": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/0/speaker_bootstrap_95"
+        },
+        "unit": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/0/unit"
+        }
+      }
+    },
+    {
+      "adverse_pairs": 230,
+      "applicable_output_observations": 960,
+      "applicable_pairs": 480,
+      "available_pairs": 480,
+      "available_pml": 480,
+      "available_raw_full": 480,
+      "bootstrap_repetitions": 2000,
+      "bootstrap_seed": 20261012,
+      "ci_status": "available",
+      "complete_recording_descriptive_mean": 0.18156969916476834,
+      "complete_recordings": 120,
+      "complete_speaker_mean": 0.18156969916476828,
+      "complete_speakers": 40,
+      "expected_recordings": 120,
+      "expected_speakers": 40,
+      "favorable_direction": "lower",
+      "flag_evaluable_pairs": 480,
+      "flag_unknown_or_undefined_pairs": 0,
+      "flagged_pairs": 2,
+      "maximum_adverse_delta": {
+        "case": "librispeech_908-31957-0016",
+        "delta": 57.65530148293334,
+        "pitch_semitones": 3,
+        "seed": 0
+      },
+      "metric": "relative_f0_mae_cents",
+      "pair_status_counts": {
+        "available": 480
+      },
+      "planned_output_observations": 960,
+      "planned_pairs": 480,
+      "primary": true,
+      "scope": "edited",
+      "speaker_bootstrap_95": [
+        -0.09917438927154207,
+        0.5166309492412584
+      ],
+      "unit": "cent",
+      "source": {
+        "source_file": "report.json",
+        "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+        "json_pointer": "/summaries/18"
+      },
+      "field_provenance": {
+        "adverse_pairs": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/18/adverse_pairs"
+        },
+        "applicable_output_observations": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/18/applicable_output_observations"
+        },
+        "applicable_pairs": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/18/applicable_pairs"
+        },
+        "available_pairs": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/18/available_pairs"
+        },
+        "available_pml": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/18/available_pml"
+        },
+        "available_raw_full": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/18/available_raw_full"
+        },
+        "bootstrap_repetitions": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/18/bootstrap_repetitions"
+        },
+        "bootstrap_seed": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/18/bootstrap_seed"
+        },
+        "ci_status": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/18/ci_status"
+        },
+        "complete_recording_descriptive_mean": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/18/complete_recording_descriptive_mean"
+        },
+        "complete_recordings": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/18/complete_recordings"
+        },
+        "complete_speaker_mean": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/18/complete_speaker_mean"
+        },
+        "complete_speakers": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/18/complete_speakers"
+        },
+        "expected_recordings": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/18/expected_recordings"
+        },
+        "expected_speakers": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/18/expected_speakers"
+        },
+        "favorable_direction": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/18/favorable_direction"
+        },
+        "flag_evaluable_pairs": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/18/flag_evaluable_pairs"
+        },
+        "flag_unknown_or_undefined_pairs": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/18/flag_unknown_or_undefined_pairs"
+        },
+        "flagged_pairs": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/18/flagged_pairs"
+        },
+        "maximum_adverse_delta": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/18/maximum_adverse_delta"
+        },
+        "metric": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/18/metric"
+        },
+        "pair_status_counts": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/18/pair_status_counts"
+        },
+        "planned_output_observations": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/18/planned_output_observations"
+        },
+        "planned_pairs": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/18/planned_pairs"
+        },
+        "primary": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/18/primary"
+        },
+        "scope": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/18/scope"
+        },
+        "speaker_bootstrap_95": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/18/speaker_bootstrap_95"
+        },
+        "unit": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/18/unit"
+        }
+      }
+    },
+    {
+      "adverse_pairs": 219,
+      "applicable_output_observations": 960,
+      "applicable_pairs": 480,
+      "available_pairs": 480,
+      "available_pml": 480,
+      "available_raw_full": 480,
+      "bootstrap_repetitions": 2000,
+      "bootstrap_seed": 20261012,
+      "ci_status": "available",
+      "complete_recording_descriptive_mean": 0.15453813441832048,
+      "complete_recordings": 120,
+      "complete_speaker_mean": 0.1545381344183205,
+      "complete_speakers": 40,
+      "expected_recordings": 120,
+      "expected_speakers": 40,
+      "favorable_direction": "lower",
+      "flag_evaluable_pairs": 480,
+      "flag_unknown_or_undefined_pairs": 0,
+      "flagged_pairs": 28,
+      "maximum_adverse_delta": {
+        "case": "librispeech_6829-68769-0038",
+        "delta": 6.958041958041957,
+        "pitch_semitones": 3,
+        "seed": 20261015
+      },
+      "metric": "unvoiced_miss_rate",
+      "pair_status_counts": {
+        "available": 480
+      },
+      "planned_output_observations": 960,
+      "planned_pairs": 480,
+      "primary": true,
+      "scope": "edited",
+      "speaker_bootstrap_95": [
+        0.032611912669845984,
+        0.2884457252102314
+      ],
+      "unit": "percentage_points",
+      "source": {
+        "source_file": "report.json",
+        "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+        "json_pointer": "/summaries/27"
+      },
+      "field_provenance": {
+        "adverse_pairs": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/27/adverse_pairs"
+        },
+        "applicable_output_observations": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/27/applicable_output_observations"
+        },
+        "applicable_pairs": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/27/applicable_pairs"
+        },
+        "available_pairs": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/27/available_pairs"
+        },
+        "available_pml": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/27/available_pml"
+        },
+        "available_raw_full": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/27/available_raw_full"
+        },
+        "bootstrap_repetitions": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/27/bootstrap_repetitions"
+        },
+        "bootstrap_seed": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/27/bootstrap_seed"
+        },
+        "ci_status": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/27/ci_status"
+        },
+        "complete_recording_descriptive_mean": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/27/complete_recording_descriptive_mean"
+        },
+        "complete_recordings": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/27/complete_recordings"
+        },
+        "complete_speaker_mean": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/27/complete_speaker_mean"
+        },
+        "complete_speakers": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/27/complete_speakers"
+        },
+        "expected_recordings": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/27/expected_recordings"
+        },
+        "expected_speakers": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/27/expected_speakers"
+        },
+        "favorable_direction": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/27/favorable_direction"
+        },
+        "flag_evaluable_pairs": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/27/flag_evaluable_pairs"
+        },
+        "flag_unknown_or_undefined_pairs": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/27/flag_unknown_or_undefined_pairs"
+        },
+        "flagged_pairs": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/27/flagged_pairs"
+        },
+        "maximum_adverse_delta": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/27/maximum_adverse_delta"
+        },
+        "metric": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/27/metric"
+        },
+        "pair_status_counts": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/27/pair_status_counts"
+        },
+        "planned_output_observations": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/27/planned_output_observations"
+        },
+        "planned_pairs": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/27/planned_pairs"
+        },
+        "primary": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/27/primary"
+        },
+        "scope": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/27/scope"
+        },
+        "speaker_bootstrap_95": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/27/speaker_bootstrap_95"
+        },
+        "unit": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/27/unit"
+        }
+      }
+    },
+    {
+      "adverse_pairs": 95,
+      "applicable_output_observations": 480,
+      "applicable_pairs": 240,
+      "available_pairs": 240,
+      "available_pml": 240,
+      "available_raw_full": 240,
+      "bootstrap_repetitions": 2000,
+      "bootstrap_seed": 20261012,
+      "ci_status": "available",
+      "complete_recording_descriptive_mean": 0.23500109367772015,
+      "complete_recordings": 120,
+      "complete_speaker_mean": 0.23500109367772018,
+      "complete_speakers": 40,
+      "expected_recordings": 120,
+      "expected_speakers": 40,
+      "favorable_direction": "lower",
+      "flag_evaluable_pairs": 0,
+      "flag_unknown_or_undefined_pairs": 240,
+      "flagged_pairs": 0,
+      "maximum_adverse_delta": {
+        "case": "librispeech_908-31957-0016",
+        "delta": 34.76517385432555,
+        "pitch_semitones": 0,
+        "seed": 20261015
+      },
+      "metric": "native_original_f0",
+      "pair_status_counts": {
+        "available": 240
+      },
+      "planned_output_observations": 480,
+      "planned_pairs": 240,
+      "primary": true,
+      "scope": "native",
+      "speaker_bootstrap_95": [
+        -0.010599735104289455,
+        0.577784811131884
+      ],
+      "unit": "cent",
+      "source": {
+        "source_file": "report.json",
+        "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+        "json_pointer": "/summaries/36"
+      },
+      "field_provenance": {
+        "adverse_pairs": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/36/adverse_pairs"
+        },
+        "applicable_output_observations": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/36/applicable_output_observations"
+        },
+        "applicable_pairs": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/36/applicable_pairs"
+        },
+        "available_pairs": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/36/available_pairs"
+        },
+        "available_pml": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/36/available_pml"
+        },
+        "available_raw_full": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/36/available_raw_full"
+        },
+        "bootstrap_repetitions": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/36/bootstrap_repetitions"
+        },
+        "bootstrap_seed": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/36/bootstrap_seed"
+        },
+        "ci_status": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/36/ci_status"
+        },
+        "complete_recording_descriptive_mean": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/36/complete_recording_descriptive_mean"
+        },
+        "complete_recordings": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/36/complete_recordings"
+        },
+        "complete_speaker_mean": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/36/complete_speaker_mean"
+        },
+        "complete_speakers": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/36/complete_speakers"
+        },
+        "expected_recordings": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/36/expected_recordings"
+        },
+        "expected_speakers": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/36/expected_speakers"
+        },
+        "favorable_direction": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/36/favorable_direction"
+        },
+        "flag_evaluable_pairs": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/36/flag_evaluable_pairs"
+        },
+        "flag_unknown_or_undefined_pairs": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/36/flag_unknown_or_undefined_pairs"
+        },
+        "flagged_pairs": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/36/flagged_pairs"
+        },
+        "maximum_adverse_delta": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/36/maximum_adverse_delta"
+        },
+        "metric": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/36/metric"
+        },
+        "pair_status_counts": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/36/pair_status_counts"
+        },
+        "planned_output_observations": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/36/planned_output_observations"
+        },
+        "planned_pairs": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/36/planned_pairs"
+        },
+        "primary": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/36/primary"
+        },
+        "scope": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/36/scope"
+        },
+        "speaker_bootstrap_95": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/36/speaker_bootstrap_95"
+        },
+        "unit": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/36/unit"
+        }
+      }
+    },
+    {
+      "adverse_pairs": 92,
+      "applicable_output_observations": 480,
+      "applicable_pairs": 240,
+      "available_pairs": 240,
+      "available_pml": 240,
+      "available_raw_full": 240,
+      "bootstrap_repetitions": 2000,
+      "bootstrap_seed": 20261012,
+      "ci_status": "available",
+      "complete_recording_descriptive_mean": 0.0007675171596439203,
+      "complete_recordings": 120,
+      "complete_speaker_mean": 0.0007675171596439203,
+      "complete_speakers": 40,
+      "expected_recordings": 120,
+      "expected_speakers": 40,
+      "favorable_direction": "higher",
+      "flag_evaluable_pairs": 0,
+      "flag_unknown_or_undefined_pairs": 240,
+      "flagged_pairs": 0,
+      "maximum_adverse_delta": {
+        "case": "librispeech_2094-142345-0040",
+        "delta": -0.00409209881322492,
+        "pitch_semitones": 0,
+        "seed": 20261015
+      },
+      "metric": "estoi",
+      "pair_status_counts": {
+        "available": 240
+      },
+      "planned_output_observations": 480,
+      "planned_pairs": 240,
+      "primary": true,
+      "scope": "native",
+      "speaker_bootstrap_95": [
+        0.00033666907759623434,
+        0.0012717728451009625
+      ],
+      "unit": "index",
+      "source": {
+        "source_file": "report.json",
+        "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+        "json_pointer": "/summaries/42"
+      },
+      "field_provenance": {
+        "adverse_pairs": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/42/adverse_pairs"
+        },
+        "applicable_output_observations": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/42/applicable_output_observations"
+        },
+        "applicable_pairs": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/42/applicable_pairs"
+        },
+        "available_pairs": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/42/available_pairs"
+        },
+        "available_pml": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/42/available_pml"
+        },
+        "available_raw_full": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/42/available_raw_full"
+        },
+        "bootstrap_repetitions": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/42/bootstrap_repetitions"
+        },
+        "bootstrap_seed": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/42/bootstrap_seed"
+        },
+        "ci_status": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/42/ci_status"
+        },
+        "complete_recording_descriptive_mean": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/42/complete_recording_descriptive_mean"
+        },
+        "complete_recordings": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/42/complete_recordings"
+        },
+        "complete_speaker_mean": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/42/complete_speaker_mean"
+        },
+        "complete_speakers": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/42/complete_speakers"
+        },
+        "expected_recordings": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/42/expected_recordings"
+        },
+        "expected_speakers": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/42/expected_speakers"
+        },
+        "favorable_direction": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/42/favorable_direction"
+        },
+        "flag_evaluable_pairs": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/42/flag_evaluable_pairs"
+        },
+        "flag_unknown_or_undefined_pairs": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/42/flag_unknown_or_undefined_pairs"
+        },
+        "flagged_pairs": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/42/flagged_pairs"
+        },
+        "maximum_adverse_delta": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/42/maximum_adverse_delta"
+        },
+        "metric": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/42/metric"
+        },
+        "pair_status_counts": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/42/pair_status_counts"
+        },
+        "planned_output_observations": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/42/planned_output_observations"
+        },
+        "planned_pairs": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/42/planned_pairs"
+        },
+        "primary": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/42/primary"
+        },
+        "scope": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/42/scope"
+        },
+        "speaker_bootstrap_95": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/42/speaker_bootstrap_95"
+        },
+        "unit": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/42/unit"
+        }
+      }
+    },
+    {
+      "adverse_pairs": 29,
+      "applicable_output_observations": 480,
+      "applicable_pairs": 240,
+      "available_pairs": 240,
+      "available_pml": 240,
+      "available_raw_full": 240,
+      "bootstrap_repetitions": 2000,
+      "bootstrap_seed": 20261012,
+      "ci_status": "available",
+      "complete_recording_descriptive_mean": -0.05697577538163175,
+      "complete_recordings": 120,
+      "complete_speaker_mean": -0.056975775381631746,
+      "complete_speakers": 40,
+      "expected_recordings": 120,
+      "expected_speakers": 40,
+      "favorable_direction": "lower",
+      "flag_evaluable_pairs": 0,
+      "flag_unknown_or_undefined_pairs": 240,
+      "flagged_pairs": 0,
+      "maximum_adverse_delta": {
+        "case": "librispeech_8455-210777-0010",
+        "delta": 0.021686600583885607,
+        "pitch_semitones": 0,
+        "seed": 0
+      },
+      "metric": "mr_stft",
+      "pair_status_counts": {
+        "available": 240
+      },
+      "planned_output_observations": 480,
+      "planned_pairs": 240,
+      "primary": true,
+      "scope": "native",
+      "speaker_bootstrap_95": [
+        -0.0723470980657903,
+        -0.04361180816667047
+      ],
+      "unit": "dB",
+      "source": {
+        "source_file": "report.json",
+        "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+        "json_pointer": "/summaries/48"
+      },
+      "field_provenance": {
+        "adverse_pairs": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/48/adverse_pairs"
+        },
+        "applicable_output_observations": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/48/applicable_output_observations"
+        },
+        "applicable_pairs": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/48/applicable_pairs"
+        },
+        "available_pairs": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/48/available_pairs"
+        },
+        "available_pml": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/48/available_pml"
+        },
+        "available_raw_full": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/48/available_raw_full"
+        },
+        "bootstrap_repetitions": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/48/bootstrap_repetitions"
+        },
+        "bootstrap_seed": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/48/bootstrap_seed"
+        },
+        "ci_status": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/48/ci_status"
+        },
+        "complete_recording_descriptive_mean": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/48/complete_recording_descriptive_mean"
+        },
+        "complete_recordings": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/48/complete_recordings"
+        },
+        "complete_speaker_mean": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/48/complete_speaker_mean"
+        },
+        "complete_speakers": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/48/complete_speakers"
+        },
+        "expected_recordings": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/48/expected_recordings"
+        },
+        "expected_speakers": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/48/expected_speakers"
+        },
+        "favorable_direction": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/48/favorable_direction"
+        },
+        "flag_evaluable_pairs": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/48/flag_evaluable_pairs"
+        },
+        "flag_unknown_or_undefined_pairs": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/48/flag_unknown_or_undefined_pairs"
+        },
+        "flagged_pairs": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/48/flagged_pairs"
+        },
+        "maximum_adverse_delta": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/48/maximum_adverse_delta"
+        },
+        "metric": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/48/metric"
+        },
+        "pair_status_counts": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/48/pair_status_counts"
+        },
+        "planned_output_observations": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/48/planned_output_observations"
+        },
+        "planned_pairs": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/48/planned_pairs"
+        },
+        "primary": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/48/primary"
+        },
+        "scope": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/48/scope"
+        },
+        "speaker_bootstrap_95": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/48/speaker_bootstrap_95"
+        },
+        "unit": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/48/unit"
+        }
+      }
+    },
+    {
+      "adverse_pairs": 115,
+      "applicable_output_observations": 480,
+      "applicable_pairs": 240,
+      "available_pairs": 240,
+      "available_pml": 240,
+      "available_raw_full": 240,
+      "bootstrap_repetitions": 2000,
+      "bootstrap_seed": 20261012,
+      "ci_status": "available",
+      "complete_recording_descriptive_mean": -0.007360147678274224,
+      "complete_recordings": 120,
+      "complete_speaker_mean": -0.007360147678274224,
+      "complete_speakers": 40,
+      "expected_recordings": 120,
+      "expected_speakers": 40,
+      "favorable_direction": "lower",
+      "flag_evaluable_pairs": 0,
+      "flag_unknown_or_undefined_pairs": 240,
+      "flagged_pairs": 0,
+      "maximum_adverse_delta": {
+        "case": "librispeech_61-70968-0043",
+        "delta": 0.05270611536965286,
+        "pitch_semitones": 0,
+        "seed": 0
+      },
+      "metric": "erb40",
+      "pair_status_counts": {
+        "available": 240
+      },
+      "planned_output_observations": 480,
+      "planned_pairs": 240,
+      "primary": true,
+      "scope": "native",
+      "speaker_bootstrap_95": [
+        -0.01550595561609974,
+        -0.00015750601141738287
+      ],
+      "unit": "dB",
+      "source": {
+        "source_file": "report.json",
+        "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+        "json_pointer": "/summaries/54"
+      },
+      "field_provenance": {
+        "adverse_pairs": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/54/adverse_pairs"
+        },
+        "applicable_output_observations": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/54/applicable_output_observations"
+        },
+        "applicable_pairs": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/54/applicable_pairs"
+        },
+        "available_pairs": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/54/available_pairs"
+        },
+        "available_pml": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/54/available_pml"
+        },
+        "available_raw_full": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/54/available_raw_full"
+        },
+        "bootstrap_repetitions": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/54/bootstrap_repetitions"
+        },
+        "bootstrap_seed": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/54/bootstrap_seed"
+        },
+        "ci_status": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/54/ci_status"
+        },
+        "complete_recording_descriptive_mean": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/54/complete_recording_descriptive_mean"
+        },
+        "complete_recordings": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/54/complete_recordings"
+        },
+        "complete_speaker_mean": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/54/complete_speaker_mean"
+        },
+        "complete_speakers": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/54/complete_speakers"
+        },
+        "expected_recordings": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/54/expected_recordings"
+        },
+        "expected_speakers": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/54/expected_speakers"
+        },
+        "favorable_direction": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/54/favorable_direction"
+        },
+        "flag_evaluable_pairs": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/54/flag_evaluable_pairs"
+        },
+        "flag_unknown_or_undefined_pairs": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/54/flag_unknown_or_undefined_pairs"
+        },
+        "flagged_pairs": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/54/flagged_pairs"
+        },
+        "maximum_adverse_delta": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/54/maximum_adverse_delta"
+        },
+        "metric": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/54/metric"
+        },
+        "pair_status_counts": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/54/pair_status_counts"
+        },
+        "planned_output_observations": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/54/planned_output_observations"
+        },
+        "planned_pairs": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/54/planned_pairs"
+        },
+        "primary": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/54/primary"
+        },
+        "scope": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/54/scope"
+        },
+        "speaker_bootstrap_95": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/54/speaker_bootstrap_95"
+        },
+        "unit": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/54/unit"
+        }
+      }
+    },
+    {
+      "adverse_pairs": 48,
+      "applicable_output_observations": 480,
+      "applicable_pairs": 240,
+      "available_pairs": 240,
+      "available_pml": 240,
+      "available_raw_full": 240,
+      "bootstrap_repetitions": 2000,
+      "bootstrap_seed": 20261012,
+      "ci_status": "available",
+      "complete_recording_descriptive_mean": 0.004353031267722448,
+      "complete_recordings": 120,
+      "complete_speaker_mean": 0.004353031267722448,
+      "complete_speakers": 40,
+      "expected_recordings": 120,
+      "expected_speakers": 40,
+      "favorable_direction": "higher",
+      "flag_evaluable_pairs": 0,
+      "flag_unknown_or_undefined_pairs": 240,
+      "flagged_pairs": 0,
+      "maximum_adverse_delta": {
+        "case": "librispeech_6829-68769-0038",
+        "delta": -0.010228931903839111,
+        "pitch_semitones": 0,
+        "seed": 20261015
+      },
+      "metric": "speaker_ecapa",
+      "pair_status_counts": {
+        "available": 240
+      },
+      "planned_output_observations": 480,
+      "planned_pairs": 240,
+      "primary": true,
+      "scope": "native",
+      "speaker_bootstrap_95": [
+        0.0032826504483819004,
+        0.005491263146201769
+      ],
+      "unit": "cosine_similarity",
+      "source": {
+        "source_file": "report.json",
+        "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+        "json_pointer": "/summaries/60"
+      },
+      "field_provenance": {
+        "adverse_pairs": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/60/adverse_pairs"
+        },
+        "applicable_output_observations": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/60/applicable_output_observations"
+        },
+        "applicable_pairs": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/60/applicable_pairs"
+        },
+        "available_pairs": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/60/available_pairs"
+        },
+        "available_pml": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/60/available_pml"
+        },
+        "available_raw_full": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/60/available_raw_full"
+        },
+        "bootstrap_repetitions": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/60/bootstrap_repetitions"
+        },
+        "bootstrap_seed": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/60/bootstrap_seed"
+        },
+        "ci_status": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/60/ci_status"
+        },
+        "complete_recording_descriptive_mean": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/60/complete_recording_descriptive_mean"
+        },
+        "complete_recordings": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/60/complete_recordings"
+        },
+        "complete_speaker_mean": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/60/complete_speaker_mean"
+        },
+        "complete_speakers": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/60/complete_speakers"
+        },
+        "expected_recordings": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/60/expected_recordings"
+        },
+        "expected_speakers": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/60/expected_speakers"
+        },
+        "favorable_direction": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/60/favorable_direction"
+        },
+        "flag_evaluable_pairs": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/60/flag_evaluable_pairs"
+        },
+        "flag_unknown_or_undefined_pairs": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/60/flag_unknown_or_undefined_pairs"
+        },
+        "flagged_pairs": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/60/flagged_pairs"
+        },
+        "maximum_adverse_delta": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/60/maximum_adverse_delta"
+        },
+        "metric": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/60/metric"
+        },
+        "pair_status_counts": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/60/pair_status_counts"
+        },
+        "planned_output_observations": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/60/planned_output_observations"
+        },
+        "planned_pairs": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/60/planned_pairs"
+        },
+        "primary": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/60/primary"
+        },
+        "scope": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/60/scope"
+        },
+        "speaker_bootstrap_95": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/60/speaker_bootstrap_95"
+        },
+        "unit": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/60/unit"
+        }
+      }
+    },
+    {
+      "adverse_pairs": 171,
+      "applicable_output_observations": 960,
+      "applicable_pairs": 480,
+      "available_pairs": 480,
+      "available_pml": 480,
+      "available_raw_full": 480,
+      "bootstrap_repetitions": 2000,
+      "bootstrap_seed": 20261012,
+      "ci_status": "available",
+      "complete_recording_descriptive_mean": 0.00355022872487704,
+      "complete_recordings": 120,
+      "complete_speaker_mean": 0.0035502287248770394,
+      "complete_speakers": 40,
+      "expected_recordings": 120,
+      "expected_speakers": 40,
+      "favorable_direction": "higher",
+      "flag_evaluable_pairs": 0,
+      "flag_unknown_or_undefined_pairs": 480,
+      "flagged_pairs": 0,
+      "maximum_adverse_delta": {
+        "case": "librispeech_8555-284449-0020",
+        "delta": -0.017161250114440918,
+        "pitch_semitones": 3,
+        "seed": 20261015
+      },
+      "metric": "speaker_ecapa",
+      "pair_status_counts": {
+        "available": 480
+      },
+      "planned_output_observations": 960,
+      "planned_pairs": 480,
+      "primary": true,
+      "scope": "edited",
+      "speaker_bootstrap_95": [
+        0.00256546985047559,
+        0.0045630613807588795
+      ],
+      "unit": "cosine_similarity",
+      "source": {
+        "source_file": "report.json",
+        "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+        "json_pointer": "/summaries/63"
+      },
+      "field_provenance": {
+        "adverse_pairs": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/63/adverse_pairs"
+        },
+        "applicable_output_observations": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/63/applicable_output_observations"
+        },
+        "applicable_pairs": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/63/applicable_pairs"
+        },
+        "available_pairs": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/63/available_pairs"
+        },
+        "available_pml": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/63/available_pml"
+        },
+        "available_raw_full": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/63/available_raw_full"
+        },
+        "bootstrap_repetitions": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/63/bootstrap_repetitions"
+        },
+        "bootstrap_seed": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/63/bootstrap_seed"
+        },
+        "ci_status": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/63/ci_status"
+        },
+        "complete_recording_descriptive_mean": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/63/complete_recording_descriptive_mean"
+        },
+        "complete_recordings": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/63/complete_recordings"
+        },
+        "complete_speaker_mean": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/63/complete_speaker_mean"
+        },
+        "complete_speakers": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/63/complete_speakers"
+        },
+        "expected_recordings": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/63/expected_recordings"
+        },
+        "expected_speakers": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/63/expected_speakers"
+        },
+        "favorable_direction": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/63/favorable_direction"
+        },
+        "flag_evaluable_pairs": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/63/flag_evaluable_pairs"
+        },
+        "flag_unknown_or_undefined_pairs": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/63/flag_unknown_or_undefined_pairs"
+        },
+        "flagged_pairs": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/63/flagged_pairs"
+        },
+        "maximum_adverse_delta": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/63/maximum_adverse_delta"
+        },
+        "metric": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/63/metric"
+        },
+        "pair_status_counts": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/63/pair_status_counts"
+        },
+        "planned_output_observations": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/63/planned_output_observations"
+        },
+        "planned_pairs": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/63/planned_pairs"
+        },
+        "primary": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/63/primary"
+        },
+        "scope": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/63/scope"
+        },
+        "speaker_bootstrap_95": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/63/speaker_bootstrap_95"
+        },
+        "unit": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/63/unit"
+        }
+      }
+    },
+    {
+      "adverse_pairs": 23,
+      "applicable_output_observations": 660,
+      "applicable_pairs": 330,
+      "available_pairs": 330,
+      "available_pml": 330,
+      "available_raw_full": 330,
+      "bootstrap_repetitions": null,
+      "bootstrap_seed": null,
+      "ci_status": "not_authorized_for_asr_or_stratum",
+      "complete_recording_descriptive_mean": 0.0014859878841007015,
+      "complete_recordings": 55,
+      "complete_speaker_mean": 0.0012858983712641457,
+      "complete_speakers": 32,
+      "expected_recordings": 55,
+      "expected_speakers": 32,
+      "favorable_direction": "lower",
+      "flag_evaluable_pairs": 0,
+      "flag_unknown_or_undefined_pairs": 720,
+      "flagged_pairs": 0,
+      "maximum_adverse_delta": {
+        "case": "librispeech_5142-33396-0030",
+        "delta": 0.10256410256410256,
+        "pitch_semitones": 3,
+        "seed": 0
+      },
+      "metric": "recognition_cer",
+      "pair_status_counts": {
+        "available": 330,
+        "not_applicable": 390
+      },
+      "planned_output_observations": 1440,
+      "planned_pairs": 720,
+      "primary": true,
+      "scope": "all_pitches",
+      "speaker_bootstrap_95": null,
+      "unit": "fraction",
+      "source": {
+        "source_file": "report.json",
+        "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+        "json_pointer": "/summaries/75"
+      },
+      "field_provenance": {
+        "adverse_pairs": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/75/adverse_pairs"
+        },
+        "applicable_output_observations": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/75/applicable_output_observations"
+        },
+        "applicable_pairs": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/75/applicable_pairs"
+        },
+        "available_pairs": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/75/available_pairs"
+        },
+        "available_pml": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/75/available_pml"
+        },
+        "available_raw_full": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/75/available_raw_full"
+        },
+        "bootstrap_repetitions": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/75/bootstrap_repetitions"
+        },
+        "bootstrap_seed": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/75/bootstrap_seed"
+        },
+        "ci_status": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/75/ci_status"
+        },
+        "complete_recording_descriptive_mean": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/75/complete_recording_descriptive_mean"
+        },
+        "complete_recordings": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/75/complete_recordings"
+        },
+        "complete_speaker_mean": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/75/complete_speaker_mean"
+        },
+        "complete_speakers": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/75/complete_speakers"
+        },
+        "expected_recordings": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/75/expected_recordings"
+        },
+        "expected_speakers": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/75/expected_speakers"
+        },
+        "favorable_direction": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/75/favorable_direction"
+        },
+        "flag_evaluable_pairs": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/75/flag_evaluable_pairs"
+        },
+        "flag_unknown_or_undefined_pairs": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/75/flag_unknown_or_undefined_pairs"
+        },
+        "flagged_pairs": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/75/flagged_pairs"
+        },
+        "maximum_adverse_delta": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/75/maximum_adverse_delta"
+        },
+        "metric": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/75/metric"
+        },
+        "pair_status_counts": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/75/pair_status_counts"
+        },
+        "planned_output_observations": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/75/planned_output_observations"
+        },
+        "planned_pairs": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/75/planned_pairs"
+        },
+        "primary": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/75/primary"
+        },
+        "scope": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/75/scope"
+        },
+        "speaker_bootstrap_95": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/75/speaker_bootstrap_95"
+        },
+        "unit": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/75/unit"
+        }
+      }
+    },
+    {
+      "adverse_pairs": 20,
+      "applicable_output_observations": 660,
+      "applicable_pairs": 330,
+      "available_pairs": 330,
+      "available_pml": 330,
+      "available_raw_full": 330,
+      "bootstrap_repetitions": null,
+      "bootstrap_seed": null,
+      "ci_status": "not_authorized_for_asr_or_stratum",
+      "complete_recording_descriptive_mean": 0.004727019118730349,
+      "complete_recordings": 55,
+      "complete_speaker_mean": 0.004191284755776178,
+      "complete_speakers": 32,
+      "expected_recordings": 55,
+      "expected_speakers": 32,
+      "favorable_direction": "lower",
+      "flag_evaluable_pairs": 0,
+      "flag_unknown_or_undefined_pairs": 720,
+      "flagged_pairs": 0,
+      "maximum_adverse_delta": {
+        "case": "librispeech_1188-133604-0031",
+        "delta": 0.2,
+        "pitch_semitones": -3,
+        "seed": 0
+      },
+      "metric": "recognition_wer",
+      "pair_status_counts": {
+        "available": 330,
+        "not_applicable": 390
+      },
+      "planned_output_observations": 1440,
+      "planned_pairs": 720,
+      "primary": true,
+      "scope": "all_pitches",
+      "speaker_bootstrap_95": null,
+      "unit": "fraction",
+      "source": {
+        "source_file": "report.json",
+        "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+        "json_pointer": "/summaries/93"
+      },
+      "field_provenance": {
+        "adverse_pairs": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/93/adverse_pairs"
+        },
+        "applicable_output_observations": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/93/applicable_output_observations"
+        },
+        "applicable_pairs": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/93/applicable_pairs"
+        },
+        "available_pairs": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/93/available_pairs"
+        },
+        "available_pml": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/93/available_pml"
+        },
+        "available_raw_full": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/93/available_raw_full"
+        },
+        "bootstrap_repetitions": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/93/bootstrap_repetitions"
+        },
+        "bootstrap_seed": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/93/bootstrap_seed"
+        },
+        "ci_status": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/93/ci_status"
+        },
+        "complete_recording_descriptive_mean": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/93/complete_recording_descriptive_mean"
+        },
+        "complete_recordings": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/93/complete_recordings"
+        },
+        "complete_speaker_mean": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/93/complete_speaker_mean"
+        },
+        "complete_speakers": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/93/complete_speakers"
+        },
+        "expected_recordings": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/93/expected_recordings"
+        },
+        "expected_speakers": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/93/expected_speakers"
+        },
+        "favorable_direction": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/93/favorable_direction"
+        },
+        "flag_evaluable_pairs": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/93/flag_evaluable_pairs"
+        },
+        "flag_unknown_or_undefined_pairs": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/93/flag_unknown_or_undefined_pairs"
+        },
+        "flagged_pairs": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/93/flagged_pairs"
+        },
+        "maximum_adverse_delta": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/93/maximum_adverse_delta"
+        },
+        "metric": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/93/metric"
+        },
+        "pair_status_counts": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/93/pair_status_counts"
+        },
+        "planned_output_observations": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/93/planned_output_observations"
+        },
+        "planned_pairs": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/93/planned_pairs"
+        },
+        "primary": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/93/primary"
+        },
+        "scope": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/93/scope"
+        },
+        "speaker_bootstrap_95": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/93/speaker_bootstrap_95"
+        },
+        "unit": {
+          "source_file": "report.json",
+          "sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+          "json_pointer": "/summaries/93/unit"
+        }
+      }
+    }
+  ],
+  "historical_axes": [
+    {
+      "axis": "estoi",
+      "direction": "higher",
+      "scope": "supplementary_native_pitch0_synthesis_seed0_only",
+      "synthesis_seed": 0,
+      "unit": "index",
+      "status": "available_full120",
+      "method_summaries": [
+        {
+          "competition_rank": 3,
+          "complete_speakers_before_identity_gate": 40,
+          "finite_success_recordings": 120,
+          "joint_finite_success_recordings": 120,
+          "mean": {
+            "exact_denominator": "540431955284459520",
+            "exact_numerator": "490516772368248943",
+            "value": 0.9076383577467446
+          },
+          "mean_recordings": 120,
+          "mean_speakers": 40,
+          "method": "PML",
+          "planned_recordings": 120,
+          "reason_counts": {
+            "none": 120
+          },
+          "source": {
+            "source_file": "historical-comparison.json.gz",
+            "sha256": "538bced4257299403df4e6628bdf1a09e44954670be9d3e4fe6cfb1ac3725b79",
+            "json_pointer": "/axes/0/method_summaries/0"
+          },
+          "status_counts": {
+            "available": 120
+          },
+          "measurement_source_kind": "current_accepted_export"
+        },
+        {
+          "competition_rank": 2,
+          "complete_speakers_before_identity_gate": 40,
+          "finite_success_recordings": 120,
+          "joint_finite_success_recordings": 120,
+          "mean": {
+            "exact_denominator": "360287970189639680",
+            "exact_numerator": "327259812722031149",
+            "value": 0.9083284477962893
+          },
+          "mean_recordings": 120,
+          "mean_speakers": 40,
+          "method": "RAW_FULL",
+          "planned_recordings": 120,
+          "reason_counts": {
+            "none": 120
+          },
+          "source": {
+            "source_file": "historical-comparison.json.gz",
+            "sha256": "538bced4257299403df4e6628bdf1a09e44954670be9d3e4fe6cfb1ac3725b79",
+            "json_pointer": "/axes/0/method_summaries/1"
+          },
+          "status_counts": {
+            "available": 120
+          },
+          "measurement_source_kind": "current_accepted_export"
+        },
+        {
+          "competition_rank": 8,
+          "complete_speakers_before_identity_gate": 40,
+          "finite_success_recordings": 120,
+          "joint_finite_success_recordings": 120,
+          "mean": {
+            "exact_denominator": "1080863910568919040",
+            "exact_numerator": "936811393204668227",
+            "value": 0.8667246487224947
+          },
+          "mean_recordings": 120,
+          "mean_speakers": 40,
+          "method": "hnm",
+          "planned_recordings": 120,
+          "reason_counts": {
+            "none": 120
+          },
+          "source": {
+            "source_file": "historical-comparison.json.gz",
+            "sha256": "538bced4257299403df4e6628bdf1a09e44954670be9d3e4fe6cfb1ac3725b79",
+            "json_pointer": "/axes/0/method_summaries/2"
+          },
+          "status_counts": {
+            "measured": 120
+          },
+          "measurement_source_kind": "historical_saved_scalar"
+        },
+        {
+          "competition_rank": 4,
+          "complete_speakers_before_identity_gate": 40,
+          "finite_success_recordings": 120,
+          "joint_finite_success_recordings": 120,
+          "mean": {
+            "exact_denominator": "180143985094819840",
+            "exact_numerator": "163064707382039829",
+            "value": 0.9051909631965217
+          },
+          "mean_recordings": 120,
+          "mean_speakers": 40,
+          "method": "world_harvest",
+          "planned_recordings": 120,
+          "reason_counts": {
+            "none": 120
+          },
+          "source": {
+            "source_file": "historical-comparison.json.gz",
+            "sha256": "538bced4257299403df4e6628bdf1a09e44954670be9d3e4fe6cfb1ac3725b79",
+            "json_pointer": "/axes/0/method_summaries/3"
+          },
+          "status_counts": {
+            "measured": 120
+          },
+          "measurement_source_kind": "historical_saved_scalar"
+        },
+        {
+          "competition_rank": 5,
+          "complete_speakers_before_identity_gate": 40,
+          "finite_success_recordings": 120,
+          "joint_finite_success_recordings": 120,
+          "mean": {
+            "exact_denominator": "45035996273704960",
+            "exact_numerator": "40074964012503159",
+            "value": 0.8898429551541112
+          },
+          "mean_recordings": 120,
+          "mean_speakers": 40,
+          "method": "facodec",
+          "planned_recordings": 120,
+          "reason_counts": {
+            "none": 120
+          },
+          "source": {
+            "source_file": "historical-comparison.json.gz",
+            "sha256": "538bced4257299403df4e6628bdf1a09e44954670be9d3e4fe6cfb1ac3725b79",
+            "json_pointer": "/axes/0/method_summaries/4"
+          },
+          "status_counts": {
+            "measured": 120
+          },
+          "measurement_source_kind": "historical_saved_scalar"
+        },
+        {
+          "competition_rank": 10,
+          "complete_speakers_before_identity_gate": 40,
+          "finite_success_recordings": 120,
+          "joint_finite_success_recordings": 120,
+          "mean": {
+            "exact_denominator": "180143985094819840",
+            "exact_numerator": "132287713551750709",
+            "value": 0.7343443273008549
+          },
+          "mean_recordings": 120,
+          "mean_speakers": 40,
+          "method": "hifiglot",
+          "planned_recordings": 120,
+          "reason_counts": {
+            "none": 120
+          },
+          "source": {
+            "source_file": "historical-comparison.json.gz",
+            "sha256": "538bced4257299403df4e6628bdf1a09e44954670be9d3e4fe6cfb1ac3725b79",
+            "json_pointer": "/axes/0/method_summaries/5"
+          },
+          "status_counts": {
+            "measured": 120
+          },
+          "measurement_source_kind": "historical_saved_scalar"
+        },
+        {
+          "competition_rank": 7,
+          "complete_speakers_before_identity_gate": 40,
+          "finite_success_recordings": 120,
+          "joint_finite_success_recordings": 120,
+          "mean": {
+            "exact_denominator": "540431955284459520",
+            "exact_numerator": "470584210096295263",
+            "value": 0.8707557084565818
+          },
+          "mean_recordings": 120,
+          "mean_speakers": 40,
+          "method": "golf",
+          "planned_recordings": 120,
+          "reason_counts": {
+            "none": 120
+          },
+          "source": {
+            "source_file": "historical-comparison.json.gz",
+            "sha256": "538bced4257299403df4e6628bdf1a09e44954670be9d3e4fe6cfb1ac3725b79",
+            "json_pointer": "/axes/0/method_summaries/6"
+          },
+          "status_counts": {
+            "measured": 120
+          },
+          "measurement_source_kind": "historical_saved_scalar"
+        },
+        {
+          "competition_rank": 6,
+          "complete_speakers_before_identity_gate": 40,
+          "finite_success_recordings": 120,
+          "joint_finite_success_recordings": 120,
+          "mean": {
+            "exact_denominator": "108086391056891904",
+            "exact_numerator": "94988769278014747",
+            "value": 0.878822656110489
+          },
+          "mean_recordings": 120,
+          "mean_speakers": 40,
+          "method": "sifigan",
+          "planned_recordings": 120,
+          "reason_counts": {
+            "none": 120
+          },
+          "source": {
+            "source_file": "historical-comparison.json.gz",
+            "sha256": "538bced4257299403df4e6628bdf1a09e44954670be9d3e4fe6cfb1ac3725b79",
+            "json_pointer": "/axes/0/method_summaries/7"
+          },
+          "status_counts": {
+            "measured": 120
+          },
+          "measurement_source_kind": "historical_saved_scalar"
+        },
+        {
+          "competition_rank": 1,
+          "complete_speakers_before_identity_gate": 40,
+          "finite_success_recordings": 120,
+          "joint_finite_success_recordings": 120,
+          "mean": {
+            "exact_denominator": "540431955284459520",
+            "exact_numerator": "503925115953031009",
+            "value": 0.9324487773632614
+          },
+          "mean_recordings": 120,
+          "mean_speakers": 40,
+          "method": "llsm2",
+          "planned_recordings": 120,
+          "reason_counts": {
+            "none": 120
+          },
+          "source": {
+            "source_file": "historical-comparison.json.gz",
+            "sha256": "538bced4257299403df4e6628bdf1a09e44954670be9d3e4fe6cfb1ac3725b79",
+            "json_pointer": "/axes/0/method_summaries/8"
+          },
+          "status_counts": {
+            "measured": 120
+          },
+          "measurement_source_kind": "historical_saved_scalar"
+        },
+        {
+          "competition_rank": 9,
+          "complete_speakers_before_identity_gate": 40,
+          "finite_success_recordings": 120,
+          "joint_finite_success_recordings": 120,
+          "mean": {
+            "exact_denominator": "2161727821137838080",
+            "exact_numerator": "1686362833431415237",
+            "value": 0.7800995189781978
+          },
+          "mean_recordings": 120,
+          "mean_speakers": 40,
+          "method": "magphase",
+          "planned_recordings": 120,
+          "reason_counts": {
+            "none": 120
+          },
+          "source": {
+            "source_file": "historical-comparison.json.gz",
+            "sha256": "538bced4257299403df4e6628bdf1a09e44954670be9d3e4fe6cfb1ac3725b79",
+            "json_pointer": "/axes/0/method_summaries/9"
+          },
+          "status_counts": {
+            "measured": 120
+          },
+          "measurement_source_kind": "historical_saved_scalar"
+        }
+      ]
+    },
+    {
+      "axis": "mr_stft",
+      "direction": "lower",
+      "scope": "supplementary_native_pitch0_synthesis_seed0_only",
+      "synthesis_seed": 0,
+      "unit": "dB",
+      "status": "available_full120",
+      "method_summaries": [
+        {
+          "competition_rank": 4,
+          "complete_speakers_before_identity_gate": 40,
+          "finite_success_recordings": 120,
+          "joint_finite_success_recordings": 120,
+          "mean": {
+            "exact_denominator": "22517998136852480",
+            "exact_numerator": "129919564001195793",
+            "value": 5.769587652135568
+          },
+          "mean_recordings": 120,
+          "mean_speakers": 40,
+          "method": "PML",
+          "planned_recordings": 120,
+          "reason_counts": {
+            "none": 120
+          },
+          "source": {
+            "source_file": "historical-comparison.json.gz",
+            "sha256": "538bced4257299403df4e6628bdf1a09e44954670be9d3e4fe6cfb1ac3725b79",
+            "json_pointer": "/axes/1/method_summaries/0"
+          },
+          "status_counts": {
+            "available": 120
+          },
+          "measurement_source_kind": "current_accepted_export"
+        },
+        {
+          "competition_rank": 3,
+          "complete_speakers_before_identity_gate": 40,
+          "finite_success_recordings": 120,
+          "joint_finite_success_recordings": 120,
+          "mean": {
+            "exact_denominator": "135107988821114880",
+            "exact_numerator": "771868262117160791",
+            "value": 5.712972777199183
+          },
+          "mean_recordings": 120,
+          "mean_speakers": 40,
+          "method": "RAW_FULL",
+          "planned_recordings": 120,
+          "reason_counts": {
+            "none": 120
+          },
+          "source": {
+            "source_file": "historical-comparison.json.gz",
+            "sha256": "538bced4257299403df4e6628bdf1a09e44954670be9d3e4fe6cfb1ac3725b79",
+            "json_pointer": "/axes/1/method_summaries/1"
+          },
+          "status_counts": {
+            "available": 120
+          },
+          "measurement_source_kind": "current_accepted_export"
+        },
+        {
+          "competition_rank": 2,
+          "complete_speakers_before_identity_gate": 40,
+          "finite_success_recordings": 120,
+          "joint_finite_success_recordings": 120,
+          "mean": {
+            "exact_denominator": "135107988821114880",
+            "exact_numerator": "763120348800941551",
+            "value": 5.648225211991905
+          },
+          "mean_recordings": 120,
+          "mean_speakers": 40,
+          "method": "hnm",
+          "planned_recordings": 120,
+          "reason_counts": {
+            "none": 120
+          },
+          "source": {
+            "source_file": "historical-comparison.json.gz",
+            "sha256": "538bced4257299403df4e6628bdf1a09e44954670be9d3e4fe6cfb1ac3725b79",
+            "json_pointer": "/axes/1/method_summaries/2"
+          },
+          "status_counts": {
+            "measured": 120
+          },
+          "measurement_source_kind": "historical_saved_scalar"
+        },
+        {
+          "competition_rank": 5,
+          "complete_speakers_before_identity_gate": 40,
+          "finite_success_recordings": 120,
+          "joint_finite_success_recordings": 120,
+          "mean": {
+            "exact_denominator": "27021597764222976",
+            "exact_numerator": "157317296260853309",
+            "value": 5.8219094826858795
+          },
+          "mean_recordings": 120,
+          "mean_speakers": 40,
+          "method": "world_harvest",
+          "planned_recordings": 120,
+          "reason_counts": {
+            "none": 120
+          },
+          "source": {
+            "source_file": "historical-comparison.json.gz",
+            "sha256": "538bced4257299403df4e6628bdf1a09e44954670be9d3e4fe6cfb1ac3725b79",
+            "json_pointer": "/axes/1/method_summaries/3"
+          },
+          "status_counts": {
+            "measured": 120
+          },
+          "measurement_source_kind": "historical_saved_scalar"
+        },
+        {
+          "competition_rank": 6,
+          "complete_speakers_before_identity_gate": 40,
+          "finite_success_recordings": 120,
+          "joint_finite_success_recordings": 120,
+          "mean": {
+            "exact_denominator": "135107988821114880",
+            "exact_numerator": "891995973993228901",
+            "value": 6.6020964546681675
+          },
+          "mean_recordings": 120,
+          "mean_speakers": 40,
+          "method": "facodec",
+          "planned_recordings": 120,
+          "reason_counts": {
+            "none": 120
+          },
+          "source": {
+            "source_file": "historical-comparison.json.gz",
+            "sha256": "538bced4257299403df4e6628bdf1a09e44954670be9d3e4fe6cfb1ac3725b79",
+            "json_pointer": "/axes/1/method_summaries/4"
+          },
+          "status_counts": {
+            "measured": 120
+          },
+          "measurement_source_kind": "historical_saved_scalar"
+        },
+        {
+          "competition_rank": 10,
+          "complete_speakers_before_identity_gate": 40,
+          "finite_success_recordings": 120,
+          "joint_finite_success_recordings": 120,
+          "mean": {
+            "exact_denominator": "135107988821114880",
+            "exact_numerator": "1191253288598296807",
+            "value": 8.817045527748437
+          },
+          "mean_recordings": 120,
+          "mean_speakers": 40,
+          "method": "hifiglot",
+          "planned_recordings": 120,
+          "reason_counts": {
+            "none": 120
+          },
+          "source": {
+            "source_file": "historical-comparison.json.gz",
+            "sha256": "538bced4257299403df4e6628bdf1a09e44954670be9d3e4fe6cfb1ac3725b79",
+            "json_pointer": "/axes/1/method_summaries/5"
+          },
+          "status_counts": {
+            "measured": 120
+          },
+          "measurement_source_kind": "historical_saved_scalar"
+        },
+        {
+          "competition_rank": 9,
+          "complete_speakers_before_identity_gate": 40,
+          "finite_success_recordings": 120,
+          "joint_finite_success_recordings": 120,
+          "mean": {
+            "exact_denominator": "22517998136852480",
+            "exact_numerator": "155609251216852037",
+            "value": 6.910438941825172
+          },
+          "mean_recordings": 120,
+          "mean_speakers": 40,
+          "method": "golf",
+          "planned_recordings": 120,
+          "reason_counts": {
+            "none": 120
+          },
+          "source": {
+            "source_file": "historical-comparison.json.gz",
+            "sha256": "538bced4257299403df4e6628bdf1a09e44954670be9d3e4fe6cfb1ac3725b79",
+            "json_pointer": "/axes/1/method_summaries/6"
+          },
+          "status_counts": {
+            "measured": 120
+          },
+          "measurement_source_kind": "historical_saved_scalar"
+        },
+        {
+          "competition_rank": 7,
+          "complete_speakers_before_identity_gate": 40,
+          "finite_success_recordings": 120,
+          "joint_finite_success_recordings": 120,
+          "mean": {
+            "exact_denominator": "45035996273704960",
+            "exact_numerator": "299632357690591661",
+            "value": 6.65317484861631
+          },
+          "mean_recordings": 120,
+          "mean_speakers": 40,
+          "method": "sifigan",
+          "planned_recordings": 120,
+          "reason_counts": {
+            "none": 120
+          },
+          "source": {
+            "source_file": "historical-comparison.json.gz",
+            "sha256": "538bced4257299403df4e6628bdf1a09e44954670be9d3e4fe6cfb1ac3725b79",
+            "json_pointer": "/axes/1/method_summaries/7"
+          },
+          "status_counts": {
+            "measured": 120
+          },
+          "measurement_source_kind": "historical_saved_scalar"
+        },
+        {
+          "competition_rank": 1,
+          "complete_speakers_before_identity_gate": 40,
+          "finite_success_recordings": 120,
+          "joint_finite_success_recordings": 120,
+          "mean": {
+            "exact_denominator": "45035996273704960",
+            "exact_numerator": "210285027907255693",
+            "value": 4.669265594331577
+          },
+          "mean_recordings": 120,
+          "mean_speakers": 40,
+          "method": "llsm2",
+          "planned_recordings": 120,
+          "reason_counts": {
+            "none": 120
+          },
+          "source": {
+            "source_file": "historical-comparison.json.gz",
+            "sha256": "538bced4257299403df4e6628bdf1a09e44954670be9d3e4fe6cfb1ac3725b79",
+            "json_pointer": "/axes/1/method_summaries/8"
+          },
+          "status_counts": {
+            "measured": 120
+          },
+          "measurement_source_kind": "historical_saved_scalar"
+        },
+        {
+          "competition_rank": 8,
+          "complete_speakers_before_identity_gate": 40,
+          "finite_success_recordings": 120,
+          "joint_finite_success_recordings": 120,
+          "mean": {
+            "exact_denominator": "4503599627370496",
+            "exact_numerator": "30221061625678971",
+            "value": 6.710423689088912
+          },
+          "mean_recordings": 120,
+          "mean_speakers": 40,
+          "method": "magphase",
+          "planned_recordings": 120,
+          "reason_counts": {
+            "none": 120
+          },
+          "source": {
+            "source_file": "historical-comparison.json.gz",
+            "sha256": "538bced4257299403df4e6628bdf1a09e44954670be9d3e4fe6cfb1ac3725b79",
+            "json_pointer": "/axes/1/method_summaries/9"
+          },
+          "status_counts": {
+            "measured": 120
+          },
+          "measurement_source_kind": "historical_saved_scalar"
+        }
+      ]
+    },
+    {
+      "axis": "erb40",
+      "direction": "lower",
+      "scope": "supplementary_native_pitch0_synthesis_seed0_only",
+      "synthesis_seed": 0,
+      "unit": "dB",
+      "status": "available_full120",
+      "method_summaries": [
+        {
+          "competition_rank": 3,
+          "complete_speakers_before_identity_gate": 40,
+          "finite_success_recordings": 120,
+          "joint_finite_success_recordings": 120,
+          "mean": {
+            "exact_denominator": "36028797018963968",
+            "exact_numerator": "71939881527354795",
+            "value": 1.9967328215118816
+          },
+          "mean_recordings": 120,
+          "mean_speakers": 40,
+          "method": "PML",
+          "planned_recordings": 120,
+          "reason_counts": {
+            "none": 120
+          },
+          "source": {
+            "source_file": "historical-comparison.json.gz",
+            "sha256": "538bced4257299403df4e6628bdf1a09e44954670be9d3e4fe6cfb1ac3725b79",
+            "json_pointer": "/axes/2/method_summaries/0"
+          },
+          "status_counts": {
+            "available": 120
+          },
+          "measurement_source_kind": "current_accepted_export"
+        },
+        {
+          "competition_rank": 2,
+          "complete_speakers_before_identity_gate": 40,
+          "finite_success_recordings": 120,
+          "joint_finite_success_recordings": 120,
+          "mean": {
+            "exact_denominator": "54043195528445952",
+            "exact_numerator": "107551547021155847",
+            "value": 1.9901033972823732
+          },
+          "mean_recordings": 120,
+          "mean_speakers": 40,
+          "method": "RAW_FULL",
+          "planned_recordings": 120,
+          "reason_counts": {
+            "none": 120
+          },
+          "source": {
+            "source_file": "historical-comparison.json.gz",
+            "sha256": "538bced4257299403df4e6628bdf1a09e44954670be9d3e4fe6cfb1ac3725b79",
+            "json_pointer": "/axes/2/method_summaries/1"
+          },
+          "status_counts": {
+            "available": 120
+          },
+          "measurement_source_kind": "current_accepted_export"
+        },
+        {
+          "competition_rank": 5,
+          "complete_speakers_before_identity_gate": 40,
+          "finite_success_recordings": 120,
+          "joint_finite_success_recordings": 120,
+          "mean": {
+            "exact_denominator": "135107988821114880",
+            "exact_numerator": "302065881744574661",
+            "value": 2.2357366457768437
+          },
+          "mean_recordings": 120,
+          "mean_speakers": 40,
+          "method": "hnm",
+          "planned_recordings": 120,
+          "reason_counts": {
+            "none": 120
+          },
+          "source": {
+            "source_file": "historical-comparison.json.gz",
+            "sha256": "538bced4257299403df4e6628bdf1a09e44954670be9d3e4fe6cfb1ac3725b79",
+            "json_pointer": "/axes/2/method_summaries/2"
+          },
+          "status_counts": {
+            "measured": 120
+          },
+          "measurement_source_kind": "historical_saved_scalar"
+        },
+        {
+          "competition_rank": 4,
+          "complete_speakers_before_identity_gate": 40,
+          "finite_success_recordings": 120,
+          "joint_finite_success_recordings": 120,
+          "mean": {
+            "exact_denominator": "135107988821114880",
+            "exact_numerator": "277752152021392913",
+            "value": 2.0557788954222476
+          },
+          "mean_recordings": 120,
+          "mean_speakers": 40,
+          "method": "world_harvest",
+          "planned_recordings": 120,
+          "reason_counts": {
+            "none": 120
+          },
+          "source": {
+            "source_file": "historical-comparison.json.gz",
+            "sha256": "538bced4257299403df4e6628bdf1a09e44954670be9d3e4fe6cfb1ac3725b79",
+            "json_pointer": "/axes/2/method_summaries/3"
+          },
+          "status_counts": {
+            "measured": 120
+          },
+          "measurement_source_kind": "historical_saved_scalar"
+        },
+        {
+          "competition_rank": 6,
+          "complete_speakers_before_identity_gate": 40,
+          "finite_success_recordings": 120,
+          "joint_finite_success_recordings": 120,
+          "mean": {
+            "exact_denominator": "180143985094819840",
+            "exact_numerator": "439418321542412771",
+            "value": 2.4392616900926356
+          },
+          "mean_recordings": 120,
+          "mean_speakers": 40,
+          "method": "facodec",
+          "planned_recordings": 120,
+          "reason_counts": {
+            "none": 120
+          },
+          "source": {
+            "source_file": "historical-comparison.json.gz",
+            "sha256": "538bced4257299403df4e6628bdf1a09e44954670be9d3e4fe6cfb1ac3725b79",
+            "json_pointer": "/axes/2/method_summaries/4"
+          },
+          "status_counts": {
+            "measured": 120
+          },
+          "measurement_source_kind": "historical_saved_scalar"
+        },
+        {
+          "competition_rank": 10,
+          "complete_speakers_before_identity_gate": 40,
+          "finite_success_recordings": 120,
+          "joint_finite_success_recordings": 120,
+          "mean": {
+            "exact_denominator": "270215977642229760",
+            "exact_numerator": "1263461425642066027",
+            "value": 4.67574655157849
+          },
+          "mean_recordings": 120,
+          "mean_speakers": 40,
+          "method": "hifiglot",
+          "planned_recordings": 120,
+          "reason_counts": {
+            "none": 120
+          },
+          "source": {
+            "source_file": "historical-comparison.json.gz",
+            "sha256": "538bced4257299403df4e6628bdf1a09e44954670be9d3e4fe6cfb1ac3725b79",
+            "json_pointer": "/axes/2/method_summaries/5"
+          },
+          "status_counts": {
+            "measured": 120
+          },
+          "measurement_source_kind": "historical_saved_scalar"
+        },
+        {
+          "competition_rank": 8,
+          "complete_speakers_before_identity_gate": 40,
+          "finite_success_recordings": 120,
+          "joint_finite_success_recordings": 120,
+          "mean": {
+            "exact_denominator": "67553994410557440",
+            "exact_numerator": "187221200942312447",
+            "value": 2.7714305064550446
+          },
+          "mean_recordings": 120,
+          "mean_speakers": 40,
+          "method": "golf",
+          "planned_recordings": 120,
+          "reason_counts": {
+            "none": 120
+          },
+          "source": {
+            "source_file": "historical-comparison.json.gz",
+            "sha256": "538bced4257299403df4e6628bdf1a09e44954670be9d3e4fe6cfb1ac3725b79",
+            "json_pointer": "/axes/2/method_summaries/6"
+          },
+          "status_counts": {
+            "measured": 120
+          },
+          "measurement_source_kind": "historical_saved_scalar"
+        },
+        {
+          "competition_rank": 7,
+          "complete_speakers_before_identity_gate": 40,
+          "finite_success_recordings": 120,
+          "joint_finite_success_recordings": 120,
+          "mean": {
+            "exact_denominator": "180143985094819840",
+            "exact_numerator": "468200713740965219",
+            "value": 2.5990360627057574
+          },
+          "mean_recordings": 120,
+          "mean_speakers": 40,
+          "method": "sifigan",
+          "planned_recordings": 120,
+          "reason_counts": {
+            "none": 120
+          },
+          "source": {
+            "source_file": "historical-comparison.json.gz",
+            "sha256": "538bced4257299403df4e6628bdf1a09e44954670be9d3e4fe6cfb1ac3725b79",
+            "json_pointer": "/axes/2/method_summaries/7"
+          },
+          "status_counts": {
+            "measured": 120
+          },
+          "measurement_source_kind": "historical_saved_scalar"
+        },
+        {
+          "competition_rank": 1,
+          "complete_speakers_before_identity_gate": 40,
+          "finite_success_recordings": 120,
+          "joint_finite_success_recordings": 120,
+          "mean": {
+            "exact_denominator": "1080863910568919040",
+            "exact_numerator": "1513331968509278521",
+            "value": 1.4001133294502612
+          },
+          "mean_recordings": 120,
+          "mean_speakers": 40,
+          "method": "llsm2",
+          "planned_recordings": 120,
+          "reason_counts": {
+            "none": 120
+          },
+          "source": {
+            "source_file": "historical-comparison.json.gz",
+            "sha256": "538bced4257299403df4e6628bdf1a09e44954670be9d3e4fe6cfb1ac3725b79",
+            "json_pointer": "/axes/2/method_summaries/8"
+          },
+          "status_counts": {
+            "measured": 120
+          },
+          "measurement_source_kind": "historical_saved_scalar"
+        },
+        {
+          "competition_rank": 9,
+          "complete_speakers_before_identity_gate": 40,
+          "finite_success_recordings": 120,
+          "joint_finite_success_recordings": 120,
+          "mean": {
+            "exact_denominator": "180143985094819840",
+            "exact_numerator": "582775480060654469",
+            "value": 3.235053780751587
+          },
+          "mean_recordings": 120,
+          "mean_speakers": 40,
+          "method": "magphase",
+          "planned_recordings": 120,
+          "reason_counts": {
+            "none": 120
+          },
+          "source": {
+            "source_file": "historical-comparison.json.gz",
+            "sha256": "538bced4257299403df4e6628bdf1a09e44954670be9d3e4fe6cfb1ac3725b79",
+            "json_pointer": "/axes/2/method_summaries/9"
+          },
+          "status_counts": {
+            "measured": 120
+          },
+          "measurement_source_kind": "historical_saved_scalar"
+        }
+      ]
+    },
+    {
+      "axis": "speaker_ecapa",
+      "direction": "higher",
+      "scope": "supplementary_native_pitch0_synthesis_seed0_only",
+      "synthesis_seed": 0,
+      "unit": "cosine_similarity",
+      "status": "available_full120",
+      "method_summaries": [
+        {
+          "competition_rank": 5,
+          "complete_speakers_before_identity_gate": 40,
+          "finite_success_recordings": 120,
+          "joint_finite_success_recordings": 120,
+          "mean": {
+            "exact_denominator": "1006632960",
+            "exact_numerator": "954919921",
+            "value": 0.948627711335818
+          },
+          "mean_recordings": 120,
+          "mean_speakers": 40,
+          "method": "PML",
+          "planned_recordings": 120,
+          "reason_counts": {
+            "none": 120
+          },
+          "source": {
+            "source_file": "historical-comparison.json.gz",
+            "sha256": "538bced4257299403df4e6628bdf1a09e44954670be9d3e4fe6cfb1ac3725b79",
+            "json_pointer": "/axes/3/method_summaries/0"
+          },
+          "status_counts": {
+            "available": 120
+          },
+          "measurement_source_kind": "current_accepted_export"
+        },
+        {
+          "competition_rank": 2,
+          "complete_speakers_before_identity_gate": 40,
+          "finite_success_recordings": 120,
+          "joint_finite_success_recordings": 120,
+          "mean": {
+            "exact_denominator": "1006632960",
+            "exact_numerator": "959374067",
+            "value": 0.9530525078376134
+          },
+          "mean_recordings": 120,
+          "mean_speakers": 40,
+          "method": "RAW_FULL",
+          "planned_recordings": 120,
+          "reason_counts": {
+            "none": 120
+          },
+          "source": {
+            "source_file": "historical-comparison.json.gz",
+            "sha256": "538bced4257299403df4e6628bdf1a09e44954670be9d3e4fe6cfb1ac3725b79",
+            "json_pointer": "/axes/3/method_summaries/1"
+          },
+          "status_counts": {
+            "available": 120
+          },
+          "measurement_source_kind": "current_accepted_export"
+        },
+        {
+          "competition_rank": 7,
+          "complete_speakers_before_identity_gate": 40,
+          "finite_success_recordings": 120,
+          "joint_finite_success_recordings": 120,
+          "mean": {
+            "exact_denominator": "402653184",
+            "exact_numerator": "365176375",
+            "value": 0.9069253380099932
+          },
+          "mean_recordings": 120,
+          "mean_speakers": 40,
+          "method": "hnm",
+          "planned_recordings": 120,
+          "reason_counts": {
+            "none": 120
+          },
+          "source": {
+            "source_file": "historical-comparison.json.gz",
+            "sha256": "538bced4257299403df4e6628bdf1a09e44954670be9d3e4fe6cfb1ac3725b79",
+            "json_pointer": "/axes/3/method_summaries/2"
+          },
+          "status_counts": {
+            "measured": 120
+          },
+          "measurement_source_kind": "historical_saved_scalar"
+        },
+        {
+          "competition_rank": 6,
+          "complete_speakers_before_identity_gate": 40,
+          "finite_success_recordings": 120,
+          "joint_finite_success_recordings": 120,
+          "mean": {
+            "exact_denominator": "1006632960",
+            "exact_numerator": "936707713",
+            "value": 0.9305355081955592
+          },
+          "mean_recordings": 120,
+          "mean_speakers": 40,
+          "method": "world_harvest",
+          "planned_recordings": 120,
+          "reason_counts": {
+            "none": 120
+          },
+          "source": {
+            "source_file": "historical-comparison.json.gz",
+            "sha256": "538bced4257299403df4e6628bdf1a09e44954670be9d3e4fe6cfb1ac3725b79",
+            "json_pointer": "/axes/3/method_summaries/3"
+          },
+          "status_counts": {
+            "measured": 120
+          },
+          "measurement_source_kind": "historical_saved_scalar"
+        },
+        {
+          "competition_rank": 8,
+          "complete_speakers_before_identity_gate": 40,
+          "finite_success_recordings": 120,
+          "joint_finite_success_recordings": 120,
+          "mean": {
+            "exact_denominator": "2013265920",
+            "exact_numerator": "1724628493",
+            "value": 0.8566322391231854
+          },
+          "mean_recordings": 120,
+          "mean_speakers": 40,
+          "method": "facodec",
+          "planned_recordings": 120,
+          "reason_counts": {
+            "none": 120
+          },
+          "source": {
+            "source_file": "historical-comparison.json.gz",
+            "sha256": "538bced4257299403df4e6628bdf1a09e44954670be9d3e4fe6cfb1ac3725b79",
+            "json_pointer": "/axes/3/method_summaries/4"
+          },
+          "status_counts": {
+            "measured": 120
+          },
+          "measurement_source_kind": "historical_saved_scalar"
+        },
+        {
+          "competition_rank": 10,
+          "complete_speakers_before_identity_gate": 40,
+          "finite_success_recordings": 120,
+          "joint_finite_success_recordings": 120,
+          "mean": {
+            "exact_denominator": "536870912",
+            "exact_numerator": "246984971",
+            "value": 0.4600453581660986
+          },
+          "mean_recordings": 120,
+          "mean_speakers": 40,
+          "method": "hifiglot",
+          "planned_recordings": 120,
+          "reason_counts": {
+            "none": 120
+          },
+          "source": {
+            "source_file": "historical-comparison.json.gz",
+            "sha256": "538bced4257299403df4e6628bdf1a09e44954670be9d3e4fe6cfb1ac3725b79",
+            "json_pointer": "/axes/3/method_summaries/5"
+          },
+          "status_counts": {
+            "measured": 120
+          },
+          "measurement_source_kind": "historical_saved_scalar"
+        },
+        {
+          "competition_rank": 9,
+          "complete_speakers_before_identity_gate": 40,
+          "finite_success_recordings": 120,
+          "joint_finite_success_recordings": 120,
+          "mean": {
+            "exact_denominator": "2013265920",
+            "exact_numerator": "1661061481",
+            "value": 0.8250581627090772
+          },
+          "mean_recordings": 120,
+          "mean_speakers": 40,
+          "method": "golf",
+          "planned_recordings": 120,
+          "reason_counts": {
+            "none": 120
+          },
+          "source": {
+            "source_file": "historical-comparison.json.gz",
+            "sha256": "538bced4257299403df4e6628bdf1a09e44954670be9d3e4fe6cfb1ac3725b79",
+            "json_pointer": "/axes/3/method_summaries/6"
+          },
+          "status_counts": {
+            "measured": 120
+          },
+          "measurement_source_kind": "historical_saved_scalar"
+        },
+        {
+          "competition_rank": 3,
+          "complete_speakers_before_identity_gate": 40,
+          "finite_success_recordings": 120,
+          "joint_finite_success_recordings": 120,
+          "mean": {
+            "exact_denominator": "1006632960",
+            "exact_numerator": "957759881",
+            "value": 0.9514489581187566
+          },
+          "mean_recordings": 120,
+          "mean_speakers": 40,
+          "method": "sifigan",
+          "planned_recordings": 120,
+          "reason_counts": {
+            "none": 120
+          },
+          "source": {
+            "source_file": "historical-comparison.json.gz",
+            "sha256": "538bced4257299403df4e6628bdf1a09e44954670be9d3e4fe6cfb1ac3725b79",
+            "json_pointer": "/axes/3/method_summaries/7"
+          },
+          "status_counts": {
+            "measured": 120
+          },
+          "measurement_source_kind": "historical_saved_scalar"
+        },
+        {
+          "competition_rank": 1,
+          "complete_speakers_before_identity_gate": 40,
+          "finite_success_recordings": 120,
+          "joint_finite_success_recordings": 120,
+          "mean": {
+            "exact_denominator": "1006632960",
+            "exact_numerator": "963256321",
+            "value": 0.9569091806809108
+          },
+          "mean_recordings": 120,
+          "mean_speakers": 40,
+          "method": "llsm2",
+          "planned_recordings": 120,
+          "reason_counts": {
+            "none": 120
+          },
+          "source": {
+            "source_file": "historical-comparison.json.gz",
+            "sha256": "538bced4257299403df4e6628bdf1a09e44954670be9d3e4fe6cfb1ac3725b79",
+            "json_pointer": "/axes/3/method_summaries/8"
+          },
+          "status_counts": {
+            "measured": 120
+          },
+          "measurement_source_kind": "historical_saved_scalar"
+        },
+        {
+          "competition_rank": 4,
+          "complete_speakers_before_identity_gate": 40,
+          "finite_success_recordings": 120,
+          "joint_finite_success_recordings": 120,
+          "mean": {
+            "exact_denominator": "100663296",
+            "exact_numerator": "95616889",
+            "value": 0.9498684505621592
+          },
+          "mean_recordings": 120,
+          "mean_speakers": 40,
+          "method": "magphase",
+          "planned_recordings": 120,
+          "reason_counts": {
+            "none": 120
+          },
+          "source": {
+            "source_file": "historical-comparison.json.gz",
+            "sha256": "538bced4257299403df4e6628bdf1a09e44954670be9d3e4fe6cfb1ac3725b79",
+            "json_pointer": "/axes/3/method_summaries/9"
+          },
+          "status_counts": {
+            "measured": 120
+          },
+          "measurement_source_kind": "historical_saved_scalar"
+        }
+      ]
+    }
+  ],
+  "rtf_main120_wall": [
+    {
+      "variant": "PML",
+      "phase": "analysis",
+      "value": 1.0402107147462065,
+      "source": {
+        "source_file": "report.json",
+        "sha256": "d0593bf0bb39f6044b50830c7df1cbce27e97873a6f2a3fc8c2d90ee282bb206",
+        "json_pointer": "/variants/PML/cohorts/main120/analysis/wall_seconds/speaker_equal_weight_rtf"
+      }
+    },
+    {
+      "variant": "PML",
+      "phase": "decode",
+      "value": 0.18330100549968464,
+      "source": {
+        "source_file": "report.json",
+        "sha256": "d0593bf0bb39f6044b50830c7df1cbce27e97873a6f2a3fc8c2d90ee282bb206",
+        "json_pointer": "/variants/PML/cohorts/main120/decode/wall_seconds/speaker_equal_weight_rtf"
+      }
+    },
+    {
+      "variant": "RAW_FULL",
+      "phase": "analysis",
+      "value": 1.0165404049159603,
+      "source": {
+        "source_file": "report.json",
+        "sha256": "d0593bf0bb39f6044b50830c7df1cbce27e97873a6f2a3fc8c2d90ee282bb206",
+        "json_pointer": "/variants/RAW_FULL/cohorts/main120/analysis/wall_seconds/speaker_equal_weight_rtf"
+      }
+    },
+    {
+      "variant": "RAW_FULL",
+      "phase": "decode",
+      "value": 0.1929033522864625,
+      "source": {
+        "source_file": "report.json",
+        "sha256": "d0593bf0bb39f6044b50830c7df1cbce27e97873a6f2a3fc8c2d90ee282bb206",
+        "json_pointer": "/variants/RAW_FULL/cohorts/main120/decode/wall_seconds/speaker_equal_weight_rtf"
+      }
+    }
+  ],
+  "rtf_source_provenance": {
+    "completion_receipt_sha256": "a1803fa3837d8a5238e4ba2eea3f94c57b738783a4675e81b8a06d95d6e1ddb5",
+    "timing_summary_sha256": "0ebbfd55e93ba26a010c5d5608049b42287f8cb8aefb376fa436daaed1e016a7",
+    "rtf_source_manifest_sha256": "1bd45c50eda35ec98ce2a09e7cf41b48dd7f900332ad34b5ca06b1df3c6ecd7a",
+    "existing_quality_report_sha256": "caba10ae8303904639d6939ce12d747e3525a7d9f8e85fce3403b02f2d4df8aa",
+    "storage_ledger_derived_sha256": "10b32ae4bbca74d8526d5e20419c87e0163d306861d08eab0a31711e48fbb81a"
+  },
+  "storage": {
+    "value": {
+      "scope": "Saved container ledger arithmetic only, not new codec measurement",
+      "source_sha256": "6cd10fc3ad6c46ee0e48ff10792645764f5784857ca896b569eb36b4c500b591",
+      "recordings": 120,
+      "speakers": 40,
+      "audio_seconds": 615.935,
+      "sum_bytes": {
+        "PML_file_bytes": 61969776,
+        "raw_NPZ_file_bytes": 10373997,
+        "metadata_file_bytes": 235693,
+        "shared_asset_bytes_allocated": 0
+      },
+      "additional_payload_percent_of_PML": 16.740413907579722,
+      "additional_payload_and_metadata_percent_of_PML": 17.120749314956374,
+      "storage_bytes_per_original_second": {
+        "PML": 100610.90212441249,
+        "RAW_FULL_including_metadata": 117836.24246064927
+      },
+      "limitations": [
+        "Container bytes, not memory use or theoretical array size.",
+        "Metadata is recorded separately from added RAW payload.",
+        "Existing analysis/decode time columns are not substituted for pure RTF."
+      ]
+    },
+    "source": {
+      "source_file": "report.json",
+      "sha256": "d0593bf0bb39f6044b50830c7df1cbce27e97873a6f2a3fc8c2d90ee282bb206",
+      "json_pointer": "/storage_ledger"
+    }
+  },
+  "audio": [
+    {
+      "variant": "ORIGINAL",
+      "case": "librispeech_121-121726-0012",
+      "pitch_semitones": null,
+      "seed": null,
+      "start_seconds": 0,
+      "end_seconds": 4.045,
+      "url": "https://hiroshiba.github.io/check-nonml-saikyo-vocoder/research/raw-full-full120-comparison-2026-10-19/audio/librispeech_121-121726-0012__ORIGINAL.wav",
+      "published_wav": {
+        "bytes": 129484,
+        "path": "audio/librispeech_121-121726-0012__ORIGINAL.wav",
+        "sha256": "b741059885961aea0bceaef76e0e01760ec3b9eb00990af669db9277ca178468"
+      },
+      "source": {
+        "source_file": "clip-manifest.json",
+        "sha256": "f7a4f897f41c7766878a403541ada5a2d9fe15f701f7828464d35aeb1f234370",
+        "json_pointer": "/clips/3"
+      },
+      "url_verification": "Existing published bundle paths; publication state records browser playback of +3 PML/RAW seed0 and live RAW bytes. No new playback or fetch in this proposal."
+    },
+    {
+      "variant": "PML",
+      "case": "librispeech_121-121726-0012",
+      "pitch_semitones": 3,
+      "seed": 0,
+      "start_seconds": 0,
+      "end_seconds": 4.045,
+      "url": "https://hiroshiba.github.io/check-nonml-saikyo-vocoder/research/raw-full-full120-comparison-2026-10-19/audio/librispeech_121-121726-0012__pitch+3__seed0__PML.wav",
+      "published_wav": {
+        "bytes": 129484,
+        "path": "audio/librispeech_121-121726-0012__pitch+3__seed0__PML.wav",
+        "sha256": "5e211d3e0f396339e35df0a4242950540c9d773bad73c677721b01d07f8476d1"
+      },
+      "source": {
+        "source_file": "clip-manifest.json",
+        "sha256": "f7a4f897f41c7766878a403541ada5a2d9fe15f701f7828464d35aeb1f234370",
+        "json_pointer": "/clips/49"
+      },
+      "url_verification": "Existing published bundle paths; publication state records browser playback of +3 PML/RAW seed0 and live RAW bytes. No new playback or fetch in this proposal."
+    },
+    {
+      "variant": "RAW_FULL",
+      "case": "librispeech_121-121726-0012",
+      "pitch_semitones": 3,
+      "seed": 0,
+      "start_seconds": 0,
+      "end_seconds": 4.045,
+      "url": "https://hiroshiba.github.io/check-nonml-saikyo-vocoder/research/raw-full-full120-comparison-2026-10-19/audio/librispeech_121-121726-0012__pitch+3__seed0__RAW_FULL.wav",
+      "published_wav": {
+        "bytes": 129484,
+        "path": "audio/librispeech_121-121726-0012__pitch+3__seed0__RAW_FULL.wav",
+        "sha256": "fa5381cc4d270a3b813ce2718a1090538623ccd3bf67ac24bf2744e1ed99d6c4"
+      },
+      "source": {
+        "source_file": "clip-manifest.json",
+        "sha256": "f7a4f897f41c7766878a403541ada5a2d9fe15f701f7828464d35aeb1f234370",
+        "json_pointer": "/clips/50"
+      },
+      "url_verification": "Existing published bundle paths; publication state records browser playback of +3 PML/RAW seed0 and live RAW bytes. No new playback or fetch in this proposal."
+    }
+  ],
+  "limitations_ja": [
+    "16 kHz・英語の開発に使用済み120録音・40話者、生成seed 0/20261015、0/±3半音に限定。独立holdoutではない。",
+    "ASRはGT付き55録音・32話者・330対。残65録音390対は対象外で、成功や誤差0へ置換しない。保存CIなし。",
+    "編集F0/VUVは方式別native推定参照。共通正解有声mask上の比較ではない。F0区間が0を跨ぐことは同等性・非劣性の証明ではない。",
+    "単回・方式固定順RTF。主120の解析約2.28%短縮をRAW固有の高速化と解釈しない。新統合実装を計時済みとはしない。",
+    "gain編集経路の静的保持とRAWの音量追従性能は別。後者は未測定。DC floor・丸めを含む従来の近似契約以上を保証しない。",
+    "A/Lを含む全特徴の距離・補間・ABX・下流読み出しの改善や非劣性は未測定。既存PML部分への射影と追加復号情報を区別する。",
+    "A_rawは8標本、L_rawは5 ms間隔でsource周期由来の包絡変動を保持し得る。絶対target Hzで励振時計を変えても全周期性の独立制御は保証されない。",
+    "任意音高・時間伸縮・native 48 kHzの達成を主張しない。YIN CMND棄却の説明は知覚的無害の証明ではない。"
+  ],
+  "excluded_completion_gates": [
+    "all79_axes",
+    "eight_seed_repeat",
+    "zero_warnings",
+    "48k_completion",
+    "human_listening",
+    "new_tests_or_smoke_or_regression"
+  ],
+  "overall_rank": null,
+  "new_quality_calculation": false,
+  "new_measurements": false,
+  "review_status": "static document authoring only; no browser/build/test run",
+  "provenance_policy": "Every copied metric scalar is addressed by its original row pointer plus field name, with SHA256 of original source bytes. Historical means/ranks retain exact rational fields; no ranking recomputation.",
+  "public_rtf_report_url": "https://hiroshiba.github.io/check-nonml-saikyo-vocoder/research/raw-full-pure-rtf-2026-10-19/index.html",
+  "public_quality_report_url": "https://hiroshiba.github.io/check-nonml-saikyo-vocoder/research/raw-full-full120-comparison-2026-10-19/index.html",
+  "rtf_percentage_display": {
+    "decode_increase_approx_percent": 5.24,
+    "analysis_decrease_approx_percent": 2.28,
+    "source_file": "REVIEW-ja.md",
+    "sha256": "b9cb49c06f6a97484e51bdfa8b3232d8dbff8bf1dc311260faed301882bc6c69",
+    "section": "読み方の注意",
+    "status": "Previously saved rounded interpretation; exact RTF operands copied separately, no new timing."
+  },
+  "review_documents": [
+    {
+      "filename": "raw-full-post-rtf-adoption-review-20261019.md",
+      "sha256": "0eebc4bedad88fda481f9265b402c034b6b9c77e90f6b904ba89ee42b317add7"
+    },
+    {
+      "filename": "raw-full-adoption-independent-critique-20261019.md",
+      "sha256": "790dbd0f17a7454c15acccef8d9fcd79bc3149b92dd8ca3e16217c72a39b6f3a"
+    },
+    {
+      "filename": "raw-full-adoption-comparison-scope-audit-20261019.md",
+      "sha256": "0de43dbe24c22d5767f7aec074c239636f29226b83cdb803fcb9285ba30fc1a5"
+    },
+    {
+      "filename": "raw-full-base-integration-plan-20261019.md",
+      "sha256": "16a2321ff2841a376193acffec63293f4e96e1774b91c0db193e7a4bebbd4502"
+    }
+  ],
+  "previous_base": "PML",
+  "previous_version": "pml-lowband-fwcep60-v1",
+  "selected_base": "RAW_FULL",
+  "selected_version": "raw-full-fwcep60-v1",
+  "activation": "The selection takes effect together with BASELINE.json and the implementation in the same change; this record does not assert remote merge or deployment.",
+  "created_at": "2026-10-19T21:50:50+00:00",
+  "created_at_note": "UTC document assembly time, not measurement time."
+}

@@ -13,7 +13,7 @@ import numpy as np
 
 ROOT = Path(__file__).resolve().parents[1]
 BASE_VERSION = json.loads((ROOT / 'BASELINE.json').read_text(encoding='utf-8'))['version']
-LABELS = {'identity': '原音', 'pml': f'自作PML {BASE_VERSION.removeprefix("pml-")}（当時のベース）',
+LABELS = {'identity': '原音', 'pml': f'RAW_FULL {BASE_VERSION}（当時のベース）',
           'candidate': 'Git管理外の開発候補', 'world_harvest': 'WORLD（Harvest）'}
 SEEDS = tuple(range(8))
 

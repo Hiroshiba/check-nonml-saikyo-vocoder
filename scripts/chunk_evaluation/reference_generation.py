@@ -1,4 +1,6 @@
 """PML現baseと固定WORLDを12録音ずつ生成する公開用routing。"""
+# GenerationContext retains the old PML version and complete source-freeze guards.
+# This historical plan must not generate RAW_FULL under old PML labels.
 import argparse
 import copy
 import logging

@@ -6,7 +6,7 @@ from pathlib import Path
 import traceback
 import numpy as np
 from run_edits import ROOT, sha, read, write, freeze
-from vocoderbench.pml import load
+from vocoderbench.pml.storage import load_parameters as load
 
 
 def matrix(p):

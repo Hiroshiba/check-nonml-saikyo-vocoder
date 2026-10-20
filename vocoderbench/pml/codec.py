@@ -1,16 +1,16 @@
-"""既測定の PML + 低域マスク拡張 + 60 FWCEP の公開 API。"""
+"""RAW_FULL の公開 API。測定済み経路を移植した提案で、統合版の再計測ではない。"""
 
 import logging
 
 import numpy as np
 
 from . import fwcep
-from .parameters import BINS, DEFAULT_SEED, FS, NFFT, PMLParameters
+from .parameters import BINS, DEFAULT_SEED, FS, NFFT, PMLParameters, _with_raw, validate_raw
 
 _LOG = logging.getLogger(__name__)
 
 
-def encode(x, sr=FS, *, seed=DEFAULT_SEED, trace=None):
+def _analyze_components(x, sr=FS, *, seed=DEFAULT_SEED, trace=None):
     """有限・mono・[-1,1] の 16 kHz 音声を解析する（最低 0.2 秒）。
 
     pyreaper/pyworld はここでのみ読み込む。trace 辞書を指定すると解析中の
@@ -79,6 +79,15 @@ def encode(x, sr=FS, *, seed=DEFAULT_SEED, trace=None):
     return params
 
 
+def encode(x, sr=FS, *, seed=DEFAULT_SEED, trace=None):
+    """基礎解析の直後に、同じ原音と未編集F0でA/Lを生成する。"""
+    from .raw_features import raw_features
+
+    params = _analyze_components(x, sr, seed=seed, trace=trace)
+    values, _ = raw_features(x, params.f0)
+    return _with_raw(params, values["A_raw"], values["L_raw"])
+
+
 def decode(params, *, seed=None, trace=None):
     """保存特徴量のみから float64 音声を生成する。必要依存は NumPy/SciPy。
 
@@ -86,6 +95,12 @@ def decode(params, *, seed=None, trace=None):
     trace['pulse'] は 0.25 秒以後のパルスがある場合のみ存在する。
     """
     from .pml_synthesis import synthesize
+    from .raw_noise import RawNoiseControl
+
+    validate_raw(params)
+    A, L = params.A_raw, params.L_raw
+    A_samples = np.interp(np.arange(params.n_samples), np.arange(len(A)) * 8, A)
+    controller = RawNoiseControl(A_samples, L)
 
     selected_seed = params.seed if seed is None else seed
     if type(selected_seed) is not int or not 0 <= selected_seed < 2**32:
@@ -104,9 +119,14 @@ def decode(params, *, seed=None, trace=None):
         verbose=0,
         trace=trace,
         seed=selected_seed,
+        noise_modifier=controller,
     )
+    if y.dtype != np.float64 or y.shape != (params.n_samples,):
+        raise ValueError("RAW_FULL 合成出力の精度または長さが不正です")
+    if controller.calls <= 0:
+        raise ValueError("RAW_FULL 雑音変調が呼び出されませんでした")
     if not np.isfinite(y).all():
-        raise ValueError("PML 合成出力に非有限値があります")
+        raise ValueError("RAW_FULL 合成出力に非有限値があります")
     if np.max(np.abs(y)) > 1:
-        _LOG.warning("PML 出力が ±1 を超えています。自動クリップは行いません")
+        _LOG.warning("RAW_FULL 出力が ±1 を超えています。自動クリップは行いません")
     return y

@@ -34,3 +34,14 @@ Python 2 の整数標本化率による整数 Hz グリッド、符号付き pea
 独自追加の API と保存形式は、このリポジトリへの統合用です。上流 CLI の抽出と pyreaper API の抽出は同一精度と主張しません。REAPER API の float32 出力を float64 へ昇格させた量子化は残ります。
 
 CLI デモで非推奨警告がフレームごとに出たため、NumPy の `row_stack` 別名を同じ演算の `vstack` に置換しました。警告をフィルターで隠す変更ではありません。
+
+## 2026-10-19 RAW_FULL 統合（本変更で選択）
+
+- `raw_features.py`: run003 `pure_rtf/raw_features/features.py` をbyte同一で移植。診断配列計算も削除しない。
+- `raw_noise.py`: run003 `pure_rtf/raw_noise.py` から移植。requireをファイル内へ移動しただけでcontroller数値式・guardsは維持。
+- `pml_synthesis.py`: run003 RAW backendを唯一の合成実装へ置換。reference_modeの非既定source_value/source_maskを削除、edited経路を保持。noise_modifierは必須keyword引数となり、Noneなら旧復号する分岐を削除。RNG、D0、clock、nearest row、mask、複素べき、最小位相、taper、OLAは保持。
+- `pml_helpers.py` とライセンスは既存共有ファイルを使い、重複backendを追加しない。測定RAW helpersと現main helpersのソースは同じ。
+- codecは基礎解析を内部関数へ分離し、A/L生成を追加。公開復号は必須RAW型だけ。native-only pitch==0 guardは採用せず、既存累積±3編集契約を適用。
+- storageはPML成分serializerと過去結果読取りとして保持。公開保存境界は新規payload.pyへ移す。
+
+この移植の確認はソース読取り・AST・キャッシュ使用Ruffのみ。新テスト・スモーク・回帰・保存往復・再decode一致・音声計算は実施しない。

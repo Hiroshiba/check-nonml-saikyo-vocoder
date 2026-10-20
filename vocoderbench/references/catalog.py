@@ -16,7 +16,7 @@ class Method:
 
 
 METHODS = {
-    "pml": Method("PML（現ベース）", 16000, (), "現開発ベース・明示併記のみ", True),
+    "pml": Method("RAW_FULL（現ベース）", 16000, (), "現開発ベース・明示併記のみ", True),
     "world_harvest": Method("WORLD（Harvest）", 16000, (), "既存の固定版WORLD"),
     "facodec": Method("FACodec", 16000, ("facodec",), "v1・全6コードブック"),
     "hifiglot": Method("HiFi-Glot", 44100, ("hifiglot",), "公開学習済み44.1 kHz"),
