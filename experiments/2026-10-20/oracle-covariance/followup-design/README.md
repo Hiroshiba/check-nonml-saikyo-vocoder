@@ -82,3 +82,7 @@ E は元設計どおり tr(Σ)/N、すなわち一標本当たりに各成分を
 - [stage1のindex照合](pitch-fixed-candidate-stage1-index-review-20261020.md)と[数値呼出しの静的レビュー](pitch-fixed-bf-stage1-numerical-review-20261020.md)：保存入力との対応と呼出し条件の確認。実測一致や実行全体の承認とは区別します。
 
 保存元はLibrary `libfile_9692652c9d848191a7aeca16c48125f8` v0の `pitch-reviewed-followup-docs-20261020.zip`（40587 bytes、SHA256 `0f2788ea9675c0b9dce0b1d19b76319ebbd915871407f9c8b39867969bd07f75`）です。8文書のサイズとSHAを同梱MANIFESTに照合しました。科学コードとZIP原本はGitに含めていません。
+
+## 雑音尺度の校正とPMLの位相契約（2026-10-20）
+
+[一次資料確認・独立レビュー・PML契約監査の3文書](calibration-and-base-contract/README.md)を保存しました。著者実装の正規化・正則化を、今回の雑音の事前分布の校正根拠としてそのまま流用しません。校正方法・パラメーターは未決定です。既知q・一定F0で学習側だけから位相原点を校正するための残る契約を検討しています。実装・数値prior選択・測定・採用は未決定で、PMLを維持します。
