@@ -1,5 +1,12 @@
 # 現在の状態と次の作業
 
+## 理想Wの予測理論と参照資料を保存、実500は集計保留（2026-10-20）
+
+[予測理論・コーパス一次資料・失敗原因調査の案内](../experiments/2026-10-20/phase-origin-fixed-truth/followup-design/README.md)を追加し、指定Library v0の全12ファイルを原bytesで保存しました。理想Wでの連続位相混合予測の固定φ期待logscore優越は、理想global OLSとの紙上比較です。現行数値500組や音質の改善を意味しません。MOCHA-TIMIT・CMU ARCTIC・Keeleは当時コーパス未取得の調査で、EGGやpitchmarkは完全GCI真値ではありません。別CloudのMOCHA実体header調査とは区別して原文を保持し、PMLを維持します。
+
+実500は3hostすべての計算workerが実終了0、外側が終了2、167・167・166組完了との報告です。各hostの保存値の読取監査では欠落・不一致なしと報告されていますが、親によるrawの独立検証は未完了です。`/proc/self/task/{PID}/children` の読取失敗により、過去の全子終了unknown、`immutable=false`、通常packing拒否を保持します。各hostの写しは保全済みですが、正規Library uploadの `tools/list` はHTTP403で拒否されています。親判断により正式集計もhost別暫定集計も行いません。今回の文書保存では実験データへの接触、転送再試行・別経路転送・権限操作を行っていません。Draft PRの差分・CI確認とマージは親の工程です。以下は以前の記録です。
+
+
 ## 位相原点校正v2：処理状況と失敗証拠保全（2026-10-20）
 
 [v2固定契約・v1/v2監査・REAPER調査](../experiments/2026-10-20/phase-origin-fixed-truth/followup-design/frozen-contract-and-reaper-20261020/README.md)を保存しました。v2は静的レビューを通過し、500組を167・167・166組に分けた3ownerへ一回の開始指示を送りました。3担当とも外側の処理は終了していますが、すべての子プロセスの終了確認が不完全なため、正式な集計には進んでいません。各担当の計算プロセスは終了コード0、外側の処理は終了コード2でした。完了記録はowner0が167組、owner1が167組、owner2が166組で、計500組すべてにあると報告されています。ただし、保存物の全体監査と科学結果の採用は未完了です。
