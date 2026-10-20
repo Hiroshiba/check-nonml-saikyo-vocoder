@@ -62,3 +62,12 @@ E は元設計どおり tr(Σ)/N、すなわち一標本当たりに各成分を
 指定条件では両端の近傍で近似値が厳密値より小さく、r=0 の右近傍では比がさらに下がります。しかし連続全領域の過小評価は未証明で、反例を得たという意味でもありません。有限支持の数値照合は別途準備済み・未実行です。品質改善、実装採用、既存 F0 誤りの原因を結論していません。
 
 既存500組の予測混合は別の再解析です。初代3分割回収の統合では成功3675/5000積分、BMA確定36/500組（W22・A14）で、全100組の平均・CIは未確定です。成功済み値を保持する次段階の3分割計測を依頼していますが、結果は未受領です。PML base と PR67 Draft は維持します。
+
+## 保存値の識別可能性と予測利得の基準（2026-10-20 08:16 UTC）
+
+- [log-g Laplace の逆写像と丸めの限界](pitch-laplace-inverse-identifiability-20261020.md)、[独立レビュー](pitch-laplace-inverse-independent-review-20261020.md)：指定条件の解析式は r に対して厳密単調増加ですが、helper 内部誤差や clip が不明なら丸め済みログから元 r の保証付き復元はできません。既存ログへの逆変換は実施していません。
+- [W-only の scale 積分による期待予測利得](white-scale-predictive-gain-derivation-20261020.md)、[独立レビュー](white-scale-predictive-gain-independent-review-20261020.md)：平均既知の白色 Gaussian と共通未知分散という限定条件で、train/test 長への依存を閉形式で導出しました。BMA の実測利得をモデル混合だけに帰属させないための理論的な対照であり、実測の寄与分解や音質改善の証明ではありません。
+- [固定2周波数・全次数の反事実比較計画](pitch-fixed-candidate-counterfactual-plan-20261020.md)：保存済み固定候補だけで BF 差や旧 prior 凍結下の条件付き odds を調べる計画です。全 grid MAP、VUV、exact 再追跡は対象外です。
+- [選択入力の読取監査](pitch-bf-selected-input-audit-20261020.md)：309 frame・6180固定候補の保存字段を確認しました。prediction_prior は旧 A の更新前 H1 joint 質量で2056セルに保存zeroがあります。後続 frame の initial_prior_payload のzeroは帳簿用であり、これとは別です。計画適用時はこの監査の限定を優先し、zeroをfloorで補いません。
+
+上記は紙上導出・保存値の読取・計画で、309 frame に新しい BF を適用していません。数値 kernel の固定1080点診断は別工程で、原成功548点と回収532点の保存照合が済み、専用集約を準備しています。有限支持の照合を全領域誤差保証やF0品質改善とはしません。PML base、PR67 Draft、既存比較結果は維持します。
