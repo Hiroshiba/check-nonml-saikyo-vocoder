@@ -31,3 +31,10 @@ docs ZIP: 63950 bytes、SHA256 `462d3cf42ca0c831b40947bd4009fbbce72a96f430984e6f
 原results SHA256: `7b819eb2308e1310c636c5ce6f76f3313f25814653d058bc7417978aa2140e3d`。
 
 Pages予定先は `research/oracle-evidence-run-001-2026-10-20/index.html`。registryは初回記録のみを登録し、レビュー原文はGit管理します。未採用実装・生音声・残差は含めません。Draft PRまでで停止し、マージと本番Pages確認は親の確認後です。
+
+
+## 初代回収unionの保存記録（2026-10-20追記）
+
+[初回run-001](results/run-001/index.html)と[初代回収union](results/recovery-union-001/index.html)を別の実行記録として参照できます。[回収unionの説明](results/recovery-union-001/README-ja.md)は3675成功積分・完全36/500組（W22/A14）を記録し、全25比較の全100平均・CIは未確定です。Bは固定snapshotで外部終了unknown、A/Cは保存終了確認あり。世代2B担当280の全件成功は報告受領・独立監査中、A/C未受領という本文作成時点の記録です。全体完了や品質改善を意味しません。
+
+監査済みLibrary v1のpublic17ファイルをそのまま保存しました。元resultsはmtime=0の可逆gzipで、解凍SHAを確認済み。以前の「回収run未統合」等は初回文書作成時点の経過として保持しています。新しい公開先は `research/oracle-evidence-recovery-union-001-2026-10-20/index.html`。本追記はDraft保存時点で、マージ・Pages反映は未実施です。既存ChromiumのSUID sandbox設定不備によりブラウザー描画は未確認です。
