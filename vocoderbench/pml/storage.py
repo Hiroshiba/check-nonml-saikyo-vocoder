@@ -1,4 +1,4 @@
-"""独立復号可能な PML 特徴量ファイル。外部音声・特徴量は参照しない。"""
+"""内部PML成分serializerと履歴読取り。RAW復号には別途保存A/Lが必須。"""
 
 import hashlib
 import json

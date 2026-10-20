@@ -1,4 +1,4 @@
-"""既存PML/WORLDの区間生成契約。科学処理と保存中断を分離する。"""
+"""旧PML版の計画に固定されたPML/WORLD区間生成契約。RAW_FULL生成用ではない。"""
 import json
 import os
 import shutil
@@ -17,7 +17,7 @@ class GenerationContext:
         if args.method not in self.plan['methods'] or self.stage not in self.plan['required_stage_receipts']:
             raise ContractError('計画外の方式・生成stageです')
         if self.plan['formal_base'] != 'pml' or self.plan['formal_base_version'] != 'pml-lowband-fwcep60-v1':
-            raise ContractError('現baseの固定版が異なります')
+            raise ContractError('旧PML専用計画の固定版が異なります。RAW_FULLには転用できません')
         self.chunk = next(c for c in self.plan['chunks'] if c['id'] == args.chunk)
         authorization = read(args.authorization)
         if (authorization.get('approved') is not True
@@ -58,7 +58,7 @@ class GenerationContext:
             self.require_bound(path)
         baseline = read(repo / 'BASELINE.json')
         if baseline['method'] != 'pml' or baseline['version'] != 'pml-lowband-fwcep60-v1':
-            raise ContractError('repositoryの現baseが変わりました')
+            raise ContractError('旧PML版専用の生成入口です。現RAW_FULLへの切替後は旧版生成を拒否します')
         self.inputs = read(args.inputs)
         if list(self.inputs) != [r['case'] for r in self.plan['cases']]:
             raise ContractError('全120入力の順序が計画と異なります')

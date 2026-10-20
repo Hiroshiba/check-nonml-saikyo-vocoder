@@ -1,10 +1,10 @@
 {
   "status": "selected",
   "method": "pml",
-  "version": "pml-lowband-fwcep60-v1",
-  "reason": "次の研究baseとしてPML低域雑音マスク拡張＋60FWCEPへ更新。正式package seed 0・固定120録音の品質71軸と追加制御・表現評価に基づき、旧HNMからの予測MOS・明瞭性・話者類似度改善を重視する。音高追従・固定読み出し・スペクトル誤差の弱点があり、総合優越や48 kHz対応は未確証。測定時の比較基準はHNM v3。",
+  "version": "raw-full-fwcep60-v1",
+  "reason": "16 kHz・0/±3半音の研究baseをRAW_FULLへ更新する事後的な工学的交換条件判断。固定120録音・40話者・2seedで小さい品質平均利得がある一方、個別悪化・有声取りこぼし・GT付き55録音のASR不利、保存約17.1%増・単回固定順の純復号RTF約5.24%増を受け入れる。総合優越・非劣性の証明ではない。gain追従、全表現の距離・補間、任意音高、48 kHzは未測定。保存済み結果の版・比較基準は保持する。",
   "comparison_reference": "pml",
   "comparison_reference_meaning": "現在の唯一の開発ベース。保存済み過去結果は測定時の方式・版・比較基準を保持する。",
-  "previous_version": "hnm-v3",
-  "selection_report": "research/pml-package-evaluation-2026-10-16/index.html"
+  "previous_version": "pml-lowband-fwcep60-v1",
+  "selection_report": "research/raw-full-adoption-selection-2026-10-20/index.html"
 }

@@ -1,4 +1,4 @@
-"""16 kHzモノラル音声をPML特徴へ解析し、保存特徴だけから復号する。"""
+"""16 kHzモノラル音声をRAW_FULL保存特徴へ解析し、保存特徴だけから復号する。"""
 from pathlib import Path
 import json
 import logging
@@ -29,10 +29,10 @@ def main():
     sub = parser.add_subparsers(dest='command', required=True)
     enc = sub.add_parser('encode', help='WAVから保存特徴を生成')
     enc.add_argument('input', type=Path)
-    enc.add_argument('output', type=Path)
+    enc.add_argument('output', type=Path, help='新規RAW保存directory')
     enc.add_argument('--seed', type=int, default=20261015)
     dec = sub.add_parser('decode', help='保存特徴だけからFLOAT WAVを生成')
-    dec.add_argument('input', type=Path)
+    dec.add_argument('input', type=Path, help='parameters.pmlとraw.npzを含むRAW保存directory')
     dec.add_argument('output', type=Path)
     dec.add_argument('--seed', type=int)
     dec.add_argument('--pitch-semitones', type=float, default=0)
@@ -61,7 +61,7 @@ def main():
         wavfile.write(args.output, params.sample_rate, y.astype(np.float32))
         duration = params.n_samples / params.sample_rate
         result = {'decode_seconds': seconds, 'decode_rtf': seconds / duration}
-    result.update(method='pml-lowband-fwcep60-v1', seconds_audio=duration,
+    result.update(method=pml.VERSION, seconds_audio=duration,
                   measurement='単発・ウォームアップなし。I/Oを除く壁時計。正式速度順位には使わない')
     if args.timing_json:
         args.timing_json.write_text(json.dumps(result, ensure_ascii=False, indent=2) + '\n')

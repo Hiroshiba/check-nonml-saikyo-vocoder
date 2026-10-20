@@ -34,6 +34,7 @@ def freeze(path, value):
 
 
 def main():
+    raise RuntimeError('旧PML版専用の新規生成は廃止しました。現在のRAW_FULLを旧方式名で生成しません。保存済み結果の読取り・集計とsource-freeze契約は維持します。')
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--input-manifest', type=Path, required=True)
     parser.add_argument('--input-root', type=Path, required=True)

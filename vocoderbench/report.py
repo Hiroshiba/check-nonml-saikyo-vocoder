@@ -7,7 +7,7 @@ from pathlib import Path
 import numpy as np
 
 from .audio_report import section as audio_section
-from .site_summary import CURRENT_LABELS
+from .site_summary import saved_method_labels
 
 
 def esc(value):
@@ -58,8 +58,9 @@ def _render_current(data, path):
     """第2版は比較と音声を先頭へ置き、全数値の詳細を折りたたむ。"""
     path = Path(path)
     reference = data['comparison_reference']
+    labels = saved_method_labels(data)
     def name(method):
-        return CURRENT_LABELS.get(method, method)
+        return labels.get(method, method)
     refs = {r['case']: r for r in data['resynthesis'] if r['method'] == reference}
     groups, all_rows = defaultdict(list), []
     for row in data['resynthesis']:
@@ -130,9 +131,11 @@ def _render_current(data, path):
             break
     iteration = data.get('development_iteration')
     iteration_section = ('<details><summary>初代作成中の改善記録</summary><pre>' + esc(json.dumps(iteration, ensure_ascii=False, indent=2)) + '</pre></details>') if iteration else ''
+    base_label = name(base.get('method') or reference)
+    heading = f'{base_label}と{name("world_harvest")}の比較'
     provenance = {key: data.get(key) for key in ('environment', 'parent_commit', 'data_status', 'formal_base', 'native_builds')}
     content = f'''<!doctype html><html lang="ja"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>自作HNMとWORLD（Harvest）の比較</title><style>
+<title>{esc(heading)}</title><style>
 :root{{color-scheme:light dark;--ink:#172a3a;--muted:#506375;--line:#d8e2ea;--accent:#156d79;--bg:#f6f8fb;--surface:#fff;--head:#e7eef5;--link:#126d8a}}
 body{{font:15px/1.7 system-ui,sans-serif;color:var(--ink);background:var(--bg);margin:0}}main{{max-width:1250px;margin:auto;padding:32px 24px 64px}}
 h1{{font-size:28px;margin:0 0 12px}}h2{{font-size:22px;margin-top:32px}}h3{{font-size:17px}}p{{max-width:1050px}}a{{color:var(--link)}}small{{color:var(--muted)}}
@@ -141,15 +144,15 @@ th{{background:var(--head)}}th:first-child,td:first-child,th:nth-child(2),td:nth
 .scroll{{overflow:auto;border:1px solid var(--line);border-radius:8px}}.audio-grid{{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px}}audio{{width:100%}}
 details{{margin:16px 0;border:1px solid var(--line);border-radius:8px;padding:14px;background:var(--surface)}}summary{{cursor:pointer;font-weight:600}}pre{{white-space:pre-wrap;overflow-wrap:anywhere;font-size:12px}}
 a:focus-visible,summary:focus-visible,audio:focus-visible{{outline:2px solid var(--accent);outline-offset:3px}}@media(prefers-color-scheme:dark){{:root{{--ink:#e6edf4;--muted:#b3c1d0;--line:#3b4b60;--accent:#68c8c6;--bg:#0f1724;--surface:#182438;--head:#23334a;--link:#7fdae8}}}}
-</style><main><h1>自作HNMとWORLD（Harvest）の比較</h1>
+</style><main><h1>{esc(heading)}</h1>
 <p>ベース：<strong>{esc(name(base.get('method') or reference))}</strong>。誤差は小さいほど原音に近く、差分は{esc(name(reference))}比です。知覚品質の勝敗ではありません。</p>
 {summary_table}
-{audio_section(path.parent, base.get('method'), compact=True)}
+{audio_section(path.parent, base.get('method'), compact=True, labels=labels)}
 <details><summary>比較条件と指標の読み方</summary>
 <p>{esc(base.get('reason', ''))}</p><p>自然音声は{speakers}話者・{len(natural)}区間・計{fmt(seconds, 1)}秒です。人工信号は評価対象のデコーダーとは独立に生成しています。</p>
 <p>MR-STFTは5・20・80 ms窓のスペクトル誤差です。表はケース中央値、差分は対応するケース同士の差の中央値です。自動時間整列・ゲイン正規化は行いません。—は欠測・未定義であり、ゼロ誤差ではありません。</p>
 <p>F0は音高に対応する基本周波数、100 centは1半音、P95は誤差の95パーセンタイルです。有声の欠測と誤有声は別に示します。F0測定には固定2 kHz低域通過処理を含む独立YIN型測定器を使います。自然音声の絶対正解F0はありません。</p>
-<p>WORLD（Harvest）はWORLDボコーダーにHarvestによるF0抽出を組み合わせた既存比較です。自作HNMは独自の解析・合成系です。原音は比較の参照であり、手法の順位には含めません。今回の測定だけで自然性、共鳴保持、多話者への一般化を保証しません。</p>
+<p>WORLD（Harvest）はWORLDボコーダーにHarvestによるF0抽出を組み合わせた既存比較です。{esc(base_label)}の方式名・版は保存された結果に基づいて表示しています。原音は比較の参照であり、手法の順位には含めません。今回の測定だけで自然性、共鳴保持、多話者への一般化を保証しません。</p>
 <p><a href="{repo}docs/EVALUATION.md">測定仕様</a> ／ <a href="{repo}docs/F0_CALIBRATION.md">音高測定器の校正</a> ／ <a href="{esc(review)}">5人の議論</a></p></details>
 <details><summary>再合成の全ケースとF0欠測</summary>{all_table}</details>
 <details><summary>操作の追従と欠測</summary><p>ゲイン・音高・時間長の変更を測定します。真値F0との誤差と、未操作出力からの相対変化推定は別の値です。全長一致は局所タイミングの保持を保証しません。帯域変化は未操作出力との差で、音高変更に伴う正常な変化も含む診断値です。</p>{operation_table}</details>

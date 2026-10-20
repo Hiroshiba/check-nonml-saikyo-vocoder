@@ -63,6 +63,8 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--stage", choices=["decode", "measure"], required=True)
     args = ap.parse_args()
+    if args.stage == "decode":
+        raise RuntimeError('旧PML版専用の新規生成は廃止しました。現在のRAW_FULLを旧方式名で生成しません。保存済み結果の読取り・集計とsource-freeze契約は維持します。')
     if not (ROOT / "native-summary.json").exists():
         raise RuntimeError("Native RTF phase not finished")
     spec = read(ROOT / "input-contract.json")

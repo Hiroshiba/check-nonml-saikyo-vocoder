@@ -19,6 +19,7 @@ import scipy
 from scipy.io import wavfile
 
 from .fixtures import make_synthetic_cases
+from .site_summary import saved_method_labels
 from .metrics import compare_waveforms, pitch_metrics, estimate_f0_yin, _band_metrics
 from . import world, audio_samples, methods
 
@@ -101,7 +102,8 @@ def run(args):
     except (OSError,subprocess.CalledProcessError):
         logging.exception('実行版の取得に失敗')
         head = None
-    report = dict(schema_version=2, formal_base=base, index_methods=['identity', 'pml', 'world_harvest'],
+    report = dict(schema_version=2, formal_base=base,
+                  method_labels=saved_method_labels({'formal_base': base}), index_methods=['identity', 'pml', 'world_harvest'],
                   environment={'python':platform.python_version(),'numpy':np.__version__,
                                'scipy':scipy.__version__,'platform':platform.platform()},
                   parent_commit=head, source_sha256={str(p.relative_to(ROOT)):hashlib.sha256(p.read_bytes()).hexdigest()
@@ -120,7 +122,7 @@ def run(args):
         audio_samples.collect(saved_audio, case, 'identity', x)
         for method in selected_methods:
             row = dict(case=case['id'],kind=case['kind'],method=method,base_method=base['method'],
-                       decoder_family='PML低域拡張＋60FWCEP' if method == 'pml' else 'WORLD',
+                       decoder_family='RAW_FULL（60FWCEP＋A_raw/L_raw）' if method == 'pml' else 'WORLD',
                        f0_source='REAPER由来の連続パルス時計' if method == 'pml' else 'WORLD Harvest')
             begin = time.perf_counter()
             try:

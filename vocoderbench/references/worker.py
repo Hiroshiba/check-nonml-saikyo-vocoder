@@ -61,7 +61,7 @@ def run_case(adapter, spec, args):
         start = time.perf_counter()
         divisor = math.gcd(spec['sample_rate'], adapter.sr)
         if args.method == 'pml' and spec['sample_rate'] != adapter.sr:
-            raise ValueError('PMLは16 kHz専用です。暗黙の再標本化はしません')
+            raise ValueError('RAW_FULLは16 kHz専用です。暗黙の再標本化はしません')
         if spec['sample_rate'] != adapter.sr:
             x = resample_poly(x, adapter.sr // divisor, spec['sample_rate'] // divisor)
         x = np.ascontiguousarray(x)

@@ -77,7 +77,7 @@ def main():
         if evidence.get(str(file)) != sha(file):
             raise ContractError("PML loader source is outside frozen common bindings")
     sys.path.insert(0, str(a.repository.resolve()))
-    from vocoderbench.pml import load
+    from vocoderbench.pml.storage import load_parameters as load
 
     for chunk, pml_item in zip(plan["chunks"], pml_paths):
         receipt = run / "chunk-receipts" / (chunk["id"] + ".json")

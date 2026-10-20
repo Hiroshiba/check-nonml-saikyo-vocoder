@@ -102,7 +102,7 @@ def main(argv=None):
     add_arguments(parser)
     parser.add_argument('--output', type=Path)
     parser.add_argument('--include-current-base', action='store_true',
-                        help='現在のPMLを同じ入力・seedで正式に併記する。新候補や採用判断ではない')
+                        help='現在のRAW_FULLを同じ入力・seedで正式に併記する。新候補や採用判断ではない')
     parser.add_argument('--manifest', type=Path, default=corpus.MANIFEST)
     parser.add_argument('--corpus-cache', type=Path, default=corpus.CACHE)
     parser.add_argument('--mos-cache', type=Path, default=Path('.cache/mos'))
@@ -167,7 +167,7 @@ def main(argv=None):
             'failure_count': failures, 'process_failure_count': process_failures,
             'operation_evaluation': {'status': 'not_implemented', 'reason': '本PRは再合成比較の追加。属性操作・下流学習は未評価'}}
     if args.include_current_base:
-        data['method_labels']['pml'] = f"PML（現ベース: {formal_base['version']}）"
+        data['method_labels']['pml'] = f"RAW_FULL（現ベース: {formal_base['version']}）"
     if (args.output / 'mos_provenance.json').exists():
         data['mos_provenance'] = read(args.output / 'mos_provenance.json')
     write(args.output / 'results.json', data)

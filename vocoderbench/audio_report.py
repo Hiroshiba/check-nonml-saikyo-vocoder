@@ -6,14 +6,16 @@ import json
 from .site_summary import CURRENT_LABELS, LABELS
 
 
-def section(directory, base, *, compact=False):
+def section(directory, base, *, compact=False, labels=None):
+    # Existing callers keep their historical labels; result renderers supply saved labels.
+    labels = (CURRENT_LABELS if compact else LABELS) if labels is None else labels
     path = directory / 'audio_samples.json'
     if not path.exists():
         return '<h2>原音と各方式の音声</h2><p>この記録には音声例を保存していません。</p>'
     data = json.loads(path.read_text(encoding='utf-8'))
     groups = defaultdict(list)
     for item in data['samples']:
-        if compact and item['method'] not in CURRENT_LABELS:
+        if compact and item['method'] not in labels:
             continue
         groups[item['case']].append(item)
     parts = ['<h2>原音と各方式の音声</h2><p>'+html.escape(data['selection_note'])+'</p>',
@@ -29,7 +31,6 @@ def section(directory, base, *, compact=False):
             uri = item['data_uri']
             if not uri.startswith('data:audio/wav;base64,'):
                 raise ValueError('音声例はWAVで保存してください')
-            labels = CURRENT_LABELS if compact else LABELS
             label = labels.get(item['method'], item['method'])
             if item['method'] == base:
                 label += '（ベース）' if compact else '（正式ベース）'

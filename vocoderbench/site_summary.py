@@ -13,6 +13,20 @@ INDEX_METRICS = (
 )
 
 
+def saved_method_labels(data):
+    """保存結果自身の版とlabelだけを使う。現BASELINEで履歴を改名しない。"""
+    labels = dict(CURRENT_LABELS)
+    base = data.get('formal_base') or {}
+    if isinstance(base, dict) and base.get('method') == 'pml':
+        version = base.get('version')
+        if version == 'raw-full-fwcep60-v1':
+            labels['pml'] = f'RAW_FULL（当時のベース: {version}）'
+        elif version:
+            labels['pml'] = f'PML（当時のベース: {version}）'
+    labels.update(data.get('method_labels') or {})
+    return labels
+
+
 def esc(value):
     return html.escape(str(value), quote=True)
 
@@ -107,6 +121,7 @@ def _metric_table(data, summary):
 
 def _brief_current(data):
     rows = data['resynthesis']
+    labels = saved_method_labels(data)
     natural = any(row['kind'] == 'natural_speech' for row in rows)
     selected = [r for r in rows if (r['kind'] == 'natural_speech') == natural]
     reference = data['comparison_reference']
@@ -123,12 +138,12 @@ def _brief_current(data):
                 if base is not None:
                     deltas.append(value - base)
         failed = sum(r['status'] != 'measured' or r.get('measurement', {}).get('status') != 'ok' for r in records)
-        cells = [CURRENT_LABELS.get(method, method), f'{median(values):.3f}' if values else '—',
+        cells = [labels.get(method, method), f'{median(values):.3f}' if values else '—',
                  f'{len(values)}/{len(records)}',
                  f'{len(deltas)}/{len(records)}', f'{failed}/{len(records)}']
         body.append('<tr>'+''.join(f'<td>{esc(v)}</td>' for v in cells)+'</tr>')
     kind = '自然音声' if natural else '人工信号'
-    return (f'<p>{kind}の再合成。比較相手：{esc(CURRENT_LABELS.get(reference, reference))}。対応差は詳細に保存しています。'
+    return (f'<p>{kind}の再合成。比較相手：{esc(labels.get(reference, reference))}。対応差は詳細に保存しています。'
             '誤差は小さいほど原音に近く、知覚品質の順位ではありません。</p>'
             '<div class="scroll"><table><thead><tr><th>方式</th><th>誤差中央値 dB</th>'
             '<th>有効／全件</th><th>比較可能／全件</th><th>失敗／全件</th>'
@@ -146,7 +161,7 @@ def short_audio(results, *, heading='同じ区間の音声'):
     data = json.loads(path.read_text(encoding='utf-8'))
     measurements = json.loads((results / 'results.json').read_text(encoding='utf-8'))
     current = measurements.get('schema_version', 1) >= 2
-    labels = measurements.get('method_labels', CURRENT_LABELS if current else LABELS)
+    labels = saved_method_labels(measurements) if current else measurements.get('method_labels', LABELS)
     samples = data.get('samples', [])
     refs = [s for s in samples if s['method'] == 'identity']
     if not refs:
