@@ -1484,6 +1484,40 @@
         "bytes": 22576,
         "sha256": "be345414b33b6afeba3ed80b0fbaff1bb69d2824325b9ec06ec0efe8c2641756"
       }
+    },
+    {
+      "kind": "navigation-only",
+      "id": "pitch-history-log-2026-10-20",
+      "path": "research/pitch-history-log-2026-10-20",
+      "source_path": "experiments/2026-10-20/pitch-history-log/results/run-001",
+      "created_on": "2026-10-20",
+      "created_at": "2026-10-20T04:15:12.887016+00:00",
+      "title": "F0の履歴と数値表現：人工3入力・309窓のMAPと分布差",
+      "comparison_scope": "PML維持。通常確率状態保持版と同一モデルlog領域版で309窓のjoint MAP不変。共通49窓の53–55のみ履歴差、56以後MAP一致。posterior差は残る。正弦波＋固定乱数の人工音3本、品質指標・順位・自然音声への一般化なし。",
+      "artifact_count": 16,
+      "artifact_manifest": {
+        "bytes": 2372,
+        "sha256": "b28136e15ed2b9b61573386f9a3aa883b69d69faacdc149bd52f26b9954ed2ca"
+      },
+      "audio_listing": {
+        "caption": "同じ固定雑音を使った人工入力。各1.024秒。",
+        "note": "正弦波とPCG64乱数のみ。既存PCM16をbyte同一コピー。品質順位ではない。",
+        "attribution_path": "audio-credits.html",
+        "samples": [
+          {
+            "path": "U-U.wav",
+            "label": "U-U（人工入力）"
+          },
+          {
+            "path": "E-U.wav",
+            "label": "E-U（人工入力）"
+          },
+          {
+            "path": "E-E.wav",
+            "label": "E-E（人工入力）"
+          }
+        ]
+      }
     }
   ]
 }
