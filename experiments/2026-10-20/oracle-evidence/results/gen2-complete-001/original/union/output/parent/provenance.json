@@ -1,0 +1,525 @@
+{
+  "generation": 2,
+  "parent_index_sha256": "dd8f5d535cae2aeda953aa2e99ed30e9d9ee00db6e7593a0877f06b23dc888a6",
+  "parent_results_sha256": "e1b9122441e5d62f73ee0ad3dda45450517b5731851c8bda144906723b47a269",
+  "parent_merged_slots_sha256": "1486fb61b4664aaa10d69b4c7b1780e649356882fe8db5e4953a6d83c66556f4",
+  "parent_union_source_sha256": "5ba5e987786d8e31eacb5b549e42b90ebb921681376755e5027517e5c8d54ded",
+  "parent_input_index": {
+    "schema": "oracle-gen2-parent-index",
+    "schema_version": 1,
+    "generation": 2,
+    "input_index_sha256": "79c47c6b1926359d636d63eca6b6bab161e2b2d5f28015bc16d5209a100350d2",
+    "parent_union_source_manifest_sha256": "5ba5e987786d8e31eacb5b549e42b90ebb921681376755e5027517e5c8d54ded",
+    "artifacts": {
+      "results": {
+        "path": "/workspace/oracle-gen2-parent-fixed/results.json",
+        "bytes": 13220296,
+        "sha256": "e1b9122441e5d62f73ee0ad3dda45450517b5731851c8bda144906723b47a269"
+      },
+      "merged_slots": {
+        "path": "/workspace/oracle-gen2-parent-fixed/merged_slots.json",
+        "bytes": 12503398,
+        "sha256": "1486fb61b4664aaa10d69b4c7b1780e649356882fe8db5e4953a6d83c66556f4"
+      },
+      "worker_receipt": {
+        "path": "/workspace/oracle-gen2-parent-fixed/worker_receipt.json",
+        "bytes": 60027,
+        "sha256": "5456f6e91a0048910125968933a13b869faba674d2b2ebe9fdcacaee8f72a650"
+      },
+      "supervisor_receipt": {
+        "path": "/workspace/oracle-gen2-parent-fixed/supervisor_receipt.json",
+        "bytes": 784,
+        "sha256": "d9039482ff87401083e416ddec42775dd4df67af07824df4269fcc5852410960"
+      },
+      "union_index": {
+        "path": "/workspace/oracle-gen2-parent-fixed/union_index.json",
+        "bytes": 4904,
+        "sha256": "cca181945f8e08d51840ac5b6b7c477f59a6053d2023f81179a975f3d61cd9dd"
+      },
+      "union_source_manifest": {
+        "path": "/workspace/oracle-gen2-parent-fixed/union_source_manifest.json",
+        "bytes": 7093,
+        "sha256": "5ba5e987786d8e31eacb5b549e42b90ebb921681376755e5027517e5c8d54ded"
+      }
+    }
+  },
+  "parent_provenance": {
+    "source_manifest": {
+      "schema": "oracle-source-manifest",
+      "version": 7,
+      "state": "union_immutable_snapshot_source_prepared_static_only",
+      "repository": "Hiroshiba/check-nonml-saikyo-vocoder",
+      "main_sha": "55e3ce03874404d3c076e5e08c72eb324a9b9d88",
+      "deliverables": {
+        "CHANGES-ja.md": {
+          "bytes": 1948,
+          "sha256": "0a7f3ba9b4e226c76932e11de528fd7345f2b4f5322a3e9565b4e6fc23d09f69"
+        },
+        "CONTRACT-ja.md": {
+          "bytes": 18424,
+          "sha256": "b908dc2c46b1ae013974b9a7b115e908152cc823e0d347ca3c6876628e3fa7fd"
+        },
+        "README.md": {
+          "bytes": 3402,
+          "sha256": "0396a151b25186dedfb6ec1ad0830f80516b09b33c45981366cd27bb6c17cb15"
+        },
+        "RECOVERY-ja.md": {
+          "bytes": 7247,
+          "sha256": "330e74c3b961d2ca9a023a4bc07ca22307d942b6cb6ebd623a60aa7e33b3fe03"
+        },
+        "STATIC_CHECKS.md": {
+          "bytes": 1626,
+          "sha256": "a955ea1fd8b3bdcce3fab9c2a7352cdce19f2356d08395c789aeaa12c3bdb76a"
+        },
+        "UNION-ja.md": {
+          "bytes": 14101,
+          "sha256": "e4a4ee48e76cc208077c5134a8f1ef0751aaa18f4e32d6faf896529b0b20dae1"
+        },
+        "UNION_STATIC_CHECKS.md": {
+          "bytes": 3142,
+          "sha256": "907a4194c6f599fbb5afd0afbd0719ae55fec0040cccb8cd85b5a9cb2513695f"
+        },
+        "core.py": {
+          "bytes": 6266,
+          "sha256": "801105b5d0331c7215c82772635ccf81fc324d0c16ff23513fb5abe67159aed1"
+        },
+        "input_index.py": {
+          "bytes": 6406,
+          "sha256": "1488d91d521993137a47bcdfc6838eb9c3ddc3fe82bf8129db4912ced6e5795e"
+        },
+        "legacy-CONTRACT-ja.md": {
+          "bytes": 15794,
+          "sha256": "8c7b21a29f0d8a711db0af280c0af3f99b1bcd6ec1f6e95881139fdff5c7f9fb"
+        },
+        "legacy-source-manifest.json": {
+          "bytes": 4107,
+          "sha256": "1b54832860d9744576e071d36cc70256291c145571bc3f372b1cbeefa17e0cec"
+        },
+        "pyproject.toml": {
+          "bytes": 333,
+          "sha256": "1b220ffe53209c8d9b45ebe4f8658530adc3709f6c17423c87a91b23a5d75cde"
+        },
+        "quadrature_1d.py": {
+          "bytes": 8219,
+          "sha256": "0c76b9fed31437fa0d2d2ad06b81782d8561e0ca333b23737f2b0656cc109752"
+        },
+        "quadrature_disk.py": {
+          "bytes": 15402,
+          "sha256": "e11058fcecc9bc97e9ecde40391593b4f51b5928e176b17872b23a4e10fb3a48"
+        },
+        "recovery.py": {
+          "bytes": 6942,
+          "sha256": "8c00a6c70b40f1421b4778f7c1346fac9c7dd069c1b30691b3841c7decd9f883"
+        },
+        "recovery_validation.py": {
+          "bytes": 6026,
+          "sha256": "440fc95bcbd3e1fb63346528541bc8190005d8d70858d00b3b406c99347e6aef"
+        },
+        "report.py": {
+          "bytes": 10391,
+          "sha256": "f4d91ecb7fa16bdec8b31001a286c48c6e3bc36dd40dc0e2aefa25b0a67615fe"
+        },
+        "run_reanalysis.py": {
+          "bytes": 7725,
+          "sha256": "61facf21a562ecf09fb756b9cf35f348b2b1eb85ed3ce9a86d283a5aecc15779"
+        },
+        "run_union.py": {
+          "bytes": 5630,
+          "sha256": "c3ba70d90306a637bb6cc770f4dad4d4149fcd9094595a2872c5b27003569430"
+        },
+        "runtime.py": {
+          "bytes": 5163,
+          "sha256": "110fc8a511d72d7aacee3387302fb02f5383368c054fa1ff13fb333dbea101e1"
+        },
+        "shard-source-manifest.json": {
+          "bytes": 5671,
+          "sha256": "11b308a02d96cd3e55ef407006131a7677ff57604185f3ca83fb93660ea094ad"
+        },
+        "union_io.py": {
+          "bytes": 10683,
+          "sha256": "b64fa2a927113bcf638738efb0c1b20ee18329bfaa99db1f8d1cfb48c149759a"
+        },
+        "union_merge.py": {
+          "bytes": 12099,
+          "sha256": "e1dfe04d0f4bd78bb0a024888ed57365d6659708dc1db5eb4cc137a95eda25a8"
+        },
+        "union_snapshot.py": {
+          "bytes": 6215,
+          "sha256": "c2e5edea229b9b3aa2c0b9a7950b889ecabdf5659d7ab77929681885e7b0d9f6"
+        },
+        "union_validation.py": {
+          "bytes": 6277,
+          "sha256": "351a4bdaf1e8f4785b75e78871076347b9f1c2e5ffa90a3ea175155b6a3b2bfa"
+        },
+        "union_worker.py": {
+          "bytes": 8558,
+          "sha256": "ddfbea0374f0b68a1ad22d3b73db197778619b357ab7a71eabbff96cf98202cd"
+        },
+        "worker.py": {
+          "bytes": 15040,
+          "sha256": "9e85acf0b698f51c0cc6a7345ef2ece886315c3e963454c189457df451bce380"
+        }
+      },
+      "reference_documents": {
+        "USER_INSTRUCTIONS.md": {
+          "bytes": 8218,
+          "sha256": "39a5b4d1596b267cad2be40b37b8de54ee2ca9b986e8c2951e6b4cf7ee4f6065"
+        },
+        "AGENTS.md": {
+          "bytes": 1370,
+          "sha256": "2b850808518e086f31edabd54370d617b752181b5d52d95c61ad0419d1d7bc36"
+        },
+        "BASELINE.json": {
+          "bytes": 811,
+          "sha256": "02fa0c4315f4401a817ac38d0c7ed523eb5e2ef43523485596d52a72bbdf3a92"
+        },
+        "pyproject.toml": {
+          "bytes": 1033,
+          "sha256": "f6ab6f877acd61ef43b642081d2441b8b61d80c2da599f5cffa910797884252d"
+        },
+        "experiments/2026-10-20/oracle-covariance/followup-design/README.md": {
+          "bytes": 3734,
+          "sha256": "66538ecaeb51e9b89fa871463d361fcab63c1e2465f874db90a112c9be6f3986"
+        },
+        "experiments/2026-10-20/oracle-covariance/followup-design/bayesian-evidence-independent-review-20261020.md": {
+          "bytes": 21151,
+          "sha256": "2e7b2822b1152782bf1bc9547f4e775a7805b3c336668e551a66801c44ae3bb2"
+        },
+        "experiments/2026-10-20/oracle-covariance/followup-design/evidence-quadrature-plan-20261020.md": {
+          "bytes": 18944,
+          "sha256": "0a2f7b96ee17eecc6b8c098a08161ae5da5a05be3d82a0f87962c5734b2a3e84"
+        },
+        "experiments/2026-10-20/oracle-covariance/followup-design/evidence-reanalysis-scope-20261020.md": {
+          "bytes": 5203,
+          "sha256": "9eed92a340861abec90ca84b0eb6e76040559f00ca438dd0ec81fbefd63af3b3"
+        },
+        "experiments/2026-10-20/oracle-covariance/followup-design/noise-model-evidence-design-20261020.md": {
+          "bytes": 26226,
+          "sha256": "57679a89dd3e1fd52b7ac669e35a36ce16abf2949a74a5b67b839eb5beeb786d"
+        },
+        "experiments/2026-10-20/oracle-covariance/followup-design/template-uncertainty-design-20261020.md": {
+          "bytes": 26032,
+          "sha256": "7f99d81925ed2f8bfc76c1d3cf500805b3aa689d086321c3c4068fee6c3ec1f6"
+        }
+      },
+      "excludes": [
+        "source-manifest.json self hash",
+        "input arrays",
+        "input-index contents",
+        "recordings",
+        "cache",
+        "Git"
+      ],
+      "input_index_sha256": "79c47c6b1926359d636d63eca6b6bab161e2b2d5f28015bc16d5209a100350d2",
+      "processing_order": "pair_id ascending, then W/A/V/S/J (round-robin)",
+      "previous_zip_sha256": "da6181411d038331e8f09bac47a2a2db26b1065f929ccc1cfe49e26642af6ac5",
+      "recovery_reference": {
+        "archive_sha256": "f06e7bd1f1ae7a2f2e4e8e22aeb66dcc1fd76928c78c45a27406ed297d41e3d8",
+        "results_sha256": "7b819eb2308e1310c636c5ce6f76f3313f25814653d058bc7417978aa2140e3d",
+        "source_manifest_sha256": "1b54832860d9744576e071d36cc70256291c145571bc3f372b1cbeefa17e0cec",
+        "reusable_slots": 392,
+        "legacy_V_slots": [
+          "A-001/train/V",
+          "W-004/train/V"
+        ]
+      },
+      "planned_shards": [
+        {
+          "pair_id_range": [
+            0,
+            32
+          ],
+          "new_slots": 1258
+        },
+        {
+          "pair_id_range": [
+            33,
+            65
+          ],
+          "new_slots": 1650
+        },
+        {
+          "pair_id_range": [
+            66,
+            99
+          ],
+          "new_slots": 1700
+        }
+      ],
+      "shard_source_manifest_sha256": "11b308a02d96cd3e55ef407006131a7677ff57604185f3ca83fb93660ea094ad",
+      "union_input_schema_version": 3,
+      "union_terminal_schema_version": 2
+    },
+    "source_manifest_sha256": "5ba5e987786d8e31eacb5b549e42b90ebb921681376755e5027517e5c8d54ded",
+    "shard_source_manifest_sha256": "11b308a02d96cd3e55ef407006131a7677ff57604185f3ca83fb93660ea094ad",
+    "union_input_index_sha256": "cca181945f8e08d51840ac5b6b7c477f59a6053d2023f81179a975f3d61cd9dd",
+    "input_index_sha256": "79c47c6b1926359d636d63eca6b6bab161e2b2d5f28015bc16d5209a100350d2",
+    "artifacts": {
+      "schema": "oracle-union-index",
+      "schema_version": 3,
+      "input_index_sha256": "79c47c6b1926359d636d63eca6b6bab161e2b2d5f28015bc16d5209a100350d2",
+      "shard_source_manifest_sha256": "11b308a02d96cd3e55ef407006131a7677ff57604185f3ca83fb93660ea094ad",
+      "root_archive": {
+        "path": "/workspace/oracle-evidence-run-001-preserved-20261020.zip",
+        "bytes": 514502,
+        "sha256": "f06e7bd1f1ae7a2f2e4e8e22aeb66dcc1fd76928c78c45a27406ed297d41e3d8"
+      },
+      "shards": [
+        {
+          "pair_id_range": [
+            0,
+            32
+          ],
+          "availability": "terminal_artifacts",
+          "artifacts": {
+            "results": {
+              "path": "/workspace/oracle-evidence-results-shard-a-run-002-20261020/results.json",
+              "bytes": 6391586,
+              "sha256": "41af34a4413af7e42cfb3ca9b087b6b55c41101179bc50b378a59e0a5cb7b9c6"
+            },
+            "worker_receipt": {
+              "path": "/workspace/oracle-evidence-results-shard-a-run-002-20261020/receipt-worker.json",
+              "bytes": 79923,
+              "sha256": "78256cec9067033f76183efefb4701c64db6bad4a46e09625266b71c1b41a8f0"
+            },
+            "supervisor_receipt": {
+              "path": "/workspace/oracle-evidence-results-shard-a-run-002-20261020/receipt-supervisor.json",
+              "bytes": 86690,
+              "sha256": "6b1e9f525f2ab651c9d0e98609acb80769c915f8c33740ec67da6664efad8960"
+            },
+            "terminal": {
+              "path": "/workspace/oracle-union-index-v3-20261020/terminal-A.json",
+              "bytes": 1364,
+              "sha256": "8cf305fc6567d887b0855aad7229f4d513e731fe7eb52308ce9940255649b79f"
+            }
+          }
+        },
+        {
+          "pair_id_range": [
+            33,
+            65
+          ],
+          "availability": "immutable_snapshot",
+          "artifacts": {
+            "results": {
+              "path": "/workspace/oracle-union-inputs-P7gcME/B/shard-B/results.json",
+              "bytes": 7338485,
+              "sha256": "63646c090e6a6573f3deea2ffc32e76d38a29e94bc8bd1c683183897e5ccb63c"
+            },
+            "worker_receipt": {
+              "path": "/workspace/oracle-union-inputs-P7gcME/B/shard-B/receipt-worker.json",
+              "bytes": 81318,
+              "sha256": "ff1e445d6a8700d05485bab240c73ba052d8cd5089642484730296216af4e97a"
+            },
+            "supervisor_receipt": {
+              "path": "/workspace/oracle-union-inputs-P7gcME/B/shard-B/receipt-supervisor.json",
+              "bytes": 88033,
+              "sha256": "ae68ae1300be9f1cac4a71b8b490dcedf686cbc36571e33ce5ff8f97ee87f85d"
+            }
+          },
+          "snapshot": {
+            "archive": {
+              "path": "/workspace/oracle-union-inputs-P7gcME/oracle-evidence-shard-B-33-65-20261020.zip",
+              "bytes": 1863927,
+              "sha256": "8e8b568d82085079889f29b4ab3843abdaf95a92aaaaec93ed4989411661822e"
+            },
+            "members": {
+              "results": "shard-B/results.json",
+              "worker_receipt": "shard-B/receipt-worker.json",
+              "supervisor_receipt": "shard-B/receipt-supervisor.json"
+            },
+            "observed_utc": "2026-10-20T06:58:37.943753+00:00",
+            "execution_state": "unknown",
+            "reason": "External supervisor wait record is unavailable; /proc observations do not establish normal termination. B is not terminal.",
+            "evidence": "Official Library version-pinned materialization into /workspace/oracle-union-inputs-P7gcME; archive SHA/bytes and all three explicit members were rechecked byte-for-byte against the extracted artifacts at observed_utc. Prior complete extraction inventory is /workspace/oracle-union-inputs-P7gcME/verified-path-inventory.json. This is snapshot verification, not a live process observation.",
+            "library_materialization": {
+              "library_file_id": "libfile_ba0cf9a040188191aebf7ba81b26ca2e",
+              "version": 0
+            }
+          }
+        },
+        {
+          "pair_id_range": [
+            66,
+            99
+          ],
+          "availability": "terminal_artifacts",
+          "artifacts": {
+            "results": {
+              "path": "/workspace/oracle-union-inputs-P7gcME/C/oracle-reanalysis-C-66-99/results.json",
+              "bytes": 7139338,
+              "sha256": "c675b9600999e20366f5599c3947f3cd58beb94cc83269a33d17afff729aeb22"
+            },
+            "worker_receipt": {
+              "path": "/workspace/oracle-union-inputs-P7gcME/C/oracle-reanalysis-C-66-99/receipt-worker.json",
+              "bytes": 81489,
+              "sha256": "bf52f516dab0cf9cb320f59e749f66a4d18d124641b995bdc5084ab7d1769e67"
+            },
+            "supervisor_receipt": {
+              "path": "/workspace/oracle-union-inputs-P7gcME/C/oracle-reanalysis-C-66-99/receipt-supervisor.json",
+              "bytes": 88258,
+              "sha256": "f0f11e482ef31797c707894d453b4ddf7f395adc81b237813afc3e6ada37e3a3"
+            },
+            "terminal": {
+              "path": "/workspace/oracle-union-index-v3-20261020/terminal-C.json",
+              "bytes": 1516,
+              "sha256": "37da0751e50c80e0549e8e708c67815fbdd2788e7e32a7f23cf17c25cda0ba99"
+            }
+          }
+        }
+      ],
+      "supersedes_union_sha256": null
+    },
+    "terminal_confirmations": [
+      {
+        "schema": "oracle-shard-terminal",
+        "schema_version": 2,
+        "status": "exited",
+        "pair_id_range": [
+          0,
+          32
+        ],
+        "source_manifest_sha256": "11b308a02d96cd3e55ef407006131a7677ff57604185f3ca83fb93660ea094ad",
+        "input_index_sha256": "79c47c6b1926359d636d63eca6b6bab161e2b2d5f28015bc16d5209a100350d2",
+        "root_archive_sha256": "f06e7bd1f1ae7a2f2e4e8e22aeb66dcc1fd76928c78c45a27406ed297d41e3d8",
+        "worker_returncode": 2,
+        "supervisor_returncode": 2,
+        "worker_alive": false,
+        "supervisor_alive": false,
+        "checked_utc": "2026-10-20T06:58:37.874387+00:00",
+        "evidence": "External execution record /workspace/oracle-evidence-execution-shard-a-run-002-20261020/execution.json, SHA256 3d048d6c51b455d4f8f3b3d457d3c9f888284fdd95aa70f142a4ca5b56c5a075, records proc.wait exit_code=2, supervisor PID3089, worker PID3091, ended_utc=2026-10-20T06:46:20.725638+00:00, worker_processes_still_present=[]. The original supervisor receipt records worker wait returncode=2. At checked_utc, ps -p 3089,3091 returned no rows (exit1). No restart or signal was performed.",
+        "artifacts_sha256": {
+          "results": "41af34a4413af7e42cfb3ca9b087b6b55c41101179bc50b378a59e0a5cb7b9c6",
+          "worker_receipt": "78256cec9067033f76183efefb4701c64db6bad4a46e09625266b71c1b41a8f0",
+          "supervisor_receipt": "6b1e9f525f2ab651c9d0e98609acb80769c915f8c33740ec67da6664efad8960"
+        }
+      },
+      {
+        "schema": "oracle-shard-terminal",
+        "schema_version": 2,
+        "status": "exited",
+        "pair_id_range": [
+          66,
+          99
+        ],
+        "source_manifest_sha256": "11b308a02d96cd3e55ef407006131a7677ff57604185f3ca83fb93660ea094ad",
+        "input_index_sha256": "79c47c6b1926359d636d63eca6b6bab161e2b2d5f28015bc16d5209a100350d2",
+        "root_archive_sha256": "f06e7bd1f1ae7a2f2e4e8e22aeb66dcc1fd76928c78c45a27406ed297d41e3d8",
+        "worker_returncode": 2,
+        "supervisor_returncode": 2,
+        "worker_alive": false,
+        "supervisor_alive": false,
+        "checked_utc": "2026-10-20T06:49:48.567654+00:00",
+        "evidence": "Transcribed C's actual observation, not a new observation by A: /workspace/oracle-union-inputs-P7gcME/oracle-reanalysis-C-process-exit-evidence-20261020.json, SHA256 b37bebf5a58aef399434b55c9e037dab4f6c421e437051d0074a2d9a5816d378. Original session37338 final tool result chunk55bad3: Process exited with code 2; original supervisor receipt records worker_returncode=2 and its SHA matches this evidence. At C observation_utc 2026-10-20T06:49:48.567654+00:00, PID725 and PID729 proc directories were absent. External final_wait_utc was not recorded (null); OS PPID was not recorded (null). PID absence alone is not used as exit proof.",
+        "artifacts_sha256": {
+          "results": "c675b9600999e20366f5599c3947f3cd58beb94cc83269a33d17afff729aeb22",
+          "worker_receipt": "bf52f516dab0cf9cb320f59e749f66a4d18d124641b995bdc5084ab7d1769e67",
+          "supervisor_receipt": "f0f11e482ef31797c707894d453b4ddf7f395adc81b237813afc3e6ada37e3a3"
+        }
+      }
+    ],
+    "union_state": "provisional_partial",
+    "shard_execution_complete": false,
+    "snapshot_observations": [
+      {
+        "pair_id_range": [
+          33,
+          65
+        ],
+        "availability": "immutable_snapshot",
+        "artifacts": {
+          "results": {
+            "path": "/workspace/oracle-union-inputs-P7gcME/B/shard-B/results.json",
+            "bytes": 7338485,
+            "sha256": "63646c090e6a6573f3deea2ffc32e76d38a29e94bc8bd1c683183897e5ccb63c"
+          },
+          "worker_receipt": {
+            "path": "/workspace/oracle-union-inputs-P7gcME/B/shard-B/receipt-worker.json",
+            "bytes": 81318,
+            "sha256": "ff1e445d6a8700d05485bab240c73ba052d8cd5089642484730296216af4e97a"
+          },
+          "supervisor_receipt": {
+            "path": "/workspace/oracle-union-inputs-P7gcME/B/shard-B/receipt-supervisor.json",
+            "bytes": 88033,
+            "sha256": "ae68ae1300be9f1cac4a71b8b490dcedf686cbc36571e33ce5ff8f97ee87f85d"
+          }
+        },
+        "snapshot": {
+          "archive": {
+            "path": "/workspace/oracle-union-inputs-P7gcME/oracle-evidence-shard-B-33-65-20261020.zip",
+            "bytes": 1863927,
+            "sha256": "8e8b568d82085079889f29b4ab3843abdaf95a92aaaaec93ed4989411661822e"
+          },
+          "members": {
+            "results": "shard-B/results.json",
+            "worker_receipt": "shard-B/receipt-worker.json",
+            "supervisor_receipt": "shard-B/receipt-supervisor.json"
+          },
+          "observed_utc": "2026-10-20T06:58:37.943753+00:00",
+          "execution_state": "unknown",
+          "reason": "External supervisor wait record is unavailable; /proc observations do not establish normal termination. B is not terminal.",
+          "evidence": "Official Library version-pinned materialization into /workspace/oracle-union-inputs-P7gcME; archive SHA/bytes and all three explicit members were rechecked byte-for-byte against the extracted artifacts at observed_utc. Prior complete extraction inventory is /workspace/oracle-union-inputs-P7gcME/verified-path-inventory.json. This is snapshot verification, not a live process observation.",
+          "library_materialization": {
+            "library_file_id": "libfile_ba0cf9a040188191aebf7ba81b26ca2e",
+            "version": 0
+          }
+        }
+      }
+    ],
+    "external_exit_unconfirmed_ranges": [
+      [
+        33,
+        65
+      ]
+    ],
+    "missing_shards": [],
+    "supersedes_union_sha256": null,
+    "geometry": {
+      "actual": {
+        "g_norm2": 63.99999999999999,
+        "h_norm2": 64.0,
+        "g_dot_h": 2.2209068351736194e-15
+      },
+      "saved": {
+        "file": "/workspace/oracle-covariance-results-20261020/receipt.json",
+        "json_pointer": "/geometry",
+        "values": {
+          "g_norm2": 64.0,
+          "h_norm2": 64.00000000000001,
+          "g_dot_h": -1.5543122344752192e-15
+        },
+        "q_norm2_alias": "g_norm2",
+        "note": "Saved squared norms and inner product, copied without recalculation; no rescaling or normalization."
+      }
+    },
+    "inventory": {
+      "reused": 392,
+      "new_success": 3283,
+      "failed_or_missing": 1325
+    },
+    "runtime_versions": {
+      "numpy": "2.3.5",
+      "scipy": "1.17.0"
+    },
+    "started_utc": "2026-10-20T07:01:14.883931+00:00",
+    "base": "PML",
+    "PR67": "Draft unchanged",
+    "aggregation_policy": "unique owner; exact legacy reuse; no integration; bootstrap once"
+  },
+  "counts_before_new_work": {
+    "converged": 3675,
+    "not_converged": 759,
+    "time_budget_exhausted": 6,
+    "not_attempted": 560
+  },
+  "reused_successes": 3675,
+  "pending_targets": 1325,
+  "ancestor_execution_complete": false,
+  "ancestor_external_exit_unconfirmed_ranges": [
+    [
+      33,
+      65
+    ]
+  ],
+  "reuse_policy": "original source gates; no requalification by new bound"
+}

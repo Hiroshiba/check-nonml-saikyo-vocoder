@@ -1,0 +1,49 @@
+{
+  "command": [
+    "/workspace/pshf-report-venv-20261019/bin/python",
+    "-B",
+    "/workspace/gen2-finalization-source-HO3Gs3/source/run_finalization.py",
+    "--input-manifest",
+    "/workspace/gen2-finalization-source-HO3Gs3/source/parent-input-manifest.json",
+    "--input-sha256",
+    "52d1249b28e639eca0ec5b9471811d99d2060e939e854c184d66f0ea5ef0e739",
+    "--source-sha256",
+    "c1fcc59f7dd64858facc8b55d9a7e012f3717336901007b7b796aa97a5235de2",
+    "--permit-one-derived-rebuild",
+    "--output",
+    "/workspace/gen2-finalization-results-001-20261020"
+  ],
+  "started_utc": "2026-10-20T08:10:33.940487+00:00",
+  "external_monitor_pid": 6900,
+  "status": "exited",
+  "worker_address_space_limit_bytes": 1073741824,
+  "aggregate_memory_limit_claimed": false,
+  "supervisor_pid": 6905,
+  "ended_utc": "2026-10-20T08:10:36.813371+00:00",
+  "elapsed_seconds": 2.8728917150001507,
+  "returncode": 0,
+  "forced_timeout": false,
+  "worker_pids": [
+    6907
+  ],
+  "process_observations": [
+    {
+      "pid": 6905,
+      "ppid": 6900,
+      "observed_utc": "2026-10-20T08:10:33.947248+00:00",
+      "ps": "   6905    6900  3188 /workspace/pshf-report-venv-20261019/bin/python -B /workspace/gen2-finalization-source-HO3Gs3/source/run_finalization.py --input-manifest /workspace/gen2-finalization-source-HO3Gs3/source/parent-input-manifest.json --input-sha256 52d1249b28e639eca0ec5b9471811d99d2060e939e854c184d66f0ea5ef0e739 --source-sha256 c1fcc59f7dd64858facc8b55d9a7e012f3717336901007b7b796aa97a5235de2 --permit-one-derived-rebuild --output /workspace/gen2-finalization-results-001-20261020"
+    },
+    {
+      "pid": 6907,
+      "ppid": 6905,
+      "observed_utc": "2026-10-20T08:10:34.052555+00:00",
+      "ps": "   6907    6905 12260 /workspace/pshf-report-venv-20261019/bin/python -B /workspace/gen2-finalization-source-HO3Gs3/source/finalization_worker.py --input-manifest /workspace/gen2-finalization-source-HO3Gs3/source/parent-input-manifest.json --input-sha256 52d1249b28e639eca0ec5b9471811d99d2060e939e854c184d66f0ea5ef0e739 --source-sha256 c1fcc59f7dd64858facc8b55d9a7e012f3717336901007b7b796aa97a5235de2 --output /workspace/gen2-finalization-results-001-20261020 --started-monotonic 15561.246019757 --started-utc 2026-10-20T08:10:33.988833+00:00 --permit-one-derived-rebuild"
+    }
+  ],
+  "sampled_peak_rss_bytes": {
+    "6905": 12431360,
+    "6907": 190193664
+  },
+  "external_monitor_peak_rss_bytes": 9961472,
+  "worker_processes_still_present": []
+}

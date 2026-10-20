@@ -1,0 +1,44 @@
+{
+  "command": [
+    "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+    "-B",
+    "/workspace/oracle-gen2-B-stage.X4N5PN/oracle-recovery-gen2/oracle-recovery-gen2/run_gen2.py",
+    "--input-index",
+    "/workspace/oracle-input-index-20261020.json",
+    "--index-sha256",
+    "79c47c6b1926359d636d63eca6b6bab161e2b2d5f28015bc16d5209a100350d2",
+    "--manifest-sha256",
+    "2278c3e1c03e651e21ef68ab2f6b4daa7974e044d9654bcb8c598f7332a319c1",
+    "--parent-index",
+    "/workspace/oracle-gen2-parent-fixed/parent-index.json",
+    "--parent-index-sha256",
+    "dd8f5d535cae2aeda953aa2e99ed30e9d9ee00db6e7593a0877f06b23dc888a6",
+    "--parent-results-sha256",
+    "e1b9122441e5d62f73ee0ad3dda45450517b5731851c8bda144906723b47a269",
+    "--pair-id-start",
+    "33",
+    "--pair-id-end",
+    "65",
+    "--output",
+    "/workspace/oracle-gen2-B-20261020"
+  ],
+  "shell_source": "e=\"$1\"; shift; date -u +%Y-%m-%dT%H:%M:%S.%NZ > \"$e/shell-start-utc.txt\"; \"$@\" & sup=$!; printf \"%s\\n\" \"$sup\" > \"$e/supervisor-pid.txt\"; wait \"$sup\"; rc=$?; printf \"%s\\n\" \"$rc\" > \"$e/supervisor-wait-returncode.txt\"; date -u +%Y-%m-%dT%H:%M:%S.%NZ > \"$e/shell-end-utc.txt\"; exit \"$rc\"",
+  "started_utc": "2026-10-20T07:25:14.582792+00:00",
+  "output": "/workspace/oracle-gen2-B-20261020",
+  "process_observations": [
+    {
+      "pid": 1168,
+      "stat_raw": "1168 (python3) S 1166 1165 1160 0 -1 4194560 4986 0 0 0 7 0 0 0 20 0 1 0 457414 44425216 4256 18446744073709551615 4329472 32290168 140726824105984 0 0 0 0 16781318 0 1 0 0 17 2 0 0 0 0 0 23068672 32290168 362008576 140726824112226 140726824112940 140726824112940 140726824116142 0\n",
+      "cmdline": "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3 -B /workspace/oracle-gen2-B-stage.X4N5PN/oracle-recovery-gen2/oracle-recovery-gen2/run_gen2.py --input-index /workspace/oracle-input-index-20261020.json --index-sha256 79c47c6b1926359d636d63eca6b6bab161e2b2d5f28015bc16d5209a100350d2 --manifest-sha256 2278c3e1c03e651e21ef68ab2f6b4daa7974e044d9654bcb8c598f7332a319c1 --parent-index /workspace/oracle-gen2-parent-fixed/parent-index.json --parent-index-sha256 dd8f5d535cae2aeda953aa2e99ed30e9d9ee00db6e7593a0877f06b23dc888a6 --parent-results-sha256 e1b9122441e5d62f73ee0ad3dda45450517b5731851c8bda144906723b47a269 --pair-id-start 33 --pair-id-end 65 --output /workspace/oracle-gen2-B-20261020 ",
+      "observed_utc": "2026-10-20T07:25:14.784812+00:00"
+    }
+  ],
+  "timeout_pid": 1165,
+  "supervisor_pid": 1168,
+  "timeout_wait_returncode": 0,
+  "ended_utc": "2026-10-20T07:31:33.895502+00:00",
+  "supervisor_wait_returncode": 0,
+  "observed_pid_proc_exists_after_wait": {
+    "1168": false
+  }
+}

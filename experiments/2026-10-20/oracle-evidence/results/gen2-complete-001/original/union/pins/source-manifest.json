@@ -1,0 +1,244 @@
+{
+  "schema": "oracle-source-manifest",
+  "version": 2,
+  "generation": 2,
+  "state": "gen2_union_prepared_static_only_not_authorized_to_run",
+  "parent_union_source_manifest_sha256": "5ba5e987786d8e31eacb5b549e42b90ebb921681376755e5027517e5c8d54ded",
+  "approved_bounds_manifest_sha256": "c88b2bcd79fc86b5c65e0ec464176a0f932d0f0c3426691b0e367816260ac806",
+  "parent_index_sha256": "dd8f5d535cae2aeda953aa2e99ed30e9d9ee00db6e7593a0877f06b23dc888a6",
+  "parent_results_sha256": "e1b9122441e5d62f73ee0ad3dda45450517b5731851c8bda144906723b47a269",
+  "reused_successes": 3675,
+  "new_target_slots": 1325,
+  "shards": [
+    {
+      "range": [
+        0,
+        32
+      ],
+      "targets": 610
+    },
+    {
+      "range": [
+        33,
+        65
+      ],
+      "targets": 280
+    },
+    {
+      "range": [
+        66,
+        99
+      ],
+      "targets": 435
+    }
+  ],
+  "ancestor_execution_complete": false,
+  "ancestor_external_exit_unconfirmed_ranges": [
+    [
+      33,
+      65
+    ]
+  ],
+  "deliverables": {
+    "APPROVED-BOUNDS-NOTES-ja.md": {
+      "bytes": 7160,
+      "sha256": "15e69101635e32f76bbfcf74aaf6dd5f25e089fa3149e42afd5bbab2600bef84"
+    },
+    "CHANGES-ja.md": {
+      "bytes": 1948,
+      "sha256": "0a7f3ba9b4e226c76932e11de528fd7345f2b4f5322a3e9565b4e6fc23d09f69"
+    },
+    "CONTRACT-ja.md": {
+      "bytes": 18424,
+      "sha256": "b908dc2c46b1ae013974b9a7b115e908152cc823e0d347ca3c6876628e3fa7fd"
+    },
+    "GEN2-CONTRACT-ja.md": {
+      "bytes": 11996,
+      "sha256": "b95a0bcb8ce26676ebf8226e3372bb6666f7085f22fb54d34e39cdca743ebd79"
+    },
+    "GEN2-SOURCE-CHANGES.patch": {
+      "bytes": 38710,
+      "sha256": "b71a1e6b6c7c513073df1a2b7db97f3cab120e2d4b27e8a30f382c04d1f80505"
+    },
+    "GEN2-STATIC-CHECKS.md": {
+      "bytes": 1851,
+      "sha256": "0ba5e3da98c1dc136f41cbda45ad6a0b94cb5839db25767a042ddfb212bedf3f"
+    },
+    "GEN2-UNION-CONTRACT-ja.md": {
+      "bytes": 14283,
+      "sha256": "9b64d05b9f731400c7ec05758ce656aa546f9310824001968476f5aba99aa8ec"
+    },
+    "GEN2-UNION-SOURCE-CHANGES.patch": {
+      "bytes": 51724,
+      "sha256": "5e8a01b516448610d03e0f4814657f01ded4d989c8331264219f6db52a1f447a"
+    },
+    "GEN2-UNION-STATIC-CHECKS.md": {
+      "bytes": 1922,
+      "sha256": "f3e06abd534638bc4fcad89c31eb54247edbe5356ab0b80f9a580efb9f56d23d"
+    },
+    "README.md": {
+      "bytes": 3402,
+      "sha256": "0396a151b25186dedfb6ec1ad0830f80516b09b33c45981366cd27bb6c17cb15"
+    },
+    "RECOVERY-ja.md": {
+      "bytes": 7247,
+      "sha256": "330e74c3b961d2ca9a023a4bc07ca22307d942b6cb6ebd623a60aa7e33b3fe03"
+    },
+    "STATIC_CHECKS.md": {
+      "bytes": 1626,
+      "sha256": "a955ea1fd8b3bdcce3fab9c2a7352cdce19f2356d08395c789aeaa12c3bdb76a"
+    },
+    "UNION-ja.md": {
+      "bytes": 14101,
+      "sha256": "e4a4ee48e76cc208077c5134a8f1ef0751aaa18f4e32d6faf896529b0b20dae1"
+    },
+    "UNION_STATIC_CHECKS.md": {
+      "bytes": 3142,
+      "sha256": "907a4194c6f599fbb5afd0afbd0719ae55fec0040cccb8cd85b5a9cb2513695f"
+    },
+    "approved-bounds-source-manifest.json": {
+      "bytes": 3751,
+      "sha256": "c88b2bcd79fc86b5c65e0ec464176a0f932d0f0c3426691b0e367816260ac806"
+    },
+    "core.py": {
+      "bytes": 6266,
+      "sha256": "801105b5d0331c7215c82772635ccf81fc324d0c16ff23513fb5abe67159aed1"
+    },
+    "gen2-shard-source-manifest.json": {
+      "bytes": 6229,
+      "sha256": "2278c3e1c03e651e21ef68ab2f6b4daa7974e044d9654bcb8c598f7332a319c1"
+    },
+    "gen2_runtime.py": {
+      "bytes": 5425,
+      "sha256": "0a1959d436e727e8df69f5befb916149080405e5effa6732191cee0a77436cd6"
+    },
+    "gen2_union_io.py": {
+      "bytes": 12681,
+      "sha256": "e81c8d6d172d1f5db63178b0ce55bb0db0e30f9965e6700749353a97d9061ccf"
+    },
+    "gen2_union_merge.py": {
+      "bytes": 14697,
+      "sha256": "0a432b4bfea4995d0a93ec53a0bea8678c72c3277de46c32f06a7dcf466a412d"
+    },
+    "gen2_union_validation.py": {
+      "bytes": 7510,
+      "sha256": "b3977101528b48253a6a1772803432105997c75e09f3c7725c4dfeb07c29740f"
+    },
+    "gen2_union_worker.py": {
+      "bytes": 9369,
+      "sha256": "e8d23dc1a73579a8f623e4b6e600ed2b46fc47874605b35583e15e3e1195aa77"
+    },
+    "input_index.py": {
+      "bytes": 6406,
+      "sha256": "1488d91d521993137a47bcdfc6838eb9c3ddc3fe82bf8129db4912ced6e5795e"
+    },
+    "legacy-CONTRACT-ja.md": {
+      "bytes": 15794,
+      "sha256": "8c7b21a29f0d8a711db0af280c0af3f99b1bcd6ec1f6e95881139fdff5c7f9fb"
+    },
+    "legacy-source-manifest.json": {
+      "bytes": 4107,
+      "sha256": "1b54832860d9744576e071d36cc70256291c145571bc3f372b1cbeefa17e0cec"
+    },
+    "parent-union-source-manifest.json": {
+      "bytes": 7093,
+      "sha256": "5ba5e987786d8e31eacb5b549e42b90ebb921681376755e5027517e5c8d54ded"
+    },
+    "pyproject.toml": {
+      "bytes": 333,
+      "sha256": "1b220ffe53209c8d9b45ebe4f8658530adc3709f6c17423c87a91b23a5d75cde"
+    },
+    "quadrature_1d.py": {
+      "bytes": 8219,
+      "sha256": "0c76b9fed31437fa0d2d2ad06b81782d8561e0ca333b23737f2b0656cc109752"
+    },
+    "quadrature_disk.py": {
+      "bytes": 21749,
+      "sha256": "d351fd36d980efa73770289ad623bf7b28ea72b8bb4ff994f800edc09093c726"
+    },
+    "recovery.py": {
+      "bytes": 6942,
+      "sha256": "8c00a6c70b40f1421b4778f7c1346fac9c7dd069c1b30691b3841c7decd9f883"
+    },
+    "recovery_gen2.py": {
+      "bytes": 15271,
+      "sha256": "b3326860e420a2423bee9109228b41cf88928e43001cdd51dc567410f60e9093"
+    },
+    "recovery_validation.py": {
+      "bytes": 6026,
+      "sha256": "440fc95bcbd3e1fb63346528541bc8190005d8d70858d00b3b406c99347e6aef"
+    },
+    "report.py": {
+      "bytes": 10391,
+      "sha256": "f4d91ecb7fa16bdec8b31001a286c48c6e3bc36dd40dc0e2aefa25b0a67615fe"
+    },
+    "run_gen2.py": {
+      "bytes": 7969,
+      "sha256": "80465ff0134be97777b0ed4a50cb5c86c49d175d59590006beb3330c28dd58e2"
+    },
+    "run_gen2_union.py": {
+      "bytes": 6320,
+      "sha256": "ff9516df3bb1817dc0d70ba095ace4add0647a1d3c3bcbf9057057d8b05d7c42"
+    },
+    "run_reanalysis.py": {
+      "bytes": 7725,
+      "sha256": "61facf21a562ecf09fb756b9cf35f348b2b1eb85ed3ce9a86d283a5aecc15779"
+    },
+    "run_union.py": {
+      "bytes": 5630,
+      "sha256": "c3ba70d90306a637bb6cc770f4dad4d4149fcd9094595a2872c5b27003569430"
+    },
+    "runtime.py": {
+      "bytes": 5163,
+      "sha256": "110fc8a511d72d7aacee3387302fb02f5383368c054fa1ff13fb333dbea101e1"
+    },
+    "shard-source-manifest.json": {
+      "bytes": 5671,
+      "sha256": "11b308a02d96cd3e55ef407006131a7677ff57604185f3ca83fb93660ea094ad"
+    },
+    "union_io.py": {
+      "bytes": 10683,
+      "sha256": "b64fa2a927113bcf638738efb0c1b20ee18329bfaa99db1f8d1cfb48c149759a"
+    },
+    "union_merge.py": {
+      "bytes": 12099,
+      "sha256": "e1dfe04d0f4bd78bb0a024888ed57365d6659708dc1db5eb4cc137a95eda25a8"
+    },
+    "union_snapshot.py": {
+      "bytes": 6215,
+      "sha256": "c2e5edea229b9b3aa2c0b9a7950b889ecabdf5659d7ab77929681885e7b0d9f6"
+    },
+    "union_validation.py": {
+      "bytes": 6277,
+      "sha256": "351a4bdaf1e8f4785b75e78871076347b9f1c2e5ffa90a3ea175155b6a3b2bfa"
+    },
+    "union_worker.py": {
+      "bytes": 8558,
+      "sha256": "ddfbea0374f0b68a1ad22d3b73db197778619b357ab7a71eabbff96cf98202cd"
+    },
+    "worker.py": {
+      "bytes": 15040,
+      "sha256": "9e85acf0b698f51c0cc6a7345ef2ece886315c3e963454c189457df451bce380"
+    },
+    "worker_gen2.py": {
+      "bytes": 15985,
+      "sha256": "ef8c532079f575bdbb27cc59a7df2b7f6526c121fac2bd1e8980c71acb159def"
+    }
+  },
+  "excludes": [
+    "source-manifest self hash",
+    "cache",
+    "scientific inputs/results",
+    "Git"
+  ],
+  "measurement_source_manifest_sha256": "2278c3e1c03e651e21ef68ab2f6b4daa7974e044d9654bcb8c598f7332a319c1",
+  "previous_zip_sha256": "8c55394d3b73b40c4fb1a22af887e717dbbf3bc2b383965a9f05a96779d302af",
+  "gen2_union_index_schema_version": 1,
+  "gen2_terminal_schema_version": 1,
+  "union_resource_contract": {
+    "workers": 1,
+    "seconds": 300,
+    "worker_address_space_bytes": 1073741824,
+    "managed_output_bytes": 134217728
+  }
+}

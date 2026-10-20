@@ -1,0 +1,52 @@
+{
+  "started_utc": "2026-10-20T07:24:38.262255+00:00",
+  "command": [
+    "/workspace/pshf-report-venv-20261019/bin/python",
+    "/workspace/oracle-gen2-A-staging-uLjVHv/source/oracle-recovery-gen2/run_gen2.py",
+    "--input-index",
+    "/workspace/oracle-input-index-20261020.json",
+    "--index-sha256",
+    "79c47c6b1926359d636d63eca6b6bab161e2b2d5f28015bc16d5209a100350d2",
+    "--manifest-sha256",
+    "2278c3e1c03e651e21ef68ab2f6b4daa7974e044d9654bcb8c598f7332a319c1",
+    "--parent-index",
+    "/workspace/oracle-gen2-parent-fixed/parent-index.json",
+    "--parent-index-sha256",
+    "dd8f5d535cae2aeda953aa2e99ed30e9d9ee00db6e7593a0877f06b23dc888a6",
+    "--parent-results-sha256",
+    "e1b9122441e5d62f73ee0ad3dda45450517b5731851c8bda144906723b47a269",
+    "--pair-id-start",
+    "0",
+    "--pair-id-end",
+    "32",
+    "--output",
+    "/workspace/oracle-gen2-A-results-20261020"
+  ],
+  "status": "exited",
+  "worker_RLIMIT_AS_bytes": 1073741824,
+  "aggregate_memory_limit_claimed": false,
+  "external_monitor_pid": 5380,
+  "supervisor_pid": 5384,
+  "ended_utc": "2026-10-20T07:34:40.237013+00:00",
+  "elapsed_seconds": 601.9747789149988,
+  "exit_code": 0,
+  "forced_stop_reason": null,
+  "process_evidence": {
+    "observed_utc": "2026-10-20T07:24:39.281230+00:00",
+    "ps": "   5380    5379 S    python3 /workspace/oracle-gen2-A-external-20261020.py\n   5384    5380 Ss   /workspace/pshf-report-venv-20261019/bin/python /workspace/oracle-gen2-A-staging-uLjVHv/source/oracle-recovery-gen2/run_gen2.py --input-index /workspace/oracle-input-index-20261020.json --index-sha256 79c47c6b1926359d636d63eca6b6bab161e2b2d5f28015bc16d5209a100350d2 --manifest-sha256 2278c3e1c03e651e21ef68ab2f6b4daa7974e044d9654bcb8c598f7332a319c1 --parent-index /workspace/oracle-gen2-parent-fixed/parent-index.json --parent-index-sha256 dd8f5d535cae2aeda953aa2e99ed30e9d9ee00db6e7593a0877f06b23dc888a6 --parent-results-sha256 e1b9122441e5d62f73ee0ad3dda45450517b5731851c8bda144906723b47a269 --pair-id-start 0 --pair-id-end 32 --output /workspace/oracle-gen2-A-results-20261020\n   5386    5384 Rs   /workspace/pshf-report-venv-20261019/bin/python -B /workspace/oracle-gen2-A-staging-uLjVHv/source/oracle-recovery-gen2/worker_gen2.py --input-index /workspace/oracle-input-index-20261020.json --index-sha256 79c47c6b1926359d636d63eca6b6bab161e2b2d5f28015bc16d5209a100350d2 --manifest-sha256 2278c3e1c03e651e21ef68ab2f6b4daa7974e044d9654bcb8c598f7332a319c1 --output /workspace/oracle-gen2-A-results-20261020 --started-monotonic 12805.634280972 --started-utc 2026-10-20T07:24:38.377094+00:00 --parent-index /workspace/oracle-gen2-parent-fixed/parent-index.json --parent-index-sha256 dd8f5d535cae2aeda953aa2e99ed30e9d9ee00db6e7593a0877f06b23dc888a6 --parent-results-sha256 e1b9122441e5d62f73ee0ad3dda45450517b5731851c8bda144906723b47a269 --pair-id-start 0 --pair-id-end 32\n"
+  },
+  "worker_pids": [
+    5386
+  ],
+  "sampled_peak_rss_by_pid_bytes": {
+    "5384": 17453056,
+    "5386": 271675392
+  },
+  "external_monitor_peak_rss_bytes": 10223616,
+  "supervisor_peak_rss_wait4_bytes": 271675392,
+  "external_log_seen_bytes": 0,
+  "external_log_retained_bytes": 0,
+  "output_bytes": 61408564,
+  "worker_processes_still_present": [],
+  "terminal_ps": ""
+}

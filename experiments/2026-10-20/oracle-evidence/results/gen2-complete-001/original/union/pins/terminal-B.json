@@ -1,0 +1,32 @@
+{
+  "schema": "oracle-gen2-shard-terminal",
+  "schema_version": 1,
+  "status": "exited",
+  "generation": 2,
+  "source_manifest_sha256": "2278c3e1c03e651e21ef68ab2f6b4daa7974e044d9654bcb8c598f7332a319c1",
+  "input_index_sha256": "79c47c6b1926359d636d63eca6b6bab161e2b2d5f28015bc16d5209a100350d2",
+  "parent_index_sha256": "dd8f5d535cae2aeda953aa2e99ed30e9d9ee00db6e7593a0877f06b23dc888a6",
+  "parent_results_sha256": "e1b9122441e5d62f73ee0ad3dda45450517b5731851c8bda144906723b47a269",
+  "shard_pair_id_range": [
+    33,
+    65
+  ],
+  "ancestor_execution_complete": false,
+  "ancestor_external_exit_unconfirmed_ranges": [
+    [
+      33,
+      65
+    ]
+  ],
+  "worker_returncode": 0,
+  "supervisor_returncode": 0,
+  "worker_alive": false,
+  "supervisor_alive": false,
+  "checked_utc": "2026-10-20T07:32:14.379215+00:00",
+  "evidence": "Original external bash wait record /workspace/oracle-gen2-union-inputs-dL0Hdx/B/gen2-B/external-evidence/external-execution.json (SHA256 71824fd1e77fef660f1ff779bed511767ef82a0e09ddb35dea0af36236bf1524): supervisor PID1168 wait=0, timeout wrapper PID1165 wait=0, ended 2026-10-20T07:31:33.895502+00:00; original terminal checked 2026-10-20T07:32:14.379215+00:00, worker PID1169 returncode=0 from supervisor receipt.",
+  "artifacts_sha256": {
+    "results": "28946d84fd321433250c76ae922e92932db2efaef107d3c00e66d134f89c5202",
+    "worker_receipt": "3ae70ba17db60579ad7b56610346b7f8d8513cd8ea4d3e31db1f79286f51107d",
+    "supervisor_receipt": "ad4cb47f8d54d1f4828c6cdb322d0cbdf8449506e6faaa13d9d8f25cef84ec0a"
+  }
+}
