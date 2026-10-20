@@ -10,7 +10,7 @@
 
 ## ソース準備と計算開始を分ける
 
-source v2は静的レビューを通過し、500組を167・167・166組に分けた3ownerへ一回の開始指示を送りました。実計測の進捗・成功は未確認で、結果はありません。[固定契約・v1/v2監査・REAPER調査](followup-design/frozen-contract-and-reaper-20261020/README.md)に経過を保存しています。初期文書の「紙上停止」「実行不可」は当時の状態であり、v0・v1の未通過履歴も保持します。PMLを維持します。
+source v2は静的レビューを通過し、500組を167・167・166組に分けた3ownerへ一回の開始指示を送りました。owner1は167行処理後、owner2は166/166 pair completeの報告を受けています。両者ともworkerはexit0ですが、外側処理はexit2で、全子プロセスの終了確認が未完了のため通常packingは拒否されました。原成果を保持し、科学採用不可の失敗証拠として別途保全中です。owner0は結果未確認で、全500組の成功や正式集計の完了は確認されていません。[固定契約・v1/v2監査・REAPER調査](followup-design/frozen-contract-and-reaper-20261020/README.md)に経過を保存しています。初期文書の「紙上停止」「実行不可」は当時の状態であり、v0・v1の未通過履歴も保持します。PMLを維持します。
 
 6文書とMANIFESTはLibrary `libfile_6687ae2f7da88191ae6d3afd955718c1` v0から原bytesで保存しています。
 
