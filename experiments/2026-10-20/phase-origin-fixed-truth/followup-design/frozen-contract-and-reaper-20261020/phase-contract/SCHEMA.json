@@ -1,0 +1,512 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:phase-origin:pair:v1",
+  "title": "Phase-origin raw pair metadata",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "row",
+    "status",
+    "arrays",
+    "inflight"
+  ],
+  "properties": {
+    "row": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "global_id",
+        "truth",
+        "truth_id",
+        "pair_id",
+        "owner"
+      ],
+      "properties": {
+        "global_id": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 499
+        },
+        "truth": {
+          "enum": [
+            "W",
+            "A",
+            "V",
+            "S",
+            "J"
+          ]
+        },
+        "truth_id": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 4
+        },
+        "pair_id": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 99
+        },
+        "owner": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 2
+        }
+      }
+    },
+    "status": {
+      "enum": [
+        "started",
+        "complete",
+        "numerical_failure"
+      ]
+    },
+    "arrays": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "offset",
+          "bytes",
+          "shape",
+          "dtype",
+          "sha256"
+        ],
+        "properties": {
+          "offset": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "bytes": {
+            "type": "integer",
+            "minimum": 8,
+            "maximum": 32768
+          },
+          "shape": {
+            "type": "array",
+            "minItems": 1,
+            "maxItems": 1,
+            "items": {
+              "enum": [
+                1,
+                64,
+                4096
+              ]
+            }
+          },
+          "dtype": {
+            "const": "<f8"
+          },
+          "sha256": {
+            "type": "string",
+            "pattern": "^[0-9a-f]{64}$"
+          }
+        }
+      }
+    },
+    "inflight": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "description": "intent blob descriptor plus name; may be absent/partially persisted raw"
+    },
+    "stage": {
+      "type": "string",
+      "maxLength": 64
+    },
+    "error": {
+      "type": "string",
+      "maxLength": 1024
+    },
+    "oracle_geometry": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "g_ref",
+        "constants",
+        "norms",
+        "membership"
+      ],
+      "properties": {
+        "g_ref": {
+          "enum": [
+            "oracle/q",
+            "estimated/q"
+          ]
+        },
+        "constants": {
+          "type": "object"
+        },
+        "norms": {
+          "type": "object"
+        },
+        "membership": {
+          "type": "array",
+          "minItems": 64,
+          "maxItems": 65,
+          "items": {
+            "type": "array",
+            "minItems": 3,
+            "maxItems": 3,
+            "items": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 4096
+            }
+          }
+        }
+      }
+    },
+    "estimated_geometry": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "g_ref",
+        "constants",
+        "norms",
+        "membership"
+      ],
+      "properties": {
+        "g_ref": {
+          "enum": [
+            "oracle/q",
+            "estimated/q"
+          ]
+        },
+        "constants": {
+          "type": "object"
+        },
+        "norms": {
+          "type": "object"
+        },
+        "membership": {
+          "type": "array",
+          "minItems": 64,
+          "maxItems": 65,
+          "items": {
+            "type": "array",
+            "minItems": 3,
+            "maxItems": 3,
+            "items": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 4096
+            }
+          }
+        }
+      }
+    },
+    "phase": {
+      "type": "object",
+      "description": "root correspondence and boundary diagnostics or precision_failures; phi_eval fixed40 decimal"
+    },
+    "phase_error": {
+      "type": "object",
+      "required": [
+        "cycles",
+        "radians"
+      ],
+      "properties": {
+        "cycles": {
+          "type": "string",
+          "maxLength": 128,
+          "description": "finite mpmath decimal/scientific approximation, <=90 printed significant digits; not a certified interval"
+        },
+        "radians": {
+          "type": "string",
+          "maxLength": 128,
+          "description": "finite mpmath decimal/scientific approximation, <=90 printed significant digits; not a certified interval"
+        }
+      }
+    },
+    "scores": {
+      "type": "object",
+      "required": [
+        "dps60",
+        "dps90",
+        "relative_checks",
+        "precision_gate",
+        "passed"
+      ],
+      "properties": {
+        "dps60": {
+          "type": "array",
+          "minItems": 9,
+          "maxItems": 9,
+          "items": {
+            "type": "string",
+            "maxLength": 128,
+            "description": "finite mpmath decimal/scientific approximation, <=90 printed significant digits; not a certified interval"
+          }
+        },
+        "dps90": {
+          "type": "array",
+          "minItems": 9,
+          "maxItems": 9,
+          "items": {
+            "type": "string",
+            "maxLength": 128,
+            "description": "finite mpmath decimal/scientific approximation, <=90 printed significant digits; not a certified interval"
+          }
+        },
+        "relative_checks": {
+          "type": "array",
+          "minItems": 9,
+          "maxItems": 9,
+          "items": {
+            "type": "string",
+            "maxLength": 128,
+            "description": "finite mpmath decimal/scientific approximation, <=90 printed significant digits; not a certified interval"
+          }
+        },
+        "precision_gate": {
+          "const": "1e-40"
+        },
+        "passed": {
+          "type": "boolean"
+        }
+      }
+    },
+    "seed_inputs_0": {
+      "type": "array",
+      "minItems": 4,
+      "maxItems": 4,
+      "items": {
+        "type": "array",
+        "minItems": 13,
+        "maxItems": 13,
+        "items": {
+          "type": "integer",
+          "minimum": 0
+        }
+      }
+    },
+    "stream_states_0": {
+      "type": "object",
+      "description": "original PCG64 state before the single standard_normal call"
+    },
+    "seed_inputs_1": {
+      "type": "array",
+      "minItems": 4,
+      "maxItems": 4,
+      "items": {
+        "type": "array",
+        "minItems": 13,
+        "maxItems": 13,
+        "items": {
+          "type": "integer",
+          "minimum": 0
+        }
+      }
+    },
+    "stream_states_1": {
+      "type": "object",
+      "description": "original PCG64 state before the single standard_normal call"
+    },
+    "oracle_score60": {
+      "type": "array",
+      "minItems": 4,
+      "maxItems": 4,
+      "items": {
+        "type": "string",
+        "maxLength": 128,
+        "description": "finite mpmath decimal/scientific approximation, <=90 printed significant digits; not a certified interval"
+      }
+    },
+    "oracle_score90": {
+      "type": "array",
+      "minItems": 4,
+      "maxItems": 4,
+      "items": {
+        "type": "string",
+        "maxLength": 128,
+        "description": "finite mpmath decimal/scientific approximation, <=90 printed significant digits; not a certified interval"
+      }
+    },
+    "calibration_passed": {
+      "type": "boolean"
+    },
+    "estimated_score60": {
+      "type": "array",
+      "minItems": 4,
+      "maxItems": 4,
+      "items": {
+        "type": "string",
+        "maxLength": 128
+      },
+      "description": "fsync persisted immediately after this precision returns and before the next precision starts"
+    },
+    "estimated_score90": {
+      "type": "array",
+      "minItems": 4,
+      "maxItems": 4,
+      "items": {
+        "type": "string",
+        "maxLength": 128
+      },
+      "description": "fsync persisted immediately after this precision returns and before the next precision starts"
+    }
+  },
+  "x-schema-notes": {
+    "score_order": [
+      "oracle_logdet",
+      "oracle_Q",
+      "oracle_constant",
+      "oracle_score",
+      "estimated_logdet",
+      "estimated_Q",
+      "estimated_constant",
+      "estimated_score",
+      "estimated_minus_oracle"
+    ],
+    "array_layout": {
+      "record_prefixes": [
+        "train/",
+        "test/"
+      ],
+      "record_arrays": {
+        "initial": 1,
+        "initial_scaled": 1,
+        "innovation": 4096,
+        "s_standard": 64,
+        "s_scaled": 64,
+        "j_standard": 64,
+        "j_scaled": 64,
+        "ar": 4096,
+        "residual": 4096,
+        "Y": 4096
+      },
+      "geometry_prefixes": [
+        "oracle/",
+        "estimated/"
+      ],
+      "geometry_arrays": {
+        "q": 64,
+        "h": 64,
+        "v": 64,
+        "Pminus": 1
+      },
+      "score_residuals": [
+        "test/score_residual_oracle",
+        "test/score_residual_estimated"
+      ],
+      "score_residual_length": 4096,
+      "raw_byte_cap": 334960,
+      "periodic_expansion": "byte-copy table[n mod64]",
+      "g_alias": "q only; no regeneration from seed or analytic formula"
+    },
+    "root_file": {
+      "cap_bytes": 12288,
+      "dps": [
+        50,
+        80
+      ],
+      "all_returned_roots_saved": true,
+      "coefficients": "7 descending complex coefficient [real,imag] decimal string pairs",
+      "roots": "6 complex pairs including off-unit roots",
+      "classes": [
+        "unit",
+        "outside",
+        "undecided"
+      ],
+      "unknown_API_fields": [
+        "actual_iterations",
+        "intermediate_roots_on_NoConvergence",
+        "err_on_NoConvergence"
+      ],
+      "distance_norm": "abs(z-w)/max(1,abs(z),abs(w))"
+    },
+    "row_interpretation": "stage+intent+raw file length describe partials; process/external terminal observations are independent",
+    "owner_terminal_files": [
+      "worker-receipt.json",
+      "owner-ledger.json",
+      "supervisor-receipt.json",
+      "supervisor-post-fsync.json",
+      "external-wait.json",
+      "artifact-manifest.json",
+      "outer-last-observation.json"
+    ],
+    "immutable_initial_rows": 500,
+    "residual_stage": "oracle once at oracle score stage even if calibration later fails; estimated once after estimated geometry",
+    "summary_entrypoint": "quarantined; requires separate review/instruction",
+    "process_protocol": {
+      "birth_files": [
+        "supervisor-birth.json",
+        "worker-birth.json"
+      ],
+      "acks": [
+        "supervisor-parent-ack.json",
+        "worker-parent-ack.json",
+        "worker-outer-ack.json"
+      ],
+      "exec_authorized": [
+        "supervisor-exec-authorized.json",
+        "worker-exec-authorized.json"
+      ],
+      "record_byte_cap": 4096,
+      "identity": [
+        "pid",
+        "ppid",
+        "pgrp",
+        "start_ticks"
+      ],
+      "parent_tool_evidence": "external full raw bytes + typed proof; not an owner output member",
+      "inventory_schema": "phase-origin-owner-artifacts-v2; immutable iff both child waits proven"
+    },
+    "exception_tracebacks": {
+      "sink": "original stderr",
+      "per_process_byte_cap": 131072,
+      "tail_marker_reserve": 512,
+      "complete_flag": "traceback_logging.complete",
+      "overflow_fields": [
+        "truncated_bytes",
+        "write_errors"
+      ],
+      "monitor_order": "capture exc_info reference; kill/reap attempts; then traceback formatting/write",
+      "expected_gate_failure": "traceback emitted; abort owner if logging incomplete",
+      "non_returned_solver_values": "remain API-not-returned/unknown"
+    },
+    "owner_ledger": {
+      "source": "fixed planned-ledger rows validated against pinned INPUT",
+      "enumeration": "self-owner rows -> exact pair-XXX.json only",
+      "no_root_glob": true,
+      "metadata_states": [
+        "missing",
+        "invalid",
+        "incomplete",
+        "terminal_metadata"
+      ],
+      "missing_start_status": "start_unconfirmed",
+      "not_scientific_acceptance": true
+    },
+    "anomaly_stacks": {
+      "when": [
+        "TERM/KILL/failover",
+        "cleanup KILL",
+        "log overflow",
+        "reap deadline",
+        "child nonzero exit",
+        "missing/incomplete planned metadata"
+      ],
+      "capture": "frozen file/line/function only; no linecache or log I/O",
+      "monitor_emit": "after all cleanup kill/wait attempts",
+      "shares_traceback_byte_cap": true,
+      "frame_cap": 128,
+      "incomplete_counter": "stack_capture_truncated",
+      "faulthandler": "Python stacks obtainable at native fatal signals; raw parent capture caps apply"
+    },
+    "parent_failure_preservation": {
+      "separate_explicit_parent_instruction_required": true,
+      "normal_packing_gate_relaxed": false,
+      "science_acceptance": false,
+      "states": [
+        "not_started_confirmed_by_positive_evidence",
+        "terminal_confirmed_by_actual_wait",
+        "unknown"
+      ],
+      "mutable_copy": "timestamped snapshot only; not immutable run completion",
+      "new_general_packer_implemented": false
+    }
+  }
+}
