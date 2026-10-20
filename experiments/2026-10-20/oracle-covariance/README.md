@@ -27,3 +27,9 @@ PMLを現在のbaseとして維持します。これは既知の人工波形 q�
 [文書manifest](research/DOCUMENT-MANIFEST.json)は全7件のサイズ・SHA256を保持します。受領ZIPは50,431 bytes、SHA256 `55d4fd23139dcf990b2273b16fa6ec67b624d8795dfb78a8e2cb6f20ad3a9f7b`。初版の結果20ファイルを保持して掲載した後、親側の図レビューに基づき4図とHTMLの表示だけを修正しました。保存CSV/JSON/WAVと科学契約のbytesは不変です。図の旧SHA・新SHA・描画日時・変更理由は[表示修正の来歴](results/run-002/rendering-provenance.json)に記録し、manifestを更新しています。候補ソース・NPYは掲載しません。
 
 次は親側で4図と説明の品質確認を行い、承認後に公開へ進みます。このDraftでは追加計測・再推定・テスト・サイト生成予行を行っていません。
+
+## 公開後の状態（2026-10-20 05:05 UTC）
+
+PR69 のマージと main CI・Pages が成功しました。配信21ファイルのサイズ・SHA256、19相対参照、一覧掲載を確認済みです。上記の Draft・公開準備の記述は当時の経過です。
+
+次の[予測混合と未知テンプレートの設計記録](followup-design/README.md)を追加しました。既存結果を変更せず、次のコード準備・科学 run は未開始です。
