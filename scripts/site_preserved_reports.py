@@ -145,7 +145,7 @@ def navigation_audio_listing(item, artifact_names):
 
 
 def navigation_card(item, time_label, artifact_names):
-    """案内作成日時・比較範囲と任意の音声を示し、測定日時とは区別する。"""
+    """初回公開・案内作成日時と比較範囲を示し、測定日時とは区別する。"""
     created_on = date.fromisoformat(item['created_on']).isoformat()
     if created_on != item['created_on']:
         raise ValueError('案内作成日はYYYY-MM-DDで指定してください')
@@ -154,6 +154,10 @@ def navigation_card(item, time_label, artifact_names):
     if 'created_at' in item:
         created_label = ('案内作成（測定時刻とは別）：'
                          + time_label({'recorded_at': item['created_at']}))
+    if 'published_at' in item:
+        published_label = ('初回公開（Pagesデプロイ完了）：'
+                           + time_label({'recorded_at': item['published_at']}))
+        created_label = published_label + '<br>' + created_label
     link = item['path'] + '/index.html'
     return (f'<article><h2><a href="{esc(link)}">{esc(item["title"])}</a></h2>'
             f'<small>{created_label}</small>'
@@ -206,11 +210,13 @@ def preserved_cards(root, output, recorded_time, time_label):
         seen.add(item['path'])
         source, artifact_names = copy_artifacts(root, output, item)
         if kind == 'navigation-only':
-            # 実際の案内作成日時が未登録の場合だけ、従来の日単位キーを維持する。
+            # 作成日時の整合は、公開日時の有無にかかわらず確認する。
             timestamp = item.get('created_at', item['created_on'] + 'T00:00:00+00:00')
             sort_time = recorded_time({'recorded_at': timestamp})
             if 'created_at' in item and sort_time.date().isoformat() != item['created_on']:
                 raise ValueError('案内作成日時のUTC日付がcreated_onと一致しません')
+            if 'published_at' in item:
+                sort_time = recorded_time({'recorded_at': item['published_at']})
             card = navigation_card(item, time_label, artifact_names)
             cards.append((sort_time, item['path'], item['id'], card))
             continue
