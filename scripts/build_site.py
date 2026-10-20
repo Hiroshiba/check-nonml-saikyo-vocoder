@@ -210,7 +210,7 @@ def build(output):
                 f'<p>{esc(day)}（日本時間） · {esc(topic)}</p><p>{esc(meta["summary"])}</p>'
                 f'<div class="notice">状態：{esc(meta["status"])}</div><h2>調査・議論・レビュー</h2>'
                 f'<ul>{"".join(notes)}</ul><h2>実行結果</h2>'
-                + (''.join(runs) or '<p>調査段階です。測定結果はまだありません。</p>')
+                + (''.join(runs) or '<p>公開済みの測定結果はまだありません。</p>')
                 + ('<h2>補助記録</h2><ul>' + ''.join(supplements) + '</ul>' if supplements else ''))
         (public / 'index.html').write_text(page(meta['title'], body), encoding='utf-8')
         groups.append((rel, meta))
