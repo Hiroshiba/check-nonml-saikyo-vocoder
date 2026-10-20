@@ -1,0 +1,252 @@
+{
+  "schema": 1,
+  "tolerance": 1.3102408047416247e-10,
+  "roundoff_bound_formula": "128*461*10*float64_epsilon",
+  "explanation": "計算モデルが既に宣言した正規化の丸め誤差boundを描画入力にも適用。生値はclip・再正規化せず保持。物理的色尺度は0〜1のままで上限外は同じ終端色。音質や科学的採否の新しい閾値ではない。",
+  "log_color_display": {
+    "vmin": 1e-06,
+    "vmax": 1.0,
+    "shared_across_recordings_and_views": true,
+    "below_floor_including_zero": "lowest_color",
+    "nan": "gray",
+    "raw_values_changed": false,
+    "mass_selection_threshold": false
+  },
+  "recordings": {
+    "1089-134686-0008": {
+      "base": {
+        "cell_count": 276600,
+        "maximum": 1.000000000000024,
+        "cells_above_one": 10,
+        "maximum_excess_above_one": 2.398081733190338e-14,
+        "tolerance": 1.3102408047416247e-10,
+        "raw_values_preserved": true,
+        "joint_plus_h0_maximum": 1.0000000000000275,
+        "joint_plus_h0_rows_above_one": 244,
+        "joint_plus_h0_maximum_excess": 2.7533531010703882e-14
+      },
+      "prediction": {
+        "cell_count": 276600,
+        "maximum": 0.33185686608216747,
+        "cells_above_one": 0,
+        "maximum_excess_above_one": 0.0,
+        "tolerance": 1.3102408047416247e-10,
+        "raw_values_preserved": true,
+        "joint_plus_h0_maximum": 1.0000000000000198,
+        "joint_plus_h0_rows_above_one": 164,
+        "joint_plus_h0_maximum_excess": 1.9761969838327786e-14
+      },
+      "filtered": {
+        "cell_count": 276600,
+        "maximum": 1.0000000000000173,
+        "cells_above_one": 8,
+        "maximum_excess_above_one": 1.7319479184152442e-14,
+        "tolerance": 1.3102408047416247e-10,
+        "raw_values_preserved": true,
+        "joint_plus_h0_maximum": 1.0000000000000284,
+        "joint_plus_h0_rows_above_one": 179,
+        "joint_plus_h0_maximum_excess": 2.842170943040401e-14
+      },
+      "loghz": {
+        "cell_count": 276600,
+        "maximum": 1.000000000000024,
+        "cells_above_one": 10,
+        "maximum_excess_above_one": 2.398081733190338e-14,
+        "tolerance": 1.3102408047416247e-10,
+        "raw_values_preserved": true,
+        "joint_plus_h0_maximum": 1.000000000000028,
+        "joint_plus_h0_rows_above_one": 238,
+        "joint_plus_h0_maximum_excess": 2.7977620220553945e-14
+      }
+    },
+    "1188-133604-0003": {
+      "base": {
+        "cell_count": 276600,
+        "maximum": 1.0000000000000284,
+        "cells_above_one": 3,
+        "maximum_excess_above_one": 2.842170943040401e-14,
+        "tolerance": 1.3102408047416247e-10,
+        "raw_values_preserved": true,
+        "joint_plus_h0_maximum": 1.0000000000000284,
+        "joint_plus_h0_rows_above_one": 186,
+        "joint_plus_h0_maximum_excess": 2.842170943040401e-14
+      },
+      "prediction": {
+        "cell_count": 276600,
+        "maximum": 0.2282518868693473,
+        "cells_above_one": 0,
+        "maximum_excess_above_one": 0.0,
+        "tolerance": 1.3102408047416247e-10,
+        "raw_values_preserved": true,
+        "joint_plus_h0_maximum": 1.0000000000000195,
+        "joint_plus_h0_rows_above_one": 177,
+        "joint_plus_h0_maximum_excess": 1.9539925233402755e-14
+      },
+      "filtered": {
+        "cell_count": 276600,
+        "maximum": 1.0000000000000262,
+        "cells_above_one": 5,
+        "maximum_excess_above_one": 2.6201263381153694e-14,
+        "tolerance": 1.3102408047416247e-10,
+        "raw_values_preserved": true,
+        "joint_plus_h0_maximum": 1.000000000000028,
+        "joint_plus_h0_rows_above_one": 139,
+        "joint_plus_h0_maximum_excess": 2.7977620220553945e-14
+      },
+      "loghz": {
+        "cell_count": 276600,
+        "maximum": 1.0000000000000284,
+        "cells_above_one": 3,
+        "maximum_excess_above_one": 2.842170943040401e-14,
+        "tolerance": 1.3102408047416247e-10,
+        "raw_values_preserved": true,
+        "joint_plus_h0_maximum": 1.0000000000000284,
+        "joint_plus_h0_rows_above_one": 196,
+        "joint_plus_h0_maximum_excess": 2.842170943040401e-14
+      }
+    },
+    "121-121726-0012": {
+      "base": {
+        "cell_count": 152591,
+        "maximum": 1.000000000000022,
+        "cells_above_one": 5,
+        "maximum_excess_above_one": 2.19824158875781e-14,
+        "tolerance": 1.3102408047416247e-10,
+        "raw_values_preserved": true,
+        "joint_plus_h0_maximum": 1.0000000000000269,
+        "joint_plus_h0_rows_above_one": 137,
+        "joint_plus_h0_maximum_excess": 2.6867397195928788e-14
+      },
+      "prediction": {
+        "cell_count": 152591,
+        "maximum": 0.13635722474658715,
+        "cells_above_one": 0,
+        "maximum_excess_above_one": 0.0,
+        "tolerance": 1.3102408047416247e-10,
+        "raw_values_preserved": true,
+        "joint_plus_h0_maximum": 1.000000000000019,
+        "joint_plus_h0_rows_above_one": 120,
+        "joint_plus_h0_maximum_excess": 1.9095836023552692e-14
+      },
+      "filtered": {
+        "cell_count": 152591,
+        "maximum": 1.0000000000000273,
+        "cells_above_one": 11,
+        "maximum_excess_above_one": 2.731148640577885e-14,
+        "tolerance": 1.3102408047416247e-10,
+        "raw_values_preserved": true,
+        "joint_plus_h0_maximum": 1.0000000000000273,
+        "joint_plus_h0_rows_above_one": 111,
+        "joint_plus_h0_maximum_excess": 2.731148640577885e-14
+      },
+      "loghz": {
+        "cell_count": 152591,
+        "maximum": 1.000000000000022,
+        "cells_above_one": 5,
+        "maximum_excess_above_one": 2.19824158875781e-14,
+        "tolerance": 1.3102408047416247e-10,
+        "raw_values_preserved": true,
+        "joint_plus_h0_maximum": 1.0000000000000278,
+        "joint_plus_h0_rows_above_one": 128,
+        "joint_plus_h0_maximum_excess": 2.7755575615628914e-14
+      }
+    },
+    "1221-135766-0005": {
+      "base": {
+        "cell_count": 276600,
+        "maximum": 1.0000000000000218,
+        "cells_above_one": 8,
+        "maximum_excess_above_one": 2.1760371282653068e-14,
+        "tolerance": 1.3102408047416247e-10,
+        "raw_values_preserved": true,
+        "joint_plus_h0_maximum": 1.000000000000028,
+        "joint_plus_h0_rows_above_one": 245,
+        "joint_plus_h0_maximum_excess": 2.7977620220553945e-14
+      },
+      "prediction": {
+        "cell_count": 276600,
+        "maximum": 0.1363572247465864,
+        "cells_above_one": 0,
+        "maximum_excess_above_one": 0.0,
+        "tolerance": 1.3102408047416247e-10,
+        "raw_values_preserved": true,
+        "joint_plus_h0_maximum": 1.0000000000000195,
+        "joint_plus_h0_rows_above_one": 180,
+        "joint_plus_h0_maximum_excess": 1.9539925233402755e-14
+      },
+      "filtered": {
+        "cell_count": 276600,
+        "maximum": 1.000000000000022,
+        "cells_above_one": 6,
+        "maximum_excess_above_one": 2.19824158875781e-14,
+        "tolerance": 1.3102408047416247e-10,
+        "raw_values_preserved": true,
+        "joint_plus_h0_maximum": 1.0000000000000278,
+        "joint_plus_h0_rows_above_one": 195,
+        "joint_plus_h0_maximum_excess": 2.7755575615628914e-14
+      },
+      "loghz": {
+        "cell_count": 276600,
+        "maximum": 1.0000000000000218,
+        "cells_above_one": 8,
+        "maximum_excess_above_one": 2.1760371282653068e-14,
+        "tolerance": 1.3102408047416247e-10,
+        "raw_values_preserved": true,
+        "joint_plus_h0_maximum": 1.0000000000000282,
+        "joint_plus_h0_rows_above_one": 264,
+        "joint_plus_h0_maximum_excess": 2.8199664825478976e-14
+      }
+    },
+    "1089-134686-0032": {
+      "base": {
+        "cell_count": 188549,
+        "maximum": 1.0000000000000548,
+        "cells_above_one": 7,
+        "maximum_excess_above_one": 5.484501741648273e-14,
+        "tolerance": 1.3102408047416247e-10,
+        "raw_values_preserved": true,
+        "joint_plus_h0_maximum": 1.0000000000000548,
+        "joint_plus_h0_rows_above_one": 151,
+        "joint_plus_h0_maximum_excess": 5.484501741648273e-14
+      },
+      "prediction": {
+        "cell_count": 188549,
+        "maximum": 0.22825188686934378,
+        "cells_above_one": 0,
+        "maximum_excess_above_one": 0.0,
+        "tolerance": 1.3102408047416247e-10,
+        "raw_values_preserved": true,
+        "joint_plus_h0_maximum": 1.0000000000000369,
+        "joint_plus_h0_rows_above_one": 111,
+        "joint_plus_h0_maximum_excess": 3.68594044175552e-14
+      },
+      "filtered": {
+        "cell_count": 188549,
+        "maximum": 1.0000000000000526,
+        "cells_above_one": 13,
+        "maximum_excess_above_one": 5.262457136723242e-14,
+        "tolerance": 1.3102408047416247e-10,
+        "raw_values_preserved": true,
+        "joint_plus_h0_maximum": 1.0000000000000526,
+        "joint_plus_h0_rows_above_one": 115,
+        "joint_plus_h0_maximum_excess": 5.262457136723242e-14
+      },
+      "loghz": {
+        "cell_count": 188549,
+        "maximum": 1.0000000000000548,
+        "cells_above_one": 7,
+        "maximum_excess_above_one": 5.484501741648273e-14,
+        "tolerance": 1.3102408047416247e-10,
+        "raw_values_preserved": true,
+        "joint_plus_h0_maximum": 1.0000000000000548,
+        "joint_plus_h0_rows_above_one": 154,
+        "joint_plus_h0_maximum_excess": 5.484501741648273e-14
+      }
+    }
+  },
+  "all_views": {
+    "cells_above_one": 109,
+    "maximum": 1.0000000000000548,
+    "maximum_excess_above_one": 5.484501741648273e-14
+  }
+}
