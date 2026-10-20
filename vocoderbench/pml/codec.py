@@ -14,7 +14,8 @@ def encode(x, sr=FS, *, seed=DEFAULT_SEED, trace=None):
     """有限・mono・[-1,1] の 16 kHz 音声を解析する（最低 0.2 秒）。
 
     pyreaper/pyworld はここでのみ読み込む。trace 辞書を指定すると解析中の
-    SPEC/PDD/NM/F0 と診断値を保存する。保存用パラメーターには PDD は不要。
+    SPEC/PDD/NM/F0 と診断値、reaper に未加工の5戻り配列の独立コピーを
+    保存する。保存用パラメーターには PDD や REAPER 観測配列は不要。
     入力の正規化・クリップ・再標本化は行わない。
     """
     if type(sr) is not int or sr != FS:
@@ -35,7 +36,7 @@ def encode(x, sr=FS, *, seed=DEFAULT_SEED, trace=None):
     from .pml_analysis import analyze
 
     pcm = np.rint(x * 32767).astype(np.int16)
-    _, _, times, f0, _ = pyreaper.reaper(
+    pm_times, pm, times, f0, corr = pyreaper.reaper(
         pcm,
         FS,
         minf0=65.0,
@@ -46,6 +47,15 @@ def encode(x, sr=FS, *, seed=DEFAULT_SEED, trace=None):
         frame_period=0.005,
         unvoiced_cost=0.9,
     )
+    if trace is not None:
+        reaper_trace = dict(
+            pm_times=pm_times.copy(),
+            pm=pm.copy(),
+            f0_times=times.copy(),
+            f0=f0.copy(),
+            corr=corr.copy(),
+        )
+    del pm_times, pm, corr
     raw_f0 = np.column_stack((times, f0)).astype(np.float64)
     raw_f0[raw_f0[:, 1] < 0, 1] = 0.0
     if len(raw_f0) < 3:
@@ -75,7 +85,10 @@ def encode(x, sr=FS, *, seed=DEFAULT_SEED, trace=None):
         seed=seed,
     )
     if trace is not None:
-        trace.update(features=features, diagnostics=diagnostics, raw_f0=raw_f0)
+        trace.update(
+            features=features, diagnostics=diagnostics, raw_f0=raw_f0,
+            reaper=reaper_trace,
+        )
     return params
 
 

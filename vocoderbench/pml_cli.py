@@ -31,6 +31,8 @@ def main():
     enc.add_argument('input', type=Path)
     enc.add_argument('output', type=Path)
     enc.add_argument('--seed', type=int, default=20261015)
+    enc.add_argument('--reaper-trace-npz', type=Path,
+                     help='未加工REAPER観測5配列を別NPZへ保存（コピー負荷を解析時間に含む）')
     dec = sub.add_parser('decode', help='保存特徴だけからFLOAT WAVを生成')
     dec.add_argument('input', type=Path)
     dec.add_argument('output', type=Path)
@@ -40,31 +42,48 @@ def main():
     for child in (enc, dec):
         child.add_argument('--timing-json', type=Path, help='I/Oを除く解析または復号RTFを保存')
     args = parser.parse_args()
-    if args.timing_json and args.timing_json.resolve() == args.output.resolve():
-        raise ValueError('音声・特徴量と計測JSONは別の出力先を指定してください')
-    if args.output.exists() or (args.timing_json and args.timing_json.exists()):
-        raise FileExistsError('出力先が存在します。別の出力先を指定してください')
+    reaper_path = getattr(args, 'reaper_trace_npz', None)
+    outputs = [path for path in (args.output, args.timing_json, reaper_path) if path is not None]
+    resolved = [path.resolve() for path in [args.input, *outputs]]
+    if len(set(resolved)) != len(resolved):
+        raise ValueError('入力・音声/特徴量・計測JSON・診断NPZは別のパスを指定してください')
+    for path in outputs:
+        if path.exists() or path.is_symlink():
+            raise FileExistsError(f'出力先が存在します。別の出力先を指定してください: {path}')
     if args.command == 'encode':
         x, sr = read_audio(args.input)
+        trace = {} if reaper_path is not None else None
         begin = time.perf_counter()
-        params = pml.encode(x, sr, seed=args.seed)
+        params = pml.encode(x, sr, seed=args.seed, trace=trace)
         seconds = time.perf_counter() - begin
+        if trace is not None:
+            reaper_arrays = trace['reaper']
+            del trace
         pml.save(params, args.output)
+        if reaper_path is not None:
+            with reaper_path.open('xb') as handle:
+                np.savez(handle, allow_pickle=False, **reaper_arrays)
         duration = len(x) / sr
         result = {'analysis_seconds': seconds, 'analysis_rtf': seconds / duration}
+        if reaper_path is not None:
+            result['reaper_trace_capture_included'] = True
     else:
         params = pml.load(args.input)
         params = pml.edit_parameters(params, pitch_semitones=args.pitch_semitones, gain_db=args.gain_db)
         begin = time.perf_counter()
         y = pml.decode(params, seed=args.seed)
         seconds = time.perf_counter() - begin
-        wavfile.write(args.output, params.sample_rate, y.astype(np.float32))
+        with args.output.open('xb') as handle:
+            wavfile.write(handle, params.sample_rate, y.astype(np.float32))
         duration = params.n_samples / params.sample_rate
         result = {'decode_seconds': seconds, 'decode_rtf': seconds / duration}
     result.update(method='pml-lowband-fwcep60-v1', seconds_audio=duration,
                   measurement='単発・ウォームアップなし。I/Oを除く壁時計。正式速度順位には使わない')
+    if reaper_path is not None:
+        result['measurement'] += '。REAPER診断コピー負荷を含む。診断なしの速度順位に混ぜない'
     if args.timing_json:
-        args.timing_json.write_text(json.dumps(result, ensure_ascii=False, indent=2) + '\n')
+        with args.timing_json.open('x', encoding='utf-8') as handle:
+            handle.write(json.dumps(result, ensure_ascii=False, indent=2) + '\n')
     logging.info('処理完了: %s / %s', args.output, result)
     return 0
 
