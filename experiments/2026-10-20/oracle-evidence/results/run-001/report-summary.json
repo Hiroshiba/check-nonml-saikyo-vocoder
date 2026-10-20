@@ -1,0 +1,43 @@
+{
+  "scope": "run-001 only; saved values and status counts; no numerical reanalysis",
+  "pair_counts": {
+    "partial": 49,
+    "time_budget_exhausted": 451
+  },
+  "bma_complete": 0,
+  "integral_counts": {
+    "converged": 392,
+    "not_converged": 96,
+    "time_budget_exhausted": 2,
+    "not_attempted": 4510
+  },
+  "successful_integrals_by_model": {
+    "W": 98,
+    "A": 98,
+    "S": 97,
+    "J": 97,
+    "V": 2
+  },
+  "successful_V_locations": [
+    "A-001/train",
+    "W-004/train"
+  ],
+  "budget_exception_stages": {
+    "alternate": 89,
+    "Cartesian": 3
+  },
+  "diagnostic_gate_failures": {
+    "kind": "joint",
+    "model": "V",
+    "pair_ids": [
+      "W-000",
+      "A-000",
+      "A-004",
+      "W-007"
+    ],
+    "interpretation": "Cartesian 24/48 difference criterion not met; Cartesian48 vs partition16 difference about 4e-12 to 6e-12 is not a certified true-error bound."
+  },
+  "bootstrap_completed_comparisons": 0,
+  "bootstrap_status": "no_successful_pairs for all 25 comparisons",
+  "stop_interpretation": "Explicit parent-requested SIGUSR1 before 27 minutes; original time_budget_exhausted and no_new_integrations_after_27_minutes labels are preserved, not interpreted as actual elapsed 27 minutes."
+}
