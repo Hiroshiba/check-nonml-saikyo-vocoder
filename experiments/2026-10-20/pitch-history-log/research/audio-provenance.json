@@ -1,0 +1,57 @@
+{
+  "configuration": {
+    "fs": 16000,
+    "window_samples": 400,
+    "hop_samples": 160,
+    "boundary_seconds": 0.512,
+    "seed": 20261020,
+    "generator": "PCG64",
+    "noise_nominal_variance": 0.0015,
+    "common_scale": 0.004589219874983008,
+    "clean_U_harmonics": [
+      2,
+      3,
+      4
+    ],
+    "clean_E_harmonics": [
+      2,
+      4,
+      6
+    ],
+    "fstar_hz": 97.65625,
+    "E_clean_minimum_period_hz": 195.3125
+  },
+  "audio": {
+    "U-U": {
+      "source_npy_sha256": "e4247816994c1c1be8f4faef5218a5e13f95e20138471fd31c68d936f6c149a3",
+      "peak_abs": 0.013055667715461138,
+      "pcm16_peak_abs": 428,
+      "samples": 16384,
+      "sample_rate": 16000,
+      "duration_seconds": 1.024,
+      "conversion": "round-to-nearest-even(x * 32768), signed little-endian PCM16; no normalization, no clipping",
+      "wav_sha256": "f2397b16bde358ef58457f1aec80fd7e79ca86368130081bfbe90959601a4228"
+    },
+    "E-U": {
+      "source_npy_sha256": "1df22d5b938b2b0d6b3ab290c76a06cc3daa3da73b2c3576335368c330b5be0a",
+      "peak_abs": 0.013040966254985398,
+      "pcm16_peak_abs": 427,
+      "samples": 16384,
+      "sample_rate": 16000,
+      "duration_seconds": 1.024,
+      "conversion": "round-to-nearest-even(x * 32768), signed little-endian PCM16; no normalization, no clipping",
+      "wav_sha256": "972e85bd17d2f0551977a8ffb55a32748c8f3c15a1070f516282c19eb1963fee"
+    },
+    "E-E": {
+      "source_npy_sha256": "3d8e3de489b79597d517618a1d77fd069f9a6ea5aba5edb83f8085416d58df92",
+      "peak_abs": 0.01205614711594862,
+      "pcm16_peak_abs": 395,
+      "samples": 16384,
+      "sample_rate": 16000,
+      "duration_seconds": 1.024,
+      "conversion": "round-to-nearest-even(x * 32768), signed little-endian PCM16; no normalization, no clipping",
+      "wav_sha256": "1d5a7be27cee9f8efacdff496a1f1125f4433483f71131024b326781e5657194"
+    }
+  },
+  "origin": "正弦波と固定PCG64乱数のみ。録音・個人情報なし。既存PCM16をbyte同一コピー。"
+}
