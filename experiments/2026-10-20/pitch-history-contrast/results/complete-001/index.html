@@ -1,0 +1,33 @@
+<!doctype html><html lang="ja"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>同じ観測を共有する二候補比較と履歴の影響</title><link rel="stylesheet" href="style.css"><header><p class="eyebrow">固定100組の保存値診断 · 2026年10月20日</p><h1>同じ観測を共有する二候補比較と履歴の影響</h1><div class="lead"><p><strong>基準は引き続きPMLです。</strong>この報告は音声品質の比較ではありません。新しい音声・品質順位・MOS評価は追加していません。</p><nav aria-label="既存の音声比較"><a href="https://hiroshiba.github.io/check-nonml-saikyo-vocoder/research/pml-package-evaluation-2026-10-16/index.html">PMLの実音声評価</a> · <a href="https://hiroshiba.github.io/check-nonml-saikyo-vocoder/research/raw-full-full120-comparison-2026-10-19/index.html">自然120録音の比較</a> · <a href="https://hiroshiba.github.io/check-nonml-saikyo-vocoder/research/all-method-final-2026-10-15/index.html">標準8方式の比較</a></nav>
+<p>同じ観測を共有する条件どうしでも、保存された履歴を使うと二候補の得点差に違いが残りました。主要H群49組の履歴Bでは、条件差Xは負8組・零41組でした。一方、初期分布では全49組が零。通常確率の履歴Aは全49組が未定義で、零とは扱えません。</p><p class="note">これは固定された人工データと保存値の診断です。履歴の単一要因による因果効果、F0の正解、音質改善を測った結果ではありません。</p></div></header>
+<main><section><h2>前回の二候補を固定し、今回は条件間の違いを読む</h2>
+<p><a href="https://hiroshiba.github.io/check-nonml-saikyo-vocoder/research/pitch-fixed-candidate-2026-10-20/index.html">前回の固定二候補レポート</a>では、積分参照への置換で有限な得点差は動いたものの、二候補の厳密な優劣逆転は0件でした。今回はその保存結果を使い、同じ観測を持つ条件間で差が残るかを調べました。前回の計算や追跡はやり直していません。</p>
+<p>候補はf*=97.65625 Hzと2f*=195.3125 Hzです。Dはf*側の対数得点から2f*側を引いた値で、正ならf*、負なら2f*が優位になります。Sは保存実装、Lは高精度で評価した同じLaplace式、Eは積分参照A80を使った値です。A80と履歴Aは別の名称です。</p>
+<p>刺激のUは倍音集合{2,3,4}、Eは{2,4,6}の人工ブロックを表し、有声・無声の略ではありません。E-Uなどの条件名は前半と後半のブロックを示します。条件名のEと、積分参照を表す評価名Eも区別してください。</p></section>
+<section><h2>100組を先に固定し、主要97組と端の3組を分けた</h2>
+<p>H50はE-UからU-Uを引く対比で、frame 53〜102の50組です。後半の観測は共通ですが、それ以前のブロックが異なります。C50はE-UからE-Eを引く対比で、frame 0〜49の50組。前半の共通区間を比較します。</p>
+<table><caption>固定された比較範囲</caption><thead><tr><th>対比</th><th>引く向き</th><th>全組</th><th>主要群</th><th>padding群</th></tr></thead><tbody><tr><td>H50</td><td>E-U − U-U</td><td>50</td><td>49：frame 53〜101</td><td>1：frame 102</td></tr><tr><td>C50</td><td>E-U − E-E</td><td>50</td><td>48：frame 2〜49</td><td>2：frame 0・1</td></tr></tbody></table>
+<p>paddingは窓が音声区間の外にはみ出し、零埋めを含む端の窓です。3組を捨てず、主要群と分けて保存しました。効果の大きさや符号で組を選んだものではありません。<a href="data/provenance/PAIRS.json">固定100組の台帳</a>から対象を確認できます。</p>
+<p>同じ観測という前提は、保存された400標本の観測ハッシュなどで照合しています。共通雑音・共通の振幅倍率、同じ初期状態と処理条件も原契約に記録されています。今回、元波形を読み直して同一性を再計測したわけではありません。</p></section>
+<section><h2>XとIは、それぞれ別に保存された量の差である</h2>
+<p><strong>X</strong>は同じ評価S・L・Eについて、Dの条件間差を取ったものです。たとえばHのX[S]は、保存D[E-U,S]から保存D[U-U,S]を引きます。負のXはE-UのDが比較条件より小さいことを表し、そのD自体が負かどうかは示しません。</p>
+<p><strong>I</strong>は各窓内に保存された近似変更の差gについて、同じ条件間差を取ります。gにはL−S、E−L、E−Sの3種類があります。したがってI[E−L]は、積分参照への置換に伴う保存gが条件間でどう違うかを示します。</p>
+<p class="note">保存Dとgは別々に丸められた値です。IをXから組み直すことはせず、I=0やIの符号から、保存Xが厳密に不変だとか、その変化量がいくらだとかは断定しません。以下のXとIの零・正負は、それぞれの保存結果として読みます。</p></section>
+<section><h2>主要H群では履歴Bに差が残り、履歴Aは未定義だった</h2>
+<p>全100組の1800値は、有限1476・未定義324・欠測0です。これは組数ではなく、3事前分布それぞれのX3種類・I3種類を含む値の件数です。表の分母はH主要49組、C主要48組であり、全1800値の分母とは異なります。</p>
+<div class="scroll"><table><caption>主要群の保存集計：件数は各X・各Iごと</caption><thead><tr><th>群</th><th>事前分布</th><th>有限</th><th>未定義</th><th>欠測</th><th>X[S]の負／零／正</th><th>I[E−L]の負／零／正</th></tr></thead><tbody><tr data-main="0"><td>H主要群</td><td>初期分布（static）</td><td>49</td><td>0</td><td>0</td><td>0／49／0</td><td>0／49／0</td></tr><tr data-main="6"><td>H主要群</td><td>通常確率の履歴A</td><td>0</td><td>49</td><td>0</td><td>0／0／0</td><td>0／0／0</td></tr><tr data-main="12"><td>H主要群</td><td>対数値の履歴B</td><td>49</td><td>0</td><td>0</td><td>8／41／0</td><td>8／41／0</td></tr><tr data-main="54"><td>C主要群</td><td>初期分布（static）</td><td>48</td><td>0</td><td>0</td><td>0／48／0</td><td>0／48／0</td></tr><tr data-main="60"><td>C主要群</td><td>通常確率の履歴A</td><td>44</td><td>4</td><td>0</td><td>0／44／0</td><td>0／44／0</td></tr><tr data-main="66"><td>C主要群</td><td>対数値の履歴B</td><td>48</td><td>0</td><td>0</td><td>0／48／0</td><td>0／48／0</td></tr></tbody></table></div>
+<p>Hの初期分布では、XとIの全種類が零でした。履歴BのXはS・L・Eのいずれも負8組・零41組で、I[E−L]も同じ件数です。ただし、件数が一致することと、XからIを厳密に導けることは別です。零41組も、保存量が零だったという結果であり、履歴全体や内部状態の同一性を証明しません。</p>
+<p>H主要群の履歴Aは、X・Iの各種類が49組すべて未定義でした。通常確率で保存された事前分布の支持消失と非有限な元量に関わる結果であり、差がないという意味にはできません。対数値の履歴Bを使ってAの未定義を補修することもしていません。</p>
+<p>C主要群は、有限なX・Iがすべて零でした。初期分布と履歴Bは各48組が有限。履歴Aは有限44組が零で、残る4組は未定義です。この一致は選んだ候補と保存量の整合に限られ、全候補・内部状態の一致や、一般的な未来情報の漏洩不存在を証明しません。</p>
+<p>端の3組も区別して読む必要があります。Hのpadding 1組は初期分布とBの各X・Iが有限の零、Aは各1件が未定義でした。Cのpadding 2組は、3事前分布すべての各X・Iが有限の零です。主要群の表にこの3組は混ぜていません。</p></section>
+<section><h2>履歴BのIは小さいが、保証区間でも代表値でもない</h2>
+<p>主要H49の履歴Bでは、I[E−L]の保存範囲は約−7.84744×10⁻⁵〜0 natsでした。I[L−S]は約−4.61919×10⁻¹⁶〜8.34814×10⁻¹⁶ natsで、負4・零41・正4です。以下は元集計の端点を表示用に6有効桁へ丸めただけの表です。</p>
+<div class="scroll"><table><caption>主要H49・履歴B：保存範囲（nats）</caption><thead><tr><th>量</th><th>最小</th><th>最大</th><th>負</th><th>零</th><th>正</th></tr></thead><tbody><tr data-range="12"><td>X S</td><td>-1526.55</td><td>0</td><td>8</td><td>41</td><td>0</td></tr><tr data-range="13"><td>X L</td><td>-1526.55</td><td>0</td><td>8</td><td>41</td><td>0</td></tr><tr data-range="14"><td>X E</td><td>-1526.55</td><td>0</td><td>8</td><td>41</td><td>0</td></tr><tr data-range="15"><td>I L−S</td><td>-4.61919e-16</td><td>8.34814e-16</td><td>4</td><td>41</td><td>4</td></tr><tr data-range="16"><td>I E−L</td><td>-0.0000784744</td><td>0</td><td>8</td><td>41</td><td>0</td></tr><tr data-range="17"><td>I E−S</td><td>-0.0000784744</td><td>0</td><td>8</td><td>41</td><td>0</td></tr></tbody></table></div>
+<p class="note">端点は固定された有限49組の最小・最大です。全体の代表値や信頼区間ではありません。丸め後の表示が同じでも、元の保存文字列が同じとは限りません。XとIの桁の違いを一つの図で潰さないよう、ここでは表で示します。<a href="display-ranges.csv">元の十進文字列と表示値を分けたCSV</a>と<a href="data/output/summary.json">全72群の原集計</a>を保存しています。</p></section>
+<section><h2>無丸めで引けたことと、真値の精度保証は区別する</h2>
+<p>保存結果の計算はDecimal 256桁で行われ、保存十進文字列から直接構築した値を減算しています。追加の丸めが生じれば停止する設定で、一回の実行が完了しました。ただし元のDとgは誤差非保証の有限精度参照です。追加丸めがなかったことを、真値の誤差や符号の保証へ昇格させません。</p>
+<p>100組の台帳はすべて完了し、計算プロセスは終了コード0で回収済みです。原ファイルに残る一次証拠は、内部の最終保存確定後（post-fsync）の観測3.042310820秒と、外側で実際に終了を待った記録 3.503779294秒です。独立監査では正本100記録・CSV 1800行・集計72群の不整合は0でした。</p>
+<p><a href="data/output/contrasts.json.gz">全100組の正本JSON Lines（gzip）</a>と<a href="data/output/contrasts.csv">全1800値のCSV</a>をダウンロードできます。H・Cそれぞれを時系列順に含む固定台帳順のままです。元の文字列は表示丸めで置き換えていません。<a href="audit.html">監査資料一覧</a>には入力・実装の固定情報と終了証拠、未同梱の外側観測についての留保をまとめました。</p></section>
+<section><h2>既存検証と限定結果を整理し、この診断を区切る</h2>
+<p>同じ観測の下で、初期分布と保存された履歴では条件差の現れ方が違うことを、この固定診断で確認しました。主要HのBに差が残る一方、Aの未定義は零と比較できません。元データには重複窓と共有雑音があり、独立反復の集計としては扱いません。</p>
+<p>現時点ではPMLを維持します。通常確率Aと対数状態Bの全候補追跡や、支持が零になった最初の箇所を追う帳簿分解は既に報告されています。これらを未実施の問いとして繰り返さず、既存検証と今回の限定結果を整理して、この診断を区切ります。積分参照による全候補の再追跡や音質への効果は別の未回答問題であり、追加実験を決定したものではありません。</p></section></main><footer>保存された固定100組に基づく、観測と履歴の限定診断です。</footer></html>

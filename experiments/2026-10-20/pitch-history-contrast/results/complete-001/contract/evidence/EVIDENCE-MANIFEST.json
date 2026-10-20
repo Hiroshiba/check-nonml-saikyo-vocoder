@@ -1,0 +1,31 @@
+{
+  "files": {
+    "producer-run.py": {
+      "original_path": "/workspace/pitch-prior-history-job-20261020/run.py",
+      "bytes": 13416,
+      "sha256": "852c6faf72398e196b1ce969a974739ba94c4eb56a48f38d0b9504b4ae81d3fe",
+      "byte_identical": true,
+      "purpose": "read-only evidence; never imported/executed by this package"
+    },
+    "inputs.json": {
+      "original_path": "/workspace/pitch-prior-history-results-20261020/inputs.json",
+      "bytes": 44031,
+      "sha256": "d4228d48c618046b37b0b793c66fd88cdd36c53ca108eee2eb41561480183977",
+      "byte_identical": true,
+      "purpose": "read-only evidence; never imported/executed by this package"
+    },
+    "model.py": {
+      "original_path": "/workspace/direct-harmonic-posterior-job-20261019/model.py",
+      "bytes": 6915,
+      "sha256": "111c5bfda62595a3b5f01208741fc52303dc78c2569d9dbc889b399244c95955",
+      "byte_identical": true,
+      "purpose": "read-only evidence; never imported/executed by this package"
+    }
+  },
+  "links": {
+    "observation_hash": "producer-run.py observations construction and y.tobytes()",
+    "common_scale_and_noise": "producer-run.py generation; inputs.json saved seed/generator/common_scale/noise hashes",
+    "common_initialization": "producer-run.py per-condition state=Filter(); model.py Filter.__init__/first update"
+  },
+  "no_candidate_import": true
+}

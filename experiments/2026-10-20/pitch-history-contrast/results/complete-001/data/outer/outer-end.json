@@ -1,0 +1,30 @@
+{
+  "command": [
+    "/workspace/quality-env-v1/venv/bin/python",
+    "-B",
+    "/workspace/pitch-interaction-source-v1-20261020/source/run.py",
+    "--authorized-once",
+    "--source-sha256",
+    "2913969218f72c840f6083268533c531029f01fd2066095c754ab39f59fdbe4b",
+    "--output",
+    "/workspace/pitch-interaction-once-20261020/output",
+    "--claims-dir",
+    "/workspace/pitch-interaction-claims-20261020"
+  ],
+  "started_utc": "2026-10-20T10:33:05.262703+00:00",
+  "started_monotonic": 203869.368831942,
+  "signals": [],
+  "reaped": true,
+  "exitcode": 0,
+  "overall_success": true,
+  "pid": 15876,
+  "wait_finished_utc": "2026-10-20T10:33:08.766416+00:00",
+  "elapsed_seconds": 3.5037792939983774,
+  "stdout_sha256": "2ce635f089a736abad92458f8cca28c627b09c473b0f3841fce1702563f79494",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "post_fsync_observation": {
+    "type": "interaction_post_fsync",
+    "success": true,
+    "elapsed_seconds": 3.0423108200193383
+  }
+}
