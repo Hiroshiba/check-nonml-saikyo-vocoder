@@ -1,0 +1,27 @@
+{
+  "command": [
+    "/workspace/check-nonml-saikyo-vocoder/.venv/bin/python",
+    "/workspace/scalar-recovery-shard1-v1/approved-package/source/recover.py",
+    "--authorized-shard-once",
+    "3",
+    "--parent-bundle",
+    "/workspace/scalar-recovery-shard1-v1/input/pitch-exact-scalar-parent-transfer-20261020.zip",
+    "--claims-dir",
+    "/workspace/scalar-recovery-shared-claims",
+    "--output",
+    "/workspace/scalar-recovery-shard3-v1/output",
+    "--expected-manifest-sha256",
+    "df345e185429ea15fa4edfcfadc1aad5528d31e04ccaeb4e90546af9dd4d8b57"
+  ],
+  "started_utc": "2026-10-20T08:07:53.454196+00:00",
+  "monitor_pid": 1891,
+  "monitor_ppid": 1887,
+  "deadline_seconds": 300,
+  "worker_pid": null,
+  "worker_ppid": null,
+  "worker_first_observed_utc": null,
+  "observed_worker_peak_rss_kib": null,
+  "signals": [],
+  "supervisor_pid": 1897,
+  "supervisor_ppid": 1891
+}

@@ -1,0 +1,24 @@
+{
+  "command": [
+    "/workspace/check-nonml-saikyo-vocoder/.venv/bin/python",
+    "/workspace/scalar-union-once-v0/approved-package/source/run_union.py",
+    "--authorized-union-once",
+    "--input-directory",
+    "/workspace/scalar-union-once-v0/fixed-inputs",
+    "--output",
+    "/workspace/scalar-union-once-v0/output",
+    "--expected-source-manifest-sha256",
+    "ad4bf845bfc76c8cbb50fbd8c16bc2a3d071227c96b8a2b81899c92ea306456b"
+  ],
+  "started_utc": "2026-10-20T08:25:31.517764+00:00",
+  "monitor_pid": 2156,
+  "monitor_ppid": 2155,
+  "deadline_seconds": 300,
+  "worker_pid": null,
+  "worker_ppid": null,
+  "worker_first_observed_utc": null,
+  "observed_worker_peak_rss_kib": null,
+  "signals": [],
+  "supervisor_pid": 2160,
+  "supervisor_ppid": 2156
+}
