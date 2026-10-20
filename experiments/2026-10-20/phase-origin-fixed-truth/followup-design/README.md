@@ -4,8 +4,8 @@ source v0は実行前監査を通過しておらず、修正中です。v1は未
 
 ## 局所得点の参照と参考音声の表示案
 
-- [局所得点の紙上導出](phase-origin-local-score-reference-20261020.md)と[独立レビュー](phase-origin-local-score-reference-independent-review-20261020.md)：局所の−1/2 nats/recordは理想モデルの近似参照で、合否閾値ではありません。
-- [人工入力の参考音声表示契約](phase-origin-reference-audio-presentation-contract-20261020.md)と[独立レビュー](phase-origin-reference-audio-independent-review-20261020.md)：5本は未生成の人工入力を表示する案です。音質比較や品質改善例として扱いません。レビューに残った修正事項も保持しています。
+- [局所得点の紙上導出](phase-origin-local-score-reference-20261020.md)と[独立レビュー](phase-origin-local-score-reference-independent-review-20261020.md)：−1/2 nats/recordはW（白色雑音）の理想モデルでの局所近似参照で、合否閾値ではありません。
+- [人工入力の参考音声表示契約](phase-origin-reference-audio-presentation-contract-20261020.md)と[独立レビュー](phase-origin-reference-audio-independent-review-20261020.md)：5本は未生成の人工入力を表示する案です。音質比較や品質改善例として扱いません。独立レビューの指摘と契約への反映を記録しています。
 
 ## v0の監査と修正版の受入れ準備
 
