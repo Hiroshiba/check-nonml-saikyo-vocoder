@@ -243,8 +243,9 @@ def build(output):
         if not meta['runs']:
             cards.append(f'<article><h2><a href="{esc(rel)}/index.html">{esc(meta["title"])}</a></h2>'
                          f'<p>{esc(meta["summary"])}（調査中・比較結果なし）</p></article>')
-    body = ('<h1>非MLボコーダーの調査・実験記録</h1><p>新しい記録から表示しています。'
-            '日時は日本時間です。</p>'
+    body = ('<h1>非MLボコーダーの調査・実験記録</h1><p>初回公開日時を登録した案内はその日時を、'
+            '未登録の旧記録は従来の作成・記録日時を使い、新しい順に並べています。'
+            '時刻は日本時間で表示し、日付だけの案内にはUTCと明記しています。</p>'
             f'<div class="notice"><strong>現在の正式ベース：{esc(current)}</strong><br>'
             f'{esc(baseline["reason"])}<br><a href="BASELINE.json">現在のベース情報（JSON）</a></div>'
             f'<p>{repo_link("README.md", "プロジェクトの説明")} ／ '
