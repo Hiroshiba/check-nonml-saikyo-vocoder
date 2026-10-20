@@ -1,0 +1,42 @@
+{
+  "command": [
+    "/workspace/check-nonml-saikyo-vocoder/.venv/bin/python",
+    "/workspace/scalar-union-once-v0/approved-package/source/run_union.py",
+    "--authorized-union-once",
+    "--input-directory",
+    "/workspace/scalar-union-once-v0/fixed-inputs",
+    "--output",
+    "/workspace/scalar-union-once-v0/output",
+    "--expected-source-manifest-sha256",
+    "ad4bf845bfc76c8cbb50fbd8c16bc2a3d071227c96b8a2b81899c92ea306456b"
+  ],
+  "started_utc": "2026-10-20T08:25:31.517764+00:00",
+  "monitor_pid": 2156,
+  "monitor_ppid": 2155,
+  "deadline_seconds": 300,
+  "worker_pid": 2162,
+  "worker_ppid": 2160,
+  "worker_first_observed_utc": "2026-10-20T08:25:31.619143+00:00",
+  "observed_worker_peak_rss_kib": 78408,
+  "signals": [],
+  "supervisor_pid": 2160,
+  "supervisor_ppid": 2156,
+  "deadline_reached": false,
+  "returncode": 0,
+  "wait_finished_utc": "2026-10-20T08:25:34.330316+00:00",
+  "wait_elapsed_seconds": 6.209000275703147e-06,
+  "external_elapsed_at_wait_seconds": 2.8125480830003653,
+  "supervisor_reaped": true,
+  "worker_exitcode": 0,
+  "worker_reaped": true,
+  "internal_run_status": "completed",
+  "worker_proc_entry_exists_after_wait": false,
+  "post_final_save_check": {
+    "type": "post_final_save_check",
+    "internal_success": true,
+    "elapsed_seconds": 2.6662774839996928,
+    "run_status": "completed"
+  },
+  "overall_success": true,
+  "evidence_write_started_utc": "2026-10-20T08:25:34.332585+00:00"
+}

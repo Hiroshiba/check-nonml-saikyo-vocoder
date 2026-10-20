@@ -1,0 +1,40 @@
+{
+  "command": [
+    "/workspace/check-nonml-saikyo-vocoder/.venv/bin/python",
+    "/workspace/scalar-once-v2/approved-package/source/supervise.py",
+    "--authorized-one-shot",
+    "/workspace/scalar-once-v2/output",
+    "--expected-manifest-sha256",
+    "320865684480581408525899ace68a373d1abedee29350565a5bdbe8fc5c2497"
+  ],
+  "started_utc": "2026-10-20T07:34:35.946058+00:00",
+  "external_monitor_pid": 1234,
+  "compute_deadline_seconds": 300,
+  "cleanup_wait_seconds_max": 10,
+  "signals": [
+    {
+      "pid": 1241,
+      "signal": "SIGKILL",
+      "utc": "2026-10-20T07:39:36.013880+00:00"
+    },
+    {
+      "pid": 1238,
+      "signal": "SIGINT",
+      "utc": "2026-10-20T07:39:36.013922+00:00"
+    }
+  ],
+  "worker_pid": 1241,
+  "worker_first_observed_utc": "2026-10-20T07:34:36.147928+00:00",
+  "supervisor_pid": 1238,
+  "deadline_reached": true,
+  "returncode": 2,
+  "wait_elapsed_seconds": 0.16413443300007202,
+  "ended_utc": "2026-10-20T07:39:36.178066+00:00",
+  "external_elapsed_seconds": 300.2320498040001,
+  "supervisor_reaped": true,
+  "internal_terminal_receipt_file": "completion.json",
+  "worker_exitcode": -9,
+  "worker_reaped": true,
+  "worker_terminal_observed_utc": "2026-10-20T07:39:36.178066+00:00",
+  "worker_proc_entry_exists_after_wait": false
+}
