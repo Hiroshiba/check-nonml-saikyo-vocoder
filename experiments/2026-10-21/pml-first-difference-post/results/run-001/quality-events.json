@@ -1,0 +1,1599 @@
+{
+  "source_archive": "quality/quality.zip",
+  "source_member": "events.jsonl",
+  "source_sha256": "7199e02ebba8066b91d9e5a3d2b8d9c3c8b2fb8aaac95a880e65b2806ee9102d",
+  "representation": "JSONL parsed into JSON array; every original event object retained",
+  "warning_count": 52,
+  "events": [
+    {
+      "utc": "2026-10-21T01:49:42.042234+00:00",
+      "stage": "immutable_native_inventory",
+      "record": null,
+      "branch": null,
+      "status": "started"
+    },
+    {
+      "utc": "2026-10-21T01:49:42.165703+00:00",
+      "stage": "immutable_native_inventory",
+      "record": null,
+      "branch": null,
+      "status": "succeeded",
+      "elapsed_seconds": 0.12353027299991481
+    },
+    {
+      "utc": "2026-10-21T01:49:44.459008+00:00",
+      "stage": "verified_saved_waveforms",
+      "record": "librispeech_1089-134686-0008",
+      "branch": null,
+      "status": "started"
+    },
+    {
+      "utc": "2026-10-21T01:49:44.470859+00:00",
+      "stage": "verified_saved_waveforms",
+      "record": "librispeech_1089-134686-0008",
+      "branch": null,
+      "status": "succeeded",
+      "elapsed_seconds": 0.011851569999862477
+    },
+    {
+      "utc": "2026-10-21T01:49:44.471047+00:00",
+      "stage": "verified_saved_waveforms",
+      "record": "librispeech_1089-134686-0011",
+      "branch": null,
+      "status": "started"
+    },
+    {
+      "utc": "2026-10-21T01:49:44.479921+00:00",
+      "stage": "verified_saved_waveforms",
+      "record": "librispeech_1089-134686-0011",
+      "branch": null,
+      "status": "succeeded",
+      "elapsed_seconds": 0.008873027999925398
+    },
+    {
+      "utc": "2026-10-21T01:49:44.480104+00:00",
+      "stage": "verified_saved_waveforms",
+      "record": "librispeech_1089-134686-0032",
+      "branch": null,
+      "status": "started"
+    },
+    {
+      "utc": "2026-10-21T01:49:44.488324+00:00",
+      "stage": "verified_saved_waveforms",
+      "record": "librispeech_1089-134686-0032",
+      "branch": null,
+      "status": "succeeded",
+      "elapsed_seconds": 0.008220260999905804
+    },
+    {
+      "utc": "2026-10-21T01:49:44.489503+00:00",
+      "stage": "initialize_utmos_v2",
+      "record": null,
+      "branch": null,
+      "status": "started"
+    },
+    {
+      "utc": "2026-10-21T01:49:50.823952+00:00",
+      "stage": "initialize_utmos_v2",
+      "record": null,
+      "branch": null,
+      "notice": "warning",
+      "category": "UserWarning",
+      "message": "Passing `gradient_checkpointing` to a config initialization is deprecated and will be removed in v5 Transformers. Using `model.gradient_checkpointing_enable()` instead, or if you are using the `Trainer` API, pass `gradient_checkpointing=True` in your `TrainingArguments`.",
+      "filename": "/workspace/check-nonml-saikyo-vocoder/.venv/lib/python3.12/site-packages/transformers/configuration_utils.py",
+      "lineno": 311
+    },
+    {
+      "utc": "2026-10-21T01:49:50.825279+00:00",
+      "stage": "initialize_utmos_v2",
+      "record": null,
+      "branch": null,
+      "notice": "warning",
+      "category": "UserWarning",
+      "message": "Passing `gradient_checkpointing` to a config initialization is deprecated and will be removed in v5 Transformers. Using `model.gradient_checkpointing_enable()` instead, or if you are using the `Trainer` API, pass `gradient_checkpointing=True` in your `TrainingArguments`.",
+      "filename": "/workspace/check-nonml-saikyo-vocoder/.venv/lib/python3.12/site-packages/transformers/configuration_utils.py",
+      "lineno": 311
+    },
+    {
+      "utc": "2026-10-21T01:49:53.569127+00:00",
+      "stage": "initialize_utmos_v2",
+      "record": null,
+      "branch": null,
+      "status": "succeeded",
+      "elapsed_seconds": 9.079622169000004
+    },
+    {
+      "utc": "2026-10-21T01:49:53.569899+00:00",
+      "stage": "score_utmos_v2",
+      "record": "librispeech_1089-134686-0008",
+      "branch": "pml",
+      "status": "started"
+    },
+    {
+      "utc": "2026-10-21T01:49:53.591473+00:00",
+      "stage": "score_utmos_v2",
+      "record": "librispeech_1089-134686-0008",
+      "branch": "pml",
+      "notice": "warning",
+      "category": "UserWarning",
+      "message": "'pin_memory' argument is set as true but no accelerator is found, then device pinned memory won't be used.",
+      "filename": "/workspace/check-nonml-saikyo-vocoder/.venv/lib/python3.12/site-packages/torch/utils/data/dataloader.py",
+      "lineno": 666
+    },
+    {
+      "utc": "2026-10-21T01:50:09.887190+00:00",
+      "stage": "score_utmos_v2",
+      "record": "librispeech_1089-134686-0008",
+      "branch": "pml",
+      "notice": "warning",
+      "category": "FutureWarning",
+      "message": "`torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.",
+      "filename": "/workspace/check-nonml-saikyo-vocoder/.venv/lib/python3.12/site-packages/utmosv2/_core/model/_common.py",
+      "lineno": 290
+    },
+    {
+      "utc": "2026-10-21T01:50:09.888346+00:00",
+      "stage": "score_utmos_v2",
+      "record": "librispeech_1089-134686-0008",
+      "branch": "pml",
+      "notice": "warning",
+      "category": "UserWarning",
+      "message": "User provided device_type of 'cuda', but CUDA is not available. Disabling",
+      "filename": "/workspace/check-nonml-saikyo-vocoder/.venv/lib/python3.12/site-packages/torch/amp/autocast_mode.py",
+      "lineno": 266
+    },
+    {
+      "utc": "2026-10-21T01:50:12.473283+00:00",
+      "stage": "score_utmos_v2",
+      "record": "librispeech_1089-134686-0008",
+      "branch": "pml",
+      "status": "succeeded",
+      "elapsed_seconds": 18.90338251000003
+    },
+    {
+      "utc": "2026-10-21T01:50:12.475755+00:00",
+      "stage": "score_utmos_v2",
+      "record": "librispeech_1089-134686-0008",
+      "branch": "R_d1",
+      "status": "started"
+    },
+    {
+      "utc": "2026-10-21T01:50:12.497039+00:00",
+      "stage": "score_utmos_v2",
+      "record": "librispeech_1089-134686-0008",
+      "branch": "R_d1",
+      "notice": "warning",
+      "category": "UserWarning",
+      "message": "'pin_memory' argument is set as true but no accelerator is found, then device pinned memory won't be used.",
+      "filename": "/workspace/check-nonml-saikyo-vocoder/.venv/lib/python3.12/site-packages/torch/utils/data/dataloader.py",
+      "lineno": 666
+    },
+    {
+      "utc": "2026-10-21T01:50:13.007763+00:00",
+      "stage": "score_utmos_v2",
+      "record": "librispeech_1089-134686-0008",
+      "branch": "R_d1",
+      "notice": "warning",
+      "category": "FutureWarning",
+      "message": "`torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.",
+      "filename": "/workspace/check-nonml-saikyo-vocoder/.venv/lib/python3.12/site-packages/utmosv2/_core/model/_common.py",
+      "lineno": 290
+    },
+    {
+      "utc": "2026-10-21T01:50:13.009139+00:00",
+      "stage": "score_utmos_v2",
+      "record": "librispeech_1089-134686-0008",
+      "branch": "R_d1",
+      "notice": "warning",
+      "category": "UserWarning",
+      "message": "User provided device_type of 'cuda', but CUDA is not available. Disabling",
+      "filename": "/workspace/check-nonml-saikyo-vocoder/.venv/lib/python3.12/site-packages/torch/amp/autocast_mode.py",
+      "lineno": 266
+    },
+    {
+      "utc": "2026-10-21T01:50:15.305039+00:00",
+      "stage": "score_utmos_v2",
+      "record": "librispeech_1089-134686-0008",
+      "branch": "R_d1",
+      "status": "succeeded",
+      "elapsed_seconds": 2.8292824609998206
+    },
+    {
+      "utc": "2026-10-21T01:50:15.307947+00:00",
+      "stage": "score_utmos_v2",
+      "record": "librispeech_1089-134686-0008",
+      "branch": "L_d1",
+      "status": "started"
+    },
+    {
+      "utc": "2026-10-21T01:50:15.331077+00:00",
+      "stage": "score_utmos_v2",
+      "record": "librispeech_1089-134686-0008",
+      "branch": "L_d1",
+      "notice": "warning",
+      "category": "UserWarning",
+      "message": "'pin_memory' argument is set as true but no accelerator is found, then device pinned memory won't be used.",
+      "filename": "/workspace/check-nonml-saikyo-vocoder/.venv/lib/python3.12/site-packages/torch/utils/data/dataloader.py",
+      "lineno": 666
+    },
+    {
+      "utc": "2026-10-21T01:50:15.868481+00:00",
+      "stage": "score_utmos_v2",
+      "record": "librispeech_1089-134686-0008",
+      "branch": "L_d1",
+      "notice": "warning",
+      "category": "FutureWarning",
+      "message": "`torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.",
+      "filename": "/workspace/check-nonml-saikyo-vocoder/.venv/lib/python3.12/site-packages/utmosv2/_core/model/_common.py",
+      "lineno": 290
+    },
+    {
+      "utc": "2026-10-21T01:50:15.869908+00:00",
+      "stage": "score_utmos_v2",
+      "record": "librispeech_1089-134686-0008",
+      "branch": "L_d1",
+      "notice": "warning",
+      "category": "UserWarning",
+      "message": "User provided device_type of 'cuda', but CUDA is not available. Disabling",
+      "filename": "/workspace/check-nonml-saikyo-vocoder/.venv/lib/python3.12/site-packages/torch/amp/autocast_mode.py",
+      "lineno": 266
+    },
+    {
+      "utc": "2026-10-21T01:50:18.658363+00:00",
+      "stage": "score_utmos_v2",
+      "record": "librispeech_1089-134686-0008",
+      "branch": "L_d1",
+      "status": "succeeded",
+      "elapsed_seconds": 3.3504141559999425
+    },
+    {
+      "utc": "2026-10-21T01:50:18.661186+00:00",
+      "stage": "score_utmos_v2",
+      "record": "librispeech_1089-134686-0008",
+      "branch": "F_d1",
+      "status": "started"
+    },
+    {
+      "utc": "2026-10-21T01:50:18.691139+00:00",
+      "stage": "score_utmos_v2",
+      "record": "librispeech_1089-134686-0008",
+      "branch": "F_d1",
+      "notice": "warning",
+      "category": "UserWarning",
+      "message": "'pin_memory' argument is set as true but no accelerator is found, then device pinned memory won't be used.",
+      "filename": "/workspace/check-nonml-saikyo-vocoder/.venv/lib/python3.12/site-packages/torch/utils/data/dataloader.py",
+      "lineno": 666
+    },
+    {
+      "utc": "2026-10-21T01:50:19.336664+00:00",
+      "stage": "score_utmos_v2",
+      "record": "librispeech_1089-134686-0008",
+      "branch": "F_d1",
+      "notice": "warning",
+      "category": "FutureWarning",
+      "message": "`torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.",
+      "filename": "/workspace/check-nonml-saikyo-vocoder/.venv/lib/python3.12/site-packages/utmosv2/_core/model/_common.py",
+      "lineno": 290
+    },
+    {
+      "utc": "2026-10-21T01:50:19.337998+00:00",
+      "stage": "score_utmos_v2",
+      "record": "librispeech_1089-134686-0008",
+      "branch": "F_d1",
+      "notice": "warning",
+      "category": "UserWarning",
+      "message": "User provided device_type of 'cuda', but CUDA is not available. Disabling",
+      "filename": "/workspace/check-nonml-saikyo-vocoder/.venv/lib/python3.12/site-packages/torch/amp/autocast_mode.py",
+      "lineno": 266
+    },
+    {
+      "utc": "2026-10-21T01:50:21.603415+00:00",
+      "stage": "score_utmos_v2",
+      "record": "librispeech_1089-134686-0008",
+      "branch": "F_d1",
+      "status": "succeeded",
+      "elapsed_seconds": 2.942227042000013
+    },
+    {
+      "utc": "2026-10-21T01:50:21.606166+00:00",
+      "stage": "score_utmos_v2",
+      "record": "librispeech_1089-134686-0008",
+      "branch": "original",
+      "status": "started"
+    },
+    {
+      "utc": "2026-10-21T01:50:21.628321+00:00",
+      "stage": "score_utmos_v2",
+      "record": "librispeech_1089-134686-0008",
+      "branch": "original",
+      "notice": "warning",
+      "category": "UserWarning",
+      "message": "'pin_memory' argument is set as true but no accelerator is found, then device pinned memory won't be used.",
+      "filename": "/workspace/check-nonml-saikyo-vocoder/.venv/lib/python3.12/site-packages/torch/utils/data/dataloader.py",
+      "lineno": 666
+    },
+    {
+      "utc": "2026-10-21T01:50:22.152659+00:00",
+      "stage": "score_utmos_v2",
+      "record": "librispeech_1089-134686-0008",
+      "branch": "original",
+      "notice": "warning",
+      "category": "FutureWarning",
+      "message": "`torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.",
+      "filename": "/workspace/check-nonml-saikyo-vocoder/.venv/lib/python3.12/site-packages/utmosv2/_core/model/_common.py",
+      "lineno": 290
+    },
+    {
+      "utc": "2026-10-21T01:50:22.154054+00:00",
+      "stage": "score_utmos_v2",
+      "record": "librispeech_1089-134686-0008",
+      "branch": "original",
+      "notice": "warning",
+      "category": "UserWarning",
+      "message": "User provided device_type of 'cuda', but CUDA is not available. Disabling",
+      "filename": "/workspace/check-nonml-saikyo-vocoder/.venv/lib/python3.12/site-packages/torch/amp/autocast_mode.py",
+      "lineno": 266
+    },
+    {
+      "utc": "2026-10-21T01:50:24.452136+00:00",
+      "stage": "score_utmos_v2",
+      "record": "librispeech_1089-134686-0008",
+      "branch": "original",
+      "status": "succeeded",
+      "elapsed_seconds": 2.8459680459998253
+    },
+    {
+      "utc": "2026-10-21T01:50:24.454371+00:00",
+      "stage": "score_utmos_v2",
+      "record": "librispeech_1089-134686-0011",
+      "branch": "pml",
+      "status": "started"
+    },
+    {
+      "utc": "2026-10-21T01:50:24.475603+00:00",
+      "stage": "score_utmos_v2",
+      "record": "librispeech_1089-134686-0011",
+      "branch": "pml",
+      "notice": "warning",
+      "category": "UserWarning",
+      "message": "'pin_memory' argument is set as true but no accelerator is found, then device pinned memory won't be used.",
+      "filename": "/workspace/check-nonml-saikyo-vocoder/.venv/lib/python3.12/site-packages/torch/utils/data/dataloader.py",
+      "lineno": 666
+    },
+    {
+      "utc": "2026-10-21T01:50:24.992259+00:00",
+      "stage": "score_utmos_v2",
+      "record": "librispeech_1089-134686-0011",
+      "branch": "pml",
+      "notice": "warning",
+      "category": "FutureWarning",
+      "message": "`torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.",
+      "filename": "/workspace/check-nonml-saikyo-vocoder/.venv/lib/python3.12/site-packages/utmosv2/_core/model/_common.py",
+      "lineno": 290
+    },
+    {
+      "utc": "2026-10-21T01:50:24.993471+00:00",
+      "stage": "score_utmos_v2",
+      "record": "librispeech_1089-134686-0011",
+      "branch": "pml",
+      "notice": "warning",
+      "category": "UserWarning",
+      "message": "User provided device_type of 'cuda', but CUDA is not available. Disabling",
+      "filename": "/workspace/check-nonml-saikyo-vocoder/.venv/lib/python3.12/site-packages/torch/amp/autocast_mode.py",
+      "lineno": 266
+    },
+    {
+      "utc": "2026-10-21T01:50:27.469436+00:00",
+      "stage": "score_utmos_v2",
+      "record": "librispeech_1089-134686-0011",
+      "branch": "pml",
+      "status": "succeeded",
+      "elapsed_seconds": 3.015063113999986
+    },
+    {
+      "utc": "2026-10-21T01:50:27.471953+00:00",
+      "stage": "score_utmos_v2",
+      "record": "librispeech_1089-134686-0011",
+      "branch": "R_d1",
+      "status": "started"
+    },
+    {
+      "utc": "2026-10-21T01:50:27.494392+00:00",
+      "stage": "score_utmos_v2",
+      "record": "librispeech_1089-134686-0011",
+      "branch": "R_d1",
+      "notice": "warning",
+      "category": "UserWarning",
+      "message": "'pin_memory' argument is set as true but no accelerator is found, then device pinned memory won't be used.",
+      "filename": "/workspace/check-nonml-saikyo-vocoder/.venv/lib/python3.12/site-packages/torch/utils/data/dataloader.py",
+      "lineno": 666
+    },
+    {
+      "utc": "2026-10-21T01:50:28.047131+00:00",
+      "stage": "score_utmos_v2",
+      "record": "librispeech_1089-134686-0011",
+      "branch": "R_d1",
+      "notice": "warning",
+      "category": "FutureWarning",
+      "message": "`torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.",
+      "filename": "/workspace/check-nonml-saikyo-vocoder/.venv/lib/python3.12/site-packages/utmosv2/_core/model/_common.py",
+      "lineno": 290
+    },
+    {
+      "utc": "2026-10-21T01:50:28.048252+00:00",
+      "stage": "score_utmos_v2",
+      "record": "librispeech_1089-134686-0011",
+      "branch": "R_d1",
+      "notice": "warning",
+      "category": "UserWarning",
+      "message": "User provided device_type of 'cuda', but CUDA is not available. Disabling",
+      "filename": "/workspace/check-nonml-saikyo-vocoder/.venv/lib/python3.12/site-packages/torch/amp/autocast_mode.py",
+      "lineno": 266
+    },
+    {
+      "utc": "2026-10-21T01:50:30.234552+00:00",
+      "stage": "score_utmos_v2",
+      "record": "librispeech_1089-134686-0011",
+      "branch": "R_d1",
+      "status": "succeeded",
+      "elapsed_seconds": 2.7625969569999143
+    },
+    {
+      "utc": "2026-10-21T01:50:30.236777+00:00",
+      "stage": "score_utmos_v2",
+      "record": "librispeech_1089-134686-0011",
+      "branch": "L_d1",
+      "status": "started"
+    },
+    {
+      "utc": "2026-10-21T01:50:30.257598+00:00",
+      "stage": "score_utmos_v2",
+      "record": "librispeech_1089-134686-0011",
+      "branch": "L_d1",
+      "notice": "warning",
+      "category": "UserWarning",
+      "message": "'pin_memory' argument is set as true but no accelerator is found, then device pinned memory won't be used.",
+      "filename": "/workspace/check-nonml-saikyo-vocoder/.venv/lib/python3.12/site-packages/torch/utils/data/dataloader.py",
+      "lineno": 666
+    },
+    {
+      "utc": "2026-10-21T01:50:30.805484+00:00",
+      "stage": "score_utmos_v2",
+      "record": "librispeech_1089-134686-0011",
+      "branch": "L_d1",
+      "notice": "warning",
+      "category": "FutureWarning",
+      "message": "`torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.",
+      "filename": "/workspace/check-nonml-saikyo-vocoder/.venv/lib/python3.12/site-packages/utmosv2/_core/model/_common.py",
+      "lineno": 290
+    },
+    {
+      "utc": "2026-10-21T01:50:30.806792+00:00",
+      "stage": "score_utmos_v2",
+      "record": "librispeech_1089-134686-0011",
+      "branch": "L_d1",
+      "notice": "warning",
+      "category": "UserWarning",
+      "message": "User provided device_type of 'cuda', but CUDA is not available. Disabling",
+      "filename": "/workspace/check-nonml-saikyo-vocoder/.venv/lib/python3.12/site-packages/torch/amp/autocast_mode.py",
+      "lineno": 266
+    },
+    {
+      "utc": "2026-10-21T01:50:33.441436+00:00",
+      "stage": "score_utmos_v2",
+      "record": "librispeech_1089-134686-0011",
+      "branch": "L_d1",
+      "status": "succeeded",
+      "elapsed_seconds": 3.2046569819999604
+    },
+    {
+      "utc": "2026-10-21T01:50:33.443968+00:00",
+      "stage": "score_utmos_v2",
+      "record": "librispeech_1089-134686-0011",
+      "branch": "F_d1",
+      "status": "started"
+    },
+    {
+      "utc": "2026-10-21T01:50:33.469852+00:00",
+      "stage": "score_utmos_v2",
+      "record": "librispeech_1089-134686-0011",
+      "branch": "F_d1",
+      "notice": "warning",
+      "category": "UserWarning",
+      "message": "'pin_memory' argument is set as true but no accelerator is found, then device pinned memory won't be used.",
+      "filename": "/workspace/check-nonml-saikyo-vocoder/.venv/lib/python3.12/site-packages/torch/utils/data/dataloader.py",
+      "lineno": 666
+    },
+    {
+      "utc": "2026-10-21T01:50:34.022980+00:00",
+      "stage": "score_utmos_v2",
+      "record": "librispeech_1089-134686-0011",
+      "branch": "F_d1",
+      "notice": "warning",
+      "category": "FutureWarning",
+      "message": "`torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.",
+      "filename": "/workspace/check-nonml-saikyo-vocoder/.venv/lib/python3.12/site-packages/utmosv2/_core/model/_common.py",
+      "lineno": 290
+    },
+    {
+      "utc": "2026-10-21T01:50:34.024475+00:00",
+      "stage": "score_utmos_v2",
+      "record": "librispeech_1089-134686-0011",
+      "branch": "F_d1",
+      "notice": "warning",
+      "category": "UserWarning",
+      "message": "User provided device_type of 'cuda', but CUDA is not available. Disabling",
+      "filename": "/workspace/check-nonml-saikyo-vocoder/.venv/lib/python3.12/site-packages/torch/amp/autocast_mode.py",
+      "lineno": 266
+    },
+    {
+      "utc": "2026-10-21T01:50:36.589195+00:00",
+      "stage": "score_utmos_v2",
+      "record": "librispeech_1089-134686-0011",
+      "branch": "F_d1",
+      "status": "succeeded",
+      "elapsed_seconds": 3.145225408999977
+    },
+    {
+      "utc": "2026-10-21T01:50:36.591830+00:00",
+      "stage": "score_utmos_v2",
+      "record": "librispeech_1089-134686-0011",
+      "branch": "original",
+      "status": "started"
+    },
+    {
+      "utc": "2026-10-21T01:50:36.614630+00:00",
+      "stage": "score_utmos_v2",
+      "record": "librispeech_1089-134686-0011",
+      "branch": "original",
+      "notice": "warning",
+      "category": "UserWarning",
+      "message": "'pin_memory' argument is set as true but no accelerator is found, then device pinned memory won't be used.",
+      "filename": "/workspace/check-nonml-saikyo-vocoder/.venv/lib/python3.12/site-packages/torch/utils/data/dataloader.py",
+      "lineno": 666
+    },
+    {
+      "utc": "2026-10-21T01:50:37.153147+00:00",
+      "stage": "score_utmos_v2",
+      "record": "librispeech_1089-134686-0011",
+      "branch": "original",
+      "notice": "warning",
+      "category": "FutureWarning",
+      "message": "`torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.",
+      "filename": "/workspace/check-nonml-saikyo-vocoder/.venv/lib/python3.12/site-packages/utmosv2/_core/model/_common.py",
+      "lineno": 290
+    },
+    {
+      "utc": "2026-10-21T01:50:37.154587+00:00",
+      "stage": "score_utmos_v2",
+      "record": "librispeech_1089-134686-0011",
+      "branch": "original",
+      "notice": "warning",
+      "category": "UserWarning",
+      "message": "User provided device_type of 'cuda', but CUDA is not available. Disabling",
+      "filename": "/workspace/check-nonml-saikyo-vocoder/.venv/lib/python3.12/site-packages/torch/amp/autocast_mode.py",
+      "lineno": 266
+    },
+    {
+      "utc": "2026-10-21T01:50:39.817321+00:00",
+      "stage": "score_utmos_v2",
+      "record": "librispeech_1089-134686-0011",
+      "branch": "original",
+      "status": "succeeded",
+      "elapsed_seconds": 3.2254897450000044
+    },
+    {
+      "utc": "2026-10-21T01:50:39.820015+00:00",
+      "stage": "score_utmos_v2",
+      "record": "librispeech_1089-134686-0032",
+      "branch": "pml",
+      "status": "started"
+    },
+    {
+      "utc": "2026-10-21T01:50:39.847977+00:00",
+      "stage": "score_utmos_v2",
+      "record": "librispeech_1089-134686-0032",
+      "branch": "pml",
+      "notice": "warning",
+      "category": "UserWarning",
+      "message": "'pin_memory' argument is set as true but no accelerator is found, then device pinned memory won't be used.",
+      "filename": "/workspace/check-nonml-saikyo-vocoder/.venv/lib/python3.12/site-packages/torch/utils/data/dataloader.py",
+      "lineno": 666
+    },
+    {
+      "utc": "2026-10-21T01:50:40.490853+00:00",
+      "stage": "score_utmos_v2",
+      "record": "librispeech_1089-134686-0032",
+      "branch": "pml",
+      "notice": "warning",
+      "category": "FutureWarning",
+      "message": "`torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.",
+      "filename": "/workspace/check-nonml-saikyo-vocoder/.venv/lib/python3.12/site-packages/utmosv2/_core/model/_common.py",
+      "lineno": 290
+    },
+    {
+      "utc": "2026-10-21T01:50:40.492238+00:00",
+      "stage": "score_utmos_v2",
+      "record": "librispeech_1089-134686-0032",
+      "branch": "pml",
+      "notice": "warning",
+      "category": "UserWarning",
+      "message": "User provided device_type of 'cuda', but CUDA is not available. Disabling",
+      "filename": "/workspace/check-nonml-saikyo-vocoder/.venv/lib/python3.12/site-packages/torch/amp/autocast_mode.py",
+      "lineno": 266
+    },
+    {
+      "utc": "2026-10-21T01:50:43.875353+00:00",
+      "stage": "score_utmos_v2",
+      "record": "librispeech_1089-134686-0032",
+      "branch": "pml",
+      "status": "succeeded",
+      "elapsed_seconds": 4.055337144000077
+    },
+    {
+      "utc": "2026-10-21T01:50:43.877950+00:00",
+      "stage": "score_utmos_v2",
+      "record": "librispeech_1089-134686-0032",
+      "branch": "R_d1",
+      "status": "started"
+    },
+    {
+      "utc": "2026-10-21T01:50:43.904162+00:00",
+      "stage": "score_utmos_v2",
+      "record": "librispeech_1089-134686-0032",
+      "branch": "R_d1",
+      "notice": "warning",
+      "category": "UserWarning",
+      "message": "'pin_memory' argument is set as true but no accelerator is found, then device pinned memory won't be used.",
+      "filename": "/workspace/check-nonml-saikyo-vocoder/.venv/lib/python3.12/site-packages/torch/utils/data/dataloader.py",
+      "lineno": 666
+    },
+    {
+      "utc": "2026-10-21T01:50:44.497367+00:00",
+      "stage": "score_utmos_v2",
+      "record": "librispeech_1089-134686-0032",
+      "branch": "R_d1",
+      "notice": "warning",
+      "category": "FutureWarning",
+      "message": "`torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.",
+      "filename": "/workspace/check-nonml-saikyo-vocoder/.venv/lib/python3.12/site-packages/utmosv2/_core/model/_common.py",
+      "lineno": 290
+    },
+    {
+      "utc": "2026-10-21T01:50:44.498473+00:00",
+      "stage": "score_utmos_v2",
+      "record": "librispeech_1089-134686-0032",
+      "branch": "R_d1",
+      "notice": "warning",
+      "category": "UserWarning",
+      "message": "User provided device_type of 'cuda', but CUDA is not available. Disabling",
+      "filename": "/workspace/check-nonml-saikyo-vocoder/.venv/lib/python3.12/site-packages/torch/amp/autocast_mode.py",
+      "lineno": 266
+    },
+    {
+      "utc": "2026-10-21T01:50:47.928305+00:00",
+      "stage": "score_utmos_v2",
+      "record": "librispeech_1089-134686-0032",
+      "branch": "R_d1",
+      "status": "succeeded",
+      "elapsed_seconds": 4.050352854000039
+    },
+    {
+      "utc": "2026-10-21T01:50:47.930880+00:00",
+      "stage": "score_utmos_v2",
+      "record": "librispeech_1089-134686-0032",
+      "branch": "L_d1",
+      "status": "started"
+    },
+    {
+      "utc": "2026-10-21T01:50:47.953200+00:00",
+      "stage": "score_utmos_v2",
+      "record": "librispeech_1089-134686-0032",
+      "branch": "L_d1",
+      "notice": "warning",
+      "category": "UserWarning",
+      "message": "'pin_memory' argument is set as true but no accelerator is found, then device pinned memory won't be used.",
+      "filename": "/workspace/check-nonml-saikyo-vocoder/.venv/lib/python3.12/site-packages/torch/utils/data/dataloader.py",
+      "lineno": 666
+    },
+    {
+      "utc": "2026-10-21T01:50:48.602021+00:00",
+      "stage": "score_utmos_v2",
+      "record": "librispeech_1089-134686-0032",
+      "branch": "L_d1",
+      "notice": "warning",
+      "category": "FutureWarning",
+      "message": "`torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.",
+      "filename": "/workspace/check-nonml-saikyo-vocoder/.venv/lib/python3.12/site-packages/utmosv2/_core/model/_common.py",
+      "lineno": 290
+    },
+    {
+      "utc": "2026-10-21T01:50:48.603464+00:00",
+      "stage": "score_utmos_v2",
+      "record": "librispeech_1089-134686-0032",
+      "branch": "L_d1",
+      "notice": "warning",
+      "category": "UserWarning",
+      "message": "User provided device_type of 'cuda', but CUDA is not available. Disabling",
+      "filename": "/workspace/check-nonml-saikyo-vocoder/.venv/lib/python3.12/site-packages/torch/amp/autocast_mode.py",
+      "lineno": 266
+    },
+    {
+      "utc": "2026-10-21T01:50:51.963341+00:00",
+      "stage": "score_utmos_v2",
+      "record": "librispeech_1089-134686-0032",
+      "branch": "L_d1",
+      "status": "succeeded",
+      "elapsed_seconds": 4.032459875000086
+    },
+    {
+      "utc": "2026-10-21T01:50:51.967351+00:00",
+      "stage": "score_utmos_v2",
+      "record": "librispeech_1089-134686-0032",
+      "branch": "F_d1",
+      "status": "started"
+    },
+    {
+      "utc": "2026-10-21T01:50:51.994117+00:00",
+      "stage": "score_utmos_v2",
+      "record": "librispeech_1089-134686-0032",
+      "branch": "F_d1",
+      "notice": "warning",
+      "category": "UserWarning",
+      "message": "'pin_memory' argument is set as true but no accelerator is found, then device pinned memory won't be used.",
+      "filename": "/workspace/check-nonml-saikyo-vocoder/.venv/lib/python3.12/site-packages/torch/utils/data/dataloader.py",
+      "lineno": 666
+    },
+    {
+      "utc": "2026-10-21T01:50:52.613417+00:00",
+      "stage": "score_utmos_v2",
+      "record": "librispeech_1089-134686-0032",
+      "branch": "F_d1",
+      "notice": "warning",
+      "category": "FutureWarning",
+      "message": "`torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.",
+      "filename": "/workspace/check-nonml-saikyo-vocoder/.venv/lib/python3.12/site-packages/utmosv2/_core/model/_common.py",
+      "lineno": 290
+    },
+    {
+      "utc": "2026-10-21T01:50:52.614852+00:00",
+      "stage": "score_utmos_v2",
+      "record": "librispeech_1089-134686-0032",
+      "branch": "F_d1",
+      "notice": "warning",
+      "category": "UserWarning",
+      "message": "User provided device_type of 'cuda', but CUDA is not available. Disabling",
+      "filename": "/workspace/check-nonml-saikyo-vocoder/.venv/lib/python3.12/site-packages/torch/amp/autocast_mode.py",
+      "lineno": 266
+    },
+    {
+      "utc": "2026-10-21T01:50:54.890335+00:00",
+      "stage": "score_utmos_v2",
+      "record": "librispeech_1089-134686-0032",
+      "branch": "F_d1",
+      "status": "succeeded",
+      "elapsed_seconds": 2.9230399719999696
+    },
+    {
+      "utc": "2026-10-21T01:50:54.892922+00:00",
+      "stage": "score_utmos_v2",
+      "record": "librispeech_1089-134686-0032",
+      "branch": "original",
+      "status": "started"
+    },
+    {
+      "utc": "2026-10-21T01:50:54.915319+00:00",
+      "stage": "score_utmos_v2",
+      "record": "librispeech_1089-134686-0032",
+      "branch": "original",
+      "notice": "warning",
+      "category": "UserWarning",
+      "message": "'pin_memory' argument is set as true but no accelerator is found, then device pinned memory won't be used.",
+      "filename": "/workspace/check-nonml-saikyo-vocoder/.venv/lib/python3.12/site-packages/torch/utils/data/dataloader.py",
+      "lineno": 666
+    },
+    {
+      "utc": "2026-10-21T01:50:55.408829+00:00",
+      "stage": "score_utmos_v2",
+      "record": "librispeech_1089-134686-0032",
+      "branch": "original",
+      "notice": "warning",
+      "category": "FutureWarning",
+      "message": "`torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.",
+      "filename": "/workspace/check-nonml-saikyo-vocoder/.venv/lib/python3.12/site-packages/utmosv2/_core/model/_common.py",
+      "lineno": 290
+    },
+    {
+      "utc": "2026-10-21T01:50:55.409922+00:00",
+      "stage": "score_utmos_v2",
+      "record": "librispeech_1089-134686-0032",
+      "branch": "original",
+      "notice": "warning",
+      "category": "UserWarning",
+      "message": "User provided device_type of 'cuda', but CUDA is not available. Disabling",
+      "filename": "/workspace/check-nonml-saikyo-vocoder/.venv/lib/python3.12/site-packages/torch/amp/autocast_mode.py",
+      "lineno": 266
+    },
+    {
+      "utc": "2026-10-21T01:50:57.440188+00:00",
+      "stage": "score_utmos_v2",
+      "record": "librispeech_1089-134686-0032",
+      "branch": "original",
+      "status": "succeeded",
+      "elapsed_seconds": 2.5472645580000517
+    },
+    {
+      "utc": "2026-10-21T01:50:57.782556+00:00",
+      "stage": "initialize_scoreq_natural",
+      "record": null,
+      "branch": null,
+      "status": "started"
+    },
+    {
+      "utc": "2026-10-21T01:50:58.375215+00:00",
+      "stage": "initialize_scoreq_natural",
+      "record": null,
+      "branch": null,
+      "status": "succeeded",
+      "elapsed_seconds": 0.5926585340000656
+    },
+    {
+      "utc": "2026-10-21T01:50:58.377196+00:00",
+      "stage": "score_scoreq_natural",
+      "record": "librispeech_1089-134686-0008",
+      "branch": "pml",
+      "status": "started"
+    },
+    {
+      "utc": "2026-10-21T01:50:59.407763+00:00",
+      "stage": "score_scoreq_natural",
+      "record": "librispeech_1089-134686-0008",
+      "branch": "pml",
+      "status": "succeeded",
+      "elapsed_seconds": 1.0305647210000188
+    },
+    {
+      "utc": "2026-10-21T01:50:59.410608+00:00",
+      "stage": "score_scoreq_natural",
+      "record": "librispeech_1089-134686-0008",
+      "branch": "R_d1",
+      "status": "started"
+    },
+    {
+      "utc": "2026-10-21T01:51:00.400132+00:00",
+      "stage": "score_scoreq_natural",
+      "record": "librispeech_1089-134686-0008",
+      "branch": "R_d1",
+      "status": "succeeded",
+      "elapsed_seconds": 0.9895232569999735
+    },
+    {
+      "utc": "2026-10-21T01:51:00.403402+00:00",
+      "stage": "score_scoreq_natural",
+      "record": "librispeech_1089-134686-0008",
+      "branch": "L_d1",
+      "status": "started"
+    },
+    {
+      "utc": "2026-10-21T01:51:01.441999+00:00",
+      "stage": "score_scoreq_natural",
+      "record": "librispeech_1089-134686-0008",
+      "branch": "L_d1",
+      "status": "succeeded",
+      "elapsed_seconds": 1.0385958950000713
+    },
+    {
+      "utc": "2026-10-21T01:51:01.444818+00:00",
+      "stage": "score_scoreq_natural",
+      "record": "librispeech_1089-134686-0008",
+      "branch": "F_d1",
+      "status": "started"
+    },
+    {
+      "utc": "2026-10-21T01:51:02.596965+00:00",
+      "stage": "score_scoreq_natural",
+      "record": "librispeech_1089-134686-0008",
+      "branch": "F_d1",
+      "status": "succeeded",
+      "elapsed_seconds": 1.152145783999913
+    },
+    {
+      "utc": "2026-10-21T01:51:02.599731+00:00",
+      "stage": "score_scoreq_natural",
+      "record": "librispeech_1089-134686-0011",
+      "branch": "pml",
+      "status": "started"
+    },
+    {
+      "utc": "2026-10-21T01:51:03.782808+00:00",
+      "stage": "score_scoreq_natural",
+      "record": "librispeech_1089-134686-0011",
+      "branch": "pml",
+      "status": "succeeded",
+      "elapsed_seconds": 1.1830748680001761
+    },
+    {
+      "utc": "2026-10-21T01:51:03.785701+00:00",
+      "stage": "score_scoreq_natural",
+      "record": "librispeech_1089-134686-0011",
+      "branch": "R_d1",
+      "status": "started"
+    },
+    {
+      "utc": "2026-10-21T01:51:04.997660+00:00",
+      "stage": "score_scoreq_natural",
+      "record": "librispeech_1089-134686-0011",
+      "branch": "R_d1",
+      "status": "succeeded",
+      "elapsed_seconds": 1.2119584290001058
+    },
+    {
+      "utc": "2026-10-21T01:51:05.000315+00:00",
+      "stage": "score_scoreq_natural",
+      "record": "librispeech_1089-134686-0011",
+      "branch": "L_d1",
+      "status": "started"
+    },
+    {
+      "utc": "2026-10-21T01:51:06.291714+00:00",
+      "stage": "score_scoreq_natural",
+      "record": "librispeech_1089-134686-0011",
+      "branch": "L_d1",
+      "status": "succeeded",
+      "elapsed_seconds": 1.291397226999834
+    },
+    {
+      "utc": "2026-10-21T01:51:06.294651+00:00",
+      "stage": "score_scoreq_natural",
+      "record": "librispeech_1089-134686-0011",
+      "branch": "F_d1",
+      "status": "started"
+    },
+    {
+      "utc": "2026-10-21T01:51:07.540652+00:00",
+      "stage": "score_scoreq_natural",
+      "record": "librispeech_1089-134686-0011",
+      "branch": "F_d1",
+      "status": "succeeded",
+      "elapsed_seconds": 1.2459998780000205
+    },
+    {
+      "utc": "2026-10-21T01:51:07.543622+00:00",
+      "stage": "score_scoreq_natural",
+      "record": "librispeech_1089-134686-0032",
+      "branch": "pml",
+      "status": "started"
+    },
+    {
+      "utc": "2026-10-21T01:51:08.322853+00:00",
+      "stage": "score_scoreq_natural",
+      "record": "librispeech_1089-134686-0032",
+      "branch": "pml",
+      "status": "succeeded",
+      "elapsed_seconds": 0.7792293309998968
+    },
+    {
+      "utc": "2026-10-21T01:51:08.325205+00:00",
+      "stage": "score_scoreq_natural",
+      "record": "librispeech_1089-134686-0032",
+      "branch": "R_d1",
+      "status": "started"
+    },
+    {
+      "utc": "2026-10-21T01:51:09.163506+00:00",
+      "stage": "score_scoreq_natural",
+      "record": "librispeech_1089-134686-0032",
+      "branch": "R_d1",
+      "status": "succeeded",
+      "elapsed_seconds": 0.8382997450000857
+    },
+    {
+      "utc": "2026-10-21T01:51:09.165942+00:00",
+      "stage": "score_scoreq_natural",
+      "record": "librispeech_1089-134686-0032",
+      "branch": "L_d1",
+      "status": "started"
+    },
+    {
+      "utc": "2026-10-21T01:51:09.895577+00:00",
+      "stage": "score_scoreq_natural",
+      "record": "librispeech_1089-134686-0032",
+      "branch": "L_d1",
+      "status": "succeeded",
+      "elapsed_seconds": 0.7296334540001226
+    },
+    {
+      "utc": "2026-10-21T01:51:09.897948+00:00",
+      "stage": "score_scoreq_natural",
+      "record": "librispeech_1089-134686-0032",
+      "branch": "F_d1",
+      "status": "started"
+    },
+    {
+      "utc": "2026-10-21T01:51:10.672208+00:00",
+      "stage": "score_scoreq_natural",
+      "record": "librispeech_1089-134686-0032",
+      "branch": "F_d1",
+      "status": "succeeded",
+      "elapsed_seconds": 0.7742591510000238
+    },
+    {
+      "utc": "2026-10-21T01:51:10.979468+00:00",
+      "stage": "initialize_ecapa_cosine",
+      "record": null,
+      "branch": null,
+      "status": "started"
+    },
+    {
+      "utc": "2026-10-21T01:51:11.277892+00:00",
+      "stage": "initialize_ecapa_cosine",
+      "record": null,
+      "branch": null,
+      "notice": "warning",
+      "category": "UserWarning",
+      "message": "torchaudio._backend.list_audio_backends has been deprecated. This deprecation is part of a large refactoring effort to transition TorchAudio into a maintenance phase. The decoding and encoding capabilities of PyTorch for both audio and video are being consolidated into TorchCodec. Please see https://github.com/pytorch/audio/issues/3902 for more information. It will be removed from the 2.9 release. ",
+      "filename": "/workspace/check-nonml-saikyo-vocoder/.venv/lib/python3.12/site-packages/speechbrain/utils/torch_audio_backend.py",
+      "lineno": 57
+    },
+    {
+      "utc": "2026-10-21T01:51:11.300999+00:00",
+      "stage": "initialize_ecapa_cosine",
+      "record": null,
+      "branch": null,
+      "notice": "logging",
+      "level": "DEBUG",
+      "logger": "speechbrain.utils.checkpoints",
+      "message": "Registered checkpoint save hook for _speechbrain_save",
+      "traceback": null,
+      "stack_info": null
+    },
+    {
+      "utc": "2026-10-21T01:51:11.301850+00:00",
+      "stage": "initialize_ecapa_cosine",
+      "record": null,
+      "branch": null,
+      "notice": "logging",
+      "level": "DEBUG",
+      "logger": "speechbrain.utils.checkpoints",
+      "message": "Registered checkpoint load hook for _speechbrain_load",
+      "traceback": null,
+      "stack_info": null
+    },
+    {
+      "utc": "2026-10-21T01:51:11.302761+00:00",
+      "stage": "initialize_ecapa_cosine",
+      "record": null,
+      "branch": null,
+      "notice": "logging",
+      "level": "DEBUG",
+      "logger": "speechbrain.utils.checkpoints",
+      "message": "Registered checkpoint save hook for save",
+      "traceback": null,
+      "stack_info": null
+    },
+    {
+      "utc": "2026-10-21T01:51:11.303434+00:00",
+      "stage": "initialize_ecapa_cosine",
+      "record": null,
+      "branch": null,
+      "notice": "logging",
+      "level": "DEBUG",
+      "logger": "speechbrain.utils.checkpoints",
+      "message": "Registered checkpoint load hook for load",
+      "traceback": null,
+      "stack_info": null
+    },
+    {
+      "utc": "2026-10-21T01:51:11.315872+00:00",
+      "stage": "initialize_ecapa_cosine",
+      "record": null,
+      "branch": null,
+      "notice": "logging",
+      "level": "INFO",
+      "logger": "speechbrain.utils.quirks",
+      "message": "Applied quirks (see `speechbrain.utils.quirks`): [allow_tf32, disable_jit_profiling]",
+      "traceback": null,
+      "stack_info": null
+    },
+    {
+      "utc": "2026-10-21T01:51:11.316750+00:00",
+      "stage": "initialize_ecapa_cosine",
+      "record": null,
+      "branch": null,
+      "notice": "logging",
+      "level": "INFO",
+      "logger": "speechbrain.utils.quirks",
+      "message": "Excluded quirks specified by the `SB_DISABLE_QUIRKS` environment (comma-separated list): []",
+      "traceback": null,
+      "stack_info": null
+    },
+    {
+      "utc": "2026-10-21T01:51:11.317900+00:00",
+      "stage": "initialize_ecapa_cosine",
+      "record": null,
+      "branch": null,
+      "notice": "logging",
+      "level": "DEBUG",
+      "logger": "speechbrain.utils.checkpoints",
+      "message": "Registered checkpoint save hook for _save",
+      "traceback": null,
+      "stack_info": null
+    },
+    {
+      "utc": "2026-10-21T01:51:11.320636+00:00",
+      "stage": "initialize_ecapa_cosine",
+      "record": null,
+      "branch": null,
+      "notice": "logging",
+      "level": "DEBUG",
+      "logger": "speechbrain.utils.checkpoints",
+      "message": "Registered checkpoint load hook for _recover",
+      "traceback": null,
+      "stack_info": null
+    },
+    {
+      "utc": "2026-10-21T01:51:11.327736+00:00",
+      "stage": "initialize_ecapa_cosine",
+      "record": null,
+      "branch": null,
+      "notice": "warning",
+      "category": "UserWarning",
+      "message": "torchaudio._backend.list_audio_backends has been deprecated. This deprecation is part of a large refactoring effort to transition TorchAudio into a maintenance phase. The decoding and encoding capabilities of PyTorch for both audio and video are being consolidated into TorchCodec. Please see https://github.com/pytorch/audio/issues/3902 for more information. It will be removed from the 2.9 release. ",
+      "filename": "/workspace/check-nonml-saikyo-vocoder/.venv/lib/python3.12/site-packages/speechbrain/utils/torch_audio_backend.py",
+      "lineno": 57
+    },
+    {
+      "utc": "2026-10-21T01:51:11.346998+00:00",
+      "stage": "initialize_ecapa_cosine",
+      "record": null,
+      "branch": null,
+      "notice": "logging",
+      "level": "DEBUG",
+      "logger": "speechbrain.utils.checkpoints",
+      "message": "Registered checkpoint save hook for _save",
+      "traceback": null,
+      "stack_info": null
+    },
+    {
+      "utc": "2026-10-21T01:51:11.347873+00:00",
+      "stage": "initialize_ecapa_cosine",
+      "record": null,
+      "branch": null,
+      "notice": "logging",
+      "level": "DEBUG",
+      "logger": "speechbrain.utils.checkpoints",
+      "message": "Registered checkpoint load hook for _load",
+      "traceback": null,
+      "stack_info": null
+    },
+    {
+      "utc": "2026-10-21T01:51:11.348832+00:00",
+      "stage": "initialize_ecapa_cosine",
+      "record": null,
+      "branch": null,
+      "notice": "logging",
+      "level": "DEBUG",
+      "logger": "speechbrain.utils.checkpoints",
+      "message": "Registered parameter transfer hook for _load",
+      "traceback": null,
+      "stack_info": null
+    },
+    {
+      "utc": "2026-10-21T01:51:11.351496+00:00",
+      "stage": "initialize_ecapa_cosine",
+      "record": null,
+      "branch": null,
+      "notice": "warning",
+      "category": "FutureWarning",
+      "message": "`torch.cuda.amp.custom_fwd(args...)` is deprecated. Please use `torch.amp.custom_fwd(args..., device_type='cuda')` instead.",
+      "filename": "/workspace/check-nonml-saikyo-vocoder/.venv/lib/python3.12/site-packages/speechbrain/utils/autocast.py",
+      "lineno": 188
+    },
+    {
+      "utc": "2026-10-21T01:51:11.352336+00:00",
+      "stage": "initialize_ecapa_cosine",
+      "record": null,
+      "branch": null,
+      "notice": "warning",
+      "category": "FutureWarning",
+      "message": "`torch.cuda.amp.custom_fwd(args...)` is deprecated. Please use `torch.amp.custom_fwd(args..., device_type='cuda')` instead.",
+      "filename": "/workspace/check-nonml-saikyo-vocoder/.venv/lib/python3.12/site-packages/speechbrain/utils/autocast.py",
+      "lineno": 188
+    },
+    {
+      "utc": "2026-10-21T01:51:11.353109+00:00",
+      "stage": "initialize_ecapa_cosine",
+      "record": null,
+      "branch": null,
+      "notice": "warning",
+      "category": "FutureWarning",
+      "message": "`torch.cuda.amp.custom_fwd(args...)` is deprecated. Please use `torch.amp.custom_fwd(args..., device_type='cuda')` instead.",
+      "filename": "/workspace/check-nonml-saikyo-vocoder/.venv/lib/python3.12/site-packages/speechbrain/utils/autocast.py",
+      "lineno": 188
+    },
+    {
+      "utc": "2026-10-21T01:51:11.466334+00:00",
+      "stage": "initialize_ecapa_cosine",
+      "record": null,
+      "branch": null,
+      "status": "succeeded",
+      "elapsed_seconds": 0.48686577500006933
+    },
+    {
+      "utc": "2026-10-21T01:51:11.468083+00:00",
+      "stage": "score_ecapa_cosine",
+      "record": "librispeech_1089-134686-0008",
+      "branch": "pml",
+      "status": "started"
+    },
+    {
+      "utc": "2026-10-21T01:51:11.776212+00:00",
+      "stage": "score_ecapa_cosine",
+      "record": "librispeech_1089-134686-0008",
+      "branch": "pml",
+      "status": "succeeded",
+      "elapsed_seconds": 0.30812720200015065
+    },
+    {
+      "utc": "2026-10-21T01:51:11.779041+00:00",
+      "stage": "score_ecapa_cosine",
+      "record": "librispeech_1089-134686-0008",
+      "branch": "R_d1",
+      "status": "started"
+    },
+    {
+      "utc": "2026-10-21T01:51:12.066270+00:00",
+      "stage": "score_ecapa_cosine",
+      "record": "librispeech_1089-134686-0008",
+      "branch": "R_d1",
+      "status": "succeeded",
+      "elapsed_seconds": 0.28722702899995056
+    },
+    {
+      "utc": "2026-10-21T01:51:12.069138+00:00",
+      "stage": "score_ecapa_cosine",
+      "record": "librispeech_1089-134686-0008",
+      "branch": "L_d1",
+      "status": "started"
+    },
+    {
+      "utc": "2026-10-21T01:51:12.377452+00:00",
+      "stage": "score_ecapa_cosine",
+      "record": "librispeech_1089-134686-0008",
+      "branch": "L_d1",
+      "status": "succeeded",
+      "elapsed_seconds": 0.3083115800000087
+    },
+    {
+      "utc": "2026-10-21T01:51:12.380659+00:00",
+      "stage": "score_ecapa_cosine",
+      "record": "librispeech_1089-134686-0008",
+      "branch": "F_d1",
+      "status": "started"
+    },
+    {
+      "utc": "2026-10-21T01:51:12.739970+00:00",
+      "stage": "score_ecapa_cosine",
+      "record": "librispeech_1089-134686-0008",
+      "branch": "F_d1",
+      "status": "succeeded",
+      "elapsed_seconds": 0.35930943300013496
+    },
+    {
+      "utc": "2026-10-21T01:51:12.742827+00:00",
+      "stage": "score_ecapa_cosine",
+      "record": "librispeech_1089-134686-0011",
+      "branch": "pml",
+      "status": "started"
+    },
+    {
+      "utc": "2026-10-21T01:51:13.052090+00:00",
+      "stage": "score_ecapa_cosine",
+      "record": "librispeech_1089-134686-0011",
+      "branch": "pml",
+      "status": "succeeded",
+      "elapsed_seconds": 0.30926165999994737
+    },
+    {
+      "utc": "2026-10-21T01:51:13.055110+00:00",
+      "stage": "score_ecapa_cosine",
+      "record": "librispeech_1089-134686-0011",
+      "branch": "R_d1",
+      "status": "started"
+    },
+    {
+      "utc": "2026-10-21T01:51:13.376459+00:00",
+      "stage": "score_ecapa_cosine",
+      "record": "librispeech_1089-134686-0011",
+      "branch": "R_d1",
+      "status": "succeeded",
+      "elapsed_seconds": 0.32134707899990644
+    },
+    {
+      "utc": "2026-10-21T01:51:13.379796+00:00",
+      "stage": "score_ecapa_cosine",
+      "record": "librispeech_1089-134686-0011",
+      "branch": "L_d1",
+      "status": "started"
+    },
+    {
+      "utc": "2026-10-21T01:51:13.695214+00:00",
+      "stage": "score_ecapa_cosine",
+      "record": "librispeech_1089-134686-0011",
+      "branch": "L_d1",
+      "status": "succeeded",
+      "elapsed_seconds": 0.31541656500007775
+    },
+    {
+      "utc": "2026-10-21T01:51:13.698131+00:00",
+      "stage": "score_ecapa_cosine",
+      "record": "librispeech_1089-134686-0011",
+      "branch": "F_d1",
+      "status": "started"
+    },
+    {
+      "utc": "2026-10-21T01:51:14.000485+00:00",
+      "stage": "score_ecapa_cosine",
+      "record": "librispeech_1089-134686-0011",
+      "branch": "F_d1",
+      "status": "succeeded",
+      "elapsed_seconds": 0.30235146700010773
+    },
+    {
+      "utc": "2026-10-21T01:51:14.003904+00:00",
+      "stage": "score_ecapa_cosine",
+      "record": "librispeech_1089-134686-0032",
+      "branch": "pml",
+      "status": "started"
+    },
+    {
+      "utc": "2026-10-21T01:51:14.240318+00:00",
+      "stage": "score_ecapa_cosine",
+      "record": "librispeech_1089-134686-0032",
+      "branch": "pml",
+      "status": "succeeded",
+      "elapsed_seconds": 0.23641258099996776
+    },
+    {
+      "utc": "2026-10-21T01:51:14.242954+00:00",
+      "stage": "score_ecapa_cosine",
+      "record": "librispeech_1089-134686-0032",
+      "branch": "R_d1",
+      "status": "started"
+    },
+    {
+      "utc": "2026-10-21T01:51:14.479058+00:00",
+      "stage": "score_ecapa_cosine",
+      "record": "librispeech_1089-134686-0032",
+      "branch": "R_d1",
+      "status": "succeeded",
+      "elapsed_seconds": 0.2361018219999096
+    },
+    {
+      "utc": "2026-10-21T01:51:14.481625+00:00",
+      "stage": "score_ecapa_cosine",
+      "record": "librispeech_1089-134686-0032",
+      "branch": "L_d1",
+      "status": "started"
+    },
+    {
+      "utc": "2026-10-21T01:51:14.776687+00:00",
+      "stage": "score_ecapa_cosine",
+      "record": "librispeech_1089-134686-0032",
+      "branch": "L_d1",
+      "status": "succeeded",
+      "elapsed_seconds": 0.2950603249998949
+    },
+    {
+      "utc": "2026-10-21T01:51:14.779610+00:00",
+      "stage": "score_ecapa_cosine",
+      "record": "librispeech_1089-134686-0032",
+      "branch": "F_d1",
+      "status": "started"
+    },
+    {
+      "utc": "2026-10-21T01:51:15.002507+00:00",
+      "stage": "score_ecapa_cosine",
+      "record": "librispeech_1089-134686-0032",
+      "branch": "F_d1",
+      "status": "succeeded",
+      "elapsed_seconds": 0.22289507100003902
+    },
+    {
+      "utc": "2026-10-21T01:51:15.307110+00:00",
+      "stage": "initialize_estoi",
+      "record": null,
+      "branch": null,
+      "status": "started"
+    },
+    {
+      "utc": "2026-10-21T01:51:15.309091+00:00",
+      "stage": "initialize_estoi",
+      "record": null,
+      "branch": null,
+      "status": "succeeded",
+      "elapsed_seconds": 0.0019825610002044414
+    },
+    {
+      "utc": "2026-10-21T01:51:15.310748+00:00",
+      "stage": "score_estoi",
+      "record": "librispeech_1089-134686-0008",
+      "branch": "pml",
+      "status": "started"
+    },
+    {
+      "utc": "2026-10-21T01:51:15.362396+00:00",
+      "stage": "score_estoi",
+      "record": "librispeech_1089-134686-0008",
+      "branch": "pml",
+      "status": "succeeded",
+      "elapsed_seconds": 0.05164756500016665
+    },
+    {
+      "utc": "2026-10-21T01:51:15.365459+00:00",
+      "stage": "score_estoi",
+      "record": "librispeech_1089-134686-0008",
+      "branch": "R_d1",
+      "status": "started"
+    },
+    {
+      "utc": "2026-10-21T01:51:15.406595+00:00",
+      "stage": "score_estoi",
+      "record": "librispeech_1089-134686-0008",
+      "branch": "R_d1",
+      "status": "succeeded",
+      "elapsed_seconds": 0.041133703000014066
+    },
+    {
+      "utc": "2026-10-21T01:51:15.409313+00:00",
+      "stage": "score_estoi",
+      "record": "librispeech_1089-134686-0008",
+      "branch": "L_d1",
+      "status": "started"
+    },
+    {
+      "utc": "2026-10-21T01:51:15.449052+00:00",
+      "stage": "score_estoi",
+      "record": "librispeech_1089-134686-0008",
+      "branch": "L_d1",
+      "status": "succeeded",
+      "elapsed_seconds": 0.03973696999992171
+    },
+    {
+      "utc": "2026-10-21T01:51:15.451737+00:00",
+      "stage": "score_estoi",
+      "record": "librispeech_1089-134686-0008",
+      "branch": "F_d1",
+      "status": "started"
+    },
+    {
+      "utc": "2026-10-21T01:51:15.493464+00:00",
+      "stage": "score_estoi",
+      "record": "librispeech_1089-134686-0008",
+      "branch": "F_d1",
+      "status": "succeeded",
+      "elapsed_seconds": 0.04172658999982559
+    },
+    {
+      "utc": "2026-10-21T01:51:15.496479+00:00",
+      "stage": "score_estoi",
+      "record": "librispeech_1089-134686-0011",
+      "branch": "pml",
+      "status": "started"
+    },
+    {
+      "utc": "2026-10-21T01:51:15.536889+00:00",
+      "stage": "score_estoi",
+      "record": "librispeech_1089-134686-0011",
+      "branch": "pml",
+      "status": "succeeded",
+      "elapsed_seconds": 0.040408351999985825
+    },
+    {
+      "utc": "2026-10-21T01:51:15.539669+00:00",
+      "stage": "score_estoi",
+      "record": "librispeech_1089-134686-0011",
+      "branch": "R_d1",
+      "status": "started"
+    },
+    {
+      "utc": "2026-10-21T01:51:15.579950+00:00",
+      "stage": "score_estoi",
+      "record": "librispeech_1089-134686-0011",
+      "branch": "R_d1",
+      "status": "succeeded",
+      "elapsed_seconds": 0.04027917000007619
+    },
+    {
+      "utc": "2026-10-21T01:51:15.582741+00:00",
+      "stage": "score_estoi",
+      "record": "librispeech_1089-134686-0011",
+      "branch": "L_d1",
+      "status": "started"
+    },
+    {
+      "utc": "2026-10-21T01:51:15.624447+00:00",
+      "stage": "score_estoi",
+      "record": "librispeech_1089-134686-0011",
+      "branch": "L_d1",
+      "status": "succeeded",
+      "elapsed_seconds": 0.041705509000166785
+    },
+    {
+      "utc": "2026-10-21T01:51:15.627441+00:00",
+      "stage": "score_estoi",
+      "record": "librispeech_1089-134686-0011",
+      "branch": "F_d1",
+      "status": "started"
+    },
+    {
+      "utc": "2026-10-21T01:51:15.667910+00:00",
+      "stage": "score_estoi",
+      "record": "librispeech_1089-134686-0011",
+      "branch": "F_d1",
+      "status": "succeeded",
+      "elapsed_seconds": 0.04046742000014092
+    },
+    {
+      "utc": "2026-10-21T01:51:15.670635+00:00",
+      "stage": "score_estoi",
+      "record": "librispeech_1089-134686-0032",
+      "branch": "pml",
+      "status": "started"
+    },
+    {
+      "utc": "2026-10-21T01:51:15.698296+00:00",
+      "stage": "score_estoi",
+      "record": "librispeech_1089-134686-0032",
+      "branch": "pml",
+      "status": "succeeded",
+      "elapsed_seconds": 0.027659575999905428
+    },
+    {
+      "utc": "2026-10-21T01:51:15.700941+00:00",
+      "stage": "score_estoi",
+      "record": "librispeech_1089-134686-0032",
+      "branch": "R_d1",
+      "status": "started"
+    },
+    {
+      "utc": "2026-10-21T01:51:15.727860+00:00",
+      "stage": "score_estoi",
+      "record": "librispeech_1089-134686-0032",
+      "branch": "R_d1",
+      "status": "succeeded",
+      "elapsed_seconds": 0.026917619999949238
+    },
+    {
+      "utc": "2026-10-21T01:51:15.730484+00:00",
+      "stage": "score_estoi",
+      "record": "librispeech_1089-134686-0032",
+      "branch": "L_d1",
+      "status": "started"
+    },
+    {
+      "utc": "2026-10-21T01:51:15.757356+00:00",
+      "stage": "score_estoi",
+      "record": "librispeech_1089-134686-0032",
+      "branch": "L_d1",
+      "status": "succeeded",
+      "elapsed_seconds": 0.026869819000012285
+    },
+    {
+      "utc": "2026-10-21T01:51:15.760426+00:00",
+      "stage": "score_estoi",
+      "record": "librispeech_1089-134686-0032",
+      "branch": "F_d1",
+      "status": "started"
+    },
+    {
+      "utc": "2026-10-21T01:51:15.795357+00:00",
+      "stage": "score_estoi",
+      "record": "librispeech_1089-134686-0032",
+      "branch": "F_d1",
+      "status": "succeeded",
+      "elapsed_seconds": 0.03492956800005231
+    }
+  ],
+  "source_bytes": 46631
+}

@@ -1,0 +1,475 @@
+{
+  "schema_version": 1,
+  "purpose": "publication-only; not quality inputs",
+  "corpus": "LibriSpeech test-clean / OpenSLR 12; Vassil Panayotov with Daniel Povey, from LibriVox",
+  "source_url": "https://www.openslr.org/12",
+  "license": "CC BY 4.0",
+  "license_url": "https://creativecommons.org/licenses/by/4.0/",
+  "samples": [
+    {
+      "case": "librispeech_1089-134686-0008",
+      "method": "identity",
+      "source_archive": "native/native.zip",
+      "source_member": "records/librispeech_1089-134686-0008/input.npy",
+      "source_member_bytes": 768128,
+      "source_member_sha256": "2906c24c57cf16b7a1a29dac15e0d727cb8b4679724efec0f565946723cc9fd8",
+      "interval_samples": [
+        0,
+        32000
+      ],
+      "interval_seconds": [
+        0,
+        2
+      ],
+      "sample_rate": 16000,
+      "n_samples": 32000,
+      "conversion": "round(x*32767), ties-to-even; PCM16 little-endian WAV",
+      "clipping": false,
+      "gain_normalization": false,
+      "range_check": {
+        "source_min": -0.33538818359375,
+        "source_max": 0.45428466796875,
+        "rounded_min": -10990,
+        "rounded_max": 14886,
+        "range_scope": "publication interval only, samples [0,32000)",
+        "status": "written"
+      },
+      "wav_bytes": 64044,
+      "wav_sha256": "8ea2a45b1bb10cef7612e5a74184868a6c832a5c2bc48a885139e7b5c44ddaf4"
+    },
+    {
+      "case": "librispeech_1089-134686-0008",
+      "method": "pml",
+      "source_archive": "native/native.zip",
+      "source_member": "records/librispeech_1089-134686-0008/branches/pml/native.npy",
+      "source_member_bytes": 768128,
+      "source_member_sha256": "66fa9fe6bb6e0880a2213e700ec59f6dd8af48283c5c350d980d948bf12644f6",
+      "interval_samples": [
+        0,
+        32000
+      ],
+      "interval_seconds": [
+        0,
+        2
+      ],
+      "sample_rate": 16000,
+      "n_samples": 32000,
+      "conversion": "round(x*32767), ties-to-even; PCM16 little-endian WAV",
+      "clipping": false,
+      "gain_normalization": false,
+      "range_check": {
+        "source_min": -0.45632272819057107,
+        "source_max": 0.40007382712792605,
+        "rounded_min": -14952,
+        "rounded_max": 13109,
+        "range_scope": "publication interval only, samples [0,32000)",
+        "status": "written"
+      },
+      "wav_bytes": 64044,
+      "wav_sha256": "e0c99889302882584253539d79d55d30ab43aeedf1037ef7dc7327895570305e"
+    },
+    {
+      "case": "librispeech_1089-134686-0008",
+      "method": "R_d1",
+      "source_archive": "native/native.zip",
+      "source_member": "records/librispeech_1089-134686-0008/branches/R_d1/native.npy",
+      "source_member_bytes": 768128,
+      "source_member_sha256": "f1a2e3a29af1fa6e3c02d564e2c53b54e249e6cbebb50c8caf0460608b8e63de",
+      "interval_samples": [
+        0,
+        32000
+      ],
+      "interval_seconds": [
+        0,
+        2
+      ],
+      "sample_rate": 16000,
+      "n_samples": 32000,
+      "conversion": "round(x*32767), ties-to-even; PCM16 little-endian WAV",
+      "clipping": false,
+      "gain_normalization": false,
+      "range_check": {
+        "source_min": -0.4527729582041502,
+        "source_max": 0.4000369681743905,
+        "rounded_min": -14836,
+        "rounded_max": 13108,
+        "range_scope": "publication interval only, samples [0,32000)",
+        "status": "written"
+      },
+      "wav_bytes": 64044,
+      "wav_sha256": "97a781bc0bc7f7b8142b346b107b9100a3f99d7f294c69c0f3b8ae1f31038313"
+    },
+    {
+      "case": "librispeech_1089-134686-0008",
+      "method": "L_d1",
+      "source_archive": "native/native.zip",
+      "source_member": "records/librispeech_1089-134686-0008/branches/L_d1/native.npy",
+      "source_member_bytes": 768128,
+      "source_member_sha256": "94f1a8fb9e953a5c76cd9d0156f88ce214ed410a9f56f0c7bbd0e7c8d98aaac6",
+      "interval_samples": [
+        0,
+        32000
+      ],
+      "interval_seconds": [
+        0,
+        2
+      ],
+      "sample_rate": 16000,
+      "n_samples": 32000,
+      "conversion": "round(x*32767), ties-to-even; PCM16 little-endian WAV",
+      "clipping": false,
+      "gain_normalization": false,
+      "range_check": {
+        "source_min": -0.42364548915065825,
+        "source_max": 0.40543298062402755,
+        "rounded_min": -13882,
+        "rounded_max": 13285,
+        "range_scope": "publication interval only, samples [0,32000)",
+        "status": "written"
+      },
+      "wav_bytes": 64044,
+      "wav_sha256": "f87f878445508c54298c23ad23f024402515542eb7e10d7bf984b5251a9cd138"
+    },
+    {
+      "case": "librispeech_1089-134686-0008",
+      "method": "F_d1",
+      "source_archive": "native/native.zip",
+      "source_member": "records/librispeech_1089-134686-0008/branches/F_d1/native.npy",
+      "source_member_bytes": 768128,
+      "source_member_sha256": "b5c28d238b4850043be3385825d680960b5423ffdec4672234ba7161879380f3",
+      "interval_samples": [
+        0,
+        32000
+      ],
+      "interval_seconds": [
+        0,
+        2
+      ],
+      "sample_rate": 16000,
+      "n_samples": 32000,
+      "conversion": "round(x*32767), ties-to-even; PCM16 little-endian WAV",
+      "clipping": false,
+      "gain_normalization": false,
+      "range_check": {
+        "source_min": -0.4047337977681309,
+        "source_max": 0.4525149080436677,
+        "rounded_min": -13262,
+        "rounded_max": 14828,
+        "range_scope": "publication interval only, samples [0,32000)",
+        "status": "written"
+      },
+      "wav_bytes": 64044,
+      "wav_sha256": "d6ff43b4740f605e00385f3ccd207dae449a6eefb71fc7d66d00396f96f48c95"
+    },
+    {
+      "case": "librispeech_1089-134686-0011",
+      "method": "identity",
+      "source_archive": "native/native.zip",
+      "source_member": "records/librispeech_1089-134686-0011/input.npy",
+      "source_member_bytes": 768128,
+      "source_member_sha256": "a66507e24c1f41aeef2407f91575332cabbbd6656e90a56803a001b4fcbf9333",
+      "interval_samples": [
+        0,
+        32000
+      ],
+      "interval_seconds": [
+        0,
+        2
+      ],
+      "sample_rate": 16000,
+      "n_samples": 32000,
+      "conversion": "round(x*32767), ties-to-even; PCM16 little-endian WAV",
+      "clipping": false,
+      "gain_normalization": false,
+      "range_check": {
+        "source_min": -0.316131591796875,
+        "source_max": 0.5145263671875,
+        "rounded_min": -10359,
+        "rounded_max": 16859,
+        "range_scope": "publication interval only, samples [0,32000)",
+        "status": "written"
+      },
+      "wav_bytes": 64044,
+      "wav_sha256": "ed59cc26c29831063ea46828f1587ee42452e3c383530a88b6586a3c17501f74"
+    },
+    {
+      "case": "librispeech_1089-134686-0011",
+      "method": "pml",
+      "source_archive": "native/native.zip",
+      "source_member": "records/librispeech_1089-134686-0011/branches/pml/native.npy",
+      "source_member_bytes": 768128,
+      "source_member_sha256": "19db23acecafc5665e49ab0037adf2647aeebbadcee67b34b6cc67c48641b7c2",
+      "interval_samples": [
+        0,
+        32000
+      ],
+      "interval_seconds": [
+        0,
+        2
+      ],
+      "sample_rate": 16000,
+      "n_samples": 32000,
+      "conversion": "round(x*32767), ties-to-even; PCM16 little-endian WAV",
+      "clipping": false,
+      "gain_normalization": false,
+      "range_check": {
+        "source_min": -0.4647643780335784,
+        "source_max": 0.44564360345248133,
+        "rounded_min": -15229,
+        "rounded_max": 14602,
+        "range_scope": "publication interval only, samples [0,32000)",
+        "status": "written"
+      },
+      "wav_bytes": 64044,
+      "wav_sha256": "a40c6b6eccff568edacf4a5829bcfb3d792557b8afe71c3de673852fd1a30154"
+    },
+    {
+      "case": "librispeech_1089-134686-0011",
+      "method": "R_d1",
+      "source_archive": "native/native.zip",
+      "source_member": "records/librispeech_1089-134686-0011/branches/R_d1/native.npy",
+      "source_member_bytes": 768128,
+      "source_member_sha256": "ff203ac787be80ea07c27236fd049fef936f4531772abc35dc2d3acf81e94049",
+      "interval_samples": [
+        0,
+        32000
+      ],
+      "interval_seconds": [
+        0,
+        2
+      ],
+      "sample_rate": 16000,
+      "n_samples": 32000,
+      "conversion": "round(x*32767), ties-to-even; PCM16 little-endian WAV",
+      "clipping": false,
+      "gain_normalization": false,
+      "range_check": {
+        "source_min": -0.46474295924417675,
+        "source_max": 0.44508681941078976,
+        "rounded_min": -15228,
+        "rounded_max": 14584,
+        "range_scope": "publication interval only, samples [0,32000)",
+        "status": "written"
+      },
+      "wav_bytes": 64044,
+      "wav_sha256": "06eadc2ac48816f031a9ac3aef66250a8d70dace16e085af7f0acf4f0e3c8def"
+    },
+    {
+      "case": "librispeech_1089-134686-0011",
+      "method": "L_d1",
+      "source_archive": "native/native.zip",
+      "source_member": "records/librispeech_1089-134686-0011/branches/L_d1/native.npy",
+      "source_member_bytes": 768128,
+      "source_member_sha256": "5f8a2164530c908da794ef63b5f790f752bb21c3a81b3f93e89b2b4f412de1aa",
+      "interval_samples": [
+        0,
+        32000
+      ],
+      "interval_seconds": [
+        0,
+        2
+      ],
+      "sample_rate": 16000,
+      "n_samples": 32000,
+      "conversion": "round(x*32767), ties-to-even; PCM16 little-endian WAV",
+      "clipping": false,
+      "gain_normalization": false,
+      "range_check": {
+        "source_min": -0.45198254508432,
+        "source_max": 0.4518820430384949,
+        "rounded_min": -14810,
+        "rounded_max": 14807,
+        "range_scope": "publication interval only, samples [0,32000)",
+        "status": "written"
+      },
+      "wav_bytes": 64044,
+      "wav_sha256": "61c094cce303e231e4ad73b0b769b6397d612512e5d059214a7a7cf21fe8e961"
+    },
+    {
+      "case": "librispeech_1089-134686-0011",
+      "method": "F_d1",
+      "source_archive": "native/native.zip",
+      "source_member": "records/librispeech_1089-134686-0011/branches/F_d1/native.npy",
+      "source_member_bytes": 768128,
+      "source_member_sha256": "13df9011b3ca46927d7409373d036396e815b2d28cbe06e4878374e0976d8cb1",
+      "interval_samples": [
+        0,
+        32000
+      ],
+      "interval_seconds": [
+        0,
+        2
+      ],
+      "sample_rate": 16000,
+      "n_samples": 32000,
+      "conversion": "round(x*32767), ties-to-even; PCM16 little-endian WAV",
+      "clipping": false,
+      "gain_normalization": false,
+      "range_check": {
+        "source_min": -0.48238678416237235,
+        "source_max": 0.4544740209239535,
+        "rounded_min": -15806,
+        "rounded_max": 14892,
+        "range_scope": "publication interval only, samples [0,32000)",
+        "status": "written"
+      },
+      "wav_bytes": 64044,
+      "wav_sha256": "4d9a388b94ba2594c4a052e3b3a31dafe1019c0ba576770050a30cb622546230"
+    },
+    {
+      "case": "librispeech_1089-134686-0032",
+      "method": "identity",
+      "source_archive": "native/native.zip",
+      "source_member": "records/librispeech_1089-134686-0032/input.npy",
+      "source_member_bytes": 523648,
+      "source_member_sha256": "cf1d3a15f9864fa36824ce1cb46c161624f17c4e82ba1e8b14109293167293b6",
+      "interval_samples": [
+        0,
+        32000
+      ],
+      "interval_seconds": [
+        0,
+        2
+      ],
+      "sample_rate": 16000,
+      "n_samples": 32000,
+      "conversion": "round(x*32767), ties-to-even; PCM16 little-endian WAV",
+      "clipping": false,
+      "gain_normalization": false,
+      "range_check": {
+        "source_min": -0.264739990234375,
+        "source_max": 0.348907470703125,
+        "rounded_min": -8675,
+        "rounded_max": 11433,
+        "range_scope": "publication interval only, samples [0,32000)",
+        "status": "written"
+      },
+      "wav_bytes": 64044,
+      "wav_sha256": "e9527d1e4737f3d7da875ad60ea4167707af503902737952a6d386ceea91ed32"
+    },
+    {
+      "case": "librispeech_1089-134686-0032",
+      "method": "pml",
+      "source_archive": "native/native.zip",
+      "source_member": "records/librispeech_1089-134686-0032/branches/pml/native.npy",
+      "source_member_bytes": 523648,
+      "source_member_sha256": "80bf274d7883bff30b22f1eae1ea2a40cb7d3f7fdc0bc75162dc90e44faa6cc8",
+      "interval_samples": [
+        0,
+        32000
+      ],
+      "interval_seconds": [
+        0,
+        2
+      ],
+      "sample_rate": 16000,
+      "n_samples": 32000,
+      "conversion": "round(x*32767), ties-to-even; PCM16 little-endian WAV",
+      "clipping": false,
+      "gain_normalization": false,
+      "range_check": {
+        "source_min": -0.43306016485439613,
+        "source_max": 0.27069541315722745,
+        "rounded_min": -14190,
+        "rounded_max": 8870,
+        "range_scope": "publication interval only, samples [0,32000)",
+        "status": "written"
+      },
+      "wav_bytes": 64044,
+      "wav_sha256": "66d593c0f734ddb0acda9b189975cc0a3006063aa8a68f122ca1a0b956fa2254"
+    },
+    {
+      "case": "librispeech_1089-134686-0032",
+      "method": "R_d1",
+      "source_archive": "native/native.zip",
+      "source_member": "records/librispeech_1089-134686-0032/branches/R_d1/native.npy",
+      "source_member_bytes": 523648,
+      "source_member_sha256": "b1bb3ebcb3ca010abe72b49cf1991ab1b14a1f70fa43c475fed8ce8776f9c619",
+      "interval_samples": [
+        0,
+        32000
+      ],
+      "interval_seconds": [
+        0,
+        2
+      ],
+      "sample_rate": 16000,
+      "n_samples": 32000,
+      "conversion": "round(x*32767), ties-to-even; PCM16 little-endian WAV",
+      "clipping": false,
+      "gain_normalization": false,
+      "range_check": {
+        "source_min": -0.43415196577552706,
+        "source_max": 0.27149004087550566,
+        "rounded_min": -14226,
+        "rounded_max": 8896,
+        "range_scope": "publication interval only, samples [0,32000)",
+        "status": "written"
+      },
+      "wav_bytes": 64044,
+      "wav_sha256": "f1710f9be60fc1ab03bb8e4b732642f206738bcd458e66019357cb519793f595"
+    },
+    {
+      "case": "librispeech_1089-134686-0032",
+      "method": "L_d1",
+      "source_archive": "native/native.zip",
+      "source_member": "records/librispeech_1089-134686-0032/branches/L_d1/native.npy",
+      "source_member_bytes": 523648,
+      "source_member_sha256": "dc012f5a1dc457b6244de0d2ed5f8a34207002b95bb6907a2100164316e2d049",
+      "interval_samples": [
+        0,
+        32000
+      ],
+      "interval_seconds": [
+        0,
+        2
+      ],
+      "sample_rate": 16000,
+      "n_samples": 32000,
+      "conversion": "round(x*32767), ties-to-even; PCM16 little-endian WAV",
+      "clipping": false,
+      "gain_normalization": false,
+      "range_check": {
+        "source_min": -0.430309628485702,
+        "source_max": 0.26970969917601906,
+        "rounded_min": -14100,
+        "rounded_max": 8838,
+        "range_scope": "publication interval only, samples [0,32000)",
+        "status": "written"
+      },
+      "wav_bytes": 64044,
+      "wav_sha256": "74a34a327897c2616d3beedaf908a1f4a0415f21e69e10cfce0c9c53b93b38e2"
+    },
+    {
+      "case": "librispeech_1089-134686-0032",
+      "method": "F_d1",
+      "source_archive": "native/native.zip",
+      "source_member": "records/librispeech_1089-134686-0032/branches/F_d1/native.npy",
+      "source_member_bytes": 523648,
+      "source_member_sha256": "c67e0b7749002677c1d9375b73daddcb0c302b8166583a5726f3c40e8587f680",
+      "interval_samples": [
+        0,
+        32000
+      ],
+      "interval_seconds": [
+        0,
+        2
+      ],
+      "sample_rate": 16000,
+      "n_samples": 32000,
+      "conversion": "round(x*32767), ties-to-even; PCM16 little-endian WAV",
+      "clipping": false,
+      "gain_normalization": false,
+      "range_check": {
+        "source_min": -0.429155264981091,
+        "source_max": 0.2750596985570155,
+        "rounded_min": -14062,
+        "rounded_max": 9013,
+        "range_scope": "publication interval only, samples [0,32000)",
+        "status": "written"
+      },
+      "wav_bytes": 64044,
+      "wav_sha256": "86eaab6842c34bba1bed76a4b00da6845574655b8ac777e81fe42490f14302ee"
+    }
+  ]
+}

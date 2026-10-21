@@ -1,0 +1,1002 @@
+{
+  "schema_version": 2,
+  "study_role": "d1_first3_development",
+  "recorded_at": "2026-10-21T11:03:07+09:00",
+  "recorded_at_source": "publication record creation time",
+  "title": "F0の一次差分平滑化：3録音の生成・品質個票と比較音声",
+  "comparison_reference": "pml",
+  "formal_base": {
+    "method": "pml"
+  },
+  "method_labels": {
+    "identity": "原音",
+    "pml": "既存PML（正式ベース）",
+    "R_d1": "REAPER入力＋D1",
+    "L_d1": "局所候補＋D1",
+    "F_d1": "系列候補＋D1"
+  },
+  "index_methods": [
+    "identity",
+    "pml",
+    "R_d1",
+    "L_d1",
+    "F_d1"
+  ],
+  "record_ids": [
+    "librispeech_1089-134686-0008",
+    "librispeech_1089-134686-0011",
+    "librispeech_1089-134686-0032"
+  ],
+  "speakers": 1,
+  "scope": "previously observed development first3; not independent validation",
+  "resynthesis": [
+    {
+      "case": "librispeech_1089-134686-0008",
+      "method": "pml",
+      "kind": "natural_speech",
+      "status": "native_succeeded",
+      "execution_kind": "prior_byte_reuse",
+      "newly_executed": false,
+      "frames": 1194,
+      "sample_rate": 16000,
+      "n_samples": 96000,
+      "record_path": "native-librispeech_1089-134686-0008-pml.json",
+      "measurement": {
+        "status": "measured",
+        "quality_record_paths": {
+          "ecapa_cosine": "quality-librispeech_1089-134686-0008-pml-ecapa_cosine.json",
+          "estoi": "quality-librispeech_1089-134686-0008-pml-estoi.json",
+          "scoreq_natural": "quality-librispeech_1089-134686-0008-pml-scoreq_natural.json",
+          "utmos_v2": "quality-librispeech_1089-134686-0008-pml-utmos_v2.json"
+        }
+      }
+    },
+    {
+      "case": "librispeech_1089-134686-0008",
+      "method": "R_d1",
+      "kind": "natural_speech",
+      "status": "native_succeeded",
+      "execution_kind": "new_d1_analysis_save_load_decode",
+      "newly_executed": true,
+      "frames": 1194,
+      "sample_rate": 16000,
+      "n_samples": 96000,
+      "record_path": "native-librispeech_1089-134686-0008-R_d1.json",
+      "measurement": {
+        "status": "measured",
+        "quality_record_paths": {
+          "ecapa_cosine": "quality-librispeech_1089-134686-0008-R_d1-ecapa_cosine.json",
+          "estoi": "quality-librispeech_1089-134686-0008-R_d1-estoi.json",
+          "scoreq_natural": "quality-librispeech_1089-134686-0008-R_d1-scoreq_natural.json",
+          "utmos_v2": "quality-librispeech_1089-134686-0008-R_d1-utmos_v2.json"
+        }
+      }
+    },
+    {
+      "case": "librispeech_1089-134686-0008",
+      "method": "L_d1",
+      "kind": "natural_speech",
+      "status": "native_succeeded",
+      "execution_kind": "new_d1_analysis_save_load_decode",
+      "newly_executed": true,
+      "frames": 1200,
+      "sample_rate": 16000,
+      "n_samples": 96000,
+      "record_path": "native-librispeech_1089-134686-0008-L_d1.json",
+      "measurement": {
+        "status": "measured",
+        "quality_record_paths": {
+          "ecapa_cosine": "quality-librispeech_1089-134686-0008-L_d1-ecapa_cosine.json",
+          "estoi": "quality-librispeech_1089-134686-0008-L_d1-estoi.json",
+          "scoreq_natural": "quality-librispeech_1089-134686-0008-L_d1-scoreq_natural.json",
+          "utmos_v2": "quality-librispeech_1089-134686-0008-L_d1-utmos_v2.json"
+        }
+      }
+    },
+    {
+      "case": "librispeech_1089-134686-0008",
+      "method": "F_d1",
+      "kind": "natural_speech",
+      "status": "native_succeeded",
+      "execution_kind": "new_d1_analysis_save_load_decode",
+      "newly_executed": true,
+      "frames": 1200,
+      "sample_rate": 16000,
+      "n_samples": 96000,
+      "record_path": "native-librispeech_1089-134686-0008-F_d1.json",
+      "measurement": {
+        "status": "measured",
+        "quality_record_paths": {
+          "ecapa_cosine": "quality-librispeech_1089-134686-0008-F_d1-ecapa_cosine.json",
+          "estoi": "quality-librispeech_1089-134686-0008-F_d1-estoi.json",
+          "scoreq_natural": "quality-librispeech_1089-134686-0008-F_d1-scoreq_natural.json",
+          "utmos_v2": "quality-librispeech_1089-134686-0008-F_d1-utmos_v2.json"
+        }
+      }
+    },
+    {
+      "case": "librispeech_1089-134686-0011",
+      "method": "pml",
+      "kind": "natural_speech",
+      "status": "native_succeeded",
+      "execution_kind": "prior_byte_reuse",
+      "newly_executed": false,
+      "frames": 1195,
+      "sample_rate": 16000,
+      "n_samples": 96000,
+      "record_path": "native-librispeech_1089-134686-0011-pml.json",
+      "measurement": {
+        "status": "measured",
+        "quality_record_paths": {
+          "ecapa_cosine": "quality-librispeech_1089-134686-0011-pml-ecapa_cosine.json",
+          "estoi": "quality-librispeech_1089-134686-0011-pml-estoi.json",
+          "scoreq_natural": "quality-librispeech_1089-134686-0011-pml-scoreq_natural.json",
+          "utmos_v2": "quality-librispeech_1089-134686-0011-pml-utmos_v2.json"
+        }
+      }
+    },
+    {
+      "case": "librispeech_1089-134686-0011",
+      "method": "R_d1",
+      "kind": "natural_speech",
+      "status": "native_succeeded",
+      "execution_kind": "new_d1_analysis_save_load_decode",
+      "newly_executed": true,
+      "frames": 1195,
+      "sample_rate": 16000,
+      "n_samples": 96000,
+      "record_path": "native-librispeech_1089-134686-0011-R_d1.json",
+      "measurement": {
+        "status": "measured",
+        "quality_record_paths": {
+          "ecapa_cosine": "quality-librispeech_1089-134686-0011-R_d1-ecapa_cosine.json",
+          "estoi": "quality-librispeech_1089-134686-0011-R_d1-estoi.json",
+          "scoreq_natural": "quality-librispeech_1089-134686-0011-R_d1-scoreq_natural.json",
+          "utmos_v2": "quality-librispeech_1089-134686-0011-R_d1-utmos_v2.json"
+        }
+      }
+    },
+    {
+      "case": "librispeech_1089-134686-0011",
+      "method": "L_d1",
+      "kind": "natural_speech",
+      "status": "native_succeeded",
+      "execution_kind": "new_d1_analysis_save_load_decode",
+      "newly_executed": true,
+      "frames": 1200,
+      "sample_rate": 16000,
+      "n_samples": 96000,
+      "record_path": "native-librispeech_1089-134686-0011-L_d1.json",
+      "measurement": {
+        "status": "measured",
+        "quality_record_paths": {
+          "ecapa_cosine": "quality-librispeech_1089-134686-0011-L_d1-ecapa_cosine.json",
+          "estoi": "quality-librispeech_1089-134686-0011-L_d1-estoi.json",
+          "scoreq_natural": "quality-librispeech_1089-134686-0011-L_d1-scoreq_natural.json",
+          "utmos_v2": "quality-librispeech_1089-134686-0011-L_d1-utmos_v2.json"
+        }
+      }
+    },
+    {
+      "case": "librispeech_1089-134686-0011",
+      "method": "F_d1",
+      "kind": "natural_speech",
+      "status": "native_succeeded",
+      "execution_kind": "new_d1_analysis_save_load_decode",
+      "newly_executed": true,
+      "frames": 1200,
+      "sample_rate": 16000,
+      "n_samples": 96000,
+      "record_path": "native-librispeech_1089-134686-0011-F_d1.json",
+      "measurement": {
+        "status": "measured",
+        "quality_record_paths": {
+          "ecapa_cosine": "quality-librispeech_1089-134686-0011-F_d1-ecapa_cosine.json",
+          "estoi": "quality-librispeech_1089-134686-0011-F_d1-estoi.json",
+          "scoreq_natural": "quality-librispeech_1089-134686-0011-F_d1-scoreq_natural.json",
+          "utmos_v2": "quality-librispeech_1089-134686-0011-F_d1-utmos_v2.json"
+        }
+      }
+    },
+    {
+      "case": "librispeech_1089-134686-0032",
+      "method": "pml",
+      "kind": "natural_speech",
+      "status": "native_succeeded",
+      "execution_kind": "prior_byte_reuse",
+      "newly_executed": false,
+      "frames": 814,
+      "sample_rate": 16000,
+      "n_samples": 65440,
+      "record_path": "native-librispeech_1089-134686-0032-pml.json",
+      "measurement": {
+        "status": "measured",
+        "quality_record_paths": {
+          "ecapa_cosine": "quality-librispeech_1089-134686-0032-pml-ecapa_cosine.json",
+          "estoi": "quality-librispeech_1089-134686-0032-pml-estoi.json",
+          "scoreq_natural": "quality-librispeech_1089-134686-0032-pml-scoreq_natural.json",
+          "utmos_v2": "quality-librispeech_1089-134686-0032-pml-utmos_v2.json"
+        }
+      }
+    },
+    {
+      "case": "librispeech_1089-134686-0032",
+      "method": "R_d1",
+      "kind": "natural_speech",
+      "status": "native_succeeded",
+      "execution_kind": "new_d1_analysis_save_load_decode",
+      "newly_executed": true,
+      "frames": 814,
+      "sample_rate": 16000,
+      "n_samples": 65440,
+      "record_path": "native-librispeech_1089-134686-0032-R_d1.json",
+      "measurement": {
+        "status": "measured",
+        "quality_record_paths": {
+          "ecapa_cosine": "quality-librispeech_1089-134686-0032-R_d1-ecapa_cosine.json",
+          "estoi": "quality-librispeech_1089-134686-0032-R_d1-estoi.json",
+          "scoreq_natural": "quality-librispeech_1089-134686-0032-R_d1-scoreq_natural.json",
+          "utmos_v2": "quality-librispeech_1089-134686-0032-R_d1-utmos_v2.json"
+        }
+      }
+    },
+    {
+      "case": "librispeech_1089-134686-0032",
+      "method": "L_d1",
+      "kind": "natural_speech",
+      "status": "native_succeeded",
+      "execution_kind": "new_d1_analysis_save_load_decode",
+      "newly_executed": true,
+      "frames": 818,
+      "sample_rate": 16000,
+      "n_samples": 65440,
+      "record_path": "native-librispeech_1089-134686-0032-L_d1.json",
+      "measurement": {
+        "status": "measured",
+        "quality_record_paths": {
+          "ecapa_cosine": "quality-librispeech_1089-134686-0032-L_d1-ecapa_cosine.json",
+          "estoi": "quality-librispeech_1089-134686-0032-L_d1-estoi.json",
+          "scoreq_natural": "quality-librispeech_1089-134686-0032-L_d1-scoreq_natural.json",
+          "utmos_v2": "quality-librispeech_1089-134686-0032-L_d1-utmos_v2.json"
+        }
+      }
+    },
+    {
+      "case": "librispeech_1089-134686-0032",
+      "method": "F_d1",
+      "kind": "natural_speech",
+      "status": "native_succeeded",
+      "execution_kind": "new_d1_analysis_save_load_decode",
+      "newly_executed": true,
+      "frames": 818,
+      "sample_rate": 16000,
+      "n_samples": 65440,
+      "record_path": "native-librispeech_1089-134686-0032-F_d1.json",
+      "measurement": {
+        "status": "measured",
+        "quality_record_paths": {
+          "ecapa_cosine": "quality-librispeech_1089-134686-0032-F_d1-ecapa_cosine.json",
+          "estoi": "quality-librispeech_1089-134686-0032-F_d1-estoi.json",
+          "scoreq_natural": "quality-librispeech_1089-134686-0032-F_d1-scoreq_natural.json",
+          "utmos_v2": "quality-librispeech_1089-134686-0032-F_d1-utmos_v2.json"
+        }
+      }
+    }
+  ],
+  "quality": {
+    "status": "measured",
+    "measured_values": 51,
+    "planned_values": 51,
+    "metrics": [
+      {
+        "id": "utmos_v2",
+        "label": "UTMOSv2 ↑",
+        "direction": "higher"
+      },
+      {
+        "id": "estoi",
+        "label": "eSTOI ↑",
+        "direction": "higher"
+      },
+      {
+        "id": "ecapa_cosine",
+        "label": "ECAPA cosine ↑",
+        "direction": "higher"
+      },
+      {
+        "id": "scoreq_natural",
+        "label": "SCOREQ natural ↓",
+        "direction": "lower"
+      }
+    ],
+    "records": [
+      {
+        "record_id": "librispeech_1089-134686-0008",
+        "branch": "F_d1",
+        "metric": "ecapa_cosine",
+        "direction": "higher",
+        "sample_rate": 16000,
+        "interval_start_sample": 0,
+        "scored_samples": 95840,
+        "scope": "fixed_common_prefix",
+        "status": "measured",
+        "value": 0.8988885879516602,
+        "record_path": "quality-librispeech_1089-134686-0008-F_d1-ecapa_cosine.json"
+      },
+      {
+        "record_id": "librispeech_1089-134686-0008",
+        "branch": "F_d1",
+        "metric": "estoi",
+        "direction": "higher",
+        "sample_rate": 16000,
+        "interval_start_sample": 0,
+        "scored_samples": 95840,
+        "scope": "明瞭性の推定。MOS・自然性・話者類似度ではない",
+        "status": "measured",
+        "value": 0.8792103407686376,
+        "record_path": "quality-librispeech_1089-134686-0008-F_d1-estoi.json"
+      },
+      {
+        "record_id": "librispeech_1089-134686-0008",
+        "branch": "F_d1",
+        "metric": "scoreq_natural",
+        "direction": "lower",
+        "sample_rate": 16000,
+        "interval_start_sample": 0,
+        "scored_samples": 95840,
+        "scope": "fixed_common_prefix",
+        "status": "measured",
+        "value": 0.49641934037208557,
+        "record_path": "quality-librispeech_1089-134686-0008-F_d1-scoreq_natural.json"
+      },
+      {
+        "record_id": "librispeech_1089-134686-0008",
+        "branch": "F_d1",
+        "metric": "utmos_v2",
+        "direction": "higher",
+        "sample_rate": 16000,
+        "interval_start_sample": 0,
+        "scored_samples": 96000,
+        "scope": "full_saved_native",
+        "status": "measured",
+        "value": 3.1995651721954346,
+        "record_path": "quality-librispeech_1089-134686-0008-F_d1-utmos_v2.json"
+      },
+      {
+        "record_id": "librispeech_1089-134686-0008",
+        "branch": "L_d1",
+        "metric": "ecapa_cosine",
+        "direction": "higher",
+        "sample_rate": 16000,
+        "interval_start_sample": 0,
+        "scored_samples": 95840,
+        "scope": "fixed_common_prefix",
+        "status": "measured",
+        "value": 0.8919568657875061,
+        "record_path": "quality-librispeech_1089-134686-0008-L_d1-ecapa_cosine.json"
+      },
+      {
+        "record_id": "librispeech_1089-134686-0008",
+        "branch": "L_d1",
+        "metric": "estoi",
+        "direction": "higher",
+        "sample_rate": 16000,
+        "interval_start_sample": 0,
+        "scored_samples": 95840,
+        "scope": "明瞭性の推定。MOS・自然性・話者類似度ではない",
+        "status": "measured",
+        "value": 0.8822579734549469,
+        "record_path": "quality-librispeech_1089-134686-0008-L_d1-estoi.json"
+      },
+      {
+        "record_id": "librispeech_1089-134686-0008",
+        "branch": "L_d1",
+        "metric": "scoreq_natural",
+        "direction": "lower",
+        "sample_rate": 16000,
+        "interval_start_sample": 0,
+        "scored_samples": 95840,
+        "scope": "fixed_common_prefix",
+        "status": "measured",
+        "value": 0.5526825189590454,
+        "record_path": "quality-librispeech_1089-134686-0008-L_d1-scoreq_natural.json"
+      },
+      {
+        "record_id": "librispeech_1089-134686-0008",
+        "branch": "L_d1",
+        "metric": "utmos_v2",
+        "direction": "higher",
+        "sample_rate": 16000,
+        "interval_start_sample": 0,
+        "scored_samples": 96000,
+        "scope": "full_saved_native",
+        "status": "measured",
+        "value": 2.7632534503936768,
+        "record_path": "quality-librispeech_1089-134686-0008-L_d1-utmos_v2.json"
+      },
+      {
+        "record_id": "librispeech_1089-134686-0008",
+        "branch": "R_d1",
+        "metric": "ecapa_cosine",
+        "direction": "higher",
+        "sample_rate": 16000,
+        "interval_start_sample": 0,
+        "scored_samples": 95840,
+        "scope": "fixed_common_prefix",
+        "status": "measured",
+        "value": 0.9495701789855957,
+        "record_path": "quality-librispeech_1089-134686-0008-R_d1-ecapa_cosine.json"
+      },
+      {
+        "record_id": "librispeech_1089-134686-0008",
+        "branch": "R_d1",
+        "metric": "estoi",
+        "direction": "higher",
+        "sample_rate": 16000,
+        "interval_start_sample": 0,
+        "scored_samples": 95840,
+        "scope": "明瞭性の推定。MOS・自然性・話者類似度ではない",
+        "status": "measured",
+        "value": 0.921705092055878,
+        "record_path": "quality-librispeech_1089-134686-0008-R_d1-estoi.json"
+      },
+      {
+        "record_id": "librispeech_1089-134686-0008",
+        "branch": "R_d1",
+        "metric": "scoreq_natural",
+        "direction": "lower",
+        "sample_rate": 16000,
+        "interval_start_sample": 0,
+        "scored_samples": 95840,
+        "scope": "fixed_common_prefix",
+        "status": "measured",
+        "value": 0.33117735385894775,
+        "record_path": "quality-librispeech_1089-134686-0008-R_d1-scoreq_natural.json"
+      },
+      {
+        "record_id": "librispeech_1089-134686-0008",
+        "branch": "R_d1",
+        "metric": "utmos_v2",
+        "direction": "higher",
+        "sample_rate": 16000,
+        "interval_start_sample": 0,
+        "scored_samples": 96000,
+        "scope": "full_saved_native",
+        "status": "measured",
+        "value": 3.1117208003997803,
+        "record_path": "quality-librispeech_1089-134686-0008-R_d1-utmos_v2.json"
+      },
+      {
+        "record_id": "librispeech_1089-134686-0008",
+        "branch": "original",
+        "metric": "utmos_v2",
+        "direction": "higher",
+        "sample_rate": 16000,
+        "interval_start_sample": 0,
+        "scored_samples": 96000,
+        "scope": "full_saved_original_reference_only",
+        "status": "measured",
+        "value": 4.073602676391602,
+        "record_path": "quality-librispeech_1089-134686-0008-original-utmos_v2.json"
+      },
+      {
+        "record_id": "librispeech_1089-134686-0008",
+        "branch": "pml",
+        "metric": "ecapa_cosine",
+        "direction": "higher",
+        "sample_rate": 16000,
+        "interval_start_sample": 0,
+        "scored_samples": 95840,
+        "scope": "fixed_common_prefix",
+        "status": "measured",
+        "value": 0.9518733024597168,
+        "record_path": "quality-librispeech_1089-134686-0008-pml-ecapa_cosine.json"
+      },
+      {
+        "record_id": "librispeech_1089-134686-0008",
+        "branch": "pml",
+        "metric": "estoi",
+        "direction": "higher",
+        "sample_rate": 16000,
+        "interval_start_sample": 0,
+        "scored_samples": 95840,
+        "scope": "明瞭性の推定。MOS・自然性・話者類似度ではない",
+        "status": "measured",
+        "value": 0.9225710361778331,
+        "record_path": "quality-librispeech_1089-134686-0008-pml-estoi.json"
+      },
+      {
+        "record_id": "librispeech_1089-134686-0008",
+        "branch": "pml",
+        "metric": "scoreq_natural",
+        "direction": "lower",
+        "sample_rate": 16000,
+        "interval_start_sample": 0,
+        "scored_samples": 95840,
+        "scope": "fixed_common_prefix",
+        "status": "measured",
+        "value": 0.3142026662826538,
+        "record_path": "quality-librispeech_1089-134686-0008-pml-scoreq_natural.json"
+      },
+      {
+        "record_id": "librispeech_1089-134686-0008",
+        "branch": "pml",
+        "metric": "utmos_v2",
+        "direction": "higher",
+        "sample_rate": 16000,
+        "interval_start_sample": 0,
+        "scored_samples": 96000,
+        "scope": "full_saved_native",
+        "status": "measured",
+        "value": 3.2559711933135986,
+        "record_path": "quality-librispeech_1089-134686-0008-pml-utmos_v2.json"
+      },
+      {
+        "record_id": "librispeech_1089-134686-0011",
+        "branch": "F_d1",
+        "metric": "ecapa_cosine",
+        "direction": "higher",
+        "sample_rate": 16000,
+        "interval_start_sample": 0,
+        "scored_samples": 95840,
+        "scope": "fixed_common_prefix",
+        "status": "measured",
+        "value": 0.8879530429840088,
+        "record_path": "quality-librispeech_1089-134686-0011-F_d1-ecapa_cosine.json"
+      },
+      {
+        "record_id": "librispeech_1089-134686-0011",
+        "branch": "F_d1",
+        "metric": "estoi",
+        "direction": "higher",
+        "sample_rate": 16000,
+        "interval_start_sample": 0,
+        "scored_samples": 95840,
+        "scope": "明瞭性の推定。MOS・自然性・話者類似度ではない",
+        "status": "measured",
+        "value": 0.8594947004925826,
+        "record_path": "quality-librispeech_1089-134686-0011-F_d1-estoi.json"
+      },
+      {
+        "record_id": "librispeech_1089-134686-0011",
+        "branch": "F_d1",
+        "metric": "scoreq_natural",
+        "direction": "lower",
+        "sample_rate": 16000,
+        "interval_start_sample": 0,
+        "scored_samples": 95840,
+        "scope": "fixed_common_prefix",
+        "status": "measured",
+        "value": 0.5547086000442505,
+        "record_path": "quality-librispeech_1089-134686-0011-F_d1-scoreq_natural.json"
+      },
+      {
+        "record_id": "librispeech_1089-134686-0011",
+        "branch": "F_d1",
+        "metric": "utmos_v2",
+        "direction": "higher",
+        "sample_rate": 16000,
+        "interval_start_sample": 0,
+        "scored_samples": 96000,
+        "scope": "full_saved_native",
+        "status": "measured",
+        "value": 3.544567346572876,
+        "record_path": "quality-librispeech_1089-134686-0011-F_d1-utmos_v2.json"
+      },
+      {
+        "record_id": "librispeech_1089-134686-0011",
+        "branch": "L_d1",
+        "metric": "ecapa_cosine",
+        "direction": "higher",
+        "sample_rate": 16000,
+        "interval_start_sample": 0,
+        "scored_samples": 95840,
+        "scope": "fixed_common_prefix",
+        "status": "measured",
+        "value": 0.8900705575942993,
+        "record_path": "quality-librispeech_1089-134686-0011-L_d1-ecapa_cosine.json"
+      },
+      {
+        "record_id": "librispeech_1089-134686-0011",
+        "branch": "L_d1",
+        "metric": "estoi",
+        "direction": "higher",
+        "sample_rate": 16000,
+        "interval_start_sample": 0,
+        "scored_samples": 95840,
+        "scope": "明瞭性の推定。MOS・自然性・話者類似度ではない",
+        "status": "measured",
+        "value": 0.866862721852936,
+        "record_path": "quality-librispeech_1089-134686-0011-L_d1-estoi.json"
+      },
+      {
+        "record_id": "librispeech_1089-134686-0011",
+        "branch": "L_d1",
+        "metric": "scoreq_natural",
+        "direction": "lower",
+        "sample_rate": 16000,
+        "interval_start_sample": 0,
+        "scored_samples": 95840,
+        "scope": "fixed_common_prefix",
+        "status": "measured",
+        "value": 0.6279880404472351,
+        "record_path": "quality-librispeech_1089-134686-0011-L_d1-scoreq_natural.json"
+      },
+      {
+        "record_id": "librispeech_1089-134686-0011",
+        "branch": "L_d1",
+        "metric": "utmos_v2",
+        "direction": "higher",
+        "sample_rate": 16000,
+        "interval_start_sample": 0,
+        "scored_samples": 96000,
+        "scope": "full_saved_native",
+        "status": "measured",
+        "value": 3.458186388015747,
+        "record_path": "quality-librispeech_1089-134686-0011-L_d1-utmos_v2.json"
+      },
+      {
+        "record_id": "librispeech_1089-134686-0011",
+        "branch": "R_d1",
+        "metric": "ecapa_cosine",
+        "direction": "higher",
+        "sample_rate": 16000,
+        "interval_start_sample": 0,
+        "scored_samples": 95840,
+        "scope": "fixed_common_prefix",
+        "status": "measured",
+        "value": 0.931485116481781,
+        "record_path": "quality-librispeech_1089-134686-0011-R_d1-ecapa_cosine.json"
+      },
+      {
+        "record_id": "librispeech_1089-134686-0011",
+        "branch": "R_d1",
+        "metric": "estoi",
+        "direction": "higher",
+        "sample_rate": 16000,
+        "interval_start_sample": 0,
+        "scored_samples": 95840,
+        "scope": "明瞭性の推定。MOS・自然性・話者類似度ではない",
+        "status": "measured",
+        "value": 0.9080453014525811,
+        "record_path": "quality-librispeech_1089-134686-0011-R_d1-estoi.json"
+      },
+      {
+        "record_id": "librispeech_1089-134686-0011",
+        "branch": "R_d1",
+        "metric": "scoreq_natural",
+        "direction": "lower",
+        "sample_rate": 16000,
+        "interval_start_sample": 0,
+        "scored_samples": 95840,
+        "scope": "fixed_common_prefix",
+        "status": "measured",
+        "value": 0.30969133973121643,
+        "record_path": "quality-librispeech_1089-134686-0011-R_d1-scoreq_natural.json"
+      },
+      {
+        "record_id": "librispeech_1089-134686-0011",
+        "branch": "R_d1",
+        "metric": "utmos_v2",
+        "direction": "higher",
+        "sample_rate": 16000,
+        "interval_start_sample": 0,
+        "scored_samples": 96000,
+        "scope": "full_saved_native",
+        "status": "measured",
+        "value": 3.2599780559539795,
+        "record_path": "quality-librispeech_1089-134686-0011-R_d1-utmos_v2.json"
+      },
+      {
+        "record_id": "librispeech_1089-134686-0011",
+        "branch": "original",
+        "metric": "utmos_v2",
+        "direction": "higher",
+        "sample_rate": 16000,
+        "interval_start_sample": 0,
+        "scored_samples": 96000,
+        "scope": "full_saved_original_reference_only",
+        "status": "measured",
+        "value": 4.290393352508545,
+        "record_path": "quality-librispeech_1089-134686-0011-original-utmos_v2.json"
+      },
+      {
+        "record_id": "librispeech_1089-134686-0011",
+        "branch": "pml",
+        "metric": "ecapa_cosine",
+        "direction": "higher",
+        "sample_rate": 16000,
+        "interval_start_sample": 0,
+        "scored_samples": 95840,
+        "scope": "fixed_common_prefix",
+        "status": "measured",
+        "value": 0.9255818128585815,
+        "record_path": "quality-librispeech_1089-134686-0011-pml-ecapa_cosine.json"
+      },
+      {
+        "record_id": "librispeech_1089-134686-0011",
+        "branch": "pml",
+        "metric": "estoi",
+        "direction": "higher",
+        "sample_rate": 16000,
+        "interval_start_sample": 0,
+        "scored_samples": 95840,
+        "scope": "明瞭性の推定。MOS・自然性・話者類似度ではない",
+        "status": "measured",
+        "value": 0.9071610141502287,
+        "record_path": "quality-librispeech_1089-134686-0011-pml-estoi.json"
+      },
+      {
+        "record_id": "librispeech_1089-134686-0011",
+        "branch": "pml",
+        "metric": "scoreq_natural",
+        "direction": "lower",
+        "sample_rate": 16000,
+        "interval_start_sample": 0,
+        "scored_samples": 95840,
+        "scope": "fixed_common_prefix",
+        "status": "measured",
+        "value": 0.3354029059410095,
+        "record_path": "quality-librispeech_1089-134686-0011-pml-scoreq_natural.json"
+      },
+      {
+        "record_id": "librispeech_1089-134686-0011",
+        "branch": "pml",
+        "metric": "utmos_v2",
+        "direction": "higher",
+        "sample_rate": 16000,
+        "interval_start_sample": 0,
+        "scored_samples": 96000,
+        "scope": "full_saved_native",
+        "status": "measured",
+        "value": 3.2830944061279297,
+        "record_path": "quality-librispeech_1089-134686-0011-pml-utmos_v2.json"
+      },
+      {
+        "record_id": "librispeech_1089-134686-0032",
+        "branch": "F_d1",
+        "metric": "ecapa_cosine",
+        "direction": "higher",
+        "sample_rate": 16000,
+        "interval_start_sample": 0,
+        "scored_samples": 65280,
+        "scope": "fixed_common_prefix",
+        "status": "measured",
+        "value": 0.8918949961662292,
+        "record_path": "quality-librispeech_1089-134686-0032-F_d1-ecapa_cosine.json"
+      },
+      {
+        "record_id": "librispeech_1089-134686-0032",
+        "branch": "F_d1",
+        "metric": "estoi",
+        "direction": "higher",
+        "sample_rate": 16000,
+        "interval_start_sample": 0,
+        "scored_samples": 65280,
+        "scope": "明瞭性の推定。MOS・自然性・話者類似度ではない",
+        "status": "measured",
+        "value": 0.8946128092869208,
+        "record_path": "quality-librispeech_1089-134686-0032-F_d1-estoi.json"
+      },
+      {
+        "record_id": "librispeech_1089-134686-0032",
+        "branch": "F_d1",
+        "metric": "scoreq_natural",
+        "direction": "lower",
+        "sample_rate": 16000,
+        "interval_start_sample": 0,
+        "scored_samples": 65280,
+        "scope": "fixed_common_prefix",
+        "status": "measured",
+        "value": 0.4907604157924652,
+        "record_path": "quality-librispeech_1089-134686-0032-F_d1-scoreq_natural.json"
+      },
+      {
+        "record_id": "librispeech_1089-134686-0032",
+        "branch": "F_d1",
+        "metric": "utmos_v2",
+        "direction": "higher",
+        "sample_rate": 16000,
+        "interval_start_sample": 0,
+        "scored_samples": 65440,
+        "scope": "full_saved_native",
+        "status": "measured",
+        "value": 3.130828619003296,
+        "record_path": "quality-librispeech_1089-134686-0032-F_d1-utmos_v2.json"
+      },
+      {
+        "record_id": "librispeech_1089-134686-0032",
+        "branch": "L_d1",
+        "metric": "ecapa_cosine",
+        "direction": "higher",
+        "sample_rate": 16000,
+        "interval_start_sample": 0,
+        "scored_samples": 65280,
+        "scope": "fixed_common_prefix",
+        "status": "measured",
+        "value": 0.8846079707145691,
+        "record_path": "quality-librispeech_1089-134686-0032-L_d1-ecapa_cosine.json"
+      },
+      {
+        "record_id": "librispeech_1089-134686-0032",
+        "branch": "L_d1",
+        "metric": "estoi",
+        "direction": "higher",
+        "sample_rate": 16000,
+        "interval_start_sample": 0,
+        "scored_samples": 65280,
+        "scope": "明瞭性の推定。MOS・自然性・話者類似度ではない",
+        "status": "measured",
+        "value": 0.8993005166487993,
+        "record_path": "quality-librispeech_1089-134686-0032-L_d1-estoi.json"
+      },
+      {
+        "record_id": "librispeech_1089-134686-0032",
+        "branch": "L_d1",
+        "metric": "scoreq_natural",
+        "direction": "lower",
+        "sample_rate": 16000,
+        "interval_start_sample": 0,
+        "scored_samples": 65280,
+        "scope": "fixed_common_prefix",
+        "status": "measured",
+        "value": 0.4808524549007416,
+        "record_path": "quality-librispeech_1089-134686-0032-L_d1-scoreq_natural.json"
+      },
+      {
+        "record_id": "librispeech_1089-134686-0032",
+        "branch": "L_d1",
+        "metric": "utmos_v2",
+        "direction": "higher",
+        "sample_rate": 16000,
+        "interval_start_sample": 0,
+        "scored_samples": 65440,
+        "scope": "full_saved_native",
+        "status": "measured",
+        "value": 3.3061683177948,
+        "record_path": "quality-librispeech_1089-134686-0032-L_d1-utmos_v2.json"
+      },
+      {
+        "record_id": "librispeech_1089-134686-0032",
+        "branch": "R_d1",
+        "metric": "ecapa_cosine",
+        "direction": "higher",
+        "sample_rate": 16000,
+        "interval_start_sample": 0,
+        "scored_samples": 65280,
+        "scope": "fixed_common_prefix",
+        "status": "measured",
+        "value": 0.9315820932388306,
+        "record_path": "quality-librispeech_1089-134686-0032-R_d1-ecapa_cosine.json"
+      },
+      {
+        "record_id": "librispeech_1089-134686-0032",
+        "branch": "R_d1",
+        "metric": "estoi",
+        "direction": "higher",
+        "sample_rate": 16000,
+        "interval_start_sample": 0,
+        "scored_samples": 65280,
+        "scope": "明瞭性の推定。MOS・自然性・話者類似度ではない",
+        "status": "measured",
+        "value": 0.924113755851536,
+        "record_path": "quality-librispeech_1089-134686-0032-R_d1-estoi.json"
+      },
+      {
+        "record_id": "librispeech_1089-134686-0032",
+        "branch": "R_d1",
+        "metric": "scoreq_natural",
+        "direction": "lower",
+        "sample_rate": 16000,
+        "interval_start_sample": 0,
+        "scored_samples": 65280,
+        "scope": "fixed_common_prefix",
+        "status": "measured",
+        "value": 0.375702828168869,
+        "record_path": "quality-librispeech_1089-134686-0032-R_d1-scoreq_natural.json"
+      },
+      {
+        "record_id": "librispeech_1089-134686-0032",
+        "branch": "R_d1",
+        "metric": "utmos_v2",
+        "direction": "higher",
+        "sample_rate": 16000,
+        "interval_start_sample": 0,
+        "scored_samples": 65440,
+        "scope": "full_saved_native",
+        "status": "measured",
+        "value": 3.6870055198669434,
+        "record_path": "quality-librispeech_1089-134686-0032-R_d1-utmos_v2.json"
+      },
+      {
+        "record_id": "librispeech_1089-134686-0032",
+        "branch": "original",
+        "metric": "utmos_v2",
+        "direction": "higher",
+        "sample_rate": 16000,
+        "interval_start_sample": 0,
+        "scored_samples": 65440,
+        "scope": "full_saved_original_reference_only",
+        "status": "measured",
+        "value": 4.574299335479736,
+        "record_path": "quality-librispeech_1089-134686-0032-original-utmos_v2.json"
+      },
+      {
+        "record_id": "librispeech_1089-134686-0032",
+        "branch": "pml",
+        "metric": "ecapa_cosine",
+        "direction": "higher",
+        "sample_rate": 16000,
+        "interval_start_sample": 0,
+        "scored_samples": 65280,
+        "scope": "fixed_common_prefix",
+        "status": "measured",
+        "value": 0.9351053237915039,
+        "record_path": "quality-librispeech_1089-134686-0032-pml-ecapa_cosine.json"
+      },
+      {
+        "record_id": "librispeech_1089-134686-0032",
+        "branch": "pml",
+        "metric": "estoi",
+        "direction": "higher",
+        "sample_rate": 16000,
+        "interval_start_sample": 0,
+        "scored_samples": 65280,
+        "scope": "明瞭性の推定。MOS・自然性・話者類似度ではない",
+        "status": "measured",
+        "value": 0.9241683586547452,
+        "record_path": "quality-librispeech_1089-134686-0032-pml-estoi.json"
+      },
+      {
+        "record_id": "librispeech_1089-134686-0032",
+        "branch": "pml",
+        "metric": "scoreq_natural",
+        "direction": "lower",
+        "sample_rate": 16000,
+        "interval_start_sample": 0,
+        "scored_samples": 65280,
+        "scope": "fixed_common_prefix",
+        "status": "measured",
+        "value": 0.3546605408191681,
+        "record_path": "quality-librispeech_1089-134686-0032-pml-scoreq_natural.json"
+      },
+      {
+        "record_id": "librispeech_1089-134686-0032",
+        "branch": "pml",
+        "metric": "utmos_v2",
+        "direction": "higher",
+        "sample_rate": 16000,
+        "interval_start_sample": 0,
+        "scored_samples": 65440,
+        "scope": "full_saved_native",
+        "status": "measured",
+        "value": 3.5099804401397705,
+        "record_path": "quality-librispeech_1089-134686-0032-pml-utmos_v2.json"
+      }
+    ],
+    "warning_count": 52,
+    "v1": {
+      "actual_exit_code": 1,
+      "measured_values": 0,
+      "reason": "platform.platform() attempted a subprocess forbidden by that task"
+    },
+    "v1_source": "parent report; failed original retained outside this publication",
+    "v2": {
+      "status": "quality_succeeded",
+      "actual_exit_code": 0,
+      "source_version": "pml-d1-post-quality-v2-20261021",
+      "change": "environment metadata uses os.uname; no scientific parameter change (parent report)"
+    },
+    "execution_evidence": "quality-execution-evidence.json",
+    "events": "quality-events.json",
+    "paired_differences": "paired-differences.json"
+  },
+  "execution_evidence": "execution-evidence.json",
+  "audit_evidence": "independent-audit-verdict.json",
+  "new_native_succeeded": 9,
+  "new_native_planned": 9,
+  "pml_prior_byte_reused": 3,
+  "old_iir_L_F_status": "failed unchanged; old B and 117 expansion remain stopped",
+  "timing_scope": "received raw F0 onward only; old pml timing is historical; no speed comparison",
+  "audio_manifest": "audio-manifest.json"
+}
