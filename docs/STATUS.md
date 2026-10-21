@@ -1,5 +1,11 @@
 # 現在の状態と次の作業
 
+## ACG音声の品質63値を記録し、PMLを維持（2026-10-21）
+
+[品質run-002（Pages）](https://hiroshiba.github.io/check-nonml-saikyo-vocoder/experiments/2026-10-21/pml-ar1-three-atom-residual/results/run-002/index.html)に、新規24値・条件照合済み引用39値と48対応差をまとめました。PML比では新L/Fの全6枝でECAPA・eSTOIが低く、SCOREQ距離が高い方向です。UTMOSは0008・0011で低く、0032で高く、従来AR3との変化も混在しました。正式ベースはPMLを維持します。
+
+独立確認9項目はすべて通過し、終了コード0・捕捉警告25件と全出力を記録しています。同一話者3録音の固定区間内の比較で、原値による録音・指標別順位を示し、原音は順位外としました。18短音声は既存JSONを参照し、旧75品質値・21音声・日時は保持しています。PMLとの差をACG密度だけの原因とせず、一般化・音高精度・有意差・採用を主張しません。過去のv2起動前停止とv3保持不確実は別の履歴として残します。以下は以前の記録です。
+
 ## 得点定義による保存F0の変更を、47明細の補助診断として記録（2026-10-21）
 
 [保存配列診断のレポート（Pages）](https://hiroshiba.github.io/check-nonml-saikyo-vocoder/experiments/2026-10-21/pml-ar1-three-atom-residual/results/saved-raw-f0-changes-v1/index.html)に、旧AR3との操作上の有声→無声6件・双方有声の音高変更41件を記録しました。枝別47明細はL/F重複を除く41時点で、双方有声41件中26件は局所首位が同じです。独立照合117項目はすべて通過し、原値・全診断ログ・監査範囲と参考18短音声へ案内します。

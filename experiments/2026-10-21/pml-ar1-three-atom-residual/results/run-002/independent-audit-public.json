@@ -1,0 +1,723 @@
+{
+  "original": {
+    "library_file_id": "libfile_a73f0531a5e48191837bf99838f8534a",
+    "version": 0,
+    "bytes": 28917,
+    "sha256": "63cc98cf38c1860f0bfd9adb1a280f3df615ac4b7050921a5a4d13bc3eb81e39"
+  },
+  "conversion": "JSON projection; local absolute paths replaced; original fields, nine verdicts and all numerical comparisons retained",
+  "audit": {
+    "schema_version": 1,
+    "kind": "independent_saved_quality_wrapper_v1_audit",
+    "verdict": "passed",
+    "scope": "Saved bytes, metadata, completed run receipts, native waveforms and scored PCM prefixes; no evaluator/model inference or audio regeneration.",
+    "official_inputs": {
+      "new_outer": {
+        "library_file_id": "libfile_7b32c8a58e30819181fff2bdaa8e2e37",
+        "version": 0,
+        "bytes": 497208,
+        "sha256": "0ac8857df552fb6cd0dc94839722e1680d43bbb7e772e136c2c4b65321ccbc1f"
+      },
+      "old_quality_delivery": {
+        "library_file_id": "libfile_532baca8ee8c8191976a6f33cd83d747",
+        "version": 0,
+        "bytes": 1639524,
+        "sha256": "5dce01de9179396037c9afeec5ad9450fce0205ad2eb97df1dee8f94cdd660d8"
+      },
+      "quality_source_v2": {
+        "library_file_id": "libfile_a3d64476504081918ae330a00b9ea59d",
+        "version": 0,
+        "bytes": 350634,
+        "sha256": "be011acc883abf65ff06940dc3c017b369f6dd4db47cab03d482752af189f22c"
+      },
+      "old_ar3_delivery": {
+        "library_file_id": "libfile_a244bfdf237481919e016453b40ec273",
+        "version": 0,
+        "bytes": 41442909,
+        "sha256": "dcbcc49b9cffcded4188adcb32bf61c068344ebf767c76c8bb3591de0506fbe2"
+      },
+      "new_native_v4_outer": {
+        "library_file_id": "libfile_5dff74897fc081918aff3fface24c083",
+        "version": 0,
+        "bytes": 20928120,
+        "sha256": "f51fdf9c0e1b1be3f9f2010b23a3267e13dedd32a921b717b61e8b3ce66d6da1"
+      }
+    },
+    "archive_manifests": {
+      "new_outer": {
+        "members": 5,
+        "verified_payload_members": 4,
+        "manifest_sha256": "0a6bbc1e9cc8346611ed56e957c30662b324662a1cd682eb8d17f628914d36f5"
+      },
+      "old_quality_delivery": {
+        "members": 6,
+        "verified_payload_members": 5,
+        "manifest_sha256": "6cd12c9ddca0a7ef0d92253a09aaf122e8d044a26e8d087cc7a8a3f36e1a0a1f"
+      },
+      "old_native_delivery": {
+        "members": 6,
+        "verified_payload_members": 5,
+        "manifest_sha256": "a16b466327f0928da32bdd03f03cc403109b2e8851d39348dda0ea957b354fd6"
+      },
+      "v4_outer": {
+        "members": 19,
+        "verified_payload_members": 18,
+        "manifest_sha256": "91eea951298e1aae767ed94d936207f243e47f936aab44127d803c5774d43ebf"
+      },
+      "source_v2": {
+        "members": 34,
+        "verified_payload_members": 33,
+        "manifest_sha256": "024375527ed195a7d918949a13785b57befeb73f9107288076e0bfa41bf77f0c"
+      },
+      "v2_receipt": {
+        "members": 18,
+        "verified_payload_members": 17,
+        "manifest_sha256": "2da4aa3cf6d4964d3c91c982765f7d428f0f169a84fe6175cef421ccb04cd527"
+      },
+      "old_quality": {
+        "members": 92,
+        "verified_payload_members": 91,
+        "manifest_sha256": "16cc0c0cc6301e910fa4112393f443dc16e1e9c0b488e428ce85d6256f27d967"
+      },
+      "old_native": {
+        "members": 266,
+        "verified_payload_members": 265,
+        "manifest_sha256": "f98a520bc9ec7fcf4df8568f5031b08a34406363f50a71f9a0caba7d50ceb29e"
+      },
+      "v4_delivery": {
+        "members": 12,
+        "verified_payload_members": 11,
+        "manifest_sha256": "6206fc2800c57dcde46c0c149a0ae4e548f52866876a6cc33995e9b2cf10aacd"
+      },
+      "quality": {
+        "members": 48,
+        "verified_payload_members": 47,
+        "manifest_sha256": "8231d107001b7390792fbc4c466e6c6b0b923eff5b9c71e8f27735bae8c4cf4d"
+      },
+      "v4_native": {
+        "members": 184,
+        "verified_payload_members": 183,
+        "manifest_sha256": "89945af2b0b17edb26dd02462e94d4d2277c70e3e55a1d4bc9029e5f8da5cd55"
+      },
+      "prior_delivery": {
+        "members": 6,
+        "verified_payload_members": 5,
+        "manifest_sha256": "d08ef169bd039f5c9976095196fcbc504550db941dbc743f5fc8ef46d10f6104"
+      },
+      "prior_native": {
+        "members": 204,
+        "verified_payload_members": 203,
+        "manifest_sha256": "738d265e054bd955c24fa29abdd582c290e9d60f93b8709d54c514d93303249f"
+      }
+    },
+    "wrapper": {
+      "saved_bytes": 75,
+      "sha256": "7a6f1a73d060aac9b7cdfaa9112600a70a594fa5d8c108800e793e09fd1a4ee2",
+      "pre_post_attested_mode": "0700",
+      "caveat": "Original launch-time filesystem mode/interpreter binary was attested in retained receipts; this audit directly checked saved wrapper bytes and receipt agreement."
+    },
+    "execution": {
+      "external_exit": 0,
+      "launcher_child_exit": 0,
+      "reaped_by_external_recorder": true,
+      "reaped_by_launcher": true,
+      "wall_seconds": 72.17374358099914,
+      "max_rss_kib": 2034916,
+      "new_measured": 24,
+      "old_quoted_verified": 39,
+      "ledger_total": 63
+    },
+    "warnings": {
+      "count": 25,
+      "categories": {
+        "UserWarning": 16,
+        "FutureWarning": 9
+      },
+      "events_jsonl_sha256": "738ff380812fec38c7473ca6552998f5278e61be0f2329943b8651cd90b27c14",
+      "all_warning_events": [
+        {
+          "utc": "2026-10-21T14:25:31.828245+00:00",
+          "stage": "initialize_utmos_v2",
+          "record": null,
+          "branch": null,
+          "notice": "warning",
+          "category": "UserWarning",
+          "message": "Passing `gradient_checkpointing` to a config initialization is deprecated and will be removed in v5 Transformers. Using `model.gradient_checkpointing_enable()` instead, or if you are using the `Trainer` API, pass `gradient_checkpointing=True` in your `TrainingArguments`.",
+          "filename": "[local]/configuration_utils.py",
+          "lineno": 311
+        },
+        {
+          "utc": "2026-10-21T14:25:31.829789+00:00",
+          "stage": "initialize_utmos_v2",
+          "record": null,
+          "branch": null,
+          "notice": "warning",
+          "category": "UserWarning",
+          "message": "Passing `gradient_checkpointing` to a config initialization is deprecated and will be removed in v5 Transformers. Using `model.gradient_checkpointing_enable()` instead, or if you are using the `Trainer` API, pass `gradient_checkpointing=True` in your `TrainingArguments`.",
+          "filename": "[local]/configuration_utils.py",
+          "lineno": 311
+        },
+        {
+          "utc": "2026-10-21T14:25:35.000424+00:00",
+          "stage": "score_utmos_v2",
+          "record": "librispeech_1089-134686-0008",
+          "branch": "L_acg_d1",
+          "notice": "warning",
+          "category": "UserWarning",
+          "message": "'pin_memory' argument is set as true but no accelerator is found, then device pinned memory won't be used.",
+          "filename": "[local]/dataloader.py",
+          "lineno": 666
+        },
+        {
+          "utc": "2026-10-21T14:25:54.282060+00:00",
+          "stage": "score_utmos_v2",
+          "record": "librispeech_1089-134686-0008",
+          "branch": "L_acg_d1",
+          "notice": "warning",
+          "category": "FutureWarning",
+          "message": "`torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.",
+          "filename": "[local]/_common.py",
+          "lineno": 290
+        },
+        {
+          "utc": "2026-10-21T14:25:54.283310+00:00",
+          "stage": "score_utmos_v2",
+          "record": "librispeech_1089-134686-0008",
+          "branch": "L_acg_d1",
+          "notice": "warning",
+          "category": "UserWarning",
+          "message": "User provided device_type of 'cuda', but CUDA is not available. Disabling",
+          "filename": "[local]/autocast_mode.py",
+          "lineno": 266
+        },
+        {
+          "utc": "2026-10-21T14:25:57.783093+00:00",
+          "stage": "score_utmos_v2",
+          "record": "librispeech_1089-134686-0008",
+          "branch": "F_acg_d1",
+          "notice": "warning",
+          "category": "UserWarning",
+          "message": "'pin_memory' argument is set as true but no accelerator is found, then device pinned memory won't be used.",
+          "filename": "[local]/dataloader.py",
+          "lineno": 666
+        },
+        {
+          "utc": "2026-10-21T14:25:58.413752+00:00",
+          "stage": "score_utmos_v2",
+          "record": "librispeech_1089-134686-0008",
+          "branch": "F_acg_d1",
+          "notice": "warning",
+          "category": "FutureWarning",
+          "message": "`torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.",
+          "filename": "[local]/_common.py",
+          "lineno": 290
+        },
+        {
+          "utc": "2026-10-21T14:25:58.415263+00:00",
+          "stage": "score_utmos_v2",
+          "record": "librispeech_1089-134686-0008",
+          "branch": "F_acg_d1",
+          "notice": "warning",
+          "category": "UserWarning",
+          "message": "User provided device_type of 'cuda', but CUDA is not available. Disabling",
+          "filename": "[local]/autocast_mode.py",
+          "lineno": 266
+        },
+        {
+          "utc": "2026-10-21T14:26:01.268680+00:00",
+          "stage": "score_utmos_v2",
+          "record": "librispeech_1089-134686-0011",
+          "branch": "L_acg_d1",
+          "notice": "warning",
+          "category": "UserWarning",
+          "message": "'pin_memory' argument is set as true but no accelerator is found, then device pinned memory won't be used.",
+          "filename": "[local]/dataloader.py",
+          "lineno": 666
+        },
+        {
+          "utc": "2026-10-21T14:26:01.832522+00:00",
+          "stage": "score_utmos_v2",
+          "record": "librispeech_1089-134686-0011",
+          "branch": "L_acg_d1",
+          "notice": "warning",
+          "category": "FutureWarning",
+          "message": "`torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.",
+          "filename": "[local]/_common.py",
+          "lineno": 290
+        },
+        {
+          "utc": "2026-10-21T14:26:01.834038+00:00",
+          "stage": "score_utmos_v2",
+          "record": "librispeech_1089-134686-0011",
+          "branch": "L_acg_d1",
+          "notice": "warning",
+          "category": "UserWarning",
+          "message": "User provided device_type of 'cuda', but CUDA is not available. Disabling",
+          "filename": "[local]/autocast_mode.py",
+          "lineno": 266
+        },
+        {
+          "utc": "2026-10-21T14:26:05.032973+00:00",
+          "stage": "score_utmos_v2",
+          "record": "librispeech_1089-134686-0011",
+          "branch": "F_acg_d1",
+          "notice": "warning",
+          "category": "UserWarning",
+          "message": "'pin_memory' argument is set as true but no accelerator is found, then device pinned memory won't be used.",
+          "filename": "[local]/dataloader.py",
+          "lineno": 666
+        },
+        {
+          "utc": "2026-10-21T14:26:05.626210+00:00",
+          "stage": "score_utmos_v2",
+          "record": "librispeech_1089-134686-0011",
+          "branch": "F_acg_d1",
+          "notice": "warning",
+          "category": "FutureWarning",
+          "message": "`torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.",
+          "filename": "[local]/_common.py",
+          "lineno": 290
+        },
+        {
+          "utc": "2026-10-21T14:26:05.627443+00:00",
+          "stage": "score_utmos_v2",
+          "record": "librispeech_1089-134686-0011",
+          "branch": "F_acg_d1",
+          "notice": "warning",
+          "category": "UserWarning",
+          "message": "User provided device_type of 'cuda', but CUDA is not available. Disabling",
+          "filename": "[local]/autocast_mode.py",
+          "lineno": 266
+        },
+        {
+          "utc": "2026-10-21T14:26:08.758629+00:00",
+          "stage": "score_utmos_v2",
+          "record": "librispeech_1089-134686-0032",
+          "branch": "L_acg_d1",
+          "notice": "warning",
+          "category": "UserWarning",
+          "message": "'pin_memory' argument is set as true but no accelerator is found, then device pinned memory won't be used.",
+          "filename": "[local]/dataloader.py",
+          "lineno": 666
+        },
+        {
+          "utc": "2026-10-21T14:26:09.432455+00:00",
+          "stage": "score_utmos_v2",
+          "record": "librispeech_1089-134686-0032",
+          "branch": "L_acg_d1",
+          "notice": "warning",
+          "category": "FutureWarning",
+          "message": "`torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.",
+          "filename": "[local]/_common.py",
+          "lineno": 290
+        },
+        {
+          "utc": "2026-10-21T14:26:09.433913+00:00",
+          "stage": "score_utmos_v2",
+          "record": "librispeech_1089-134686-0032",
+          "branch": "L_acg_d1",
+          "notice": "warning",
+          "category": "UserWarning",
+          "message": "User provided device_type of 'cuda', but CUDA is not available. Disabling",
+          "filename": "[local]/autocast_mode.py",
+          "lineno": 266
+        },
+        {
+          "utc": "2026-10-21T14:26:12.280437+00:00",
+          "stage": "score_utmos_v2",
+          "record": "librispeech_1089-134686-0032",
+          "branch": "F_acg_d1",
+          "notice": "warning",
+          "category": "UserWarning",
+          "message": "'pin_memory' argument is set as true but no accelerator is found, then device pinned memory won't be used.",
+          "filename": "[local]/dataloader.py",
+          "lineno": 666
+        },
+        {
+          "utc": "2026-10-21T14:26:12.914069+00:00",
+          "stage": "score_utmos_v2",
+          "record": "librispeech_1089-134686-0032",
+          "branch": "F_acg_d1",
+          "notice": "warning",
+          "category": "FutureWarning",
+          "message": "`torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.",
+          "filename": "[local]/_common.py",
+          "lineno": 290
+        },
+        {
+          "utc": "2026-10-21T14:26:12.915597+00:00",
+          "stage": "score_utmos_v2",
+          "record": "librispeech_1089-134686-0032",
+          "branch": "F_acg_d1",
+          "notice": "warning",
+          "category": "UserWarning",
+          "message": "User provided device_type of 'cuda', but CUDA is not available. Disabling",
+          "filename": "[local]/autocast_mode.py",
+          "lineno": 266
+        },
+        {
+          "utc": "2026-10-21T14:26:26.991297+00:00",
+          "stage": "initialize_ecapa_cosine",
+          "record": null,
+          "branch": null,
+          "notice": "warning",
+          "category": "UserWarning",
+          "message": "torchaudio._backend.list_audio_backends has been deprecated. This deprecation is part of a large refactoring effort to transition TorchAudio into a maintenance phase. The decoding and encoding capabilities of PyTorch for both audio and video are being consolidated into TorchCodec. Please see https://github.com/pytorch/audio/issues/3902 for more information. It will be removed from the 2.9 release. ",
+          "filename": "[local]/torch_audio_backend.py",
+          "lineno": 57
+        },
+        {
+          "utc": "2026-10-21T14:26:27.039168+00:00",
+          "stage": "initialize_ecapa_cosine",
+          "record": null,
+          "branch": null,
+          "notice": "warning",
+          "category": "UserWarning",
+          "message": "torchaudio._backend.list_audio_backends has been deprecated. This deprecation is part of a large refactoring effort to transition TorchAudio into a maintenance phase. The decoding and encoding capabilities of PyTorch for both audio and video are being consolidated into TorchCodec. Please see https://github.com/pytorch/audio/issues/3902 for more information. It will be removed from the 2.9 release. ",
+          "filename": "[local]/torch_audio_backend.py",
+          "lineno": 57
+        },
+        {
+          "utc": "2026-10-21T14:26:27.064092+00:00",
+          "stage": "initialize_ecapa_cosine",
+          "record": null,
+          "branch": null,
+          "notice": "warning",
+          "category": "FutureWarning",
+          "message": "`torch.cuda.amp.custom_fwd(args...)` is deprecated. Please use `torch.amp.custom_fwd(args..., device_type='cuda')` instead.",
+          "filename": "[local]/autocast.py",
+          "lineno": 188
+        },
+        {
+          "utc": "2026-10-21T14:26:27.064905+00:00",
+          "stage": "initialize_ecapa_cosine",
+          "record": null,
+          "branch": null,
+          "notice": "warning",
+          "category": "FutureWarning",
+          "message": "`torch.cuda.amp.custom_fwd(args...)` is deprecated. Please use `torch.amp.custom_fwd(args..., device_type='cuda')` instead.",
+          "filename": "[local]/autocast.py",
+          "lineno": 188
+        },
+        {
+          "utc": "2026-10-21T14:26:27.065599+00:00",
+          "stage": "initialize_ecapa_cosine",
+          "record": null,
+          "branch": null,
+          "notice": "warning",
+          "category": "FutureWarning",
+          "message": "`torch.cuda.amp.custom_fwd(args...)` is deprecated. Please use `torch.amp.custom_fwd(args..., device_type='cuda')` instead.",
+          "filename": "[local]/autocast.py",
+          "lineno": 188
+        }
+      ]
+    },
+    "checks": {
+      "all_nested_manifest_members_verified": true,
+      "source_v2_33_files_staged": true,
+      "planned_actual_argv_equal": true,
+      "all_stream_bytes_sha_complete": true,
+      "pre_science_input_identity_and_evaluator_AST_pin": true,
+      "new_24_saved_waveform_and_pcm_prefixes": true,
+      "cited_39_old_row_bytes_and_pcm_prefixes": true,
+      "paired_record_metric_interval_reference_conditions": true,
+      "dependency_thread_and_asset_pins_match": true
+    },
+    "comparisons": [
+      {
+        "record_id": "librispeech_1089-134686-0008",
+        "branch": "L",
+        "metric": "utmos_v2",
+        "direction": "higher",
+        "new_acg": 2.8632519245147705,
+        "old_ar3": 2.674614906311035,
+        "formal_pml": 3.2559711933135986,
+        "delta_acg_minus_old_ar3": 0.18863701820373535,
+        "delta_acg_minus_pml": -0.3927192687988281,
+        "scored_samples": 96000
+      },
+      {
+        "record_id": "librispeech_1089-134686-0008",
+        "branch": "L",
+        "metric": "scoreq_natural",
+        "direction": "lower",
+        "new_acg": 0.49802595376968384,
+        "old_ar3": 0.5376504063606262,
+        "formal_pml": 0.3142026662826538,
+        "delta_acg_minus_old_ar3": -0.03962445259094238,
+        "delta_acg_minus_pml": 0.18382328748703003,
+        "scored_samples": 95840
+      },
+      {
+        "record_id": "librispeech_1089-134686-0008",
+        "branch": "L",
+        "metric": "ecapa_cosine",
+        "direction": "higher",
+        "new_acg": 0.9087617993354797,
+        "old_ar3": 0.9124236106872559,
+        "formal_pml": 0.9518733024597168,
+        "delta_acg_minus_old_ar3": -0.003661811351776123,
+        "delta_acg_minus_pml": -0.04311150312423706,
+        "scored_samples": 95840
+      },
+      {
+        "record_id": "librispeech_1089-134686-0008",
+        "branch": "L",
+        "metric": "estoi",
+        "direction": "higher",
+        "new_acg": 0.8914054675113148,
+        "old_ar3": 0.8917437085171251,
+        "formal_pml": 0.9225710361778331,
+        "delta_acg_minus_old_ar3": -0.0003382410058103691,
+        "delta_acg_minus_pml": -0.031165568666518317,
+        "scored_samples": 95840
+      },
+      {
+        "record_id": "librispeech_1089-134686-0008",
+        "branch": "F",
+        "metric": "utmos_v2",
+        "direction": "higher",
+        "new_acg": 3.1696665287017822,
+        "old_ar3": 2.83148455619812,
+        "formal_pml": 3.2559711933135986,
+        "delta_acg_minus_old_ar3": 0.3381819725036621,
+        "delta_acg_minus_pml": -0.0863046646118164,
+        "scored_samples": 96000
+      },
+      {
+        "record_id": "librispeech_1089-134686-0008",
+        "branch": "F",
+        "metric": "scoreq_natural",
+        "direction": "lower",
+        "new_acg": 0.48229482769966125,
+        "old_ar3": 0.4560498297214508,
+        "formal_pml": 0.3142026662826538,
+        "delta_acg_minus_old_ar3": 0.02624499797821045,
+        "delta_acg_minus_pml": 0.16809216141700745,
+        "scored_samples": 95840
+      },
+      {
+        "record_id": "librispeech_1089-134686-0008",
+        "branch": "F",
+        "metric": "ecapa_cosine",
+        "direction": "higher",
+        "new_acg": 0.9048340916633606,
+        "old_ar3": 0.9068265557289124,
+        "formal_pml": 0.9518733024597168,
+        "delta_acg_minus_old_ar3": -0.001992464065551758,
+        "delta_acg_minus_pml": -0.0470392107963562,
+        "scored_samples": 95840
+      },
+      {
+        "record_id": "librispeech_1089-134686-0008",
+        "branch": "F",
+        "metric": "estoi",
+        "direction": "higher",
+        "new_acg": 0.9002885100727965,
+        "old_ar3": 0.9002706853285306,
+        "formal_pml": 0.9225710361778331,
+        "delta_acg_minus_old_ar3": 1.7824744265926284e-05,
+        "delta_acg_minus_pml": -0.02228252610503656,
+        "scored_samples": 95840
+      },
+      {
+        "record_id": "librispeech_1089-134686-0011",
+        "branch": "L",
+        "metric": "utmos_v2",
+        "direction": "higher",
+        "new_acg": 2.9734349250793457,
+        "old_ar3": 2.882662534713745,
+        "formal_pml": 3.2830944061279297,
+        "delta_acg_minus_old_ar3": 0.09077239036560059,
+        "delta_acg_minus_pml": -0.309659481048584,
+        "scored_samples": 96000
+      },
+      {
+        "record_id": "librispeech_1089-134686-0011",
+        "branch": "L",
+        "metric": "scoreq_natural",
+        "direction": "lower",
+        "new_acg": 0.7878941297531128,
+        "old_ar3": 0.67181396484375,
+        "formal_pml": 0.3354029059410095,
+        "delta_acg_minus_old_ar3": 0.11608016490936279,
+        "delta_acg_minus_pml": 0.45249122381210327,
+        "scored_samples": 95840
+      },
+      {
+        "record_id": "librispeech_1089-134686-0011",
+        "branch": "L",
+        "metric": "ecapa_cosine",
+        "direction": "higher",
+        "new_acg": 0.9081317782402039,
+        "old_ar3": 0.8985853791236877,
+        "formal_pml": 0.9255818128585815,
+        "delta_acg_minus_old_ar3": 0.009546399116516113,
+        "delta_acg_minus_pml": -0.017450034618377686,
+        "scored_samples": 95840
+      },
+      {
+        "record_id": "librispeech_1089-134686-0011",
+        "branch": "L",
+        "metric": "estoi",
+        "direction": "higher",
+        "new_acg": 0.8527596222392451,
+        "old_ar3": 0.8519678028607688,
+        "formal_pml": 0.9071610141502287,
+        "delta_acg_minus_old_ar3": 0.0007918193784762773,
+        "delta_acg_minus_pml": -0.05440139191098359,
+        "scored_samples": 95840
+      },
+      {
+        "record_id": "librispeech_1089-134686-0011",
+        "branch": "F",
+        "metric": "utmos_v2",
+        "direction": "higher",
+        "new_acg": 2.909515380859375,
+        "old_ar3": 3.3566935062408447,
+        "formal_pml": 3.2830944061279297,
+        "delta_acg_minus_old_ar3": -0.4471781253814697,
+        "delta_acg_minus_pml": -0.3735790252685547,
+        "scored_samples": 96000
+      },
+      {
+        "record_id": "librispeech_1089-134686-0011",
+        "branch": "F",
+        "metric": "scoreq_natural",
+        "direction": "lower",
+        "new_acg": 0.785088062286377,
+        "old_ar3": 0.7645208239555359,
+        "formal_pml": 0.3354029059410095,
+        "delta_acg_minus_old_ar3": 0.020567238330841064,
+        "delta_acg_minus_pml": 0.44968515634536743,
+        "scored_samples": 95840
+      },
+      {
+        "record_id": "librispeech_1089-134686-0011",
+        "branch": "F",
+        "metric": "ecapa_cosine",
+        "direction": "higher",
+        "new_acg": 0.9064099788665771,
+        "old_ar3": 0.9073574542999268,
+        "formal_pml": 0.9255818128585815,
+        "delta_acg_minus_old_ar3": -0.0009474754333496094,
+        "delta_acg_minus_pml": -0.019171833992004395,
+        "scored_samples": 95840
+      },
+      {
+        "record_id": "librispeech_1089-134686-0011",
+        "branch": "F",
+        "metric": "estoi",
+        "direction": "higher",
+        "new_acg": 0.8496619507942184,
+        "old_ar3": 0.8523672223635862,
+        "formal_pml": 0.9071610141502287,
+        "delta_acg_minus_old_ar3": -0.0027052715693678397,
+        "delta_acg_minus_pml": -0.057499063356010294,
+        "scored_samples": 95840
+      },
+      {
+        "record_id": "librispeech_1089-134686-0032",
+        "branch": "L",
+        "metric": "utmos_v2",
+        "direction": "higher",
+        "new_acg": 3.868682384490967,
+        "old_ar3": 3.832148313522339,
+        "formal_pml": 3.5099804401397705,
+        "delta_acg_minus_old_ar3": 0.03653407096862793,
+        "delta_acg_minus_pml": 0.3587019443511963,
+        "scored_samples": 65440
+      },
+      {
+        "record_id": "librispeech_1089-134686-0032",
+        "branch": "L",
+        "metric": "scoreq_natural",
+        "direction": "lower",
+        "new_acg": 0.44271257519721985,
+        "old_ar3": 0.4544063210487366,
+        "formal_pml": 0.3546605408191681,
+        "delta_acg_minus_old_ar3": -0.011693745851516724,
+        "delta_acg_minus_pml": 0.08805203437805176,
+        "scored_samples": 65280
+      },
+      {
+        "record_id": "librispeech_1089-134686-0032",
+        "branch": "L",
+        "metric": "ecapa_cosine",
+        "direction": "higher",
+        "new_acg": 0.9211142063140869,
+        "old_ar3": 0.9178466796875,
+        "formal_pml": 0.9351053237915039,
+        "delta_acg_minus_old_ar3": 0.003267526626586914,
+        "delta_acg_minus_pml": -0.013991117477416992,
+        "scored_samples": 65280
+      },
+      {
+        "record_id": "librispeech_1089-134686-0032",
+        "branch": "L",
+        "metric": "estoi",
+        "direction": "higher",
+        "new_acg": 0.9202818283760978,
+        "old_ar3": 0.9212648784366863,
+        "formal_pml": 0.9241683586547452,
+        "delta_acg_minus_old_ar3": -0.0009830500605884085,
+        "delta_acg_minus_pml": -0.003886530278647382,
+        "scored_samples": 65280
+      },
+      {
+        "record_id": "librispeech_1089-134686-0032",
+        "branch": "F",
+        "metric": "utmos_v2",
+        "direction": "higher",
+        "new_acg": 3.5511767864227295,
+        "old_ar3": 3.5622782707214355,
+        "formal_pml": 3.5099804401397705,
+        "delta_acg_minus_old_ar3": -0.011101484298706055,
+        "delta_acg_minus_pml": 0.041196346282958984,
+        "scored_samples": 65440
+      },
+      {
+        "record_id": "librispeech_1089-134686-0032",
+        "branch": "F",
+        "metric": "scoreq_natural",
+        "direction": "lower",
+        "new_acg": 0.3896706998348236,
+        "old_ar3": 0.4024933874607086,
+        "formal_pml": 0.3546605408191681,
+        "delta_acg_minus_old_ar3": -0.01282268762588501,
+        "delta_acg_minus_pml": 0.03501015901565552,
+        "scored_samples": 65280
+      },
+      {
+        "record_id": "librispeech_1089-134686-0032",
+        "branch": "F",
+        "metric": "ecapa_cosine",
+        "direction": "higher",
+        "new_acg": 0.9126830697059631,
+        "old_ar3": 0.9147955775260925,
+        "formal_pml": 0.9351053237915039,
+        "delta_acg_minus_old_ar3": -0.0021125078201293945,
+        "delta_acg_minus_pml": -0.02242225408554077,
+        "scored_samples": 65280
+      },
+      {
+        "record_id": "librispeech_1089-134686-0032",
+        "branch": "F",
+        "metric": "estoi",
+        "direction": "higher",
+        "new_acg": 0.9170439036865772,
+        "old_ar3": 0.9175237991601952,
+        "formal_pml": 0.9241683586547452,
+        "delta_acg_minus_old_ar3": -0.00047989547361804163,
+        "delta_acg_minus_pml": -0.007124454968168048,
+        "scored_samples": 65280
+      }
+    ],
+    "limits": [
+      "Saved-artifact audit does not rerun metric inference or establish truth calibration, causal improvement, statistical significance or generalization.",
+      "Quality values are for fixed three recordings from one speaker; PML remains formal base.",
+      "Source asset binary identity at launch is supported by run receipts and saved pins; this audit did not reload model assets.",
+      "Saved wrapper bytes are independently checked; original filesystem mode/PID continuity is supported by recorded receipts, not directly observed here."
+    ]
+  }
+}

@@ -1,0 +1,153 @@
+{
+  "record_id": "librispeech_1089-134686-0008",
+  "speaker": "librispeech_1089",
+  "branch": "F_acg_d1",
+  "metric": "estoi",
+  "direction": "higher",
+  "sample_rate": 16000,
+  "interval_start_sample": 0,
+  "scored_samples": 95840,
+  "scope": "明瞭性の推定。MOS・自然性・話者類似度ではない",
+  "scored_output_pcm_float64_sha256": "7c642b881cf08662a6e04152229d5e766a42a51729a6643cd6d51f6b40d8374d",
+  "scored_reference_pcm_float64_sha256": "c5a44ef404a9b1c9165a709b54cc62c5ec439b414dc7d1c26b8faee973cb5474",
+  "reference_used": true,
+  "reference_identity": {
+    "member": "records/librispeech_1089-134686-0008/input.npy",
+    "bytes": 768128,
+    "file_sha256": "2906c24c57cf16b7a1a29dac15e0d727cb8b4679724efec0f565946723cc9fd8",
+    "data_sha256": "8f2c75e70d2dfde4cea5c2020edbeb245b488fa365bd4fe467c3c025be3f6232",
+    "dtype": "<f8",
+    "samples": 96000,
+    "archive_chain": [
+      {
+        "scope": "new_native_archive",
+        "path": "[local]/native.zip",
+        "bytes": 41430719,
+        "sha256": "8431e6fb7c206413a00e0ee5bf07e4827076525c390469a168baf722b1cdaafd"
+      },
+      {
+        "member": "references/prior-delivery.zip",
+        "bytes": 18504522,
+        "sha256": "43ffc10cdcdd739fb6f0583287af787a39d17050f09a801abe1aa1bd4ec0a21f"
+      },
+      {
+        "member": "native/native.zip",
+        "bytes": 18493180,
+        "sha256": "b674091fdc09072d7c2c8844cc61cfb2f0730c9410c6914a20329082f028b404"
+      }
+    ]
+  },
+  "output_identity": {
+    "member": "records/librispeech_1089-134686-0008/branches/F_acg_d1/native.npy",
+    "bytes": 768128,
+    "file_sha256": "1fd0b0fa44a4dd5ec5b0569d84a412665bb62929aafb5c3251bc19a39438e7b5",
+    "data_sha256": "f25fed45315785a2a0e0263b79a5feecd56edb7c4227fc75144d3b70eb47ad66",
+    "dtype": "<f8",
+    "samples": 96000,
+    "archive_chain": [
+      {
+        "scope": "new_ACG_native_archive",
+        "bytes": 20752355,
+        "sha256": "55a706dcf24fb6f3844877da41beb40d4c659ca88856a699218dd70c365459f6"
+      }
+    ]
+  },
+  "native_execution": {
+    "scored_waveform_origin": "new_ACG_native_bytes",
+    "quality_measurement": "new_this_run",
+    "actual_saved_branch": {
+      "schema_version": 1,
+      "version": "pml-acg-lf-d1-native-v4-20261021",
+      "postprocessor_version": "linear-hz-natural-first-difference-v1",
+      "record": "librispeech_1089-134686-0008",
+      "branch": "F_acg_d1",
+      "selector": "F",
+      "status": "native_succeeded",
+      "execution_kind": "saved_acg_bridge_LF_D1_analysis_save_load_decode",
+      "newly_executed": true,
+      "completed_stages": [
+        "raw_admitted",
+        "post_completed",
+        "stonemask",
+        "cheaptrick",
+        "pdd",
+        "backend",
+        "parameters_constructed",
+        "saved",
+        "loaded",
+        "decoded"
+      ],
+      "input_provenance": {
+        "source_version": "pml-acg-lf-d1-native-v4-20261021",
+        "contrast_result_member": "librispeech_1089-134686-0008.q_log_acg.npy",
+        "contrast_evidence_member": "librispeech_1089-134686-0008.hypothesis_log_evidence.npy",
+        "native_original_input_member": {
+          "path": "records/librispeech_1089-134686-0008/input.npy",
+          "bytes": 768128,
+          "sha256": "2906c24c57cf16b7a1a29dac15e0d727cb8b4679724efec0f565946723cc9fd8",
+          "dtype": "<f8",
+          "shape": [
+            96000
+          ],
+          "data_sha256": "8f2c75e70d2dfde4cea5c2020edbeb245b488fa365bd4fe467c3c025be3f6232"
+        },
+        "new_gate_source": "E0/E1 prior aggregation from saved ACG"
+      },
+      "raw_identity": {
+        "path": "records/librispeech_1089-134686-0008/branches/F_acg_d1/raw_f0.npy",
+        "bytes": 19328,
+        "sha256": "8964960dc81a353b0b905a31b406ebe51469aea30cf51ece6be65c9ccb32154c",
+        "dtype": "<f8",
+        "shape": [
+          1200,
+          2
+        ],
+        "data_sha256": "b776de21bcf13b3a6ae14834007f992d9c268624ef9f543ce4bc753e0c3288e2",
+        "raw_time_data_sha256": "7f3277caf8bac500d55d63ae409fcd00dc67e4a1ef2df8640dc5274b248becc8"
+      },
+      "raw_guard": "new_saved_raw_LF_fixed_J_5ms",
+      "raw_origin": "this run saved ACG bridge plus unchanged L/F; saved then byte/data/time verified",
+      "seed_analysis": 0,
+      "seed_decode": 0,
+      "sample_rate": 16000,
+      "n_samples": 96000,
+      "timing_scope": "this new D1 branch only",
+      "frames": 1200,
+      "timing": {
+        "status": "native_succeeded",
+        "version": "pml-acg-lf-d1-native-v4-20261021",
+        "postprocessor_version": "linear-hz-natural-first-difference-v1",
+        "seed_analysis": 0,
+        "seed_decode": 0,
+        "frames": 1200,
+        "n_samples": 96000,
+        "sample_rate": 16000,
+        "analysis_encode_save_seconds": 3.6563679599967145,
+        "analysis_encode_save_RTF": 0.6093946599994524,
+        "decode_seconds": 0.43817166699955123,
+        "decode_RTF": 0.07302861116659187,
+        "timing_scope": "partial actual post/backend/FWCEP/save RTF from newly generated saved raw F0; new local potentials, L/F selection and saved-raw verification excluded; not end-to-end encoder RTF",
+        "saved_NM": "params.pml original packed binary NM before decoder extension/smoothing",
+        "waveform": "native.npy unchanged float64; no normalization/clip/trim/alignment"
+      },
+      "elapsed_seconds": 4.098281253998721
+    }
+  },
+  "alignment": "none",
+  "added_gain_normalization": "none",
+  "added_silence_removal": "none",
+  "added_clip": "none",
+  "value": 0.9002885100727965,
+  "library": "pystoi",
+  "version": "0.4.1",
+  "extended": true,
+  "reference_required": true,
+  "internal_sample_rate": 10000,
+  "evaluation_seed": 0,
+  "internal_silence_removal_db": 40,
+  "warnings": [],
+  "normalization": "公式実装の行・列正規化",
+  "status": "measured",
+  "wall_seconds": 0.046155456999258604,
+  "process_cpu_seconds": 0.09415350399999056
+}
