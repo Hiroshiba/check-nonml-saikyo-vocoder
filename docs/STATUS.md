@@ -1,5 +1,11 @@
 # 現在の状態と次の作業
 
+## 保存済みACG重みの音声比較は初回の初期化で停止（2026-10-21 日本時間）
+
+[計画・初回失敗と監査範囲](../experiments/2026-10-21/pml-ar1-three-atom-residual/followup-design/saved-acg-lf-d1-plan-20261021.md)を記録しました。v3は `SOLVER` 定義欠落で停止し、旧t入力監査0/3録音・新ACG生成0/6音声です。親が失敗監査原本を全受領し、外部・外側exit 2、計測子exit 1・signal/timeoutなし・回収済み・全出力完了を確認しました。音声・品質結果も成功ZIPもありません。
+
+旧referenceと同値の辞書を戻した最小修正source v4は公式保存済み・独立静的レビュー中で、再実行はしていません。実験条件は変更せず、PMLと既存75品質値・21短音声・感度結果を保持します。以下は以前の記録です。
+
 ## 同じ観測の得点定義を比べた方向密度の補助解析（2026-10-21 日本時間）
 
 [方向密度対比v2の保存値・全窓データ・監査をPagesで開く](https://hiroshiba.github.io/check-nonml-saikyo-vocoder/experiments/2026-10-21/pml-ar1-three-atom-residual/results/directional-density-v2/index.html)。既存固定prefix最大6秒の1話者3録音で、候補ID q=52..66（15候補）対q=67..512（446候補）のlog odds差と、H1/H0の仮説priorを除くlog evidence ratio差（いずれもACG−t）を録音別中央値として記録しました。PMLを維持し、新音声・品質比較はありません。
