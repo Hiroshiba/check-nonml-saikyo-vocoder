@@ -1,0 +1,537 @@
+{
+  "scope": "stored bytes/header/mask/finite-value/zero-difference reads only; no median, likelihood, solver or scientific replay",
+  "independent_C_audit": {
+    "status": "reviewed_with_exact_rounding_differences",
+    "public_projection": "independent-audit-public.json"
+  },
+  "arrays": [
+    {
+      "member": "librispeech_1089-134686-0008.q_log_t.npy",
+      "dtype": "<f8",
+      "shape": [
+        1197,
+        461
+      ],
+      "all_stored_values_finite": true
+    },
+    {
+      "member": "librispeech_1089-134686-0008.q_log_acg.npy",
+      "dtype": "<f8",
+      "shape": [
+        1197,
+        461
+      ],
+      "all_stored_values_finite": true
+    },
+    {
+      "member": "librispeech_1089-134686-0008.t_minus_saved_q_log.npy",
+      "dtype": "<f8",
+      "shape": [
+        1197,
+        461
+      ],
+      "all_stored_values_finite": true,
+      "all_stored_differences_numeric_zero": true
+    },
+    {
+      "member": "librispeech_1089-134686-0008.hypothesis_log_evidence.npy",
+      "dtype": "<f8",
+      "shape": [
+        1197,
+        4
+      ],
+      "all_stored_values_finite": true
+    },
+    {
+      "member": "librispeech_1089-134686-0008.contrasts.npy",
+      "dtype": "<f8",
+      "shape": [
+        1197,
+        6
+      ],
+      "all_stored_values_finite": true
+    },
+    {
+      "member": "librispeech_1089-134686-0008.t_minus_saved_other.npy",
+      "dtype": "<f8",
+      "shape": [
+        1197,
+        4
+      ],
+      "all_stored_values_finite": true,
+      "all_stored_differences_numeric_zero": true
+    },
+    {
+      "member": "librispeech_1089-134686-0008.q_argmax_auxiliary.npy",
+      "dtype": "<i8",
+      "shape": [
+        1197,
+        2
+      ]
+    },
+    {
+      "member": "librispeech_1089-134686-0008.masks.npy",
+      "dtype": "|b1",
+      "shape": [
+        1197,
+        6
+      ],
+      "true_count_by_column": {
+        "new_valid_nonzero": 1197,
+        "new_exact_zero_missing": 0,
+        "saved_zero": 0,
+        "saved_computed": 1197,
+        "saved_valid": 1197,
+        "t_replay_valid": 1197
+      }
+    },
+    {
+      "member": "librispeech_1089-134686-0008.t_replay_bitwise_equal.npy",
+      "dtype": "|b1",
+      "shape": [
+        1197,
+        4
+      ],
+      "all_stored_bitwise_flags_true": true
+    },
+    {
+      "member": "librispeech_1089-134686-0008.rms.npy",
+      "dtype": "<f8",
+      "shape": [
+        1197
+      ],
+      "all_stored_values_finite": true
+    },
+    {
+      "member": "librispeech_1089-134686-0008.saved_rms.npy",
+      "dtype": "<f8",
+      "shape": [
+        1197
+      ],
+      "all_stored_values_finite": true
+    },
+    {
+      "member": "librispeech_1089-134686-0008.unique_window_start.npy",
+      "dtype": "<i8",
+      "shape": [
+        1197
+      ]
+    },
+    {
+      "member": "librispeech_1089-134686-0008.multiplicity.npy",
+      "dtype": "<i8",
+      "shape": [
+        1197
+      ]
+    },
+    {
+      "member": "librispeech_1089-134686-0008.first_anchor.npy",
+      "dtype": "<i8",
+      "shape": [
+        1197
+      ]
+    },
+    {
+      "member": "librispeech_1089-134686-0008.anchor_to_unique_window.npy",
+      "dtype": "<i8",
+      "shape": [
+        1200
+      ]
+    },
+    {
+      "member": "librispeech_1089-134686-0008.anchor_sample.npy",
+      "dtype": "<i8",
+      "shape": [
+        1200
+      ]
+    },
+    {
+      "member": "librispeech_1089-134686-0008.window_start.npy",
+      "dtype": "<i8",
+      "shape": [
+        1200
+      ]
+    },
+    {
+      "member": "librispeech_1089-134686-0008.window_stop.npy",
+      "dtype": "<i8",
+      "shape": [
+        1200
+      ]
+    },
+    {
+      "member": "librispeech_1089-134686-0008.raw_times.npy",
+      "dtype": "<f8",
+      "shape": [
+        1200
+      ],
+      "all_stored_values_finite": true
+    },
+    {
+      "member": "librispeech_1089-134686-0008.raw_time_bits.npy",
+      "dtype": "<u8",
+      "shape": [
+        1200
+      ]
+    },
+    {
+      "member": "librispeech_1089-134686-0008.shifted_window.npy",
+      "dtype": "|b1",
+      "shape": [
+        1200
+      ]
+    },
+    {
+      "member": "librispeech_1089-134686-0011.q_log_t.npy",
+      "dtype": "<f8",
+      "shape": [
+        1197,
+        461
+      ],
+      "all_stored_values_finite": true
+    },
+    {
+      "member": "librispeech_1089-134686-0011.q_log_acg.npy",
+      "dtype": "<f8",
+      "shape": [
+        1197,
+        461
+      ],
+      "all_stored_values_finite": true
+    },
+    {
+      "member": "librispeech_1089-134686-0011.t_minus_saved_q_log.npy",
+      "dtype": "<f8",
+      "shape": [
+        1197,
+        461
+      ],
+      "all_stored_values_finite": true,
+      "all_stored_differences_numeric_zero": true
+    },
+    {
+      "member": "librispeech_1089-134686-0011.hypothesis_log_evidence.npy",
+      "dtype": "<f8",
+      "shape": [
+        1197,
+        4
+      ],
+      "all_stored_values_finite": true
+    },
+    {
+      "member": "librispeech_1089-134686-0011.contrasts.npy",
+      "dtype": "<f8",
+      "shape": [
+        1197,
+        6
+      ],
+      "all_stored_values_finite": true
+    },
+    {
+      "member": "librispeech_1089-134686-0011.t_minus_saved_other.npy",
+      "dtype": "<f8",
+      "shape": [
+        1197,
+        4
+      ],
+      "all_stored_values_finite": true,
+      "all_stored_differences_numeric_zero": true
+    },
+    {
+      "member": "librispeech_1089-134686-0011.q_argmax_auxiliary.npy",
+      "dtype": "<i8",
+      "shape": [
+        1197,
+        2
+      ]
+    },
+    {
+      "member": "librispeech_1089-134686-0011.masks.npy",
+      "dtype": "|b1",
+      "shape": [
+        1197,
+        6
+      ],
+      "true_count_by_column": {
+        "new_valid_nonzero": 1197,
+        "new_exact_zero_missing": 0,
+        "saved_zero": 0,
+        "saved_computed": 1197,
+        "saved_valid": 1197,
+        "t_replay_valid": 1197
+      }
+    },
+    {
+      "member": "librispeech_1089-134686-0011.t_replay_bitwise_equal.npy",
+      "dtype": "|b1",
+      "shape": [
+        1197,
+        4
+      ],
+      "all_stored_bitwise_flags_true": true
+    },
+    {
+      "member": "librispeech_1089-134686-0011.rms.npy",
+      "dtype": "<f8",
+      "shape": [
+        1197
+      ],
+      "all_stored_values_finite": true
+    },
+    {
+      "member": "librispeech_1089-134686-0011.saved_rms.npy",
+      "dtype": "<f8",
+      "shape": [
+        1197
+      ],
+      "all_stored_values_finite": true
+    },
+    {
+      "member": "librispeech_1089-134686-0011.unique_window_start.npy",
+      "dtype": "<i8",
+      "shape": [
+        1197
+      ]
+    },
+    {
+      "member": "librispeech_1089-134686-0011.multiplicity.npy",
+      "dtype": "<i8",
+      "shape": [
+        1197
+      ]
+    },
+    {
+      "member": "librispeech_1089-134686-0011.first_anchor.npy",
+      "dtype": "<i8",
+      "shape": [
+        1197
+      ]
+    },
+    {
+      "member": "librispeech_1089-134686-0011.anchor_to_unique_window.npy",
+      "dtype": "<i8",
+      "shape": [
+        1200
+      ]
+    },
+    {
+      "member": "librispeech_1089-134686-0011.anchor_sample.npy",
+      "dtype": "<i8",
+      "shape": [
+        1200
+      ]
+    },
+    {
+      "member": "librispeech_1089-134686-0011.window_start.npy",
+      "dtype": "<i8",
+      "shape": [
+        1200
+      ]
+    },
+    {
+      "member": "librispeech_1089-134686-0011.window_stop.npy",
+      "dtype": "<i8",
+      "shape": [
+        1200
+      ]
+    },
+    {
+      "member": "librispeech_1089-134686-0011.raw_times.npy",
+      "dtype": "<f8",
+      "shape": [
+        1200
+      ],
+      "all_stored_values_finite": true
+    },
+    {
+      "member": "librispeech_1089-134686-0011.raw_time_bits.npy",
+      "dtype": "<u8",
+      "shape": [
+        1200
+      ]
+    },
+    {
+      "member": "librispeech_1089-134686-0011.shifted_window.npy",
+      "dtype": "|b1",
+      "shape": [
+        1200
+      ]
+    },
+    {
+      "member": "librispeech_1089-134686-0032.q_log_t.npy",
+      "dtype": "<f8",
+      "shape": [
+        815,
+        461
+      ],
+      "all_stored_values_finite": true
+    },
+    {
+      "member": "librispeech_1089-134686-0032.q_log_acg.npy",
+      "dtype": "<f8",
+      "shape": [
+        815,
+        461
+      ],
+      "all_stored_values_finite": true
+    },
+    {
+      "member": "librispeech_1089-134686-0032.t_minus_saved_q_log.npy",
+      "dtype": "<f8",
+      "shape": [
+        815,
+        461
+      ],
+      "all_stored_values_finite": true,
+      "all_stored_differences_numeric_zero": true
+    },
+    {
+      "member": "librispeech_1089-134686-0032.hypothesis_log_evidence.npy",
+      "dtype": "<f8",
+      "shape": [
+        815,
+        4
+      ],
+      "all_stored_values_finite": true
+    },
+    {
+      "member": "librispeech_1089-134686-0032.contrasts.npy",
+      "dtype": "<f8",
+      "shape": [
+        815,
+        6
+      ],
+      "all_stored_values_finite": true
+    },
+    {
+      "member": "librispeech_1089-134686-0032.t_minus_saved_other.npy",
+      "dtype": "<f8",
+      "shape": [
+        815,
+        4
+      ],
+      "all_stored_values_finite": true,
+      "all_stored_differences_numeric_zero": true
+    },
+    {
+      "member": "librispeech_1089-134686-0032.q_argmax_auxiliary.npy",
+      "dtype": "<i8",
+      "shape": [
+        815,
+        2
+      ]
+    },
+    {
+      "member": "librispeech_1089-134686-0032.masks.npy",
+      "dtype": "|b1",
+      "shape": [
+        815,
+        6
+      ],
+      "true_count_by_column": {
+        "new_valid_nonzero": 815,
+        "new_exact_zero_missing": 0,
+        "saved_zero": 0,
+        "saved_computed": 815,
+        "saved_valid": 815,
+        "t_replay_valid": 815
+      }
+    },
+    {
+      "member": "librispeech_1089-134686-0032.t_replay_bitwise_equal.npy",
+      "dtype": "|b1",
+      "shape": [
+        815,
+        4
+      ],
+      "all_stored_bitwise_flags_true": true
+    },
+    {
+      "member": "librispeech_1089-134686-0032.rms.npy",
+      "dtype": "<f8",
+      "shape": [
+        815
+      ],
+      "all_stored_values_finite": true
+    },
+    {
+      "member": "librispeech_1089-134686-0032.saved_rms.npy",
+      "dtype": "<f8",
+      "shape": [
+        815
+      ],
+      "all_stored_values_finite": true
+    },
+    {
+      "member": "librispeech_1089-134686-0032.unique_window_start.npy",
+      "dtype": "<i8",
+      "shape": [
+        815
+      ]
+    },
+    {
+      "member": "librispeech_1089-134686-0032.multiplicity.npy",
+      "dtype": "<i8",
+      "shape": [
+        815
+      ]
+    },
+    {
+      "member": "librispeech_1089-134686-0032.first_anchor.npy",
+      "dtype": "<i8",
+      "shape": [
+        815
+      ]
+    },
+    {
+      "member": "librispeech_1089-134686-0032.anchor_to_unique_window.npy",
+      "dtype": "<i8",
+      "shape": [
+        818
+      ]
+    },
+    {
+      "member": "librispeech_1089-134686-0032.anchor_sample.npy",
+      "dtype": "<i8",
+      "shape": [
+        818
+      ]
+    },
+    {
+      "member": "librispeech_1089-134686-0032.window_start.npy",
+      "dtype": "<i8",
+      "shape": [
+        818
+      ]
+    },
+    {
+      "member": "librispeech_1089-134686-0032.window_stop.npy",
+      "dtype": "<i8",
+      "shape": [
+        818
+      ]
+    },
+    {
+      "member": "librispeech_1089-134686-0032.raw_times.npy",
+      "dtype": "<f8",
+      "shape": [
+        818
+      ],
+      "all_stored_values_finite": true
+    },
+    {
+      "member": "librispeech_1089-134686-0032.raw_time_bits.npy",
+      "dtype": "<u8",
+      "shape": [
+        818
+      ]
+    },
+    {
+      "member": "librispeech_1089-134686-0032.shifted_window.npy",
+      "dtype": "|b1",
+      "shape": [
+        818
+      ]
+    }
+  ]
+}

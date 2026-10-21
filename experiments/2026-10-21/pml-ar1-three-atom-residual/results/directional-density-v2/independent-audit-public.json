@@ -1,0 +1,653 @@
+{
+  "schema_version": 1,
+  "original": {
+    "library_file_id": "libfile_d17c13ba435481919afaba92e0feb03f",
+    "file_id": "file_0000000015508230bde75ec82ac6f6d0",
+    "version": 0,
+    "file_name": "pml-rms-directional-contrast-v2-independent-saved-delivery-audit-20261021.json",
+    "bytes": 61369,
+    "sha256": "37ebf9938a3875947c35d53ebb22d7e2feacb9dde544b1d69e513f3d17f345b6"
+  },
+  "not_a_verbatim_original": true,
+  "omitted": [
+    "local absolute paths",
+    "reviewer invocation",
+    "original receipt bodies and receipt-controlled metadata",
+    "internal conversation or approval records",
+    "implementation code",
+    "old source absolute locations"
+  ],
+  "projection": {
+    "recorded_at_utc": "2026-10-21T07:19:23.801145+00:00",
+    "verdict": "saved_archive_and_replay_checks_passed; independent_low_log_odds_recomputation_has_exact_rounding_differences; no_tolerance_pass_assigned",
+    "complete_scope": true,
+    "structural_hash_and_mapping_issues": [],
+    "independent_primary_all_row_exact_equality": false,
+    "reason_for_non_exact_primary_equality": "Independent stdlib max-shift logsumexp and saved SciPy logsumexp yield different floating-point last bits for some low15/rest446 log odds rows. Reported without tolerance, clipping, renormalization, replacement, or a blanket arithmetic pass. H1/H0 evidence ratios and all six per-record medians are exactly equal.",
+    "low_log_odds_all_columns_total_exact_unequal_cells": 842,
+    "low_log_odds_global_max_abs_difference": 2.842170943040401e-14,
+    "H1_H0_ratio_all_columns_exact_unequal_cells": 0,
+    "actual_process_receipt": {
+      "actual_exit_code": 0,
+      "signal": null,
+      "timed_out": false,
+      "reaped_by_launcher": true,
+      "elapsed_seconds": 206.57711400799963,
+      "max_rss_kib": 287880
+    },
+    "actual_process_receipt_limits": {
+      "one_thread_environment_variables": "OPENBLAS_NUM_THREADS/OMP_NUM_THREADS/MKL_NUM_THREADS/VECLIB_MAXIMUM_THREADS/NUMEXPR_NUM_THREADS/BLIS_NUM_THREADS each 1",
+      "AS_soft_hard_bytes": 2147483648,
+      "RSS_stage_observed_budget_bytes": 1073741824,
+      "wall_seconds": 1800,
+      "termination_grace_seconds": 10,
+      "stdout_bytes": 315,
+      "stderr_bytes": 0,
+      "streams_complete": true,
+      "scientific_status": "directional_contrast_completed",
+      "result_packing_status": "result_zip_all70_files_verified"
+    },
+    "archive_closure": {
+      "outer_stored_members": 11,
+      "inner_stored_members": 70,
+      "inner_NPY_files": 63,
+      "inner_JSON_files": 7,
+      "outer_manifest_rows": 10,
+      "inner_FILES_rows": 69,
+      "inner_result_zip_bytes": 36318261,
+      "inner_result_zip_sha256": "ead060560ea6eadbbc719e377469703223a00f0fd6fd4f3d427a7db9e01e7c60",
+      "all_outer_and_inner_member_bytes_SHA256_and_stored_regular_metadata_checked": true,
+      "all_63_NPY_magic_header_dtype_shape_fortran_data_length_and_data_SHA256_checked": true,
+      "source_staging_member_count": 30,
+      "all_four_original_receipt_bytes_SHA256_crosschecked": true,
+      "external_closure_json_embedded": false,
+      "external_closure_json_status_directly_read": false,
+      "closure_limit": "execution/closure.json is defined as a separate noncircular sidecar and is not a delivery member. The retained delivery itself and its full member/manifest closure were independently checked."
+    },
+    "records": {
+      "librispeech_1089-134686-0008": {
+        "anchors": 1200,
+        "unique_physical_windows": 1197,
+        "fixed_prefix_samples": 96000,
+        "denominator_valid_nonzero_unique_windows": 1197,
+        "exact_zero_missing": 0,
+        "saved_uncomputed": 0,
+        "saved_valid": 1197,
+        "replay_compared": 1197,
+        "extra_anchor_copies": 3,
+        "maximum_multiplicity": 3,
+        "old_t_full_461_q_bitwise_unequal_windows": 0,
+        "old_t_saved_difference_nonzero_entries": 0,
+        "old_t_saved_difference_max_abs": 0.0,
+        "old_t_gate_normalizer_RMS_saved_difference_max_abs": 0.0,
+        "replay_flags_false": 0,
+        "nonfinite_saved_numbers": 0,
+        "invalid_placeholder_nonzero": 0,
+        "descriptive_medians_from_saved_arrays": {
+          "low15_rest446_log_odds_t": -18.25127377405216,
+          "low15_rest446_log_odds_acg": -19.049661682869903,
+          "low15_rest446_log_odds_acg_minus_t": -0.44213954628813923,
+          "H1_H0_prior_free_log_evidence_ratio_t": 93.04946297900807,
+          "H1_H0_prior_free_log_evidence_ratio_acg": 97.81418015284495,
+          "H1_H0_prior_free_log_evidence_ratio_acg_minus_t": 4.910933932212089
+        },
+        "descriptive_medians_recomputed_from_q_and_evidence": {
+          "low15_rest446_log_odds_t": -18.25127377405216,
+          "low15_rest446_log_odds_acg": -19.049661682869903,
+          "low15_rest446_log_odds_acg_minus_t": -0.44213954628813923,
+          "H1_H0_prior_free_log_evidence_ratio_t": 93.04946297900807,
+          "H1_H0_prior_free_log_evidence_ratio_acg": 97.81418015284495,
+          "H1_H0_prior_free_log_evidence_ratio_acg_minus_t": 4.910933932212089
+        },
+        "saved_array_medians_vs_record_JSON_exact_mismatch": {},
+        "independent_medians_vs_record_JSON_exact_difference": {},
+        "each_primary_column_per_window_exact_unequal_count": {
+          "low15_rest446_log_odds_t": 108,
+          "low15_rest446_log_odds_acg": 92,
+          "low15_rest446_log_odds_acg_minus_t": 157,
+          "H1_H0_prior_free_log_evidence_ratio_t": 0,
+          "H1_H0_prior_free_log_evidence_ratio_acg": 0,
+          "H1_H0_prior_free_log_evidence_ratio_acg_minus_t": 0
+        },
+        "each_primary_column_per_window_max_abs_difference_and_location": {
+          "low15_rest446_log_odds_t": {
+            "value": 1.4210854715202004e-14,
+            "index": 547,
+            "stored": -73.20594235947536,
+            "recomputed": -73.20594235947537
+          },
+          "low15_rest446_log_odds_acg": {
+            "value": 1.4210854715202004e-14,
+            "index": 795,
+            "stored": -100.84422400829791,
+            "recomputed": -100.8442240082979
+          },
+          "low15_rest446_log_odds_acg_minus_t": {
+            "value": 1.4210854715202004e-14,
+            "index": 547,
+            "stored": -13.836583646282236,
+            "recomputed": -13.836583646282222
+          },
+          "H1_H0_prior_free_log_evidence_ratio_t": {
+            "value": 0.0,
+            "index": null,
+            "stored": null,
+            "recomputed": null
+          },
+          "H1_H0_prior_free_log_evidence_ratio_acg": {
+            "value": 0.0,
+            "index": null,
+            "stored": null,
+            "recomputed": null
+          },
+          "H1_H0_prior_free_log_evidence_ratio_acg_minus_t": {
+            "value": 0.0,
+            "index": null,
+            "stored": null,
+            "recomputed": null
+          }
+        },
+        "q_argmax_changed_auxiliary": 7,
+        "independent_q_logsumexp_max_abs_descriptive_only": 5.595524044110789e-14
+      },
+      "librispeech_1089-134686-0011": {
+        "anchors": 1200,
+        "unique_physical_windows": 1197,
+        "fixed_prefix_samples": 96000,
+        "denominator_valid_nonzero_unique_windows": 1197,
+        "exact_zero_missing": 0,
+        "saved_uncomputed": 0,
+        "saved_valid": 1197,
+        "replay_compared": 1197,
+        "extra_anchor_copies": 3,
+        "maximum_multiplicity": 3,
+        "old_t_full_461_q_bitwise_unequal_windows": 0,
+        "old_t_saved_difference_nonzero_entries": 0,
+        "old_t_saved_difference_max_abs": 0.0,
+        "old_t_gate_normalizer_RMS_saved_difference_max_abs": 0.0,
+        "replay_flags_false": 0,
+        "nonfinite_saved_numbers": 0,
+        "invalid_placeholder_nonzero": 0,
+        "descriptive_medians_from_saved_arrays": {
+          "low15_rest446_log_odds_t": -19.785467946717993,
+          "low15_rest446_log_odds_acg": -20.74288672454346,
+          "low15_rest446_log_odds_acg_minus_t": -0.43493542466083923,
+          "H1_H0_prior_free_log_evidence_ratio_t": 86.13247916830363,
+          "H1_H0_prior_free_log_evidence_ratio_acg": 90.42841147615717,
+          "H1_H0_prior_free_log_evidence_ratio_acg_minus_t": 3.9333965114373513
+        },
+        "descriptive_medians_recomputed_from_q_and_evidence": {
+          "low15_rest446_log_odds_t": -19.785467946717993,
+          "low15_rest446_log_odds_acg": -20.74288672454346,
+          "low15_rest446_log_odds_acg_minus_t": -0.43493542466083923,
+          "H1_H0_prior_free_log_evidence_ratio_t": 86.13247916830363,
+          "H1_H0_prior_free_log_evidence_ratio_acg": 90.42841147615717,
+          "H1_H0_prior_free_log_evidence_ratio_acg_minus_t": 3.9333965114373513
+        },
+        "saved_array_medians_vs_record_JSON_exact_mismatch": {},
+        "independent_medians_vs_record_JSON_exact_difference": {},
+        "each_primary_column_per_window_exact_unequal_count": {
+          "low15_rest446_log_odds_t": 78,
+          "low15_rest446_log_odds_acg": 77,
+          "low15_rest446_log_odds_acg_minus_t": 128,
+          "H1_H0_prior_free_log_evidence_ratio_t": 0,
+          "H1_H0_prior_free_log_evidence_ratio_acg": 0,
+          "H1_H0_prior_free_log_evidence_ratio_acg_minus_t": 0
+        },
+        "each_primary_column_per_window_max_abs_difference_and_location": {
+          "low15_rest446_log_odds_t": {
+            "value": 1.4210854715202004e-14,
+            "index": 239,
+            "stored": -83.43350193695,
+            "recomputed": -83.43350193694998
+          },
+          "low15_rest446_log_odds_acg": {
+            "value": 2.842170943040401e-14,
+            "index": 380,
+            "stored": -168.90853005644487,
+            "recomputed": -168.90853005644485
+          },
+          "low15_rest446_log_odds_acg_minus_t": {
+            "value": 2.842170943040401e-14,
+            "index": 380,
+            "stored": -38.84798476551629,
+            "recomputed": -38.84798476551626
+          },
+          "H1_H0_prior_free_log_evidence_ratio_t": {
+            "value": 0.0,
+            "index": null,
+            "stored": null,
+            "recomputed": null
+          },
+          "H1_H0_prior_free_log_evidence_ratio_acg": {
+            "value": 0.0,
+            "index": null,
+            "stored": null,
+            "recomputed": null
+          },
+          "H1_H0_prior_free_log_evidence_ratio_acg_minus_t": {
+            "value": 0.0,
+            "index": null,
+            "stored": null,
+            "recomputed": null
+          }
+        },
+        "q_argmax_changed_auxiliary": 7,
+        "independent_q_logsumexp_max_abs_descriptive_only": 5.684341886080802e-14
+      },
+      "librispeech_1089-134686-0032": {
+        "anchors": 818,
+        "unique_physical_windows": 815,
+        "fixed_prefix_samples": 65440,
+        "denominator_valid_nonzero_unique_windows": 815,
+        "exact_zero_missing": 0,
+        "saved_uncomputed": 0,
+        "saved_valid": 815,
+        "replay_compared": 815,
+        "extra_anchor_copies": 3,
+        "maximum_multiplicity": 3,
+        "old_t_full_461_q_bitwise_unequal_windows": 0,
+        "old_t_saved_difference_nonzero_entries": 0,
+        "old_t_saved_difference_max_abs": 0.0,
+        "old_t_gate_normalizer_RMS_saved_difference_max_abs": 0.0,
+        "replay_flags_false": 0,
+        "nonfinite_saved_numbers": 0,
+        "invalid_placeholder_nonzero": 0,
+        "descriptive_medians_from_saved_arrays": {
+          "low15_rest446_log_odds_t": -17.73016778793936,
+          "low15_rest446_log_odds_acg": -18.384573887238048,
+          "low15_rest446_log_odds_acg_minus_t": -0.16174736038683335,
+          "H1_H0_prior_free_log_evidence_ratio_t": 82.77971227921643,
+          "H1_H0_prior_free_log_evidence_ratio_acg": 86.46670566880447,
+          "H1_H0_prior_free_log_evidence_ratio_acg_minus_t": 3.8293794592234107
+        },
+        "descriptive_medians_recomputed_from_q_and_evidence": {
+          "low15_rest446_log_odds_t": -17.73016778793936,
+          "low15_rest446_log_odds_acg": -18.384573887238048,
+          "low15_rest446_log_odds_acg_minus_t": -0.16174736038683335,
+          "H1_H0_prior_free_log_evidence_ratio_t": 82.77971227921643,
+          "H1_H0_prior_free_log_evidence_ratio_acg": 86.46670566880447,
+          "H1_H0_prior_free_log_evidence_ratio_acg_minus_t": 3.8293794592234107
+        },
+        "saved_array_medians_vs_record_JSON_exact_mismatch": {},
+        "independent_medians_vs_record_JSON_exact_difference": {},
+        "each_primary_column_per_window_exact_unequal_count": {
+          "low15_rest446_log_odds_t": 57,
+          "low15_rest446_log_odds_acg": 52,
+          "low15_rest446_log_odds_acg_minus_t": 93,
+          "H1_H0_prior_free_log_evidence_ratio_t": 0,
+          "H1_H0_prior_free_log_evidence_ratio_acg": 0,
+          "H1_H0_prior_free_log_evidence_ratio_acg_minus_t": 0
+        },
+        "each_primary_column_per_window_max_abs_difference_and_location": {
+          "low15_rest446_log_odds_t": {
+            "value": 7.105427357601002e-15,
+            "index": 265,
+            "stored": -38.22195082409385,
+            "recomputed": -38.221950824093845
+          },
+          "low15_rest446_log_odds_acg": {
+            "value": 3.552713678800501e-15,
+            "index": 323,
+            "stored": -22.816581416695517,
+            "recomputed": -22.816581416695513
+          },
+          "low15_rest446_log_odds_acg_minus_t": {
+            "value": 7.105427357601002e-15,
+            "index": 265,
+            "stored": -2.343485283944709,
+            "recomputed": -2.343485283944716
+          },
+          "H1_H0_prior_free_log_evidence_ratio_t": {
+            "value": 0.0,
+            "index": null,
+            "stored": null,
+            "recomputed": null
+          },
+          "H1_H0_prior_free_log_evidence_ratio_acg": {
+            "value": 0.0,
+            "index": null,
+            "stored": null,
+            "recomputed": null
+          },
+          "H1_H0_prior_free_log_evidence_ratio_acg_minus_t": {
+            "value": 0.0,
+            "index": null,
+            "stored": null,
+            "recomputed": null
+          }
+        },
+        "q_argmax_changed_auxiliary": 2,
+        "independent_q_logsumexp_max_abs_descriptive_only": 5.495603971894525e-14
+      }
+    },
+    "all_checks": [
+      "official Library materialization and delivery SHA/bytes/xattrs",
+      "outer11 and inner70 stored regular member inventories, no duplicate/encrypted members",
+      "outer DELIVERY_MANIFEST 10 rows and inner FILES 69 rows covering exact bytes/SHA",
+      "inner63 NPY header/data length/type/shape and data SHA, all JSON parsed",
+      "actual invocation exit/signal/timeout/reap/elapsed/RSS/limits/complete stream identities and stdout/stderr",
+      "four original receipt byte hashes against invocation/provenance/outer members",
+      "actual source receipt 12 fields and retained source Library identity/manifest, full30 source-staging byte hashes",
+      "fixed input pin, native and nested D1 outer/inner archive and FILES byte hashes, prior audit receipt status",
+      "all3 fixed prefixes, 3218 anchors, 3209 unique windows, hop/window boundary, monotonic unique map, first representative and multiplicity",
+      "clock raw times/bits, shifted windows, masks, zero/valid/computed states, nonfinite and placeholder scan",
+      "all valid old t 461q value bytes, saved difference arrays, replay flags, RMS, duplicate old anchor values",
+      "all valid 461q low15/rest446 log odds from independent stdlib logsumexp with every exact difference recorded by count/max/location",
+      "all valid H1/H0 prior-free evidence ratios and ACG-minus-t from saved four evidence columns",
+      "per-record six medians from saved metrics and independent q/evidence arithmetic against both record and summary JSON",
+      "old vs new NumPy errstate and warnings filter/capture static source comparison and saved event counts"
+    ],
+    "quality_truth_adoption_decision": null,
+    "formal_base": "PML",
+    "AR3_meaning": "three atoms of AR(1) residual prior, not AR(3)",
+    "old_401_403_artifacts_used_or_transferred": false,
+    "warning_finding": {
+      "new_saved_captured_event_count": 0,
+      "new_summary_warning_count": 0,
+      "new_child_stdout_warning_count": 0,
+      "new_captured_stderr_bytes": 0,
+      "old_native_saved_events_total": 660,
+      "old_native_saved_warning_events": 596,
+      "old_native_RuntimeWarning_underflow_events": 595,
+      "old_native_UserWarning_events": 1,
+      "old_native_warning_event_has_stack": false,
+      "underflow_detection_setting_change_found": false,
+      "static_configuration": {
+        "old_outer_errstate": {
+          "over": "warn",
+          "invalid": "warn",
+          "divide": "warn",
+          "under": "warn"
+        },
+        "old_narrow_selector_errstate": "all=raise",
+        "new_main_and_local_errstate": {
+          "over": "raise",
+          "invalid": "raise",
+          "divide": "raise",
+          "under": "warn"
+        },
+        "old_and_new_simplefilter": "always",
+        "suppression_setting_found": false,
+        "runtime_np_geterr_recorded": false,
+        "import_and_logging_capture_placement_differ": true,
+        "cause_of_zero_captured_warnings_determined": false
+      },
+      "interpretation": "Captured event count only; not absence of underflow or evidence of improved numerical stability. Static source settings do not establish the unrecorded runtime np.geterr."
+    },
+    "full_numeric_evidence": {
+      "status": "static_saved_data_audit_complete",
+      "issues": [],
+      "staging_file_count": 30,
+      "records": {
+        "librispeech_1089-134686-0008": {
+          "anchors": 1200,
+          "unique_windows": 1197,
+          "prefix_samples": 96000,
+          "valid_nonzero": 1197,
+          "exact_zero_missing": 0,
+          "saved_uncomputed": 0,
+          "saved_valid": 1197,
+          "replay_compared": 1197,
+          "argmax_changed": 7,
+          "multiplicity_max": 3,
+          "q_log_bitwise_unequal_windows": 0,
+          "q_log_difference_nonzero_entries": 0,
+          "q_log_difference_max_abs": 0.0,
+          "other_replay_difference_max_abs": 0.0,
+          "replay_flag_false": 0,
+          "nonfinite_values": 0,
+          "invalid_placeholder_nonzero": 0,
+          "conditional_q_logsumexp_max_abs": 5.595524044110789e-14,
+          "saved_metric_medians": {
+            "low15_rest446_log_odds_t": -18.25127377405216,
+            "low15_rest446_log_odds_acg": -19.049661682869903,
+            "low15_rest446_log_odds_acg_minus_t": -0.44213954628813923,
+            "H1_H0_prior_free_log_evidence_ratio_t": 93.04946297900807,
+            "H1_H0_prior_free_log_evidence_ratio_acg": 97.81418015284495,
+            "H1_H0_prior_free_log_evidence_ratio_acg_minus_t": 4.910933932212089
+          },
+          "independent_metric_medians": {
+            "low15_rest446_log_odds_t": -18.25127377405216,
+            "low15_rest446_log_odds_acg": -19.049661682869903,
+            "low15_rest446_log_odds_acg_minus_t": -0.44213954628813923,
+            "H1_H0_prior_free_log_evidence_ratio_t": 93.04946297900807,
+            "H1_H0_prior_free_log_evidence_ratio_acg": 97.81418015284495,
+            "H1_H0_prior_free_log_evidence_ratio_acg_minus_t": 4.910933932212089
+          },
+          "saved_metric_json_median_unequal": {},
+          "recomputed_metric_json_median_difference": {},
+          "metric_all_row_numeric_unequal_count": {
+            "low15_rest446_log_odds_t": 108,
+            "low15_rest446_log_odds_acg": 92,
+            "low15_rest446_log_odds_acg_minus_t": 157,
+            "H1_H0_prior_free_log_evidence_ratio_t": 0,
+            "H1_H0_prior_free_log_evidence_ratio_acg": 0,
+            "H1_H0_prior_free_log_evidence_ratio_acg_minus_t": 0
+          },
+          "metric_all_row_max_abs_difference": {
+            "low15_rest446_log_odds_t": {
+              "value": 1.4210854715202004e-14,
+              "index": 547,
+              "stored": -73.20594235947536,
+              "recomputed": -73.20594235947537
+            },
+            "low15_rest446_log_odds_acg": {
+              "value": 1.4210854715202004e-14,
+              "index": 795,
+              "stored": -100.84422400829791,
+              "recomputed": -100.8442240082979
+            },
+            "low15_rest446_log_odds_acg_minus_t": {
+              "value": 1.4210854715202004e-14,
+              "index": 547,
+              "stored": -13.836583646282236,
+              "recomputed": -13.836583646282222
+            },
+            "H1_H0_prior_free_log_evidence_ratio_t": {
+              "value": 0.0,
+              "index": null,
+              "stored": null,
+              "recomputed": null
+            },
+            "H1_H0_prior_free_log_evidence_ratio_acg": {
+              "value": 0.0,
+              "index": null,
+              "stored": null,
+              "recomputed": null
+            },
+            "H1_H0_prior_free_log_evidence_ratio_acg_minus_t": {
+              "value": 0.0,
+              "index": null,
+              "stored": null,
+              "recomputed": null
+            }
+          }
+        },
+        "librispeech_1089-134686-0011": {
+          "anchors": 1200,
+          "unique_windows": 1197,
+          "prefix_samples": 96000,
+          "valid_nonzero": 1197,
+          "exact_zero_missing": 0,
+          "saved_uncomputed": 0,
+          "saved_valid": 1197,
+          "replay_compared": 1197,
+          "argmax_changed": 7,
+          "multiplicity_max": 3,
+          "q_log_bitwise_unequal_windows": 0,
+          "q_log_difference_nonzero_entries": 0,
+          "q_log_difference_max_abs": 0.0,
+          "other_replay_difference_max_abs": 0.0,
+          "replay_flag_false": 0,
+          "nonfinite_values": 0,
+          "invalid_placeholder_nonzero": 0,
+          "conditional_q_logsumexp_max_abs": 5.684341886080802e-14,
+          "saved_metric_medians": {
+            "low15_rest446_log_odds_t": -19.785467946717993,
+            "low15_rest446_log_odds_acg": -20.74288672454346,
+            "low15_rest446_log_odds_acg_minus_t": -0.43493542466083923,
+            "H1_H0_prior_free_log_evidence_ratio_t": 86.13247916830363,
+            "H1_H0_prior_free_log_evidence_ratio_acg": 90.42841147615717,
+            "H1_H0_prior_free_log_evidence_ratio_acg_minus_t": 3.9333965114373513
+          },
+          "independent_metric_medians": {
+            "low15_rest446_log_odds_t": -19.785467946717993,
+            "low15_rest446_log_odds_acg": -20.74288672454346,
+            "low15_rest446_log_odds_acg_minus_t": -0.43493542466083923,
+            "H1_H0_prior_free_log_evidence_ratio_t": 86.13247916830363,
+            "H1_H0_prior_free_log_evidence_ratio_acg": 90.42841147615717,
+            "H1_H0_prior_free_log_evidence_ratio_acg_minus_t": 3.9333965114373513
+          },
+          "saved_metric_json_median_unequal": {},
+          "recomputed_metric_json_median_difference": {},
+          "metric_all_row_numeric_unequal_count": {
+            "low15_rest446_log_odds_t": 78,
+            "low15_rest446_log_odds_acg": 77,
+            "low15_rest446_log_odds_acg_minus_t": 128,
+            "H1_H0_prior_free_log_evidence_ratio_t": 0,
+            "H1_H0_prior_free_log_evidence_ratio_acg": 0,
+            "H1_H0_prior_free_log_evidence_ratio_acg_minus_t": 0
+          },
+          "metric_all_row_max_abs_difference": {
+            "low15_rest446_log_odds_t": {
+              "value": 1.4210854715202004e-14,
+              "index": 239,
+              "stored": -83.43350193695,
+              "recomputed": -83.43350193694998
+            },
+            "low15_rest446_log_odds_acg": {
+              "value": 2.842170943040401e-14,
+              "index": 380,
+              "stored": -168.90853005644487,
+              "recomputed": -168.90853005644485
+            },
+            "low15_rest446_log_odds_acg_minus_t": {
+              "value": 2.842170943040401e-14,
+              "index": 380,
+              "stored": -38.84798476551629,
+              "recomputed": -38.84798476551626
+            },
+            "H1_H0_prior_free_log_evidence_ratio_t": {
+              "value": 0.0,
+              "index": null,
+              "stored": null,
+              "recomputed": null
+            },
+            "H1_H0_prior_free_log_evidence_ratio_acg": {
+              "value": 0.0,
+              "index": null,
+              "stored": null,
+              "recomputed": null
+            },
+            "H1_H0_prior_free_log_evidence_ratio_acg_minus_t": {
+              "value": 0.0,
+              "index": null,
+              "stored": null,
+              "recomputed": null
+            }
+          }
+        },
+        "librispeech_1089-134686-0032": {
+          "anchors": 818,
+          "unique_windows": 815,
+          "prefix_samples": 65440,
+          "valid_nonzero": 815,
+          "exact_zero_missing": 0,
+          "saved_uncomputed": 0,
+          "saved_valid": 815,
+          "replay_compared": 815,
+          "argmax_changed": 2,
+          "multiplicity_max": 3,
+          "q_log_bitwise_unequal_windows": 0,
+          "q_log_difference_nonzero_entries": 0,
+          "q_log_difference_max_abs": 0.0,
+          "other_replay_difference_max_abs": 0.0,
+          "replay_flag_false": 0,
+          "nonfinite_values": 0,
+          "invalid_placeholder_nonzero": 0,
+          "conditional_q_logsumexp_max_abs": 5.495603971894525e-14,
+          "saved_metric_medians": {
+            "low15_rest446_log_odds_t": -17.73016778793936,
+            "low15_rest446_log_odds_acg": -18.384573887238048,
+            "low15_rest446_log_odds_acg_minus_t": -0.16174736038683335,
+            "H1_H0_prior_free_log_evidence_ratio_t": 82.77971227921643,
+            "H1_H0_prior_free_log_evidence_ratio_acg": 86.46670566880447,
+            "H1_H0_prior_free_log_evidence_ratio_acg_minus_t": 3.8293794592234107
+          },
+          "independent_metric_medians": {
+            "low15_rest446_log_odds_t": -17.73016778793936,
+            "low15_rest446_log_odds_acg": -18.384573887238048,
+            "low15_rest446_log_odds_acg_minus_t": -0.16174736038683335,
+            "H1_H0_prior_free_log_evidence_ratio_t": 82.77971227921643,
+            "H1_H0_prior_free_log_evidence_ratio_acg": 86.46670566880447,
+            "H1_H0_prior_free_log_evidence_ratio_acg_minus_t": 3.8293794592234107
+          },
+          "saved_metric_json_median_unequal": {},
+          "recomputed_metric_json_median_difference": {},
+          "metric_all_row_numeric_unequal_count": {
+            "low15_rest446_log_odds_t": 57,
+            "low15_rest446_log_odds_acg": 52,
+            "low15_rest446_log_odds_acg_minus_t": 93,
+            "H1_H0_prior_free_log_evidence_ratio_t": 0,
+            "H1_H0_prior_free_log_evidence_ratio_acg": 0,
+            "H1_H0_prior_free_log_evidence_ratio_acg_minus_t": 0
+          },
+          "metric_all_row_max_abs_difference": {
+            "low15_rest446_log_odds_t": {
+              "value": 7.105427357601002e-15,
+              "index": 265,
+              "stored": -38.22195082409385,
+              "recomputed": -38.221950824093845
+            },
+            "low15_rest446_log_odds_acg": {
+              "value": 3.552713678800501e-15,
+              "index": 323,
+              "stored": -22.816581416695517,
+              "recomputed": -22.816581416695513
+            },
+            "low15_rest446_log_odds_acg_minus_t": {
+              "value": 7.105427357601002e-15,
+              "index": 265,
+              "stored": -2.343485283944709,
+              "recomputed": -2.343485283944716
+            },
+            "H1_H0_prior_free_log_evidence_ratio_t": {
+              "value": 0.0,
+              "index": null,
+              "stored": null,
+              "recomputed": null
+            },
+            "H1_H0_prior_free_log_evidence_ratio_acg": {
+              "value": 0.0,
+              "index": null,
+              "stored": null,
+              "recomputed": null
+            },
+            "H1_H0_prior_free_log_evidence_ratio_acg_minus_t": {
+              "value": 0.0,
+              "index": null,
+              "stored": null,
+              "recomputed": null
+            }
+          }
+        }
+      },
+      "warnings_captured": 0,
+      "executed_science": false,
+      "target_imported": false
+    },
+    "reviewer_reader_history": {
+      "scope": "reviewer saved-array reader only; not the scientific run",
+      "final_exit_code": 0,
+      "final_stderr": "",
+      "first_local_failure_and_correction": "Initial reviewer NPY.values implementation returned only the first element for a 1D array and raised StopIteration when constructing unique-window representatives. The helper was corrected to unpack the full 1D payload; no source/output bytes or acceptance threshold changed."
+    },
+    "limitations": [
+      "Past process exit/reap assessed through retained invocation and stream/archive evidence; no independent OS observation.",
+      "Separate noncircular execution closure sidecar was not embedded or directly read; delivery member closure was independently checked.",
+      "No complete likelihood rerun, source execution, true-F0/VUV calibration, quality or adoption conclusion.",
+      "Independent stdlib low-odds arithmetic has exact last-bit differences from SciPy; no tolerance pass or stored-value replacement."
+    ]
+  }
+}

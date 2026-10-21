@@ -1,0 +1,62 @@
+{
+  "original": {
+    "member": "evidence/invocation.json",
+    "bytes": 6720,
+    "sha256": "d5a6ffa0040a2d81e5cd781f4aa64f9929bacb31fe0ab682481a7a06aa665fee"
+  },
+  "projection": {
+    "source_version": "pml-rms-directional-contrast-v2-20261021",
+    "started_at_utc": "2026-10-21T07:01:53.118139+00:00",
+    "finished_at_utc": "2026-10-21T07:05:19.695236+00:00",
+    "elapsed_seconds": 206.57711400799963,
+    "actual_exit_code": 0,
+    "signal": null,
+    "timed_out": false,
+    "reaped_by_launcher": true,
+    "child_started": true,
+    "streams_capture_completed": true,
+    "max_rss_kib": 287880,
+    "limits": {
+      "wall_seconds": 1800,
+      "terminate_grace_seconds": 10,
+      "address_space_bytes": 2147483648,
+      "address_space_soft_hard_equal": true,
+      "threads": 1,
+      "observed_rss_stage_budget_bytes": 1073741824,
+      "RSS_is_not_hard_limit": true
+    },
+    "explicit_child_environment": {
+      "OPENBLAS_NUM_THREADS": "1",
+      "OMP_NUM_THREADS": "1",
+      "MKL_NUM_THREADS": "1",
+      "VECLIB_MAXIMUM_THREADS": "1",
+      "NUMEXPR_NUM_THREADS": "1",
+      "BLIS_NUM_THREADS": "1",
+      "PYTHONDONTWRITEBYTECODE": "1"
+    },
+    "scientific_status": "directional_contrast_completed",
+    "packing_status": "result_zip_all70_files_verified",
+    "outer_closure_status": "see_separate_execution_closure_json",
+    "returned_wait_code": 0,
+    "stdout": {
+      "bytes": 315,
+      "sha256": "caf1e0d5a91a627874479c607530a488a0a12725d853d361ae80eba117b32c22",
+      "complete": true
+    },
+    "stderr": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "complete": true
+    }
+  },
+  "not_a_verbatim_original": true,
+  "omitted": [
+    "argv",
+    "tool",
+    "evidence_ref",
+    "pid",
+    "receipt_originals",
+    "filesystem archive path"
+  ],
+  "closure_evidence_note": "実プロセスの終了・回収は保存invocationと整合するstream・archive証拠から確認した範囲です。別の非循環closure JSONはdelivery内に含まれず、Cも直接閲覧していません。delivery自身のmember・manifest閉包は独立照合されています。"
+}

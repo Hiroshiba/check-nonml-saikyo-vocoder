@@ -1,0 +1,106 @@
+{
+  "original": {
+    "member": "provenance.json",
+    "bytes": 42479,
+    "sha256": "62f28ec1a3a538ece781109186545ca0763ac640f8e1fd485318e52047921181"
+  },
+  "source_staging_original": {
+    "member": "evidence/source-staging.json",
+    "bytes": 6382,
+    "sha256": "7b498317296ff97211f9d1378e9e07414f95b4f6fb45e1db11e263f3ba8153c4"
+  },
+  "projection": {
+    "source_version": "pml-rms-directional-contrast-v2-20261021",
+    "source_library": {
+      "library_file_id": "libfile_fe5603bd9f3c819188214adf561163b5",
+      "file_id": "file_00000000ca8081f9b4542d55a73a9926",
+      "version_number": 0
+    },
+    "source_zip": {
+      "bytes": 744937,
+      "sha256": "26c9f3311978038d69ca347740a1e7cb5b2387b1571993b5a085b88c82878a6e"
+    },
+    "source_manifest_sha256": "f0cc43d003d47a164af2634a39e6ed2579047208345d8e0f4734378992d9bfc8",
+    "input_pin_sha256": "8c98b4e0fdab2818d9c3fc1a445e1586ea412173058bd7e08a970adbee90967d",
+    "input_envelopes": {
+      "ar3": {
+        "bytes": 41442909,
+        "sha256": "dcbcc49b9cffcded4188adcb32bf61c068344ebf767c76c8bb3591de0506fbe2"
+      },
+      "prior": {
+        "bytes": 18504522,
+        "sha256": "43ffc10cdcdd739fb6f0583287af787a39d17050f09a801abe1aa1bd4ec0a21f"
+      }
+    },
+    "native_source_lineage": {
+      "source_zip_sha256": "a4b4f84d1e913a34439a14cacd335d1a24ad11a64d990a9bab45878662c5c469",
+      "source_manifest_sha256": "20937857f1bd6422b9ef6d84c5e572f3331540d79c0b8649e4030fc076648494",
+      "lineage_sha256": "6a6a187cf08319b47a42bfa7e4baf60437a967858d11faf5b3771758cee8b8c6",
+      "all40_source_members_verified": true
+    },
+    "rebuilt_common_recorded": {
+      "all_common_arrays_bitwise_equal": true,
+      "scalar_constants_exactly_equal": true
+    },
+    "runtime": {
+      "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+      "distributions": {
+        "numpy": "2.3.5",
+        "scipy": "1.17.0"
+      },
+      "thread_environment": {
+        "OPENBLAS_NUM_THREADS": "1",
+        "OMP_NUM_THREADS": "1",
+        "MKL_NUM_THREADS": "1",
+        "VECLIB_MAXIMUM_THREADS": "1",
+        "NUMEXPR_NUM_THREADS": "1",
+        "BLIS_NUM_THREADS": "1"
+      },
+      "address_space_soft_bytes": 2147483648,
+      "address_space_hard_bytes": 2147483648,
+      "external_wall_seconds": 1800,
+      "terminate_grace_seconds": 10,
+      "observed_stage_RSS_bytes": 1073741824,
+      "observed_RSS_is_not_hard_limit": true
+    },
+    "inherited_kernel_constants": {
+      "model_family": "proper_common_AR1_three_atom",
+      "numpy_version": "2.3.5",
+      "scipy_version": "1.17.0",
+      "dtype": "float64",
+      "train_n": 400,
+      "local_n_first": 0,
+      "local_n_last": 399,
+      "c": 1,
+      "ig_alpha": 3,
+      "ig_beta": 2,
+      "train_alpha": 203,
+      "train_half_n": 200,
+      "prior_h0": 0.3,
+      "prior_h1": 0.7,
+      "prior_each_qk": 0.00015184381778741865,
+      "kappa": 1.0,
+      "lambda": 1.0,
+      "noise_prior": "fixed finite atoms [-0.8,0,0.8], each 1/3; not quadrature",
+      "same_noise_prior_H0_H1_qK": true,
+      "physical_window_batch_max": 32,
+      "rounding": "atom logaddexp ascending; K then q contiguous logsumexp; no bitwise claim",
+      "coefficient_prior": "zero mean, covariance sigma2/K times I(2K)",
+      "variance_prior": "inverse-gamma(alpha=3,beta=2*c) on RMS-normalized y"
+    }
+  },
+  "not_a_verbatim_original": true,
+  "independent_result_array_audit": {
+    "status": "reviewed_with_exact_rounding_differences",
+    "public_projection": "independent-audit-public.json"
+  },
+  "omitted": [
+    "receipt_originals",
+    "actual_source_receipt_sha256",
+    "actual_prior_executions",
+    "source file listing",
+    "implementation expressions",
+    "legacy audit_status"
+  ],
+  "audit_status_note": "The original provenance audit_status is not used to assert completion of the new C result-array audit."
+}
