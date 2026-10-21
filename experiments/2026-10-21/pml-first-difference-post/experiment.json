@@ -5,8 +5,8 @@
   "topic": "pml-first-difference-post",
   "timezone": "Asia/Tokyo",
   "title": "F0の平滑化を一次差分で比べる",
-  "summary": "一次差分でF0を平滑化する別モデルD1の設計です。候補ソースの準備・静的レビューは完了との報告ですが、本計測は未開始で、新音声・MOS・品質順位はありません。PMLと元IIRの失敗・停止条件を維持します。",
-  "status": "候補ソース・静的レビュー完了との報告／本計測未開始",
+  "summary": "同じ1話者の既観測3録音でD1の新9枝がnative成功。品質v2は51/51個票を測定し、15短例と同録音の対応差を掲載しました。4指標は一貫した改善を示さず、平均・順位・採用判断をせずPMLを維持します。",
+  "status": "初回3録音のnative・品質v2完了／PML維持・旧IIR失敗保持",
   "notes": [
     "README.md",
     "pml-first-difference-post-parent-design-review-20261021.md",
@@ -14,6 +14,15 @@
     "pml-first-difference-post-adapter-boundary-20261021.md",
     "pml-first-difference-smoother-math-review-20261021.md"
   ],
-  "runs": [],
+  "runs": [
+    {
+      "id": "run-001",
+      "date": "2026-10-21",
+      "title": "F0の一次差分平滑化：3録音の生成・品質個票と比較音声",
+      "path": "results/run-001",
+      "recorded_at": "2026-10-21T11:03:07+09:00",
+      "date_note": "掲載用記録の作成日時。実行時刻は元の実行証拠へ保存。"
+    }
+  ],
   "created_at": "2026-10-21T03:48:52+09:00"
 }

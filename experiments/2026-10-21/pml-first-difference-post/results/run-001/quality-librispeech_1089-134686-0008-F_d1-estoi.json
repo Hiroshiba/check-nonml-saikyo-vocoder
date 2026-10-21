@@ -1,0 +1,157 @@
+{
+  "record_id": "librispeech_1089-134686-0008",
+  "speaker": "librispeech_1089",
+  "branch": "F_d1",
+  "metric": "estoi",
+  "direction": "higher",
+  "sample_rate": 16000,
+  "interval_start_sample": 0,
+  "scored_samples": 95840,
+  "scope": "明瞭性の推定。MOS・自然性・話者類似度ではない",
+  "scored_output_pcm_float64_sha256": "dff92999889e5b3c15c0af90e3b4c7b957f2d5ce469fc0339e217cda7633eb1b",
+  "scored_reference_pcm_float64_sha256": "c5a44ef404a9b1c9165a709b54cc62c5ec439b414dc7d1c26b8faee973cb5474",
+  "reference_used": true,
+  "reference_identity": {
+    "member": "records/librispeech_1089-134686-0008/input.npy",
+    "bytes": 768128,
+    "file_sha256": "2906c24c57cf16b7a1a29dac15e0d727cb8b4679724efec0f565946723cc9fd8",
+    "data_sha256": "8f2c75e70d2dfde4cea5c2020edbeb245b488fa365bd4fe467c3c025be3f6232",
+    "dtype": "<f8",
+    "samples": 96000
+  },
+  "output_identity": {
+    "member": "records/librispeech_1089-134686-0008/branches/F_d1/native.npy",
+    "bytes": 768128,
+    "file_sha256": "b5c28d238b4850043be3385825d680960b5423ffdec4672234ba7161879380f3",
+    "data_sha256": "785297c81899d5abd05b701f9e3c9c86cd5444fabe9d5db3f44cde47fd493724",
+    "dtype": "<f8",
+    "samples": 96000
+  },
+  "native_execution": {
+    "schema_version": 1,
+    "version": "pml-d1-post-native-v1-20261021",
+    "postprocessor_version": "linear-hz-natural-first-difference-v1",
+    "record": "librispeech_1089-134686-0008",
+    "branch": "F_d1",
+    "selector": "F",
+    "status": "native_succeeded",
+    "execution_kind": "new_d1_analysis_save_load_decode",
+    "newly_executed": true,
+    "completed_stages": [
+      "raw_admitted",
+      "post_completed",
+      "stonemask",
+      "cheaptrick",
+      "pdd",
+      "backend",
+      "parameters_constructed",
+      "saved",
+      "loaded",
+      "decoded"
+    ],
+    "input_provenance": {
+      "version": "pml-d1-post-native-v1-20261021",
+      "new_source": {
+        "schema_version": 1,
+        "kind": "actual_library_source_receipt",
+        "library_file_id": "libfile_09c74cc2331c81919ee8b267afe44d20",
+        "version_number": 0,
+        "file_id": "file_00000000eca482308ca288d7f4f6e349",
+        "zip_bytes": 315271,
+        "zip_sha256": "9c82927ae42b05c4a679599ee904960d4fc67c6d42fd96f1b1dae91861ace3dc",
+        "source_manifest_sha256": "ddc57eb6a29a7b4b074de47ca71e4d65f45260bbf23a4f30e192b6c18538a480"
+      },
+      "source_receipt_sha256": "cf437dcd24104d4e35a1c42ff708d622d114d2d3b48872dc533e56e8e674a97a",
+      "reuse_authorization_sha256": "4503c3c20c5544d3e8289bb0ab4bb7c290ebc32c5fa74259e2af81c105800ee3",
+      "source_lineage_sha256": "91f3220f96e243bf854053939d797c8c816b2437e696338ec47fd1ecfc96a111",
+      "dependency_manifest_sha256": "90fdeacbb4212323b78e991dab2ff4ac6772025e0f6ea534aaa7f3b5e65b7115",
+      "input_manifest_sha256": "1f392fc60fbca4003c236f03ffd9edba82b048737f23cf250295c1b4c6c85193",
+      "prior_library": {
+        "library_file_id": "libfile_c4a085e9297481918bae5d8bbbea6e0f",
+        "version_number": 0,
+        "file_id": "file_0000000005448230bd4455e2b6278054"
+      },
+      "prior_envelope": {
+        "bytes": 19922354,
+        "sha256": "a78bc6019de20a8ff702165b60121c5263324cb0c8c47514a1777498149d0a7a"
+      },
+      "prior_native_archive": {
+        "bytes": 19911267,
+        "sha256": "8c402790d826825d87dbadcc7cd908d7747e629c2ea9342dc9408d2c5264dc96"
+      },
+      "prior_native_FILES_sha256": "12e38db01ed45e964d361024516e4cae3ad21298822317c699a6e72884f4d5e1",
+      "prior_materialized_receipt_sha256": "57e6b6368081e59d933a8ec17769a391f761ef234e8df5a929bb02e4c8d15bf1",
+      "failure_verdict_sha256": "59beafbf8b432896dc6ea352c7d4801cd31e655c052deeb5b3b017c6ba8d146a",
+      "original_failed_status_unchanged": {
+        "actual_exit_code": 2,
+        "scientific_status": "native_incomplete_scientific_failures",
+        "approved_for_quality": false,
+        "successful_native_audit_run": false
+      },
+      "record_input_identity": {
+        "path": "records/librispeech_1089-134686-0008/input.npy",
+        "bytes": 768128,
+        "sha256": "2906c24c57cf16b7a1a29dac15e0d727cb8b4679724efec0f565946723cc9fd8",
+        "dtype": "<f8",
+        "shape": [
+          96000
+        ],
+        "data_sha256": "8f2c75e70d2dfde4cea5c2020edbeb245b488fa365bd4fe467c3c025be3f6232"
+      }
+    },
+    "raw_identity": {
+      "path": "records/librispeech_1089-134686-0008/branches/F/raw_f0.npy",
+      "bytes": 19328,
+      "sha256": "125cc51fc217a8f12a5d097d7557325a07d3b9af1bc349b0916cdc249f102a55",
+      "dtype": "<f8",
+      "shape": [
+        1200,
+        2
+      ],
+      "data_sha256": "13b28f3f1d22b781ab102dfacd34b419b1b90cd96593c7260527b7dc520f7724",
+      "raw_time_data_sha256": "7f3277caf8bac500d55d63ae409fcd00dc67e4a1ef2df8640dc5274b248becc8"
+    },
+    "raw_guard": "LF_fixed_J_5ms",
+    "seed_analysis": 0,
+    "seed_decode": 0,
+    "sample_rate": 16000,
+    "n_samples": 96000,
+    "timing_scope": "this new D1 branch only",
+    "frames": 1200,
+    "timing": {
+      "status": "native_succeeded",
+      "version": "pml-d1-post-native-v1-20261021",
+      "postprocessor_version": "linear-hz-natural-first-difference-v1",
+      "seed_analysis": 0,
+      "seed_decode": 0,
+      "frames": 1200,
+      "n_samples": 96000,
+      "sample_rate": 16000,
+      "analysis_encode_save_seconds": 3.3704957620000187,
+      "analysis_encode_save_RTF": 0.5617492936666698,
+      "decode_seconds": 0.389396846000011,
+      "decode_RTF": 0.06489947433333516,
+      "timing_scope": "partial actual post/backend/FWCEP/save RTF from received raw F0; REAPER, local potentials, L/F selection and byte verification/reuse excluded; not end-to-end encoder RTF",
+      "saved_NM": "params.pml original packed binary NM before decoder extension/smoothing",
+      "waveform": "native.npy unchanged float64; no normalization/clip/trim/alignment"
+    },
+    "elapsed_seconds": 3.763460249000019
+  },
+  "alignment": "none",
+  "added_gain_normalization": "none",
+  "added_silence_removal": "none",
+  "added_clip": "none",
+  "value": 0.8792103407686376,
+  "library": "pystoi",
+  "version": "0.4.1",
+  "extended": true,
+  "reference_required": true,
+  "internal_sample_rate": 10000,
+  "evaluation_seed": 0,
+  "internal_silence_removal_db": 40,
+  "warnings": [],
+  "normalization": "公式実装の行・列正規化",
+  "status": "measured",
+  "wall_seconds": 0.039702899000076286,
+  "process_cpu_seconds": 0.07969585600000073
+}

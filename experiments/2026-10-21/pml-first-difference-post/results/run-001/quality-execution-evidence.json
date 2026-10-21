@@ -1,0 +1,57 @@
+{
+  "actual_exit_code": 0,
+  "argv": [
+    "/workspace/check-nonml-saikyo-vocoder/.venv/bin/python",
+    "-B",
+    "/workspace/check-nonml-saikyo-vocoder/runs/pml-d1-first3-quality-20261021-v2/source/run_quality.py",
+    "--speaker",
+    "librispeech_1089",
+    "--native-zip",
+    "/workspace/check-nonml-saikyo-vocoder/runs/pml-d1-post-first-speaker-20261021-v1/native.zip",
+    "--native-parent-receipt",
+    "/workspace/check-nonml-saikyo-vocoder/runs/pml-d1-first3-quality-20261021-v2/receipts/native-parent-receipt.json",
+    "--source-receipt",
+    "/workspace/check-nonml-saikyo-vocoder/runs/pml-d1-first3-quality-20261021-v2/receipts/quality-source-receipt.json",
+    "--asset-map",
+    "/workspace/check-nonml-saikyo-vocoder/runs/pml-d1-first3-quality-20261021-v2/receipts/asset-map.json",
+    "--output",
+    "/workspace/check-nonml-saikyo-vocoder/runs/pml-d1-first3-quality-20261021-v2/quality",
+    "--cache",
+    "/workspace/check-nonml-saikyo-vocoder/runs/pml-d1-first3-quality-20261021-v2/cache/quality-runtime"
+  ],
+  "elapsed_seconds": 96.77281178899989,
+  "evidence_ref": "execution/launcher-result.json",
+  "finished_at_utc": "2026-10-21T01:51:17.815392+00:00",
+  "kind": "actual_tool_receipt",
+  "limits": {
+    "address_space_bytes": 12884901888,
+    "observed_rss_stage_budget_bytes": 8589934592,
+    "terminate_grace_seconds": 10,
+    "threads": 2,
+    "torch_interop_threads": 1,
+    "wall_seconds": 3600
+  },
+  "max_rss_kib": 1989444,
+  "packing_status": "succeeded",
+  "quality_archive": {
+    "bytes": 544373,
+    "sha256": "074dff35b54dd22f33d3800a34924aa34bc1b84effd287c0191424a09cd904ef"
+  },
+  "reaped_by_launcher": true,
+  "schema_version": 1,
+  "scientific_status": "quality_succeeded",
+  "signal": null,
+  "started_at_utc": "2026-10-21T01:49:41.042599+00:00",
+  "stderr": {
+    "bytes": 0,
+    "complete": true,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "stdout": {
+    "bytes": 389,
+    "complete": true,
+    "sha256": "e25301edcd808b4dc4b1a4692c59aa10293ba7ee30ad991cc24ff1294841dc39"
+  },
+  "timed_out": false,
+  "tool": "exec_command"
+}
