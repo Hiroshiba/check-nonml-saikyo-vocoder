@@ -1,0 +1,70 @@
+{
+  "schema_version": 1,
+  "study_role": "saved_raw_f0_change_diagnostic",
+  "title": "得点の定義を替えると、音高の選択はどこで変わるか",
+  "publication_recorded_at_utc": "2026-10-21T14:14:29.226917+00:00",
+  "formal_base": {
+    "method": "pml"
+  },
+  "comparison_reference": "old AR3 L/F versus saved ACG L/F",
+  "scope": "one speaker, three known recordings; saved arrays only; no quality assessment",
+  "original_diagnostic": {
+    "library_file_id": "libfile_82bd39b5aa60819196b66d8ea687afd5",
+    "version": 0,
+    "bytes": 13101,
+    "sha256": "50665b811d46a5835e1236f43596e2d7a726b308958ea786a314957deb908eec"
+  },
+  "original_values": [
+    "diagnostic-summary.json",
+    "diagnostic-details.json",
+    "diagnostic-anomalies.json"
+  ],
+  "independent_audit": "independent-audit-public.json",
+  "execution": "diagnostic-execution-public.json",
+  "all_diagnostic_logs": "diagnostic-logs.json",
+  "audio_manifest": "audio-manifest.json",
+  "numeric_change_branch_rows": 47,
+  "unique_record_time_bits": 41,
+  "local_top_counts_on_41_both_voiced_rows": {
+    "changed": 15,
+    "same": 26
+  },
+  "PML_clock": {
+    "0008": {
+      "saved_shape": [
+        1195,
+        2
+      ],
+      "L_F_clock_shape": [
+        1200
+      ],
+      "identical": false,
+      "interpolated": false
+    },
+    "0011": {
+      "saved_shape": [
+        1196,
+        2
+      ],
+      "L_F_clock_shape": [
+        1200
+      ],
+      "identical": false,
+      "interpolated": false
+    },
+    "0032": {
+      "saved_shape": [
+        814,
+        2
+      ],
+      "L_F_clock_shape": [
+        818
+      ],
+      "identical": false,
+      "interpolated": false
+    }
+  },
+  "quality_status": "not_evaluated_in_this_diagnostic",
+  "quality_values_or_ranks_added": false,
+  "planned_quality_run002_published": false
+}

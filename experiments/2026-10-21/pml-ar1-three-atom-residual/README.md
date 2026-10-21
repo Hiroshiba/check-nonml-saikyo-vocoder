@@ -98,3 +98,7 @@ native独立監査の初回はPython選択ミスでNumPyがなく、保存配列
 ## F0候補の識別と声質の分離を区別する文献記録
 
 [一次資料2本の評価範囲](followup-design/f0-identification-source-filter-scope-20261021.md)を整理しました。F0識別と声質の物理的解釈を分け、現ACGの品質や次の事前・モデルの採用根拠とはせず、PMLを維持します。
+
+## 得点定義による音高選択の変更を、保存配列で読む補助診断
+
+[6行の集計・47明細・参考音声のレポート（Pages）](https://hiroshiba.github.io/check-nonml-saikyo-vocoder/experiments/2026-10-21/pml-ar1-three-atom-residual/results/saved-raw-f0-changes-v1/index.html)を追加しました。旧AR3との比較は操作上の有声→無声6件・双方有声の音高変更41件で、L/F重複を除くと41時点です。双方有声41件中26件は局所首位が同じでしたが、DPだけを原因とはしません。PMLの時計は行対応せず、品質未評価・PML維持とします。既存の品質run-001は保持し、予定の品質run-002は未公開です。

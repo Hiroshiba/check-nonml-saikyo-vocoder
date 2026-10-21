@@ -1,0 +1,2780 @@
+{
+  "schema_version": 1,
+  "kind": "independent retained-array audit of saved-array-lf-diagnostic-20261021",
+  "verdict": "passed",
+  "audited_at_utc": "2026-10-21T13:59:06.258282+00:00",
+  "diagnostic_library_file_id": "libfile_82bd39b5aa60819196b66d8ea687afd5",
+  "diagnostic_version": 0,
+  "diagnostic_zip_bytes": 13101,
+  "diagnostic_zip_sha256": "50665b811d46a5835e1236f43596e2d7a726b308958ea786a314957deb908eec",
+  "method": "Independent Python stdlib NPY parsing, raw byte/clock comparison and first-maximum reading of saved scores; D script read statically but never imported or executed.",
+  "independent_code": {
+    "bytes": 16106,
+    "sha256": "536264ec453f030e691740a5b7820d26cd897153ee177fd003e40a40a48ba7d2"
+  },
+  "prior_native_audit_reference_scope": "identity pin matches parent-received audit; that audit was not rematerialized or rerun here",
+  "execution_evidence_limit": "D exit/time/RSS verified against preserved run metadata and complete logs, not a new remote attestation or rerun",
+  "D_execution": {
+    "analysis_run_count": 1,
+    "exit_code": 0,
+    "process_wall_seconds": 0.733652,
+    "tool_wall_seconds": 0.889026912,
+    "maxrss_kib": 187252,
+    "warning_count": 0,
+    "traceback_count": 0,
+    "static_ast": "passed",
+    "static_ruff": "passed with cache",
+    "source_sha256": "419d46cf5e599c8958e06d8469a53ac65ca889c86b1a5a831ba428123eb9b251",
+    "conditions_sha256": "a97ab1c11b10598471c919ca6de6cb9bbf60e24e1a5b6261fce612f046966f86",
+    "limits": "One Python analysis process, 300 s timeout, 2 GiB address-space ceiling",
+    "logs": [
+      "static-ast.log",
+      "static-ruff.log",
+      "analysis-stdout.log",
+      "analysis-stderr.log"
+    ]
+  },
+  "checks": [
+    {
+      "check": "diagnostic_zip_identity",
+      "passed": true
+    },
+    {
+      "check": "diagnostic_exact_member_set",
+      "passed": true
+    },
+    {
+      "check": "diagnostic_member:saved_array_diagnostic.py",
+      "passed": true,
+      "bytes": 13241,
+      "sha256": "419d46cf5e599c8958e06d8469a53ac65ca889c86b1a5a831ba428123eb9b251"
+    },
+    {
+      "check": "diagnostic_member:conditions.json",
+      "passed": true,
+      "bytes": 2087,
+      "sha256": "a97ab1c11b10598471c919ca6de6cb9bbf60e24e1a5b6261fce612f046966f86"
+    },
+    {
+      "check": "diagnostic_member:input-identities.json",
+      "passed": true,
+      "bytes": 1358,
+      "sha256": "ead50101809ca8b3badd172d8f43dc6d1e4631b441a42250bcd63029e2b21a59"
+    },
+    {
+      "check": "diagnostic_member:details.json",
+      "passed": true,
+      "bytes": 33891,
+      "sha256": "6028d9a3130b01a009d9f8de7efc67667f608ef7bdd9236ec7b44d5b82005298"
+    },
+    {
+      "check": "diagnostic_member:anomalies.json",
+      "passed": true,
+      "bytes": 3,
+      "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570"
+    },
+    {
+      "check": "diagnostic_member:summary.json",
+      "passed": true,
+      "bytes": 3326,
+      "sha256": "ecabd477b99d2a7082e1bd4477cfde0fbd9bb6e73fb99fdf75cb5618689b33fb"
+    },
+    {
+      "check": "diagnostic_member:notes-ja.md",
+      "passed": true,
+      "bytes": 2070,
+      "sha256": "90fd3ed8697a3648401036f911b1cb43587c3e9d3a52da2d8459b297981f90e7"
+    },
+    {
+      "check": "diagnostic_member:run-metadata.json",
+      "passed": true,
+      "bytes": 738,
+      "sha256": "bab5f294dc82190a01d4c616a78062903f63ba80a2d41b70a6e11c22deb77f0d"
+    },
+    {
+      "check": "diagnostic_member:static-ast.log",
+      "passed": true,
+      "bytes": 201,
+      "sha256": "f6cefe8ebb5c753593aac327661bb0e7fee100255f551a878d5836cebed08095"
+    },
+    {
+      "check": "diagnostic_member:static-ruff.log",
+      "passed": true,
+      "bytes": 19,
+      "sha256": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18"
+    },
+    {
+      "check": "diagnostic_member:analysis-stdout.log",
+      "passed": true,
+      "bytes": 62,
+      "sha256": "2f3e52b1c31600eb788f9c905900bca3b28f329fe497adb63f0a1dcdd80d6d45"
+    },
+    {
+      "check": "diagnostic_member:analysis-stderr.log",
+      "passed": true,
+      "bytes": 49,
+      "sha256": "c4e38242508a511b9c9b97247786f5db9e56b66d75836017f5bba07575be3f98"
+    },
+    {
+      "check": "frozen_source_and_conditions",
+      "passed": true
+    },
+    {
+      "check": "input_identity_copy",
+      "passed": true
+    },
+    {
+      "check": "fixed_records_branches",
+      "passed": true
+    },
+    {
+      "check": "declared_limits",
+      "passed": true
+    },
+    {
+      "check": "excluded_operations",
+      "passed": true
+    },
+    {
+      "check": "saved_execution_record",
+      "passed": true
+    },
+    {
+      "check": "saved_resource_log",
+      "passed": true
+    },
+    {
+      "check": "saved_warning_traceback_records",
+      "passed": true
+    },
+    {
+      "check": "saved_static_logs",
+      "passed": true
+    },
+    {
+      "check": "retained_input:v4",
+      "passed": true,
+      "bytes": 20928120,
+      "sha256": "f51fdf9c0e1b1be3f9f2010b23a3267e13dedd32a921b717b61e8b3ce66d6da1"
+    },
+    {
+      "check": "retained_input:v4_delivery",
+      "passed": true,
+      "bytes": 20859022,
+      "sha256": "88736e848c5789da7cc9d7946d2af1601b0c6088c29a0b3a3e7b40344399c133"
+    },
+    {
+      "check": "retained_input:v4_native",
+      "passed": true,
+      "bytes": 20752355,
+      "sha256": "55a706dcf24fb6f3844877da41beb40d4c659ca88856a699218dd70c365459f6"
+    },
+    {
+      "check": "retained_input:old_ar3",
+      "passed": true,
+      "bytes": 41442909,
+      "sha256": "dcbcc49b9cffcded4188adcb32bf61c068344ebf767c76c8bb3591de0506fbe2"
+    },
+    {
+      "check": "retained_input:old_native",
+      "passed": true,
+      "bytes": 41430719,
+      "sha256": "8431e6fb7c206413a00e0ee5bf07e4827076525c390469a168baf722b1cdaafd"
+    },
+    {
+      "check": "new_outer_delivery_chain",
+      "passed": true
+    },
+    {
+      "check": "new_delivery_native_chain",
+      "passed": true
+    },
+    {
+      "check": "old_delivery_native_chain",
+      "passed": true
+    },
+    {
+      "check": "previous_native_audit_pin_matches_parent_received_identity",
+      "passed": true
+    },
+    {
+      "check": "PML_reference_delivery",
+      "passed": true,
+      "bytes": 18504522,
+      "sha256": "43ffc10cdcdd739fb6f0583287af787a39d17050f09a801abe1aa1bd4ec0a21f"
+    },
+    {
+      "check": "PML_reference_native",
+      "passed": true,
+      "bytes": 18493180,
+      "sha256": "b674091fdc09072d7c2c8844cc61cfb2f0730c9410c6914a20329082f028b404"
+    },
+    {
+      "check": "0008:clock_mapping_shapes",
+      "passed": true
+    },
+    {
+      "check": "0008:candidate_arrays",
+      "passed": true
+    },
+    {
+      "check": "0008:PML_clock_mismatch_not_aligned",
+      "passed": true
+    },
+    {
+      "check": "0008L:raw_vector_shapes",
+      "passed": true
+    },
+    {
+      "check": "0008L:exact_clock_bits",
+      "passed": true
+    },
+    {
+      "check": "0008F:raw_vector_shapes",
+      "passed": true
+    },
+    {
+      "check": "0008F:exact_clock_bits",
+      "passed": true
+    },
+    {
+      "check": "0011:clock_mapping_shapes",
+      "passed": true
+    },
+    {
+      "check": "0011:candidate_arrays",
+      "passed": true
+    },
+    {
+      "check": "0011:PML_clock_mismatch_not_aligned",
+      "passed": true
+    },
+    {
+      "check": "0011L:raw_vector_shapes",
+      "passed": true
+    },
+    {
+      "check": "0011L:exact_clock_bits",
+      "passed": true
+    },
+    {
+      "check": "0011F:raw_vector_shapes",
+      "passed": true
+    },
+    {
+      "check": "0011F:exact_clock_bits",
+      "passed": true
+    },
+    {
+      "check": "0032:clock_mapping_shapes",
+      "passed": true
+    },
+    {
+      "check": "0032:candidate_arrays",
+      "passed": true
+    },
+    {
+      "check": "0032:PML_clock_mismatch_not_aligned",
+      "passed": true
+    },
+    {
+      "check": "0032L:raw_vector_shapes",
+      "passed": true
+    },
+    {
+      "check": "0032L:exact_clock_bits",
+      "passed": true
+    },
+    {
+      "check": "0032F:raw_vector_shapes",
+      "passed": true
+    },
+    {
+      "check": "0032F:exact_clock_bits",
+      "passed": true
+    },
+    {
+      "check": "reported_summary:record_branch_counts",
+      "passed": true,
+      "independently_read": {
+        "0008": {
+          "L": {
+            "old_unvoiced_to_new_voiced": 0,
+            "old_voiced_to_new_unvoiced": 1,
+            "both_voiced_frequency_change": 6,
+            "bit_only": 0,
+            "nonfinite_raw_change": 0,
+            "other_numeric_change": 0
+          },
+          "F": {
+            "old_unvoiced_to_new_voiced": 0,
+            "old_voiced_to_new_unvoiced": 3,
+            "both_voiced_frequency_change": 11,
+            "bit_only": 0,
+            "nonfinite_raw_change": 0,
+            "other_numeric_change": 0
+          }
+        },
+        "0011": {
+          "L": {
+            "old_unvoiced_to_new_voiced": 0,
+            "old_voiced_to_new_unvoiced": 1,
+            "both_voiced_frequency_change": 3,
+            "bit_only": 0,
+            "nonfinite_raw_change": 0,
+            "other_numeric_change": 0
+          },
+          "F": {
+            "old_unvoiced_to_new_voiced": 0,
+            "old_voiced_to_new_unvoiced": 1,
+            "both_voiced_frequency_change": 13,
+            "bit_only": 0,
+            "nonfinite_raw_change": 0,
+            "other_numeric_change": 0
+          }
+        },
+        "0032": {
+          "L": {
+            "old_unvoiced_to_new_voiced": 0,
+            "old_voiced_to_new_unvoiced": 0,
+            "both_voiced_frequency_change": 2,
+            "bit_only": 0,
+            "nonfinite_raw_change": 0,
+            "other_numeric_change": 0
+          },
+          "F": {
+            "old_unvoiced_to_new_voiced": 0,
+            "old_voiced_to_new_unvoiced": 0,
+            "both_voiced_frequency_change": 6,
+            "bit_only": 0,
+            "nonfinite_raw_change": 0,
+            "other_numeric_change": 0
+          }
+        }
+      }
+    },
+    {
+      "check": "reported_summary:branch_totals",
+      "passed": true,
+      "independently_read": {
+        "L": {
+          "old_unvoiced_to_new_voiced": 0,
+          "old_voiced_to_new_unvoiced": 2,
+          "both_voiced_frequency_change": 11,
+          "bit_only": 0,
+          "nonfinite_raw_change": 0,
+          "other_numeric_change": 0
+        },
+        "F": {
+          "old_unvoiced_to_new_voiced": 0,
+          "old_voiced_to_new_unvoiced": 4,
+          "both_voiced_frequency_change": 30,
+          "bit_only": 0,
+          "nonfinite_raw_change": 0,
+          "other_numeric_change": 0
+        }
+      }
+    },
+    {
+      "check": "reported_summary:numeric_change_branch_rows",
+      "passed": true,
+      "independently_read": 47
+    },
+    {
+      "check": "reported_summary:unique_record_time_bits",
+      "passed": true,
+      "independently_read": 41
+    },
+    {
+      "check": "reported_summary:unique_record_physical_windows",
+      "passed": true,
+      "independently_read": 41
+    },
+    {
+      "check": "reported_summary:L_F_shared_record_time_bits",
+      "passed": true,
+      "independently_read": 6
+    },
+    {
+      "check": "reported_summary:L_F_shared_record_physical_windows",
+      "passed": true,
+      "independently_read": 6
+    },
+    {
+      "check": "reported_summary:clock_checks",
+      "passed": true,
+      "independently_read": {
+        "0008": {
+          "frames": 1200,
+          "physical_windows": 1197,
+          "L": "old/new raw clock bit-equal to saved AR3 clock",
+          "F": "old/new raw clock bit-equal to saved AR3 clock"
+        },
+        "0011": {
+          "frames": 1200,
+          "physical_windows": 1197,
+          "L": "old/new raw clock bit-equal to saved AR3 clock",
+          "F": "old/new raw clock bit-equal to saved AR3 clock"
+        },
+        "0032": {
+          "frames": 818,
+          "physical_windows": 815,
+          "L": "old/new raw clock bit-equal to saved AR3 clock",
+          "F": "old/new raw clock bit-equal to saved AR3 clock"
+        }
+      }
+    },
+    {
+      "check": "reported_summary:anomaly_count",
+      "passed": true,
+      "independently_read": 0
+    },
+    {
+      "check": "unique_reported_row_keys",
+      "passed": true
+    },
+    {
+      "check": "detail:0008:L:113",
+      "passed": true
+    },
+    {
+      "check": "detail:0008:L:277",
+      "passed": true
+    },
+    {
+      "check": "detail:0008:L:347",
+      "passed": true
+    },
+    {
+      "check": "detail:0008:L:411",
+      "passed": true
+    },
+    {
+      "check": "detail:0008:L:711",
+      "passed": true
+    },
+    {
+      "check": "detail:0008:L:944",
+      "passed": true
+    },
+    {
+      "check": "detail:0008:L:1154",
+      "passed": true
+    },
+    {
+      "check": "detail:0008:F:411",
+      "passed": true
+    },
+    {
+      "check": "detail:0008:F:598",
+      "passed": true
+    },
+    {
+      "check": "detail:0008:F:711",
+      "passed": true
+    },
+    {
+      "check": "detail:0008:F:745",
+      "passed": true
+    },
+    {
+      "check": "detail:0008:F:790",
+      "passed": true
+    },
+    {
+      "check": "detail:0008:F:876",
+      "passed": true
+    },
+    {
+      "check": "detail:0008:F:944",
+      "passed": true
+    },
+    {
+      "check": "detail:0008:F:993",
+      "passed": true
+    },
+    {
+      "check": "detail:0008:F:994",
+      "passed": true
+    },
+    {
+      "check": "detail:0008:F:995",
+      "passed": true
+    },
+    {
+      "check": "detail:0008:F:996",
+      "passed": true
+    },
+    {
+      "check": "detail:0008:F:997",
+      "passed": true
+    },
+    {
+      "check": "detail:0008:F:1018",
+      "passed": true
+    },
+    {
+      "check": "detail:0008:F:1138",
+      "passed": true
+    },
+    {
+      "check": "detail:0011:L:416",
+      "passed": true
+    },
+    {
+      "check": "detail:0011:L:547",
+      "passed": true
+    },
+    {
+      "check": "detail:0011:L:748",
+      "passed": true
+    },
+    {
+      "check": "detail:0011:L:821",
+      "passed": true
+    },
+    {
+      "check": "detail:0011:F:60",
+      "passed": true
+    },
+    {
+      "check": "detail:0011:F:70",
+      "passed": true
+    },
+    {
+      "check": "detail:0011:F:416",
+      "passed": true
+    },
+    {
+      "check": "detail:0011:F:417",
+      "passed": true
+    },
+    {
+      "check": "detail:0011:F:532",
+      "passed": true
+    },
+    {
+      "check": "detail:0011:F:547",
+      "passed": true
+    },
+    {
+      "check": "detail:0011:F:579",
+      "passed": true
+    },
+    {
+      "check": "detail:0011:F:580",
+      "passed": true
+    },
+    {
+      "check": "detail:0011:F:629",
+      "passed": true
+    },
+    {
+      "check": "detail:0011:F:636",
+      "passed": true
+    },
+    {
+      "check": "detail:0011:F:637",
+      "passed": true
+    },
+    {
+      "check": "detail:0011:F:865",
+      "passed": true
+    },
+    {
+      "check": "detail:0011:F:866",
+      "passed": true
+    },
+    {
+      "check": "detail:0011:F:936",
+      "passed": true
+    },
+    {
+      "check": "detail:0032:L:371",
+      "passed": true
+    },
+    {
+      "check": "detail:0032:L:473",
+      "passed": true
+    },
+    {
+      "check": "detail:0032:F:89",
+      "passed": true
+    },
+    {
+      "check": "detail:0032:F:371",
+      "passed": true
+    },
+    {
+      "check": "detail:0032:F:482",
+      "passed": true
+    },
+    {
+      "check": "detail:0032:F:511",
+      "passed": true
+    },
+    {
+      "check": "detail:0032:F:765",
+      "passed": true
+    },
+    {
+      "check": "detail:0032:F:797",
+      "passed": true
+    },
+    {
+      "check": "exact_full_detail_list",
+      "passed": true,
+      "rows": 47
+    },
+    {
+      "check": "anomalies_empty_and_match",
+      "passed": true
+    },
+    {
+      "check": "stdout_summary_matches",
+      "passed": true
+    },
+    {
+      "check": "parent_reported_local_top_counts",
+      "passed": true,
+      "changed": 15,
+      "same": 26
+    },
+    {
+      "check": "parent_reported_main_totals",
+      "passed": true
+    }
+  ],
+  "failed_checks": [],
+  "array_identities": [
+    {
+      "archive": "old_native",
+      "member": "records/librispeech_1089-134686-0008/selector_ar3/raw_times.npy",
+      "bytes": 9728,
+      "sha256": "3abb55cac4927937f9e2ba268e681e77bc511e3f33e1bc0e967a7d3d423ab3da",
+      "dtype": "<f8",
+      "shape": [
+        1200
+      ],
+      "payload_sha256": "7f3277caf8bac500d55d63ae409fcd00dc67e4a1ef2df8640dc5274b248becc8"
+    },
+    {
+      "archive": "old_native",
+      "member": "records/librispeech_1089-134686-0008/selector_ar3/anchor_to_unique_window.npy",
+      "bytes": 9728,
+      "sha256": "a07fb8df69ff3ebbb3346fb266915a1bbe42baa236356d9e9afc5b42e626f6ef",
+      "dtype": "<i8",
+      "shape": [
+        1200
+      ],
+      "payload_sha256": "0ecc8e3cdeb6eac21ab74a019a3810eb0996457ec43a3eaa5387593ec45f1bc1"
+    },
+    {
+      "archive": "old_native",
+      "member": "records/librispeech_1089-134686-0008/selector_ar3/unique_window_start.npy",
+      "bytes": 9704,
+      "sha256": "e40140ed04f9f5374519dd7ded7b4d4232cc8ac3c93ddb58c61693cb24eb540d",
+      "dtype": "<i8",
+      "shape": [
+        1197
+      ],
+      "payload_sha256": "8ec922061b0c4dc9fe37f271e3f6642c76628dc8203f50b8c69952d638d020a0"
+    },
+    {
+      "archive": "old_native",
+      "member": "records/librispeech_1089-134686-0008/selector_ar3/q_log_potential.npy",
+      "bytes": 4425728,
+      "sha256": "b8f68e0db9be040add128993c05eb19bc0c469f1936e9f6031b582d8e70d3f47",
+      "dtype": "<f8",
+      "shape": [
+        1200,
+        461
+      ],
+      "payload_sha256": "a466c68e3ddcb43f4d5ce5b61d1094e711de9d7c2ac616261a4be2322198b084"
+    },
+    {
+      "archive": "v4_native",
+      "member": "records/librispeech_1089-134686-0008/bridge/acg_q.npy",
+      "bytes": 4425728,
+      "sha256": "515f1df56cd91d2325458dee506077e79c0b859c5fd46ccd1c4f2c6c5e9d084f",
+      "dtype": "<f8",
+      "shape": [
+        1200,
+        461
+      ],
+      "payload_sha256": "443d1fed503089d36d947883ef658721158d7c8155eabfe763834db42a1c494c"
+    },
+    {
+      "archive": "prior_native",
+      "member": "records/librispeech_1089-134686-0008/branches/pml/raw_f0.npy",
+      "bytes": 19248,
+      "sha256": "ce115dd602fc9711555ef9630505277b00b7d8e18a691078cbe85958ab27acba",
+      "dtype": "<f8",
+      "shape": [
+        1195,
+        2
+      ],
+      "payload_sha256": "ec6f3b916f85f3873e8d4134d0001a733cca48288d3ec84859e2ea7cd215d286"
+    },
+    {
+      "archive": "old_native",
+      "member": "records/librispeech_1089-134686-0008/branches/L_ar3_d1/raw_f0.npy",
+      "bytes": 19328,
+      "sha256": "c6d6950e3c9a24d5fd7fd510f9f26d0e1d33eb980e771e3435cda56265b8bce6",
+      "dtype": "<f8",
+      "shape": [
+        1200,
+        2
+      ],
+      "payload_sha256": "ce6c4f6ae7a3466990663a7d4db34ba438253f145962b8efdb83cbce0aab695d"
+    },
+    {
+      "archive": "v4_native",
+      "member": "records/librispeech_1089-134686-0008/branches/L_acg_d1/raw_f0.npy",
+      "bytes": 19328,
+      "sha256": "68309e02800c7dc1dce414856e79c4dd0589975b630e54373a315704e0b67411",
+      "dtype": "<f8",
+      "shape": [
+        1200,
+        2
+      ],
+      "payload_sha256": "cb9ffc407756c878ee00e2d8c1fbe4457f6aa1147167cfbfced34040e42b83c6"
+    },
+    {
+      "archive": "old_native",
+      "member": "records/librispeech_1089-134686-0008/selector_ar3/L/gate.npy",
+      "bytes": 1328,
+      "sha256": "e66150e9b0b4abf9556429e3a3889f6a1c9f9c9b8b650966bccbd1a81a90b699",
+      "dtype": "|u1",
+      "shape": [
+        1200
+      ],
+      "payload_sha256": "e9830675796202463c8554310a3d9c56256311b5f9c35b896e11dc7998b220fd"
+    },
+    {
+      "archive": "old_native",
+      "member": "records/librispeech_1089-134686-0008/selector_ar3/L/q_index.npy",
+      "bytes": 9728,
+      "sha256": "2d12286465eaa2b65f3bb033de920deb811594afeaba38c2d9ae1019f5906ebd",
+      "dtype": "<i8",
+      "shape": [
+        1200
+      ],
+      "payload_sha256": "7382e01ce95d137da2300b8de91927eaf9f5a32ffe9610ba8caf43bff21d2977"
+    },
+    {
+      "archive": "old_native",
+      "member": "records/librispeech_1089-134686-0008/selector_ar3/L/raw_f0.npy",
+      "bytes": 9728,
+      "sha256": "5525625159d549b56172e4336f97c27b106952d5317ad5f50cdbc31efda02839",
+      "dtype": "<f8",
+      "shape": [
+        1200
+      ],
+      "payload_sha256": "9042daef3f3e7309de42b6aaf71185c56f4a807d8c0412440b962b5d0ee3b735"
+    },
+    {
+      "archive": "v4_native",
+      "member": "records/librispeech_1089-134686-0008/selector_acg/L/gate.npy",
+      "bytes": 1328,
+      "sha256": "7055d4af7c1c65900b1b1ba5e5ea9f16a6d7eb442f900ad117f78ae86a3193de",
+      "dtype": "|u1",
+      "shape": [
+        1200
+      ],
+      "payload_sha256": "069e6c713450087c8f751cfe6becb33c169a5e432ac69c23f77bf9ef4e7a1217"
+    },
+    {
+      "archive": "v4_native",
+      "member": "records/librispeech_1089-134686-0008/selector_acg/L/q_index.npy",
+      "bytes": 9728,
+      "sha256": "1ae862e6ebf9f642ef3b11c21101d0fb4011fd449781999f5c206f55192ea792",
+      "dtype": "<i8",
+      "shape": [
+        1200
+      ],
+      "payload_sha256": "05ad9a7436007679d5e3cd9c033437976e0853cf06467def3ddc5f8594aad905"
+    },
+    {
+      "archive": "v4_native",
+      "member": "records/librispeech_1089-134686-0008/selector_acg/L/raw_f0.npy",
+      "bytes": 9728,
+      "sha256": "48c9fa20cf3b3bf6121075f379438e59f3295a24c888bcda97e6d15fc0f45cdf",
+      "dtype": "<f8",
+      "shape": [
+        1200
+      ],
+      "payload_sha256": "bba223f564952819d4e590d995208a7dcefa50795a74e5300c05c8b1d521cbf3"
+    },
+    {
+      "archive": "old_native",
+      "member": "records/librispeech_1089-134686-0008/branches/F_ar3_d1/raw_f0.npy",
+      "bytes": 19328,
+      "sha256": "7a4cb7ee4228dba6467c169de9e91784efed70908028a9d0c498acfc5643cd68",
+      "dtype": "<f8",
+      "shape": [
+        1200,
+        2
+      ],
+      "payload_sha256": "238fb7602200fef87a9dd839635600ed17698f18543315a53b451e1d17f6102f"
+    },
+    {
+      "archive": "v4_native",
+      "member": "records/librispeech_1089-134686-0008/branches/F_acg_d1/raw_f0.npy",
+      "bytes": 19328,
+      "sha256": "8964960dc81a353b0b905a31b406ebe51469aea30cf51ece6be65c9ccb32154c",
+      "dtype": "<f8",
+      "shape": [
+        1200,
+        2
+      ],
+      "payload_sha256": "b776de21bcf13b3a6ae14834007f992d9c268624ef9f543ce4bc753e0c3288e2"
+    },
+    {
+      "archive": "old_native",
+      "member": "records/librispeech_1089-134686-0008/selector_ar3/F/gate.npy",
+      "bytes": 1328,
+      "sha256": "24992f11c480ffd217605043477359dbab6696cbb9cd44bf610e819c756addd0",
+      "dtype": "|u1",
+      "shape": [
+        1200
+      ],
+      "payload_sha256": "c8f85a91bc22b9763d225f3bd5353527cfc504627a4b62e7255f27da1d028822"
+    },
+    {
+      "archive": "old_native",
+      "member": "records/librispeech_1089-134686-0008/selector_ar3/F/q_index.npy",
+      "bytes": 9728,
+      "sha256": "009faba9295f97352ab37dada6d033d5454a23f4a389345b4175724c9f0aa448",
+      "dtype": "<i8",
+      "shape": [
+        1200
+      ],
+      "payload_sha256": "d8a63c71a97d9e64ebb13d0539d18aa5fa83e4cdac85ac5c223a5ec11dcde40b"
+    },
+    {
+      "archive": "old_native",
+      "member": "records/librispeech_1089-134686-0008/selector_ar3/F/raw_f0.npy",
+      "bytes": 9728,
+      "sha256": "bd73d813aed0c26201b8e753ac44ee05dd061b67875cd53ef3c22ce4fc6225eb",
+      "dtype": "<f8",
+      "shape": [
+        1200
+      ],
+      "payload_sha256": "2b9ccb4efe51fecb8f84ef63ab0271a472199f8df41bcc0f00e4767cf564030a"
+    },
+    {
+      "archive": "v4_native",
+      "member": "records/librispeech_1089-134686-0008/selector_acg/F/gate.npy",
+      "bytes": 1328,
+      "sha256": "f4af40546304df63a9fa618e44d91df515ed842f21ce5200ac91245b17348329",
+      "dtype": "|u1",
+      "shape": [
+        1200
+      ],
+      "payload_sha256": "af88ee2973d90a7b6f5c771df84e9b1b18e5a2a1c22fc9d93c7b473911de2424"
+    },
+    {
+      "archive": "v4_native",
+      "member": "records/librispeech_1089-134686-0008/selector_acg/F/q_index.npy",
+      "bytes": 9728,
+      "sha256": "dba136982399a663f29c3bcdde66c433917461b69b0da29cbf9f041bf4bdc40e",
+      "dtype": "<i8",
+      "shape": [
+        1200
+      ],
+      "payload_sha256": "050e21c0e8069cd61ad411bec0094d12d1d8ff3c4a5b1c645eb587469609c0b8"
+    },
+    {
+      "archive": "v4_native",
+      "member": "records/librispeech_1089-134686-0008/selector_acg/F/raw_f0.npy",
+      "bytes": 9728,
+      "sha256": "e53566e1c361323688abb2fdfe7c4a1deffc39773363880c579b4df4bb1d86e5",
+      "dtype": "<f8",
+      "shape": [
+        1200
+      ],
+      "payload_sha256": "7137544c2809b3f53f0ee262e0085ea4e8150ea31cf7b1b165a40a851df88d42"
+    },
+    {
+      "archive": "old_native",
+      "member": "records/librispeech_1089-134686-0011/selector_ar3/raw_times.npy",
+      "bytes": 9728,
+      "sha256": "3abb55cac4927937f9e2ba268e681e77bc511e3f33e1bc0e967a7d3d423ab3da",
+      "dtype": "<f8",
+      "shape": [
+        1200
+      ],
+      "payload_sha256": "7f3277caf8bac500d55d63ae409fcd00dc67e4a1ef2df8640dc5274b248becc8"
+    },
+    {
+      "archive": "old_native",
+      "member": "records/librispeech_1089-134686-0011/selector_ar3/anchor_to_unique_window.npy",
+      "bytes": 9728,
+      "sha256": "a07fb8df69ff3ebbb3346fb266915a1bbe42baa236356d9e9afc5b42e626f6ef",
+      "dtype": "<i8",
+      "shape": [
+        1200
+      ],
+      "payload_sha256": "0ecc8e3cdeb6eac21ab74a019a3810eb0996457ec43a3eaa5387593ec45f1bc1"
+    },
+    {
+      "archive": "old_native",
+      "member": "records/librispeech_1089-134686-0011/selector_ar3/unique_window_start.npy",
+      "bytes": 9704,
+      "sha256": "e40140ed04f9f5374519dd7ded7b4d4232cc8ac3c93ddb58c61693cb24eb540d",
+      "dtype": "<i8",
+      "shape": [
+        1197
+      ],
+      "payload_sha256": "8ec922061b0c4dc9fe37f271e3f6642c76628dc8203f50b8c69952d638d020a0"
+    },
+    {
+      "archive": "old_native",
+      "member": "records/librispeech_1089-134686-0011/selector_ar3/q_log_potential.npy",
+      "bytes": 4425728,
+      "sha256": "9538b9399ccc015a6a5de2bd08f5abd903c236595267eb444d09438aaef819bf",
+      "dtype": "<f8",
+      "shape": [
+        1200,
+        461
+      ],
+      "payload_sha256": "b8a90f23403218168999674140367f1c001ac84368f10de1cbf89056cf5fe05a"
+    },
+    {
+      "archive": "v4_native",
+      "member": "records/librispeech_1089-134686-0011/bridge/acg_q.npy",
+      "bytes": 4425728,
+      "sha256": "fa7d613ce09564da85df04fa82fb76c54652adb43d06074c7257e244a2f7e9ba",
+      "dtype": "<f8",
+      "shape": [
+        1200,
+        461
+      ],
+      "payload_sha256": "4e83089720aadbb8423b71fb51e2319d7a7160c0bf3aa540c330a0e90f98a1b1"
+    },
+    {
+      "archive": "prior_native",
+      "member": "records/librispeech_1089-134686-0011/branches/pml/raw_f0.npy",
+      "bytes": 19264,
+      "sha256": "dd2532305862147bb5b31c437901f0b8574ce46363ff976a39ba1f8e1b409ace",
+      "dtype": "<f8",
+      "shape": [
+        1196,
+        2
+      ],
+      "payload_sha256": "2486500bde12770702180b77bc1ba2ec750d7fdf45b5fe55f990a4c143df2a41"
+    },
+    {
+      "archive": "old_native",
+      "member": "records/librispeech_1089-134686-0011/branches/L_ar3_d1/raw_f0.npy",
+      "bytes": 19328,
+      "sha256": "ea6f4628d2445de297b60b276f9be76ed43265b58a21c4f3ffe89f059553433e",
+      "dtype": "<f8",
+      "shape": [
+        1200,
+        2
+      ],
+      "payload_sha256": "5e9dfaf05ec74df2e9c631c167b21f63ff1466dde72f1ffe7eb54948fbfdd2b6"
+    },
+    {
+      "archive": "v4_native",
+      "member": "records/librispeech_1089-134686-0011/branches/L_acg_d1/raw_f0.npy",
+      "bytes": 19328,
+      "sha256": "c96f819ea07ed29f8c34b4fcbbf0a4b6279d1c4a81e1dc89aca57a0a3abe8924",
+      "dtype": "<f8",
+      "shape": [
+        1200,
+        2
+      ],
+      "payload_sha256": "1a992ffb14627023c25286c6a97ac9cb93c86cd8d939801bfb54213db7eb1a23"
+    },
+    {
+      "archive": "old_native",
+      "member": "records/librispeech_1089-134686-0011/selector_ar3/L/gate.npy",
+      "bytes": 1328,
+      "sha256": "e9bf055aee03e3f84f06de8fa2e31690ef2750eb91b61d53a7569f851aadbd56",
+      "dtype": "|u1",
+      "shape": [
+        1200
+      ],
+      "payload_sha256": "06f8a5c1a248bb011b1df61dd96195082241737813006bb6c1d260703b760dd1"
+    },
+    {
+      "archive": "old_native",
+      "member": "records/librispeech_1089-134686-0011/selector_ar3/L/q_index.npy",
+      "bytes": 9728,
+      "sha256": "429d5d833823183151ebeccf359f47cc7b126404eae8060a742c0168a0487342",
+      "dtype": "<i8",
+      "shape": [
+        1200
+      ],
+      "payload_sha256": "2031ed459bf882ca2399e60236e24819052d9e5d86ce0198f3562a15e5af43de"
+    },
+    {
+      "archive": "old_native",
+      "member": "records/librispeech_1089-134686-0011/selector_ar3/L/raw_f0.npy",
+      "bytes": 9728,
+      "sha256": "c29e6ac57558d226bf4d291ab5f102ce655362b77d3420d58e325e6d28584f40",
+      "dtype": "<f8",
+      "shape": [
+        1200
+      ],
+      "payload_sha256": "8c9f4b912472fede6b9b63326753fa74fca4baccbdc78beffbec70745c64630e"
+    },
+    {
+      "archive": "v4_native",
+      "member": "records/librispeech_1089-134686-0011/selector_acg/L/gate.npy",
+      "bytes": 1328,
+      "sha256": "813b6550b8c219e1c71e66bcfedd2313229d12d97b815980adcc262f0a7547bd",
+      "dtype": "|u1",
+      "shape": [
+        1200
+      ],
+      "payload_sha256": "a7b5f8388e9008d92e81ea475bdbfe9029f8c5af0d52bdb5a6432ed338d6d70d"
+    },
+    {
+      "archive": "v4_native",
+      "member": "records/librispeech_1089-134686-0011/selector_acg/L/q_index.npy",
+      "bytes": 9728,
+      "sha256": "e76589f3459bc10d6054ad02761b5b9321c237f98d0d76e536372320d96ca039",
+      "dtype": "<i8",
+      "shape": [
+        1200
+      ],
+      "payload_sha256": "546444e40f243da3168a3decdd3f169f6fe76c750a29000679f3d2a6e3c51b81"
+    },
+    {
+      "archive": "v4_native",
+      "member": "records/librispeech_1089-134686-0011/selector_acg/L/raw_f0.npy",
+      "bytes": 9728,
+      "sha256": "4429467449e529d5c77e1dba8c3b048889dbc058da2a9eb0030088843aab7fa3",
+      "dtype": "<f8",
+      "shape": [
+        1200
+      ],
+      "payload_sha256": "51af3f4fa1ff3d2343087121bdc09d18eb03a374a73e6825710b3ae773b0c570"
+    },
+    {
+      "archive": "old_native",
+      "member": "records/librispeech_1089-134686-0011/branches/F_ar3_d1/raw_f0.npy",
+      "bytes": 19328,
+      "sha256": "6ebb36f03df41dde689ae0c3fa54a83d4622cc6ff508dc8e60e1584db21ae010",
+      "dtype": "<f8",
+      "shape": [
+        1200,
+        2
+      ],
+      "payload_sha256": "5f4598690b88c405dc17e6ddba7954bd12b415d59d03115d9c099baae74acca6"
+    },
+    {
+      "archive": "v4_native",
+      "member": "records/librispeech_1089-134686-0011/branches/F_acg_d1/raw_f0.npy",
+      "bytes": 19328,
+      "sha256": "5dc756cc96ed791c02e621566221b44a85724ef66e9926a8d934d669364777d6",
+      "dtype": "<f8",
+      "shape": [
+        1200,
+        2
+      ],
+      "payload_sha256": "c7e288c271f0ec7b31a60564f05215562566f5ed16269084a257db5f6e33427c"
+    },
+    {
+      "archive": "old_native",
+      "member": "records/librispeech_1089-134686-0011/selector_ar3/F/gate.npy",
+      "bytes": 1328,
+      "sha256": "dd6065db4c66f05fac0a68bb97bb10fede440098b0a4e4662b4a78dbec860f34",
+      "dtype": "|u1",
+      "shape": [
+        1200
+      ],
+      "payload_sha256": "0ec9396d03c9dbaa15294479d74f447d5092e1ad0bee47bafc20bb4e6f64474e"
+    },
+    {
+      "archive": "old_native",
+      "member": "records/librispeech_1089-134686-0011/selector_ar3/F/q_index.npy",
+      "bytes": 9728,
+      "sha256": "568b256c8eda73db4d6e0216e8af19867d258d7ce65505cb58042913c021672b",
+      "dtype": "<i8",
+      "shape": [
+        1200
+      ],
+      "payload_sha256": "83828a1b40d257e20dff7bc75781d1889138836b61b1fd5fe94787343f548bb3"
+    },
+    {
+      "archive": "old_native",
+      "member": "records/librispeech_1089-134686-0011/selector_ar3/F/raw_f0.npy",
+      "bytes": 9728,
+      "sha256": "e4f5eda00c2bd604703e0495a139892637c251c256effd13a94bd576d601628e",
+      "dtype": "<f8",
+      "shape": [
+        1200
+      ],
+      "payload_sha256": "780bec4192b751aeaf891ab5e83a31ebb2c7b1d220a9936a54c00ddd1e14cc67"
+    },
+    {
+      "archive": "v4_native",
+      "member": "records/librispeech_1089-134686-0011/selector_acg/F/gate.npy",
+      "bytes": 1328,
+      "sha256": "831c3cec3e23c776fa15a604c6605ab8adb75620cf76f742144cb30706f02fd1",
+      "dtype": "|u1",
+      "shape": [
+        1200
+      ],
+      "payload_sha256": "d430ee4d25b059db350dce889978386eedc08610fa0b100feb1672f115d33b05"
+    },
+    {
+      "archive": "v4_native",
+      "member": "records/librispeech_1089-134686-0011/selector_acg/F/q_index.npy",
+      "bytes": 9728,
+      "sha256": "7658af830c61d75ceb40b0a42fa631a27221b2d089b24aa37fc64f2034c952ce",
+      "dtype": "<i8",
+      "shape": [
+        1200
+      ],
+      "payload_sha256": "056d3b925dc50d55bfc06f99de5b6323c27817d79fd112733e89118f119f184d"
+    },
+    {
+      "archive": "v4_native",
+      "member": "records/librispeech_1089-134686-0011/selector_acg/F/raw_f0.npy",
+      "bytes": 9728,
+      "sha256": "265e8e037d3bb60011ad0f17cf0fc777de794c4fcd81a3c5d14f0abac1a4340a",
+      "dtype": "<f8",
+      "shape": [
+        1200
+      ],
+      "payload_sha256": "a4a68909162d5df1daf56bf77359cd6b0f5011c0bdfe6f02eb7fc54ef12c1ccb"
+    },
+    {
+      "archive": "old_native",
+      "member": "records/librispeech_1089-134686-0032/selector_ar3/raw_times.npy",
+      "bytes": 6672,
+      "sha256": "731e29828a8f3f3f7def430128db3f17f4197dd57147e47b94b3637a243cb3b6",
+      "dtype": "<f8",
+      "shape": [
+        818
+      ],
+      "payload_sha256": "03a08b56261e261e14058cff531db63c7babd8ae8f5fb0a6cb7daa3f789b2568"
+    },
+    {
+      "archive": "old_native",
+      "member": "records/librispeech_1089-134686-0032/selector_ar3/anchor_to_unique_window.npy",
+      "bytes": 6672,
+      "sha256": "687536512cde731f806956f740a83171cda37e27185620cd860cc852c7bb5be1",
+      "dtype": "<i8",
+      "shape": [
+        818
+      ],
+      "payload_sha256": "4d89f6820ff9d47925a1c9997986aa433efb723c1f2b906fe8c879cd819255c9"
+    },
+    {
+      "archive": "old_native",
+      "member": "records/librispeech_1089-134686-0032/selector_ar3/unique_window_start.npy",
+      "bytes": 6648,
+      "sha256": "41b2d831ac5d51d57149e55ae061f5c28c9481aa1bde441e8e684254f1f058c2",
+      "dtype": "<i8",
+      "shape": [
+        815
+      ],
+      "payload_sha256": "d257e755abb1c6c9d8cf2a4bbd6c4a94b4ef076e2a289aa3aa8333efc24adaef"
+    },
+    {
+      "archive": "old_native",
+      "member": "records/librispeech_1089-134686-0032/selector_ar3/q_log_potential.npy",
+      "bytes": 3016912,
+      "sha256": "164ee9d7d0aac440c128a3b35cb71be0b3b949009ddbe296350abb3037a576ea",
+      "dtype": "<f8",
+      "shape": [
+        818,
+        461
+      ],
+      "payload_sha256": "bff1734857af2d220bc28d39167b9ce1798221e897952de2857cb63b0bd1930e"
+    },
+    {
+      "archive": "v4_native",
+      "member": "records/librispeech_1089-134686-0032/bridge/acg_q.npy",
+      "bytes": 3016912,
+      "sha256": "b2754199b34263e303365d3563e8d5157000541ac60bd818c52bcbf89d27fa20",
+      "dtype": "<f8",
+      "shape": [
+        818,
+        461
+      ],
+      "payload_sha256": "a27aa8e4c613ac08b3b238757362cfa6fa0297d8e9ec62d62a6aa94a978f79f2"
+    },
+    {
+      "archive": "prior_native",
+      "member": "records/librispeech_1089-134686-0032/branches/pml/raw_f0.npy",
+      "bytes": 13152,
+      "sha256": "bc75738a0a744d8cd63aa88f1a990455a02a541450873e3b6b8d649bcf29397c",
+      "dtype": "<f8",
+      "shape": [
+        814,
+        2
+      ],
+      "payload_sha256": "d80376fd4cf8615f14698273b7d7f84be0790f1849147585ca32c92b111c90bc"
+    },
+    {
+      "archive": "old_native",
+      "member": "records/librispeech_1089-134686-0032/branches/L_ar3_d1/raw_f0.npy",
+      "bytes": 13216,
+      "sha256": "9ab2c840f8384ca012ef5710d5636ec2460b248395d8c79ed05acd5d0abd2380",
+      "dtype": "<f8",
+      "shape": [
+        818,
+        2
+      ],
+      "payload_sha256": "bb98343659ddbfb5b93949ffcd985a545dac1b7b3bb1ec8272b093b24d04e76f"
+    },
+    {
+      "archive": "v4_native",
+      "member": "records/librispeech_1089-134686-0032/branches/L_acg_d1/raw_f0.npy",
+      "bytes": 13216,
+      "sha256": "17ab3b705e6bfe5af6f83d15458c8a7ac44e1b67b5aa86bb684703a9a89dac22",
+      "dtype": "<f8",
+      "shape": [
+        818,
+        2
+      ],
+      "payload_sha256": "44a73a9a13d002cca7e2b1c720f6db04b2315adaa92c06276f09a7840daf6e58"
+    },
+    {
+      "archive": "old_native",
+      "member": "records/librispeech_1089-134686-0032/selector_ar3/L/gate.npy",
+      "bytes": 946,
+      "sha256": "7fec92391986847bc98362a07a7c1393a5c2439aebff827b1c36c09efd78356e",
+      "dtype": "|u1",
+      "shape": [
+        818
+      ],
+      "payload_sha256": "3d8cbbbb7a8487514d9aabd6d84ca3b4be2c1b61e74d778baa6a0b0371ea0876"
+    },
+    {
+      "archive": "old_native",
+      "member": "records/librispeech_1089-134686-0032/selector_ar3/L/q_index.npy",
+      "bytes": 6672,
+      "sha256": "49149c8eeba12cc4560161c4ca0d105ad4f80eaba0ccdc1a1160a260fc4e13ae",
+      "dtype": "<i8",
+      "shape": [
+        818
+      ],
+      "payload_sha256": "e178b18101c1dde591eb29079a94bf4ad87aa6914cd8cfb0a9d576d55b285d6a"
+    },
+    {
+      "archive": "old_native",
+      "member": "records/librispeech_1089-134686-0032/selector_ar3/L/raw_f0.npy",
+      "bytes": 6672,
+      "sha256": "1b5100afad480af0b3512a0e607e1a31f390d8721cafc306e740eec4e06ef7b9",
+      "dtype": "<f8",
+      "shape": [
+        818
+      ],
+      "payload_sha256": "d88b346455cd9285f3fadaf4f3cd4cfec409e9512c0d18d4026e44b3a5ea8c87"
+    },
+    {
+      "archive": "v4_native",
+      "member": "records/librispeech_1089-134686-0032/selector_acg/L/gate.npy",
+      "bytes": 946,
+      "sha256": "7fec92391986847bc98362a07a7c1393a5c2439aebff827b1c36c09efd78356e",
+      "dtype": "|u1",
+      "shape": [
+        818
+      ],
+      "payload_sha256": "3d8cbbbb7a8487514d9aabd6d84ca3b4be2c1b61e74d778baa6a0b0371ea0876"
+    },
+    {
+      "archive": "v4_native",
+      "member": "records/librispeech_1089-134686-0032/selector_acg/L/q_index.npy",
+      "bytes": 6672,
+      "sha256": "c26c8b880527c7667f8eae01d759c436abb4cc4f3ea9c14a00fcd6d295f13159",
+      "dtype": "<i8",
+      "shape": [
+        818
+      ],
+      "payload_sha256": "55aea88422f126678b8f8ed9d843f03795050e2e448e5da28d2b51961ffc3166"
+    },
+    {
+      "archive": "v4_native",
+      "member": "records/librispeech_1089-134686-0032/selector_acg/L/raw_f0.npy",
+      "bytes": 6672,
+      "sha256": "88d5df7d13abbd80dd7d03ab63bf47e7cca06f7d6c1e61505adf774c5e6a5edb",
+      "dtype": "<f8",
+      "shape": [
+        818
+      ],
+      "payload_sha256": "21fb0bfe1efe68b00e9d19bbaa05c3757cb827e271d6404f339c398c8ffa9eeb"
+    },
+    {
+      "archive": "old_native",
+      "member": "records/librispeech_1089-134686-0032/branches/F_ar3_d1/raw_f0.npy",
+      "bytes": 13216,
+      "sha256": "885cce28f4b87b233480d615d2f091ee66f7e7cc069610f071fd50a6ff27b655",
+      "dtype": "<f8",
+      "shape": [
+        818,
+        2
+      ],
+      "payload_sha256": "3591dde025cb181faf69fbd7af7f868415fa33bdc33836d5c2f116e0b267ae59"
+    },
+    {
+      "archive": "v4_native",
+      "member": "records/librispeech_1089-134686-0032/branches/F_acg_d1/raw_f0.npy",
+      "bytes": 13216,
+      "sha256": "06acc746460a9451971ed83742cf7e967b0146193905fa46a59c96856cb7c0bc",
+      "dtype": "<f8",
+      "shape": [
+        818,
+        2
+      ],
+      "payload_sha256": "869c00fba0fbe0422121574ed224998adb6a17d2637b97eaf9818ce6d0e15832"
+    },
+    {
+      "archive": "old_native",
+      "member": "records/librispeech_1089-134686-0032/selector_ar3/F/gate.npy",
+      "bytes": 946,
+      "sha256": "4975b8007065c18ee09998ce358ac49bd480cc1e3ddaf74c4471075df1bc195c",
+      "dtype": "|u1",
+      "shape": [
+        818
+      ],
+      "payload_sha256": "a14a9fff0e4152c45900bed416fa14805aa3bea556820bfba8c57ea1ede1b095"
+    },
+    {
+      "archive": "old_native",
+      "member": "records/librispeech_1089-134686-0032/selector_ar3/F/q_index.npy",
+      "bytes": 6672,
+      "sha256": "c2c7e84f5ca568aee840034a48058b2e1d03c90412bb7d2bafc5cd86d110d10b",
+      "dtype": "<i8",
+      "shape": [
+        818
+      ],
+      "payload_sha256": "e8269bce7ef993ff1a10f4f1824a7d083b992696a02b0e40264affa2ab34dfd5"
+    },
+    {
+      "archive": "old_native",
+      "member": "records/librispeech_1089-134686-0032/selector_ar3/F/raw_f0.npy",
+      "bytes": 6672,
+      "sha256": "7983d1e75f4a1e4dea180ff19487bb25f2704aac4ae7b960264b21d7cffb1444",
+      "dtype": "<f8",
+      "shape": [
+        818
+      ],
+      "payload_sha256": "1548d26d4817c698c670d8ab027792ec0dd1e2e368e89988f746d9d54dbf7545"
+    },
+    {
+      "archive": "v4_native",
+      "member": "records/librispeech_1089-134686-0032/selector_acg/F/gate.npy",
+      "bytes": 946,
+      "sha256": "4975b8007065c18ee09998ce358ac49bd480cc1e3ddaf74c4471075df1bc195c",
+      "dtype": "|u1",
+      "shape": [
+        818
+      ],
+      "payload_sha256": "a14a9fff0e4152c45900bed416fa14805aa3bea556820bfba8c57ea1ede1b095"
+    },
+    {
+      "archive": "v4_native",
+      "member": "records/librispeech_1089-134686-0032/selector_acg/F/q_index.npy",
+      "bytes": 6672,
+      "sha256": "39850ec3cef41eb333148039bc64a9737fa9ad113c90bd23e0154a4edf14c851",
+      "dtype": "<i8",
+      "shape": [
+        818
+      ],
+      "payload_sha256": "09cd3b494291e59bd3270ecd98daa4d59064a46a73da39979755022cd00bbf33"
+    },
+    {
+      "archive": "v4_native",
+      "member": "records/librispeech_1089-134686-0032/selector_acg/F/raw_f0.npy",
+      "bytes": 6672,
+      "sha256": "042e4e0e204e5c93162f89a51e174b10ca1baf8a3ed57966ab340c0a4579e35f",
+      "dtype": "<f8",
+      "shape": [
+        818
+      ],
+      "payload_sha256": "67102ce1d029824ebf91e25fc88e0572f11dfba0de26b4e2dd9baf4056bfa0f4"
+    }
+  ],
+  "independent_summary": {
+    "record_branch_counts": {
+      "0008": {
+        "L": {
+          "old_unvoiced_to_new_voiced": 0,
+          "old_voiced_to_new_unvoiced": 1,
+          "both_voiced_frequency_change": 6,
+          "bit_only": 0,
+          "nonfinite_raw_change": 0,
+          "other_numeric_change": 0
+        },
+        "F": {
+          "old_unvoiced_to_new_voiced": 0,
+          "old_voiced_to_new_unvoiced": 3,
+          "both_voiced_frequency_change": 11,
+          "bit_only": 0,
+          "nonfinite_raw_change": 0,
+          "other_numeric_change": 0
+        }
+      },
+      "0011": {
+        "L": {
+          "old_unvoiced_to_new_voiced": 0,
+          "old_voiced_to_new_unvoiced": 1,
+          "both_voiced_frequency_change": 3,
+          "bit_only": 0,
+          "nonfinite_raw_change": 0,
+          "other_numeric_change": 0
+        },
+        "F": {
+          "old_unvoiced_to_new_voiced": 0,
+          "old_voiced_to_new_unvoiced": 1,
+          "both_voiced_frequency_change": 13,
+          "bit_only": 0,
+          "nonfinite_raw_change": 0,
+          "other_numeric_change": 0
+        }
+      },
+      "0032": {
+        "L": {
+          "old_unvoiced_to_new_voiced": 0,
+          "old_voiced_to_new_unvoiced": 0,
+          "both_voiced_frequency_change": 2,
+          "bit_only": 0,
+          "nonfinite_raw_change": 0,
+          "other_numeric_change": 0
+        },
+        "F": {
+          "old_unvoiced_to_new_voiced": 0,
+          "old_voiced_to_new_unvoiced": 0,
+          "both_voiced_frequency_change": 6,
+          "bit_only": 0,
+          "nonfinite_raw_change": 0,
+          "other_numeric_change": 0
+        }
+      }
+    },
+    "branch_totals": {
+      "L": {
+        "old_unvoiced_to_new_voiced": 0,
+        "old_voiced_to_new_unvoiced": 2,
+        "both_voiced_frequency_change": 11,
+        "bit_only": 0,
+        "nonfinite_raw_change": 0,
+        "other_numeric_change": 0
+      },
+      "F": {
+        "old_unvoiced_to_new_voiced": 0,
+        "old_voiced_to_new_unvoiced": 4,
+        "both_voiced_frequency_change": 30,
+        "bit_only": 0,
+        "nonfinite_raw_change": 0,
+        "other_numeric_change": 0
+      }
+    },
+    "numeric_change_branch_rows": 47,
+    "unique_record_time_bits": 41,
+    "unique_record_physical_windows": 41,
+    "L_F_shared_record_time_bits": 6,
+    "L_F_shared_record_physical_windows": 6,
+    "clock_checks": {
+      "0008": {
+        "frames": 1200,
+        "physical_windows": 1197,
+        "L": "old/new raw clock bit-equal to saved AR3 clock",
+        "F": "old/new raw clock bit-equal to saved AR3 clock"
+      },
+      "0011": {
+        "frames": 1200,
+        "physical_windows": 1197,
+        "L": "old/new raw clock bit-equal to saved AR3 clock",
+        "F": "old/new raw clock bit-equal to saved AR3 clock"
+      },
+      "0032": {
+        "frames": 818,
+        "physical_windows": 815,
+        "L": "old/new raw clock bit-equal to saved AR3 clock",
+        "F": "old/new raw clock bit-equal to saved AR3 clock"
+      }
+    },
+    "anomaly_count": 0
+  },
+  "local_top_counts": {
+    "changed": 15,
+    "same": 26
+  },
+  "independent_details": [
+    {
+      "record": "0008",
+      "branch": "L",
+      "anchor_index": 113,
+      "time_bits": "3fe2147ae147ae15",
+      "time_hex": "0x1.2147ae147ae15p-1",
+      "physical_window_id": 111,
+      "kind": "both_voiced_frequency_change",
+      "old_gate": 1,
+      "new_gate": 1,
+      "old_q_index": 68,
+      "new_q_index": 0,
+      "old_q": 120,
+      "new_q": 52,
+      "old_raw_hz": 117.1875,
+      "new_raw_hz": 50.78125,
+      "old_raw_hz_hex": "0x1.d4c0000000000p+6",
+      "new_raw_hz_hex": "0x1.9640000000000p+5",
+      "old_raw_bits": "405d4c0000000000",
+      "new_raw_bits": "4049640000000000",
+      "old_local_top_index": 68,
+      "new_local_top_index": 0,
+      "old_local_top_q": 120,
+      "new_local_top_q": 52,
+      "local_top_changed": true
+    },
+    {
+      "record": "0008",
+      "branch": "L",
+      "anchor_index": 277,
+      "time_bits": "3ff628f5c28f5c29",
+      "time_hex": "0x1.628f5c28f5c29p+0",
+      "physical_window_id": 275,
+      "kind": "both_voiced_frequency_change",
+      "old_gate": 1,
+      "new_gate": 1,
+      "old_q_index": 13,
+      "new_q_index": 14,
+      "old_q": 65,
+      "new_q": 66,
+      "old_raw_hz": 63.4765625,
+      "new_raw_hz": 64.453125,
+      "old_raw_hz_hex": "0x1.fbd0000000000p+5",
+      "new_raw_hz_hex": "0x1.01d0000000000p+6",
+      "old_raw_bits": "404fbd0000000000",
+      "new_raw_bits": "40501d0000000000",
+      "old_local_top_index": 13,
+      "new_local_top_index": 14,
+      "old_local_top_q": 65,
+      "new_local_top_q": 66,
+      "local_top_changed": true
+    },
+    {
+      "record": "0008",
+      "branch": "L",
+      "anchor_index": 347,
+      "time_bits": "3ffbc28f5c28f5c3",
+      "time_hex": "0x1.bc28f5c28f5c3p+0",
+      "physical_window_id": 345,
+      "kind": "both_voiced_frequency_change",
+      "old_gate": 1,
+      "new_gate": 1,
+      "old_q_index": 32,
+      "new_q_index": 21,
+      "old_q": 84,
+      "new_q": 73,
+      "old_raw_hz": 82.03125,
+      "new_raw_hz": 71.2890625,
+      "old_raw_hz_hex": "0x1.4820000000000p+6",
+      "new_raw_hz_hex": "0x1.1d28000000000p+6",
+      "old_raw_bits": "4054820000000000",
+      "new_raw_bits": "4051d28000000000",
+      "old_local_top_index": 32,
+      "new_local_top_index": 21,
+      "old_local_top_q": 84,
+      "new_local_top_q": 73,
+      "local_top_changed": true
+    },
+    {
+      "record": "0008",
+      "branch": "L",
+      "anchor_index": 411,
+      "time_bits": "400070a3d70a3d71",
+      "time_hex": "0x1.070a3d70a3d71p+1",
+      "physical_window_id": 409,
+      "kind": "both_voiced_frequency_change",
+      "old_gate": 1,
+      "new_gate": 1,
+      "old_q_index": 10,
+      "new_q_index": 9,
+      "old_q": 62,
+      "new_q": 61,
+      "old_raw_hz": 60.546875,
+      "new_raw_hz": 59.5703125,
+      "old_raw_hz_hex": "0x1.e460000000000p+5",
+      "new_raw_hz_hex": "0x1.dc90000000000p+5",
+      "old_raw_bits": "404e460000000000",
+      "new_raw_bits": "404dc90000000000",
+      "old_local_top_index": 10,
+      "new_local_top_index": 9,
+      "old_local_top_q": 62,
+      "new_local_top_q": 61,
+      "local_top_changed": true
+    },
+    {
+      "record": "0008",
+      "branch": "L",
+      "anchor_index": 711,
+      "time_bits": "400c70a3d70a3d71",
+      "time_hex": "0x1.c70a3d70a3d71p+1",
+      "physical_window_id": 709,
+      "kind": "both_voiced_frequency_change",
+      "old_gate": 1,
+      "new_gate": 1,
+      "old_q_index": 40,
+      "new_q_index": 39,
+      "old_q": 92,
+      "new_q": 91,
+      "old_raw_hz": 89.84375,
+      "new_raw_hz": 88.8671875,
+      "old_raw_hz_hex": "0x1.6760000000000p+6",
+      "new_raw_hz_hex": "0x1.6378000000000p+6",
+      "old_raw_bits": "4056760000000000",
+      "new_raw_bits": "4056378000000000",
+      "old_local_top_index": 40,
+      "new_local_top_index": 39,
+      "old_local_top_q": 92,
+      "new_local_top_q": 91,
+      "local_top_changed": true
+    },
+    {
+      "record": "0008",
+      "branch": "L",
+      "anchor_index": 944,
+      "time_bits": "4012e147ae147ae1",
+      "time_hex": "0x1.2e147ae147ae1p+2",
+      "physical_window_id": 942,
+      "kind": "old_voiced_to_new_unvoiced",
+      "old_gate": 1,
+      "new_gate": 0,
+      "old_q_index": 29,
+      "new_q_index": -1,
+      "old_q": 81,
+      "new_q": null,
+      "old_raw_hz": 79.1015625,
+      "new_raw_hz": 0.0,
+      "old_raw_hz_hex": "0x1.3c68000000000p+6",
+      "new_raw_hz_hex": "0x0.0p+0",
+      "old_raw_bits": "4053c68000000000",
+      "new_raw_bits": "0000000000000000",
+      "old_local_top_index": null,
+      "new_local_top_index": null,
+      "old_local_top_q": null,
+      "new_local_top_q": null,
+      "local_top_changed": null
+    },
+    {
+      "record": "0008",
+      "branch": "L",
+      "anchor_index": 1154,
+      "time_bits": "4017147ae147ae15",
+      "time_hex": "0x1.7147ae147ae15p+2",
+      "physical_window_id": 1152,
+      "kind": "both_voiced_frequency_change",
+      "old_gate": 1,
+      "new_gate": 1,
+      "old_q_index": 291,
+      "new_q_index": 330,
+      "old_q": 343,
+      "new_q": 382,
+      "old_raw_hz": 334.9609375,
+      "new_raw_hz": 373.046875,
+      "old_raw_hz_hex": "0x1.4ef6000000000p+8",
+      "new_raw_hz_hex": "0x1.750c000000000p+8",
+      "old_raw_bits": "4074ef6000000000",
+      "new_raw_bits": "407750c000000000",
+      "old_local_top_index": 291,
+      "new_local_top_index": 330,
+      "old_local_top_q": 343,
+      "new_local_top_q": 382,
+      "local_top_changed": true
+    },
+    {
+      "record": "0008",
+      "branch": "F",
+      "anchor_index": 411,
+      "time_bits": "400070a3d70a3d71",
+      "time_hex": "0x1.070a3d70a3d71p+1",
+      "physical_window_id": 409,
+      "kind": "both_voiced_frequency_change",
+      "old_gate": 1,
+      "new_gate": 1,
+      "old_q_index": 10,
+      "new_q_index": 9,
+      "old_q": 62,
+      "new_q": 61,
+      "old_raw_hz": 60.546875,
+      "new_raw_hz": 59.5703125,
+      "old_raw_hz_hex": "0x1.e460000000000p+5",
+      "new_raw_hz_hex": "0x1.dc90000000000p+5",
+      "old_raw_bits": "404e460000000000",
+      "new_raw_bits": "404dc90000000000",
+      "old_local_top_index": 10,
+      "new_local_top_index": 9,
+      "old_local_top_q": 62,
+      "new_local_top_q": 61,
+      "local_top_changed": true
+    },
+    {
+      "record": "0008",
+      "branch": "F",
+      "anchor_index": 598,
+      "time_bits": "4007eb851eb851ec",
+      "time_hex": "0x1.7eb851eb851ecp+1",
+      "physical_window_id": 596,
+      "kind": "both_voiced_frequency_change",
+      "old_gate": 1,
+      "new_gate": 1,
+      "old_q_index": 38,
+      "new_q_index": 0,
+      "old_q": 90,
+      "new_q": 52,
+      "old_raw_hz": 87.890625,
+      "new_raw_hz": 50.78125,
+      "old_raw_hz_hex": "0x1.5f90000000000p+6",
+      "new_raw_hz_hex": "0x1.9640000000000p+5",
+      "old_raw_bits": "4055f90000000000",
+      "new_raw_bits": "4049640000000000",
+      "old_local_top_index": 0,
+      "new_local_top_index": 0,
+      "old_local_top_q": 52,
+      "new_local_top_q": 52,
+      "local_top_changed": false
+    },
+    {
+      "record": "0008",
+      "branch": "F",
+      "anchor_index": 711,
+      "time_bits": "400c70a3d70a3d71",
+      "time_hex": "0x1.c70a3d70a3d71p+1",
+      "physical_window_id": 709,
+      "kind": "both_voiced_frequency_change",
+      "old_gate": 1,
+      "new_gate": 1,
+      "old_q_index": 40,
+      "new_q_index": 39,
+      "old_q": 92,
+      "new_q": 91,
+      "old_raw_hz": 89.84375,
+      "new_raw_hz": 88.8671875,
+      "old_raw_hz_hex": "0x1.6760000000000p+6",
+      "new_raw_hz_hex": "0x1.6378000000000p+6",
+      "old_raw_bits": "4056760000000000",
+      "new_raw_bits": "4056378000000000",
+      "old_local_top_index": 40,
+      "new_local_top_index": 39,
+      "old_local_top_q": 92,
+      "new_local_top_q": 91,
+      "local_top_changed": true
+    },
+    {
+      "record": "0008",
+      "branch": "F",
+      "anchor_index": 745,
+      "time_bits": "400dcccccccccccd",
+      "time_hex": "0x1.dcccccccccccdp+1",
+      "physical_window_id": 743,
+      "kind": "both_voiced_frequency_change",
+      "old_gate": 1,
+      "new_gate": 1,
+      "old_q_index": 15,
+      "new_q_index": 16,
+      "old_q": 67,
+      "new_q": 68,
+      "old_raw_hz": 65.4296875,
+      "new_raw_hz": 66.40625,
+      "old_raw_hz_hex": "0x1.05b8000000000p+6",
+      "new_raw_hz_hex": "0x1.09a0000000000p+6",
+      "old_raw_bits": "40505b8000000000",
+      "new_raw_bits": "40509a0000000000",
+      "old_local_top_index": 16,
+      "new_local_top_index": 16,
+      "old_local_top_q": 68,
+      "new_local_top_q": 68,
+      "local_top_changed": false
+    },
+    {
+      "record": "0008",
+      "branch": "F",
+      "anchor_index": 790,
+      "time_bits": "400f99999999999a",
+      "time_hex": "0x1.f99999999999ap+1",
+      "physical_window_id": 788,
+      "kind": "both_voiced_frequency_change",
+      "old_gate": 1,
+      "new_gate": 1,
+      "old_q_index": 5,
+      "new_q_index": 6,
+      "old_q": 57,
+      "new_q": 58,
+      "old_raw_hz": 55.6640625,
+      "new_raw_hz": 56.640625,
+      "old_raw_hz_hex": "0x1.bd50000000000p+5",
+      "new_raw_hz_hex": "0x1.c520000000000p+5",
+      "old_raw_bits": "404bd50000000000",
+      "new_raw_bits": "404c520000000000",
+      "old_local_top_index": 7,
+      "new_local_top_index": 7,
+      "old_local_top_q": 59,
+      "new_local_top_q": 59,
+      "local_top_changed": false
+    },
+    {
+      "record": "0008",
+      "branch": "F",
+      "anchor_index": 876,
+      "time_bits": "4011851eb851eb85",
+      "time_hex": "0x1.1851eb851eb85p+2",
+      "physical_window_id": 874,
+      "kind": "both_voiced_frequency_change",
+      "old_gate": 1,
+      "new_gate": 1,
+      "old_q_index": 10,
+      "new_q_index": 71,
+      "old_q": 62,
+      "new_q": 123,
+      "old_raw_hz": 60.546875,
+      "new_raw_hz": 120.1171875,
+      "old_raw_hz_hex": "0x1.e460000000000p+5",
+      "new_raw_hz_hex": "0x1.e078000000000p+6",
+      "old_raw_bits": "404e460000000000",
+      "new_raw_bits": "405e078000000000",
+      "old_local_top_index": 71,
+      "new_local_top_index": 71,
+      "old_local_top_q": 123,
+      "new_local_top_q": 123,
+      "local_top_changed": false
+    },
+    {
+      "record": "0008",
+      "branch": "F",
+      "anchor_index": 944,
+      "time_bits": "4012e147ae147ae1",
+      "time_hex": "0x1.2e147ae147ae1p+2",
+      "physical_window_id": 942,
+      "kind": "old_voiced_to_new_unvoiced",
+      "old_gate": 1,
+      "new_gate": 0,
+      "old_q_index": 27,
+      "new_q_index": -1,
+      "old_q": 79,
+      "new_q": null,
+      "old_raw_hz": 77.1484375,
+      "new_raw_hz": 0.0,
+      "old_raw_hz_hex": "0x1.3498000000000p+6",
+      "new_raw_hz_hex": "0x0.0p+0",
+      "old_raw_bits": "4053498000000000",
+      "new_raw_bits": "0000000000000000",
+      "old_local_top_index": null,
+      "new_local_top_index": null,
+      "old_local_top_q": null,
+      "new_local_top_q": null,
+      "local_top_changed": null
+    },
+    {
+      "record": "0008",
+      "branch": "F",
+      "anchor_index": 993,
+      "time_bits": "4013dc28f5c28f5c",
+      "time_hex": "0x1.3dc28f5c28f5cp+2",
+      "physical_window_id": 991,
+      "kind": "old_voiced_to_new_unvoiced",
+      "old_gate": 1,
+      "new_gate": 0,
+      "old_q_index": 193,
+      "new_q_index": -1,
+      "old_q": 245,
+      "new_q": null,
+      "old_raw_hz": 239.2578125,
+      "new_raw_hz": 0.0,
+      "old_raw_hz_hex": "0x1.de84000000000p+7",
+      "new_raw_hz_hex": "0x0.0p+0",
+      "old_raw_bits": "406de84000000000",
+      "new_raw_bits": "0000000000000000",
+      "old_local_top_index": null,
+      "new_local_top_index": null,
+      "old_local_top_q": null,
+      "new_local_top_q": null,
+      "local_top_changed": null
+    },
+    {
+      "record": "0008",
+      "branch": "F",
+      "anchor_index": 994,
+      "time_bits": "4013e147ae147ae1",
+      "time_hex": "0x1.3e147ae147ae1p+2",
+      "physical_window_id": 992,
+      "kind": "old_voiced_to_new_unvoiced",
+      "old_gate": 1,
+      "new_gate": 0,
+      "old_q_index": 193,
+      "new_q_index": -1,
+      "old_q": 245,
+      "new_q": null,
+      "old_raw_hz": 239.2578125,
+      "new_raw_hz": 0.0,
+      "old_raw_hz_hex": "0x1.de84000000000p+7",
+      "new_raw_hz_hex": "0x0.0p+0",
+      "old_raw_bits": "406de84000000000",
+      "new_raw_bits": "0000000000000000",
+      "old_local_top_index": null,
+      "new_local_top_index": null,
+      "old_local_top_q": null,
+      "new_local_top_q": null,
+      "local_top_changed": null
+    },
+    {
+      "record": "0008",
+      "branch": "F",
+      "anchor_index": 995,
+      "time_bits": "4013e66666666667",
+      "time_hex": "0x1.3e66666666667p+2",
+      "physical_window_id": 993,
+      "kind": "both_voiced_frequency_change",
+      "old_gate": 1,
+      "new_gate": 1,
+      "old_q_index": 195,
+      "new_q_index": 10,
+      "old_q": 247,
+      "new_q": 62,
+      "old_raw_hz": 241.2109375,
+      "new_raw_hz": 60.546875,
+      "old_raw_hz_hex": "0x1.e26c000000000p+7",
+      "new_raw_hz_hex": "0x1.e460000000000p+5",
+      "old_raw_bits": "406e26c000000000",
+      "new_raw_bits": "404e460000000000",
+      "old_local_top_index": 195,
+      "new_local_top_index": 195,
+      "old_local_top_q": 247,
+      "new_local_top_q": 247,
+      "local_top_changed": false
+    },
+    {
+      "record": "0008",
+      "branch": "F",
+      "anchor_index": 996,
+      "time_bits": "4013eb851eb851ec",
+      "time_hex": "0x1.3eb851eb851ecp+2",
+      "physical_window_id": 994,
+      "kind": "both_voiced_frequency_change",
+      "old_gate": 1,
+      "new_gate": 1,
+      "old_q_index": 96,
+      "new_q_index": 10,
+      "old_q": 148,
+      "new_q": 62,
+      "old_raw_hz": 144.53125,
+      "new_raw_hz": 60.546875,
+      "old_raw_hz_hex": "0x1.2110000000000p+7",
+      "new_raw_hz_hex": "0x1.e460000000000p+5",
+      "old_raw_bits": "4062110000000000",
+      "new_raw_bits": "404e460000000000",
+      "old_local_top_index": 96,
+      "new_local_top_index": 96,
+      "old_local_top_q": 148,
+      "new_local_top_q": 148,
+      "local_top_changed": false
+    },
+    {
+      "record": "0008",
+      "branch": "F",
+      "anchor_index": 997,
+      "time_bits": "4013f0a3d70a3d71",
+      "time_hex": "0x1.3f0a3d70a3d71p+2",
+      "physical_window_id": 995,
+      "kind": "both_voiced_frequency_change",
+      "old_gate": 1,
+      "new_gate": 1,
+      "old_q_index": 11,
+      "new_q_index": 10,
+      "old_q": 63,
+      "new_q": 62,
+      "old_raw_hz": 61.5234375,
+      "new_raw_hz": 60.546875,
+      "old_raw_hz_hex": "0x1.ec30000000000p+5",
+      "new_raw_hz_hex": "0x1.e460000000000p+5",
+      "old_raw_bits": "404ec30000000000",
+      "new_raw_bits": "404e460000000000",
+      "old_local_top_index": 11,
+      "new_local_top_index": 11,
+      "old_local_top_q": 63,
+      "new_local_top_q": 63,
+      "local_top_changed": false
+    },
+    {
+      "record": "0008",
+      "branch": "F",
+      "anchor_index": 1018,
+      "time_bits": "40145c28f5c28f5c",
+      "time_hex": "0x1.45c28f5c28f5cp+2",
+      "physical_window_id": 1016,
+      "kind": "both_voiced_frequency_change",
+      "old_gate": 1,
+      "new_gate": 1,
+      "old_q_index": 6,
+      "new_q_index": 5,
+      "old_q": 58,
+      "new_q": 57,
+      "old_raw_hz": 56.640625,
+      "new_raw_hz": 55.6640625,
+      "old_raw_hz_hex": "0x1.c520000000000p+5",
+      "new_raw_hz_hex": "0x1.bd50000000000p+5",
+      "old_raw_bits": "404c520000000000",
+      "new_raw_bits": "404bd50000000000",
+      "old_local_top_index": 0,
+      "new_local_top_index": 0,
+      "old_local_top_q": 52,
+      "new_local_top_q": 52,
+      "local_top_changed": false
+    },
+    {
+      "record": "0008",
+      "branch": "F",
+      "anchor_index": 1138,
+      "time_bits": "4016c28f5c28f5c3",
+      "time_hex": "0x1.6c28f5c28f5c3p+2",
+      "physical_window_id": 1136,
+      "kind": "both_voiced_frequency_change",
+      "old_gate": 1,
+      "new_gate": 1,
+      "old_q_index": 27,
+      "new_q_index": 0,
+      "old_q": 79,
+      "new_q": 52,
+      "old_raw_hz": 77.1484375,
+      "new_raw_hz": 50.78125,
+      "old_raw_hz_hex": "0x1.3498000000000p+6",
+      "new_raw_hz_hex": "0x1.9640000000000p+5",
+      "old_raw_bits": "4053498000000000",
+      "new_raw_bits": "4049640000000000",
+      "old_local_top_index": 0,
+      "new_local_top_index": 0,
+      "old_local_top_q": 52,
+      "new_local_top_q": 52,
+      "local_top_changed": false
+    },
+    {
+      "record": "0011",
+      "branch": "L",
+      "anchor_index": 416,
+      "time_bits": "4000a3d70a3d70a4",
+      "time_hex": "0x1.0a3d70a3d70a4p+1",
+      "physical_window_id": 414,
+      "kind": "old_voiced_to_new_unvoiced",
+      "old_gate": 1,
+      "new_gate": 0,
+      "old_q_index": 16,
+      "new_q_index": -1,
+      "old_q": 68,
+      "new_q": null,
+      "old_raw_hz": 66.40625,
+      "new_raw_hz": 0.0,
+      "old_raw_hz_hex": "0x1.09a0000000000p+6",
+      "new_raw_hz_hex": "0x0.0p+0",
+      "old_raw_bits": "40509a0000000000",
+      "new_raw_bits": "0000000000000000",
+      "old_local_top_index": null,
+      "new_local_top_index": null,
+      "old_local_top_q": null,
+      "new_local_top_q": null,
+      "local_top_changed": null
+    },
+    {
+      "record": "0011",
+      "branch": "L",
+      "anchor_index": 547,
+      "time_bits": "4005e147ae147ae1",
+      "time_hex": "0x1.5e147ae147ae1p+1",
+      "physical_window_id": 545,
+      "kind": "both_voiced_frequency_change",
+      "old_gate": 1,
+      "new_gate": 1,
+      "old_q_index": 51,
+      "new_q_index": 52,
+      "old_q": 103,
+      "new_q": 104,
+      "old_raw_hz": 100.5859375,
+      "new_raw_hz": 101.5625,
+      "old_raw_hz_hex": "0x1.9258000000000p+6",
+      "new_raw_hz_hex": "0x1.9640000000000p+6",
+      "old_raw_bits": "4059258000000000",
+      "new_raw_bits": "4059640000000000",
+      "old_local_top_index": 51,
+      "new_local_top_index": 52,
+      "old_local_top_q": 103,
+      "new_local_top_q": 104,
+      "local_top_changed": true
+    },
+    {
+      "record": "0011",
+      "branch": "L",
+      "anchor_index": 748,
+      "time_bits": "400deb851eb851ec",
+      "time_hex": "0x1.deb851eb851ecp+1",
+      "physical_window_id": 746,
+      "kind": "both_voiced_frequency_change",
+      "old_gate": 1,
+      "new_gate": 1,
+      "old_q_index": 2,
+      "new_q_index": 440,
+      "old_q": 54,
+      "new_q": 492,
+      "old_raw_hz": 52.734375,
+      "new_raw_hz": 480.46875,
+      "old_raw_hz_hex": "0x1.a5e0000000000p+5",
+      "new_raw_hz_hex": "0x1.e078000000000p+8",
+      "old_raw_bits": "404a5e0000000000",
+      "new_raw_bits": "407e078000000000",
+      "old_local_top_index": 2,
+      "new_local_top_index": 440,
+      "old_local_top_q": 54,
+      "new_local_top_q": 492,
+      "local_top_changed": true
+    },
+    {
+      "record": "0011",
+      "branch": "L",
+      "anchor_index": 821,
+      "time_bits": "40106b851eb851ec",
+      "time_hex": "0x1.06b851eb851ecp+2",
+      "physical_window_id": 819,
+      "kind": "both_voiced_frequency_change",
+      "old_gate": 1,
+      "new_gate": 1,
+      "old_q_index": 63,
+      "new_q_index": 175,
+      "old_q": 115,
+      "new_q": 227,
+      "old_raw_hz": 112.3046875,
+      "new_raw_hz": 221.6796875,
+      "old_raw_hz_hex": "0x1.c138000000000p+6",
+      "new_raw_hz_hex": "0x1.bb5c000000000p+7",
+      "old_raw_bits": "405c138000000000",
+      "new_raw_bits": "406bb5c000000000",
+      "old_local_top_index": 63,
+      "new_local_top_index": 175,
+      "old_local_top_q": 115,
+      "new_local_top_q": 227,
+      "local_top_changed": true
+    },
+    {
+      "record": "0011",
+      "branch": "F",
+      "anchor_index": 60,
+      "time_bits": "3fd3333333333333",
+      "time_hex": "0x1.3333333333333p-2",
+      "physical_window_id": 58,
+      "kind": "both_voiced_frequency_change",
+      "old_gate": 1,
+      "new_gate": 1,
+      "old_q_index": 8,
+      "new_q_index": 9,
+      "old_q": 60,
+      "new_q": 61,
+      "old_raw_hz": 58.59375,
+      "new_raw_hz": 59.5703125,
+      "old_raw_hz_hex": "0x1.d4c0000000000p+5",
+      "new_raw_hz_hex": "0x1.dc90000000000p+5",
+      "old_raw_bits": "404d4c0000000000",
+      "new_raw_bits": "404dc90000000000",
+      "old_local_top_index": 9,
+      "new_local_top_index": 9,
+      "old_local_top_q": 61,
+      "new_local_top_q": 61,
+      "local_top_changed": false
+    },
+    {
+      "record": "0011",
+      "branch": "F",
+      "anchor_index": 70,
+      "time_bits": "3fd6666666666667",
+      "time_hex": "0x1.6666666666667p-2",
+      "physical_window_id": 68,
+      "kind": "both_voiced_frequency_change",
+      "old_gate": 1,
+      "new_gate": 1,
+      "old_q_index": 15,
+      "new_q_index": 16,
+      "old_q": 67,
+      "new_q": 68,
+      "old_raw_hz": 65.4296875,
+      "new_raw_hz": 66.40625,
+      "old_raw_hz_hex": "0x1.05b8000000000p+6",
+      "new_raw_hz_hex": "0x1.09a0000000000p+6",
+      "old_raw_bits": "40505b8000000000",
+      "new_raw_bits": "40509a0000000000",
+      "old_local_top_index": 17,
+      "new_local_top_index": 17,
+      "old_local_top_q": 69,
+      "new_local_top_q": 69,
+      "local_top_changed": false
+    },
+    {
+      "record": "0011",
+      "branch": "F",
+      "anchor_index": 416,
+      "time_bits": "4000a3d70a3d70a4",
+      "time_hex": "0x1.0a3d70a3d70a4p+1",
+      "physical_window_id": 414,
+      "kind": "old_voiced_to_new_unvoiced",
+      "old_gate": 1,
+      "new_gate": 0,
+      "old_q_index": 14,
+      "new_q_index": -1,
+      "old_q": 66,
+      "new_q": null,
+      "old_raw_hz": 64.453125,
+      "new_raw_hz": 0.0,
+      "old_raw_hz_hex": "0x1.01d0000000000p+6",
+      "new_raw_hz_hex": "0x0.0p+0",
+      "old_raw_bits": "40501d0000000000",
+      "new_raw_bits": "0000000000000000",
+      "old_local_top_index": null,
+      "new_local_top_index": null,
+      "old_local_top_q": null,
+      "new_local_top_q": null,
+      "local_top_changed": null
+    },
+    {
+      "record": "0011",
+      "branch": "F",
+      "anchor_index": 417,
+      "time_bits": "4000ae147ae147ae",
+      "time_hex": "0x1.0ae147ae147aep+1",
+      "physical_window_id": 415,
+      "kind": "both_voiced_frequency_change",
+      "old_gate": 1,
+      "new_gate": 1,
+      "old_q_index": 12,
+      "new_q_index": 4,
+      "old_q": 64,
+      "new_q": 56,
+      "old_raw_hz": 62.5,
+      "new_raw_hz": 54.6875,
+      "old_raw_hz_hex": "0x1.f400000000000p+5",
+      "new_raw_hz_hex": "0x1.b580000000000p+5",
+      "old_raw_bits": "404f400000000000",
+      "new_raw_bits": "404b580000000000",
+      "old_local_top_index": 434,
+      "new_local_top_index": 434,
+      "old_local_top_q": 486,
+      "new_local_top_q": 486,
+      "local_top_changed": false
+    },
+    {
+      "record": "0011",
+      "branch": "F",
+      "anchor_index": 532,
+      "time_bits": "400547ae147ae148",
+      "time_hex": "0x1.547ae147ae148p+1",
+      "physical_window_id": 530,
+      "kind": "both_voiced_frequency_change",
+      "old_gate": 1,
+      "new_gate": 1,
+      "old_q_index": 42,
+      "new_q_index": 43,
+      "old_q": 94,
+      "new_q": 95,
+      "old_raw_hz": 91.796875,
+      "new_raw_hz": 92.7734375,
+      "old_raw_hz_hex": "0x1.6f30000000000p+6",
+      "new_raw_hz_hex": "0x1.7318000000000p+6",
+      "old_raw_bits": "4056f30000000000",
+      "new_raw_bits": "4057318000000000",
+      "old_local_top_index": 43,
+      "new_local_top_index": 43,
+      "old_local_top_q": 95,
+      "new_local_top_q": 95,
+      "local_top_changed": false
+    },
+    {
+      "record": "0011",
+      "branch": "F",
+      "anchor_index": 547,
+      "time_bits": "4005e147ae147ae1",
+      "time_hex": "0x1.5e147ae147ae1p+1",
+      "physical_window_id": 545,
+      "kind": "both_voiced_frequency_change",
+      "old_gate": 1,
+      "new_gate": 1,
+      "old_q_index": 51,
+      "new_q_index": 52,
+      "old_q": 103,
+      "new_q": 104,
+      "old_raw_hz": 100.5859375,
+      "new_raw_hz": 101.5625,
+      "old_raw_hz_hex": "0x1.9258000000000p+6",
+      "new_raw_hz_hex": "0x1.9640000000000p+6",
+      "old_raw_bits": "4059258000000000",
+      "new_raw_bits": "4059640000000000",
+      "old_local_top_index": 51,
+      "new_local_top_index": 52,
+      "old_local_top_q": 103,
+      "new_local_top_q": 104,
+      "local_top_changed": true
+    },
+    {
+      "record": "0011",
+      "branch": "F",
+      "anchor_index": 579,
+      "time_bits": "400728f5c28f5c29",
+      "time_hex": "0x1.728f5c28f5c29p+1",
+      "physical_window_id": 577,
+      "kind": "both_voiced_frequency_change",
+      "old_gate": 1,
+      "new_gate": 1,
+      "old_q_index": 0,
+      "new_q_index": 23,
+      "old_q": 52,
+      "new_q": 75,
+      "old_raw_hz": 50.78125,
+      "new_raw_hz": 73.2421875,
+      "old_raw_hz_hex": "0x1.9640000000000p+5",
+      "new_raw_hz_hex": "0x1.24f8000000000p+6",
+      "old_raw_bits": "4049640000000000",
+      "new_raw_bits": "40524f8000000000",
+      "old_local_top_index": 23,
+      "new_local_top_index": 23,
+      "old_local_top_q": 75,
+      "new_local_top_q": 75,
+      "local_top_changed": false
+    },
+    {
+      "record": "0011",
+      "branch": "F",
+      "anchor_index": 580,
+      "time_bits": "4007333333333333",
+      "time_hex": "0x1.7333333333333p+1",
+      "physical_window_id": 578,
+      "kind": "both_voiced_frequency_change",
+      "old_gate": 1,
+      "new_gate": 1,
+      "old_q_index": 4,
+      "new_q_index": 5,
+      "old_q": 56,
+      "new_q": 57,
+      "old_raw_hz": 54.6875,
+      "new_raw_hz": 55.6640625,
+      "old_raw_hz_hex": "0x1.b580000000000p+5",
+      "new_raw_hz_hex": "0x1.bd50000000000p+5",
+      "old_raw_bits": "404b580000000000",
+      "new_raw_bits": "404bd50000000000",
+      "old_local_top_index": 4,
+      "new_local_top_index": 4,
+      "old_local_top_q": 56,
+      "new_local_top_q": 56,
+      "local_top_changed": false
+    },
+    {
+      "record": "0011",
+      "branch": "F",
+      "anchor_index": 629,
+      "time_bits": "400928f5c28f5c29",
+      "time_hex": "0x1.928f5c28f5c29p+1",
+      "physical_window_id": 627,
+      "kind": "both_voiced_frequency_change",
+      "old_gate": 1,
+      "new_gate": 1,
+      "old_q_index": 6,
+      "new_q_index": 7,
+      "old_q": 58,
+      "new_q": 59,
+      "old_raw_hz": 56.640625,
+      "new_raw_hz": 57.6171875,
+      "old_raw_hz_hex": "0x1.c520000000000p+5",
+      "new_raw_hz_hex": "0x1.ccf0000000000p+5",
+      "old_raw_bits": "404c520000000000",
+      "new_raw_bits": "404ccf0000000000",
+      "old_local_top_index": 7,
+      "new_local_top_index": 7,
+      "old_local_top_q": 59,
+      "new_local_top_q": 59,
+      "local_top_changed": false
+    },
+    {
+      "record": "0011",
+      "branch": "F",
+      "anchor_index": 636,
+      "time_bits": "400970a3d70a3d71",
+      "time_hex": "0x1.970a3d70a3d71p+1",
+      "physical_window_id": 634,
+      "kind": "both_voiced_frequency_change",
+      "old_gate": 1,
+      "new_gate": 1,
+      "old_q_index": 403,
+      "new_q_index": 404,
+      "old_q": 455,
+      "new_q": 456,
+      "old_raw_hz": 444.3359375,
+      "new_raw_hz": 445.3125,
+      "old_raw_hz_hex": "0x1.bc56000000000p+8",
+      "new_raw_hz_hex": "0x1.bd50000000000p+8",
+      "old_raw_bits": "407bc56000000000",
+      "new_raw_bits": "407bd50000000000",
+      "old_local_top_index": 16,
+      "new_local_top_index": 16,
+      "old_local_top_q": 68,
+      "new_local_top_q": 68,
+      "local_top_changed": false
+    },
+    {
+      "record": "0011",
+      "branch": "F",
+      "anchor_index": 637,
+      "time_bits": "40097ae147ae147b",
+      "time_hex": "0x1.97ae147ae147bp+1",
+      "physical_window_id": 635,
+      "kind": "both_voiced_frequency_change",
+      "old_gate": 1,
+      "new_gate": 1,
+      "old_q_index": 403,
+      "new_q_index": 404,
+      "old_q": 455,
+      "new_q": 456,
+      "old_raw_hz": 444.3359375,
+      "new_raw_hz": 445.3125,
+      "old_raw_hz_hex": "0x1.bc56000000000p+8",
+      "new_raw_hz_hex": "0x1.bd50000000000p+8",
+      "old_raw_bits": "407bc56000000000",
+      "new_raw_bits": "407bd50000000000",
+      "old_local_top_index": 302,
+      "new_local_top_index": 302,
+      "old_local_top_q": 354,
+      "new_local_top_q": 354,
+      "local_top_changed": false
+    },
+    {
+      "record": "0011",
+      "branch": "F",
+      "anchor_index": 865,
+      "time_bits": "40114ccccccccccd",
+      "time_hex": "0x1.14ccccccccccdp+2",
+      "physical_window_id": 863,
+      "kind": "both_voiced_frequency_change",
+      "old_gate": 1,
+      "new_gate": 1,
+      "old_q_index": 54,
+      "new_q_index": 2,
+      "old_q": 106,
+      "new_q": 54,
+      "old_raw_hz": 103.515625,
+      "new_raw_hz": 52.734375,
+      "old_raw_hz_hex": "0x1.9e10000000000p+6",
+      "new_raw_hz_hex": "0x1.a5e0000000000p+5",
+      "old_raw_bits": "4059e10000000000",
+      "new_raw_bits": "404a5e0000000000",
+      "old_local_top_index": 2,
+      "new_local_top_index": 2,
+      "old_local_top_q": 54,
+      "new_local_top_q": 54,
+      "local_top_changed": false
+    },
+    {
+      "record": "0011",
+      "branch": "F",
+      "anchor_index": 866,
+      "time_bits": "401151eb851eb852",
+      "time_hex": "0x1.151eb851eb852p+2",
+      "physical_window_id": 864,
+      "kind": "both_voiced_frequency_change",
+      "old_gate": 1,
+      "new_gate": 1,
+      "old_q_index": 48,
+      "new_q_index": 6,
+      "old_q": 100,
+      "new_q": 58,
+      "old_raw_hz": 97.65625,
+      "new_raw_hz": 56.640625,
+      "old_raw_hz_hex": "0x1.86a0000000000p+6",
+      "new_raw_hz_hex": "0x1.c520000000000p+5",
+      "old_raw_bits": "40586a0000000000",
+      "new_raw_bits": "404c520000000000",
+      "old_local_top_index": 6,
+      "new_local_top_index": 6,
+      "old_local_top_q": 58,
+      "new_local_top_q": 58,
+      "local_top_changed": false
+    },
+    {
+      "record": "0011",
+      "branch": "F",
+      "anchor_index": 936,
+      "time_bits": "4012b851eb851eb8",
+      "time_hex": "0x1.2b851eb851eb8p+2",
+      "physical_window_id": 934,
+      "kind": "both_voiced_frequency_change",
+      "old_gate": 1,
+      "new_gate": 1,
+      "old_q_index": 43,
+      "new_q_index": 50,
+      "old_q": 95,
+      "new_q": 102,
+      "old_raw_hz": 92.7734375,
+      "new_raw_hz": 99.609375,
+      "old_raw_hz_hex": "0x1.7318000000000p+6",
+      "new_raw_hz_hex": "0x1.8e70000000000p+6",
+      "old_raw_bits": "4057318000000000",
+      "new_raw_bits": "4058e70000000000",
+      "old_local_top_index": 60,
+      "new_local_top_index": 60,
+      "old_local_top_q": 112,
+      "new_local_top_q": 112,
+      "local_top_changed": false
+    },
+    {
+      "record": "0032",
+      "branch": "L",
+      "anchor_index": 371,
+      "time_bits": "3ffdae147ae147ae",
+      "time_hex": "0x1.dae147ae147aep+0",
+      "physical_window_id": 369,
+      "kind": "both_voiced_frequency_change",
+      "old_gate": 1,
+      "new_gate": 1,
+      "old_q_index": 40,
+      "new_q_index": 39,
+      "old_q": 92,
+      "new_q": 91,
+      "old_raw_hz": 89.84375,
+      "new_raw_hz": 88.8671875,
+      "old_raw_hz_hex": "0x1.6760000000000p+6",
+      "new_raw_hz_hex": "0x1.6378000000000p+6",
+      "old_raw_bits": "4056760000000000",
+      "new_raw_bits": "4056378000000000",
+      "old_local_top_index": 40,
+      "new_local_top_index": 39,
+      "old_local_top_q": 92,
+      "new_local_top_q": 91,
+      "local_top_changed": true
+    },
+    {
+      "record": "0032",
+      "branch": "L",
+      "anchor_index": 473,
+      "time_bits": "4002eb851eb851ec",
+      "time_hex": "0x1.2eb851eb851ecp+1",
+      "physical_window_id": 471,
+      "kind": "both_voiced_frequency_change",
+      "old_gate": 1,
+      "new_gate": 1,
+      "old_q_index": 6,
+      "new_q_index": 0,
+      "old_q": 58,
+      "new_q": 52,
+      "old_raw_hz": 56.640625,
+      "new_raw_hz": 50.78125,
+      "old_raw_hz_hex": "0x1.c520000000000p+5",
+      "new_raw_hz_hex": "0x1.9640000000000p+5",
+      "old_raw_bits": "404c520000000000",
+      "new_raw_bits": "4049640000000000",
+      "old_local_top_index": 6,
+      "new_local_top_index": 0,
+      "old_local_top_q": 58,
+      "new_local_top_q": 52,
+      "local_top_changed": true
+    },
+    {
+      "record": "0032",
+      "branch": "F",
+      "anchor_index": 89,
+      "time_bits": "3fdc7ae147ae147b",
+      "time_hex": "0x1.c7ae147ae147bp-2",
+      "physical_window_id": 87,
+      "kind": "both_voiced_frequency_change",
+      "old_gate": 1,
+      "new_gate": 1,
+      "old_q_index": 7,
+      "new_q_index": 6,
+      "old_q": 59,
+      "new_q": 58,
+      "old_raw_hz": 57.6171875,
+      "new_raw_hz": 56.640625,
+      "old_raw_hz_hex": "0x1.ccf0000000000p+5",
+      "new_raw_hz_hex": "0x1.c520000000000p+5",
+      "old_raw_bits": "404ccf0000000000",
+      "new_raw_bits": "404c520000000000",
+      "old_local_top_index": 5,
+      "new_local_top_index": 5,
+      "old_local_top_q": 57,
+      "new_local_top_q": 57,
+      "local_top_changed": false
+    },
+    {
+      "record": "0032",
+      "branch": "F",
+      "anchor_index": 371,
+      "time_bits": "3ffdae147ae147ae",
+      "time_hex": "0x1.dae147ae147aep+0",
+      "physical_window_id": 369,
+      "kind": "both_voiced_frequency_change",
+      "old_gate": 1,
+      "new_gate": 1,
+      "old_q_index": 40,
+      "new_q_index": 39,
+      "old_q": 92,
+      "new_q": 91,
+      "old_raw_hz": 89.84375,
+      "new_raw_hz": 88.8671875,
+      "old_raw_hz_hex": "0x1.6760000000000p+6",
+      "new_raw_hz_hex": "0x1.6378000000000p+6",
+      "old_raw_bits": "4056760000000000",
+      "new_raw_bits": "4056378000000000",
+      "old_local_top_index": 40,
+      "new_local_top_index": 39,
+      "old_local_top_q": 92,
+      "new_local_top_q": 91,
+      "local_top_changed": true
+    },
+    {
+      "record": "0032",
+      "branch": "F",
+      "anchor_index": 482,
+      "time_bits": "400347ae147ae148",
+      "time_hex": "0x1.347ae147ae148p+1",
+      "physical_window_id": 480,
+      "kind": "both_voiced_frequency_change",
+      "old_gate": 1,
+      "new_gate": 1,
+      "old_q_index": 19,
+      "new_q_index": 20,
+      "old_q": 71,
+      "new_q": 72,
+      "old_raw_hz": 69.3359375,
+      "new_raw_hz": 70.3125,
+      "old_raw_hz_hex": "0x1.1558000000000p+6",
+      "new_raw_hz_hex": "0x1.1940000000000p+6",
+      "old_raw_bits": "4051558000000000",
+      "new_raw_bits": "4051940000000000",
+      "old_local_top_index": 22,
+      "new_local_top_index": 22,
+      "old_local_top_q": 74,
+      "new_local_top_q": 74,
+      "local_top_changed": false
+    },
+    {
+      "record": "0032",
+      "branch": "F",
+      "anchor_index": 511,
+      "time_bits": "400470a3d70a3d71",
+      "time_hex": "0x1.470a3d70a3d71p+1",
+      "physical_window_id": 509,
+      "kind": "both_voiced_frequency_change",
+      "old_gate": 1,
+      "new_gate": 1,
+      "old_q_index": 93,
+      "new_q_index": 84,
+      "old_q": 145,
+      "new_q": 136,
+      "old_raw_hz": 141.6015625,
+      "new_raw_hz": 132.8125,
+      "old_raw_hz_hex": "0x1.1b34000000000p+7",
+      "new_raw_hz_hex": "0x1.09a0000000000p+7",
+      "old_raw_bits": "4061b34000000000",
+      "new_raw_bits": "40609a0000000000",
+      "old_local_top_index": 68,
+      "new_local_top_index": 68,
+      "old_local_top_q": 120,
+      "new_local_top_q": 120,
+      "local_top_changed": false
+    },
+    {
+      "record": "0032",
+      "branch": "F",
+      "anchor_index": 765,
+      "time_bits": "400e99999999999a",
+      "time_hex": "0x1.e99999999999ap+1",
+      "physical_window_id": 763,
+      "kind": "both_voiced_frequency_change",
+      "old_gate": 1,
+      "new_gate": 1,
+      "old_q_index": 21,
+      "new_q_index": 22,
+      "old_q": 73,
+      "new_q": 74,
+      "old_raw_hz": 71.2890625,
+      "new_raw_hz": 72.265625,
+      "old_raw_hz_hex": "0x1.1d28000000000p+6",
+      "new_raw_hz_hex": "0x1.2110000000000p+6",
+      "old_raw_bits": "4051d28000000000",
+      "new_raw_bits": "4052110000000000",
+      "old_local_top_index": 23,
+      "new_local_top_index": 23,
+      "old_local_top_q": 75,
+      "new_local_top_q": 75,
+      "local_top_changed": false
+    },
+    {
+      "record": "0032",
+      "branch": "F",
+      "anchor_index": 797,
+      "time_bits": "400fe147ae147ae1",
+      "time_hex": "0x1.fe147ae147ae1p+1",
+      "physical_window_id": 795,
+      "kind": "both_voiced_frequency_change",
+      "old_gate": 1,
+      "new_gate": 1,
+      "old_q_index": 7,
+      "new_q_index": 6,
+      "old_q": 59,
+      "new_q": 58,
+      "old_raw_hz": 57.6171875,
+      "new_raw_hz": 56.640625,
+      "old_raw_hz_hex": "0x1.ccf0000000000p+5",
+      "new_raw_hz_hex": "0x1.c520000000000p+5",
+      "old_raw_bits": "404ccf0000000000",
+      "new_raw_bits": "404c520000000000",
+      "old_local_top_index": 5,
+      "new_local_top_index": 5,
+      "old_local_top_q": 57,
+      "new_local_top_q": 57,
+      "local_top_changed": false
+    }
+  ],
+  "independent_anomalies": [],
+  "PML_clock_reading": {
+    "0008": {
+      "saved_shape": [
+        1195,
+        2
+      ],
+      "L_F_clock_shape": [
+        1200
+      ],
+      "identical": false,
+      "interpolated": false
+    },
+    "0011": {
+      "saved_shape": [
+        1196,
+        2
+      ],
+      "L_F_clock_shape": [
+        1200
+      ],
+      "identical": false,
+      "interpolated": false
+    },
+    "0032": {
+      "saved_shape": [
+        814,
+        2
+      ],
+      "L_F_clock_shape": [
+        818
+      ],
+      "identical": false,
+      "interpolated": false
+    }
+  },
+  "limits": [
+    "47 branch rows are not 47 independent observations",
+    "no likelihood/DP/D1/audio/quality/model rerun",
+    "no causal attribution, physiological VUV, F0 truth or quality guarantee",
+    "PML remains formal base",
+    "no PML clock interpolation",
+    "no unretained quality-v3 material used"
+  ],
+  "Git_or_HTML_modified": false,
+  "original_audit": {
+    "bytes": 98508,
+    "sha256": "601aabe90e1c6ffb1dbc93ced03e8f0591ca6dc490b8afbe4895281bb9a8404e",
+    "library_file_id": "libfile_f5acaab11c24819196cf7a9293169254",
+    "version": 0
+  },
+  "publication_transform": "independent audit source text and launch command omitted; all check verdicts, numeric fields, saved-array identities and limits retained"
+}

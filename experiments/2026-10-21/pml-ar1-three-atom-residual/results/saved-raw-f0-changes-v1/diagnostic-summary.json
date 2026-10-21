@@ -1,0 +1,108 @@
+{
+  "scope": "saved arrays, fixed three recordings and L/F only; descriptive, no quality assessment",
+  "record_branch_counts": {
+    "0008": {
+      "L": {
+        "old_unvoiced_to_new_voiced": 0,
+        "old_voiced_to_new_unvoiced": 1,
+        "both_voiced_frequency_change": 6,
+        "bit_only": 0,
+        "nonfinite_raw_change": 0,
+        "other_numeric_change": 0
+      },
+      "F": {
+        "old_unvoiced_to_new_voiced": 0,
+        "old_voiced_to_new_unvoiced": 3,
+        "both_voiced_frequency_change": 11,
+        "bit_only": 0,
+        "nonfinite_raw_change": 0,
+        "other_numeric_change": 0
+      }
+    },
+    "0011": {
+      "L": {
+        "old_unvoiced_to_new_voiced": 0,
+        "old_voiced_to_new_unvoiced": 1,
+        "both_voiced_frequency_change": 3,
+        "bit_only": 0,
+        "nonfinite_raw_change": 0,
+        "other_numeric_change": 0
+      },
+      "F": {
+        "old_unvoiced_to_new_voiced": 0,
+        "old_voiced_to_new_unvoiced": 1,
+        "both_voiced_frequency_change": 13,
+        "bit_only": 0,
+        "nonfinite_raw_change": 0,
+        "other_numeric_change": 0
+      }
+    },
+    "0032": {
+      "L": {
+        "old_unvoiced_to_new_voiced": 0,
+        "old_voiced_to_new_unvoiced": 0,
+        "both_voiced_frequency_change": 2,
+        "bit_only": 0,
+        "nonfinite_raw_change": 0,
+        "other_numeric_change": 0
+      },
+      "F": {
+        "old_unvoiced_to_new_voiced": 0,
+        "old_voiced_to_new_unvoiced": 0,
+        "both_voiced_frequency_change": 6,
+        "bit_only": 0,
+        "nonfinite_raw_change": 0,
+        "other_numeric_change": 0
+      }
+    }
+  },
+  "branch_totals": {
+    "L": {
+      "old_unvoiced_to_new_voiced": 0,
+      "old_voiced_to_new_unvoiced": 2,
+      "both_voiced_frequency_change": 11,
+      "bit_only": 0,
+      "nonfinite_raw_change": 0,
+      "other_numeric_change": 0
+    },
+    "F": {
+      "old_unvoiced_to_new_voiced": 0,
+      "old_voiced_to_new_unvoiced": 4,
+      "both_voiced_frequency_change": 30,
+      "bit_only": 0,
+      "nonfinite_raw_change": 0,
+      "other_numeric_change": 0
+    }
+  },
+  "numeric_change_branch_rows": 47,
+  "prior_reported_branch_rows": 47,
+  "unique_record_time_bits": 41,
+  "unique_record_physical_windows": 41,
+  "L_F_shared_record_time_bits": 6,
+  "L_F_shared_record_physical_windows": 6,
+  "clock_checks": {
+    "0008": {
+      "frames": 1200,
+      "physical_windows": 1197,
+      "L": "old/new raw clock bit-equal to saved AR3 clock",
+      "F": "old/new raw clock bit-equal to saved AR3 clock"
+    },
+    "0011": {
+      "frames": 1200,
+      "physical_windows": 1197,
+      "L": "old/new raw clock bit-equal to saved AR3 clock",
+      "F": "old/new raw clock bit-equal to saved AR3 clock"
+    },
+    "0032": {
+      "frames": 818,
+      "physical_windows": 815,
+      "L": "old/new raw clock bit-equal to saved AR3 clock",
+      "F": "old/new raw clock bit-equal to saved AR3 clock"
+    }
+  },
+  "anomaly_count": 0,
+  "local_top_rule": "saved old q_log_potential and new acg_q; 461 columns; np.argmax first index on exact ties",
+  "PML_clock": "not identical to L/F; excluded from rowwise comparison; no interpolation",
+  "base": "PML remains the formal base; quality ranking not evaluated",
+  "causal_limit": "unchanged local q top does not assign a sequence change solely to DP"
+}

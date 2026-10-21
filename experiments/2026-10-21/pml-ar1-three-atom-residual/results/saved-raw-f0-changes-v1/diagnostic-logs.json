@@ -1,0 +1,35 @@
+{
+  "scope": "all four saved logs of this array-only diagnostic",
+  "warning_count": 0,
+  "traceback_count": 0,
+  "logs": [
+    {
+      "member": "static-ast.log",
+      "bytes": 201,
+      "sha256": "f6cefe8ebb5c753593aac327661bb0e7fee100255f551a878d5836cebed08095",
+      "encoding": "UTF-8",
+      "full_text": "AST: passed\nsource bytes: 13241 SHA256: 419d46cf5e599c8958e06d8469a53ac65ca889c86b1a5a831ba428123eb9b251\nconditions bytes: 2087 SHA256: a97ab1c11b10598471c919ca6de6cb9bbf60e24e1a5b6261fce612f046966f86\n"
+    },
+    {
+      "member": "static-ruff.log",
+      "bytes": 19,
+      "sha256": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18",
+      "encoding": "UTF-8",
+      "full_text": "All checks passed!\n"
+    },
+    {
+      "member": "analysis-stdout.log",
+      "bytes": 62,
+      "sha256": "2f3e52b1c31600eb788f9c905900bca3b28f329fe497adb63f0a1dcdd80d6d45",
+      "encoding": "UTF-8",
+      "full_text": "completed saved-array description; detail rows=47 anomalies=0\n"
+    },
+    {
+      "member": "analysis-stderr.log",
+      "bytes": 49,
+      "sha256": "c4e38242508a511b9c9b97247786f5db9e56b66d75836017f5bba07575be3f98",
+      "encoding": "UTF-8",
+      "full_text": "RESOURCE wall_seconds=0.733652 maxrss_kib=187252\n"
+    }
+  ]
+}
