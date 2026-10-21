@@ -40,3 +40,21 @@ native独立監査の初回はPython選択ミスでNumPyがなく、保存配列
 独立品質レビューの短い原文noteも上記へ加えています。原文の`/workspace/shared/...`などは当時の照合元パスで、公開URLではありません。今回の比較JSON・元個票・監査判定は[掲載記録の来歴](results/run-001/receipt-verification.json)から辿れます。独立品質監査は親admission・ソース保持receiptを含む来歴とdetailを除いた[公開用チェックJSON](results/run-001/quality-independent-review-public.json)とし、全4089検査名・判定と元JSONの容量・SHAを保持しました。資産本体の再取得や再推論、遠隔実行の独立証明ではありません。
 
 `created_at`はこの群の案内を作った実時刻、runの日時は掲載用記録の作成時刻です。旧D1群・原設計・原結果は変更せず、新しい群として登録しました。候補実装・モデル・全長音声・親のadmission/保持receipt・ユーザー会話はGitへ追加していません。natural-japanese quickは新しい案内・HTML・一覧・要約・STATUS・PR文面へ適用し、原文は改稿していません。
+
+## 固定モデルの幾何を読む紙上追補
+
+[低q選択と固定次数・係数事前の幾何](followup-design/model-geometry-20261021/README.md)へ、議論原文・別担当の紙上確認と親追補を保存しました。親追補が最新の読み方です。Bは次の紙上点検対象であり、原因認定や新モデル・係数尺度・実行条件の採用ではありません。原文の「未受領」は当時の記録とし、別工程の保存配列観測の細目や数値結果は追加していません。公開済み75品質・21短音声とPML維持は不変です。
+
+初版の文書束 `pml-ar3-model-geometry-20261021.zip`（9,971 bytes、5ファイル）は訂正前の記録として公式Libraryに保持しています。
+
+- SHA256: `1f4708e18147c13ff540675a802dd215c5bf93a6f4a24a0db6530509f819d3a6`
+- Library: `libfile_f65bb8cab3fc81919d133720ac0e8017`、version `0`
+- 保存ファイル: `file_000000006894823082baf582b1ecbdd2`
+
+訂正版を最新とします。独立確認の `If Δ>0 while` を親の原文に合わせ、H0の原子重みをデータ z に条件付けた事後重みと明確にしました。旧Library保存物は変更していません。
+
+訂正版 `pml-ar3-model-geometry-20261021-corrected.zip`（10,186 bytes、5ファイル）も公式Libraryへ保存済みです。
+
+- SHA256: `737617e2e429f479c34c5380daf1b1ec774111533cb7bbf5fb2506167b1fd70a`
+- Library: `libfile_216a6268378c81918f457b1dfe8c61ef`、version `0`
+- 保存ファイル: `file_00000000de788230bc38a42dc2b48b50`

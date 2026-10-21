@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "bundle": "pml-ar3-model-geometry-20261021",
+  "scope": "publication_only_paper_followup",
+  "latest_reading": "parent-addendum-ja.md",
+  "reading_order": [
+    "README.md",
+    "parent-addendum-ja.md",
+    "original-discussion-ja.md",
+    "independent-review.md"
+  ],
+  "original_text_preservation": {
+    "encoding": "UTF-8",
+    "line_endings": "LF",
+    "trailing_newlines": 1,
+    "block_delimiters_excluded": true,
+    "unicode_normalization": false,
+    "html_entity_decoding": true,
+    "html_entity_decoding_scope": {
+      "path": "independent-review.md",
+      "from": "If Δ&gt;0 while",
+      "to": "If Δ>0 while",
+      "occurrences": 1,
+      "corrected_source_characters": 2975
+    }
+  },
+  "files": [
+    {
+      "path": "README.md",
+      "bytes": 2331,
+      "sha256": "2f20079031832df5ed89c060b3b8fe233d69f1807900596691d1a614cfd26a29",
+      "role": "guide"
+    },
+    {
+      "path": "original-discussion-ja.md",
+      "bytes": 5118,
+      "sha256": "b382642c70bf45708d02a81dfd49cffb26762312592a6a313f97decb7ad6d982",
+      "role": "received_original"
+    },
+    {
+      "path": "independent-review.md",
+      "bytes": 3037,
+      "sha256": "bcc2f3384134822da224bcbc9a17c72a44895ea85532f770c01e21c3699642c2",
+      "role": "received_original"
+    },
+    {
+      "path": "parent-addendum-ja.md",
+      "bytes": 5264,
+      "sha256": "a82fddecff3f9eb1df99e4e9cedbca4f01ee85cba550ab0fdc1c6d5991caf4f7",
+      "role": "latest_addendum"
+    }
+  ],
+  "revision": 2,
+  "supersedes_bundle_sha256": "1f4708e18147c13ff540675a802dd215c5bf93a6f4a24a0db6530509f819d3a6"
+}
