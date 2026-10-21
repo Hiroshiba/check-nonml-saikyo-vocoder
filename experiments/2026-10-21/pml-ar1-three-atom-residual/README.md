@@ -58,3 +58,13 @@ native独立監査の初回はPython選択ミスでNumPyがなく、保存配列
 - SHA256: `737617e2e429f479c34c5380daf1b1ec774111533cb7bbf5fb2506167b1fd70a`
 - Library: `libfile_216a6268378c81918f457b1dfe8c61ef`、version `0`
 - 保存ファイル: `file_00000000de788230bc38a42dc2b48b50`
+
+## 混合差と成分変化の紙上補題
+
+[混合得点の差から、成分の変化をどこまで言えるか](followup-design/logsum-component-bounds-20261021.md)に、30成分logsumの境界と反例を保存しました。lowerとupperは異なる極値への片側制約です。今回の別担当の確認は式・反例・解釈条件の紙上整合性に限ります。実データ診断はexit0との報告がありますが、保存HTTP401で親は本体未受領のため、数値や診断結論は加えていません。既存の原文・親追補と公開結果は保持しています。
+
+新しい文書本文（UTF-8、5,607 bytes）を公式Libraryへ保存済みです。
+
+- SHA256: `22b8e2afc9e8a1a4494497bf71cfcfd9111d5aa91a63d1d317f527ce437012aa`
+- Library: `libfile_74f320b70644819181d480b3f2eb3e84`、version `0`
+- 保存ファイル: `file_00000000adac823083ee3a86ab54dce8`
