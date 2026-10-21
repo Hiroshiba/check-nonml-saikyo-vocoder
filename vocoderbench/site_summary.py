@@ -19,6 +19,8 @@ def esc(value):
 
 def brief(results):
     data = json.loads((results / 'results.json').read_text(encoding='utf-8'))
+    if data.get('study_role') == 'acg_lf_d1_first3_quality':
+        return _brief_acg_first3(data, results)
     if data.get('study_role') == 'ar3_first3_development':
         return _brief_ar3_first3(data)
     if data.get('study_role') == 'd1_first3_development':
@@ -225,6 +227,41 @@ def _brief_ar3_first3(data):
             '変換式・出典・SHAは詳細レポートに記載しています。</p>')
 
 
+def _brief_acg_first3(data, results):
+    first = data['record_ids'][0]
+    quality = data['quality']
+    scores = {(r['branch'], r['metric']): r for r in quality['records']
+              if r['record_id'] == first}
+    ranks = json.loads((results / data['descriptive_ranks']).read_text(encoding='utf-8'))
+    positions = {(r['method'], r['metric']): r['rank'] for r in ranks['records']
+                 if r['record_id'] == first}
+    rows = []
+    for method in data['index_methods']:
+        branch = 'original' if method == 'identity' else method
+        cells = ['<td>' + esc(data['method_labels'][method]) + '</td>']
+        for metric in quality['metrics']:
+            row = scores.get((branch, metric['id']))
+            if row is None:
+                cells.append('<td>対象外</td>')
+                continue
+            rank = positions.get((branch, metric['id']))
+            text = f"{row['value']:.6f}" + ('（参考・順位外）' if rank is None else f'（{rank}位）')
+            cells.append('<td>' + ('<strong>' + esc(text) + '</strong>' if rank == 1 else esc(text)) + '</td>')
+        rows.append('<tr>' + ''.join(cells) + '</tr>')
+    headings = ''.join(f'<th>{esc(m["label"])}</th>' for m in quality['metrics'])
+    return ('<p>同じ1話者の既知3録音による開発比較です。新ACGの品質24値と、条件照合済みの引用39値を記録しました。'
+            'PML比では新L/Fの全6枝でECAPA・eSTOIが低く、SCOREQ距離が高い方向でした。'
+            'UTMOSは0008・0011で低く、0032で高くなり、正式ベースはPMLを維持します。</p>'
+            f'<p>以下は先頭ID {esc(first)} のみの保存値と、同じ指標・採点範囲の合成5条件内の順位です。'
+            '1位を太字で示し、同値は同順位とします。順位は丸める前の原値から計算し、原音は参考として除外しました。</p>'
+            '<div class="scroll"><table><thead><tr><th>条件</th>' + headings + '</tr></thead><tbody>'
+            + ''.join(rows) + '</tbody></table></div>'
+            '<p>SCOREQだけ小さい方向、他3指標は大きい方向です。全3録音の原値・48対応差・採点区間・25警告は詳細へ。'
+            '従来AR3との変化は指標・録音で混在します。PMLとの差を密度だけの原因とせず、音高精度・一般化・有意差・採用は判断しません。</p>'
+            '<p>18短例は既存の掲載JSONを参照する先頭2秒です。LibriSpeech / '
+            '<a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>。品質測定にはこの掲載コピーを使っていません。</p>')
+
+
 def short_audio(results, *, heading='同じ区間の音声'):
     path = results / 'audio_samples.json'
     if not path.exists():
@@ -238,6 +275,16 @@ def short_audio(results, *, heading='同じ区間の音声'):
     current = measurements.get('schema_version', 1) >= 2
     labels = measurements.get('method_labels', CURRENT_LABELS if current else LABELS)
     samples = data.get('samples', [])
+    if measurements.get('study_role') == 'acg_lf_d1_first3_quality':
+        sources = {}
+        for ref in data['references']:
+            name = ref['audio_json']
+            if name not in sources:
+                sources[name] = json.loads((results / name).read_text(encoding='utf-8'))['samples']
+            found = [s for s in sources[name] if s['case'] == ref['case'] and s['method'] == ref['method']]
+            if len(found) != 1:
+                raise ValueError('音声参照の録音・条件が一意に対応していません')
+            samples.append(found[0])
     refs = [s for s in samples if s['method'] == 'identity']
     if not refs:
         return '<p>比較できる原音の音声例がありません。</p>'

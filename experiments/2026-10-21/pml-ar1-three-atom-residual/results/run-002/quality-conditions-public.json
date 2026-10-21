@@ -1,0 +1,383 @@
+{
+  "original": {
+    "member": "runtime.json",
+    "bytes": 4104,
+    "sha256": "f16cb41b12872fedf27bb2d94d4158dd704e132a86c4dafcb4d2391cf3874cf3"
+  },
+  "conversion": "argv, process ID and host name omitted; local absolute paths replaced; runtime versions/threads/limits retained",
+  "runtime": {
+    "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+    "platform": "Linux-6.18.55-x86_64",
+    "platform_source": "os.uname; sysname-release-machine; no subprocess",
+    "uname": {
+      "sysname": "Linux",
+      "release": "6.18.55",
+      "version": "#1 SMP Wed Oct 14 19:45:18 UTC 2026",
+      "machine": "x86_64"
+    },
+    "packages": {
+      "numpy": "2.3.5",
+      "scipy": "1.17.0",
+      "torch": "2.8.0+cpu",
+      "torchaudio": "2.8.0+cpu",
+      "torchvision": "0.23.0+cpu",
+      "transformers": "4.51.3",
+      "timm": "1.0.15",
+      "librosa": "0.11.0",
+      "pystoi": "0.4.1",
+      "onnxruntime": "1.22.0",
+      "speechbrain": "1.0.3",
+      "threadpoolctl": "3.7.0",
+      "hyperpyyaml": "1.2.2",
+      "ruamel.yaml": "0.18.10",
+      "sentencepiece": "0.2.0",
+      "coloredlogs": "15.0.1",
+      "humanfriendly": "10.0",
+      "flatbuffers": "25.2.10",
+      "protobuf": "6.31.1",
+      "ruamel-yaml-clib": "0.2.15"
+    },
+    "torchvision_metadata": "0.23.0+cpu",
+    "torchvision_pin": "0.23.0+cpu; confirmed actual Cloud metadata before source preparation",
+    "cpu_threads": 2,
+    "thread_environment": {
+      "OPENBLAS_NUM_THREADS": "2",
+      "OMP_NUM_THREADS": "2",
+      "MKL_NUM_THREADS": "2",
+      "VECLIB_MAXIMUM_THREADS": "2",
+      "NUMEXPR_NUM_THREADS": "2",
+      "BLIS_NUM_THREADS": "2"
+    },
+    "network": "offline flags plus socket-connect/DNS/bind and subprocess denial audit hook",
+    "RSS_budget_bytes": 8589934592,
+    "native_concurrency": "external exclusive gate required",
+    "exclusive_owner_assertion": "launcher assertion; OS-wide exclusivity not proven",
+    "external_supervision": "wall3600+10s, AS12GiB, stage RSS8GiB, actual wait/reap",
+    "per_file_write_soft_limit_bytes": 8388608,
+    "free_disk_bytes_at_start": 29493514240,
+    "threadpools": [
+      {
+        "user_api": "openmp",
+        "internal_api": "openmp",
+        "num_threads": 2,
+        "prefix": "libgomp",
+        "filepath": "[local]/libgomp.so.1",
+        "version": null
+      },
+      {
+        "user_api": "blas",
+        "internal_api": "openblas",
+        "num_threads": 2,
+        "prefix": "libscipy_openblas",
+        "filepath": "[local]/libscipy_openblas64_-fdde5778.so",
+        "version": "0.3.30",
+        "threading_layer": "pthreads",
+        "architecture": "SkylakeX"
+      }
+    ]
+  },
+  "verified_assets": {
+    "utmos_checkpoint": {
+      "path": "[local]/fold0_s42_best_model.pth",
+      "filename": "fold0_s42_best_model.pth",
+      "bytes": 818531314,
+      "sha256": "c8149d988e4bbf3f347e6966b5d769de347a5f8c59ffca1dc4bd4bf5b8585e57",
+      "source": "https://huggingface.co/sarulab-speech/UTMOSv2/resolve/506474f2b33dc77c234d668cc419be1861899cad/fold0_s42_best_model.pth"
+    },
+    "utmos_config": {
+      "path": "[local]/config.json",
+      "filename": "config.json",
+      "bytes": 1842,
+      "sha256": "4937977e24d12d1bba70cdce8709c3c04807a8e4ae8ddac4229c48c436ae99ae",
+      "source": "https://huggingface.co/facebook/wav2vec2-base/resolve/0b5b8e868dd84f03fd87d01f9c4ff0f080fecfe8/config.json"
+    },
+    "utmos_preprocessor": {
+      "path": "[local]/preprocessor_config.json",
+      "filename": "preprocessor_config.json",
+      "bytes": 159,
+      "sha256": "b225d617c025463b9e157e06afea8b90dc7078fc70b013c533328423e0486b4a",
+      "source": "https://huggingface.co/facebook/wav2vec2-base/resolve/0b5b8e868dd84f03fd87d01f9c4ff0f080fecfe8/preprocessor_config.json"
+    },
+    "ecapa": {
+      "path": "[local]/embedding_model.ckpt",
+      "filename": "embedding_model.ckpt",
+      "bytes": 83316686,
+      "sha256": "0575cb64845e6b9a10db9bcb74d5ac32b326b8dc90352671d345e2ee3d0126a2",
+      "source": "https://huggingface.co/speechbrain/spkrec-ecapa-voxceleb/blob/a9f171aee6b706ea72b35dfe6d9dbd07947c2555/embedding_model.ckpt"
+    },
+    "scoreq": {
+      "path": "[local]/fixed_nmr_telephone.onnx",
+      "filename": "fixed_nmr_telephone.onnx",
+      "bytes": 377979175,
+      "sha256": "899c9959bf48b38d99fdd5227b31182ca9d8253b14b61edd2725eca779a55b49",
+      "source": "https://github.com/alessandroragano/scoreq",
+      "acquisition_provenance_git_blob": "f7fb9778549b78f7b8525cc0905a1cfa400c98d3"
+    }
+  },
+  "evaluator_AST": {
+    "schema_version": 1,
+    "old_source_manifest_sha256": "35d3976e71e23d7fee186ca4648d99ea5002871adb23ad3de5ad6fd94e1ef192",
+    "function_ast_sha256": {
+      "build_metric": "b0fa4f5b229f4faf768b0953f2f021776e2bb508f8562c185264bcd9f9016a23",
+      "measure": "950868533240fee703630802563ce395860740404657fee739c17c781bde5bb6"
+    },
+    "statement": "build_metric and measure science AST must remain identical to old AR3 quality v2"
+  },
+  "source_manifest": {
+    "schema_version": 1,
+    "version": "pml-acg-lf-d1-quality-v2-20261021",
+    "base_commit": "2251f947032296c6cdf03e8022c74eefbeef17e8",
+    "files": [
+      {
+        "path": "ACG_NATIVE_PIN.json",
+        "bytes": 871,
+        "sha256": "aab141c59c227c2991b17ca4652d06dbdfc99d59bb6896b4f914f99e48f98f02"
+      },
+      {
+        "path": "ACG_PARENT_GATE.schema.json",
+        "bytes": 627,
+        "sha256": "30ec8bbf06c2716401c0ebd25836d136c42f45f947b9a84ff1487412f73b80b4"
+      },
+      {
+        "path": "ASSET_PINS.json",
+        "bytes": 1794,
+        "sha256": "0f39db268d9623220a4a9ba3ba089a96c56a308c13a62529f291d60fd5347881"
+      },
+      {
+        "path": "CHANGELOG.json",
+        "bytes": 998,
+        "sha256": "b678d6679127087c0d7aee037ad7f19cae47227a76929743e66ffe3cdb922c74"
+      },
+      {
+        "path": "DEPENDENCY_SOURCE_MANIFEST.json",
+        "bytes": 3592,
+        "sha256": "06e8b499f0a4e223da2af319a0457062dc16b86afe77da0d716d7d5bb953cb59"
+      },
+      {
+        "path": "EVALUATOR_AST_PIN.json",
+        "bytes": 427,
+        "sha256": "6b9ab8f6897c1f239b58cf717d5c0bc5b7bfd6ce2334d0c06f08aeb52493deff"
+      },
+      {
+        "path": "NATIVE_SOURCE_PIN.json",
+        "bytes": 751,
+        "sha256": "5fdbd038ed4fcff236739fccb74d2d05b51a7cf40b48219383586487e0fcc14e"
+      },
+      {
+        "path": "OUTPUT_SCHEMA.json",
+        "bytes": 1195,
+        "sha256": "7054e981042013ae6023120924bf260e5b140510aa38fff4d5884e92af38b71c"
+      },
+      {
+        "path": "PRIOR_INPUT_PIN.json",
+        "bytes": 77494,
+        "sha256": "b96685e90134bd813493200926d9be0e71e96a68ef64890881ccb26a15d8f159"
+      },
+      {
+        "path": "QUOTE_PIN.json",
+        "bytes": 8552,
+        "sha256": "723118cf1eeb57cad541a5c3fdaf5f47d980c4db3d0e8710329ab94e0acff166"
+      },
+      {
+        "path": "README-ja.md",
+        "bytes": 3316,
+        "sha256": "b83ee3da620fab7d96f9090576fc456fc43436efe2e70b85ec79df75f6663115"
+      },
+      {
+        "path": "SOURCE_RECEIPT.schema.json",
+        "bytes": 467,
+        "sha256": "6fa35df7040a26f2838531c0e747f896971fe36a6adf668453463a1b4bcd05f8"
+      },
+      {
+        "path": "STATIC_BYTE_BOUNDS.json",
+        "bytes": 1403,
+        "sha256": "7e2b7bb8dec55355d19b0421b053a896837b0cd920d2d7d31b25ae14d6a601c8"
+      },
+      {
+        "path": "dependencies/vocoderbench/__init__.py",
+        "bytes": 79,
+        "sha256": "73738d70706824f85fdfac302306af505437a50b0ca4cdc68fd57aec211a308d"
+      },
+      {
+        "path": "dependencies/vocoderbench/extended_metrics.py",
+        "bytes": 10671,
+        "sha256": "ab3537d2c8e5d568a0cd2fa8aa36309de09c3bce7cf2f849214331a22fe3624f"
+      },
+      {
+        "path": "dependencies/vocoderbench/metrics.py",
+        "bytes": 11886,
+        "sha256": "b8767feb49494058bd9ec08fd95ae2fb50ce7897fcdd6cebe319ff8a0ac51f22"
+      },
+      {
+        "path": "dependencies/vocoderbench/mos.py",
+        "bytes": 12126,
+        "sha256": "fb632aa5440245525289962372db4f3eb007cd2b3b493b2d05ecccb878e85f03"
+      },
+      {
+        "path": "dependencies/vocoderbench/quality_backends.py",
+        "bytes": 10198,
+        "sha256": "1f36068515bc3e218f9eb149d7fc3b2b8e62b5eee804448ff30f01624dd23a48"
+      },
+      {
+        "path": "dependencies/vocoderbench/quality_core.py",
+        "bytes": 8262,
+        "sha256": "66bf6c08633424f544b2ad7eef2a74283c05d809aa9a59df8fc1ba0e5ab51f4b"
+      },
+      {
+        "path": "dependencies/vocoderbench/temporal_metrics.py",
+        "bytes": 16993,
+        "sha256": "ce21b6a4767071a7b98ea0cdbfe54bdba15b596bf8d6b6127281a97095e7be91"
+      },
+      {
+        "path": "fixed-input-manifest.json",
+        "bytes": 55015,
+        "sha256": "1f392fc60fbca4003c236f03ffd9edba82b048737f23cf250295c1b4c6c85193"
+      },
+      {
+        "path": "quality-requirements.txt",
+        "bytes": 245,
+        "sha256": "b299f99ec743a9a2c0c9cf2b746829c6215a7ae368a2fa1b7d8b3e34d8ae9051"
+      },
+      {
+        "path": "quality_acg.py",
+        "bytes": 5009,
+        "sha256": "508ebbc9d9b45f5e01c3b77aef16e83f73ac5de3197909b7113e73809f268a79"
+      },
+      {
+        "path": "quality_capture.py",
+        "bytes": 9684,
+        "sha256": "2790434d58a00d581697ad57d554b2ef4a4c7612669c241c9b35ccc3331838c2"
+      },
+      {
+        "path": "quality_contract.py",
+        "bytes": 14135,
+        "sha256": "a5796b8f166873f1d4f6e69714795cdb6f8f3dd5ae521e5648015c4ba8944517"
+      },
+      {
+        "path": "quality_delivery.py",
+        "bytes": 10798,
+        "sha256": "f9564726056ecb0a544642aef70d079ce333a6388e893b1d81318d2fe7d9aeee"
+      },
+      {
+        "path": "quality_launch.py",
+        "bytes": 6967,
+        "sha256": "9692bc0c5b2266322ced97a89e029ae3f6269d3025554cdeafc001ba63d36d87"
+      },
+      {
+        "path": "quality_native.py",
+        "bytes": 16782,
+        "sha256": "dd49c247bf20688deab30b2a670407045e48af3ed1644f55ee424ac4a9709346"
+      },
+      {
+        "path": "quality_quote.py",
+        "bytes": 8259,
+        "sha256": "b52ff014a8198045cd2b9e7cf13b9df9dd5d52ef59e6b447094288c3f7fc290b"
+      },
+      {
+        "path": "quality_record_outer.py",
+        "bytes": 14311,
+        "sha256": "d8879b3d60ad1636db2bdd1986db7c8b4b3edf26f23c6369d3ec5679ea8e7af9"
+      },
+      {
+        "path": "quality_reference.py",
+        "bytes": 10491,
+        "sha256": "213ee4963466cf532316fef77a0ee061ec7a4e8f10c4734d8b7648261053e88c"
+      },
+      {
+        "path": "ruff.toml",
+        "bytes": 65,
+        "sha256": "3579d79d8c12209d3b1b462a8b97b43e13b79972f5a1800b53c00ca44b727963"
+      },
+      {
+        "path": "run_quality.py",
+        "bytes": 17577,
+        "sha256": "e1d9f090dbfe89c7508671a00c8e0fd09af947eb5738123afba07d0a4721ce2e"
+      }
+    ]
+  },
+  "dependency_source_manifest": {
+    "schema_version": 1,
+    "base_commit": "2251f947032296c6cdf03e8022c74eefbeef17e8",
+    "files": [
+      {
+        "path": "dependencies/vocoderbench/__init__.py",
+        "bytes": 79,
+        "sha256": "73738d70706824f85fdfac302306af505437a50b0ca4cdc68fd57aec211a308d",
+        "git_blob_sha1": "260c2a2f096adaadcdbdbddfa1952b1b6eba4bb7",
+        "source_url": "https://github.com/Hiroshiba/check-nonml-saikyo-vocoder/blob/2251f947032296c6cdf03e8022c74eefbeef17e8/vocoderbench/__init__.py",
+        "modification": "byte unchanged"
+      },
+      {
+        "path": "dependencies/vocoderbench/extended_metrics.py",
+        "bytes": 10671,
+        "sha256": "ab3537d2c8e5d568a0cd2fa8aa36309de09c3bce7cf2f849214331a22fe3624f",
+        "git_blob_sha1": "d026ba998339287a88949ed3358db3d98f2671fc",
+        "source_url": "https://github.com/Hiroshiba/check-nonml-saikyo-vocoder/blob/2251f947032296c6cdf03e8022c74eefbeef17e8/vocoderbench/extended_metrics.py",
+        "modification": "byte unchanged"
+      },
+      {
+        "path": "dependencies/vocoderbench/metrics.py",
+        "bytes": 11886,
+        "sha256": "b8767feb49494058bd9ec08fd95ae2fb50ce7897fcdd6cebe319ff8a0ac51f22",
+        "git_blob_sha1": "3e9f2440cb7920e1fd57171c6c62ab49b40472ac",
+        "source_url": "https://github.com/Hiroshiba/check-nonml-saikyo-vocoder/blob/2251f947032296c6cdf03e8022c74eefbeef17e8/vocoderbench/metrics.py",
+        "modification": "byte unchanged"
+      },
+      {
+        "path": "dependencies/vocoderbench/mos.py",
+        "bytes": 12126,
+        "sha256": "fb632aa5440245525289962372db4f3eb007cd2b3b493b2d05ecccb878e85f03",
+        "git_blob_sha1": "e1edf527190a676f9edf5814d72d20c911394c22",
+        "source_url": "https://github.com/Hiroshiba/check-nonml-saikyo-vocoder/blob/2251f947032296c6cdf03e8022c74eefbeef17e8/vocoderbench/mos.py",
+        "modification": "byte unchanged"
+      },
+      {
+        "path": "dependencies/vocoderbench/quality_backends.py",
+        "bytes": 10198,
+        "sha256": "1f36068515bc3e218f9eb149d7fc3b2b8e62b5eee804448ff30f01624dd23a48",
+        "git_blob_sha1": "b14e1c898928405a89dec0787a1e468f2e97e04e",
+        "source_url": "https://github.com/Hiroshiba/check-nonml-saikyo-vocoder/blob/2251f947032296c6cdf03e8022c74eefbeef17e8/vocoderbench/quality_backends.py",
+        "modification": "byte unchanged"
+      },
+      {
+        "path": "dependencies/vocoderbench/quality_core.py",
+        "bytes": 8262,
+        "sha256": "66bf6c08633424f544b2ad7eef2a74283c05d809aa9a59df8fc1ba0e5ab51f4b",
+        "git_blob_sha1": "bb87c93d0b3a4757f62e9f007d5434821c9a8ada",
+        "source_url": "https://github.com/Hiroshiba/check-nonml-saikyo-vocoder/blob/2251f947032296c6cdf03e8022c74eefbeef17e8/vocoderbench/quality_core.py",
+        "modification": "byte unchanged"
+      },
+      {
+        "path": "dependencies/vocoderbench/temporal_metrics.py",
+        "bytes": 16993,
+        "sha256": "ce21b6a4767071a7b98ea0cdbfe54bdba15b596bf8d6b6127281a97095e7be91",
+        "git_blob_sha1": "d5ff8be3f0c230d8ced0e9302849c145692bc86e",
+        "source_url": "https://github.com/Hiroshiba/check-nonml-saikyo-vocoder/blob/2251f947032296c6cdf03e8022c74eefbeef17e8/vocoderbench/temporal_metrics.py",
+        "modification": "byte unchanged"
+      },
+      {
+        "path": "quality-requirements.txt",
+        "bytes": 245,
+        "sha256": "b299f99ec743a9a2c0c9cf2b746829c6215a7ae368a2fa1b7d8b3e34d8ae9051",
+        "git_blob_sha1": "5ff664e202776f2d6f01b8c38ab922949f492a7e",
+        "source_url": "https://github.com/Hiroshiba/check-nonml-saikyo-vocoder/blob/2251f947032296c6cdf03e8022c74eefbeef17e8/scripts/pml_evaluation/quality-requirements.txt",
+        "modification": "byte unchanged"
+      }
+    ]
+  },
+  "citation_provenance": {
+    "historical_quality_zip": {
+      "bytes": 1628809,
+      "sha256": "96c137afd76b74b0ce16489d71c81fa8b74c5d769724a21bb10523f7373a44f8"
+    },
+    "historical_delivery": {
+      "bytes": 1639524,
+      "sha256": "5dce01de9179396037c9afeec5ad9450fce0205ad2eb97df1dee8f94cdd660d8"
+    },
+    "historical_source_manifest_sha256": "35d3976e71e23d7fee186ca4648d99ea5002871adb23ad3de5ad6fd94e1ef192",
+    "historical_runtime_sha256": "65b654e6398d81f4c76058a80036953066a43cc33cbf4d2930666f485349876a",
+    "historical_assets_sha256": "1a1370cd3f4454cd80e0bd456e0ca7fed3f6ea553e886d371ec08d4e3979d59c",
+    "quoted_rows": 39,
+    "old_quality_execution": "actual exit0 and reaped; 75 measured"
+  }
+}

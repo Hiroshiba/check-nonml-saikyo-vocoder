@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="ja"><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>方向の密度へ替えた音声は、PMLや従来の音声とどう違うか</title><style>:root{color-scheme:light dark}body{font-family:system-ui,sans-serif;line-height:1.8;max-width:1160px;margin:2rem auto;padding:0 1rem}table{border-collapse:collapse;width:100%;font-size:.9rem}th,td{border:1px solid #888;padding:.5rem;text-align:left;vertical-align:top}.scroll{overflow-x:auto}.audio-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1rem}audio{max-width:100%}.best-value{display:block;font-weight:700;outline:2px solid currentColor;outline-offset:2px}h2{margin-top:2.4rem}</style><body>
+<nav><a href="../../index.html">研究グループ</a> ／ <a href="../../../../../index.html">実験一覧</a></nav>
+<h1>方向の密度へ替えた音声は、PMLや従来の音声とどう違うか</h1>
+<p>同じ録音・同じ後段処理で、候補の重み付けだけを替えた音声を比べました。従来のt分布による得点を、波形の大きさを取り除いた方向の確率密度（ACG）へ替え、局所選択L／系列選択F、D1平滑化、PMLの解析・復号を固定しています。</p>
+<p><strong>正式ベースはPMLを維持します。</strong>新ACGのL/Fは3録音ともPMLよりECAPA・eSTOIが低く、SCOREQ距離が高い方向でした。UTMOSは0008・0011で低く、0032で高くなりました。これは既知の同一話者3録音の冒頭の固定区間による開発比較で、音高精度・一般性能・有意差・方式採用の判断には使えません。</p>
+<p>新規24値と条件照合済みの引用39値、計63値を示します。PMLとの比較を先に、従来AR3の同じL/Fとの直接の対比を次に掲載します。原音のUTMOSは参考値で、合成5条件の順位から除外します。</p>
+<p>品質実行：2026-10-21T14:25:20.490195+00:00 〜 2026-10-21T14:26:32.663928+00:00（UTC）。所要72.17374358099914秒、最大RSS 2034916 KiB、終了コード0、捕捉警告25件です。<a href="quality-execution-public.json">実終了と全出力</a> ／ <a href="quality-events-public.json">全100イベント・25警告</a>。</p>
+<h2>PMLとの比較では、参照を使う3指標は全6枝で不利な方向だった</h2>
+<p>ECAPAは話者埋込みの類似度、eSTOIは明瞭性の推定、SCOREQは参照音声との距離です。UTMOSv2は参照なしの品質予測値です。SCOREQだけ小さい方向、それ以外の3指標は大きい方向を良い向きとして表示します。いずれも今回の再合成音声に対する指標で、真のF0や聴取評価の代わりにはなりません。</p>
+<p>表はACG−PMLの対応差です。PMLとACGは異なる経路なので、この差をACG密度だけの原因へ帰属させません。PMLの保存F0の時刻とは行対応・補間していません。</p>
+<div class="scroll"><table><thead><tr><th>録音</th><th>条件</th><th>UTMOSv2 ↑</th><th>SCOREQ natural距離 ↓</th><th>ECAPA cosine ↑</th><th>eSTOI ↑</th></tr></thead><tbody><tr><td>0008</td><td>ACG・局所L＋D1</td><td>-0.3927192687988281</td><td>0.18382328748703003</td><td>-0.04311150312423706</td><td>-0.031165568666518317</td></tr>
+<tr><td>0008</td><td>ACG・系列F＋D1</td><td>-0.0863046646118164</td><td>0.16809216141700745</td><td>-0.0470392107963562</td><td>-0.02228252610503656</td></tr>
+<tr><td>0011</td><td>ACG・局所L＋D1</td><td>-0.309659481048584</td><td>0.45249122381210327</td><td>-0.017450034618377686</td><td>-0.05440139191098359</td></tr>
+<tr><td>0011</td><td>ACG・系列F＋D1</td><td>-0.3735790252685547</td><td>0.44968515634536743</td><td>-0.019171833992004395</td><td>-0.057499063356010294</td></tr>
+<tr><td>0032</td><td>ACG・局所L＋D1</td><td>0.3587019443511963</td><td>0.08805203437805176</td><td>-0.013991117477416992</td><td>-0.003886530278647382</td></tr>
+<tr><td>0032</td><td>ACG・系列F＋D1</td><td>0.041196346282958984</td><td>0.03501015901565552</td><td>-0.02242225408554077</td><td>-0.007124454968168048</td></tr>
+</tbody></table></div>
+<h2>従来AR3との変化は、録音・指標・L/Fで混在した</h2>
+<p>こちらは同じL/Fと固定後段で得点の定義を替えた直接の対比です。UTMOSはLの3録音とFの0008で上がり、Fの0011・0032で下がりました。ほかの指標も変化方向が混在します。表は新ACG−従来AR3で、値の差を一貫した品質向上や音高精度の変化とは呼びません。</p>
+<div class="scroll"><table><thead><tr><th>録音</th><th>条件</th><th>UTMOSv2 ↑</th><th>SCOREQ natural距離 ↓</th><th>ECAPA cosine ↑</th><th>eSTOI ↑</th></tr></thead><tbody><tr><td>0008</td><td>ACG・局所L＋D1</td><td>0.18863701820373535</td><td>-0.03962445259094238</td><td>-0.003661811351776123</td><td>-0.0003382410058103691</td></tr>
+<tr><td>0008</td><td>ACG・系列F＋D1</td><td>0.3381819725036621</td><td>0.02624499797821045</td><td>-0.001992464065551758</td><td>1.7824744265926284e-05</td></tr>
+<tr><td>0011</td><td>ACG・局所L＋D1</td><td>0.09077239036560059</td><td>0.11608016490936279</td><td>0.009546399116516113</td><td>0.0007918193784762773</td></tr>
+<tr><td>0011</td><td>ACG・系列F＋D1</td><td>-0.4471781253814697</td><td>0.020567238330841064</td><td>-0.0009474754333496094</td><td>-0.0027052715693678397</td></tr>
+<tr><td>0032</td><td>ACG・局所L＋D1</td><td>0.03653407096862793</td><td>-0.011693745851516724</td><td>0.003267526626586914</td><td>-0.0009830500605884085</td></tr>
+<tr><td>0032</td><td>ACG・系列F＋D1</td><td>-0.011101484298706055</td><td>-0.01282268762588501</td><td>-0.0021125078201293945</td><td>-0.00047989547361804163</td></tr>
+</tbody></table></div>
+<p><a href="paired-differences.json">48対応差の原値と対応条件</a>。各差は同じ録音・同じ指標・同じ採点区間で計算し、全録音の平均や総合順位にはまとめていません。</p>
+<h2>同じ録音・指標内の5条件を、原値と記述的順位で読む</h2>
+<p>各セルは保存値（小数第6位まで表示）と順位です。順位は丸める前の原値から計算し、同値は同順位とします。1位のセルを太枠・太字で示します。この限られた比較内の記述であり、統計的優越や採用順位ではありません。全録音平均・平均順位・総合順位は作りません。セルのリンクから採点区間や入力SHAを確認できます。</p>
+<h3>librispeech_1089-134686-0008</h3>
+<div class="scroll"><table><thead><tr><th>条件</th><th>UTMOSv2 ↑</th><th>SCOREQ natural距離 ↓</th><th>ECAPA cosine ↑</th><th>eSTOI ↑</th></tr></thead><tbody><tr><td>PML（正式ベース）</td><td><span class="best-value"><a href="../run-001/quality-librispeech_1089-134686-0008-pml-utmos_v2.json">3.255971</a>（1位）</span></td><td><span class="best-value"><a href="../run-001/quality-librispeech_1089-134686-0008-pml-scoreq_natural.json">0.314203</a>（1位）</span></td><td><span class="best-value"><a href="../run-001/quality-librispeech_1089-134686-0008-pml-ecapa_cosine.json">0.951873</a>（1位）</span></td><td><span class="best-value"><a href="../run-001/quality-librispeech_1089-134686-0008-pml-estoi.json">0.922571</a>（1位）</span></td></tr>
+<tr><td>従来のt分布・局所L＋D1</td><td><a href="../run-001/quality-librispeech_1089-134686-0008-L_ar3_d1-utmos_v2.json">2.674615</a>（5位）</td><td><a href="../run-001/quality-librispeech_1089-134686-0008-L_ar3_d1-scoreq_natural.json">0.537650</a>（5位）</td><td><a href="../run-001/quality-librispeech_1089-134686-0008-L_ar3_d1-ecapa_cosine.json">0.912424</a>（2位）</td><td><a href="../run-001/quality-librispeech_1089-134686-0008-L_ar3_d1-estoi.json">0.891744</a>（4位）</td></tr>
+<tr><td>従来のt分布・系列F＋D1</td><td><a href="../run-001/quality-librispeech_1089-134686-0008-F_ar3_d1-utmos_v2.json">2.831485</a>（4位）</td><td><a href="../run-001/quality-librispeech_1089-134686-0008-F_ar3_d1-scoreq_natural.json">0.456050</a>（2位）</td><td><a href="../run-001/quality-librispeech_1089-134686-0008-F_ar3_d1-ecapa_cosine.json">0.906827</a>（4位）</td><td><a href="../run-001/quality-librispeech_1089-134686-0008-F_ar3_d1-estoi.json">0.900271</a>（3位）</td></tr>
+<tr><td>ACG・局所L＋D1</td><td><a href="quality-librispeech_1089-134686-0008-L_acg_d1-utmos_v2.json">2.863252</a>（3位）</td><td><a href="quality-librispeech_1089-134686-0008-L_acg_d1-scoreq_natural.json">0.498026</a>（4位）</td><td><a href="quality-librispeech_1089-134686-0008-L_acg_d1-ecapa_cosine.json">0.908762</a>（3位）</td><td><a href="quality-librispeech_1089-134686-0008-L_acg_d1-estoi.json">0.891405</a>（5位）</td></tr>
+<tr><td>ACG・系列F＋D1</td><td><a href="quality-librispeech_1089-134686-0008-F_acg_d1-utmos_v2.json">3.169667</a>（2位）</td><td><a href="quality-librispeech_1089-134686-0008-F_acg_d1-scoreq_natural.json">0.482295</a>（3位）</td><td><a href="quality-librispeech_1089-134686-0008-F_acg_d1-ecapa_cosine.json">0.904834</a>（5位）</td><td><a href="quality-librispeech_1089-134686-0008-F_acg_d1-estoi.json">0.900289</a>（2位）</td></tr>
+<tr><td>原音（順位外）</td><td><a href="../run-001/quality-librispeech_1089-134686-0008-original-utmos_v2.json">4.073603</a>（参考・順位外）</td><td>対象外</td><td>対象外</td><td>対象外</td></tr>
+</tbody></table></div>
+<h3>librispeech_1089-134686-0011</h3>
+<div class="scroll"><table><thead><tr><th>条件</th><th>UTMOSv2 ↑</th><th>SCOREQ natural距離 ↓</th><th>ECAPA cosine ↑</th><th>eSTOI ↑</th></tr></thead><tbody><tr><td>PML（正式ベース）</td><td><a href="../run-001/quality-librispeech_1089-134686-0011-pml-utmos_v2.json">3.283094</a>（2位）</td><td><span class="best-value"><a href="../run-001/quality-librispeech_1089-134686-0011-pml-scoreq_natural.json">0.335403</a>（1位）</span></td><td><span class="best-value"><a href="../run-001/quality-librispeech_1089-134686-0011-pml-ecapa_cosine.json">0.925582</a>（1位）</span></td><td><span class="best-value"><a href="../run-001/quality-librispeech_1089-134686-0011-pml-estoi.json">0.907161</a>（1位）</span></td></tr>
+<tr><td>従来のt分布・局所L＋D1</td><td><a href="../run-001/quality-librispeech_1089-134686-0011-L_ar3_d1-utmos_v2.json">2.882663</a>（5位）</td><td><a href="../run-001/quality-librispeech_1089-134686-0011-L_ar3_d1-scoreq_natural.json">0.671814</a>（2位）</td><td><a href="../run-001/quality-librispeech_1089-134686-0011-L_ar3_d1-ecapa_cosine.json">0.898585</a>（5位）</td><td><a href="../run-001/quality-librispeech_1089-134686-0011-L_ar3_d1-estoi.json">0.851968</a>（4位）</td></tr>
+<tr><td>従来のt分布・系列F＋D1</td><td><span class="best-value"><a href="../run-001/quality-librispeech_1089-134686-0011-F_ar3_d1-utmos_v2.json">3.356694</a>（1位）</span></td><td><a href="../run-001/quality-librispeech_1089-134686-0011-F_ar3_d1-scoreq_natural.json">0.764521</a>（3位）</td><td><a href="../run-001/quality-librispeech_1089-134686-0011-F_ar3_d1-ecapa_cosine.json">0.907357</a>（3位）</td><td><a href="../run-001/quality-librispeech_1089-134686-0011-F_ar3_d1-estoi.json">0.852367</a>（3位）</td></tr>
+<tr><td>ACG・局所L＋D1</td><td><a href="quality-librispeech_1089-134686-0011-L_acg_d1-utmos_v2.json">2.973435</a>（3位）</td><td><a href="quality-librispeech_1089-134686-0011-L_acg_d1-scoreq_natural.json">0.787894</a>（5位）</td><td><a href="quality-librispeech_1089-134686-0011-L_acg_d1-ecapa_cosine.json">0.908132</a>（2位）</td><td><a href="quality-librispeech_1089-134686-0011-L_acg_d1-estoi.json">0.852760</a>（2位）</td></tr>
+<tr><td>ACG・系列F＋D1</td><td><a href="quality-librispeech_1089-134686-0011-F_acg_d1-utmos_v2.json">2.909515</a>（4位）</td><td><a href="quality-librispeech_1089-134686-0011-F_acg_d1-scoreq_natural.json">0.785088</a>（4位）</td><td><a href="quality-librispeech_1089-134686-0011-F_acg_d1-ecapa_cosine.json">0.906410</a>（4位）</td><td><a href="quality-librispeech_1089-134686-0011-F_acg_d1-estoi.json">0.849662</a>（5位）</td></tr>
+<tr><td>原音（順位外）</td><td><a href="../run-001/quality-librispeech_1089-134686-0011-original-utmos_v2.json">4.290393</a>（参考・順位外）</td><td>対象外</td><td>対象外</td><td>対象外</td></tr>
+</tbody></table></div>
+<h3>librispeech_1089-134686-0032</h3>
+<div class="scroll"><table><thead><tr><th>条件</th><th>UTMOSv2 ↑</th><th>SCOREQ natural距離 ↓</th><th>ECAPA cosine ↑</th><th>eSTOI ↑</th></tr></thead><tbody><tr><td>PML（正式ベース）</td><td><a href="../run-001/quality-librispeech_1089-134686-0032-pml-utmos_v2.json">3.509980</a>（5位）</td><td><span class="best-value"><a href="../run-001/quality-librispeech_1089-134686-0032-pml-scoreq_natural.json">0.354661</a>（1位）</span></td><td><span class="best-value"><a href="../run-001/quality-librispeech_1089-134686-0032-pml-ecapa_cosine.json">0.935105</a>（1位）</span></td><td><span class="best-value"><a href="../run-001/quality-librispeech_1089-134686-0032-pml-estoi.json">0.924168</a>（1位）</span></td></tr>
+<tr><td>従来のt分布・局所L＋D1</td><td><a href="../run-001/quality-librispeech_1089-134686-0032-L_ar3_d1-utmos_v2.json">3.832148</a>（2位）</td><td><a href="../run-001/quality-librispeech_1089-134686-0032-L_ar3_d1-scoreq_natural.json">0.454406</a>（5位）</td><td><a href="../run-001/quality-librispeech_1089-134686-0032-L_ar3_d1-ecapa_cosine.json">0.917847</a>（3位）</td><td><a href="../run-001/quality-librispeech_1089-134686-0032-L_ar3_d1-estoi.json">0.921265</a>（2位）</td></tr>
+<tr><td>従来のt分布・系列F＋D1</td><td><a href="../run-001/quality-librispeech_1089-134686-0032-F_ar3_d1-utmos_v2.json">3.562278</a>（3位）</td><td><a href="../run-001/quality-librispeech_1089-134686-0032-F_ar3_d1-scoreq_natural.json">0.402493</a>（3位）</td><td><a href="../run-001/quality-librispeech_1089-134686-0032-F_ar3_d1-ecapa_cosine.json">0.914796</a>（4位）</td><td><a href="../run-001/quality-librispeech_1089-134686-0032-F_ar3_d1-estoi.json">0.917524</a>（4位）</td></tr>
+<tr><td>ACG・局所L＋D1</td><td><span class="best-value"><a href="quality-librispeech_1089-134686-0032-L_acg_d1-utmos_v2.json">3.868682</a>（1位）</span></td><td><a href="quality-librispeech_1089-134686-0032-L_acg_d1-scoreq_natural.json">0.442713</a>（4位）</td><td><a href="quality-librispeech_1089-134686-0032-L_acg_d1-ecapa_cosine.json">0.921114</a>（2位）</td><td><a href="quality-librispeech_1089-134686-0032-L_acg_d1-estoi.json">0.920282</a>（3位）</td></tr>
+<tr><td>ACG・系列F＋D1</td><td><a href="quality-librispeech_1089-134686-0032-F_acg_d1-utmos_v2.json">3.551177</a>（4位）</td><td><a href="quality-librispeech_1089-134686-0032-F_acg_d1-scoreq_natural.json">0.389671</a>（2位）</td><td><a href="quality-librispeech_1089-134686-0032-F_acg_d1-ecapa_cosine.json">0.912683</a>（5位）</td><td><a href="quality-librispeech_1089-134686-0032-F_acg_d1-estoi.json">0.917044</a>（5位）</td></tr>
+<tr><td>原音（順位外）</td><td><a href="../run-001/quality-librispeech_1089-134686-0032-original-utmos_v2.json">4.574299</a>（参考・順位外）</td><td>対象外</td><td>対象外</td><td>対象外</td></tr>
+</tbody></table></div>
+<p><a href="results.json">63値・測定状態・採点範囲</a> ／ <a href="descriptive-ranks.json">60個の順位と原値</a> ／ <a href="cited-quality-ledger.json">引用39値の照合台帳</a>。</p>
+<h2>採点は固定区間、短音声は同じ先頭2秒の参考例</h2>
+<p>入力はLibriSpeech test-cleanの同一話者1089の3録音です。元録音全長ではなく、既存の冒頭最大6秒を使っています。UTMOSv2は保存音声の全区間、参照を使う他3指標は開始0の共通先頭区間です。原音UTMOSも引用39値に含みます。</p>
+<div class="scroll"><table><thead><tr><th>録音</th><th>UTMOS標本数／秒</th><th>他3指標の標本数／秒</th><th>開始標本</th></tr></thead><tbody><tr><td>0008</td><td>96000 / 6.0</td><td>95840 / 5.99</td><td>0</td></tr>
+<tr><td>0011</td><td>96000 / 6.0</td><td>95840 / 5.99</td><td>0</td></tr>
+<tr><td>0032</td><td>65440 / 4.09</td><td>65280 / 4.08</td><td>0</td></tr>
+</tbody></table></div>
+<p>eSTOIのscope文字列は評価器説明に上書きされる既存仕様があるため、区間は明示されたscored_samplesと採点入力SHAで確認します。追加の位置合わせ・音量正規化・無音除去・値の切り詰めはしていません。eSTOI内部の無音処理など、評価器自身の処理は個票と<a href="quality-conditions-public.json">評価器・モデル資産・実行条件</a>に残しています。</p>
+<p>以下の18短例はすべて16 kHzの[0,32000)、先頭2秒です。既存のPCM16掲載コピーをそのまま参照し、この作業で再生成・再変換していません。元の変換はround(x×32767)、ちょうど中間の値は偶数へ丸める方式です。値の切り詰め・音量調整はなく、品質測定にはこの2秒コピーを使っていません。<a href="audio-manifest.json">元音声・PCM・WAVのSHAと出典</a> ／ <a href="audio_samples.json">18音声の参照一覧</a>。</p>
+<p>LibriSpeech / <a href="https://www.openslr.org/12/">OpenSLR 12</a>、<a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>。表示の「従来」はAR3のt分布の得点、「ACG」は今回の方向密度です。どちらも同じD1と後段処理を用います。</p><p id="audio-status" role="status">音声データは既存の掲載JSONを参照します。</p>
+<h3>librispeech_1089-134686-0008</h3><div class="audio-grid">
+<div><p>原音（UTMOS参考）</p><audio controls preload="none" aria-label="librispeech_1089-134686-0008 原音（UTMOS参考）" data-json="../run-001/audio_samples.json" data-case="librispeech_1089-134686-0008" data-method="identity"></audio></div>
+<div><p>PML（正式ベース）</p><audio controls preload="none" aria-label="librispeech_1089-134686-0008 PML（正式ベース）" data-json="../run-001/audio_samples.json" data-case="librispeech_1089-134686-0008" data-method="pml"></audio></div>
+<div><p>従来のt分布・局所L＋D1</p><audio controls preload="none" aria-label="librispeech_1089-134686-0008 従来のt分布・局所L＋D1" data-json="../run-001/audio_samples.json" data-case="librispeech_1089-134686-0008" data-method="L_ar3_d1"></audio></div>
+<div><p>従来のt分布・系列F＋D1</p><audio controls preload="none" aria-label="librispeech_1089-134686-0008 従来のt分布・系列F＋D1" data-json="../run-001/audio_samples.json" data-case="librispeech_1089-134686-0008" data-method="F_ar3_d1"></audio></div>
+<div><p>ACG・局所L＋D1</p><audio controls preload="none" aria-label="librispeech_1089-134686-0008 ACG・局所L＋D1" data-json="../saved-raw-f0-changes-v1/new-acg-audio.json" data-case="librispeech_1089-134686-0008" data-method="L_acg_d1"></audio></div>
+<div><p>ACG・系列F＋D1</p><audio controls preload="none" aria-label="librispeech_1089-134686-0008 ACG・系列F＋D1" data-json="../saved-raw-f0-changes-v1/new-acg-audio.json" data-case="librispeech_1089-134686-0008" data-method="F_acg_d1"></audio></div>
+</div>
+<h3>librispeech_1089-134686-0011</h3><div class="audio-grid">
+<div><p>原音（UTMOS参考）</p><audio controls preload="none" aria-label="librispeech_1089-134686-0011 原音（UTMOS参考）" data-json="../run-001/audio_samples.json" data-case="librispeech_1089-134686-0011" data-method="identity"></audio></div>
+<div><p>PML（正式ベース）</p><audio controls preload="none" aria-label="librispeech_1089-134686-0011 PML（正式ベース）" data-json="../run-001/audio_samples.json" data-case="librispeech_1089-134686-0011" data-method="pml"></audio></div>
+<div><p>従来のt分布・局所L＋D1</p><audio controls preload="none" aria-label="librispeech_1089-134686-0011 従来のt分布・局所L＋D1" data-json="../run-001/audio_samples.json" data-case="librispeech_1089-134686-0011" data-method="L_ar3_d1"></audio></div>
+<div><p>従来のt分布・系列F＋D1</p><audio controls preload="none" aria-label="librispeech_1089-134686-0011 従来のt分布・系列F＋D1" data-json="../run-001/audio_samples.json" data-case="librispeech_1089-134686-0011" data-method="F_ar3_d1"></audio></div>
+<div><p>ACG・局所L＋D1</p><audio controls preload="none" aria-label="librispeech_1089-134686-0011 ACG・局所L＋D1" data-json="../saved-raw-f0-changes-v1/new-acg-audio.json" data-case="librispeech_1089-134686-0011" data-method="L_acg_d1"></audio></div>
+<div><p>ACG・系列F＋D1</p><audio controls preload="none" aria-label="librispeech_1089-134686-0011 ACG・系列F＋D1" data-json="../saved-raw-f0-changes-v1/new-acg-audio.json" data-case="librispeech_1089-134686-0011" data-method="F_acg_d1"></audio></div>
+</div>
+<h3>librispeech_1089-134686-0032</h3><div class="audio-grid">
+<div><p>原音（UTMOS参考）</p><audio controls preload="none" aria-label="librispeech_1089-134686-0032 原音（UTMOS参考）" data-json="../run-001/audio_samples.json" data-case="librispeech_1089-134686-0032" data-method="identity"></audio></div>
+<div><p>PML（正式ベース）</p><audio controls preload="none" aria-label="librispeech_1089-134686-0032 PML（正式ベース）" data-json="../run-001/audio_samples.json" data-case="librispeech_1089-134686-0032" data-method="pml"></audio></div>
+<div><p>従来のt分布・局所L＋D1</p><audio controls preload="none" aria-label="librispeech_1089-134686-0032 従来のt分布・局所L＋D1" data-json="../run-001/audio_samples.json" data-case="librispeech_1089-134686-0032" data-method="L_ar3_d1"></audio></div>
+<div><p>従来のt分布・系列F＋D1</p><audio controls preload="none" aria-label="librispeech_1089-134686-0032 従来のt分布・系列F＋D1" data-json="../run-001/audio_samples.json" data-case="librispeech_1089-134686-0032" data-method="F_ar3_d1"></audio></div>
+<div><p>ACG・局所L＋D1</p><audio controls preload="none" aria-label="librispeech_1089-134686-0032 ACG・局所L＋D1" data-json="../saved-raw-f0-changes-v1/new-acg-audio.json" data-case="librispeech_1089-134686-0032" data-method="L_acg_d1"></audio></div>
+<div><p>ACG・系列F＋D1</p><audio controls preload="none" aria-label="librispeech_1089-134686-0032 ACG・系列F＋D1" data-json="../saved-raw-f0-changes-v1/new-acg-audio.json" data-case="librispeech_1089-134686-0032" data-method="F_acg_d1"></audio></div>
+</div>
+<h2>成功した今回の品質測定と、以前の停止・保持履歴を分ける</h2>
+<p>今回は保持済み品質計測用のソースv2の科学コードを変更せず、通常の実行用ラッパーで実行しました。新ACGの24値は今回測定し、従来AR3のL/F・PML・原音の39値は、評価器・資産・入力SHA・採点区間・前処理等の一致を確認して引用しています。過去の値を新規測定とは扱いません。</p>
+<p>品質v1は記録形式の読取りの静的阻害で未実行、元のv2初回は同じ仮想環境のPythonリンク検査で科学子起動前に停止しました。v3とその停止証拠の保存はHTTP 401後のID・到達段階が未確認のままで、今回の成功へ書き換えていません。初期の音声生成v3のSOLVER読み込み失敗も別の履歴です。</p>
+<p>今回の独立確認は9項目すべて通過し、24新規値・39引用値・48対応差と保存音声／採点区間の整合を確認しました。評価器の再推論やモデル資産本体の再取得検証ではありません。ラッパーの保存バイトと記録の一致は確認済みですが、起動時の元ファイルモードやプロセス連続性をここで直接観測したものではありません。<a href="independent-audit-public.json">独立確認の全判定・数値・限界</a>を残します。</p>
+<p>警告はUserWarning 16件・FutureWarning 9件です。標準エラー出力0バイトでも、捕捉警告25件は存在します。<a href="quality-events-public.json">全警告・ログイベント</a>を省略せず残し、警告0とは表示しません。</p>
+<p>公開用の抜粋ではローカル絶対パスを置換し、私的な受渡し・承認記録、制御用の呼出し全文、計測ソースやラッパーの実装は含めていません。数値・採点区間・SHA・全警告の内容は保持し、元文書の容量・SHAと変換方法を各JSONに記録しています。原本はLibraryに保持されています。<a href="source-archive-identities.json">原ZIPの構成と全manifest照合</a> ／ <a href="publication-manifest.json">掲載ファイルのmanifest</a>。</p>
+<h2>音声差を改善や原因の特定へ読み替えず、PMLを維持する</h2>
+<p>平滑化前のF0の少数の変更でも、平滑化、音高の積分によるパルス配置、音高に依存する後段解析を通じて波形の広い範囲へ差が伝わり得ます。ただし各処理の寄与を個別に実測したものではありません。保存配列の47変更や、局所首位が同じ26件から、どの変更が今回の指標を動かしたかも特定できません。</p>
+<p>今回の結果は、この録音での再合成指標の変化です。音高精度の悪化や改善、生理的な有声・無声、一般性能を示すものではありません。標準8方式は評価条件が一致しないため数値を混ぜていません。新しいパラメータ調整や方式採用の根拠とはせず、正式ベースをPMLのまま保ちます。</p>
+<p><a href="../run-001/index.html">以前のAR3比較：75品質値・21短音声</a> ／ <a href="../saved-raw-f0-changes-v1/index.html">保存F0の47変更と独立確認</a> ／ <a href="../directional-density-v2/index.html">得点定義だけの感度比較</a>。</p><script>
+(async () => {
+  const players = [...document.querySelectorAll('audio[data-json]')];
+  try {
+    const sources = new Map(await Promise.all([...new Set(players.map(x => x.dataset.json))].map(async path => {
+      const response = await fetch(path);
+      if (!response.ok) throw new Error(`Audio JSON: ${response.status}`);
+      return [path, (await response.json()).samples];
+    })));
+    for (const player of players) {
+      const found = sources.get(player.dataset.json).filter(x => x.case === player.dataset.case && x.method === player.dataset.method);
+      if (found.length !== 1 || found[0].sample_rate !== 16000 || found[0].n_samples !== 32000) throw new Error('Audio identity mismatch');
+      player.src = found[0].data_uri;
+    }
+    document.querySelector('#audio-status').textContent = '既存の18短音声を読み込みました。';
+  } catch (error) {
+    console.error(error);
+    document.querySelector('#audio-status').textContent = '音声の参照を読み込めませんでした。参照一覧の元JSONを確認してください。';
+  }
+})();
+</script>
+</body></html>

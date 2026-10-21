@@ -1,0 +1,96 @@
+{
+  "original": {
+    "member": "evidence/execution/invocation.json",
+    "bytes": 3376,
+    "sha256": "61ab4a00f084e6be0f0a13c414656a2b45720cfb32619ca8998e2a577eacaf54"
+  },
+  "conversion": "execution projection; actual argv and local control path omitted; all four streams retained with local paths replaced",
+  "execution": {
+    "schema_version": 1,
+    "kind": "actual_tool_receipt",
+    "started_at_utc": "2026-10-21T14:25:20.490195+00:00",
+    "finished_at_utc": "2026-10-21T14:26:32.663928+00:00",
+    "actual_exit_code": 0,
+    "signal": null,
+    "timed_out": false,
+    "reaped_by_launcher": true,
+    "child_started": true,
+    "streams_capture_completed": true,
+    "elapsed_seconds": 72.17374358099914,
+    "max_rss_kib": 2034916,
+    "limits": {
+      "wall_seconds": 3600,
+      "terminate_grace_seconds": 10,
+      "address_space_bytes": 12884901888,
+      "threads": 2,
+      "torch_interop_threads": 1,
+      "observed_rss_stage_budget_bytes": 8589934592
+    },
+    "thread_environment": {
+      "OPENBLAS_NUM_THREADS": "2",
+      "OMP_NUM_THREADS": "2",
+      "MKL_NUM_THREADS": "2",
+      "VECLIB_MAXIMUM_THREADS": "2",
+      "NUMEXPR_NUM_THREADS": "2",
+      "BLIS_NUM_THREADS": "2"
+    },
+    "scientific_status": "quality_succeeded",
+    "packing_status": "closed_archive_present_requires_full_manifest_verification",
+    "stdout": {
+      "bytes": 407,
+      "sha256": "f1a8fb974cdd97b328aa7dffe6a9944bc3c42390063c99b2088d0be00e75b4d6",
+      "complete": true
+    },
+    "stderr": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "complete": true
+    },
+    "inner_archive": {
+      "bytes": 415830,
+      "sha256": "000134561c9203843e05d40d02209d496f93856f28b2ae5ef265862eeda0086c"
+    }
+  },
+  "independent_external_execution_check": {
+    "external_exit": 0,
+    "launcher_child_exit": 0,
+    "reaped_by_external_recorder": true,
+    "reaped_by_launcher": true,
+    "wall_seconds": 72.17374358099914,
+    "max_rss_kib": 2034916,
+    "new_measured": 24,
+    "old_quoted_verified": 39,
+    "ledger_total": 63
+  },
+  "streams": [
+    {
+      "member": "evidence/call-evidence/stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "utf8_public": ""
+    },
+    {
+      "member": "evidence/call-evidence/stdout.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "utf8_public": ""
+    },
+    {
+      "member": "evidence/execution/stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "utf8_public": ""
+    },
+    {
+      "member": "evidence/execution/stdout.log",
+      "bytes": 407,
+      "sha256": "f1a8fb974cdd97b328aa7dffe6a9944bc3c42390063c99b2088d0be00e75b4d6",
+      "utf8_public": "{\"packing\": \"succeeded\", \"scientific_status\": \"quality_succeeded\", \"archive\": {\"path\": \"[local]/quality.zip\", \"bytes\": 415830, \"sha256\": \"000134561c9203843e05d40d02209d496f93856f28b2ae5ef265862eeda0086c\", \"reserved_upper_bytes\": 424470}, \"actual_process_exit\": \"capture_externally\", \"library_delivery\": \"not_attempted\"}\n"
+    }
+  ],
+  "warning_count": 25,
+  "warning_categories": {
+    "UserWarning": 16,
+    "FutureWarning": 9
+  }
+}
