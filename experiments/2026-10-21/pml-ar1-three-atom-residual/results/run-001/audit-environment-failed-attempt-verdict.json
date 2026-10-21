@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "kind": "pml_ar3_d1_native_independent_audit_verdict",
+  "status": "failed",
+  "audit_version": "pml-ar3-d1-result-audit-v1-20261021",
+  "source_schema_support": "failed",
+  "independent_saved_selection_post_contract": "failed",
+  "files_manifest_and_member_hashes": "failed",
+  "quality_measured": false,
+  "approved_for_quality": false,
+  "adoption_decision": false,
+  "F0_truth_verified": false,
+  "native_resynthesis_independently_verified": false,
+  "old_study_approved_for_quality": false,
+  "main120_complete": false,
+  "independent_full_qK_atom_likelihood_verified": false,
+  "static_model_code_review_is_separate": true,
+  "limitations": [
+    "Saved-array system consistency, not an independent exact/high-precision solver or rounding enclosure.",
+    "No candidate/PML import, waveform reanalysis/resynthesis, old filter replay, or quality metrics.",
+    "Source, Library and execution receipts are consistency-checked, not independently attested.",
+    "No independent full (q,K,a) likelihood, F0 truth, quality or adoption verification.",
+    "Only the parent may approve quality; the old exit2 experiment remains a failure."
+  ],
+  "audit_source_manifest_sha256": "538597f02173d158ac270658287d13bcfaf2d512d241d4b84fc552b23ee934b5",
+  "audit_source_receipt_sha256": "e4603c0f8a0cff716c9d1d145bd49f662096230b546872b96f4f83e56baa3610",
+  "audit_source_library": {
+    "library_file_id": "libfile_2fd0939819848191b0bc859f5ddfb229",
+    "version_number": 0,
+    "file_id": "file_00000000709c81f58b123b346356d896"
+  },
+  "traceback": "Traceback (most recent call last):\n  File \"/workspace/shared/pml-ar3-d1-result-audit-source-20261021/run_audit.py\", line 116, in main\n    from audit_native import audit\n  File \"/workspace/shared/pml-ar3-d1-result-audit-source-20261021/audit_native.py\", line 5, in <module>\n    import numpy as np\nModuleNotFoundError: No module named 'numpy'\n",
+  "originals_retained": true,
+  "recorded_at_utc": "2026-10-21T02:59:50.366386+00:00"
+}

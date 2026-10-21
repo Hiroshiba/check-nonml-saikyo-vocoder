@@ -1,0 +1,57 @@
+{
+  "actual_exit_code": 0,
+  "argv": [
+    "/workspace/check-nonml-saikyo-vocoder/.venv/bin/python",
+    "-B",
+    "/workspace/check-nonml-saikyo-vocoder/runs/pml-ar3-d1-first3-quality-20261021-v2/source/run_quality.py",
+    "--speaker",
+    "librispeech_1089",
+    "--native-zip",
+    "/workspace/check-nonml-saikyo-vocoder/runs/pml-ar3-d1-first-speaker-20261021-v1/native.zip",
+    "--native-parent-receipt",
+    "/workspace/check-nonml-saikyo-vocoder/runs/pml-ar3-d1-first3-quality-20261021-v2/receipts/native-parent-receipt.json",
+    "--source-receipt",
+    "/workspace/check-nonml-saikyo-vocoder/runs/pml-ar3-d1-first3-quality-20261021-v2/receipts/local-quality-source-receipt.json",
+    "--asset-map",
+    "/workspace/check-nonml-saikyo-vocoder/runs/pml-d1-first3-quality-20261021-v2/receipts/asset-map.json",
+    "--output",
+    "/workspace/check-nonml-saikyo-vocoder/runs/pml-ar3-d1-first3-quality-20261021-v2/quality",
+    "--cache",
+    "/workspace/check-nonml-saikyo-vocoder/runs/pml-ar3-d1-first3-quality-20261021-v2/cache/quality-runtime"
+  ],
+  "elapsed_seconds": 123.33314285800043,
+  "evidence_ref": "execution/launcher-result.json",
+  "finished_at_utc": "2026-10-21T03:12:38.616024+00:00",
+  "kind": "actual_tool_receipt",
+  "limits": {
+    "address_space_bytes": 12884901888,
+    "observed_rss_stage_budget_bytes": 8589934592,
+    "terminate_grace_seconds": 10,
+    "threads": 2,
+    "torch_interop_threads": 1,
+    "wall_seconds": 3600
+  },
+  "max_rss_kib": 2031924,
+  "packing_status": "succeeded",
+  "quality_archive": {
+    "bytes": 1628809,
+    "sha256": "96c137afd76b74b0ce16489d71c81fa8b74c5d769724a21bb10523f7373a44f8"
+  },
+  "reaped_by_launcher": true,
+  "schema_version": 1,
+  "scientific_status": "quality_succeeded",
+  "signal": null,
+  "started_at_utc": "2026-10-21T03:10:35.282912+00:00",
+  "stderr": {
+    "bytes": 0,
+    "complete": true,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "stdout": {
+    "bytes": 395,
+    "complete": true,
+    "sha256": "233a98e354d96c4643cc45e65768f2b79f5bb38449638aeb2b8b450f46dae81a"
+  },
+  "timed_out": false,
+  "tool": "exec_command"
+}

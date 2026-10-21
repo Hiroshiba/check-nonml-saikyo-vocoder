@@ -1,0 +1,125 @@
+{
+  "speaker": "librispeech_1089",
+  "record_ids": [
+    "librispeech_1089-134686-0008",
+    "librispeech_1089-134686-0011",
+    "librispeech_1089-134686-0032"
+  ],
+  "scientific_status": "quality_succeeded",
+  "raw_score_count": 75,
+  "planned_native_scores": 72,
+  "planned_original_utmos_reference_scores": 3,
+  "planned_total_scores": 75,
+  "measured_total_scores": 75,
+  "measured_original_utmos_reference_scores": 3,
+  "measured_native_scores": 72,
+  "metrics": {
+    "utmos_v2": {
+      "initialization": "ready",
+      "provenance": {
+        "algorithm": "UTMOSv2-fusion_stage3-fold0",
+        "source_commit": "cc2700db57bb83ee13dc31ebe1b868c254e15d09",
+        "predict_dataset": "bvcc",
+        "extraction_seed": 20261012,
+        "extraction_repetitions": 1,
+        "device": "cpu",
+        "remove_silent_section": false,
+        "calibration": "対象ボコーダーでの人間評定校正は未実施",
+        "assets": {
+          "checkpoint": {
+            "path": "/workspace/check-nonml-saikyo-vocoder/runs/pml-quality-assets-preparation-20261021-v1/mos/weights/fold0_s42_best_model.pth",
+            "bytes": 818531314,
+            "sha256": "c8149d988e4bbf3f347e6966b5d769de347a5f8c59ffca1dc4bd4bf5b8585e57",
+            "expected_sha256": "c8149d988e4bbf3f347e6966b5d769de347a5f8c59ffca1dc4bd4bf5b8585e57"
+          },
+          "config": {
+            "path": "/workspace/check-nonml-saikyo-vocoder/runs/pml-quality-assets-preparation-20261021-v1/mos/wav2vec2_config/config.json",
+            "bytes": 1842,
+            "sha256": "4937977e24d12d1bba70cdce8709c3c04807a8e4ae8ddac4229c48c436ae99ae",
+            "expected_sha256": "4937977e24d12d1bba70cdce8709c3c04807a8e4ae8ddac4229c48c436ae99ae"
+          },
+          "preprocessor_config": {
+            "path": "/workspace/check-nonml-saikyo-vocoder/runs/pml-quality-assets-preparation-20261021-v1/mos/wav2vec2_config/preprocessor_config.json",
+            "bytes": 159,
+            "sha256": "b225d617c025463b9e157e06afea8b90dc7078fc70b013c533328423e0486b4a",
+            "expected_sha256": "b225d617c025463b9e157e06afea8b90dc7078fc70b013c533328423e0486b4a"
+          }
+        },
+        "packages": {
+          "utmosv2": "1.3.1.dev0",
+          "torch": "2.8.0+cpu",
+          "transformers": "4.51.3",
+          "timm": "1.0.15",
+          "librosa": "0.11.0"
+        }
+      },
+      "model_constructions": 1,
+      "reuse": "same instance across all fixed recordings and branches"
+    },
+    "scoreq_natural": {
+      "initialization": "ready",
+      "provenance": {
+        "algorithm": "SCOREQ-ONNX-ref",
+        "domain": "natural",
+        "source": "https://github.com/alessandroragano/scoreq",
+        "sample_rate": 16000,
+        "padding_multiple": 320,
+        "reference_cache": false,
+        "assets": {
+          "model": {
+            "path": "/workspace/check-nonml-saikyo-vocoder/runs/pml-quality-assets-preparation-20261021-v1/scoreq/fixed_nmr_telephone.onnx",
+            "bytes": 377979175,
+            "sha256": "899c9959bf48b38d99fdd5227b31182ca9d8253b14b61edd2725eca779a55b49",
+            "expected_sha256": "899c9959bf48b38d99fdd5227b31182ca9d8253b14b61edd2725eca779a55b49"
+          }
+        },
+        "packages": {
+          "onnxruntime": "1.22.0",
+          "torch": "2.8.0+cpu",
+          "torchaudio": "2.8.0+cpu"
+        }
+      },
+      "model_constructions": 1,
+      "reuse": "same instance across all fixed recordings and branches"
+    },
+    "ecapa_cosine": {
+      "initialization": "ready",
+      "provenance": {
+        "algorithm": "speechbrain-ecapa-voxceleb-raw-embedding",
+        "source": "https://huggingface.co/speechbrain/spkrec-ecapa-voxceleb",
+        "sample_rate": 16000,
+        "normalize_embeddings_with_global_stats": false,
+        "reference_cache": false,
+        "recipe": "official-80mel-1024channels-192dim",
+        "assets": {
+          "embedding_model": {
+            "path": "/workspace/check-nonml-saikyo-vocoder/runs/pml-quality-assets-preparation-20261021-v1/ecapa/embedding_model.ckpt",
+            "bytes": 83316686,
+            "sha256": "0575cb64845e6b9a10db9bcb74d5ac32b326b8dc90352671d345e2ee3d0126a2",
+            "expected_sha256": "0575cb64845e6b9a10db9bcb74d5ac32b326b8dc90352671d345e2ee3d0126a2"
+          }
+        },
+        "packages": {
+          "speechbrain": "1.0.3",
+          "torch": "2.8.0+cpu",
+          "torchaudio": "2.8.0+cpu"
+        }
+      },
+      "model_constructions": 1,
+      "reuse": "same instance across all fixed recordings and branches"
+    },
+    "estoi": {
+      "initialization": "ready",
+      "provenance": null,
+      "model_constructions": 0,
+      "reuse": "same instance across all fixed recordings and branches"
+    }
+  },
+  "full120_comparison_complete": false,
+  "adoption_complete": false,
+  "averages_and_ranking": "not_generated; first3 development comparison only",
+  "old_original_iir_phase_B": "blocked_unchanged",
+  "old_remaining117": "blocked_unchanged",
+  "prior_51_quality_values": "historical_only_not_reused_or_relabelled",
+  "peak_RSS_bytes": 2080690176
+}
