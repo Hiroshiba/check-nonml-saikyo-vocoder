@@ -68,3 +68,13 @@ native独立監査の初回はPython選択ミスでNumPyがなく、保存配列
 - SHA256: `4f76e69d62ebfdbaedcfc58a95a8093661a0eef1ac15818b65aefe9a5a9ad64d`
 - Library: `libfile_fce5d8f31fa881918c3d7e05828f9175`、version `0`
 - 保存ファイル: `file_00000000368081fdb33ccdef542807b1`
+
+## 方向密度の別仮説と、未実行の限定感度分析
+
+[同じ連続モデルを方向へ写す別仮説](followup-design/directional-density-20261021/README.md)と、固定3録音の全物理窓を対象にする感度分析計画を保存しました。旧tを誤りとは断定せず、全体尺度の消去と相対λ=1・I/Kの前提を分けます。計画は全13,833成分を保持し、得点定義だけによる対応差を記述する未実行案です。新run・音声・品質値・base変更はありません。旧401/403と未受領の診断・監査成果は別のままです。
+
+文書束 `ar3-directional-density-design-20261021.zip`（5,959 bytes、3ファイル）は公式Libraryへ保存済みです。
+
+- SHA256: `b338948bbcde0e50adbbdfdb31bdab5aa13464cc84e748bbbbbb08e4fe177860`
+- Library: `libfile_64160b93e5208191a672a5a41c8cd279`、version `0`
+- 保存ファイル: `file_00000000a1bc81fd9b9e277957f093d3`
