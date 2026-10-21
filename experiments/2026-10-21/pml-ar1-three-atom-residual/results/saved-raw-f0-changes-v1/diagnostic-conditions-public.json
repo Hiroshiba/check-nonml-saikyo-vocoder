@@ -1,0 +1,75 @@
+{
+  "original": {
+    "member": "conditions.json",
+    "bytes": 2087,
+    "sha256": "a97ab1c11b10598471c919ca6de6cb9bbf60e24e1a5b6261fce612f046966f86"
+  },
+  "publication_transform": "local input paths and launcher command omitted; other data retained",
+  "data": {
+    "schema_version": 1,
+    "purpose": "Fixed saved-array diagnostic for raw F0 changes, not quality measurement",
+    "script_sha256": "419d46cf5e599c8958e06d8469a53ac65ca889c86b1a5a831ba428123eb9b251",
+    "records": [
+      "0008",
+      "0011",
+      "0032"
+    ],
+    "branches": [
+      "L",
+      "F"
+    ],
+    "clock": "old and new L/F exact time bits; no PML alignment or interpolation",
+    "classification": "old 0 to new positive, old positive to new 0, both positive with numeric frequency change; retain bit-only and anomalies",
+    "argmax": "saved 461 candidates, first index for exact tie, both-voiced changes only",
+    "resource_limit": {
+      "single_science_process": true,
+      "timeout_seconds": 300,
+      "address_space_bytes": 2147483648
+    },
+    "excluded_operations": [
+      "likelihood",
+      "DP",
+      "D1",
+      "audio",
+      "quality",
+      "model_load",
+      "parameter_search",
+      "PML_interpolation"
+    ],
+    "inputs": {
+      "v4": {
+        "library_file_id": "libfile_5dff74897fc081918aff3fface24c083",
+        "version": 0,
+        "file_id": "file_00000000fc3881fd9063aaa7cbccf100",
+        "bytes": 20928120,
+        "sha256": "f51fdf9c0e1b1be3f9f2010b23a3267e13dedd32a921b717b61e8b3ce66d6da1"
+      },
+      "audit": {
+        "library_file_id": "libfile_bb11060aecf08191807a3677a58becfd",
+        "version": 0,
+        "file_id": "file_0000000067488230b2f69acf1c6ebd72",
+        "bytes": 31384,
+        "sha256": "659b76b8e044fcd60fc9b8f1fb7bc1c5c5cfbf32fd0381096f559632a9ab681f"
+      },
+      "old_ar3": {
+        "library_file_id": "libfile_a244bfdf237481919e016453b40ec273",
+        "version": 0,
+        "file_id": "file_000000004400823087c6c553b064f2e0",
+        "bytes": 41442909,
+        "sha256": "dcbcc49b9cffcded4188adcb32bf61c068344ebf767c76c8bb3591de0506fbe2"
+      },
+      "v4_delivery": {
+        "bytes": 20859022,
+        "sha256": "88736e848c5789da7cc9d7946d2af1601b0c6088c29a0b3a3e7b40344399c133"
+      },
+      "v4_native": {
+        "bytes": 20752355,
+        "sha256": "55a706dcf24fb6f3844877da41beb40d4c659ca88856a699218dd70c365459f6"
+      },
+      "old_native": {
+        "bytes": 41430719,
+        "sha256": "8431e6fb7c206413a00e0ee5bf07e4827076525c390469a168baf722b1cdaafd"
+      }
+    }
+  }
+}

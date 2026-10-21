@@ -1,0 +1,137 @@
+<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>得点の定義を替えると、音高の選択はどこで変わるか</title><style>:root{color-scheme:light dark}body{font:16px/1.8 system-ui,sans-serif;max-width:1160px;margin:auto;padding:24px}a{overflow-wrap:anywhere}.scroll{overflow-x:auto}table{border-collapse:collapse;width:100%}th,td{padding:7px;border-bottom:1px solid #899cab;text-align:left}.notice{border:2px solid #899cab;padding:12px}.audio-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px}audio{width:100%}h2{margin-top:36px}code{overflow-wrap:anywhere}</style></head><body><main>
+<h1>得点の定義を替えると、音高の選択はどこで変わるか</h1>
+<p>従来のt分布による得点を使った旧AR3のL/Fと、波形の大きさを取り除いた方向の確率密度（ACG）の保存重みを使ったL/Fを比べました。同じ1話者の既知3録音について、保存済みの平滑化前F0（raw F0）の変更箇所を読み取った補助診断です。</p>
+<div class="notice"><p>旧AR3との比較では、有声→無声が6件、双方有声の音高変更が41件、無声→有声は0件でした。L/Fを合わせた47明細は、両枝の重複を除くと41時点です。</p>
+<p>正式ベースはPMLを維持し、この診断では品質を評価していません。PMLの平滑化前の時刻列はL/Fと一致しないため、行対応や補間は行いません。ここでの有声・無声は選択器の操作上の状態で、生理的な正解ではありません。</p></div>
+<p>変更件数の大小に良い・悪いの向きはなく、品質順位にはしません。真F0・品質・採用・一般化や総合順位を示す記録ではありません。</p>
+<nav><a href="#counts">録音×枝の集計</a> / <a href="#details">47明細</a> / <a href="#interpretation">言える範囲</a> / <a href="#audio">参考音声</a> / <a href="#evidence">方法・原値・全ログ・監査</a></nav>
+<section id="counts"><h2>47件の変更を、録音と枝ごとに分ける</h2>
+<p>Lは局所選択、Fは系列選択です。47件は枝別の明細数であり、独立した47時点とは数えません。物理窓も重複を除くと41窓ですが、窓の重なりは残ります。</p>
+<div class="scroll"><table><thead><tr><th>録音</th><th>枝</th><th>無声→有声</th><th>有声→無声</th><th>双方有声の音高変更</th></tr></thead><tbody>
+<tr><th>0008</th><td>L</td><td>0</td><td>1</td><td>6</td></tr>
+<tr><th>0008</th><td>F</td><td>0</td><td>3</td><td>11</td></tr>
+<tr><th>0011</th><td>L</td><td>0</td><td>1</td><td>3</td></tr>
+<tr><th>0011</th><td>F</td><td>0</td><td>1</td><td>13</td></tr>
+<tr><th>0032</th><td>L</td><td>0</td><td>0</td><td>2</td></tr>
+<tr><th>0032</th><td>F</td><td>0</td><td>0</td><td>6</td></tr>
+</tbody></table></div><p><a href="diagnostic-summary.json">集計の原JSON</a></p></section>
+<section id="interpretation"><h2>局所首位だけで系列選択の変化を説明しない</h2>
+<p>双方有声の41件のうち、26件ではその時点の最有力候補が同じで、15件では変わっていました。首位が同じでも全候補の重みが同じとは限りません。前後時点や有声区間の区切り、累積値や同点選択も関わるため、動的計画法（DP）だけを原因とはしません。</p>
+<p>結論は、局所首位だけで系列選択の変化を説明せず、品質未測定の段階でパラメータを調整しない、という範囲です。生理的VUVや真F0の誤り率は調べていません。</p></section>
+<section id="details"><h2>47明細を、時刻・選択候補・保存F0へ戻して読む</h2>
+<p>qは候補IDで、Hzではありません。局所首位は保存された461候補の対数重みから読み、完全同値では先頭候補を選びます。「対象外」は双方有声でない変更で、局所首位の集計対象にしていない欄です。表の時刻は小数6桁で表示し、時刻のビット列・周波数の16進表記を含む全原値はJSONに保持しています。</p>
+<div class="scroll"><table><thead><tr><th>録音</th><th>枝</th><th>評価時点番号</th><th>時刻（秒）</th><th>物理窓ID</th><th>変更区分</th><th>旧q→新q</th><th>旧Hz→新Hz</th><th>旧局所首位q→新q</th></tr></thead><tbody>
+<tr><td>0008</td><td>L</td><td>113</td><td>0.565000</td><td>111</td><td>双方有声・音高変更</td><td>120 → 52</td><td>117.1875 → 50.78125</td><td>120 → 52</td></tr>
+<tr><td>0008</td><td>L</td><td>277</td><td>1.385000</td><td>275</td><td>双方有声・音高変更</td><td>65 → 66</td><td>63.4765625 → 64.453125</td><td>65 → 66</td></tr>
+<tr><td>0008</td><td>L</td><td>347</td><td>1.735000</td><td>345</td><td>双方有声・音高変更</td><td>84 → 73</td><td>82.03125 → 71.2890625</td><td>84 → 73</td></tr>
+<tr><td>0008</td><td>L</td><td>411</td><td>2.055000</td><td>409</td><td>双方有声・音高変更</td><td>62 → 61</td><td>60.546875 → 59.5703125</td><td>62 → 61</td></tr>
+<tr><td>0008</td><td>L</td><td>711</td><td>3.555000</td><td>709</td><td>双方有声・音高変更</td><td>92 → 91</td><td>89.84375 → 88.8671875</td><td>92 → 91</td></tr>
+<tr><td>0008</td><td>L</td><td>944</td><td>4.720000</td><td>942</td><td>有声→無声</td><td>81 → 対象外</td><td>79.1015625 → 0.0</td><td>対象外</td></tr>
+<tr><td>0008</td><td>L</td><td>1154</td><td>5.770000</td><td>1152</td><td>双方有声・音高変更</td><td>343 → 382</td><td>334.9609375 → 373.046875</td><td>343 → 382</td></tr>
+<tr><td>0008</td><td>F</td><td>411</td><td>2.055000</td><td>409</td><td>双方有声・音高変更</td><td>62 → 61</td><td>60.546875 → 59.5703125</td><td>62 → 61</td></tr>
+<tr><td>0008</td><td>F</td><td>598</td><td>2.990000</td><td>596</td><td>双方有声・音高変更</td><td>90 → 52</td><td>87.890625 → 50.78125</td><td>52 → 52</td></tr>
+<tr><td>0008</td><td>F</td><td>711</td><td>3.555000</td><td>709</td><td>双方有声・音高変更</td><td>92 → 91</td><td>89.84375 → 88.8671875</td><td>92 → 91</td></tr>
+<tr><td>0008</td><td>F</td><td>745</td><td>3.725000</td><td>743</td><td>双方有声・音高変更</td><td>67 → 68</td><td>65.4296875 → 66.40625</td><td>68 → 68</td></tr>
+<tr><td>0008</td><td>F</td><td>790</td><td>3.950000</td><td>788</td><td>双方有声・音高変更</td><td>57 → 58</td><td>55.6640625 → 56.640625</td><td>59 → 59</td></tr>
+<tr><td>0008</td><td>F</td><td>876</td><td>4.380000</td><td>874</td><td>双方有声・音高変更</td><td>62 → 123</td><td>60.546875 → 120.1171875</td><td>123 → 123</td></tr>
+<tr><td>0008</td><td>F</td><td>944</td><td>4.720000</td><td>942</td><td>有声→無声</td><td>79 → 対象外</td><td>77.1484375 → 0.0</td><td>対象外</td></tr>
+<tr><td>0008</td><td>F</td><td>993</td><td>4.965000</td><td>991</td><td>有声→無声</td><td>245 → 対象外</td><td>239.2578125 → 0.0</td><td>対象外</td></tr>
+<tr><td>0008</td><td>F</td><td>994</td><td>4.970000</td><td>992</td><td>有声→無声</td><td>245 → 対象外</td><td>239.2578125 → 0.0</td><td>対象外</td></tr>
+<tr><td>0008</td><td>F</td><td>995</td><td>4.975000</td><td>993</td><td>双方有声・音高変更</td><td>247 → 62</td><td>241.2109375 → 60.546875</td><td>247 → 247</td></tr>
+<tr><td>0008</td><td>F</td><td>996</td><td>4.980000</td><td>994</td><td>双方有声・音高変更</td><td>148 → 62</td><td>144.53125 → 60.546875</td><td>148 → 148</td></tr>
+<tr><td>0008</td><td>F</td><td>997</td><td>4.985000</td><td>995</td><td>双方有声・音高変更</td><td>63 → 62</td><td>61.5234375 → 60.546875</td><td>63 → 63</td></tr>
+<tr><td>0008</td><td>F</td><td>1018</td><td>5.090000</td><td>1016</td><td>双方有声・音高変更</td><td>58 → 57</td><td>56.640625 → 55.6640625</td><td>52 → 52</td></tr>
+<tr><td>0008</td><td>F</td><td>1138</td><td>5.690000</td><td>1136</td><td>双方有声・音高変更</td><td>79 → 52</td><td>77.1484375 → 50.78125</td><td>52 → 52</td></tr>
+<tr><td>0011</td><td>L</td><td>416</td><td>2.080000</td><td>414</td><td>有声→無声</td><td>68 → 対象外</td><td>66.40625 → 0.0</td><td>対象外</td></tr>
+<tr><td>0011</td><td>L</td><td>547</td><td>2.735000</td><td>545</td><td>双方有声・音高変更</td><td>103 → 104</td><td>100.5859375 → 101.5625</td><td>103 → 104</td></tr>
+<tr><td>0011</td><td>L</td><td>748</td><td>3.740000</td><td>746</td><td>双方有声・音高変更</td><td>54 → 492</td><td>52.734375 → 480.46875</td><td>54 → 492</td></tr>
+<tr><td>0011</td><td>L</td><td>821</td><td>4.105000</td><td>819</td><td>双方有声・音高変更</td><td>115 → 227</td><td>112.3046875 → 221.6796875</td><td>115 → 227</td></tr>
+<tr><td>0011</td><td>F</td><td>60</td><td>0.300000</td><td>58</td><td>双方有声・音高変更</td><td>60 → 61</td><td>58.59375 → 59.5703125</td><td>61 → 61</td></tr>
+<tr><td>0011</td><td>F</td><td>70</td><td>0.350000</td><td>68</td><td>双方有声・音高変更</td><td>67 → 68</td><td>65.4296875 → 66.40625</td><td>69 → 69</td></tr>
+<tr><td>0011</td><td>F</td><td>416</td><td>2.080000</td><td>414</td><td>有声→無声</td><td>66 → 対象外</td><td>64.453125 → 0.0</td><td>対象外</td></tr>
+<tr><td>0011</td><td>F</td><td>417</td><td>2.085000</td><td>415</td><td>双方有声・音高変更</td><td>64 → 56</td><td>62.5 → 54.6875</td><td>486 → 486</td></tr>
+<tr><td>0011</td><td>F</td><td>532</td><td>2.660000</td><td>530</td><td>双方有声・音高変更</td><td>94 → 95</td><td>91.796875 → 92.7734375</td><td>95 → 95</td></tr>
+<tr><td>0011</td><td>F</td><td>547</td><td>2.735000</td><td>545</td><td>双方有声・音高変更</td><td>103 → 104</td><td>100.5859375 → 101.5625</td><td>103 → 104</td></tr>
+<tr><td>0011</td><td>F</td><td>579</td><td>2.895000</td><td>577</td><td>双方有声・音高変更</td><td>52 → 75</td><td>50.78125 → 73.2421875</td><td>75 → 75</td></tr>
+<tr><td>0011</td><td>F</td><td>580</td><td>2.900000</td><td>578</td><td>双方有声・音高変更</td><td>56 → 57</td><td>54.6875 → 55.6640625</td><td>56 → 56</td></tr>
+<tr><td>0011</td><td>F</td><td>629</td><td>3.145000</td><td>627</td><td>双方有声・音高変更</td><td>58 → 59</td><td>56.640625 → 57.6171875</td><td>59 → 59</td></tr>
+<tr><td>0011</td><td>F</td><td>636</td><td>3.180000</td><td>634</td><td>双方有声・音高変更</td><td>455 → 456</td><td>444.3359375 → 445.3125</td><td>68 → 68</td></tr>
+<tr><td>0011</td><td>F</td><td>637</td><td>3.185000</td><td>635</td><td>双方有声・音高変更</td><td>455 → 456</td><td>444.3359375 → 445.3125</td><td>354 → 354</td></tr>
+<tr><td>0011</td><td>F</td><td>865</td><td>4.325000</td><td>863</td><td>双方有声・音高変更</td><td>106 → 54</td><td>103.515625 → 52.734375</td><td>54 → 54</td></tr>
+<tr><td>0011</td><td>F</td><td>866</td><td>4.330000</td><td>864</td><td>双方有声・音高変更</td><td>100 → 58</td><td>97.65625 → 56.640625</td><td>58 → 58</td></tr>
+<tr><td>0011</td><td>F</td><td>936</td><td>4.680000</td><td>934</td><td>双方有声・音高変更</td><td>95 → 102</td><td>92.7734375 → 99.609375</td><td>112 → 112</td></tr>
+<tr><td>0032</td><td>L</td><td>371</td><td>1.855000</td><td>369</td><td>双方有声・音高変更</td><td>92 → 91</td><td>89.84375 → 88.8671875</td><td>92 → 91</td></tr>
+<tr><td>0032</td><td>L</td><td>473</td><td>2.365000</td><td>471</td><td>双方有声・音高変更</td><td>58 → 52</td><td>56.640625 → 50.78125</td><td>58 → 52</td></tr>
+<tr><td>0032</td><td>F</td><td>89</td><td>0.445000</td><td>87</td><td>双方有声・音高変更</td><td>59 → 58</td><td>57.6171875 → 56.640625</td><td>57 → 57</td></tr>
+<tr><td>0032</td><td>F</td><td>371</td><td>1.855000</td><td>369</td><td>双方有声・音高変更</td><td>92 → 91</td><td>89.84375 → 88.8671875</td><td>92 → 91</td></tr>
+<tr><td>0032</td><td>F</td><td>482</td><td>2.410000</td><td>480</td><td>双方有声・音高変更</td><td>71 → 72</td><td>69.3359375 → 70.3125</td><td>74 → 74</td></tr>
+<tr><td>0032</td><td>F</td><td>511</td><td>2.555000</td><td>509</td><td>双方有声・音高変更</td><td>145 → 136</td><td>141.6015625 → 132.8125</td><td>120 → 120</td></tr>
+<tr><td>0032</td><td>F</td><td>765</td><td>3.825000</td><td>763</td><td>双方有声・音高変更</td><td>73 → 74</td><td>71.2890625 → 72.265625</td><td>75 → 75</td></tr>
+<tr><td>0032</td><td>F</td><td>797</td><td>3.985000</td><td>795</td><td>双方有声・音高変更</td><td>59 → 58</td><td>57.6171875 → 56.640625</td><td>57 → 57</td></tr>
+</tbody></table></div><p><a href="diagnostic-details.json">47明細の原JSON</a> / <a href="diagnostic-anomalies.json">異常記録の原JSON</a></p></section>
+<section id="audio"><h2>冒頭2秒の参考音声を、原音と5条件で比べる</h2>
+<p>各録音の原音・PML・旧AR3 L/F・新ACG L/F、計18例です。全例が16 kHz・標本[0,32000)の同じ冒頭2秒で、47変更箇所すべてを含む抜粋ではありません。音声差を改善の根拠にはせず、品質測定入力にも戻しません。</p>
+<p>既存12例は公開済みJSONを参照し、新6例も準備済みのPCM16バイトをそのまま使います。この掲載で再変換・音声生成はしていません。元の変換はround(x×32767)・同距離は偶数丸めで、クリップ・音量調整・位置合わせ・無音除去はありません。</p>
+<h3>librispeech_1089-134686-0008</h3><div class="audio-grid">
+<div><p>原音</p><audio controls preload="none" aria-label="librispeech_1089-134686-0008 原音" data-json="../run-001/audio_samples.json" data-case="librispeech_1089-134686-0008" data-method="identity"></audio></div>
+<div><p>PML（正式ベース）</p><audio controls preload="none" aria-label="librispeech_1089-134686-0008 PML（正式ベース）" data-json="../run-001/audio_samples.json" data-case="librispeech_1089-134686-0008" data-method="pml"></audio></div>
+<div><p>従来のt分布・局所L＋D1</p><audio controls preload="none" aria-label="librispeech_1089-134686-0008 従来のt分布・局所L＋D1" data-json="../run-001/audio_samples.json" data-case="librispeech_1089-134686-0008" data-method="L_ar3_d1"></audio></div>
+<div><p>従来のt分布・系列F＋D1</p><audio controls preload="none" aria-label="librispeech_1089-134686-0008 従来のt分布・系列F＋D1" data-json="../run-001/audio_samples.json" data-case="librispeech_1089-134686-0008" data-method="F_ar3_d1"></audio></div>
+<div><p>ACG・局所L＋D1</p><audio controls preload="none" aria-label="librispeech_1089-134686-0008 ACG・局所L＋D1" data-json="new-acg-audio.json" data-case="librispeech_1089-134686-0008" data-method="L_acg_d1"></audio></div>
+<div><p>ACG・系列F＋D1</p><audio controls preload="none" aria-label="librispeech_1089-134686-0008 ACG・系列F＋D1" data-json="new-acg-audio.json" data-case="librispeech_1089-134686-0008" data-method="F_acg_d1"></audio></div>
+</div>
+<h3>librispeech_1089-134686-0011</h3><div class="audio-grid">
+<div><p>原音</p><audio controls preload="none" aria-label="librispeech_1089-134686-0011 原音" data-json="../run-001/audio_samples.json" data-case="librispeech_1089-134686-0011" data-method="identity"></audio></div>
+<div><p>PML（正式ベース）</p><audio controls preload="none" aria-label="librispeech_1089-134686-0011 PML（正式ベース）" data-json="../run-001/audio_samples.json" data-case="librispeech_1089-134686-0011" data-method="pml"></audio></div>
+<div><p>従来のt分布・局所L＋D1</p><audio controls preload="none" aria-label="librispeech_1089-134686-0011 従来のt分布・局所L＋D1" data-json="../run-001/audio_samples.json" data-case="librispeech_1089-134686-0011" data-method="L_ar3_d1"></audio></div>
+<div><p>従来のt分布・系列F＋D1</p><audio controls preload="none" aria-label="librispeech_1089-134686-0011 従来のt分布・系列F＋D1" data-json="../run-001/audio_samples.json" data-case="librispeech_1089-134686-0011" data-method="F_ar3_d1"></audio></div>
+<div><p>ACG・局所L＋D1</p><audio controls preload="none" aria-label="librispeech_1089-134686-0011 ACG・局所L＋D1" data-json="new-acg-audio.json" data-case="librispeech_1089-134686-0011" data-method="L_acg_d1"></audio></div>
+<div><p>ACG・系列F＋D1</p><audio controls preload="none" aria-label="librispeech_1089-134686-0011 ACG・系列F＋D1" data-json="new-acg-audio.json" data-case="librispeech_1089-134686-0011" data-method="F_acg_d1"></audio></div>
+</div>
+<h3>librispeech_1089-134686-0032</h3><div class="audio-grid">
+<div><p>原音</p><audio controls preload="none" aria-label="librispeech_1089-134686-0032 原音" data-json="../run-001/audio_samples.json" data-case="librispeech_1089-134686-0032" data-method="identity"></audio></div>
+<div><p>PML（正式ベース）</p><audio controls preload="none" aria-label="librispeech_1089-134686-0032 PML（正式ベース）" data-json="../run-001/audio_samples.json" data-case="librispeech_1089-134686-0032" data-method="pml"></audio></div>
+<div><p>従来のt分布・局所L＋D1</p><audio controls preload="none" aria-label="librispeech_1089-134686-0032 従来のt分布・局所L＋D1" data-json="../run-001/audio_samples.json" data-case="librispeech_1089-134686-0032" data-method="L_ar3_d1"></audio></div>
+<div><p>従来のt分布・系列F＋D1</p><audio controls preload="none" aria-label="librispeech_1089-134686-0032 従来のt分布・系列F＋D1" data-json="../run-001/audio_samples.json" data-case="librispeech_1089-134686-0032" data-method="F_ar3_d1"></audio></div>
+<div><p>ACG・局所L＋D1</p><audio controls preload="none" aria-label="librispeech_1089-134686-0032 ACG・局所L＋D1" data-json="new-acg-audio.json" data-case="librispeech_1089-134686-0032" data-method="L_acg_d1"></audio></div>
+<div><p>ACG・系列F＋D1</p><audio controls preload="none" aria-label="librispeech_1089-134686-0032 ACG・系列F＋D1" data-json="new-acg-audio.json" data-case="librispeech_1089-134686-0032" data-method="F_acg_d1"></audio></div>
+</div>
+<p id="audio-load-status" role="status"></p><p><a href="audio-manifest.json">全18例の元音声・出力SHAと引用元</a> / <a href="new-acg-audio.json">新6例の掲載用音声JSON</a> / <a href="../run-001/audio_samples.json">既存音声の引用元JSON</a></p>
+<p>出典は<a href="https://www.openslr.org/12">LibriSpeech test-clean / OpenSLR 12</a>、Vassil Panayotov・Daniel Povey、LibriVox由来です。<a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>で、掲載用の区間切出し・PCM16変換を加えています。</p></section>
+<section id="evidence"><h2>原値と全ログを保持し、独立確認の限界を分ける</h2>
+<p>診断プログラムと条件は実行前にSHAで固定した保存記録です。既存の旧AR3と保持・監査済みnative v4の配列だけを読み、尤度・DP・D1・音声・品質を再実行していません。PMLの平滑化前の配列は長さも時刻のビット列も一致せず、補間しませんでした。</p>
+<p>診断の保存記録は終了コード0、0.733652秒、最大RSS 187,252 KiBです。警告・例外のスタックトレースは0件で、全標準出力・標準エラーを保存しています。これは今回の配列診断の記録であり、音声生成時の警告が0件という意味ではありません。</p>
+<p>別コードの独立照合は117項目すべて通過し、47明細・集計が一致しました。数値が同じでビット列だけ異なる平滑化前F0と、不整合記録はいずれも0件です。終了・時間・RSSの確認は保存メタデータとログの照合であり、遠隔実行の独立証明や再実行ではありません。品質や因果の保証にもなりません。</p>
+<ul><li><a href="diagnostic-summary.json">原集計JSON</a> / <a href="diagnostic-details.json">原47明細JSON</a> / <a href="diagnostic-anomalies.json">原異常記録JSON</a></li>
+<li><a href="diagnostic-conditions-public.json">条件の公開用抜粋</a> / <a href="diagnostic-input-identities-public.json">入力SHAの公開用抜粋</a></li>
+<li><a href="diagnostic-execution-public.json">実行記録の公開用抜粋</a> / <a href="diagnostic-logs.json">全4ログと元の容量・SHA</a></li>
+<li><a href="independent-audit-public.json">独立監査の公開用抜粋：全117判定・原数値・限界</a></li>
+<li><a href="diagnostic-note.json">診断時の原文メモ</a> / <a href="diagnostic-manifest.json">元ZIPの全メンバー構成・SHA</a></li>
+<li><a href="results.json">この補助記録の来歴</a> / <a href="publication-manifest.json">掲載ファイルの容量・SHA</a></li></ul>
+<p>元診断ZIPは13,101 bytes、SHA256 <code>50665b811d46a5835e1236f43596e2d7a726b308958ea786a314957deb908eec</code>。元独立監査JSONは98,508 bytes、SHA256 <code>601aabe90e1c6ffb1dbc93ced03e8f0591ca6dc490b8afbe4895281bb9a8404e</code>です。公開用抜粋では実装ソース、ローカル入力パス、起動コマンドを除き、元の容量・SHA、検査判定・数値・限界を残しました。</p>
+<p>正式ベースPMLと<a href="../run-001/index.html">既存75品質値・21短音声</a>・日時は保持しています。予定の品質run-002は未公開で、この補助記録に品質値や未測定の順位を加えていません。</p></section>
+</main><script>
+(async () => {
+  const players = [...document.querySelectorAll('audio[data-json]')];
+  try {
+    const sources = new Map();
+    for (const url of new Set(players.map(p => p.dataset.json))) {
+      const response = await fetch(url);
+      if (!response.ok) throw new Error(`audio JSON ${response.status}`);
+      sources.set(url, (await response.json()).samples);
+    }
+    for (const player of players) {
+      const matches = sources.get(player.dataset.json).filter(s =>
+        s.case === player.dataset.case && s.method === player.dataset.method);
+      if (matches.length !== 1 || matches[0].sample_rate !== 16000 || matches[0].n_samples !== 32000)
+        throw new Error('audio identity mismatch');
+      player.src = matches[0].data_uri;
+    }
+  } catch (error) {
+    console.error(error);
+    document.getElementById('audio-load-status').textContent =
+      '参考音声を読み込めませんでした。音声JSONのリンクから保存記録を確認してください。';
+  }
+})();
+</script></body></html>
