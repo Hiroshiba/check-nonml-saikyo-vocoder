@@ -15,13 +15,20 @@
     "trailing_newlines": 1,
     "block_delimiters_excluded": true,
     "unicode_normalization": false,
-    "html_entity_decoding": false
+    "html_entity_decoding": true,
+    "html_entity_decoding_scope": {
+      "path": "independent-review.md",
+      "from": "If Δ&gt;0 while",
+      "to": "If Δ>0 while",
+      "occurrences": 1,
+      "corrected_source_characters": 2975
+    }
   },
   "files": [
     {
       "path": "README.md",
-      "bytes": 2207,
-      "sha256": "1478822a4ac70303cb49880b4034dd8c87e06a402ed008f6b693299c781816d5",
+      "bytes": 2331,
+      "sha256": "2f20079031832df5ed89c060b3b8fe233d69f1807900596691d1a614cfd26a29",
       "role": "guide"
     },
     {
@@ -32,15 +39,17 @@
     },
     {
       "path": "independent-review.md",
-      "bytes": 3040,
-      "sha256": "8310288a47288f02544357ede5be24b7aab92cb4151c6ce57cff78ea2292cccd",
+      "bytes": 3037,
+      "sha256": "bcc2f3384134822da224bcbc9a17c72a44895ea85532f770c01e21c3699642c2",
       "role": "received_original"
     },
     {
       "path": "parent-addendum-ja.md",
-      "bytes": 5239,
-      "sha256": "686012cec3353644bcfc34edb55d5e7f2cae19e94eeac17040dda659f32428ae",
+      "bytes": 5264,
+      "sha256": "a82fddecff3f9eb1df99e4e9cedbca4f01ee85cba550ab0fdc1c6d5991caf4f7",
       "role": "latest_addendum"
     }
-  ]
+  ],
+  "revision": 2,
+  "supersedes_bundle_sha256": "1f4708e18147c13ff540675a802dd215c5bf93a6f4a24a0db6530509f819d3a6"
 }

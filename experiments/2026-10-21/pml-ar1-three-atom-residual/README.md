@@ -45,8 +45,16 @@ native独立監査の初回はPython選択ミスでNumPyがなく、保存配列
 
 [低q選択と固定次数・係数事前の幾何](followup-design/model-geometry-20261021/README.md)へ、議論原文・別担当の紙上確認と親追補を保存しました。親追補が最新の読み方です。Bは次の紙上点検対象であり、原因認定や新モデル・係数尺度・実行条件の採用ではありません。原文の「未受領」は当時の記録とし、別工程の保存配列観測の細目や数値結果は追加していません。公開済み75品質・21短音声とPML維持は不変です。
 
-文書束 `pml-ar3-model-geometry-20261021.zip`（9,971 bytes、5ファイル）は公式Libraryへ保存済みです。
+初版の文書束 `pml-ar3-model-geometry-20261021.zip`（9,971 bytes、5ファイル）は訂正前の記録として公式Libraryに保持しています。
 
 - SHA256: `1f4708e18147c13ff540675a802dd215c5bf93a6f4a24a0db6530509f819d3a6`
 - Library: `libfile_f65bb8cab3fc81919d133720ac0e8017`、version `0`
 - 保存ファイル: `file_000000006894823082baf582b1ecbdd2`
+
+訂正版を最新とします。独立確認の `If Δ>0 while` を親の原文に合わせ、H0の原子重みをデータ z に条件付けた事後重みと明確にしました。旧Library保存物は変更していません。
+
+訂正版 `pml-ar3-model-geometry-20261021-corrected.zip`（10,186 bytes、5ファイル）も公式Libraryへ保存済みです。
+
+- SHA256: `737617e2e429f479c34c5380daf1b1ec774111533cb7bbf5fb2506167b1fd70a`
+- Library: `libfile_216a6268378c81918f457b1dfe8c61ef`、version `0`
+- 保存ファイル: `file_00000000de788230bc38a42dc2b48b50`

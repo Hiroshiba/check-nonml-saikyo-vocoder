@@ -8,4 +8,4 @@
 
 [既存の75品質個票と21短音声](https://hiroshiba.github.io/check-nonml-saikyo-vocoder/experiments/2026-10-21/pml-ar1-three-atom-residual/results/run-001/index.html)は公開済みで、PMLを維持します。対象は1話者3既知録音の開発比較です。実測値・音声・RTF・全警告・全120条件を更新する追補ではありません。
 
-[MANIFEST](MANIFEST.json)は4文書のUTF-8容量とSHA256を記録します。原文はブロック境界を除いてLF・末尾改行1件で保存し、Unicode正規化やHTML実体参照の復号はしていません。ZIPとLibrary保存の実識別子は[群README](https://github.com/Hiroshiba/check-nonml-saikyo-vocoder/blob/main/experiments/2026-10-21/pml-ar1-three-atom-residual/README.md)へ記録します。既存の掲載manifestはPR104時点の記録として保持し、この追補は別MANIFESTで管理します。natural-japanese quickは新しい案内と親追補へ適用し、原文2件は改稿していません。
+[MANIFEST](MANIFEST.json)は4文書のUTF-8容量とSHA256を記録します。原文はブロック境界を除いてLF・末尾改行1件で保存し、Unicode正規化はしていません。独立確認の `If Δ>0 while` は、受け渡し時のエスケープを親の原文に合わせて訂正しました。ZIPとLibrary保存の実識別子は[群README](https://github.com/Hiroshiba/check-nonml-saikyo-vocoder/blob/main/experiments/2026-10-21/pml-ar1-three-atom-residual/README.md)へ記録します。既存の掲載manifestはPR104時点の記録として保持し、この追補は別MANIFESTで管理します。natural-japanese quickは新しい案内と親追補へ適用し、原文2件はこの表記訂正を除いて改稿していません。

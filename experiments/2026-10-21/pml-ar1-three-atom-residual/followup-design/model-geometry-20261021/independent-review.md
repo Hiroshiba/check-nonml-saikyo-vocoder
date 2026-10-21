@@ -24,7 +24,7 @@ For low/high-q atoms at the same a,K:
 Δ = −½ log(|Vlow|/|Vhigh|)
     −203 log{[2+zᵀVlow⁻¹z/2]/[2+zᵀVhigh⁻¹z/2]}.
 
-If Δ&gt;0 while its determinant contribution is ≤0, that contrast contradicts a determinant-only explanation. It does not refute B overall or establish the cause of a K/a-marginalized decision. Call the second contribution the “quadratic-form/scale term,” rather than an independently optimized residual fit.
+If Δ>0 while its determinant contribution is ≤0, that contrast contradicts a determinant-only explanation. It does not refute B overall or establish the cause of a K/a-marginalized decision. Call the second contribution the “quadratic-form/scale term,” rather than an independently optimized residual fit.
 
 5. Preserve the remaining qualifications.
 - Explicitly define Cnm=a^|n−m|. Then (Wv)0=v0, (Wv)n=(vn−avn−1)/√(1−a²), and det(C)=(1−a²)^399.
