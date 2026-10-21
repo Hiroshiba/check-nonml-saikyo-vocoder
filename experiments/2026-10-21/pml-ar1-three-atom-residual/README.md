@@ -63,8 +63,8 @@ native独立監査の初回はPython選択ミスでNumPyがなく、保存配列
 
 [混合得点の差から、成分の変化をどこまで言えるか](followup-design/logsum-component-bounds-20261021.md)に、30成分logsumの境界と反例を保存しました。lowerとupperは異なる極値への片側制約です。今回の別担当の確認は式・反例・解釈条件の紙上整合性に限ります。実データ診断はexit0との報告がありますが、保存HTTP401で親は本体未受領のため、数値や診断結論は加えていません。既存の原文・親追補と公開結果は保持しています。
 
-新しい文書本文（UTF-8、5,607 bytes）を公式Libraryへ保存済みです。
+最新のリンク訂正文書（UTF-8、5,710 bytes）を公式Libraryへ新規保存しました。Library名は `logsum-component-bounds-20261021(1).md` です。旧版 `libfile_74f320b70644819181d480b3f2eb3e84`（version `0`）も保持しています。
 
-- SHA256: `22b8e2afc9e8a1a4494497bf71cfcfd9111d5aa91a63d1d317f527ce437012aa`
-- Library: `libfile_74f320b70644819181d480b3f2eb3e84`、version `0`
-- 保存ファイル: `file_00000000adac823083ee3a86ab54dce8`
+- SHA256: `4f76e69d62ebfdbaedcfc58a95a8093661a0eef1ac15818b65aefe9a5a9ad64d`
+- Library: `libfile_fce5d8f31fa881918c3d7e05828f9175`、version `0`
+- 保存ファイル: `file_00000000368081fdb33ccdef542807b1`
