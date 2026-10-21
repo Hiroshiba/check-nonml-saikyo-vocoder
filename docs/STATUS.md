@@ -1,5 +1,11 @@
 # 現在の状態と次の作業
 
+## 保存段階の差を6枝の補助観測として記録（観測：2026-10-21 UTC）
+
+[段階別の保存値と全マスク（Pages）](https://hiroshiba.github.io/check-nonml-saikyo-vocoder/experiments/2026-10-21/pml-ar1-three-atom-residual/results/saved-stage-propagation-v1/index.html)を追加しました。rawの枝別47変更・重複を除く41時点に対し、raw不変行にもD1後・FWCEP・NMの差があります。この対応はF0選択起因を否定せず、各変更の寄与を特定するものでもありません。完全一致しない位置数を行・セル・標本で区別し、大きな誤差や品質悪化の面積とは扱いません。
+
+元SPEC/PDDは未保存で、FWCEP/NMは圧縮・派生表現です。PMLの異なる時計には対応や補間をせず、波形をフレームの因果領域へ割り当てません。実終了・全ログ・警告0件と独立確認を残し、既存18短音声を参照します。新しい品質測定・音声生成・base変更はなく、既存run-001/002と原文は保持します。以下は以前の記録です。
+
 ## ACG音声の品質63値を記録し、PMLを維持（2026-10-21）
 
 [品質run-002（Pages）](https://hiroshiba.github.io/check-nonml-saikyo-vocoder/experiments/2026-10-21/pml-ar1-three-atom-residual/results/run-002/index.html)に、新規24値・条件照合済み引用39値と48対応差をまとめました。PML比では新L/Fの全6枝でECAPA・eSTOIが低く、SCOREQ距離が高い方向です。UTMOSは0008・0011で低く、0032で高く、従来AR3との変化も混在しました。正式ベースはPMLを維持します。

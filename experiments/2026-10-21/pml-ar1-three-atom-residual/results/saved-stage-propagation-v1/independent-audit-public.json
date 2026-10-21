@@ -1,0 +1,395 @@
+{
+  "original": {
+    "library_file_id": "libfile_5ad015fc140c8191a57b9ae79fd30ede",
+    "version": 0,
+    "bytes": 11548,
+    "sha256": "cb9d1a6315da3b299c8cfce1516afa4b792382e3e4cdf7dbec939ed991d4da39"
+  },
+  "conversion": "local absolute paths replaced; all acceptance checks, counts, intervals and limits retained",
+  "audit": {
+    "schema_version": 1,
+    "kind": "independent_saved_stage_acceptance_audit",
+    "verdict": "accepted",
+    "source_execution": "none; saved bytes and independent arithmetic only",
+    "identities": {
+      "outer": {
+        "bytes": 2074473,
+        "sha256": "6347b96aa96b7c3078665ae6a3b0edc8bcf37458d5df4fbc2c5e83fc361e3b81"
+      },
+      "delivery": {
+        "bytes": 2038561,
+        "sha256": "ebd702f4edecd4fee4ffb4d1b138446c4b2d6d6e67f6cfea57ccdbed38c5aac6"
+      },
+      "result": {
+        "bytes": 2033598,
+        "sha256": "283c891847207e3c2a68c4dd1a26ee17e7c22d33a55cf85cc71c839db8cffd54"
+      },
+      "old_native_sha256": "8431e6fb7c206413a00e0ee5bf07e4827076525c390469a168baf722b1cdaafd",
+      "new_native_sha256": "55a706dcf24fb6f3844877da41beb40d4c659ca88856a699218dd70c365459f6"
+    },
+    "manifests_verified": [
+      "RECEIPT_MANIFEST.json",
+      "DELIVERY_MANIFEST.json",
+      "FILES.json",
+      "old_native/FILES.json",
+      "new_native/FILES.json"
+    ],
+    "result_members": 16,
+    "branches": 6,
+    "mask_keys_per_branch": 20,
+    "acceptance_checks": [
+      "all five FILES/DELIVERY/RECEIPT manifests by bytes and SHA",
+      "exact 16 result members and exact six 20-key uint8 masks",
+      "native PML header/body/order/clock and post-to-PML F0 bits",
+      "all stage float bits/numerics/counts/intervals/masks and cross-tabs",
+      "source receipt/Library success response, plan pins and outer argv/sys.argv",
+      "three-layer exits, reaping, complete streams, zero warnings and archive bounds"
+    ],
+    "raw_numeric_changed_branch_rows": 47,
+    "same_clock_union_rows": 41,
+    "float_bit_only_differences": 0,
+    "record_modes": [
+      {
+        "record_id": "librispeech_1089-134686-0008",
+        "mode": "L",
+        "raw": 7,
+        "post": 233,
+        "saved_f0": 233,
+        "fwcep_rows": 1089,
+        "nm_rows": 1015,
+        "wave_samples": 88268,
+        "raw_unchanged_downstream_rows": {
+          "post": 228,
+          "saved_f0": 228,
+          "fwcep": 1082,
+          "nm": 1008
+        },
+        "stage_counts": {
+          "raw": {
+            "bit_changed_positions": 7,
+            "numeric_changed_positions": 7,
+            "bit_changed_indices": 7,
+            "numeric_changed_indices": 7
+          },
+          "post": {
+            "bit_changed_positions": 233,
+            "numeric_changed_positions": 233,
+            "bit_changed_indices": 233,
+            "numeric_changed_indices": 233
+          },
+          "saved_f0": {
+            "bit_changed_positions": 233,
+            "numeric_changed_positions": 233,
+            "bit_changed_indices": 233,
+            "numeric_changed_indices": 233
+          },
+          "fwcep": {
+            "bit_changed_positions": 33962,
+            "numeric_changed_positions": 33962,
+            "bit_changed_indices": 1089,
+            "numeric_changed_indices": 1089
+          },
+          "nm": {
+            "bit_changed_positions": 86291,
+            "numeric_changed_positions": 86291,
+            "bit_changed_indices": 1015,
+            "numeric_changed_indices": 1015
+          },
+          "wave": {
+            "bit_changed_positions": 88268,
+            "numeric_changed_positions": 88268,
+            "bit_changed_indices": 88268,
+            "numeric_changed_indices": 88268
+          }
+        }
+      },
+      {
+        "record_id": "librispeech_1089-134686-0008",
+        "mode": "F",
+        "raw": 14,
+        "post": 324,
+        "saved_f0": 324,
+        "fwcep_rows": 605,
+        "nm_rows": 601,
+        "wave_samples": 49171,
+        "raw_unchanged_downstream_rows": {
+          "post": 312,
+          "saved_f0": 312,
+          "fwcep": 592,
+          "nm": 588
+        },
+        "stage_counts": {
+          "raw": {
+            "bit_changed_positions": 14,
+            "numeric_changed_positions": 14,
+            "bit_changed_indices": 14,
+            "numeric_changed_indices": 14
+          },
+          "post": {
+            "bit_changed_positions": 324,
+            "numeric_changed_positions": 324,
+            "bit_changed_indices": 324,
+            "numeric_changed_indices": 324
+          },
+          "saved_f0": {
+            "bit_changed_positions": 324,
+            "numeric_changed_positions": 324,
+            "bit_changed_indices": 324,
+            "numeric_changed_indices": 324
+          },
+          "fwcep": {
+            "bit_changed_positions": 21926,
+            "numeric_changed_positions": 21926,
+            "bit_changed_indices": 605,
+            "numeric_changed_indices": 605
+          },
+          "nm": {
+            "bit_changed_positions": 65696,
+            "numeric_changed_positions": 65696,
+            "bit_changed_indices": 601,
+            "numeric_changed_indices": 601
+          },
+          "wave": {
+            "bit_changed_positions": 49171,
+            "numeric_changed_positions": 49171,
+            "bit_changed_indices": 49171,
+            "numeric_changed_indices": 49171
+          }
+        }
+      },
+      {
+        "record_id": "librispeech_1089-134686-0011",
+        "mode": "L",
+        "raw": 4,
+        "post": 201,
+        "saved_f0": 201,
+        "fwcep_rows": 789,
+        "nm_rows": 748,
+        "wave_samples": 64098,
+        "raw_unchanged_downstream_rows": {
+          "post": 197,
+          "saved_f0": 197,
+          "fwcep": 785,
+          "nm": 744
+        },
+        "stage_counts": {
+          "raw": {
+            "bit_changed_positions": 4,
+            "numeric_changed_positions": 4,
+            "bit_changed_indices": 4,
+            "numeric_changed_indices": 4
+          },
+          "post": {
+            "bit_changed_positions": 201,
+            "numeric_changed_positions": 201,
+            "bit_changed_indices": 201,
+            "numeric_changed_indices": 201
+          },
+          "saved_f0": {
+            "bit_changed_positions": 201,
+            "numeric_changed_positions": 201,
+            "bit_changed_indices": 201,
+            "numeric_changed_indices": 201
+          },
+          "fwcep": {
+            "bit_changed_positions": 23539,
+            "numeric_changed_positions": 23539,
+            "bit_changed_indices": 789,
+            "numeric_changed_indices": 789
+          },
+          "nm": {
+            "bit_changed_positions": 68156,
+            "numeric_changed_positions": 68156,
+            "bit_changed_indices": 748,
+            "numeric_changed_indices": 748
+          },
+          "wave": {
+            "bit_changed_positions": 64098,
+            "numeric_changed_positions": 64098,
+            "bit_changed_indices": 64098,
+            "numeric_changed_indices": 64098
+          }
+        }
+      },
+      {
+        "record_id": "librispeech_1089-134686-0011",
+        "mode": "F",
+        "raw": 14,
+        "post": 335,
+        "saved_f0": 335,
+        "fwcep_rows": 804,
+        "nm_rows": 1047,
+        "wave_samples": 91714,
+        "raw_unchanged_downstream_rows": {
+          "post": 321,
+          "saved_f0": 321,
+          "fwcep": 791,
+          "nm": 1034
+        },
+        "stage_counts": {
+          "raw": {
+            "bit_changed_positions": 14,
+            "numeric_changed_positions": 14,
+            "bit_changed_indices": 14,
+            "numeric_changed_indices": 14
+          },
+          "post": {
+            "bit_changed_positions": 335,
+            "numeric_changed_positions": 335,
+            "bit_changed_indices": 335,
+            "numeric_changed_indices": 335
+          },
+          "saved_f0": {
+            "bit_changed_positions": 335,
+            "numeric_changed_positions": 335,
+            "bit_changed_indices": 335,
+            "numeric_changed_indices": 335
+          },
+          "fwcep": {
+            "bit_changed_positions": 24298,
+            "numeric_changed_positions": 24298,
+            "bit_changed_indices": 804,
+            "numeric_changed_indices": 804
+          },
+          "nm": {
+            "bit_changed_positions": 65444,
+            "numeric_changed_positions": 65444,
+            "bit_changed_indices": 1047,
+            "numeric_changed_indices": 1047
+          },
+          "wave": {
+            "bit_changed_positions": 91714,
+            "numeric_changed_positions": 91714,
+            "bit_changed_indices": 91714,
+            "numeric_changed_indices": 91714
+          }
+        }
+      },
+      {
+        "record_id": "librispeech_1089-134686-0032",
+        "mode": "L",
+        "raw": 2,
+        "post": 43,
+        "saved_f0": 43,
+        "fwcep_rows": 5,
+        "nm_rows": 369,
+        "wave_samples": 36717,
+        "raw_unchanged_downstream_rows": {
+          "post": 42,
+          "saved_f0": 42,
+          "fwcep": 4,
+          "nm": 368
+        },
+        "stage_counts": {
+          "raw": {
+            "bit_changed_positions": 2,
+            "numeric_changed_positions": 2,
+            "bit_changed_indices": 2,
+            "numeric_changed_indices": 2
+          },
+          "post": {
+            "bit_changed_positions": 43,
+            "numeric_changed_positions": 43,
+            "bit_changed_indices": 43,
+            "numeric_changed_indices": 43
+          },
+          "saved_f0": {
+            "bit_changed_positions": 43,
+            "numeric_changed_positions": 43,
+            "bit_changed_indices": 43,
+            "numeric_changed_indices": 43
+          },
+          "fwcep": {
+            "bit_changed_positions": 297,
+            "numeric_changed_positions": 297,
+            "bit_changed_indices": 5,
+            "numeric_changed_indices": 5
+          },
+          "nm": {
+            "bit_changed_positions": 12152,
+            "numeric_changed_positions": 12152,
+            "bit_changed_indices": 369,
+            "numeric_changed_indices": 369
+          },
+          "wave": {
+            "bit_changed_positions": 36717,
+            "numeric_changed_positions": 36717,
+            "bit_changed_indices": 36717,
+            "numeric_changed_indices": 36717
+          }
+        }
+      },
+      {
+        "record_id": "librispeech_1089-134686-0032",
+        "mode": "F",
+        "raw": 6,
+        "post": 161,
+        "saved_f0": 161,
+        "fwcep_rows": 341,
+        "nm_rows": 387,
+        "wave_samples": 36697,
+        "raw_unchanged_downstream_rows": {
+          "post": 157,
+          "saved_f0": 157,
+          "fwcep": 336,
+          "nm": 382
+        },
+        "stage_counts": {
+          "raw": {
+            "bit_changed_positions": 6,
+            "numeric_changed_positions": 6,
+            "bit_changed_indices": 6,
+            "numeric_changed_indices": 6
+          },
+          "post": {
+            "bit_changed_positions": 161,
+            "numeric_changed_positions": 161,
+            "bit_changed_indices": 161,
+            "numeric_changed_indices": 161
+          },
+          "saved_f0": {
+            "bit_changed_positions": 161,
+            "numeric_changed_positions": 161,
+            "bit_changed_indices": 161,
+            "numeric_changed_indices": 161
+          },
+          "fwcep": {
+            "bit_changed_positions": 11176,
+            "numeric_changed_positions": 11176,
+            "bit_changed_indices": 341,
+            "numeric_changed_indices": 341
+          },
+          "nm": {
+            "bit_changed_positions": 31278,
+            "numeric_changed_positions": 31278,
+            "bit_changed_indices": 387,
+            "numeric_changed_indices": 387
+          },
+          "wave": {
+            "bit_changed_positions": 36697,
+            "numeric_changed_positions": 36697,
+            "bit_changed_indices": 36697,
+            "numeric_changed_indices": 36697
+          }
+        }
+      }
+    ],
+    "execution": {
+      "outer_exit_code": 0,
+      "science_exit_code": 0,
+      "outer_reaped": true,
+      "science_reaped": true,
+      "warning_count": 0,
+      "outer_elapsed_seconds": 0.5680074599949876,
+      "science_elapsed_seconds": 0.47064713500003563,
+      "science_max_rss_kib": 46416,
+      "outer_stdout_bytes": 244,
+      "outer_stderr_bytes": 0,
+      "science_stdout_bytes": 264,
+      "science_stderr_bytes": 0,
+      "child_address_space_limit_bytes": 2147483648,
+      "science_rss_is_observed_not_enforced": true
+    },
+    "limits": "Saved-value description. No inference about causal contribution, F0 truth, physiological voicing, sound quality, or generalization."
+  }
+}

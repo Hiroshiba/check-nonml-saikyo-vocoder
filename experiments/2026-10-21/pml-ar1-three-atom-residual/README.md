@@ -1,5 +1,11 @@
 # 残差に相関を許すと、F0候補と再合成はどう変わるか
 
+## 保存値の差は、raw変更行だけには局在しなかった（観測：2026-10-21 UTC）
+
+[保存段階の差の補足レポート（Pages）](https://hiroshiba.github.io/check-nonml-saikyo-vocoder/experiments/2026-10-21/pml-ar1-three-atom-residual/results/saved-stage-propagation-v1/index.html)に、従来AR3とACGの同じL/Fを、raw・D1後・保存F0・FWCEP・NM・波形の順に比べた観測を記録しました。rawは枝別47行、重複を除く41時点で変わり、raw不変行にも下流差がありました。これはF0選択の違いに由来する可能性を否定するものではなく、個々の変更の因果範囲も特定しません。
+
+6枝の全行・セル・標本の分母を示し、全マスク・区間・全ログと独立確認へ案内します。完全一致しない位置数であり、大きな誤差や品質悪化の面積ではありません。FWCEP/NMは元SPEC/PDDの圧縮・派生表現で、元SPEC/PDDは未保存です。既存18短音声を参照し、新しい品質測定や音声生成はしていません。PMLとrun-001/002の数値・音声・日時は保持します。
+
 ## ACG音声の品質は新規24値と引用39値で比較した（2026-10-21）
 
 [ACG音声とPML・従来AR3の比較（Pages）](https://hiroshiba.github.io/check-nonml-saikyo-vocoder/experiments/2026-10-21/pml-ar1-three-atom-residual/results/run-002/index.html)に、同じ録音・同じ後段処理で候補の重み付けを替えた結果を記録しました。PML比では新L/Fの全6枝でECAPA・eSTOIが低く、SCOREQ距離が高い方向でした。UTMOSは0008・0011で低く、0032で高くなりました。従来AR3の同じL/Fとの変化は指標・録音で混在し、正式ベースはPMLを維持します。
