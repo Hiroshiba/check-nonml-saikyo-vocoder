@@ -1,0 +1,532 @@
+{
+  "schema_version": 1,
+  "kind": "pml_ar3_d1_native_independent_audit_verdict",
+  "status": "passed",
+  "audit_version": "pml-ar3-d1-result-audit-v1-20261021",
+  "source_schema_support": "passed",
+  "independent_saved_selection_post_contract": "passed",
+  "files_manifest_and_member_hashes": "passed",
+  "quality_measured": false,
+  "approved_for_quality": false,
+  "adoption_decision": false,
+  "F0_truth_verified": false,
+  "native_resynthesis_independently_verified": false,
+  "old_study_approved_for_quality": false,
+  "main120_complete": false,
+  "independent_full_qK_atom_likelihood_verified": false,
+  "static_model_code_review_is_separate": true,
+  "limitations": [
+    "Saved-array system consistency, not an independent exact/high-precision solver or rounding enclosure.",
+    "No candidate/PML import, waveform reanalysis/resynthesis, old filter replay, or quality metrics.",
+    "Source, Library and execution receipts are consistency-checked, not independently attested.",
+    "No independent full (q,K,a) likelihood, F0 truth, quality or adoption verification.",
+    "Only the parent may approve quality; the old exit2 experiment remains a failure."
+  ],
+  "audit_source_manifest_sha256": "538597f02173d158ac270658287d13bcfaf2d512d241d4b84fc552b23ee934b5",
+  "audit_source_receipt_sha256": "e4603c0f8a0cff716c9d1d145bd49f662096230b546872b96f4f83e56baa3610",
+  "audit_source_library": {
+    "library_file_id": "libfile_2fd0939819848191b0bc859f5ddfb229",
+    "version_number": 0,
+    "file_id": "file_00000000709c81f58b123b346356d896"
+  },
+  "native_files_sha256": "f98a520bc9ec7fcf4df8568f5031b08a34406363f50a71f9a0caba7d50ceb29e",
+  "old_native_provenance": {
+    "version": "pml-candidate-sequence-native-v2-20261021",
+    "delivery_envelope": {
+      "bytes": 19922354,
+      "sha256": "a78bc6019de20a8ff702165b60121c5263324cb0c8c47514a1777498149d0a7a"
+    },
+    "native_archive": {
+      "bytes": 19911267,
+      "sha256": "8c402790d826825d87dbadcc7cd908d7747e629c2ea9342dc9408d2c5264dc96"
+    },
+    "native_files_sha256": "12e38db01ed45e964d361024516e4cae3ad21298822317c699a6e72884f4d5e1",
+    "materialized_receipt_sha256": "57e6b6368081e59d933a8ec17769a391f761ef234e8df5a929bb02e4c8d15bf1",
+    "failure_verdict_sha256": "59beafbf8b432896dc6ea352c7d4801cd31e655c052deeb5b3b017c6ba8d146a",
+    "library_receipt": {
+      "status": "retained",
+      "library_file_id": "libfile_c4a085e9297481918bae5d8bbbea6e0f",
+      "version_number": 0,
+      "file_id": "file_0000000005448230bd4455e2b6278054"
+    },
+    "actual_exit_code": 2,
+    "scientific_status": "native_incomplete_scientific_failures",
+    "approved_for_quality": false
+  },
+  "prior_reference": {
+    "version": "pml-d1-post-native-v1-20261021",
+    "delivery_envelope": {
+      "bytes": 18504522,
+      "sha256": "43ffc10cdcdd739fb6f0583287af787a39d17050f09a801abe1aa1bd4ec0a21f"
+    },
+    "native_archive": {
+      "bytes": 18493180,
+      "sha256": "b674091fdc09072d7c2c8844cc61cfb2f0730c9410c6914a20329082f028b404"
+    },
+    "native_files_sha256": "738d265e054bd955c24fa29abdd582c290e9d60f93b8709d54c514d93303249f",
+    "materialized_receipt_sha256": "343db4bea2175b9caeca4624d3fec27fd17ec7bcf79de3be46b0c5c66419d0f8",
+    "independent_verdict_sha256": "f35e1f28336413a0d0adf20b8c452ac720bb8f1a767d91b28add0f805bf292ed",
+    "library_receipt": {
+      "library_file_id": "libfile_ad3e7afeb8748191be023f2d42480714",
+      "version_number": 0,
+      "file_id": "file_00000000cf6881fd80c760f819ceefc3"
+    }
+  },
+  "all_prior_members_verified": 203,
+  "records": [
+    {
+      "id": "librispeech_1089-134686-0008",
+      "n_samples": 96000,
+      "branches": {
+        "pml": {
+          "frames": 1194,
+          "body_sha256": "4b5bae0da58794a119ce0f2ee19673e7dec59cebcaa93d35885f70351819179d",
+          "seed": 0,
+          "FWCEP60_float32_finite": true,
+          "NM_little_bitorder_padding_valid": true,
+          "execution_kind": "prior_byte_reference",
+          "newly_executed": false,
+          "native_sha256": "66fa9fe6bb6e0880a2213e700ec59f6dd8af48283c5c350d980d948bf12644f6",
+          "params_sha256": "c57ebd92faee5b12f8286e2b56d1baea70f4579441c98d6571e200b7ea441a4e",
+          "timing_scope": "original payload only; not a new RTF measurement"
+        },
+        "R_d1": {
+          "frames": 1194,
+          "body_sha256": "5b4fbbbc8bcd83f90078762186e59f8d0312638c40c45811bc7bac1715697af4",
+          "seed": 0,
+          "FWCEP60_float32_finite": true,
+          "NM_little_bitorder_padding_valid": true,
+          "execution_kind": "prior_byte_reference",
+          "newly_executed": false,
+          "native_sha256": "f1a2e3a29af1fa6e3c02d564e2c53b54e249e6cbebb50c8caf0460608b8e63de",
+          "params_sha256": "7f98f5e7d43b9987dee0762a271ff6cb5c3c820a28b317f9ef4c2f0dd6991aaf",
+          "timing_scope": "original payload only; not a new RTF measurement"
+        },
+        "L_d1": {
+          "frames": 1200,
+          "body_sha256": "8d98bdfd55c05df542134fc4044efee3417cb903540f7717e2a18f0a0eeb6389",
+          "seed": 0,
+          "FWCEP60_float32_finite": true,
+          "NM_little_bitorder_padding_valid": true,
+          "execution_kind": "prior_byte_reference",
+          "newly_executed": false,
+          "native_sha256": "94f1a8fb9e953a5c76cd9d0156f88ce214ed410a9f56f0c7bbd0e7c8d98aaac6",
+          "params_sha256": "81c72f15c4ab3f495c3810882d948aa00ed2920059ec37ae380b9738fde8a5aa",
+          "timing_scope": "original payload only; not a new RTF measurement"
+        },
+        "F_d1": {
+          "frames": 1200,
+          "body_sha256": "d44956efde1a10bba37078c4a7368d50de03ea66d485c03eef8107156abfe154",
+          "seed": 0,
+          "FWCEP60_float32_finite": true,
+          "NM_little_bitorder_padding_valid": true,
+          "execution_kind": "prior_byte_reference",
+          "newly_executed": false,
+          "native_sha256": "b5c28d238b4850043be3385825d680960b5423ffdec4672234ba7161879380f3",
+          "params_sha256": "2d0ad39ace32c0ab836c6539d5e588ab8914b43d3aafcf383e490edd1ee15c32",
+          "timing_scope": "original payload only; not a new RTF measurement"
+        },
+        "L_ar3_d1": {
+          "frames": 1200,
+          "body_sha256": "98724195ac44a77d6038ea150e4d019e29b91321b47bee6738f5834d4db37119",
+          "seed": 0,
+          "FWCEP60_float32_finite": true,
+          "NM_little_bitorder_padding_valid": true,
+          "execution_kind": "new_ar3_local_LF_D1_analysis_save_load_decode",
+          "newly_executed": true,
+          "native_sha256": "85a93eb8fc9690ca4b9e483384e4cc19d4797b75ffc1b68e10074589050a8771",
+          "params_sha256": "f4d9bca40d019c032f1282536657ac8a51430a9fb9ae25b28b31c22075e2af6f",
+          "timing_scope": "this new D1 branch only",
+          "saved_solver": {
+            "internal_samples": 2398,
+            "post_frames": 1200,
+            "raw_prep_internal_and_post_return": "bitwise_matched_canonical_operators",
+            "residual_linf": 3.410605131648481e-13,
+            "A_linf": 7.828427124746192,
+            "scale": 4234.740319508378,
+            "budget": 6.017927943714167e-11,
+            "factor": 64,
+            "policy": "ordinary_float64_scaled_residual_not_rigorous_rounding_enclosure",
+            "independent_exact_or_high_precision_solution": false
+          }
+        },
+        "F_ar3_d1": {
+          "frames": 1200,
+          "body_sha256": "45ab09d60b168e37288bb6010989e191f315624326610b2aaf1e6a2034039986",
+          "seed": 0,
+          "FWCEP60_float32_finite": true,
+          "NM_little_bitorder_padding_valid": true,
+          "execution_kind": "new_ar3_local_LF_D1_analysis_save_load_decode",
+          "newly_executed": true,
+          "native_sha256": "f778312973735db7a81b30e7d1d52b17b4dda860fe7c594dec6b42e054532712",
+          "params_sha256": "28755b8b8f8bf18e70357e1141aa342ce93f0bda0e0094d4a714f59cfd32c8a0",
+          "timing_scope": "this new D1 branch only",
+          "saved_solver": {
+            "internal_samples": 2398,
+            "post_frames": 1200,
+            "raw_prep_internal_and_post_return": "bitwise_matched_canonical_operators",
+            "residual_linf": 3.410605131648481e-13,
+            "A_linf": 7.828427124746192,
+            "scale": 4216.233741389322,
+            "budget": 5.991628514421623e-11,
+            "factor": 64,
+            "policy": "ordinary_float64_scaled_residual_not_rigorous_rounding_enclosure",
+            "independent_exact_or_high_precision_solution": false
+          }
+        }
+      },
+      "independent_selection": {
+        "selection_replay": "passed",
+        "frames": 1200,
+        "modes": [
+          "L",
+          "F"
+        ],
+        "path_comparison": "bitwise_exact_no_tolerance"
+      },
+      "optional_atom_diagnostics": {
+        "valid_frames": 1200,
+        "admission_gate": false,
+        "algorithm": "independent stable finite-three-sum, atom order -0.8,0,+0.8; no qK likelihood recomputation",
+        "max_abs_differences": {
+          "h0_log_responsibility": 0.0,
+          "h1_log_responsibility": 0.0,
+          "h0_aggregate_vs_saved_gate_plus_z": 2.842170943040401e-14,
+          "h1_aggregate_vs_saved_gate_plus_z": 1.1368683772161603e-13
+        },
+        "IEEE_reassociation_may_differ": true,
+        "no_tolerance_or_bitwise_gate": true,
+        "independent_full_qK_atom_likelihood_verified": false
+      }
+    },
+    {
+      "id": "librispeech_1089-134686-0011",
+      "n_samples": 96000,
+      "branches": {
+        "pml": {
+          "frames": 1195,
+          "body_sha256": "e0d6e102b12f4609270aa0b507fee6bd93cc5e3944e06800582b39ebda51a826",
+          "seed": 0,
+          "FWCEP60_float32_finite": true,
+          "NM_little_bitorder_padding_valid": true,
+          "execution_kind": "prior_byte_reference",
+          "newly_executed": false,
+          "native_sha256": "19db23acecafc5665e49ab0037adf2647aeebbadcee67b34b6cc67c48641b7c2",
+          "params_sha256": "15b8463d684c528a6785334a515a363d4a40487594f99d51c871be1a789f52ad",
+          "timing_scope": "original payload only; not a new RTF measurement"
+        },
+        "R_d1": {
+          "frames": 1195,
+          "body_sha256": "6af145a63787fc4a4f9329a5da6d2f0b11a75fbff7cfc35edffe79417b595555",
+          "seed": 0,
+          "FWCEP60_float32_finite": true,
+          "NM_little_bitorder_padding_valid": true,
+          "execution_kind": "prior_byte_reference",
+          "newly_executed": false,
+          "native_sha256": "ff203ac787be80ea07c27236fd049fef936f4531772abc35dc2d3acf81e94049",
+          "params_sha256": "2b33188674396834ea65138bed3aea0d793fea2dff8d75ca17889666dcb11cd7",
+          "timing_scope": "original payload only; not a new RTF measurement"
+        },
+        "L_d1": {
+          "frames": 1200,
+          "body_sha256": "ae330f7f0d276e5a6dbeb643a6222c42eecdc466a6291d92aedc84e579ef5982",
+          "seed": 0,
+          "FWCEP60_float32_finite": true,
+          "NM_little_bitorder_padding_valid": true,
+          "execution_kind": "prior_byte_reference",
+          "newly_executed": false,
+          "native_sha256": "5f8a2164530c908da794ef63b5f790f752bb21c3a81b3f93e89b2b4f412de1aa",
+          "params_sha256": "ea064dba17c377d958ce4220583e721681b210bb6f23fb6a212926942419da3a",
+          "timing_scope": "original payload only; not a new RTF measurement"
+        },
+        "F_d1": {
+          "frames": 1200,
+          "body_sha256": "eab538e7642aa1212a98a752a8ac44cb292b32f2e22bf30d3ca92a22b3e89a17",
+          "seed": 0,
+          "FWCEP60_float32_finite": true,
+          "NM_little_bitorder_padding_valid": true,
+          "execution_kind": "prior_byte_reference",
+          "newly_executed": false,
+          "native_sha256": "13df9011b3ca46927d7409373d036396e815b2d28cbe06e4878374e0976d8cb1",
+          "params_sha256": "25183a0a382e62d294cda4cc9cd33d2ec18570c40404e36d3e3f989c7133a13a",
+          "timing_scope": "original payload only; not a new RTF measurement"
+        },
+        "L_ar3_d1": {
+          "frames": 1200,
+          "body_sha256": "d99caf3b9a641f705192bbc3c50a5fac1f6dc782853214fd6570ee201c454e39",
+          "seed": 0,
+          "FWCEP60_float32_finite": true,
+          "NM_little_bitorder_padding_valid": true,
+          "execution_kind": "new_ar3_local_LF_D1_analysis_save_load_decode",
+          "newly_executed": true,
+          "native_sha256": "d0b6ccaba0c4c03f75ee70e8dd6b74f59f79b7da8145410becc097ad6ac8b04e",
+          "params_sha256": "f6bc4f2ddb7b6f8cccafb5cf924497093ac5af73a4112f3744502a8015f3c363",
+          "timing_scope": "this new D1 branch only",
+          "saved_solver": {
+            "internal_samples": 2398,
+            "post_frames": 1200,
+            "raw_prep_internal_and_post_return": "bitwise_matched_canonical_operators",
+            "residual_linf": 5.115907697472721e-13,
+            "A_linf": 7.828427124746192,
+            "scale": 4327.489233994219,
+            "budget": 6.149732078589265e-11,
+            "factor": 64,
+            "policy": "ordinary_float64_scaled_residual_not_rigorous_rounding_enclosure",
+            "independent_exact_or_high_precision_solution": false
+          }
+        },
+        "F_ar3_d1": {
+          "frames": 1200,
+          "body_sha256": "75963dd62f82b4794226026c4775aaec01b97d3e0ff9eefaa1cfdb1aa5ab7ee5",
+          "seed": 0,
+          "FWCEP60_float32_finite": true,
+          "NM_little_bitorder_padding_valid": true,
+          "execution_kind": "new_ar3_local_LF_D1_analysis_save_load_decode",
+          "newly_executed": true,
+          "native_sha256": "b167ed721703f8077f4c3eb67e5f43582b2c609e767e59861d8d3ec43e6b4c00",
+          "params_sha256": "8574761ed4093ea2ef794c3d0a7e9ed389b940cff357093a830e482af2f398dc",
+          "timing_scope": "this new D1 branch only",
+          "saved_solver": {
+            "internal_samples": 2398,
+            "post_frames": 1200,
+            "raw_prep_internal_and_post_return": "bitwise_matched_canonical_operators",
+            "residual_linf": 3.979039320256561e-13,
+            "A_linf": 7.828427124746192,
+            "scale": 4290.458506412111,
+            "budget": 6.09710824962251e-11,
+            "factor": 64,
+            "policy": "ordinary_float64_scaled_residual_not_rigorous_rounding_enclosure",
+            "independent_exact_or_high_precision_solution": false
+          }
+        }
+      },
+      "independent_selection": {
+        "selection_replay": "passed",
+        "frames": 1200,
+        "modes": [
+          "L",
+          "F"
+        ],
+        "path_comparison": "bitwise_exact_no_tolerance"
+      },
+      "optional_atom_diagnostics": {
+        "valid_frames": 1200,
+        "admission_gate": false,
+        "algorithm": "independent stable finite-three-sum, atom order -0.8,0,+0.8; no qK likelihood recomputation",
+        "max_abs_differences": {
+          "h0_log_responsibility": 0.0,
+          "h1_log_responsibility": 0.0,
+          "h0_aggregate_vs_saved_gate_plus_z": 2.842170943040401e-14,
+          "h1_aggregate_vs_saved_gate_plus_z": 1.1368683772161603e-13
+        },
+        "IEEE_reassociation_may_differ": true,
+        "no_tolerance_or_bitwise_gate": true,
+        "independent_full_qK_atom_likelihood_verified": false
+      }
+    },
+    {
+      "id": "librispeech_1089-134686-0032",
+      "n_samples": 65440,
+      "branches": {
+        "pml": {
+          "frames": 814,
+          "body_sha256": "49f9f585e70737d3d335037734ef05204d432d18b7bf1b097f123b3105dd1647",
+          "seed": 0,
+          "FWCEP60_float32_finite": true,
+          "NM_little_bitorder_padding_valid": true,
+          "execution_kind": "prior_byte_reference",
+          "newly_executed": false,
+          "native_sha256": "80bf274d7883bff30b22f1eae1ea2a40cb7d3f7fdc0bc75162dc90e44faa6cc8",
+          "params_sha256": "8c1fbd635ab5ce63e71068d0b9f38b417de80c85be9446a8b73bb217026d0610",
+          "timing_scope": "original payload only; not a new RTF measurement"
+        },
+        "R_d1": {
+          "frames": 814,
+          "body_sha256": "182282a9b7c3d7a0051339d2f55d4029def5d04e98daf2e9fccd421b35b6a45d",
+          "seed": 0,
+          "FWCEP60_float32_finite": true,
+          "NM_little_bitorder_padding_valid": true,
+          "execution_kind": "prior_byte_reference",
+          "newly_executed": false,
+          "native_sha256": "b1bb3ebcb3ca010abe72b49cf1991ab1b14a1f70fa43c475fed8ce8776f9c619",
+          "params_sha256": "ae93aaf4021ff47020d66c5141735cd1a05ca74ff76e1e5eabef296cefba7da8",
+          "timing_scope": "original payload only; not a new RTF measurement"
+        },
+        "L_d1": {
+          "frames": 818,
+          "body_sha256": "96dd24d591f05393bb974e5a69219dd331958221e4ae0f1cb4a122b9bcd9c811",
+          "seed": 0,
+          "FWCEP60_float32_finite": true,
+          "NM_little_bitorder_padding_valid": true,
+          "execution_kind": "prior_byte_reference",
+          "newly_executed": false,
+          "native_sha256": "dc012f5a1dc457b6244de0d2ed5f8a34207002b95bb6907a2100164316e2d049",
+          "params_sha256": "a9aa2e233d664892d01eafa9ea713b06cca888367f0fb29a4a424816afd4749c",
+          "timing_scope": "original payload only; not a new RTF measurement"
+        },
+        "F_d1": {
+          "frames": 818,
+          "body_sha256": "ad3288f316e2d06a916596ff82832a309af2e518d711051bb8b9479a6199c2b1",
+          "seed": 0,
+          "FWCEP60_float32_finite": true,
+          "NM_little_bitorder_padding_valid": true,
+          "execution_kind": "prior_byte_reference",
+          "newly_executed": false,
+          "native_sha256": "c67e0b7749002677c1d9375b73daddcb0c302b8166583a5726f3c40e8587f680",
+          "params_sha256": "0ad126e628915731eefeadb858f627ab567d5b74db544fbe2edc8790f61df342",
+          "timing_scope": "original payload only; not a new RTF measurement"
+        },
+        "L_ar3_d1": {
+          "frames": 818,
+          "body_sha256": "55e05376c7333c6b60a65de418179735543fb1b10d4ff547afdeeb9c4e334aa7",
+          "seed": 0,
+          "FWCEP60_float32_finite": true,
+          "NM_little_bitorder_padding_valid": true,
+          "execution_kind": "new_ar3_local_LF_D1_analysis_save_load_decode",
+          "newly_executed": true,
+          "native_sha256": "ea94823a8d454f882d3f7a67005f3f65389301cf8597226672fef38716efecf6",
+          "params_sha256": "7a8668feb619e7184601a67ab845724ff88bde8904905e75839e4f9bdeb0457d",
+          "timing_scope": "this new D1 branch only",
+          "saved_solver": {
+            "internal_samples": 1634,
+            "post_frames": 818,
+            "raw_prep_internal_and_post_return": "bitwise_matched_canonical_operators",
+            "residual_linf": 4.547473508864641e-13,
+            "A_linf": 7.828427124746192,
+            "scale": 4176.703092382129,
+            "budget": 5.935452083437737e-11,
+            "factor": 64,
+            "policy": "ordinary_float64_scaled_residual_not_rigorous_rounding_enclosure",
+            "independent_exact_or_high_precision_solution": false
+          }
+        },
+        "F_ar3_d1": {
+          "frames": 818,
+          "body_sha256": "8214814a3a1f0076c5ea59927e983be2e7bf45aa9fdc8d1f3e53a67757deab0b",
+          "seed": 0,
+          "FWCEP60_float32_finite": true,
+          "NM_little_bitorder_padding_valid": true,
+          "execution_kind": "new_ar3_local_LF_D1_analysis_save_load_decode",
+          "newly_executed": true,
+          "native_sha256": "b6a3c6248257c751b962661b07b806f44b5a8cafa542528f8d67e28950661cf7",
+          "params_sha256": "4ca0449d2fe679517b634026caa5948d3bc6aa492300765894ff53bbf8e08abf",
+          "timing_scope": "this new D1 branch only",
+          "saved_solver": {
+            "internal_samples": 1634,
+            "post_frames": 818,
+            "raw_prep_internal_and_post_return": "bitwise_matched_canonical_operators",
+            "residual_linf": 3.410605131648481e-13,
+            "A_linf": 7.828427124746192,
+            "scale": 4180.777224670484,
+            "budget": 5.94124177364177e-11,
+            "factor": 64,
+            "policy": "ordinary_float64_scaled_residual_not_rigorous_rounding_enclosure",
+            "independent_exact_or_high_precision_solution": false
+          }
+        }
+      },
+      "independent_selection": {
+        "selection_replay": "passed",
+        "frames": 818,
+        "modes": [
+          "L",
+          "F"
+        ],
+        "path_comparison": "bitwise_exact_no_tolerance"
+      },
+      "optional_atom_diagnostics": {
+        "valid_frames": 818,
+        "admission_gate": false,
+        "algorithm": "independent stable finite-three-sum, atom order -0.8,0,+0.8; no qK likelihood recomputation",
+        "max_abs_differences": {
+          "h0_log_responsibility": 0.0,
+          "h1_log_responsibility": 0.0,
+          "h0_aggregate_vs_saved_gate_plus_z": 2.842170943040401e-14,
+          "h1_aggregate_vs_saved_gate_plus_z": 1.1368683772161603e-13
+        },
+        "IEEE_reassociation_may_differ": true,
+        "no_tolerance_or_bitwise_gate": true,
+        "independent_full_qK_atom_likelihood_verified": false
+      }
+    }
+  ],
+  "materialized_receipt_sha256": "13210182002d6d92f826e7f2a85bf177c37c81facad06e01b2d9ad6549b30dac",
+  "delivery_envelope": {
+    "bytes": 41442909,
+    "sha256": "dcbcc49b9cffcded4188adcb32bf61c068344ebf767c76c8bb3591de0506fbe2"
+  },
+  "library_receipt": {
+    "library_file_id": "libfile_a244bfdf237481919e016453b40ec273",
+    "version_number": 0,
+    "file_id": "file_000000004400823087c6c553b064f2e0"
+  },
+  "actual_execution": {
+    "actual_exit_code": 0,
+    "argv": [
+      "/workspace/check-nonml-saikyo-vocoder/.venv/bin/python",
+      "-B",
+      "/workspace/check-nonml-saikyo-vocoder/runs/pml-ar3-d1-first-speaker-20261021-v1/source/run_saved_first3_ar3.py",
+      "--prior-envelope",
+      "/workspace/check-nonml-saikyo-vocoder/runs/pml-d1-post-first-speaker-20261021-v1/delivery.zip",
+      "--prior-materialized-receipt",
+      "/workspace/check-nonml-saikyo-vocoder/runs/pml-ar3-d1-first-speaker-20261021-v1/launch-receipts/prior-materialized-receipt.json",
+      "--independent-verdict",
+      "/workspace/check-nonml-saikyo-vocoder/runs/pml-ar3-d1-first-speaker-20261021-v1/launch-receipts/prior-independent-verdict.json",
+      "--reuse-authorization",
+      "/workspace/check-nonml-saikyo-vocoder/runs/pml-ar3-d1-first-speaker-20261021-v1/launch-receipts/reuse-authorization.json",
+      "--source-receipt",
+      "/workspace/check-nonml-saikyo-vocoder/runs/pml-ar3-d1-first-speaker-20261021-v1/launch-receipts/source-receipt.json",
+      "--speaker",
+      "librispeech_1089",
+      "--output",
+      "/workspace/check-nonml-saikyo-vocoder/runs/pml-ar3-d1-first-speaker-20261021-v1/native"
+    ],
+    "elapsed_seconds": 188.8887625670004,
+    "evidence_ref": "execution/launcher-result.json",
+    "finished_at_utc": "2026-10-21T02:54:11.385319+00:00",
+    "kind": "actual_tool_receipt",
+    "limits": {
+      "address_space_bytes": 4294967296,
+      "observed_rss_stage_budget_bytes": 3221225472,
+      "terminate_grace_seconds": 10,
+      "threads": 1,
+      "wall_seconds": 1800
+    },
+    "max_rss_kib": 346104,
+    "native_archive": {
+      "bytes": 41430719,
+      "sha256": "8431e6fb7c206413a00e0ee5bf07e4827076525c390469a168baf722b1cdaafd"
+    },
+    "packing_status": "succeeded",
+    "reaped_by_launcher": true,
+    "schema_version": 1,
+    "scientific_status": "ar3_d1_native_succeeded",
+    "signal": null,
+    "started_at_utc": "2026-10-21T02:51:02.496552+00:00",
+    "stderr": {
+      "bytes": 0,
+      "complete": true,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "stdout": {
+      "bytes": 364,
+      "complete": true,
+      "sha256": "a0936f04261a27de30f415f7f983b5207a6f2bcc3263283c168fb2e111edc849"
+    },
+    "timed_out": false,
+    "tool": "exec_command"
+  },
+  "source_manifest_sha256": "20937857f1bd6422b9ef6d84c5e572f3331540d79c0b8649e4030fc076648494",
+  "delivery_manifest_sha256": "a16b466327f0928da32bdd03f03cc403109b2e8851d39348dda0ea957b354fd6",
+  "outer_members": 6,
+  "native_archive": {
+    "bytes": 41430719,
+    "sha256": "8431e6fb7c206413a00e0ee5bf07e4827076525c390469a168baf722b1cdaafd"
+  },
+  "record_ids": [
+    "librispeech_1089-134686-0008",
+    "librispeech_1089-134686-0011",
+    "librispeech_1089-134686-0032"
+  ],
+  "recorded_at_utc": "2026-10-21T03:01:06.788659+00:00"
+}

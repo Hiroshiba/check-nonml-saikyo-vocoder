@@ -1,0 +1,82 @@
+{
+  "schema_version": 1,
+  "kind": "actual_tool_receipt",
+  "tool": "exec_command -> stdlib subprocess.Popen/wait",
+  "evidence_ref": "/workspace/shared/pml-ar3-d1-first-independent-audit-20261021/invocation.json",
+  "scope": "one real received-data independent saved-result audit; no synthetic test/probe",
+  "argv": [
+    "/workspace/scratch/71b268329986/vocoder-recovery-20261014/main-repository/.venv/bin/python",
+    "-B",
+    "/workspace/shared/pml-ar3-d1-result-audit-source-20261021/run_audit.py",
+    "--envelope",
+    "/workspace/shared/pml-ar3-d1-first-received-20261021/delivery.zip",
+    "--materialized-receipt",
+    "/workspace/shared/pml-ar3-d1-first-received-20261021/parent-materialized-receipt.json",
+    "--prior-envelope",
+    "/workspace/shared/pml-d1-first-received-20261021/delivery.zip",
+    "--audit-source-receipt",
+    "/workspace/shared/pml-ar3-d1-result-audit-actual-source-receipt-20261021.json",
+    "--verdict",
+    "/workspace/shared/pml-ar3-d1-first-independent-audit-20261021/verdict.json",
+    "--protected-root",
+    "/workspace/shared/pml-ar3-d1-first-received-20261021",
+    "--protected-root",
+    "/workspace/shared/pml-d1-first-received-20261021",
+    "--protected-root",
+    "/workspace/shared/pml-ar3-d1-result-audit-source-20261021",
+    "--protected-root",
+    "/workspace/shared/pml-ar3-d1-native-source-20261021",
+    "--protected-root",
+    "/workspace/scratch/71b268329986/vocoder-recovery-20261014/.cache"
+  ],
+  "cwd": "/workspace/shared/pml-ar3-d1-result-audit-source-20261021",
+  "limits": {
+    "wall_seconds": 120,
+    "terminate_grace_seconds": 10,
+    "address_space_bytes": 2147483648,
+    "threads": 1
+  },
+  "thread_environment": {
+    "OPENBLAS_NUM_THREADS": "1",
+    "OMP_NUM_THREADS": "1",
+    "MKL_NUM_THREADS": "1",
+    "VECLIB_MAXIMUM_THREADS": "1",
+    "NUMEXPR_NUM_THREADS": "1",
+    "BLIS_NUM_THREADS": "1"
+  },
+  "started_at_utc": "2026-10-21T02:59:50.123268+00:00",
+  "finished_at_utc": "2026-10-21T02:59:50.390123+00:00",
+  "elapsed_seconds": 0.2668598000018392,
+  "actual_exit_code": 1,
+  "returncode": 1,
+  "signal": null,
+  "timed_out": false,
+  "reaped_by_launcher": true,
+  "launcher_pid": 2,
+  "child_pid": 7,
+  "sole_wait_owner": true,
+  "termination_signals": [],
+  "max_rss_kib": 94388,
+  "stdout": {
+    "bytes": 130,
+    "sha256": "aed27d11de284520f9ff2ec24ff69e814a5bd30ef199247dd82000796cbecd78",
+    "complete": true
+  },
+  "stderr": {
+    "bytes": 341,
+    "sha256": "52c1d0b2296da01eb53e456eeb07561d9f29ec6905aa433187b4b2707803bb1f",
+    "complete": true
+  },
+  "verdict": {
+    "path": "/workspace/shared/pml-ar3-d1-first-independent-audit-20261021/verdict.json",
+    "bytes": 2012,
+    "sha256": "652650432205751a0597b1a5bee86e1c7c3282a07c8a2fb642df8b525d3bad20"
+  },
+  "audit_status": "failed",
+  "audit_gates": {
+    "source_schema_support": "failed",
+    "files_manifest_and_member_hashes": "failed",
+    "independent_saved_selection_post_contract": "failed"
+  },
+  "approved_for_quality": false
+}

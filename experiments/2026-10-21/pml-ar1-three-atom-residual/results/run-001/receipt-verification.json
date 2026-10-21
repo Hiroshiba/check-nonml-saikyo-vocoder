@@ -1,0 +1,1067 @@
+{
+  "kind": "received archives, saved payload and publication byte checks",
+  "recorded_at": "2026-10-21T12:27:02+09:00",
+  "archive_manifest_checks": {
+    "native_delivery": {
+      "members": 6,
+      "hashed_members": 5
+    },
+    "native": {
+      "members": 266,
+      "hashed_members": 265
+    },
+    "prior_delivery": {
+      "members": 6,
+      "hashed_members": 5
+    },
+    "prior_native": {
+      "members": 204,
+      "hashed_members": 203
+    },
+    "quality_delivery": {
+      "members": 6,
+      "hashed_members": 5
+    },
+    "quality": {
+      "members": 92,
+      "hashed_members": 91
+    },
+    "audit": {
+      "members": 14,
+      "hashed_members": 13
+    },
+    "design": {
+      "members": 8,
+      "hashed_members": 7
+    },
+    "quality_review": {
+      "members": 4,
+      "hashed_members": 3
+    }
+  },
+  "preserved_original_files": [
+    {
+      "path": "design/pml-common-ar1-residual-design-20261021-ja.md",
+      "archive": "design",
+      "member": "pml-common-ar1-residual-design-20261021-ja.md",
+      "bytes": 19608,
+      "sha256": "775d39feeed3acefb009e28162c0429873e8483a7cae2fba48f214f6a0ccee16",
+      "original_bytes": true
+    },
+    {
+      "path": "design/pml-common-ar1-three-atom-addendum-20261021-ja.md",
+      "archive": "design",
+      "member": "pml-common-ar1-three-atom-addendum-20261021-ja.md",
+      "bytes": 13507,
+      "sha256": "2684e3090c63b9b063c65a4a8fd1595e7d81be72a023717f2ff8fa2956b77b6b",
+      "original_bytes": true
+    },
+    {
+      "path": "design/pml-ar3-d1-comparison-plan-20261021-ja.md",
+      "archive": "design",
+      "member": "pml-ar3-d1-comparison-plan-20261021-ja.md",
+      "bytes": 1861,
+      "sha256": "b239c933b1a00101f8a41f639f974f6425dd9d171a463473d587f9706aefe083",
+      "original_bytes": true
+    },
+    {
+      "path": "design/pml-ar3-d1-report-outline-20261021-ja.md",
+      "archive": "design",
+      "member": "pml-ar3-d1-report-outline-20261021-ja.md",
+      "bytes": 13370,
+      "sha256": "1d8bdc67ab84d9b09ca862a20ddaf549c711601027ca7e76a7173598f35c7eea",
+      "original_bytes": true
+    },
+    {
+      "path": "design/pml-ar3-d1-native-independent-static-review-20261021-ja.md",
+      "archive": "design",
+      "member": "pml-ar3-d1-native-independent-static-review-20261021-ja.md",
+      "bytes": 4339,
+      "sha256": "d4f07fe7733fa01aaab46f1ce724e50cd236f0448b70bb5a4fd292733ab917d8",
+      "original_bytes": true
+    },
+    {
+      "path": "design/pml-ar3-d1-observation-scope-20261021-ja.md",
+      "archive": "design",
+      "member": "pml-ar3-d1-observation-scope-20261021-ja.md",
+      "bytes": 4411,
+      "sha256": "b1c0944beae40529d95419e9238da28bfb52e740d9b46b8aa2f964d87908070e",
+      "original_bytes": true
+    },
+    {
+      "path": "design/pml-ar3-d1-post-metadata-comparison-20261021.json",
+      "archive": "design",
+      "member": "pml-ar3-d1-post-metadata-comparison-20261021.json",
+      "bytes": 2784,
+      "sha256": "c2ee1286915cc899b2e6b0278e299c9e87c218803bab3a13b213235cc82e3c1e",
+      "original_bytes": true
+    },
+    {
+      "path": "design/MANIFEST.json",
+      "archive": "design",
+      "member": "MANIFEST.json",
+      "bytes": 1438,
+      "sha256": "a5bc7a6f517e5efafd84558a06dacc173b87ef950422193df22d7e067036ef29",
+      "original_bytes": true
+    },
+    {
+      "path": "results/run-001/native-execution.json",
+      "archive": "native_delivery",
+      "member": "evidence/invocation.json",
+      "bytes": 2209,
+      "sha256": "0daa0f6a92b20e36f2698f34883e7a25064f28380c458db80979a74fc6a3b95f",
+      "original_bytes": true
+    },
+    {
+      "path": "results/run-001/quality-execution.json",
+      "archive": "quality_delivery",
+      "member": "evidence/invocation.json",
+      "bytes": 2149,
+      "sha256": "5fb0f08f3328306a8b7645c833cb1d41429b7bd32f44aabd15bf3997180cc1a1",
+      "original_bytes": true
+    },
+    {
+      "path": "results/run-001/native-runtime.json",
+      "archive": "native",
+      "member": "runtime.json",
+      "bytes": 3905,
+      "sha256": "ca85b78fb5adbb54693df66f382493c8da62675df2b0af7f7428fa63173f6c97",
+      "original_bytes": true
+    },
+    {
+      "path": "results/run-001/quality-runtime.json",
+      "archive": "quality",
+      "member": "runtime.json",
+      "bytes": 3425,
+      "sha256": "65b654e6398d81f4c76058a80036953066a43cc33cbf4d2930666f485349876a",
+      "original_bytes": true
+    },
+    {
+      "path": "results/run-001/native-declaration.json",
+      "archive": "native",
+      "member": "declaration.json",
+      "bytes": 3180,
+      "sha256": "54c8bf75c4d339f6f1eeeb7d137c2b95a32efd928982d314051ae79c2993cff0",
+      "original_bytes": true
+    },
+    {
+      "path": "results/run-001/quality-speaker.json",
+      "archive": "quality",
+      "member": "speaker.json",
+      "bytes": 5084,
+      "sha256": "825c124878dacc91dcf92661943fcc9e839282d251699425e64dd9c3b1781e70",
+      "original_bytes": true
+    },
+    {
+      "path": "results/run-001/audit-environment-failed-attempt-verdict.json",
+      "archive": "audit",
+      "member": "environment-failed-attempt/verdict.json",
+      "bytes": 2012,
+      "sha256": "652650432205751a0597b1a5bee86e1c7c3282a07c8a2fb642df8b525d3bad20",
+      "original_bytes": true
+    },
+    {
+      "path": "results/run-001/audit-environment-failed-attempt-invocation.json",
+      "archive": "audit",
+      "member": "environment-failed-attempt/invocation.json",
+      "bytes": 2993,
+      "sha256": "be965375c9ff7245776c60655cda92212c723fd4ac4e58757f0ad9daf9702e49",
+      "original_bytes": true
+    },
+    {
+      "path": "results/run-001/audit-completed-audit-verdict.json",
+      "archive": "audit",
+      "member": "completed-audit/verdict.json",
+      "bytes": 24231,
+      "sha256": "d81cdc4b1874d818ad520fb1e0dcf8e46b343204b1e265b72a798111569ad352",
+      "original_bytes": true
+    },
+    {
+      "path": "results/run-001/audit-completed-audit-invocation.json",
+      "archive": "audit",
+      "member": "completed-audit/invocation.json",
+      "bytes": 2985,
+      "sha256": "70c0cda7184491b014c056df29eeb748c7b948920f949bb773bcdd7e657258f8",
+      "original_bytes": true
+    },
+    {
+      "path": "results/run-001/post-metadata-comparison.json",
+      "archive": "design",
+      "member": "pml-ar3-d1-post-metadata-comparison-20261021.json",
+      "bytes": 2784,
+      "sha256": "c2ee1286915cc899b2e6b0278e299c9e87c218803bab3a13b213235cc82e3c1e",
+      "original_bytes": true
+    },
+    {
+      "path": "results/run-001/input-librispeech_1089-134686-0008.json",
+      "archive": "prior_native",
+      "member": "records/librispeech_1089-134686-0008/input.json",
+      "bytes": 996,
+      "sha256": "2b0be37820611232e7e81f3744cce23d53c0946b827c2557f77449d5734c295a",
+      "original_bytes": true
+    },
+    {
+      "path": "results/run-001/native-record-librispeech_1089-134686-0008.json",
+      "archive": "native",
+      "member": "records/librispeech_1089-134686-0008/record.json",
+      "bytes": 60071,
+      "sha256": "cce46f66120602d4fa35377cd4e8229a3ac072427e386d6f77a5ef16d0c1df1a",
+      "original_bytes": true
+    },
+    {
+      "path": "results/run-001/native-librispeech_1089-134686-0008-pml.json",
+      "archive": "prior_native",
+      "member": "records/librispeech_1089-134686-0008/branches/pml/branch.json",
+      "bytes": 3764,
+      "sha256": "95f000c31b36105bb09877efc2e6601102bd694558aa4333972cd131724a6145",
+      "original_bytes": true
+    },
+    {
+      "path": "results/run-001/native-librispeech_1089-134686-0008-R_d1.json",
+      "archive": "prior_native",
+      "member": "records/librispeech_1089-134686-0008/branches/R_d1/branch.json",
+      "bytes": 4466,
+      "sha256": "741736b510e31ab4c5b20857733f0ae3ddd43f329f3b151aaec20880e25f903c",
+      "original_bytes": true
+    },
+    {
+      "path": "results/run-001/native-librispeech_1089-134686-0008-L_d1.json",
+      "archive": "prior_native",
+      "member": "records/librispeech_1089-134686-0008/branches/L_d1/branch.json",
+      "bytes": 4450,
+      "sha256": "6aff1e8687ce55768f7c4616347e36e074e83d4bac260e8484133b5c571e9372",
+      "original_bytes": true
+    },
+    {
+      "path": "results/run-001/native-librispeech_1089-134686-0008-F_d1.json",
+      "archive": "prior_native",
+      "member": "records/librispeech_1089-134686-0008/branches/F_d1/branch.json",
+      "bytes": 4456,
+      "sha256": "fe532e257cfd7a0951fcecb4bf59ceaeba1364d4481d2078cfae28d179eb3716",
+      "original_bytes": true
+    },
+    {
+      "path": "results/run-001/native-librispeech_1089-134686-0008-L_ar3_d1.json",
+      "archive": "native",
+      "member": "records/librispeech_1089-134686-0008/branches/L_ar3_d1/branch.json",
+      "bytes": 4622,
+      "sha256": "41035de5a7cce425b6bbc232cfea343316272bded88e5fdcafdc81cbe74a62d0",
+      "original_bytes": true
+    },
+    {
+      "path": "results/run-001/selection-librispeech_1089-134686-0008-L-timing.json",
+      "archive": "native",
+      "member": "records/librispeech_1089-134686-0008/selector_ar3/L/timing.json",
+      "bytes": 134,
+      "sha256": "3697b9915d0f024463cd484c93ee0d261337224b17190065fefddd684995c8da",
+      "original_bytes": true
+    },
+    {
+      "path": "results/run-001/native-librispeech_1089-134686-0008-F_ar3_d1.json",
+      "archive": "native",
+      "member": "records/librispeech_1089-134686-0008/branches/F_ar3_d1/branch.json",
+      "bytes": 4620,
+      "sha256": "9f39e2f1930d4aebe22bda926186a1e76bf6f6a2befb88c08167709a819638f1",
+      "original_bytes": true
+    },
+    {
+      "path": "results/run-001/selection-librispeech_1089-134686-0008-F-timing.json",
+      "archive": "native",
+      "member": "records/librispeech_1089-134686-0008/selector_ar3/F/timing.json",
+      "bytes": 133,
+      "sha256": "af356b55b20812e33acc65c0ef6e1941321129eb7851042164a78d736628c6ca",
+      "original_bytes": true
+    },
+    {
+      "path": "results/run-001/input-librispeech_1089-134686-0011.json",
+      "archive": "prior_native",
+      "member": "records/librispeech_1089-134686-0011/input.json",
+      "bytes": 996,
+      "sha256": "fce503099808ea593ec1a7a05d226c4a5714ce101a6367b02f2ed184098c1abb",
+      "original_bytes": true
+    },
+    {
+      "path": "results/run-001/native-record-librispeech_1089-134686-0011.json",
+      "archive": "native",
+      "member": "records/librispeech_1089-134686-0011/record.json",
+      "bytes": 60072,
+      "sha256": "c194ef90e546af18274748f4f3695d4266472094c495cd8c80975f384645319d",
+      "original_bytes": true
+    },
+    {
+      "path": "results/run-001/native-librispeech_1089-134686-0011-pml.json",
+      "archive": "prior_native",
+      "member": "records/librispeech_1089-134686-0011/branches/pml/branch.json",
+      "bytes": 3764,
+      "sha256": "3b3906c32f78a48660b6c08e89ec0452fd5bdf34eaa777af7fd3eced342e9a64",
+      "original_bytes": true
+    },
+    {
+      "path": "results/run-001/native-librispeech_1089-134686-0011-R_d1.json",
+      "archive": "prior_native",
+      "member": "records/librispeech_1089-134686-0011/branches/R_d1/branch.json",
+      "bytes": 4467,
+      "sha256": "80a054194ba815d8aed9d505a83d33d902998eea384743dd2619fd96149a063e",
+      "original_bytes": true
+    },
+    {
+      "path": "results/run-001/native-librispeech_1089-134686-0011-L_d1.json",
+      "archive": "prior_native",
+      "member": "records/librispeech_1089-134686-0011/branches/L_d1/branch.json",
+      "bytes": 4457,
+      "sha256": "e5ec571fe9157f64bd0cce3d7b168046b81f7d6827dede264bc09089a173941d",
+      "original_bytes": true
+    },
+    {
+      "path": "results/run-001/native-librispeech_1089-134686-0011-F_d1.json",
+      "archive": "prior_native",
+      "member": "records/librispeech_1089-134686-0011/branches/F_d1/branch.json",
+      "bytes": 4457,
+      "sha256": "fc94876b6df6365b117bfd103be3a643074d5ee2f0faa05b16cd46c50bc9710a",
+      "original_bytes": true
+    },
+    {
+      "path": "results/run-001/native-librispeech_1089-134686-0011-L_ar3_d1.json",
+      "archive": "native",
+      "member": "records/librispeech_1089-134686-0011/branches/L_ar3_d1/branch.json",
+      "bytes": 4622,
+      "sha256": "9300953f78483aabdd6d37a691a2e6ada5635b12a45758970dc98c7b9673a44e",
+      "original_bytes": true
+    },
+    {
+      "path": "results/run-001/selection-librispeech_1089-134686-0011-L-timing.json",
+      "archive": "native",
+      "member": "records/librispeech_1089-134686-0011/selector_ar3/L/timing.json",
+      "bytes": 134,
+      "sha256": "673027554e2e6a262744f6aa91b42a39e92ed149d094959c40bb35c4c31f4011",
+      "original_bytes": true
+    },
+    {
+      "path": "results/run-001/native-librispeech_1089-134686-0011-F_ar3_d1.json",
+      "archive": "native",
+      "member": "records/librispeech_1089-134686-0011/branches/F_ar3_d1/branch.json",
+      "bytes": 4621,
+      "sha256": "04013d14692bbd82f8ef83c0a4b2eac261cf48151d69872ba0f3e7503f2b36e9",
+      "original_bytes": true
+    },
+    {
+      "path": "results/run-001/selection-librispeech_1089-134686-0011-F-timing.json",
+      "archive": "native",
+      "member": "records/librispeech_1089-134686-0011/selector_ar3/F/timing.json",
+      "bytes": 133,
+      "sha256": "9af769eecfbe7dddc107a306edd8f886241aec7ce68ee71660c6bb9b6d7d2507",
+      "original_bytes": true
+    },
+    {
+      "path": "results/run-001/input-librispeech_1089-134686-0032.json",
+      "archive": "prior_native",
+      "member": "records/librispeech_1089-134686-0032/input.json",
+      "bytes": 996,
+      "sha256": "fd69aa67788a8069c633653f21d0205c9d12c76e93339c8fa9398786b2fb2d37",
+      "original_bytes": true
+    },
+    {
+      "path": "results/run-001/native-record-librispeech_1089-134686-0032.json",
+      "archive": "native",
+      "member": "records/librispeech_1089-134686-0032/record.json",
+      "bytes": 60053,
+      "sha256": "7560e8bc0fe7ceb6b182ee3a1f80ebefb8a6ea97debe9c34d6d4f32f282d0c12",
+      "original_bytes": true
+    },
+    {
+      "path": "results/run-001/native-librispeech_1089-134686-0032-pml.json",
+      "archive": "prior_native",
+      "member": "records/librispeech_1089-134686-0032/branches/pml/branch.json",
+      "bytes": 3759,
+      "sha256": "6fb606f55eb0bea636a09a8aa04d4c2c069732cdaf00c3073ee9d166e9951197",
+      "original_bytes": true
+    },
+    {
+      "path": "results/run-001/native-librispeech_1089-134686-0032-R_d1.json",
+      "archive": "prior_native",
+      "member": "records/librispeech_1089-134686-0032/branches/R_d1/branch.json",
+      "bytes": 4463,
+      "sha256": "1451b1138c6f0fe6049d8080689ebf14f29f49037d8675b675be768aa700d058",
+      "original_bytes": true
+    },
+    {
+      "path": "results/run-001/native-librispeech_1089-134686-0032-L_d1.json",
+      "archive": "prior_native",
+      "member": "records/librispeech_1089-134686-0032/branches/L_d1/branch.json",
+      "bytes": 4455,
+      "sha256": "98330f92683685b283fc03c607e32d2404375b71cd41f3956c0049992886bc08",
+      "original_bytes": true
+    },
+    {
+      "path": "results/run-001/native-librispeech_1089-134686-0032-F_d1.json",
+      "archive": "prior_native",
+      "member": "records/librispeech_1089-134686-0032/branches/F_d1/branch.json",
+      "bytes": 4455,
+      "sha256": "280ff8722d1b43f18637b6234a944469949492f292a6b4acedc21aa8d6b02096",
+      "original_bytes": true
+    },
+    {
+      "path": "results/run-001/native-librispeech_1089-134686-0032-L_ar3_d1.json",
+      "archive": "native",
+      "member": "records/librispeech_1089-134686-0032/branches/L_ar3_d1/branch.json",
+      "bytes": 4620,
+      "sha256": "dfe96f2f1e1b380d319348cbf39d4b61a91ed511a74bbbdd972f0cbdb6566e4d",
+      "original_bytes": true
+    },
+    {
+      "path": "results/run-001/selection-librispeech_1089-134686-0032-L-timing.json",
+      "archive": "native",
+      "member": "records/librispeech_1089-134686-0032/selector_ar3/L/timing.json",
+      "bytes": 134,
+      "sha256": "b65330b5f0aecf5d47ac5db42cc61ab2bdd8f91839c61358d1f6274fd5517b96",
+      "original_bytes": true
+    },
+    {
+      "path": "results/run-001/native-librispeech_1089-134686-0032-F_ar3_d1.json",
+      "archive": "native",
+      "member": "records/librispeech_1089-134686-0032/branches/F_ar3_d1/branch.json",
+      "bytes": 4619,
+      "sha256": "4c7463bf763c326b6276b505da30076f41d300ecd45b180cefc10fbecd8b76f0",
+      "original_bytes": true
+    },
+    {
+      "path": "results/run-001/selection-librispeech_1089-134686-0032-F-timing.json",
+      "archive": "native",
+      "member": "records/librispeech_1089-134686-0032/selector_ar3/F/timing.json",
+      "bytes": 133,
+      "sha256": "323657f14db7c5dc01f66d966ebd7b84ceebc4986e55939b53ce3fec9d50b28f",
+      "original_bytes": true
+    },
+    {
+      "path": "results/run-001/quality-librispeech_1089-134686-0008-F_ar3_d1-ecapa_cosine.json",
+      "archive": "quality",
+      "member": "records/librispeech_1089-134686-0008/F_ar3_d1/ecapa_cosine.json",
+      "bytes": 7804,
+      "sha256": "8473349ecd22f2908bb766c2b8512736d3e30a1f8c786fbbd777e63dec6df92e",
+      "original_bytes": true
+    },
+    {
+      "path": "results/run-001/quality-librispeech_1089-134686-0008-F_ar3_d1-estoi.json",
+      "archive": "quality",
+      "member": "records/librispeech_1089-134686-0008/F_ar3_d1/estoi.json",
+      "bytes": 7956,
+      "sha256": "ddbc63e4eb4bb740d10f68cc0cfc73677abec17e9be81a678d2fb50ab72f4d39",
+      "original_bytes": true
+    },
+    {
+      "path": "results/run-001/quality-librispeech_1089-134686-0008-F_ar3_d1-scoreq_natural.json",
+      "archive": "quality",
+      "member": "records/librispeech_1089-134686-0008/F_ar3_d1/scoreq_natural.json",
+      "bytes": 7703,
+      "sha256": "71319b5b6790baf08ae2963444151be474c0511cac478c6d069eb5f0e0854a12",
+      "original_bytes": true
+    },
+    {
+      "path": "results/run-001/quality-librispeech_1089-134686-0008-F_ar3_d1-utmos_v2.json",
+      "archive": "quality",
+      "member": "records/librispeech_1089-134686-0008/F_ar3_d1/utmos_v2.json",
+      "bytes": 7673,
+      "sha256": "5902e22fe541088fd54b17ad683cf5830c0da6787afd4a03b50c72a4a612eef8",
+      "original_bytes": true
+    },
+    {
+      "path": "results/run-001/quality-librispeech_1089-134686-0008-F_d1-ecapa_cosine.json",
+      "archive": "quality",
+      "member": "records/librispeech_1089-134686-0008/F_d1/ecapa_cosine.json",
+      "bytes": 21610,
+      "sha256": "1932f87511e5dcbc04ea4297132cf4424b50200e15dfc9332b27952c2d6a9c62",
+      "original_bytes": true
+    },
+    {
+      "path": "results/run-001/quality-librispeech_1089-134686-0008-F_d1-estoi.json",
+      "archive": "quality",
+      "member": "records/librispeech_1089-134686-0008/F_d1/estoi.json",
+      "bytes": 21762,
+      "sha256": "fc5266666c2593d5b5c4ecb7e74b89e3df92dd24bb54fd16d49b3d5aedfe594b",
+      "original_bytes": true
+    },
+    {
+      "path": "results/run-001/quality-librispeech_1089-134686-0008-F_d1-scoreq_natural.json",
+      "archive": "quality",
+      "member": "records/librispeech_1089-134686-0008/F_d1/scoreq_natural.json",
+      "bytes": 21509,
+      "sha256": "0c6c42dee8bf3a04db175e4f32d5487cbab200286f72a880b684d4610e8519d2",
+      "original_bytes": true
+    },
+    {
+      "path": "results/run-001/quality-librispeech_1089-134686-0008-F_d1-utmos_v2.json",
+      "archive": "quality",
+      "member": "records/librispeech_1089-134686-0008/F_d1/utmos_v2.json",
+      "bytes": 21476,
+      "sha256": "3cce79685eb16ab3645ed3f3331f61d5eaacee6e2615f4af3dcae3162993d24e",
+      "original_bytes": true
+    },
+    {
+      "path": "results/run-001/quality-librispeech_1089-134686-0008-L_ar3_d1-ecapa_cosine.json",
+      "archive": "quality",
+      "member": "records/librispeech_1089-134686-0008/L_ar3_d1/ecapa_cosine.json",
+      "bytes": 7806,
+      "sha256": "c75575cc05bb1b54aeb908bf9e44d21c6f278902a0754f6a2dba9137d4b49dbf",
+      "original_bytes": true
+    },
+    {
+      "path": "results/run-001/quality-librispeech_1089-134686-0008-L_ar3_d1-estoi.json",
+      "archive": "quality",
+      "member": "records/librispeech_1089-134686-0008/L_ar3_d1/estoi.json",
+      "bytes": 7957,
+      "sha256": "608d227b17fe59b45668d9403c60f0707c31da2e48846862aed834571c88e9fd",
+      "original_bytes": true
+    },
+    {
+      "path": "results/run-001/quality-librispeech_1089-134686-0008-L_ar3_d1-scoreq_natural.json",
+      "archive": "quality",
+      "member": "records/librispeech_1089-134686-0008/L_ar3_d1/scoreq_natural.json",
+      "bytes": 7705,
+      "sha256": "4771b56c632ff8f6ec3948e69e1acd21c9b7c976a6342beede2bd52314f191fa",
+      "original_bytes": true
+    },
+    {
+      "path": "results/run-001/quality-librispeech_1089-134686-0008-L_ar3_d1-utmos_v2.json",
+      "archive": "quality",
+      "member": "records/librispeech_1089-134686-0008/L_ar3_d1/utmos_v2.json",
+      "bytes": 7677,
+      "sha256": "c08f955716351dd9bcd40447228760d0d8219ff402b513185e1d3e15e6c04e7e",
+      "original_bytes": true
+    },
+    {
+      "path": "results/run-001/quality-librispeech_1089-134686-0008-L_d1-ecapa_cosine.json",
+      "archive": "quality",
+      "member": "records/librispeech_1089-134686-0008/L_d1/ecapa_cosine.json",
+      "bytes": 21604,
+      "sha256": "e747a1d993e3d88ed9fb411c5a5b209f4a391d4cdb1623288cb14ffe76306abe",
+      "original_bytes": true
+    },
+    {
+      "path": "results/run-001/quality-librispeech_1089-134686-0008-L_d1-estoi.json",
+      "archive": "quality",
+      "member": "records/librispeech_1089-134686-0008/L_d1/estoi.json",
+      "bytes": 21756,
+      "sha256": "4b2fabd6bdfb10682604bdbbfeee97530c2c7bab543abdaa44da3b00cd2aa104",
+      "original_bytes": true
+    },
+    {
+      "path": "results/run-001/quality-librispeech_1089-134686-0008-L_d1-scoreq_natural.json",
+      "archive": "quality",
+      "member": "records/librispeech_1089-134686-0008/L_d1/scoreq_natural.json",
+      "bytes": 21502,
+      "sha256": "0a939eebfcd16ada932a8aca8dad3d26975009e385252387a6715df223792398",
+      "original_bytes": true
+    },
+    {
+      "path": "results/run-001/quality-librispeech_1089-134686-0008-L_d1-utmos_v2.json",
+      "archive": "quality",
+      "member": "records/librispeech_1089-134686-0008/L_d1/utmos_v2.json",
+      "bytes": 21476,
+      "sha256": "7bcc2fd050141b4e891f372f6173ce809492fa068af17ab63e8e1435efe56f2e",
+      "original_bytes": true
+    },
+    {
+      "path": "results/run-001/quality-librispeech_1089-134686-0008-R_d1-ecapa_cosine.json",
+      "archive": "quality",
+      "member": "records/librispeech_1089-134686-0008/R_d1/ecapa_cosine.json",
+      "bytes": 21619,
+      "sha256": "9848523a2cb9fc700d747f239959c895dead95f50ae2b4884bf4ee49092f8c1e",
+      "original_bytes": true
+    },
+    {
+      "path": "results/run-001/quality-librispeech_1089-134686-0008-R_d1-estoi.json",
+      "archive": "quality",
+      "member": "records/librispeech_1089-134686-0008/R_d1/estoi.json",
+      "bytes": 21771,
+      "sha256": "6a89098a50f62170ffc3002832651c2aa87c0b1939e0102c30c25cd6261ee892",
+      "original_bytes": true
+    },
+    {
+      "path": "results/run-001/quality-librispeech_1089-134686-0008-R_d1-scoreq_natural.json",
+      "archive": "quality",
+      "member": "records/librispeech_1089-134686-0008/R_d1/scoreq_natural.json",
+      "bytes": 21519,
+      "sha256": "cc64372666471014e2bd2d9fbe7f205acacd7ca6b147f3e9e3a4d0d8cda498d1",
+      "original_bytes": true
+    },
+    {
+      "path": "results/run-001/quality-librispeech_1089-134686-0008-R_d1-utmos_v2.json",
+      "archive": "quality",
+      "member": "records/librispeech_1089-134686-0008/R_d1/utmos_v2.json",
+      "bytes": 21491,
+      "sha256": "18931cabb63c86870d43f321ce5468c9459b5d393aa866d730005242fc5e6142",
+      "original_bytes": true
+    },
+    {
+      "path": "results/run-001/quality-librispeech_1089-134686-0008-original-utmos_v2.json",
+      "archive": "quality",
+      "member": "records/librispeech_1089-134686-0008/original/utmos_v2.json",
+      "bytes": 2811,
+      "sha256": "7055ecf5f52424e6000883fafca11955052fd41b264026740b2888ff7833ff38",
+      "original_bytes": true
+    },
+    {
+      "path": "results/run-001/quality-librispeech_1089-134686-0008-pml-ecapa_cosine.json",
+      "archive": "quality",
+      "member": "records/librispeech_1089-134686-0008/pml/ecapa_cosine.json",
+      "bytes": 15794,
+      "sha256": "0b8f5800f223ff0dc1148eac5ab0c0df139c201ca0340d7e60bf95347d332c84",
+      "original_bytes": true
+    },
+    {
+      "path": "results/run-001/quality-librispeech_1089-134686-0008-pml-estoi.json",
+      "archive": "quality",
+      "member": "records/librispeech_1089-134686-0008/pml/estoi.json",
+      "bytes": 15946,
+      "sha256": "9147c4ee84b796bee5ad203a2447a28a7a73a6f55be9797c4fb87d60e6ba951a",
+      "original_bytes": true
+    },
+    {
+      "path": "results/run-001/quality-librispeech_1089-134686-0008-pml-scoreq_natural.json",
+      "archive": "quality",
+      "member": "records/librispeech_1089-134686-0008/pml/scoreq_natural.json",
+      "bytes": 15693,
+      "sha256": "2670e2cb8b7a90379a86569527f7ed2e7cca5639c69265f26e69c3e7a9cd545d",
+      "original_bytes": true
+    },
+    {
+      "path": "results/run-001/quality-librispeech_1089-134686-0008-pml-utmos_v2.json",
+      "archive": "quality",
+      "member": "records/librispeech_1089-134686-0008/pml/utmos_v2.json",
+      "bytes": 15662,
+      "sha256": "0b7ca2626e91b45f2fd340a928b5d751582768384942ecd02efa4983331ace69",
+      "original_bytes": true
+    },
+    {
+      "path": "results/run-001/quality-librispeech_1089-134686-0011-F_ar3_d1-ecapa_cosine.json",
+      "archive": "quality",
+      "member": "records/librispeech_1089-134686-0011/F_ar3_d1/ecapa_cosine.json",
+      "bytes": 7805,
+      "sha256": "b7264ae10dc53cc916c79a2a4dc3025d146967014be13510d5592cac85f28418",
+      "original_bytes": true
+    },
+    {
+      "path": "results/run-001/quality-librispeech_1089-134686-0011-F_ar3_d1-estoi.json",
+      "archive": "quality",
+      "member": "records/librispeech_1089-134686-0011/F_ar3_d1/estoi.json",
+      "bytes": 7957,
+      "sha256": "a9f5e38765c5fb3ddd11983bd0cf29d9a3e583e5abe47d07fbedb92a8f42b7b4",
+      "original_bytes": true
+    },
+    {
+      "path": "results/run-001/quality-librispeech_1089-134686-0011-F_ar3_d1-scoreq_natural.json",
+      "archive": "quality",
+      "member": "records/librispeech_1089-134686-0011/F_ar3_d1/scoreq_natural.json",
+      "bytes": 7704,
+      "sha256": "9d287dce441bc777e077d95a4e2e76113b6bce2e3e4f692a7bb9b2b8d667adb1",
+      "original_bytes": true
+    },
+    {
+      "path": "results/run-001/quality-librispeech_1089-134686-0011-F_ar3_d1-utmos_v2.json",
+      "archive": "quality",
+      "member": "records/librispeech_1089-134686-0011/F_ar3_d1/utmos_v2.json",
+      "bytes": 7677,
+      "sha256": "42aed5f438af5919fa23ceb5a2f4a7a745b38d8e5155ce3fb8f2c7c6db0f4d23",
+      "original_bytes": true
+    },
+    {
+      "path": "results/run-001/quality-librispeech_1089-134686-0011-F_d1-ecapa_cosine.json",
+      "archive": "quality",
+      "member": "records/librispeech_1089-134686-0011/F_d1/ecapa_cosine.json",
+      "bytes": 21611,
+      "sha256": "c226dbfbb58c17bdbdd8af959ba7fecea34594f738297ca40cf7a25c83cf0059",
+      "original_bytes": true
+    },
+    {
+      "path": "results/run-001/quality-librispeech_1089-134686-0011-F_d1-estoi.json",
+      "archive": "quality",
+      "member": "records/librispeech_1089-134686-0011/F_d1/estoi.json",
+      "bytes": 21762,
+      "sha256": "323f924ac37ab77bbcb7c7ae261f581e01e2d55bf1b89d8457244f1bb3719a11",
+      "original_bytes": true
+    },
+    {
+      "path": "results/run-001/quality-librispeech_1089-134686-0011-F_d1-scoreq_natural.json",
+      "archive": "quality",
+      "member": "records/librispeech_1089-134686-0011/F_d1/scoreq_natural.json",
+      "bytes": 21508,
+      "sha256": "897b25bc5d95890e53e72f69e743c16feeab55ec37f4ffff4fcbf6c0809ec06c",
+      "original_bytes": true
+    },
+    {
+      "path": "results/run-001/quality-librispeech_1089-134686-0011-F_d1-utmos_v2.json",
+      "archive": "quality",
+      "member": "records/librispeech_1089-134686-0011/F_d1/utmos_v2.json",
+      "bytes": 21480,
+      "sha256": "6bebe7b0955a267ba465ee24625ce435c6cdcbeb27f33463c9ac2f07440d2727",
+      "original_bytes": true
+    },
+    {
+      "path": "results/run-001/quality-librispeech_1089-134686-0011-L_ar3_d1-ecapa_cosine.json",
+      "archive": "quality",
+      "member": "records/librispeech_1089-134686-0011/L_ar3_d1/ecapa_cosine.json",
+      "bytes": 7805,
+      "sha256": "1beb7ab3a8abb222c5f636dfa0433af32983d8b2924f7da324b1758c9d4c528e",
+      "original_bytes": true
+    },
+    {
+      "path": "results/run-001/quality-librispeech_1089-134686-0011-L_ar3_d1-estoi.json",
+      "archive": "quality",
+      "member": "records/librispeech_1089-134686-0011/L_ar3_d1/estoi.json",
+      "bytes": 7958,
+      "sha256": "ce16a7fe369d60df58daeb286ff4f5215da23b40387d6e37593a1b16c7649216",
+      "original_bytes": true
+    },
+    {
+      "path": "results/run-001/quality-librispeech_1089-134686-0011-L_ar3_d1-scoreq_natural.json",
+      "archive": "quality",
+      "member": "records/librispeech_1089-134686-0011/L_ar3_d1/scoreq_natural.json",
+      "bytes": 7703,
+      "sha256": "a0eca2726cbfaf17a694d7cc5093b27fe920fd8c207afd5c0781ef40112f1af2",
+      "original_bytes": true
+    },
+    {
+      "path": "results/run-001/quality-librispeech_1089-134686-0011-L_ar3_d1-utmos_v2.json",
+      "archive": "quality",
+      "member": "records/librispeech_1089-134686-0011/L_ar3_d1/utmos_v2.json",
+      "bytes": 7676,
+      "sha256": "082435cc9089ea93f4648755444ebfbca0fc4f2e17a088d043f729b7cd97b6c5",
+      "original_bytes": true
+    },
+    {
+      "path": "results/run-001/quality-librispeech_1089-134686-0011-L_d1-ecapa_cosine.json",
+      "archive": "quality",
+      "member": "records/librispeech_1089-134686-0011/L_d1/ecapa_cosine.json",
+      "bytes": 21611,
+      "sha256": "33efa08ded58e8e42e78612965f777987f8f7b2db50b376ac27671c2d76c2cf9",
+      "original_bytes": true
+    },
+    {
+      "path": "results/run-001/quality-librispeech_1089-134686-0011-L_d1-estoi.json",
+      "archive": "quality",
+      "member": "records/librispeech_1089-134686-0011/L_d1/estoi.json",
+      "bytes": 21763,
+      "sha256": "6d11f242fb1902d6c1f71c230d87d823a7bc297e5625f57f4c8d57a0952991a3",
+      "original_bytes": true
+    },
+    {
+      "path": "results/run-001/quality-librispeech_1089-134686-0011-L_d1-scoreq_natural.json",
+      "archive": "quality",
+      "member": "records/librispeech_1089-134686-0011/L_d1/scoreq_natural.json",
+      "bytes": 21509,
+      "sha256": "e453522360e5d76eee5b08700f8fdfc70a0a7b27aa1ba580a961b321557c4d5f",
+      "original_bytes": true
+    },
+    {
+      "path": "results/run-001/quality-librispeech_1089-134686-0011-L_d1-utmos_v2.json",
+      "archive": "quality",
+      "member": "records/librispeech_1089-134686-0011/L_d1/utmos_v2.json",
+      "bytes": 21481,
+      "sha256": "339bf25110fe3172f2f9ccd176fa2ae78c4886f40d794e68fcab961343471e99",
+      "original_bytes": true
+    },
+    {
+      "path": "results/run-001/quality-librispeech_1089-134686-0011-R_d1-ecapa_cosine.json",
+      "archive": "quality",
+      "member": "records/librispeech_1089-134686-0011/R_d1/ecapa_cosine.json",
+      "bytes": 21619,
+      "sha256": "990818a66ed7d09127b1746b668a972c05fb2187b4f8fead373b282659efb619",
+      "original_bytes": true
+    },
+    {
+      "path": "results/run-001/quality-librispeech_1089-134686-0011-R_d1-estoi.json",
+      "archive": "quality",
+      "member": "records/librispeech_1089-134686-0011/R_d1/estoi.json",
+      "bytes": 21774,
+      "sha256": "3713679f5f13aed0405b90c78e9757ce72dff95116606e92cb56adc6b5c6d033",
+      "original_bytes": true
+    },
+    {
+      "path": "results/run-001/quality-librispeech_1089-134686-0011-R_d1-scoreq_natural.json",
+      "archive": "quality",
+      "member": "records/librispeech_1089-134686-0011/R_d1/scoreq_natural.json",
+      "bytes": 21521,
+      "sha256": "a7dad39462c1c1e315990bfc6d2ce5dc1c5ec7b9f387c704a26cf397299a90d7",
+      "original_bytes": true
+    },
+    {
+      "path": "results/run-001/quality-librispeech_1089-134686-0011-R_d1-utmos_v2.json",
+      "archive": "quality",
+      "member": "records/librispeech_1089-134686-0011/R_d1/utmos_v2.json",
+      "bytes": 21493,
+      "sha256": "c7a333c85f27ae8d329bdbdc14a79974b429cd320c574bca82282d68c6bb0112",
+      "original_bytes": true
+    },
+    {
+      "path": "results/run-001/quality-librispeech_1089-134686-0011-original-utmos_v2.json",
+      "archive": "quality",
+      "member": "records/librispeech_1089-134686-0011/original/utmos_v2.json",
+      "bytes": 2811,
+      "sha256": "c3d7dec789c1f19352183b7aea6837ebd01eb73eed386be24fc5a71fb5c9d56f",
+      "original_bytes": true
+    },
+    {
+      "path": "results/run-001/quality-librispeech_1089-134686-0011-pml-ecapa_cosine.json",
+      "archive": "quality",
+      "member": "records/librispeech_1089-134686-0011/pml/ecapa_cosine.json",
+      "bytes": 15795,
+      "sha256": "aa01b7227baa7eed1429433af17a6893cde4b66ed65581645b2883c6900dcb3b",
+      "original_bytes": true
+    },
+    {
+      "path": "results/run-001/quality-librispeech_1089-134686-0011-pml-estoi.json",
+      "archive": "quality",
+      "member": "records/librispeech_1089-134686-0011/pml/estoi.json",
+      "bytes": 15948,
+      "sha256": "e6acd9663f9723a827846091460d802bfd65c56898faf033a1c190319313105d",
+      "original_bytes": true
+    },
+    {
+      "path": "results/run-001/quality-librispeech_1089-134686-0011-pml-scoreq_natural.json",
+      "archive": "quality",
+      "member": "records/librispeech_1089-134686-0011/pml/scoreq_natural.json",
+      "bytes": 15693,
+      "sha256": "8ca85a4b68c59f1df1f53b028430ba6c8183c5c65a702b3f3e5144c9d18e1e03",
+      "original_bytes": true
+    },
+    {
+      "path": "results/run-001/quality-librispeech_1089-134686-0011-pml-utmos_v2.json",
+      "archive": "quality",
+      "member": "records/librispeech_1089-134686-0011/pml/utmos_v2.json",
+      "bytes": 15667,
+      "sha256": "653a5f09f479aacae17f99640089a9c87362527b2a42175d214c013c54bcccaa",
+      "original_bytes": true
+    },
+    {
+      "path": "results/run-001/quality-librispeech_1089-134686-0032-F_ar3_d1-ecapa_cosine.json",
+      "archive": "quality",
+      "member": "records/librispeech_1089-134686-0032/F_ar3_d1/ecapa_cosine.json",
+      "bytes": 7802,
+      "sha256": "412a4c19c8921c19ffb7e0ffcf2c30b003d6407c32c1c643ece3d3588350571f",
+      "original_bytes": true
+    },
+    {
+      "path": "results/run-001/quality-librispeech_1089-134686-0032-F_ar3_d1-estoi.json",
+      "archive": "quality",
+      "member": "records/librispeech_1089-134686-0032/F_ar3_d1/estoi.json",
+      "bytes": 7957,
+      "sha256": "4dd1ca4b73d14d9a828eb4cdff9965bb50eece31bd43f4e063104e4d4617ff20",
+      "original_bytes": true
+    },
+    {
+      "path": "results/run-001/quality-librispeech_1089-134686-0032-F_ar3_d1-scoreq_natural.json",
+      "archive": "quality",
+      "member": "records/librispeech_1089-134686-0032/F_ar3_d1/scoreq_natural.json",
+      "bytes": 7702,
+      "sha256": "ec54c9e5e9d8311624a63523867bbda856972c305a9dfeff11c4487ef9ee4440",
+      "original_bytes": true
+    },
+    {
+      "path": "results/run-001/quality-librispeech_1089-134686-0032-F_ar3_d1-utmos_v2.json",
+      "archive": "quality",
+      "member": "records/librispeech_1089-134686-0032/F_ar3_d1/utmos_v2.json",
+      "bytes": 7675,
+      "sha256": "fccb30ffa7a993d952d86195780eae8c82393bc656f5210d3321246d24a79caf",
+      "original_bytes": true
+    },
+    {
+      "path": "results/run-001/quality-librispeech_1089-134686-0032-F_d1-ecapa_cosine.json",
+      "archive": "quality",
+      "member": "records/librispeech_1089-134686-0032/F_d1/ecapa_cosine.json",
+      "bytes": 21604,
+      "sha256": "359a2df8e9999789581015991e9e263b10b4dacf1ce0c2212ccc9cc60d8f75f2",
+      "original_bytes": true
+    },
+    {
+      "path": "results/run-001/quality-librispeech_1089-134686-0032-F_d1-estoi.json",
+      "archive": "quality",
+      "member": "records/librispeech_1089-134686-0032/F_d1/estoi.json",
+      "bytes": 21758,
+      "sha256": "e472bac841c30c9f91b2cd001427978b8465cce0830c78539b08edfa58e2a0a8",
+      "original_bytes": true
+    },
+    {
+      "path": "results/run-001/quality-librispeech_1089-134686-0032-F_d1-scoreq_natural.json",
+      "archive": "quality",
+      "member": "records/librispeech_1089-134686-0032/F_d1/scoreq_natural.json",
+      "bytes": 21504,
+      "sha256": "004decbc2fe828a49900348506997e8b742ff0b3b9af4e64d720ef4b9c187a9b",
+      "original_bytes": true
+    },
+    {
+      "path": "results/run-001/quality-librispeech_1089-134686-0032-F_d1-utmos_v2.json",
+      "archive": "quality",
+      "member": "records/librispeech_1089-134686-0032/F_d1/utmos_v2.json",
+      "bytes": 21476,
+      "sha256": "44b0b445aa61cd140f3088a9509577d0c4eb9ce2d0c6c310adfdd03db8c9e12d",
+      "original_bytes": true
+    },
+    {
+      "path": "results/run-001/quality-librispeech_1089-134686-0032-L_ar3_d1-ecapa_cosine.json",
+      "archive": "quality",
+      "member": "records/librispeech_1089-134686-0032/L_ar3_d1/ecapa_cosine.json",
+      "bytes": 7801,
+      "sha256": "c7479dc305488dcc7839cc3557b4f16168b1c1d5d3a62217eb0392714232a364",
+      "original_bytes": true
+    },
+    {
+      "path": "results/run-001/quality-librispeech_1089-134686-0032-L_ar3_d1-estoi.json",
+      "archive": "quality",
+      "member": "records/librispeech_1089-134686-0032/L_ar3_d1/estoi.json",
+      "bytes": 7957,
+      "sha256": "80d474adc796fba26b58bfa0fb2a983020892ad8c210b640d6e9402af04eef2f",
+      "original_bytes": true
+    },
+    {
+      "path": "results/run-001/quality-librispeech_1089-134686-0032-L_ar3_d1-scoreq_natural.json",
+      "archive": "quality",
+      "member": "records/librispeech_1089-134686-0032/L_ar3_d1/scoreq_natural.json",
+      "bytes": 7702,
+      "sha256": "5277a75fb86a648234235d1b2ee1122cdba426ddfac430c86db027db6b20b4fb",
+      "original_bytes": true
+    },
+    {
+      "path": "results/run-001/quality-librispeech_1089-134686-0032-L_ar3_d1-utmos_v2.json",
+      "archive": "quality",
+      "member": "records/librispeech_1089-134686-0032/L_ar3_d1/utmos_v2.json",
+      "bytes": 7674,
+      "sha256": "823435c9496c5d5a1710478232f705cd720c03de4c1449663e0f4938a63a7f2f",
+      "original_bytes": true
+    },
+    {
+      "path": "results/run-001/quality-librispeech_1089-134686-0032-L_d1-ecapa_cosine.json",
+      "archive": "quality",
+      "member": "records/librispeech_1089-134686-0032/L_d1/ecapa_cosine.json",
+      "bytes": 21604,
+      "sha256": "c589f4b03805cbf082e5b48bb95b10ee3023c78eaef6538866273ba458bf652d",
+      "original_bytes": true
+    },
+    {
+      "path": "results/run-001/quality-librispeech_1089-134686-0032-L_d1-estoi.json",
+      "archive": "quality",
+      "member": "records/librispeech_1089-134686-0032/L_d1/estoi.json",
+      "bytes": 21758,
+      "sha256": "ab7cd0d697f20c92837367936fff141ea610be1ccf31f62693390769b5c198ef",
+      "original_bytes": true
+    },
+    {
+      "path": "results/run-001/quality-librispeech_1089-134686-0032-L_d1-scoreq_natural.json",
+      "archive": "quality",
+      "member": "records/librispeech_1089-134686-0032/L_d1/scoreq_natural.json",
+      "bytes": 21504,
+      "sha256": "a590c585aa8bb4b3d1a4d05b0e8ac30b5ba6aadaa3a2a9457511c3b4e328f434",
+      "original_bytes": true
+    },
+    {
+      "path": "results/run-001/quality-librispeech_1089-134686-0032-L_d1-utmos_v2.json",
+      "archive": "quality",
+      "member": "records/librispeech_1089-134686-0032/L_d1/utmos_v2.json",
+      "bytes": 21473,
+      "sha256": "bf8876222cb501fa87af4593abd26ba57ca28f4a56366996fc044e2a5df799fa",
+      "original_bytes": true
+    },
+    {
+      "path": "results/run-001/quality-librispeech_1089-134686-0032-R_d1-ecapa_cosine.json",
+      "archive": "quality",
+      "member": "records/librispeech_1089-134686-0032/R_d1/ecapa_cosine.json",
+      "bytes": 21613,
+      "sha256": "89096d1cd6ff9cf57e1714f149381882e37f9c1b4a4848e0e91f509984b13e9f",
+      "original_bytes": true
+    },
+    {
+      "path": "results/run-001/quality-librispeech_1089-134686-0032-R_d1-estoi.json",
+      "archive": "quality",
+      "member": "records/librispeech_1089-134686-0032/R_d1/estoi.json",
+      "bytes": 21763,
+      "sha256": "0279a1edcce63e4e3962ae1e63fef605f7e78539c07020d02b08b1e3e662060c",
+      "original_bytes": true
+    },
+    {
+      "path": "results/run-001/quality-librispeech_1089-134686-0032-R_d1-scoreq_natural.json",
+      "archive": "quality",
+      "member": "records/librispeech_1089-134686-0032/R_d1/scoreq_natural.json",
+      "bytes": 21510,
+      "sha256": "e93e5319af50a327bfe71948d6cf186cd4b09bcd82b3a6b0a4c42d26088f539f",
+      "original_bytes": true
+    },
+    {
+      "path": "results/run-001/quality-librispeech_1089-134686-0032-R_d1-utmos_v2.json",
+      "archive": "quality",
+      "member": "records/librispeech_1089-134686-0032/R_d1/utmos_v2.json",
+      "bytes": 21486,
+      "sha256": "ad18185f1db2bd3be9b9e0ec200bf984f9b10ed7239bc748c52f4b61d4669c9d",
+      "original_bytes": true
+    },
+    {
+      "path": "results/run-001/quality-librispeech_1089-134686-0032-original-utmos_v2.json",
+      "archive": "quality",
+      "member": "records/librispeech_1089-134686-0032/original/utmos_v2.json",
+      "bytes": 2812,
+      "sha256": "4c27c49ddeac1cc63ba4ddab3426b094c05b28808fc5171e532d804b91a93c02",
+      "original_bytes": true
+    },
+    {
+      "path": "results/run-001/quality-librispeech_1089-134686-0032-pml-ecapa_cosine.json",
+      "archive": "quality",
+      "member": "records/librispeech_1089-134686-0032/pml/ecapa_cosine.json",
+      "bytes": 15787,
+      "sha256": "a6522455862b1d1de9d84bbbed0ff65fc15646d79702240cd88bb6773d581f55",
+      "original_bytes": true
+    },
+    {
+      "path": "results/run-001/quality-librispeech_1089-134686-0032-pml-estoi.json",
+      "archive": "quality",
+      "member": "records/librispeech_1089-134686-0032/pml/estoi.json",
+      "bytes": 15938,
+      "sha256": "177dfbf7f55fd952a8f0747ccac0bf02efd635996dda1b5ffaba6ff1aab68cbf",
+      "original_bytes": true
+    },
+    {
+      "path": "results/run-001/quality-librispeech_1089-134686-0032-pml-scoreq_natural.json",
+      "archive": "quality",
+      "member": "records/librispeech_1089-134686-0032/pml/scoreq_natural.json",
+      "bytes": 15685,
+      "sha256": "bb0f7a6b3ab37ce7a5b4ad601e12d107309a92671bc2fc0672677fef4a71d840",
+      "original_bytes": true
+    },
+    {
+      "path": "results/run-001/quality-librispeech_1089-134686-0032-pml-utmos_v2.json",
+      "archive": "quality",
+      "member": "records/librispeech_1089-134686-0032/pml/utmos_v2.json",
+      "bytes": 15657,
+      "sha256": "4618863cab2e5ff50293270b1584455ce756db1cde724bc95333b8d76692d6ec",
+      "original_bytes": true
+    },
+    {
+      "path": "design/pml-ar3-d1-quality-v2-independent-review-20261021-ja.md",
+      "archive": "quality_review",
+      "member": "pml-ar3-d1-quality-v2-independent-review-20261021-ja.md",
+      "bytes": 4368,
+      "sha256": "ce28a2540f9ac4ae54b3836d1302bc75f9709ef3c0544b37c0b8f82631eede1b",
+      "original_bytes": true
+    },
+    {
+      "path": "results/run-001/pml-ar3-d1-short-audio-independent-identities-20261021.json",
+      "archive": "quality_review",
+      "member": "pml-ar3-d1-short-audio-independent-identities-20261021.json",
+      "bytes": 13557,
+      "sha256": "25c2ff6267786f413885085cebd34cf846b0cb42e26d8384912816611be5cb11",
+      "original_bytes": true
+    }
+  ],
+  "quality_native_member_payload_and_scored_interval_sha256": "75/75 exact match",
+  "all_quality_new_this_run": true,
+  "native_warning_count": 596,
+  "quality_warning_count": 70,
+  "audio_written": 21,
+  "audio_planned": 21,
+  "source_or_model_code_imported": false,
+  "science_rerun": false,
+  "independent_audio_expected_sha": "21/21 source file/prefix, complete PCM bytes/SHA, WAV header/bytes/SHA and labels match",
+  "quality_review_bundle": {
+    "library_file_id": "libfile_2bf86f34f6588191847319a7a564e7ce",
+    "version": 0,
+    "bytes": 1237769,
+    "sha256": "a10ba70f625bce939a64774b63d84f169444a9e541c8185e61a33b62b30e934c"
+  }
+}

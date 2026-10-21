@@ -1,0 +1,103 @@
+{
+  "schema_version": 1,
+  "version": "pml-ar3-d1-native-v1-20261021",
+  "base": "pml-lowband-fwcep60-v1",
+  "base_commit": "2251f947032296c6cdf03e8022c74eefbeef17e8",
+  "postprocessor_version": "linear-hz-natural-first-difference-v1",
+  "solver": {
+    "call": "scipy.linalg.solveh_banded",
+    "scipy": "1.17.0",
+    "lower": true,
+    "overwrite_ab": false,
+    "overwrite_b": false,
+    "check_finite": true,
+    "storage": "ab[0,j]=A[j,j]; ab[1,j]=A[j+1,j] for j<n-1; unused last=0",
+    "n1_storage": "ab shape (1,1), diagonal 1; same solver call",
+    "dtype": "float64",
+    "rho_expression": "float64(1)/(float64(2)-sqrt(float64(2)))",
+    "D": "unscaled adjacent first differences; natural finite path endpoints"
+  },
+  "speaker": "librispeech_1089",
+  "record_ids": [
+    "librispeech_1089-134686-0008",
+    "librispeech_1089-134686-0011",
+    "librispeech_1089-134686-0032"
+  ],
+  "new_branches": {
+    "L_ar3_d1": "L",
+    "F_ar3_d1": "F"
+  },
+  "reference_branches": [
+    "pml",
+    "R_d1",
+    "L_d1",
+    "F_d1"
+  ],
+  "input_manifest_sha256": "1f392fc60fbca4003c236f03ffd9edba82b048737f23cf250295c1b4c6c85193",
+  "sample_rate": 16000,
+  "analysis_seed": 0,
+  "decode_seed": 0,
+  "window_samples": 400,
+  "hop_samples": 80,
+  "frames": "1+(N-1)//80",
+  "anchor": "80*j",
+  "start": "min(max(anchor-200,0),N-400)",
+  "time": "float64 arange(J)*float64(0.005)",
+  "q": [
+    52,
+    512
+  ],
+  "K": [
+    1,
+    10
+  ],
+  "frequency": "16000*q/16384",
+  "c": 1,
+  "coefficient_prior": "b|s ~ N(0,s I_(2K)/K)",
+  "variance_prior": "IG(3,2)",
+  "prior_h0": 0.3,
+  "prior_each_qk": "0.7/4610",
+  "noise_prior": {
+    "atoms": [
+      -0.8,
+      0.0,
+      0.8
+    ],
+    "weights": [
+      "1/3",
+      "1/3",
+      "1/3"
+    ],
+    "meaning": "proper finite model, not quadrature; common H0/H1/all q,K"
+  },
+  "whitening": "row0 identity; row t>=1=(v[t]-atom*v[t-1])/sqrt(1-atom**2)",
+  "logdet_C": "399*log(1-atom**2), retained inside each atom evidence",
+  "local_residual": "norm(Wx-WX mu)^2+K norm(mu)^2; two triangular solves",
+  "marginal_order": "atoms -0.8,0,0.8 then K1..10 then q52..512; H0/H1 logaddexp",
+  "RMS": "single unchanged original safeRMS per physical window before all atoms",
+  "zero_window": "exact-zero missing: a,b,z=0; z_valid and diagnostics invalid",
+  "batch_max": 32,
+  "kappa": 1,
+  "lambda_nat_per_semitone": 1,
+  "selector": "unchanged two-stage gate then q; not joint MAP",
+  "no_reference_reanalysis": true,
+  "reaper_rerun": false,
+  "old_white_rerun": false,
+  "old_iir_rerun": false,
+  "quality_run": false,
+  "future_quality_raw_values": 75,
+  "quality_boundary": "separate future phase only; six branches on all first3 plus audit/parent gate",
+  "limits": {
+    "wall_seconds": 1800,
+    "terminate_grace_seconds": 10,
+    "address_space_bytes": 4294967296,
+    "observed_rss_stage_budget_bytes": 3221225472,
+    "threads": 1,
+    "archive_bytes": 47185920
+  },
+  "model_interpretation": "working density on RMS features, not calibrated F0/VUV/noise posterior",
+  "a0_reference": "mathematical white baseline only; no IEEE old match requirement",
+  "completion_guaranteed": false,
+  "adoption": false,
+  "expansion": false
+}

@@ -1,0 +1,524 @@
+{
+  "record_id": "librispeech_1089-134686-0011",
+  "speaker": "librispeech_1089",
+  "branch": "F_d1",
+  "metric": "utmos_v2",
+  "direction": "higher",
+  "sample_rate": 16000,
+  "interval_start_sample": 0,
+  "scored_samples": 96000,
+  "scope": "full_saved_native",
+  "scored_output_pcm_float64_sha256": "e75b6f3f109d8412dabaeee8c779dde1d222da4a34ada13b04d1d634ebeb562b",
+  "scored_reference_pcm_float64_sha256": null,
+  "reference_used": false,
+  "reference_identity": {
+    "member": "records/librispeech_1089-134686-0011/input.npy",
+    "bytes": 768128,
+    "file_sha256": "a66507e24c1f41aeef2407f91575332cabbbd6656e90a56803a001b4fcbf9333",
+    "data_sha256": "268fc1c32f96268178577f4a1e99eea58e49783318f4f0bcffc51b66ffc40254",
+    "dtype": "<f8",
+    "samples": 96000,
+    "archive_chain": [
+      {
+        "scope": "new_native_archive",
+        "path": "/workspace/check-nonml-saikyo-vocoder/runs/pml-ar3-d1-first-speaker-20261021-v1/native.zip",
+        "bytes": 41430719,
+        "sha256": "8431e6fb7c206413a00e0ee5bf07e4827076525c390469a168baf722b1cdaafd"
+      },
+      {
+        "member": "references/prior-delivery.zip",
+        "bytes": 18504522,
+        "sha256": "43ffc10cdcdd739fb6f0583287af787a39d17050f09a801abe1aa1bd4ec0a21f"
+      },
+      {
+        "member": "native/native.zip",
+        "bytes": 18493180,
+        "sha256": "b674091fdc09072d7c2c8844cc61cfb2f0730c9410c6914a20329082f028b404"
+      }
+    ]
+  },
+  "output_identity": {
+    "member": "records/librispeech_1089-134686-0011/branches/F_d1/native.npy",
+    "bytes": 768128,
+    "file_sha256": "13df9011b3ca46927d7409373d036396e815b2d28cbe06e4878374e0976d8cb1",
+    "data_sha256": "e75b6f3f109d8412dabaeee8c779dde1d222da4a34ada13b04d1d634ebeb562b",
+    "dtype": "<f8",
+    "samples": 96000,
+    "archive_chain": [
+      {
+        "scope": "new_native_archive",
+        "path": "/workspace/check-nonml-saikyo-vocoder/runs/pml-ar3-d1-first-speaker-20261021-v1/native.zip",
+        "bytes": 41430719,
+        "sha256": "8431e6fb7c206413a00e0ee5bf07e4827076525c390469a168baf722b1cdaafd"
+      },
+      {
+        "member": "references/prior-delivery.zip",
+        "bytes": 18504522,
+        "sha256": "43ffc10cdcdd739fb6f0583287af787a39d17050f09a801abe1aa1bd4ec0a21f"
+      },
+      {
+        "member": "native/native.zip",
+        "bytes": 18493180,
+        "sha256": "b674091fdc09072d7c2c8844cc61cfb2f0730c9410c6914a20329082f028b404"
+      }
+    ]
+  },
+  "native_execution": {
+    "scored_waveform_origin": "prior_native_bytes",
+    "quality_measurement": "new_this_run_not_prior_quality_reuse",
+    "actual_saved_branch": {
+      "schema_version": 1,
+      "version": "pml-d1-post-native-v1-20261021",
+      "postprocessor_version": "linear-hz-natural-first-difference-v1",
+      "record": "librispeech_1089-134686-0011",
+      "branch": "F_d1",
+      "selector": "F",
+      "status": "native_succeeded",
+      "execution_kind": "new_d1_analysis_save_load_decode",
+      "newly_executed": true,
+      "completed_stages": [
+        "raw_admitted",
+        "post_completed",
+        "stonemask",
+        "cheaptrick",
+        "pdd",
+        "backend",
+        "parameters_constructed",
+        "saved",
+        "loaded",
+        "decoded"
+      ],
+      "input_provenance": {
+        "version": "pml-d1-post-native-v1-20261021",
+        "new_source": {
+          "schema_version": 1,
+          "kind": "actual_library_source_receipt",
+          "library_file_id": "libfile_09c74cc2331c81919ee8b267afe44d20",
+          "version_number": 0,
+          "file_id": "file_00000000eca482308ca288d7f4f6e349",
+          "zip_bytes": 315271,
+          "zip_sha256": "9c82927ae42b05c4a679599ee904960d4fc67c6d42fd96f1b1dae91861ace3dc",
+          "source_manifest_sha256": "ddc57eb6a29a7b4b074de47ca71e4d65f45260bbf23a4f30e192b6c18538a480"
+        },
+        "source_receipt_sha256": "cf437dcd24104d4e35a1c42ff708d622d114d2d3b48872dc533e56e8e674a97a",
+        "reuse_authorization_sha256": "4503c3c20c5544d3e8289bb0ab4bb7c290ebc32c5fa74259e2af81c105800ee3",
+        "source_lineage_sha256": "91f3220f96e243bf854053939d797c8c816b2437e696338ec47fd1ecfc96a111",
+        "dependency_manifest_sha256": "90fdeacbb4212323b78e991dab2ff4ac6772025e0f6ea534aaa7f3b5e65b7115",
+        "input_manifest_sha256": "1f392fc60fbca4003c236f03ffd9edba82b048737f23cf250295c1b4c6c85193",
+        "prior_library": {
+          "library_file_id": "libfile_c4a085e9297481918bae5d8bbbea6e0f",
+          "version_number": 0,
+          "file_id": "file_0000000005448230bd4455e2b6278054"
+        },
+        "prior_envelope": {
+          "bytes": 19922354,
+          "sha256": "a78bc6019de20a8ff702165b60121c5263324cb0c8c47514a1777498149d0a7a"
+        },
+        "prior_native_archive": {
+          "bytes": 19911267,
+          "sha256": "8c402790d826825d87dbadcc7cd908d7747e629c2ea9342dc9408d2c5264dc96"
+        },
+        "prior_native_FILES_sha256": "12e38db01ed45e964d361024516e4cae3ad21298822317c699a6e72884f4d5e1",
+        "prior_materialized_receipt_sha256": "57e6b6368081e59d933a8ec17769a391f761ef234e8df5a929bb02e4c8d15bf1",
+        "failure_verdict_sha256": "59beafbf8b432896dc6ea352c7d4801cd31e655c052deeb5b3b017c6ba8d146a",
+        "original_failed_status_unchanged": {
+          "actual_exit_code": 2,
+          "scientific_status": "native_incomplete_scientific_failures",
+          "approved_for_quality": false,
+          "successful_native_audit_run": false
+        },
+        "record_input_identity": {
+          "path": "records/librispeech_1089-134686-0011/input.npy",
+          "bytes": 768128,
+          "sha256": "a66507e24c1f41aeef2407f91575332cabbbd6656e90a56803a001b4fcbf9333",
+          "dtype": "<f8",
+          "shape": [
+            96000
+          ],
+          "data_sha256": "268fc1c32f96268178577f4a1e99eea58e49783318f4f0bcffc51b66ffc40254"
+        }
+      },
+      "raw_identity": {
+        "path": "records/librispeech_1089-134686-0011/branches/F/raw_f0.npy",
+        "bytes": 19328,
+        "sha256": "1248c1a97bed4284aa39eb8d8268a0e8e54da2396d261682596c8ffb01ddcc4a",
+        "dtype": "<f8",
+        "shape": [
+          1200,
+          2
+        ],
+        "data_sha256": "badd4517571905d8d43efabf149d7bff605e7ade21570853297017190f83c42d",
+        "raw_time_data_sha256": "7f3277caf8bac500d55d63ae409fcd00dc67e4a1ef2df8640dc5274b248becc8"
+      },
+      "raw_guard": "LF_fixed_J_5ms",
+      "seed_analysis": 0,
+      "seed_decode": 0,
+      "sample_rate": 16000,
+      "n_samples": 96000,
+      "timing_scope": "this new D1 branch only",
+      "frames": 1200,
+      "timing": {
+        "status": "native_succeeded",
+        "version": "pml-d1-post-native-v1-20261021",
+        "postprocessor_version": "linear-hz-natural-first-difference-v1",
+        "seed_analysis": 0,
+        "seed_decode": 0,
+        "frames": 1200,
+        "n_samples": 96000,
+        "sample_rate": 16000,
+        "analysis_encode_save_seconds": 3.622038401999987,
+        "analysis_encode_save_RTF": 0.6036730669999978,
+        "decode_seconds": 0.39773301899998614,
+        "decode_RTF": 0.06628883649999769,
+        "timing_scope": "partial actual post/backend/FWCEP/save RTF from received raw F0; REAPER, local potentials, L/F selection and byte verification/reuse excluded; not end-to-end encoder RTF",
+        "saved_NM": "params.pml original packed binary NM before decoder extension/smoothing",
+        "waveform": "native.npy unchanged float64; no normalization/clip/trim/alignment"
+      },
+      "elapsed_seconds": 4.024049381999987
+    },
+    "this_run_reference": {
+      "schema_version": 1,
+      "record": "librispeech_1089-134686-0011",
+      "branch": "F_d1",
+      "status": "native_succeeded",
+      "execution_kind": "prior_byte_reference",
+      "newly_executed": false,
+      "member_scope": "all original members including original branch/payload JSON, never regenerated",
+      "member_locators": [
+        {
+          "outer_reference_member": {
+            "path": "references/prior-delivery.zip",
+            "bytes": 18504522,
+            "sha256": "43ffc10cdcdd739fb6f0583287af787a39d17050f09a801abe1aa1bd4ec0a21f"
+          },
+          "inner_native_member": {
+            "path": "native/native.zip",
+            "bytes": 18493180,
+            "sha256": "b674091fdc09072d7c2c8844cc61cfb2f0730c9410c6914a20329082f028b404"
+          },
+          "final_native_member": {
+            "path": "records/librispeech_1089-134686-0011/branches/F_d1/analysis_diagnostics.json",
+            "bytes": 1387,
+            "sha256": "6b30742ca9dec999fdc71b5a213a0c8c1460596ef3ea4a9b3ddf16b82419cb01"
+          },
+          "not_a_new_native_output_path": true
+        },
+        {
+          "outer_reference_member": {
+            "path": "references/prior-delivery.zip",
+            "bytes": 18504522,
+            "sha256": "43ffc10cdcdd739fb6f0583287af787a39d17050f09a801abe1aa1bd4ec0a21f"
+          },
+          "inner_native_member": {
+            "path": "native/native.zip",
+            "bytes": 18493180,
+            "sha256": "b674091fdc09072d7c2c8844cc61cfb2f0730c9410c6914a20329082f028b404"
+          },
+          "final_native_member": {
+            "path": "records/librispeech_1089-134686-0011/branches/F_d1/branch.json",
+            "bytes": 4457,
+            "sha256": "fc94876b6df6365b117bfd103be3a643074d5ee2f0faa05b16cd46c50bc9710a"
+          },
+          "not_a_new_native_output_path": true
+        },
+        {
+          "outer_reference_member": {
+            "path": "references/prior-delivery.zip",
+            "bytes": 18504522,
+            "sha256": "43ffc10cdcdd739fb6f0583287af787a39d17050f09a801abe1aa1bd4ec0a21f"
+          },
+          "inner_native_member": {
+            "path": "native/native.zip",
+            "bytes": 18493180,
+            "sha256": "b674091fdc09072d7c2c8844cc61cfb2f0730c9410c6914a20329082f028b404"
+          },
+          "final_native_member": {
+            "path": "records/librispeech_1089-134686-0011/branches/F_d1/internal_grid.npy",
+            "bytes": 19312,
+            "sha256": "5ac4c48cede2fb4947a59741f44b88fdfd219334dd8dbcd295c8ee58393f6597",
+            "dtype": "<f8",
+            "shape": [
+              2398
+            ],
+            "data_sha256": "968753ca5d1bcc3a96f698942368ea30ccd54ef90d4c72bfe834ab1a20ee22b9"
+          },
+          "not_a_new_native_output_path": true
+        },
+        {
+          "outer_reference_member": {
+            "path": "references/prior-delivery.zip",
+            "bytes": 18504522,
+            "sha256": "43ffc10cdcdd739fb6f0583287af787a39d17050f09a801abe1aa1bd4ec0a21f"
+          },
+          "inner_native_member": {
+            "path": "native/native.zip",
+            "bytes": 18493180,
+            "sha256": "b674091fdc09072d7c2c8844cc61cfb2f0730c9410c6914a20329082f028b404"
+          },
+          "final_native_member": {
+            "path": "records/librispeech_1089-134686-0011/branches/F_d1/internal_y.npy",
+            "bytes": 19312,
+            "sha256": "670efdf3b26c15e5e0875129f506c9326ad11abd38a26ca155574545cfd7238b",
+            "dtype": "<f8",
+            "shape": [
+              2398
+            ],
+            "data_sha256": "7fc561530f74ddda2fac849c27c55c9fe111dfe245e51cc7f94d0f8aa1c5d26d"
+          },
+          "not_a_new_native_output_path": true
+        },
+        {
+          "outer_reference_member": {
+            "path": "references/prior-delivery.zip",
+            "bytes": 18504522,
+            "sha256": "43ffc10cdcdd739fb6f0583287af787a39d17050f09a801abe1aa1bd4ec0a21f"
+          },
+          "inner_native_member": {
+            "path": "native/native.zip",
+            "bytes": 18493180,
+            "sha256": "b674091fdc09072d7c2c8844cc61cfb2f0730c9410c6914a20329082f028b404"
+          },
+          "final_native_member": {
+            "path": "records/librispeech_1089-134686-0011/branches/F_d1/internal_z.npy",
+            "bytes": 19312,
+            "sha256": "8a1a07f91cd182e89c1a3dc1ad64d480e952a4e2b748cf702f553fdb29e92f2f",
+            "dtype": "<f8",
+            "shape": [
+              2398
+            ],
+            "data_sha256": "0b1eeba457ce343b1836b49c0dd3135e0d16a7c0e5213fa3efbbb3ec7b2f0f46"
+          },
+          "not_a_new_native_output_path": true
+        },
+        {
+          "outer_reference_member": {
+            "path": "references/prior-delivery.zip",
+            "bytes": 18504522,
+            "sha256": "43ffc10cdcdd739fb6f0583287af787a39d17050f09a801abe1aa1bd4ec0a21f"
+          },
+          "inner_native_member": {
+            "path": "native/native.zip",
+            "bytes": 18493180,
+            "sha256": "b674091fdc09072d7c2c8844cc61cfb2f0730c9410c6914a20329082f028b404"
+          },
+          "final_native_member": {
+            "path": "records/librispeech_1089-134686-0011/branches/F_d1/native.npy",
+            "bytes": 768128,
+            "sha256": "13df9011b3ca46927d7409373d036396e815b2d28cbe06e4878374e0976d8cb1",
+            "dtype": "<f8",
+            "shape": [
+              96000
+            ],
+            "data_sha256": "e75b6f3f109d8412dabaeee8c779dde1d222da4a34ada13b04d1d634ebeb562b"
+          },
+          "not_a_new_native_output_path": true
+        },
+        {
+          "outer_reference_member": {
+            "path": "references/prior-delivery.zip",
+            "bytes": 18504522,
+            "sha256": "43ffc10cdcdd739fb6f0583287af787a39d17050f09a801abe1aa1bd4ec0a21f"
+          },
+          "inner_native_member": {
+            "path": "native/native.zip",
+            "bytes": 18493180,
+            "sha256": "b674091fdc09072d7c2c8844cc61cfb2f0730c9410c6914a20329082f028b404"
+          },
+          "final_native_member": {
+            "path": "records/librispeech_1089-134686-0011/branches/F_d1/params.pml",
+            "bytes": 606242,
+            "sha256": "25183a0a382e62d294cda4cc9cd33d2ec18570c40404e36d3e3f989c7133a13a"
+          },
+          "not_a_new_native_output_path": true
+        },
+        {
+          "outer_reference_member": {
+            "path": "references/prior-delivery.zip",
+            "bytes": 18504522,
+            "sha256": "43ffc10cdcdd739fb6f0583287af787a39d17050f09a801abe1aa1bd4ec0a21f"
+          },
+          "inner_native_member": {
+            "path": "native/native.zip",
+            "bytes": 18493180,
+            "sha256": "b674091fdc09072d7c2c8844cc61cfb2f0730c9410c6914a20329082f028b404"
+          },
+          "final_native_member": {
+            "path": "records/librispeech_1089-134686-0011/branches/F_d1/payload.json",
+            "bytes": 801,
+            "sha256": "a02142f98953707ec758a35c014239df27b0a20c0e181958463d095bf7465f20"
+          },
+          "not_a_new_native_output_path": true
+        },
+        {
+          "outer_reference_member": {
+            "path": "references/prior-delivery.zip",
+            "bytes": 18504522,
+            "sha256": "43ffc10cdcdd739fb6f0583287af787a39d17050f09a801abe1aa1bd4ec0a21f"
+          },
+          "inner_native_member": {
+            "path": "native/native.zip",
+            "bytes": 18493180,
+            "sha256": "b674091fdc09072d7c2c8844cc61cfb2f0730c9410c6914a20329082f028b404"
+          },
+          "final_native_member": {
+            "path": "records/librispeech_1089-134686-0011/branches/F_d1/post_diagnostics.json",
+            "bytes": 475,
+            "sha256": "c52ac036f6652f59a91b2f4e2530dba42ef9e781fc40d5c13a27857b88fc21ee"
+          },
+          "not_a_new_native_output_path": true
+        },
+        {
+          "outer_reference_member": {
+            "path": "references/prior-delivery.zip",
+            "bytes": 18504522,
+            "sha256": "43ffc10cdcdd739fb6f0583287af787a39d17050f09a801abe1aa1bd4ec0a21f"
+          },
+          "inner_native_member": {
+            "path": "native/native.zip",
+            "bytes": 18493180,
+            "sha256": "b674091fdc09072d7c2c8844cc61cfb2f0730c9410c6914a20329082f028b404"
+          },
+          "final_native_member": {
+            "path": "records/librispeech_1089-134686-0011/branches/F_d1/post_f0.npy",
+            "bytes": 19328,
+            "sha256": "b72975f7ea666e80ae15108537fd263bb6c3490e8615ad04b5869054ad1195ca",
+            "dtype": "<f8",
+            "shape": [
+              1200,
+              2
+            ],
+            "data_sha256": "cffa99ef9fb20a11a67fd80138d9312b0603728caaf51c37d03e425bac14472b"
+          },
+          "not_a_new_native_output_path": true
+        },
+        {
+          "outer_reference_member": {
+            "path": "references/prior-delivery.zip",
+            "bytes": 18504522,
+            "sha256": "43ffc10cdcdd739fb6f0583287af787a39d17050f09a801abe1aa1bd4ec0a21f"
+          },
+          "inner_native_member": {
+            "path": "native/native.zip",
+            "bytes": 18493180,
+            "sha256": "b674091fdc09072d7c2c8844cc61cfb2f0730c9410c6914a20329082f028b404"
+          },
+          "final_native_member": {
+            "path": "records/librispeech_1089-134686-0011/branches/F_d1/post_time_bits.npy",
+            "bytes": 9728,
+            "sha256": "67b33fbdf50644dc829e7c0327d6721c81c6ed5498725cf60001e413a53df3f7",
+            "dtype": "<u8",
+            "shape": [
+              1200
+            ],
+            "data_sha256": "7f3277caf8bac500d55d63ae409fcd00dc67e4a1ef2df8640dc5274b248becc8"
+          },
+          "not_a_new_native_output_path": true
+        },
+        {
+          "outer_reference_member": {
+            "path": "references/prior-delivery.zip",
+            "bytes": 18504522,
+            "sha256": "43ffc10cdcdd739fb6f0583287af787a39d17050f09a801abe1aa1bd4ec0a21f"
+          },
+          "inner_native_member": {
+            "path": "native/native.zip",
+            "bytes": 18493180,
+            "sha256": "b674091fdc09072d7c2c8844cc61cfb2f0730c9410c6914a20329082f028b404"
+          },
+          "final_native_member": {
+            "path": "records/librispeech_1089-134686-0011/branches/F_d1/raw_f0.npy",
+            "bytes": 19328,
+            "sha256": "1248c1a97bed4284aa39eb8d8268a0e8e54da2396d261682596c8ffb01ddcc4a",
+            "dtype": "<f8",
+            "shape": [
+              1200,
+              2
+            ],
+            "data_sha256": "badd4517571905d8d43efabf149d7bff605e7ade21570853297017190f83c42d"
+          },
+          "not_a_new_native_output_path": true
+        },
+        {
+          "outer_reference_member": {
+            "path": "references/prior-delivery.zip",
+            "bytes": 18504522,
+            "sha256": "43ffc10cdcdd739fb6f0583287af787a39d17050f09a801abe1aa1bd4ec0a21f"
+          },
+          "inner_native_member": {
+            "path": "native/native.zip",
+            "bytes": 18493180,
+            "sha256": "b674091fdc09072d7c2c8844cc61cfb2f0730c9410c6914a20329082f028b404"
+          },
+          "final_native_member": {
+            "path": "records/librispeech_1089-134686-0011/branches/F_d1/refined_ct_f0.npy",
+            "bytes": 9728,
+            "sha256": "ebbb969baefe0e35305b5ce432fb0e305f4f3573956a64202a21d33effd15c86",
+            "dtype": "<f8",
+            "shape": [
+              1200
+            ],
+            "data_sha256": "1a09ca27a6c551545f5dda319971a8d65ffb22711b5c7fbab26aca1f69f56eb4"
+          },
+          "not_a_new_native_output_path": true
+        },
+        {
+          "outer_reference_member": {
+            "path": "references/prior-delivery.zip",
+            "bytes": 18504522,
+            "sha256": "43ffc10cdcdd739fb6f0583287af787a39d17050f09a801abe1aa1bd4ec0a21f"
+          },
+          "inner_native_member": {
+            "path": "native/native.zip",
+            "bytes": 18493180,
+            "sha256": "b674091fdc09072d7c2c8844cc61cfb2f0730c9410c6914a20329082f028b404"
+          },
+          "final_native_member": {
+            "path": "records/librispeech_1089-134686-0011/branches/F_d1/smoother_diagnostics.json",
+            "bytes": 1227,
+            "sha256": "158da34249a3f5da2ff0d5d1a808621d8a1a4d30668a536ab7a7d76667710c51"
+          },
+          "not_a_new_native_output_path": true
+        },
+        {
+          "outer_reference_member": {
+            "path": "references/prior-delivery.zip",
+            "bytes": 18504522,
+            "sha256": "43ffc10cdcdd739fb6f0583287af787a39d17050f09a801abe1aa1bd4ec0a21f"
+          },
+          "inner_native_member": {
+            "path": "native/native.zip",
+            "bytes": 18493180,
+            "sha256": "b674091fdc09072d7c2c8844cc61cfb2f0730c9410c6914a20329082f028b404"
+          },
+          "final_native_member": {
+            "path": "records/librispeech_1089-134686-0011/branches/F_d1/smoother_input.json",
+            "bytes": 829,
+            "sha256": "6e9415fff3dd25ee1b9d74e617ea9d47f1e6db99ffa70117cc3e821827c70c06"
+          },
+          "not_a_new_native_output_path": true
+        }
+      ],
+      "prior_library": {
+        "library_file_id": "libfile_ad3e7afeb8748191be023f2d42480714",
+        "version_number": 0,
+        "file_id": "file_00000000cf6881fd80c760f819ceefc3"
+      },
+      "reference_version": "pml-d1-post-native-v1-20261021",
+      "timing_scope": "original payload only; not a new RTF measurement",
+      "reference_origin": "previous new D1 analysis",
+      "approved_for_quality_by_this_source": false
+    }
+  },
+  "alignment": "none",
+  "added_gain_normalization": "none",
+  "added_silence_removal": "none",
+  "added_clip": "none",
+  "status": "measured",
+  "value": 3.544567346572876,
+  "details": {
+    "reference_used": false,
+    "extraction_seed_reset_each_call": true
+  },
+  "wall_seconds": 3.45571618699978,
+  "process_cpu_seconds": 7.042768923000011
+}

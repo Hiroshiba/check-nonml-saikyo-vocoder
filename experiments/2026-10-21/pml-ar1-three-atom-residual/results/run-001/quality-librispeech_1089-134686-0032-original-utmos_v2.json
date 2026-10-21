@@ -1,0 +1,79 @@
+{
+  "record_id": "librispeech_1089-134686-0032",
+  "speaker": "librispeech_1089",
+  "branch": "original",
+  "metric": "utmos_v2",
+  "direction": "higher",
+  "sample_rate": 16000,
+  "interval_start_sample": 0,
+  "scored_samples": 65440,
+  "scope": "full_saved_original_reference_only",
+  "scored_output_pcm_float64_sha256": "688fca4389961f6b0bd8deda2592f5b06da201e63eda73f6a6bf6edcf15ab69d",
+  "scored_reference_pcm_float64_sha256": null,
+  "reference_used": false,
+  "reference_identity": {
+    "member": "records/librispeech_1089-134686-0032/input.npy",
+    "bytes": 523648,
+    "file_sha256": "cf1d3a15f9864fa36824ce1cb46c161624f17c4e82ba1e8b14109293167293b6",
+    "data_sha256": "688fca4389961f6b0bd8deda2592f5b06da201e63eda73f6a6bf6edcf15ab69d",
+    "dtype": "<f8",
+    "samples": 65440,
+    "archive_chain": [
+      {
+        "scope": "new_native_archive",
+        "path": "/workspace/check-nonml-saikyo-vocoder/runs/pml-ar3-d1-first-speaker-20261021-v1/native.zip",
+        "bytes": 41430719,
+        "sha256": "8431e6fb7c206413a00e0ee5bf07e4827076525c390469a168baf722b1cdaafd"
+      },
+      {
+        "member": "references/prior-delivery.zip",
+        "bytes": 18504522,
+        "sha256": "43ffc10cdcdd739fb6f0583287af787a39d17050f09a801abe1aa1bd4ec0a21f"
+      },
+      {
+        "member": "native/native.zip",
+        "bytes": 18493180,
+        "sha256": "b674091fdc09072d7c2c8844cc61cfb2f0730c9410c6914a20329082f028b404"
+      }
+    ]
+  },
+  "output_identity": {
+    "member": "records/librispeech_1089-134686-0032/input.npy",
+    "bytes": 523648,
+    "file_sha256": "cf1d3a15f9864fa36824ce1cb46c161624f17c4e82ba1e8b14109293167293b6",
+    "data_sha256": "688fca4389961f6b0bd8deda2592f5b06da201e63eda73f6a6bf6edcf15ab69d",
+    "dtype": "<f8",
+    "samples": 65440,
+    "archive_chain": [
+      {
+        "scope": "new_native_archive",
+        "path": "/workspace/check-nonml-saikyo-vocoder/runs/pml-ar3-d1-first-speaker-20261021-v1/native.zip",
+        "bytes": 41430719,
+        "sha256": "8431e6fb7c206413a00e0ee5bf07e4827076525c390469a168baf722b1cdaafd"
+      },
+      {
+        "member": "references/prior-delivery.zip",
+        "bytes": 18504522,
+        "sha256": "43ffc10cdcdd739fb6f0583287af787a39d17050f09a801abe1aa1bd4ec0a21f"
+      },
+      {
+        "member": "native/native.zip",
+        "bytes": 18493180,
+        "sha256": "b674091fdc09072d7c2c8844cc61cfb2f0730c9410c6914a20329082f028b404"
+      }
+    ]
+  },
+  "native_execution": null,
+  "alignment": "none",
+  "added_gain_normalization": "none",
+  "added_silence_removal": "none",
+  "added_clip": "none",
+  "status": "measured",
+  "value": 4.574299335479736,
+  "details": {
+    "reference_used": false,
+    "extraction_seed_reset_each_call": true
+  },
+  "wall_seconds": 2.9287948929995764,
+  "process_cpu_seconds": 5.987357470999996
+}

@@ -1,0 +1,56 @@
+{
+  "actual_exit_code": 0,
+  "argv": [
+    "/workspace/check-nonml-saikyo-vocoder/.venv/bin/python",
+    "-B",
+    "/workspace/check-nonml-saikyo-vocoder/runs/pml-ar3-d1-first-speaker-20261021-v1/source/run_saved_first3_ar3.py",
+    "--prior-envelope",
+    "/workspace/check-nonml-saikyo-vocoder/runs/pml-d1-post-first-speaker-20261021-v1/delivery.zip",
+    "--prior-materialized-receipt",
+    "/workspace/check-nonml-saikyo-vocoder/runs/pml-ar3-d1-first-speaker-20261021-v1/launch-receipts/prior-materialized-receipt.json",
+    "--independent-verdict",
+    "/workspace/check-nonml-saikyo-vocoder/runs/pml-ar3-d1-first-speaker-20261021-v1/launch-receipts/prior-independent-verdict.json",
+    "--reuse-authorization",
+    "/workspace/check-nonml-saikyo-vocoder/runs/pml-ar3-d1-first-speaker-20261021-v1/launch-receipts/reuse-authorization.json",
+    "--source-receipt",
+    "/workspace/check-nonml-saikyo-vocoder/runs/pml-ar3-d1-first-speaker-20261021-v1/launch-receipts/source-receipt.json",
+    "--speaker",
+    "librispeech_1089",
+    "--output",
+    "/workspace/check-nonml-saikyo-vocoder/runs/pml-ar3-d1-first-speaker-20261021-v1/native"
+  ],
+  "elapsed_seconds": 188.8887625670004,
+  "evidence_ref": "execution/launcher-result.json",
+  "finished_at_utc": "2026-10-21T02:54:11.385319+00:00",
+  "kind": "actual_tool_receipt",
+  "limits": {
+    "address_space_bytes": 4294967296,
+    "observed_rss_stage_budget_bytes": 3221225472,
+    "terminate_grace_seconds": 10,
+    "threads": 1,
+    "wall_seconds": 1800
+  },
+  "max_rss_kib": 346104,
+  "native_archive": {
+    "bytes": 41430719,
+    "sha256": "8431e6fb7c206413a00e0ee5bf07e4827076525c390469a168baf722b1cdaafd"
+  },
+  "packing_status": "succeeded",
+  "reaped_by_launcher": true,
+  "schema_version": 1,
+  "scientific_status": "ar3_d1_native_succeeded",
+  "signal": null,
+  "started_at_utc": "2026-10-21T02:51:02.496552+00:00",
+  "stderr": {
+    "bytes": 0,
+    "complete": true,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "stdout": {
+    "bytes": 364,
+    "complete": true,
+    "sha256": "a0936f04261a27de30f415f7f983b5207a6f2bcc3263283c168fb2e111edc849"
+  },
+  "timed_out": false,
+  "tool": "exec_command"
+}

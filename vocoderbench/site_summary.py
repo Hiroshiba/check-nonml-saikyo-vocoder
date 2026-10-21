@@ -19,6 +19,8 @@ def esc(value):
 
 def brief(results):
     data = json.loads((results / 'results.json').read_text(encoding='utf-8'))
+    if data.get('study_role') == 'ar3_first3_development':
+        return _brief_ar3_first3(data)
     if data.get('study_role') == 'd1_first3_development':
         return _brief_d1_first3(data)
     if data.get('study_role') == 'added_quality_control_metrics':
@@ -167,6 +169,49 @@ def _brief_d1_first3(data):
             '4指標は一貫した改善を示さず、正式ベースはPMLを維持します。'
             '独立検証・固定120録音完了・方式採用ではありません。</p>'
             '<div class="scroll"><table><thead><tr><th>方式</th><th>native成功／対象</th>'
+            '<th>今回の処理</th><th>品質個票 有効／予定</th></tr></thead><tbody>'
+            + ''.join(rows) + '</tbody></table></div>'
+            f'<p>以下の値は先頭ID {esc(first)} だけの保存個票です。表示は小数第6位に丸めています。'
+            '原音はUTMOS参考のみで、全3録音・区間・対応差・原値は詳細に記載しています。</p>'
+            '<div class="scroll"><table><thead><tr><th>条件</th>' + headings + '</tr></thead><tbody>'
+            + ''.join(values) + '</tbody></table></div>'
+            '<p>SCOREQだけ小さい方向、他3指標は大きい方向です。平均・順位・有意性は主張しません。'
+            '旧IIRのL/F失敗を保持し、RTF（実時間比）はraw F0以降の部分計時なので旧PML過去値と速度比較できません。</p>'
+            '<p>短例は掲載専用の先頭2秒で、品質測定入力ではありません。LibriSpeech / '
+            '<a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>。'
+            '変換式・出典・SHAは詳細レポートに記載しています。</p>')
+
+
+def _brief_ar3_first3(data):
+    quality = data['quality']
+    rows = []
+    for method in data['index_methods']:
+        if method == 'identity':
+            continue
+        records = [r for r in data['resynthesis'] if r['method'] == method]
+        succeeded = sum(r['status'] == 'native_succeeded' for r in records)
+        reused = all(not r['newly_executed'] for r in records)
+        measured = sum(r['branch'] == method and r['status'] == 'measured'
+                       for r in quality['records'])
+        cells = [data['method_labels'][method], f'{succeeded}/{len(records)}',
+                 '保存済み参照（再解析なし）' if reused else '新規解析・保存・復号',
+                 f'{measured}/{4*len(records)}']
+        rows.append('<tr>' + ''.join(f'<td>{esc(v)}</td>' for v in cells) + '</tr>')
+    first = data['record_ids'][0]
+    scores = {(r['branch'], r['metric']): r for r in quality['records'] if r['record_id'] == first}
+    values = []
+    for method in data['index_methods']:
+        branch = 'original' if method == 'identity' else method
+        cells = [data['method_labels'][method]]
+        for metric in quality['metrics']:
+            row = scores.get((branch, metric['id']))
+            cells.append(f"{row['value']:.6f}" if row else '対象外')
+        values.append('<tr>' + ''.join(f'<td>{esc(v)}</td>' for v in cells) + '</tr>')
+    headings = ''.join(f'<th>{esc(m["label"])}</th>' for m in quality['metrics'])
+    return ('<p>同じ1話者の既観測3録音による開発比較です。AR3の新6枝がnative成功し、参照12枝は保存バイトを再利用。品質75/75個票は全件新規測定です。'
+            '旧L/F比の変化は指標・録音で混在し、PML比では新2条件とも3録音でECAPA・eSTOI・SCOREQが劣りました。正式ベースはPMLを維持します。'
+            '独立検証・固定120録音完了・方式採用ではありません。</p>'
+            '<div class="scroll"><table><thead><tr><th>方式</th><th>native保存済み／対象</th>'
             '<th>今回の処理</th><th>品質個票 有効／予定</th></tr></thead><tbody>'
             + ''.join(rows) + '</tbody></table></div>'
             f'<p>以下の値は先頭ID {esc(first)} だけの保存個票です。表示は小数第6位に丸めています。'
