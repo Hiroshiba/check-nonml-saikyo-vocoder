@@ -16,7 +16,7 @@ class Method:
 
 
 METHODS = {
-    "pml": Method("PML（現ベース）", 16000, (), "現開発ベース・明示併記のみ", True),
+    "apron": Method("Apron（現作業ベース）", 24000, ("llsm", "ciglet"), "LLSM2 Layer1・未測定", True),
     "world_harvest": Method("WORLD（Harvest）", 16000, (), "既存の固定版WORLD"),
     "facodec": Method("FACodec", 16000, ("facodec",), "v1・全6コードブック"),
     "hifiglot": Method("HiFi-Glot", 44100, ("hifiglot",), "公開学習済み44.1 kHz"),

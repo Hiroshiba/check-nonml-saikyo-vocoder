@@ -29,7 +29,7 @@ def contract(adapter, args, prepared):
         ROOT / 'scripts/all_metrics_common.py', ROOT / 'scripts/all_metrics_synthesis.py',
         ROOT / 'scripts/all_metrics_base_controls.py', *(ROOT / 'scripts' / name for name in ADAPTER_SOURCES),
         *sorted((ROOT / 'vocoderbench/references').glob('adapters_*.py')),
-        ROOT / 'vocoderbench/world.py', ROOT / 'vocoderbench/control.py', ROOT / 'vocoderbench/methods.py',
+        ROOT / 'vocoderbench/world.py', ROOT / 'vocoderbench/control.py',
         *sorted((ROOT / 'vocoderbench').glob('hnm*.py'))]
     asset_path = args.output_root / 'latent-contracts' / args.method / 'shared-assets.json'
     freeze(asset_path, shared_assets(adapter, args))

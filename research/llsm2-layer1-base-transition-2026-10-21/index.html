@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>LLSM2 Layer1への作業ベース切替</title>
+<style>
+  :root { color-scheme: light dark; font-family: system-ui, sans-serif; line-height: 1.7; }
+  body { max-width: 62rem; margin: 2rem auto; padding: 0 1.2rem; }
+  h1, h2 { line-height: 1.35; }
+  .note { border-left: .3rem solid #45829b; padding: .2rem 1rem; background: color-mix(in srgb, #45829b 10%, transparent); }
+  table { border-collapse: collapse; width: 100%; }
+  th, td { border-bottom: 1px solid #8887; padding: .55rem; text-align: left; vertical-align: top; }
+  code { overflow-wrap: anywhere; }
+</style>
+</head>
+<body>
+<main>
+<p>2026年10月21日　作業ベースの切替記録</p>
+<h1>LLSM2 Layer1を作業ベースにする</h1>
+<p class="note">ユーザーの指定で切り替えました。Layer1の品質は未測定です。PMLや測定済みのLLSM2 Layer0より優れているという結果ではありません。</p>
+
+<h2>比較の現在地</h2>
+<table>
+<thead><tr><th>方式</th><th>役割</th><th>この切替で確認できたこと</th></tr></thead>
+<tbody>
+<tr><td>Apron（LLSM2 Layer1）</td><td>現在の作業ベース</td><td>固定上流版と保存・復号の実装を用意。音声生成、品質、操作追従は未測定。</td></tr>
+<tr><td>PML低域拡張＋60FWCEP</td><td>以前の作業ベース</td><td><a href="../pml-package-evaluation-2026-10-16/index.html">当時の追加評価と比較音声</a>を保持。評価条件や当時の比較基準は変更しない。</td></tr>
+<tr><td>LLSM2 Layer0</td><td>既存の比較方式</td><td><a href="../../experiments/2026-10-12/reference-methods/results/run-001/index.html">保存済み比較と音声</a>はLayer0の結果。Layer1へ転用しない。</td></tr>
+</tbody>
+</table>
+
+<h2>実装範囲</h2>
+<p>上流のlibllsm2 <code>d18cdf02b31819670e3bc23ead933ad9467da06d</code> とciglet <code>895ba9b1c0eabee83d3544208bbc82420efa3206</code> を固定します。24 kHz音声からLayer0を解析し、<code>llsm_chunk_tolayer1(chunk, 2048)</code>でLayer1へ変換します。保存形式には元の調波列HMを含めず、設定、F0、雑音、残差PSD、RD、声道の振幅と位相を保存します。</p>
+<p>復号ごとに保存特徴を読み直し、独立したCの状態を作ります。元HMがないことを確かめてから、Layer1の合成を呼びます。音高の±3半音は上流例の位相伝播、F0倍率、声道振幅のdB補正、位相伝播の順です。解析前と各復号前にseed 0を設定します。PbP、独自の位相補完、圧縮符号化は追加しません。</p>
+<p>入口は実際の24 kHzと出力標本数を記録します。16 kHzの固定入力と比較する場合は明示的に再標本化し、音響指標の共通区間とnative全長を分けます。24 kHzの出力を16 kHzや入力と同じ長さとして扱いません。</p>
+
+<h2>名前と移行の記録</h2>
+<p>手法の発想が名前に引っ張られないよう、日常語8語を抽選前に固定し、Python標準ライブラリの<code>secrets.choice</code>で選びました。最初は日本語名「指輪」まで決めましたが、その後ユーザーが英語名を指定しました。<a href="naming-record.json">日本語の抽選記録</a>は当時の履歴として残し、別の<a href="naming-english-candidates.json">英語候補8語</a>から再抽選して「Apron」を採用しました。<a href="naming-english-record.json">英語名の抽選・衝突確認</a>も記録しています。Apronは作業ベースの名称で、上流方式名LLSM2 Layer1や比較ID <code>llsm2</code> を改称しません。</p>
+<p>旧PMLの結果HTML、JSON、音声、当時の識別子は残します。旧実行コードを用いた再現先は変更前commit <code>62acf3cadcd8a49f37e2e63826f2966ed2d8ce28</code> です。旧専用実行入口は退役し、保存済みJSONを読む表示・集約は残します。</p>
+
+<h2>未確認事項と次の測定</h2>
+<p>準備の隔離環境はPython 3.10.22ですが、リポジトリ本体はPython 3.12です。実行入口は本体Python 3.12で、固定した上流版・ビルド手順と隔離キャッシュの準備記録を照合し、その環境で作ったnative libraryのSHAを来歴に記録します。起点のビルドSHAだけを全環境の必須値にはしません。科学的な実行確認はこの切替では行っていません。上流Cのビルドには<code>layer0.c</code>の<code>nfrm</code>に関する警告があり、ビルド自体は終了0でした。この警告も品質の成否とはみなしません。</p>
+<p>固定120録音の品質・音高操作・話者性・未対応条件は後工程で測ります。結果が出るまで順位や改善を示しません。48 kHz、時間伸縮、音量操作、特徴補間は未対応です。過去の音声を新Layer1の音声として掲示しません。</p>
+</main>
+</body>
+</html>

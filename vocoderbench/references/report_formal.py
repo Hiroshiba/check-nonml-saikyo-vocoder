@@ -183,7 +183,7 @@ def environment_note(data):
     host = contract.get('host_environment', {}).get('packages', {})
     reference_environments = set()
     for method, item in contract.get('prepared_methods', {}).items():
-        if method in {'hnm', 'pml'}:
+        if method in {'hnm', 'pml', 'apron'}:
             continue
         env = item.get('environment', {})
         packages = dict(line.split('==', 1) for line in env.get('dependencies', '').splitlines() if '==' in line)

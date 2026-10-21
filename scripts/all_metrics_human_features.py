@@ -95,7 +95,7 @@ def main():
         ROOT / 'scripts/all_metrics_common.py', ROOT / 'scripts/all_metrics_base_controls.py',
         *(ROOT / 'scripts' / p for p in ADAPTER_SOURCES),
         *sorted((ROOT / 'vocoderbench/references').glob('adapters_*.py')),
-        ROOT / 'vocoderbench/world.py', ROOT / 'vocoderbench/methods.py',
+        ROOT / 'vocoderbench/world.py',
         *sorted((ROOT / 'vocoderbench').glob('hnm*.py'))]
     contract = {'method': args.method, 'source_sha256': {str(p.relative_to(ROOT)): sha256(p) for p in sources},
         'prepared': prepared, 'input_contract_sha256': sha256(OUT / 'input-contract.json'),

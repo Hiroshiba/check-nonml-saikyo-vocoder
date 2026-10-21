@@ -1,10 +1,12 @@
 # 既存方式の比較
 
+現在の作業ベース「Apron」は固定LLSM2 Layer1です。比較ID `llsm2` は引き続きLayer0です。Layer1の固定120音声評価は未実施で、`--include-current-base` の正式測定は後工程です。
+
 ## 対象と目的
 
 WORLD（Harvest）に加え、FACodec v1、HiFi-Glot、GOLF-ff、SiFi-GAN、LLSM2 Layer 0、MagPhaseを標準の既存比較対象にする。DACはオプショナルで、`--include-dac` を指定したときだけコード・重みの取得と計測を行う。原音は正解参照であり方式数に含めない。自作ベースを良いものと前提にせず、既存方式への全置換も検討できる比較にする。
 
-指示変更はPR #28、実装と結果保存はPR #29。USER_INSTRUCTIONS.mdの変更は実装PRに含めない。既存のBASELINE.json・自作実装・過去の結果は今回変更しない。閉じたPR #26から実装を引き継ぎ、保存されていなかった音声付き結果を補った。
+この節の既存方式比較はPR #28・#29当時の経緯です。保存結果はその時点のベースと条件を保持します。
 
 ## 実行
 
@@ -18,7 +20,7 @@ uv run --locked python -m vocoderbench.corpus fetch
 uv run --locked python -m vocoderbench.reference --output runs/references-120
 ```
 
-候補を指定しない `python -m vocoderbench.benchmark --output runs/references-120` も同じ入口。自作の開発候補を従来どおり `--candidate-package /absolute/package --criteria /criteria.md` で指定すると、自作・候補・WORLDの比較に6方式を加える。`--reference-cache` でその実行の推論環境を指定できる。`--legacy-three-methods` は旧3方式だけの実行経路を残すための指定で、標準比較の完了とは表示しない。
+実行入口は `python -m vocoderbench.reference` です。旧PML専用の `vocoderbench.benchmark` は退役しました。現在の作業ベースを併記するときだけ `--include-current-base` を指定し、固定LLSM2キャッシュを `--runtime-cache` に渡します。
 
 DACを含めるには準備と計測の両方に指定する。DACが失敗しても他方式の結果を残すが、明示選択された方式の失敗なので終了コードは非0となる。
 

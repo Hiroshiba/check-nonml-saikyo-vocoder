@@ -1,0 +1,27 @@
+{
+  "schema_version": 1,
+  "reason_for_new_draw": "The user specified an English name after the earlier Japanese draw. The Japanese draw remains historical and is not the final name.",
+  "previous_record": "naming-record.json",
+  "candidate_file": "naming-english-candidates.json",
+  "candidate_sha256_before_draw": "633158689e0ae940e4e1cae2899b578f8953de29bd378ea41b25c7745fe4a075",
+  "mechanism": "Python standard library secrets.choice; one draw",
+  "drawn_at_utc": "2026-10-21T17:56:38.502274+00:00",
+  "selected": "apron",
+  "collision_check": {
+    "status": "accepted_no_confusing_audio_signal_or_ml_method_found",
+    "repository_search": "BASELINE.json, vocoderbench, docs, README.md, migration records excluding the candidate list: no prior Apron method name",
+    "public_queries": [
+      "Apron vocoder speech synthesis model algorithm",
+      "Apron audio signal processing machine learning model",
+      "\"Apron\" speech technology neural network",
+      "\"APRON\" vocoder",
+      "\"APRON\" speech synthesis",
+      "\"APRON\" machine learning model audio"
+    ],
+    "examples_of_unrelated_results": [
+      "https://www.mdpi.com/2226-4310/10/7/596",
+      "https://bearhap.com/collections/synthesizer"
+    ],
+    "note": "Results referred to airport apron controllers or clothing, not a same-name vocoder, speech, signal-processing, or ML method. This is a scoped collision check, not an exhaustive trademark search."
+  }
+}

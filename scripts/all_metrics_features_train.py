@@ -114,7 +114,7 @@ def main():
         ROOT / 'scripts/all_metrics_base_controls.py',
         *(ROOT / 'scripts' / name for name in ADAPTER_SOURCES),
         *sorted((ROOT / 'vocoderbench/references').glob('adapters_*.py')),
-        ROOT / 'vocoderbench/world.py', ROOT / 'vocoderbench/methods.py',
+        ROOT / 'vocoderbench/world.py',
         *sorted((ROOT / 'vocoderbench').glob('hnm*.py'))]
     contract = {'schema_version': 1, 'stage': 'independent_train_encode_only',
         'implementation_origin': 'new_recovery_run_source_not_restored_original',

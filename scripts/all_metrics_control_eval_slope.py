@@ -23,7 +23,7 @@ from vocoderbench.assessment.common import Inputs, NotApplicable
 from vocoderbench.logging_utils import run_cli
 from vocoderbench.quality_core import environment, sha256, write_json
 
-SOURCE_FILES = [Path(__file__), ROOT / 'scripts/all_metrics_common.py', ROOT / 'vocoderbench/methods.py', ROOT / 'vocoderbench/world.py',
+SOURCE_FILES = [Path(__file__), ROOT / 'scripts/all_metrics_common.py', ROOT / 'vocoderbench/world.py',
     ROOT / 'vocoderbench/assessment/acoustics.py', ROOT / 'vocoderbench/assessment/common.py',
     ROOT / 'scripts/all_metrics_controls.py', ROOT / 'scripts/all_metrics_control_eval_equivalence.py']
 
