@@ -17,7 +17,7 @@
 <tr><th>0032</th><td>F</td><td>0</td><td>0</td><td>6</td></tr>
 </tbody></table></div><p><a href="diagnostic-summary.json">集計の原JSON</a></p></section>
 <section id="interpretation"><h2>局所首位だけで系列選択の変化を説明しない</h2>
-<p>双方有声の41件のうち、26件ではその時点の最有力候補が同じで、15件では変わっていました。首位が同じでも全候補の重みが同じとは限りません。前後時点や有声区間の区切り、累積値や同点選択も関わるため、動的計画法（DP）だけを原因とはしません。</p>
+<p>双方有声の41件のうち、26件ではその時点の最有力候補が同じで、15件では変わっていました。この26件はいずれも系列選択Fです。首位が同じでも全候補の重みが同じとは限りません。前後時点や有声区間の区切り、累積値や同点選択も関わるため、動的計画法（DP）だけを原因とはしません。</p>
 <p>結論は、局所首位だけで系列選択の変化を説明せず、品質未測定の段階でパラメータを調整しない、という範囲です。生理的VUVや真F0の誤り率は調べていません。</p></section>
 <section id="details"><h2>47明細を、時刻・選択候補・保存F0へ戻して読む</h2>
 <p>qは候補IDで、Hzではありません。局所首位は保存された461候補の対数重みから読み、完全同値では先頭候補を選びます。「対象外」は双方有声でない変更で、局所首位の集計対象にしていない欄です。表の時刻は小数6桁で表示し、時刻のビット列・周波数の16進表記を含む全原値はJSONに保持しています。</p>
@@ -72,7 +72,7 @@
 </tbody></table></div><p><a href="diagnostic-details.json">47明細の原JSON</a> / <a href="diagnostic-anomalies.json">異常記録の原JSON</a></p></section>
 <section id="audio"><h2>冒頭2秒の参考音声を、原音と5条件で比べる</h2>
 <p>各録音の原音・PML・旧AR3 L/F・新ACG L/F、計18例です。全例が16 kHz・標本[0,32000)の同じ冒頭2秒で、47変更箇所すべてを含む抜粋ではありません。音声差を改善の根拠にはせず、品質測定入力にも戻しません。</p>
-<p>既存12例は公開済みJSONを参照し、新6例も準備済みのPCM16バイトをそのまま使います。この掲載で再変換・音声生成はしていません。元の変換はround(x×32767)・同距離は偶数丸めで、クリップ・音量調整・位置合わせ・無音除去はありません。</p>
+<p>既存12例は公開済みJSONを参照し、新6例も準備済みのPCM16バイトをそのまま使います。この掲載で再変換・音声生成はしていません。元の変換はround(x×32767)（ちょうど中間の値は偶数へ丸める）です。クリップ・音量調整・位置合わせ・無音除去はありません。</p>
 <h3>librispeech_1089-134686-0008</h3><div class="audio-grid">
 <div><p>原音</p><audio controls preload="none" aria-label="librispeech_1089-134686-0008 原音" data-json="../run-001/audio_samples.json" data-case="librispeech_1089-134686-0008" data-method="identity"></audio></div>
 <div><p>PML（正式ベース）</p><audio controls preload="none" aria-label="librispeech_1089-134686-0008 PML（正式ベース）" data-json="../run-001/audio_samples.json" data-case="librispeech_1089-134686-0008" data-method="pml"></audio></div>
