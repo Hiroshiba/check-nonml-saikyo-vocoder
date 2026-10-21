@@ -84,3 +84,7 @@ native独立監査の初回はPython選択ミスでNumPyがなく、保存配列
 [方向密度対比v2の保存値・独立監査・全窓データをPagesで開く](https://hiroshiba.github.io/check-nonml-saikyo-vocoder/experiments/2026-10-21/pml-ar1-three-atom-residual/results/directional-density-v2/index.html)。既存固定prefix最大6秒の1話者3録音、3,209 unique窓・3,218 anchorです。候補ID q=52..66（15候補）対q=67..512（446候補）のlog oddsと、H1/H0の仮説priorを除くlog evidence ratioについて、ACG−tの対応差の録音別中央値を記録しました。PMLを維持し、新音声・品質比較はありません。
 
 旧tの全461候補値は全窓でbit一致し、独立再集計のH1/H0比の全行と録音別中央値も一致しました。低域log oddsのt・ACG・差の3列には842セルの最終桁差があり、最大絶対差は2.842170943040401e-14です。許容差による合格や全計算完全一致とは扱いません。捕捉警告0件の原因は確定せず、安定性・真F0・生理的VUV・音質の改善や採用は主張しません。原計画の未実行という表現は当時の履歴です。
+
+## 倍音係数の固定減衰案は、計測せず紙上で閉じる
+
+[固定減衰案を計測しない判断](followup-design/fixed-harmonic-prior-decay-20261021.md)を保存しました。この固定形状の根拠と追加計測で得られる情報が不足するため例示へ戻し、指数探索・逆順対照の追加計測・実装は行いません。PMLと既存結果・原計画は維持します。
