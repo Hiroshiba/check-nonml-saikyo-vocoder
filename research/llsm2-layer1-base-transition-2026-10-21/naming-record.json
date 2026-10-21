@@ -1,0 +1,107 @@
+{
+  "schema_version": 1,
+  "candidate_file": "transition-draft/naming-candidates.json",
+  "candidate_sha256_before_draw": "d5e4cb3a75f6e6b01d7592619437e3c4467be88589dae258b21240c27d369925",
+  "mechanism": "Python standard library secrets.choice; one draw",
+  "drawn_at_utc": "2026-10-21T17:38:40.618695+00:00",
+  "candidates": [
+    {
+      "id": "yakan",
+      "display": "やかん"
+    },
+    {
+      "id": "zabuton",
+      "display": "座布団"
+    },
+    {
+      "id": "noren",
+      "display": "のれん"
+    },
+    {
+      "id": "tansu",
+      "display": "たんす"
+    },
+    {
+      "id": "uchiwa",
+      "display": "うちわ"
+    },
+    {
+      "id": "futon",
+      "display": "ふとん"
+    },
+    {
+      "id": "omochi",
+      "display": "おもち"
+    },
+    {
+      "id": "yubiwa",
+      "display": "指輪"
+    }
+  ],
+  "selected": {
+    "id": "yubiwa",
+    "display": "指輪"
+  },
+  "collision_check": {
+    "status": "accepted_no_confusing_method_found",
+    "checked_at_utc": "2026-10-21T17:39:43.155713+00:00",
+    "repository_search": "BASELINE.json, vocoderbench, docs, README.md: yubiwa/指輪/ゆびわ の関連ソース一致なし",
+    "public_queries": [
+      "\"Yubiwa\" vocoder speech synthesis model",
+      "\"Yubiwa\" audio signal processing algorithm",
+      "\"指輪\" ボコーダー 音声合成 手法"
+    ],
+    "note": "一般名詞・楽曲名等の一致はあるが、同名の音声手法・信号処理方式は確認できなかった。網羅的な商標調査ではない。"
+  },
+  "rejected_draws": [
+    {
+      "selected": {
+        "id": "tansu",
+        "display": "たんす"
+      },
+      "reason": "公開のシンセサイザー Moog III-C の呼称「Tansu」と紛らわしい",
+      "evidence": [
+        "https://otomo.net/contents/937720?locale=en",
+        "https://www.electricityclub.co.uk/tag/ryuichi-sakamoto/"
+      ]
+    },
+    {
+      "selected": {
+        "id": "futon",
+        "display": "ふとん"
+      },
+      "reason": "FUTON は Fourier Tensor Network の既存手法名で、音声合成分野にも「おふとんP」がある",
+      "evidence": [
+        "https://arxiv.org/abs/2602.13414",
+        "https://mohumohuton.web.fc2.com/"
+      ]
+    }
+  ],
+  "redraws": [
+    {
+      "mechanism": "Python standard library secrets.choice; rejected collision omitted",
+      "drawn_at_utc": "2026-10-21T17:39:01.907244+00:00",
+      "eligible_ids": [
+        "yakan",
+        "zabuton",
+        "noren",
+        "uchiwa",
+        "futon",
+        "omochi",
+        "yubiwa"
+      ]
+    },
+    {
+      "mechanism": "Python standard library secrets.choice; rejected collisions omitted",
+      "drawn_at_utc": "2026-10-21T17:39:24.852033+00:00",
+      "eligible_ids": [
+        "yakan",
+        "zabuton",
+        "noren",
+        "uchiwa",
+        "omochi",
+        "yubiwa"
+      ]
+    }
+  ]
+}

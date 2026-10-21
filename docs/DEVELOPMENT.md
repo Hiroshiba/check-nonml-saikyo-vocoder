@@ -1,5 +1,7 @@
 # 開発とログの手順
 
+現在の作業ベースは指輪（LLSM2 Layer1）です。以下に残る `vocoderbench.run` / `vocoderbench.benchmark` の記述は旧PML期の履歴で、両実行入口は退役しました。新規比較は `vocoderbench.reference` を使い、24 kHzのnative出力と16 kHzの共通区間を区別します。
+
 本書はユーザー指示を実行に移すためのAIの運用文書であり、`USER_INSTRUCTIONS.md` が優先する。
 
 ## PythonのCLIと依存関係

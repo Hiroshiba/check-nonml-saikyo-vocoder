@@ -39,7 +39,8 @@ def check(path, expected):
 
 
 def implementation_hashes():
-    paths = [*HERE.glob('*.py'), *(ROOT / 'vocoderbench').glob('*.py'), *(ROOT / 'vocoderbench/pml').glob('*.py'),
+    paths = [*HERE.glob('*.py'), *(ROOT / 'vocoderbench').glob('*.py'),
+             *(ROOT / 'vocoderbench/yubiwa').glob('*.py'),
              HERE / 'sources.lock.json', HERE / 'requirements.txt',
              ROOT / 'vocoderbench/world.lock.json', ROOT / 'uv.lock', ROOT / 'BASELINE.json']
     return {str(p.relative_to(ROOT)): digest(p) for p in sorted(set(paths))}

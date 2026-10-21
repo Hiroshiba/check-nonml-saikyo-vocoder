@@ -60,8 +60,6 @@ def run_case(adapter, spec, args):
             raise ValueError('入力は100 ms以上の有限なモノラル波形にしてください')
         start = time.perf_counter()
         divisor = math.gcd(spec['sample_rate'], adapter.sr)
-        if args.method == 'pml' and spec['sample_rate'] != adapter.sr:
-            raise ValueError('PMLは16 kHz専用です。暗黙の再標本化はしません')
         if spec['sample_rate'] != adapter.sr:
             x = resample_poly(x, adapter.sr // divisor, spec['sample_rate'] // divisor)
         x = np.ascontiguousarray(x)
@@ -74,8 +72,7 @@ def run_case(adapter, spec, args):
             x, _ = sf.read(wav, dtype='float64')
             row['input_quantization'] = 'PCM16 (MagPhase/REAPER file API only)'
         else:
-            row['input_quantization'] = ('float64 signal; REAPER F0 only: round(x*32767) int16'
-                                         if args.method == 'pml' else 'none')
+            row['input_quantization'] = 'none'
         row['resampling_and_input_io_s'] = time.perf_counter() - start
         row['native_input_samples'] = len(x)
         row['native_input_sha256'] = __import__('hashlib').sha256(x.astype('<f8').tobytes()).hexdigest()
@@ -128,13 +125,13 @@ def main():
     torch.set_num_interop_threads(1)
     start = time.perf_counter()
     seed_all(args.seed)
-    if args.method == 'pml':
+    if args.method == 'yubiwa':
         from .current_base import build, record
-        spec = record()
+        spec = record(args.runtime_cache)
         contract = read(args.output.parent.parent / 'contract.json')
         if spec != contract['current_base']:
             raise ValueError('現在のベースのコード・依存・識別子が固定条件と一致しません')
-        adapter = build(args.seed)
+        adapter = build(args.seed, args.runtime_cache)
     else:
         spec = verify_prepared(args.runtime_cache, args.method)
         module, name = BUILDERS[args.method]

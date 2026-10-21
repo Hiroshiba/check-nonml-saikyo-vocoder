@@ -1,10 +1,16 @@
 {
   "status": "selected",
-  "method": "pml",
-  "version": "pml-lowband-fwcep60-v1",
-  "reason": "次の研究baseとしてPML低域雑音マスク拡張＋60FWCEPへ更新。正式package seed 0・固定120録音の品質71軸と追加制御・表現評価に基づき、旧HNMからの予測MOS・明瞭性・話者類似度改善を重視する。音高追従・固定読み出し・スペクトル誤差の弱点があり、総合優越や48 kHz対応は未確証。測定時の比較基準はHNM v3。",
-  "comparison_reference": "pml",
-  "comparison_reference_meaning": "現在の唯一の開発ベース。保存済み過去結果は測定時の方式・版・比較基準を保持する。",
-  "previous_version": "hnm-v3",
-  "selection_report": "research/pml-package-evaluation-2026-10-16/index.html"
+  "method": "yubiwa",
+  "display_name": "指輪",
+  "version": "yubiwa-llsm2-layer1-v1",
+  "source_method": "LLSM2 Layer1",
+  "reason": "ユーザー指定により作業ベースをLLSM2 Layer1へ切り替える。Layer1の固定120音声品質評価は未実施で、PMLや測定済みLayer0に対する性能優位は主張しない。",
+  "comparison_reference": "yubiwa",
+  "comparison_reference_meaning": "現在唯一の作業ベース。比較ID llsm2 は従来のLayer0を指す。保存済み結果は測定時の方式・版・比較基準を維持する。",
+  "previous_method": "pml",
+  "previous_version": "pml-lowband-fwcep60-v1",
+  "previous_reproduction_commit": "62acf3cadcd8a49f37e2e63826f2966ed2d8ce28",
+  "previous_selection_report": "research/pml-package-evaluation-2026-10-16/index.html",
+  "selection_report": "research/llsm2-layer1-base-transition-2026-10-21/index.html",
+  "evaluation_status": "Layer1の品質・操作追従は未測定。固定120録音の評価は後工程。"
 }
