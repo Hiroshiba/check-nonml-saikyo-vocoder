@@ -1,0 +1,1100 @@
+{
+  "original": {
+    "member": "INPUT_PIN.json",
+    "bytes": 185071,
+    "sha256": "8c98b4e0fdab2818d9c3fc1a445e1586ea412173058bd7e08a970adbee90967d"
+  },
+  "projection": {
+    "records": [
+      {
+        "id": "librispeech_1089-134686-0008",
+        "n_samples": 96000,
+        "anchors": 1200,
+        "unique_physical_windows": 1197
+      },
+      {
+        "id": "librispeech_1089-134686-0011",
+        "n_samples": 96000,
+        "anchors": 1200,
+        "unique_physical_windows": 1197
+      },
+      {
+        "id": "librispeech_1089-134686-0032",
+        "n_samples": 65440,
+        "anchors": 818,
+        "unique_physical_windows": 815
+      }
+    ],
+    "inputs": {
+      "ar3": {
+        "envelope": {
+          "bytes": 41442909,
+          "sha256": "dcbcc49b9cffcded4188adcb32bf61c068344ebf767c76c8bb3591de0506fbe2"
+        },
+        "native_member": "native/native.zip",
+        "native_archive": {
+          "bytes": 41430719,
+          "sha256": "8431e6fb7c206413a00e0ee5bf07e4827076525c390469a168baf722b1cdaafd"
+        },
+        "FILES_sha256": "f98a520bc9ec7fcf4df8568f5031b08a34406363f50a71f9a0caba7d50ceb29e",
+        "data_members": [
+          {
+            "path": "records/librispeech_1089-134686-0008/selector_ar3/F/gate.npy",
+            "bytes": 1328,
+            "sha256": "24992f11c480ffd217605043477359dbab6696cbb9cd44bf610e819c756addd0",
+            "dtype": "|u1",
+            "shape": [
+              1200
+            ],
+            "data_sha256": "c8f85a91bc22b9763d225f3bd5353527cfc504627a4b62e7255f27da1d028822"
+          },
+          {
+            "path": "records/librispeech_1089-134686-0008/selector_ar3/F/gate_local_contribution.npy",
+            "bytes": 9728,
+            "sha256": "353f4349b1f076eb4c61baf1f9bcfd503267623d24644c935928b06b68cc2efc",
+            "dtype": "<f8",
+            "shape": [
+              1200
+            ],
+            "data_sha256": "52d0908115bea893b7c33a1e1ad1f689001c0c51d547bd8c853d8a435ac4f2bf"
+          },
+          {
+            "path": "records/librispeech_1089-134686-0008/selector_ar3/F/gate_recenter_offsets.npy",
+            "bytes": 9728,
+            "sha256": "41e638b1979e3f1cd62e3f1f590928032d0813bd39855ad96ef3ca52764df3eb",
+            "dtype": "<f8",
+            "shape": [
+              1200
+            ],
+            "data_sha256": "444c246ceb2282e874814c59cff057bfe977330045e5292b1004a655df3b2b9e"
+          },
+          {
+            "path": "records/librispeech_1089-134686-0008/selector_ar3/F/q_index.npy",
+            "bytes": 9728,
+            "sha256": "009faba9295f97352ab37dada6d033d5454a23f4a389345b4175724c9f0aa448",
+            "dtype": "<i8",
+            "shape": [
+              1200
+            ],
+            "data_sha256": "d8a63c71a97d9e64ebb13d0539d18aa5fa83e4cdac85ac5c223a5ec11dcde40b"
+          },
+          {
+            "path": "records/librispeech_1089-134686-0008/selector_ar3/F/q_local_contribution.npy",
+            "bytes": 9728,
+            "sha256": "0900acb87b0bf26bf50204310f76bb3fa860e8fc9d98f87c7e37ac52a260318b",
+            "dtype": "<f8",
+            "shape": [
+              1200
+            ],
+            "data_sha256": "0c65fa64b224871726f81b8bf30b26a3dca85f4661d23c7a9eadba56a17c484c"
+          },
+          {
+            "path": "records/librispeech_1089-134686-0008/selector_ar3/F/q_recenter_offsets.npy",
+            "bytes": 9728,
+            "sha256": "b50ce80a3e6e868f40d4e54cf67743aa38794612b5d2a2ac6d1f7b0ef36efd51",
+            "dtype": "<f8",
+            "shape": [
+              1200
+            ],
+            "data_sha256": "67c179a1855bfe328a046ce23f876e3de708051971078e5d41321c2ed040f314"
+          },
+          {
+            "path": "records/librispeech_1089-134686-0008/selector_ar3/F/raw_f0.npy",
+            "bytes": 9728,
+            "sha256": "bd73d813aed0c26201b8e753ac44ee05dd061b67875cd53ef3c22ce4fc6225eb",
+            "dtype": "<f8",
+            "shape": [
+              1200
+            ],
+            "data_sha256": "2b9ccb4efe51fecb8f84ef63ab0271a472199f8df41bcc0f00e4767cf564030a"
+          },
+          {
+            "path": "records/librispeech_1089-134686-0008/selector_ar3/L/gate.npy",
+            "bytes": 1328,
+            "sha256": "e66150e9b0b4abf9556429e3a3889f6a1c9f9c9b8b650966bccbd1a81a90b699",
+            "dtype": "|u1",
+            "shape": [
+              1200
+            ],
+            "data_sha256": "e9830675796202463c8554310a3d9c56256311b5f9c35b896e11dc7998b220fd"
+          },
+          {
+            "path": "records/librispeech_1089-134686-0008/selector_ar3/L/gate_local_contribution.npy",
+            "bytes": 9728,
+            "sha256": "c8abfc80556c60ccd766166ae3c877a84bf194684e4ff7f13433bd19f8d47942",
+            "dtype": "<f8",
+            "shape": [
+              1200
+            ],
+            "data_sha256": "2b49f30685819cdea5ed844b997b9fd13022c13d26ef57de57e2a7d4bf407631"
+          },
+          {
+            "path": "records/librispeech_1089-134686-0008/selector_ar3/L/q_index.npy",
+            "bytes": 9728,
+            "sha256": "2d12286465eaa2b65f3bb033de920deb811594afeaba38c2d9ae1019f5906ebd",
+            "dtype": "<i8",
+            "shape": [
+              1200
+            ],
+            "data_sha256": "7382e01ce95d137da2300b8de91927eaf9f5a32ffe9610ba8caf43bff21d2977"
+          },
+          {
+            "path": "records/librispeech_1089-134686-0008/selector_ar3/L/q_local_contribution.npy",
+            "bytes": 9728,
+            "sha256": "5781a49a6e4ebc741dee38bba5cd17e5b733c3c3e7eed398b45dbb50251a51c3",
+            "dtype": "<f8",
+            "shape": [
+              1200
+            ],
+            "data_sha256": "d81e5811a782548227275369e201fcfe7c4cd121c2148d0b9705ac3f6f5524dd"
+          },
+          {
+            "path": "records/librispeech_1089-134686-0008/selector_ar3/L/raw_f0.npy",
+            "bytes": 9728,
+            "sha256": "5525625159d549b56172e4336f97c27b106952d5317ad5f50cdbc31efda02839",
+            "dtype": "<f8",
+            "shape": [
+              1200
+            ],
+            "data_sha256": "9042daef3f3e7309de42b6aaf71185c56f4a807d8c0412440b962b5d0ee3b735"
+          },
+          {
+            "path": "records/librispeech_1089-134686-0008/selector_ar3/anchor_sample.npy",
+            "bytes": 9728,
+            "sha256": "3f3c07c0e5ea7215cefa6bee893090e756cb08ffada6c90df6238ad0d722c6b5",
+            "dtype": "<i8",
+            "shape": [
+              1200
+            ],
+            "data_sha256": "5136dcf72cd97373044b8907a9ef381d3881a2c6ddbc1bcd20e4d99b3e8185d3"
+          },
+          {
+            "path": "records/librispeech_1089-134686-0008/selector_ar3/anchor_to_unique_window.npy",
+            "bytes": 9728,
+            "sha256": "a07fb8df69ff3ebbb3346fb266915a1bbe42baa236356d9e9afc5b42e626f6ef",
+            "dtype": "<i8",
+            "shape": [
+              1200
+            ],
+            "data_sha256": "0ecc8e3cdeb6eac21ab74a019a3810eb0996457ec43a3eaa5387593ec45f1bc1"
+          },
+          {
+            "path": "records/librispeech_1089-134686-0008/selector_ar3/gate_log_potential.npy",
+            "bytes": 19328,
+            "sha256": "68829b68abf53914d1932484bfeea8fa3d79bda9a77713cb6450638ad4923569",
+            "dtype": "<f8",
+            "shape": [
+              1200,
+              2
+            ],
+            "data_sha256": "6a506f148022b2142113438a5aa64a5425639a2275c240fbb3eed86aa106d08b"
+          },
+          {
+            "path": "records/librispeech_1089-134686-0008/selector_ar3/h0_atom_aggregate_loge.npy",
+            "bytes": 28928,
+            "sha256": "1278ca351e0d4266a68a24b046384dab2db3d9009e3fb1de8fc8e10571d722e3",
+            "dtype": "<f8",
+            "shape": [
+              1200,
+              3
+            ],
+            "data_sha256": "8b5896963349b63ee7f4677b3b956abff21b0727f3189121b462693eaada191b"
+          },
+          {
+            "path": "records/librispeech_1089-134686-0008/selector_ar3/h0_atom_log_responsibility.npy",
+            "bytes": 28928,
+            "sha256": "3e0e3b971f6a007f6f32a721e0bea50ecd5c5a8d8e06653cb297d4c1a3f5a3bf",
+            "dtype": "<f8",
+            "shape": [
+              1200,
+              3
+            ],
+            "data_sha256": "3312b0e46b7511fb8a097c4125d321c29074624334144a15727fb4b435e153ca"
+          },
+          {
+            "path": "records/librispeech_1089-134686-0008/selector_ar3/h1_atom_aggregate_loge.npy",
+            "bytes": 28928,
+            "sha256": "a6650365348146eb7ff28fefe8fc2839d660a470763c298dd1804bbd769bca98",
+            "dtype": "<f8",
+            "shape": [
+              1200,
+              3
+            ],
+            "data_sha256": "538f2b80d2e7bd5ec3295ed0e800ef72942983105be7e81c5d41d6e625960c72"
+          },
+          {
+            "path": "records/librispeech_1089-134686-0008/selector_ar3/h1_atom_log_responsibility.npy",
+            "bytes": 28928,
+            "sha256": "6249b22770e7155978101452838eb690a3eace226ff29c58c81df08a5abb40a1",
+            "dtype": "<f8",
+            "shape": [
+              1200,
+              3
+            ],
+            "data_sha256": "74e876c0b27153a70461f4398f9aa988cc041d25b1d866d256ba615547237e6a"
+          },
+          {
+            "path": "records/librispeech_1089-134686-0008/selector_ar3/log_normalizer.npy",
+            "bytes": 9728,
+            "sha256": "970624077186b7fdc0e73fb2b9b0001bb425a9c66c728c4033d1295be4c20d1c",
+            "dtype": "<f8",
+            "shape": [
+              1200
+            ],
+            "data_sha256": "286a66dab3718b072f995a4d56858de92aab09fa828334fd436360d03357f1eb"
+          },
+          {
+            "path": "records/librispeech_1089-134686-0008/selector_ar3/potential_batch_column.npy",
+            "bytes": 9728,
+            "sha256": "9416def5bd353ec06346c9a092ee050d6115839b475cb7646958ddab15e1cb8c",
+            "dtype": "<i8",
+            "shape": [
+              1200
+            ],
+            "data_sha256": "480bfbdf893849e82c5ee26769e2d122dd544135254ab187ae800c6de5f786c0"
+          },
+          {
+            "path": "records/librispeech_1089-134686-0008/selector_ar3/potential_batch_index.npy",
+            "bytes": 9728,
+            "sha256": "1eaf390ddcddd9e5566263ff2d67121064e5ca64e6c201b23337075bfa444ff2",
+            "dtype": "<i8",
+            "shape": [
+              1200
+            ],
+            "data_sha256": "b3628b3bf9b062afa4af1594b0ef4f6a3e0ba20a00b97dee5ecbe1e1893bab2b"
+          },
+          {
+            "path": "records/librispeech_1089-134686-0008/selector_ar3/potential_computed.npy",
+            "bytes": 1328,
+            "sha256": "46256fbe57e5954003dce48c2a64eea84a32c62faf08096ddac5219afab1824a",
+            "dtype": "|b1",
+            "shape": [
+              1200
+            ],
+            "data_sha256": "64bf4e7fe668627a965187e536da3baef5a3ae007bd0fd657421b3ff7bea9127"
+          },
+          {
+            "path": "records/librispeech_1089-134686-0008/selector_ar3/q_log_potential.npy",
+            "bytes": 4425728,
+            "sha256": "b8f68e0db9be040add128993c05eb19bc0c469f1936e9f6031b582d8e70d3f47",
+            "dtype": "<f8",
+            "shape": [
+              1200,
+              461
+            ],
+            "data_sha256": "a466c68e3ddcb43f4d5ce5b61d1094e711de9d7c2ac616261a4be2322198b084"
+          },
+          {
+            "path": "records/librispeech_1089-134686-0008/selector_ar3/raw_time_bits.npy",
+            "bytes": 9728,
+            "sha256": "67b33fbdf50644dc829e7c0327d6721c81c6ed5498725cf60001e413a53df3f7",
+            "dtype": "<u8",
+            "shape": [
+              1200
+            ],
+            "data_sha256": "7f3277caf8bac500d55d63ae409fcd00dc67e4a1ef2df8640dc5274b248becc8"
+          },
+          {
+            "path": "records/librispeech_1089-134686-0008/selector_ar3/raw_times.npy",
+            "bytes": 9728,
+            "sha256": "3abb55cac4927937f9e2ba268e681e77bc511e3f33e1bc0e967a7d3d423ab3da",
+            "dtype": "<f8",
+            "shape": [
+              1200
+            ],
+            "data_sha256": "7f3277caf8bac500d55d63ae409fcd00dc67e4a1ef2df8640dc5274b248becc8"
+          },
+          {
+            "path": "records/librispeech_1089-134686-0008/selector_ar3/shifted_window.npy",
+            "bytes": 1328,
+            "sha256": "251e04165b0dc88c398f053b561c2f7cad1d341234ff6092afcdc9ed128aa5d8",
+            "dtype": "|b1",
+            "shape": [
+              1200
+            ],
+            "data_sha256": "d7c2600740d0457629cd2c0535099b1319d491f3ef4be8bb25c708f89fce9730"
+          },
+          {
+            "path": "records/librispeech_1089-134686-0008/selector_ar3/unique_window_start.npy",
+            "bytes": 9704,
+            "sha256": "e40140ed04f9f5374519dd7ded7b4d4232cc8ac3c93ddb58c61693cb24eb540d",
+            "dtype": "<i8",
+            "shape": [
+              1197
+            ],
+            "data_sha256": "8ec922061b0c4dc9fe37f271e3f6642c76628dc8203f50b8c69952d638d020a0"
+          },
+          {
+            "path": "records/librispeech_1089-134686-0008/selector_ar3/window_rms.npy",
+            "bytes": 9728,
+            "sha256": "33c45604a04c0cde4aefd0bbb119a832cbf58744c4f44510efaea60404b526d2",
+            "dtype": "<f8",
+            "shape": [
+              1200
+            ],
+            "data_sha256": "4e93f79e498b7d662e9f1c175a012a54ce7c082c40b3f4e2627b8ffb1a2bf656"
+          },
+          {
+            "path": "records/librispeech_1089-134686-0008/selector_ar3/window_start.npy",
+            "bytes": 9728,
+            "sha256": "854e05733d972812a5462089670134c6497f67dab1f219af0112874c3fdaa66a",
+            "dtype": "<i8",
+            "shape": [
+              1200
+            ],
+            "data_sha256": "601df02c40703f2b82c7e519238dd805829a42759c888faf55aa724166360036"
+          },
+          {
+            "path": "records/librispeech_1089-134686-0008/selector_ar3/window_stop.npy",
+            "bytes": 9728,
+            "sha256": "a3e22dff23e68953c4036fc83328a8de14260ca203896366948b059ae5e8a636",
+            "dtype": "<i8",
+            "shape": [
+              1200
+            ],
+            "data_sha256": "481b85313beeb7baece8bcba92840f7cbe249a1f64e72a074baab8ad70ff1787"
+          },
+          {
+            "path": "records/librispeech_1089-134686-0008/selector_ar3/z_valid.npy",
+            "bytes": 1328,
+            "sha256": "46256fbe57e5954003dce48c2a64eea84a32c62faf08096ddac5219afab1824a",
+            "dtype": "|b1",
+            "shape": [
+              1200
+            ],
+            "data_sha256": "64bf4e7fe668627a965187e536da3baef5a3ae007bd0fd657421b3ff7bea9127"
+          },
+          {
+            "path": "records/librispeech_1089-134686-0008/selector_ar3/zero_window.npy",
+            "bytes": 1328,
+            "sha256": "edb710450bf5acb34e37b61998752ccbe67b056d48fdf1c148d889e9721099b0",
+            "dtype": "|b1",
+            "shape": [
+              1200
+            ],
+            "data_sha256": "655a3ef0465a9f30fddf25f4dde0c19a05c6f9069b83961800c1944165955273"
+          },
+          {
+            "path": "records/librispeech_1089-134686-0011/selector_ar3/F/gate.npy",
+            "bytes": 1328,
+            "sha256": "dd6065db4c66f05fac0a68bb97bb10fede440098b0a4e4662b4a78dbec860f34",
+            "dtype": "|u1",
+            "shape": [
+              1200
+            ],
+            "data_sha256": "0ec9396d03c9dbaa15294479d74f447d5092e1ad0bee47bafc20bb4e6f64474e"
+          },
+          {
+            "path": "records/librispeech_1089-134686-0011/selector_ar3/F/gate_local_contribution.npy",
+            "bytes": 9728,
+            "sha256": "933e8151a3fc6f0a48fed7f911486473c2d951e9745f4a8f1437f8e9c11b18b4",
+            "dtype": "<f8",
+            "shape": [
+              1200
+            ],
+            "data_sha256": "232229d97746b5de3c3e37439db5d2a371bd9057c7d730289d1eb0415149e98a"
+          },
+          {
+            "path": "records/librispeech_1089-134686-0011/selector_ar3/F/gate_recenter_offsets.npy",
+            "bytes": 9728,
+            "sha256": "a04a82ac3e046fec956c7c94570fb808f1e047ad9498baed3e5cd3a250e7a984",
+            "dtype": "<f8",
+            "shape": [
+              1200
+            ],
+            "data_sha256": "d469a5bab97b3e4982722b283eb8dfd9147f39b20b2f28e5d29bd77d3d8baf1d"
+          },
+          {
+            "path": "records/librispeech_1089-134686-0011/selector_ar3/F/q_index.npy",
+            "bytes": 9728,
+            "sha256": "568b256c8eda73db4d6e0216e8af19867d258d7ce65505cb58042913c021672b",
+            "dtype": "<i8",
+            "shape": [
+              1200
+            ],
+            "data_sha256": "83828a1b40d257e20dff7bc75781d1889138836b61b1fd5fe94787343f548bb3"
+          },
+          {
+            "path": "records/librispeech_1089-134686-0011/selector_ar3/F/q_local_contribution.npy",
+            "bytes": 9728,
+            "sha256": "1841e2434b3bb79fb90497d66ed44b12dbed3bdaf20c6e3f8d7f49ee3f397cfb",
+            "dtype": "<f8",
+            "shape": [
+              1200
+            ],
+            "data_sha256": "1f449d25270172187eec8879cff275ef8285526d4e90d189de2f8dbda906ceb0"
+          },
+          {
+            "path": "records/librispeech_1089-134686-0011/selector_ar3/F/q_recenter_offsets.npy",
+            "bytes": 9728,
+            "sha256": "e23fc2a71b64e13089388876455644a6584734c387a5bd418261b337097c3bcc",
+            "dtype": "<f8",
+            "shape": [
+              1200
+            ],
+            "data_sha256": "e7438fa8a6b44646a36ad46693a36b1941e4d69c561fe93ed226523c699aa29a"
+          },
+          {
+            "path": "records/librispeech_1089-134686-0011/selector_ar3/F/raw_f0.npy",
+            "bytes": 9728,
+            "sha256": "e4f5eda00c2bd604703e0495a139892637c251c256effd13a94bd576d601628e",
+            "dtype": "<f8",
+            "shape": [
+              1200
+            ],
+            "data_sha256": "780bec4192b751aeaf891ab5e83a31ebb2c7b1d220a9936a54c00ddd1e14cc67"
+          },
+          {
+            "path": "records/librispeech_1089-134686-0011/selector_ar3/L/gate.npy",
+            "bytes": 1328,
+            "sha256": "e9bf055aee03e3f84f06de8fa2e31690ef2750eb91b61d53a7569f851aadbd56",
+            "dtype": "|u1",
+            "shape": [
+              1200
+            ],
+            "data_sha256": "06f8a5c1a248bb011b1df61dd96195082241737813006bb6c1d260703b760dd1"
+          },
+          {
+            "path": "records/librispeech_1089-134686-0011/selector_ar3/L/gate_local_contribution.npy",
+            "bytes": 9728,
+            "sha256": "775fdc822158f5d28059bbc40716de2a9f6b33a36f3302d9a966dd96350e0022",
+            "dtype": "<f8",
+            "shape": [
+              1200
+            ],
+            "data_sha256": "3d4c1c7965b636e4b98b12b179ce0b3e1d25785af05a1f22e796fe08ccc1bca0"
+          },
+          {
+            "path": "records/librispeech_1089-134686-0011/selector_ar3/L/q_index.npy",
+            "bytes": 9728,
+            "sha256": "429d5d833823183151ebeccf359f47cc7b126404eae8060a742c0168a0487342",
+            "dtype": "<i8",
+            "shape": [
+              1200
+            ],
+            "data_sha256": "2031ed459bf882ca2399e60236e24819052d9e5d86ce0198f3562a15e5af43de"
+          },
+          {
+            "path": "records/librispeech_1089-134686-0011/selector_ar3/L/q_local_contribution.npy",
+            "bytes": 9728,
+            "sha256": "bd6b1f77a731c4adfd0f7e5d06937ab056ca56e14375d2e72fffa7d1c2931567",
+            "dtype": "<f8",
+            "shape": [
+              1200
+            ],
+            "data_sha256": "6d64de8917aa2bba3b65def403cc9f4d21a8baae540d0f06086ec0d53ffde111"
+          },
+          {
+            "path": "records/librispeech_1089-134686-0011/selector_ar3/L/raw_f0.npy",
+            "bytes": 9728,
+            "sha256": "c29e6ac57558d226bf4d291ab5f102ce655362b77d3420d58e325e6d28584f40",
+            "dtype": "<f8",
+            "shape": [
+              1200
+            ],
+            "data_sha256": "8c9f4b912472fede6b9b63326753fa74fca4baccbdc78beffbec70745c64630e"
+          },
+          {
+            "path": "records/librispeech_1089-134686-0011/selector_ar3/anchor_sample.npy",
+            "bytes": 9728,
+            "sha256": "3f3c07c0e5ea7215cefa6bee893090e756cb08ffada6c90df6238ad0d722c6b5",
+            "dtype": "<i8",
+            "shape": [
+              1200
+            ],
+            "data_sha256": "5136dcf72cd97373044b8907a9ef381d3881a2c6ddbc1bcd20e4d99b3e8185d3"
+          },
+          {
+            "path": "records/librispeech_1089-134686-0011/selector_ar3/anchor_to_unique_window.npy",
+            "bytes": 9728,
+            "sha256": "a07fb8df69ff3ebbb3346fb266915a1bbe42baa236356d9e9afc5b42e626f6ef",
+            "dtype": "<i8",
+            "shape": [
+              1200
+            ],
+            "data_sha256": "0ecc8e3cdeb6eac21ab74a019a3810eb0996457ec43a3eaa5387593ec45f1bc1"
+          },
+          {
+            "path": "records/librispeech_1089-134686-0011/selector_ar3/gate_log_potential.npy",
+            "bytes": 19328,
+            "sha256": "96f67b83123c0ccb9cc73b6c9bff4d6808e52fb133b1abb390203ffdb6dbd4b1",
+            "dtype": "<f8",
+            "shape": [
+              1200,
+              2
+            ],
+            "data_sha256": "d6d37cc990df0b7fb69d200edccdc581e11f9d724c1799d3156454545a28f521"
+          },
+          {
+            "path": "records/librispeech_1089-134686-0011/selector_ar3/h0_atom_aggregate_loge.npy",
+            "bytes": 28928,
+            "sha256": "82cf796817235f957afd864d77e4931bca70772f8be62885877adef3bf52a1c2",
+            "dtype": "<f8",
+            "shape": [
+              1200,
+              3
+            ],
+            "data_sha256": "871d8d5ac091694a183a6a5bf351ba6f6f95bfcf6fe10e68471f5765b3db2b32"
+          },
+          {
+            "path": "records/librispeech_1089-134686-0011/selector_ar3/h0_atom_log_responsibility.npy",
+            "bytes": 28928,
+            "sha256": "0daa63d2843cda58e65afe64cdcbaae0a3b627937567173930383ab4775d6d6c",
+            "dtype": "<f8",
+            "shape": [
+              1200,
+              3
+            ],
+            "data_sha256": "a9e429d15483e2f2bb1d873d12e8a1a109f01d2b84f91cd64794c63e09bcd283"
+          },
+          {
+            "path": "records/librispeech_1089-134686-0011/selector_ar3/h1_atom_aggregate_loge.npy",
+            "bytes": 28928,
+            "sha256": "9b1db42a550cd43e21e2fb9c3d8ad4e7d92ea84153ee35920f1d3969be0cbafe",
+            "dtype": "<f8",
+            "shape": [
+              1200,
+              3
+            ],
+            "data_sha256": "591da0e818898fe6360a8d59deaba69f4d7aaca753706e265f1465f58a07a4a6"
+          },
+          {
+            "path": "records/librispeech_1089-134686-0011/selector_ar3/h1_atom_log_responsibility.npy",
+            "bytes": 28928,
+            "sha256": "6fcf332564d0f14d52f2a3ae8858fcf75a8355e3cb7fbd2aae0710fc1ceeabf5",
+            "dtype": "<f8",
+            "shape": [
+              1200,
+              3
+            ],
+            "data_sha256": "887646cf6e3c42c63bc9352bc26c099179d3b6608f71614b1443f369a9a6b9f5"
+          },
+          {
+            "path": "records/librispeech_1089-134686-0011/selector_ar3/log_normalizer.npy",
+            "bytes": 9728,
+            "sha256": "835c715fdce5dd3ccc4ffea01947bde239703028efd78b79f81b24d3abb19ce8",
+            "dtype": "<f8",
+            "shape": [
+              1200
+            ],
+            "data_sha256": "b7373728e73901b426e363d53f9e4a4eb28648c3504026769ba8a9981bf8370c"
+          },
+          {
+            "path": "records/librispeech_1089-134686-0011/selector_ar3/potential_batch_column.npy",
+            "bytes": 9728,
+            "sha256": "9416def5bd353ec06346c9a092ee050d6115839b475cb7646958ddab15e1cb8c",
+            "dtype": "<i8",
+            "shape": [
+              1200
+            ],
+            "data_sha256": "480bfbdf893849e82c5ee26769e2d122dd544135254ab187ae800c6de5f786c0"
+          },
+          {
+            "path": "records/librispeech_1089-134686-0011/selector_ar3/potential_batch_index.npy",
+            "bytes": 9728,
+            "sha256": "1eaf390ddcddd9e5566263ff2d67121064e5ca64e6c201b23337075bfa444ff2",
+            "dtype": "<i8",
+            "shape": [
+              1200
+            ],
+            "data_sha256": "b3628b3bf9b062afa4af1594b0ef4f6a3e0ba20a00b97dee5ecbe1e1893bab2b"
+          },
+          {
+            "path": "records/librispeech_1089-134686-0011/selector_ar3/potential_computed.npy",
+            "bytes": 1328,
+            "sha256": "46256fbe57e5954003dce48c2a64eea84a32c62faf08096ddac5219afab1824a",
+            "dtype": "|b1",
+            "shape": [
+              1200
+            ],
+            "data_sha256": "64bf4e7fe668627a965187e536da3baef5a3ae007bd0fd657421b3ff7bea9127"
+          },
+          {
+            "path": "records/librispeech_1089-134686-0011/selector_ar3/q_log_potential.npy",
+            "bytes": 4425728,
+            "sha256": "9538b9399ccc015a6a5de2bd08f5abd903c236595267eb444d09438aaef819bf",
+            "dtype": "<f8",
+            "shape": [
+              1200,
+              461
+            ],
+            "data_sha256": "b8a90f23403218168999674140367f1c001ac84368f10de1cbf89056cf5fe05a"
+          },
+          {
+            "path": "records/librispeech_1089-134686-0011/selector_ar3/raw_time_bits.npy",
+            "bytes": 9728,
+            "sha256": "67b33fbdf50644dc829e7c0327d6721c81c6ed5498725cf60001e413a53df3f7",
+            "dtype": "<u8",
+            "shape": [
+              1200
+            ],
+            "data_sha256": "7f3277caf8bac500d55d63ae409fcd00dc67e4a1ef2df8640dc5274b248becc8"
+          },
+          {
+            "path": "records/librispeech_1089-134686-0011/selector_ar3/raw_times.npy",
+            "bytes": 9728,
+            "sha256": "3abb55cac4927937f9e2ba268e681e77bc511e3f33e1bc0e967a7d3d423ab3da",
+            "dtype": "<f8",
+            "shape": [
+              1200
+            ],
+            "data_sha256": "7f3277caf8bac500d55d63ae409fcd00dc67e4a1ef2df8640dc5274b248becc8"
+          },
+          {
+            "path": "records/librispeech_1089-134686-0011/selector_ar3/shifted_window.npy",
+            "bytes": 1328,
+            "sha256": "251e04165b0dc88c398f053b561c2f7cad1d341234ff6092afcdc9ed128aa5d8",
+            "dtype": "|b1",
+            "shape": [
+              1200
+            ],
+            "data_sha256": "d7c2600740d0457629cd2c0535099b1319d491f3ef4be8bb25c708f89fce9730"
+          },
+          {
+            "path": "records/librispeech_1089-134686-0011/selector_ar3/unique_window_start.npy",
+            "bytes": 9704,
+            "sha256": "e40140ed04f9f5374519dd7ded7b4d4232cc8ac3c93ddb58c61693cb24eb540d",
+            "dtype": "<i8",
+            "shape": [
+              1197
+            ],
+            "data_sha256": "8ec922061b0c4dc9fe37f271e3f6642c76628dc8203f50b8c69952d638d020a0"
+          },
+          {
+            "path": "records/librispeech_1089-134686-0011/selector_ar3/window_rms.npy",
+            "bytes": 9728,
+            "sha256": "72ba27724d46e110fb54309168a77ce126099e25cb14a040b6e691bb667cdce4",
+            "dtype": "<f8",
+            "shape": [
+              1200
+            ],
+            "data_sha256": "5ac2490e0f08acc787f4bd944f90d1345f56e0658875b5a0abd0e27eb01ba958"
+          },
+          {
+            "path": "records/librispeech_1089-134686-0011/selector_ar3/window_start.npy",
+            "bytes": 9728,
+            "sha256": "854e05733d972812a5462089670134c6497f67dab1f219af0112874c3fdaa66a",
+            "dtype": "<i8",
+            "shape": [
+              1200
+            ],
+            "data_sha256": "601df02c40703f2b82c7e519238dd805829a42759c888faf55aa724166360036"
+          },
+          {
+            "path": "records/librispeech_1089-134686-0011/selector_ar3/window_stop.npy",
+            "bytes": 9728,
+            "sha256": "a3e22dff23e68953c4036fc83328a8de14260ca203896366948b059ae5e8a636",
+            "dtype": "<i8",
+            "shape": [
+              1200
+            ],
+            "data_sha256": "481b85313beeb7baece8bcba92840f7cbe249a1f64e72a074baab8ad70ff1787"
+          },
+          {
+            "path": "records/librispeech_1089-134686-0011/selector_ar3/z_valid.npy",
+            "bytes": 1328,
+            "sha256": "46256fbe57e5954003dce48c2a64eea84a32c62faf08096ddac5219afab1824a",
+            "dtype": "|b1",
+            "shape": [
+              1200
+            ],
+            "data_sha256": "64bf4e7fe668627a965187e536da3baef5a3ae007bd0fd657421b3ff7bea9127"
+          },
+          {
+            "path": "records/librispeech_1089-134686-0011/selector_ar3/zero_window.npy",
+            "bytes": 1328,
+            "sha256": "edb710450bf5acb34e37b61998752ccbe67b056d48fdf1c148d889e9721099b0",
+            "dtype": "|b1",
+            "shape": [
+              1200
+            ],
+            "data_sha256": "655a3ef0465a9f30fddf25f4dde0c19a05c6f9069b83961800c1944165955273"
+          },
+          {
+            "path": "records/librispeech_1089-134686-0032/selector_ar3/F/gate.npy",
+            "bytes": 946,
+            "sha256": "4975b8007065c18ee09998ce358ac49bd480cc1e3ddaf74c4471075df1bc195c",
+            "dtype": "|u1",
+            "shape": [
+              818
+            ],
+            "data_sha256": "a14a9fff0e4152c45900bed416fa14805aa3bea556820bfba8c57ea1ede1b095"
+          },
+          {
+            "path": "records/librispeech_1089-134686-0032/selector_ar3/F/gate_local_contribution.npy",
+            "bytes": 6672,
+            "sha256": "24764c4c62b531fb6a256f4e9f2f8617200768ee1de3b6a4409fb88b1ac05242",
+            "dtype": "<f8",
+            "shape": [
+              818
+            ],
+            "data_sha256": "a9d87369d235e70defdfc84dce17cf7386afcb05c10f3e390b14aa586710ffa4"
+          },
+          {
+            "path": "records/librispeech_1089-134686-0032/selector_ar3/F/gate_recenter_offsets.npy",
+            "bytes": 6672,
+            "sha256": "130c8fa27d096adf0d8859643640c3206fc5b74a9c915c6c537ffd39347ea4ab",
+            "dtype": "<f8",
+            "shape": [
+              818
+            ],
+            "data_sha256": "b29e581ffa91b95d2f5088d0945ed49654f753ef36c62ceed781f6e8de62b8e1"
+          },
+          {
+            "path": "records/librispeech_1089-134686-0032/selector_ar3/F/q_index.npy",
+            "bytes": 6672,
+            "sha256": "c2c7e84f5ca568aee840034a48058b2e1d03c90412bb7d2bafc5cd86d110d10b",
+            "dtype": "<i8",
+            "shape": [
+              818
+            ],
+            "data_sha256": "e8269bce7ef993ff1a10f4f1824a7d083b992696a02b0e40264affa2ab34dfd5"
+          },
+          {
+            "path": "records/librispeech_1089-134686-0032/selector_ar3/F/q_local_contribution.npy",
+            "bytes": 6672,
+            "sha256": "bd2cbd6b8839fb78cc67828811fead44657f6935a33c34a53c26863ff24d2c3d",
+            "dtype": "<f8",
+            "shape": [
+              818
+            ],
+            "data_sha256": "c292e2cc5089caea602bcce0eb820c90a0d269f16139cd27f27f3cc035d6ba49"
+          },
+          {
+            "path": "records/librispeech_1089-134686-0032/selector_ar3/F/q_recenter_offsets.npy",
+            "bytes": 6672,
+            "sha256": "23c7c418625b4001891d3a127b2039b313e3b8e981dff6cf17166855577a8b00",
+            "dtype": "<f8",
+            "shape": [
+              818
+            ],
+            "data_sha256": "38bace0a069a5e3491d0803717110d1c98ba3dd06ff6338e25ec3ad9673f5115"
+          },
+          {
+            "path": "records/librispeech_1089-134686-0032/selector_ar3/F/raw_f0.npy",
+            "bytes": 6672,
+            "sha256": "7983d1e75f4a1e4dea180ff19487bb25f2704aac4ae7b960264b21d7cffb1444",
+            "dtype": "<f8",
+            "shape": [
+              818
+            ],
+            "data_sha256": "1548d26d4817c698c670d8ab027792ec0dd1e2e368e89988f746d9d54dbf7545"
+          },
+          {
+            "path": "records/librispeech_1089-134686-0032/selector_ar3/L/gate.npy",
+            "bytes": 946,
+            "sha256": "7fec92391986847bc98362a07a7c1393a5c2439aebff827b1c36c09efd78356e",
+            "dtype": "|u1",
+            "shape": [
+              818
+            ],
+            "data_sha256": "3d8cbbbb7a8487514d9aabd6d84ca3b4be2c1b61e74d778baa6a0b0371ea0876"
+          },
+          {
+            "path": "records/librispeech_1089-134686-0032/selector_ar3/L/gate_local_contribution.npy",
+            "bytes": 6672,
+            "sha256": "c49f4a89b6aac91fd434e295278a3489670b297d61ee29071d909360cfe24180",
+            "dtype": "<f8",
+            "shape": [
+              818
+            ],
+            "data_sha256": "1c085643e5e1d5af76d1bf1cd2b0030ba75a5a091b6a7cd77273160117d6af1b"
+          },
+          {
+            "path": "records/librispeech_1089-134686-0032/selector_ar3/L/q_index.npy",
+            "bytes": 6672,
+            "sha256": "49149c8eeba12cc4560161c4ca0d105ad4f80eaba0ccdc1a1160a260fc4e13ae",
+            "dtype": "<i8",
+            "shape": [
+              818
+            ],
+            "data_sha256": "e178b18101c1dde591eb29079a94bf4ad87aa6914cd8cfb0a9d576d55b285d6a"
+          },
+          {
+            "path": "records/librispeech_1089-134686-0032/selector_ar3/L/q_local_contribution.npy",
+            "bytes": 6672,
+            "sha256": "ab08b6ef7933ad006cd17fb74f3b77b3fe4be3f1d5f886366c64b4981e6b6b4b",
+            "dtype": "<f8",
+            "shape": [
+              818
+            ],
+            "data_sha256": "cc5729bb9922577150ca78660a1161e4fa26d0944bbcd9d7f83f0447ff90856d"
+          },
+          {
+            "path": "records/librispeech_1089-134686-0032/selector_ar3/L/raw_f0.npy",
+            "bytes": 6672,
+            "sha256": "1b5100afad480af0b3512a0e607e1a31f390d8721cafc306e740eec4e06ef7b9",
+            "dtype": "<f8",
+            "shape": [
+              818
+            ],
+            "data_sha256": "d88b346455cd9285f3fadaf4f3cd4cfec409e9512c0d18d4026e44b3a5ea8c87"
+          },
+          {
+            "path": "records/librispeech_1089-134686-0032/selector_ar3/anchor_sample.npy",
+            "bytes": 6672,
+            "sha256": "570b0097d4cd6b150ae7d175a4779cc4b24f0140f00112658234767d0ee2066f",
+            "dtype": "<i8",
+            "shape": [
+              818
+            ],
+            "data_sha256": "4d4091189b6e938a158b1160815fe8dbd3a765768d5a027b6ad0c4bbf015883b"
+          },
+          {
+            "path": "records/librispeech_1089-134686-0032/selector_ar3/anchor_to_unique_window.npy",
+            "bytes": 6672,
+            "sha256": "687536512cde731f806956f740a83171cda37e27185620cd860cc852c7bb5be1",
+            "dtype": "<i8",
+            "shape": [
+              818
+            ],
+            "data_sha256": "4d89f6820ff9d47925a1c9997986aa433efb723c1f2b906fe8c879cd819255c9"
+          },
+          {
+            "path": "records/librispeech_1089-134686-0032/selector_ar3/gate_log_potential.npy",
+            "bytes": 13216,
+            "sha256": "4eca0752f745c70cf2a6139de252e10f86ee8facedb9a2134c34666d115a6018",
+            "dtype": "<f8",
+            "shape": [
+              818,
+              2
+            ],
+            "data_sha256": "e6cc3596d4f24781ac2ceb783b47d732e12e8a4167b8957d5aa0f65ecfe21867"
+          },
+          {
+            "path": "records/librispeech_1089-134686-0032/selector_ar3/h0_atom_aggregate_loge.npy",
+            "bytes": 19760,
+            "sha256": "f8b8a2f1054dd128b7cd1059c9ebcd29b3be1efc6e3d56e33400f24becb4527c",
+            "dtype": "<f8",
+            "shape": [
+              818,
+              3
+            ],
+            "data_sha256": "4e0a101a29939cb3dc206fdf543b95f0392f824aa738f7f364c9d3b21347f524"
+          },
+          {
+            "path": "records/librispeech_1089-134686-0032/selector_ar3/h0_atom_log_responsibility.npy",
+            "bytes": 19760,
+            "sha256": "0c5dc0c9a276e4fc45e6e6641324a092a4d3441e30fecbf09543644e9b8dfb97",
+            "dtype": "<f8",
+            "shape": [
+              818,
+              3
+            ],
+            "data_sha256": "8325b7299c1792a94eb642dbe736716debf58085c089b9ab18d7641177b82845"
+          },
+          {
+            "path": "records/librispeech_1089-134686-0032/selector_ar3/h1_atom_aggregate_loge.npy",
+            "bytes": 19760,
+            "sha256": "07e20f8a8f26a76aa530aa3ca9c5608627b82e8305ba86750bc4f3b455785e1f",
+            "dtype": "<f8",
+            "shape": [
+              818,
+              3
+            ],
+            "data_sha256": "8f417d33d8235e9ebf28c70e2a561b97f4502d341fbc67e6ae5668e26e87f187"
+          },
+          {
+            "path": "records/librispeech_1089-134686-0032/selector_ar3/h1_atom_log_responsibility.npy",
+            "bytes": 19760,
+            "sha256": "c4b6dfebc14e94737b3fe6da542c052389e10e7ed9fd94b4ba0cdd88b786401c",
+            "dtype": "<f8",
+            "shape": [
+              818,
+              3
+            ],
+            "data_sha256": "500d936814af7ad29b05a541990bc4b5722ea233d407ab84ddcab1ada0a04954"
+          },
+          {
+            "path": "records/librispeech_1089-134686-0032/selector_ar3/log_normalizer.npy",
+            "bytes": 6672,
+            "sha256": "b23010477d3701d9831975677fb9ef954c1bbb76656e8af6b538c55088d494f8",
+            "dtype": "<f8",
+            "shape": [
+              818
+            ],
+            "data_sha256": "ffd6ae5b226b699755df4bcf20a5cfff68e3afab55087097ca8a96b4a8c1a9af"
+          },
+          {
+            "path": "records/librispeech_1089-134686-0032/selector_ar3/potential_batch_column.npy",
+            "bytes": 6672,
+            "sha256": "1d96c35ee7a92ca3e49b4a1e6aae081e3668caf9e50d219ed754a94ee54f9fd0",
+            "dtype": "<i8",
+            "shape": [
+              818
+            ],
+            "data_sha256": "d8a2dfc58e49a87a22d86c051d34678303f066e91452e5a13d45fd98fba04b24"
+          },
+          {
+            "path": "records/librispeech_1089-134686-0032/selector_ar3/potential_batch_index.npy",
+            "bytes": 6672,
+            "sha256": "76844a56e3fdb09f7e23e93ef183cdc4ef531555abf09bb5de520bf0b2dd1629",
+            "dtype": "<i8",
+            "shape": [
+              818
+            ],
+            "data_sha256": "07dfbae5da7c1db440c6d01be66149372452c24f2489963addd6b24235d136ef"
+          },
+          {
+            "path": "records/librispeech_1089-134686-0032/selector_ar3/potential_computed.npy",
+            "bytes": 946,
+            "sha256": "71e5379da6abb84392f85622a33a296d6e083ee9f7723364a6be66938e29e447",
+            "dtype": "|b1",
+            "shape": [
+              818
+            ],
+            "data_sha256": "d2783b2c534627a81fbc457ef44f6ab78c67c4a9d753030a3886e4f4a7842339"
+          },
+          {
+            "path": "records/librispeech_1089-134686-0032/selector_ar3/q_log_potential.npy",
+            "bytes": 3016912,
+            "sha256": "164ee9d7d0aac440c128a3b35cb71be0b3b949009ddbe296350abb3037a576ea",
+            "dtype": "<f8",
+            "shape": [
+              818,
+              461
+            ],
+            "data_sha256": "bff1734857af2d220bc28d39167b9ce1798221e897952de2857cb63b0bd1930e"
+          },
+          {
+            "path": "records/librispeech_1089-134686-0032/selector_ar3/raw_time_bits.npy",
+            "bytes": 6672,
+            "sha256": "8b1a8e8b9e57fd07f474f82365b902dfb89b570008daa50c225ffd6f6737cda6",
+            "dtype": "<u8",
+            "shape": [
+              818
+            ],
+            "data_sha256": "03a08b56261e261e14058cff531db63c7babd8ae8f5fb0a6cb7daa3f789b2568"
+          },
+          {
+            "path": "records/librispeech_1089-134686-0032/selector_ar3/raw_times.npy",
+            "bytes": 6672,
+            "sha256": "731e29828a8f3f3f7def430128db3f17f4197dd57147e47b94b3637a243cb3b6",
+            "dtype": "<f8",
+            "shape": [
+              818
+            ],
+            "data_sha256": "03a08b56261e261e14058cff531db63c7babd8ae8f5fb0a6cb7daa3f789b2568"
+          },
+          {
+            "path": "records/librispeech_1089-134686-0032/selector_ar3/shifted_window.npy",
+            "bytes": 946,
+            "sha256": "6ad428fa6759fe0d40fb784892057853aff2518bad199991372ef035f142d40a",
+            "dtype": "|b1",
+            "shape": [
+              818
+            ],
+            "data_sha256": "35ffb393cedf5db8165118fb2ee393023cad6de420943f551dece29245d7016e"
+          },
+          {
+            "path": "records/librispeech_1089-134686-0032/selector_ar3/unique_window_start.npy",
+            "bytes": 6648,
+            "sha256": "41b2d831ac5d51d57149e55ae061f5c28c9481aa1bde441e8e684254f1f058c2",
+            "dtype": "<i8",
+            "shape": [
+              815
+            ],
+            "data_sha256": "d257e755abb1c6c9d8cf2a4bbd6c4a94b4ef076e2a289aa3aa8333efc24adaef"
+          },
+          {
+            "path": "records/librispeech_1089-134686-0032/selector_ar3/window_rms.npy",
+            "bytes": 6672,
+            "sha256": "3e93ce4a9132ba10eee7124062425c1d79854bea9b1639506f34a5c3e2ca4dde",
+            "dtype": "<f8",
+            "shape": [
+              818
+            ],
+            "data_sha256": "1e6af75f86548aee21d8833f0f02e92bdf4899f732cd03f7725327fe290cacd3"
+          },
+          {
+            "path": "records/librispeech_1089-134686-0032/selector_ar3/window_start.npy",
+            "bytes": 6672,
+            "sha256": "9fc2da0bd45fef904c30996261ea6391045912fe301b2091b0c5dda518c0ecbb",
+            "dtype": "<i8",
+            "shape": [
+              818
+            ],
+            "data_sha256": "ab14df48aa67ada5d6fe5ab7296ea0341b3c780c9fb0d0ebc5cd0e7eb175f73f"
+          },
+          {
+            "path": "records/librispeech_1089-134686-0032/selector_ar3/window_stop.npy",
+            "bytes": 6672,
+            "sha256": "43bfb4f882cf144fd77b4b134b6e946af9dfd27c68e1a5a8b25eb6f8b370282f",
+            "dtype": "<i8",
+            "shape": [
+              818
+            ],
+            "data_sha256": "274fee3de8b36d73774e06772d39dd2e8bf5a392f2e035f0e22f02b9c9de295a"
+          },
+          {
+            "path": "records/librispeech_1089-134686-0032/selector_ar3/z_valid.npy",
+            "bytes": 946,
+            "sha256": "71e5379da6abb84392f85622a33a296d6e083ee9f7723364a6be66938e29e447",
+            "dtype": "|b1",
+            "shape": [
+              818
+            ],
+            "data_sha256": "d2783b2c534627a81fbc457ef44f6ab78c67c4a9d753030a3886e4f4a7842339"
+          },
+          {
+            "path": "records/librispeech_1089-134686-0032/selector_ar3/zero_window.npy",
+            "bytes": 946,
+            "sha256": "4ef64a8860073b94638e98c88acd69a160aec5853e53fcd662ea71bdbadab8be",
+            "dtype": "|b1",
+            "shape": [
+              818
+            ],
+            "data_sha256": "e0986fa1ef05d4b624e111359f1b995c81f051c6be6303296a30937bfc061e08"
+          }
+        ]
+      },
+      "prior": {
+        "envelope": {
+          "bytes": 18504522,
+          "sha256": "43ffc10cdcdd739fb6f0583287af787a39d17050f09a801abe1aa1bd4ec0a21f"
+        },
+        "native_member": "native/native.zip",
+        "native_archive": {
+          "bytes": 18493180,
+          "sha256": "b674091fdc09072d7c2c8844cc61cfb2f0730c9410c6914a20329082f028b404"
+        },
+        "FILES_sha256": "738d265e054bd955c24fa29abdd582c290e9d60f93b8709d54c514d93303249f",
+        "data_members": [
+          {
+            "path": "records/librispeech_1089-134686-0008/input.npy",
+            "bytes": 768128,
+            "sha256": "2906c24c57cf16b7a1a29dac15e0d727cb8b4679724efec0f565946723cc9fd8",
+            "dtype": "<f8",
+            "shape": [
+              96000
+            ],
+            "data_sha256": "8f2c75e70d2dfde4cea5c2020edbeb245b488fa365bd4fe467c3c025be3f6232"
+          },
+          {
+            "path": "records/librispeech_1089-134686-0011/input.npy",
+            "bytes": 768128,
+            "sha256": "a66507e24c1f41aeef2407f91575332cabbbd6656e90a56803a001b4fcbf9333",
+            "dtype": "<f8",
+            "shape": [
+              96000
+            ],
+            "data_sha256": "268fc1c32f96268178577f4a1e99eea58e49783318f4f0bcffc51b66ffc40254"
+          },
+          {
+            "path": "records/librispeech_1089-134686-0032/input.npy",
+            "bytes": 523648,
+            "sha256": "cf1d3a15f9864fa36824ce1cb46c161624f17c4e82ba1e8b14109293167293b6",
+            "dtype": "<f8",
+            "shape": [
+              65440
+            ],
+            "data_sha256": "688fca4389961f6b0bd8deda2592f5b06da201e63eda73f6a6bf6edcf15ab69d"
+          }
+        ]
+      }
+    },
+    "native_source_manifest_sha256": "20937857f1bd6422b9ef6d84c5e572f3331540d79c0b8649e4030fc076648494"
+  },
+  "not_a_verbatim_original": true,
+  "omitted": "original receipts, source retention receipts, private control metadata and unrelated output-file inventory"
+}

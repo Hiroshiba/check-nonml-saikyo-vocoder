@@ -1,0 +1,73 @@
+{
+  "schema_version": 1,
+  "delivery": {
+    "library_file_id": "libfile_53fc4ad7afc08191a921a6595aeec23d",
+    "version": 0,
+    "file_id": "file_000000005cc881f592a28ed22ccb950b",
+    "bytes": 36376013,
+    "sha256": "1ffdbc5b9f010a78e6dd617772f0921a4b54a554213bcfa366eab2643e933c86"
+  },
+  "result_archive": {
+    "original_member": "result/result.zip",
+    "bytes": 36318261,
+    "sha256": "ead060560ea6eadbbc719e377469703223a00f0fd6fd4f3d427a7db9e01e7c60",
+    "members": 70
+  },
+  "source_archive": {
+    "library_file_id": "libfile_fe5603bd9f3c819188214adf561163b5",
+    "version": 0,
+    "bytes": 744937,
+    "sha256": "26c9f3311978038d69ca347740a1e7cb5b2387b1571993b5a085b88c82878a6e"
+  },
+  "manifest_byte_hash_checks": {
+    "outer_manifest_records": 10,
+    "result_manifest_records": 69,
+    "source_manifest_records": 29
+  },
+  "all_checked_members_match": true,
+  "original_json_copies": [
+    {
+      "member": "summary.json",
+      "bytes": 5792,
+      "sha256": "18d01e375f36e302096407469bcdb9887c4fcc1cec72c2ba91c40e6f421dda1f",
+      "public_path": "summary.json"
+    },
+    {
+      "member": "warnings.json",
+      "bytes": 3,
+      "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+      "public_path": "warnings.json"
+    },
+    {
+      "member": "FILES.json",
+      "bytes": 12493,
+      "sha256": "e7938f69c226bd9c216368d49dd321045fc39b64f107d2955239edc0fe2e368e",
+      "public_path": "original-result-files.json"
+    },
+    {
+      "member": "librispeech_1089-134686-0008.json",
+      "bytes": 1563,
+      "sha256": "b048488d4b4bd2ecbabe98d5691cc0ea70ac5a42c87fdd575c72e0dd9baf1412",
+      "public_path": "librispeech_1089-134686-0008.json"
+    },
+    {
+      "member": "librispeech_1089-134686-0011.json",
+      "bytes": 1564,
+      "sha256": "ecca974fe214ea2f8f2a196e79921644364d816ee0274d31dd0b18000fdaa955",
+      "public_path": "librispeech_1089-134686-0011.json"
+    },
+    {
+      "member": "librispeech_1089-134686-0032.json",
+      "bytes": 1559,
+      "sha256": "6f8572952813deec9d601c5778c1d38cc38ede9013ce7eabf152ef2a9145d268",
+      "public_path": "librispeech_1089-134686-0032.json"
+    }
+  ],
+  "private_receipts_published": false,
+  "source_implementation_published": false,
+  "originals_retained_in_library": true,
+  "new_independent_C_audit": {
+    "status": "reviewed_with_exact_rounding_differences",
+    "public_projection": "independent-audit-public.json"
+  }
+}

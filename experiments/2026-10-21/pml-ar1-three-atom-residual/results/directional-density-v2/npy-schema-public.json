@@ -1,0 +1,156 @@
+{
+  "original": {
+    "member": "OUTPUT_SCHEMA.json",
+    "bytes": 4184,
+    "sha256": "56a9ea04d0facd464022c2eee8e274df88356fc1c45482f4e6b0ccac2e3a965a"
+  },
+  "projection": {
+    "version": "pml-rms-directional-contrast-v2-20261021",
+    "per_record_NPYs": {
+      "q_log_t": [
+        "U",
+        461
+      ],
+      "q_log_acg": [
+        "U",
+        461
+      ],
+      "t_minus_saved_q_log": [
+        "U",
+        461
+      ],
+      "hypothesis_log_evidence": [
+        "U",
+        4
+      ],
+      "contrasts": [
+        "U",
+        6
+      ],
+      "t_minus_saved_other": [
+        "U",
+        4
+      ],
+      "q_argmax_auxiliary": [
+        "U",
+        2
+      ],
+      "masks": [
+        "U",
+        6
+      ],
+      "t_replay_bitwise_equal": [
+        "U",
+        4
+      ],
+      "rms": [
+        "U"
+      ],
+      "saved_rms": [
+        "U"
+      ],
+      "unique_window_start": [
+        "U"
+      ],
+      "multiplicity": [
+        "U"
+      ],
+      "first_anchor": [
+        "U"
+      ],
+      "anchor_to_unique_window": [
+        "J"
+      ],
+      "anchor_sample": [
+        "J"
+      ],
+      "window_start": [
+        "J"
+      ],
+      "window_stop": [
+        "J"
+      ],
+      "raw_times": [
+        "J"
+      ],
+      "raw_time_bits": [
+        "J"
+      ],
+      "shifted_window": [
+        "J"
+      ]
+    },
+    "columns": {
+      "hypothesis_log_evidence": [
+        "t_H0",
+        "t_H1",
+        "acg_H0",
+        "acg_H1"
+      ],
+      "contrasts": [
+        "t_low15_rest446_log_odds",
+        "acg_low15_rest446_log_odds",
+        "low_log_odds_acg_minus_t",
+        "t_H1_H0_prior_free_log_evidence_ratio",
+        "acg_H1_H0_prior_free_log_evidence_ratio",
+        "log_evidence_ratio_acg_minus_t"
+      ],
+      "masks": [
+        "new_valid_nonzero",
+        "new_exact_zero_missing",
+        "saved_zero",
+        "saved_computed",
+        "saved_valid",
+        "t_replay_valid"
+      ],
+      "t_minus_saved_other": [
+        "gate_H0",
+        "gate_H1",
+        "log_normalizer",
+        "window_RMS"
+      ],
+      "t_replay_bitwise_equal": [
+        "conditional_q_log_distribution",
+        "gate_log_potential",
+        "log_normalizer",
+        "window_RMS"
+      ],
+      "q_argmax_auxiliary": [
+        "t_local_conditional_H1_q",
+        "acg_local_conditional_H1_q"
+      ]
+    },
+    "dtypes": {
+      "default": "<f8",
+      "integer_arrays": [
+        "q_argmax_auxiliary",
+        "unique_window_start",
+        "multiplicity",
+        "first_anchor",
+        "anchor_to_unique_window",
+        "anchor_sample",
+        "window_start",
+        "window_stop"
+      ],
+      "integer_dtype": "<i8",
+      "boolean_arrays": [
+        "masks",
+        "t_replay_bitwise_equal",
+        "shifted_window"
+      ],
+      "boolean_dtype": "|b1",
+      "raw_time_bits": "<u8"
+    },
+    "index_semantics": {
+      "q_column": "0..460 -> q52..512; model index is separately 1+(q-52)*10+(K-1)",
+      "argmax_missing": -1,
+      "low_indices": "q52..66 inclusive (15)",
+      "rest_indices": "q67..512 inclusive (446)",
+      "no_group_reweighting": true
+    },
+    "missingness": "mask/state only; invalid numeric0 placeholders are not real evidence; actual numeric0 is valid when its mask is valid",
+    "primary_summaries": "NumPy2.3.5 median separately per recording over all valid nonzero unique windows for each of the six contrast columns; even n uses np.median midpoint; null if none; no cross-record summary"
+  },
+  "not_a_verbatim_original": true,
+  "omitted": "launcher limits and internal success/failure control instructions"
+}

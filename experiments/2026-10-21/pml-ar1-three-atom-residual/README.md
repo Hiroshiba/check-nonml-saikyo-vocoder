@@ -78,3 +78,9 @@ native独立監査の初回はPython選択ミスでNumPyがなく、保存配列
 - SHA256: `a8431c4a638b86518ac66133bbd9c5042ba44fd1994272841c3c09b74440605e`
 - Library: `libfile_00036892fed48191a9c7319b7244c706`、version `0`
 - 保存ファイル: `file_00000000f8d48230a732175834b59b30`
+
+## 同じ観測で得点定義を変えた方向密度の補助解析
+
+[方向密度対比v2の保存値・独立監査・全窓データをPagesで開く](https://hiroshiba.github.io/check-nonml-saikyo-vocoder/experiments/2026-10-21/pml-ar1-three-atom-residual/results/directional-density-v2/index.html)。既存固定prefix最大6秒の1話者3録音、3,209 unique窓・3,218 anchorです。候補ID q=52..66（15候補）対q=67..512（446候補）のlog oddsと、H1/H0の仮説priorを除くlog evidence ratioについて、ACG−tの対応差の録音別中央値を記録しました。PMLを維持し、新音声・品質比較はありません。
+
+旧tの全461候補値は全窓でbit一致し、独立再集計のH1/H0比の全行と録音別中央値も一致しました。低域log oddsのt・ACG・差の3列には842セルの最終桁差があり、最大絶対差は2.842170943040401e-14です。許容差による合格や全計算完全一致とは扱いません。捕捉警告0件の原因は確定せず、安定性・真F0・生理的VUV・音質の改善や採用は主張しません。原計画の未実行という表現は当時の履歴です。

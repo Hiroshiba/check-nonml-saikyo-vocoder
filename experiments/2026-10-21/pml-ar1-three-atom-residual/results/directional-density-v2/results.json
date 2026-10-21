@@ -1,0 +1,199 @@
+{
+  "schema_version": 1,
+  "study_role": "directional_density_sensitivity_v2_supplement",
+  "formal_base": {
+    "method": "pml",
+    "unchanged": true
+  },
+  "new_audio": false,
+  "new_quality_evaluation": false,
+  "scope": {
+    "record_ids": [
+      "librispeech_1089-134686-0008",
+      "librispeech_1089-134686-0011",
+      "librispeech_1089-134686-0032"
+    ],
+    "speakers": 1,
+    "input": "existing fixed prefixes, maximum 6 seconds; not full recordings",
+    "selection": "all unique physical windows; no low-q or gate selection",
+    "not_independent_samples": true
+  },
+  "recorded_execution": {
+    "started_at_utc": "2026-10-21T07:01:53.118139+00:00",
+    "finished_at_utc": "2026-10-21T07:05:19.695236+00:00",
+    "elapsed_seconds": 206.57711400799963,
+    "actual_exit_code": 0,
+    "timed_out": false,
+    "reaped_by_launcher": true,
+    "max_rss_kib": 287880
+  },
+  "all_anchors": 3218,
+  "all_unique_windows": 3209,
+  "records": [
+    {
+      "id": "librispeech_1089-134686-0008",
+      "all_anchors": 1200,
+      "all_unique_windows": 1197,
+      "valid_nonzero_windows": 1197,
+      "exact_zero_missing": 0,
+      "saved_uncomputed_windows": 0,
+      "saved_valid_windows": 1197,
+      "replay_compared_windows": 1197,
+      "primary_descriptive_medians": {
+        "low15_rest446_log_odds_t": -18.25127377405216,
+        "low15_rest446_log_odds_acg": -19.049661682869903,
+        "low15_rest446_log_odds_acg_minus_t": -0.44213954628813923,
+        "H1_H0_prior_free_log_evidence_ratio_t": 93.04946297900807,
+        "H1_H0_prior_free_log_evidence_ratio_acg": 97.81418015284495,
+        "H1_H0_prior_free_log_evidence_ratio_acg_minus_t": 4.910933932212089
+      },
+      "auxiliary_argmax_changed_windows": 7,
+      "argmax_tie_rule": "first exact maximum in ascending q52..512; no tolerance",
+      "native_t_replay": {
+        "maximum_absolute_q_log_difference": 0.0,
+        "maximum_absolute_gate_normalizer_RMS_difference": 0.0,
+        "q_log_numeric_unequal_entries": 0,
+        "q_log_bitwise_unequal_windows": 0,
+        "all_differences_saved": true,
+        "tolerance": null,
+        "numeric_zero_not_a_missingness_rule": true
+      },
+      "surface_log_constant_added_to_each_acg_component": 631.2902777489716,
+      "surface_log_constant_formula": "0.5*log(400)+gammaln(200)-log(2)-200*log(pi)",
+      "posterior_log_odds_if_desired": "prior_free_H1_H0_log_evidence_ratio + log(0.7/0.3); not emitted",
+      "not_independent_samples": true,
+      "no_cross_record_aggregate": true,
+      "no_cross_measure_fit_ordering": true,
+      "F0_truth_or_VUV_calibration": false,
+      "adoption_or_quality_conclusion": false
+    },
+    {
+      "id": "librispeech_1089-134686-0011",
+      "all_anchors": 1200,
+      "all_unique_windows": 1197,
+      "valid_nonzero_windows": 1197,
+      "exact_zero_missing": 0,
+      "saved_uncomputed_windows": 0,
+      "saved_valid_windows": 1197,
+      "replay_compared_windows": 1197,
+      "primary_descriptive_medians": {
+        "low15_rest446_log_odds_t": -19.785467946717993,
+        "low15_rest446_log_odds_acg": -20.74288672454346,
+        "low15_rest446_log_odds_acg_minus_t": -0.43493542466083923,
+        "H1_H0_prior_free_log_evidence_ratio_t": 86.13247916830363,
+        "H1_H0_prior_free_log_evidence_ratio_acg": 90.42841147615717,
+        "H1_H0_prior_free_log_evidence_ratio_acg_minus_t": 3.9333965114373513
+      },
+      "auxiliary_argmax_changed_windows": 7,
+      "argmax_tie_rule": "first exact maximum in ascending q52..512; no tolerance",
+      "native_t_replay": {
+        "maximum_absolute_q_log_difference": 0.0,
+        "maximum_absolute_gate_normalizer_RMS_difference": 0.0,
+        "q_log_numeric_unequal_entries": 0,
+        "q_log_bitwise_unequal_windows": 0,
+        "all_differences_saved": true,
+        "tolerance": null,
+        "numeric_zero_not_a_missingness_rule": true
+      },
+      "surface_log_constant_added_to_each_acg_component": 631.2902777489716,
+      "surface_log_constant_formula": "0.5*log(400)+gammaln(200)-log(2)-200*log(pi)",
+      "posterior_log_odds_if_desired": "prior_free_H1_H0_log_evidence_ratio + log(0.7/0.3); not emitted",
+      "not_independent_samples": true,
+      "no_cross_record_aggregate": true,
+      "no_cross_measure_fit_ordering": true,
+      "F0_truth_or_VUV_calibration": false,
+      "adoption_or_quality_conclusion": false
+    },
+    {
+      "id": "librispeech_1089-134686-0032",
+      "all_anchors": 818,
+      "all_unique_windows": 815,
+      "valid_nonzero_windows": 815,
+      "exact_zero_missing": 0,
+      "saved_uncomputed_windows": 0,
+      "saved_valid_windows": 815,
+      "replay_compared_windows": 815,
+      "primary_descriptive_medians": {
+        "low15_rest446_log_odds_t": -17.73016778793936,
+        "low15_rest446_log_odds_acg": -18.384573887238048,
+        "low15_rest446_log_odds_acg_minus_t": -0.16174736038683335,
+        "H1_H0_prior_free_log_evidence_ratio_t": 82.77971227921643,
+        "H1_H0_prior_free_log_evidence_ratio_acg": 86.46670566880447,
+        "H1_H0_prior_free_log_evidence_ratio_acg_minus_t": 3.8293794592234107
+      },
+      "auxiliary_argmax_changed_windows": 2,
+      "argmax_tie_rule": "first exact maximum in ascending q52..512; no tolerance",
+      "native_t_replay": {
+        "maximum_absolute_q_log_difference": 0.0,
+        "maximum_absolute_gate_normalizer_RMS_difference": 0.0,
+        "q_log_numeric_unequal_entries": 0,
+        "q_log_bitwise_unequal_windows": 0,
+        "all_differences_saved": true,
+        "tolerance": null,
+        "numeric_zero_not_a_missingness_rule": true
+      },
+      "surface_log_constant_added_to_each_acg_component": 631.2902777489716,
+      "surface_log_constant_formula": "0.5*log(400)+gammaln(200)-log(2)-200*log(pi)",
+      "posterior_log_odds_if_desired": "prior_free_H1_H0_log_evidence_ratio + log(0.7/0.3); not emitted",
+      "not_independent_samples": true,
+      "no_cross_record_aggregate": true,
+      "no_cross_measure_fit_ordering": true,
+      "F0_truth_or_VUV_calibration": false,
+      "adoption_or_quality_conclusion": false
+    }
+  ],
+  "captured_warning_events": 0,
+  "source_recorded_scientific_status": "directional_contrast_completed",
+  "independent_C_audit": {
+    "status": "reviewed_with_exact_rounding_differences",
+    "public_projection": "independent-audit-public.json",
+    "low_log_odds_exact_unequal_cells": 842,
+    "low_log_odds_max_abs_difference": 2.842170943040401e-14,
+    "H1_H0_ratio_exact_unequal_cells": 0,
+    "t_full461_bitwise_unequal_windows": 0,
+    "blanket_arithmetic_pass": false,
+    "tolerance_pass_assigned": false
+  },
+  "source_of_medians": "summary.json primary_descriptive_medians copied; not recalculated",
+  "sign_convention": {
+    "delta_low_positive": "relative movement toward the low 15-q set",
+    "delta_H_positive": "relative movement toward H1",
+    "not_a_good_bad_ordering": true
+  },
+  "interpretation": [
+    "per-record median of paired differences, not difference of medians",
+    "prior-free H1/H0 log evidence ratios; t side is a working-score ratio",
+    "no ranking, improvement, true F0, physiological VUV calibration, population inference or adoption"
+  ],
+  "provenance": [
+    "provenance-public.json",
+    "invocation-public.json",
+    "input-pin-public.json",
+    "npy-schema-public.json",
+    "delivery-verification.json",
+    "independent-audit-public.json"
+  ],
+  "raw_data": "binary-array-manifest.json",
+  "old_t_read_checks": "stored-array-read-checks.json",
+  "existing_comparison_reference": "https://hiroshiba.github.io/check-nonml-saikyo-vocoder/experiments/2026-10-21/pml-ar1-three-atom-residual/results/run-001/index.html",
+  "audit_limits_and_warning_interpretation": [
+    "今回の捕捉警告は0件です。AとCの静的確認では旧・新の主なコンテキストはunder=warn、simplefilter(always)で、抑制設定は見つかりませんでした。旧外側のover/invalid/divideはwarn、新はraiseです。Cは旧selector内の狭いall=raiseも記録しています。import配置とlogging捕捉範囲は異なりますが、0件の原因とは確定できません。実np.geterrは記録されておらず、underflow不在や安定性改善とは解釈しません。",
+    "Cの読取補助具では、初回に1次元配列の先頭要素だけを返す処理でStopIterationが起きました。全1次元ペイロードを読むよう訂正した後の監査終了コードは0です。科学処理の失敗ではなく、元source・結果bytes・受入閾値を変更したものでもありません。",
+    "実プロセスの終了・回収は保存invocationと整合するstream・archive証拠から確認した範囲です。別の非循環closure JSONはdelivery内に含まれず、Cも直接閲覧していません。delivery自身のmember・manifest閉包は独立照合されています。",
+    "表の方向は3録音の対応差の中央値についての記述です。全窓が同方向とは限らず、真値に対するバイアスや音質の改善を意味しません。",
+    "尤度・solver・DP・F0・音声・品質の再実行はありません。旧401/403成果や元volume診断の代理保存・復元ではなく、元の未実行計画は当時の履歴として保持しています。"
+  ],
+  "q_id_sets": {
+    "low_inclusive": [
+      52,
+      66
+    ],
+    "rest_inclusive": [
+      67,
+      512
+    ],
+    "unit": "candidate ID, not Hz",
+    "no_group_reweighting": true
+  },
+  "record_status": "saved_directional_sensitivity_with_scoped_independent_audit"
+}

@@ -1,0 +1,37 @@
+{
+  "id": "librispeech_1089-134686-0011",
+  "all_anchors": 1200,
+  "all_unique_windows": 1197,
+  "valid_nonzero_windows": 1197,
+  "exact_zero_missing": 0,
+  "saved_uncomputed_windows": 0,
+  "saved_valid_windows": 1197,
+  "replay_compared_windows": 1197,
+  "primary_descriptive_medians": {
+    "low15_rest446_log_odds_t": -19.785467946717993,
+    "low15_rest446_log_odds_acg": -20.74288672454346,
+    "low15_rest446_log_odds_acg_minus_t": -0.43493542466083923,
+    "H1_H0_prior_free_log_evidence_ratio_t": 86.13247916830363,
+    "H1_H0_prior_free_log_evidence_ratio_acg": 90.42841147615717,
+    "H1_H0_prior_free_log_evidence_ratio_acg_minus_t": 3.9333965114373513
+  },
+  "auxiliary_argmax_changed_windows": 7,
+  "argmax_tie_rule": "first exact maximum in ascending q52..512; no tolerance",
+  "native_t_replay": {
+    "maximum_absolute_q_log_difference": 0.0,
+    "maximum_absolute_gate_normalizer_RMS_difference": 0.0,
+    "q_log_numeric_unequal_entries": 0,
+    "q_log_bitwise_unequal_windows": 0,
+    "all_differences_saved": true,
+    "tolerance": null,
+    "numeric_zero_not_a_missingness_rule": true
+  },
+  "surface_log_constant_added_to_each_acg_component": 631.2902777489716,
+  "surface_log_constant_formula": "0.5*log(400)+gammaln(200)-log(2)-200*log(pi)",
+  "posterior_log_odds_if_desired": "prior_free_H1_H0_log_evidence_ratio + log(0.7/0.3); not emitted",
+  "not_independent_samples": true,
+  "no_cross_record_aggregate": true,
+  "no_cross_measure_fit_ordering": true,
+  "F0_truth_or_VUV_calibration": false,
+  "adoption_or_quality_conclusion": false
+}
