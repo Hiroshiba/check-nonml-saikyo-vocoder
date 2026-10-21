@@ -1,7 +1,8 @@
 # Layer1 ベース切替の静的確認
 
 - 起点は main `62acf3cadcd8a49f37e2e63826f2966ed2d8ce28`。PR #117 の `docs/STATUS.md` と人工10刺激の文書、PR #118 のユーザー編集を保持し、`USER_INSTRUCTIONS.md` を本変更で編集していない。
-- 比較 ID `llsm2` は `references/adapters_dsp.py` の Layer0 のまま。現在の作業ベースは別 ID `yubiwa` として `BASELINE.json`、`references/current_base.py`、`reference.py`、`worker.py` に接続する。
+- 比較 ID `llsm2` は `references/adapters_dsp.py` の Layer0 のまま。現在の作業ベースは別 ID `apron` として `BASELINE.json`、`references/current_base.py`、`reference.py`、`worker.py` に接続する。
+- 最初の日本語抽選はユーザーの英語指定より前の履歴として保持。英語候補8語を先に固定して `secrets.choice` で再抽選し、Apronを採用した。リポジトリと公開検索で、同名の音声・信号処理・ML手法は確認できなかった。英語の候補・抽選・検索範囲は別JSONに保存した。
 - 固定上流ヘッダーの field 番号・型は F0=0(float)、HM=1、NM=2、PSDRES=3、RD=10、VTMAGN=11、VSPHSE=12。解析は既存の固定 `speed_encode(...,1)` で Layer0 から `llsm_chunk_tolayer1(...,2048)` を呼ぶ。保存時は元 HM と PbP field 8/9 を除き、その他の未知 field は拒否する。
 - C の `llsm_create_chunk` は config をコピーし、`llsm_delete_chunk` は frame/config を破棄する。保存からの復元は所有権付き `llsm_container_attach_` と実体の destructor/copy constructor を使う。復号ごとに別の chunk を構築し、合成前の HM 不在を確認する。上流合成が live chunk へ HM を追加しても保存配列は変わらない。
 - 音高は固定 ±3 半音のみ。上流例と同じ phasepropagate(-1) → F0倍率 → VTMAGNのdB補正 → phasepropagate(+1)。各解析・復号前にPython/NumPy/libc seed 0。未対応の音量・時間長・補間・48 kHzは暗黙処理しない。

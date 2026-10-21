@@ -24,7 +24,7 @@
 <table>
 <thead><tr><th>方式</th><th>役割</th><th>この切替で確認できたこと</th></tr></thead>
 <tbody>
-<tr><td>指輪（LLSM2 Layer1）</td><td>現在の作業ベース</td><td>固定上流版と保存・復号の実装を用意。音声生成、品質、操作追従は未測定。</td></tr>
+<tr><td>Apron（LLSM2 Layer1）</td><td>現在の作業ベース</td><td>固定上流版と保存・復号の実装を用意。音声生成、品質、操作追従は未測定。</td></tr>
 <tr><td>PML低域拡張＋60FWCEP</td><td>以前の作業ベース</td><td><a href="../pml-package-evaluation-2026-10-16/index.html">当時の追加評価と比較音声</a>を保持。評価条件や当時の比較基準は変更しない。</td></tr>
 <tr><td>LLSM2 Layer0</td><td>既存の比較方式</td><td><a href="../../experiments/2026-10-12/reference-methods/results/run-001/index.html">保存済み比較と音声</a>はLayer0の結果。Layer1へ転用しない。</td></tr>
 </tbody>
@@ -36,7 +36,7 @@
 <p>入口は実際の24 kHzと出力標本数を記録します。16 kHzの固定入力と比較する場合は明示的に再標本化し、音響指標の共通区間とnative全長を分けます。24 kHzの出力を16 kHzや入力と同じ長さとして扱いません。</p>
 
 <h2>名前と移行の記録</h2>
-<p>手法の発想が名前に引っ張られないよう、音響と関係の薄い日常語8語を抽選前に固定し、Python標準ライブラリの<code>secrets.choice</code>で選びました。最初の「たんす」は既存の音響機器の呼称、次の「ふとん」は既存の手法名と紛らわしいため除外し、次の「指輪」を採用しました。候補一覧と各抽選・公開検索の記録は<a href="naming-record.json">命名記録</a>に保存しています。「指輪」は作業ベースの名称で、上流方式名LLSM2 Layer1や比較ID <code>llsm2</code> を改称しません。</p>
+<p>手法の発想が名前に引っ張られないよう、日常語8語を抽選前に固定し、Python標準ライブラリの<code>secrets.choice</code>で選びました。最初は日本語名「指輪」まで決めましたが、その後ユーザーが英語名を指定しました。<a href="naming-record.json">日本語の抽選記録</a>は当時の履歴として残し、別の<a href="naming-english-candidates.json">英語候補8語</a>から再抽選して「Apron」を採用しました。<a href="naming-english-record.json">英語名の抽選・衝突確認</a>も記録しています。Apronは作業ベースの名称で、上流方式名LLSM2 Layer1や比較ID <code>llsm2</code> を改称しません。</p>
 <p>旧PMLの結果HTML、JSON、音声、当時の識別子は残します。旧実行コードを用いた再現先は変更前commit <code>62acf3cadcd8a49f37e2e63826f2966ed2d8ce28</code> です。旧専用実行入口は退役し、保存済みJSONを読む表示・集約は残します。</p>
 
 <h2>未確認事項と次の測定</h2>

@@ -1,4 +1,4 @@
-"""指輪（LLSM2 Layer1）を固定した現在の作業ベースとして併記する。"""
+"""Apron（LLSM2 Layer1）を固定した現在の作業ベースとして併記する。"""
 import importlib.metadata
 import platform
 from types import SimpleNamespace
@@ -6,7 +6,7 @@ from types import SimpleNamespace
 from .common import ROOT, digest, read, verify_prepared
 
 
-BASE_ID = 'yubiwa'
+BASE_ID = 'apron'
 LLSM_REVISION = 'd18cdf02b31819670e3bc23ead933ad9467da06d'
 CIGLET_REVISION = '895ba9b1c0eabee83d3544208bbc82420efa3206'
 
@@ -14,18 +14,18 @@ CIGLET_REVISION = '895ba9b1c0eabee83d3544208bbc82420efa3206'
 def record(runtime_cache):
     baseline = read(ROOT / 'BASELINE.json')
     if baseline.get('status') != 'selected' or baseline.get('method') != BASE_ID:
-        raise ValueError('現在の作業ベースは選定済みの指輪だけです')
+        raise ValueError('現在の作業ベースは選定済みのApronだけです')
     prepared = verify_prepared(runtime_cache, 'llsm2')
     sources = prepared['sources']
     if (sources['llsm']['revision'] != LLSM_REVISION
             or sources['ciglet']['revision'] != CIGLET_REVISION):
         raise ValueError('固定 LLSM2 / ciglet revision が一致しません')
     native = runtime_cache / 'native/libllsm_speed.so'
-    from ..yubiwa.engine import NATIVE_SHA256
+    from ..apron.engine import NATIVE_SHA256
     if digest(native) != NATIVE_SHA256:
         raise ValueError('固定 Layer1 native library の SHA が一致しません')
     paths = [ROOT / 'BASELINE.json',
-             *sorted((ROOT / 'vocoderbench/yubiwa').glob('*.py'))]
+             *sorted((ROOT / 'vocoderbench/apron').glob('*.py'))]
     return {'baseline': baseline,
             'source_hashes': {str(p.relative_to(ROOT)): digest(p) for p in paths},
             'upstream_revision': LLSM_REVISION, 'ciglet_revision': CIGLET_REVISION,
@@ -39,7 +39,7 @@ def record(runtime_cache):
 
 
 def build(seed, runtime_cache):
-    from ..yubiwa import Layer1Engine, SAMPLE_RATE
+    from ..apron import Layer1Engine, SAMPLE_RATE
     baseline = record(runtime_cache)['baseline']
     engine = Layer1Engine(runtime_cache / 'native/libllsm_speed.so')
 

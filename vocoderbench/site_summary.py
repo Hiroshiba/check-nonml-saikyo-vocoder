@@ -5,7 +5,7 @@ from statistics import median
 
 LABELS = {'world_harvest': 'WORLD Harvest', 'world_dio': 'WORLD DIO',
           'llsm_world_dio': 'LLSM（WORLD DIOの音高）', 'identity': '原音（再合成の正解参照）'}
-CURRENT_LABELS = {'yubiwa': '指輪（LLSM2 Layer1）', 'pml': 'PML低域拡張＋60FWCEP',
+CURRENT_LABELS = {'apron': 'Apron（LLSM2 Layer1）', 'pml': 'PML低域拡張＋60FWCEP',
                   'hnm': '自作HNM', 'world_harvest': 'WORLD（Harvest）', 'identity': '原音'}
 INDEX_METRICS = (
     ('mos', '予測MOS ↑'), ('estoi', '明瞭性 eSTOI ↑'),

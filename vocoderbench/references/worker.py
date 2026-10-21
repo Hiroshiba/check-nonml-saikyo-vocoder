@@ -125,7 +125,7 @@ def main():
     torch.set_num_interop_threads(1)
     start = time.perf_counter()
     seed_all(args.seed)
-    if args.method == 'yubiwa':
+    if args.method == 'apron':
         from .current_base import build, record
         spec = record(args.runtime_cache)
         contract = read(args.output.parent.parent / 'contract.json')

@@ -1,18 +1,18 @@
 # ボコーダーの比較と開発
 
-**現在の作業ベースは「指輪」です。** 固定版の LLSM2 Layer1 を使います。ユーザーの指定で切り替えたもので、Layer1 の品質はまだ測定していません。[切替記録](research/llsm2-layer1-base-transition-2026-10-21/index.html)に、実装範囲と未測定項目をまとめました。ユーザー指示の正本は [USER_INSTRUCTIONS.md](USER_INSTRUCTIONS.md) です。
+**現在の作業ベースは「Apron」です。** 固定版の LLSM2 Layer1 を使います。ユーザーの指定で切り替えたもので、Layer1 の品質はまだ測定していません。[切替記録](research/llsm2-layer1-base-transition-2026-10-21/index.html)に、実装範囲と未測定項目をまとめました。ユーザー指示の正本は [USER_INSTRUCTIONS.md](USER_INSTRUCTIONS.md) です。
 
-指輪は24 kHzで解析し、元の調波列を含まない Layer1 特徴を保存します。復号のたびに保存特徴から独立した状態を作ります。既存の比較 ID `llsm2` は従来どおり Layer0 です。両者の結果を混同しません。
+Apronは24 kHzで解析し、元の調波列を含まない Layer1 特徴を保存します。復号のたびに保存特徴から独立した状態を作ります。既存の比較 ID `llsm2` は従来どおり Layer0 です。両者の結果を混同しません。
 
 ## 開発ベースの入口
 
-リポジトリ本体は Python 3.12 を使います。上流 LLSM2 と ciglet は[固定版の準備手順](docs/REFERENCES.md)に従い、Git 管理外の隔離キャッシュに準備します。この準備で得る比較用 Python 3.10 環境と、本体の Python 3.12 環境は区別します。指輪の入口は本体 Python 3.12 から、照合済みの native library を使います。Layer1 の音声処理はまだ実測していません。
+リポジトリ本体は Python 3.12 を使います。上流 LLSM2 と ciglet は[固定版の準備手順](docs/REFERENCES.md)に従い、Git 管理外の隔離キャッシュに準備します。この準備で得る比較用 Python 3.10 環境と、本体の Python 3.12 環境は区別します。Apronの入口は本体 Python 3.12 から、照合済みの native library を使います。Layer1 の音声処理はまだ実測していません。
 
 ```sh
 uv sync --locked
 uv run --locked python -m vocoderbench.references.prepare --methods llsm2 --runtime-cache /absolute/new-cache
-uv run --locked python -m vocoderbench.yubiwa_cli --runtime-cache /absolute/new-cache encode input-24k.wav features.layer1
-uv run --locked python -m vocoderbench.yubiwa_cli --runtime-cache /absolute/new-cache decode features.layer1 output-24k.wav
+uv run --locked python -m vocoderbench.apron_cli --runtime-cache /absolute/new-cache encode input-24k.wav features.layer1
+uv run --locked python -m vocoderbench.apron_cli --runtime-cache /absolute/new-cache decode features.layer1 output-24k.wav
 ```
 
 音声 CLI は24 kHz・単声道の入力だけを受け付け、出力も実際の24 kHzで保存します。音高操作は `decode` の `--pitch-semitones -3` または `3` のみです。音量・時間長・補間・48 kHz は未対応です。上記は実行手順であり、この切替 PR での実行結果ではありません。
@@ -29,6 +29,6 @@ uv run --locked python -m vocoderbench.yubiwa_cli --runtime-cache /absolute/new-
 
 ## 制約と帰属
 
-固定120音声の品質評価は、指輪の長所と弱点を調べる工程です。切替時点の優位性を裏付ける測定として扱いません。最終目標の48 kHz、時間伸縮、音量操作、下流合成への適性も未確認です。
+固定120音声の品質評価は、Apronの長所と弱点を調べる工程です。切替時点の優位性を裏付ける測定として扱いません。最終目標の48 kHz、時間伸縮、音量操作、下流合成への適性も未確認です。
 
 上流の LLSM2 と ciglet は固定した版をキャッシュに取得し、Gitへ複製しません。[第三者コードの帰属](docs/THIRD_PARTY.md)と[既存方式の手順](docs/REFERENCES.md)を参照してください。

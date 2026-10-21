@@ -1,6 +1,6 @@
 # 既存方式の比較
 
-現在の作業ベース「指輪」は固定LLSM2 Layer1です。比較ID `llsm2` は引き続きLayer0です。Layer1の固定120音声評価は未実施で、`--include-current-base` の正式測定は後工程です。
+現在の作業ベース「Apron」は固定LLSM2 Layer1です。比較ID `llsm2` は引き続きLayer0です。Layer1の固定120音声評価は未実施で、`--include-current-base` の正式測定は後工程です。
 
 ## 対象と目的
 

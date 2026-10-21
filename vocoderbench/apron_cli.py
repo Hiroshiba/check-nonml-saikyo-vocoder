@@ -1,4 +1,4 @@
-"""指輪（LLSM2 Layer1）の固定24 kHz保存・復号入口。"""
+"""Apron（LLSM2 Layer1）の固定24 kHz保存・復号入口。"""
 
 import argparse
 import logging
@@ -9,7 +9,7 @@ import soundfile as sf
 
 from .logging_utils import run_cli
 from .references.current_base import record
-from .yubiwa import Layer1Engine, SAMPLE_RATE
+from .apron import Layer1Engine, SAMPLE_RATE
 
 
 def main():
@@ -43,4 +43,4 @@ def main():
 
 
 if __name__ == '__main__':
-    raise SystemExit(run_cli(main, 'yubiwa'))
+    raise SystemExit(run_cli(main, 'apron'))
