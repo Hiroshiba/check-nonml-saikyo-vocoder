@@ -25,8 +25,9 @@ def main():
     decode.add_argument('output', type=Path)
     decode.add_argument('--pitch-semitones', type=int, choices=(-3, 0, 3), default=0)
     args = parser.parse_args()
-    record(args.runtime_cache)
-    engine = Layer1Engine(args.runtime_cache / 'native/libllsm_speed.so')
+    prepared = record(args.runtime_cache)
+    logging.info('準備済みLayer1 native SHA-256: %s', prepared['native_sha256'])
+    engine = Layer1Engine(args.runtime_cache / 'native/libllsm_speed.so', prepared['native_sha256'])
     if args.operation == 'encode':
         x, rate = sf.read(args.input, dtype='float64', always_2d=False)
         if rate != SAMPLE_RATE or np.asarray(x).ndim != 1:

@@ -9,6 +9,7 @@ import json
 import math
 from pathlib import Path
 import random
+import re
 
 import numpy as np
 
@@ -19,7 +20,6 @@ from .storage import Layer1Storage
 
 
 SOURCE_REVISION = 'd18cdf02b31819670e3bc23ead933ad9467da06d'
-NATIVE_SHA256 = 'd8da444d9c3298899065de57d5efbea69574d38ec1c4d9f42a50c2cb1a730c2a'
 SAMPLE_RATE = 24000
 
 
@@ -45,9 +45,10 @@ class Output(ct.Structure):
 
 
 class Layer1Engine:
-    def __init__(self, library_path):
-        if sha256(library_path) != NATIVE_SHA256:
-            raise ValueError('固定 LLSM2 native library の SHA が一致しません')
+    def __init__(self, library_path, expected_sha256):
+        if sha256(library_path) != expected_sha256:
+            raise ValueError('準備済み LLSM2 native library の SHA が一致しません')
+        self.native_sha256 = expected_sha256
         self.storage = Layer1Storage(library_path)
         lib = self.storage.lib
         contiguous = np.ctypeslib.ndpointer(dtype=np.float32, ndim=1, flags='C_CONTIGUOUS')
@@ -86,7 +87,7 @@ class Layer1Engine:
                 np.savez_compressed(stream, **arrays)
             tree.update(llsm_layer=1, native_float_type='float32',
                         sample_rate=SAMPLE_RATE, source_revision=SOURCE_REVISION,
-                        native_sha256=NATIVE_SHA256,
+                        native_sha256=self.native_sha256,
                         native_input_samples=len(pcm),
                         native_input_float32_sha256=hashlib.sha256(pcm.tobytes()).hexdigest(),
                         external_f0='pyworld DIO + StoneMask, 60..1000 Hz, 5 ms',
@@ -105,7 +106,8 @@ class Layer1Engine:
         metadata = json.loads((source / 'metadata.json').read_text(encoding='utf-8'))
         if (metadata.get('llsm_layer') != 1 or metadata.get('sample_rate') != SAMPLE_RATE
                 or metadata.get('source_revision') != SOURCE_REVISION
-                or metadata.get('native_sha256') != NATIVE_SHA256
+                or not isinstance(metadata.get('native_sha256'), str)
+                or re.fullmatch(r'[0-9a-f]{64}', metadata['native_sha256']) is None
                 or metadata.get('original_hm_saved') is not False
                 or metadata.get('pbp_saved') is not False):
             raise ValueError('固定 Layer1 保存版と一致しません')

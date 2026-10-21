@@ -12,14 +12,7 @@ from ..logging_utils import run_process
 from .common import write
 
 
-def build_llsm(cache):
-    src, native = cache / 'src', cache / 'native'
-    native.mkdir(exist_ok=True)
-    run_process(['make', 'CONFIG=Release', '-j2'], cwd=src / 'ciglet')
-    run_process(['make', 'install', f'PREFIX={native}'], cwd=src / 'ciglet')
-    run_process(['make', 'CONFIG=Release', f'CIGLET_PREFIX={native}', '-j2'], cwd=src / 'llsm')
-    wrapper = native / 'wrapper.c'
-    wrapper.write_text('''#include "llsm.h"
+LLSM_WRAPPER_SOURCE = '''#include "llsm.h"
 llsm_chunk* speed_encode(float* x, int nx, float fs, float* f0, int nfrm, int l1) {
     llsm_aoptions* a = llsm_create_aoptions();
     a->thop = .005; a->maxnhar = 400; a->maxnhar_e = 5; a->npsd = 128;
@@ -36,11 +29,26 @@ llsm_output* speed_decode(llsm_chunk* c, float fs, int l1) {
     llsm_delete_soptions(s);
     return o;
 }
-''')
-    command = ['gcc', '-shared', '-fPIC', '-fopenmp', '-Ofast', '-DFP_TYPE=float',
-               '-I' + str(src / 'llsm'), str(wrapper), '-Wl,--whole-archive',
-               str(src / 'llsm/build/libllsm2.a'), str(src / 'ciglet/libciglet.a'),
-               '-Wl,--no-whole-archive', '-lm', '-o', str(native / 'libllsm_speed.so')]
+'''
+
+
+def llsm_build_command(cache):
+    src, native = cache / 'src', cache / 'native'
+    return ['gcc', '-shared', '-fPIC', '-fopenmp', '-Ofast', '-DFP_TYPE=float',
+            '-I' + str(src / 'llsm'), str(native / 'wrapper.c'), '-Wl,--whole-archive',
+            str(src / 'llsm/build/libllsm2.a'), str(src / 'ciglet/libciglet.a'),
+            '-Wl,--no-whole-archive', '-lm', '-o', str(native / 'libllsm_speed.so')]
+
+
+def build_llsm(cache):
+    src, native = cache / 'src', cache / 'native'
+    native.mkdir(exist_ok=True)
+    run_process(['make', 'CONFIG=Release', '-j2'], cwd=src / 'ciglet')
+    run_process(['make', 'install', f'PREFIX={native}'], cwd=src / 'ciglet')
+    run_process(['make', 'CONFIG=Release', f'CIGLET_PREFIX={native}', '-j2'], cwd=src / 'llsm')
+    wrapper = native / 'wrapper.c'
+    wrapper.write_text(LLSM_WRAPPER_SOURCE)
+    command = llsm_build_command(cache)
     run_process(command)
     write(native / 'build.json', {'command': command, 'compiler': run_process(['gcc', '--version']).stdout})
 

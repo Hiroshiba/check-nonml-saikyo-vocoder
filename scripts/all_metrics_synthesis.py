@@ -336,7 +336,7 @@ def main():
     adapter = build_control_adapter(args.method, args.runtime_cache / 'src',
                                     args.runtime_cache / 'models', args.output_root / 'adapter-work' / args.method)
     initialization = time.perf_counter() - start
-    paths = [Path(__file__), ROOT / 'scripts/all_metrics_common.py', ROOT / 'vocoderbench/methods.py',
+    paths = [Path(__file__), ROOT / 'scripts/all_metrics_common.py',
              *(ROOT / 'scripts' / name for name in ADAPTER_SOURCES),
              *sorted((ROOT / 'vocoderbench/references').glob('adapters_*.py'))]
     if args.method in ('hnm', 'world_harvest'):

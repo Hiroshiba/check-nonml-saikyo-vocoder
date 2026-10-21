@@ -11,6 +11,7 @@ import random
 import sys
 import time
 import traceback
+from uuid import uuid4
 
 import numpy as np
 from scipy.signal import resample_poly
@@ -49,7 +50,13 @@ def run_case(adapter, spec, args):
     row = {'case': spec['id'], 'method': args.method, 'status': 'failed', 'started_at': now(),
            'native_sample_rate': adapter.sr, 'seed': args.seed, 'metrics_include_timing': False}
     output_path = args.output / f'{spec["id"]}.npy'
-    output_path.unlink(missing_ok=True)
+    if args.method == 'apron' and output_path.exists():
+        history = args.output / 'failure_history' / f'{spec["id"]}-{uuid4().hex}.npy'
+        history.parent.mkdir(parents=True, exist_ok=True)
+        output_path.rename(history)
+        row['previous_partial_output_path'] = str(history)
+    else:
+        output_path.unlink(missing_ok=True)
     z = None
     try:
         check_input = Path(spec['path'])
@@ -81,6 +88,8 @@ def run_case(adapter, spec, args):
         with torch.inference_mode():
             t0 = time.perf_counter()
             z = adapter.encode(x, wav)
+            if args.method == 'apron':
+                row['representation_path'] = str(z)
             t1 = time.perf_counter()
             y = adapter.decode(z)
             t2 = time.perf_counter()

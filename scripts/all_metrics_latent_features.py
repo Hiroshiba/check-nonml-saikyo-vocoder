@@ -87,7 +87,7 @@ def main():
     paths = [Path(__file__), ROOT / 'scripts/all_metrics_common.py',
         ROOT / 'scripts/all_metrics_synthesis.py', ROOT / 'scripts/all_metrics_base_controls.py',
         *(ROOT / 'scripts' / name for name in ADAPTER_SOURCES), ROOT / 'vocoderbench/world.py',
-        ROOT / 'vocoderbench/methods.py', *sorted((ROOT / 'vocoderbench').glob('hnm*.py'))]
+        *sorted((ROOT / 'vocoderbench').glob('hnm*.py'))]
     contract = {'schema_version': 1, 'stage': 'existing_native_feature_export', 'method': args.method,
         'source_sha256': {str(path.relative_to(ROOT)): sha256(path) for path in paths},
         'input_contract_sha256': sha256(args.output_root / 'input-contract.json'),

@@ -38,13 +38,13 @@ def publish(source: Path, topic: str, title: str, provenance: dict | None = None
     if role not in {'existing_references', 'current_base_and_references'}:
         raise ValueError('このコマンドは既存方式または現ベース併記の比較結果専用です')
     names = data['selected_methods']
-    if not names or len(names) != len(set(names)) or set(names) - (METHODS.keys() | {'hnm'}):
+    if not names or len(names) != len(set(names)) or set(names) - (METHODS.keys() | {'hnm', 'pml'}):
         raise ValueError('方式の選択が不正です')
     current_base = role == 'current_base_and_references'
     if current_base:
         formal = data['formal_base']
         contract = data['contract']
-        if (formal.get('method') not in {'hnm', 'pml'} or not formal.get('version') or
+        if (formal.get('method') not in {'hnm', 'pml', 'apron'} or not formal.get('version') or
                 formal.get('status') != 'selected' or data['comparison_reference'] != formal.get('method') or
                 formal.get('method') not in names or len(names) < 2):
             raise ValueError('現ベース併記には既存の開発ベース情報と参照方式が必要です')
@@ -56,7 +56,7 @@ def publish(source: Path, topic: str, title: str, provenance: dict | None = None
                 len({case['id'] for case in contract['inputs']}) != len(contract['inputs']) or
                 any(case['sample_rate'] != 16000 for case in contract['inputs'])):
             raise ValueError('現ベース併記は固定100音声以上・16 kHz入力の正式比較専用です')
-    elif data['formal_base']['method'] is not None or {'hnm', 'pml'} & set(names):
+    elif data['formal_base']['method'] is not None or {'hnm', 'pml', 'apron'} & set(names):
         raise ValueError('既存方式だけの比較に自作ベースを設定しないでください')
     records = data['resynthesis']
     pairs = [(row['case'], row['method']) for row in records]

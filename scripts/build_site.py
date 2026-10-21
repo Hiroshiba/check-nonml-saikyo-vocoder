@@ -247,7 +247,9 @@ def build(output):
     shutil.copy2(ROOT / 'BASELINE.json', output / 'BASELINE.json')
     method = baseline['method']
     current = ('自作HNM ' + baseline['version'].removeprefix('hnm-') if method == 'hnm'
-               else 'PML低域拡張＋60FWCEP' if method == 'pml' else method or '未選定')
+               else 'PML低域拡張＋60FWCEP' if method == 'pml'
+               else 'Apron（LLSM2 Layer1・未測定）' if method == 'apron'
+               else method or '未選定')
     cards = []
     for _, rel, meta, run in sorted(reports, key=lambda item: (item[0], str(item[1]), item[3]['id']), reverse=True):
         results = ROOT / rel / run['path']
