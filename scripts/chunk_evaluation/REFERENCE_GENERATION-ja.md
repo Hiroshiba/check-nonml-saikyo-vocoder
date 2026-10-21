@@ -1,5 +1,7 @@
 # 現PML・固定WORLDの区間生成
 
+> 履歴文書です。この区間生成入口は旧PML実装と当時の固定BASELINEに依存するため、現ブランチでは退役しました。以下の当時の手順を再現する場合は変更前commit `62acf3cadcd8a49f37e2e63826f2966ed2d8ce28` を使用してください。保存済み結果の読取・集約経路は残しています。
+
 本入口は既存科学APIへの公開可能な経路整理で、候補実装を含まない。PMLはscripts/pml_evaluation/run_native.pyと同じencode(seed=0)→save→load→decodeの順序を使う。旧120件一括CLIを12件で呼ばず、区間保存・現在のbase識別・明示decode seed0・immutable attemptsを追加したため、旧driverそのものを実行したとは記録しない。
 
 PMLのnative/-3/+3は毎回、同じ元解析の保存済みパラメーターを読み込む。±3は編集後の独立payloadも保存・再読込してから復号する（元公開run_editsの直接decodeからの保存経路拡張）。編集間の連鎖、編集音声の再解析、クリップ、振幅正規化、長さ補正をしない。WORLDは固定source/共有libraryを用いたnativeのみ。WORLD編集は下流で未対応として表示する。
