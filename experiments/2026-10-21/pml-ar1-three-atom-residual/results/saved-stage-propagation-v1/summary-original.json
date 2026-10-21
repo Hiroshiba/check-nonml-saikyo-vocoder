@@ -1,0 +1,68 @@
+{
+  "schema_version": 1,
+  "version": "pml-ar3-acg-saved-stage-observation-v1-20261021",
+  "status": "saved_stage_comparison_complete",
+  "record_mode_rows": [
+    {
+      "record_id": "librispeech_1089-134686-0008",
+      "mode": "L",
+      "raw_bit_changed_rows": 7,
+      "raw_numeric_changed_rows": 7,
+      "stage_path": "records/librispeech_1089-134686-0008/L/stage.json",
+      "mask_path": "records/librispeech_1089-134686-0008/L/masks.npz"
+    },
+    {
+      "record_id": "librispeech_1089-134686-0008",
+      "mode": "F",
+      "raw_bit_changed_rows": 14,
+      "raw_numeric_changed_rows": 14,
+      "stage_path": "records/librispeech_1089-134686-0008/F/stage.json",
+      "mask_path": "records/librispeech_1089-134686-0008/F/masks.npz"
+    },
+    {
+      "record_id": "librispeech_1089-134686-0011",
+      "mode": "L",
+      "raw_bit_changed_rows": 4,
+      "raw_numeric_changed_rows": 4,
+      "stage_path": "records/librispeech_1089-134686-0011/L/stage.json",
+      "mask_path": "records/librispeech_1089-134686-0011/L/masks.npz"
+    },
+    {
+      "record_id": "librispeech_1089-134686-0011",
+      "mode": "F",
+      "raw_bit_changed_rows": 14,
+      "raw_numeric_changed_rows": 14,
+      "stage_path": "records/librispeech_1089-134686-0011/F/stage.json",
+      "mask_path": "records/librispeech_1089-134686-0011/F/masks.npz"
+    },
+    {
+      "record_id": "librispeech_1089-134686-0032",
+      "mode": "L",
+      "raw_bit_changed_rows": 2,
+      "raw_numeric_changed_rows": 2,
+      "stage_path": "records/librispeech_1089-134686-0032/L/stage.json",
+      "mask_path": "records/librispeech_1089-134686-0032/L/masks.npz"
+    },
+    {
+      "record_id": "librispeech_1089-134686-0032",
+      "mode": "F",
+      "raw_bit_changed_rows": 6,
+      "raw_numeric_changed_rows": 6,
+      "stage_path": "records/librispeech_1089-134686-0032/F/stage.json",
+      "mask_path": "records/librispeech_1089-134686-0032/F/masks.npz"
+    }
+  ],
+  "recordings": 3,
+  "modes_per_record": 2,
+  "raw_numeric_changed_mode_rows": 47,
+  "raw_numeric_changed_same_clock_union": 41,
+  "prior_observation_consistency_reference": {
+    "branch_mode_changed_rows": 47,
+    "deduplicated_same_clock_rows": 41,
+    "purpose": "prior descriptive cross-check, not truth or an independent sample count"
+  },
+  "matches_reference_counts": true,
+  "frame_mapping": "only exact same 5 ms frame index; no interpolation",
+  "wave_mapping": "sample n/16000 only; no inferred originating frame",
+  "interpretation": "descriptive saved-value comparison; no truth or causal attribution"
+}

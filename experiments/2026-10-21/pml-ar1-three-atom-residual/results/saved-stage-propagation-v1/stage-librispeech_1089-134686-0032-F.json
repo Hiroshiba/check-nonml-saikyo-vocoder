@@ -1,0 +1,869 @@
+{
+  "schema_version": 1,
+  "record_id": "librispeech_1089-134686-0032",
+  "mode": "F",
+  "old_branch": "F_ar3_d1",
+  "new_branch": "F_acg_d1",
+  "frame_count": 818,
+  "sample_count": 65440,
+  "clock": {
+    "formula": "float64 arange(T) * float64(0.005)",
+    "all_saved_raw_post_clock_bits_match": true,
+    "all_post_time_bits_match": true
+  },
+  "source_members": {
+    "raw_f0.npy": {
+      "old": {
+        "member": "records/librispeech_1089-134686-0032/branches/F_ar3_d1/raw_f0.npy",
+        "bytes": 13216,
+        "sha256": "885cce28f4b87b233480d615d2f091ee66f7e7cc069610f071fd50a6ff27b655"
+      },
+      "new": {
+        "member": "records/librispeech_1089-134686-0032/branches/F_acg_d1/raw_f0.npy",
+        "bytes": 13216,
+        "sha256": "06acc746460a9451971ed83742cf7e967b0146193905fa46a59c96856cb7c0bc"
+      }
+    },
+    "post_f0.npy": {
+      "old": {
+        "member": "records/librispeech_1089-134686-0032/branches/F_ar3_d1/post_f0.npy",
+        "bytes": 13216,
+        "sha256": "8619e0b898f2f6a15914346e4e09c44d80641aecdfd272969e03b2dd0aa2640a"
+      },
+      "new": {
+        "member": "records/librispeech_1089-134686-0032/branches/F_acg_d1/post_f0.npy",
+        "bytes": 13216,
+        "sha256": "6bd43a8afb24aea50143abdef88ac7bff087d04f6bd84e3f1e15d48c41579675"
+      }
+    },
+    "post_time_bits.npy": {
+      "old": {
+        "member": "records/librispeech_1089-134686-0032/branches/F_ar3_d1/post_time_bits.npy",
+        "bytes": 6672,
+        "sha256": "8b1a8e8b9e57fd07f474f82365b902dfb89b570008daa50c225ffd6f6737cda6"
+      },
+      "new": {
+        "member": "records/librispeech_1089-134686-0032/branches/F_acg_d1/post_time_bits.npy",
+        "bytes": 6672,
+        "sha256": "8b1a8e8b9e57fd07f474f82365b902dfb89b570008daa50c225ffd6f6737cda6"
+      }
+    },
+    "params.pml": {
+      "old": {
+        "member": "records/librispeech_1089-134686-0032/branches/F_ar3_d1/params.pml",
+        "bytes": 413331,
+        "sha256": "4ca0449d2fe679517b634026caa5948d3bc6aa492300765894ff53bbf8e08abf"
+      },
+      "new": {
+        "member": "records/librispeech_1089-134686-0032/branches/F_acg_d1/params.pml",
+        "bytes": 413331,
+        "sha256": "73d29723441943b383b09f3c4431189177a644e863bf725563be9790327a594b"
+      }
+    },
+    "native.npy": {
+      "old": {
+        "member": "records/librispeech_1089-134686-0032/branches/F_ar3_d1/native.npy",
+        "bytes": 523648,
+        "sha256": "b6a3c6248257c751b962661b07b806f44b5a8cafa542528f8d67e28950661cf7"
+      },
+      "new": {
+        "member": "records/librispeech_1089-134686-0032/branches/F_acg_d1/native.npy",
+        "bytes": 523648,
+        "sha256": "4ff074422486f55bcc57aade7cc4582bb0e772f342741705b1cb918a08881d09"
+      }
+    }
+  },
+  "stages": {
+    "raw": {
+      "stage": "raw",
+      "bit_changed_positions": 6,
+      "numeric_changed_positions": 6,
+      "index_axis": "frame",
+      "bit_changed_indices": 6,
+      "numeric_changed_indices": 6,
+      "bit_changed_index_intervals_half_open": [
+        [
+          89,
+          90
+        ],
+        [
+          371,
+          372
+        ],
+        [
+          482,
+          483
+        ],
+        [
+          511,
+          512
+        ],
+        [
+          765,
+          766
+        ],
+        [
+          797,
+          798
+        ]
+      ],
+      "numeric_changed_index_intervals_half_open": [
+        [
+          89,
+          90
+        ],
+        [
+          371,
+          372
+        ],
+        [
+          482,
+          483
+        ],
+        [
+          511,
+          512
+        ],
+        [
+          765,
+          766
+        ],
+        [
+          797,
+          798
+        ]
+      ],
+      "bit_changed": 6,
+      "numeric_changed": 6,
+      "numeric_delta_min": -8.7890625,
+      "numeric_delta_max": 0.9765625,
+      "max_absolute_numeric_delta": 8.7890625
+    },
+    "post": {
+      "stage": "post",
+      "bit_changed_positions": 161,
+      "numeric_changed_positions": 161,
+      "index_axis": "frame",
+      "bit_changed_indices": 161,
+      "numeric_changed_indices": 161,
+      "bit_changed_index_intervals_half_open": [
+        [
+          349,
+          393
+        ],
+        [
+          394,
+          395
+        ],
+        [
+          461,
+          534
+        ],
+        [
+          744,
+          787
+        ]
+      ],
+      "numeric_changed_index_intervals_half_open": [
+        [
+          349,
+          393
+        ],
+        [
+          394,
+          395
+        ],
+        [
+          461,
+          534
+        ],
+        [
+          744,
+          787
+        ]
+      ],
+      "bit_changed": 161,
+      "numeric_changed": 161,
+      "numeric_delta_min": -4.628340365924828,
+      "numeric_delta_max": 0.5142600406583142,
+      "max_absolute_numeric_delta": 4.628340365924828
+    },
+    "saved_f0": {
+      "stage": "saved_f0",
+      "bit_changed_positions": 161,
+      "numeric_changed_positions": 161,
+      "index_axis": "frame",
+      "bit_changed_indices": 161,
+      "numeric_changed_indices": 161,
+      "bit_changed_index_intervals_half_open": [
+        [
+          349,
+          393
+        ],
+        [
+          394,
+          395
+        ],
+        [
+          461,
+          534
+        ],
+        [
+          744,
+          787
+        ]
+      ],
+      "numeric_changed_index_intervals_half_open": [
+        [
+          349,
+          393
+        ],
+        [
+          394,
+          395
+        ],
+        [
+          461,
+          534
+        ],
+        [
+          744,
+          787
+        ]
+      ],
+      "bit_changed": 161,
+      "numeric_changed": 161,
+      "numeric_delta_min": -4.628340365924828,
+      "numeric_delta_max": 0.5142600406583142,
+      "max_absolute_numeric_delta": 4.628340365924828
+    },
+    "fwcep": {
+      "stage": "fwcep",
+      "bit_changed_positions": 11176,
+      "numeric_changed_positions": 11176,
+      "index_axis": "frame",
+      "bit_changed_indices": 341,
+      "numeric_changed_indices": 341,
+      "bit_changed_index_intervals_half_open": [
+        [
+          371,
+          373
+        ],
+        [
+          374,
+          375
+        ],
+        [
+          473,
+          474
+        ],
+        [
+          481,
+          818
+        ]
+      ],
+      "numeric_changed_index_intervals_half_open": [
+        [
+          371,
+          373
+        ],
+        [
+          374,
+          375
+        ],
+        [
+          473,
+          474
+        ],
+        [
+          481,
+          818
+        ]
+      ],
+      "bit_changed": 11176,
+      "numeric_changed": 11176,
+      "numeric_delta_min": -0.060564205050468445,
+      "numeric_delta_max": 0.07399892807006836,
+      "max_absolute_numeric_delta": 0.07399892807006836
+    },
+    "wave": {
+      "stage": "wave",
+      "bit_changed_positions": 36697,
+      "numeric_changed_positions": 36697,
+      "index_axis": "sample",
+      "bit_changed_indices": 36697,
+      "numeric_changed_indices": 36697,
+      "bit_changed_index_intervals_half_open": [
+        [
+          28599,
+          28600
+        ],
+        [
+          28603,
+          28609
+        ],
+        [
+          28610,
+          28613
+        ],
+        [
+          28615,
+          28616
+        ],
+        [
+          28620,
+          28626
+        ],
+        [
+          28627,
+          28628
+        ],
+        [
+          28631,
+          28633
+        ],
+        [
+          28634,
+          28636
+        ],
+        [
+          28637,
+          28638
+        ],
+        [
+          28639,
+          28645
+        ],
+        [
+          28647,
+          28648
+        ],
+        [
+          28650,
+          28653
+        ],
+        [
+          28654,
+          28660
+        ],
+        [
+          28663,
+          28665
+        ],
+        [
+          28667,
+          28670
+        ],
+        [
+          28671,
+          28677
+        ],
+        [
+          28679,
+          28680
+        ],
+        [
+          28682,
+          28683
+        ],
+        [
+          28685,
+          28692
+        ],
+        [
+          28695,
+          28697
+        ],
+        [
+          28698,
+          28701
+        ],
+        [
+          28714,
+          28715
+        ],
+        [
+          28727,
+          28728
+        ],
+        [
+          28764,
+          28765
+        ],
+        [
+          28770,
+          28776
+        ],
+        [
+          28777,
+          28870
+        ],
+        [
+          28871,
+          28872
+        ],
+        [
+          28883,
+          28885
+        ],
+        [
+          28886,
+          28888
+        ],
+        [
+          28894,
+          28898
+        ],
+        [
+          28899,
+          28902
+        ],
+        [
+          28903,
+          28905
+        ],
+        [
+          28906,
+          28909
+        ],
+        [
+          28910,
+          28912
+        ],
+        [
+          28913,
+          28914
+        ],
+        [
+          28916,
+          28917
+        ],
+        [
+          28919,
+          28921
+        ],
+        [
+          28922,
+          28924
+        ],
+        [
+          28927,
+          28929
+        ],
+        [
+          28930,
+          28933
+        ],
+        [
+          28934,
+          28937
+        ],
+        [
+          28938,
+          29062
+        ],
+        [
+          29063,
+          29084
+        ],
+        [
+          29086,
+          29094
+        ],
+        [
+          29095,
+          65440
+        ]
+      ],
+      "numeric_changed_index_intervals_half_open": [
+        [
+          28599,
+          28600
+        ],
+        [
+          28603,
+          28609
+        ],
+        [
+          28610,
+          28613
+        ],
+        [
+          28615,
+          28616
+        ],
+        [
+          28620,
+          28626
+        ],
+        [
+          28627,
+          28628
+        ],
+        [
+          28631,
+          28633
+        ],
+        [
+          28634,
+          28636
+        ],
+        [
+          28637,
+          28638
+        ],
+        [
+          28639,
+          28645
+        ],
+        [
+          28647,
+          28648
+        ],
+        [
+          28650,
+          28653
+        ],
+        [
+          28654,
+          28660
+        ],
+        [
+          28663,
+          28665
+        ],
+        [
+          28667,
+          28670
+        ],
+        [
+          28671,
+          28677
+        ],
+        [
+          28679,
+          28680
+        ],
+        [
+          28682,
+          28683
+        ],
+        [
+          28685,
+          28692
+        ],
+        [
+          28695,
+          28697
+        ],
+        [
+          28698,
+          28701
+        ],
+        [
+          28714,
+          28715
+        ],
+        [
+          28727,
+          28728
+        ],
+        [
+          28764,
+          28765
+        ],
+        [
+          28770,
+          28776
+        ],
+        [
+          28777,
+          28870
+        ],
+        [
+          28871,
+          28872
+        ],
+        [
+          28883,
+          28885
+        ],
+        [
+          28886,
+          28888
+        ],
+        [
+          28894,
+          28898
+        ],
+        [
+          28899,
+          28902
+        ],
+        [
+          28903,
+          28905
+        ],
+        [
+          28906,
+          28909
+        ],
+        [
+          28910,
+          28912
+        ],
+        [
+          28913,
+          28914
+        ],
+        [
+          28916,
+          28917
+        ],
+        [
+          28919,
+          28921
+        ],
+        [
+          28922,
+          28924
+        ],
+        [
+          28927,
+          28929
+        ],
+        [
+          28930,
+          28933
+        ],
+        [
+          28934,
+          28937
+        ],
+        [
+          28938,
+          29062
+        ],
+        [
+          29063,
+          29084
+        ],
+        [
+          29086,
+          29094
+        ],
+        [
+          29095,
+          65440
+        ]
+      ],
+      "bit_changed": 36697,
+      "numeric_changed": 36697,
+      "numeric_delta_min": -0.6257782567507917,
+      "numeric_delta_max": 0.5968641039428988,
+      "max_absolute_numeric_delta": 0.6257782567507917
+    },
+    "nm": {
+      "stage": "nm",
+      "bit_changed_positions": 31278,
+      "numeric_changed_positions": 31278,
+      "index_axis": "frame",
+      "bit_changed_indices": 387,
+      "numeric_changed_indices": 387,
+      "bit_changed_index_intervals_half_open": [
+        [
+          364,
+          370
+        ],
+        [
+          371,
+          372
+        ],
+        [
+          378,
+          385
+        ],
+        [
+          395,
+          402
+        ],
+        [
+          404,
+          407
+        ],
+        [
+          408,
+          418
+        ],
+        [
+          422,
+          423
+        ],
+        [
+          424,
+          425
+        ],
+        [
+          428,
+          469
+        ],
+        [
+          475,
+          494
+        ],
+        [
+          506,
+          510
+        ],
+        [
+          511,
+          526
+        ],
+        [
+          533,
+          539
+        ],
+        [
+          549,
+          550
+        ],
+        [
+          551,
+          754
+        ],
+        [
+          755,
+          817
+        ]
+      ],
+      "numeric_changed_index_intervals_half_open": [
+        [
+          364,
+          370
+        ],
+        [
+          371,
+          372
+        ],
+        [
+          378,
+          385
+        ],
+        [
+          395,
+          402
+        ],
+        [
+          404,
+          407
+        ],
+        [
+          408,
+          418
+        ],
+        [
+          422,
+          423
+        ],
+        [
+          424,
+          425
+        ],
+        [
+          428,
+          469
+        ],
+        [
+          475,
+          494
+        ],
+        [
+          506,
+          510
+        ],
+        [
+          511,
+          526
+        ],
+        [
+          533,
+          539
+        ],
+        [
+          549,
+          550
+        ],
+        [
+          551,
+          754
+        ],
+        [
+          755,
+          817
+        ]
+      ]
+    }
+  },
+  "raw_frame_cross_tabs": {
+    "post": {
+      "raw_numeric_vs_stage_numeric": {
+        "raw_unchanged_stage_unchanged": 655,
+        "raw_unchanged_stage_changed": 157,
+        "raw_changed_stage_unchanged": 2,
+        "raw_changed_stage_changed": 4
+      },
+      "raw_bit_vs_stage_bit": {
+        "raw_unchanged_stage_unchanged": 655,
+        "raw_unchanged_stage_changed": 157,
+        "raw_changed_stage_unchanged": 2,
+        "raw_changed_stage_changed": 4
+      }
+    },
+    "saved_f0": {
+      "raw_numeric_vs_stage_numeric": {
+        "raw_unchanged_stage_unchanged": 655,
+        "raw_unchanged_stage_changed": 157,
+        "raw_changed_stage_unchanged": 2,
+        "raw_changed_stage_changed": 4
+      },
+      "raw_bit_vs_stage_bit": {
+        "raw_unchanged_stage_unchanged": 655,
+        "raw_unchanged_stage_changed": 157,
+        "raw_changed_stage_unchanged": 2,
+        "raw_changed_stage_changed": 4
+      }
+    },
+    "fwcep": {
+      "raw_numeric_vs_stage_numeric": {
+        "raw_unchanged_stage_unchanged": 476,
+        "raw_unchanged_stage_changed": 336,
+        "raw_changed_stage_unchanged": 1,
+        "raw_changed_stage_changed": 5
+      },
+      "raw_bit_vs_stage_bit": {
+        "raw_unchanged_stage_unchanged": 476,
+        "raw_unchanged_stage_changed": 336,
+        "raw_changed_stage_unchanged": 1,
+        "raw_changed_stage_changed": 5
+      }
+    },
+    "nm": {
+      "raw_numeric_vs_stage_numeric": {
+        "raw_unchanged_stage_unchanged": 430,
+        "raw_unchanged_stage_changed": 382,
+        "raw_changed_stage_unchanged": 1,
+        "raw_changed_stage_changed": 5
+      },
+      "raw_bit_vs_stage_bit": {
+        "raw_unchanged_stage_unchanged": 430,
+        "raw_unchanged_stage_changed": 382,
+        "raw_changed_stage_unchanged": 1,
+        "raw_changed_stage_changed": 5
+      }
+    }
+  },
+  "wave_sample_axis": "n/16000; no frame-origin assignment",
+  "bit_vs_numeric": "signed zero can differ in bits without differing numerically",
+  "mask_encoding": "npz uint8, numpy.packbits bitorder=little; axis=1 for FWCEP/NM cells",
+  "interpretation": "saved-array description only; no causal, F0-truth or quality claim"
+}

@@ -1,0 +1,766 @@
+{
+  "schema_version": 1,
+  "study_role": "saved_stage_observation_supplement",
+  "formal_base": {
+    "method": "pml"
+  },
+  "new_quality_measurements": 0,
+  "new_audio_generation": 0,
+  "branches": [
+    {
+      "record_id": "librispeech_1089-134686-0008",
+      "mode": "L",
+      "frame_count": 1200,
+      "sample_count": 96000,
+      "stage_json": "stage-librispeech_1089-134686-0008-L.json",
+      "masks_json": "masks-librispeech_1089-134686-0008-L.json",
+      "original_stage": {
+        "bytes": 12934,
+        "sha256": "f2b5170d7e6d40de9091646332ca142f0fb95f026db595a7d6e7d495e1861f92"
+      },
+      "original_masks": {
+        "bytes": 359014,
+        "sha256": "8b4010e151c603464bde6dea141e09edfd8c39204372424fa3b19f550bf5bf7a"
+      },
+      "stages": {
+        "raw": {
+          "stage": "raw",
+          "bit_changed_positions": 7,
+          "numeric_changed_positions": 7,
+          "index_axis": "frame",
+          "bit_changed_indices": 7,
+          "numeric_changed_indices": 7
+        },
+        "post": {
+          "stage": "post",
+          "bit_changed_positions": 233,
+          "numeric_changed_positions": 233,
+          "index_axis": "frame",
+          "bit_changed_indices": 233,
+          "numeric_changed_indices": 233
+        },
+        "saved_f0": {
+          "stage": "saved_f0",
+          "bit_changed_positions": 233,
+          "numeric_changed_positions": 233,
+          "index_axis": "frame",
+          "bit_changed_indices": 233,
+          "numeric_changed_indices": 233
+        },
+        "fwcep": {
+          "stage": "fwcep",
+          "bit_changed_positions": 33962,
+          "numeric_changed_positions": 33962,
+          "index_axis": "frame",
+          "bit_changed_indices": 1089,
+          "numeric_changed_indices": 1089
+        },
+        "wave": {
+          "stage": "wave",
+          "bit_changed_positions": 88268,
+          "numeric_changed_positions": 88268,
+          "index_axis": "sample",
+          "bit_changed_indices": 88268,
+          "numeric_changed_indices": 88268
+        },
+        "nm": {
+          "stage": "nm",
+          "bit_changed_positions": 86291,
+          "numeric_changed_positions": 86291,
+          "index_axis": "frame",
+          "bit_changed_indices": 1015,
+          "numeric_changed_indices": 1015
+        }
+      },
+      "raw_frame_cross_tabs": {
+        "post": {
+          "raw_numeric_vs_stage_numeric": {
+            "raw_unchanged_stage_unchanged": 965,
+            "raw_unchanged_stage_changed": 228,
+            "raw_changed_stage_unchanged": 2,
+            "raw_changed_stage_changed": 5
+          },
+          "raw_bit_vs_stage_bit": {
+            "raw_unchanged_stage_unchanged": 965,
+            "raw_unchanged_stage_changed": 228,
+            "raw_changed_stage_unchanged": 2,
+            "raw_changed_stage_changed": 5
+          }
+        },
+        "saved_f0": {
+          "raw_numeric_vs_stage_numeric": {
+            "raw_unchanged_stage_unchanged": 965,
+            "raw_unchanged_stage_changed": 228,
+            "raw_changed_stage_unchanged": 2,
+            "raw_changed_stage_changed": 5
+          },
+          "raw_bit_vs_stage_bit": {
+            "raw_unchanged_stage_unchanged": 965,
+            "raw_unchanged_stage_changed": 228,
+            "raw_changed_stage_unchanged": 2,
+            "raw_changed_stage_changed": 5
+          }
+        },
+        "fwcep": {
+          "raw_numeric_vs_stage_numeric": {
+            "raw_unchanged_stage_unchanged": 111,
+            "raw_unchanged_stage_changed": 1082,
+            "raw_changed_stage_unchanged": 0,
+            "raw_changed_stage_changed": 7
+          },
+          "raw_bit_vs_stage_bit": {
+            "raw_unchanged_stage_unchanged": 111,
+            "raw_unchanged_stage_changed": 1082,
+            "raw_changed_stage_unchanged": 0,
+            "raw_changed_stage_changed": 7
+          }
+        },
+        "nm": {
+          "raw_numeric_vs_stage_numeric": {
+            "raw_unchanged_stage_unchanged": 185,
+            "raw_unchanged_stage_changed": 1008,
+            "raw_changed_stage_unchanged": 0,
+            "raw_changed_stage_changed": 7
+          },
+          "raw_bit_vs_stage_bit": {
+            "raw_unchanged_stage_unchanged": 185,
+            "raw_unchanged_stage_changed": 1008,
+            "raw_changed_stage_unchanged": 0,
+            "raw_changed_stage_changed": 7
+          }
+        }
+      }
+    },
+    {
+      "record_id": "librispeech_1089-134686-0008",
+      "mode": "F",
+      "frame_count": 1200,
+      "sample_count": 96000,
+      "stage_json": "stage-librispeech_1089-134686-0008-F.json",
+      "masks_json": "masks-librispeech_1089-134686-0008-F.json",
+      "original_stage": {
+        "bytes": 20111,
+        "sha256": "1a510e77ddc803a94c3015e4b537b0dac6af3e04453f923abae1a0041dff43c2"
+      },
+      "original_masks": {
+        "bytes": 359014,
+        "sha256": "b2442d4360bceb931d3842c17344f6e1f837eaf60a4d936b212a76606019a60f"
+      },
+      "stages": {
+        "raw": {
+          "stage": "raw",
+          "bit_changed_positions": 14,
+          "numeric_changed_positions": 14,
+          "index_axis": "frame",
+          "bit_changed_indices": 14,
+          "numeric_changed_indices": 14
+        },
+        "post": {
+          "stage": "post",
+          "bit_changed_positions": 324,
+          "numeric_changed_positions": 324,
+          "index_axis": "frame",
+          "bit_changed_indices": 324,
+          "numeric_changed_indices": 324
+        },
+        "saved_f0": {
+          "stage": "saved_f0",
+          "bit_changed_positions": 324,
+          "numeric_changed_positions": 324,
+          "index_axis": "frame",
+          "bit_changed_indices": 324,
+          "numeric_changed_indices": 324
+        },
+        "fwcep": {
+          "stage": "fwcep",
+          "bit_changed_positions": 21926,
+          "numeric_changed_positions": 21926,
+          "index_axis": "frame",
+          "bit_changed_indices": 605,
+          "numeric_changed_indices": 605
+        },
+        "wave": {
+          "stage": "wave",
+          "bit_changed_positions": 49171,
+          "numeric_changed_positions": 49171,
+          "index_axis": "sample",
+          "bit_changed_indices": 49171,
+          "numeric_changed_indices": 49171
+        },
+        "nm": {
+          "stage": "nm",
+          "bit_changed_positions": 65696,
+          "numeric_changed_positions": 65696,
+          "index_axis": "frame",
+          "bit_changed_indices": 601,
+          "numeric_changed_indices": 601
+        }
+      },
+      "raw_frame_cross_tabs": {
+        "post": {
+          "raw_numeric_vs_stage_numeric": {
+            "raw_unchanged_stage_unchanged": 874,
+            "raw_unchanged_stage_changed": 312,
+            "raw_changed_stage_unchanged": 2,
+            "raw_changed_stage_changed": 12
+          },
+          "raw_bit_vs_stage_bit": {
+            "raw_unchanged_stage_unchanged": 874,
+            "raw_unchanged_stage_changed": 312,
+            "raw_changed_stage_unchanged": 2,
+            "raw_changed_stage_changed": 12
+          }
+        },
+        "saved_f0": {
+          "raw_numeric_vs_stage_numeric": {
+            "raw_unchanged_stage_unchanged": 874,
+            "raw_unchanged_stage_changed": 312,
+            "raw_changed_stage_unchanged": 2,
+            "raw_changed_stage_changed": 12
+          },
+          "raw_bit_vs_stage_bit": {
+            "raw_unchanged_stage_unchanged": 874,
+            "raw_unchanged_stage_changed": 312,
+            "raw_changed_stage_unchanged": 2,
+            "raw_changed_stage_changed": 12
+          }
+        },
+        "fwcep": {
+          "raw_numeric_vs_stage_numeric": {
+            "raw_unchanged_stage_unchanged": 594,
+            "raw_unchanged_stage_changed": 592,
+            "raw_changed_stage_unchanged": 1,
+            "raw_changed_stage_changed": 13
+          },
+          "raw_bit_vs_stage_bit": {
+            "raw_unchanged_stage_unchanged": 594,
+            "raw_unchanged_stage_changed": 592,
+            "raw_changed_stage_unchanged": 1,
+            "raw_changed_stage_changed": 13
+          }
+        },
+        "nm": {
+          "raw_numeric_vs_stage_numeric": {
+            "raw_unchanged_stage_unchanged": 598,
+            "raw_unchanged_stage_changed": 588,
+            "raw_changed_stage_unchanged": 1,
+            "raw_changed_stage_changed": 13
+          },
+          "raw_bit_vs_stage_bit": {
+            "raw_unchanged_stage_unchanged": 598,
+            "raw_unchanged_stage_changed": 588,
+            "raw_changed_stage_unchanged": 1,
+            "raw_changed_stage_changed": 13
+          }
+        }
+      }
+    },
+    {
+      "record_id": "librispeech_1089-134686-0011",
+      "mode": "L",
+      "frame_count": 1200,
+      "sample_count": 96000,
+      "stage_json": "stage-librispeech_1089-134686-0011-L.json",
+      "masks_json": "masks-librispeech_1089-134686-0011-L.json",
+      "original_stage": {
+        "bytes": 18067,
+        "sha256": "0499d508370fb5b2ed6d44d4b2eec11d9c665b431ea2f6798b22b53ebc114bde"
+      },
+      "original_masks": {
+        "bytes": 359014,
+        "sha256": "4037901305a21c7cb5f9647fc5b45361dfd24a0627b8f0e5d679e4fa878705f5"
+      },
+      "stages": {
+        "raw": {
+          "stage": "raw",
+          "bit_changed_positions": 4,
+          "numeric_changed_positions": 4,
+          "index_axis": "frame",
+          "bit_changed_indices": 4,
+          "numeric_changed_indices": 4
+        },
+        "post": {
+          "stage": "post",
+          "bit_changed_positions": 201,
+          "numeric_changed_positions": 201,
+          "index_axis": "frame",
+          "bit_changed_indices": 201,
+          "numeric_changed_indices": 201
+        },
+        "saved_f0": {
+          "stage": "saved_f0",
+          "bit_changed_positions": 201,
+          "numeric_changed_positions": 201,
+          "index_axis": "frame",
+          "bit_changed_indices": 201,
+          "numeric_changed_indices": 201
+        },
+        "fwcep": {
+          "stage": "fwcep",
+          "bit_changed_positions": 23539,
+          "numeric_changed_positions": 23539,
+          "index_axis": "frame",
+          "bit_changed_indices": 789,
+          "numeric_changed_indices": 789
+        },
+        "wave": {
+          "stage": "wave",
+          "bit_changed_positions": 64098,
+          "numeric_changed_positions": 64098,
+          "index_axis": "sample",
+          "bit_changed_indices": 64098,
+          "numeric_changed_indices": 64098
+        },
+        "nm": {
+          "stage": "nm",
+          "bit_changed_positions": 68156,
+          "numeric_changed_positions": 68156,
+          "index_axis": "frame",
+          "bit_changed_indices": 748,
+          "numeric_changed_indices": 748
+        }
+      },
+      "raw_frame_cross_tabs": {
+        "post": {
+          "raw_numeric_vs_stage_numeric": {
+            "raw_unchanged_stage_unchanged": 999,
+            "raw_unchanged_stage_changed": 197,
+            "raw_changed_stage_unchanged": 0,
+            "raw_changed_stage_changed": 4
+          },
+          "raw_bit_vs_stage_bit": {
+            "raw_unchanged_stage_unchanged": 999,
+            "raw_unchanged_stage_changed": 197,
+            "raw_changed_stage_unchanged": 0,
+            "raw_changed_stage_changed": 4
+          }
+        },
+        "saved_f0": {
+          "raw_numeric_vs_stage_numeric": {
+            "raw_unchanged_stage_unchanged": 999,
+            "raw_unchanged_stage_changed": 197,
+            "raw_changed_stage_unchanged": 0,
+            "raw_changed_stage_changed": 4
+          },
+          "raw_bit_vs_stage_bit": {
+            "raw_unchanged_stage_unchanged": 999,
+            "raw_unchanged_stage_changed": 197,
+            "raw_changed_stage_unchanged": 0,
+            "raw_changed_stage_changed": 4
+          }
+        },
+        "fwcep": {
+          "raw_numeric_vs_stage_numeric": {
+            "raw_unchanged_stage_unchanged": 411,
+            "raw_unchanged_stage_changed": 785,
+            "raw_changed_stage_unchanged": 0,
+            "raw_changed_stage_changed": 4
+          },
+          "raw_bit_vs_stage_bit": {
+            "raw_unchanged_stage_unchanged": 411,
+            "raw_unchanged_stage_changed": 785,
+            "raw_changed_stage_unchanged": 0,
+            "raw_changed_stage_changed": 4
+          }
+        },
+        "nm": {
+          "raw_numeric_vs_stage_numeric": {
+            "raw_unchanged_stage_unchanged": 452,
+            "raw_unchanged_stage_changed": 744,
+            "raw_changed_stage_unchanged": 0,
+            "raw_changed_stage_changed": 4
+          },
+          "raw_bit_vs_stage_bit": {
+            "raw_unchanged_stage_unchanged": 452,
+            "raw_unchanged_stage_changed": 744,
+            "raw_changed_stage_unchanged": 0,
+            "raw_changed_stage_changed": 4
+          }
+        }
+      }
+    },
+    {
+      "record_id": "librispeech_1089-134686-0011",
+      "mode": "F",
+      "frame_count": 1200,
+      "sample_count": 96000,
+      "stage_json": "stage-librispeech_1089-134686-0011-F.json",
+      "masks_json": "masks-librispeech_1089-134686-0011-F.json",
+      "original_stage": {
+        "bytes": 13811,
+        "sha256": "c0d7d2824150e43278a3849f7071f141d4a7a14415b46bf8903effdf83c073d6"
+      },
+      "original_masks": {
+        "bytes": 359014,
+        "sha256": "a019bc7898e9b3d85900e441be04107ac7d43c5d034392e838e84516e887e88e"
+      },
+      "stages": {
+        "raw": {
+          "stage": "raw",
+          "bit_changed_positions": 14,
+          "numeric_changed_positions": 14,
+          "index_axis": "frame",
+          "bit_changed_indices": 14,
+          "numeric_changed_indices": 14
+        },
+        "post": {
+          "stage": "post",
+          "bit_changed_positions": 335,
+          "numeric_changed_positions": 335,
+          "index_axis": "frame",
+          "bit_changed_indices": 335,
+          "numeric_changed_indices": 335
+        },
+        "saved_f0": {
+          "stage": "saved_f0",
+          "bit_changed_positions": 335,
+          "numeric_changed_positions": 335,
+          "index_axis": "frame",
+          "bit_changed_indices": 335,
+          "numeric_changed_indices": 335
+        },
+        "fwcep": {
+          "stage": "fwcep",
+          "bit_changed_positions": 24298,
+          "numeric_changed_positions": 24298,
+          "index_axis": "frame",
+          "bit_changed_indices": 804,
+          "numeric_changed_indices": 804
+        },
+        "wave": {
+          "stage": "wave",
+          "bit_changed_positions": 91714,
+          "numeric_changed_positions": 91714,
+          "index_axis": "sample",
+          "bit_changed_indices": 91714,
+          "numeric_changed_indices": 91714
+        },
+        "nm": {
+          "stage": "nm",
+          "bit_changed_positions": 65444,
+          "numeric_changed_positions": 65444,
+          "index_axis": "frame",
+          "bit_changed_indices": 1047,
+          "numeric_changed_indices": 1047
+        }
+      },
+      "raw_frame_cross_tabs": {
+        "post": {
+          "raw_numeric_vs_stage_numeric": {
+            "raw_unchanged_stage_unchanged": 865,
+            "raw_unchanged_stage_changed": 321,
+            "raw_changed_stage_unchanged": 0,
+            "raw_changed_stage_changed": 14
+          },
+          "raw_bit_vs_stage_bit": {
+            "raw_unchanged_stage_unchanged": 865,
+            "raw_unchanged_stage_changed": 321,
+            "raw_changed_stage_unchanged": 0,
+            "raw_changed_stage_changed": 14
+          }
+        },
+        "saved_f0": {
+          "raw_numeric_vs_stage_numeric": {
+            "raw_unchanged_stage_unchanged": 865,
+            "raw_unchanged_stage_changed": 321,
+            "raw_changed_stage_unchanged": 0,
+            "raw_changed_stage_changed": 14
+          },
+          "raw_bit_vs_stage_bit": {
+            "raw_unchanged_stage_unchanged": 865,
+            "raw_unchanged_stage_changed": 321,
+            "raw_changed_stage_unchanged": 0,
+            "raw_changed_stage_changed": 14
+          }
+        },
+        "fwcep": {
+          "raw_numeric_vs_stage_numeric": {
+            "raw_unchanged_stage_unchanged": 395,
+            "raw_unchanged_stage_changed": 791,
+            "raw_changed_stage_unchanged": 1,
+            "raw_changed_stage_changed": 13
+          },
+          "raw_bit_vs_stage_bit": {
+            "raw_unchanged_stage_unchanged": 395,
+            "raw_unchanged_stage_changed": 791,
+            "raw_changed_stage_unchanged": 1,
+            "raw_changed_stage_changed": 13
+          }
+        },
+        "nm": {
+          "raw_numeric_vs_stage_numeric": {
+            "raw_unchanged_stage_unchanged": 152,
+            "raw_unchanged_stage_changed": 1034,
+            "raw_changed_stage_unchanged": 1,
+            "raw_changed_stage_changed": 13
+          },
+          "raw_bit_vs_stage_bit": {
+            "raw_unchanged_stage_unchanged": 152,
+            "raw_unchanged_stage_changed": 1034,
+            "raw_changed_stage_unchanged": 1,
+            "raw_changed_stage_changed": 13
+          }
+        }
+      }
+    },
+    {
+      "record_id": "librispeech_1089-134686-0032",
+      "mode": "L",
+      "frame_count": 818,
+      "sample_count": 65440,
+      "stage_json": "stage-librispeech_1089-134686-0032-L.json",
+      "masks_json": "masks-librispeech_1089-134686-0032-L.json",
+      "original_stage": {
+        "bytes": 13218,
+        "sha256": "a32a755acc13cf082e7dd5f1c32dc13a45956a810d1bb21341a14092dadf822a"
+      },
+      "original_masks": {
+        "bytes": 246383,
+        "sha256": "ff232fdc661fbceab548e34cbe82fb7fec54aa24fd944e91871b982ee2c59d51"
+      },
+      "stages": {
+        "raw": {
+          "stage": "raw",
+          "bit_changed_positions": 2,
+          "numeric_changed_positions": 2,
+          "index_axis": "frame",
+          "bit_changed_indices": 2,
+          "numeric_changed_indices": 2
+        },
+        "post": {
+          "stage": "post",
+          "bit_changed_positions": 43,
+          "numeric_changed_positions": 43,
+          "index_axis": "frame",
+          "bit_changed_indices": 43,
+          "numeric_changed_indices": 43
+        },
+        "saved_f0": {
+          "stage": "saved_f0",
+          "bit_changed_positions": 43,
+          "numeric_changed_positions": 43,
+          "index_axis": "frame",
+          "bit_changed_indices": 43,
+          "numeric_changed_indices": 43
+        },
+        "fwcep": {
+          "stage": "fwcep",
+          "bit_changed_positions": 297,
+          "numeric_changed_positions": 297,
+          "index_axis": "frame",
+          "bit_changed_indices": 5,
+          "numeric_changed_indices": 5
+        },
+        "wave": {
+          "stage": "wave",
+          "bit_changed_positions": 36717,
+          "numeric_changed_positions": 36717,
+          "index_axis": "sample",
+          "bit_changed_indices": 36717,
+          "numeric_changed_indices": 36717
+        },
+        "nm": {
+          "stage": "nm",
+          "bit_changed_positions": 12152,
+          "numeric_changed_positions": 12152,
+          "index_axis": "frame",
+          "bit_changed_indices": 369,
+          "numeric_changed_indices": 369
+        }
+      },
+      "raw_frame_cross_tabs": {
+        "post": {
+          "raw_numeric_vs_stage_numeric": {
+            "raw_unchanged_stage_unchanged": 774,
+            "raw_unchanged_stage_changed": 42,
+            "raw_changed_stage_unchanged": 1,
+            "raw_changed_stage_changed": 1
+          },
+          "raw_bit_vs_stage_bit": {
+            "raw_unchanged_stage_unchanged": 774,
+            "raw_unchanged_stage_changed": 42,
+            "raw_changed_stage_unchanged": 1,
+            "raw_changed_stage_changed": 1
+          }
+        },
+        "saved_f0": {
+          "raw_numeric_vs_stage_numeric": {
+            "raw_unchanged_stage_unchanged": 774,
+            "raw_unchanged_stage_changed": 42,
+            "raw_changed_stage_unchanged": 1,
+            "raw_changed_stage_changed": 1
+          },
+          "raw_bit_vs_stage_bit": {
+            "raw_unchanged_stage_unchanged": 774,
+            "raw_unchanged_stage_changed": 42,
+            "raw_changed_stage_unchanged": 1,
+            "raw_changed_stage_changed": 1
+          }
+        },
+        "fwcep": {
+          "raw_numeric_vs_stage_numeric": {
+            "raw_unchanged_stage_unchanged": 812,
+            "raw_unchanged_stage_changed": 4,
+            "raw_changed_stage_unchanged": 1,
+            "raw_changed_stage_changed": 1
+          },
+          "raw_bit_vs_stage_bit": {
+            "raw_unchanged_stage_unchanged": 812,
+            "raw_unchanged_stage_changed": 4,
+            "raw_changed_stage_unchanged": 1,
+            "raw_changed_stage_changed": 1
+          }
+        },
+        "nm": {
+          "raw_numeric_vs_stage_numeric": {
+            "raw_unchanged_stage_unchanged": 448,
+            "raw_unchanged_stage_changed": 368,
+            "raw_changed_stage_unchanged": 1,
+            "raw_changed_stage_changed": 1
+          },
+          "raw_bit_vs_stage_bit": {
+            "raw_unchanged_stage_unchanged": 448,
+            "raw_unchanged_stage_changed": 368,
+            "raw_changed_stage_unchanged": 1,
+            "raw_changed_stage_changed": 1
+          }
+        }
+      }
+    },
+    {
+      "record_id": "librispeech_1089-134686-0032",
+      "mode": "F",
+      "frame_count": 818,
+      "sample_count": 65440,
+      "stage_json": "stage-librispeech_1089-134686-0032-F.json",
+      "masks_json": "masks-librispeech_1089-134686-0032-F.json",
+      "original_stage": {
+        "bytes": 16229,
+        "sha256": "7a6cb6080b417696cef80fbf8ea0d3806651bbc91691063cd701e5f47a8b2f77"
+      },
+      "original_masks": {
+        "bytes": 246383,
+        "sha256": "02790e8b4c4c30308f607fb778277ad7632867e088bdf990620052f392c29455"
+      },
+      "stages": {
+        "raw": {
+          "stage": "raw",
+          "bit_changed_positions": 6,
+          "numeric_changed_positions": 6,
+          "index_axis": "frame",
+          "bit_changed_indices": 6,
+          "numeric_changed_indices": 6
+        },
+        "post": {
+          "stage": "post",
+          "bit_changed_positions": 161,
+          "numeric_changed_positions": 161,
+          "index_axis": "frame",
+          "bit_changed_indices": 161,
+          "numeric_changed_indices": 161
+        },
+        "saved_f0": {
+          "stage": "saved_f0",
+          "bit_changed_positions": 161,
+          "numeric_changed_positions": 161,
+          "index_axis": "frame",
+          "bit_changed_indices": 161,
+          "numeric_changed_indices": 161
+        },
+        "fwcep": {
+          "stage": "fwcep",
+          "bit_changed_positions": 11176,
+          "numeric_changed_positions": 11176,
+          "index_axis": "frame",
+          "bit_changed_indices": 341,
+          "numeric_changed_indices": 341
+        },
+        "wave": {
+          "stage": "wave",
+          "bit_changed_positions": 36697,
+          "numeric_changed_positions": 36697,
+          "index_axis": "sample",
+          "bit_changed_indices": 36697,
+          "numeric_changed_indices": 36697
+        },
+        "nm": {
+          "stage": "nm",
+          "bit_changed_positions": 31278,
+          "numeric_changed_positions": 31278,
+          "index_axis": "frame",
+          "bit_changed_indices": 387,
+          "numeric_changed_indices": 387
+        }
+      },
+      "raw_frame_cross_tabs": {
+        "post": {
+          "raw_numeric_vs_stage_numeric": {
+            "raw_unchanged_stage_unchanged": 655,
+            "raw_unchanged_stage_changed": 157,
+            "raw_changed_stage_unchanged": 2,
+            "raw_changed_stage_changed": 4
+          },
+          "raw_bit_vs_stage_bit": {
+            "raw_unchanged_stage_unchanged": 655,
+            "raw_unchanged_stage_changed": 157,
+            "raw_changed_stage_unchanged": 2,
+            "raw_changed_stage_changed": 4
+          }
+        },
+        "saved_f0": {
+          "raw_numeric_vs_stage_numeric": {
+            "raw_unchanged_stage_unchanged": 655,
+            "raw_unchanged_stage_changed": 157,
+            "raw_changed_stage_unchanged": 2,
+            "raw_changed_stage_changed": 4
+          },
+          "raw_bit_vs_stage_bit": {
+            "raw_unchanged_stage_unchanged": 655,
+            "raw_unchanged_stage_changed": 157,
+            "raw_changed_stage_unchanged": 2,
+            "raw_changed_stage_changed": 4
+          }
+        },
+        "fwcep": {
+          "raw_numeric_vs_stage_numeric": {
+            "raw_unchanged_stage_unchanged": 476,
+            "raw_unchanged_stage_changed": 336,
+            "raw_changed_stage_unchanged": 1,
+            "raw_changed_stage_changed": 5
+          },
+          "raw_bit_vs_stage_bit": {
+            "raw_unchanged_stage_unchanged": 476,
+            "raw_unchanged_stage_changed": 336,
+            "raw_changed_stage_unchanged": 1,
+            "raw_changed_stage_changed": 5
+          }
+        },
+        "nm": {
+          "raw_numeric_vs_stage_numeric": {
+            "raw_unchanged_stage_unchanged": 430,
+            "raw_unchanged_stage_changed": 382,
+            "raw_changed_stage_unchanged": 1,
+            "raw_changed_stage_changed": 5
+          },
+          "raw_bit_vs_stage_bit": {
+            "raw_unchanged_stage_unchanged": 430,
+            "raw_unchanged_stage_changed": 382,
+            "raw_changed_stage_unchanged": 1,
+            "raw_changed_stage_changed": 5
+          }
+        }
+      }
+    }
+  ],
+  "summary": "summary-original.json",
+  "warnings": "warnings.json",
+  "audit": "independent-audit-public.json",
+  "execution": "execution-public.json",
+  "provenance": "provenance-public.json",
+  "audio_references": "audio_samples.json",
+  "existing_quality_report": "../run-002/index.html",
+  "title": "音高の選択差は、保存された後段の値のどこまで広がったか",
+  "observed_execution_started_at_utc": "2026-10-21T15:24:16.080678+00:00",
+  "observed_execution_finished_at_utc": "2026-10-21T15:24:16.551313+00:00",
+  "detail_storage": "Complete intervals, saved deltas and all fields remain in the byte-identical stage_json files; this index repeats counts only."
+}

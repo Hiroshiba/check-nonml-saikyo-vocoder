@@ -1,0 +1,130 @@
+{
+  "execution": {
+    "outer_exit_code": 0,
+    "science_exit_code": 0,
+    "outer_reaped": true,
+    "science_reaped": true,
+    "warning_count": 0,
+    "outer_elapsed_seconds": 0.5680074599949876,
+    "science_elapsed_seconds": 0.47064713500003563,
+    "science_max_rss_kib": 46416,
+    "outer_stdout_bytes": 244,
+    "outer_stderr_bytes": 0,
+    "science_stdout_bytes": 264,
+    "science_stderr_bytes": 0,
+    "child_address_space_limit_bytes": 2147483648,
+    "science_rss_is_observed_not_enforced": true
+  },
+  "all_streams": [
+    {
+      "layer": "outer",
+      "member": "evidence/stdout.log",
+      "bytes": 244,
+      "sha256": "607c9c6d5afdc64d35c0783559c71ff51bec8c6d30afc91af8a56fd0081bdefd",
+      "utf8_public": "{\"status\":\"succeeded\",\"package\":{\"path\":\"[local]/pml-ar3-acg-saved-stage-run-20261021-v1-delivery.zip\",\"bytes\":2038561,\"sha256\":\"ebd702f4edecd4fee4ffb4d1b138446c4b2d6d6e67f6cfea57ccdbed38c5aac6\",\"members\":7}}\n"
+    },
+    {
+      "layer": "outer",
+      "member": "evidence/stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "utf8_public": ""
+    },
+    {
+      "layer": "inner",
+      "member": "evidence/stdout.log",
+      "bytes": 264,
+      "sha256": "594491b387c9f268cbc5654124136b4ab464bad5fb747e4452ff81e30ca17643",
+      "utf8_public": "{\"status\":\"saved_stage_comparison_complete\",\"result\":{\"path\":\"[local]/result.zip\",\"bytes\":2033598,\"sha256\":\"283c891847207e3c2a68c4dd1a26ee17e7c22d33a55cf85cc71c839db8cffd54\"},\"warnings\":0}\n"
+    },
+    {
+      "layer": "inner",
+      "member": "evidence/stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "utf8_public": ""
+    }
+  ],
+  "warning_count": 0,
+  "source_execution": "none; saved bytes and independent arithmetic only",
+  "limits": "Saved-value description. No inference about causal contribution, F0 truth, physiological voicing, sound quality, or generalization.",
+  "note": "Saved artifact observation only; scientific source and private control records excluded.",
+  "invocations_public": [
+    {
+      "layer": "outer",
+      "original_member": "evidence/invocation.json",
+      "bytes": 1535,
+      "sha256": "7a6d109ee67c85b8544a9123715f7aa8bf9cb423e3a6405e74c2a0e86905c979",
+      "conversion": "execution fields only; argv and local control references omitted",
+      "invocation": {
+        "sigint_sent_to_launcher": false,
+        "launcher_reaped_by_recorder": true,
+        "finished_at_utc": "2026-10-21T15:24:16.602859+00:00",
+        "science_child_status": "reaped_by_launcher",
+        "process_group_sigkill_sent": false,
+        "kind": "actual_outer_call",
+        "streams_complete": true,
+        "schema_version": 1,
+        "launcher_started": true,
+        "launcher_signal": null,
+        "limits": {
+          "outer_wall_seconds": 360,
+          "interrupt_grace_seconds": 15,
+          "kill_reap_grace_seconds": 5,
+          "inner_wall_seconds": 300,
+          "inner_terminate_grace_seconds": 10
+        },
+        "elapsed_seconds": 0.5680074599949876,
+        "started_at_utc": "2026-10-21T15:24:16.034547+00:00",
+        "outer_timed_out": false,
+        "launcher_exit_code": 0
+      }
+    },
+    {
+      "layer": "inner",
+      "original_member": "evidence/invocation.json",
+      "bytes": 1824,
+      "sha256": "fe297a75b02c87673fafc2f21ec519faa747d873b7f483b6c669a3559d7d6ad8",
+      "conversion": "execution fields only; argv and local control references omitted",
+      "invocation": {
+        "thread_environment": {
+          "OPENBLAS_NUM_THREADS": "1",
+          "OMP_NUM_THREADS": "1",
+          "MKL_NUM_THREADS": "1",
+          "VECLIB_MAXIMUM_THREADS": "1",
+          "NUMEXPR_NUM_THREADS": "1",
+          "BLIS_NUM_THREADS": "1"
+        },
+        "signal": null,
+        "child_started": true,
+        "finished_at_utc": "2026-10-21T15:24:16.551313+00:00",
+        "stdout": {
+          "bytes": 264,
+          "sha256": "594491b387c9f268cbc5654124136b4ab464bad5fb747e4452ff81e30ca17643",
+          "complete": true
+        },
+        "kind": "actual_saved_stage_invocation",
+        "timed_out": false,
+        "schema_version": 1,
+        "streams_complete": true,
+        "limits": {
+          "wall_seconds": 300,
+          "terminate_grace_seconds": 10,
+          "address_space_bytes": 2147483648,
+          "threads": 1,
+          "observed_rss_stage_budget_bytes": 1073741824
+        },
+        "stderr": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "complete": true
+        },
+        "reaped_by_launcher": true,
+        "elapsed_seconds": 0.47064713500003563,
+        "started_at_utc": "2026-10-21T15:24:16.080678+00:00",
+        "max_rss_kib": 46416,
+        "actual_exit_code": 0
+      }
+    }
+  ]
+}
