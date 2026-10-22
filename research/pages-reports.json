@@ -3,6 +3,36 @@
   "reports": [
     {
       "kind": "navigation-only",
+      "id": "apron-hm-method-fixed120-2026-10-22",
+      "path": "research/apron-hm-method-fixed120-2026-10-22",
+      "source_path": "research/apron-hm-method-fixed120-2026-10-22",
+      "created_on": "2026-10-22",
+      "created_at": "2026-10-22T18:15:13.642388+00:00",
+      "title": "Apronの調波解析HMPP/HMCZT切替：固定120録音の新規対応比較",
+      "comparison_scope": "英語40話者・120録音。HMPPとHMCZTを同一nativeバイナリで切り替えて240解析・720波形・2160品質値を全件新規計測。無編集のHMCZT−HMPP平均はUTMOSv2 +0.088233、全長ECAPA −0.001171、固定先頭SCOREQ −0.003855、eSTOI +0.000569。指標間の方向は分かれ、品質優位・総合順位を決めずApronを維持。",
+      "audio_listing": {
+        "caption": "固定録音0008の先頭5秒。HMPPとHMCZTの新しい無編集出力を並べます。",
+        "note": "両方24 kHzのPCM16。音量調整・clipなし。LibriSpeech / CC BY 4.0。編集2条件と録音0003は詳細レポートへ。",
+        "attribution_path": "audio-credits.html",
+        "samples": [
+          {
+            "path": "audio/librispeech_1089-134686-0008-hmpp_0.wav",
+            "label": "HMPP・無編集"
+          },
+          {
+            "path": "audio/librispeech_1089-134686-0008-hmczt_0.wav",
+            "label": "HMCZT・無編集"
+          }
+        ]
+      },
+      "artifact_count": 22,
+      "artifact_manifest": {
+        "bytes": 3625,
+        "sha256": "d15069cbd973efe1aea1e8111cadc97f036f560198114178d99fb3709375f498"
+      }
+    },
+    {
+      "kind": "navigation-only",
       "id": "iaif-known-vt-2026-10-22",
       "path": "research/iaif-known-vt-2026-10-22",
       "source_path": "research/iaif-known-vt-2026-10-22",
