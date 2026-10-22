@@ -1,0 +1,341 @@
+{
+  "kind": "known_vt_iaif_saved_result_audit",
+  "status": "passed",
+  "scope": "saved bytes and descriptive rows only; no synthesis or IAIF rerun",
+  "source_lock": {
+    "bytes": 2037,
+    "sha256": "ef1ea9bf120775d285d73cffd434d95417f43ce357c4c21c0a90341d84c9aeb0"
+  },
+  "contract": {
+    "bytes": 5487,
+    "sha256": "c1722f660dc0050204dd4febfb80a2c96c987cf551b39e212502589946c7b8da"
+  },
+  "run_manifest": {
+    "bytes": 25670,
+    "sha256": "c340e90676ec3297be15a8000e075d4bf261ecc39af95c1d31520637041d2d8e"
+  },
+  "run_summary": {
+    "bytes": 5930,
+    "sha256": "79f61c8f59a94bcf75fcfbb910e07074be0b77341e74755a5de31397b0ab8e79"
+  },
+  "f0_comparison": {
+    "bytes": 697516,
+    "sha256": "d38df118a69fc72fc3150842526a6b26d831003883ea7682f8d2c6414545224b"
+  },
+  "invocation": {
+    "bytes": 6755,
+    "sha256": "ccdec68cffbe56e62c555e4019ae81e9ded7ffc227ee8556abb5d97067c6c286"
+  },
+  "manifest_members_checked": 147,
+  "cases_checked": 72,
+  "wave_files_and_raw_hashes_checked": 72,
+  "section_hashes_checked": 432,
+  "lp_coefficient_hashes_checked": 5472,
+  "frame_pcm_hashes_checked": 1368,
+  "shape_values_checked": 433656,
+  "frame_warnings": 0,
+  "case_valid_n_distribution": {
+    "19": 72
+  },
+  "case_median_stable_rmse_db": {
+    "count": 72,
+    "min": 2.1223283384826206,
+    "median": 3.6227566844550836,
+    "max": 4.5807625882649825
+  },
+  "groups": [
+    {
+      "vt": 0,
+      "source": 0,
+      "phase": "zero",
+      "noise": "off",
+      "common_n": 19,
+      "pair_rmse_db": {
+        "120-200": 0.9343177314285283,
+        "120-300": 1.6860479293359907,
+        "200-300": 1.43831022133517
+      }
+    },
+    {
+      "vt": 0,
+      "source": 0,
+      "phase": "zero",
+      "noise": "seed0",
+      "common_n": 19,
+      "pair_rmse_db": {
+        "120-200": 0.9320026510144722,
+        "120-300": 1.6804874754530765,
+        "200-300": 1.436784082783662
+      }
+    },
+    {
+      "vt": 0,
+      "source": 0,
+      "phase": "zero",
+      "noise": "seed1",
+      "common_n": 19,
+      "pair_rmse_db": {
+        "120-200": 0.9395515245811139,
+        "120-300": 1.69463982969502,
+        "200-300": 1.4458112386968303
+      }
+    },
+    {
+      "vt": 0,
+      "source": 0,
+      "phase": "half",
+      "noise": "off",
+      "common_n": 19,
+      "pair_rmse_db": {
+        "120-200": 0.8952864908330463,
+        "120-300": 1.671437855265573,
+        "200-300": 1.4464059214091116
+      }
+    },
+    {
+      "vt": 0,
+      "source": 0,
+      "phase": "half",
+      "noise": "seed0",
+      "common_n": 19,
+      "pair_rmse_db": {
+        "120-200": 0.8956586371637052,
+        "120-300": 1.6720634349691568,
+        "200-300": 1.4484937749024138
+      }
+    },
+    {
+      "vt": 0,
+      "source": 0,
+      "phase": "half",
+      "noise": "seed1",
+      "common_n": 19,
+      "pair_rmse_db": {
+        "120-200": 0.8949257571062237,
+        "120-300": 1.672544809784195,
+        "200-300": 1.4445592709481692
+      }
+    },
+    {
+      "vt": 0,
+      "source": 1,
+      "phase": "zero",
+      "noise": "off",
+      "common_n": 19,
+      "pair_rmse_db": {
+        "120-200": 0.8329713602589338,
+        "120-300": 1.8763795253517728,
+        "200-300": 1.726565988392713
+      }
+    },
+    {
+      "vt": 0,
+      "source": 1,
+      "phase": "zero",
+      "noise": "seed0",
+      "common_n": 19,
+      "pair_rmse_db": {
+        "120-200": 0.8326164740564715,
+        "120-300": 1.8692691813968327,
+        "200-300": 1.7195272255537413
+      }
+    },
+    {
+      "vt": 0,
+      "source": 1,
+      "phase": "zero",
+      "noise": "seed1",
+      "common_n": 19,
+      "pair_rmse_db": {
+        "120-200": 0.8333395719669979,
+        "120-300": 1.881830939464124,
+        "200-300": 1.7323660953032627
+      }
+    },
+    {
+      "vt": 0,
+      "source": 1,
+      "phase": "half",
+      "noise": "off",
+      "common_n": 19,
+      "pair_rmse_db": {
+        "120-200": 0.8286918441190996,
+        "120-300": 1.8185728512200823,
+        "200-300": 1.6727999763829073
+      }
+    },
+    {
+      "vt": 0,
+      "source": 1,
+      "phase": "half",
+      "noise": "seed0",
+      "common_n": 19,
+      "pair_rmse_db": {
+        "120-200": 0.8274528428284279,
+        "120-300": 1.8129124331845372,
+        "200-300": 1.6712132199675356
+      }
+    },
+    {
+      "vt": 0,
+      "source": 1,
+      "phase": "half",
+      "noise": "seed1",
+      "common_n": 19,
+      "pair_rmse_db": {
+        "120-200": 0.8267728455919643,
+        "120-300": 1.8150921953388544,
+        "200-300": 1.663212872841198
+      }
+    },
+    {
+      "vt": 1,
+      "source": 0,
+      "phase": "zero",
+      "noise": "off",
+      "common_n": 19,
+      "pair_rmse_db": {
+        "120-200": 0.715219362910207,
+        "120-300": 2.256527106496523,
+        "200-300": 2.687046755937256
+      }
+    },
+    {
+      "vt": 1,
+      "source": 0,
+      "phase": "zero",
+      "noise": "seed0",
+      "common_n": 19,
+      "pair_rmse_db": {
+        "120-200": 0.7214775789624658,
+        "120-300": 2.191882727516987,
+        "200-300": 2.6391485332047893
+      }
+    },
+    {
+      "vt": 1,
+      "source": 0,
+      "phase": "zero",
+      "noise": "seed1",
+      "common_n": 19,
+      "pair_rmse_db": {
+        "120-200": 0.7182570573913637,
+        "120-300": 2.181886307122695,
+        "200-300": 2.6250839395125194
+      }
+    },
+    {
+      "vt": 1,
+      "source": 0,
+      "phase": "half",
+      "noise": "off",
+      "common_n": 19,
+      "pair_rmse_db": {
+        "120-200": 0.7478350696292071,
+        "120-300": 2.2794558620531644,
+        "200-300": 2.7051932182095992
+      }
+    },
+    {
+      "vt": 1,
+      "source": 0,
+      "phase": "half",
+      "noise": "seed0",
+      "common_n": 19,
+      "pair_rmse_db": {
+        "120-200": 0.7420343616693246,
+        "120-300": 2.226775981675004,
+        "200-300": 2.654145926967034
+      }
+    },
+    {
+      "vt": 1,
+      "source": 0,
+      "phase": "half",
+      "noise": "seed1",
+      "common_n": 19,
+      "pair_rmse_db": {
+        "120-200": 0.7497643104907313,
+        "120-300": 2.217076344675638,
+        "200-300": 2.6521384579745666
+      }
+    },
+    {
+      "vt": 1,
+      "source": 1,
+      "phase": "zero",
+      "noise": "off",
+      "common_n": 19,
+      "pair_rmse_db": {
+        "120-200": 1.5502899136101251,
+        "120-300": 3.2281038807449662,
+        "200-300": 4.521128343570751
+      }
+    },
+    {
+      "vt": 1,
+      "source": 1,
+      "phase": "zero",
+      "noise": "seed0",
+      "common_n": 19,
+      "pair_rmse_db": {
+        "120-200": 1.5473504467787302,
+        "120-300": 3.1142544389429725,
+        "200-300": 4.398067304470961
+      }
+    },
+    {
+      "vt": 1,
+      "source": 1,
+      "phase": "zero",
+      "noise": "seed1",
+      "common_n": 19,
+      "pair_rmse_db": {
+        "120-200": 1.5462771291270925,
+        "120-300": 3.134587823882772,
+        "200-300": 4.4210393718031575
+      }
+    },
+    {
+      "vt": 1,
+      "source": 1,
+      "phase": "half",
+      "noise": "off",
+      "common_n": 19,
+      "pair_rmse_db": {
+        "120-200": 1.5462914705340551,
+        "120-300": 3.064158356407092,
+        "200-300": 4.338112496452204
+      }
+    },
+    {
+      "vt": 1,
+      "source": 1,
+      "phase": "half",
+      "noise": "seed0",
+      "common_n": 19,
+      "pair_rmse_db": {
+        "120-200": 1.5536022191508603,
+        "120-300": 3.003360089182421,
+        "200-300": 4.276816695126721
+      }
+    },
+    {
+      "vt": 1,
+      "source": 1,
+      "phase": "half",
+      "noise": "seed1",
+      "common_n": 19,
+      "pair_rmse_db": {
+        "120-200": 1.5457224804081562,
+        "120-300": 3.004778633469804,
+        "200-300": 4.271587704293396
+      }
+    }
+  ],
+  "limitations": [
+    "glottal flow and derivative arrays were not saved; their hashes cannot be rechecked from bytes",
+    "original COVAREP source identity is provenance pinned but its bytes are not part of the run manifest",
+    "max_rss_kib is null; receipt reports cumulative RUSAGE_CHILDREN before/after high-water"
+  ]
+}

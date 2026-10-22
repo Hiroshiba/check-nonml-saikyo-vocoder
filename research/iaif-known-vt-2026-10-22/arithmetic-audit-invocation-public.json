@@ -1,0 +1,46 @@
+{
+  "kind": "report_projection_of_saved_arithmetic_audit_invocation",
+  "original_local_record": {
+    "bytes": 1849,
+    "sha256": "a306a34b08babd85e70f135585a6752a51f2898f4abde35de2ae9e12f7e65ed9"
+  },
+  "original_path_fields_omitted": true,
+  "audit_entrypoint": "python saved_arithmetic_audit.py --run-root SEALED_RUN --output NEW_AUDIT",
+  "audit_source": {
+    "bytes": 13127,
+    "sha256": "23d92fd02259ec90317e1e27b7e2b10303f12010755fbfe4b860263410ce592c"
+  },
+  "started_at_utc": "2026-10-22T11:32:59.284036+00:00",
+  "finished_at_utc": "2026-10-22T11:33:00.286793+00:00",
+  "elapsed_seconds": 1.0027706370019587,
+  "thread_environment": {
+    "OMP_NUM_THREADS": "1",
+    "OPENBLAS_NUM_THREADS": "1",
+    "MKL_NUM_THREADS": "1",
+    "NUMEXPR_NUM_THREADS": "1",
+    "VECLIB_MAXIMUM_THREADS": "1",
+    "BLIS_NUM_THREADS": "1"
+  },
+  "limit_address_space_bytes": 2147483648,
+  "wall_seconds": 120,
+  "grace_seconds": 10,
+  "retained_output_cap_bytes": 16777216,
+  "actual_child_exit_code": 0,
+  "reaped_by_launcher": true,
+  "signals_sent": [],
+  "rusage_children_before_maxrss_kib": 0,
+  "rusage_children_after_maxrss_kib": 32192,
+  "audit_output": {
+    "bytes": 1378,
+    "sha256": "759a88c3e2e68339f5f519afdd70cf07a9e84d29f603e13707287b1b3cd6ee9a"
+  },
+  "stdout": {
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "stderr": {
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "status": "completed"
+}

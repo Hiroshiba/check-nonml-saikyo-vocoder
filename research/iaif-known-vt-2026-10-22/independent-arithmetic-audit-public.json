@@ -1,0 +1,58 @@
+{
+  "arithmetic": {
+    "cases": 72,
+    "comparisons": {
+      "all_exact": true,
+      "checked_values": {
+        "case_median": 72,
+        "estimated_grid": 433656,
+        "frame_rmse": 1368,
+        "group_curve": 22824,
+        "pair_rmse": 72,
+        "truth_grid": 22824
+      },
+      "different_values": {
+        "case_median": 0,
+        "estimated_grid": 0,
+        "frame_rmse": 0,
+        "group_curve": 0,
+        "pair_rmse": 0,
+        "truth_grid": 0
+      },
+      "first_differences": [],
+      "max_abs_difference": {}
+    },
+    "frames": 1368,
+    "grid_points": 317,
+    "groups": 24,
+    "sealed_members": 147
+  },
+  "expected_pins": {
+    "ARTIFACT_MANIFEST.json": {
+      "bytes": 25670,
+      "sha256": "c340e90676ec3297be15a8000e075d4bf261ecc39af95c1d31520637041d2d8e"
+    },
+    "f0-comparison.json": {
+      "bytes": 697516,
+      "sha256": "d38df118a69fc72fc3150842526a6b26d831003883ea7682f8d2c6414545224b"
+    },
+    "summary.json": {
+      "bytes": 5930,
+      "sha256": "79f61c8f59a94bcf75fcfbb910e07074be0b77341e74755a5de31397b0ab8e79"
+    }
+  },
+  "kind": "independent_saved_iaif_arithmetic_audit",
+  "no_generation_or_iaif_inference": true,
+  "post_input_identity": {
+    "all_unchanged": true,
+    "checked": 148,
+    "mismatches": []
+  },
+  "run_root": "sealed scientific run retained locally; wave files are not in this report",
+  "status": "passed",
+  "original_local_record": {
+    "bytes": 1378,
+    "sha256": "759a88c3e2e68339f5f519afdd70cf07a9e84d29f603e13707287b1b3cd6ee9a"
+  },
+  "record_kind": "report_projection_with_local_path_removed"
+}

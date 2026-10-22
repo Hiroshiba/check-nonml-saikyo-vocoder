@@ -1,5 +1,9 @@
 # 現在の状態と次の作業
 
+## 既知声道フィルタで通常IAIF移植の応答を調べる（2026-10-22）
+
+[人工72条件の研究レポート](https://hiroshiba.github.io/check-nonml-saikyo-vocoder/research/iaif-known-vt-2026-10-22/index.html)を追加しました。既知の声道フィルタに対する推定応答はF0条件で異なり、計1,368フレームは数値的に安定しました。これは人工信号の声道応答の記録で、現ベースApronや既存方式の音質比較、無声境界の評価ではありません。音声・品質順位・ベース変更はありません。
+
 ## 保存pYIN系列をApronへ渡した比較（2026-10-22）
 
 [固定120録音の対応比較と短い音声](https://hiroshiba.github.io/check-nonml-saikyo-vocoder/research/apron-pyin-viterbi-fixed120-2026-10-22/index.html)を記録しました。保存済みpYIN Viterbi F0を解析入口に渡した候補を0・±3半音で再合成し、360波形・1080の新しい品質値を得ました。既公開のApronとLLSM2 Layer0の2160個票を同じ録音・採点範囲で参照した9群では、すべて候補よりApronの平均が望ましい方向でした。今回の結果に基づき候補を採用せず、Apronを作業ベースとして維持します。一般的なpYINの劣位やF0精度は示しません。

@@ -1,0 +1,65 @@
+{
+  "kind": "report_projection_of_scientific_invocation",
+  "original_local_record": {
+    "bytes": 6755,
+    "sha256": "ccdec68cffbe56e62c555e4019ae81e9ded7ffc227ee8556abb5d97067c6c286"
+  },
+  "original_path_fields_omitted": true,
+  "scientific_entrypoint": "python -m iaif_known_vt.run --source-lock SOURCE_LOCK.json --output NEW_RUN",
+  "runtime": {
+    "numpy": "2.3.5",
+    "python": "3.12.14",
+    "scipy": "1.17.0"
+  },
+  "source_lock": {
+    "bytes": 2037,
+    "sha256": "ef1ea9bf120775d285d73cffd434d95417f43ce357c4c21c0a90341d84c9aeb0"
+  },
+  "launcher_source": {
+    "bytes": 14209,
+    "sha256": "f79eb5950ec2ec5ba84c489e672721d7395031308a8baee6212759e762a1498d"
+  },
+  "started_at_utc": "2026-10-22T11:07:13.386871+00:00",
+  "finished_at_utc": "2026-10-22T11:07:24.908667+00:00",
+  "child_elapsed_seconds": 11.517222019996552,
+  "elapsed_seconds": 11.521815803993377,
+  "thread_environment": {
+    "OMP_NUM_THREADS": "1",
+    "OPENBLAS_NUM_THREADS": "1",
+    "MKL_NUM_THREADS": "1",
+    "NUMEXPR_NUM_THREADS": "1",
+    "VECLIB_MAXIMUM_THREADS": "1",
+    "BLIS_NUM_THREADS": "1"
+  },
+  "limits": {
+    "wall_seconds": 1800,
+    "grace_seconds": 10,
+    "address_space_bytes": 2147483648,
+    "retained_observation_bytes": 134217728
+  },
+  "actual_child_exit_code": 0,
+  "launcher_exit_code": 0,
+  "reaped_by_launcher": true,
+  "signals_sent": [],
+  "memory_events_delta": {
+    "low": 0,
+    "high": 0,
+    "max": 0,
+    "oom": 0,
+    "oom_kill": 0,
+    "oom_group_kill": 0
+  },
+  "rusage_children_before_maxrss_kib": 896,
+  "rusage_children_after_maxrss_kib": 116312,
+  "max_rss_kib": null,
+  "rss_unit": "Linux ru_maxrss KiB; RUSAGE_CHILDREN cumulative high-water",
+  "stdout": {
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "stderr": {
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "status": "finished"
+}
