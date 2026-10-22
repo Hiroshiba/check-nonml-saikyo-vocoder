@@ -1,0 +1,211 @@
+{
+  "kind": "apron_f0_marginals_public_provenance",
+  "measurement_source_commit": "1a1181bac001fae325a5381cd9a11f6b07076b75",
+  "source_files": [
+    {
+      "path": "scripts/apron_f0_marginals/__init__.py",
+      "bytes": 92,
+      "sha256": "d157d070b0c4ffbfc0e5e8dca14c8376ee59e73740c4f1d7d3dd678e3f618ec1"
+    },
+    {
+      "path": "scripts/apron_f0_marginals/analyze.py",
+      "bytes": 16915,
+      "sha256": "23f593ec5409496185bfa1082df17822b0794235a4fc0308341aa3b48a1b13b0"
+    },
+    {
+      "path": "scripts/apron_f0_marginals/common.py",
+      "bytes": 6766,
+      "sha256": "f9241545643c6e047810d7d16b3c9bdf0ebc6a0187d492beba1c4651dccdf45e"
+    },
+    {
+      "path": "scripts/apron_f0_marginals/extract.py",
+      "bytes": 12194,
+      "sha256": "44c46bdfba044585742706f1095cf73d6fe716eed3bfdb2630c84fe638c1dc2d"
+    },
+    {
+      "path": "scripts/apron_f0_marginals/launch.py",
+      "bytes": 13858,
+      "sha256": "0f41a516a58c21d45f75cbe1983fcbbfb03ab2e55905db1e157044618eb8eedf"
+    },
+    {
+      "path": "scripts/apron_f0_marginals/operator.py",
+      "bytes": 7270,
+      "sha256": "fe13c9093a9f42a081122b379433f85f8764412f7177f42f83b030966ef14529"
+    },
+    {
+      "path": "scripts/apron_f0_marginals/summarize.py",
+      "bytes": 13021,
+      "sha256": "4faa58e05ee01105f6d6c0747298a1a8f325fbb719ce41a5ed660152292c0bac"
+    }
+  ],
+  "input_manifest": {
+    "bytes": 55015,
+    "sha256": "1f392fc60fbca4003c236f03ffd9edba82b048737f23cf250295c1b4c6c85193"
+  },
+  "inputs": "fixed LibriSpeech test-clean 120 recordings, 40 speakers; original 16 kHz mono float64 NPY",
+  "preprocessing": "scipy.signal.resample_poly(x,3,2); contiguous 24 kHz float64; no normalization, trimming, silence removal or interpolation",
+  "pyin_options": {
+    "sr": 24000,
+    "fmin": 60,
+    "fmax": 1000,
+    "frame_length": 2048,
+    "hop_length": 120,
+    "center": true,
+    "pad_mode": "constant",
+    "fill_na": 0,
+    "n_thresholds": 100,
+    "beta_parameters": [
+      2,
+      18
+    ],
+    "boltzmann_parameter": 2,
+    "resolution": 0.1,
+    "max_transition_rate": 35.92,
+    "switch_prob": 0.01,
+    "no_trough_prob": 0.01
+  },
+  "expected_pitch_bins": 488,
+  "expected_states": 976,
+  "environment": {
+    "python": "3.12.14",
+    "distributions": {
+      "numpy": "2.3.5",
+      "scipy": "1.17.0",
+      "numba": "0.68.0",
+      "librosa": "0.11.0"
+    },
+    "source_sha256": {
+      "scripts/apron_fixed120/common.py": "8acaadffec7f2ae07740b9eb44f8d08135c19d60da2c18ce9f6bdd6f38614801",
+      "librosa/core/pitch.py": "f45cc429f9daa2276d750fa4f100641eae45991daf6e70050073088b86516b87",
+      "librosa/sequence.py": "1253a1427630506928873c82d00ae0fdf1a6a35ba7653252d3bad8f2d37052e6"
+    },
+    "librosa_source_git_blob_sha1": {
+      "librosa/core/pitch.py": "195275311c80b4365e8e4d7e32da310696b4ec95",
+      "librosa/sequence.py": "478da5b4f682533695ab7d092a6404462343f558"
+    },
+    "reviewed_pair_matches_release_commit": true,
+    "librosa_release_commit_reference": "af8c839fb15317fa2712ea66e7a22da6a9267b32",
+    "full_wheel_commit_provenance_verified": false
+  },
+  "probability_model": {
+    "effective_factors": "u=log(O+epsilon), L=log(T+epsilon), r=log(pi+epsilon); epsilon=librosa.util.tiny(O)",
+    "marginalization": "float64 epsilon-aware forward/backward on captured O,T,pi; nominal-zero transition complements included; no renormalization or clipping",
+    "voiced_mode": "argmax of voiced log marginals, lowest-bin ties",
+    "offset_histogram": "unconditional voiced mass at signed 10-cent offsets from each frame mode; frame mean within recording, then 120 recordings equal weight",
+    "uv": "sum of all unvoiced states; not silence or physiological truth"
+  },
+  "owner_evidence": {
+    "0": {
+      "factor_contract": {
+        "bytes": 4390,
+        "sha256": "3db6ae5d9451e5890a6a05019e9f9163fe9d6ea315fe54da9ad099549cf18dcf"
+      },
+      "factor_summary": {
+        "bytes": 341,
+        "sha256": "2f3810107e73debac0cbb1f3223858043b32f197d03d2ebc92fc2bfc38fdcf36"
+      },
+      "factor_seal": {
+        "bytes": 54125,
+        "sha256": "4a8e95d4561b32ba5f88aabc7b3e21d603112ef7a72ba0874303530bafeb05ef"
+      },
+      "analysis_contract": {
+        "bytes": 4485,
+        "sha256": "2a85f8654c262f95d0bb1e57cda0080fabd0c6ee463e5ff72bd425bbc14ccee1"
+      },
+      "analysis_summary": {
+        "bytes": 367,
+        "sha256": "7a2199dbf33c421f3cb1fd4559236695c295553d9b8c62ce616805e120a5e6c9"
+      },
+      "analysis_seal": {
+        "bytes": 112506,
+        "sha256": "45b2262a0a106d04abae1ffee4ae75e6b2e872408115ef2c23a0c7a023e99841"
+      }
+    },
+    "1": {
+      "factor_contract": {
+        "bytes": 4267,
+        "sha256": "1c13b59e029998465360bbab49ec4f9c84ef8ad215217c76d926ab7578037f08"
+      },
+      "factor_summary": {
+        "bytes": 341,
+        "sha256": "4599eae67319fb813b3de83ce0cd90bc39b42fe9283b759d2c03592466b69195"
+      },
+      "factor_seal": {
+        "bytes": 50204,
+        "sha256": "517178849682f9d7f2c505baffadde11ab309b002788c06904291cb7447e77da"
+      },
+      "analysis_contract": {
+        "bytes": 4362,
+        "sha256": "fdac18440970dfd37fe458140bbec685077e0f5df13462ad7706210a1933df11"
+      },
+      "analysis_summary": {
+        "bytes": 367,
+        "sha256": "c34a0308c0343f7ef70192f48735b0c10c78c91be55df0a95b2fc4181c065e1e"
+      },
+      "analysis_seal": {
+        "bytes": 104254,
+        "sha256": "352b651b4419076c641b2cffdd6c0d36dd93b8b75909371da50bb429aec5d405"
+      }
+    },
+    "2": {
+      "factor_contract": {
+        "bytes": 4295,
+        "sha256": "2aadab93390641cc7e36f20bd30139586ed673554ab6913337480aaed63b3eb9"
+      },
+      "factor_summary": {
+        "bytes": 342,
+        "sha256": "73744a9396e58d15975048477fcb3839e47c0e40db27c7614e5dd888e76b3244"
+      },
+      "factor_seal": {
+        "bytes": 50393,
+        "sha256": "67b0dfb34440e9fbf940558d284a7caa77291711c5795eb3c3583c884e5302c5"
+      },
+      "analysis_contract": {
+        "bytes": 4390,
+        "sha256": "125169ad2d7738952b84741605efd9f72b4c4b059b77ae675dde317e6a5d1075"
+      },
+      "analysis_summary": {
+        "bytes": 368,
+        "sha256": "2b08d37a10864abed39aaf5e1e9b086ef103ce127cb3f33df223ff544a3dee25"
+      },
+      "analysis_seal": {
+        "bytes": 104646,
+        "sha256": "2555f3220834596035ababebbd68b9e1de9e37b2a5cdf6ddc92c92f6ed326771"
+      }
+    }
+  },
+  "original_local_report_manifest": {
+    "bytes": 20544,
+    "sha256": "52f304d7aea17f7c1e100cfa201080f3432a1b36d4ee0ea2b9241ec11c3b4140"
+  },
+  "original_local_summary": {
+    "bytes": 73382,
+    "sha256": "6af1e56606e488d3aafb6021be877aef9aad3764eb0cebc91b70aa373e72afbe"
+  },
+  "original_local_recording_index": {
+    "bytes": 53282,
+    "sha256": "5b3017384ab423152276c66f6556ea511b448e74513d208fe0de09c27c0017f0"
+  },
+  "original_local_figure_sources": {
+    "bytes": 4512,
+    "sha256": "f2f17bf9aa5faeb59bc038c73ae53dcee1fd87a4498be216b3fb6b618552fcb7"
+  },
+  "figure_generation_source": {
+    "bytes": 21610,
+    "sha256": "bbc927bccf8326837d6749a8c567809653f5310cf6e219a88849e3c62f13b2ce"
+  },
+  "presentation_revision_source": {
+    "bytes": 22218,
+    "sha256": "607d0f249b01ecd1df450aa021f8ebbd4a989bb12d81e8f1837fda048f49e509"
+  },
+  "published_files_scope": "120 individual compact JSON rows, descriptive summary and index, 5 fixed figures, selected provenance and report HTML",
+  "not_published": [
+    "full observation O arrays",
+    "full voiced-bin log-marginal arrays",
+    "original input audio or new audio",
+    "raw execution logs",
+    "local draft review and browser-access records",
+    "unrelated local run data"
+  ],
+  "source_verification_limit": "Installed librosa core/pitch.py and sequence.py matched reviewed release blobs; this is not proof of the entire wheel source commit."
+}
