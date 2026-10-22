@@ -114,17 +114,20 @@ def analyze_case(case: dict, owner: int, factors: Path, output: Path,
         trace, overlay = apron_context(case, owner, original_run,
                                        factor['native_input'], frames)
         files = []
-        arrays = {'voiced_bin_log_marginal.npy': result['logvoiced'],
-                  'uv_log_mass.npy': result['loguv'],
-                  'voiced_log_mass.npy': result['logv'],
-                  'frame_log_normalization.npy': result['lognorm'],
-                  'frame_mass_drift.npy': np.expm1(result['lognorm']),
-                  'voiced_mode_bin.npy': result['mode'],
-                  'offset_log_mean.npy': result['histogram_log_mean'],
-                  'offset_mean.npy': np.exp(result['histogram_log_mean']),
-                  'offset_contributing_frames.npy': result['histogram_count'],
-                  'forward_support_intervals.npy': result['forward_intervals'],
-                  'backward_support_intervals.npy': result['backward_intervals']}
+        with warnings.catch_warnings(record=True) as conversion_warnings:
+            warnings.simplefilter('always')
+            arrays = {'voiced_bin_log_marginal.npy': result['logvoiced'],
+                      'uv_log_mass.npy': result['loguv'],
+                      'voiced_log_mass.npy': result['logv'],
+                      'frame_log_normalization.npy': result['lognorm'],
+                      'frame_mass_drift.npy': np.expm1(result['lognorm']),
+                      'voiced_mode_bin.npy': result['mode'],
+                      'offset_log_mean.npy': result['histogram_log_mean'],
+                      'offset_mean.npy': np.exp(result['histogram_log_mean']),
+                      'offset_contributing_frames.npy': result['histogram_count'],
+                      'forward_support_intervals.npy': result['forward_intervals'],
+                      'backward_support_intervals.npy': result['backward_intervals']}
+        captured.extend(conversion_warnings)
         if trace is not None:
             arrays['apron_post_refinement_f0.npy'] = trace
         for name, array in arrays.items():

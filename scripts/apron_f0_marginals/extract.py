@@ -82,16 +82,20 @@ def extract_case(case: dict, output: Path, common_dir: Path) -> dict:
         x = np.load(case['absolute_input'], allow_pickle=False)
         if x.dtype != np.float64 or x.ndim != 1 or not np.isfinite(x).all():
             raise RuntimeError('固定入力がmono float64有限値ではありません')
-        x24 = np.ascontiguousarray(resample_poly(x, 3, 2), dtype=np.float64)
+        with warnings.catch_warnings(record=True) as resample_warnings:
+            warnings.simplefilter('always')
+            x24 = np.ascontiguousarray(resample_poly(x, 3, 2), dtype=np.float64)
+        found.extend(resample_warnings)
         frames = len(x24) // HOP + 1
         if not 414 <= frames <= 1201 or len(x24) != (len(x) * 3 + 1) // 2:
             raise RuntimeError(f'24 kHz長と固定frame範囲が不一致: {len(x24)}, {frames}')
         row['native_input'] = {'sample_rate': SR, 'samples': len(x24),
                                'float64_sha256': hashlib.sha256(x24.tobytes()).hexdigest(),
                                'resampling': 'scipy.signal.resample_poly(x,3,2)'}
-        with warnings.catch_warnings(record=True) as found:
+        with warnings.catch_warnings(record=True) as pyin_warnings:
             warnings.simplefilter('always')
             observation, transition, initial, states, f0, flag, voiced_prob = capture_once(x24, frames)
+        found.extend(pyin_warnings)
         if observation.shape != (1, STATES, frames) or np.any(states >= STATES) or np.any(states < 0):
             raise RuntimeError('捕捉因子・経路のshape/値が不正です')
         row['actual_transition_array_sha256'] = hashlib.sha256(
