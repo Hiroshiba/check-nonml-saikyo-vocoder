@@ -2,7 +2,7 @@
 
 今回の候補は、保存済みの `librosa.pyin` Viterbi F0系列をApronの解析入口に渡し、音声全体をLayer1まで再解析したものです。元Apron、LLSM2 Layer0、候補を同じ120録音・40話者、同じ編集条件と指標の範囲で比べました。9群すべてで、候補よりApronの平均が指標の望ましい方向でした。この結果に基づく開発上の判断として候補は採用せず、作業ベースはApronのままです。計測前に合否の数値閾値を置いたわけではありません。
 
-[結果HTML](index.html)の冒頭には順位と実際の短い音声を載せました。元の[Apron固定120評価](../apron-fixed120-evaluation-2026-10-22/)の数値・HTML・音声は変更していません。固定120録音は開発にも使ったLibriSpeech test-cleanで、未知の最終検証集合ではありません。候補の不採用から、pYIN一般の性能やF0精度の低さは導けません。
+[結果HTML](https://hiroshiba.github.io/check-nonml-saikyo-vocoder/research/apron-pyin-viterbi-fixed120-2026-10-22/index.html)の冒頭には順位と実際の短い音声を載せました。元の[Apron固定120評価](../apron-fixed120-evaluation-2026-10-22/)の数値・HTML・音声は変更していません。固定120録音は開発にも使ったLibriSpeech test-cleanで、未知の最終検証集合ではありません。候補の不採用から、pYIN一般の性能やF0精度の低さは導けません。
 
 ## 保存値と採点区間
 
