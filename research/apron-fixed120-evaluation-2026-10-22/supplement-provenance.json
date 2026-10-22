@@ -1,0 +1,4673 @@
+{
+  "schema_version": 1,
+  "kind": "apron_pitch_control_supplement_public_provenance",
+  "measurement_commit": "9440f7e6997c1a6f0262809b88ce5c3b253cc7f9",
+  "original_measurement_commit": "06b6da5e5822500993bdfc44b3bf35f84acaea46",
+  "original_published_provenance": {
+    "path": "provenance.json",
+    "bytes": 7959,
+    "sha256": "e53493c51bb07f0682ac0a9753e66e3eacc9abeb6b11458130de1dff40d13a02"
+  },
+  "original_published_rows": {
+    "path": "individual-results.json",
+    "bytes": 1052094,
+    "sha256": "078c8886db755d1b43398329ea06100e907e84baec7276a4f2121d5947598004",
+    "reused_count": 720,
+    "reused_row_keys_and_zero_based_indices": [
+      {
+        "index": 1,
+        "case": "librispeech_1089-134686-0008",
+        "metric": "ecapa",
+        "condition": "apron_minus3"
+      },
+      {
+        "index": 2,
+        "case": "librispeech_1089-134686-0008",
+        "metric": "ecapa",
+        "condition": "apron_plus3"
+      },
+      {
+        "index": 8,
+        "case": "librispeech_1089-134686-0008",
+        "metric": "utmosv2",
+        "condition": "apron_0"
+      },
+      {
+        "index": 9,
+        "case": "librispeech_1089-134686-0008",
+        "metric": "utmosv2",
+        "condition": "apron_minus3"
+      },
+      {
+        "index": 10,
+        "case": "librispeech_1089-134686-0008",
+        "metric": "utmosv2",
+        "condition": "apron_plus3"
+      },
+      {
+        "index": 11,
+        "case": "librispeech_1089-134686-0008",
+        "metric": "utmosv2",
+        "condition": "llsm2_0"
+      },
+      {
+        "index": 13,
+        "case": "librispeech_1089-134686-0011",
+        "metric": "ecapa",
+        "condition": "apron_minus3"
+      },
+      {
+        "index": 14,
+        "case": "librispeech_1089-134686-0011",
+        "metric": "ecapa",
+        "condition": "apron_plus3"
+      },
+      {
+        "index": 20,
+        "case": "librispeech_1089-134686-0011",
+        "metric": "utmosv2",
+        "condition": "apron_0"
+      },
+      {
+        "index": 21,
+        "case": "librispeech_1089-134686-0011",
+        "metric": "utmosv2",
+        "condition": "apron_minus3"
+      },
+      {
+        "index": 22,
+        "case": "librispeech_1089-134686-0011",
+        "metric": "utmosv2",
+        "condition": "apron_plus3"
+      },
+      {
+        "index": 23,
+        "case": "librispeech_1089-134686-0011",
+        "metric": "utmosv2",
+        "condition": "llsm2_0"
+      },
+      {
+        "index": 25,
+        "case": "librispeech_1089-134686-0032",
+        "metric": "ecapa",
+        "condition": "apron_minus3"
+      },
+      {
+        "index": 26,
+        "case": "librispeech_1089-134686-0032",
+        "metric": "ecapa",
+        "condition": "apron_plus3"
+      },
+      {
+        "index": 32,
+        "case": "librispeech_1089-134686-0032",
+        "metric": "utmosv2",
+        "condition": "apron_0"
+      },
+      {
+        "index": 33,
+        "case": "librispeech_1089-134686-0032",
+        "metric": "utmosv2",
+        "condition": "apron_minus3"
+      },
+      {
+        "index": 34,
+        "case": "librispeech_1089-134686-0032",
+        "metric": "utmosv2",
+        "condition": "apron_plus3"
+      },
+      {
+        "index": 35,
+        "case": "librispeech_1089-134686-0032",
+        "metric": "utmosv2",
+        "condition": "llsm2_0"
+      },
+      {
+        "index": 37,
+        "case": "librispeech_1188-133604-0003",
+        "metric": "ecapa",
+        "condition": "apron_minus3"
+      },
+      {
+        "index": 38,
+        "case": "librispeech_1188-133604-0003",
+        "metric": "ecapa",
+        "condition": "apron_plus3"
+      },
+      {
+        "index": 44,
+        "case": "librispeech_1188-133604-0003",
+        "metric": "utmosv2",
+        "condition": "apron_0"
+      },
+      {
+        "index": 45,
+        "case": "librispeech_1188-133604-0003",
+        "metric": "utmosv2",
+        "condition": "apron_minus3"
+      },
+      {
+        "index": 46,
+        "case": "librispeech_1188-133604-0003",
+        "metric": "utmosv2",
+        "condition": "apron_plus3"
+      },
+      {
+        "index": 47,
+        "case": "librispeech_1188-133604-0003",
+        "metric": "utmosv2",
+        "condition": "llsm2_0"
+      },
+      {
+        "index": 49,
+        "case": "librispeech_1188-133604-0031",
+        "metric": "ecapa",
+        "condition": "apron_minus3"
+      },
+      {
+        "index": 50,
+        "case": "librispeech_1188-133604-0031",
+        "metric": "ecapa",
+        "condition": "apron_plus3"
+      },
+      {
+        "index": 56,
+        "case": "librispeech_1188-133604-0031",
+        "metric": "utmosv2",
+        "condition": "apron_0"
+      },
+      {
+        "index": 57,
+        "case": "librispeech_1188-133604-0031",
+        "metric": "utmosv2",
+        "condition": "apron_minus3"
+      },
+      {
+        "index": 58,
+        "case": "librispeech_1188-133604-0031",
+        "metric": "utmosv2",
+        "condition": "apron_plus3"
+      },
+      {
+        "index": 59,
+        "case": "librispeech_1188-133604-0031",
+        "metric": "utmosv2",
+        "condition": "llsm2_0"
+      },
+      {
+        "index": 61,
+        "case": "librispeech_1188-133604-0037",
+        "metric": "ecapa",
+        "condition": "apron_minus3"
+      },
+      {
+        "index": 62,
+        "case": "librispeech_1188-133604-0037",
+        "metric": "ecapa",
+        "condition": "apron_plus3"
+      },
+      {
+        "index": 68,
+        "case": "librispeech_1188-133604-0037",
+        "metric": "utmosv2",
+        "condition": "apron_0"
+      },
+      {
+        "index": 69,
+        "case": "librispeech_1188-133604-0037",
+        "metric": "utmosv2",
+        "condition": "apron_minus3"
+      },
+      {
+        "index": 70,
+        "case": "librispeech_1188-133604-0037",
+        "metric": "utmosv2",
+        "condition": "apron_plus3"
+      },
+      {
+        "index": 71,
+        "case": "librispeech_1188-133604-0037",
+        "metric": "utmosv2",
+        "condition": "llsm2_0"
+      },
+      {
+        "index": 73,
+        "case": "librispeech_121-121726-0012",
+        "metric": "ecapa",
+        "condition": "apron_minus3"
+      },
+      {
+        "index": 74,
+        "case": "librispeech_121-121726-0012",
+        "metric": "ecapa",
+        "condition": "apron_plus3"
+      },
+      {
+        "index": 80,
+        "case": "librispeech_121-121726-0012",
+        "metric": "utmosv2",
+        "condition": "apron_0"
+      },
+      {
+        "index": 81,
+        "case": "librispeech_121-121726-0012",
+        "metric": "utmosv2",
+        "condition": "apron_minus3"
+      },
+      {
+        "index": 82,
+        "case": "librispeech_121-121726-0012",
+        "metric": "utmosv2",
+        "condition": "apron_plus3"
+      },
+      {
+        "index": 83,
+        "case": "librispeech_121-121726-0012",
+        "metric": "utmosv2",
+        "condition": "llsm2_0"
+      },
+      {
+        "index": 85,
+        "case": "librispeech_121-123852-0000",
+        "metric": "ecapa",
+        "condition": "apron_minus3"
+      },
+      {
+        "index": 86,
+        "case": "librispeech_121-123852-0000",
+        "metric": "ecapa",
+        "condition": "apron_plus3"
+      },
+      {
+        "index": 92,
+        "case": "librispeech_121-123852-0000",
+        "metric": "utmosv2",
+        "condition": "apron_0"
+      },
+      {
+        "index": 93,
+        "case": "librispeech_121-123852-0000",
+        "metric": "utmosv2",
+        "condition": "apron_minus3"
+      },
+      {
+        "index": 94,
+        "case": "librispeech_121-123852-0000",
+        "metric": "utmosv2",
+        "condition": "apron_plus3"
+      },
+      {
+        "index": 95,
+        "case": "librispeech_121-123852-0000",
+        "metric": "utmosv2",
+        "condition": "llsm2_0"
+      },
+      {
+        "index": 97,
+        "case": "librispeech_121-127105-0035",
+        "metric": "ecapa",
+        "condition": "apron_minus3"
+      },
+      {
+        "index": 98,
+        "case": "librispeech_121-127105-0035",
+        "metric": "ecapa",
+        "condition": "apron_plus3"
+      },
+      {
+        "index": 104,
+        "case": "librispeech_121-127105-0035",
+        "metric": "utmosv2",
+        "condition": "apron_0"
+      },
+      {
+        "index": 105,
+        "case": "librispeech_121-127105-0035",
+        "metric": "utmosv2",
+        "condition": "apron_minus3"
+      },
+      {
+        "index": 106,
+        "case": "librispeech_121-127105-0035",
+        "metric": "utmosv2",
+        "condition": "apron_plus3"
+      },
+      {
+        "index": 107,
+        "case": "librispeech_121-127105-0035",
+        "metric": "utmosv2",
+        "condition": "llsm2_0"
+      },
+      {
+        "index": 109,
+        "case": "librispeech_1221-135766-0005",
+        "metric": "ecapa",
+        "condition": "apron_minus3"
+      },
+      {
+        "index": 110,
+        "case": "librispeech_1221-135766-0005",
+        "metric": "ecapa",
+        "condition": "apron_plus3"
+      },
+      {
+        "index": 116,
+        "case": "librispeech_1221-135766-0005",
+        "metric": "utmosv2",
+        "condition": "apron_0"
+      },
+      {
+        "index": 117,
+        "case": "librispeech_1221-135766-0005",
+        "metric": "utmosv2",
+        "condition": "apron_minus3"
+      },
+      {
+        "index": 118,
+        "case": "librispeech_1221-135766-0005",
+        "metric": "utmosv2",
+        "condition": "apron_plus3"
+      },
+      {
+        "index": 119,
+        "case": "librispeech_1221-135766-0005",
+        "metric": "utmosv2",
+        "condition": "llsm2_0"
+      },
+      {
+        "index": 121,
+        "case": "librispeech_1221-135767-0006",
+        "metric": "ecapa",
+        "condition": "apron_minus3"
+      },
+      {
+        "index": 122,
+        "case": "librispeech_1221-135767-0006",
+        "metric": "ecapa",
+        "condition": "apron_plus3"
+      },
+      {
+        "index": 128,
+        "case": "librispeech_1221-135767-0006",
+        "metric": "utmosv2",
+        "condition": "apron_0"
+      },
+      {
+        "index": 129,
+        "case": "librispeech_1221-135767-0006",
+        "metric": "utmosv2",
+        "condition": "apron_minus3"
+      },
+      {
+        "index": 130,
+        "case": "librispeech_1221-135767-0006",
+        "metric": "utmosv2",
+        "condition": "apron_plus3"
+      },
+      {
+        "index": 131,
+        "case": "librispeech_1221-135767-0006",
+        "metric": "utmosv2",
+        "condition": "llsm2_0"
+      },
+      {
+        "index": 133,
+        "case": "librispeech_1221-135767-0019",
+        "metric": "ecapa",
+        "condition": "apron_minus3"
+      },
+      {
+        "index": 134,
+        "case": "librispeech_1221-135767-0019",
+        "metric": "ecapa",
+        "condition": "apron_plus3"
+      },
+      {
+        "index": 140,
+        "case": "librispeech_1221-135767-0019",
+        "metric": "utmosv2",
+        "condition": "apron_0"
+      },
+      {
+        "index": 141,
+        "case": "librispeech_1221-135767-0019",
+        "metric": "utmosv2",
+        "condition": "apron_minus3"
+      },
+      {
+        "index": 142,
+        "case": "librispeech_1221-135767-0019",
+        "metric": "utmosv2",
+        "condition": "apron_plus3"
+      },
+      {
+        "index": 143,
+        "case": "librispeech_1221-135767-0019",
+        "metric": "utmosv2",
+        "condition": "llsm2_0"
+      },
+      {
+        "index": 145,
+        "case": "librispeech_1284-1180-0020",
+        "metric": "ecapa",
+        "condition": "apron_minus3"
+      },
+      {
+        "index": 146,
+        "case": "librispeech_1284-1180-0020",
+        "metric": "ecapa",
+        "condition": "apron_plus3"
+      },
+      {
+        "index": 152,
+        "case": "librispeech_1284-1180-0020",
+        "metric": "utmosv2",
+        "condition": "apron_0"
+      },
+      {
+        "index": 153,
+        "case": "librispeech_1284-1180-0020",
+        "metric": "utmosv2",
+        "condition": "apron_minus3"
+      },
+      {
+        "index": 154,
+        "case": "librispeech_1284-1180-0020",
+        "metric": "utmosv2",
+        "condition": "apron_plus3"
+      },
+      {
+        "index": 155,
+        "case": "librispeech_1284-1180-0020",
+        "metric": "utmosv2",
+        "condition": "llsm2_0"
+      },
+      {
+        "index": 157,
+        "case": "librispeech_1284-1180-0027",
+        "metric": "ecapa",
+        "condition": "apron_minus3"
+      },
+      {
+        "index": 158,
+        "case": "librispeech_1284-1180-0027",
+        "metric": "ecapa",
+        "condition": "apron_plus3"
+      },
+      {
+        "index": 164,
+        "case": "librispeech_1284-1180-0027",
+        "metric": "utmosv2",
+        "condition": "apron_0"
+      },
+      {
+        "index": 165,
+        "case": "librispeech_1284-1180-0027",
+        "metric": "utmosv2",
+        "condition": "apron_minus3"
+      },
+      {
+        "index": 166,
+        "case": "librispeech_1284-1180-0027",
+        "metric": "utmosv2",
+        "condition": "apron_plus3"
+      },
+      {
+        "index": 167,
+        "case": "librispeech_1284-1180-0027",
+        "metric": "utmosv2",
+        "condition": "llsm2_0"
+      },
+      {
+        "index": 169,
+        "case": "librispeech_1284-1180-0028",
+        "metric": "ecapa",
+        "condition": "apron_minus3"
+      },
+      {
+        "index": 170,
+        "case": "librispeech_1284-1180-0028",
+        "metric": "ecapa",
+        "condition": "apron_plus3"
+      },
+      {
+        "index": 176,
+        "case": "librispeech_1284-1180-0028",
+        "metric": "utmosv2",
+        "condition": "apron_0"
+      },
+      {
+        "index": 177,
+        "case": "librispeech_1284-1180-0028",
+        "metric": "utmosv2",
+        "condition": "apron_minus3"
+      },
+      {
+        "index": 178,
+        "case": "librispeech_1284-1180-0028",
+        "metric": "utmosv2",
+        "condition": "apron_plus3"
+      },
+      {
+        "index": 179,
+        "case": "librispeech_1284-1180-0028",
+        "metric": "utmosv2",
+        "condition": "llsm2_0"
+      },
+      {
+        "index": 181,
+        "case": "librispeech_1320-122617-0019",
+        "metric": "ecapa",
+        "condition": "apron_minus3"
+      },
+      {
+        "index": 182,
+        "case": "librispeech_1320-122617-0019",
+        "metric": "ecapa",
+        "condition": "apron_plus3"
+      },
+      {
+        "index": 188,
+        "case": "librispeech_1320-122617-0019",
+        "metric": "utmosv2",
+        "condition": "apron_0"
+      },
+      {
+        "index": 189,
+        "case": "librispeech_1320-122617-0019",
+        "metric": "utmosv2",
+        "condition": "apron_minus3"
+      },
+      {
+        "index": 190,
+        "case": "librispeech_1320-122617-0019",
+        "metric": "utmosv2",
+        "condition": "apron_plus3"
+      },
+      {
+        "index": 191,
+        "case": "librispeech_1320-122617-0019",
+        "metric": "utmosv2",
+        "condition": "llsm2_0"
+      },
+      {
+        "index": 193,
+        "case": "librispeech_1320-122617-0023",
+        "metric": "ecapa",
+        "condition": "apron_minus3"
+      },
+      {
+        "index": 194,
+        "case": "librispeech_1320-122617-0023",
+        "metric": "ecapa",
+        "condition": "apron_plus3"
+      },
+      {
+        "index": 200,
+        "case": "librispeech_1320-122617-0023",
+        "metric": "utmosv2",
+        "condition": "apron_0"
+      },
+      {
+        "index": 201,
+        "case": "librispeech_1320-122617-0023",
+        "metric": "utmosv2",
+        "condition": "apron_minus3"
+      },
+      {
+        "index": 202,
+        "case": "librispeech_1320-122617-0023",
+        "metric": "utmosv2",
+        "condition": "apron_plus3"
+      },
+      {
+        "index": 203,
+        "case": "librispeech_1320-122617-0023",
+        "metric": "utmosv2",
+        "condition": "llsm2_0"
+      },
+      {
+        "index": 205,
+        "case": "librispeech_1320-122617-0039",
+        "metric": "ecapa",
+        "condition": "apron_minus3"
+      },
+      {
+        "index": 206,
+        "case": "librispeech_1320-122617-0039",
+        "metric": "ecapa",
+        "condition": "apron_plus3"
+      },
+      {
+        "index": 212,
+        "case": "librispeech_1320-122617-0039",
+        "metric": "utmosv2",
+        "condition": "apron_0"
+      },
+      {
+        "index": 213,
+        "case": "librispeech_1320-122617-0039",
+        "metric": "utmosv2",
+        "condition": "apron_minus3"
+      },
+      {
+        "index": 214,
+        "case": "librispeech_1320-122617-0039",
+        "metric": "utmosv2",
+        "condition": "apron_plus3"
+      },
+      {
+        "index": 215,
+        "case": "librispeech_1320-122617-0039",
+        "metric": "utmosv2",
+        "condition": "llsm2_0"
+      },
+      {
+        "index": 217,
+        "case": "librispeech_1580-141083-0010",
+        "metric": "ecapa",
+        "condition": "apron_minus3"
+      },
+      {
+        "index": 218,
+        "case": "librispeech_1580-141083-0010",
+        "metric": "ecapa",
+        "condition": "apron_plus3"
+      },
+      {
+        "index": 224,
+        "case": "librispeech_1580-141083-0010",
+        "metric": "utmosv2",
+        "condition": "apron_0"
+      },
+      {
+        "index": 225,
+        "case": "librispeech_1580-141083-0010",
+        "metric": "utmosv2",
+        "condition": "apron_minus3"
+      },
+      {
+        "index": 226,
+        "case": "librispeech_1580-141083-0010",
+        "metric": "utmosv2",
+        "condition": "apron_plus3"
+      },
+      {
+        "index": 227,
+        "case": "librispeech_1580-141083-0010",
+        "metric": "utmosv2",
+        "condition": "llsm2_0"
+      },
+      {
+        "index": 229,
+        "case": "librispeech_1580-141084-0016",
+        "metric": "ecapa",
+        "condition": "apron_minus3"
+      },
+      {
+        "index": 230,
+        "case": "librispeech_1580-141084-0016",
+        "metric": "ecapa",
+        "condition": "apron_plus3"
+      },
+      {
+        "index": 236,
+        "case": "librispeech_1580-141084-0016",
+        "metric": "utmosv2",
+        "condition": "apron_0"
+      },
+      {
+        "index": 237,
+        "case": "librispeech_1580-141084-0016",
+        "metric": "utmosv2",
+        "condition": "apron_minus3"
+      },
+      {
+        "index": 238,
+        "case": "librispeech_1580-141084-0016",
+        "metric": "utmosv2",
+        "condition": "apron_plus3"
+      },
+      {
+        "index": 239,
+        "case": "librispeech_1580-141084-0016",
+        "metric": "utmosv2",
+        "condition": "llsm2_0"
+      },
+      {
+        "index": 241,
+        "case": "librispeech_1580-141084-0047",
+        "metric": "ecapa",
+        "condition": "apron_minus3"
+      },
+      {
+        "index": 242,
+        "case": "librispeech_1580-141084-0047",
+        "metric": "ecapa",
+        "condition": "apron_plus3"
+      },
+      {
+        "index": 248,
+        "case": "librispeech_1580-141084-0047",
+        "metric": "utmosv2",
+        "condition": "apron_0"
+      },
+      {
+        "index": 249,
+        "case": "librispeech_1580-141084-0047",
+        "metric": "utmosv2",
+        "condition": "apron_minus3"
+      },
+      {
+        "index": 250,
+        "case": "librispeech_1580-141084-0047",
+        "metric": "utmosv2",
+        "condition": "apron_plus3"
+      },
+      {
+        "index": 251,
+        "case": "librispeech_1580-141084-0047",
+        "metric": "utmosv2",
+        "condition": "llsm2_0"
+      },
+      {
+        "index": 253,
+        "case": "librispeech_1995-1836-0000",
+        "metric": "ecapa",
+        "condition": "apron_minus3"
+      },
+      {
+        "index": 254,
+        "case": "librispeech_1995-1836-0000",
+        "metric": "ecapa",
+        "condition": "apron_plus3"
+      },
+      {
+        "index": 260,
+        "case": "librispeech_1995-1836-0000",
+        "metric": "utmosv2",
+        "condition": "apron_0"
+      },
+      {
+        "index": 261,
+        "case": "librispeech_1995-1836-0000",
+        "metric": "utmosv2",
+        "condition": "apron_minus3"
+      },
+      {
+        "index": 262,
+        "case": "librispeech_1995-1836-0000",
+        "metric": "utmosv2",
+        "condition": "apron_plus3"
+      },
+      {
+        "index": 263,
+        "case": "librispeech_1995-1836-0000",
+        "metric": "utmosv2",
+        "condition": "llsm2_0"
+      },
+      {
+        "index": 265,
+        "case": "librispeech_1995-1836-0014",
+        "metric": "ecapa",
+        "condition": "apron_minus3"
+      },
+      {
+        "index": 266,
+        "case": "librispeech_1995-1836-0014",
+        "metric": "ecapa",
+        "condition": "apron_plus3"
+      },
+      {
+        "index": 272,
+        "case": "librispeech_1995-1836-0014",
+        "metric": "utmosv2",
+        "condition": "apron_0"
+      },
+      {
+        "index": 273,
+        "case": "librispeech_1995-1836-0014",
+        "metric": "utmosv2",
+        "condition": "apron_minus3"
+      },
+      {
+        "index": 274,
+        "case": "librispeech_1995-1836-0014",
+        "metric": "utmosv2",
+        "condition": "apron_plus3"
+      },
+      {
+        "index": 275,
+        "case": "librispeech_1995-1836-0014",
+        "metric": "utmosv2",
+        "condition": "llsm2_0"
+      },
+      {
+        "index": 277,
+        "case": "librispeech_1995-1837-0023",
+        "metric": "ecapa",
+        "condition": "apron_minus3"
+      },
+      {
+        "index": 278,
+        "case": "librispeech_1995-1837-0023",
+        "metric": "ecapa",
+        "condition": "apron_plus3"
+      },
+      {
+        "index": 284,
+        "case": "librispeech_1995-1837-0023",
+        "metric": "utmosv2",
+        "condition": "apron_0"
+      },
+      {
+        "index": 285,
+        "case": "librispeech_1995-1837-0023",
+        "metric": "utmosv2",
+        "condition": "apron_minus3"
+      },
+      {
+        "index": 286,
+        "case": "librispeech_1995-1837-0023",
+        "metric": "utmosv2",
+        "condition": "apron_plus3"
+      },
+      {
+        "index": 287,
+        "case": "librispeech_1995-1837-0023",
+        "metric": "utmosv2",
+        "condition": "llsm2_0"
+      },
+      {
+        "index": 289,
+        "case": "librispeech_2094-142345-0032",
+        "metric": "ecapa",
+        "condition": "apron_minus3"
+      },
+      {
+        "index": 290,
+        "case": "librispeech_2094-142345-0032",
+        "metric": "ecapa",
+        "condition": "apron_plus3"
+      },
+      {
+        "index": 296,
+        "case": "librispeech_2094-142345-0032",
+        "metric": "utmosv2",
+        "condition": "apron_0"
+      },
+      {
+        "index": 297,
+        "case": "librispeech_2094-142345-0032",
+        "metric": "utmosv2",
+        "condition": "apron_minus3"
+      },
+      {
+        "index": 298,
+        "case": "librispeech_2094-142345-0032",
+        "metric": "utmosv2",
+        "condition": "apron_plus3"
+      },
+      {
+        "index": 299,
+        "case": "librispeech_2094-142345-0032",
+        "metric": "utmosv2",
+        "condition": "llsm2_0"
+      },
+      {
+        "index": 301,
+        "case": "librispeech_2094-142345-0039",
+        "metric": "ecapa",
+        "condition": "apron_minus3"
+      },
+      {
+        "index": 302,
+        "case": "librispeech_2094-142345-0039",
+        "metric": "ecapa",
+        "condition": "apron_plus3"
+      },
+      {
+        "index": 308,
+        "case": "librispeech_2094-142345-0039",
+        "metric": "utmosv2",
+        "condition": "apron_0"
+      },
+      {
+        "index": 309,
+        "case": "librispeech_2094-142345-0039",
+        "metric": "utmosv2",
+        "condition": "apron_minus3"
+      },
+      {
+        "index": 310,
+        "case": "librispeech_2094-142345-0039",
+        "metric": "utmosv2",
+        "condition": "apron_plus3"
+      },
+      {
+        "index": 311,
+        "case": "librispeech_2094-142345-0039",
+        "metric": "utmosv2",
+        "condition": "llsm2_0"
+      },
+      {
+        "index": 313,
+        "case": "librispeech_2094-142345-0040",
+        "metric": "ecapa",
+        "condition": "apron_minus3"
+      },
+      {
+        "index": 314,
+        "case": "librispeech_2094-142345-0040",
+        "metric": "ecapa",
+        "condition": "apron_plus3"
+      },
+      {
+        "index": 320,
+        "case": "librispeech_2094-142345-0040",
+        "metric": "utmosv2",
+        "condition": "apron_0"
+      },
+      {
+        "index": 321,
+        "case": "librispeech_2094-142345-0040",
+        "metric": "utmosv2",
+        "condition": "apron_minus3"
+      },
+      {
+        "index": 322,
+        "case": "librispeech_2094-142345-0040",
+        "metric": "utmosv2",
+        "condition": "apron_plus3"
+      },
+      {
+        "index": 323,
+        "case": "librispeech_2094-142345-0040",
+        "metric": "utmosv2",
+        "condition": "llsm2_0"
+      },
+      {
+        "index": 325,
+        "case": "librispeech_2300-131720-0022",
+        "metric": "ecapa",
+        "condition": "apron_minus3"
+      },
+      {
+        "index": 326,
+        "case": "librispeech_2300-131720-0022",
+        "metric": "ecapa",
+        "condition": "apron_plus3"
+      },
+      {
+        "index": 332,
+        "case": "librispeech_2300-131720-0022",
+        "metric": "utmosv2",
+        "condition": "apron_0"
+      },
+      {
+        "index": 333,
+        "case": "librispeech_2300-131720-0022",
+        "metric": "utmosv2",
+        "condition": "apron_minus3"
+      },
+      {
+        "index": 334,
+        "case": "librispeech_2300-131720-0022",
+        "metric": "utmosv2",
+        "condition": "apron_plus3"
+      },
+      {
+        "index": 335,
+        "case": "librispeech_2300-131720-0022",
+        "metric": "utmosv2",
+        "condition": "llsm2_0"
+      },
+      {
+        "index": 337,
+        "case": "librispeech_2300-131720-0028",
+        "metric": "ecapa",
+        "condition": "apron_minus3"
+      },
+      {
+        "index": 338,
+        "case": "librispeech_2300-131720-0028",
+        "metric": "ecapa",
+        "condition": "apron_plus3"
+      },
+      {
+        "index": 344,
+        "case": "librispeech_2300-131720-0028",
+        "metric": "utmosv2",
+        "condition": "apron_0"
+      },
+      {
+        "index": 345,
+        "case": "librispeech_2300-131720-0028",
+        "metric": "utmosv2",
+        "condition": "apron_minus3"
+      },
+      {
+        "index": 346,
+        "case": "librispeech_2300-131720-0028",
+        "metric": "utmosv2",
+        "condition": "apron_plus3"
+      },
+      {
+        "index": 347,
+        "case": "librispeech_2300-131720-0028",
+        "metric": "utmosv2",
+        "condition": "llsm2_0"
+      },
+      {
+        "index": 349,
+        "case": "librispeech_2300-131720-0041",
+        "metric": "ecapa",
+        "condition": "apron_minus3"
+      },
+      {
+        "index": 350,
+        "case": "librispeech_2300-131720-0041",
+        "metric": "ecapa",
+        "condition": "apron_plus3"
+      },
+      {
+        "index": 356,
+        "case": "librispeech_2300-131720-0041",
+        "metric": "utmosv2",
+        "condition": "apron_0"
+      },
+      {
+        "index": 357,
+        "case": "librispeech_2300-131720-0041",
+        "metric": "utmosv2",
+        "condition": "apron_minus3"
+      },
+      {
+        "index": 358,
+        "case": "librispeech_2300-131720-0041",
+        "metric": "utmosv2",
+        "condition": "apron_plus3"
+      },
+      {
+        "index": 359,
+        "case": "librispeech_2300-131720-0041",
+        "metric": "utmosv2",
+        "condition": "llsm2_0"
+      },
+      {
+        "index": 361,
+        "case": "librispeech_237-126133-0003",
+        "metric": "ecapa",
+        "condition": "apron_minus3"
+      },
+      {
+        "index": 362,
+        "case": "librispeech_237-126133-0003",
+        "metric": "ecapa",
+        "condition": "apron_plus3"
+      },
+      {
+        "index": 368,
+        "case": "librispeech_237-126133-0003",
+        "metric": "utmosv2",
+        "condition": "apron_0"
+      },
+      {
+        "index": 369,
+        "case": "librispeech_237-126133-0003",
+        "metric": "utmosv2",
+        "condition": "apron_minus3"
+      },
+      {
+        "index": 370,
+        "case": "librispeech_237-126133-0003",
+        "metric": "utmosv2",
+        "condition": "apron_plus3"
+      },
+      {
+        "index": 371,
+        "case": "librispeech_237-126133-0003",
+        "metric": "utmosv2",
+        "condition": "llsm2_0"
+      },
+      {
+        "index": 373,
+        "case": "librispeech_237-134500-0029",
+        "metric": "ecapa",
+        "condition": "apron_minus3"
+      },
+      {
+        "index": 374,
+        "case": "librispeech_237-134500-0029",
+        "metric": "ecapa",
+        "condition": "apron_plus3"
+      },
+      {
+        "index": 380,
+        "case": "librispeech_237-134500-0029",
+        "metric": "utmosv2",
+        "condition": "apron_0"
+      },
+      {
+        "index": 381,
+        "case": "librispeech_237-134500-0029",
+        "metric": "utmosv2",
+        "condition": "apron_minus3"
+      },
+      {
+        "index": 382,
+        "case": "librispeech_237-134500-0029",
+        "metric": "utmosv2",
+        "condition": "apron_plus3"
+      },
+      {
+        "index": 383,
+        "case": "librispeech_237-134500-0029",
+        "metric": "utmosv2",
+        "condition": "llsm2_0"
+      },
+      {
+        "index": 385,
+        "case": "librispeech_237-134500-0031",
+        "metric": "ecapa",
+        "condition": "apron_minus3"
+      },
+      {
+        "index": 386,
+        "case": "librispeech_237-134500-0031",
+        "metric": "ecapa",
+        "condition": "apron_plus3"
+      },
+      {
+        "index": 392,
+        "case": "librispeech_237-134500-0031",
+        "metric": "utmosv2",
+        "condition": "apron_0"
+      },
+      {
+        "index": 393,
+        "case": "librispeech_237-134500-0031",
+        "metric": "utmosv2",
+        "condition": "apron_minus3"
+      },
+      {
+        "index": 394,
+        "case": "librispeech_237-134500-0031",
+        "metric": "utmosv2",
+        "condition": "apron_plus3"
+      },
+      {
+        "index": 395,
+        "case": "librispeech_237-134500-0031",
+        "metric": "utmosv2",
+        "condition": "llsm2_0"
+      },
+      {
+        "index": 397,
+        "case": "librispeech_260-123286-0008",
+        "metric": "ecapa",
+        "condition": "apron_minus3"
+      },
+      {
+        "index": 398,
+        "case": "librispeech_260-123286-0008",
+        "metric": "ecapa",
+        "condition": "apron_plus3"
+      },
+      {
+        "index": 404,
+        "case": "librispeech_260-123286-0008",
+        "metric": "utmosv2",
+        "condition": "apron_0"
+      },
+      {
+        "index": 405,
+        "case": "librispeech_260-123286-0008",
+        "metric": "utmosv2",
+        "condition": "apron_minus3"
+      },
+      {
+        "index": 406,
+        "case": "librispeech_260-123286-0008",
+        "metric": "utmosv2",
+        "condition": "apron_plus3"
+      },
+      {
+        "index": 407,
+        "case": "librispeech_260-123286-0008",
+        "metric": "utmosv2",
+        "condition": "llsm2_0"
+      },
+      {
+        "index": 409,
+        "case": "librispeech_260-123288-0003",
+        "metric": "ecapa",
+        "condition": "apron_minus3"
+      },
+      {
+        "index": 410,
+        "case": "librispeech_260-123288-0003",
+        "metric": "ecapa",
+        "condition": "apron_plus3"
+      },
+      {
+        "index": 416,
+        "case": "librispeech_260-123288-0003",
+        "metric": "utmosv2",
+        "condition": "apron_0"
+      },
+      {
+        "index": 417,
+        "case": "librispeech_260-123288-0003",
+        "metric": "utmosv2",
+        "condition": "apron_minus3"
+      },
+      {
+        "index": 418,
+        "case": "librispeech_260-123288-0003",
+        "metric": "utmosv2",
+        "condition": "apron_plus3"
+      },
+      {
+        "index": 419,
+        "case": "librispeech_260-123288-0003",
+        "metric": "utmosv2",
+        "condition": "llsm2_0"
+      },
+      {
+        "index": 421,
+        "case": "librispeech_260-123440-0020",
+        "metric": "ecapa",
+        "condition": "apron_minus3"
+      },
+      {
+        "index": 422,
+        "case": "librispeech_260-123440-0020",
+        "metric": "ecapa",
+        "condition": "apron_plus3"
+      },
+      {
+        "index": 428,
+        "case": "librispeech_260-123440-0020",
+        "metric": "utmosv2",
+        "condition": "apron_0"
+      },
+      {
+        "index": 429,
+        "case": "librispeech_260-123440-0020",
+        "metric": "utmosv2",
+        "condition": "apron_minus3"
+      },
+      {
+        "index": 430,
+        "case": "librispeech_260-123440-0020",
+        "metric": "utmosv2",
+        "condition": "apron_plus3"
+      },
+      {
+        "index": 431,
+        "case": "librispeech_260-123440-0020",
+        "metric": "utmosv2",
+        "condition": "llsm2_0"
+      },
+      {
+        "index": 433,
+        "case": "librispeech_2830-3980-0000",
+        "metric": "ecapa",
+        "condition": "apron_minus3"
+      },
+      {
+        "index": 434,
+        "case": "librispeech_2830-3980-0000",
+        "metric": "ecapa",
+        "condition": "apron_plus3"
+      },
+      {
+        "index": 440,
+        "case": "librispeech_2830-3980-0000",
+        "metric": "utmosv2",
+        "condition": "apron_0"
+      },
+      {
+        "index": 441,
+        "case": "librispeech_2830-3980-0000",
+        "metric": "utmosv2",
+        "condition": "apron_minus3"
+      },
+      {
+        "index": 442,
+        "case": "librispeech_2830-3980-0000",
+        "metric": "utmosv2",
+        "condition": "apron_plus3"
+      },
+      {
+        "index": 443,
+        "case": "librispeech_2830-3980-0000",
+        "metric": "utmosv2",
+        "condition": "llsm2_0"
+      },
+      {
+        "index": 445,
+        "case": "librispeech_2830-3980-0038",
+        "metric": "ecapa",
+        "condition": "apron_minus3"
+      },
+      {
+        "index": 446,
+        "case": "librispeech_2830-3980-0038",
+        "metric": "ecapa",
+        "condition": "apron_plus3"
+      },
+      {
+        "index": 452,
+        "case": "librispeech_2830-3980-0038",
+        "metric": "utmosv2",
+        "condition": "apron_0"
+      },
+      {
+        "index": 453,
+        "case": "librispeech_2830-3980-0038",
+        "metric": "utmosv2",
+        "condition": "apron_minus3"
+      },
+      {
+        "index": 454,
+        "case": "librispeech_2830-3980-0038",
+        "metric": "utmosv2",
+        "condition": "apron_plus3"
+      },
+      {
+        "index": 455,
+        "case": "librispeech_2830-3980-0038",
+        "metric": "utmosv2",
+        "condition": "llsm2_0"
+      },
+      {
+        "index": 457,
+        "case": "librispeech_2830-3980-0042",
+        "metric": "ecapa",
+        "condition": "apron_minus3"
+      },
+      {
+        "index": 458,
+        "case": "librispeech_2830-3980-0042",
+        "metric": "ecapa",
+        "condition": "apron_plus3"
+      },
+      {
+        "index": 464,
+        "case": "librispeech_2830-3980-0042",
+        "metric": "utmosv2",
+        "condition": "apron_0"
+      },
+      {
+        "index": 465,
+        "case": "librispeech_2830-3980-0042",
+        "metric": "utmosv2",
+        "condition": "apron_minus3"
+      },
+      {
+        "index": 466,
+        "case": "librispeech_2830-3980-0042",
+        "metric": "utmosv2",
+        "condition": "apron_plus3"
+      },
+      {
+        "index": 467,
+        "case": "librispeech_2830-3980-0042",
+        "metric": "utmosv2",
+        "condition": "llsm2_0"
+      },
+      {
+        "index": 469,
+        "case": "librispeech_2961-960-0010",
+        "metric": "ecapa",
+        "condition": "apron_minus3"
+      },
+      {
+        "index": 470,
+        "case": "librispeech_2961-960-0010",
+        "metric": "ecapa",
+        "condition": "apron_plus3"
+      },
+      {
+        "index": 476,
+        "case": "librispeech_2961-960-0010",
+        "metric": "utmosv2",
+        "condition": "apron_0"
+      },
+      {
+        "index": 477,
+        "case": "librispeech_2961-960-0010",
+        "metric": "utmosv2",
+        "condition": "apron_minus3"
+      },
+      {
+        "index": 478,
+        "case": "librispeech_2961-960-0010",
+        "metric": "utmosv2",
+        "condition": "apron_plus3"
+      },
+      {
+        "index": 479,
+        "case": "librispeech_2961-960-0010",
+        "metric": "utmosv2",
+        "condition": "llsm2_0"
+      },
+      {
+        "index": 481,
+        "case": "librispeech_2961-960-0019",
+        "metric": "ecapa",
+        "condition": "apron_minus3"
+      },
+      {
+        "index": 482,
+        "case": "librispeech_2961-960-0019",
+        "metric": "ecapa",
+        "condition": "apron_plus3"
+      },
+      {
+        "index": 488,
+        "case": "librispeech_2961-960-0019",
+        "metric": "utmosv2",
+        "condition": "apron_0"
+      },
+      {
+        "index": 489,
+        "case": "librispeech_2961-960-0019",
+        "metric": "utmosv2",
+        "condition": "apron_minus3"
+      },
+      {
+        "index": 490,
+        "case": "librispeech_2961-960-0019",
+        "metric": "utmosv2",
+        "condition": "apron_plus3"
+      },
+      {
+        "index": 491,
+        "case": "librispeech_2961-960-0019",
+        "metric": "utmosv2",
+        "condition": "llsm2_0"
+      },
+      {
+        "index": 493,
+        "case": "librispeech_2961-961-0011",
+        "metric": "ecapa",
+        "condition": "apron_minus3"
+      },
+      {
+        "index": 494,
+        "case": "librispeech_2961-961-0011",
+        "metric": "ecapa",
+        "condition": "apron_plus3"
+      },
+      {
+        "index": 500,
+        "case": "librispeech_2961-961-0011",
+        "metric": "utmosv2",
+        "condition": "apron_0"
+      },
+      {
+        "index": 501,
+        "case": "librispeech_2961-961-0011",
+        "metric": "utmosv2",
+        "condition": "apron_minus3"
+      },
+      {
+        "index": 502,
+        "case": "librispeech_2961-961-0011",
+        "metric": "utmosv2",
+        "condition": "apron_plus3"
+      },
+      {
+        "index": 503,
+        "case": "librispeech_2961-961-0011",
+        "metric": "utmosv2",
+        "condition": "llsm2_0"
+      },
+      {
+        "index": 505,
+        "case": "librispeech_3570-5694-0001",
+        "metric": "ecapa",
+        "condition": "apron_minus3"
+      },
+      {
+        "index": 506,
+        "case": "librispeech_3570-5694-0001",
+        "metric": "ecapa",
+        "condition": "apron_plus3"
+      },
+      {
+        "index": 512,
+        "case": "librispeech_3570-5694-0001",
+        "metric": "utmosv2",
+        "condition": "apron_0"
+      },
+      {
+        "index": 513,
+        "case": "librispeech_3570-5694-0001",
+        "metric": "utmosv2",
+        "condition": "apron_minus3"
+      },
+      {
+        "index": 514,
+        "case": "librispeech_3570-5694-0001",
+        "metric": "utmosv2",
+        "condition": "apron_plus3"
+      },
+      {
+        "index": 515,
+        "case": "librispeech_3570-5694-0001",
+        "metric": "utmosv2",
+        "condition": "llsm2_0"
+      },
+      {
+        "index": 517,
+        "case": "librispeech_3570-5694-0004",
+        "metric": "ecapa",
+        "condition": "apron_minus3"
+      },
+      {
+        "index": 518,
+        "case": "librispeech_3570-5694-0004",
+        "metric": "ecapa",
+        "condition": "apron_plus3"
+      },
+      {
+        "index": 524,
+        "case": "librispeech_3570-5694-0004",
+        "metric": "utmosv2",
+        "condition": "apron_0"
+      },
+      {
+        "index": 525,
+        "case": "librispeech_3570-5694-0004",
+        "metric": "utmosv2",
+        "condition": "apron_minus3"
+      },
+      {
+        "index": 526,
+        "case": "librispeech_3570-5694-0004",
+        "metric": "utmosv2",
+        "condition": "apron_plus3"
+      },
+      {
+        "index": 527,
+        "case": "librispeech_3570-5694-0004",
+        "metric": "utmosv2",
+        "condition": "llsm2_0"
+      },
+      {
+        "index": 529,
+        "case": "librispeech_3570-5696-0010",
+        "metric": "ecapa",
+        "condition": "apron_minus3"
+      },
+      {
+        "index": 530,
+        "case": "librispeech_3570-5696-0010",
+        "metric": "ecapa",
+        "condition": "apron_plus3"
+      },
+      {
+        "index": 536,
+        "case": "librispeech_3570-5696-0010",
+        "metric": "utmosv2",
+        "condition": "apron_0"
+      },
+      {
+        "index": 537,
+        "case": "librispeech_3570-5696-0010",
+        "metric": "utmosv2",
+        "condition": "apron_minus3"
+      },
+      {
+        "index": 538,
+        "case": "librispeech_3570-5696-0010",
+        "metric": "utmosv2",
+        "condition": "apron_plus3"
+      },
+      {
+        "index": 539,
+        "case": "librispeech_3570-5696-0010",
+        "metric": "utmosv2",
+        "condition": "llsm2_0"
+      },
+      {
+        "index": 541,
+        "case": "librispeech_3575-170457-0034",
+        "metric": "ecapa",
+        "condition": "apron_minus3"
+      },
+      {
+        "index": 542,
+        "case": "librispeech_3575-170457-0034",
+        "metric": "ecapa",
+        "condition": "apron_plus3"
+      },
+      {
+        "index": 548,
+        "case": "librispeech_3575-170457-0034",
+        "metric": "utmosv2",
+        "condition": "apron_0"
+      },
+      {
+        "index": 549,
+        "case": "librispeech_3575-170457-0034",
+        "metric": "utmosv2",
+        "condition": "apron_minus3"
+      },
+      {
+        "index": 550,
+        "case": "librispeech_3575-170457-0034",
+        "metric": "utmosv2",
+        "condition": "apron_plus3"
+      },
+      {
+        "index": 551,
+        "case": "librispeech_3575-170457-0034",
+        "metric": "utmosv2",
+        "condition": "llsm2_0"
+      },
+      {
+        "index": 553,
+        "case": "librispeech_3575-170457-0041",
+        "metric": "ecapa",
+        "condition": "apron_minus3"
+      },
+      {
+        "index": 554,
+        "case": "librispeech_3575-170457-0041",
+        "metric": "ecapa",
+        "condition": "apron_plus3"
+      },
+      {
+        "index": 560,
+        "case": "librispeech_3575-170457-0041",
+        "metric": "utmosv2",
+        "condition": "apron_0"
+      },
+      {
+        "index": 561,
+        "case": "librispeech_3575-170457-0041",
+        "metric": "utmosv2",
+        "condition": "apron_minus3"
+      },
+      {
+        "index": 562,
+        "case": "librispeech_3575-170457-0041",
+        "metric": "utmosv2",
+        "condition": "apron_plus3"
+      },
+      {
+        "index": 563,
+        "case": "librispeech_3575-170457-0041",
+        "metric": "utmosv2",
+        "condition": "llsm2_0"
+      },
+      {
+        "index": 565,
+        "case": "librispeech_3575-170457-0054",
+        "metric": "ecapa",
+        "condition": "apron_minus3"
+      },
+      {
+        "index": 566,
+        "case": "librispeech_3575-170457-0054",
+        "metric": "ecapa",
+        "condition": "apron_plus3"
+      },
+      {
+        "index": 572,
+        "case": "librispeech_3575-170457-0054",
+        "metric": "utmosv2",
+        "condition": "apron_0"
+      },
+      {
+        "index": 573,
+        "case": "librispeech_3575-170457-0054",
+        "metric": "utmosv2",
+        "condition": "apron_minus3"
+      },
+      {
+        "index": 574,
+        "case": "librispeech_3575-170457-0054",
+        "metric": "utmosv2",
+        "condition": "apron_plus3"
+      },
+      {
+        "index": 575,
+        "case": "librispeech_3575-170457-0054",
+        "metric": "utmosv2",
+        "condition": "llsm2_0"
+      },
+      {
+        "index": 577,
+        "case": "librispeech_3729-6852-0000",
+        "metric": "ecapa",
+        "condition": "apron_minus3"
+      },
+      {
+        "index": 578,
+        "case": "librispeech_3729-6852-0000",
+        "metric": "ecapa",
+        "condition": "apron_plus3"
+      },
+      {
+        "index": 584,
+        "case": "librispeech_3729-6852-0000",
+        "metric": "utmosv2",
+        "condition": "apron_0"
+      },
+      {
+        "index": 585,
+        "case": "librispeech_3729-6852-0000",
+        "metric": "utmosv2",
+        "condition": "apron_minus3"
+      },
+      {
+        "index": 586,
+        "case": "librispeech_3729-6852-0000",
+        "metric": "utmosv2",
+        "condition": "apron_plus3"
+      },
+      {
+        "index": 587,
+        "case": "librispeech_3729-6852-0000",
+        "metric": "utmosv2",
+        "condition": "llsm2_0"
+      },
+      {
+        "index": 589,
+        "case": "librispeech_3729-6852-0007",
+        "metric": "ecapa",
+        "condition": "apron_minus3"
+      },
+      {
+        "index": 590,
+        "case": "librispeech_3729-6852-0007",
+        "metric": "ecapa",
+        "condition": "apron_plus3"
+      },
+      {
+        "index": 596,
+        "case": "librispeech_3729-6852-0007",
+        "metric": "utmosv2",
+        "condition": "apron_0"
+      },
+      {
+        "index": 597,
+        "case": "librispeech_3729-6852-0007",
+        "metric": "utmosv2",
+        "condition": "apron_minus3"
+      },
+      {
+        "index": 598,
+        "case": "librispeech_3729-6852-0007",
+        "metric": "utmosv2",
+        "condition": "apron_plus3"
+      },
+      {
+        "index": 599,
+        "case": "librispeech_3729-6852-0007",
+        "metric": "utmosv2",
+        "condition": "llsm2_0"
+      },
+      {
+        "index": 601,
+        "case": "librispeech_3729-6852-0017",
+        "metric": "ecapa",
+        "condition": "apron_minus3"
+      },
+      {
+        "index": 602,
+        "case": "librispeech_3729-6852-0017",
+        "metric": "ecapa",
+        "condition": "apron_plus3"
+      },
+      {
+        "index": 608,
+        "case": "librispeech_3729-6852-0017",
+        "metric": "utmosv2",
+        "condition": "apron_0"
+      },
+      {
+        "index": 609,
+        "case": "librispeech_3729-6852-0017",
+        "metric": "utmosv2",
+        "condition": "apron_minus3"
+      },
+      {
+        "index": 610,
+        "case": "librispeech_3729-6852-0017",
+        "metric": "utmosv2",
+        "condition": "apron_plus3"
+      },
+      {
+        "index": 611,
+        "case": "librispeech_3729-6852-0017",
+        "metric": "utmosv2",
+        "condition": "llsm2_0"
+      },
+      {
+        "index": 613,
+        "case": "librispeech_4077-13751-0001",
+        "metric": "ecapa",
+        "condition": "apron_minus3"
+      },
+      {
+        "index": 614,
+        "case": "librispeech_4077-13751-0001",
+        "metric": "ecapa",
+        "condition": "apron_plus3"
+      },
+      {
+        "index": 620,
+        "case": "librispeech_4077-13751-0001",
+        "metric": "utmosv2",
+        "condition": "apron_0"
+      },
+      {
+        "index": 621,
+        "case": "librispeech_4077-13751-0001",
+        "metric": "utmosv2",
+        "condition": "apron_minus3"
+      },
+      {
+        "index": 622,
+        "case": "librispeech_4077-13751-0001",
+        "metric": "utmosv2",
+        "condition": "apron_plus3"
+      },
+      {
+        "index": 623,
+        "case": "librispeech_4077-13751-0001",
+        "metric": "utmosv2",
+        "condition": "llsm2_0"
+      },
+      {
+        "index": 625,
+        "case": "librispeech_4077-13754-0002",
+        "metric": "ecapa",
+        "condition": "apron_minus3"
+      },
+      {
+        "index": 626,
+        "case": "librispeech_4077-13754-0002",
+        "metric": "ecapa",
+        "condition": "apron_plus3"
+      },
+      {
+        "index": 632,
+        "case": "librispeech_4077-13754-0002",
+        "metric": "utmosv2",
+        "condition": "apron_0"
+      },
+      {
+        "index": 633,
+        "case": "librispeech_4077-13754-0002",
+        "metric": "utmosv2",
+        "condition": "apron_minus3"
+      },
+      {
+        "index": 634,
+        "case": "librispeech_4077-13754-0002",
+        "metric": "utmosv2",
+        "condition": "apron_plus3"
+      },
+      {
+        "index": 635,
+        "case": "librispeech_4077-13754-0002",
+        "metric": "utmosv2",
+        "condition": "llsm2_0"
+      },
+      {
+        "index": 637,
+        "case": "librispeech_4077-13754-0012",
+        "metric": "ecapa",
+        "condition": "apron_minus3"
+      },
+      {
+        "index": 638,
+        "case": "librispeech_4077-13754-0012",
+        "metric": "ecapa",
+        "condition": "apron_plus3"
+      },
+      {
+        "index": 644,
+        "case": "librispeech_4077-13754-0012",
+        "metric": "utmosv2",
+        "condition": "apron_0"
+      },
+      {
+        "index": 645,
+        "case": "librispeech_4077-13754-0012",
+        "metric": "utmosv2",
+        "condition": "apron_minus3"
+      },
+      {
+        "index": 646,
+        "case": "librispeech_4077-13754-0012",
+        "metric": "utmosv2",
+        "condition": "apron_plus3"
+      },
+      {
+        "index": 647,
+        "case": "librispeech_4077-13754-0012",
+        "metric": "utmosv2",
+        "condition": "llsm2_0"
+      },
+      {
+        "index": 649,
+        "case": "librispeech_4446-2271-0003",
+        "metric": "ecapa",
+        "condition": "apron_minus3"
+      },
+      {
+        "index": 650,
+        "case": "librispeech_4446-2271-0003",
+        "metric": "ecapa",
+        "condition": "apron_plus3"
+      },
+      {
+        "index": 656,
+        "case": "librispeech_4446-2271-0003",
+        "metric": "utmosv2",
+        "condition": "apron_0"
+      },
+      {
+        "index": 657,
+        "case": "librispeech_4446-2271-0003",
+        "metric": "utmosv2",
+        "condition": "apron_minus3"
+      },
+      {
+        "index": 658,
+        "case": "librispeech_4446-2271-0003",
+        "metric": "utmosv2",
+        "condition": "apron_plus3"
+      },
+      {
+        "index": 659,
+        "case": "librispeech_4446-2271-0003",
+        "metric": "utmosv2",
+        "condition": "llsm2_0"
+      },
+      {
+        "index": 661,
+        "case": "librispeech_4446-2271-0022",
+        "metric": "ecapa",
+        "condition": "apron_minus3"
+      },
+      {
+        "index": 662,
+        "case": "librispeech_4446-2271-0022",
+        "metric": "ecapa",
+        "condition": "apron_plus3"
+      },
+      {
+        "index": 668,
+        "case": "librispeech_4446-2271-0022",
+        "metric": "utmosv2",
+        "condition": "apron_0"
+      },
+      {
+        "index": 669,
+        "case": "librispeech_4446-2271-0022",
+        "metric": "utmosv2",
+        "condition": "apron_minus3"
+      },
+      {
+        "index": 670,
+        "case": "librispeech_4446-2271-0022",
+        "metric": "utmosv2",
+        "condition": "apron_plus3"
+      },
+      {
+        "index": 671,
+        "case": "librispeech_4446-2271-0022",
+        "metric": "utmosv2",
+        "condition": "llsm2_0"
+      },
+      {
+        "index": 673,
+        "case": "librispeech_4446-2273-0010",
+        "metric": "ecapa",
+        "condition": "apron_minus3"
+      },
+      {
+        "index": 674,
+        "case": "librispeech_4446-2273-0010",
+        "metric": "ecapa",
+        "condition": "apron_plus3"
+      },
+      {
+        "index": 680,
+        "case": "librispeech_4446-2273-0010",
+        "metric": "utmosv2",
+        "condition": "apron_0"
+      },
+      {
+        "index": 681,
+        "case": "librispeech_4446-2273-0010",
+        "metric": "utmosv2",
+        "condition": "apron_minus3"
+      },
+      {
+        "index": 682,
+        "case": "librispeech_4446-2273-0010",
+        "metric": "utmosv2",
+        "condition": "apron_plus3"
+      },
+      {
+        "index": 683,
+        "case": "librispeech_4446-2273-0010",
+        "metric": "utmosv2",
+        "condition": "llsm2_0"
+      },
+      {
+        "index": 685,
+        "case": "librispeech_4507-16021-0016",
+        "metric": "ecapa",
+        "condition": "apron_minus3"
+      },
+      {
+        "index": 686,
+        "case": "librispeech_4507-16021-0016",
+        "metric": "ecapa",
+        "condition": "apron_plus3"
+      },
+      {
+        "index": 692,
+        "case": "librispeech_4507-16021-0016",
+        "metric": "utmosv2",
+        "condition": "apron_0"
+      },
+      {
+        "index": 693,
+        "case": "librispeech_4507-16021-0016",
+        "metric": "utmosv2",
+        "condition": "apron_minus3"
+      },
+      {
+        "index": 694,
+        "case": "librispeech_4507-16021-0016",
+        "metric": "utmosv2",
+        "condition": "apron_plus3"
+      },
+      {
+        "index": 695,
+        "case": "librispeech_4507-16021-0016",
+        "metric": "utmosv2",
+        "condition": "llsm2_0"
+      },
+      {
+        "index": 697,
+        "case": "librispeech_4507-16021-0032",
+        "metric": "ecapa",
+        "condition": "apron_minus3"
+      },
+      {
+        "index": 698,
+        "case": "librispeech_4507-16021-0032",
+        "metric": "ecapa",
+        "condition": "apron_plus3"
+      },
+      {
+        "index": 704,
+        "case": "librispeech_4507-16021-0032",
+        "metric": "utmosv2",
+        "condition": "apron_0"
+      },
+      {
+        "index": 705,
+        "case": "librispeech_4507-16021-0032",
+        "metric": "utmosv2",
+        "condition": "apron_minus3"
+      },
+      {
+        "index": 706,
+        "case": "librispeech_4507-16021-0032",
+        "metric": "utmosv2",
+        "condition": "apron_plus3"
+      },
+      {
+        "index": 707,
+        "case": "librispeech_4507-16021-0032",
+        "metric": "utmosv2",
+        "condition": "llsm2_0"
+      },
+      {
+        "index": 709,
+        "case": "librispeech_4507-16021-0045",
+        "metric": "ecapa",
+        "condition": "apron_minus3"
+      },
+      {
+        "index": 710,
+        "case": "librispeech_4507-16021-0045",
+        "metric": "ecapa",
+        "condition": "apron_plus3"
+      },
+      {
+        "index": 716,
+        "case": "librispeech_4507-16021-0045",
+        "metric": "utmosv2",
+        "condition": "apron_0"
+      },
+      {
+        "index": 717,
+        "case": "librispeech_4507-16021-0045",
+        "metric": "utmosv2",
+        "condition": "apron_minus3"
+      },
+      {
+        "index": 718,
+        "case": "librispeech_4507-16021-0045",
+        "metric": "utmosv2",
+        "condition": "apron_plus3"
+      },
+      {
+        "index": 719,
+        "case": "librispeech_4507-16021-0045",
+        "metric": "utmosv2",
+        "condition": "llsm2_0"
+      },
+      {
+        "index": 721,
+        "case": "librispeech_4970-29093-0004",
+        "metric": "ecapa",
+        "condition": "apron_minus3"
+      },
+      {
+        "index": 722,
+        "case": "librispeech_4970-29093-0004",
+        "metric": "ecapa",
+        "condition": "apron_plus3"
+      },
+      {
+        "index": 728,
+        "case": "librispeech_4970-29093-0004",
+        "metric": "utmosv2",
+        "condition": "apron_0"
+      },
+      {
+        "index": 729,
+        "case": "librispeech_4970-29093-0004",
+        "metric": "utmosv2",
+        "condition": "apron_minus3"
+      },
+      {
+        "index": 730,
+        "case": "librispeech_4970-29093-0004",
+        "metric": "utmosv2",
+        "condition": "apron_plus3"
+      },
+      {
+        "index": 731,
+        "case": "librispeech_4970-29093-0004",
+        "metric": "utmosv2",
+        "condition": "llsm2_0"
+      },
+      {
+        "index": 733,
+        "case": "librispeech_4970-29093-0005",
+        "metric": "ecapa",
+        "condition": "apron_minus3"
+      },
+      {
+        "index": 734,
+        "case": "librispeech_4970-29093-0005",
+        "metric": "ecapa",
+        "condition": "apron_plus3"
+      },
+      {
+        "index": 740,
+        "case": "librispeech_4970-29093-0005",
+        "metric": "utmosv2",
+        "condition": "apron_0"
+      },
+      {
+        "index": 741,
+        "case": "librispeech_4970-29093-0005",
+        "metric": "utmosv2",
+        "condition": "apron_minus3"
+      },
+      {
+        "index": 742,
+        "case": "librispeech_4970-29093-0005",
+        "metric": "utmosv2",
+        "condition": "apron_plus3"
+      },
+      {
+        "index": 743,
+        "case": "librispeech_4970-29093-0005",
+        "metric": "utmosv2",
+        "condition": "llsm2_0"
+      },
+      {
+        "index": 745,
+        "case": "librispeech_4970-29095-0008",
+        "metric": "ecapa",
+        "condition": "apron_minus3"
+      },
+      {
+        "index": 746,
+        "case": "librispeech_4970-29095-0008",
+        "metric": "ecapa",
+        "condition": "apron_plus3"
+      },
+      {
+        "index": 752,
+        "case": "librispeech_4970-29095-0008",
+        "metric": "utmosv2",
+        "condition": "apron_0"
+      },
+      {
+        "index": 753,
+        "case": "librispeech_4970-29095-0008",
+        "metric": "utmosv2",
+        "condition": "apron_minus3"
+      },
+      {
+        "index": 754,
+        "case": "librispeech_4970-29095-0008",
+        "metric": "utmosv2",
+        "condition": "apron_plus3"
+      },
+      {
+        "index": 755,
+        "case": "librispeech_4970-29095-0008",
+        "metric": "utmosv2",
+        "condition": "llsm2_0"
+      },
+      {
+        "index": 757,
+        "case": "librispeech_4992-23283-0016",
+        "metric": "ecapa",
+        "condition": "apron_minus3"
+      },
+      {
+        "index": 758,
+        "case": "librispeech_4992-23283-0016",
+        "metric": "ecapa",
+        "condition": "apron_plus3"
+      },
+      {
+        "index": 764,
+        "case": "librispeech_4992-23283-0016",
+        "metric": "utmosv2",
+        "condition": "apron_0"
+      },
+      {
+        "index": 765,
+        "case": "librispeech_4992-23283-0016",
+        "metric": "utmosv2",
+        "condition": "apron_minus3"
+      },
+      {
+        "index": 766,
+        "case": "librispeech_4992-23283-0016",
+        "metric": "utmosv2",
+        "condition": "apron_plus3"
+      },
+      {
+        "index": 767,
+        "case": "librispeech_4992-23283-0016",
+        "metric": "utmosv2",
+        "condition": "llsm2_0"
+      },
+      {
+        "index": 769,
+        "case": "librispeech_4992-41797-0000",
+        "metric": "ecapa",
+        "condition": "apron_minus3"
+      },
+      {
+        "index": 770,
+        "case": "librispeech_4992-41797-0000",
+        "metric": "ecapa",
+        "condition": "apron_plus3"
+      },
+      {
+        "index": 776,
+        "case": "librispeech_4992-41797-0000",
+        "metric": "utmosv2",
+        "condition": "apron_0"
+      },
+      {
+        "index": 777,
+        "case": "librispeech_4992-41797-0000",
+        "metric": "utmosv2",
+        "condition": "apron_minus3"
+      },
+      {
+        "index": 778,
+        "case": "librispeech_4992-41797-0000",
+        "metric": "utmosv2",
+        "condition": "apron_plus3"
+      },
+      {
+        "index": 779,
+        "case": "librispeech_4992-41797-0000",
+        "metric": "utmosv2",
+        "condition": "llsm2_0"
+      },
+      {
+        "index": 781,
+        "case": "librispeech_4992-41806-0000",
+        "metric": "ecapa",
+        "condition": "apron_minus3"
+      },
+      {
+        "index": 782,
+        "case": "librispeech_4992-41806-0000",
+        "metric": "ecapa",
+        "condition": "apron_plus3"
+      },
+      {
+        "index": 788,
+        "case": "librispeech_4992-41806-0000",
+        "metric": "utmosv2",
+        "condition": "apron_0"
+      },
+      {
+        "index": 789,
+        "case": "librispeech_4992-41806-0000",
+        "metric": "utmosv2",
+        "condition": "apron_minus3"
+      },
+      {
+        "index": 790,
+        "case": "librispeech_4992-41806-0000",
+        "metric": "utmosv2",
+        "condition": "apron_plus3"
+      },
+      {
+        "index": 791,
+        "case": "librispeech_4992-41806-0000",
+        "metric": "utmosv2",
+        "condition": "llsm2_0"
+      },
+      {
+        "index": 793,
+        "case": "librispeech_5105-28240-0011",
+        "metric": "ecapa",
+        "condition": "apron_minus3"
+      },
+      {
+        "index": 794,
+        "case": "librispeech_5105-28240-0011",
+        "metric": "ecapa",
+        "condition": "apron_plus3"
+      },
+      {
+        "index": 800,
+        "case": "librispeech_5105-28240-0011",
+        "metric": "utmosv2",
+        "condition": "apron_0"
+      },
+      {
+        "index": 801,
+        "case": "librispeech_5105-28240-0011",
+        "metric": "utmosv2",
+        "condition": "apron_minus3"
+      },
+      {
+        "index": 802,
+        "case": "librispeech_5105-28240-0011",
+        "metric": "utmosv2",
+        "condition": "apron_plus3"
+      },
+      {
+        "index": 803,
+        "case": "librispeech_5105-28240-0011",
+        "metric": "utmosv2",
+        "condition": "llsm2_0"
+      },
+      {
+        "index": 805,
+        "case": "librispeech_5105-28241-0004",
+        "metric": "ecapa",
+        "condition": "apron_minus3"
+      },
+      {
+        "index": 806,
+        "case": "librispeech_5105-28241-0004",
+        "metric": "ecapa",
+        "condition": "apron_plus3"
+      },
+      {
+        "index": 812,
+        "case": "librispeech_5105-28241-0004",
+        "metric": "utmosv2",
+        "condition": "apron_0"
+      },
+      {
+        "index": 813,
+        "case": "librispeech_5105-28241-0004",
+        "metric": "utmosv2",
+        "condition": "apron_minus3"
+      },
+      {
+        "index": 814,
+        "case": "librispeech_5105-28241-0004",
+        "metric": "utmosv2",
+        "condition": "apron_plus3"
+      },
+      {
+        "index": 815,
+        "case": "librispeech_5105-28241-0004",
+        "metric": "utmosv2",
+        "condition": "llsm2_0"
+      },
+      {
+        "index": 817,
+        "case": "librispeech_5105-28241-0019",
+        "metric": "ecapa",
+        "condition": "apron_minus3"
+      },
+      {
+        "index": 818,
+        "case": "librispeech_5105-28241-0019",
+        "metric": "ecapa",
+        "condition": "apron_plus3"
+      },
+      {
+        "index": 824,
+        "case": "librispeech_5105-28241-0019",
+        "metric": "utmosv2",
+        "condition": "apron_0"
+      },
+      {
+        "index": 825,
+        "case": "librispeech_5105-28241-0019",
+        "metric": "utmosv2",
+        "condition": "apron_minus3"
+      },
+      {
+        "index": 826,
+        "case": "librispeech_5105-28241-0019",
+        "metric": "utmosv2",
+        "condition": "apron_plus3"
+      },
+      {
+        "index": 827,
+        "case": "librispeech_5105-28241-0019",
+        "metric": "utmosv2",
+        "condition": "llsm2_0"
+      },
+      {
+        "index": 829,
+        "case": "librispeech_5142-33396-0019",
+        "metric": "ecapa",
+        "condition": "apron_minus3"
+      },
+      {
+        "index": 830,
+        "case": "librispeech_5142-33396-0019",
+        "metric": "ecapa",
+        "condition": "apron_plus3"
+      },
+      {
+        "index": 836,
+        "case": "librispeech_5142-33396-0019",
+        "metric": "utmosv2",
+        "condition": "apron_0"
+      },
+      {
+        "index": 837,
+        "case": "librispeech_5142-33396-0019",
+        "metric": "utmosv2",
+        "condition": "apron_minus3"
+      },
+      {
+        "index": 838,
+        "case": "librispeech_5142-33396-0019",
+        "metric": "utmosv2",
+        "condition": "apron_plus3"
+      },
+      {
+        "index": 839,
+        "case": "librispeech_5142-33396-0019",
+        "metric": "utmosv2",
+        "condition": "llsm2_0"
+      },
+      {
+        "index": 841,
+        "case": "librispeech_5142-33396-0030",
+        "metric": "ecapa",
+        "condition": "apron_minus3"
+      },
+      {
+        "index": 842,
+        "case": "librispeech_5142-33396-0030",
+        "metric": "ecapa",
+        "condition": "apron_plus3"
+      },
+      {
+        "index": 848,
+        "case": "librispeech_5142-33396-0030",
+        "metric": "utmosv2",
+        "condition": "apron_0"
+      },
+      {
+        "index": 849,
+        "case": "librispeech_5142-33396-0030",
+        "metric": "utmosv2",
+        "condition": "apron_minus3"
+      },
+      {
+        "index": 850,
+        "case": "librispeech_5142-33396-0030",
+        "metric": "utmosv2",
+        "condition": "apron_plus3"
+      },
+      {
+        "index": 851,
+        "case": "librispeech_5142-33396-0030",
+        "metric": "utmosv2",
+        "condition": "llsm2_0"
+      },
+      {
+        "index": 853,
+        "case": "librispeech_5142-33396-0065",
+        "metric": "ecapa",
+        "condition": "apron_minus3"
+      },
+      {
+        "index": 854,
+        "case": "librispeech_5142-33396-0065",
+        "metric": "ecapa",
+        "condition": "apron_plus3"
+      },
+      {
+        "index": 860,
+        "case": "librispeech_5142-33396-0065",
+        "metric": "utmosv2",
+        "condition": "apron_0"
+      },
+      {
+        "index": 861,
+        "case": "librispeech_5142-33396-0065",
+        "metric": "utmosv2",
+        "condition": "apron_minus3"
+      },
+      {
+        "index": 862,
+        "case": "librispeech_5142-33396-0065",
+        "metric": "utmosv2",
+        "condition": "apron_plus3"
+      },
+      {
+        "index": 863,
+        "case": "librispeech_5142-33396-0065",
+        "metric": "utmosv2",
+        "condition": "llsm2_0"
+      },
+      {
+        "index": 865,
+        "case": "librispeech_5639-40744-0013",
+        "metric": "ecapa",
+        "condition": "apron_minus3"
+      },
+      {
+        "index": 866,
+        "case": "librispeech_5639-40744-0013",
+        "metric": "ecapa",
+        "condition": "apron_plus3"
+      },
+      {
+        "index": 872,
+        "case": "librispeech_5639-40744-0013",
+        "metric": "utmosv2",
+        "condition": "apron_0"
+      },
+      {
+        "index": 873,
+        "case": "librispeech_5639-40744-0013",
+        "metric": "utmosv2",
+        "condition": "apron_minus3"
+      },
+      {
+        "index": 874,
+        "case": "librispeech_5639-40744-0013",
+        "metric": "utmosv2",
+        "condition": "apron_plus3"
+      },
+      {
+        "index": 875,
+        "case": "librispeech_5639-40744-0013",
+        "metric": "utmosv2",
+        "condition": "llsm2_0"
+      },
+      {
+        "index": 877,
+        "case": "librispeech_5639-40744-0023",
+        "metric": "ecapa",
+        "condition": "apron_minus3"
+      },
+      {
+        "index": 878,
+        "case": "librispeech_5639-40744-0023",
+        "metric": "ecapa",
+        "condition": "apron_plus3"
+      },
+      {
+        "index": 884,
+        "case": "librispeech_5639-40744-0023",
+        "metric": "utmosv2",
+        "condition": "apron_0"
+      },
+      {
+        "index": 885,
+        "case": "librispeech_5639-40744-0023",
+        "metric": "utmosv2",
+        "condition": "apron_minus3"
+      },
+      {
+        "index": 886,
+        "case": "librispeech_5639-40744-0023",
+        "metric": "utmosv2",
+        "condition": "apron_plus3"
+      },
+      {
+        "index": 887,
+        "case": "librispeech_5639-40744-0023",
+        "metric": "utmosv2",
+        "condition": "llsm2_0"
+      },
+      {
+        "index": 889,
+        "case": "librispeech_5639-40744-0030",
+        "metric": "ecapa",
+        "condition": "apron_minus3"
+      },
+      {
+        "index": 890,
+        "case": "librispeech_5639-40744-0030",
+        "metric": "ecapa",
+        "condition": "apron_plus3"
+      },
+      {
+        "index": 896,
+        "case": "librispeech_5639-40744-0030",
+        "metric": "utmosv2",
+        "condition": "apron_0"
+      },
+      {
+        "index": 897,
+        "case": "librispeech_5639-40744-0030",
+        "metric": "utmosv2",
+        "condition": "apron_minus3"
+      },
+      {
+        "index": 898,
+        "case": "librispeech_5639-40744-0030",
+        "metric": "utmosv2",
+        "condition": "apron_plus3"
+      },
+      {
+        "index": 899,
+        "case": "librispeech_5639-40744-0030",
+        "metric": "utmosv2",
+        "condition": "llsm2_0"
+      },
+      {
+        "index": 901,
+        "case": "librispeech_5683-32865-0017",
+        "metric": "ecapa",
+        "condition": "apron_minus3"
+      },
+      {
+        "index": 902,
+        "case": "librispeech_5683-32865-0017",
+        "metric": "ecapa",
+        "condition": "apron_plus3"
+      },
+      {
+        "index": 908,
+        "case": "librispeech_5683-32865-0017",
+        "metric": "utmosv2",
+        "condition": "apron_0"
+      },
+      {
+        "index": 909,
+        "case": "librispeech_5683-32865-0017",
+        "metric": "utmosv2",
+        "condition": "apron_minus3"
+      },
+      {
+        "index": 910,
+        "case": "librispeech_5683-32865-0017",
+        "metric": "utmosv2",
+        "condition": "apron_plus3"
+      },
+      {
+        "index": 911,
+        "case": "librispeech_5683-32865-0017",
+        "metric": "utmosv2",
+        "condition": "llsm2_0"
+      },
+      {
+        "index": 913,
+        "case": "librispeech_5683-32879-0009",
+        "metric": "ecapa",
+        "condition": "apron_minus3"
+      },
+      {
+        "index": 914,
+        "case": "librispeech_5683-32879-0009",
+        "metric": "ecapa",
+        "condition": "apron_plus3"
+      },
+      {
+        "index": 920,
+        "case": "librispeech_5683-32879-0009",
+        "metric": "utmosv2",
+        "condition": "apron_0"
+      },
+      {
+        "index": 921,
+        "case": "librispeech_5683-32879-0009",
+        "metric": "utmosv2",
+        "condition": "apron_minus3"
+      },
+      {
+        "index": 922,
+        "case": "librispeech_5683-32879-0009",
+        "metric": "utmosv2",
+        "condition": "apron_plus3"
+      },
+      {
+        "index": 923,
+        "case": "librispeech_5683-32879-0009",
+        "metric": "utmosv2",
+        "condition": "llsm2_0"
+      },
+      {
+        "index": 925,
+        "case": "librispeech_5683-32879-0019",
+        "metric": "ecapa",
+        "condition": "apron_minus3"
+      },
+      {
+        "index": 926,
+        "case": "librispeech_5683-32879-0019",
+        "metric": "ecapa",
+        "condition": "apron_plus3"
+      },
+      {
+        "index": 932,
+        "case": "librispeech_5683-32879-0019",
+        "metric": "utmosv2",
+        "condition": "apron_0"
+      },
+      {
+        "index": 933,
+        "case": "librispeech_5683-32879-0019",
+        "metric": "utmosv2",
+        "condition": "apron_minus3"
+      },
+      {
+        "index": 934,
+        "case": "librispeech_5683-32879-0019",
+        "metric": "utmosv2",
+        "condition": "apron_plus3"
+      },
+      {
+        "index": 935,
+        "case": "librispeech_5683-32879-0019",
+        "metric": "utmosv2",
+        "condition": "llsm2_0"
+      },
+      {
+        "index": 937,
+        "case": "librispeech_61-70968-0042",
+        "metric": "ecapa",
+        "condition": "apron_minus3"
+      },
+      {
+        "index": 938,
+        "case": "librispeech_61-70968-0042",
+        "metric": "ecapa",
+        "condition": "apron_plus3"
+      },
+      {
+        "index": 944,
+        "case": "librispeech_61-70968-0042",
+        "metric": "utmosv2",
+        "condition": "apron_0"
+      },
+      {
+        "index": 945,
+        "case": "librispeech_61-70968-0042",
+        "metric": "utmosv2",
+        "condition": "apron_minus3"
+      },
+      {
+        "index": 946,
+        "case": "librispeech_61-70968-0042",
+        "metric": "utmosv2",
+        "condition": "apron_plus3"
+      },
+      {
+        "index": 947,
+        "case": "librispeech_61-70968-0042",
+        "metric": "utmosv2",
+        "condition": "llsm2_0"
+      },
+      {
+        "index": 949,
+        "case": "librispeech_61-70968-0043",
+        "metric": "ecapa",
+        "condition": "apron_minus3"
+      },
+      {
+        "index": 950,
+        "case": "librispeech_61-70968-0043",
+        "metric": "ecapa",
+        "condition": "apron_plus3"
+      },
+      {
+        "index": 956,
+        "case": "librispeech_61-70968-0043",
+        "metric": "utmosv2",
+        "condition": "apron_0"
+      },
+      {
+        "index": 957,
+        "case": "librispeech_61-70968-0043",
+        "metric": "utmosv2",
+        "condition": "apron_minus3"
+      },
+      {
+        "index": 958,
+        "case": "librispeech_61-70968-0043",
+        "metric": "utmosv2",
+        "condition": "apron_plus3"
+      },
+      {
+        "index": 959,
+        "case": "librispeech_61-70968-0043",
+        "metric": "utmosv2",
+        "condition": "llsm2_0"
+      },
+      {
+        "index": 961,
+        "case": "librispeech_61-70968-0054",
+        "metric": "ecapa",
+        "condition": "apron_minus3"
+      },
+      {
+        "index": 962,
+        "case": "librispeech_61-70968-0054",
+        "metric": "ecapa",
+        "condition": "apron_plus3"
+      },
+      {
+        "index": 968,
+        "case": "librispeech_61-70968-0054",
+        "metric": "utmosv2",
+        "condition": "apron_0"
+      },
+      {
+        "index": 969,
+        "case": "librispeech_61-70968-0054",
+        "metric": "utmosv2",
+        "condition": "apron_minus3"
+      },
+      {
+        "index": 970,
+        "case": "librispeech_61-70968-0054",
+        "metric": "utmosv2",
+        "condition": "apron_plus3"
+      },
+      {
+        "index": 971,
+        "case": "librispeech_61-70968-0054",
+        "metric": "utmosv2",
+        "condition": "llsm2_0"
+      },
+      {
+        "index": 973,
+        "case": "librispeech_672-122797-0003",
+        "metric": "ecapa",
+        "condition": "apron_minus3"
+      },
+      {
+        "index": 974,
+        "case": "librispeech_672-122797-0003",
+        "metric": "ecapa",
+        "condition": "apron_plus3"
+      },
+      {
+        "index": 980,
+        "case": "librispeech_672-122797-0003",
+        "metric": "utmosv2",
+        "condition": "apron_0"
+      },
+      {
+        "index": 981,
+        "case": "librispeech_672-122797-0003",
+        "metric": "utmosv2",
+        "condition": "apron_minus3"
+      },
+      {
+        "index": 982,
+        "case": "librispeech_672-122797-0003",
+        "metric": "utmosv2",
+        "condition": "apron_plus3"
+      },
+      {
+        "index": 983,
+        "case": "librispeech_672-122797-0003",
+        "metric": "utmosv2",
+        "condition": "llsm2_0"
+      },
+      {
+        "index": 985,
+        "case": "librispeech_672-122797-0044",
+        "metric": "ecapa",
+        "condition": "apron_minus3"
+      },
+      {
+        "index": 986,
+        "case": "librispeech_672-122797-0044",
+        "metric": "ecapa",
+        "condition": "apron_plus3"
+      },
+      {
+        "index": 992,
+        "case": "librispeech_672-122797-0044",
+        "metric": "utmosv2",
+        "condition": "apron_0"
+      },
+      {
+        "index": 993,
+        "case": "librispeech_672-122797-0044",
+        "metric": "utmosv2",
+        "condition": "apron_minus3"
+      },
+      {
+        "index": 994,
+        "case": "librispeech_672-122797-0044",
+        "metric": "utmosv2",
+        "condition": "apron_plus3"
+      },
+      {
+        "index": 995,
+        "case": "librispeech_672-122797-0044",
+        "metric": "utmosv2",
+        "condition": "llsm2_0"
+      },
+      {
+        "index": 997,
+        "case": "librispeech_672-122797-0056",
+        "metric": "ecapa",
+        "condition": "apron_minus3"
+      },
+      {
+        "index": 998,
+        "case": "librispeech_672-122797-0056",
+        "metric": "ecapa",
+        "condition": "apron_plus3"
+      },
+      {
+        "index": 1004,
+        "case": "librispeech_672-122797-0056",
+        "metric": "utmosv2",
+        "condition": "apron_0"
+      },
+      {
+        "index": 1005,
+        "case": "librispeech_672-122797-0056",
+        "metric": "utmosv2",
+        "condition": "apron_minus3"
+      },
+      {
+        "index": 1006,
+        "case": "librispeech_672-122797-0056",
+        "metric": "utmosv2",
+        "condition": "apron_plus3"
+      },
+      {
+        "index": 1007,
+        "case": "librispeech_672-122797-0056",
+        "metric": "utmosv2",
+        "condition": "llsm2_0"
+      },
+      {
+        "index": 1009,
+        "case": "librispeech_6829-68769-0014",
+        "metric": "ecapa",
+        "condition": "apron_minus3"
+      },
+      {
+        "index": 1010,
+        "case": "librispeech_6829-68769-0014",
+        "metric": "ecapa",
+        "condition": "apron_plus3"
+      },
+      {
+        "index": 1016,
+        "case": "librispeech_6829-68769-0014",
+        "metric": "utmosv2",
+        "condition": "apron_0"
+      },
+      {
+        "index": 1017,
+        "case": "librispeech_6829-68769-0014",
+        "metric": "utmosv2",
+        "condition": "apron_minus3"
+      },
+      {
+        "index": 1018,
+        "case": "librispeech_6829-68769-0014",
+        "metric": "utmosv2",
+        "condition": "apron_plus3"
+      },
+      {
+        "index": 1019,
+        "case": "librispeech_6829-68769-0014",
+        "metric": "utmosv2",
+        "condition": "llsm2_0"
+      },
+      {
+        "index": 1021,
+        "case": "librispeech_6829-68769-0038",
+        "metric": "ecapa",
+        "condition": "apron_minus3"
+      },
+      {
+        "index": 1022,
+        "case": "librispeech_6829-68769-0038",
+        "metric": "ecapa",
+        "condition": "apron_plus3"
+      },
+      {
+        "index": 1028,
+        "case": "librispeech_6829-68769-0038",
+        "metric": "utmosv2",
+        "condition": "apron_0"
+      },
+      {
+        "index": 1029,
+        "case": "librispeech_6829-68769-0038",
+        "metric": "utmosv2",
+        "condition": "apron_minus3"
+      },
+      {
+        "index": 1030,
+        "case": "librispeech_6829-68769-0038",
+        "metric": "utmosv2",
+        "condition": "apron_plus3"
+      },
+      {
+        "index": 1031,
+        "case": "librispeech_6829-68769-0038",
+        "metric": "utmosv2",
+        "condition": "llsm2_0"
+      },
+      {
+        "index": 1033,
+        "case": "librispeech_6829-68769-0041",
+        "metric": "ecapa",
+        "condition": "apron_minus3"
+      },
+      {
+        "index": 1034,
+        "case": "librispeech_6829-68769-0041",
+        "metric": "ecapa",
+        "condition": "apron_plus3"
+      },
+      {
+        "index": 1040,
+        "case": "librispeech_6829-68769-0041",
+        "metric": "utmosv2",
+        "condition": "apron_0"
+      },
+      {
+        "index": 1041,
+        "case": "librispeech_6829-68769-0041",
+        "metric": "utmosv2",
+        "condition": "apron_minus3"
+      },
+      {
+        "index": 1042,
+        "case": "librispeech_6829-68769-0041",
+        "metric": "utmosv2",
+        "condition": "apron_plus3"
+      },
+      {
+        "index": 1043,
+        "case": "librispeech_6829-68769-0041",
+        "metric": "utmosv2",
+        "condition": "llsm2_0"
+      },
+      {
+        "index": 1045,
+        "case": "librispeech_6930-75918-0013",
+        "metric": "ecapa",
+        "condition": "apron_minus3"
+      },
+      {
+        "index": 1046,
+        "case": "librispeech_6930-75918-0013",
+        "metric": "ecapa",
+        "condition": "apron_plus3"
+      },
+      {
+        "index": 1052,
+        "case": "librispeech_6930-75918-0013",
+        "metric": "utmosv2",
+        "condition": "apron_0"
+      },
+      {
+        "index": 1053,
+        "case": "librispeech_6930-75918-0013",
+        "metric": "utmosv2",
+        "condition": "apron_minus3"
+      },
+      {
+        "index": 1054,
+        "case": "librispeech_6930-75918-0013",
+        "metric": "utmosv2",
+        "condition": "apron_plus3"
+      },
+      {
+        "index": 1055,
+        "case": "librispeech_6930-75918-0013",
+        "metric": "utmosv2",
+        "condition": "llsm2_0"
+      },
+      {
+        "index": 1057,
+        "case": "librispeech_6930-76324-0024",
+        "metric": "ecapa",
+        "condition": "apron_minus3"
+      },
+      {
+        "index": 1058,
+        "case": "librispeech_6930-76324-0024",
+        "metric": "ecapa",
+        "condition": "apron_plus3"
+      },
+      {
+        "index": 1064,
+        "case": "librispeech_6930-76324-0024",
+        "metric": "utmosv2",
+        "condition": "apron_0"
+      },
+      {
+        "index": 1065,
+        "case": "librispeech_6930-76324-0024",
+        "metric": "utmosv2",
+        "condition": "apron_minus3"
+      },
+      {
+        "index": 1066,
+        "case": "librispeech_6930-76324-0024",
+        "metric": "utmosv2",
+        "condition": "apron_plus3"
+      },
+      {
+        "index": 1067,
+        "case": "librispeech_6930-76324-0024",
+        "metric": "utmosv2",
+        "condition": "llsm2_0"
+      },
+      {
+        "index": 1069,
+        "case": "librispeech_6930-81414-0026",
+        "metric": "ecapa",
+        "condition": "apron_minus3"
+      },
+      {
+        "index": 1070,
+        "case": "librispeech_6930-81414-0026",
+        "metric": "ecapa",
+        "condition": "apron_plus3"
+      },
+      {
+        "index": 1076,
+        "case": "librispeech_6930-81414-0026",
+        "metric": "utmosv2",
+        "condition": "apron_0"
+      },
+      {
+        "index": 1077,
+        "case": "librispeech_6930-81414-0026",
+        "metric": "utmosv2",
+        "condition": "apron_minus3"
+      },
+      {
+        "index": 1078,
+        "case": "librispeech_6930-81414-0026",
+        "metric": "utmosv2",
+        "condition": "apron_plus3"
+      },
+      {
+        "index": 1079,
+        "case": "librispeech_6930-81414-0026",
+        "metric": "utmosv2",
+        "condition": "llsm2_0"
+      },
+      {
+        "index": 1081,
+        "case": "librispeech_7021-79740-0002",
+        "metric": "ecapa",
+        "condition": "apron_minus3"
+      },
+      {
+        "index": 1082,
+        "case": "librispeech_7021-79740-0002",
+        "metric": "ecapa",
+        "condition": "apron_plus3"
+      },
+      {
+        "index": 1088,
+        "case": "librispeech_7021-79740-0002",
+        "metric": "utmosv2",
+        "condition": "apron_0"
+      },
+      {
+        "index": 1089,
+        "case": "librispeech_7021-79740-0002",
+        "metric": "utmosv2",
+        "condition": "apron_minus3"
+      },
+      {
+        "index": 1090,
+        "case": "librispeech_7021-79740-0002",
+        "metric": "utmosv2",
+        "condition": "apron_plus3"
+      },
+      {
+        "index": 1091,
+        "case": "librispeech_7021-79740-0002",
+        "metric": "utmosv2",
+        "condition": "llsm2_0"
+      },
+      {
+        "index": 1093,
+        "case": "librispeech_7021-79740-0011",
+        "metric": "ecapa",
+        "condition": "apron_minus3"
+      },
+      {
+        "index": 1094,
+        "case": "librispeech_7021-79740-0011",
+        "metric": "ecapa",
+        "condition": "apron_plus3"
+      },
+      {
+        "index": 1100,
+        "case": "librispeech_7021-79740-0011",
+        "metric": "utmosv2",
+        "condition": "apron_0"
+      },
+      {
+        "index": 1101,
+        "case": "librispeech_7021-79740-0011",
+        "metric": "utmosv2",
+        "condition": "apron_minus3"
+      },
+      {
+        "index": 1102,
+        "case": "librispeech_7021-79740-0011",
+        "metric": "utmosv2",
+        "condition": "apron_plus3"
+      },
+      {
+        "index": 1103,
+        "case": "librispeech_7021-79740-0011",
+        "metric": "utmosv2",
+        "condition": "llsm2_0"
+      },
+      {
+        "index": 1105,
+        "case": "librispeech_7021-85628-0025",
+        "metric": "ecapa",
+        "condition": "apron_minus3"
+      },
+      {
+        "index": 1106,
+        "case": "librispeech_7021-85628-0025",
+        "metric": "ecapa",
+        "condition": "apron_plus3"
+      },
+      {
+        "index": 1112,
+        "case": "librispeech_7021-85628-0025",
+        "metric": "utmosv2",
+        "condition": "apron_0"
+      },
+      {
+        "index": 1113,
+        "case": "librispeech_7021-85628-0025",
+        "metric": "utmosv2",
+        "condition": "apron_minus3"
+      },
+      {
+        "index": 1114,
+        "case": "librispeech_7021-85628-0025",
+        "metric": "utmosv2",
+        "condition": "apron_plus3"
+      },
+      {
+        "index": 1115,
+        "case": "librispeech_7021-85628-0025",
+        "metric": "utmosv2",
+        "condition": "llsm2_0"
+      },
+      {
+        "index": 1117,
+        "case": "librispeech_7127-75946-0002",
+        "metric": "ecapa",
+        "condition": "apron_minus3"
+      },
+      {
+        "index": 1118,
+        "case": "librispeech_7127-75946-0002",
+        "metric": "ecapa",
+        "condition": "apron_plus3"
+      },
+      {
+        "index": 1124,
+        "case": "librispeech_7127-75946-0002",
+        "metric": "utmosv2",
+        "condition": "apron_0"
+      },
+      {
+        "index": 1125,
+        "case": "librispeech_7127-75946-0002",
+        "metric": "utmosv2",
+        "condition": "apron_minus3"
+      },
+      {
+        "index": 1126,
+        "case": "librispeech_7127-75946-0002",
+        "metric": "utmosv2",
+        "condition": "apron_plus3"
+      },
+      {
+        "index": 1127,
+        "case": "librispeech_7127-75946-0002",
+        "metric": "utmosv2",
+        "condition": "llsm2_0"
+      },
+      {
+        "index": 1129,
+        "case": "librispeech_7127-75946-0029",
+        "metric": "ecapa",
+        "condition": "apron_minus3"
+      },
+      {
+        "index": 1130,
+        "case": "librispeech_7127-75946-0029",
+        "metric": "ecapa",
+        "condition": "apron_plus3"
+      },
+      {
+        "index": 1136,
+        "case": "librispeech_7127-75946-0029",
+        "metric": "utmosv2",
+        "condition": "apron_0"
+      },
+      {
+        "index": 1137,
+        "case": "librispeech_7127-75946-0029",
+        "metric": "utmosv2",
+        "condition": "apron_minus3"
+      },
+      {
+        "index": 1138,
+        "case": "librispeech_7127-75946-0029",
+        "metric": "utmosv2",
+        "condition": "apron_plus3"
+      },
+      {
+        "index": 1139,
+        "case": "librispeech_7127-75946-0029",
+        "metric": "utmosv2",
+        "condition": "llsm2_0"
+      },
+      {
+        "index": 1141,
+        "case": "librispeech_7127-75947-0011",
+        "metric": "ecapa",
+        "condition": "apron_minus3"
+      },
+      {
+        "index": 1142,
+        "case": "librispeech_7127-75947-0011",
+        "metric": "ecapa",
+        "condition": "apron_plus3"
+      },
+      {
+        "index": 1148,
+        "case": "librispeech_7127-75947-0011",
+        "metric": "utmosv2",
+        "condition": "apron_0"
+      },
+      {
+        "index": 1149,
+        "case": "librispeech_7127-75947-0011",
+        "metric": "utmosv2",
+        "condition": "apron_minus3"
+      },
+      {
+        "index": 1150,
+        "case": "librispeech_7127-75947-0011",
+        "metric": "utmosv2",
+        "condition": "apron_plus3"
+      },
+      {
+        "index": 1151,
+        "case": "librispeech_7127-75947-0011",
+        "metric": "utmosv2",
+        "condition": "llsm2_0"
+      },
+      {
+        "index": 1153,
+        "case": "librispeech_7176-88083-0002",
+        "metric": "ecapa",
+        "condition": "apron_minus3"
+      },
+      {
+        "index": 1154,
+        "case": "librispeech_7176-88083-0002",
+        "metric": "ecapa",
+        "condition": "apron_plus3"
+      },
+      {
+        "index": 1160,
+        "case": "librispeech_7176-88083-0002",
+        "metric": "utmosv2",
+        "condition": "apron_0"
+      },
+      {
+        "index": 1161,
+        "case": "librispeech_7176-88083-0002",
+        "metric": "utmosv2",
+        "condition": "apron_minus3"
+      },
+      {
+        "index": 1162,
+        "case": "librispeech_7176-88083-0002",
+        "metric": "utmosv2",
+        "condition": "apron_plus3"
+      },
+      {
+        "index": 1163,
+        "case": "librispeech_7176-88083-0002",
+        "metric": "utmosv2",
+        "condition": "llsm2_0"
+      },
+      {
+        "index": 1165,
+        "case": "librispeech_7176-88083-0004",
+        "metric": "ecapa",
+        "condition": "apron_minus3"
+      },
+      {
+        "index": 1166,
+        "case": "librispeech_7176-88083-0004",
+        "metric": "ecapa",
+        "condition": "apron_plus3"
+      },
+      {
+        "index": 1172,
+        "case": "librispeech_7176-88083-0004",
+        "metric": "utmosv2",
+        "condition": "apron_0"
+      },
+      {
+        "index": 1173,
+        "case": "librispeech_7176-88083-0004",
+        "metric": "utmosv2",
+        "condition": "apron_minus3"
+      },
+      {
+        "index": 1174,
+        "case": "librispeech_7176-88083-0004",
+        "metric": "utmosv2",
+        "condition": "apron_plus3"
+      },
+      {
+        "index": 1175,
+        "case": "librispeech_7176-88083-0004",
+        "metric": "utmosv2",
+        "condition": "llsm2_0"
+      },
+      {
+        "index": 1177,
+        "case": "librispeech_7176-88083-0026",
+        "metric": "ecapa",
+        "condition": "apron_minus3"
+      },
+      {
+        "index": 1178,
+        "case": "librispeech_7176-88083-0026",
+        "metric": "ecapa",
+        "condition": "apron_plus3"
+      },
+      {
+        "index": 1184,
+        "case": "librispeech_7176-88083-0026",
+        "metric": "utmosv2",
+        "condition": "apron_0"
+      },
+      {
+        "index": 1185,
+        "case": "librispeech_7176-88083-0026",
+        "metric": "utmosv2",
+        "condition": "apron_minus3"
+      },
+      {
+        "index": 1186,
+        "case": "librispeech_7176-88083-0026",
+        "metric": "utmosv2",
+        "condition": "apron_plus3"
+      },
+      {
+        "index": 1187,
+        "case": "librispeech_7176-88083-0026",
+        "metric": "utmosv2",
+        "condition": "llsm2_0"
+      },
+      {
+        "index": 1189,
+        "case": "librispeech_7729-102255-0028",
+        "metric": "ecapa",
+        "condition": "apron_minus3"
+      },
+      {
+        "index": 1190,
+        "case": "librispeech_7729-102255-0028",
+        "metric": "ecapa",
+        "condition": "apron_plus3"
+      },
+      {
+        "index": 1196,
+        "case": "librispeech_7729-102255-0028",
+        "metric": "utmosv2",
+        "condition": "apron_0"
+      },
+      {
+        "index": 1197,
+        "case": "librispeech_7729-102255-0028",
+        "metric": "utmosv2",
+        "condition": "apron_minus3"
+      },
+      {
+        "index": 1198,
+        "case": "librispeech_7729-102255-0028",
+        "metric": "utmosv2",
+        "condition": "apron_plus3"
+      },
+      {
+        "index": 1199,
+        "case": "librispeech_7729-102255-0028",
+        "metric": "utmosv2",
+        "condition": "llsm2_0"
+      },
+      {
+        "index": 1201,
+        "case": "librispeech_7729-102255-0038",
+        "metric": "ecapa",
+        "condition": "apron_minus3"
+      },
+      {
+        "index": 1202,
+        "case": "librispeech_7729-102255-0038",
+        "metric": "ecapa",
+        "condition": "apron_plus3"
+      },
+      {
+        "index": 1208,
+        "case": "librispeech_7729-102255-0038",
+        "metric": "utmosv2",
+        "condition": "apron_0"
+      },
+      {
+        "index": 1209,
+        "case": "librispeech_7729-102255-0038",
+        "metric": "utmosv2",
+        "condition": "apron_minus3"
+      },
+      {
+        "index": 1210,
+        "case": "librispeech_7729-102255-0038",
+        "metric": "utmosv2",
+        "condition": "apron_plus3"
+      },
+      {
+        "index": 1211,
+        "case": "librispeech_7729-102255-0038",
+        "metric": "utmosv2",
+        "condition": "llsm2_0"
+      },
+      {
+        "index": 1213,
+        "case": "librispeech_7729-102255-0042",
+        "metric": "ecapa",
+        "condition": "apron_minus3"
+      },
+      {
+        "index": 1214,
+        "case": "librispeech_7729-102255-0042",
+        "metric": "ecapa",
+        "condition": "apron_plus3"
+      },
+      {
+        "index": 1220,
+        "case": "librispeech_7729-102255-0042",
+        "metric": "utmosv2",
+        "condition": "apron_0"
+      },
+      {
+        "index": 1221,
+        "case": "librispeech_7729-102255-0042",
+        "metric": "utmosv2",
+        "condition": "apron_minus3"
+      },
+      {
+        "index": 1222,
+        "case": "librispeech_7729-102255-0042",
+        "metric": "utmosv2",
+        "condition": "apron_plus3"
+      },
+      {
+        "index": 1223,
+        "case": "librispeech_7729-102255-0042",
+        "metric": "utmosv2",
+        "condition": "llsm2_0"
+      },
+      {
+        "index": 1225,
+        "case": "librispeech_8224-274381-0010",
+        "metric": "ecapa",
+        "condition": "apron_minus3"
+      },
+      {
+        "index": 1226,
+        "case": "librispeech_8224-274381-0010",
+        "metric": "ecapa",
+        "condition": "apron_plus3"
+      },
+      {
+        "index": 1232,
+        "case": "librispeech_8224-274381-0010",
+        "metric": "utmosv2",
+        "condition": "apron_0"
+      },
+      {
+        "index": 1233,
+        "case": "librispeech_8224-274381-0010",
+        "metric": "utmosv2",
+        "condition": "apron_minus3"
+      },
+      {
+        "index": 1234,
+        "case": "librispeech_8224-274381-0010",
+        "metric": "utmosv2",
+        "condition": "apron_plus3"
+      },
+      {
+        "index": 1235,
+        "case": "librispeech_8224-274381-0010",
+        "metric": "utmosv2",
+        "condition": "llsm2_0"
+      },
+      {
+        "index": 1237,
+        "case": "librispeech_8224-274381-0013",
+        "metric": "ecapa",
+        "condition": "apron_minus3"
+      },
+      {
+        "index": 1238,
+        "case": "librispeech_8224-274381-0013",
+        "metric": "ecapa",
+        "condition": "apron_plus3"
+      },
+      {
+        "index": 1244,
+        "case": "librispeech_8224-274381-0013",
+        "metric": "utmosv2",
+        "condition": "apron_0"
+      },
+      {
+        "index": 1245,
+        "case": "librispeech_8224-274381-0013",
+        "metric": "utmosv2",
+        "condition": "apron_minus3"
+      },
+      {
+        "index": 1246,
+        "case": "librispeech_8224-274381-0013",
+        "metric": "utmosv2",
+        "condition": "apron_plus3"
+      },
+      {
+        "index": 1247,
+        "case": "librispeech_8224-274381-0013",
+        "metric": "utmosv2",
+        "condition": "llsm2_0"
+      },
+      {
+        "index": 1249,
+        "case": "librispeech_8224-274384-0010",
+        "metric": "ecapa",
+        "condition": "apron_minus3"
+      },
+      {
+        "index": 1250,
+        "case": "librispeech_8224-274384-0010",
+        "metric": "ecapa",
+        "condition": "apron_plus3"
+      },
+      {
+        "index": 1256,
+        "case": "librispeech_8224-274384-0010",
+        "metric": "utmosv2",
+        "condition": "apron_0"
+      },
+      {
+        "index": 1257,
+        "case": "librispeech_8224-274384-0010",
+        "metric": "utmosv2",
+        "condition": "apron_minus3"
+      },
+      {
+        "index": 1258,
+        "case": "librispeech_8224-274384-0010",
+        "metric": "utmosv2",
+        "condition": "apron_plus3"
+      },
+      {
+        "index": 1259,
+        "case": "librispeech_8224-274384-0010",
+        "metric": "utmosv2",
+        "condition": "llsm2_0"
+      },
+      {
+        "index": 1261,
+        "case": "librispeech_8230-279154-0018",
+        "metric": "ecapa",
+        "condition": "apron_minus3"
+      },
+      {
+        "index": 1262,
+        "case": "librispeech_8230-279154-0018",
+        "metric": "ecapa",
+        "condition": "apron_plus3"
+      },
+      {
+        "index": 1268,
+        "case": "librispeech_8230-279154-0018",
+        "metric": "utmosv2",
+        "condition": "apron_0"
+      },
+      {
+        "index": 1269,
+        "case": "librispeech_8230-279154-0018",
+        "metric": "utmosv2",
+        "condition": "apron_minus3"
+      },
+      {
+        "index": 1270,
+        "case": "librispeech_8230-279154-0018",
+        "metric": "utmosv2",
+        "condition": "apron_plus3"
+      },
+      {
+        "index": 1271,
+        "case": "librispeech_8230-279154-0018",
+        "metric": "utmosv2",
+        "condition": "llsm2_0"
+      },
+      {
+        "index": 1273,
+        "case": "librispeech_8230-279154-0032",
+        "metric": "ecapa",
+        "condition": "apron_minus3"
+      },
+      {
+        "index": 1274,
+        "case": "librispeech_8230-279154-0032",
+        "metric": "ecapa",
+        "condition": "apron_plus3"
+      },
+      {
+        "index": 1280,
+        "case": "librispeech_8230-279154-0032",
+        "metric": "utmosv2",
+        "condition": "apron_0"
+      },
+      {
+        "index": 1281,
+        "case": "librispeech_8230-279154-0032",
+        "metric": "utmosv2",
+        "condition": "apron_minus3"
+      },
+      {
+        "index": 1282,
+        "case": "librispeech_8230-279154-0032",
+        "metric": "utmosv2",
+        "condition": "apron_plus3"
+      },
+      {
+        "index": 1283,
+        "case": "librispeech_8230-279154-0032",
+        "metric": "utmosv2",
+        "condition": "llsm2_0"
+      },
+      {
+        "index": 1285,
+        "case": "librispeech_8230-279154-0033",
+        "metric": "ecapa",
+        "condition": "apron_minus3"
+      },
+      {
+        "index": 1286,
+        "case": "librispeech_8230-279154-0033",
+        "metric": "ecapa",
+        "condition": "apron_plus3"
+      },
+      {
+        "index": 1292,
+        "case": "librispeech_8230-279154-0033",
+        "metric": "utmosv2",
+        "condition": "apron_0"
+      },
+      {
+        "index": 1293,
+        "case": "librispeech_8230-279154-0033",
+        "metric": "utmosv2",
+        "condition": "apron_minus3"
+      },
+      {
+        "index": 1294,
+        "case": "librispeech_8230-279154-0033",
+        "metric": "utmosv2",
+        "condition": "apron_plus3"
+      },
+      {
+        "index": 1295,
+        "case": "librispeech_8230-279154-0033",
+        "metric": "utmosv2",
+        "condition": "llsm2_0"
+      },
+      {
+        "index": 1297,
+        "case": "librispeech_8455-210777-0010",
+        "metric": "ecapa",
+        "condition": "apron_minus3"
+      },
+      {
+        "index": 1298,
+        "case": "librispeech_8455-210777-0010",
+        "metric": "ecapa",
+        "condition": "apron_plus3"
+      },
+      {
+        "index": 1304,
+        "case": "librispeech_8455-210777-0010",
+        "metric": "utmosv2",
+        "condition": "apron_0"
+      },
+      {
+        "index": 1305,
+        "case": "librispeech_8455-210777-0010",
+        "metric": "utmosv2",
+        "condition": "apron_minus3"
+      },
+      {
+        "index": 1306,
+        "case": "librispeech_8455-210777-0010",
+        "metric": "utmosv2",
+        "condition": "apron_plus3"
+      },
+      {
+        "index": 1307,
+        "case": "librispeech_8455-210777-0010",
+        "metric": "utmosv2",
+        "condition": "llsm2_0"
+      },
+      {
+        "index": 1309,
+        "case": "librispeech_8455-210777-0049",
+        "metric": "ecapa",
+        "condition": "apron_minus3"
+      },
+      {
+        "index": 1310,
+        "case": "librispeech_8455-210777-0049",
+        "metric": "ecapa",
+        "condition": "apron_plus3"
+      },
+      {
+        "index": 1316,
+        "case": "librispeech_8455-210777-0049",
+        "metric": "utmosv2",
+        "condition": "apron_0"
+      },
+      {
+        "index": 1317,
+        "case": "librispeech_8455-210777-0049",
+        "metric": "utmosv2",
+        "condition": "apron_minus3"
+      },
+      {
+        "index": 1318,
+        "case": "librispeech_8455-210777-0049",
+        "metric": "utmosv2",
+        "condition": "apron_plus3"
+      },
+      {
+        "index": 1319,
+        "case": "librispeech_8455-210777-0049",
+        "metric": "utmosv2",
+        "condition": "llsm2_0"
+      },
+      {
+        "index": 1321,
+        "case": "librispeech_8455-210777-0060",
+        "metric": "ecapa",
+        "condition": "apron_minus3"
+      },
+      {
+        "index": 1322,
+        "case": "librispeech_8455-210777-0060",
+        "metric": "ecapa",
+        "condition": "apron_plus3"
+      },
+      {
+        "index": 1328,
+        "case": "librispeech_8455-210777-0060",
+        "metric": "utmosv2",
+        "condition": "apron_0"
+      },
+      {
+        "index": 1329,
+        "case": "librispeech_8455-210777-0060",
+        "metric": "utmosv2",
+        "condition": "apron_minus3"
+      },
+      {
+        "index": 1330,
+        "case": "librispeech_8455-210777-0060",
+        "metric": "utmosv2",
+        "condition": "apron_plus3"
+      },
+      {
+        "index": 1331,
+        "case": "librispeech_8455-210777-0060",
+        "metric": "utmosv2",
+        "condition": "llsm2_0"
+      },
+      {
+        "index": 1333,
+        "case": "librispeech_8463-294828-0003",
+        "metric": "ecapa",
+        "condition": "apron_minus3"
+      },
+      {
+        "index": 1334,
+        "case": "librispeech_8463-294828-0003",
+        "metric": "ecapa",
+        "condition": "apron_plus3"
+      },
+      {
+        "index": 1340,
+        "case": "librispeech_8463-294828-0003",
+        "metric": "utmosv2",
+        "condition": "apron_0"
+      },
+      {
+        "index": 1341,
+        "case": "librispeech_8463-294828-0003",
+        "metric": "utmosv2",
+        "condition": "apron_minus3"
+      },
+      {
+        "index": 1342,
+        "case": "librispeech_8463-294828-0003",
+        "metric": "utmosv2",
+        "condition": "apron_plus3"
+      },
+      {
+        "index": 1343,
+        "case": "librispeech_8463-294828-0003",
+        "metric": "utmosv2",
+        "condition": "llsm2_0"
+      },
+      {
+        "index": 1345,
+        "case": "librispeech_8463-294828-0014",
+        "metric": "ecapa",
+        "condition": "apron_minus3"
+      },
+      {
+        "index": 1346,
+        "case": "librispeech_8463-294828-0014",
+        "metric": "ecapa",
+        "condition": "apron_plus3"
+      },
+      {
+        "index": 1352,
+        "case": "librispeech_8463-294828-0014",
+        "metric": "utmosv2",
+        "condition": "apron_0"
+      },
+      {
+        "index": 1353,
+        "case": "librispeech_8463-294828-0014",
+        "metric": "utmosv2",
+        "condition": "apron_minus3"
+      },
+      {
+        "index": 1354,
+        "case": "librispeech_8463-294828-0014",
+        "metric": "utmosv2",
+        "condition": "apron_plus3"
+      },
+      {
+        "index": 1355,
+        "case": "librispeech_8463-294828-0014",
+        "metric": "utmosv2",
+        "condition": "llsm2_0"
+      },
+      {
+        "index": 1357,
+        "case": "librispeech_8463-294828-0022",
+        "metric": "ecapa",
+        "condition": "apron_minus3"
+      },
+      {
+        "index": 1358,
+        "case": "librispeech_8463-294828-0022",
+        "metric": "ecapa",
+        "condition": "apron_plus3"
+      },
+      {
+        "index": 1364,
+        "case": "librispeech_8463-294828-0022",
+        "metric": "utmosv2",
+        "condition": "apron_0"
+      },
+      {
+        "index": 1365,
+        "case": "librispeech_8463-294828-0022",
+        "metric": "utmosv2",
+        "condition": "apron_minus3"
+      },
+      {
+        "index": 1366,
+        "case": "librispeech_8463-294828-0022",
+        "metric": "utmosv2",
+        "condition": "apron_plus3"
+      },
+      {
+        "index": 1367,
+        "case": "librispeech_8463-294828-0022",
+        "metric": "utmosv2",
+        "condition": "llsm2_0"
+      },
+      {
+        "index": 1369,
+        "case": "librispeech_8555-284447-0007",
+        "metric": "ecapa",
+        "condition": "apron_minus3"
+      },
+      {
+        "index": 1370,
+        "case": "librispeech_8555-284447-0007",
+        "metric": "ecapa",
+        "condition": "apron_plus3"
+      },
+      {
+        "index": 1376,
+        "case": "librispeech_8555-284447-0007",
+        "metric": "utmosv2",
+        "condition": "apron_0"
+      },
+      {
+        "index": 1377,
+        "case": "librispeech_8555-284447-0007",
+        "metric": "utmosv2",
+        "condition": "apron_minus3"
+      },
+      {
+        "index": 1378,
+        "case": "librispeech_8555-284447-0007",
+        "metric": "utmosv2",
+        "condition": "apron_plus3"
+      },
+      {
+        "index": 1379,
+        "case": "librispeech_8555-284447-0007",
+        "metric": "utmosv2",
+        "condition": "llsm2_0"
+      },
+      {
+        "index": 1381,
+        "case": "librispeech_8555-284449-0020",
+        "metric": "ecapa",
+        "condition": "apron_minus3"
+      },
+      {
+        "index": 1382,
+        "case": "librispeech_8555-284449-0020",
+        "metric": "ecapa",
+        "condition": "apron_plus3"
+      },
+      {
+        "index": 1388,
+        "case": "librispeech_8555-284449-0020",
+        "metric": "utmosv2",
+        "condition": "apron_0"
+      },
+      {
+        "index": 1389,
+        "case": "librispeech_8555-284449-0020",
+        "metric": "utmosv2",
+        "condition": "apron_minus3"
+      },
+      {
+        "index": 1390,
+        "case": "librispeech_8555-284449-0020",
+        "metric": "utmosv2",
+        "condition": "apron_plus3"
+      },
+      {
+        "index": 1391,
+        "case": "librispeech_8555-284449-0020",
+        "metric": "utmosv2",
+        "condition": "llsm2_0"
+      },
+      {
+        "index": 1393,
+        "case": "librispeech_8555-292519-0001",
+        "metric": "ecapa",
+        "condition": "apron_minus3"
+      },
+      {
+        "index": 1394,
+        "case": "librispeech_8555-292519-0001",
+        "metric": "ecapa",
+        "condition": "apron_plus3"
+      },
+      {
+        "index": 1400,
+        "case": "librispeech_8555-292519-0001",
+        "metric": "utmosv2",
+        "condition": "apron_0"
+      },
+      {
+        "index": 1401,
+        "case": "librispeech_8555-292519-0001",
+        "metric": "utmosv2",
+        "condition": "apron_minus3"
+      },
+      {
+        "index": 1402,
+        "case": "librispeech_8555-292519-0001",
+        "metric": "utmosv2",
+        "condition": "apron_plus3"
+      },
+      {
+        "index": 1403,
+        "case": "librispeech_8555-292519-0001",
+        "metric": "utmosv2",
+        "condition": "llsm2_0"
+      },
+      {
+        "index": 1405,
+        "case": "librispeech_908-157963-0018",
+        "metric": "ecapa",
+        "condition": "apron_minus3"
+      },
+      {
+        "index": 1406,
+        "case": "librispeech_908-157963-0018",
+        "metric": "ecapa",
+        "condition": "apron_plus3"
+      },
+      {
+        "index": 1412,
+        "case": "librispeech_908-157963-0018",
+        "metric": "utmosv2",
+        "condition": "apron_0"
+      },
+      {
+        "index": 1413,
+        "case": "librispeech_908-157963-0018",
+        "metric": "utmosv2",
+        "condition": "apron_minus3"
+      },
+      {
+        "index": 1414,
+        "case": "librispeech_908-157963-0018",
+        "metric": "utmosv2",
+        "condition": "apron_plus3"
+      },
+      {
+        "index": 1415,
+        "case": "librispeech_908-157963-0018",
+        "metric": "utmosv2",
+        "condition": "llsm2_0"
+      },
+      {
+        "index": 1417,
+        "case": "librispeech_908-31957-0002",
+        "metric": "ecapa",
+        "condition": "apron_minus3"
+      },
+      {
+        "index": 1418,
+        "case": "librispeech_908-31957-0002",
+        "metric": "ecapa",
+        "condition": "apron_plus3"
+      },
+      {
+        "index": 1424,
+        "case": "librispeech_908-31957-0002",
+        "metric": "utmosv2",
+        "condition": "apron_0"
+      },
+      {
+        "index": 1425,
+        "case": "librispeech_908-31957-0002",
+        "metric": "utmosv2",
+        "condition": "apron_minus3"
+      },
+      {
+        "index": 1426,
+        "case": "librispeech_908-31957-0002",
+        "metric": "utmosv2",
+        "condition": "apron_plus3"
+      },
+      {
+        "index": 1427,
+        "case": "librispeech_908-31957-0002",
+        "metric": "utmosv2",
+        "condition": "llsm2_0"
+      },
+      {
+        "index": 1429,
+        "case": "librispeech_908-31957-0016",
+        "metric": "ecapa",
+        "condition": "apron_minus3"
+      },
+      {
+        "index": 1430,
+        "case": "librispeech_908-31957-0016",
+        "metric": "ecapa",
+        "condition": "apron_plus3"
+      },
+      {
+        "index": 1436,
+        "case": "librispeech_908-31957-0016",
+        "metric": "utmosv2",
+        "condition": "apron_0"
+      },
+      {
+        "index": 1437,
+        "case": "librispeech_908-31957-0016",
+        "metric": "utmosv2",
+        "condition": "apron_minus3"
+      },
+      {
+        "index": 1438,
+        "case": "librispeech_908-31957-0016",
+        "metric": "utmosv2",
+        "condition": "apron_plus3"
+      },
+      {
+        "index": 1439,
+        "case": "librispeech_908-31957-0016",
+        "metric": "utmosv2",
+        "condition": "llsm2_0"
+      }
+    ]
+  },
+  "new_published_rows": {
+    "path": "supplement-individual-results.json",
+    "bytes": 674415,
+    "sha256": "d1e3c86bf4d99cc8164ace81c26c53f9677af71bb453fbb668afee696c9563e0",
+    "new_count": 720
+  },
+  "supplement_results": {
+    "path": "supplement-results.json",
+    "bytes": 10442,
+    "sha256": "fffae0092bcd3856bf7dfece65cb17f9cb5e545284088bb00e9d84602bbf2b50"
+  },
+  "saved_result_audit": {
+    "path": "supplement-saved-result-audit.json",
+    "bytes": 7065,
+    "sha256": "7e504d4ddc59f2ddb3de280e1c167805614c62a1f0bca52f655a6d5092075faf",
+    "same_environment_saved_value_review": true,
+    "independent_scientific_reproduction": false
+  },
+  "input_manifest_sha256": "1f392fc60fbca4003c236f03ffd9edba82b048737f23cf250295c1b4c6c85193",
+  "source_and_asset_gate": {
+    "merged_commit": "9440f7e6997c1a6f0262809b88ce5c3b253cc7f9",
+    "frozen_original_source_commit": "06b6da5e5822500993bdfc44b3bf35f84acaea46",
+    "source_files_verified": 24,
+    "inputs_verified": 120,
+    "assets_verified": 5,
+    "runtime_distributions_verified": 12,
+    "original_native_outputs_verified_by_summary": 480,
+    "original_quality_rows_verified_by_summary": 1440
+  },
+  "preflight_history": [
+    {
+      "attempt": 1,
+      "status": "failed_before_runroot_or_scientific_launch",
+      "reason": "metadata check invoked system Python instead of the planned .venv interpreter; pyworld not installed in system Python",
+      "scientific_process_started": false
+    },
+    {
+      "attempt": 2,
+      "status": "passed",
+      "python_executable": "repository .venv/bin/python"
+    }
+  ],
+  "execution_limits": {
+    "native": {
+      "threads": 1,
+      "address_space_bytes": 8589934592,
+      "wall_seconds": 1800,
+      "terminate_grace_seconds": 10
+    },
+    "quality": {
+      "threads": 2,
+      "address_space_bytes": 12884901888,
+      "wall_seconds": 3600,
+      "terminate_grace_seconds": 10
+    },
+    "maximum_parallel_jobs": 2
+  },
+  "new_layer0_analysis": "Each input was analyzed once for Layer0 in the supplement; -3/+3 edits used separate copies of that chunk. The original Layer0 zero-edit chunk was not saved and was not reused.",
+  "original_assets_and_models": "The same UTMOSv2 and ECAPA model provenance was byte-compared with original runs. Asset SHA and runtime versions remain in the original published provenance.json.",
+  "native_cases": 120,
+  "new_native_waves": 240,
+  "new_quality_rows": 720,
+  "new_quality_missing": 0,
+  "invocations": [
+    {
+      "phase": "native",
+      "owner": 0,
+      "metric": null,
+      "actual_child_exit_code": 0,
+      "launcher_exit_code": 0,
+      "reaped_by_launcher": true,
+      "elapsed_seconds": 31.023813281000002,
+      "max_rss_kib": 275412,
+      "timed_out": false,
+      "warnings_in_full_log": 1,
+      "errors_in_full_log": 0,
+      "invocation": {
+        "bytes": 2515,
+        "sha256": "85b9c06c3a1b7e7d38cee21e8622522c42133a66f9f157073006f05a4498b8d3"
+      },
+      "stdout": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "stderr": {
+        "bytes": 658,
+        "sha256": "afa539ba507ac9f69e06277bf8d69917841019f3b4d2ccf0de8ce3649564b262"
+      },
+      "full_log": {
+        "bytes": 658,
+        "sha256": "afa539ba507ac9f69e06277bf8d69917841019f3b4d2ccf0de8ce3649564b262"
+      }
+    },
+    {
+      "phase": "native",
+      "owner": 1,
+      "metric": null,
+      "actual_child_exit_code": 0,
+      "launcher_exit_code": 0,
+      "reaped_by_launcher": true,
+      "elapsed_seconds": 30.018261934999828,
+      "max_rss_kib": 274556,
+      "timed_out": false,
+      "warnings_in_full_log": 1,
+      "errors_in_full_log": 0,
+      "invocation": {
+        "bytes": 2515,
+        "sha256": "025fdc0154161096b856d38ec7f6bdadb8c4afbf2ee68e5f594e48cb64925a37"
+      },
+      "stdout": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "stderr": {
+        "bytes": 658,
+        "sha256": "8153a32d039f0fae87a4f77e7734edc0008f44749f4e6dfec1e8961765592886"
+      },
+      "full_log": {
+        "bytes": 658,
+        "sha256": "8153a32d039f0fae87a4f77e7734edc0008f44749f4e6dfec1e8961765592886"
+      }
+    },
+    {
+      "phase": "native",
+      "owner": 2,
+      "metric": null,
+      "actual_child_exit_code": 0,
+      "launcher_exit_code": 0,
+      "reaped_by_launcher": true,
+      "elapsed_seconds": 28.019782733000284,
+      "max_rss_kib": 276228,
+      "timed_out": false,
+      "warnings_in_full_log": 1,
+      "errors_in_full_log": 0,
+      "invocation": {
+        "bytes": 2516,
+        "sha256": "f9764d511e8ebf036e55b40d9b41abac7c678fd77af56fa8831f4331e176b530"
+      },
+      "stdout": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "stderr": {
+        "bytes": 658,
+        "sha256": "cc0192d528f08526b7f07a66443a1b9ee96943d983252d9ac6d03f828d6108b5"
+      },
+      "full_log": {
+        "bytes": 658,
+        "sha256": "cc0192d528f08526b7f07a66443a1b9ee96943d983252d9ac6d03f828d6108b5"
+      }
+    },
+    {
+      "phase": "quality",
+      "owner": 0,
+      "metric": "utmosv2",
+      "actual_child_exit_code": 0,
+      "launcher_exit_code": 0,
+      "reaped_by_launcher": true,
+      "elapsed_seconds": 294.3283425509999,
+      "max_rss_kib": 1980980,
+      "timed_out": false,
+      "warnings_in_full_log": 593,
+      "errors_in_full_log": 0,
+      "invocation": {
+        "bytes": 2987,
+        "sha256": "1981f4d2f45d6ecbc93db3ca44904fa1ac57a1360fd6d8eef3b4358574860544"
+      },
+      "stdout": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "stderr": {
+        "bytes": 219541,
+        "sha256": "1c2ef3021728f238c3d01207ce85c57a3d6f4a42455234ef5917245902680df9"
+      },
+      "full_log": {
+        "bytes": 292371,
+        "sha256": "74aaeef61f7c8946bb46edf5b5ce72f5bf933f390e832009b31a1727649e7419"
+      }
+    },
+    {
+      "phase": "quality",
+      "owner": 0,
+      "metric": "ecapa",
+      "actual_child_exit_code": 0,
+      "launcher_exit_code": 0,
+      "reaped_by_launcher": true,
+      "elapsed_seconds": 58.31528595599957,
+      "max_rss_kib": 517100,
+      "timed_out": false,
+      "warnings_in_full_log": 5,
+      "errors_in_full_log": 0,
+      "invocation": {
+        "bytes": 2978,
+        "sha256": "b45629facd651a5ef115a27dc9bbf459ac514e76931138315723eb5cd1cfbe92"
+      },
+      "stdout": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "stderr": {
+        "bytes": 3881,
+        "sha256": "cbeaa1bce9e86460e4e3e619e48c94ff91807c24267598d5009b28b055a3f283"
+      },
+      "full_log": {
+        "bytes": 3881,
+        "sha256": "cbeaa1bce9e86460e4e3e619e48c94ff91807c24267598d5009b28b055a3f283"
+      }
+    },
+    {
+      "phase": "quality",
+      "owner": 1,
+      "metric": "utmosv2",
+      "actual_child_exit_code": 0,
+      "launcher_exit_code": 0,
+      "reaped_by_launcher": true,
+      "elapsed_seconds": 275.0735468949997,
+      "max_rss_kib": 1981016,
+      "timed_out": false,
+      "warnings_in_full_log": 551,
+      "errors_in_full_log": 0,
+      "invocation": {
+        "bytes": 2987,
+        "sha256": "a8215c9b6cbde995537ccc247ccae927cf0b6482e19c1aafeed702662a2e4f08"
+      },
+      "stdout": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "stderr": {
+        "bytes": 204037,
+        "sha256": "532c7e9cebacf6f1625aeb8c99064430322cd144e5f024795795a3e757c396dd"
+      },
+      "full_log": {
+        "bytes": 271731,
+        "sha256": "aca125aec9bfa1d826288369d212cc973a2a22e55c66f84c61400431eb5b36eb"
+      }
+    },
+    {
+      "phase": "quality",
+      "owner": 1,
+      "metric": "ecapa",
+      "actual_child_exit_code": 0,
+      "launcher_exit_code": 0,
+      "reaped_by_launcher": true,
+      "elapsed_seconds": 60.33072315899972,
+      "max_rss_kib": 551852,
+      "timed_out": false,
+      "warnings_in_full_log": 5,
+      "errors_in_full_log": 0,
+      "invocation": {
+        "bytes": 2979,
+        "sha256": "d83a61de81a811adac014b4d87aee3891cf04cdf8409e06a2b2b3e6838582e69"
+      },
+      "stdout": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "stderr": {
+        "bytes": 3881,
+        "sha256": "4fe4f752538af01b01f25b0a09c1611d092700d2286237da332e330b069ff229"
+      },
+      "full_log": {
+        "bytes": 3881,
+        "sha256": "4fe4f752538af01b01f25b0a09c1611d092700d2286237da332e330b069ff229"
+      }
+    },
+    {
+      "phase": "quality",
+      "owner": 2,
+      "metric": "utmosv2",
+      "actual_child_exit_code": 0,
+      "launcher_exit_code": 0,
+      "reaped_by_launcher": true,
+      "elapsed_seconds": 251.18433979099973,
+      "max_rss_kib": 1980988,
+      "timed_out": false,
+      "warnings_in_full_log": 551,
+      "errors_in_full_log": 0,
+      "invocation": {
+        "bytes": 2988,
+        "sha256": "d2e6333b048a31ecd85f4501d3f4318f39ff0b303118ce7fbf9a885c4ec2adeb"
+      },
+      "stdout": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "stderr": {
+        "bytes": 204037,
+        "sha256": "1c7818e90eae65f436c5afa244b5784c08f1fd14dcf9172d18d34681ab022742"
+      },
+      "full_log": {
+        "bytes": 271731,
+        "sha256": "08f43ae4baa2f606bb78fa56ba84a3b170808f33c7b3001b1dd88c1f708df779"
+      }
+    },
+    {
+      "phase": "quality",
+      "owner": 2,
+      "metric": "ecapa",
+      "actual_child_exit_code": 0,
+      "launcher_exit_code": 0,
+      "reaped_by_launcher": true,
+      "elapsed_seconds": 57.58774533899941,
+      "max_rss_kib": 531424,
+      "timed_out": false,
+      "warnings_in_full_log": 5,
+      "errors_in_full_log": 0,
+      "invocation": {
+        "bytes": 2978,
+        "sha256": "9c63cb7c6f3fca09dfa6834fe5e2e803e590d19123a24dcaeff924b8562b105f"
+      },
+      "stdout": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "stderr": {
+        "bytes": 3881,
+        "sha256": "8a7820ad1ba8082814e9c3f1db672ae2554c1585b805f75aa028a3593de12cb1"
+      },
+      "full_log": {
+        "bytes": 3881,
+        "sha256": "8a7820ad1ba8082814e9c3f1db672ae2554c1585b805f75aa028a3593de12cb1"
+      }
+    }
+  ],
+  "warnings_total": 1713,
+  "errors_total": 0,
+  "failure_notes": [
+    "The initial preflight used system Python for metadata inspection, found pyworld unavailable there, and stopped before creating the run root or starting a scientific child. The specified existing venv then passed the gate.",
+    "A local read-only native audit tally initially incremented total_cases per owner; the corrected saved-byte audit counted all 120 cases. No scientific process was rerun."
+  ],
+  "no_measurement_replayed_for_publication": true,
+  "raw_logs_and_full_native_audio_local_only": true
+}

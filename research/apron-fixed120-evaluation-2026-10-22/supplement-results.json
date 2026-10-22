@@ -1,0 +1,308 @@
+{
+  "schema_version": 1,
+  "kind": "apron_pitch_control_post_result_supplement_descriptive_results",
+  "comparison_note": "Post-result supplemental controls. The original fixed120 evaluation was planned before its measurements; this Layer0 edited control was planned after seeing those aggregates.",
+  "support": {
+    "recordings": 120,
+    "speakers": 40,
+    "new_layer0_edited_waves": 240,
+    "new_quality_rows": 720,
+    "reused_original_quality_rows": 720,
+    "new_missing_rows": 0
+  },
+  "aggregation": "For each metric/condition/scope, use the saved public case values as Decimal, sum all 120 fixed-case values and divide by 120. Paired deltas are computed per case first and then averaged; no missing-value substitution or significance test.",
+  "original_published_rows": {
+    "path": "individual-results.json",
+    "bytes": 1052094,
+    "sha256": "078c8886db755d1b43398329ea06100e907e84baec7276a4f2121d5947598004",
+    "reused_count": 720,
+    "key_fields": [
+      "case",
+      "metric",
+      "condition"
+    ]
+  },
+  "supplement_new_rows": {
+    "path": "supplement-individual-results.json",
+    "bytes": 674415,
+    "sha256": "d1e3c86bf4d99cc8164ace81c26c53f9677af71bb453fbb668afee696c9563e0",
+    "new_count": 720
+  },
+  "means": [
+    {
+      "metric": "ecapa",
+      "condition": "apron_0",
+      "scope": "unedited_full_length",
+      "source": "supplement_new",
+      "count": 120,
+      "sum": "114.8888426423072815",
+      "mean": "0.957407022019227345833333333333333333333333333333333333333333",
+      "min": "0.7842870950698853",
+      "max": "0.9833803772926331"
+    },
+    {
+      "metric": "ecapa",
+      "condition": "apron_minus3",
+      "scope": "edited_full_length",
+      "source": "original_published",
+      "count": 120,
+      "sum": "100.7132260799407958",
+      "mean": "0.839276883999506631666666666666666666666666666666666666666667",
+      "min": "0.7066450715065002",
+      "max": "0.9188903570175171"
+    },
+    {
+      "metric": "ecapa",
+      "condition": "apron_plus3",
+      "scope": "edited_full_length",
+      "source": "original_published",
+      "count": 120,
+      "sum": "103.3542904853820805",
+      "mean": "0.861285754044850670833333333333333333333333333333333333333333",
+      "min": "0.7379299402236938",
+      "max": "0.9279561042785645"
+    },
+    {
+      "metric": "ecapa",
+      "condition": "llsm2_0",
+      "scope": "unedited_full_length",
+      "source": "supplement_new",
+      "count": 120,
+      "sum": "114.8309503197669987",
+      "mean": "0.9569245859980583225",
+      "min": "0.7827627062797546",
+      "max": "0.9829717874526978"
+    },
+    {
+      "metric": "ecapa",
+      "condition": "llsm2_minus3",
+      "scope": "edited_full_length",
+      "source": "supplement_new",
+      "count": 120,
+      "sum": "58.46513548493385330",
+      "mean": "0.4872094623744487775",
+      "min": "0.3030192255973816",
+      "max": "0.8218942284584045"
+    },
+    {
+      "metric": "ecapa",
+      "condition": "llsm2_plus3",
+      "scope": "edited_full_length",
+      "source": "supplement_new",
+      "count": 120,
+      "sum": "50.71384353935718522",
+      "mean": "0.4226153628279765435",
+      "min": "0.14402052760124207",
+      "max": "0.7809245586395264"
+    },
+    {
+      "metric": "utmosv2",
+      "condition": "apron_0",
+      "scope": "native_full_length",
+      "source": "original_published",
+      "count": 120,
+      "sum": "371.2599089145660417",
+      "mean": "3.0938325742880503475",
+      "min": "2.038215398788452",
+      "max": "4.14528226852417"
+    },
+    {
+      "metric": "utmosv2",
+      "condition": "apron_minus3",
+      "scope": "native_full_length",
+      "source": "original_published",
+      "count": 120,
+      "sum": "374.4052813053131084",
+      "mean": "3.12004401087760923666666666666666666666666666666666666666667",
+      "min": "1.8981006145477295",
+      "max": "4.169798374176025"
+    },
+    {
+      "metric": "utmosv2",
+      "condition": "apron_plus3",
+      "scope": "native_full_length",
+      "source": "original_published",
+      "count": 120,
+      "sum": "334.8797488212585437",
+      "mean": "2.79066457351048786416666666666666666666666666666666666666667",
+      "min": "1.4071216583251953",
+      "max": "3.613220453262329"
+    },
+    {
+      "metric": "utmosv2",
+      "condition": "llsm2_0",
+      "scope": "native_full_length",
+      "source": "original_published",
+      "count": 120,
+      "sum": "370.0524663925170893",
+      "mean": "3.08377055327097574416666666666666666666666666666666666666667",
+      "min": "2.0491106510162354",
+      "max": "4.336947917938232"
+    },
+    {
+      "metric": "utmosv2",
+      "condition": "llsm2_minus3",
+      "scope": "native_full_length",
+      "source": "supplement_new",
+      "count": 120,
+      "sum": "338.6488773822784419",
+      "mean": "2.8220739781856536825",
+      "min": "2.0238728523254395",
+      "max": "3.813969850540161"
+    },
+    {
+      "metric": "utmosv2",
+      "condition": "llsm2_plus3",
+      "scope": "native_full_length",
+      "source": "supplement_new",
+      "count": 120,
+      "sum": "316.6007618904113766",
+      "mean": "2.638339682420094805",
+      "min": "1.5713229179382324",
+      "max": "3.626084566116333"
+    }
+  ],
+  "paired_comparisons": [
+    {
+      "metric": "utmosv2",
+      "sign": "minus3",
+      "scope": "native_full_length",
+      "descriptive_statistics": {
+        "apron_edited_minus_layer0_edited": {
+          "count": 120,
+          "sum": "35.7564039230346665",
+          "mean": "0.297970032691955554166666666666666666666666666666666666666667",
+          "min": "-0.3126068115234376",
+          "max": "0.9933202266693116"
+        },
+        "apron_edit_minus_apron_zero": {
+          "count": 120,
+          "sum": "3.1453723907470667",
+          "mean": "0.0262114365895588891666666666666666666666666666666666666666667",
+          "min": "-0.8021962642669678",
+          "max": "0.890089511871338"
+        },
+        "layer0_edit_minus_layer0_zero": {
+          "count": 120,
+          "sum": "-31.4035890102386474",
+          "mean": "-0.261696575085322061666666666666666666666666666666666666666667",
+          "min": "-1.4432351589202877",
+          "max": "0.6500020027160646"
+        },
+        "difference_of_edit_changes": {
+          "count": 120,
+          "sum": "34.5489614009857141",
+          "mean": "0.287908011674880950833333333333333333333333333333333333333333",
+          "min": "-0.3347716331481935",
+          "max": "1.0176956653594970"
+        }
+      }
+    },
+    {
+      "metric": "utmosv2",
+      "sign": "plus3",
+      "scope": "native_full_length",
+      "descriptive_statistics": {
+        "apron_edited_minus_layer0_edited": {
+          "count": 120,
+          "sum": "18.2789869308471671",
+          "mean": "0.152324891090393059166666666666666666666666666666666666666667",
+          "min": "-0.5179593563079834",
+          "max": "1.0716111660003662"
+        },
+        "apron_edit_minus_apron_zero": {
+          "count": 120,
+          "sum": "-36.3801600933074980",
+          "mean": "-0.303168000777562483333333333333333333333333333333333333333333",
+          "min": "-1.19260835647583",
+          "max": "0.4238257408142090"
+        },
+        "layer0_edit_minus_layer0_zero": {
+          "count": 120,
+          "sum": "-53.4517045021057127",
+          "mean": "-0.445430870850880939166666666666666666666666666666666666666667",
+          "min": "-1.5416705608367920",
+          "max": "0.4136860370635986"
+        },
+        "difference_of_edit_changes": {
+          "count": 120,
+          "sum": "17.0715444087982147",
+          "mean": "0.142262870073318455833333333333333333333333333333333333333333",
+          "min": "-0.4323182106018066",
+          "max": "1.0584704875946046"
+        }
+      }
+    },
+    {
+      "metric": "ecapa",
+      "sign": "minus3",
+      "scope": "full_length_reference_and_output_independently_16k",
+      "descriptive_statistics": {
+        "apron_edited_minus_layer0_edited": {
+          "count": 120,
+          "sum": "42.24809059500694250",
+          "mean": "0.352067421625057854166666666666666666666666666666666666666667",
+          "min": "0.0306584835052491",
+          "max": "0.5319267809391022"
+        },
+        "apron_edit_minus_apron_zero": {
+          "count": 120,
+          "sum": "-14.1756165623664857",
+          "mean": "-0.118130138019720714166666666666666666666666666666666666666667",
+          "min": "-0.2633090615272522",
+          "max": "0.0036950111389160"
+        },
+        "layer0_edit_minus_layer0_zero": {
+          "count": 120,
+          "sum": "-56.36581483483314540",
+          "mean": "-0.469715123623609545",
+          "min": "-0.66258901357650754",
+          "max": "-0.0254390835762024"
+        },
+        "difference_of_edit_changes": {
+          "count": 120,
+          "sum": "42.19019827246665970",
+          "mean": "0.351584985603888830833333333333333333333333333333333333333333",
+          "min": "0.0291340947151184",
+          "max": "0.5317373573780061"
+        }
+      }
+    },
+    {
+      "metric": "ecapa",
+      "sign": "plus3",
+      "scope": "full_length_reference_and_output_independently_16k",
+      "descriptive_statistics": {
+        "apron_edited_minus_layer0_edited": {
+          "count": 120,
+          "sum": "52.64044694602489528",
+          "mean": "0.438670391216874127333333333333333333333333333333333333333333",
+          "min": "0.0098059177398681",
+          "max": "0.62742346525192266"
+        },
+        "apron_edit_minus_apron_zero": {
+          "count": 120,
+          "sum": "-11.5345521569252010",
+          "mean": "-0.096121267974376675",
+          "min": "-0.2183721065521241",
+          "max": "0.0064433813095092"
+        },
+        "layer0_edit_minus_layer0_zero": {
+          "count": 120,
+          "sum": "-64.11710678040981348",
+          "mean": "-0.534309223170081779",
+          "min": "-0.82012048363685603",
+          "max": "-0.0018381476402282"
+        },
+        "difference_of_edit_changes": {
+          "count": 120,
+          "sum": "52.58255462348461248",
+          "mean": "0.438187955195705104",
+          "min": "0.0082815289497374",
+          "max": "0.62649005651474006"
+        }
+      }
+    }
+  ],
+  "interpretation_limit": "Predicted MOS and speaker-embedding similarity under the measured ±3 settings, not verified F0 accuracy, physiological correctness, 48 kHz performance, general-language quality, causal mechanism or an overall winner."
+}
