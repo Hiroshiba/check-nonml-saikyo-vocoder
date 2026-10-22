@@ -12,6 +12,6 @@
 
 ## 固定標本数は48 kHzで時間の長さが半分になる
 
-雑音生成のひな形は最大20,000標本、重ね合わせの単位は128標本、雑音フィルターの端のフェードは16標本です。同じ標本数を48 kHzで使えば、24 kHz時の半分の時間になります。PSDに現れる `44100/fs` は解析と合成の双方にあり、44.1 kHz専用という証拠にはなりません。[ひな形と重ね合わせ](https://github.com/Sleepwalking/libllsm2/blob/d18cdf02b31819670e3bc23ead933ad9467da06d/dsputils.c#L385-L391)／[フェード](https://github.com/Sleepwalking/libllsm2/blob/d18cdf02b31819670e3bc23ead933ad9467da06d/layer0.c#L557-L567)／[PSDの解析側](https://github.com/Sleepwalking/libllsm2/blob/d18cdf02b31819670e3bc23ead933ad9467da06d/layer0.c#L388-L403)／[PSDの合成側](https://github.com/Sleepwalking/libllsm2/blob/d18cdf02b31819670e3bc23ead933ad9467da06d/layer0.c#L595-L605)
+雑音生成のひな形は最大20,000標本、雑音ひな形を伸長するときの重複幅は128標本、雑音フィルターの端のフェードは16標本です。同じ標本数を48 kHzで使えば、24 kHz時の半分の時間になります。PSDに現れる `44100/fs` は解析と合成の双方にあり、44.1 kHz専用という証拠にはなりません。[ひな形と重ね合わせ](https://github.com/Sleepwalking/libllsm2/blob/d18cdf02b31819670e3bc23ead933ad9467da06d/dsputils.c#L363-L391)／[フェード](https://github.com/Sleepwalking/libllsm2/blob/d18cdf02b31819670e3bc23ead933ad9467da06d/layer0.c#L557-L567)／[PSDの解析側](https://github.com/Sleepwalking/libllsm2/blob/d18cdf02b31819670e3bc23ead933ad9467da06d/layer0.c#L388-L403)／[PSDの合成側](https://github.com/Sleepwalking/libllsm2/blob/d18cdf02b31819670e3bc23ead933ad9467da06d/layer0.c#L595-L605)
 
 この記録は固定コミットのソースを読む範囲に限ります。48 kHzでの高域再構成、音高編集後の保持、雑音・過渡音、数値安定性、CPU・メモリ使用量、音声全体の品質は測定していません。[F0系列と声源・声道解析の前提](apron-f0-assumptions-2026-10-22.md)も、実装上の区別として参照できます。
