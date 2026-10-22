@@ -162,5 +162,18 @@
       }
     }
   },
-  "estoi_model_provenance": "No model-provenance.json; no model asset. Source hash and pystoi distribution pinned in quality contract."
+  "estoi_model_provenance": "No model-provenance.json; no model asset. Source hash and pystoi distribution pinned in quality contract.",
+  "published_individual_results": {
+    "path": "individual-results.json",
+    "rows": 1440,
+    "bytes": 1052094,
+    "sha256": "078c8886db755d1b43398329ea06100e907e84baec7276a4f2121d5947598004"
+  },
+  "published_aggregation_check": {
+    "case_metric_condition_keys": 1440,
+    "conditions_per_case": 12,
+    "all_12_groups_exact_sum_min_max_mean_match": true,
+    "computed_from_published_saved_values_only": true
+  },
+  "source_hash_contract_note": "Source hashes, including BASELINE.json, identify the frozen measurement commit 06b6da5e5822500993bdfc44b3bf35f84acaea46. Later descriptive status updates in the report PR are not applied to the measurement checkout."
 }

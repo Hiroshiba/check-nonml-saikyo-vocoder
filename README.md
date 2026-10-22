@@ -17,7 +17,7 @@ uv run --locked python -m vocoderbench.apron_cli --runtime-cache /absolute/new-c
 
 音声 CLI は24 kHz・単声道の入力だけを受け付け、出力も実際の24 kHzで保存します。音高操作は `decode` の `--pitch-semitones -3` または `3` のみです。音量・時間長・補間・48 kHz は未対応です。上記は実行手順であり、この切替 PR での実行結果ではありません。
 
-固定120音声の比較は `vocoderbench.reference --include-current-base` の経路を使います。比較時は各方式の native 標本化周波数と全長を保持し、元の16 kHz音声との補助指標は共通区間で別に計算します。正式なLayer1品質評価は後工程です。既存方式だけの比較では `--include-current-base` を省きます。
+固定120音声の比較には `vocoderbench.reference --include-current-base` の経路があります。比較時は各方式の native 標本化周波数と全長を保持し、元の16 kHz音声との補助指標は共通区間で別に計算します。今回の[固定120録音の品質評価](research/apron-fixed120-evaluation-2026-10-22/index.html)は別の保存済み研究実行です。音高追従の精度、Layer0の編集対照、48 kHzはまだ測定していません。既存方式だけの比較では `--include-current-base` を省きます。
 
 ## 保存済みの比較
 

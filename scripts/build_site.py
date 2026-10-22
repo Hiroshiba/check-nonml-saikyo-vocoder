@@ -248,7 +248,7 @@ def build(output):
     method = baseline['method']
     current = ('自作HNM ' + baseline['version'].removeprefix('hnm-') if method == 'hnm'
                else 'PML低域拡張＋60FWCEP' if method == 'pml'
-               else 'Apron（LLSM2 Layer1・未測定）' if method == 'apron'
+               else 'Apron（LLSM2 Layer1・固定120録音の品質測定済み）' if method == 'apron'
                else method or '未選定')
     cards = []
     for _, rel, meta, run in sorted(reports, key=lambda item: (item[0], str(item[1]), item[3]['id']), reverse=True):

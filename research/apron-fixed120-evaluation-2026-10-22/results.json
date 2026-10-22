@@ -9,7 +9,7 @@
     "quality_rows": 1440,
     "missing_rows": 0
   },
-  "aggregation": "Saved measured numeric values, arithmetic case mean (sum/120) within each metric, condition and scoring scope; no speaker weighting, substitution, significance test or overall rank.",
+  "aggregation": "From individual-results.json saved rows: parse value as Decimal, sum the 120 measured fixed cases per metric/condition/scope, divide by 120; no speaker weighting, substitution, significance test or overall rank.",
   "matched_unedited_ranks": {
     "utmosv2": {
       "apron_0": 1,
@@ -151,5 +151,11 @@
     }
   ],
   "old_pml": "Historical separate measurement; not included in matched ranks.",
-  "layer0_edited": "Planned control, not measured."
+  "layer0_edited": "Planned control, not measured.",
+  "individual_results": {
+    "path": "individual-results.json",
+    "rows": 1440,
+    "bytes": 1052094,
+    "sha256": "078c8886db755d1b43398329ea06100e907e84baec7276a4f2121d5947598004"
+  }
 }
