@@ -1,0 +1,17 @@
+# Apronを48 kHzへ広げる前に確認した固定条件
+
+最終目標には48 kHz音声への適用があります。ただし、2026年10月22日時点の[固定120録音の評価計画](../experiments/2026-10-22/apron-fixed120-evaluation/README.md)は16 kHz入力を24 kHzへ変換する条件です。Apronの解析入口は24 kHz以外を拒否し、保存状態の再読込と復号出力も24 kHzに固定しています。上流LLSM2は解析・合成の標本化周波数を引数として受け取り、保存設定にナイキスト周波数を記録します。上流の引数だけでApronの48 kHz動作や品質は確認できません。[Apronの入口・保存・復号](https://github.com/Hiroshiba/check-nonml-saikyo-vocoder/blob/426187e0c41e35bab20831bc00fa4106b0279cc0/vocoderbench/apron/engine.py#L63-L156)／[固定120録音の変換](https://github.com/Hiroshiba/check-nonml-saikyo-vocoder/blob/426187e0c41e35bab20831bc00fa4106b0279cc0/scripts/apron_fixed120/native.py#L78-L95)／[上流の解析設定](https://github.com/Sleepwalking/libllsm2/blob/d18cdf02b31819670e3bc23ead933ad9467da06d/layer0.c#L479-L485)／[上流の合成設定](https://github.com/Sleepwalking/libllsm2/blob/d18cdf02b31819670e3bc23ead933ad9467da06d/layer0.c#L636-L654)
+
+## 保存する周波数目盛りは、標本化周波数で変わる
+
+現行ラッパーはLayer1の声道スペクトルにFFT長2048を使い、保存時は1025点と照合します。この目盛りの間隔は24 kHzで約11.72 Hz、48 kHzなら約23.44 Hzです。雑音のPSDはラッパーが128点へ変更しており、0からナイキスト周波数までの点間隔はそれぞれ約94.49 Hzと188.98 Hzになります。上流の初期設定はPSD 256点です。一方、調波解析用FFTの長さは標本化周波数と正のF0の最小値から決まり、すべてのFFTが2048固定という意味ではありません。[ラッパー設定](https://github.com/Hiroshiba/check-nonml-saikyo-vocoder/blob/426187e0c41e35bab20831bc00fa4106b0279cc0/vocoderbench/references/native.py#L15-L29)／[保存時の点数](https://github.com/Hiroshiba/check-nonml-saikyo-vocoder/blob/426187e0c41e35bab20831bc00fa4106b0279cc0/vocoderbench/apron/storage.py#L18-L55)／[上流の初期値](https://github.com/Sleepwalking/libllsm2/blob/d18cdf02b31819670e3bc23ead933ad9467da06d/layer0.c#L27-L41)／[PSDの周波数軸](https://github.com/Sleepwalking/libllsm2/blob/d18cdf02b31819670e3bc23ead933ad9467da06d/layer0.c#L388-L403)／[調波解析FFT](https://github.com/Sleepwalking/libllsm2/blob/d18cdf02b31819670e3bc23ead933ad9467da06d/dsputils.c#L318-L325)
+
+## 高域の範囲と調波数も同じ条件にはならない
+
+雑音解析の帯域境界は2・4・8 kHzのままで、最上位帯域は24 kHz時の8～12 kHzから、48 kHzなら8～24 kHzへ広がります。雑音包絡で追う調波は最大5本です。最上位帯域の包絡は残差ではなく元音声から取ります。ラッパーの調波上限400本は、F0がちょうど60 Hzなら24 kHzでナイキストまで200本、48 kHzで400本となり、この名目条件だけで不足とは言えません。内部のF0再調整後は60 Hz未満も排除されず、復号時の調波数には保存済みの声源位相の本数も上限として働きます。Rd推定が参照する約8 kHz・最大80調波は、その推定処理の範囲であり、出力全体を8 kHzで切る設定ではありません。[雑音帯域と包絡](https://github.com/Sleepwalking/libllsm2/blob/d18cdf02b31819670e3bc23ead933ad9467da06d/layer0.c#L433-L445)／[調波数](https://github.com/Sleepwalking/libllsm2/blob/d18cdf02b31819670e3bc23ead933ad9467da06d/dsputils.c#L171-L206)／[復号時の上限](https://github.com/Sleepwalking/libllsm2/blob/d18cdf02b31819670e3bc23ead933ad9467da06d/layer1.c#L154-L178)／[Rdの参照範囲](https://github.com/Sleepwalking/libllsm2/blob/d18cdf02b31819670e3bc23ead933ad9467da06d/layer1.c#L54-L69)
+
+## 固定標本数は48 kHzで時間の長さが半分になる
+
+雑音生成のひな形は最大20,000標本、重ね合わせの単位は128標本、雑音フィルターの端のフェードは16標本です。同じ標本数を48 kHzで使えば、24 kHz時の半分の時間になります。PSDに現れる `44100/fs` は解析と合成の双方にあり、44.1 kHz専用という証拠にはなりません。[ひな形と重ね合わせ](https://github.com/Sleepwalking/libllsm2/blob/d18cdf02b31819670e3bc23ead933ad9467da06d/dsputils.c#L385-L391)／[フェード](https://github.com/Sleepwalking/libllsm2/blob/d18cdf02b31819670e3bc23ead933ad9467da06d/layer0.c#L557-L567)／[PSDの解析側](https://github.com/Sleepwalking/libllsm2/blob/d18cdf02b31819670e3bc23ead933ad9467da06d/layer0.c#L388-L403)／[PSDの合成側](https://github.com/Sleepwalking/libllsm2/blob/d18cdf02b31819670e3bc23ead933ad9467da06d/layer0.c#L595-L605)
+
+この記録は固定コミットのソースを読む範囲に限ります。48 kHzでの高域再構成、音高編集後の保持、雑音・過渡音、数値安定性、CPU・メモリ使用量、音声全体の品質は測定していません。[F0系列と声源・声道解析の前提](apron-f0-assumptions-2026-10-22.md)も、実装上の区別として参照できます。
