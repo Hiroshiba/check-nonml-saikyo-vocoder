@@ -14,7 +14,7 @@ import torch
 
 from scripts.all_metrics_llsm_control import augment_llsm
 from scripts.apron_fixed120.common import (MANIFEST_SHA256, bind_run, input_cases,
-                                           latest_attempt, new_attempt, now, require_threads,
+                                           latest_attempt, new_attempt, now, read, require_threads,
                                            save_wave, sha, source_hashes, versions, write)
 from vocoderbench.logging_utils import LoggedArgumentParser, run_cli
 from vocoderbench.references.adapters_dsp import build_llsm
@@ -165,6 +165,23 @@ def main():
                 'runtime_versions': versions()}
     bind_run(output, contract)
     adapter = build_llsm(args.runtime_cache / 'src', args.runtime_cache / 'models', output)
+    # all_metrics_control_adapters.build_control_adapter がaugment前に用意する契約。
+    adapter.capabilities = {}
+    adapter.info['representation_contract'] = {
+        'version': 1, 'method': 'llsm2',
+        'serialization': 'numeric NPZ arrays + JSON structure',
+        'decoder_input': True, 'external_decoder_assets_required': True,
+        'payload_alone_is_self_contained_bitrate': False,
+        'floating_storage_rounding': 'explicit float16/float32 storage, original dtype restored',
+        'integer_fields_are_not_rounded': True,
+        'missing_native_controls': [],
+    }
+    prepared = args.runtime_cache / 'prepared/llsm2.json'
+    if prepared.exists():
+        record = read(prepared)
+        adapter.info['representation_contract'].update(
+            prepared_record_sha256=sha(prepared),
+            shared_decoder_assets=record['files'], sources=record['sources'])
     augment_llsm(adapter, args.runtime_cache / 'src')
     rows = []
     with threadpool_limits(limits=1):
@@ -175,8 +192,7 @@ def main():
                 'schema_version': 1, 'owner': args.owner,
                 'planned_cases': len(cases), 'planned_outputs': len(cases) * 2,
                 'finished_cases': len(rows),
-                'measured_outputs': sum(row.get('status') == 'measured' and
-                                        row['branches'][name]['status'] == 'measured'
+                'measured_outputs': sum(row['branches'][name]['status'] == 'measured'
                                         for row in rows for name in CONDITIONS),
                 'rows': [{'case': item['id'], 'status': next(
                     (row['status'] for row in rows if row['case'] == item['id']), 'not_run')}

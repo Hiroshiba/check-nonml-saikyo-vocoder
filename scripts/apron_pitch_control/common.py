@@ -33,7 +33,8 @@ def driver_hashes(phase: str) -> dict:
              ROOT / f'scripts/apron_pitch_control/{phase}.py']
     if phase == 'native':
         paths += [ROOT / f'scripts/{name}.py' for name in
-                  ('all_metrics_llsm_control', 'all_metrics_llsm_storage',
+                  ('all_metrics_control_adapters', 'all_metrics_llsm_control',
+                   'all_metrics_llsm_storage',
                    'all_metrics_neural_controls', 'all_metrics_representation')]
     return {str(path.relative_to(ROOT)): sha(path) for path in paths}
 
@@ -88,6 +89,7 @@ def supplemental_native(root: Path, cases: list, owner: int,
             or summary.get('planned_outputs') != len(cases) * 2):
         raise ValueError('補助nativeの固定契約または予定分母が違います')
     rows = {}
+    references = {}
     for case in cases:
         attempt, row = latest_attempt(root, case['id'])
         if attempt is None or row is None:
@@ -96,8 +98,12 @@ def supplemental_native(root: Path, cases: list, owner: int,
                 or row.get('status') not in ('measured', 'failed')
                 or set(row.get('branches', {})) != set(CONDITIONS)):
             raise ValueError(f'補助nativeの入力が不一致です: {case["id"]}')
+        branch_refs = {}
         for name in CONDITIONS:
-            item = row['branches'].get(name, {})
+            item = row['branches'][name]
+            branch_path = attempt / f'{name}.json'
+            if not branch_path.is_file() or read(branch_path) != item:
+                raise ValueError(f'補助native枝の記録が不一致です: {branch_path}')
             if item.get('status') == 'measured':
                 descriptor = item['output']
                 path = root / 'cases' / case['id'] / descriptor['path']
@@ -109,5 +115,15 @@ def supplemental_native(root: Path, cases: list, owner: int,
                         or descriptor['sample_rate'] != 24000
                         or wave.dtype not in (np.dtype('float32'), np.dtype('float64'))):
                     raise ValueError(f'補助波形の形式が不一致です: {path}')
+            branch_refs[name] = {
+                'record': file_record(branch_path), 'status': item.get('status'),
+                'wave_sha256': item['output']['sha256']
+                if item.get('status') == 'measured' else None,
+            }
         rows[case['id']] = row
-    return contract_path, rows
+        references[case['id']] = {
+            'attempt': str(attempt.relative_to(root)),
+            'result': file_record(attempt / 'result.json'),
+            'branches': branch_refs,
+        }
+    return contract_path, rows, references

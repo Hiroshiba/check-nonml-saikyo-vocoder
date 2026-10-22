@@ -109,7 +109,7 @@ def evaluate(case: dict, name: str, metric: str, old_rows: dict,
              'value': None, 'common_samples': case['common_samples']}
     source = old_rows[case['id']] if name in ('apron_0', 'llsm2_0') else new_rows[case['id']]
     branch = source.get('branches', {}).get(name, {})
-    if source.get('status') != 'measured' or branch.get('status') != 'measured':
+    if branch.get('status') != 'measured':
         return {**entry, 'status': 'upstream_failed',
                 'reason': branch.get('error', '補助nativeが未完了です')}
     try:
@@ -130,7 +130,8 @@ def evaluate(case: dict, name: str, metric: str, old_rows: dict,
             if not np.isfinite(y16).all():
                 raise ValueError('16 kHz変換後の波形が非有限です')
             value, detail = backend.score(x, y16, 16000)
-            entry.update(scope='edited_full_length', reference_samples=len(x),
+            scope = 'unedited_full_length' if name in ('apron_0', 'llsm2_0') else 'edited_full_length'
+            entry.update(scope=scope, reference_samples=len(x),
                          output_samples=len(y16),
                          reference_pcm_float64_sha256=pcm_sha(x),
                          output_pcm_float64_sha256=pcm_sha(y16))
@@ -207,7 +208,7 @@ def main():
     cases = input_cases(args.input_manifest, args.input_root, args.owner)
     old_contract, old_contract_data, old_rows, old_refs = original_native(
         args.original_native, cases, args.owner)
-    new_contract, new_rows = supplemental_native(
+    new_contract, new_rows, new_refs = supplemental_native(
         args.supplement_native, cases, args.owner, sha(old_contract))
     new_contract_data = read(new_contract)
     if (new_contract_data.get('base') != old_contract_data['base']
@@ -236,6 +237,7 @@ def main():
                 'original_utm_provenance_sha256': sha(utm_provenance),
                 'original_ecapa_provenance_sha256': sha(ecapa_provenance),
                 'original_native_references': old_refs,
+                'supplement_native_references': new_refs,
                 'original_utm_references': utm_refs,
                 'original_ecapa_references': ecapa_refs,
                 'input_root': str(args.input_root.resolve()),
@@ -243,8 +245,10 @@ def main():
                 'supplement_native_root': str(args.supplement_native.resolve()),
                 'assets': assets, 'source_hashes': source_hashes(),
                 'driver_hashes': driver_hashes('quality'), 'runtime_versions': versions(),
-                'quality_threads': 2, 'scope': 'native_full_length' if args.metric == 'utmosv2'
-                           else 'edited_full_length'}
+                'quality_threads': 2,
+                'scope_by_condition': {name: ('native_full_length' if args.metric == 'utmosv2'
+                    else 'unedited_full_length' if name in ('apron_0', 'llsm2_0')
+                    else 'edited_full_length') for name in expected(args.metric)}}
     bind_run(output, contract)
     backend = None
     init_error = None
