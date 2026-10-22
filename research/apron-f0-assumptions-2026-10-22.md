@@ -27,3 +27,5 @@ F0が0のフレームでは調波解析を飛ばし、声道の振幅応答（VT
 上流の著者はLayer1を声門源と声道を分けて扱う表現として説明し、周期ごとの合成方法も紹介しています。Apronの保存形式はその周期ごとの制御用特徴を除外しています。著者の説明は表現の意図を示しますが、分離の生理学的な正しさや、この固定120録音での音質は証明しません。[上流README](https://github.com/Sleepwalking/libllsm2/blob/d18cdf02b31819670e3bc23ead933ad9467da06d/README.md#L28-L36)／[周期ごとの合成](https://github.com/Sleepwalking/libllsm2/blob/d18cdf02b31819670e3bc23ead933ad9467da06d/README.md#L75-L81)／[Apronの保存形式](https://github.com/Hiroshiba/check-nonml-saikyo-vocoder/blob/700eb3866428a2528ee9f75bba3b833f495a47ca/vocoderbench/apron/storage.py#L16-L40)
 
 既存の[確率的F0診断](../experiments/2026-10-20/probabilistic-pitch-diagnostic/README.md)のH0支持も、その調波モデル内の値です。生理的な有声・無声の校正済み確率とは扱いません。[F0の識別と声質の分離を区別した文献メモ](../experiments/2026-10-21/pml-ar1-three-atom-residual/followup-design/f0-identification-source-filter-scope-20261021.md)とも、この区別を揃えます。本記録は固定版のソースと既存文書の読取範囲に限り、音声の実行・比較・品質評価は含みません。
+
+複数候補を残す場合の解析範囲と重みの解釈は、[F0候補の表現に関する追補](apron-f0-candidate-representation-2026-10-22.md)に記録しました。二系列案は未採用です。
