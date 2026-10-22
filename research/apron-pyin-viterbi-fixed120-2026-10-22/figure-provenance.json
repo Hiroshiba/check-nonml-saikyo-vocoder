@@ -1,0 +1,98 @@
+{
+  "kind": "public_saved_f0_figure_provenance",
+  "examples": {
+    "librispeech_1089-134686-0008": {
+      "display": {
+        "axis_ticks_hz": [
+          50,
+          100
+        ],
+        "f0": "positive saved values only; circles, no line, interpolation or smoothing",
+        "state_strips": "one status color per saved frame; 0 is an operational saved value",
+        "time": "frame_index*120/24000 seconds; all 1201 frames, 0..6 s",
+        "vertical_domain_hz": [
+          45.405999755859376,
+          171.28048706054688
+        ],
+        "vertical_scale": "logarithmic, per-example min(positive)*0.9 to max(positive)*1.1"
+      },
+      "figure": {
+        "bytes": 147024,
+        "sha256": "d753dceca48dc67be5fac9683c1ee464dafe96d32b40900ff11f07d3679e1f9f"
+      },
+      "source": {
+        "case": "librispeech_1089-134686-0008",
+        "duration_seconds": 6.0,
+        "frames": 1201,
+        "old_layer1_to_candidate_layer1": {
+          "bytes": 252498,
+          "sha256": "2e4d8b5e77c1fe3aa8a07e76f6069ebef9104067f5d085c19a587f88e8d74dd9"
+        },
+        "result": {
+          "bytes": 3153,
+          "sha256": "b1374434d2d021abb177670e5557f1c583c91228d46ae053b28e88004ddda460"
+        },
+        "saved_pyin_to_candidate_layer1": {
+          "bytes": 254074,
+          "sha256": "480edcfe776626d2e214543e2597fc86eab2f8be8f4370c4280e0a160dcdd904"
+        }
+      }
+    },
+    "librispeech_1188-133604-0003": {
+      "display": {
+        "axis_ticks_hz": [
+          50,
+          100,
+          200,
+          400,
+          800
+        ],
+        "f0": "positive saved values only; circles, no line, interpolation or smoothing",
+        "state_strips": "one status color per saved frame; 0 is an operational saved value",
+        "time": "frame_index*120/24000 seconds; all 1201 frames, 0..6 s",
+        "vertical_domain_hz": [
+          45.349025344848634,
+          1190.086267089844
+        ],
+        "vertical_scale": "logarithmic, per-example min(positive)*0.9 to max(positive)*1.1"
+      },
+      "figure": {
+        "bytes": 121862,
+        "sha256": "16360977eb3d3145239ae17ca0620711c4c8c63f17985da626c06f91b57ad45d"
+      },
+      "source": {
+        "case": "librispeech_1188-133604-0003",
+        "duration_seconds": 6.0,
+        "frames": 1201,
+        "old_layer1_to_candidate_layer1": {
+          "bytes": 242078,
+          "sha256": "578c0ef758a0a32d828e5314ace6f1e1719cfd3a433c38cc87e3cdd04b56cf9d"
+        },
+        "result": {
+          "bytes": 3148,
+          "sha256": "66e0e2c6fde7471af6476fd3debe403f118850652765adaf2079a6d0bf6fbab8"
+        },
+        "saved_pyin_to_candidate_layer1": {
+          "bytes": 245393,
+          "sha256": "670e675e49af9fe6cb1e06f0dc8666c57adcf2b0cbc167656983a5ed02d9e695"
+        }
+      }
+    }
+  },
+  "saved_sources": {
+    "ARTIFACT_MANIFEST.json": {
+      "bytes": 72279,
+      "sha256": "caa5997c0a31fb4d9b4940a593b5dfa5062263608bb1e173a4b259666bbef582"
+    },
+    "descriptive-summary.json": {
+      "bytes": 3962,
+      "sha256": "4e0235b7c29c1e0c5733041255a08eb101505bd52237bb2f4f5c94b5c37c1fb0"
+    },
+    "post-input-audit.json": {
+      "bytes": 652190,
+      "sha256": "219855fdb21539ba9d693655bd03fa681cbc8bb7554b0025b2ad02b41403bae2"
+    }
+  },
+  "no_new_measurement_or_interpolation": true,
+  "full_frame_ledgers_included": false
+}
