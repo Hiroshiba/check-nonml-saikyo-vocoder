@@ -3,6 +3,7 @@ from __future__ import annotations
 
 import argparse
 from datetime import datetime, timezone
+import fcntl
 import hashlib
 import json
 import os
@@ -170,6 +171,7 @@ def main():
     signal.signal(signal.SIGHUP, request_termination)
     write_new(paths['invocation-start.json'], record)
     process = None
+    slot_stream = None
     exit_code = 1
     try:
         if sys.platform != 'linux':
@@ -184,6 +186,18 @@ def main():
             raise RuntimeError('開始前のMemAvailableが4GiB未満です')
         if not args.run_root.is_dir() or not evidence.is_relative_to(args.run_root.resolve()):
             raise RuntimeError('証拠directoryが固定新run内にありません')
+        for slot in range(2):
+            candidate = (args.run_root / f'concurrency-slot-{slot}.lock').open('a+')
+            try:
+                fcntl.flock(candidate.fileno(), fcntl.LOCK_EX | fcntl.LOCK_NB)
+            except BlockingIOError:
+                candidate.close()
+                continue
+            slot_stream = candidate
+            record['concurrency_slot'] = slot
+            break
+        if slot_stream is None:
+            raise RuntimeError('固定上限の同時2科学子がすでに稼働中です')
         if not args.cwd.is_dir():
             raise FileNotFoundError(f'実行directoryがありません: {args.cwd}')
         if not Path(command[0]).is_file() or not os.access(command[0], os.X_OK):
@@ -227,6 +241,9 @@ def main():
         # 直接子の処理後は証拠の閉鎖を優先し、追加信号で書込みを中断させない。
         signal.signal(signal.SIGTERM, signal.SIG_IGN)
         signal.signal(signal.SIGHUP, signal.SIG_IGN)
+        if slot_stream is not None:
+            fcntl.flock(slot_stream.fileno(), fcntl.LOCK_UN)
+            slot_stream.close()
         if signals['first'] is not None and record['status'] == 'finished':
             record['status'] = 'interrupted_after_child_exit'
             record['interruption_reason'] = signal.Signals(signals['first']).name
