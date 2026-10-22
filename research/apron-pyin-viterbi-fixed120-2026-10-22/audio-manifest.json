@@ -168,5 +168,55 @@
       "conversion": "first 5 seconds; round(x*32767) to signed PCM16; no gain, clipping, alignment, or resampling",
       "clipped_samples": 0
     }
+  ],
+  "reused_previously_published_files": [
+    {
+      "case_id": "librispeech_1089-134686-0008",
+      "condition": "original",
+      "path": "audio/librispeech_1089-134686-0008-original.wav",
+      "bytes": 160044,
+      "sha256": "2f867a9dafd1ca92b56d0dde8b48be73ebeb328fc03ef3ce032fd5be18963af0",
+      "source_report": "../apron-fixed120-evaluation-2026-10-22",
+      "source_audio_manifest": {
+        "bytes": 11442,
+        "sha256": "2a4dd4604471b82947e9e8203d540f91ff145dc88013cce06dc752bb1149fa4c"
+      },
+      "conversion": "unchanged byte copy of already published PCM16 preview",
+      "sample_rate": 16000,
+      "samples": 80000,
+      "duration_seconds": 5
+    },
+    {
+      "case_id": "librispeech_1089-134686-0008",
+      "condition": "apron_0",
+      "path": "audio/librispeech_1089-134686-0008-apron_0.wav",
+      "bytes": 240044,
+      "sha256": "5b772c7124e73416440e524349bda282a013df6d45ad163d41b7c0e7c74bf494",
+      "source_report": "../apron-fixed120-evaluation-2026-10-22",
+      "source_audio_manifest": {
+        "bytes": 11442,
+        "sha256": "2a4dd4604471b82947e9e8203d540f91ff145dc88013cce06dc752bb1149fa4c"
+      },
+      "conversion": "unchanged byte copy of already published PCM16 preview",
+      "sample_rate": 24000,
+      "samples": 120000,
+      "duration_seconds": 5
+    },
+    {
+      "case_id": "librispeech_1089-134686-0008",
+      "condition": "llsm2_0",
+      "path": "audio/librispeech_1089-134686-0008-llsm2_0.wav",
+      "bytes": 240044,
+      "sha256": "38db891e9561afadaea33f58bc190c6163912cd80f1aad00bda4ba4d74f65e2c",
+      "source_report": "../apron-fixed120-evaluation-2026-10-22",
+      "source_audio_manifest": {
+        "bytes": 11442,
+        "sha256": "2a4dd4604471b82947e9e8203d540f91ff145dc88013cce06dc752bb1149fa4c"
+      },
+      "conversion": "unchanged byte copy of already published PCM16 preview",
+      "sample_rate": 24000,
+      "samples": 120000,
+      "duration_seconds": 5
+    }
   ]
 }

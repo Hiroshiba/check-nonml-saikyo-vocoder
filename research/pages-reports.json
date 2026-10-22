@@ -9,30 +9,34 @@
       "created_on": "2026-10-22",
       "created_at": "2026-10-22T10:02:48.593194+00:00",
       "title": "保存pYIN系列をApronへ渡した固定120録音の比較",
-      "comparison_scope": "英語120録音・40話者。保存pYIN Viterbi系列を入口にした候補360波形・1080品質値を、ApronとLLSM2 Layer0の保存済み2160値と対応比較。9群すべてでApronの平均が候補より望ましい方向だったため、今回の候補は採用せずApronを維持。保存F0の2対比は各123,307時点で、F0精度や品質差の原因は判定しません。",
+      "comparison_scope": "英語120録音・40話者。候補360波形・1080品質値をApronとLLSM2 Layer0の保存済み2160値と対応比較。無編集UTMOSv2（予測音質、24 kHz全長）の平均と順位は候補2.9355／3位、Apron3.0938／1位、Layer0 3.0838／2位。9群すべてで候補よりApronの平均が望ましい方向だったため、候補は採用せずApronを維持。F0精度や品質差の原因は判定していません。",
       "audio_listing": {
-        "caption": "公開済みLibriSpeech録音0008の先頭5秒。候補の無編集・−3半音・＋3半音を並べます。原音とApron・Layer0は詳細レポートで比較できます。",
-        "note": "今回追加した3短例は24 kHz出力をPCM16へ丸めたものです。音量補正なし。LibriSpeech / CC BY 4.0。候補は不採用で、音声だけから品質順位は決めません。",
+        "caption": "固定したLibriSpeech録音0008の先頭5秒。原音、Apron・Layer0・候補の無編集を並べます。",
+        "note": "原音16 kHz、再合成音24 kHzのPCM16です。前3本は既公開WAVの同一バイトコピーで、新たな音声内容は候補の1本です。LibriSpeech / CC BY 4.0。編集条件と2つ目の録音は詳細レポートへ。",
         "attribution_path": "audio-credits.html",
         "samples": [
           {
+            "path": "audio/librispeech_1089-134686-0008-original.wav",
+            "label": "原音"
+          },
+          {
+            "path": "audio/librispeech_1089-134686-0008-apron_0.wav",
+            "label": "Apron・無編集"
+          },
+          {
+            "path": "audio/librispeech_1089-134686-0008-llsm2_0.wav",
+            "label": "LLSM2 Layer0・無編集"
+          },
+          {
             "path": "audio/librispeech_1089-134686-0008-pyin_viterbi_0.wav",
             "label": "候補・無編集"
-          },
-          {
-            "path": "audio/librispeech_1089-134686-0008-pyin_viterbi_minus3.wav",
-            "label": "候補・−3半音"
-          },
-          {
-            "path": "audio/librispeech_1089-134686-0008-pyin_viterbi_plus3.wav",
-            "label": "候補・＋3半音"
           }
         ]
       },
-      "artifact_count": 19,
+      "artifact_count": 22,
       "artifact_manifest": {
-        "bytes": 3088,
-        "sha256": "7a7dffaac3267a3396f407a063f3996a9864c3287632574ad9a96026f402bdfd"
+        "bytes": 3638,
+        "sha256": "2bf60aef2e152840158e45ff4304e62563cd1747f55e1abe8a028ec593b0c4cc"
       }
     },
     {

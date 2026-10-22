@@ -339,8 +339,36 @@
     ],
     "preview_seconds": 5,
     "audio_manifest": {
-      "bytes": 6848,
-      "sha256": "082b768928a539dc23556673de098cfd208e3b66b4ce7ccdcdf7278977e19819"
+      "bytes": 8811,
+      "sha256": "7b080e538bb091e6aaff6ee5bb24736238b9fd98988c3f7065364b40ca1b7e87"
+    },
+    "reused_already_published_wav_files": 3,
+    "reused_previously_published_files": [
+      {
+        "case_id": "librispeech_1089-134686-0008",
+        "condition": "original",
+        "path": "audio/librispeech_1089-134686-0008-original.wav",
+        "bytes": 160044,
+        "sha256": "2f867a9dafd1ca92b56d0dde8b48be73ebeb328fc03ef3ce032fd5be18963af0"
+      },
+      {
+        "case_id": "librispeech_1089-134686-0008",
+        "condition": "apron_0",
+        "path": "audio/librispeech_1089-134686-0008-apron_0.wav",
+        "bytes": 240044,
+        "sha256": "5b772c7124e73416440e524349bda282a013df6d45ad163d41b7c0e7c74bf494"
+      },
+      {
+        "case_id": "librispeech_1089-134686-0008",
+        "condition": "llsm2_0",
+        "path": "audio/librispeech_1089-134686-0008-llsm2_0.wav",
+        "bytes": 240044,
+        "sha256": "38db891e9561afadaea33f58bc190c6163912cd80f1aad00bda4ba4d74f65e2c"
+      }
+    ],
+    "reused_source_audio_manifest": {
+      "bytes": 11442,
+      "sha256": "2a4dd4604471b82947e9e8203d540f91ff145dc88013cce06dc752bb1149fa4c"
     }
   },
   "limitations": [
