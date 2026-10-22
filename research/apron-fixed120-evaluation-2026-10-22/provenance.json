@@ -1,0 +1,179 @@
+{
+  "schema_version": 1,
+  "kind": "apron_fixed120_report_provenance",
+  "measurement_source_commit": "06b6da5e5822500993bdfc44b3bf35f84acaea46",
+  "input_manifest": {
+    "path": "research/pml-package-evaluation-2026-10-16/input-manifest.json",
+    "sha256": "1f392fc60fbca4003c236f03ffd9edba82b048737f23cf250295c1b4c6c85193"
+  },
+  "source_hashes": {
+    "BASELINE.json": "c6cc1a879754b9faa48a43c232eb17ec81aefe238d3dc745878636db06951970",
+    "vocoderbench/references/current_base.py": "72222ee3099352ce8484d69d7789c42996eeb2fcd40148d3d686d3cf66ace964",
+    "vocoderbench/references/adapters_dsp.py": "ab5a0cf63085524842a0614d2ebc63adbe11521852f53bf9d561a131c37ab285",
+    "vocoderbench/references/native.py": "da278ee8eb0de44a07f672140ec67ab392544dd53fd80c070dbbc9fedf410522",
+    "vocoderbench/references/common.py": "6e47e5b9f6eb860018b325c39c73c230013406fcbd2ba13b29e5e30c36201fa6",
+    "vocoderbench/references/worker.py": "757e548aa47b1d1bfe037b00843dca24a6ce8039bc35d0dcde85304a1e4024ce",
+    "vocoderbench/references/sources.lock.json": "a9545775f1381f6d56e390286384993ab8f1b6c3b3010058d5fc54bccef494c1",
+    "vocoderbench/references/requirements.txt": "52fe25d537c36ec24ca7ba6a00e6856cfb540c3d776d0af928ac03ecd06042d0",
+    "vocoderbench/quality_backends.py": "1f36068515bc3e218f9eb149d7fc3b2b8e62b5eee804448ff30f01624dd23a48",
+    "vocoderbench/extended_metrics.py": "ab3537d2c8e5d568a0cd2fa8aa36309de09c3bce7cf2f849214331a22fe3624f",
+    "vocoderbench/quality_core.py": "66bf6c08633424f544b2ad7eef2a74283c05d809aa9a59df8fc1ba0e5ab51f4b",
+    "vocoderbench/mos.py": "fb632aa5440245525289962372db4f3eb007cd2b3b493b2d05ecccb878e85f03",
+    "vocoderbench/logging_utils.py": "c80eb5d9647516a4bc03980cb178f8b4bb130ac15877d1b3289797e7ad81e381",
+    "uv.lock": "270f89c761dc253005840f140c520795684276c44635cce16707e8611b76a0d1",
+    "vocoderbench/apron/__init__.py": "e33074db862f0df4f5fc285929cf95cbbe164f6d06b51ef5e13d9bb0f3930a19",
+    "vocoderbench/apron/engine.py": "468f3e136661e47029ce1341e06e4408b76eb40a43575189ca8207a66c105996",
+    "vocoderbench/apron/storage.py": "af5bd6b6acf5541adc5d4fa7dad6ab7a58778b15b7bf823916b332fdcc9b3816",
+    "vocoderbench/apron/storage_base.py": "c672f5f38f934ff9710a726f029a102592c3f5e9de8d25acdace76dfae64251f",
+    "vocoderbench/apron/tree.py": "973e341c131698a36fb2a2b82fd7dd4d59b97dce6c06b2f698f595771ead5da2",
+    "scripts/apron_fixed120/__init__.py": "a11743f8f1616732a1a15e21d0aca63156d249b51ecaca0cd15f118d484c069e",
+    "scripts/apron_fixed120/common.py": "8acaadffec7f2ae07740b9eb44f8d08135c19d60da2c18ce9f6bdd6f38614801",
+    "scripts/apron_fixed120/launch.py": "b9cbda0e4575f4e25c42ddd81984eb6a176e478305c7109116020fcd37e2d530",
+    "scripts/apron_fixed120/native.py": "201eb85fb0db073963301ef40f80dc55b67f567db1477b06a7a9e0248d2cf058",
+    "scripts/apron_fixed120/quality.py": "7d7fd1f07ed981f5c34de3efec990371a8af2f07a67a522f2490a8ed8a3fd747"
+  },
+  "upstream_revisions": {
+    "upstream_revision": "d18cdf02b31819670e3bc23ead933ad9467da06d",
+    "ciglet_revision": "895ba9b1c0eabee83d3544208bbc82420efa3206"
+  },
+  "asset_pins": {
+    "mos/weights/fold0_s42_best_model.pth": {
+      "bytes": 818531314,
+      "sha256": "c8149d988e4bbf3f347e6966b5d769de347a5f8c59ffca1dc4bd4bf5b8585e57"
+    },
+    "mos/wav2vec2_config/config.json": {
+      "bytes": 1842,
+      "sha256": "4937977e24d12d1bba70cdce8709c3c04807a8e4ae8ddac4229c48c436ae99ae"
+    },
+    "mos/wav2vec2_config/preprocessor_config.json": {
+      "bytes": 159,
+      "sha256": "b225d617c025463b9e157e06afea8b90dc7078fc70b013c533328423e0486b4a"
+    },
+    "ecapa/embedding_model.ckpt": {
+      "bytes": 83316686,
+      "sha256": "0575cb64845e6b9a10db9bcb74d5ac32b326b8dc90352671d345e2ee3d0126a2"
+    },
+    "scoreq/fixed_nmr_telephone.onnx": {
+      "bytes": 377979175,
+      "sha256": "899c9959bf48b38d99fdd5227b31182ca9d8253b14b61edd2725eca779a55b49"
+    }
+  },
+  "runtime_versions": {
+    "numpy": "2.3.5",
+    "scipy": "1.17.0",
+    "pyworld": "0.3.5",
+    "torch": "2.8.0+cpu",
+    "torchaudio": "2.8.0+cpu",
+    "utmosv2": "1.3.1.dev0",
+    "onnxruntime": "1.22.0",
+    "speechbrain": "1.0.3",
+    "transformers": "4.51.3",
+    "timm": "1.0.15",
+    "librosa": "0.11.0",
+    "pystoi": "0.4.1"
+  },
+  "native_contract": {
+    "dsp_threads": 1,
+    "native_sample_rate": 24000,
+    "analysis_seed": 0,
+    "each_decode_seed": 0
+  },
+  "quality_contract": {
+    "threads": 2,
+    "unedited": {
+      "utmosv2": "native_full_length",
+      "ecapa": "frozen_common_16k_prefix",
+      "scoreq": "frozen_common_16k_prefix",
+      "estoi": "frozen_common_16k_prefix"
+    },
+    "edited": {
+      "utmosv2": "native_full_length",
+      "ecapa": "edited_full_length; full input excerpt and full edited output separately resampled to 16 kHz"
+    }
+  },
+  "saved_audit": {
+    "bytes": 22540,
+    "sha256": "57bc987bdc3bb2be34d64f8bcb06dbc3d17253596f480eb0e3cbe045b802323c",
+    "same_environment_separate_aggregation": true,
+    "independent_reproduction": false,
+    "mismatches": 0,
+    "counts": {
+      "listed_file_bytes_sha": 1382,
+      "input_npy": 120,
+      "asset": 5,
+      "source_file": 24,
+      "runtime_distribution": 12,
+      "native_wave": 480,
+      "native_representation": 240,
+      "native_result": 120,
+      "quality_native_result_reference": 480,
+      "provenance_asset_bytes_sha": 15,
+      "quality_output_file": 513,
+      "quality_stream": 24,
+      "quality_pcm_sha": 1440,
+      "quality_value": 1440,
+      "reference_pcm_sha": 960
+    }
+  },
+  "provisional_summary_sha256": "6ae3479abcc754a4ec7a7ca80393f82405623533e490101d52c25aaad0f9aa6f",
+  "v1_prelaunch_failure": "Missing /usr/bin/time, exit 127, 0/168 outputs; original failure evidence retained locally and not bundled here.",
+  "model_provenance": {
+    "utmosv2": {
+      "algorithm": "UTMOSv2-fusion_stage3-fold0",
+      "source_commit": "cc2700db57bb83ee13dc31ebe1b868c254e15d09",
+      "predict_dataset": "bvcc",
+      "extraction_seed": 20261012,
+      "extraction_repetitions": 1,
+      "device": "cpu",
+      "remove_silent_section": false,
+      "calibration": "対象ボコーダーでの人間評定校正は未実施",
+      "packages": {
+        "utmosv2": "1.3.1.dev0",
+        "torch": "2.8.0+cpu",
+        "transformers": "4.51.3",
+        "timm": "1.0.15",
+        "librosa": "0.11.0"
+      }
+    },
+    "ecapa": {
+      "algorithm": "speechbrain-ecapa-voxceleb-raw-embedding",
+      "source": "https://huggingface.co/speechbrain/spkrec-ecapa-voxceleb",
+      "sample_rate": 16000,
+      "normalize_embeddings_with_global_stats": false,
+      "reference_cache": false,
+      "recipe": "official-80mel-1024channels-192dim",
+      "packages": {
+        "speechbrain": "1.0.3",
+        "torch": "2.8.0+cpu",
+        "torchaudio": "2.8.0+cpu"
+      }
+    },
+    "scoreq": {
+      "algorithm": "SCOREQ-ONNX-ref",
+      "domain": "natural",
+      "source": "https://github.com/alessandroragano/scoreq",
+      "sample_rate": 16000,
+      "padding_multiple": 320,
+      "reference_cache": false,
+      "packages": {
+        "onnxruntime": "1.22.0",
+        "torch": "2.8.0+cpu",
+        "torchaudio": "2.8.0+cpu"
+      }
+    }
+  },
+  "estoi_model_provenance": "No model-provenance.json; no model asset. Source hash and pystoi distribution pinned in quality contract.",
+  "published_individual_results": {
+    "path": "individual-results.json",
+    "rows": 1440,
+    "bytes": 1052094,
+    "sha256": "078c8886db755d1b43398329ea06100e907e84baec7276a4f2121d5947598004"
+  },
+  "published_aggregation_check": {
+    "case_metric_condition_keys": 1440,
+    "conditions_per_case": 12,
+    "all_12_groups_exact_sum_min_max_mean_match": true,
+    "computed_from_published_saved_values_only": true
+  },
+  "source_hash_contract_note": "Source hashes, including BASELINE.json, identify the frozen measurement commit 06b6da5e5822500993bdfc44b3bf35f84acaea46. Later descriptive status updates in the report PR are not applied to the measurement checkout."
+}

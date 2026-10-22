@@ -4,7 +4,7 @@
   "display_name": "Apron",
   "version": "apron-llsm2-layer1-v1",
   "source_method": "LLSM2 Layer1",
-  "reason": "ユーザー指定により作業ベースをLLSM2 Layer1へ切り替える。Layer1の固定120音声品質評価は未実施で、PMLや測定済みLayer0に対する性能優位は主張しない。",
+  "reason": "ユーザー指定により作業ベースをLLSM2 Layer1へ切り替えた。固定120録音の品質値は測定済みだが、旧PMLやLayer0に対する総合的な性能優位は主張しない。",
   "comparison_reference": "apron",
   "comparison_reference_meaning": "現在唯一の作業ベース。比較ID llsm2 は従来のLayer0を指す。保存済み結果は測定時の方式・版・比較基準を維持する。",
   "previous_method": "pml",
@@ -12,5 +12,5 @@
   "previous_reproduction_commit": "62acf3cadcd8a49f37e2e63826f2966ed2d8ce28",
   "previous_selection_report": "research/pml-package-evaluation-2026-10-16/index.html",
   "selection_report": "research/llsm2-layer1-base-transition-2026-10-21/index.html",
-  "evaluation_status": "Layer1の品質・操作追従は未測定。固定120録音の評価は後工程。"
+  "evaluation_status": "固定120録音の無編集・音高±3半音の波形と品質値は測定済み。音高追従の精度、Layer0の編集対照、48 kHzは未測定。"
 }
