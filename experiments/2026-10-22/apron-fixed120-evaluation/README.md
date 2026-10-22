@@ -22,25 +22,28 @@
 
 ## 実行コマンド（親レビュー後にのみ使用）
 
-このPRは入口の準備だけです。次は固定入力・依存の実パスを再照合し、新しいrun rootを用意してから実行します。以下の `OWNER` は0、1、2をそれぞれ一度指定します。同時実行は資源確認後に最大3担当までとし、品質はnativeの終了後に別工程で行います。`/usr/bin/time -v` のRSSは実測であり、`ulimit -v` は仮想アドレス空間の制限です。
+固定入力・依存の実パスを再照合し、新しいrun rootを用意してから実行します。以下の `OWNER` は0、1、2をそれぞれ一度指定します。同時実行は資源確認後に最大3担当までとし、品質はnativeの終了後に別工程で行います。`scripts.apron_fixed120.launch` はPython標準ライブラリーだけで子を一度起動し、実exit・全stdout/stderr・経過時間・Linux `RUSAGE_CHILDREN.ru_maxrss` を保存します。`ru_maxrss` はKiB単位の累積high-waterで、単一子の新規launcherの事前値が0の場合にだけ、その子の最大RSS欄を記録します。RLIMIT_ASは仮想アドレス空間の制限でありRSS制限ではありません。
+
+2026-10-22の最初のowner 0外側呼出しは、当時の手順が要求した `/usr/bin/time` が環境になく、科学Python起動前にexit 127でした。旧 `runs/apron-fixed120-evaluation-20261022-v1` のinvocationと全ログは保持し、計測0/予定168波形です。この修正ではGNU timeを必要としない別の新規run rootを指定します。過去の失敗を成功や再計測として扱いません。
 
 ```sh
-REPO=/workspace/check-nonml-apron-fixed120-evaluation-20261022
+REPO=/workspace/check-nonml-apron-fixed120-measurement-20261022-v2
 PY=/workspace/check-nonml-saikyo-vocoder/.venv/bin/python
 INPUT=/workspace/check-nonml-saikyo-vocoder/runs/fixed120-input-preparation-20261020/inputs
 CACHE=/workspace/llsm2-layer1-preparation-20261021-v2/runtime-cache
 ASSETS=/workspace/check-nonml-saikyo-vocoder/runs/pml-quality-assets-preparation-20261021-v1
-RUN=/workspace/check-nonml-saikyo-vocoder/runs/apron-fixed120-evaluation-20261022-v1
+RUN=/workspace/check-nonml-saikyo-vocoder/runs/apron-fixed120-evaluation-20261022-v2
 MANIFEST="$REPO/research/pml-package-evaluation-2026-10-16/input-manifest.json"
 OWNER=0
 mkdir -p "$RUN/evidence/native/$OWNER"
 PYTHONPATH="$REPO" VOCODERBENCH_LOG_DIR="$RUN/evidence/native/$OWNER/logs" PYTHONDONTWRITEBYTECODE=1 \
 OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 MKL_NUM_THREADS=1 NUMEXPR_NUM_THREADS=1 VECLIB_MAXIMUM_THREADS=1 BLIS_NUM_THREADS=1 \
-/usr/bin/time -v timeout --signal=TERM --kill-after=10s 1800s \
-bash -c 'ulimit -v 8388608; exec "$@"' _ "$PY" -B -m scripts.apron_fixed120.native \
+"$PY" -B -m scripts.apron_fixed120.launch --phase native \
+  --cwd "$REPO" --evidence "$RUN/evidence/native/$OWNER" -- \
+  "$PY" -B -m scripts.apron_fixed120.native \
   --input-manifest "$MANIFEST" --input-root "$INPUT" --runtime-cache "$CACHE" \
   --owner "$OWNER" --output "$RUN/native/owner-$OWNER" \
-  >"$RUN/evidence/native/$OWNER/stdout.log" 2>"$RUN/evidence/native/$OWNER/stderr.log"
+  >"$RUN/evidence/native/$OWNER/outer.stdout.log" 2>"$RUN/evidence/native/$OWNER/outer.stderr.log"
 ```
 
 品質は指標ごと、担当ごとに別の新規出力を使います。`METRIC` は `utmosv2`、`ecapa`、`scoreq`、`estoi` の4種類で、それぞれ上の全担当について指定します。UTMOS/ECAPAは担当録音数×4、SCOREQ/eSTOIは×2の個票が予定分母です。
@@ -51,13 +54,14 @@ mkdir -p "$RUN/evidence/quality/$OWNER/$METRIC"
 PYTHONPATH="$REPO" VOCODERBENCH_LOG_DIR="$RUN/evidence/quality/$OWNER/$METRIC/logs" \
 PYTHONDONTWRITEBYTECODE=1 HF_HUB_OFFLINE=1 TRANSFORMERS_OFFLINE=1 \
 OMP_NUM_THREADS=2 OPENBLAS_NUM_THREADS=2 MKL_NUM_THREADS=2 NUMEXPR_NUM_THREADS=2 VECLIB_MAXIMUM_THREADS=2 BLIS_NUM_THREADS=2 \
-/usr/bin/time -v timeout --signal=TERM --kill-after=10s 3600s \
-bash -c 'ulimit -v 12582912; exec "$@"' _ "$PY" -B -m scripts.apron_fixed120.quality \
+"$PY" -B -m scripts.apron_fixed120.launch --phase quality \
+  --cwd "$REPO" --evidence "$RUN/evidence/quality/$OWNER/$METRIC" -- \
+  "$PY" -B -m scripts.apron_fixed120.quality \
   --input-manifest "$MANIFEST" --input-root "$INPUT" --asset-root "$ASSETS" \
   --native-output "$RUN/native/owner-$OWNER" --owner "$OWNER" --metric "$METRIC" \
   --output "$RUN/quality/$METRIC/owner-$OWNER" \
-  >"$RUN/evidence/quality/$OWNER/$METRIC/stdout.log" \
-  2>"$RUN/evidence/quality/$OWNER/$METRIC/stderr.log"
+  >"$RUN/evidence/quality/$OWNER/$METRIC/outer.stdout.log" \
+  2>"$RUN/evidence/quality/$OWNER/$METRIC/outer.stderr.log"
 ```
 
-運用上のwall上限はnative担当1800秒、品質の担当×指標3600秒、terminate後10秒でkillです。nativeのAS上限は8 GiB、品質は12 GiBで、実RSSではありません。新規Layer1保存物とモデル作業領域を含むdisk使用量は測定前の空き容量で確認します。分割・出力先・上限を変える場合は別の計画として先にレビューします。±6 dB、48 kHz、人工10刺激C、独自DSP改善はこの計画に含めません。
+この `REPO` は修正PRのマージ後に作る新しいmain checkoutを指します。運用上のwall上限はnative担当1800秒、品質の担当×指標3600秒、TERM後10秒でKILLして直接子を回収します。nativeのAS上限は8 GiB、品質は12 GiBで、実RSSではありません。各証拠directoryの `invocation-start.json`、`invocation.json`、科学子の `stdout.log` / `stderr.log` と外側の `outer.stdout.log` / `outer.stderr.log` を保持します。同じ証拠directoryの二重起動は拒否します。新規Layer1保存物とモデル作業領域を含むdisk使用量は測定前の空き容量で確認します。分割・出力先・上限を変える場合は別の計画として先にレビューします。±6 dB、48 kHz、人工10刺激C、独自DSP改善はこの計画に含めません。
