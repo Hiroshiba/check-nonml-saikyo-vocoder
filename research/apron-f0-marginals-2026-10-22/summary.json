@@ -1,0 +1,2483 @@
+{
+  "expected_recordings": 120,
+  "successful_recordings": 120,
+  "speakers": 40,
+  "frames": 123307,
+  "recording_equal_means_from_separate_saved_logs": {
+    "uv": 0.6142748840559388,
+    "voiced": 0.3857251159233545,
+    "sum_minus_one": -2.0706769632283795e-11
+  },
+  "per_frame_uv_plus_voiced_minus_one_max_abs": 1.3695988787532087e-10,
+  "offset_histogram": {
+    "bins": 975,
+    "unit_cents_per_bin": 10,
+    "range_cents": [
+      -4870,
+      4870
+    ],
+    "center": 0.3828445438063247,
+    "side_mass": {
+      "negative": 0.0015160339262505057,
+      "zero": 0.3828445438063247,
+      "positive": 0.0013645381907786721
+    },
+    "geometric_guide_mass": {
+      "within_geometric_1200_cents": 0.3857251118099456,
+      "outside_geometric_1200_cents": 4.113408193110331e-09
+    },
+    "total_mass": 0.3857251159233539,
+    "total_minus_recording_equal_voiced": -6.106226635438361e-16,
+    "max_abs_vs_saved_log_aggregate_after_exp": 1.1102230246251565e-16,
+    "highest_bin_offset_cents": 0
+  },
+  "normalization": {
+    "max_abs_log": 1.3695988657427827e-10,
+    "max_abs_linear_mass": 1.3695988656489925e-10
+  },
+  "linear_zero_counts": {
+    "offset_mean_finite_log_to_linear_zero": 5074,
+    "offset_mean_structural_minus_infinity_to_zero": 4141,
+    "frame_mass_drift_nonzero_log_to_linear_zero": 0,
+    "frame_mass_drift_exact_zero_log_to_linear_zero": 0
+  },
+  "zero_counts_difference_from_saved_receipts": {
+    "offset_mean_finite_log_to_linear_zero": 0,
+    "offset_mean_structural_minus_infinity_to_zero": 0,
+    "frame_mass_drift_nonzero_log_to_linear_zero": 0,
+    "frame_mass_drift_exact_zero_log_to_linear_zero": 0
+  },
+  "warnings": 0,
+  "compact_array_mismatch_count": 0,
+  "array_hashes_used": [
+    {
+      "case": "librispeech_1089-134686-0008",
+      "owner": 0,
+      "uv_log_mass": {
+        "path": "uv_log_mass.npy",
+        "bytes": 9736,
+        "sha256": "49cf36bc81211b1cc768a0af13d76f0abe1e457c120e3099187c8077fac50b69"
+      },
+      "voiced_log_mass": {
+        "path": "voiced_log_mass.npy",
+        "bytes": 9736,
+        "sha256": "df57302c223480bcf1508aa46f0b8f83edacbb18ec6b4230a9f98fe0f4784ced"
+      },
+      "offset_mean": {
+        "path": "offset_mean.npy",
+        "bytes": 7928,
+        "sha256": "1b14de7951d94832f0e1d70aebb982d98812eff1a8208a771a1d89c646da8714"
+      }
+    },
+    {
+      "case": "librispeech_1089-134686-0011",
+      "owner": 0,
+      "uv_log_mass": {
+        "path": "uv_log_mass.npy",
+        "bytes": 9736,
+        "sha256": "0b6cba753881dfc75c2e396b6152707510fe6fb0fe9210499b64da59dd786056"
+      },
+      "voiced_log_mass": {
+        "path": "voiced_log_mass.npy",
+        "bytes": 9736,
+        "sha256": "6bc824f763a77785c28bc8405ddb60ff84ae7f50849feef2647dd8ac610cfa20"
+      },
+      "offset_mean": {
+        "path": "offset_mean.npy",
+        "bytes": 7928,
+        "sha256": "4870c1967c4b0a1e9dc487843a56bd53dfef33feaf803f7620356757e18f8ed8"
+      }
+    },
+    {
+      "case": "librispeech_1089-134686-0032",
+      "owner": 0,
+      "uv_log_mass": {
+        "path": "uv_log_mass.npy",
+        "bytes": 6680,
+        "sha256": "3326708fa5d0aa7e4389a81a4747e7277fa251d3369df6a40eafd23475b3beaf"
+      },
+      "voiced_log_mass": {
+        "path": "voiced_log_mass.npy",
+        "bytes": 6680,
+        "sha256": "c2aea44c0c851d1d82be4a627c4625270304bd4e1e6b677cf91288323c12a04f"
+      },
+      "offset_mean": {
+        "path": "offset_mean.npy",
+        "bytes": 7928,
+        "sha256": "1d57d136540969bdb7cd79647c43016f0a2bcdbaa4cc4c9c2732d8a2b33fbeab"
+      }
+    },
+    {
+      "case": "librispeech_1188-133604-0003",
+      "owner": 0,
+      "uv_log_mass": {
+        "path": "uv_log_mass.npy",
+        "bytes": 9736,
+        "sha256": "5786dd8e19e3513d254f9e9f83fab6de2a6173e82573b16ae2383dd33227da51"
+      },
+      "voiced_log_mass": {
+        "path": "voiced_log_mass.npy",
+        "bytes": 9736,
+        "sha256": "5878c790f62ae70d2c10d7c949189add0be3702bfd81e9a73d5143b6a6ce4ddf"
+      },
+      "offset_mean": {
+        "path": "offset_mean.npy",
+        "bytes": 7928,
+        "sha256": "2dff0cb8932991a0692ff566facc9e75d50a368858a619b9b4826f454d128cbf"
+      }
+    },
+    {
+      "case": "librispeech_1188-133604-0031",
+      "owner": 0,
+      "uv_log_mass": {
+        "path": "uv_log_mass.npy",
+        "bytes": 6936,
+        "sha256": "abce54e78c3f3bc92757c19ad76f42eb24f663aef57810381ad3574a399380c9"
+      },
+      "voiced_log_mass": {
+        "path": "voiced_log_mass.npy",
+        "bytes": 6936,
+        "sha256": "4dd13a43a59db26d9f7315e2e7fc6dbe14f1fd718155660c9b47b89b6d77bfb6"
+      },
+      "offset_mean": {
+        "path": "offset_mean.npy",
+        "bytes": 7928,
+        "sha256": "626c542196217352f8d950488cb9c7b07caad4a6fd3d2a2d9918b1ecf788b2da"
+      }
+    },
+    {
+      "case": "librispeech_1188-133604-0037",
+      "owner": 0,
+      "uv_log_mass": {
+        "path": "uv_log_mass.npy",
+        "bytes": 9736,
+        "sha256": "b07601a23aaca911786984673e48bc59f35e8db7d22d7f9bf00a451a95733541"
+      },
+      "voiced_log_mass": {
+        "path": "voiced_log_mass.npy",
+        "bytes": 9736,
+        "sha256": "069a9b2c2812e2ed4e56e8d64258432f4ee493ffd16b3f02e520cbb95809a1ee"
+      },
+      "offset_mean": {
+        "path": "offset_mean.npy",
+        "bytes": 7928,
+        "sha256": "6b71571a8da0c58524d2339fec6bba04df025ef17010ad7e039d27571e5ab45e"
+      }
+    },
+    {
+      "case": "librispeech_121-121726-0012",
+      "owner": 0,
+      "uv_log_mass": {
+        "path": "uv_log_mass.npy",
+        "bytes": 6608,
+        "sha256": "442d1db6e898d77868eb4665cd3700861becdde5fdbff0ae72600f2487207ea6"
+      },
+      "voiced_log_mass": {
+        "path": "voiced_log_mass.npy",
+        "bytes": 6608,
+        "sha256": "691f1f7f8807edb68c5fccb7c171cdf9465f3a17952655930e28972d1804243e"
+      },
+      "offset_mean": {
+        "path": "offset_mean.npy",
+        "bytes": 7928,
+        "sha256": "2b6fff073816bfda38f2fc885f9278c7359ea923ff6398f1ba243a81ad582298"
+      }
+    },
+    {
+      "case": "librispeech_121-123852-0000",
+      "owner": 0,
+      "uv_log_mass": {
+        "path": "uv_log_mass.npy",
+        "bytes": 9736,
+        "sha256": "2d55b0ae6c158bd840434e7f074e4e5cf3c4ae675021241b1d1bac90c8c1d81b"
+      },
+      "voiced_log_mass": {
+        "path": "voiced_log_mass.npy",
+        "bytes": 9736,
+        "sha256": "79caebda08464b57af8d9f96ee1b3d414e4bb0d5ae97d7247fb0e7b989ee5fb7"
+      },
+      "offset_mean": {
+        "path": "offset_mean.npy",
+        "bytes": 7928,
+        "sha256": "082f29a0d82c6a0750f3f060b0f4e6114dac20922bf9b7495133b9c3b3f295b9"
+      }
+    },
+    {
+      "case": "librispeech_121-127105-0035",
+      "owner": 0,
+      "uv_log_mass": {
+        "path": "uv_log_mass.npy",
+        "bytes": 9736,
+        "sha256": "9604ae5f3f3bf61b7e89d9b0ac7f6e9bbe18e26c9cf6a55aed471d982d57980b"
+      },
+      "voiced_log_mass": {
+        "path": "voiced_log_mass.npy",
+        "bytes": 9736,
+        "sha256": "ce427770bb2370339b360b909492a6c083d9074991605f803cdb03925efde0a0"
+      },
+      "offset_mean": {
+        "path": "offset_mean.npy",
+        "bytes": 7928,
+        "sha256": "22ab71ec33cb4bbd9c5f77091b586c991bb85844064af61c922ea9a4cce6a329"
+      }
+    },
+    {
+      "case": "librispeech_1221-135766-0005",
+      "owner": 0,
+      "uv_log_mass": {
+        "path": "uv_log_mass.npy",
+        "bytes": 9736,
+        "sha256": "1c4998a8fcb79ba16d9c43e5bc6c3fb860d676ecc27230267c8b2ecb9d90dc57"
+      },
+      "voiced_log_mass": {
+        "path": "voiced_log_mass.npy",
+        "bytes": 9736,
+        "sha256": "4e2d01cb1f108ddefc717d2ee6e0c31830fdd519eadd7f1ba68afb2e1dbef1c2"
+      },
+      "offset_mean": {
+        "path": "offset_mean.npy",
+        "bytes": 7928,
+        "sha256": "42c7e0dd1aaca9fd8e48a902341ce6bd932e875a4a47e503b18ee5521d4f6e86"
+      }
+    },
+    {
+      "case": "librispeech_1221-135767-0006",
+      "owner": 0,
+      "uv_log_mass": {
+        "path": "uv_log_mass.npy",
+        "bytes": 9736,
+        "sha256": "c66912ac4582a0275ca72a759fff4a86cac4a357c572c6fbc8b74966c0bd55d5"
+      },
+      "voiced_log_mass": {
+        "path": "voiced_log_mass.npy",
+        "bytes": 9736,
+        "sha256": "10f2cc632449bd3362b619044780b90078533a87fcfb6383a262b26050606d69"
+      },
+      "offset_mean": {
+        "path": "offset_mean.npy",
+        "bytes": 7928,
+        "sha256": "f69c84b78e1588b975c5838b12fb0e61910492377fe0d0d6f69a693733730af0"
+      }
+    },
+    {
+      "case": "librispeech_1221-135767-0019",
+      "owner": 0,
+      "uv_log_mass": {
+        "path": "uv_log_mass.npy",
+        "bytes": 6184,
+        "sha256": "54171d5ceef538d0da44120c4d6448d42ba39c7267dacb6c17640671c96e378d"
+      },
+      "voiced_log_mass": {
+        "path": "voiced_log_mass.npy",
+        "bytes": 6184,
+        "sha256": "ac5462de909a4723fd7ebf8b96ba111a1eb20ef8b7af1feae98b1e05a42c2db4"
+      },
+      "offset_mean": {
+        "path": "offset_mean.npy",
+        "bytes": 7928,
+        "sha256": "b32a1cc9feffe966918f2fdaca02f1ea4b504e54f1e610d42357893d68489f19"
+      }
+    },
+    {
+      "case": "librispeech_1284-1180-0020",
+      "owner": 0,
+      "uv_log_mass": {
+        "path": "uv_log_mass.npy",
+        "bytes": 9528,
+        "sha256": "27b0d3024b60855959474d26d4106eab66363a7da8083709b0b4c6b571e11210"
+      },
+      "voiced_log_mass": {
+        "path": "voiced_log_mass.npy",
+        "bytes": 9528,
+        "sha256": "4c7e9b056a2fd1610cfebc18a42ca3da871204a1d25740d45efe014f1141f143"
+      },
+      "offset_mean": {
+        "path": "offset_mean.npy",
+        "bytes": 7928,
+        "sha256": "f81d676fdae4b056a3ca5bfc15c8b8fed901e4dbc82e82faf1bafe8883a99adb"
+      }
+    },
+    {
+      "case": "librispeech_1284-1180-0027",
+      "owner": 0,
+      "uv_log_mass": {
+        "path": "uv_log_mass.npy",
+        "bytes": 5368,
+        "sha256": "cc479276d3ac99e30283b5f792aed0176e23fee35b32dea281366553796942e4"
+      },
+      "voiced_log_mass": {
+        "path": "voiced_log_mass.npy",
+        "bytes": 5368,
+        "sha256": "a04a038dc37d3200a325e23feda5e194f49c4fb576b9c97013aa44788f9831a4"
+      },
+      "offset_mean": {
+        "path": "offset_mean.npy",
+        "bytes": 7928,
+        "sha256": "975661e09e2b851b5e5965e6a6cf66b300e4537f7c3f2df8db81b34a5d76d533"
+      }
+    },
+    {
+      "case": "librispeech_1284-1180-0028",
+      "owner": 0,
+      "uv_log_mass": {
+        "path": "uv_log_mass.npy",
+        "bytes": 9736,
+        "sha256": "4ec2839eb67356377de857dcffcbc6adc849397ce22ed296c10493d15dc3f7ca"
+      },
+      "voiced_log_mass": {
+        "path": "voiced_log_mass.npy",
+        "bytes": 9736,
+        "sha256": "66e3335ad1910ff0923d7420e2e2dd157893c65d7e64669c8d50e7d66087100f"
+      },
+      "offset_mean": {
+        "path": "offset_mean.npy",
+        "bytes": 7928,
+        "sha256": "187d22aa1ee640f3f308d9f373f1922d31534a2559b1153da064c4d77ba4438f"
+      }
+    },
+    {
+      "case": "librispeech_1320-122617-0019",
+      "owner": 0,
+      "uv_log_mass": {
+        "path": "uv_log_mass.npy",
+        "bytes": 9736,
+        "sha256": "8a573da1765e9740123c24cc10f3cef06cbf28e0257dfdaeb8bcc6232f0c965d"
+      },
+      "voiced_log_mass": {
+        "path": "voiced_log_mass.npy",
+        "bytes": 9736,
+        "sha256": "a2fe943c0872f242c09d2430501044c437ece2a14b0cd7ebd3f768d17f095f6e"
+      },
+      "offset_mean": {
+        "path": "offset_mean.npy",
+        "bytes": 7928,
+        "sha256": "b72321c6e483927de48953a54c60d16bace61d0c27ff474e7960484faad5dbb9"
+      }
+    },
+    {
+      "case": "librispeech_1320-122617-0023",
+      "owner": 0,
+      "uv_log_mass": {
+        "path": "uv_log_mass.npy",
+        "bytes": 9736,
+        "sha256": "27eb2a6d239cb35ad6b672ae6385b8746b8f82724bd62bd1e1102724182ea40c"
+      },
+      "voiced_log_mass": {
+        "path": "voiced_log_mass.npy",
+        "bytes": 9736,
+        "sha256": "6de7180d0471ba1abce411c82f8127628f32885682bff105ba81074c7cd9dd4c"
+      },
+      "offset_mean": {
+        "path": "offset_mean.npy",
+        "bytes": 7928,
+        "sha256": "c046bb5ae49b213829f51762f37461c928fb4eac5271dc63550985da2fb1e68d"
+      }
+    },
+    {
+      "case": "librispeech_1320-122617-0039",
+      "owner": 0,
+      "uv_log_mass": {
+        "path": "uv_log_mass.npy",
+        "bytes": 9736,
+        "sha256": "9e26521239a18859f7bc28706e69986f6e27c7a9561b2ba9d1b2df9f1c1b6c66"
+      },
+      "voiced_log_mass": {
+        "path": "voiced_log_mass.npy",
+        "bytes": 9736,
+        "sha256": "936d7cdb42f28b1151221c62a0089784e7041c2ecc9004957898f2050ff7692e"
+      },
+      "offset_mean": {
+        "path": "offset_mean.npy",
+        "bytes": 7928,
+        "sha256": "4c2d9cadd8eadf9a7910f2a5472daa753c26f839a97946181b9d216c3bdee9be"
+      }
+    },
+    {
+      "case": "librispeech_1580-141083-0010",
+      "owner": 0,
+      "uv_log_mass": {
+        "path": "uv_log_mass.npy",
+        "bytes": 8648,
+        "sha256": "168eed5617e847083e67f8307911a9b8808fffc575ea7b50f855a945d70bd4c6"
+      },
+      "voiced_log_mass": {
+        "path": "voiced_log_mass.npy",
+        "bytes": 8648,
+        "sha256": "f760f6087e5b2745f7fabf9ca6cc842f4817c4a89739ba0ec9fbb9c63adf448a"
+      },
+      "offset_mean": {
+        "path": "offset_mean.npy",
+        "bytes": 7928,
+        "sha256": "50da4b042ebd338cb125c855d5a426e548cd8ebbf5dd0ebaa49f520e1ac04f4c"
+      }
+    },
+    {
+      "case": "librispeech_1580-141084-0016",
+      "owner": 0,
+      "uv_log_mass": {
+        "path": "uv_log_mass.npy",
+        "bytes": 9672,
+        "sha256": "2c82f4d4d9622064532aad1662e8e224bc22c9c1a1ebd99277cd27b46e1c05a7"
+      },
+      "voiced_log_mass": {
+        "path": "voiced_log_mass.npy",
+        "bytes": 9672,
+        "sha256": "40565be5b94472964dc94b251a19ccaab240c5fbde99da2379ff8d347afc172e"
+      },
+      "offset_mean": {
+        "path": "offset_mean.npy",
+        "bytes": 7928,
+        "sha256": "f7f9a3457e1a97605cc6ebb04626068edde25d91b4e6e50b922830e0f4a15676"
+      }
+    },
+    {
+      "case": "librispeech_1580-141084-0047",
+      "owner": 0,
+      "uv_log_mass": {
+        "path": "uv_log_mass.npy",
+        "bytes": 8536,
+        "sha256": "d5aaab7ca62b204ca1b5413c71ee9d793cf0174d36a0afb0fcaaf39528762e9b"
+      },
+      "voiced_log_mass": {
+        "path": "voiced_log_mass.npy",
+        "bytes": 8536,
+        "sha256": "30e6c7aae07241b2cc19d8ee58508005b41dd3df2d9a80b87edf40dca300ecde"
+      },
+      "offset_mean": {
+        "path": "offset_mean.npy",
+        "bytes": 7928,
+        "sha256": "ad278ba1a0489e2fd5da9f1d1ba57b69bcad505c83ba41844f6c88085665503c"
+      }
+    },
+    {
+      "case": "librispeech_1995-1836-0000",
+      "owner": 0,
+      "uv_log_mass": {
+        "path": "uv_log_mass.npy",
+        "bytes": 9736,
+        "sha256": "46480bb5d093f3ec7f35e97566aad36b1103cb9c5fa146492d7ba5cdf160395c"
+      },
+      "voiced_log_mass": {
+        "path": "voiced_log_mass.npy",
+        "bytes": 9736,
+        "sha256": "c85aa4ce30204a6314eb05d48934140da0846cb5602427ed60050001eb9dc68d"
+      },
+      "offset_mean": {
+        "path": "offset_mean.npy",
+        "bytes": 7928,
+        "sha256": "fee3efe1b6292251d2f8413889af6b1d244154674ff444882103b478b9ef8374"
+      }
+    },
+    {
+      "case": "librispeech_1995-1836-0014",
+      "owner": 0,
+      "uv_log_mass": {
+        "path": "uv_log_mass.npy",
+        "bytes": 9736,
+        "sha256": "b477a32f3cb0fba4eeea74d0353ab0213b84ab7a40f0c6a2a14365708559996c"
+      },
+      "voiced_log_mass": {
+        "path": "voiced_log_mass.npy",
+        "bytes": 9736,
+        "sha256": "ab51f98c1ca4c75745ea53a16b62c35d1d766ed2bfe1654ec6f15c61790e7f0f"
+      },
+      "offset_mean": {
+        "path": "offset_mean.npy",
+        "bytes": 7928,
+        "sha256": "88e4cb90192a8f8fa81ec285584afca7e818c33a50feeeb1e6573c8c6bfeaf3a"
+      }
+    },
+    {
+      "case": "librispeech_1995-1837-0023",
+      "owner": 0,
+      "uv_log_mass": {
+        "path": "uv_log_mass.npy",
+        "bytes": 9736,
+        "sha256": "815dd1c021bf513b0f3a401e53029dfe172ea3d5db181c9e3f53b126e39de983"
+      },
+      "voiced_log_mass": {
+        "path": "voiced_log_mass.npy",
+        "bytes": 9736,
+        "sha256": "b82e9787fc70a77da9f28960ea82158d885b91a7455fa2f2810c18d0a40990b4"
+      },
+      "offset_mean": {
+        "path": "offset_mean.npy",
+        "bytes": 7928,
+        "sha256": "b908d4c18a47e98749d3fa137865beddf03ca95389314e72be7f512d8c817181"
+      }
+    },
+    {
+      "case": "librispeech_2094-142345-0032",
+      "owner": 0,
+      "uv_log_mass": {
+        "path": "uv_log_mass.npy",
+        "bytes": 5320,
+        "sha256": "c7596157bdc83930625da3c8e244d50124267e7c388bdf15fafd1b13cd163a56"
+      },
+      "voiced_log_mass": {
+        "path": "voiced_log_mass.npy",
+        "bytes": 5320,
+        "sha256": "07313dd4325224908fd11317b34ef93c6bfea319a48218e9a410f44f9b66aa13"
+      },
+      "offset_mean": {
+        "path": "offset_mean.npy",
+        "bytes": 7928,
+        "sha256": "bcb2b5fb30720f43d25a562d1a875c068973d0c242e253087cce9f027e0913cf"
+      }
+    },
+    {
+      "case": "librispeech_2094-142345-0039",
+      "owner": 0,
+      "uv_log_mass": {
+        "path": "uv_log_mass.npy",
+        "bytes": 9736,
+        "sha256": "00f03987b16a1451f94c2aabe172f7ae3a7d6d1adbf6a9aec9f797375adf87d8"
+      },
+      "voiced_log_mass": {
+        "path": "voiced_log_mass.npy",
+        "bytes": 9736,
+        "sha256": "c2df3bae66b64f0b1390ada34d35b684b6a4f579c4dfa13f25b1c3ced7f039b7"
+      },
+      "offset_mean": {
+        "path": "offset_mean.npy",
+        "bytes": 7928,
+        "sha256": "86e75e34d7bdf2087e1c8de46907698eb853d612d11b3063f82ddb0d9305e34e"
+      }
+    },
+    {
+      "case": "librispeech_2094-142345-0040",
+      "owner": 0,
+      "uv_log_mass": {
+        "path": "uv_log_mass.npy",
+        "bytes": 3952,
+        "sha256": "66f43098407bf54e9f228ab2a128975c5de421e00483b14cb4235cd11d3c2042"
+      },
+      "voiced_log_mass": {
+        "path": "voiced_log_mass.npy",
+        "bytes": 3952,
+        "sha256": "dc97fe6444250dd793070f0cc303c80e5f615a96d62ab462884b27e61cc62f12"
+      },
+      "offset_mean": {
+        "path": "offset_mean.npy",
+        "bytes": 7928,
+        "sha256": "5b20eb688b4e4c9e3d690c3734155a3cbe2eed319208d42fc416ce456a619c4e"
+      }
+    },
+    {
+      "case": "librispeech_2300-131720-0022",
+      "owner": 0,
+      "uv_log_mass": {
+        "path": "uv_log_mass.npy",
+        "bytes": 9736,
+        "sha256": "b96ac1bda3642d3727d6078b3f8336397288312bd529ad20a79edd417972cd17"
+      },
+      "voiced_log_mass": {
+        "path": "voiced_log_mass.npy",
+        "bytes": 9736,
+        "sha256": "f90fe705e07ea2143c8b12ec0637c4475c99ca17a2030d815fb3ab2eeab88328"
+      },
+      "offset_mean": {
+        "path": "offset_mean.npy",
+        "bytes": 7928,
+        "sha256": "c747aac836c2cd5eb945c00d1c7f47806a987dcbfaaacbdf60fdbb43a046a517"
+      }
+    },
+    {
+      "case": "librispeech_2300-131720-0028",
+      "owner": 0,
+      "uv_log_mass": {
+        "path": "uv_log_mass.npy",
+        "bytes": 9736,
+        "sha256": "01665026c11aaee9873bfca64621fdf110220929bfbc084d5cd741257616102e"
+      },
+      "voiced_log_mass": {
+        "path": "voiced_log_mass.npy",
+        "bytes": 9736,
+        "sha256": "3b313766127cae4a24f87a2c5fb4fffc65ff0bbed9bdb3421b22ab22c7134ced"
+      },
+      "offset_mean": {
+        "path": "offset_mean.npy",
+        "bytes": 7928,
+        "sha256": "dde52e9cff60be3b22a02872add3a73b55677c5b9a5c362407c17bcd78be3b36"
+      }
+    },
+    {
+      "case": "librispeech_2300-131720-0041",
+      "owner": 0,
+      "uv_log_mass": {
+        "path": "uv_log_mass.npy",
+        "bytes": 6136,
+        "sha256": "256f602a1c040309c169e8863c77005044ab562ceb15a92289cf130183549302"
+      },
+      "voiced_log_mass": {
+        "path": "voiced_log_mass.npy",
+        "bytes": 6136,
+        "sha256": "ddb345daf2e63269325086e02d56dffb225f9081fdadb2cf805a383f26dea619"
+      },
+      "offset_mean": {
+        "path": "offset_mean.npy",
+        "bytes": 7928,
+        "sha256": "b12d3df8efeb5ae342de14fac4bf053e96b1b402925e2515e45ce7fdc07fc752"
+      }
+    },
+    {
+      "case": "librispeech_237-126133-0003",
+      "owner": 0,
+      "uv_log_mass": {
+        "path": "uv_log_mass.npy",
+        "bytes": 9736,
+        "sha256": "f4922cf1c427705cfca39749cd990979e86637fa484fc554334097994b0f1d68"
+      },
+      "voiced_log_mass": {
+        "path": "voiced_log_mass.npy",
+        "bytes": 9736,
+        "sha256": "afe4ad430e3b75c5901d62c6a9f8b99e2734d4ab4bcc29e09e4615aaa924a7aa"
+      },
+      "offset_mean": {
+        "path": "offset_mean.npy",
+        "bytes": 7928,
+        "sha256": "ee2db70d4613e640408f425568f5a98be1e292c92699bc26fd555c59efb5e40f"
+      }
+    },
+    {
+      "case": "librispeech_237-134500-0029",
+      "owner": 0,
+      "uv_log_mass": {
+        "path": "uv_log_mass.npy",
+        "bytes": 3440,
+        "sha256": "b53a331783b9ad8be10e65400799404339e234892d2b1815918b1c9320e5368c"
+      },
+      "voiced_log_mass": {
+        "path": "voiced_log_mass.npy",
+        "bytes": 3440,
+        "sha256": "9220815a7ff440902a73da47f2e5497246e4649565fd5e014b000a54d4270e1b"
+      },
+      "offset_mean": {
+        "path": "offset_mean.npy",
+        "bytes": 7928,
+        "sha256": "2ab32d89a30d95f3b1163369c4f95ed12e8ac899ac03655f71049d27f9e2d6f2"
+      }
+    },
+    {
+      "case": "librispeech_237-134500-0031",
+      "owner": 0,
+      "uv_log_mass": {
+        "path": "uv_log_mass.npy",
+        "bytes": 9736,
+        "sha256": "66aa514e26e90055d1d52910823dd04ce3f657842e50a4e2f0ff04076d1eb8b0"
+      },
+      "voiced_log_mass": {
+        "path": "voiced_log_mass.npy",
+        "bytes": 9736,
+        "sha256": "0c5fbcfaf89013a73e79120be8b5f42984eac2508c745aa0e182e0caadd7b4f9"
+      },
+      "offset_mean": {
+        "path": "offset_mean.npy",
+        "bytes": 7928,
+        "sha256": "98be8e0537e7c01006434f7166a9d762eb7df05158438acc28d7a4304ba99590"
+      }
+    },
+    {
+      "case": "librispeech_260-123286-0008",
+      "owner": 0,
+      "uv_log_mass": {
+        "path": "uv_log_mass.npy",
+        "bytes": 6112,
+        "sha256": "b873dd72a7fafcf34767cadb086ec515a15d401e50d5abe122d3513c350c52a6"
+      },
+      "voiced_log_mass": {
+        "path": "voiced_log_mass.npy",
+        "bytes": 6112,
+        "sha256": "f817336297bd6f71480dcb5438b447e7f94284d45bf02d45544ea615b83bae7d"
+      },
+      "offset_mean": {
+        "path": "offset_mean.npy",
+        "bytes": 7928,
+        "sha256": "48c6ded856928d305684e65a40c5e1f2c35e264fc3162a396215024e9c47d591"
+      }
+    },
+    {
+      "case": "librispeech_260-123288-0003",
+      "owner": 0,
+      "uv_log_mass": {
+        "path": "uv_log_mass.npy",
+        "bytes": 9736,
+        "sha256": "162f1d1f9085e9aed9dab0b546b6e0a2cefb700cfe026e11eb10d3b555b43e8c"
+      },
+      "voiced_log_mass": {
+        "path": "voiced_log_mass.npy",
+        "bytes": 9736,
+        "sha256": "80efb8bb05c8d03e34bee89f16cbe022f932ced95353dbb8115e2ca4495b40c7"
+      },
+      "offset_mean": {
+        "path": "offset_mean.npy",
+        "bytes": 7928,
+        "sha256": "60d81568ac331b12de2ae66fd654ded3cb5039fb06666366e803c35558d31edb"
+      }
+    },
+    {
+      "case": "librispeech_260-123440-0020",
+      "owner": 0,
+      "uv_log_mass": {
+        "path": "uv_log_mass.npy",
+        "bytes": 8128,
+        "sha256": "876be4ba0d762e8260328a776c455e3e9bff2b364f2a05ab346c92fae1c3d1f9"
+      },
+      "voiced_log_mass": {
+        "path": "voiced_log_mass.npy",
+        "bytes": 8128,
+        "sha256": "c0fc0b6b2529e6803d28bf78ba569498ff87cc9b579495c11588064dda060d7f"
+      },
+      "offset_mean": {
+        "path": "offset_mean.npy",
+        "bytes": 7928,
+        "sha256": "fb3996063bf887f75eb57cd1bd4c3dc1c49925c34ad478dfa3f0846146a6d24c"
+      }
+    },
+    {
+      "case": "librispeech_2830-3980-0000",
+      "owner": 0,
+      "uv_log_mass": {
+        "path": "uv_log_mass.npy",
+        "bytes": 6104,
+        "sha256": "76ec76afb12f75a65053080bd73d80e2476b233c271a9d2ef851fd39a8ace473"
+      },
+      "voiced_log_mass": {
+        "path": "voiced_log_mass.npy",
+        "bytes": 6104,
+        "sha256": "238f8eaa89ce3cf31ad0e75019f9df06df381dccd4dd464beb7626d247b1fce2"
+      },
+      "offset_mean": {
+        "path": "offset_mean.npy",
+        "bytes": 7928,
+        "sha256": "a85428f368b4386cf100cd726c8ed9470272884d92cd2a897ed52005612deb4f"
+      }
+    },
+    {
+      "case": "librispeech_2830-3980-0038",
+      "owner": 0,
+      "uv_log_mass": {
+        "path": "uv_log_mass.npy",
+        "bytes": 9000,
+        "sha256": "78afde19c3fdce34010811a0ff457f8549d87f7562dc6017e4985f03c50140d2"
+      },
+      "voiced_log_mass": {
+        "path": "voiced_log_mass.npy",
+        "bytes": 9000,
+        "sha256": "525dbc3c5ba02abac3ce59c0a8438cf1fc92d78cd17ac31d7c59cf85ce7c1391"
+      },
+      "offset_mean": {
+        "path": "offset_mean.npy",
+        "bytes": 7928,
+        "sha256": "c9834c4ed5bd06d61ee0332b7946388958d020ec495fd8a7b8e6c75bac18e8a2"
+      }
+    },
+    {
+      "case": "librispeech_2830-3980-0042",
+      "owner": 0,
+      "uv_log_mass": {
+        "path": "uv_log_mass.npy",
+        "bytes": 4968,
+        "sha256": "08d00f2cd727e958f285ee409acc8547b9f19c82ac6ae72e55681ee33314f836"
+      },
+      "voiced_log_mass": {
+        "path": "voiced_log_mass.npy",
+        "bytes": 4968,
+        "sha256": "a7bf8bc242c276b851144af39c56acbb2631b87bd4673b4221c048763244867b"
+      },
+      "offset_mean": {
+        "path": "offset_mean.npy",
+        "bytes": 7928,
+        "sha256": "a94f5ba4bb08649ecaba8f4add84b00ea7a7c5ed3ab00868a1e8715b587a1d34"
+      }
+    },
+    {
+      "case": "librispeech_2961-960-0010",
+      "owner": 0,
+      "uv_log_mass": {
+        "path": "uv_log_mass.npy",
+        "bytes": 9736,
+        "sha256": "8d1c6db1cc809841263eea8eb0ddde8c88066672bb67c19fc839a7fdb415bb2d"
+      },
+      "voiced_log_mass": {
+        "path": "voiced_log_mass.npy",
+        "bytes": 9736,
+        "sha256": "80ba03edc687e54cb4272840716963d6ab4661abe0d4882e3ac27e5e8a686599"
+      },
+      "offset_mean": {
+        "path": "offset_mean.npy",
+        "bytes": 7928,
+        "sha256": "055e12181aab8228260686e12d3eabea0215bb8fa5a6a9e7e75a39c9c5dfdc04"
+      }
+    },
+    {
+      "case": "librispeech_2961-960-0019",
+      "owner": 0,
+      "uv_log_mass": {
+        "path": "uv_log_mass.npy",
+        "bytes": 9736,
+        "sha256": "48bc7cbb1604c61f58ec18363d4112e756190b7b1a7af0c37d9e4cb3dd382bb3"
+      },
+      "voiced_log_mass": {
+        "path": "voiced_log_mass.npy",
+        "bytes": 9736,
+        "sha256": "b9f0847e7cf65a3e6114d0b39513099fecd9accd0970e8bb6e3830694f738414"
+      },
+      "offset_mean": {
+        "path": "offset_mean.npy",
+        "bytes": 7928,
+        "sha256": "3e46d144035d125d54dff4f1f8e99156b1406054789b178b82181008953d3bbb"
+      }
+    },
+    {
+      "case": "librispeech_2961-961-0011",
+      "owner": 0,
+      "uv_log_mass": {
+        "path": "uv_log_mass.npy",
+        "bytes": 9736,
+        "sha256": "8db3bfa5553f6bcf4b1a99372545cb057c5119a2146ab8dfdec6a13739f8dc72"
+      },
+      "voiced_log_mass": {
+        "path": "voiced_log_mass.npy",
+        "bytes": 9736,
+        "sha256": "0b499ebaffb7462c1cbf6ddd0e2c671ba5f44bc226fea9db33007c29fa87d886"
+      },
+      "offset_mean": {
+        "path": "offset_mean.npy",
+        "bytes": 7928,
+        "sha256": "ca56ffa8b4d4e4c0f8ea9672c6d7a70259bcbcf206954a73628854eac4e035a6"
+      }
+    },
+    {
+      "case": "librispeech_3570-5694-0001",
+      "owner": 1,
+      "uv_log_mass": {
+        "path": "uv_log_mass.npy",
+        "bytes": 9216,
+        "sha256": "bb458f2b49bbd7bd016a5ed47a699ee4337c7687c0fa31e3b77d542851b862ea"
+      },
+      "voiced_log_mass": {
+        "path": "voiced_log_mass.npy",
+        "bytes": 9216,
+        "sha256": "39d92cadf5311e658d951975299ecbc5420f3f8a9740b8d0a2803ffbbf55f19f"
+      },
+      "offset_mean": {
+        "path": "offset_mean.npy",
+        "bytes": 7928,
+        "sha256": "ab184c6786c4c005cebb0d34d8ea42d8db689cd4a861e59a969f6a22ac3880bd"
+      }
+    },
+    {
+      "case": "librispeech_3570-5694-0004",
+      "owner": 1,
+      "uv_log_mass": {
+        "path": "uv_log_mass.npy",
+        "bytes": 8664,
+        "sha256": "f6797452f6c6bf88a9cdcd7f9a0684635d488f5ec6e2eaccbe28d4ef6ce7cd78"
+      },
+      "voiced_log_mass": {
+        "path": "voiced_log_mass.npy",
+        "bytes": 8664,
+        "sha256": "349b2db44b610a2dfd3fa0fed78edb9ab20c7aa3c7b69d797d05caf0bff67742"
+      },
+      "offset_mean": {
+        "path": "offset_mean.npy",
+        "bytes": 7928,
+        "sha256": "6372060d0fcd46322f0d4ff296260b8c250278f13cccf6119ab47411a79212e6"
+      }
+    },
+    {
+      "case": "librispeech_3570-5696-0010",
+      "owner": 1,
+      "uv_log_mass": {
+        "path": "uv_log_mass.npy",
+        "bytes": 9736,
+        "sha256": "1424a52c90221585cb07c19fdc3a96cb8487b92e31ce000507aaa3defba82656"
+      },
+      "voiced_log_mass": {
+        "path": "voiced_log_mass.npy",
+        "bytes": 9736,
+        "sha256": "72b0b17454cbe862f163284a76baa4ed09b706cb1665363cdbb2ae8c612254f4"
+      },
+      "offset_mean": {
+        "path": "offset_mean.npy",
+        "bytes": 7928,
+        "sha256": "be7e65e6dd41a3a6ebb5cb2d76f200e21b83e0c8152550c9bec8fc885acf7d18"
+      }
+    },
+    {
+      "case": "librispeech_3575-170457-0034",
+      "owner": 1,
+      "uv_log_mass": {
+        "path": "uv_log_mass.npy",
+        "bytes": 5728,
+        "sha256": "1aa5ca924dc5671b0b0f77a86e47aa642746ba427664ed7e1ba45f7bd2ced344"
+      },
+      "voiced_log_mass": {
+        "path": "voiced_log_mass.npy",
+        "bytes": 5728,
+        "sha256": "06114d269edd92037e81541cc3545bb96c01638095fc3389812b8ad53d6a5523"
+      },
+      "offset_mean": {
+        "path": "offset_mean.npy",
+        "bytes": 7928,
+        "sha256": "1a40c1e0a24d705f1a82ee494632f2054c114151f36558180f66070c2e56743f"
+      }
+    },
+    {
+      "case": "librispeech_3575-170457-0041",
+      "owner": 1,
+      "uv_log_mass": {
+        "path": "uv_log_mass.npy",
+        "bytes": 9736,
+        "sha256": "da8b90ed7839154aad3980485c06a0066820bcf3c90fc7433096963f9cc50bec"
+      },
+      "voiced_log_mass": {
+        "path": "voiced_log_mass.npy",
+        "bytes": 9736,
+        "sha256": "556df83dff1d4e19f10e02571b11e3f7c956688d027219ae9143a2b69c18d269"
+      },
+      "offset_mean": {
+        "path": "offset_mean.npy",
+        "bytes": 7928,
+        "sha256": "15c535ed291d22351a086af787799e02c315106e33a3d6af91d141e9acee390a"
+      }
+    },
+    {
+      "case": "librispeech_3575-170457-0054",
+      "owner": 1,
+      "uv_log_mass": {
+        "path": "uv_log_mass.npy",
+        "bytes": 9736,
+        "sha256": "04c112667428f89bdbb051f32f0d42c39a89dea881646d3e2007cc76df3ff5e7"
+      },
+      "voiced_log_mass": {
+        "path": "voiced_log_mass.npy",
+        "bytes": 9736,
+        "sha256": "26fcd48cbb26ec6d9cb00185c1e1065ae745008144d92bdad197399a0cca6006"
+      },
+      "offset_mean": {
+        "path": "offset_mean.npy",
+        "bytes": 7928,
+        "sha256": "4c24578b5529ee05f2184b6fbde66ced275e649dc23d529b892ce5c8a582c6ff"
+      }
+    },
+    {
+      "case": "librispeech_3729-6852-0000",
+      "owner": 1,
+      "uv_log_mass": {
+        "path": "uv_log_mass.npy",
+        "bytes": 9736,
+        "sha256": "64f294afa59702fecacab753cdc9b9033968c1111050625ac4ae88d75c39c2a8"
+      },
+      "voiced_log_mass": {
+        "path": "voiced_log_mass.npy",
+        "bytes": 9736,
+        "sha256": "847360e52085477ae979f8787c302a7a1052a3d7e8e6b5c439f97b37b0f65cfd"
+      },
+      "offset_mean": {
+        "path": "offset_mean.npy",
+        "bytes": 7928,
+        "sha256": "59dda3f6bfcaa03e3a1cdfb3bac0ca9cf7765f9fd42fd16135cd93a6945dc2d9"
+      }
+    },
+    {
+      "case": "librispeech_3729-6852-0007",
+      "owner": 1,
+      "uv_log_mass": {
+        "path": "uv_log_mass.npy",
+        "bytes": 9736,
+        "sha256": "74fa10f3fcbf260d7b38680c1580cceb1cd0322e5000157ecca82f8394136050"
+      },
+      "voiced_log_mass": {
+        "path": "voiced_log_mass.npy",
+        "bytes": 9736,
+        "sha256": "35539ca8147cae9545ea8c8435846436d79c80f44f09d10cfd80583d8a5dcc6b"
+      },
+      "offset_mean": {
+        "path": "offset_mean.npy",
+        "bytes": 7928,
+        "sha256": "9663b29714300bb457949ec9f3766794f74c05293166705d012163139751c68a"
+      }
+    },
+    {
+      "case": "librispeech_3729-6852-0017",
+      "owner": 1,
+      "uv_log_mass": {
+        "path": "uv_log_mass.npy",
+        "bytes": 9736,
+        "sha256": "e9b12e2014eff48acaee73d95f08961453a34e7d5085e5bafff60d3b366818cb"
+      },
+      "voiced_log_mass": {
+        "path": "voiced_log_mass.npy",
+        "bytes": 9736,
+        "sha256": "2cf848e4a3c2641c6e4d07918c6be0223857aface631e9d4da4f97f0e8f42a8e"
+      },
+      "offset_mean": {
+        "path": "offset_mean.npy",
+        "bytes": 7928,
+        "sha256": "361f232c939a6afb3ad500e166e05fea32c48f6674cf567f90827945b25c1d9c"
+      }
+    },
+    {
+      "case": "librispeech_4077-13751-0001",
+      "owner": 1,
+      "uv_log_mass": {
+        "path": "uv_log_mass.npy",
+        "bytes": 9736,
+        "sha256": "e602273e2c919a48acf736a5c63fc61c599ee3948bab1ae33015f54627c940df"
+      },
+      "voiced_log_mass": {
+        "path": "voiced_log_mass.npy",
+        "bytes": 9736,
+        "sha256": "5b460fd149c7209ce684630ae5690cbbbfd205e170d2eb08861038ef2e5dd0af"
+      },
+      "offset_mean": {
+        "path": "offset_mean.npy",
+        "bytes": 7928,
+        "sha256": "94de1f170985ea625be19e305c9b9527d5d75f8a1e82a49c400b5a48d9de66f0"
+      }
+    },
+    {
+      "case": "librispeech_4077-13754-0002",
+      "owner": 1,
+      "uv_log_mass": {
+        "path": "uv_log_mass.npy",
+        "bytes": 9736,
+        "sha256": "5cda20dc6ea095e197101f9c62b025aa55c419139250e68280bd4cbd97cbb7cb"
+      },
+      "voiced_log_mass": {
+        "path": "voiced_log_mass.npy",
+        "bytes": 9736,
+        "sha256": "ac7779877a2f4bc0cc84bca16a8ed84708b77b36a38a7268a0447bffc2b51f21"
+      },
+      "offset_mean": {
+        "path": "offset_mean.npy",
+        "bytes": 7928,
+        "sha256": "b91cddbbfc176418fb21935141f02b08b6db1dfacf2bc90b172a5d8befe54500"
+      }
+    },
+    {
+      "case": "librispeech_4077-13754-0012",
+      "owner": 1,
+      "uv_log_mass": {
+        "path": "uv_log_mass.npy",
+        "bytes": 9736,
+        "sha256": "c0c855c13b9722fcadf5827c8bb0611a6467f05a0946bb1e5ca972b69ff2e079"
+      },
+      "voiced_log_mass": {
+        "path": "voiced_log_mass.npy",
+        "bytes": 9736,
+        "sha256": "3110b8a564b6461de86d481d543122de0605c52e4250b8a0708bd6c0e6668999"
+      },
+      "offset_mean": {
+        "path": "offset_mean.npy",
+        "bytes": 7928,
+        "sha256": "4943add73702cd4fa1598c33c3a48b3a2a53b8d24dac709f524f169b2b26717a"
+      }
+    },
+    {
+      "case": "librispeech_4446-2271-0003",
+      "owner": 1,
+      "uv_log_mass": {
+        "path": "uv_log_mass.npy",
+        "bytes": 6056,
+        "sha256": "26afeb9aceed5b2baddc3df70cca92a1a1a5847b7d9ffc84b7b2926ffac5c89f"
+      },
+      "voiced_log_mass": {
+        "path": "voiced_log_mass.npy",
+        "bytes": 6056,
+        "sha256": "dbf10a0afd82130aad0bf717f3c6119af7a14eb1f9168cdcb21634e98fb46852"
+      },
+      "offset_mean": {
+        "path": "offset_mean.npy",
+        "bytes": 7928,
+        "sha256": "b3a2787fafe6049915e176cb6f241501fadbfff43a2b9a8742e92741c261dc4b"
+      }
+    },
+    {
+      "case": "librispeech_4446-2271-0022",
+      "owner": 1,
+      "uv_log_mass": {
+        "path": "uv_log_mass.npy",
+        "bytes": 3856,
+        "sha256": "8749229a242f3e715d6b95112285a3559786008964f34508d6b25cb9c09308a9"
+      },
+      "voiced_log_mass": {
+        "path": "voiced_log_mass.npy",
+        "bytes": 3856,
+        "sha256": "ff3b556e6b833b0976bb9ff9e34ef845eb1f86fd2562bd0795176cc2270e6af6"
+      },
+      "offset_mean": {
+        "path": "offset_mean.npy",
+        "bytes": 7928,
+        "sha256": "3034cdeab24d72418a5ef42d1aea5a531209bb2d49f36fc9ed649f82f3da2a61"
+      }
+    },
+    {
+      "case": "librispeech_4446-2273-0010",
+      "owner": 1,
+      "uv_log_mass": {
+        "path": "uv_log_mass.npy",
+        "bytes": 9736,
+        "sha256": "99e5c0c333e3cefd66ca8828d187265fb2dc91f44eed54d7176d0c9ab53ae802"
+      },
+      "voiced_log_mass": {
+        "path": "voiced_log_mass.npy",
+        "bytes": 9736,
+        "sha256": "f00ec5f1e2d57271f0134959c78a9198e0811efdb68dd8784c35c13fa5a02404"
+      },
+      "offset_mean": {
+        "path": "offset_mean.npy",
+        "bytes": 7928,
+        "sha256": "a97110a95a9288588ee66a1c650c59ac1229ccd20df7bfe5d2ac7e13a9c71194"
+      }
+    },
+    {
+      "case": "librispeech_4507-16021-0016",
+      "owner": 1,
+      "uv_log_mass": {
+        "path": "uv_log_mass.npy",
+        "bytes": 9736,
+        "sha256": "3998a6285a9307fe38637d29686de0d54d7ae6d4cef430373161e75af59993df"
+      },
+      "voiced_log_mass": {
+        "path": "voiced_log_mass.npy",
+        "bytes": 9736,
+        "sha256": "ba5acd2f65d52761d647654e72ff5ca32bbadef4965f4c5fedec93448ceb5155"
+      },
+      "offset_mean": {
+        "path": "offset_mean.npy",
+        "bytes": 7928,
+        "sha256": "d0ed64f7f45e192e8e89a91a99dd97b8bb5aafc984a387961bb3a244c2ab8fca"
+      }
+    },
+    {
+      "case": "librispeech_4507-16021-0032",
+      "owner": 1,
+      "uv_log_mass": {
+        "path": "uv_log_mass.npy",
+        "bytes": 9736,
+        "sha256": "a163bc6841cf8bbd2c75394b860e607370c7f08feeb90d1adcd75556274ed7bb"
+      },
+      "voiced_log_mass": {
+        "path": "voiced_log_mass.npy",
+        "bytes": 9736,
+        "sha256": "5975cdef26883ae1e77cbb1bba29ef2445b81df8698371cbe894c80d619794ea"
+      },
+      "offset_mean": {
+        "path": "offset_mean.npy",
+        "bytes": 7928,
+        "sha256": "5d370f30b093c414b4355c48ec62e5db124da6ace2545c913bad916e281a48ef"
+      }
+    },
+    {
+      "case": "librispeech_4507-16021-0045",
+      "owner": 1,
+      "uv_log_mass": {
+        "path": "uv_log_mass.npy",
+        "bytes": 7960,
+        "sha256": "6a5573565cdcc0adf91802bbeffb0eb070d48a38a0a30fd1229ce9b06d82f68b"
+      },
+      "voiced_log_mass": {
+        "path": "voiced_log_mass.npy",
+        "bytes": 7960,
+        "sha256": "b22f97fab680263be6ec1dbc1c03796fe4b88be62b387d12b5ab2f4a0f2c364c"
+      },
+      "offset_mean": {
+        "path": "offset_mean.npy",
+        "bytes": 7928,
+        "sha256": "f2453a746a1dbbb835c7e135a7e25fcfa515793d8e9a1e8343292c6e4c1aa30a"
+      }
+    },
+    {
+      "case": "librispeech_4970-29093-0004",
+      "owner": 1,
+      "uv_log_mass": {
+        "path": "uv_log_mass.npy",
+        "bytes": 6136,
+        "sha256": "ed1131e10355f59f475b04f5c8684946c4440b47206e2610cf51df4cbc8059f8"
+      },
+      "voiced_log_mass": {
+        "path": "voiced_log_mass.npy",
+        "bytes": 6136,
+        "sha256": "fac5df356f788d6e4023d44131b56edb64cb3a712c413d8dcffa531edfef0288"
+      },
+      "offset_mean": {
+        "path": "offset_mean.npy",
+        "bytes": 7928,
+        "sha256": "cfb53accf549b78d6ab91e9b6b01c0c2e6a161ff092caf77c3dfb8451b07f700"
+      }
+    },
+    {
+      "case": "librispeech_4970-29093-0005",
+      "owner": 1,
+      "uv_log_mass": {
+        "path": "uv_log_mass.npy",
+        "bytes": 9736,
+        "sha256": "4366c8e0c0c8f8c9c62be3f28e78741a881c82597d1dc7697deb62ce7f8a0f1a"
+      },
+      "voiced_log_mass": {
+        "path": "voiced_log_mass.npy",
+        "bytes": 9736,
+        "sha256": "5562b36df6c933be09ebbabe0111dc41009b8d5db99cd0fc0478272da0cac8e2"
+      },
+      "offset_mean": {
+        "path": "offset_mean.npy",
+        "bytes": 7928,
+        "sha256": "25e8f55e83510836bb02dadd29c607ed1c1b664ad9e2f1e9ed912f464c7e3700"
+      }
+    },
+    {
+      "case": "librispeech_4970-29095-0008",
+      "owner": 1,
+      "uv_log_mass": {
+        "path": "uv_log_mass.npy",
+        "bytes": 5000,
+        "sha256": "18a9859b2f22154c0306dc8168b70d7eb3bdcc68e80be1f4084f7d938a3ea43c"
+      },
+      "voiced_log_mass": {
+        "path": "voiced_log_mass.npy",
+        "bytes": 5000,
+        "sha256": "7907eb9f2bfa831f819be1c863664f43c9b92f95736455f09aaff58349bda433"
+      },
+      "offset_mean": {
+        "path": "offset_mean.npy",
+        "bytes": 7928,
+        "sha256": "445dfe7e19773ec10035c26611f415e1545c5cdf5d00a06ef7b6578d33e98e7b"
+      }
+    },
+    {
+      "case": "librispeech_4992-23283-0016",
+      "owner": 1,
+      "uv_log_mass": {
+        "path": "uv_log_mass.npy",
+        "bytes": 7328,
+        "sha256": "775ee33aae6f0813287620c1e2db65cb8c522cad282fbbc0095c55a8eb911789"
+      },
+      "voiced_log_mass": {
+        "path": "voiced_log_mass.npy",
+        "bytes": 7328,
+        "sha256": "1f10896d21faa494fac372e660d407fb6555e7ad11831b4bd9b557ed0d3ee845"
+      },
+      "offset_mean": {
+        "path": "offset_mean.npy",
+        "bytes": 7928,
+        "sha256": "8c8025e942ad71d5ebc82bbab581aa606f3df718ee0e5c1ce485ed7c5049f2e4"
+      }
+    },
+    {
+      "case": "librispeech_4992-41797-0000",
+      "owner": 1,
+      "uv_log_mass": {
+        "path": "uv_log_mass.npy",
+        "bytes": 8912,
+        "sha256": "5c98e59fef70bc89eb3a38d77504aa13a5a07e954298780fb3149ad5fee45610"
+      },
+      "voiced_log_mass": {
+        "path": "voiced_log_mass.npy",
+        "bytes": 8912,
+        "sha256": "11435f45ce87e317a53ed735879826bb376d5962cd291079840fc76e4ae62cdf"
+      },
+      "offset_mean": {
+        "path": "offset_mean.npy",
+        "bytes": 7928,
+        "sha256": "550dc6e6ae8ba94e06083f856886b1b0bff8f981cd234f9016767e15b9a94dcb"
+      }
+    },
+    {
+      "case": "librispeech_4992-41806-0000",
+      "owner": 1,
+      "uv_log_mass": {
+        "path": "uv_log_mass.npy",
+        "bytes": 9736,
+        "sha256": "01f2b91b74c31941aab44d8a4cf8f02c6c5a30f79a218f509412b52e00166d34"
+      },
+      "voiced_log_mass": {
+        "path": "voiced_log_mass.npy",
+        "bytes": 9736,
+        "sha256": "9c582b4916919f6bd526af5bcdf4f7b0f561a8bc98d2be852322c12a2db64f57"
+      },
+      "offset_mean": {
+        "path": "offset_mean.npy",
+        "bytes": 7928,
+        "sha256": "d2494164d2acd81e585ee863a6f303f568dc2107088887258729d512135a0069"
+      }
+    },
+    {
+      "case": "librispeech_5105-28240-0011",
+      "owner": 1,
+      "uv_log_mass": {
+        "path": "uv_log_mass.npy",
+        "bytes": 9736,
+        "sha256": "513f0e873f6e57c99ce9a2e66813a3a434e792f049ee56ddeb7b2b884a937fd1"
+      },
+      "voiced_log_mass": {
+        "path": "voiced_log_mass.npy",
+        "bytes": 9736,
+        "sha256": "e415256834d8eb76f80080fdeff02cd1de5cc32273f53e4a978396ffe18468e4"
+      },
+      "offset_mean": {
+        "path": "offset_mean.npy",
+        "bytes": 7928,
+        "sha256": "40dfadce0a67b69835a8926b710fed17497ab1ee20bc544436262f0b09a86780"
+      }
+    },
+    {
+      "case": "librispeech_5105-28241-0004",
+      "owner": 1,
+      "uv_log_mass": {
+        "path": "uv_log_mass.npy",
+        "bytes": 9736,
+        "sha256": "cadd473897ceb26071956097c503c051e15949fbfddf724110a73da4431c6078"
+      },
+      "voiced_log_mass": {
+        "path": "voiced_log_mass.npy",
+        "bytes": 9736,
+        "sha256": "a8ee1fc678d55b16465c40c4246a4c95f7807fc6b15733a728daf8b0dc3c1da1"
+      },
+      "offset_mean": {
+        "path": "offset_mean.npy",
+        "bytes": 7928,
+        "sha256": "e59fe2ea4f2d43d8d49e23cd85b9b1846fa703fdd8f2f6aabd368e648a537616"
+      }
+    },
+    {
+      "case": "librispeech_5105-28241-0019",
+      "owner": 1,
+      "uv_log_mass": {
+        "path": "uv_log_mass.npy",
+        "bytes": 8600,
+        "sha256": "db2adb1a49fa84ec02a53ef6ee8895c22b3d9191d5f4c5ee24009de107a31a21"
+      },
+      "voiced_log_mass": {
+        "path": "voiced_log_mass.npy",
+        "bytes": 8600,
+        "sha256": "eeff3d5633083e250306f3ab4645b80765428047610fc669605d6271442e04a2"
+      },
+      "offset_mean": {
+        "path": "offset_mean.npy",
+        "bytes": 7928,
+        "sha256": "4615fb96f71d0a52e998254f86caafebcb85533bae6a8c86021dbc7e2de650f9"
+      }
+    },
+    {
+      "case": "librispeech_5142-33396-0019",
+      "owner": 1,
+      "uv_log_mass": {
+        "path": "uv_log_mass.npy",
+        "bytes": 8112,
+        "sha256": "eeaed574e42560e90b7c4b23c3a7016b66a0d23a0495582609e21e8441bd6744"
+      },
+      "voiced_log_mass": {
+        "path": "voiced_log_mass.npy",
+        "bytes": 8112,
+        "sha256": "af8e0d2f219956eab6449b461032f3d05726ac768fd2b65b14eec753753e3f42"
+      },
+      "offset_mean": {
+        "path": "offset_mean.npy",
+        "bytes": 7928,
+        "sha256": "2cfd50466d54d64a44ee3cda938835460ea4c08fe4a329385cd2878406addb39"
+      }
+    },
+    {
+      "case": "librispeech_5142-33396-0030",
+      "owner": 1,
+      "uv_log_mass": {
+        "path": "uv_log_mass.npy",
+        "bytes": 4560,
+        "sha256": "66970639196728a756fa78821ac38ca1f0d350a05807b3d4c582847f432f9ea5"
+      },
+      "voiced_log_mass": {
+        "path": "voiced_log_mass.npy",
+        "bytes": 4560,
+        "sha256": "79317298d03aa2f076784665c2fe8e23be3ed011fb38b3293206d24a8194320e"
+      },
+      "offset_mean": {
+        "path": "offset_mean.npy",
+        "bytes": 7928,
+        "sha256": "8e51046e1706af4025342eb8fef3bdcba9465937ff6b0c16c7b27973c6407498"
+      }
+    },
+    {
+      "case": "librispeech_5142-33396-0065",
+      "owner": 1,
+      "uv_log_mass": {
+        "path": "uv_log_mass.npy",
+        "bytes": 8448,
+        "sha256": "1a94187fb48af3b414f78a9dc19cf772e10bec5dbe8f58f3f6bf0a4a2aec16fe"
+      },
+      "voiced_log_mass": {
+        "path": "voiced_log_mass.npy",
+        "bytes": 8448,
+        "sha256": "2fb3253a66cc3dabe07bc0d423d513cabd1b2047f4bbbf378331c5928a13c33b"
+      },
+      "offset_mean": {
+        "path": "offset_mean.npy",
+        "bytes": 7928,
+        "sha256": "b8186297cc3efc70b32133bb34993f32df76e9d3be2a177a77d3201a96e5696e"
+      }
+    },
+    {
+      "case": "librispeech_5639-40744-0013",
+      "owner": 1,
+      "uv_log_mass": {
+        "path": "uv_log_mass.npy",
+        "bytes": 9736,
+        "sha256": "846e0038d81c75ddbfecad7d787c1e905e0a110cb7d19a89c4cd424231204d8f"
+      },
+      "voiced_log_mass": {
+        "path": "voiced_log_mass.npy",
+        "bytes": 9736,
+        "sha256": "079c1d21e06608de03fa9c81ad70355dbdded0acab8636dcf416dcc8ff98a2f9"
+      },
+      "offset_mean": {
+        "path": "offset_mean.npy",
+        "bytes": 7928,
+        "sha256": "c5a4a6801d79e3c7365a23f325975a1614d5e7544a4594b17437d6e0b3230d0c"
+      }
+    },
+    {
+      "case": "librispeech_5639-40744-0023",
+      "owner": 1,
+      "uv_log_mass": {
+        "path": "uv_log_mass.npy",
+        "bytes": 9736,
+        "sha256": "8c1ec5b86cd0e59ce17bc1fad3c1ae53400190aa5199e10bb556a4cbc563f782"
+      },
+      "voiced_log_mass": {
+        "path": "voiced_log_mass.npy",
+        "bytes": 9736,
+        "sha256": "5a511d884a87f3da2672d3c7dcd61aac4b919c60d6ccf0311fa3a56d188e9b6a"
+      },
+      "offset_mean": {
+        "path": "offset_mean.npy",
+        "bytes": 7928,
+        "sha256": "150eb633f48bc9124a753c779c97ea4a550e07b94e8d71a7a6cb1c76f602cdc7"
+      }
+    },
+    {
+      "case": "librispeech_5639-40744-0030",
+      "owner": 1,
+      "uv_log_mass": {
+        "path": "uv_log_mass.npy",
+        "bytes": 9736,
+        "sha256": "bc59fd5c34df5dbb0a2bb18f936f563f1d0adfe5866e310eed64777a7308f96e"
+      },
+      "voiced_log_mass": {
+        "path": "voiced_log_mass.npy",
+        "bytes": 9736,
+        "sha256": "8356802872eee35301483a3d00eb2a394e4fe19842569df0d4d1eb366b3fc045"
+      },
+      "offset_mean": {
+        "path": "offset_mean.npy",
+        "bytes": 7928,
+        "sha256": "5f0514babc2171508798ca1778a3c148e8de31d8aabe0ddb36773dc5cced8a1c"
+      }
+    },
+    {
+      "case": "librispeech_5683-32865-0017",
+      "owner": 1,
+      "uv_log_mass": {
+        "path": "uv_log_mass.npy",
+        "bytes": 8864,
+        "sha256": "fd66ea8e73a66c0ae5afa090e3efea2125d7512bd35b44fde3d7daaf9a0e4844"
+      },
+      "voiced_log_mass": {
+        "path": "voiced_log_mass.npy",
+        "bytes": 8864,
+        "sha256": "9975144134af741a6fdfcab511481869bd950980d0e8183a3ed14ecd5551303d"
+      },
+      "offset_mean": {
+        "path": "offset_mean.npy",
+        "bytes": 7928,
+        "sha256": "fe9ad1cbb6de3ea615639fa127257ed413411e39ce3803bdc96f94a1fbf0d941"
+      }
+    },
+    {
+      "case": "librispeech_5683-32879-0009",
+      "owner": 1,
+      "uv_log_mass": {
+        "path": "uv_log_mass.npy",
+        "bytes": 8352,
+        "sha256": "0f43172c6f47c5e780d7321d477b8439e3c53f8af151cd0801d1aaf6276457ba"
+      },
+      "voiced_log_mass": {
+        "path": "voiced_log_mass.npy",
+        "bytes": 8352,
+        "sha256": "6dcbcb77bb8b7061f47c6a8b6fb5636540aa5660e998ff4e0f8e4754ca0e5802"
+      },
+      "offset_mean": {
+        "path": "offset_mean.npy",
+        "bytes": 7928,
+        "sha256": "fae17424bfdfbb1d4bb862d73ee807ecf0bb5156df452609e3f30542d8e7a804"
+      }
+    },
+    {
+      "case": "librispeech_5683-32879-0019",
+      "owner": 1,
+      "uv_log_mass": {
+        "path": "uv_log_mass.npy",
+        "bytes": 9736,
+        "sha256": "159d2e4fe3d00e136e6f6ee5d48d54d23e78618f7d3378648105c34ac2808958"
+      },
+      "voiced_log_mass": {
+        "path": "voiced_log_mass.npy",
+        "bytes": 9736,
+        "sha256": "1b101c3e6ee0c776ec458951eb03a6fa3ace3f1af5ebbdf83721a73fa93e22cf"
+      },
+      "offset_mean": {
+        "path": "offset_mean.npy",
+        "bytes": 7928,
+        "sha256": "ed31303a844d2b5eef7d2003a4ffea17b52e5bb736f6a18d2d4efd41f9ca85e0"
+      }
+    },
+    {
+      "case": "librispeech_61-70968-0042",
+      "owner": 1,
+      "uv_log_mass": {
+        "path": "uv_log_mass.npy",
+        "bytes": 4592,
+        "sha256": "0738785a936b99f6a712d332e9c024a8f6ec3fc5b4f305239e71a745c60514d9"
+      },
+      "voiced_log_mass": {
+        "path": "voiced_log_mass.npy",
+        "bytes": 4592,
+        "sha256": "815d13f2db65f44ee7a1eb58281805940008fbaf360dcb601174639188e4e0a8"
+      },
+      "offset_mean": {
+        "path": "offset_mean.npy",
+        "bytes": 7928,
+        "sha256": "b7f274475786e4cb6651ce512b2e0c449672856f3a06f165442ad8089cd71497"
+      }
+    },
+    {
+      "case": "librispeech_61-70968-0043",
+      "owner": 1,
+      "uv_log_mass": {
+        "path": "uv_log_mass.npy",
+        "bytes": 9736,
+        "sha256": "42afd43f2d947b820c5f2ec762830527e3b4c54b257dbac96658253f605d3e9e"
+      },
+      "voiced_log_mass": {
+        "path": "voiced_log_mass.npy",
+        "bytes": 9736,
+        "sha256": "504a9360e1bca090379d13262b80db09c914237673bbd0d21306d526ce3af13d"
+      },
+      "offset_mean": {
+        "path": "offset_mean.npy",
+        "bytes": 7928,
+        "sha256": "19a3d9564f34769f2d01c5e6006f13e8a86b9619030cb2df6efba72fb8ef4b87"
+      }
+    },
+    {
+      "case": "librispeech_61-70968-0054",
+      "owner": 1,
+      "uv_log_mass": {
+        "path": "uv_log_mass.npy",
+        "bytes": 9736,
+        "sha256": "b2a8b2b8a5d45529e2d3709a7758183129ab1a1b41ed7f478cde855e528685db"
+      },
+      "voiced_log_mass": {
+        "path": "voiced_log_mass.npy",
+        "bytes": 9736,
+        "sha256": "24982a4742ac584cc3a26bc97015cada27cd3bf10bb7022573e022a5776ea985"
+      },
+      "offset_mean": {
+        "path": "offset_mean.npy",
+        "bytes": 7928,
+        "sha256": "614a5a11043c233f83e971013d2d0076d413ba3b6a6a9589411a57740929e775"
+      }
+    },
+    {
+      "case": "librispeech_672-122797-0003",
+      "owner": 2,
+      "uv_log_mass": {
+        "path": "uv_log_mass.npy",
+        "bytes": 7752,
+        "sha256": "6ef80c480e2e06f9a7bbae0956bcc3a005a32de5f002f2b1c962a293d42712b1"
+      },
+      "voiced_log_mass": {
+        "path": "voiced_log_mass.npy",
+        "bytes": 7752,
+        "sha256": "a55f062aebb7fbb16c9552bbf53f193c467729d77c14a7b11f287f0d05ff5aea"
+      },
+      "offset_mean": {
+        "path": "offset_mean.npy",
+        "bytes": 7928,
+        "sha256": "bc0b9975e4695f7c157c3fce0b7f548ef80d42af89536f6d49f0bc6205db48ff"
+      }
+    },
+    {
+      "case": "librispeech_672-122797-0044",
+      "owner": 2,
+      "uv_log_mass": {
+        "path": "uv_log_mass.npy",
+        "bytes": 6120,
+        "sha256": "0e49b7571a93e1ec40d4afebe7b30e5d2184960aa575b230a144f747a1753bb0"
+      },
+      "voiced_log_mass": {
+        "path": "voiced_log_mass.npy",
+        "bytes": 6120,
+        "sha256": "309aa4a6f4f12dfbcdd3f7f333a545d8098640f689553c78566f68ca7f957b94"
+      },
+      "offset_mean": {
+        "path": "offset_mean.npy",
+        "bytes": 7928,
+        "sha256": "19f0582d140ba1fafbe6d2acd0c8127ea7860dde0cdd98bc277063680745132b"
+      }
+    },
+    {
+      "case": "librispeech_672-122797-0056",
+      "owner": 2,
+      "uv_log_mass": {
+        "path": "uv_log_mass.npy",
+        "bytes": 8496,
+        "sha256": "6a29bf3b1a0eb0ca33761a796f3f589f67196b4a2eb8c9e45952a2b22f55b3f2"
+      },
+      "voiced_log_mass": {
+        "path": "voiced_log_mass.npy",
+        "bytes": 8496,
+        "sha256": "a94bfcba12d20b19d222f53dbd35f4dd21327bfeb65b2f0f821122a2c120a014"
+      },
+      "offset_mean": {
+        "path": "offset_mean.npy",
+        "bytes": 7928,
+        "sha256": "f266abee139812aa089eabdccfbd4689be1a4dca96be4972ce2693b08a3cfda3"
+      }
+    },
+    {
+      "case": "librispeech_6829-68769-0014",
+      "owner": 2,
+      "uv_log_mass": {
+        "path": "uv_log_mass.npy",
+        "bytes": 5984,
+        "sha256": "3386fee8a185efc15affef25eaa1a6f3948276cc16965d4b7a1cba05f5fa24be"
+      },
+      "voiced_log_mass": {
+        "path": "voiced_log_mass.npy",
+        "bytes": 5984,
+        "sha256": "bf683c8d382656964d88622f0a42d71fabd78212578e49b9c1c2973a1fb6a249"
+      },
+      "offset_mean": {
+        "path": "offset_mean.npy",
+        "bytes": 7928,
+        "sha256": "27eeaead7696b6de1a282be13cb289bed68f6e99286fc6148078d3fbab75f6dd"
+      }
+    },
+    {
+      "case": "librispeech_6829-68769-0038",
+      "owner": 2,
+      "uv_log_mass": {
+        "path": "uv_log_mass.npy",
+        "bytes": 4144,
+        "sha256": "83c8eb48a13aed59d3fd697f7d94e51955cb5d6662add62a863f9bf284d52860"
+      },
+      "voiced_log_mass": {
+        "path": "voiced_log_mass.npy",
+        "bytes": 4144,
+        "sha256": "ad051a93a1d22745d8e2b6074277e5ffab5e8f37f4caf02f8bea8005fd54912d"
+      },
+      "offset_mean": {
+        "path": "offset_mean.npy",
+        "bytes": 7928,
+        "sha256": "ddc540b186a260acf4906c91f67496ce1b41fb704fa86841443af41fb48374e2"
+      }
+    },
+    {
+      "case": "librispeech_6829-68769-0041",
+      "owner": 2,
+      "uv_log_mass": {
+        "path": "uv_log_mass.npy",
+        "bytes": 4392,
+        "sha256": "25a88e76c672c80cad2ccd91725357fbcad6682680c7692f813fd64996372a26"
+      },
+      "voiced_log_mass": {
+        "path": "voiced_log_mass.npy",
+        "bytes": 4392,
+        "sha256": "81630152ecb615a13b89f7b2579ddaf8f310636c6b2827c986b1fb18d861af62"
+      },
+      "offset_mean": {
+        "path": "offset_mean.npy",
+        "bytes": 7928,
+        "sha256": "6c1ddd611ef789c6d45f7db36f95daf3a8177da57fbfa5fdb4a59a23e4710ef0"
+      }
+    },
+    {
+      "case": "librispeech_6930-75918-0013",
+      "owner": 2,
+      "uv_log_mass": {
+        "path": "uv_log_mass.npy",
+        "bytes": 4840,
+        "sha256": "0692c42aac7e4ffd578da7f8b482d96b45ecb837feacd3467846474248cbb460"
+      },
+      "voiced_log_mass": {
+        "path": "voiced_log_mass.npy",
+        "bytes": 4840,
+        "sha256": "77d86a9081e84d76029e1cc9c1056fd4f0c448ebb1d6d91980e71e2c6adf6571"
+      },
+      "offset_mean": {
+        "path": "offset_mean.npy",
+        "bytes": 7928,
+        "sha256": "4d7f2c6ae06e2bfb7b94712c13c512e3b23225bed2b4b2533821fa18373a190c"
+      }
+    },
+    {
+      "case": "librispeech_6930-76324-0024",
+      "owner": 2,
+      "uv_log_mass": {
+        "path": "uv_log_mass.npy",
+        "bytes": 6616,
+        "sha256": "b5cab87137a996a6bc9a2510515c487f8ded3d1116fc10ef1932e722e5393fbf"
+      },
+      "voiced_log_mass": {
+        "path": "voiced_log_mass.npy",
+        "bytes": 6616,
+        "sha256": "a2c7a75c84d113eb90b3589a51bc5b4260a95f04e7735ac6d43b9e05a025cf8f"
+      },
+      "offset_mean": {
+        "path": "offset_mean.npy",
+        "bytes": 7928,
+        "sha256": "ce81dd2a4b3257680765a8fda5e61059ceaae49d6383ee853a7cb2fafc4d9e07"
+      }
+    },
+    {
+      "case": "librispeech_6930-81414-0026",
+      "owner": 2,
+      "uv_log_mass": {
+        "path": "uv_log_mass.npy",
+        "bytes": 5056,
+        "sha256": "680e1504479b77c0b86417ec8caf034bfd386230f61e9c984ce8ee739df3b515"
+      },
+      "voiced_log_mass": {
+        "path": "voiced_log_mass.npy",
+        "bytes": 5056,
+        "sha256": "23107fd263cb44cb87efda3f364e1b6fcc86f8ef45341c995015b3b430bd94cb"
+      },
+      "offset_mean": {
+        "path": "offset_mean.npy",
+        "bytes": 7928,
+        "sha256": "f73d9cc702f3446b2b249be6b81c56ac4b796eee438f5484d3b2ae594bddc50e"
+      }
+    },
+    {
+      "case": "librispeech_7021-79740-0002",
+      "owner": 2,
+      "uv_log_mass": {
+        "path": "uv_log_mass.npy",
+        "bytes": 9736,
+        "sha256": "10820072008357c639dacf5ead840eb7597efdea719a26ba58c8f84fa7907755"
+      },
+      "voiced_log_mass": {
+        "path": "voiced_log_mass.npy",
+        "bytes": 9736,
+        "sha256": "2b0ec29be8c91f3df4524bed53579e119ddb82ad1f4a215df3d1aa8c5df8b943"
+      },
+      "offset_mean": {
+        "path": "offset_mean.npy",
+        "bytes": 7928,
+        "sha256": "c75d746483f4f23e946269879712fa0aaaadd7318621b347abbde513ba9d7cd7"
+      }
+    },
+    {
+      "case": "librispeech_7021-79740-0011",
+      "owner": 2,
+      "uv_log_mass": {
+        "path": "uv_log_mass.npy",
+        "bytes": 9736,
+        "sha256": "2560316add5a16ff9b3df3392c0c132abb87ff2e1ce8411a50b7cc307b5c35ad"
+      },
+      "voiced_log_mass": {
+        "path": "voiced_log_mass.npy",
+        "bytes": 9736,
+        "sha256": "c2f1e42585359fb47c63706330ef5e5357c4aaa88cc558837d42d88e5c29e7e2"
+      },
+      "offset_mean": {
+        "path": "offset_mean.npy",
+        "bytes": 7928,
+        "sha256": "5b4afaf4bf212a379ad8923ac6be2be661666165bd1526de40ad7a2f301f2fc9"
+      }
+    },
+    {
+      "case": "librispeech_7021-85628-0025",
+      "owner": 2,
+      "uv_log_mass": {
+        "path": "uv_log_mass.npy",
+        "bytes": 4576,
+        "sha256": "c6d2b256283ada88a0c4e044b3561666a6ad24a4d1a3eaec87e05867ba21e8f5"
+      },
+      "voiced_log_mass": {
+        "path": "voiced_log_mass.npy",
+        "bytes": 4576,
+        "sha256": "cbbd38d7a0f340e307fb97ade5ba08e0a97b1cde9ce1106578c23e2230cd0f0f"
+      },
+      "offset_mean": {
+        "path": "offset_mean.npy",
+        "bytes": 7928,
+        "sha256": "b4be0d7b05bc07bd4648f933eb4b0cd2a108315dd1af3dc9eb1f7c2bbbf834cf"
+      }
+    },
+    {
+      "case": "librispeech_7127-75946-0002",
+      "owner": 2,
+      "uv_log_mass": {
+        "path": "uv_log_mass.npy",
+        "bytes": 9736,
+        "sha256": "ce84b5add948f03c4b05d7055d2b5bcd8d37e3995956475a06e9eca577274e43"
+      },
+      "voiced_log_mass": {
+        "path": "voiced_log_mass.npy",
+        "bytes": 9736,
+        "sha256": "1d5e437082d84ce6c45dee0fd89dda859ea13a1b97b035a37b8b361aa84a7b6e"
+      },
+      "offset_mean": {
+        "path": "offset_mean.npy",
+        "bytes": 7928,
+        "sha256": "2f85e7b10b36a7eb296dccefa25d4f067a3eac495ec25ba32dddd7843f0d6eae"
+      }
+    },
+    {
+      "case": "librispeech_7127-75946-0029",
+      "owner": 2,
+      "uv_log_mass": {
+        "path": "uv_log_mass.npy",
+        "bytes": 9736,
+        "sha256": "e9e89c2b87501671c7415e856cbdaa17bb46ce5e60947a06d5b008dc7df4abdc"
+      },
+      "voiced_log_mass": {
+        "path": "voiced_log_mass.npy",
+        "bytes": 9736,
+        "sha256": "bd11c8eee235d6ec805ad7a940e115ef41b5b4886474e20cdc26b4de6df9777c"
+      },
+      "offset_mean": {
+        "path": "offset_mean.npy",
+        "bytes": 7928,
+        "sha256": "e7bd5f74ca823cbd8079487bfa3fef7780c76ab00481883cf9d522453066bc7d"
+      }
+    },
+    {
+      "case": "librispeech_7127-75947-0011",
+      "owner": 2,
+      "uv_log_mass": {
+        "path": "uv_log_mass.npy",
+        "bytes": 5928,
+        "sha256": "38a9fe6cd87ac8054f67e8b88d9c50a2012956f1346c99ab8694cf23ac5807bb"
+      },
+      "voiced_log_mass": {
+        "path": "voiced_log_mass.npy",
+        "bytes": 5928,
+        "sha256": "b23a94f28a1642ff2f97694e5bd81060bd1e97abee50eaab74868be3f3c88829"
+      },
+      "offset_mean": {
+        "path": "offset_mean.npy",
+        "bytes": 7928,
+        "sha256": "45ae7a783c980944cb635dcf3979f059fe41af56f8db1812942c5d56a0338429"
+      }
+    },
+    {
+      "case": "librispeech_7176-88083-0002",
+      "owner": 2,
+      "uv_log_mass": {
+        "path": "uv_log_mass.npy",
+        "bytes": 9736,
+        "sha256": "fe3ac195f29a503c65d2b02be57618f8cc01a28eda9d18ecaba7e77793adf21a"
+      },
+      "voiced_log_mass": {
+        "path": "voiced_log_mass.npy",
+        "bytes": 9736,
+        "sha256": "b9a79a24186715f94da44a745a6a2a42f026884697c7527fac1318f52a14e6c1"
+      },
+      "offset_mean": {
+        "path": "offset_mean.npy",
+        "bytes": 7928,
+        "sha256": "6ec870a257b68544daafc1229bbc66eb154d7ad15d127427473cca23cb64fe59"
+      }
+    },
+    {
+      "case": "librispeech_7176-88083-0004",
+      "owner": 2,
+      "uv_log_mass": {
+        "path": "uv_log_mass.npy",
+        "bytes": 9736,
+        "sha256": "db88ecc8a41a591f360327f2f11601cd320126cdf999f0da9aa41fa974a25b44"
+      },
+      "voiced_log_mass": {
+        "path": "voiced_log_mass.npy",
+        "bytes": 9736,
+        "sha256": "b0add9124d13df200533d0587e8c60e2095c3e9e4abbfc9fba311937d2e186f2"
+      },
+      "offset_mean": {
+        "path": "offset_mean.npy",
+        "bytes": 7928,
+        "sha256": "6443ef6809b71e146b8fbe78a2c7d9e25f6f6b37acc11aad0086ecb818bc8393"
+      }
+    },
+    {
+      "case": "librispeech_7176-88083-0026",
+      "owner": 2,
+      "uv_log_mass": {
+        "path": "uv_log_mass.npy",
+        "bytes": 8984,
+        "sha256": "e93a5271ae2fb463cc826902941f7510ebf2ebbef2d1201e80c12dcdc1192344"
+      },
+      "voiced_log_mass": {
+        "path": "voiced_log_mass.npy",
+        "bytes": 8984,
+        "sha256": "d43c3c8cb6f3766e776f2fb085a388b3f0d875fd9ac24e7699eb51615c6ccaf1"
+      },
+      "offset_mean": {
+        "path": "offset_mean.npy",
+        "bytes": 7928,
+        "sha256": "4f9128baa671e4124be1a21039a5be79a595a4d88887223579f56296e0245df1"
+      }
+    },
+    {
+      "case": "librispeech_7729-102255-0028",
+      "owner": 2,
+      "uv_log_mass": {
+        "path": "uv_log_mass.npy",
+        "bytes": 9736,
+        "sha256": "d05f46b10bad3020dec2d44a6ab69a5da408a2a27eb9bf02195a209bc1faf9d3"
+      },
+      "voiced_log_mass": {
+        "path": "voiced_log_mass.npy",
+        "bytes": 9736,
+        "sha256": "a0e5b45684c5f29aa458d53b713498a572c00e19241ff853289b7a332b78dd1f"
+      },
+      "offset_mean": {
+        "path": "offset_mean.npy",
+        "bytes": 7928,
+        "sha256": "b4099ff34726b65d0d27ed58bad3e7b9d92b76012f4590cc191cbc772187f82d"
+      }
+    },
+    {
+      "case": "librispeech_7729-102255-0038",
+      "owner": 2,
+      "uv_log_mass": {
+        "path": "uv_log_mass.npy",
+        "bytes": 9736,
+        "sha256": "7a3b1d1efd8d96fd5f01b68788973d75645a4eb558bbb5d1fbcaa3563a2d7a71"
+      },
+      "voiced_log_mass": {
+        "path": "voiced_log_mass.npy",
+        "bytes": 9736,
+        "sha256": "125ab2f338d5ec22f3ca0141489f432d85f9c89e9e3e1e70b2554b6ad7baff20"
+      },
+      "offset_mean": {
+        "path": "offset_mean.npy",
+        "bytes": 7928,
+        "sha256": "c9d3652b8ebd99c54d49eee6f13264f74ad705abd05a5ce116446e34ccfa97b5"
+      }
+    },
+    {
+      "case": "librispeech_7729-102255-0042",
+      "owner": 2,
+      "uv_log_mass": {
+        "path": "uv_log_mass.npy",
+        "bytes": 9736,
+        "sha256": "a0482d496c10ac4eb8c0b0e2fcd613f47535de3792bacc38d810d2fc98769f2d"
+      },
+      "voiced_log_mass": {
+        "path": "voiced_log_mass.npy",
+        "bytes": 9736,
+        "sha256": "83a091b1e4702eb9a96491c9a17bb0cba42a26ed783ca82ecc814df6dd4399e5"
+      },
+      "offset_mean": {
+        "path": "offset_mean.npy",
+        "bytes": 7928,
+        "sha256": "c85ee1eccdb5b0467873a669a8ca21b5e33c73a8d798306a4f8af2fa7d3e09c9"
+      }
+    },
+    {
+      "case": "librispeech_8224-274381-0010",
+      "owner": 2,
+      "uv_log_mass": {
+        "path": "uv_log_mass.npy",
+        "bytes": 9736,
+        "sha256": "332e33c40d273519b7b539e63ae644cd99f6fc4e89696f6a092f5ab8a8a91119"
+      },
+      "voiced_log_mass": {
+        "path": "voiced_log_mass.npy",
+        "bytes": 9736,
+        "sha256": "b36793e37a396d08699a56e4b1cb9399ba3ab046a9a923cb2b4175e92b89d220"
+      },
+      "offset_mean": {
+        "path": "offset_mean.npy",
+        "bytes": 7928,
+        "sha256": "57dd3bdb23270bd29a177e522cf40b3eb213e2a481d902d1ba597b14b980c86f"
+      }
+    },
+    {
+      "case": "librispeech_8224-274381-0013",
+      "owner": 2,
+      "uv_log_mass": {
+        "path": "uv_log_mass.npy",
+        "bytes": 9736,
+        "sha256": "b06ef62e9024f17a127a89019cc7e9fb08e5597938da0f9835f123ca5ecca9c0"
+      },
+      "voiced_log_mass": {
+        "path": "voiced_log_mass.npy",
+        "bytes": 9736,
+        "sha256": "6d1dacb610113f3e4360aea9f3f9aa7d98270ae5db187c428c7dcfc81a2a41b9"
+      },
+      "offset_mean": {
+        "path": "offset_mean.npy",
+        "bytes": 7928,
+        "sha256": "70afb8529268d604b0664ae644549815230ccbfe6ff04d63a76b019adfadf84a"
+      }
+    },
+    {
+      "case": "librispeech_8224-274384-0010",
+      "owner": 2,
+      "uv_log_mass": {
+        "path": "uv_log_mass.npy",
+        "bytes": 9736,
+        "sha256": "d3c19f2967c69ea903c0ad5a0e473ca1c18cd3d07426f2b6627c95da34d76b63"
+      },
+      "voiced_log_mass": {
+        "path": "voiced_log_mass.npy",
+        "bytes": 9736,
+        "sha256": "4410b085b5e46599539c7f148ef51f9c944121615690a06969b42f0cdd0d99c3"
+      },
+      "offset_mean": {
+        "path": "offset_mean.npy",
+        "bytes": 7928,
+        "sha256": "48554c8950abc912847fc485b20b6c151885a44e4a0ca47ce66d5e585f32ffd4"
+      }
+    },
+    {
+      "case": "librispeech_8230-279154-0018",
+      "owner": 2,
+      "uv_log_mass": {
+        "path": "uv_log_mass.npy",
+        "bytes": 9736,
+        "sha256": "8d6f2585dce58c7be179158106135a7fa83f0f3d25318d53b29220f65d40f13c"
+      },
+      "voiced_log_mass": {
+        "path": "voiced_log_mass.npy",
+        "bytes": 9736,
+        "sha256": "60aa7b4c1a86de99818ee622d7a37e91a69a401df8d7ce83337d21a97756c2d4"
+      },
+      "offset_mean": {
+        "path": "offset_mean.npy",
+        "bytes": 7928,
+        "sha256": "795a06dda32e45c5cfdb7d58f8715417643f3aa75fc80ccecffc1f604e8ee23e"
+      }
+    },
+    {
+      "case": "librispeech_8230-279154-0032",
+      "owner": 2,
+      "uv_log_mass": {
+        "path": "uv_log_mass.npy",
+        "bytes": 6344,
+        "sha256": "de7ba01e78a9ad254cd45c81559037621849c5c6252cbd14080aa3244d3d1d8a"
+      },
+      "voiced_log_mass": {
+        "path": "voiced_log_mass.npy",
+        "bytes": 6344,
+        "sha256": "e557045d255b137ad5473fde972a60f694de47c6a1dbd4e6c92a3940c3939947"
+      },
+      "offset_mean": {
+        "path": "offset_mean.npy",
+        "bytes": 7928,
+        "sha256": "25b17206463818f2f902c31e7a0e5894a82e0251b7f1526dce854248cc5d58d0"
+      }
+    },
+    {
+      "case": "librispeech_8230-279154-0033",
+      "owner": 2,
+      "uv_log_mass": {
+        "path": "uv_log_mass.npy",
+        "bytes": 9736,
+        "sha256": "a6e3d9b3a089fa81f88b0b703fe5ed4f9e066cc96ddb16856533d1a7d6ad5c48"
+      },
+      "voiced_log_mass": {
+        "path": "voiced_log_mass.npy",
+        "bytes": 9736,
+        "sha256": "2e02854ce5e93a008f37ae9eee1f092a404d1aa8d03f1cac4c9d32f8606950f7"
+      },
+      "offset_mean": {
+        "path": "offset_mean.npy",
+        "bytes": 7928,
+        "sha256": "14d25989e703de1835620c65fb275558557e6278c180d644f3dc154d437141eb"
+      }
+    },
+    {
+      "case": "librispeech_8455-210777-0010",
+      "owner": 2,
+      "uv_log_mass": {
+        "path": "uv_log_mass.npy",
+        "bytes": 5096,
+        "sha256": "01d0d598e24ec1da7e997cc9848fed944a770eabcf3cf8fb742609a3cfb53260"
+      },
+      "voiced_log_mass": {
+        "path": "voiced_log_mass.npy",
+        "bytes": 5096,
+        "sha256": "7954b573e1f8703d538321f1b47ad5693690a60a3c61246287d7474a38b22466"
+      },
+      "offset_mean": {
+        "path": "offset_mean.npy",
+        "bytes": 7928,
+        "sha256": "bb680ed32a33b62d631bf046e71e80e3ca415b5c47e314e338fe9876176f5f81"
+      }
+    },
+    {
+      "case": "librispeech_8455-210777-0049",
+      "owner": 2,
+      "uv_log_mass": {
+        "path": "uv_log_mass.npy",
+        "bytes": 6712,
+        "sha256": "518b81092869f3b36d64f4f260790cb0a940032fd13314c4814f3f56edf9cc25"
+      },
+      "voiced_log_mass": {
+        "path": "voiced_log_mass.npy",
+        "bytes": 6712,
+        "sha256": "147bb3ab748f35b54ba15b9f58e02fbb0565032c8a672a7857e7f0144b51fd63"
+      },
+      "offset_mean": {
+        "path": "offset_mean.npy",
+        "bytes": 7928,
+        "sha256": "3232d073bf387a47886620ac1751eda75be8aad1729c6dd67c80e1a2703fab59"
+      }
+    },
+    {
+      "case": "librispeech_8455-210777-0060",
+      "owner": 2,
+      "uv_log_mass": {
+        "path": "uv_log_mass.npy",
+        "bytes": 9736,
+        "sha256": "77420cae9e2967d4d74c39e7330cbc336d6774a15f23c790de141b013c92ffb5"
+      },
+      "voiced_log_mass": {
+        "path": "voiced_log_mass.npy",
+        "bytes": 9736,
+        "sha256": "218364841ea3806e93c862c028b5c32f63592fdcd4534b8a1a3bf5d4f7eb500d"
+      },
+      "offset_mean": {
+        "path": "offset_mean.npy",
+        "bytes": 7928,
+        "sha256": "6a10ed9299b78331ef4120c680ee626cfc687c5c1a85bc5383200745974fe472"
+      }
+    },
+    {
+      "case": "librispeech_8463-294828-0003",
+      "owner": 2,
+      "uv_log_mass": {
+        "path": "uv_log_mass.npy",
+        "bytes": 9736,
+        "sha256": "e96babd752b11c582c3fb4361e3ecccb440e0e24103d9f1761de4eac7b6b1c61"
+      },
+      "voiced_log_mass": {
+        "path": "voiced_log_mass.npy",
+        "bytes": 9736,
+        "sha256": "d50c58b4f052707f3218b09e65a504d29bcb5fd6f86b81d5441ebb1b75c34a39"
+      },
+      "offset_mean": {
+        "path": "offset_mean.npy",
+        "bytes": 7928,
+        "sha256": "61cc124eb58dba5461706d2153751d1e106ab38e8bd6bff9282c3a7b504edc0b"
+      }
+    },
+    {
+      "case": "librispeech_8463-294828-0014",
+      "owner": 2,
+      "uv_log_mass": {
+        "path": "uv_log_mass.npy",
+        "bytes": 9296,
+        "sha256": "2ac28a9daeb64509628e5da403e3bc4be7edfaca567ca92a7a9b948dbf348d66"
+      },
+      "voiced_log_mass": {
+        "path": "voiced_log_mass.npy",
+        "bytes": 9296,
+        "sha256": "3c6b7b1cd12f70f5d867951529ceb8963f99746ef464ed6fc4bea2aa3826ab8b"
+      },
+      "offset_mean": {
+        "path": "offset_mean.npy",
+        "bytes": 7928,
+        "sha256": "eb4a377f12376eabd1ac8499a5c7d53f970b785da83ec2fa3b1f39c6f16583e1"
+      }
+    },
+    {
+      "case": "librispeech_8463-294828-0022",
+      "owner": 2,
+      "uv_log_mass": {
+        "path": "uv_log_mass.npy",
+        "bytes": 3904,
+        "sha256": "3785f41daa95fe14473c80e92d88814bc9a9641c985df71d272b40651a632609"
+      },
+      "voiced_log_mass": {
+        "path": "voiced_log_mass.npy",
+        "bytes": 3904,
+        "sha256": "833d50c97897f830c096d8ddd244f8ce0db25463cb98e907df052914e6f55439"
+      },
+      "offset_mean": {
+        "path": "offset_mean.npy",
+        "bytes": 7928,
+        "sha256": "1edda1adf273cebbd3d8a3779ff45a325c742b31854c4823ada3fca49e89f290"
+      }
+    },
+    {
+      "case": "librispeech_8555-284447-0007",
+      "owner": 2,
+      "uv_log_mass": {
+        "path": "uv_log_mass.npy",
+        "bytes": 9736,
+        "sha256": "8101882ff29ff5833bc44f72e13a5d30b8400715a8c5175fff9ec18d02558061"
+      },
+      "voiced_log_mass": {
+        "path": "voiced_log_mass.npy",
+        "bytes": 9736,
+        "sha256": "16f0ffffdb1416a3e432e9a3d6099dfde0177c20521ffa56e22719c1beb05e1b"
+      },
+      "offset_mean": {
+        "path": "offset_mean.npy",
+        "bytes": 7928,
+        "sha256": "364beb2eaef6df88116870b1d745b489a068b4ef2c3fbc5be4bd66dd0e8ee733"
+      }
+    },
+    {
+      "case": "librispeech_8555-284449-0020",
+      "owner": 2,
+      "uv_log_mass": {
+        "path": "uv_log_mass.npy",
+        "bytes": 8288,
+        "sha256": "3abefa9b15afef36b76c26934a657e2486a1e92566b88167956a02358b2ca789"
+      },
+      "voiced_log_mass": {
+        "path": "voiced_log_mass.npy",
+        "bytes": 8288,
+        "sha256": "4d1ec5c7b580ccf94b3072ecaab05d38803bf521bf5987439d70325d1169f470"
+      },
+      "offset_mean": {
+        "path": "offset_mean.npy",
+        "bytes": 7928,
+        "sha256": "a5ca2a42f23692635d3f9cc380024d20511d599b94f6b06fa6263b5d778212b7"
+      }
+    },
+    {
+      "case": "librispeech_8555-292519-0001",
+      "owner": 2,
+      "uv_log_mass": {
+        "path": "uv_log_mass.npy",
+        "bytes": 9736,
+        "sha256": "dcb0fd101dd21dd126dd3a780b75b5aae68a0a9acf5f717a8501db11ac9b7eed"
+      },
+      "voiced_log_mass": {
+        "path": "voiced_log_mass.npy",
+        "bytes": 9736,
+        "sha256": "de112acf15b0ece34ad02fd3013eab25dddf28260ba52f84d6516c973f2ce683"
+      },
+      "offset_mean": {
+        "path": "offset_mean.npy",
+        "bytes": 7928,
+        "sha256": "2eb33e5bc76a7225cfcbae409838d7fa0db5d9af5fc74806ff7d38f185be36a2"
+      }
+    },
+    {
+      "case": "librispeech_908-157963-0018",
+      "owner": 2,
+      "uv_log_mass": {
+        "path": "uv_log_mass.npy",
+        "bytes": 6944,
+        "sha256": "81409e22063a71ad5def898cd469fefd5d2892d341e1f4dcab09c3416c95f9df"
+      },
+      "voiced_log_mass": {
+        "path": "voiced_log_mass.npy",
+        "bytes": 6944,
+        "sha256": "bf51b0361749943003e707011d88e7dabdc383a288c5be60e9324a0d243bb516"
+      },
+      "offset_mean": {
+        "path": "offset_mean.npy",
+        "bytes": 7928,
+        "sha256": "c48ccd37e4ec809395ffcdadcf7c79c1241b4df32110ad008bf63d09654a691d"
+      }
+    },
+    {
+      "case": "librispeech_908-31957-0002",
+      "owner": 2,
+      "uv_log_mass": {
+        "path": "uv_log_mass.npy",
+        "bytes": 7800,
+        "sha256": "b7de73ee913f6029f663b209fec15bcdc7e640a5fe4214c2779d47b283b29bf9"
+      },
+      "voiced_log_mass": {
+        "path": "voiced_log_mass.npy",
+        "bytes": 7800,
+        "sha256": "821025a4102268926eb3f857327906c4c59f5040025850ab44c7ff187cde2642"
+      },
+      "offset_mean": {
+        "path": "offset_mean.npy",
+        "bytes": 7928,
+        "sha256": "7a3cc3dcda9da85e49269b196945043105510c9aa6abc7744da77c2e2ff4b434"
+      }
+    },
+    {
+      "case": "librispeech_908-31957-0016",
+      "owner": 2,
+      "uv_log_mass": {
+        "path": "uv_log_mass.npy",
+        "bytes": 9736,
+        "sha256": "dbb3e941bdb3635861889a102ae235b91918e830f652075803d4dfd777bff9b1"
+      },
+      "voiced_log_mass": {
+        "path": "voiced_log_mass.npy",
+        "bytes": 9736,
+        "sha256": "09fde5fe8b7efb650c98cd8793c5052f335c8452457cf6fe0b46fc66fae64aba"
+      },
+      "offset_mean": {
+        "path": "offset_mean.npy",
+        "bytes": 7928,
+        "sha256": "1e64723275689b4dcd616a4342f70c8ac716cc1b425c9200433e32bdd13c5427"
+      }
+    }
+  ],
+  "published_full_arrays": false,
+  "source_identities": {
+    "compact_results": {
+      "bytes": 16299934,
+      "sha256": "da3e5e7716e38511307a475c62be9b3ea9454d5c6ca65ef637ea84ead68fcea1"
+    },
+    "final_local_audit": {
+      "bytes": 6310,
+      "sha256": "c0d71a0020e1c5bfef3e7d54200f55be8e8d9f9d574daf55fc6b88bcb20e32d4"
+    },
+    "analysis_audit_original": {
+      "bytes": 1835,
+      "sha256": "59ec72c550953da34fdba7abf68bb444410527c0768506f7181dea9a11f3ecaf"
+    },
+    "analysis_audit_corrected": {
+      "bytes": 2150,
+      "sha256": "c6778f497fe31d8712e5fbe1c3e527c5932ff391b70e05c3e5f25cc0f6ed3745"
+    }
+  },
+  "frozen_source_commit": "1a1181bac001fae325a5381cd9a11f6b07076b75",
+  "invocation_receipts": [
+    {
+      "phase": "extract-0",
+      "identity": {
+        "bytes": 2526,
+        "sha256": "7cd0805c1783b6d7aea5d5bad33c69af2c2e4fa2626cb74ce20d1fa88fb34835"
+      },
+      "status": "finished",
+      "child_exit_code": 0,
+      "launcher_exit_code": 0,
+      "reaped_by_launcher": true,
+      "timed_out": false,
+      "limits": {
+        "wall_seconds": 1800,
+        "grace_seconds": 10,
+        "address_space_bytes": 8589934592,
+        "threads": 1
+      }
+    },
+    {
+      "phase": "extract-1",
+      "identity": {
+        "bytes": 2526,
+        "sha256": "74fee763a1fdb749790864a519386c85c17d58468f5d81c68454fc574e357457"
+      },
+      "status": "finished",
+      "child_exit_code": 0,
+      "launcher_exit_code": 0,
+      "reaped_by_launcher": true,
+      "timed_out": false,
+      "limits": {
+        "wall_seconds": 1800,
+        "grace_seconds": 10,
+        "address_space_bytes": 8589934592,
+        "threads": 1
+      }
+    },
+    {
+      "phase": "extract-2",
+      "identity": {
+        "bytes": 2527,
+        "sha256": "6504a13b02df14eb8a4e0d9cded8c53b32288abea0726c15719ffe894d0dd191"
+      },
+      "status": "finished",
+      "child_exit_code": 0,
+      "launcher_exit_code": 0,
+      "reaped_by_launcher": true,
+      "timed_out": false,
+      "limits": {
+        "wall_seconds": 1800,
+        "grace_seconds": 10,
+        "address_space_bytes": 8589934592,
+        "threads": 1
+      }
+    },
+    {
+      "phase": "analyze-0",
+      "identity": {
+        "bytes": 2760,
+        "sha256": "15f854a818ec982def382084cf0f9dc2bc052372ade16f943eb7a8f48ea5d22f"
+      },
+      "status": "finished",
+      "child_exit_code": 0,
+      "launcher_exit_code": 0,
+      "reaped_by_launcher": true,
+      "timed_out": false,
+      "limits": {
+        "wall_seconds": 3600,
+        "grace_seconds": 10,
+        "address_space_bytes": 8589934592,
+        "threads": 1
+      }
+    },
+    {
+      "phase": "analyze-1",
+      "identity": {
+        "bytes": 2760,
+        "sha256": "fb307208bfdc4f010acb655e3a983f665be2adbcffec5b2815782a82955e301b"
+      },
+      "status": "finished",
+      "child_exit_code": 0,
+      "launcher_exit_code": 0,
+      "reaped_by_launcher": true,
+      "timed_out": false,
+      "limits": {
+        "wall_seconds": 3600,
+        "grace_seconds": 10,
+        "address_space_bytes": 8589934592,
+        "threads": 1
+      }
+    },
+    {
+      "phase": "analyze-2",
+      "identity": {
+        "bytes": 2760,
+        "sha256": "3e8eab056a84c492c89d6c00d378d424f156dfb019403a94953d7f5c44da7228"
+      },
+      "status": "finished",
+      "child_exit_code": 0,
+      "launcher_exit_code": 0,
+      "reaped_by_launcher": true,
+      "timed_out": false,
+      "limits": {
+        "wall_seconds": 3600,
+        "grace_seconds": 10,
+        "address_space_bytes": 8589934592,
+        "threads": 1
+      }
+    },
+    {
+      "phase": "summarize",
+      "identity": {
+        "bytes": 2735,
+        "sha256": "11c9965651f66d05dae71e061560a582b9274a038c6829d498070cbec1b5e9c0"
+      },
+      "status": "finished",
+      "child_exit_code": 0,
+      "launcher_exit_code": 0,
+      "reaped_by_launcher": true,
+      "timed_out": false,
+      "limits": {
+        "wall_seconds": 3600,
+        "grace_seconds": 10,
+        "address_space_bytes": 8589934592,
+        "threads": 1
+      }
+    }
+  ],
+  "resource_interpretation": "max_rss_kib is null for all seven invocations; rusage_after_maxrss_kib is cumulative RUSAGE_CHILDREN high-water, not per-child peak RSS"
+}

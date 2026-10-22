@@ -1,0 +1,125 @@
+{
+  "scaling": "Heatmap uses saved unconditional log mass divided by ln(10), with display-only color limits log10 −12 to 0; no probability renormalization. Uniform pitch-bin rows have Hz tick labels 60×2^(bin/120). Full frame clock is integer index × 120/24000 seconds. Offset zoom is display-only; logarithmic vertical display omits exact-zero points only from that plot, not from stored data or aggregation.",
+  "sources": {
+    "librispeech_1089-134686-0008": {
+      "voiced_bin_log_marginal.npy": {
+        "path": "voiced_bin_log_marginal.npy",
+        "bytes": 4688832,
+        "sha256": "849b344ac70f44a424b9a4b04128ab0960b8b5fef4ed5b9e57a048842c6b5f19"
+      },
+      "uv_log_mass.npy": {
+        "path": "uv_log_mass.npy",
+        "bytes": 9736,
+        "sha256": "49cf36bc81211b1cc768a0af13d76f0abe1e457c120e3099187c8077fac50b69"
+      },
+      "voiced_log_mass.npy": {
+        "path": "voiced_log_mass.npy",
+        "bytes": 9736,
+        "sha256": "df57302c223480bcf1508aa46f0b8f83edacbb18ec6b4230a9f98fe0f4784ced"
+      },
+      "apron_post_refinement_f0.npy": {
+        "path": "apron_post_refinement_f0.npy",
+        "bytes": 4932,
+        "sha256": "10358b62ba0a87f4d0b1f44e120d703e33d74ac9acd16383f34d7a8c57710eee"
+      },
+      "source_voiced_prob.npy": {
+        "path": "voiced_prob.npy",
+        "bytes": 9736,
+        "sha256": "0490265e82d860e8c6b7b3e06c2fbbfeb170c95fade5445f53e4b96a9366cf41"
+      },
+      "overlay_identity": {
+        "status": "available",
+        "original_measurement_commit": "06b6da5e5822500993bdfc44b3bf35f84acaea46",
+        "published_original_provenance": {
+          "bytes": 7959,
+          "sha256": "e53493c51bb07f0682ac0a9753e66e3eacc9abeb6b11458130de1dff40d13a02"
+        },
+        "original_owner_contract": {
+          "bytes": 7603,
+          "sha256": "c965ce44f9f35de8ebf809ebbc2e065b2d3f0a9436bdce0bc454b37fd88082f9"
+        },
+        "original_case_result": {
+          "bytes": 2488,
+          "sha256": "fa8cc859638694e31dce00570adc121fb15c8b7dbd57fc91b6c9eef2b11f09c5"
+        },
+        "representation": {
+          "arrays.npz": {
+            "path": "attempt-0001/layer1/arrays.npz",
+            "bytes": 7977218,
+            "sha256": "9e5b1aac8b3cc468c3ff64e99864002981b682a1dc5c57135c73e47f343a5709"
+          },
+          "metadata.json": {
+            "path": "attempt-0001/layer1/metadata.json",
+            "bytes": 9670758,
+            "sha256": "771fb47819789b078cdeb22cd503cd482e4da3070f86f6bad2c7b5d427a503a7"
+          }
+        },
+        "frames": 1201,
+        "hop_serialized_float32_seconds": 0.004999999888241291,
+        "clock": "integer frame index × 120 samples at 24000 Hz",
+        "post_llsm_refinement": true,
+        "positive_outside_pyin_range_count": 10
+      }
+    },
+    "librispeech_1188-133604-0003": {
+      "voiced_bin_log_marginal.npy": {
+        "path": "voiced_bin_log_marginal.npy",
+        "bytes": 4688832,
+        "sha256": "fb8e9229dfdb22a1f473a6a635cbb93c48311165618018a411ef09d54c0963aa"
+      },
+      "uv_log_mass.npy": {
+        "path": "uv_log_mass.npy",
+        "bytes": 9736,
+        "sha256": "5786dd8e19e3513d254f9e9f83fab6de2a6173e82573b16ae2383dd33227da51"
+      },
+      "voiced_log_mass.npy": {
+        "path": "voiced_log_mass.npy",
+        "bytes": 9736,
+        "sha256": "5878c790f62ae70d2c10d7c949189add0be3702bfd81e9a73d5143b6a6ce4ddf"
+      },
+      "apron_post_refinement_f0.npy": {
+        "path": "apron_post_refinement_f0.npy",
+        "bytes": 4932,
+        "sha256": "0f17fc879ca7ca398fb7d9e4904f99a37e9154a455fd7e7b8141b1d89f39ea9a"
+      },
+      "source_voiced_prob.npy": {
+        "path": "voiced_prob.npy",
+        "bytes": 9736,
+        "sha256": "18b5c4959fe444dd772a545c291733881ef906aaf557d5e6d761812c7176cc27"
+      },
+      "overlay_identity": {
+        "status": "available",
+        "original_measurement_commit": "06b6da5e5822500993bdfc44b3bf35f84acaea46",
+        "published_original_provenance": {
+          "bytes": 7959,
+          "sha256": "e53493c51bb07f0682ac0a9753e66e3eacc9abeb6b11458130de1dff40d13a02"
+        },
+        "original_owner_contract": {
+          "bytes": 7603,
+          "sha256": "c965ce44f9f35de8ebf809ebbc2e065b2d3f0a9436bdce0bc454b37fd88082f9"
+        },
+        "original_case_result": {
+          "bytes": 2488,
+          "sha256": "c79a0335ce305086953a747541254e52b4a4ffc7ac6d485fd9db5eb8d42d8c57"
+        },
+        "representation": {
+          "arrays.npz": {
+            "path": "attempt-0001/layer1/arrays.npz",
+            "bytes": 7242988,
+            "sha256": "24190ffbfe5661e47868cfcf9e41965c495ac8a63b7926d0db67c64b2875fe50"
+          },
+          "metadata.json": {
+            "path": "attempt-0001/layer1/metadata.json",
+            "bytes": 9568328,
+            "sha256": "7cbcbbbeaf2fda4a428cc0c878c7dfea9416305d79c4f7ed028c28417caaee56"
+          }
+        },
+        "frames": 1201,
+        "hop_serialized_float32_seconds": 0.004999999888241291,
+        "clock": "integer frame index × 120 samples at 24000 Hz",
+        "post_llsm_refinement": true,
+        "positive_outside_pyin_range_count": 11
+      }
+    }
+  }
+}
