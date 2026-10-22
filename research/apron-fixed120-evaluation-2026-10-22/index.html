@@ -13,7 +13,7 @@
 <body><main>
 <p class="eyebrow">固定120録音の研究評価 · 2026年10月22日</p>
 <h1>Apronの無編集と音高±3半音を測る</h1>
-<p class="lead">同じ英語120録音・40話者を使い、現在の作業ベース Apron（LLSM2 Layer1）と比較方式 LLSM2 Layer0 の無編集出力を照合しました。4指標のうちApronが上位なのは予測MOSとECAPA、Layer0が上位なのはSCOREQ距離とeSTOIです。指標を合わせた総合順位は付けません。</p>
+<p class="lead">同じ英語120録音・40話者を使い、現在の作業ベース Apron（LLSM2 Layer1）と比較方式 LLSM2 Layer0 の無編集出力を照合しました。4指標のうちApronが上位なのは予測MOSとECAPA、Layer0が上位なのはSCOREQ距離とeSTOIです。後発の補助比較では、−3半音・＋3半音のどちらでもApronの平均UTMOSv2とECAPAがLayer0を上回りました。指標を合わせた総合順位は付けません。</p>
 <h2>まず、無編集の対応比較</h2>
 <p>各方式120録音。表は保存済み個票の単純平均です。太字はこの2方式の記述的な1位です。予測MOSは人の評定ではなく、ECAPAは人が保証した話者同一性ではありません。</p>
 <div class="table-wrap"><table><thead><tr><th>指標・採点範囲</th><th>Apron・無編集</th><th>Layer0・無編集</th><th>方向</th></tr></thead><tbody>
@@ -24,12 +24,31 @@
 </tbody></table></div>
 <p class="small">各行は同じ120録音で比較しています。UTMOSv2は全長、他の無編集3指標は入力manifestに固定された先頭の共通区間です。区間の異なる行同士を一つの順位にまとめません。旧PMLは<a href="../pml-package-evaluation-2026-10-16/index.html">当時の評価</a>として保持し、今回は採点器・出力の同一契約を確認した共同順位へは入れていません。</p>
 <h2>編集後の出力は別の範囲で見る</h2>
-<p>Apronの−3半音と＋3半音も各120録音です。音高を意図的に変えた出力へ参照忠実度のSCOREQやeSTOIは掛けていません。比較対象のLayer0編集出力はまだ測定していません。</p>
+<p>Apronの−3半音と＋3半音も各120録音です。音高を意図的に変えた出力へ参照忠実度のSCOREQやeSTOIは掛けていません。最初の評価ではLayer0編集出力を測定していませんでした。集計を見た後に計画した補助対照を次節に分けて掲載します。</p>
 <div class="table-wrap"><table><thead><tr><th>Apronの条件</th><th>UTMOSv2・native全長</th><th>ECAPA・編集全長</th></tr></thead><tbody>
 <tr><th>−3半音</th><td>3.1200</td><td>0.83928</td></tr>
 <tr><th>＋3半音</th><td>2.7907</td><td>0.86129</td></tr>
 </tbody></table></div>
 <p class="note">編集ECAPAは、元の入力抜粋全長と編集後の出力全長をそれぞれ16 kHzへ変換した値です。無編集表の「固定先頭区間」と採点範囲が違うため、両者の差を編集による話者性の減少量とは扱いません。</p>
+<h2>後発の補助対照：同じ録音のLayer0編集</h2>
+<p>最初の固定120録音評価の集計を見た後、Layer0の−3・＋3半音を対照にする補助計画を立てました。これは最初の計画に事前登録された比較ではありません。新たにLayer0の240波形と品質720個票を測り、元評価の条件が合う720個票を引用しました。全120録音・40話者で欠測はありません。</p>
+<div class="table-wrap"><table><thead><tr><th>方式・条件</th><th>UTMOSv2・native全長</th><th>ECAPA・元抜粋全長と出力全長</th></tr></thead><tbody>
+<tr><th>Apron・無編集</th><td class="best">1位　3.0938</td><td class="best">1位　0.95741</td></tr>
+<tr><th>Layer0・無編集</th><td>2位　3.0838</td><td>2位　0.95692</td></tr>
+<tr><th>Apron・−3半音</th><td class="best">1位　3.1200</td><td class="best">1位　0.83928</td></tr>
+<tr><th>Layer0・−3半音</th><td>2位　2.8221</td><td>2位　0.48721</td></tr>
+<tr><th>Apron・＋3半音</th><td class="best">1位　2.7907</td><td class="best">1位　0.86129</td></tr>
+<tr><th>Layer0・＋3半音</th><td>2位　2.6383</td><td>2位　0.42262</td></tr>
+</tbody></table></div>
+<p class="small">各セルは120録音の保存値の単純平均です。順位は同じ音高操作・同じ指標の2方式だけを比べた記述で、異なる操作や指標を横断した順位ではありません。UTMOSv2はnative出力全長、ECAPAは元の入力抜粋と出力の各全長を個別に16 kHzへ変換して採点しました。上の最初の無編集比較表のECAPAは固定先頭区間であり、この表の無編集ECAPAへ差し替えたり、両範囲を引いたりしません。</p>
+<div class="table-wrap"><table><thead><tr><th>指標・操作</th><th>編集後 Apron−Layer0</th><th>Apron 編集後−無編集</th><th>Layer0 編集後−無編集</th><th>変化量の差</th></tr></thead><tbody>
+<tr><th>UTMOSv2・−3半音</th><td>0.2980</td><td>0.0262</td><td>-0.2617</td><td>0.2879</td></tr>
+<tr><th>UTMOSv2・＋3半音</th><td>0.1523</td><td>-0.3032</td><td>-0.4454</td><td>0.1423</td></tr>
+<tr><th>ECAPA・−3半音</th><td>0.35207</td><td>-0.11813</td><td>-0.46972</td><td>0.35158</td></tr>
+<tr><th>ECAPA・＋3半音</th><td>0.43867</td><td>-0.09612</td><td>-0.53431</td><td>0.43819</td></tr>
+</tbody></table></div>
+<p class="small">差は録音ごとに計算し、120件を平均しました。「変化量の差」は〈Apron編集後−Apron無編集〉−〈Layer0編集後−Layer0無編集〉です。−3と＋3は別々に扱います。この範囲ではApronの平均予測MOSとECAPAが−3半音・＋3半音のどちらでもLayer0を上回りました。一方、これだけで真のF0精度、生理的な話者性、原因、48 kHzや他言語での品質、方式の総合優位は分かりません。初回のSCOREQ・eSTOIは意図的な音高編集へ適用していません。</p>
+<p class="small">全桁の<a href="supplement-results.json">集計と対応差</a>、<a href="supplement-individual-results.json">新規720個票</a>、<a href="supplement-provenance.json">引用した元個票の位置と実行来歴</a>、<a href="supplement-saved-result-audit.json">保存結果の別経路照合</a>を公開しています。元の<a href="individual-results.json">1440個票</a>は変更していません。</p>
 <h2>短い音声で条件を確認する</h2>
 <p><a href="https://www.openslr.org/12/">LibriSpeech test-clean</a>から公開用に事前固定した2録音です。各音声は先頭5秒。再生用だけPCM16へ変換し、音量正規化、位置合わせ、クリッピングは加えていません。原音は16 kHz、方式出力は24 kHzです。このプレビューWAVは採点していません。指標は保存した元の波形から、上記の指標ごとに定めた全長または固定先頭区間で計算しました。</p>
 <section class="grid">
@@ -37,18 +56,22 @@
 <p>原音</p><audio controls preload="none" aria-label="録音 librispeech_1089-134686-0008、原音、先頭5秒" src="audio/librispeech_1089-134686-0008-original.wav"></audio>
 <p>Apron・無編集</p><audio controls preload="none" aria-label="録音 librispeech_1089-134686-0008、Apron 無編集、先頭5秒" src="audio/librispeech_1089-134686-0008-apron_0.wav"></audio>
 <p>Apron・−3半音</p><audio controls preload="none" aria-label="録音 librispeech_1089-134686-0008、Apron マイナス3半音、先頭5秒" src="audio/librispeech_1089-134686-0008-apron_minus3.wav"></audio>
+<p>LLSM2 Layer0・−3半音</p><audio controls preload="none" aria-label="録音 librispeech_1089-134686-0008、LLSM2 Layer0 マイナス3半音、先頭5秒" src="audio/librispeech_1089-134686-0008-llsm2_minus3.wav"></audio>
 <p>Apron・＋3半音</p><audio controls preload="none" aria-label="録音 librispeech_1089-134686-0008、Apron プラス3半音、先頭5秒" src="audio/librispeech_1089-134686-0008-apron_plus3.wav"></audio>
+<p>LLSM2 Layer0・＋3半音</p><audio controls preload="none" aria-label="録音 librispeech_1089-134686-0008、LLSM2 Layer0 プラス3半音、先頭5秒" src="audio/librispeech_1089-134686-0008-llsm2_plus3.wav"></audio>
 <p>LLSM2 Layer0・無編集</p><audio controls preload="none" aria-label="録音 librispeech_1089-134686-0008、LLSM2 Layer0 無編集、先頭5秒" src="audio/librispeech_1089-134686-0008-llsm2_0.wav"></audio></div>
 <div class="card"><h3>1188-133604-0003</h3>
 <p>原音</p><audio controls preload="none" aria-label="録音 librispeech_1188-133604-0003、原音、先頭5秒" src="audio/librispeech_1188-133604-0003-original.wav"></audio>
 <p>Apron・無編集</p><audio controls preload="none" aria-label="録音 librispeech_1188-133604-0003、Apron 無編集、先頭5秒" src="audio/librispeech_1188-133604-0003-apron_0.wav"></audio>
 <p>Apron・−3半音</p><audio controls preload="none" aria-label="録音 librispeech_1188-133604-0003、Apron マイナス3半音、先頭5秒" src="audio/librispeech_1188-133604-0003-apron_minus3.wav"></audio>
+<p>LLSM2 Layer0・−3半音</p><audio controls preload="none" aria-label="録音 librispeech_1188-133604-0003、LLSM2 Layer0 マイナス3半音、先頭5秒" src="audio/librispeech_1188-133604-0003-llsm2_minus3.wav"></audio>
 <p>Apron・＋3半音</p><audio controls preload="none" aria-label="録音 librispeech_1188-133604-0003、Apron プラス3半音、先頭5秒" src="audio/librispeech_1188-133604-0003-apron_plus3.wav"></audio>
+<p>LLSM2 Layer0・＋3半音</p><audio controls preload="none" aria-label="録音 librispeech_1188-133604-0003、LLSM2 Layer0 プラス3半音、先頭5秒" src="audio/librispeech_1188-133604-0003-llsm2_plus3.wav"></audio>
 <p>LLSM2 Layer0・無編集</p><audio controls preload="none" aria-label="録音 librispeech_1188-133604-0003、LLSM2 Layer0 無編集、先頭5秒" src="audio/librispeech_1188-133604-0003-llsm2_0.wav"></audio></div>
 </section>
-<p class="small">出典・CC BY 4.0・改変の内訳は<a href="audio-credits.html">音声の帰属</a>へ。全10ファイルの元データ照合と変換条件は<a href="audio-manifest.json">音声manifest</a>に記録しました。JVS音声とユーザーの非公開音声は含みません。</p>
+<p class="small">出典・CC BY 4.0・改変の内訳は<a href="audio-credits.html">音声の帰属</a>へ。元の10ファイルと今回の4ファイルの元データ照合と変換条件は<a href="audio-manifest.json">音声manifest</a>に記録しました。JVS音声とユーザーの非公開音声は含みません。</p>
 <h2>完了範囲と読み方</h2>
-<p>Apron 3条件360波形とLayer0無編集120波形、計480波形を保存しました。予定した品質値1440件は全件測定され、欠測は0件です。元入力は16 kHzの英語朗読です。出力は24 kHzで、48 kHzへの適用や日本語・会話などへの一般化は、この測定では確認していません。順位はこの集合・採点区間・評価器での記述です。</p>
+<p>Apron 3条件360波形とLayer0無編集120波形、計480波形を保存しました。予定した品質値1440件は全件測定され、欠測は0件です。後発の補助計画ではLayer0編集240波形・品質720個票を追加し、こちらも欠測は0件です。元入力は16 kHzの英語朗読です。出力は24 kHzで、48 kHzへの適用や日本語・会話などへの一般化は、この測定では確認していません。順位はこの集合・採点区間・評価器での記述です。</p>
 <p>固定sourceと入力・モデル資産のSHA、指標ごとの合計・件数・最小・最大・平均は<a href="provenance.json">来歴</a>と<a href="results.json">集計値</a>へ。公開入力の<a href="individual-results.json">全1440個票</a>も、録音ID・採点範囲・標本数・波形とPCMのSHA付きで保存しました。保存済み値を同じ環境の別集計経路で照合し、個票・波形・参照PCMの対応に不一致はありませんでした。独立環境での再測定ではありません。最初の起動では環境に <code>/usr/bin/time</code> がなく、科学処理前に終了127・出力0でした。失敗記録をローカルで保持し、次の固定実行とは区別しています。<a href="README.md">再現条件と限界</a>にも記載しました。</p>
 <p class="small">実装上の未確認事項は、<a href="https://github.com/Hiroshiba/check-nonml-saikyo-vocoder/blob/main/research/apron-f0-assumptions-2026-10-22.md">一本のF0系列に関する調査</a>と<a href="https://github.com/Hiroshiba/check-nonml-saikyo-vocoder/blob/main/research/apron-48khz-assumptions-2026-10-22.md">48 kHzへ拡張する前の条件整理</a>に分けてあります。いずれも今回のF0精度や48 kHz品質を測った結果ではありません。</p>
 </main></body></html>
