@@ -48,7 +48,17 @@ def free_disk_bytes(path):
 
 
 def retained_bytes(path):
-    return sum(item.stat().st_size for item in path.rglob('*') if item.is_file())
+    total = 0
+    for item in path.rglob('*'):
+        try:
+            if item.is_file():
+                total += item.stat().st_size
+        except FileNotFoundError:
+            # 更新中の一時JSONが消えただけなら次回の観測で数える。
+            if item.name.endswith('.tmp'):
+                continue
+            raise
+    return total
 
 
 def available_memory_bytes():

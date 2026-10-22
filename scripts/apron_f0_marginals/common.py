@@ -77,7 +77,17 @@ def write_current(path: Path, data) -> None:
 
 
 def tree_bytes(root: Path) -> int:
-    return sum(p.stat().st_size for p in root.rglob('*') if p.is_file())
+    total = 0
+    for path in root.rglob('*'):
+        try:
+            if path.is_file():
+                total += path.stat().st_size
+        except FileNotFoundError:
+            # 別ownerが一時JSONを原子置換した場合だけ、現在の走査から外す。
+            if path.name.endswith('.tmp'):
+                continue
+            raise
+    return total
 
 
 def budget(root: Path, next_bytes: int = 0) -> None:
