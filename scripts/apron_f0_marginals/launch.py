@@ -95,8 +95,9 @@ def stop_child(process, grace, actions):
     process.wait()
 
 
-def wait_child(process, wall_seconds, grace_seconds, record, signals):
+def wait_child(process, wall_seconds, grace_seconds, record, signals, run_root):
     deadline = time.monotonic() + wall_seconds
+    next_size_check = time.monotonic()
     while True:
         if signals['first'] is not None:
             stop_child(process, grace_seconds, record['signals_sent'])
@@ -117,6 +118,16 @@ def wait_child(process, wall_seconds, grace_seconds, record, signals):
             record['status'] = 'finished'
             return (process.returncode if process.returncode >= 0
                     else 128 - process.returncode)
+        if time.monotonic() >= next_size_check:
+            used = retained_bytes(run_root)
+            record['last_observed_new_run_bytes'] = used
+            next_size_check = time.monotonic() + 2.0
+            if used > NEW_RUN_CAP_BYTES:
+                record['retained_budget_exceeded'] = True
+                record['retained_budget_exceeded_observed_at_utc'] = utc_now()
+                record['status'] = 'retained_budget_exceeded'
+                stop_child(process, grace_seconds, record['signals_sent'])
+                return 125
         remaining = deadline - time.monotonic()
         if remaining <= 0:
             record['timed_out'] = True
@@ -217,7 +228,8 @@ def main():
             record.update(status='running', child_pid=process.pid,
                           child_started_at_utc=utc_now())
             exit_code = wait_child(process, limits['wall_seconds'],
-                                   limits['grace_seconds'], record, signals)
+                                   limits['grace_seconds'], record, signals,
+                                   args.run_root)
             record['reaped_by_launcher'] = True
             record['child_elapsed_seconds'] = time.perf_counter() - child_started
             record['actual_child_exit_code'] = process.returncode

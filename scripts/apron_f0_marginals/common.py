@@ -28,6 +28,10 @@ LIBROSA_PINS = {
     'core/pitch.py': 'f45cc429f9daa2276d750fa4f100641eae45991daf6e70050073088b86516b87',
     'sequence.py': '1253a1427630506928873c82d00ae0fdf1a6a35ba7653252d3bad8f2d37052e6',
 }
+LIBROSA_REVIEWED_GIT_BLOBS = {
+    'core/pitch.py': '195275311c80b4365e8e4d7e32da310696b4ec95',
+    'sequence.py': '478da5b4f682533695ab7d092a6404462343f558',
+}
 VERSIONS = {'numpy': '2.3.5', 'scipy': '1.17.0', 'numba': '0.68.0', 'librosa': '0.11.0'}
 THREAD_ENV = ('OMP_NUM_THREADS', 'OPENBLAS_NUM_THREADS', 'MKL_NUM_THREADS',
               'NUMEXPR_NUM_THREADS', 'VECLIB_MAXIMUM_THREADS', 'BLIS_NUM_THREADS')
@@ -43,6 +47,11 @@ def sha(path: Path) -> str:
         for block in iter(lambda: stream.read(1024 * 1024), b''):
             digest.update(block)
     return digest.hexdigest()
+
+
+def git_blob_sha1(path: Path) -> str:
+    data = path.read_bytes()
+    return hashlib.sha1(b'blob ' + str(len(data)).encode('ascii') + b'\0' + data).hexdigest()
 
 
 def identity(path: Path) -> dict:
@@ -102,15 +111,21 @@ def check_environment() -> dict:
         if actual_sha != expected:
             raise RuntimeError(f'固定入力helperのsource SHA不一致: {name}: {actual_sha}')
     site = Path(importlib.metadata.distribution('librosa').locate_file('librosa'))
+    blobs = {}
     for name, expected in LIBROSA_PINS.items():
         actual_sha = sha(site / name)
+        actual_blob = git_blob_sha1(site / name)
         files['librosa/' + name] = actual_sha
-        if actual_sha != expected:
-            raise RuntimeError(f'固定librosa source SHA不一致: {name}: {actual_sha}')
+        blobs['librosa/' + name] = actual_blob
+        if actual_sha != expected or actual_blob != LIBROSA_REVIEWED_GIT_BLOBS[name]:
+            raise RuntimeError(f'固定librosa source SHA/Git blob不一致: {name}: '
+                               f'{actual_sha}/{actual_blob}')
     return {'python': sys.version.split()[0], 'distributions': actual,
-            'source_sha256': files, 'librosa_release_commit_reference':
+            'source_sha256': files, 'librosa_source_git_blob_sha1': blobs,
+            'reviewed_pair_matches_release_commit': True,
+            'librosa_release_commit_reference':
             'af8c839fb15317fa2712ea66e7a22da6a9267b32',
-            'release_commit_verified_from_wheel_metadata': False}
+            'full_wheel_commit_provenance_verified': False}
 
 
 def checked_cases(manifest: Path, input_root: Path, owner: int) -> list[dict]:
@@ -140,3 +155,14 @@ def seal_owner(output: Path) -> None:
     write_new(output / 'ARTIFACT_MANIFEST.json',
               {'kind': 'local_artifact_inventory', 'recorded_at_utc': now(),
                'files': file_manifest(output, paths)})
+
+
+def verified_seal(output: Path) -> dict:
+    """閉じたownerの一覧と展開原本の集合・bytes/SHAを照合する。"""
+    seal = output / 'ARTIFACT_MANIFEST.json'
+    data = read(seal)
+    paths = sorted(p for p in output.rglob('*') if p.is_file() and p != seal)
+    expected = file_manifest(output, paths)
+    if data.get('kind') != 'local_artifact_inventory' or data.get('files') != expected:
+        raise ValueError(f'閉鎖済みownerのfile集合/bytes/SHAが一致しません: {output}')
+    return identity(seal)

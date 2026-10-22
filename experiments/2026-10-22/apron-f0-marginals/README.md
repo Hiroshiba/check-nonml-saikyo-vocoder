@@ -6,7 +6,7 @@
 
 既存 `research/pml-package-evaluation-2026-10-16/input-manifest.json` の120録音・40話者と、照合済み16 kHz mono float64 NPYだけを使う。既存の42/39/39話者非重複分割を変えない。`scipy.signal.resample_poly(x, 3, 2)` を一度適用し、連続24 kHz float64を pYIN に渡す。正規化、無音除去、trimming、補間は行わない。固定引数は `sr=24000, fmin=60, fmax=1000, frame_length=2048, hop_length=120, center=True, pad_mode='constant', fill_na=0, n_thresholds=100, beta_parameters=(2,18), boltzmann_parameter=2, resolution=0.1, max_transition_rate=35.92, switch_prob=0.01, no_trough_prob=0.01`。範囲と5 ms hopがApron入口と数値上同じでも、推定器・解析窓は同一ではない。
 
-期待値は488有声ビン、無声を含む976状態、録音別414～1201フレーム、全123307フレーム。実値が違えば記録して失敗とし、時計を合わせるために補間しない。Python 3.12.14、NumPy 2.3.5、SciPy 1.17.0、Numba 0.68.0、librosa 0.11.0、既存入力helperとlibrosa実ファイルのSHAを開始時に照合する。librosa 0.11.0公開sourceの参照commitは `af8c839fb15317fa2712ea66e7a22da6a9267b32`。wheel metadataだけではこのcommitとの原バイト同一性を証明しないため、実際に使う `core/pitch.py` と `sequence.py` の固定SHAを別に記録する。上流では候補ビン割当て後にinclusiveな上限クリップがあるが、この入口ではクリップ/衝突件数を取得できない。件数は「未測定」とし、捕捉した因子を修正しない。
+期待値は488有声ビン、無声を含む976状態、録音別414～1201フレーム、全123307フレーム。実値が違えば記録して失敗とし、時計を合わせるために補間しない。Python 3.12.14、NumPy 2.3.5、SciPy 1.17.0、Numba 0.68.0、librosa 0.11.0、既存入力helperとlibrosa実ファイルのSHAを開始時に照合する。librosa 0.11.0公開sourceの参照commitは `af8c839fb15317fa2712ea66e7a22da6a9267b32`。インストール済み `core/pitch.py` と `sequence.py` の実バイトからGit blob SHA1を計算し、公開commitのblob ID `195275311c80b4365e8e4d7e32da310696b4ec95` と `478da5b4f682533695ab7d092a6404462343f558` にそれぞれ一致することを読取りで確認した。この二ファイルだけの同一性であり、wheel全体のcommit来歴の証明ではない。実行時にはSHA256とblob IDを再照合する。上流では候補ビン割当て後にinclusiveな上限クリップがあるが、この入口ではクリップ/衝突件数を取得できない。件数は「未測定」とし、捕捉した因子を修正しない。
 
 抽出は公開 `librosa.pyin` を各録音に一度だけ呼ぶ。内側の単一 `sequence.viterbi` 呼出しで実際の観測因子 O、遷移 T、初期 pi と経路をコピーし、元関数へ同じ引数を委譲して `finally` で復元する。公開 F0、voiced_flag、framewise voiced_prob も保持する。T/piはownerごとに最初の録音から一度だけ保存し、以後の各録音の実因子と比較する。異なればその実因子を別原本として保存して停止する。これは並列owner間の共有書込みを避け、同じTを120回保存しないためである。
 
@@ -18,7 +18,7 @@ librosa `sequence.py` のViterbi入口と同じ `epsilon=librosa.util.tiny(O)` �
 
 有声**対数**周辺量の最大ビンを選ぶ。同値なら番号の小さいビンを使う。線形化後のunderflowによる偽の同値を避けるためである。各フレームでこのビンからの符号付きoffset（1ビン10 cent）へ、**無条件**の有声質量を移す。録音内では全フレーム数を分母にし、物理的に存在しないoffsetは0質量のままにする。全120の集計はまず各録音の平均を作り、その120録音を等重みとする。失敗が1件でもあれば「全120平均」は利用不可とする。別のframe加重集計は作らない。±1200 centは図示時の幾何学的目印であり、octave誤りの分類ではない。全経路joint候補や独立した候補経路を周辺量から捏造しない。
 
-Apronの元 `06b6da5e` runに残るLayer1配列のframe field0は、LLSM後の改良済み点F0である。元16k入力SHA、元24k float64入力SHA、frame数、config0/1、float32で保存されたhop=`float32(0.005)`、整数 `frame_index × 120 / 24000` 秒を照合する。float32の0.005をfloat64の0.005と直接比較しない。正のApron値がpYIN範囲外でもclampせず、文脈上の範囲外件数とする。欠落や不一致があればoverlayを理由付きで利用不可にし、主たるpYIN周辺支持まで失敗にしない。後日の図は既定の公開2録音 `librispeech_1089-134686-0008` と `librispeech_1188-133604-0003` だけで、既公開の原音・Apron試聴へリンクする。新しい音声やMOSは作らない。
+Apronの元 `06b6da5e` runに残るLayer1配列のframe field0は、LLSM後の改良済み点F0である。公開済み元レポートの `provenance.json` 原SHAと記録済み測定commit、元owner契約の全固定source hash・入力manifest・解析条件を照合してから、元16k入力SHA、元24k float64入力SHA、frame数、config0/1、float32で保存されたhop=`float32(0.005)`、整数 `frame_index × 120 / 24000` 秒を照合する。float32の0.005をfloat64の0.005と直接比較しない。正のApron値がpYIN範囲外でもclampせず、文脈上の範囲外件数とする。欠落や不一致があればoverlayを詳細理由付きで利用不可にし、主たるpYIN周辺支持まで失敗にしない。後日の図は既定の公開2録音 `librispeech_1089-134686-0008` と `librispeech_1188-133604-0003` だけで、既公開の原音・Apron試聴へリンクする。新しい音声やMOSは作らない。
 
 ## 五役二巡の設計確認
 
@@ -30,7 +30,7 @@ Apronの元 `06b6da5e` runに残るLayer1配列のframe field0は、LLSM後の�
 
 入力からは重複音声を保存しない。Oは最大合計 `123307×976×8=962781056 B`、有声対数周辺配列は `123307×488×8=481390528 B`。ownerごとのTは各 `976×976×8=7620608 B`、alpha最大は約9.4 MBの一時メモリで、保存しない。これに元F0/経路/無声量/記録/原本SHAを加えて新runの全保持量を2 GiB以内に制限する。大きな `time×976×976` 配列は作らない。ファイル/各録音/owner証拠を保存し、容量超過時は原本を削らず失敗として止める。lossless NPYのOと有声対数周辺配列はローカルのみ。将来の公開候補は120録音すべての各フレームUV/V支持、各録音の全offset平均、録音等重みの全120平均、失敗・数値診断・設定とローカル配列SHA。図は前述2録音に限る。公開は**別ターンの判断**で、今はGitHub/Libraryへ実結果を送らない。
 
-抽出成功原本を解析前に閉じる。録音失敗をゼロ支持として補わず、未実行件数と分母を別々に示す。観測因子、警告、stack、外側全stdout/stderr、実exit・signal・回収、各fileのbytes/SHAを新規run内へ保持する。勝手な再試行、閾値調整、警告切捨てはしない。各科学子は1 thread/8 GiB address-space、抽出1800秒・解析3600秒、TERM後10秒でKILLし唯一のlauncherが回収する。4CPU/16GiB環境では同一runのlockで最大2子に制限し、開始前に空きディスクと`MemAvailable`がそれぞれ4 GiB以上か確認する。2 GiBは新run全体の保存上限であり、どんな失敗ログでも必ず閉じられる保証ではない。
+抽出成功原本を解析前に閉じ、全件成功・終端summaryと原本全件SHA付きsealが揃ったownerだけを解析する。共有T/piの固定契約違反ではその後の録音を開始せず、未実行数と元失敗証拠を残す。要約も終端済み解析ownerとsealだけを読む。録音失敗をゼロ支持として補わず、未実行件数と分母を別々に示す。有限な対数値を線形化して0になった件数と、構造上の `−inf` からの0は別に記録する。観測因子、警告、stack、外側全stdout/stderr、実exit・signal・回収、各fileのbytes/SHAを新規run内へ保持する。勝手な再試行、閾値調整、警告切捨てはしない。各科学子は1 thread/8 GiB address-space、抽出1800秒・解析3600秒、TERM後10秒でKILLし唯一のlauncherが回収する。4CPU/16GiB環境では同一runのlockで最大2子に制限し、開始前に空きディスクと`MemAvailable`がそれぞれ4 GiB以上か確認する。2 GiBは新run全体の保存目標で、外側launcherは稼働中も約2秒間隔で実容量を観測し、超過を検知した子を停止・回収する。観測間隔と最終receiptの分だけ超過し得るため、絶対上限や全失敗ログの閉鎖を保証しない。原本は削除・切捨てしない。
 
 ## 将来の実入口（今は実行しない）
 

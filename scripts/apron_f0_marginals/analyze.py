@@ -12,8 +12,12 @@ import numpy as np
 
 from .common import (HOP, ROOT, SR, STATES, budget, check_environment,
                      checked_cases, file_manifest, identity, now, prepare_root,
-                     read, save_array, seal_owner, write_current, write_new)
+                     read, save_array, seal_owner, verified_seal, write_current, write_new)
 from .operator import marginals
+
+ORIGINAL_PROVENANCE = ROOT / 'research/apron-fixed120-evaluation-2026-10-22/provenance.json'
+ORIGINAL_PROVENANCE_SHA256 = 'e53493c51bb07f0682ac0a9753e66e3eacc9abeb6b11458130de1dff40d13a02'
+ORIGINAL_COMMIT = '06b6da5e5822500993bdfc44b3bf35f84acaea46'
 
 
 def checked_file(base: Path, entry: dict) -> Path:
@@ -31,6 +35,23 @@ def apron_context(case: dict, owner: int, original_run: Path,
             / 'attempt-0001' / 'result.json')
     stage = 'saved_result'
     try:
+        stage = 'published_original_provenance'
+        published = read(ORIGINAL_PROVENANCE)
+        if (identity(ORIGINAL_PROVENANCE)['sha256'] != ORIGINAL_PROVENANCE_SHA256
+                or published['measurement_source_commit'] != ORIGINAL_COMMIT):
+            raise ValueError('公開済み元runの測定commit/来歴SHAが一致しません')
+        stage = 'original_owner_contract'
+        owner_contract_path = original_run / 'native' / f'owner-{owner}' / 'contract.json'
+        owner_contract = read(owner_contract_path)
+        if (owner_contract['owner'] != owner or case_id not in owner_contract['case_ids']
+                or owner_contract['source_hashes'] != published['source_hashes']
+                or owner_contract['input_manifest_sha256']
+                != published['input_manifest']['sha256']
+                or any(owner_contract[key] != published['native_contract'][key]
+                       for key in ('dsp_threads', 'native_sample_rate',
+                                   'analysis_seed', 'each_decode_seed'))):
+            raise ValueError('元owner契約が公開来歴の固定source/入力/条件と異なります')
+        stage = 'saved_result'
         row = read(path)
         stage = 'input_identity'
         if row['status'] != 'measured' or row['case'] != case_id:
@@ -58,7 +79,8 @@ def apron_context(case: dict, owner: int, original_run: Path,
             config = tree['config']['items']
             count = arrays[config['0']['key']]
             hop = arrays[config['1']['key']]
-            if (count.shape != (1,) or int(count[0]) != frames or hop.shape != (1,)
+            if (count.shape != (1,) or count.dtype != np.int32 or count[0] != frames
+                    or hop.shape != (1,)
                     or hop.dtype != np.float32
                     or hop[0] != np.float32(HOP / SR)):
                 raise ValueError('Layer1保存frame数またはfloat32 hopが一致しません')
@@ -71,6 +93,10 @@ def apron_context(case: dict, owner: int, original_run: Path,
         if not np.isfinite(trace).all() or np.any(trace < 0):
             raise ValueError('Layer1 F0に非有限または負値があります')
         return trace, {'status': 'available', 'source_result': str(path),
+                       'original_measurement_commit': ORIGINAL_COMMIT,
+                       'published_original_provenance': identity(ORIGINAL_PROVENANCE),
+                       'original_owner_contract': identity(owner_contract_path),
+                       'original_case_result': identity(path),
                        'representation': row['representation'], 'frames': frames,
                        'hop_serialized_float32_seconds': float(hop[0]),
                        'clock': 'integer frame index × 120 samples at 24000 Hz',
@@ -80,6 +106,7 @@ def apron_context(case: dict, owner: int, original_run: Path,
     except Exception as exc:
         return None, {'status': 'unavailable',
                       'reason': f'{stage}:{type(exc).__name__}',
+                      'reason_detail': str(exc),
                       'source_result': str(path)}
 
 
@@ -108,26 +135,49 @@ def analyze_case(case: dict, owner: int, factors: Path, output: Path,
         if observation.shape != (STATES, frames) or not 414 <= frames <= 1201:
             raise ValueError('保存観測のframe/state形状が異なります')
         epsilon = float(librosa.util.tiny(observation))
-        with warnings.catch_warnings(record=True) as captured:
-            warnings.simplefilter('always')
-            result = marginals(observation, transition, initial, epsilon)
+        with warnings.catch_warnings(record=True) as marginal_warnings:
+            try:
+                warnings.simplefilter('always')
+                result = marginals(observation, transition, initial, epsilon)
+            finally:
+                captured.extend(marginal_warnings)
         trace, overlay = apron_context(case, owner, original_run,
                                        factor['native_input'], frames)
         files = []
         with warnings.catch_warnings(record=True) as conversion_warnings:
-            warnings.simplefilter('always')
-            arrays = {'voiced_bin_log_marginal.npy': result['logvoiced'],
-                      'uv_log_mass.npy': result['loguv'],
-                      'voiced_log_mass.npy': result['logv'],
-                      'frame_log_normalization.npy': result['lognorm'],
-                      'frame_mass_drift.npy': np.expm1(result['lognorm']),
-                      'voiced_mode_bin.npy': result['mode'],
-                      'offset_log_mean.npy': result['histogram_log_mean'],
-                      'offset_mean.npy': np.exp(result['histogram_log_mean']),
-                      'offset_contributing_frames.npy': result['histogram_count'],
-                      'forward_support_intervals.npy': result['forward_intervals'],
-                      'backward_support_intervals.npy': result['backward_intervals']}
-        captured.extend(conversion_warnings)
+            try:
+                warnings.simplefilter('always')
+                arrays = {'voiced_bin_log_marginal.npy': result['logvoiced'],
+                          'uv_log_mass.npy': result['loguv'],
+                          'voiced_log_mass.npy': result['logv'],
+                          'frame_log_normalization.npy': result['lognorm'],
+                          'frame_mass_drift.npy': np.expm1(result['lognorm']),
+                          'voiced_mode_bin.npy': result['mode'],
+                          'offset_log_mean.npy': result['histogram_log_mean'],
+                          'offset_mean.npy': np.exp(result['histogram_log_mean']),
+                          'offset_contributing_frames.npy': result['histogram_count'],
+                          'forward_support_intervals.npy': result['forward_intervals'],
+                          'backward_support_intervals.npy': result['backward_intervals']}
+            finally:
+                captured.extend(conversion_warnings)
+        hist_log = result['histogram_log_mean']
+        hist_linear = arrays['offset_mean.npy']
+        drift_log = result['lognorm']
+        drift_linear = arrays['frame_mass_drift.npy']
+        if (np.isposinf(hist_log).any() or np.isnan(hist_log).any()
+                or not np.isfinite(hist_linear).all()
+                or not np.isfinite(drift_linear).all()):
+            raise FloatingPointError('offset対数平均に非有限の正値/NaNがあります')
+        conversion_counts = {
+            'offset_mean_finite_log_to_linear_zero': int(np.count_nonzero(
+                np.isfinite(hist_log) & (hist_linear == 0))),
+            'offset_mean_structural_minus_infinity_to_zero': int(np.count_nonzero(
+                np.isneginf(hist_log) & (hist_linear == 0))),
+            'frame_mass_drift_nonzero_log_to_linear_zero': int(np.count_nonzero(
+                (drift_log != 0) & (drift_linear == 0))),
+            'frame_mass_drift_exact_zero_log_to_linear_zero': int(np.count_nonzero(
+                (drift_log == 0) & (drift_linear == 0))),
+        }
         if trace is not None:
             arrays['apron_post_refinement_f0.npy'] = trace
         for name, array in arrays.items():
@@ -143,6 +193,7 @@ def analyze_case(case: dict, owner: int, factors: Path, output: Path,
                    nominal_zero_transition_log_weight=math.log(epsilon),
                    frame_log_normalization_max_abs=float(np.max(np.abs(result['lognorm']))),
                    frame_mass_drift_max_abs=float(np.max(np.abs(arrays['frame_mass_drift.npy']))),
+                   linear_conversion_zero_counts=conversion_counts,
                    apron_overlay=overlay, files=file_manifest(case_dir, files),
                    warnings=[{'category': w.category.__name__, 'message': str(w.message),
                               'filename': w.filename, 'line': w.lineno} for w in captured])
@@ -176,6 +227,17 @@ def main() -> int:
                 or contract['source_files'] != file_manifest(
                     ROOT, sorted(Path(__file__).parent.glob('*.py')))):
             raise ValueError('抽出時と解析時の固定入力/owner契約が一致しません')
+        extraction_summary_path = args.factor_root / 'summary.json'
+        extraction_summary = read(extraction_summary_path)
+        if (extraction_summary.get('terminal') is not True
+                or extraction_summary.get('outcome') != 'complete'
+                or extraction_summary.get('planned') != len(cases)
+                or extraction_summary.get('visited') != len(cases)
+                or extraction_summary.get('unattempted') != 0
+                or extraction_summary.get('saved') != len(cases)
+                or (args.factor_root / 'owner-failure.json').exists()):
+            raise ValueError('抽出ownerが全件成功・終端していません')
+        extraction_seal = verified_seal(args.factor_root)
         shared = args.factor_root / 'common' / 'factor-manifest.json'
         shared_identity = identity(shared)
         shared_files = read(shared)['files']
@@ -188,6 +250,8 @@ def main() -> int:
                    'started_at_utc': now(), 'environment': environment,
                    'input_manifest': identity(args.input_manifest),
                    'factor_contract': identity(args.factor_root / 'contract.json'),
+                   'factor_terminal_summary': identity(extraction_summary_path),
+                   'factor_owner_seal': extraction_seal,
                    'shared_factors': shared_identity,
                    'planned_cases': len(cases), 'case_ids': [case['id'] for case in cases],
                    'source_files': file_manifest(ROOT, sorted(Path(__file__).parent.glob('*.py'))),
@@ -205,8 +269,13 @@ def main() -> int:
                            'unattempted': len(cases) - index, 'analyzed': saved,
                            'failed': index - saved, 'last_case': row['case'],
                            'last_status': row['status'],
-                           'complete_owner_aggregate_available': saved == len(cases)})
-        complete = read(args.output / 'summary.json')['analyzed'] == len(cases)
+                           'complete_owner_aggregate_available': saved == len(cases),
+                           'terminal': False})
+        summary = read(args.output / 'summary.json')
+        complete = summary['analyzed'] == len(cases)
+        summary.update(terminal=True, outcome='complete' if complete else 'incomplete',
+                       finished_at_utc=now())
+        write_current(args.output / 'summary.json', summary)
         seal_owner(args.output)
         return 0 if complete else 2
     except Exception:
