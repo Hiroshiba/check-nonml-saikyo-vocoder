@@ -1,0 +1,136 @@
+{
+  "kind": "saved_value_figure_provenance",
+  "arithmetic_independent_review": "passed_bit_exact_saved_coefficient_arithmetic_same_environment_no_iaif_rerun",
+  "renderer": {
+    "bytes": 15078,
+    "sha256": "387aa047fbbef7bfbaf457497c9c3cbb89bcd14eccfea015cfcea0ff71c600c0"
+  },
+  "sources": {
+    "ARTIFACT_MANIFEST.json": {
+      "bytes": 25670,
+      "sha256": "c340e90676ec3297be15a8000e075d4bf261ecc39af95c1d31520637041d2d8e"
+    },
+    "contract.json": {
+      "bytes": 20856,
+      "sha256": "084e21c340a0537e926bc33aad7dc599b839273fcc65c8ae3de4dc0704cfb56d"
+    },
+    "f0-comparison.json": {
+      "bytes": 697516,
+      "sha256": "d38df118a69fc72fc3150842526a6b26d831003883ea7682f8d2c6414545224b"
+    },
+    "compact-summary.json": {
+      "bytes": 7936,
+      "sha256": "c5f61927cbe6e650bf36ca666674c2325cf5ab1e17b41c30573c120550a7b670"
+    },
+    "saved-audit": {
+      "bytes": 8006,
+      "sha256": "fa1df0ea825957e7064851d8653b7cd9d52ef6d4e9cb85d7afd31ce8c1543af6"
+    },
+    "independent_arithmetic_audit_original_local": {
+      "bytes": 1378,
+      "sha256": "759a88c3e2e68339f5f519afdd70cf07a9e84d29f603e13707287b1b3cd6ee9a"
+    }
+  },
+  "figures": {
+    "fig-v0-g0.svg": {
+      "bytes": 22026,
+      "sha256": "25260f683b1ecdbe00ceb8a07632a93c2520b537c08878c3e89dc5f2c7dc8c08"
+    },
+    "fig-v1-g0.svg": {
+      "bytes": 22025,
+      "sha256": "8aa3a51af9788007a141e2ca919a761ea33d83efc9d9e3dfb89b8da17888dd14"
+    }
+  },
+  "html": {
+    "bytes": 19534,
+    "sha256": "d4b17ecd4e899940bdca7b0be0135a81ae28aab6cb785391be46375c8d5fea79"
+  },
+  "figures_are_saved_curve_visualizations_only": true,
+  "selection_fixed_before_figures": {
+    "fig-v0-g0.svg": {
+      "condition": {
+        "vt": 0,
+        "source": 0,
+        "phase": "zero",
+        "noise": "off"
+      },
+      "source_results": {
+        "v0-g0-f120-pzero-off": {
+          "bytes": 312559,
+          "sha256": "4857a55bacff893f4c95a3ef8c630190b0e4f9cbaa2af86657dadbe1ccdf7330"
+        },
+        "v0-g0-f200-pzero-off": {
+          "bytes": 311540,
+          "sha256": "fb0e3e70efb750794f3bcc38159cf8ebcbd6b542763d378cee82361137d0dc36"
+        },
+        "v0-g0-f300-pzero-off": {
+          "bytes": 312105,
+          "sha256": "8088c5aefa147d78f8302c8f1f5de115f34dc1c4b6fb9cef28c4b5c7249c9cc9"
+        }
+      },
+      "common_n": 19,
+      "rendered_curves": [
+        "known_vt",
+        "120_hz",
+        "200_hz",
+        "300_hz"
+      ],
+      "bins_per_curve": 317,
+      "x_hz": [
+        100,
+        8000
+      ],
+      "y_db": [
+        -70.0,
+        100.0
+      ],
+      "svg_coordinates_decimals": 2,
+      "no_new_smoothing_or_alignment": true
+    },
+    "fig-v1-g0.svg": {
+      "condition": {
+        "vt": 1,
+        "source": 0,
+        "phase": "zero",
+        "noise": "off"
+      },
+      "source_results": {
+        "v1-g0-f120-pzero-off": {
+          "bytes": 312614,
+          "sha256": "db77a61c8e5e5484b0ac538221935be90afd1178bb30aece6ef7379203f946f9"
+        },
+        "v1-g0-f200-pzero-off": {
+          "bytes": 311643,
+          "sha256": "ddb8f843cc76ca08939e43a9237a9874b78a63e8a9fda3c0f0f3923294663044"
+        },
+        "v1-g0-f300-pzero-off": {
+          "bytes": 312083,
+          "sha256": "63928a0cde4f178a2c52f87e54cca8fb2c68ba39255ac49c9eabbd8636eed4c4"
+        }
+      },
+      "common_n": 19,
+      "rendered_curves": [
+        "known_vt",
+        "120_hz",
+        "200_hz",
+        "300_hz"
+      ],
+      "bins_per_curve": 317,
+      "x_hz": [
+        100,
+        8000
+      ],
+      "y_db": [
+        -70.0,
+        100.0
+      ],
+      "svg_coordinates_decimals": 2,
+      "no_new_smoothing_or_alignment": true
+    }
+  },
+  "selection_timing": "selected after receiving all-72 error range, before reading detailed 72-case values; before rendering, not before results or execution",
+  "source_figure_provenance_original_local": {
+    "bytes": 3444,
+    "sha256": "43c587201d03d407dd00ebeeae2734fd8f18d06edf057d2b3706d659300465d8"
+  }
+}
