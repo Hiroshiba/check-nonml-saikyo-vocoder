@@ -1,12 +1,12 @@
 # ボコーダーの比較と開発
 
-**現在の作業ベースは「Apron」です。** 固定版の LLSM2 Layer1 を使います。ユーザーの指定で切り替えたもので、Layer1 の品質はまだ測定していません。[切替記録](research/llsm2-layer1-base-transition-2026-10-21/index.html)に、実装範囲と未測定項目をまとめました。ユーザー指示の正本は [USER_INSTRUCTIONS.md](USER_INSTRUCTIONS.md) です。
+**現在の作業ベースは「Apron」です。** 固定版の LLSM2 Layer1 を使います。ユーザーの指定で切り替えたもので、[固定120録音の品質と音高±3半音の結果](research/apron-fixed120-evaluation-2026-10-22/index.html)を記録しました。[切替時点の記録](research/llsm2-layer1-base-transition-2026-10-21/index.html)にある「未測定」は当時の状態です。ユーザー指示の正本は [USER_INSTRUCTIONS.md](USER_INSTRUCTIONS.md) です。
 
 Apronは24 kHzで解析し、元の調波列を含まない Layer1 特徴を保存します。復号のたびに保存特徴から独立した状態を作ります。既存の比較 ID `llsm2` は従来どおり Layer0 です。両者の結果を混同しません。
 
 ## 開発ベースの入口
 
-リポジトリ本体は Python 3.12 を使います。上流 LLSM2 と ciglet は[固定版の準備手順](docs/REFERENCES.md)に従い、Git 管理外の隔離キャッシュに準備します。この準備で得る比較用 Python 3.10 環境と、本体の Python 3.12 環境は区別します。Apronの入口は本体 Python 3.12 から、照合済みの native library を使います。Layer1 の音声処理はまだ実測していません。
+リポジトリ本体は Python 3.12 を使います。上流 LLSM2 と ciglet は[固定版の準備手順](docs/REFERENCES.md)に従い、Git 管理外の隔離キャッシュに準備します。この準備で得る比較用 Python 3.10 環境と、本体の Python 3.12 環境は区別します。Apronの入口は本体 Python 3.12 から、照合済みの native library を使います。Layer1 の音声処理は固定120録音で測定し、48 kHzへの適用は未確認です。
 
 ```sh
 uv sync --locked

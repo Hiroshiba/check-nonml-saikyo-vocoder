@@ -1,0 +1,155 @@
+{
+  "schema_version": 1,
+  "kind": "apron_fixed120_descriptive_saved_results",
+  "cohort": {
+    "recordings": 120,
+    "speakers": 40,
+    "recordings_per_speaker": 3,
+    "native_waves": 480,
+    "quality_rows": 1440,
+    "missing_rows": 0
+  },
+  "aggregation": "Saved measured numeric values, arithmetic case mean (sum/120) within each metric, condition and scoring scope; no speaker weighting, substitution, significance test or overall rank.",
+  "matched_unedited_ranks": {
+    "utmosv2": {
+      "apron_0": 1,
+      "llsm2_0": 2
+    },
+    "ecapa": {
+      "apron_0": 1,
+      "llsm2_0": 2
+    },
+    "scoreq": {
+      "apron_0": 2,
+      "llsm2_0": 1
+    },
+    "estoi": {
+      "apron_0": 2,
+      "llsm2_0": 1
+    }
+  },
+  "aggregates": [
+    {
+      "metric": "ecapa",
+      "condition": "apron_0",
+      "scope": "frozen_common_16k_prefix",
+      "count": 120,
+      "sum": "114.8837302327156068",
+      "min": "0.7826806306838989",
+      "max": "0.9832291603088379",
+      "mean": "0.95736441860596339"
+    },
+    {
+      "metric": "ecapa",
+      "condition": "apron_minus3",
+      "scope": "edited_full_length",
+      "count": 120,
+      "sum": "100.7132260799407958",
+      "min": "0.7066450715065002",
+      "max": "0.9188903570175171",
+      "mean": "0.839276883999506631666666666666666666666666666666666666666667"
+    },
+    {
+      "metric": "ecapa",
+      "condition": "apron_plus3",
+      "scope": "edited_full_length",
+      "count": 120,
+      "sum": "103.3542904853820805",
+      "min": "0.7379299402236938",
+      "max": "0.9279561042785645",
+      "mean": "0.861285754044850670833333333333333333333333333333333333333333"
+    },
+    {
+      "metric": "ecapa",
+      "condition": "llsm2_0",
+      "scope": "frozen_common_16k_prefix",
+      "count": 120,
+      "sum": "114.8291016817092894",
+      "min": "0.7811282873153687",
+      "max": "0.9831399917602539",
+      "mean": "0.956909180680910745"
+    },
+    {
+      "metric": "estoi",
+      "condition": "apron_0",
+      "scope": "frozen_common_16k_prefix",
+      "count": 120,
+      "sum": "111.6642889212733975",
+      "min": "0.7573068227212975",
+      "max": "0.9835786806784756",
+      "mean": "0.930535741010611645833333333333333333333333333333333333333333"
+    },
+    {
+      "metric": "estoi",
+      "condition": "llsm2_0",
+      "scope": "frozen_common_16k_prefix",
+      "count": 120,
+      "sum": "111.8938532835913618",
+      "min": "0.7574231530960323",
+      "max": "0.9850851854393051",
+      "mean": "0.932448777363261348333333333333333333333333333333333333333333"
+    },
+    {
+      "metric": "scoreq",
+      "condition": "apron_0",
+      "scope": "frozen_common_16k_prefix",
+      "count": 120,
+      "sum": "29.21772118657827372",
+      "min": "0.1001049056649208",
+      "max": "0.7206410765647888",
+      "mean": "0.243481009888152281"
+    },
+    {
+      "metric": "scoreq",
+      "condition": "llsm2_0",
+      "scope": "frozen_common_16k_prefix",
+      "count": 120,
+      "sum": "28.92163797467947010",
+      "min": "0.09588658809661865",
+      "max": "0.7085394859313965",
+      "mean": "0.241013649788995584166666666666666666666666666666666666666667"
+    },
+    {
+      "metric": "utmosv2",
+      "condition": "apron_0",
+      "scope": "native_full_length",
+      "count": 120,
+      "sum": "371.2599089145660417",
+      "min": "2.038215398788452",
+      "max": "4.14528226852417",
+      "mean": "3.0938325742880503475"
+    },
+    {
+      "metric": "utmosv2",
+      "condition": "apron_minus3",
+      "scope": "native_full_length",
+      "count": 120,
+      "sum": "374.4052813053131084",
+      "min": "1.8981006145477295",
+      "max": "4.169798374176025",
+      "mean": "3.12004401087760923666666666666666666666666666666666666666667"
+    },
+    {
+      "metric": "utmosv2",
+      "condition": "apron_plus3",
+      "scope": "native_full_length",
+      "count": 120,
+      "sum": "334.8797488212585437",
+      "min": "1.4071216583251953",
+      "max": "3.613220453262329",
+      "mean": "2.79066457351048786416666666666666666666666666666666666666667"
+    },
+    {
+      "metric": "utmosv2",
+      "condition": "llsm2_0",
+      "scope": "native_full_length",
+      "count": 120,
+      "sum": "370.0524663925170893",
+      "min": "2.0491106510162354",
+      "max": "4.336947917938232",
+      "mean": "3.08377055327097574416666666666666666666666666666666666666667"
+    }
+  ],
+  "old_pml": "Historical separate measurement; not included in matched ranks.",
+  "layer0_edited": "Planned control, not measured."
+}
