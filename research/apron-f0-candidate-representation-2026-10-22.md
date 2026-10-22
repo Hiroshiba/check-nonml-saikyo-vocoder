@@ -8,6 +8,14 @@ LLSM2では、選んだF0が調波の本数・振幅・位相を決め、その�
 
 雑音PSDの計算は残差だけでなく、元音声から作るスペクトルにも候補F0に応じた窓長と包絡推定を使います。その系列から時間方向の分散を求め、平滑化にも用います。調波解析の窓長もF0に応じて変わり、FFTサイズは系列全体で最も低い正のF0に依存します。現在のラッパーはHMPPを選び、上流の既定はHMCZTです。したがって、ある時刻のF0が同じでも、その時刻の保存済み音響値を別系列で安全に使い回せるとは一般には言えません。これは依存関係の話で、すべての数値が必ず変わるという意味ではありません。[元音声と時間平滑化](https://github.com/Sleepwalking/libllsm2/blob/d18cdf02b31819670e3bc23ead933ad9467da06d/layer0.c#L324-L385)／[窓と調波解析](https://github.com/Sleepwalking/libllsm2/blob/d18cdf02b31819670e3bc23ead933ad9467da06d/dsputils.c#L175-L228)／[FFTサイズ](https://github.com/Sleepwalking/libllsm2/blob/d18cdf02b31819670e3bc23ead933ad9467da06d/dsputils.c#L318-L325)／[上流の既定と現ラッパー](https://github.com/Sleepwalking/libllsm2/blob/d18cdf02b31819670e3bc23ead933ad9467da06d/layer0.c#L27-L42)、[現ラッパー](https://github.com/Hiroshiba/check-nonml-saikyo-vocoder/blob/d3cc76850949049e2c947e3d1b2e5aa7abfaeae6/vocoderbench/references/native.py#L15-L29)
 
+### 調波の読み取り方はHMPPとHMCZTで異なる
+
+HMPPはF0の各整数倍の周囲±0.3F0でピークを探し、対数振幅と位相を補間します。HMCZTはBlackman窓をかけた信号の複素CZTでF0の整数倍を評価点にし、窓の総和で振幅を正規化して窓中心に合わせて位相を補正します。[HMPPのピーク探索](https://github.com/Sleepwalking/libllsm2/blob/d18cdf02b31819670e3bc23ead933ad9467da06d/dsputils.c#L126-L142)／[HMCZTの評価](https://github.com/Sleepwalking/libllsm2/blob/d18cdf02b31819670e3bc23ead933ad9467da06d/dsputils.c#L145-L167)
+
+両方式とも、各フレームのF0で窓長・調波数・有声フレームの扱いが変わります。系列内で最も低い正のF0からFFTサイズを求める処理も共通の入口で走ります。ただしHMCZT分岐は、そのサイズを使う共通FFTスペクトログラムを確保・処理しません。HMCZTに替えてもF0への依存は残り、別候補の音響値をそのまま共用できる根拠にはなりません。[両分岐](https://github.com/Sleepwalking/libllsm2/blob/d18cdf02b31819670e3bc23ead933ad9467da06d/dsputils.c#L175-L225)／[FFTサイズ](https://github.com/Sleepwalking/libllsm2/blob/d18cdf02b31819670e3bc23ead933ad9467da06d/dsputils.c#L318-L325)
+
+上流の既定はHMCZTで、現行ApronのラッパーはHMPPを指定しています。上流のNOTEはSkylake以降とglibc 2.23/2.24の組合せで起きる遅延への回避策としてHMCZTを挙げています。この限定的な記録から現在の速度や精度の順位は決められません。どちらかが現行Apronの音声品質を改善するという実測根拠も確認していません。[上流の既定](https://github.com/Sleepwalking/libllsm2/blob/d18cdf02b31819670e3bc23ead933ad9467da06d/layer0.c#L27-L42)／[現行ラッパー](https://github.com/Hiroshiba/check-nonml-saikyo-vocoder/blob/3f5d3193f461616a81ec1348c8911a7561aae987/vocoderbench/references/native.py#L14-L23)／[上流NOTE](https://github.com/Sleepwalking/libllsm2/blob/d18cdf02b31819670e3bc23ead933ad9467da06d/NOTE#L1-L7)
+
 入力PCM・標本化周波数・固定フレーム格子・解析設定は共通にできます。高域の帯域エネルギーを元音声から取る箇所には部分的な再利用の余地も見えますが、その共用は実装していません。候補間の解析境界としては、系列全体を元音声から解析し直すのが保守的です。所要時間は測っていません。現行Apronの保存形式は元の調波成分（HM）とPCMを残さないため、保存済みF0だけの編集は音高の変換にあたり、別候補で解析した結果は得られません。[高域の元音声参照](https://github.com/Sleepwalking/libllsm2/blob/d18cdf02b31819670e3bc23ead933ad9467da06d/layer0.c#L433-L445)／[保存項目](https://github.com/Hiroshiba/check-nonml-saikyo-vocoder/blob/d3cc76850949049e2c947e3d1b2e5aa7abfaeae6/vocoderbench/apron/storage.py#L16-L40)／[解析入力と保存](https://github.com/Hiroshiba/check-nonml-saikyo-vocoder/blob/d3cc76850949049e2c947e3d1b2e5aa7abfaeae6/vocoderbench/apron/engine.py#L68-L96)
 
 ## libpyinの一本の出力と、経路の重みは別物
