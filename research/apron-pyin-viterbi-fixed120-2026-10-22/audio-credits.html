@@ -1,0 +1,7 @@
+<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>候補音声の出典と改変</title><style>:root{color-scheme:light dark;font-family:system-ui,sans-serif;line-height:1.7}body{max-width:56rem;margin:2rem auto;padding:0 1rem}a{color:#0c695f}@media(prefers-color-scheme:dark){a{color:#80d8c4}}code{overflow-wrap:anywhere}</style></head><body><main>
+<h1>短い候補音声の出典と改変</h1>
+<p>出典は<a href="https://www.openslr.org/12/">OpenSLR SLR12のLibriSpeech test-clean</a>です。英語の朗読音声をLibriVoxなどから集めたコーパスで、<a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International（CC BY 4.0）</a>に従って利用します。コーパスの作成者としてVassil Panayotovらを表示します。元の朗読者・作品は、固定入力manifestから個別に同定していません。</p>
+<p>新たに掲載するのは、公開例として固定済みの<code>librispeech_1089-134686-0008</code>と<code>librispeech_1188-133604-0003</code>だけです。保存済みpYIN Viterbi系列を入口に使った候補による無編集・−3半音・＋3半音の再合成を、各録音の先頭5秒で示します。候補の全長360音声や、元音声全体は掲載しません。</p>
+<p>候補の元出力は24 kHz float32です。先頭120,000標本を<code>round(x × 32767)</code>でsigned PCM16 WAVにしました。音量倍率、クリップ、位置合わせ、再標本化は加えていません。この短例は採点元のfloat32全長波形とは別のバイト列です。ファイルごとの容量・SHA、元波形の容量・SHA、標本数とclip件数は<a href="audio-manifest.json">音声manifest</a>に記録しました。</p>
+<p>原音・Apron・LLSM2 Layer0の比較音声は<a href="../apron-fixed120-evaluation-2026-10-22/audio-credits.html">既公開レポート</a>にあります。一覧で無編集を聴き比べるため、録音0008の3本だけを元の公開WAVと完全に同じバイト列で再利用しました。元レポートの音声は変更せず、再合成や再量子化もしていません。この3本と新しい候補6本は<a href="audio-manifest.json">音声manifest</a>で別々に記録しています。JVSやユーザーの非公開音声は掲載していません。</p>
+<p><a href="index.html">結果へ戻る</a></p></main></body></html>

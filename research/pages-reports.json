@@ -3,6 +3,44 @@
   "reports": [
     {
       "kind": "navigation-only",
+      "id": "apron-pyin-viterbi-fixed120-2026-10-22",
+      "path": "research/apron-pyin-viterbi-fixed120-2026-10-22",
+      "source_path": "research/apron-pyin-viterbi-fixed120-2026-10-22",
+      "created_on": "2026-10-22",
+      "created_at": "2026-10-22T10:02:48.593194+00:00",
+      "title": "保存pYIN系列をApronへ渡した固定120録音の比較",
+      "comparison_scope": "英語120録音・40話者。候補360波形・1080品質値をApronとLLSM2 Layer0の保存済み2160値と対応比較。無編集UTMOSv2（予測音質、24 kHz全長）の平均と順位は候補2.9355／3位、Apron3.0938／1位、Layer0 3.0838／2位。9群すべてで候補よりApronの平均が望ましい方向だったため、候補は採用せずApronを維持。F0精度や品質差の原因は判定していません。",
+      "audio_listing": {
+        "caption": "固定したLibriSpeech録音0008の先頭5秒。原音、Apron・Layer0・候補の無編集を並べます。",
+        "note": "原音16 kHz、再合成音24 kHzのPCM16です。前3本は既公開WAVの同一バイトコピーで、新たな音声内容は候補の1本です。LibriSpeech / CC BY 4.0。編集条件と2つ目の録音は詳細レポートへ。",
+        "attribution_path": "audio-credits.html",
+        "samples": [
+          {
+            "path": "audio/librispeech_1089-134686-0008-original.wav",
+            "label": "原音"
+          },
+          {
+            "path": "audio/librispeech_1089-134686-0008-apron_0.wav",
+            "label": "Apron・無編集"
+          },
+          {
+            "path": "audio/librispeech_1089-134686-0008-llsm2_0.wav",
+            "label": "LLSM2 Layer0・無編集"
+          },
+          {
+            "path": "audio/librispeech_1089-134686-0008-pyin_viterbi_0.wav",
+            "label": "候補・無編集"
+          }
+        ]
+      },
+      "artifact_count": 22,
+      "artifact_manifest": {
+        "bytes": 3638,
+        "sha256": "13e27647d355a0b5b45cb27fb246cb7d0a84864bc9a4027473966fc5956ea2d1"
+      }
+    },
+    {
+      "kind": "navigation-only",
       "id": "apron-f0-marginals-2026-10-22",
       "path": "research/apron-f0-marginals-2026-10-22",
       "source_path": "research/apron-f0-marginals-2026-10-22",
