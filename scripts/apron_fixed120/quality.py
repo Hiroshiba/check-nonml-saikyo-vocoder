@@ -169,6 +169,24 @@ def evaluate_one(case, name, metric, native_row, native_output, backend):
                 'traceback': traceback.format_exc()}
 
 
+def write_summary(output, owner, metric, cases, rows):
+    observed = {row['case']: row for row in rows}
+    recorded = [item for row in rows for item in row.get('rows', [])]
+    planned = len(cases) * len(expected_conditions(metric))
+    write(output / 'summary.json', {'schema_version': 1, 'owner': owner,
+          'metric': metric, 'planned_cases': len(cases),
+          'planned_values': planned,
+          'visited_cases': len(rows),
+          'finished_cases': sum(row.get('status') in ('measured', 'complete_with_missing')
+                                for row in rows),
+          'measured_values': sum(item['status'] == 'measured' for item in recorded),
+          'missing_values': sum(item['status'] != 'measured' for item in recorded),
+          'not_run_values': planned - len(recorded),
+          'rows': [{'case': case['id'],
+                    'status': observed[case['id']]['status'] if case['id'] in observed else 'not_run'}
+                   for case in cases]})
+
+
 def main():
     parser = LoggedArgumentParser(description=__doc__)
     parser.add_argument('--input-manifest', type=Path, required=True)
@@ -223,9 +241,11 @@ def main():
                            for item in old_rows)):
                 raise ValueError(f'完了済み品質個票の集合・値が不正です: {case["id"]}')
             rows.append(old)
+            write_summary(output, args.owner, args.metric, cases, rows)
             continue
         if old and not args.retry_failed:
             rows.append(old)
+            write_summary(output, args.owner, args.metric, cases, rows)
             continue
         attempt = new_attempt(output, case['id'])
         old_success = {item['condition']: item for item in (old or {}).get('rows', [])
@@ -270,16 +290,8 @@ def main():
         row['finished_at_utc'] = now()
         write(attempt / 'result.json', row)
         rows.append(row)
-        observed = {r['case']: r for r in rows}
-        write(output / 'summary.json', {'schema_version': 1, 'owner': args.owner,
-              'metric': args.metric, 'planned_cases': len(cases),
-              'planned_values': len(cases) * len(expected_conditions(args.metric)),
-              'finished_cases': len(rows),
-              'measured_values': sum(item['status'] == 'measured' for r in rows
-                                     for item in r.get('rows', [])),
-              'rows': [{'case': item['id'],
-                        'status': observed[item['id']]['status'] if item['id'] in observed else 'not_run'}
-                       for item in cases]})
+        write_summary(output, args.owner, args.metric, cases, rows)
+    write_summary(output, args.owner, args.metric, cases, rows)
     return 0 if all(row.get('status') == 'measured' for row in rows) else 2
 
 

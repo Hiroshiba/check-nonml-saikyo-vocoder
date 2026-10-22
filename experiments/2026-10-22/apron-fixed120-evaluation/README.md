@@ -6,7 +6,7 @@
 
 - `research/pml-package-evaluation-2026-10-16/input-manifest.json` の SHA-256 は `1f392fc60fbca4003c236f03ffd9edba82b048737f23cf250295c1b4c6c85193`。16 kHz・40話者×3発話、120件の実bytes/SHA/NPYヘッダーを全件照合してから始めます。manifestの `common_samples` が唯一の固定共通先頭窓です。値から窓を選び直しません。
 - manifestで最初に現れる話者順を0番14人（42録音）、1番13人（39録音）、2番13人（39録音）へ固定します。各担当は別出力で、全体で Apron 0/−3/+3 が360波形、Layer0無編集が120波形、合計480波形です。成功しなかった枝も予定分母から外しません。
-- LLSM2 `d18cdf02b31819670e3bc23ead933ad9467da06d`、ciglet `895ba9b1c0eabee83d3544208bbc82420efa3206d` の正規準備記録と全ファイルハッシュを `current_base.record()` で確認します。Apronは1録音につき解析を一度だけ行い、保存Layer1状態から各decode時に独立したchunkを再構成します。元HMがないことは既存engineが確認します。Layer0は既存 `build_llsm` を用い、解析・復号の前にそれぞれseed 0へ戻し、取得したchunkを必ず解放します。DSP threadは1です。
+- LLSM2 `d18cdf02b31819670e3bc23ead933ad9467da06d`、ciglet `895ba9b1c0eabee83d3544208bbc82420efa3206` の正規準備記録と全ファイルハッシュを `current_base.record()` で確認します。Apronは1録音につき解析を一度だけ行い、保存Layer1状態から各decode時に独立したchunkを再構成します。元HMがないことは既存engineが確認します。Layer0は既存 `build_llsm` を用い、解析・復号の前にそれぞれseed 0へ戻し、取得したchunkを必ず解放します。DSP threadは1です。
 - nativeの24 kHz全長波形を元dtypeのNPYで保存し、実標本数・bytes・SHAを記録します。16 kHzへの変換は品質工程だけです。元入力の音量補正、位置合わせ、clip、無音除去を追加しません。
 
 ## 品質と過去値の扱い
