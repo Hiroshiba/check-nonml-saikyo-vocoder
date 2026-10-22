@@ -47,24 +47,56 @@ def write_new(path, value):
         stream.write('\n')
 
 
-def send_group(process, sig, actions):
-    if process.poll() is not None:
-        return
+def send_group(process_group_id, sig, actions):
+    action = {'signal': sig.name, 'sent_at_utc': utc_now(),
+              'process_group_id': process_group_id}
     try:
-        os.killpg(process.pid, sig)
-        actions.append({'signal': sig.name, 'sent_at_utc': utc_now(),
-                        'process_group_id': process.pid})
+        os.killpg(process_group_id, sig)
+        action['delivered'] = True
     except ProcessLookupError:
-        pass
+        action['delivered'] = False
+    actions.append(action)
 
 
 def stop_child(process, grace, actions):
-    send_group(process, signal.SIGTERM, actions)
-    try:
-        process.wait(timeout=grace)
-    except subprocess.TimeoutExpired:
-        send_group(process, signal.SIGKILL, actions)
-        process.wait()
+    """親のwaitまでleaderをreapせず、同じprocess groupへのKILLを保証する。"""
+    if process.returncode is not None:
+        return
+    send_group(process.pid, signal.SIGTERM, actions)
+    time.sleep(grace)
+    send_group(process.pid, signal.SIGKILL, actions)
+    process.wait()
+
+
+def wait_child(process, wall_seconds, grace_seconds, record, signals):
+    deadline = time.monotonic() + wall_seconds
+    while True:
+        if signals['first'] is not None:
+            stop_child(process, grace_seconds, record['signals_sent'])
+            record['status'] = 'interrupted'
+            record['interruption_reason'] = signal.Signals(signals['first']).name
+            return 128 + signals['first']
+        # WNOWAIT leaves the leader's PID reserved until group cleanup or normal wait.
+        ended = os.waitid(os.P_PID, process.pid,
+                          os.WEXITED | os.WNOHANG | os.WNOWAIT)
+        if ended is not None:
+            if signals['first'] is not None:
+                continue
+            process.wait()
+            if signals['first'] is not None:
+                record['status'] = 'interrupted_after_child_exit'
+                record['interruption_reason'] = signal.Signals(signals['first']).name
+                return 128 + signals['first']
+            record['status'] = 'finished'
+            return (process.returncode if process.returncode >= 0
+                    else 128 - process.returncode)
+        remaining = deadline - time.monotonic()
+        if remaining <= 0:
+            record['timed_out'] = True
+            stop_child(process, grace_seconds, record['signals_sent'])
+            record['status'] = 'timed_out'
+            return 124
+        time.sleep(min(remaining, 0.25))
 
 
 def main():
@@ -96,6 +128,17 @@ def main():
               'free_disk_bytes_before': free_disk_bytes(evidence),
               'rss_unit': 'Linux ru_maxrss KiB; RUSAGE_CHILDREN cumulative high-water',
               'reaped_by_launcher': False, 'timed_out': False, 'signals_sent': []}
+    signals = {'first': None, 'count': 0, 'last': None}
+    record['termination_signals_received'] = signals
+
+    def request_termination(signum, _frame):
+        signals['count'] += 1
+        signals['last'] = signal.Signals(signum).name
+        if signals['first'] is None:
+            signals['first'] = signum
+
+    signal.signal(signal.SIGTERM, request_termination)
+    signal.signal(signal.SIGHUP, request_termination)
     write_new(paths['invocation-start.json'], record)
     process = None
     exit_code = 1
@@ -110,6 +153,8 @@ def main():
             raise FileNotFoundError(f'実行directoryがありません: {args.cwd}')
         if not Path(command[0]).is_file() or not os.access(command[0], os.X_OK):
             raise FileNotFoundError(f'科学子の実行ファイルがありません: {command[0]}')
+        if signals['first'] is not None:
+            raise RuntimeError(f'科学子起動前に{signals["last"]}を受信しました')
 
         def limit_address_space():
             maximum = limits['address_space_bytes']
@@ -122,33 +167,35 @@ def main():
             child_started = time.perf_counter()
             record.update(status='running', child_pid=process.pid,
                           child_started_at_utc=utc_now())
-            try:
-                process.wait(timeout=limits['wall_seconds'])
-            except subprocess.TimeoutExpired:
-                record['timed_out'] = True
-                stop_child(process, limits['grace_seconds'], record['signals_sent'])
+            exit_code = wait_child(process, limits['wall_seconds'],
+                                   limits['grace_seconds'], record, signals)
             record['reaped_by_launcher'] = True
             record['child_elapsed_seconds'] = time.perf_counter() - child_started
             record['actual_child_exit_code'] = process.returncode
             record['child_signal'] = -process.returncode if process.returncode < 0 else None
-            if record['timed_out']:
-                exit_code = 124
-            elif process.returncode >= 0:
-                exit_code = process.returncode
-            else:
-                exit_code = 128 - process.returncode
-            record['status'] = 'finished'
     except BaseException:
         record['launcher_error'] = traceback.format_exc()
         print(record['launcher_error'], file=sys.stderr, end='')
-        if process is not None:
+        if process is not None and process.returncode is None:
             stop_child(process, limits['grace_seconds'], record['signals_sent'])
             record['reaped_by_launcher'] = True
             record['child_elapsed_seconds'] = time.perf_counter() - child_started
             record['actual_child_exit_code'] = process.returncode
             record['child_signal'] = -process.returncode if process.returncode < 0 else None
-        record['status'] = 'launcher_failed'
+        if signals['first'] is not None:
+            exit_code = 128 + signals['first']
+            record['status'] = 'interrupted'
+            record['interruption_reason'] = signal.Signals(signals['first']).name
+        else:
+            record['status'] = 'launcher_failed'
     finally:
+        # 直接子の処理後は証拠の閉鎖を優先し、追加信号で書込みを中断させない。
+        signal.signal(signal.SIGTERM, signal.SIG_IGN)
+        signal.signal(signal.SIGHUP, signal.SIG_IGN)
+        if signals['first'] is not None and record['status'] == 'finished':
+            record['status'] = 'interrupted_after_child_exit'
+            record['interruption_reason'] = signal.Signals(signals['first']).name
+            exit_code = 128 + signals['first']
         usage_after = resource.getrusage(resource.RUSAGE_CHILDREN)
         record.update(finished_at_utc=utc_now(), elapsed_seconds=time.perf_counter() - started,
                       launcher_exit_code=exit_code,

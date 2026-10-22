@@ -28,6 +28,7 @@
 
 ```sh
 REPO=/workspace/check-nonml-apron-fixed120-measurement-20261022-v2
+set -C  # outerログを既存ファイルへ上書きしない
 PY=/workspace/check-nonml-saikyo-vocoder/.venv/bin/python
 INPUT=/workspace/check-nonml-saikyo-vocoder/runs/fixed120-input-preparation-20261020/inputs
 CACHE=/workspace/llsm2-layer1-preparation-20261021-v2/runtime-cache
@@ -50,6 +51,7 @@ OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 MKL_NUM_THREADS=1 NUMEXPR_NUM_THREADS=1
 
 ```sh
 METRIC=utmosv2
+set -C  # 別shellで品質だけ実行する場合もouterログを保護する
 mkdir -p "$RUN/evidence/quality/$OWNER/$METRIC"
 PYTHONPATH="$REPO" VOCODERBENCH_LOG_DIR="$RUN/evidence/quality/$OWNER/$METRIC/logs" \
 PYTHONDONTWRITEBYTECODE=1 HF_HUB_OFFLINE=1 TRANSFORMERS_OFFLINE=1 \
@@ -65,3 +67,5 @@ OMP_NUM_THREADS=2 OPENBLAS_NUM_THREADS=2 MKL_NUM_THREADS=2 NUMEXPR_NUM_THREADS=2
 ```
 
 この `REPO` は修正PRのマージ後に作る新しいmain checkoutを指します。運用上のwall上限はnative担当1800秒、品質の担当×指標3600秒、TERM後10秒でKILLして直接子を回収します。nativeのAS上限は8 GiB、品質は12 GiBで、実RSSではありません。各証拠directoryの `invocation-start.json`、`invocation.json`、科学子の `stdout.log` / `stderr.log` と外側の `outer.stdout.log` / `outer.stderr.log` を保持します。同じ証拠directoryの二重起動は拒否します。新規Layer1保存物とモデル作業領域を含むdisk使用量は測定前の空き容量で確認します。分割・出力先・上限を変える場合は別の計画として先にレビューします。±6 dB、48 kHz、人工10刺激C、独自DSP改善はこの計画に含めません。
+
+launcherへのSIGTERM/SIGHUPも同じ猶予付きのprocess group停止に回します。終了確認前にgroup leaderをreapしないため、猶予中にleaderだけが終了しても同じgroupに残った子孫へKILLを送れます。繰り返し信号は停止要求の記録だけを更新し、回収や証拠の閉鎖を中断しません。これは直接子とそのgroupの処理であり、OS全体の子process終了を認定するものではありません。
