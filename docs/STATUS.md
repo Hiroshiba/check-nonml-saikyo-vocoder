@@ -4,7 +4,7 @@
 
 [調波・雑音包絡の4条件比較](../research/apron-hm-selector-factorial-fixed120-2026-10-23/index.html)はPR #137のマージ後、[Pagesのdeploy job](https://github.com/Hiroshiba/check-nonml-saikyo-vocoder/actions/runs/39926088935/job/120323247020)が08:40:23 UTCに成功しました。[音高追従](../research/apron-pitch-follow-2026-10-23/index.html)と[固定F0での声道振幅](../research/fixed-f0-vtmagn-2026-10-23/index.html)もPR #138のマージ後、[別のdeploy job](https://github.com/Hiroshiba/check-nonml-saikyo-vocoder/actions/runs/39926752949/job/120325422340)が08:46:24 UTCに成功しました。3件の初回公開日時は成功jobの完了時刻です。Apronを維持し、科学値と既存音声は変更していません。
 
-PR #137の公開物は親の独立確認で一覧のSHA一致、全24 WAVのHTTP 200・期待SHA・240044 byte・24 kHzモノラルPCM16の5秒、ローカル9リンクのHTTP 200を確認済みです。PR #138の本番ファイル照合は別担当が進行中です。実描画とブラウザの音声再生イベントは環境制約で未確認であり、HTTPでのファイル照合とは区別します。
+PR #137の公開物は親の独立確認で一覧のSHA一致、全24 WAVのHTTP 200・期待SHA・240044 byte・24 kHzモノラルPCM16の5秒、ローカル9リンクのHTTP 200を確認済みです。PR #138の本番2 manifestと16掲載成果物も、親の独立担当が固定commitのbyte数・SHAと完全一致を確認しました。6 WAVはすべて24 kHzモノラルPCM16・120000標本・5秒・240044 byteです。JSON・SVGの読取り、ローカル参照、旧レポート2リンクのHTTP 200、一覧の音高3短例・固定F0の音声なし説明・PR #137の登録保持も確認済みです。実描画とブラウザの音声再生イベントは環境制約で未確認であり、HTTPでのファイル照合とは区別します。
 
 48 kHz研究は固定VCTK v2の40話者120録音をApron24・私有Apron48・WORLD48で各1解析し、0・±3半音で計360解析・1080波形、品質3360行を予定しています。担当別は42/39/39録音、1176/1092/1092行です。入力選択、私有sourceの準備と静的レビューは完了しましたが、正式3 CloudはLibrary公式取得経路の `tools/list` HTTP 401でパッケージ取得前に停止し、科学実測は0件、3360行すべて未実行です。長時間待機後も復旧は未確認で、owner2の環境は利用不能です。音声データや手法の失敗を示すものではありません。認証変更・迂回・値の代用・研究条件変更は行わず、48 kHzの品質結果や優越は主張しません。接続待ちの通知は済んでいます。現ベースApron24を維持し、公式取得経路の復旧後に同一source・固定入力・予定キーを照合して固定計画を再開します。それまでは独立調査の文書化を続けます。
 
