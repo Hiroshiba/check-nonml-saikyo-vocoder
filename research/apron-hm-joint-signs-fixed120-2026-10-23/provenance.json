@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "analysis_kind": "post_publication_descriptive_reaggregation",
+  "created_at_utc": "2026-10-23T14:11:15.711409+00:00",
+  "public_input": {
+    "repository": "Hiroshiba/check-nonml-saikyo-vocoder",
+    "commit": "2bca700e5d5fb7e444ad9f4d8646d7e842fc5288",
+    "path": "research/apron-hm-selector-factorial-fixed120-2026-10-23/quality-values.json.gz",
+    "bytes": 632396,
+    "sha256": "ebf4e368f9424c320963c2d3a35136d4a0d5250068daafc629c47a52a2b6be60"
+  },
+  "consulted_public_files_at_same_commit": [
+    "research/apron-hm-selector-factorial-fixed120-2026-10-23/artifact-manifest.json",
+    "research/apron-hm-selector-factorial-fixed120-2026-10-23/results.json",
+    "research/apron-hm-selector-factorial-fixed120-2026-10-23/provenance.json"
+  ],
+  "scientific_reference_commit": "3f7b509b8313b5803dce2e1ededc8db9920367f1",
+  "original_manifest_sha256": "40280ebeb7dc326f9e5c4ff75eb2fa03204052963c4ec818b35296ff324e3c1e",
+  "fixed_plan": "PLAN-ja.md",
+  "private_calculation_source_sha256": "c82869b5c5fa3fc2f1066fd3feef1663dffcdb4a47f4cc6ba6376088bb453023",
+  "private_renderer_source_sha256": "dc74dcbcf119b4fc82f0e7c55bdcdc1bed5b1d1eee158fa7220921eee8eb84a7",
+  "reaggregation_method": "Verify the public gzip bytes and SHA; parse JSON numeric tokens as Decimal at precision 60; verify 4 conditions x 9 metric/pitch/scope keys for each of 120 cases and explicit speaker metadata; take PC, CP, CC minus PP at matching pitches for UTMOS full and ECAPA full; determine exact zero/negative/positive before presentation rounding; average three differences for each complete speaker; count 3x3 grids and audit the 24 source means at original precision 28 and precision 60. The private calculation source is not included in public artifacts.",
+  "key_validation": {
+    "quality_records": 4320,
+    "cases": 120,
+    "speakers": 40,
+    "expected_keys": 4320,
+    "missing_keys": 0,
+    "unexpected_keys": 0,
+    "missing_numeric_values": 0
+  },
+  "mean_audit": {
+    "groups": 24,
+    "equal_at_original_precision28": 24,
+    "nonzero_precision60_residuals": 19,
+    "maximum_absolute_residual": "3.3333333333333333333333333333333E-28",
+    "individual_values": "results.json#/mean_audit/rows"
+  },
+  "audio": {
+    "new_audio_created_or_copied": false,
+    "existing_source_report": "research/apron-hm-selector-factorial-fixed120-2026-10-23/index.html",
+    "existing_recording": "librispeech_1089-134686-0008",
+    "conditions": [
+      "PP",
+      "PC",
+      "CP",
+      "CC"
+    ],
+    "pitch": 0
+  },
+  "no_new_scoring_synthesis_or_human_listening": true,
+  "base": "Apron (PP) unchanged",
+  "interpretation_limit": "The two axes are saved predictor values, not human ratings or causal physical factors. No method selection is made."
+}
