@@ -2,6 +2,8 @@
 
 **状態：設計・コードの静的確認待ち。科学処理は未実行。** Apron の方式や正式ベースは変更しない。固定した pYIN 状態モデルの内部で、各フレームの無声状態全体と、有声488音高ビンそれぞれにどれだけ周辺確率があるかを調べる。固定120録音は開発中に繰り返し使っている入力であり、未知の最終検証集合ではない。これは F0 の正解、声の生理的有声、音声品質の判定ではない。全経路の一点確率や、音響的に異なる二本目の最適経路は今回求めない。
 
+公開後に残った補助調査として、[5 ms時計を保つ観測間引きの設計メモ](observation-thinning-design.md)を記録した。モデル内質量の感度を問う未実施案であり、この計画の結果やApronの採否は変更しない。
+
 ## 固定入力とモデル
 
 既存 `research/pml-package-evaluation-2026-10-16/input-manifest.json` の120録音・40話者と、照合済み16 kHz mono float64 NPYだけを使う。既存の42/39/39話者非重複分割を変えない。`scipy.signal.resample_poly(x, 3, 2)` を一度適用し、連続24 kHz float64を pYIN に渡す。正規化、無音除去、trimming、補間は行わない。固定引数は `sr=24000, fmin=60, fmax=1000, frame_length=2048, hop_length=120, center=True, pad_mode='constant', fill_na=0, n_thresholds=100, beta_parameters=(2,18), boltzmann_parameter=2, resolution=0.1, max_transition_rate=35.92, switch_prob=0.01, no_trough_prob=0.01`。範囲と5 ms hopがApron入口と数値上同じでも、推定器・解析窓は同一ではない。
