@@ -1,0 +1,169 @@
+{
+  "kind": "public_source_provenance",
+  "measurement_date_utc": "2026-10-23",
+  "measurement_completion_time_utc": "not retained in transferred record",
+  "public_derivation_at_utc": "2026-10-23T03:10:21.161095+00:00",
+  "scientific_reference_commit": "3f7b509b8313b5803dce2e1ededc8db9920367f1",
+  "private_archive": {
+    "relative_name": "apron-pitch-follow-2026-10-23-private-handoff.zip",
+    "bytes": 6253563,
+    "sha256": "5323d9075bcfef08baa21fe503df715ae22b3ef5a744859b6fb1b1de2ba756e0",
+    "members": 379
+  },
+  "source_files": [
+    {
+      "relative_name": "PLAN.md",
+      "bytes": 4506,
+      "sha256": "9919cd4aacce3edb915799c07a407e8ad6565a2fb8590fcd2bb066da1edd7675"
+    },
+    {
+      "relative_name": "summary.json",
+      "bytes": 377574,
+      "sha256": "cb3bbe2339dfc34d5150da24292ce02c19f6bcd5ebc9eecf81c8d7b2c65d21cd"
+    },
+    {
+      "relative_name": "source-lock.json",
+      "bytes": 13833,
+      "sha256": "00a0d5fd10f7bf81e757b2803ce5a23c7e5c5eb275eb9cb2e232b4ecce8e29fb"
+    },
+    {
+      "relative_name": "arithmetic-audit.json",
+      "bytes": 159,
+      "sha256": "e6c35a81679aee8b6d390ed98c260b3105f08f643b395e48d4165eb16d506b98"
+    },
+    {
+      "relative_name": "artifact-manifest.json",
+      "bytes": 232585,
+      "sha256": "9354cd584f78dadecb9a7d71318feebde2d20cd1fbc6485228a0e163ddc79088"
+    },
+    {
+      "relative_name": "index.html",
+      "bytes": 47662,
+      "sha256": "6bf1224a7dc4ff624da1a7b60346cb1d3262edcaa888dbd7f6a2fb26dabe5e2b"
+    }
+  ],
+  "manifest_relation": {
+    "present_files_checked": 378,
+    "manifest_entries_total": 1286,
+    "unlisted_archive_member": "artifact-manifest.json",
+    "note": "The archive is a selected subset of the private run; absent full Layer1 arrays and 118 full waveforms were not reconstructed."
+  },
+  "arithmetic_audit": {
+    "f0_start_grid": {
+      "compared": 360,
+      "nonzero": 0,
+      "max_abs": 0.0
+    },
+    "planned_grid": {
+      "compared": 240,
+      "nonzero": 0,
+      "max_abs": 0.0
+    },
+    "extra_frames": {
+      "compared": 480,
+      "nonzero": 0,
+      "max_abs": 0.0
+    },
+    "frame_status": {
+      "compared": 240,
+      "nonzero": 0,
+      "max_abs": 0.0
+    },
+    "frame_boundary": {
+      "compared": 240,
+      "nonzero": 0,
+      "max_abs": 0.0
+    },
+    "cent_nan_mask": {
+      "compared": 240,
+      "nonzero": 0,
+      "max_abs": 0.0
+    },
+    "cent_value": {
+      "compared": 35987,
+      "nonzero": 0,
+      "max_abs": 0.0
+    },
+    "recording_status_counts": {
+      "compared": 1680,
+      "nonzero": 0,
+      "max_abs": 0.0
+    },
+    "recording_grid_count": {
+      "compared": 240,
+      "nonzero": 0,
+      "max_abs": 0.0
+    },
+    "recording_boundary_count": {
+      "compared": 240,
+      "nonzero": 0,
+      "max_abs": 0.0
+    },
+    "recording_stats": {
+      "compared": 3600,
+      "nonzero": 0,
+      "max_abs": 0.0
+    },
+    "source_recording_status_counts": {
+      "compared": 1680,
+      "nonzero": 0,
+      "max_abs": 0.0
+    },
+    "source_recording_stats": {
+      "compared": 1200,
+      "nonzero": 0,
+      "max_abs": 0.0
+    },
+    "source_recording_boundary_count": {
+      "compared": 240,
+      "nonzero": 0,
+      "max_abs": 0.0
+    },
+    "speaker_recording_count": {
+      "compared": 80,
+      "nonzero": 0,
+      "max_abs": 0.0
+    },
+    "speaker_signed_median": {
+      "compared": 80,
+      "nonzero": 0,
+      "max_abs": 0.0
+    },
+    "group_status_counts": {
+      "compared": 14,
+      "nonzero": 0,
+      "max_abs": 0.0
+    },
+    "group_expected_frames": {
+      "compared": 2,
+      "nonzero": 0,
+      "max_abs": 0.0
+    },
+    "group_stats": {
+      "compared": 30,
+      "nonzero": 0,
+      "max_abs": 0.0
+    },
+    "group_speaker_stat": {
+      "compared": 2,
+      "nonzero": 0,
+      "max_abs": 0.0
+    },
+    "nonempty_recordings": {
+      "compared": 2,
+      "nonzero": 0,
+      "max_abs": 0.0
+    },
+    "summary_individual_count": {
+      "compared": 1,
+      "nonzero": 0,
+      "max_abs": 0.0
+    },
+    "summary_speakers_count": {
+      "compared": 1,
+      "nonzero": 0,
+      "max_abs": 0.0
+    }
+  },
+  "audit_comparison": "Exact numeric equality; no tolerance used. No YIN rerun."
+}
