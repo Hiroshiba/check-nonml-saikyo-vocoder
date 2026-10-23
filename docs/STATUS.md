@@ -1,5 +1,9 @@
 # 現在の状態と次の作業
 
+## 公開済み4条件の二指標を事後集計（2026-10-23 UTC）
+
+[新しい補助レポート](../research/apron-hm-joint-signs-fixed120-2026-10-23/index.html)はPR #137で公開された4320品質個票だけを再集計し、PPとの9組についてUTMOS・全長ECAPAの符号を同じ録音と話者で数えました。無編集CP−PPではUTMOS増加・ECAPA減少が45/120録音、21/40話者で、両方増加も38録音、10話者です。欠測は0件。元の平均に隠れた組合せの記述に限り、新測定・順位・採用判断・48 kHz評価ではありません。既存の結果と音声を維持し、現ベースApron（PP）も維持します。親の独立再集計とレビューを待ちます。
+
 ## Apronの3レポートを公開、48 kHz計画は公式取得待ち（2026-10-23 UTC）
 
 [調波・雑音包絡の4条件比較](../research/apron-hm-selector-factorial-fixed120-2026-10-23/index.html)はPR #137のマージ後、[Pagesのdeploy job](https://github.com/Hiroshiba/check-nonml-saikyo-vocoder/actions/runs/39926088935/job/120323247020)が08:40:23 UTCに成功しました。[音高追従](../research/apron-pitch-follow-2026-10-23/index.html)と[固定F0での声道振幅](../research/fixed-f0-vtmagn-2026-10-23/index.html)もPR #138のマージ後、[別のdeploy job](https://github.com/Hiroshiba/check-nonml-saikyo-vocoder/actions/runs/39926752949/job/120325422340)が08:46:24 UTCに成功しました。3件の初回公開日時は成功jobの完了時刻です。Apronを維持し、科学値と既存音声は変更していません。
