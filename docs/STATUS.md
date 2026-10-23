@@ -1,5 +1,13 @@
 # 現在の状態と次の作業
 
+## Apron二指標の事後集計を公開、48 kHz計画は公式取得待ち（2026-10-23 UTC）
+
+[PR #141](https://github.com/Hiroshiba/check-nonml-saikyo-vocoder/pull/141)は `77a3f90fd4761ac9e4f01f1816ee738ce0e2519e` でマージされ、[mainの静的CI](https://github.com/Hiroshiba/check-nonml-saikyo-vocoder/actions/runs/39972514552)と[Pages公開](https://github.com/Hiroshiba/check-nonml-saikyo-vocoder/actions/runs/39972514513)が成功しました。[初回deploy job](https://github.com/Hiroshiba/check-nonml-saikyo-vocoder/actions/runs/39972514513/job/120479396153)は14:48:38 UTCに成功し、この完了時刻を公開日時として登録しました。独立監査では162区分の件数、1080録音差、360話者差、4320原値・source key参照が一致し、本文と図の表示数値も一致しました。元の24平均は精度28で一致し、高精度での非ゼロ残差19件（最大約3.33×10⁻²⁸）は丸め差として記録済みです。これは公開個票の事後補助集計で、新しい測定や採用判断ではありません。
+
+公開7ファイルの全byte数・SHA256はマージ元と一致し、重複を除く11件の `href` / `src` はHEADでHTTP 200でした。既存4音声は参照のみで、新しいWAVはありません。実ブラウザの描画と音声再生は環境制約で未確認です。HTTPと保存ファイルの確認とは区別し、Apron・既存の数値・音声を維持します。
+
+48 kHz正式計測の品質3360行はすべて未実行です。Rd診断の修正も公式Library転送前の `tools/list` HTTP 401で未適用のまま、同経路の最終確認13:38:09 UTCも401でした。48 kHzのowner0環境は14:49:30 UTCに切断通知があり、owner2も利用不能で、正式再開は未確認です。音声・手法・科学計測の失敗とは扱いません。公式取得経路の復旧後、固定source・input・予定キーを再照合して再開します。別経路・代理転送・認証変更による迂回は行わず、取得待ちの間に新たな採点は行いません。
+
 ## 公開済み4条件の二指標を事後集計（2026-10-23 UTC）
 
 [新しい補助レポート](../research/apron-hm-joint-signs-fixed120-2026-10-23/index.html)はPR #137で公開された4320品質個票だけを再集計し、PPとの9組についてUTMOS・全長ECAPAの符号を同じ録音と話者で数えました。無編集CP−PPではUTMOS増加・ECAPA減少が45/120録音、21/40話者で、両方増加も38録音、10話者です。欠測は0件。元の平均に隠れた組合せの記述に限り、新測定・順位・採用判断・48 kHz評価ではありません。既存の結果と音声を維持し、現ベースApron（PP）も維持します。親の独立再集計とレビューを待ちます。
