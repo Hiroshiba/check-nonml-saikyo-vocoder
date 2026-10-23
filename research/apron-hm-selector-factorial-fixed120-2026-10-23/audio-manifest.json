@@ -1,0 +1,799 @@
+{
+  "schema_version": 1,
+  "source": "saved float32 NPY waveforms only",
+  "conversion": "first 120000 samples at 24000 Hz; no synthesis, resampling, gain, or clipping",
+  "files": [
+    {
+      "case": "librispeech_1089-134686-0008",
+      "condition": "CC",
+      "pitch_semitones": -3,
+      "source_name": "run/native/librispeech_1089-134686-0008/CC/wave_-3.npy",
+      "source_npy_sha256": "95915f5b61daee51906bc4731e13a8985163a93b91a23e27842e73eab9c5b015",
+      "source_npy_bytes": 577088,
+      "source_dtype": "float32",
+      "source_sample_rate_hz": 24000,
+      "source_samples": 144240,
+      "source_full_range": [
+        -0.34160786867141724,
+        0.45459192991256714
+      ],
+      "excerpt_samples": 120000,
+      "excerpt_seconds": 5,
+      "excerpt_float_range": [
+        -0.34160786867141724,
+        0.45459192991256714
+      ],
+      "pcm_formula": "numpy.rint(float64(x) * 32767).astype('<i2'); nearest-even ties; no scaling or clipping",
+      "pcm_range": [
+        -11193,
+        14896
+      ],
+      "wav_path": "audio/librispeech_1089-134686-0008-CC_-3.wav",
+      "wav_sha256": "9dabcf6281e7a902d215566cdcc054860e4dbcb421dc2bfc721db24bc727c29b",
+      "wav_bytes": 240044,
+      "wav_sample_rate_hz": 24000,
+      "wav_channels": 1,
+      "wav_bit_depth": 16,
+      "wav_samples": 120000
+    },
+    {
+      "case": "librispeech_1089-134686-0008",
+      "condition": "CC",
+      "pitch_semitones": 0,
+      "source_name": "run/native/librispeech_1089-134686-0008/CC/wave_0.npy",
+      "source_npy_sha256": "31078796b2548ac04a9125e40f086ce3aab940b1dc9e74798a0fe465a1400110",
+      "source_npy_bytes": 577088,
+      "source_dtype": "float32",
+      "source_sample_rate_hz": 24000,
+      "source_samples": 144240,
+      "source_full_range": [
+        -0.3787941038608551,
+        0.42694365978240967
+      ],
+      "excerpt_samples": 120000,
+      "excerpt_seconds": 5,
+      "excerpt_float_range": [
+        -0.3787941038608551,
+        0.42694365978240967
+      ],
+      "pcm_formula": "numpy.rint(float64(x) * 32767).astype('<i2'); nearest-even ties; no scaling or clipping",
+      "pcm_range": [
+        -12412,
+        13990
+      ],
+      "wav_path": "audio/librispeech_1089-134686-0008-CC_0.wav",
+      "wav_sha256": "2c24ebb12f48bc4f51f7b367e46d7fdb9317581afd83ceb536dc6ab980bbb2ac",
+      "wav_bytes": 240044,
+      "wav_sample_rate_hz": 24000,
+      "wav_channels": 1,
+      "wav_bit_depth": 16,
+      "wav_samples": 120000
+    },
+    {
+      "case": "librispeech_1089-134686-0008",
+      "condition": "CC",
+      "pitch_semitones": 3,
+      "source_name": "run/native/librispeech_1089-134686-0008/CC/wave_3.npy",
+      "source_npy_sha256": "ff2de06b8237d0a26052f250ed27d352962b8cbf1f9aa8db721e90f88b867298",
+      "source_npy_bytes": 577088,
+      "source_dtype": "float32",
+      "source_sample_rate_hz": 24000,
+      "source_samples": 144240,
+      "source_full_range": [
+        -0.3232910633087158,
+        0.4863196015357971
+      ],
+      "excerpt_samples": 120000,
+      "excerpt_seconds": 5,
+      "excerpt_float_range": [
+        -0.3232910633087158,
+        0.4863196015357971
+      ],
+      "pcm_formula": "numpy.rint(float64(x) * 32767).astype('<i2'); nearest-even ties; no scaling or clipping",
+      "pcm_range": [
+        -10593,
+        15935
+      ],
+      "wav_path": "audio/librispeech_1089-134686-0008-CC_+3.wav",
+      "wav_sha256": "21e92c365c13a7b212fec85f0543e3685732f3700c00aced7d2880b6d87f612e",
+      "wav_bytes": 240044,
+      "wav_sample_rate_hz": 24000,
+      "wav_channels": 1,
+      "wav_bit_depth": 16,
+      "wav_samples": 120000
+    },
+    {
+      "case": "librispeech_1089-134686-0008",
+      "condition": "CP",
+      "pitch_semitones": -3,
+      "source_name": "run/native/librispeech_1089-134686-0008/CP/wave_-3.npy",
+      "source_npy_sha256": "9e9af0248a8687cb363b50367b6c320ac6bb7883dcb948dc2a82122dca0a509c",
+      "source_npy_bytes": 577088,
+      "source_dtype": "float32",
+      "source_sample_rate_hz": 24000,
+      "source_samples": 144240,
+      "source_full_range": [
+        -0.34084808826446533,
+        0.4539601802825928
+      ],
+      "excerpt_samples": 120000,
+      "excerpt_seconds": 5,
+      "excerpt_float_range": [
+        -0.34084808826446533,
+        0.4539601802825928
+      ],
+      "pcm_formula": "numpy.rint(float64(x) * 32767).astype('<i2'); nearest-even ties; no scaling or clipping",
+      "pcm_range": [
+        -11169,
+        14875
+      ],
+      "wav_path": "audio/librispeech_1089-134686-0008-CP_-3.wav",
+      "wav_sha256": "57e1c71140a323573a9c903e292b7447afc6d9dc437d383cd25c5cd9ae4d7fb9",
+      "wav_bytes": 240044,
+      "wav_sample_rate_hz": 24000,
+      "wav_channels": 1,
+      "wav_bit_depth": 16,
+      "wav_samples": 120000
+    },
+    {
+      "case": "librispeech_1089-134686-0008",
+      "condition": "CP",
+      "pitch_semitones": 0,
+      "source_name": "run/native/librispeech_1089-134686-0008/CP/wave_0.npy",
+      "source_npy_sha256": "80740ca53ef72635c11ba7559b648a363a2ce0d6529f16deed79ed66ee4b557e",
+      "source_npy_bytes": 577088,
+      "source_dtype": "float32",
+      "source_sample_rate_hz": 24000,
+      "source_samples": 144240,
+      "source_full_range": [
+        -0.37541434168815613,
+        0.4270213544368744
+      ],
+      "excerpt_samples": 120000,
+      "excerpt_seconds": 5,
+      "excerpt_float_range": [
+        -0.37541434168815613,
+        0.4270213544368744
+      ],
+      "pcm_formula": "numpy.rint(float64(x) * 32767).astype('<i2'); nearest-even ties; no scaling or clipping",
+      "pcm_range": [
+        -12301,
+        13992
+      ],
+      "wav_path": "audio/librispeech_1089-134686-0008-CP_0.wav",
+      "wav_sha256": "7767034fe2bb3e3e0caf9938f875d8d22143fd7d7af416f01f9c66aef873e450",
+      "wav_bytes": 240044,
+      "wav_sample_rate_hz": 24000,
+      "wav_channels": 1,
+      "wav_bit_depth": 16,
+      "wav_samples": 120000
+    },
+    {
+      "case": "librispeech_1089-134686-0008",
+      "condition": "CP",
+      "pitch_semitones": 3,
+      "source_name": "run/native/librispeech_1089-134686-0008/CP/wave_3.npy",
+      "source_npy_sha256": "38e00e3c0c91f34d348aca78653648adb7089e61d6d063c7e067bc219ab0b7ab",
+      "source_npy_bytes": 577088,
+      "source_dtype": "float32",
+      "source_sample_rate_hz": 24000,
+      "source_samples": 144240,
+      "source_full_range": [
+        -0.32071003317832947,
+        0.4870814085006714
+      ],
+      "excerpt_samples": 120000,
+      "excerpt_seconds": 5,
+      "excerpt_float_range": [
+        -0.32071003317832947,
+        0.4870814085006714
+      ],
+      "pcm_formula": "numpy.rint(float64(x) * 32767).astype('<i2'); nearest-even ties; no scaling or clipping",
+      "pcm_range": [
+        -10509,
+        15960
+      ],
+      "wav_path": "audio/librispeech_1089-134686-0008-CP_+3.wav",
+      "wav_sha256": "6609624a5d2ff102a88c1b7c05c0f5745388d5bb28a72b47bdfea654b7ddc0f5",
+      "wav_bytes": 240044,
+      "wav_sample_rate_hz": 24000,
+      "wav_channels": 1,
+      "wav_bit_depth": 16,
+      "wav_samples": 120000
+    },
+    {
+      "case": "librispeech_1089-134686-0008",
+      "condition": "PC",
+      "pitch_semitones": -3,
+      "source_name": "run/native/librispeech_1089-134686-0008/PC/wave_-3.npy",
+      "source_npy_sha256": "fbeb6e5e7ba728cfa359cd6d5a55d73ae09a5d2bca40a492e831e2ca345676a1",
+      "source_npy_bytes": 577088,
+      "source_dtype": "float32",
+      "source_sample_rate_hz": 24000,
+      "source_samples": 144240,
+      "source_full_range": [
+        -0.3529396057128906,
+        0.4087473750114441
+      ],
+      "excerpt_samples": 120000,
+      "excerpt_seconds": 5,
+      "excerpt_float_range": [
+        -0.3529396057128906,
+        0.4087473750114441
+      ],
+      "pcm_formula": "numpy.rint(float64(x) * 32767).astype('<i2'); nearest-even ties; no scaling or clipping",
+      "pcm_range": [
+        -11565,
+        13393
+      ],
+      "wav_path": "audio/librispeech_1089-134686-0008-PC_-3.wav",
+      "wav_sha256": "3476009ca43657ffd4528754aed25febd2206b0ad86f339fc4cb6d3092364808",
+      "wav_bytes": 240044,
+      "wav_sample_rate_hz": 24000,
+      "wav_channels": 1,
+      "wav_bit_depth": 16,
+      "wav_samples": 120000
+    },
+    {
+      "case": "librispeech_1089-134686-0008",
+      "condition": "PC",
+      "pitch_semitones": 0,
+      "source_name": "run/native/librispeech_1089-134686-0008/PC/wave_0.npy",
+      "source_npy_sha256": "1f168f418104a8b2db671214b7d71f8b1d475c1e173fa1d66ab15e96aa0f7d0b",
+      "source_npy_bytes": 577088,
+      "source_dtype": "float32",
+      "source_sample_rate_hz": 24000,
+      "source_samples": 144240,
+      "source_full_range": [
+        -0.3692969083786011,
+        0.3974243700504303
+      ],
+      "excerpt_samples": 120000,
+      "excerpt_seconds": 5,
+      "excerpt_float_range": [
+        -0.3692969083786011,
+        0.3974243700504303
+      ],
+      "pcm_formula": "numpy.rint(float64(x) * 32767).astype('<i2'); nearest-even ties; no scaling or clipping",
+      "pcm_range": [
+        -12101,
+        13022
+      ],
+      "wav_path": "audio/librispeech_1089-134686-0008-PC_0.wav",
+      "wav_sha256": "27d4d2aa5326a5b87b97403350e3168e41a1d670da469f16a1eb1832da2eec08",
+      "wav_bytes": 240044,
+      "wav_sample_rate_hz": 24000,
+      "wav_channels": 1,
+      "wav_bit_depth": 16,
+      "wav_samples": 120000
+    },
+    {
+      "case": "librispeech_1089-134686-0008",
+      "condition": "PC",
+      "pitch_semitones": 3,
+      "source_name": "run/native/librispeech_1089-134686-0008/PC/wave_3.npy",
+      "source_npy_sha256": "fe831dda7c787f9b62c693a58c70f5ad42cb8d51cce671bfd47db9fe845e9360",
+      "source_npy_bytes": 577088,
+      "source_dtype": "float32",
+      "source_sample_rate_hz": 24000,
+      "source_samples": 144240,
+      "source_full_range": [
+        -0.3171704411506653,
+        0.47733598947525024
+      ],
+      "excerpt_samples": 120000,
+      "excerpt_seconds": 5,
+      "excerpt_float_range": [
+        -0.3171704411506653,
+        0.47733598947525024
+      ],
+      "pcm_formula": "numpy.rint(float64(x) * 32767).astype('<i2'); nearest-even ties; no scaling or clipping",
+      "pcm_range": [
+        -10393,
+        15641
+      ],
+      "wav_path": "audio/librispeech_1089-134686-0008-PC_+3.wav",
+      "wav_sha256": "668990b250cf81e6395b2d0fc66c73214d36c1eb872394d7d2cf5d7e913ca697",
+      "wav_bytes": 240044,
+      "wav_sample_rate_hz": 24000,
+      "wav_channels": 1,
+      "wav_bit_depth": 16,
+      "wav_samples": 120000
+    },
+    {
+      "case": "librispeech_1089-134686-0008",
+      "condition": "PP",
+      "pitch_semitones": -3,
+      "source_name": "run/native/librispeech_1089-134686-0008/PP/wave_-3.npy",
+      "source_npy_sha256": "5b8e92e9436818c06b9a3380aeb5548b2ca2724a639ff563f9ddc994b9a56afd",
+      "source_npy_bytes": 577088,
+      "source_dtype": "float32",
+      "source_sample_rate_hz": 24000,
+      "source_samples": 144240,
+      "source_full_range": [
+        -0.35312822461128235,
+        0.4159797430038452
+      ],
+      "excerpt_samples": 120000,
+      "excerpt_seconds": 5,
+      "excerpt_float_range": [
+        -0.35312822461128235,
+        0.4159797430038452
+      ],
+      "pcm_formula": "numpy.rint(float64(x) * 32767).astype('<i2'); nearest-even ties; no scaling or clipping",
+      "pcm_range": [
+        -11571,
+        13630
+      ],
+      "wav_path": "audio/librispeech_1089-134686-0008-PP_-3.wav",
+      "wav_sha256": "c28c5afbb0c78a707bd0b9ba0fd08bb41907d81ede2b34dc76aef7d233a2f345",
+      "wav_bytes": 240044,
+      "wav_sample_rate_hz": 24000,
+      "wav_channels": 1,
+      "wav_bit_depth": 16,
+      "wav_samples": 120000
+    },
+    {
+      "case": "librispeech_1089-134686-0008",
+      "condition": "PP",
+      "pitch_semitones": 0,
+      "source_name": "run/native/librispeech_1089-134686-0008/PP/wave_0.npy",
+      "source_npy_sha256": "d58c0f41a56ae4f61923fb6af45fd23a464866c52ee3d33a6e69d0d01cd07ead",
+      "source_npy_bytes": 577088,
+      "source_dtype": "float32",
+      "source_sample_rate_hz": 24000,
+      "source_samples": 144240,
+      "source_full_range": [
+        -0.36761778593063354,
+        0.3978002071380615
+      ],
+      "excerpt_samples": 120000,
+      "excerpt_seconds": 5,
+      "excerpt_float_range": [
+        -0.36761778593063354,
+        0.3978002071380615
+      ],
+      "pcm_formula": "numpy.rint(float64(x) * 32767).astype('<i2'); nearest-even ties; no scaling or clipping",
+      "pcm_range": [
+        -12046,
+        13035
+      ],
+      "wav_path": "audio/librispeech_1089-134686-0008-PP_0.wav",
+      "wav_sha256": "5b772c7124e73416440e524349bda282a013df6d45ad163d41b7c0e7c74bf494",
+      "wav_bytes": 240044,
+      "wav_sample_rate_hz": 24000,
+      "wav_channels": 1,
+      "wav_bit_depth": 16,
+      "wav_samples": 120000
+    },
+    {
+      "case": "librispeech_1089-134686-0008",
+      "condition": "PP",
+      "pitch_semitones": 3,
+      "source_name": "run/native/librispeech_1089-134686-0008/PP/wave_3.npy",
+      "source_npy_sha256": "b3f01b18b3457617db0233785b7b0735b29b2c20a18b1b622c02ecd45c4f4284",
+      "source_npy_bytes": 577088,
+      "source_dtype": "float32",
+      "source_sample_rate_hz": 24000,
+      "source_samples": 144240,
+      "source_full_range": [
+        -0.31444424390792847,
+        0.4783231317996979
+      ],
+      "excerpt_samples": 120000,
+      "excerpt_seconds": 5,
+      "excerpt_float_range": [
+        -0.31444424390792847,
+        0.4783231317996979
+      ],
+      "pcm_formula": "numpy.rint(float64(x) * 32767).astype('<i2'); nearest-even ties; no scaling or clipping",
+      "pcm_range": [
+        -10303,
+        15673
+      ],
+      "wav_path": "audio/librispeech_1089-134686-0008-PP_+3.wav",
+      "wav_sha256": "5fd2f18a1fd6ed401e0b23e62460b3bcdec531db39b41ae0b0b5dbc8bb28019a",
+      "wav_bytes": 240044,
+      "wav_sample_rate_hz": 24000,
+      "wav_channels": 1,
+      "wav_bit_depth": 16,
+      "wav_samples": 120000
+    },
+    {
+      "case": "librispeech_1188-133604-0003",
+      "condition": "CC",
+      "pitch_semitones": -3,
+      "source_name": "run/native/librispeech_1188-133604-0003/CC/wave_-3.npy",
+      "source_npy_sha256": "ad6d324c0653ae0b903dd2470319b196a91b37266e77d0cea2909549cdc41e83",
+      "source_npy_bytes": 577088,
+      "source_dtype": "float32",
+      "source_sample_rate_hz": 24000,
+      "source_samples": 144240,
+      "source_full_range": [
+        -0.227003276348114,
+        0.28268831968307495
+      ],
+      "excerpt_samples": 120000,
+      "excerpt_seconds": 5,
+      "excerpt_float_range": [
+        -0.227003276348114,
+        0.28268831968307495
+      ],
+      "pcm_formula": "numpy.rint(float64(x) * 32767).astype('<i2'); nearest-even ties; no scaling or clipping",
+      "pcm_range": [
+        -7438,
+        9263
+      ],
+      "wav_path": "audio/librispeech_1188-133604-0003-CC_-3.wav",
+      "wav_sha256": "33da48d2f07b5b0e8539a7c40a00dad087a6b7485dc159568a706e938441042b",
+      "wav_bytes": 240044,
+      "wav_sample_rate_hz": 24000,
+      "wav_channels": 1,
+      "wav_bit_depth": 16,
+      "wav_samples": 120000
+    },
+    {
+      "case": "librispeech_1188-133604-0003",
+      "condition": "CC",
+      "pitch_semitones": 0,
+      "source_name": "run/native/librispeech_1188-133604-0003/CC/wave_0.npy",
+      "source_npy_sha256": "02cf03a53e74255bf9585ec36f26dd00cd7975dc60204c68d24a7972253068b8",
+      "source_npy_bytes": 577088,
+      "source_dtype": "float32",
+      "source_sample_rate_hz": 24000,
+      "source_samples": 144240,
+      "source_full_range": [
+        -0.20776264369487762,
+        0.2451791763305664
+      ],
+      "excerpt_samples": 120000,
+      "excerpt_seconds": 5,
+      "excerpt_float_range": [
+        -0.20776264369487762,
+        0.2451791763305664
+      ],
+      "pcm_formula": "numpy.rint(float64(x) * 32767).astype('<i2'); nearest-even ties; no scaling or clipping",
+      "pcm_range": [
+        -6808,
+        8034
+      ],
+      "wav_path": "audio/librispeech_1188-133604-0003-CC_0.wav",
+      "wav_sha256": "60fc4c1afff69118e370fe3f08c04d24ebe4aa38e2ac048891d450532f9d62f1",
+      "wav_bytes": 240044,
+      "wav_sample_rate_hz": 24000,
+      "wav_channels": 1,
+      "wav_bit_depth": 16,
+      "wav_samples": 120000
+    },
+    {
+      "case": "librispeech_1188-133604-0003",
+      "condition": "CC",
+      "pitch_semitones": 3,
+      "source_name": "run/native/librispeech_1188-133604-0003/CC/wave_3.npy",
+      "source_npy_sha256": "593490c380f702071198dab812035aee137a3ed16a61d8a3f83f72e8403e8d49",
+      "source_npy_bytes": 577088,
+      "source_dtype": "float32",
+      "source_sample_rate_hz": 24000,
+      "source_samples": 144240,
+      "source_full_range": [
+        -0.24041244387626648,
+        0.27064624428749084
+      ],
+      "excerpt_samples": 120000,
+      "excerpt_seconds": 5,
+      "excerpt_float_range": [
+        -0.24041244387626648,
+        0.27064624428749084
+      ],
+      "pcm_formula": "numpy.rint(float64(x) * 32767).astype('<i2'); nearest-even ties; no scaling or clipping",
+      "pcm_range": [
+        -7878,
+        8868
+      ],
+      "wav_path": "audio/librispeech_1188-133604-0003-CC_+3.wav",
+      "wav_sha256": "9d3204ebb0edff0e2bc59d3e0fcb0fd5cfb2ed0033341a7e5f74f103b465b97a",
+      "wav_bytes": 240044,
+      "wav_sample_rate_hz": 24000,
+      "wav_channels": 1,
+      "wav_bit_depth": 16,
+      "wav_samples": 120000
+    },
+    {
+      "case": "librispeech_1188-133604-0003",
+      "condition": "CP",
+      "pitch_semitones": -3,
+      "source_name": "run/native/librispeech_1188-133604-0003/CP/wave_-3.npy",
+      "source_npy_sha256": "cbf35177ae6e20fed42ec16a2127ea16a0d92e4170fc503d8d1875f6a5d176d7",
+      "source_npy_bytes": 577088,
+      "source_dtype": "float32",
+      "source_sample_rate_hz": 24000,
+      "source_samples": 144240,
+      "source_full_range": [
+        -0.22911123931407928,
+        0.2847706973552704
+      ],
+      "excerpt_samples": 120000,
+      "excerpt_seconds": 5,
+      "excerpt_float_range": [
+        -0.22911123931407928,
+        0.2847706973552704
+      ],
+      "pcm_formula": "numpy.rint(float64(x) * 32767).astype('<i2'); nearest-even ties; no scaling or clipping",
+      "pcm_range": [
+        -7507,
+        9331
+      ],
+      "wav_path": "audio/librispeech_1188-133604-0003-CP_-3.wav",
+      "wav_sha256": "21a6c1657a71e4d6b41bfc715acb8a073d69af5ba3658bc65dcba3cd3b73af25",
+      "wav_bytes": 240044,
+      "wav_sample_rate_hz": 24000,
+      "wav_channels": 1,
+      "wav_bit_depth": 16,
+      "wav_samples": 120000
+    },
+    {
+      "case": "librispeech_1188-133604-0003",
+      "condition": "CP",
+      "pitch_semitones": 0,
+      "source_name": "run/native/librispeech_1188-133604-0003/CP/wave_0.npy",
+      "source_npy_sha256": "0f4a01dc7c3884d064bb29cf00cfd6d7cb79732ada3f39c4efc6fe60413298ba",
+      "source_npy_bytes": 577088,
+      "source_dtype": "float32",
+      "source_sample_rate_hz": 24000,
+      "source_samples": 144240,
+      "source_full_range": [
+        -0.20830923318862915,
+        0.24419885873794556
+      ],
+      "excerpt_samples": 120000,
+      "excerpt_seconds": 5,
+      "excerpt_float_range": [
+        -0.20830923318862915,
+        0.24419885873794556
+      ],
+      "pcm_formula": "numpy.rint(float64(x) * 32767).astype('<i2'); nearest-even ties; no scaling or clipping",
+      "pcm_range": [
+        -6826,
+        8002
+      ],
+      "wav_path": "audio/librispeech_1188-133604-0003-CP_0.wav",
+      "wav_sha256": "9affc84f6f10a34712e488deba22386eff8b29cbba86cc5d03b69948bd8e587a",
+      "wav_bytes": 240044,
+      "wav_sample_rate_hz": 24000,
+      "wav_channels": 1,
+      "wav_bit_depth": 16,
+      "wav_samples": 120000
+    },
+    {
+      "case": "librispeech_1188-133604-0003",
+      "condition": "CP",
+      "pitch_semitones": 3,
+      "source_name": "run/native/librispeech_1188-133604-0003/CP/wave_3.npy",
+      "source_npy_sha256": "63c31b3e326ea7ffefc1f1bb3b56621011781679d6f402b6c230617f26e26b21",
+      "source_npy_bytes": 577088,
+      "source_dtype": "float32",
+      "source_sample_rate_hz": 24000,
+      "source_samples": 144240,
+      "source_full_range": [
+        -0.24095627665519714,
+        0.2706984877586365
+      ],
+      "excerpt_samples": 120000,
+      "excerpt_seconds": 5,
+      "excerpt_float_range": [
+        -0.24095627665519714,
+        0.2706984877586365
+      ],
+      "pcm_formula": "numpy.rint(float64(x) * 32767).astype('<i2'); nearest-even ties; no scaling or clipping",
+      "pcm_range": [
+        -7895,
+        8870
+      ],
+      "wav_path": "audio/librispeech_1188-133604-0003-CP_+3.wav",
+      "wav_sha256": "954705f3bab2dcf8f78d2e56c18476665e76968075ce6a59ccee52974b5c119c",
+      "wav_bytes": 240044,
+      "wav_sample_rate_hz": 24000,
+      "wav_channels": 1,
+      "wav_bit_depth": 16,
+      "wav_samples": 120000
+    },
+    {
+      "case": "librispeech_1188-133604-0003",
+      "condition": "PC",
+      "pitch_semitones": -3,
+      "source_name": "run/native/librispeech_1188-133604-0003/PC/wave_-3.npy",
+      "source_npy_sha256": "c2dea7822f1974cf89e334ea6257e3294e6ca856f125ecdc2e037470eb64c41a",
+      "source_npy_bytes": 577088,
+      "source_dtype": "float32",
+      "source_sample_rate_hz": 24000,
+      "source_samples": 144240,
+      "source_full_range": [
+        -0.22688086330890656,
+        0.2906744182109833
+      ],
+      "excerpt_samples": 120000,
+      "excerpt_seconds": 5,
+      "excerpt_float_range": [
+        -0.22688086330890656,
+        0.2906744182109833
+      ],
+      "pcm_formula": "numpy.rint(float64(x) * 32767).astype('<i2'); nearest-even ties; no scaling or clipping",
+      "pcm_range": [
+        -7434,
+        9525
+      ],
+      "wav_path": "audio/librispeech_1188-133604-0003-PC_-3.wav",
+      "wav_sha256": "43a20cf04e611c8e743ac4452a3fa8dbbd87a898ba308ee7c7e1565007307074",
+      "wav_bytes": 240044,
+      "wav_sample_rate_hz": 24000,
+      "wav_channels": 1,
+      "wav_bit_depth": 16,
+      "wav_samples": 120000
+    },
+    {
+      "case": "librispeech_1188-133604-0003",
+      "condition": "PC",
+      "pitch_semitones": 0,
+      "source_name": "run/native/librispeech_1188-133604-0003/PC/wave_0.npy",
+      "source_npy_sha256": "7f7f270fb0fd0c1576b1122753cd9348cf372ffdaae9bca03191e4fc0c051113",
+      "source_npy_bytes": 577088,
+      "source_dtype": "float32",
+      "source_sample_rate_hz": 24000,
+      "source_samples": 144240,
+      "source_full_range": [
+        -0.20782244205474854,
+        0.24192622303962708
+      ],
+      "excerpt_samples": 120000,
+      "excerpt_seconds": 5,
+      "excerpt_float_range": [
+        -0.20782244205474854,
+        0.24192622303962708
+      ],
+      "pcm_formula": "numpy.rint(float64(x) * 32767).astype('<i2'); nearest-even ties; no scaling or clipping",
+      "pcm_range": [
+        -6810,
+        7927
+      ],
+      "wav_path": "audio/librispeech_1188-133604-0003-PC_0.wav",
+      "wav_sha256": "0df14d0542780c4ddbb0a9eb78a54c42abc5955c66c1f063e7b39ee0b1ed5493",
+      "wav_bytes": 240044,
+      "wav_sample_rate_hz": 24000,
+      "wav_channels": 1,
+      "wav_bit_depth": 16,
+      "wav_samples": 120000
+    },
+    {
+      "case": "librispeech_1188-133604-0003",
+      "condition": "PC",
+      "pitch_semitones": 3,
+      "source_name": "run/native/librispeech_1188-133604-0003/PC/wave_3.npy",
+      "source_npy_sha256": "57a324514f5e2493e1a10b6d13bd19f7fb47f737d9d85ccf11be74aea43c03dc",
+      "source_npy_bytes": 577088,
+      "source_dtype": "float32",
+      "source_sample_rate_hz": 24000,
+      "source_samples": 144240,
+      "source_full_range": [
+        -0.23886840045452118,
+        0.2764226794242859
+      ],
+      "excerpt_samples": 120000,
+      "excerpt_seconds": 5,
+      "excerpt_float_range": [
+        -0.23886840045452118,
+        0.2764226794242859
+      ],
+      "pcm_formula": "numpy.rint(float64(x) * 32767).astype('<i2'); nearest-even ties; no scaling or clipping",
+      "pcm_range": [
+        -7827,
+        9058
+      ],
+      "wav_path": "audio/librispeech_1188-133604-0003-PC_+3.wav",
+      "wav_sha256": "cb0f088deee801095ccd84ca1bf4b8d7852d788e23a7724e8ddb671caad85022",
+      "wav_bytes": 240044,
+      "wav_sample_rate_hz": 24000,
+      "wav_channels": 1,
+      "wav_bit_depth": 16,
+      "wav_samples": 120000
+    },
+    {
+      "case": "librispeech_1188-133604-0003",
+      "condition": "PP",
+      "pitch_semitones": -3,
+      "source_name": "run/native/librispeech_1188-133604-0003/PP/wave_-3.npy",
+      "source_npy_sha256": "016ba9a98469d0f8fdd110e955838cee1bc1e95c98708f4fb5af7fa7e5321904",
+      "source_npy_bytes": 577088,
+      "source_dtype": "float32",
+      "source_sample_rate_hz": 24000,
+      "source_samples": 144240,
+      "source_full_range": [
+        -0.22473731637001038,
+        0.2894875407218933
+      ],
+      "excerpt_samples": 120000,
+      "excerpt_seconds": 5,
+      "excerpt_float_range": [
+        -0.22473731637001038,
+        0.2894875407218933
+      ],
+      "pcm_formula": "numpy.rint(float64(x) * 32767).astype('<i2'); nearest-even ties; no scaling or clipping",
+      "pcm_range": [
+        -7364,
+        9486
+      ],
+      "wav_path": "audio/librispeech_1188-133604-0003-PP_-3.wav",
+      "wav_sha256": "685801a09e6d99c796e2b303a254cbf1145a1a5eef3d68f852580c3ff2397cd6",
+      "wav_bytes": 240044,
+      "wav_sample_rate_hz": 24000,
+      "wav_channels": 1,
+      "wav_bit_depth": 16,
+      "wav_samples": 120000
+    },
+    {
+      "case": "librispeech_1188-133604-0003",
+      "condition": "PP",
+      "pitch_semitones": 0,
+      "source_name": "run/native/librispeech_1188-133604-0003/PP/wave_0.npy",
+      "source_npy_sha256": "645d4ea6ba1ddc3055013f8d2113ae283ee0b884e67278bc72969efe2da570d8",
+      "source_npy_bytes": 577088,
+      "source_dtype": "float32",
+      "source_sample_rate_hz": 24000,
+      "source_samples": 144240,
+      "source_full_range": [
+        -0.20838375389575958,
+        0.2412821650505066
+      ],
+      "excerpt_samples": 120000,
+      "excerpt_seconds": 5,
+      "excerpt_float_range": [
+        -0.20838375389575958,
+        0.2412821650505066
+      ],
+      "pcm_formula": "numpy.rint(float64(x) * 32767).astype('<i2'); nearest-even ties; no scaling or clipping",
+      "pcm_range": [
+        -6828,
+        7906
+      ],
+      "wav_path": "audio/librispeech_1188-133604-0003-PP_0.wav",
+      "wav_sha256": "fd350bdd39b7a6c81b3c09da2ebef712d57d403df8008e2f3142f3ac17b14ab7",
+      "wav_bytes": 240044,
+      "wav_sample_rate_hz": 24000,
+      "wav_channels": 1,
+      "wav_bit_depth": 16,
+      "wav_samples": 120000
+    },
+    {
+      "case": "librispeech_1188-133604-0003",
+      "condition": "PP",
+      "pitch_semitones": 3,
+      "source_name": "run/native/librispeech_1188-133604-0003/PP/wave_3.npy",
+      "source_npy_sha256": "71d17dcf438934c78be28137376dd2dbacb4c2d8b59e9a9e3dbebceb22acb49b",
+      "source_npy_bytes": 577088,
+      "source_dtype": "float32",
+      "source_sample_rate_hz": 24000,
+      "source_samples": 144240,
+      "source_full_range": [
+        -0.23959045112133026,
+        0.27548283338546753
+      ],
+      "excerpt_samples": 120000,
+      "excerpt_seconds": 5,
+      "excerpt_float_range": [
+        -0.23959045112133026,
+        0.27548283338546753
+      ],
+      "pcm_formula": "numpy.rint(float64(x) * 32767).astype('<i2'); nearest-even ties; no scaling or clipping",
+      "pcm_range": [
+        -7851,
+        9027
+      ],
+      "wav_path": "audio/librispeech_1188-133604-0003-PP_+3.wav",
+      "wav_sha256": "13a2de02034a85ee7c05471454491fbbc1770aef561497a8ad255e4ddd384607",
+      "wav_bytes": 240044,
+      "wav_sample_rate_hz": 24000,
+      "wav_channels": 1,
+      "wav_bit_depth": 16,
+      "wav_samples": 120000
+    }
+  ]
+}
