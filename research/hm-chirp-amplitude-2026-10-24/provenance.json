@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "source_main": "63dd438de062add6fb6293867eba327912aca8ad",
+  "base": "Apron (LLSM2 Layer1)",
+  "source_build_lock_sha256": "485782a5c16686b12474464f6c09bd8ecb2fc9b7fbe684d76f21451d69b2fb63",
+  "freeze_sha256": "037ade0cf2a59f3d500fe499ceca92d517de764285e6c06c108206e2dae21e00",
+  "input_manifest_sha256": "22502e686f59fcc4dc18e2190592c6bc00251e3de237d488231342746d0d0e99",
+  "measurement_keys_sha256": "54305467d1d0a1220834b73dcb99b19ec8ebd46627dde091467cd52239b405cc",
+  "measurement_status_sha256": "c36af7adbb57124f4476578ccc4b799ca053b1adc216246fc7cc414fd59e8dad",
+  "private_summary_sha256": "02f5e13ac79c56809c758eeb3c11d9ec2744e15aea44a8a68e83d0b869b0db41",
+  "independent_audit_sha256": "82b795ba7839bdb949a89fc2c63fbbe7680eaea83f3d9b767e94ebef4ea49be9",
+  "source_revisions": {
+    "llsm": "d18cdf02b31819670e3bc23ead933ad9467da06d",
+    "ciglet": "895ba9b1c0eabee83d3544208bbc82420efa3206"
+  },
+  "measured_start_utc": "2026-10-23T17:50:03.170656+00:00",
+  "measured_end_utc": "2026-10-23T17:50:12.491605+00:00",
+  "counts": {
+    "planned_stimuli": 40,
+    "planned_method_calls": 80,
+    "method_calls_measured": 80,
+    "method_calls_failed": 0,
+    "method_calls_unexecuted": 0,
+    "harmonic_rows": 4800,
+    "primary_rows": 4560,
+    "band_low_rows": 2080,
+    "band_high_rows": 2480,
+    "undefined_db_rows": 0
+  },
+  "audit": "passed",
+  "report_scope": "known-signal, oracle center F0, fixed upstream HMPP/HMCZT amplitude estimates; no synthesis, Rd, noise, MOS, or quality inference",
+  "normalization_note": "Both paths use periodic Blackman in fixed ciglet; exact-arithmetic gain is 2/(0.42N) in both paths; numerical routes differ.",
+  "publication_scope": "保存値からの文書化。新しい科学処理・音声生成・採用判断なし。",
+  "private_source_archive_sha256": "47d65d9f78446ef391a84ac6fe300b6455f13b023e0e226d4aba9c54722c6ca6",
+  "public_harmonic_format": "harmonics.csv: 4800 rows, saved numeric values copied without rounding; empty undefined_reason means defined",
+  "compiler_warning": "未使用の合成関数を含むlayer0.cにnfrm may be uninitializedのビルド警告1件。測定のstdout/stderrは空。",
+  "saved_value_audit": "audit.json",
+  "environment": {
+    "compiler": "gcc (Debian 14.2.0-19) 14.2.0",
+    "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+    "numpy": "2.3.5",
+    "platform": "Linux-6.18.55-x86_64-with-glibc2.41",
+    "native_float": "FP_TYPE=float",
+    "release_flags": "-Ofast",
+    "native_threads": 1,
+    "worker_as_limit_bytes": 2147483648,
+    "per_key_wall_limit_s": 1800
+  }
+}
