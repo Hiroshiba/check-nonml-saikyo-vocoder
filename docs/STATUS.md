@@ -1,5 +1,13 @@
 # 現在の状態と次の作業
 
+## Apronの3レポートを公開、48 kHz計画は公式取得待ち（2026-10-23 UTC）
+
+[調波・雑音包絡の4条件比較](../research/apron-hm-selector-factorial-fixed120-2026-10-23/index.html)はPR #137のマージ後、[Pagesのdeploy job](https://github.com/Hiroshiba/check-nonml-saikyo-vocoder/actions/runs/39926088935/job/120323247020)が08:40:23 UTCに成功しました。[音高追従](../research/apron-pitch-follow-2026-10-23/index.html)と[固定F0での声道振幅](../research/fixed-f0-vtmagn-2026-10-23/index.html)もPR #138のマージ後、[別のdeploy job](https://github.com/Hiroshiba/check-nonml-saikyo-vocoder/actions/runs/39926752949/job/120325422340)が08:46:24 UTCに成功しました。3件の初回公開日時は成功jobの完了時刻です。Apronを維持し、科学値と既存音声は変更していません。
+
+PR #137の公開物は親の独立確認で一覧のSHA一致、全24 WAVのHTTP 200・期待SHA・240044 byte・24 kHzモノラルPCM16の5秒、ローカル9リンクのHTTP 200を確認済みです。PR #138の本番ファイル照合は別担当が進行中です。実描画とブラウザの音声再生イベントは環境制約で未確認であり、HTTPでのファイル照合とは区別します。
+
+48 kHz研究は固定VCTK v2の40話者120録音をApron24・私有Apron48・WORLD48で各1解析し、0・±3半音で計360解析・1080波形、品質3360行を予定しています。担当別は42/39/39録音、1176/1092/1092行です。入力選択、私有sourceの準備と静的レビューは完了しましたが、正式3 CloudはLibrary公式取得経路の `tools/list` HTTP 401でパッケージ取得前に停止し、科学実測は0件、3360行すべて未実行です。長時間待機後も復旧は未確認で、owner2の環境は利用不能です。音声データや手法の失敗を示すものではありません。認証変更・迂回・値の代用・研究条件変更は行わず、48 kHzの品質結果や優越は主張しません。接続待ちの通知は済んでいます。現ベースApron24を維持し、公式取得経路の復旧後に同一source・固定入力・予定キーを照合して固定計画を再開します。それまでは独立調査の文書化を続けます。
+
 ## 保存済みApron診断2件の公開準備（2026-10-23）
 
 [音高±3半音の相対追従](../research/apron-pitch-follow-2026-10-23/index.html)と[固定F0での声道振幅の入力変化](../research/fixed-f0-vtmagn-2026-10-23/index.html)を別グループで記録し、一つのDraft PRにまとめます。科学参照は 3f7b509b8313b5803dce2e1ededc8db9920367f1。前者は保存F0個票から240録音条件の7区分と35,987有限cent、話者・全体集計まで厳密一致で照合しました。後者は保存1440録音条件個票から分母・対応差・集計を再算出し、旧summaryとの差は照合範囲で0件でした。後者の生VTMAGN配列は受け渡しに含まれず、元Cloudの配列監査を今回の独立再現とは扱いません。
