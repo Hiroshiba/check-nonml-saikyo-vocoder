@@ -1,0 +1,99 @@
+{
+  "kind": "public_source_provenance",
+  "measurement_precheck_at_utc": "2026-10-23T01:30:55.052809+00:00",
+  "private_seal_at_utc": "2026-10-23T01:31:35.930095+00:00",
+  "public_derivation_at_utc": "2026-10-23T03:10:21.161095+00:00",
+  "scientific_reference_commit": "3f7b509b8313b5803dce2e1ededc8db9920367f1",
+  "private_archive": {
+    "relative_name": "fixed-f0-vtmagn-private-handoff-2026-10-23.zip",
+    "bytes": 353606,
+    "sha256": "fc88ff08a92a83b6cef13a852753d8f453e3e8e4c29f647fca9a5f82dbfb6776",
+    "members": 22
+  },
+  "source_files": [
+    {
+      "relative_name": "summary.json",
+      "bytes": 4758,
+      "sha256": "2b91dd0a0817691c147eac383e43c87178d2f6ec96170cc6fd6fa5e3d8f20c7e"
+    },
+    {
+      "relative_name": "results.json",
+      "bytes": 2455010,
+      "sha256": "f5d29d711c89328dedc30eb6f1dc2581a3d02fb64aefdf48629a925c2c2c484b"
+    },
+    {
+      "relative_name": "audit.json",
+      "bytes": 294,
+      "sha256": "fbd8599c5f3e18c1e892aa27df6c29121f77007822a43c6b0f25c089dfc6bf62"
+    },
+    {
+      "relative_name": "plan.json",
+      "bytes": 300325,
+      "sha256": "55aa11aca82f3a78a314c4b10855b02a6015bb0705213be6b1134c6405a3363b"
+    },
+    {
+      "relative_name": "source-lock.json",
+      "bytes": 1901,
+      "sha256": "85d8a98a2eaaa2d9c4ceeae63a753311103b6629c054caaadd25421a46d94a66"
+    },
+    {
+      "relative_name": "artifact-manifest.json",
+      "bytes": 540843,
+      "sha256": "377d070c668e1098454eb4742ce31b23f86eedd886394ae2fc60025c8c8d7046"
+    },
+    {
+      "relative_name": "seal.json",
+      "bytes": 1240,
+      "sha256": "6ac014bec0091a2be1b559da5b302ef547aa97f864e33c7fc48ad189533e71b6"
+    },
+    {
+      "relative_name": "execution-summary.json",
+      "bytes": 763,
+      "sha256": "8d597816baa6f83ed4dd315539a79f136761f741fe52c9fc956f1bd1eacf797f"
+    }
+  ],
+  "manifest_relation": {
+    "present_files_checked": 20,
+    "manifest_entries_total": 2870,
+    "unlisted_archive_members": [
+      "artifact-manifest.json",
+      "seal.json"
+    ],
+    "note": "The archive is a selected subset and has no raw VTMAGN arrays or waveforms."
+  },
+  "old_summary_origin": "The private summary was made after measurement with a temporary Python command, and some totals were handwritten. The present results.json is a new public derivative from saved per-recording rows. The old summary remains unchanged in the private archive.",
+  "historical_array_audit": "The original Cloud reported 1920 array bundles checked and 1440 paired rows recalculated. This run cannot reproduce array values because arrays were not transferred.",
+  "row_arithmetic_audit": {
+    "overall_counts": {
+      "compared": 10,
+      "nonzero": 0,
+      "max_abs": 0.0
+    },
+    "row_denominator": {
+      "compared": 10080,
+      "nonzero": 0,
+      "max_abs": 0.0
+    },
+    "paired_difference": {
+      "compared": 720,
+      "nonzero": 0,
+      "max_abs": 0.0
+    },
+    "pair_sign_counts": {
+      "compared": 30,
+      "nonzero": 0,
+      "max_abs": 0.0
+    },
+    "result_pair_sign_counts": {
+      "compared": 30,
+      "nonzero": 0,
+      "max_abs": 0.0
+    },
+    "summary_by_epsilon": {
+      "compared": 36,
+      "nonzero": 0,
+      "max_abs": 0.0
+    }
+  },
+  "audit_comparison": "Exact numeric equality; no tolerance used."
+}

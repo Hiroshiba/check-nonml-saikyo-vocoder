@@ -1,0 +1,100 @@
+{
+  "schema_version": 1,
+  "reference_commit": "3f7b509b8313b5803dce2e1ededc8db9920367f1",
+  "upstream_commits": {
+    "llsm": "d18cdf02b31819670e3bc23ead933ad9467da06d",
+    "ciglet": "895ba9b1c0eabee83d3544208bbc82420efa3206"
+  },
+  "base": "Apron; PP is the standard method selection",
+  "input_manifest": {
+    "relative_path": "research/pml-package-evaluation-2026-10-16/input-manifest.json",
+    "sha256": "1f392fc60fbca4003c236f03ffd9edba82b048737f23cf250295c1b4c6c85193",
+    "bytes": 55015
+  },
+  "source_package": {
+    "zip_sha256": "92bea6ef42666d5746eb941408478d733ab05b2ced25ef74f22816ea51e6dd7c",
+    "zip_bytes": 24611642,
+    "zip_members": 4356,
+    "original_manifest_sha256": "40280ebeb7dc326f9e5c4ff75eb2fa03204052963c4ec818b35296ff324e3c1e",
+    "original_manifest_entries": 4534,
+    "members_verified_against_original_manifest": 4330
+  },
+  "source_package_extra_members": "24 saved NPY waveforms and build-command.json were added to the handoff package and were not entries in the original run manifest. The 24 NPY SHA256 values each match UTMOS and ECAPA individual records; the build command SHA256 matches frozen.json. The package SHA256 covers all 4356 entries.",
+  "source_package_original_manifest_missing_members": 204,
+  "original_source_file_map": {
+    "run/manifest.json": "original sealed run manifest, SHA256 above",
+    "run/quality/values/**/*.json": "quality-values.json.gz entries preserve each original JSON object, relative name, and SHA256",
+    "run/native/{case}/{condition}/wave_{pitch}.npy": "audio-manifest.json identifies each private full waveform by relative name and SHA256; only the first five seconds of each appears as WAV"
+  },
+  "audit": {
+    "quality_values": 4320,
+    "absolute_means_and_ranks_derived_at_publication": 36,
+    "saved_contrasts_independently_recomputed": 54,
+    "saved_edit_differences_independently_recomputed": 16,
+    "differences": 0,
+    "comparisons": {
+      "recording_stats_checked": 350,
+      "case_values_checked": 8400,
+      "speaker_values_checked": 2800,
+      "speaker_stats_checked": 350,
+      "contrast_groups": 54,
+      "edit_groups": 16
+    },
+    "strict_decimal_precision": 28,
+    "strict_saved_numeric_fields_compared": 11900,
+    "strict_saved_numeric_fields_different": 0,
+    "saved_key_results_means_exactly_compared": 54,
+    "higher_precision_50_digit_comparison": {
+      "fields": "70 groups x mean/min/max = 210 fields",
+      "nonzero_rounding_residuals": 51,
+      "maximum_absolute_residual": "3.333333333333333333333E-29",
+      "note": "With Decimal precision 50, unrounded means retain further digits beyond the original precision-28 saved means. No source values were changed."
+    }
+  },
+  "same_main_saved_layer1_fields": {
+    "frames/*/0": {
+      "pairs": 240,
+      "arrays": 246614,
+      "equal_elements": 246614,
+      "different_elements": 0,
+      "shape_mismatches": 0,
+      "maximum_absolute_difference": 0
+    },
+    "frames/*/10": {
+      "pairs": 240,
+      "arrays": 246614,
+      "equal_elements": 246614,
+      "different_elements": 0,
+      "shape_mismatches": 0,
+      "maximum_absolute_difference": 0
+    },
+    "frames/*/11": {
+      "pairs": 240,
+      "arrays": 147974,
+      "equal_elements": 151673350,
+      "different_elements": 0,
+      "shape_mismatches": 0,
+      "maximum_absolute_difference": 0
+    },
+    "frames/*/12": {
+      "pairs": 240,
+      "arrays": 147974,
+      "equal_elements": 12928250,
+      "different_elements": 0,
+      "shape_mismatches": 0,
+      "maximum_absolute_difference": 0
+    }
+  },
+  "diagnostic_scope": "Only saved Layer1 F0, Rd, vocal tract magnitude, and source harmonic phase. Unsaved HM, residual, and PSD are not claimed equal.",
+  "historical_first_run": "Separate initial run reached 3115 of 4320 quality values at its 3600-second child limit; 1205 remained unexecuted. None were imported into the complete rerun.",
+  "sampling": {
+    "recordings": 120,
+    "speakers": 40,
+    "analysis": 480,
+    "waves": 1440,
+    "quality_values": 4320,
+    "quality_missing": 0
+  },
+  "source_reference_html": "run/index.html is an original private report; this publication is an independently audited derived report.",
+  "no_new_measurement_or_human_listening": true
+}
