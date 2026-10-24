@@ -1,0 +1,100 @@
+{
+  "scientific_repository": "Hiroshiba/check-nonml-saikyo-vocoder",
+  "scientific_commit": "3f7b509b8313b5803dce2e1ededc8db9920367f1",
+  "llsm2_revision": "d18cdf02b31819670e3bc23ead933ad9467da06d",
+  "ciglet_revision": "895ba9b1c0eabee83d3544208bbc82420efa3206",
+  "input_manifest_sha256": "1f392fc60fbca4003c236f03ffd9edba82b048737f23cf250295c1b4c6c85193",
+  "measurement_source_lock_sha256": "726cbae72f73db9fe6e61ac86f8255aa8953cc2785d14bba90336933042b6b8f",
+  "source_lock_creation_status": "source_only_not_built_not_run; this is the pre-execution package label",
+  "current_execution_status": "Three producers report 120 recordings and 1800 analyses completed.",
+  "independent_scope": "Retained JSON bytes, keys, support/count consistency, paired subtraction and speaker aggregation only.",
+  "not_independently_recomputed": [
+    "native execution",
+    "raw four-cell arrays",
+    "frame percentiles",
+    "run-contract and supervisor-summary preimages"
+  ],
+  "owner_sources": [
+    {
+      "owner": 0,
+      "bytes": 13039808,
+      "sha256": "b401159f64f5142650f18454fc482c534488c4a824c1827f8da42db8bf8de9fd",
+      "posthoc_aggregation": {
+        "revision": "v3-trace-relation-diagnostic",
+        "aggregation_lock_sha256": "61f30c5dc59289415e7d6e13fa913ae490eba4319a1d51cad700cd93127b8ddc",
+        "aggregation_source_sha256": {
+          "aggregate.py": "59e4fd9e8d0d845cde653545b65d6d3b57a5747bcae5633eba2fba22c9f34fef",
+          "aggregate_fields.py": "37cb23d0ae5b2597137087dc611bf5cc6a76a24aac7fc22b71083c1a25aac7a3",
+          "aggregate_validation.py": "b600d8126c3c536abe88b9f2fe99ddcd41f95f13ed2e2c7be4793b7a31699394",
+          "store.py": "1093f87f1a84fc189fe741d1150145dc4e99648c78ecfabb77580e06daf61cdb",
+          "trace_relations.py": "c31bfdca0ce65fa94424a75d247f98a2204644cac753e342cd9ecf81591f608d"
+        },
+        "owner_evidence_sha256": {
+          "0": {
+            "run-contract.json": "38360e0d8c98e7682594b998a82a79b4909ac63b77cc492496a09908dabf4b07",
+            "supervisor-summary.json": "d986564973d491218a44fcda70b16b9e0a6405aec8e0ac382ee898da35f2ecc0"
+          }
+        },
+        "measurement_source_lock_sha256": "726cbae72f73db9fe6e61ac86f8255aa8953cc2785d14bba90336933042b6b8f",
+        "change": "Raw/interpolated Rd numeric identity is described, not required.",
+        "limits": "No saved trace/cell changed; no native rerun; discrepancy cause unresolved."
+      },
+      "measured_comparisons": 504,
+      "measured_method_pairs": 252
+    },
+    {
+      "owner": 1,
+      "bytes": 12441388,
+      "sha256": "8b8752544f3ab0eeb0f93900cc8ab1b9e5b7207c5cef6aa288c55db24f3ce641",
+      "posthoc_aggregation": {
+        "revision": "v3-trace-relation-diagnostic",
+        "aggregation_lock_sha256": "61f30c5dc59289415e7d6e13fa913ae490eba4319a1d51cad700cd93127b8ddc",
+        "aggregation_source_sha256": {
+          "aggregate.py": "59e4fd9e8d0d845cde653545b65d6d3b57a5747bcae5633eba2fba22c9f34fef",
+          "aggregate_fields.py": "37cb23d0ae5b2597137087dc611bf5cc6a76a24aac7fc22b71083c1a25aac7a3",
+          "aggregate_validation.py": "b600d8126c3c536abe88b9f2fe99ddcd41f95f13ed2e2c7be4793b7a31699394",
+          "store.py": "1093f87f1a84fc189fe741d1150145dc4e99648c78ecfabb77580e06daf61cdb",
+          "trace_relations.py": "c31bfdca0ce65fa94424a75d247f98a2204644cac753e342cd9ecf81591f608d"
+        },
+        "owner_evidence_sha256": {
+          "1": {
+            "run-contract.json": "12939270f467b4a4550eacffd863d60dd1a63e3bffacd666762baec4da303e03",
+            "supervisor-summary.json": "0222d89f83b9a9f5826d7a90521694ccddd1faa7eb2b0c2b0ef480e06adf3494"
+          }
+        },
+        "measurement_source_lock_sha256": "726cbae72f73db9fe6e61ac86f8255aa8953cc2785d14bba90336933042b6b8f",
+        "change": "Raw/interpolated Rd numeric identity is described, not required.",
+        "limits": "No saved trace/cell changed; no native rerun; discrepancy cause unresolved."
+      },
+      "measured_comparisons": 468,
+      "measured_method_pairs": 234
+    },
+    {
+      "owner": 2,
+      "bytes": 12291329,
+      "sha256": "362fe9b34de1e8eabb1dd677e630eb58c1a4d06734c1b2e889d4b622e5cc3d89",
+      "posthoc_aggregation": {
+        "revision": "v3-trace-relation-diagnostic",
+        "aggregation_lock_sha256": "61f30c5dc59289415e7d6e13fa913ae490eba4319a1d51cad700cd93127b8ddc",
+        "aggregation_source_sha256": {
+          "aggregate.py": "59e4fd9e8d0d845cde653545b65d6d3b57a5747bcae5633eba2fba22c9f34fef",
+          "aggregate_fields.py": "37cb23d0ae5b2597137087dc611bf5cc6a76a24aac7fc22b71083c1a25aac7a3",
+          "aggregate_validation.py": "b600d8126c3c536abe88b9f2fe99ddcd41f95f13ed2e2c7be4793b7a31699394",
+          "store.py": "1093f87f1a84fc189fe741d1150145dc4e99648c78ecfabb77580e06daf61cdb",
+          "trace_relations.py": "c31bfdca0ce65fa94424a75d247f98a2204644cac753e342cd9ecf81591f608d"
+        },
+        "owner_evidence_sha256": {
+          "2": {
+            "run-contract.json": "8a5f332ac918586f51febd61a5dd7f76db821fedcf190507fcb342bd44a59056",
+            "supervisor-summary.json": "23edf4bfa43d423e9bff984ae377e23325dab8b19319a9ce84fbde659e783175"
+          }
+        },
+        "measurement_source_lock_sha256": "726cbae72f73db9fe6e61ac86f8255aa8953cc2785d14bba90336933042b6b8f",
+        "change": "Raw/interpolated Rd numeric identity is described, not required.",
+        "limits": "No saved trace/cell changed; no native rerun; discrepancy cause unresolved."
+      },
+      "measured_comparisons": 468,
+      "measured_method_pairs": 234
+    }
+  ]
+}
