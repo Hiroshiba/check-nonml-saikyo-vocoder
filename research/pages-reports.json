@@ -3,6 +3,21 @@
   "reports": [
     {
       "kind": "navigation-only",
+      "id": "hm-input-normalization-2026-10-24",
+      "path": "research/hm-input-normalization-2026-10-24",
+      "source_path": "research/hm-input-normalization-2026-10-24",
+      "created_on": "2026-10-24",
+      "created_at": "2026-10-24T00:55:25.977933+00:00",
+      "title": "入力音量の調整と調波振幅の誤差",
+      "comparison_scope": "人工信号616条件をHMPP・入力調整HMPP・HMCZTで比較しました。小音量の誤差は減りましたが、音高が動く一部条件では調整前の方が誤差が小さく、一律の改善ではありません。Apronを維持し、自然品質・MOSは別に測ります。復号を行わないため試聴音声はありません。",
+      "artifact_count": 8,
+      "artifact_manifest": {
+        "bytes": 1104,
+        "sha256": "edb6488799ab69c66b838dcc623853744dd434f837d83d59e6f2d1c34baab6e3"
+      }
+    },
+    {
+      "kind": "navigation-only",
       "id": "hm-component-sensitivity-2026-10-24",
       "path": "research/hm-component-sensitivity-2026-10-24",
       "source_path": "research/hm-component-sensitivity-2026-10-24",
@@ -14,6 +29,11 @@
       "artifact_manifest": {
         "bytes": 1419,
         "sha256": "3a48e93c7bee4584b405c31b90da61ab847c72860eae509cc3127560ca0ee26f"
+      },
+      "published_at": "2026-10-24T00:48:48Z",
+      "published_at_source": {
+        "kind": "first_successful_pages_deploy_job_completed_at",
+        "url": "https://github.com/Hiroshiba/check-nonml-saikyo-vocoder/actions/runs/40046673561/job/120730238664"
       }
     },
     {
