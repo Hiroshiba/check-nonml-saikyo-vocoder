@@ -1,0 +1,259 @@
+{
+  "deduplicated_analyses": 1680,
+  "counts": {
+    "finite_retained_pairs": 1035818,
+    "numeric_mismatches": 26064,
+    "raw_zero_blank_frames": 0,
+    "raw_nonfinite_frames": 0,
+    "interpolated_nonfinite_frames": 0
+  },
+  "largest_absolute": {
+    "key": [
+      "librispeech_4992-23283-0016",
+      "HMCZT",
+      "perturbed",
+      "0.001",
+      1
+    ],
+    "absolute_max": 6.437301635742188e-05,
+    "relative_absolute_max": 7.516177528215939e-05,
+    "examples": [
+      {
+        "frame": 587,
+        "raw": 0.8564594984054565,
+        "interpolated": 0.856523871421814,
+        "signed_difference_float64": 6.437301635742188e-05,
+        "absolute_difference_float64": 6.437301635742188e-05
+      },
+      {
+        "frame": 524,
+        "raw": 2.0304300785064697,
+        "interpolated": 2.0303947925567627,
+        "signed_difference_float64": -3.528594970703125e-05,
+        "absolute_difference_float64": 3.528594970703125e-05
+      },
+      {
+        "frame": 529,
+        "raw": 1.4057902097702026,
+        "interpolated": 1.4058175086975098,
+        "signed_difference_float64": 2.7298927307128906e-05,
+        "absolute_difference_float64": 2.7298927307128906e-05
+      },
+      {
+        "frame": 586,
+        "raw": 1.9118918180465698,
+        "interpolated": 1.911867380142212,
+        "signed_difference_float64": -2.4437904357910156e-05,
+        "absolute_difference_float64": 2.4437904357910156e-05
+      },
+      {
+        "frame": 588,
+        "raw": 1.247002124786377,
+        "interpolated": 1.2469782829284668,
+        "signed_difference_float64": -2.384185791015625e-05,
+        "absolute_difference_float64": 2.384185791015625e-05
+      }
+    ]
+  },
+  "largest_relative": {
+    "key": [
+      "librispeech_4992-23283-0016",
+      "HMCZT",
+      "perturbed",
+      "0.01",
+      -1
+    ],
+    "absolute_max": 5.745887756347656e-05,
+    "relative_absolute_max": 7.563892331915836e-05,
+    "examples": [
+      {
+        "frame": 587,
+        "raw": 0.7596469521522522,
+        "interpolated": 0.7597044110298157,
+        "signed_difference_float64": 5.745887756347656e-05,
+        "absolute_difference_float64": 5.745887756347656e-05
+      },
+      {
+        "frame": 524,
+        "raw": 1.8723961114883423,
+        "interpolated": 1.8723695278167725,
+        "signed_difference_float64": -2.658367156982422e-05,
+        "absolute_difference_float64": 2.658367156982422e-05
+      },
+      {
+        "frame": 527,
+        "raw": 1.6486307382583618,
+        "interpolated": 1.6486526727676392,
+        "signed_difference_float64": 2.193450927734375e-05,
+        "absolute_difference_float64": 2.193450927734375e-05
+      },
+      {
+        "frame": 530,
+        "raw": 1.0351349115371704,
+        "interpolated": 1.035156488418579,
+        "signed_difference_float64": 2.1576881408691406e-05,
+        "absolute_difference_float64": 2.1576881408691406e-05
+      },
+      {
+        "frame": 584,
+        "raw": 1.6664375066757202,
+        "interpolated": 1.6664193868637085,
+        "signed_difference_float64": -1.811981201171875e-05,
+        "absolute_difference_float64": 1.811981201171875e-05
+      }
+    ]
+  },
+  "stage_change_fractions": {
+    "0.01|HMPP|argmin_index": {
+      "mean_of_speaker_change_fractions": 0.3161631188510276,
+      "speakers": 40,
+      "pairs": 240
+    },
+    "0.01|HMPP|candidate_rd": {
+      "mean_of_speaker_change_fractions": 0.3161631188510276,
+      "speakers": 40,
+      "pairs": 240
+    },
+    "0.01|HMPP|refined_rd": {
+      "mean_of_speaker_change_fractions": 0.9941549821239563,
+      "speakers": 40,
+      "pairs": 240
+    },
+    "0.01|HMPP|interpolated_rd": {
+      "mean_of_speaker_change_fractions": 0.994284941124569,
+      "speakers": 40,
+      "pairs": 240
+    },
+    "0.01|HMPP|smoothed_rd": {
+      "mean_of_speaker_change_fractions": 0.9973728685855343,
+      "speakers": 40,
+      "pairs": 240
+    },
+    "0.01|HMCZT|argmin_index": {
+      "mean_of_speaker_change_fractions": 0.314799811665503,
+      "speakers": 40,
+      "pairs": 240
+    },
+    "0.01|HMCZT|candidate_rd": {
+      "mean_of_speaker_change_fractions": 0.314799811665503,
+      "speakers": 40,
+      "pairs": 240
+    },
+    "0.01|HMCZT|refined_rd": {
+      "mean_of_speaker_change_fractions": 0.9950446383563673,
+      "speakers": 40,
+      "pairs": 240
+    },
+    "0.01|HMCZT|interpolated_rd": {
+      "mean_of_speaker_change_fractions": 0.9951200903096986,
+      "speakers": 40,
+      "pairs": 240
+    },
+    "0.01|HMCZT|smoothed_rd": {
+      "mean_of_speaker_change_fractions": 0.9981246153660175,
+      "speakers": 40,
+      "pairs": 240
+    },
+    "0.001|HMPP|argmin_index": {
+      "mean_of_speaker_change_fractions": 0.04806572698341129,
+      "speakers": 40,
+      "pairs": 240
+    },
+    "0.001|HMPP|candidate_rd": {
+      "mean_of_speaker_change_fractions": 0.04806572698341129,
+      "speakers": 40,
+      "pairs": 240
+    },
+    "0.001|HMPP|refined_rd": {
+      "mean_of_speaker_change_fractions": 0.9930473119842996,
+      "speakers": 40,
+      "pairs": 240
+    },
+    "0.001|HMPP|interpolated_rd": {
+      "mean_of_speaker_change_fractions": 0.993178997152202,
+      "speakers": 40,
+      "pairs": 240
+    },
+    "0.001|HMPP|smoothed_rd": {
+      "mean_of_speaker_change_fractions": 0.9969971328612909,
+      "speakers": 40,
+      "pairs": 240
+    },
+    "0.001|HMCZT|argmin_index": {
+      "mean_of_speaker_change_fractions": 0.048120019299465744,
+      "speakers": 40,
+      "pairs": 240
+    },
+    "0.001|HMCZT|candidate_rd": {
+      "mean_of_speaker_change_fractions": 0.048120019299465744,
+      "speakers": 40,
+      "pairs": 240
+    },
+    "0.001|HMCZT|refined_rd": {
+      "mean_of_speaker_change_fractions": 0.9934359698218872,
+      "speakers": 40,
+      "pairs": 240
+    },
+    "0.001|HMCZT|interpolated_rd": {
+      "mean_of_speaker_change_fractions": 0.9934746139587586,
+      "speakers": 40,
+      "pairs": 240
+    },
+    "0.001|HMCZT|smoothed_rd": {
+      "mean_of_speaker_change_fractions": 0.9975995729855434,
+      "speakers": 40,
+      "pairs": 240
+    },
+    "0.0001|HMPP|argmin_index": {
+      "mean_of_speaker_change_fractions": 0.004665770692050223,
+      "speakers": 40,
+      "pairs": 240
+    },
+    "0.0001|HMPP|candidate_rd": {
+      "mean_of_speaker_change_fractions": 0.004665770692050223,
+      "speakers": 40,
+      "pairs": 240
+    },
+    "0.0001|HMPP|refined_rd": {
+      "mean_of_speaker_change_fractions": 0.9884777240001239,
+      "speakers": 40,
+      "pairs": 240
+    },
+    "0.0001|HMPP|interpolated_rd": {
+      "mean_of_speaker_change_fractions": 0.9885552604131492,
+      "speakers": 40,
+      "pairs": 240
+    },
+    "0.0001|HMPP|smoothed_rd": {
+      "mean_of_speaker_change_fractions": 0.9954303152296466,
+      "speakers": 40,
+      "pairs": 240
+    },
+    "0.0001|HMCZT|argmin_index": {
+      "mean_of_speaker_change_fractions": 0.003800056243354962,
+      "speakers": 40,
+      "pairs": 240
+    },
+    "0.0001|HMCZT|candidate_rd": {
+      "mean_of_speaker_change_fractions": 0.003800056243354962,
+      "speakers": 40,
+      "pairs": 240
+    },
+    "0.0001|HMCZT|refined_rd": {
+      "mean_of_speaker_change_fractions": 0.9885249562849756,
+      "speakers": 40,
+      "pairs": 240
+    },
+    "0.0001|HMCZT|interpolated_rd": {
+      "mean_of_speaker_change_fractions": 0.9885334496808195,
+      "speakers": 40,
+      "pairs": 240
+    },
+    "0.0001|HMCZT|smoothed_rd": {
+      "mean_of_speaker_change_fractions": 0.9961171858513544,
+      "speakers": 40,
+      "pairs": 240
+    }
+  },
+  "limits": "Each baseline counted once per case+method. Perturbations counted once per case+method+epsilon+sign. Recorded stage summaries only; no raw NPZ audit."
+}
