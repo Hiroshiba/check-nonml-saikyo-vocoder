@@ -1,0 +1,3418 @@
+{
+  "study": "E",
+  "case_count": 72,
+  "group_count": 18,
+  "status_counts": {
+    "success": 72,
+    "failed": 0,
+    "timeout": 0,
+    "not_run": 0
+  },
+  "cases": [
+    {
+      "key": "fc100_r-0.1_zero_c-20",
+      "waveform_key": "fc100_r-0.1_zero",
+      "fc": 100,
+      "r": -0.1,
+      "phase": "zero",
+      "cent": -20,
+      "q_ideal_hz": 98.85140203528961,
+      "q_native_float32_hz": 98.85140228271484,
+      "q_native_float32_bits": 1120252907,
+      "ifdetector_nh_source_derived": 971,
+      "ifdetector_nh_derivation": "fres=float32(q/float32(fs)); nh=int(float32(4/fres))",
+      "window_start_sample_source_derived": 475,
+      "window_end_sample_source_derived": 1445,
+      "status": "success",
+      "before_f0_native": 98.85140228271484,
+      "after_f0_native": 99.96652221679688,
+      "before": {
+        "signed_cent": -19.99999566671826,
+        "abs_cent": 19.99999566671826,
+        "null_reason": null
+      },
+      "after": {
+        "signed_cent": -0.5796758184070913,
+        "abs_cent": 0.5796758184070913,
+        "null_reason": null
+      },
+      "abs_after_minus_abs_before_cent": -19.42031984831117,
+      "delta_null_reason": null,
+      "unchanged_bits": false,
+      "accepted_harmonic_count": null,
+      "accepted_harmonic_count_reason": "not exposed by public API"
+    },
+    {
+      "key": "fc100_r-0.1_zero_c+0",
+      "waveform_key": "fc100_r-0.1_zero",
+      "fc": 100,
+      "r": -0.1,
+      "phase": "zero",
+      "cent": 0,
+      "q_ideal_hz": 100.0,
+      "q_native_float32_hz": 100.0,
+      "q_native_float32_bits": 1120403456,
+      "ifdetector_nh_source_derived": 959,
+      "ifdetector_nh_derivation": "fres=float32(q/float32(fs)); nh=int(float32(4/fres))",
+      "window_start_sample_source_derived": 481,
+      "window_end_sample_source_derived": 1439,
+      "status": "success",
+      "before_f0_native": 100.0,
+      "after_f0_native": 99.9790267944336,
+      "before": {
+        "signed_cent": 0.0,
+        "abs_cent": 0.0,
+        "null_reason": null
+      },
+      "after": {
+        "signed_cent": -0.36313335763049776,
+        "abs_cent": 0.36313335763049776,
+        "null_reason": null
+      },
+      "abs_after_minus_abs_before_cent": 0.36313335763049776,
+      "delta_null_reason": null,
+      "unchanged_bits": false,
+      "accepted_harmonic_count": null,
+      "accepted_harmonic_count_reason": "not exposed by public API"
+    },
+    {
+      "key": "fc100_r-0.1_zero_c+20",
+      "waveform_key": "fc100_r-0.1_zero",
+      "fc": 100,
+      "r": -0.1,
+      "phase": "zero",
+      "cent": 20,
+      "q_ideal_hz": 101.16194403019225,
+      "q_native_float32_hz": 101.16194152832031,
+      "q_native_float32_bits": 1120555754,
+      "ifdetector_nh_source_derived": 948,
+      "ifdetector_nh_derivation": "fres=float32(q/float32(fs)); nh=int(float32(4/fres))",
+      "window_start_sample_source_derived": 486,
+      "window_end_sample_source_derived": 1433,
+      "status": "success",
+      "before_f0_native": 101.16194152832031,
+      "after_f0_native": 100.002197265625,
+      "before": {
+        "signed_cent": 19.999957184236,
+        "abs_cent": 19.999957184236,
+        "null_reason": null
+      },
+      "after": {
+        "signed_cent": 0.038039392736781114,
+        "abs_cent": 0.038039392736781114,
+        "null_reason": null
+      },
+      "abs_after_minus_abs_before_cent": -19.961917791499218,
+      "delta_null_reason": null,
+      "unchanged_bits": false,
+      "accepted_harmonic_count": null,
+      "accepted_harmonic_count_reason": "not exposed by public API"
+    },
+    {
+      "key": "fc100_r-0.1_pi_over_2_c-20",
+      "waveform_key": "fc100_r-0.1_pi_over_2",
+      "fc": 100,
+      "r": -0.1,
+      "phase": "pi_over_2",
+      "cent": -20,
+      "q_ideal_hz": 98.85140203528961,
+      "q_native_float32_hz": 98.85140228271484,
+      "q_native_float32_bits": 1120252907,
+      "ifdetector_nh_source_derived": 971,
+      "ifdetector_nh_derivation": "fres=float32(q/float32(fs)); nh=int(float32(4/fres))",
+      "window_start_sample_source_derived": 475,
+      "window_end_sample_source_derived": 1445,
+      "status": "success",
+      "before_f0_native": 98.85140228271484,
+      "after_f0_native": 99.96685791015625,
+      "before": {
+        "signed_cent": -19.99999566671826,
+        "abs_cent": 19.99999566671826,
+        "null_reason": null
+      },
+      "after": {
+        "signed_cent": -0.5738622441712113,
+        "abs_cent": 0.5738622441712113,
+        "null_reason": null
+      },
+      "abs_after_minus_abs_before_cent": -19.426133422547046,
+      "delta_null_reason": null,
+      "unchanged_bits": false,
+      "accepted_harmonic_count": null,
+      "accepted_harmonic_count_reason": "not exposed by public API"
+    },
+    {
+      "key": "fc100_r-0.1_pi_over_2_c+0",
+      "waveform_key": "fc100_r-0.1_pi_over_2",
+      "fc": 100,
+      "r": -0.1,
+      "phase": "pi_over_2",
+      "cent": 0,
+      "q_ideal_hz": 100.0,
+      "q_native_float32_hz": 100.0,
+      "q_native_float32_bits": 1120403456,
+      "ifdetector_nh_source_derived": 959,
+      "ifdetector_nh_derivation": "fres=float32(q/float32(fs)); nh=int(float32(4/fres))",
+      "window_start_sample_source_derived": 481,
+      "window_end_sample_source_derived": 1439,
+      "status": "success",
+      "before_f0_native": 100.0,
+      "after_f0_native": 99.97889709472656,
+      "before": {
+        "signed_cent": 0.0,
+        "abs_cent": 0.0,
+        "null_reason": null
+      },
+      "after": {
+        "signed_cent": -0.3653792356091937,
+        "abs_cent": 0.3653792356091937,
+        "null_reason": null
+      },
+      "abs_after_minus_abs_before_cent": 0.3653792356091937,
+      "delta_null_reason": null,
+      "unchanged_bits": false,
+      "accepted_harmonic_count": null,
+      "accepted_harmonic_count_reason": "not exposed by public API"
+    },
+    {
+      "key": "fc100_r-0.1_pi_over_2_c+20",
+      "waveform_key": "fc100_r-0.1_pi_over_2",
+      "fc": 100,
+      "r": -0.1,
+      "phase": "pi_over_2",
+      "cent": 20,
+      "q_ideal_hz": 101.16194403019225,
+      "q_native_float32_hz": 101.16194152832031,
+      "q_native_float32_bits": 1120555754,
+      "ifdetector_nh_source_derived": 948,
+      "ifdetector_nh_derivation": "fres=float32(q/float32(fs)); nh=int(float32(4/fres))",
+      "window_start_sample_source_derived": 486,
+      "window_end_sample_source_derived": 1433,
+      "status": "success",
+      "before_f0_native": 101.16194152832031,
+      "after_f0_native": 100.00148010253906,
+      "before": {
+        "signed_cent": 19.999957184236,
+        "abs_cent": 19.999957184236,
+        "null_reason": null
+      },
+      "after": {
+        "signed_cent": 0.025623849488226675,
+        "abs_cent": 0.025623849488226675,
+        "null_reason": null
+      },
+      "abs_after_minus_abs_before_cent": -19.974333334747772,
+      "delta_null_reason": null,
+      "unchanged_bits": false,
+      "accepted_harmonic_count": null,
+      "accepted_harmonic_count_reason": "not exposed by public API"
+    },
+    {
+      "key": "fc100_r-0.1_quadratic_positive_c-20",
+      "waveform_key": "fc100_r-0.1_quadratic_positive",
+      "fc": 100,
+      "r": -0.1,
+      "phase": "quadratic_positive",
+      "cent": -20,
+      "q_ideal_hz": 98.85140203528961,
+      "q_native_float32_hz": 98.85140228271484,
+      "q_native_float32_bits": 1120252907,
+      "ifdetector_nh_source_derived": 971,
+      "ifdetector_nh_derivation": "fres=float32(q/float32(fs)); nh=int(float32(4/fres))",
+      "window_start_sample_source_derived": 475,
+      "window_end_sample_source_derived": 1445,
+      "status": "success",
+      "before_f0_native": 98.85140228271484,
+      "after_f0_native": 99.96070861816406,
+      "before": {
+        "signed_cent": -19.99999566671826,
+        "abs_cent": 19.99999566671826,
+        "null_reason": null
+      },
+      "after": {
+        "signed_cent": -0.6803594507620249,
+        "abs_cent": 0.6803594507620249,
+        "null_reason": null
+      },
+      "abs_after_minus_abs_before_cent": -19.319636215956233,
+      "delta_null_reason": null,
+      "unchanged_bits": false,
+      "accepted_harmonic_count": null,
+      "accepted_harmonic_count_reason": "not exposed by public API"
+    },
+    {
+      "key": "fc100_r-0.1_quadratic_positive_c+0",
+      "waveform_key": "fc100_r-0.1_quadratic_positive",
+      "fc": 100,
+      "r": -0.1,
+      "phase": "quadratic_positive",
+      "cent": 0,
+      "q_ideal_hz": 100.0,
+      "q_native_float32_hz": 100.0,
+      "q_native_float32_bits": 1120403456,
+      "ifdetector_nh_source_derived": 959,
+      "ifdetector_nh_derivation": "fres=float32(q/float32(fs)); nh=int(float32(4/fres))",
+      "window_start_sample_source_derived": 481,
+      "window_end_sample_source_derived": 1439,
+      "status": "success",
+      "before_f0_native": 100.0,
+      "after_f0_native": 99.96949768066406,
+      "before": {
+        "signed_cent": 0.0,
+        "abs_cent": 0.0,
+        "null_reason": null
+      },
+      "after": {
+        "signed_cent": -0.5281470907503487,
+        "abs_cent": 0.5281470907503487,
+        "null_reason": null
+      },
+      "abs_after_minus_abs_before_cent": 0.5281470907503487,
+      "delta_null_reason": null,
+      "unchanged_bits": false,
+      "accepted_harmonic_count": null,
+      "accepted_harmonic_count_reason": "not exposed by public API"
+    },
+    {
+      "key": "fc100_r-0.1_quadratic_positive_c+20",
+      "waveform_key": "fc100_r-0.1_quadratic_positive",
+      "fc": 100,
+      "r": -0.1,
+      "phase": "quadratic_positive",
+      "cent": 20,
+      "q_ideal_hz": 101.16194403019225,
+      "q_native_float32_hz": 101.16194152832031,
+      "q_native_float32_bits": 1120555754,
+      "ifdetector_nh_source_derived": 948,
+      "ifdetector_nh_derivation": "fres=float32(q/float32(fs)); nh=int(float32(4/fres))",
+      "window_start_sample_source_derived": 486,
+      "window_end_sample_source_derived": 1433,
+      "status": "success",
+      "before_f0_native": 101.16194152832031,
+      "after_f0_native": 99.98601531982422,
+      "before": {
+        "signed_cent": 19.999957184236,
+        "abs_cent": 19.999957184236,
+        "null_reason": null
+      },
+      "after": {
+        "signed_cent": -0.2421244754176265,
+        "abs_cent": 0.2421244754176265,
+        "null_reason": null
+      },
+      "abs_after_minus_abs_before_cent": -19.757832708818373,
+      "delta_null_reason": null,
+      "unchanged_bits": false,
+      "accepted_harmonic_count": null,
+      "accepted_harmonic_count_reason": "not exposed by public API"
+    },
+    {
+      "key": "fc100_r-0.1_quadratic_negative_c-20",
+      "waveform_key": "fc100_r-0.1_quadratic_negative",
+      "fc": 100,
+      "r": -0.1,
+      "phase": "quadratic_negative",
+      "cent": -20,
+      "q_ideal_hz": 98.85140203528961,
+      "q_native_float32_hz": 98.85140228271484,
+      "q_native_float32_bits": 1120252907,
+      "ifdetector_nh_source_derived": 971,
+      "ifdetector_nh_derivation": "fres=float32(q/float32(fs)); nh=int(float32(4/fres))",
+      "window_start_sample_source_derived": 475,
+      "window_end_sample_source_derived": 1445,
+      "status": "success",
+      "before_f0_native": 98.85140228271484,
+      "after_f0_native": 99.97322845458984,
+      "before": {
+        "signed_cent": -19.99999566671826,
+        "abs_cent": 19.99999566671826,
+        "null_reason": null
+      },
+      "after": {
+        "signed_cent": -0.46354016080319377,
+        "abs_cent": 0.46354016080319377,
+        "null_reason": null
+      },
+      "abs_after_minus_abs_before_cent": -19.536455505915065,
+      "delta_null_reason": null,
+      "unchanged_bits": false,
+      "accepted_harmonic_count": null,
+      "accepted_harmonic_count_reason": "not exposed by public API"
+    },
+    {
+      "key": "fc100_r-0.1_quadratic_negative_c+0",
+      "waveform_key": "fc100_r-0.1_quadratic_negative",
+      "fc": 100,
+      "r": -0.1,
+      "phase": "quadratic_negative",
+      "cent": 0,
+      "q_ideal_hz": 100.0,
+      "q_native_float32_hz": 100.0,
+      "q_native_float32_bits": 1120403456,
+      "ifdetector_nh_source_derived": 959,
+      "ifdetector_nh_derivation": "fres=float32(q/float32(fs)); nh=int(float32(4/fres))",
+      "window_start_sample_source_derived": 481,
+      "window_end_sample_source_derived": 1439,
+      "status": "success",
+      "before_f0_native": 100.0,
+      "after_f0_native": 99.98943328857422,
+      "before": {
+        "signed_cent": 0.0,
+        "abs_cent": 0.0,
+        "null_reason": null
+      },
+      "after": {
+        "signed_cent": -0.18294417183141456,
+        "abs_cent": 0.18294417183141456,
+        "null_reason": null
+      },
+      "abs_after_minus_abs_before_cent": 0.18294417183141456,
+      "delta_null_reason": null,
+      "unchanged_bits": false,
+      "accepted_harmonic_count": null,
+      "accepted_harmonic_count_reason": "not exposed by public API"
+    },
+    {
+      "key": "fc100_r-0.1_quadratic_negative_c+20",
+      "waveform_key": "fc100_r-0.1_quadratic_negative",
+      "fc": 100,
+      "r": -0.1,
+      "phase": "quadratic_negative",
+      "cent": 20,
+      "q_ideal_hz": 101.16194403019225,
+      "q_native_float32_hz": 101.16194152832031,
+      "q_native_float32_bits": 1120555754,
+      "ifdetector_nh_source_derived": 948,
+      "ifdetector_nh_derivation": "fres=float32(q/float32(fs)); nh=int(float32(4/fres))",
+      "window_start_sample_source_derived": 486,
+      "window_end_sample_source_derived": 1433,
+      "status": "success",
+      "before_f0_native": 101.16194152832031,
+      "after_f0_native": 100.01869201660156,
+      "before": {
+        "signed_cent": 19.999957184236,
+        "abs_cent": 19.999957184236,
+        "null_reason": null
+      },
+      "after": {
+        "signed_cent": 0.32357231570999917,
+        "abs_cent": 0.32357231570999917,
+        "null_reason": null
+      },
+      "abs_after_minus_abs_before_cent": -19.676384868526,
+      "delta_null_reason": null,
+      "unchanged_bits": false,
+      "accepted_harmonic_count": null,
+      "accepted_harmonic_count_reason": "not exposed by public API"
+    },
+    {
+      "key": "fc100_r+0.0_zero_c-20",
+      "waveform_key": "fc100_r+0.0_zero",
+      "fc": 100,
+      "r": 0,
+      "phase": "zero",
+      "cent": -20,
+      "q_ideal_hz": 98.85140203528961,
+      "q_native_float32_hz": 98.85140228271484,
+      "q_native_float32_bits": 1120252907,
+      "ifdetector_nh_source_derived": 971,
+      "ifdetector_nh_derivation": "fres=float32(q/float32(fs)); nh=int(float32(4/fres))",
+      "window_start_sample_source_derived": 475,
+      "window_end_sample_source_derived": 1445,
+      "status": "success",
+      "before_f0_native": 98.85140228271484,
+      "after_f0_native": 99.9933853149414,
+      "before": {
+        "signed_cent": -19.99999566671826,
+        "abs_cent": 19.99999566671826,
+        "null_reason": null
+      },
+      "after": {
+        "signed_cent": -0.1145194675656955,
+        "abs_cent": 0.1145194675656955,
+        "null_reason": null
+      },
+      "abs_after_minus_abs_before_cent": -19.885476199152563,
+      "delta_null_reason": null,
+      "unchanged_bits": false,
+      "accepted_harmonic_count": null,
+      "accepted_harmonic_count_reason": "not exposed by public API"
+    },
+    {
+      "key": "fc100_r+0.0_zero_c+0",
+      "waveform_key": "fc100_r+0.0_zero",
+      "fc": 100,
+      "r": 0,
+      "phase": "zero",
+      "cent": 0,
+      "q_ideal_hz": 100.0,
+      "q_native_float32_hz": 100.0,
+      "q_native_float32_bits": 1120403456,
+      "ifdetector_nh_source_derived": 959,
+      "ifdetector_nh_derivation": "fres=float32(q/float32(fs)); nh=int(float32(4/fres))",
+      "window_start_sample_source_derived": 481,
+      "window_end_sample_source_derived": 1439,
+      "status": "success",
+      "before_f0_native": 100.0,
+      "after_f0_native": 100.00001525878906,
+      "before": {
+        "signed_cent": 0.0,
+        "abs_cent": 0.0,
+        "null_reason": null
+      },
+      "after": {
+        "signed_cent": 0.0002641653314326712,
+        "abs_cent": 0.0002641653314326712,
+        "null_reason": null
+      },
+      "abs_after_minus_abs_before_cent": 0.0002641653314326712,
+      "delta_null_reason": null,
+      "unchanged_bits": false,
+      "accepted_harmonic_count": null,
+      "accepted_harmonic_count_reason": "not exposed by public API"
+    },
+    {
+      "key": "fc100_r+0.0_zero_c+20",
+      "waveform_key": "fc100_r+0.0_zero",
+      "fc": 100,
+      "r": 0,
+      "phase": "zero",
+      "cent": 20,
+      "q_ideal_hz": 101.16194403019225,
+      "q_native_float32_hz": 101.16194152832031,
+      "q_native_float32_bits": 1120555754,
+      "ifdetector_nh_source_derived": 948,
+      "ifdetector_nh_derivation": "fres=float32(q/float32(fs)); nh=int(float32(4/fres))",
+      "window_start_sample_source_derived": 486,
+      "window_end_sample_source_derived": 1433,
+      "status": "success",
+      "before_f0_native": 101.16194152832031,
+      "after_f0_native": 100.0155029296875,
+      "before": {
+        "signed_cent": 19.999957184236,
+        "abs_cent": 19.999957184236,
+        "null_reason": null
+      },
+      "after": {
+        "signed_cent": 0.26837119519158764,
+        "abs_cent": 0.26837119519158764,
+        "null_reason": null
+      },
+      "abs_after_minus_abs_before_cent": -19.73158598904441,
+      "delta_null_reason": null,
+      "unchanged_bits": false,
+      "accepted_harmonic_count": null,
+      "accepted_harmonic_count_reason": "not exposed by public API"
+    },
+    {
+      "key": "fc100_r+0.0_pi_over_2_c-20",
+      "waveform_key": "fc100_r+0.0_pi_over_2",
+      "fc": 100,
+      "r": 0,
+      "phase": "pi_over_2",
+      "cent": -20,
+      "q_ideal_hz": 98.85140203528961,
+      "q_native_float32_hz": 98.85140228271484,
+      "q_native_float32_bits": 1120252907,
+      "ifdetector_nh_source_derived": 971,
+      "ifdetector_nh_derivation": "fres=float32(q/float32(fs)); nh=int(float32(4/fres))",
+      "window_start_sample_source_derived": 475,
+      "window_end_sample_source_derived": 1445,
+      "status": "success",
+      "before_f0_native": 98.85140228271484,
+      "after_f0_native": 99.99397277832031,
+      "before": {
+        "signed_cent": -19.99999566671826,
+        "abs_cent": 19.99999566671826,
+        "null_reason": null
+      },
+      "after": {
+        "signed_cent": -0.10434845861945671,
+        "abs_cent": 0.10434845861945671,
+        "null_reason": null
+      },
+      "abs_after_minus_abs_before_cent": -19.895647208098804,
+      "delta_null_reason": null,
+      "unchanged_bits": false,
+      "accepted_harmonic_count": null,
+      "accepted_harmonic_count_reason": "not exposed by public API"
+    },
+    {
+      "key": "fc100_r+0.0_pi_over_2_c+0",
+      "waveform_key": "fc100_r+0.0_pi_over_2",
+      "fc": 100,
+      "r": 0,
+      "phase": "pi_over_2",
+      "cent": 0,
+      "q_ideal_hz": 100.0,
+      "q_native_float32_hz": 100.0,
+      "q_native_float32_bits": 1120403456,
+      "ifdetector_nh_source_derived": 959,
+      "ifdetector_nh_derivation": "fres=float32(q/float32(fs)); nh=int(float32(4/fres))",
+      "window_start_sample_source_derived": 481,
+      "window_end_sample_source_derived": 1439,
+      "status": "success",
+      "before_f0_native": 100.0,
+      "after_f0_native": 100.00000762939453,
+      "before": {
+        "signed_cent": 0.0,
+        "abs_cent": 0.0,
+        "null_reason": null
+      },
+      "after": {
+        "signed_cent": 0.00013208267094709465,
+        "abs_cent": 0.00013208267094709465,
+        "null_reason": null
+      },
+      "abs_after_minus_abs_before_cent": 0.00013208267094709465,
+      "delta_null_reason": null,
+      "unchanged_bits": false,
+      "accepted_harmonic_count": null,
+      "accepted_harmonic_count_reason": "not exposed by public API"
+    },
+    {
+      "key": "fc100_r+0.0_pi_over_2_c+20",
+      "waveform_key": "fc100_r+0.0_pi_over_2",
+      "fc": 100,
+      "r": 0,
+      "phase": "pi_over_2",
+      "cent": 20,
+      "q_ideal_hz": 101.16194403019225,
+      "q_native_float32_hz": 101.16194152832031,
+      "q_native_float32_bits": 1120555754,
+      "ifdetector_nh_source_derived": 948,
+      "ifdetector_nh_derivation": "fres=float32(q/float32(fs)); nh=int(float32(4/fres))",
+      "window_start_sample_source_derived": 486,
+      "window_end_sample_source_derived": 1433,
+      "status": "success",
+      "before_f0_native": 101.16194152832031,
+      "after_f0_native": 100.01473236083984,
+      "before": {
+        "signed_cent": 19.999957184236,
+        "abs_cent": 19.999957184236,
+        "null_reason": null
+      },
+      "after": {
+        "signed_cent": 0.25503286137126335,
+        "abs_cent": 0.25503286137126335,
+        "null_reason": null
+      },
+      "abs_after_minus_abs_before_cent": -19.744924322864737,
+      "delta_null_reason": null,
+      "unchanged_bits": false,
+      "accepted_harmonic_count": null,
+      "accepted_harmonic_count_reason": "not exposed by public API"
+    },
+    {
+      "key": "fc100_r+0.0_quadratic_positive_c-20",
+      "waveform_key": "fc100_r+0.0_quadratic_positive",
+      "fc": 100,
+      "r": 0,
+      "phase": "quadratic_positive",
+      "cent": -20,
+      "q_ideal_hz": 98.85140203528961,
+      "q_native_float32_hz": 98.85140228271484,
+      "q_native_float32_bits": 1120252907,
+      "ifdetector_nh_source_derived": 971,
+      "ifdetector_nh_derivation": "fres=float32(q/float32(fs)); nh=int(float32(4/fres))",
+      "window_start_sample_source_derived": 475,
+      "window_end_sample_source_derived": 1445,
+      "status": "success",
+      "before_f0_native": 98.85140228271484,
+      "after_f0_native": 99.9932861328125,
+      "before": {
+        "signed_cent": -19.99999566671826,
+        "abs_cent": 19.99999566671826,
+        "null_reason": null
+      },
+      "after": {
+        "signed_cent": -0.11623665679020292,
+        "abs_cent": 0.11623665679020292,
+        "null_reason": null
+      },
+      "abs_after_minus_abs_before_cent": -19.883759009928056,
+      "delta_null_reason": null,
+      "unchanged_bits": false,
+      "accepted_harmonic_count": null,
+      "accepted_harmonic_count_reason": "not exposed by public API"
+    },
+    {
+      "key": "fc100_r+0.0_quadratic_positive_c+0",
+      "waveform_key": "fc100_r+0.0_quadratic_positive",
+      "fc": 100,
+      "r": 0,
+      "phase": "quadratic_positive",
+      "cent": 0,
+      "q_ideal_hz": 100.0,
+      "q_native_float32_hz": 100.0,
+      "q_native_float32_bits": 1120403456,
+      "ifdetector_nh_source_derived": 959,
+      "ifdetector_nh_derivation": "fres=float32(q/float32(fs)); nh=int(float32(4/fres))",
+      "window_start_sample_source_derived": 481,
+      "window_end_sample_source_derived": 1439,
+      "status": "success",
+      "before_f0_native": 100.0,
+      "after_f0_native": 100.00000762939453,
+      "before": {
+        "signed_cent": 0.0,
+        "abs_cent": 0.0,
+        "null_reason": null
+      },
+      "after": {
+        "signed_cent": 0.00013208267094709465,
+        "abs_cent": 0.00013208267094709465,
+        "null_reason": null
+      },
+      "abs_after_minus_abs_before_cent": 0.00013208267094709465,
+      "delta_null_reason": null,
+      "unchanged_bits": false,
+      "accepted_harmonic_count": null,
+      "accepted_harmonic_count_reason": "not exposed by public API"
+    },
+    {
+      "key": "fc100_r+0.0_quadratic_positive_c+20",
+      "waveform_key": "fc100_r+0.0_quadratic_positive",
+      "fc": 100,
+      "r": 0,
+      "phase": "quadratic_positive",
+      "cent": 20,
+      "q_ideal_hz": 101.16194403019225,
+      "q_native_float32_hz": 101.16194152832031,
+      "q_native_float32_bits": 1120555754,
+      "ifdetector_nh_source_derived": 948,
+      "ifdetector_nh_derivation": "fres=float32(q/float32(fs)); nh=int(float32(4/fres))",
+      "window_start_sample_source_derived": 486,
+      "window_end_sample_source_derived": 1433,
+      "status": "success",
+      "before_f0_native": 101.16194152832031,
+      "after_f0_native": 100.01544952392578,
+      "before": {
+        "signed_cent": 19.999957184236,
+        "abs_cent": 19.999957184236,
+        "null_reason": null
+      },
+      "after": {
+        "signed_cent": 0.26744675952821684,
+        "abs_cent": 0.26744675952821684,
+        "null_reason": null
+      },
+      "abs_after_minus_abs_before_cent": -19.732510424707783,
+      "delta_null_reason": null,
+      "unchanged_bits": false,
+      "accepted_harmonic_count": null,
+      "accepted_harmonic_count_reason": "not exposed by public API"
+    },
+    {
+      "key": "fc100_r+0.0_quadratic_negative_c-20",
+      "waveform_key": "fc100_r+0.0_quadratic_negative",
+      "fc": 100,
+      "r": 0,
+      "phase": "quadratic_negative",
+      "cent": -20,
+      "q_ideal_hz": 98.85140203528961,
+      "q_native_float32_hz": 98.85140228271484,
+      "q_native_float32_bits": 1120252907,
+      "ifdetector_nh_source_derived": 971,
+      "ifdetector_nh_derivation": "fres=float32(q/float32(fs)); nh=int(float32(4/fres))",
+      "window_start_sample_source_derived": 475,
+      "window_end_sample_source_derived": 1445,
+      "status": "success",
+      "before_f0_native": 98.85140228271484,
+      "after_f0_native": 99.99333190917969,
+      "before": {
+        "signed_cent": -19.99999566671826,
+        "abs_cent": 19.99999566671826,
+        "null_reason": null
+      },
+      "after": {
+        "signed_cent": -0.11544410770576499,
+        "abs_cent": 0.11544410770576499,
+        "null_reason": null
+      },
+      "abs_after_minus_abs_before_cent": -19.884551559012493,
+      "delta_null_reason": null,
+      "unchanged_bits": false,
+      "accepted_harmonic_count": null,
+      "accepted_harmonic_count_reason": "not exposed by public API"
+    },
+    {
+      "key": "fc100_r+0.0_quadratic_negative_c+0",
+      "waveform_key": "fc100_r+0.0_quadratic_negative",
+      "fc": 100,
+      "r": 0,
+      "phase": "quadratic_negative",
+      "cent": 0,
+      "q_ideal_hz": 100.0,
+      "q_native_float32_hz": 100.0,
+      "q_native_float32_bits": 1120403456,
+      "ifdetector_nh_source_derived": 959,
+      "ifdetector_nh_derivation": "fres=float32(q/float32(fs)); nh=int(float32(4/fres))",
+      "window_start_sample_source_derived": 481,
+      "window_end_sample_source_derived": 1439,
+      "status": "success",
+      "before_f0_native": 100.0,
+      "after_f0_native": 100.00000762939453,
+      "before": {
+        "signed_cent": 0.0,
+        "abs_cent": 0.0,
+        "null_reason": null
+      },
+      "after": {
+        "signed_cent": 0.00013208267094709465,
+        "abs_cent": 0.00013208267094709465,
+        "null_reason": null
+      },
+      "abs_after_minus_abs_before_cent": 0.00013208267094709465,
+      "delta_null_reason": null,
+      "unchanged_bits": false,
+      "accepted_harmonic_count": null,
+      "accepted_harmonic_count_reason": "not exposed by public API"
+    },
+    {
+      "key": "fc100_r+0.0_quadratic_negative_c+20",
+      "waveform_key": "fc100_r+0.0_quadratic_negative",
+      "fc": 100,
+      "r": 0,
+      "phase": "quadratic_negative",
+      "cent": 20,
+      "q_ideal_hz": 101.16194403019225,
+      "q_native_float32_hz": 101.16194152832031,
+      "q_native_float32_bits": 1120555754,
+      "ifdetector_nh_source_derived": 948,
+      "ifdetector_nh_derivation": "fres=float32(q/float32(fs)); nh=int(float32(4/fres))",
+      "window_start_sample_source_derived": 486,
+      "window_end_sample_source_derived": 1433,
+      "status": "success",
+      "before_f0_native": 101.16194152832031,
+      "after_f0_native": 100.01544952392578,
+      "before": {
+        "signed_cent": 19.999957184236,
+        "abs_cent": 19.999957184236,
+        "null_reason": null
+      },
+      "after": {
+        "signed_cent": 0.26744675952821684,
+        "abs_cent": 0.26744675952821684,
+        "null_reason": null
+      },
+      "abs_after_minus_abs_before_cent": -19.732510424707783,
+      "delta_null_reason": null,
+      "unchanged_bits": false,
+      "accepted_harmonic_count": null,
+      "accepted_harmonic_count_reason": "not exposed by public API"
+    },
+    {
+      "key": "fc100_r+0.1_zero_c-20",
+      "waveform_key": "fc100_r+0.1_zero",
+      "fc": 100,
+      "r": 0.1,
+      "phase": "zero",
+      "cent": -20,
+      "q_ideal_hz": 98.85140203528961,
+      "q_native_float32_hz": 98.85140228271484,
+      "q_native_float32_bits": 1120252907,
+      "ifdetector_nh_source_derived": 971,
+      "ifdetector_nh_derivation": "fres=float32(q/float32(fs)); nh=int(float32(4/fres))",
+      "window_start_sample_source_derived": 475,
+      "window_end_sample_source_derived": 1445,
+      "status": "success",
+      "before_f0_native": 98.85140228271484,
+      "after_f0_native": 99.96654510498047,
+      "before": {
+        "signed_cent": -19.99999566671826,
+        "abs_cent": 19.99999566671826,
+        "null_reason": null
+      },
+      "after": {
+        "signed_cent": -0.5792794377254157,
+        "abs_cent": 0.5792794377254157,
+        "null_reason": null
+      },
+      "abs_after_minus_abs_before_cent": -19.420716228992845,
+      "delta_null_reason": null,
+      "unchanged_bits": false,
+      "accepted_harmonic_count": null,
+      "accepted_harmonic_count_reason": "not exposed by public API"
+    },
+    {
+      "key": "fc100_r+0.1_zero_c+0",
+      "waveform_key": "fc100_r+0.1_zero",
+      "fc": 100,
+      "r": 0.1,
+      "phase": "zero",
+      "cent": 0,
+      "q_ideal_hz": 100.0,
+      "q_native_float32_hz": 100.0,
+      "q_native_float32_bits": 1120403456,
+      "ifdetector_nh_source_derived": 959,
+      "ifdetector_nh_derivation": "fres=float32(q/float32(fs)); nh=int(float32(4/fres))",
+      "window_start_sample_source_derived": 481,
+      "window_end_sample_source_derived": 1439,
+      "status": "success",
+      "before_f0_native": 100.0,
+      "after_f0_native": 99.97904205322266,
+      "before": {
+        "signed_cent": 0.0,
+        "abs_cent": 0.0,
+        "null_reason": null
+      },
+      "after": {
+        "signed_cent": -0.3628691368833167,
+        "abs_cent": 0.3628691368833167,
+        "null_reason": null
+      },
+      "abs_after_minus_abs_before_cent": 0.3628691368833167,
+      "delta_null_reason": null,
+      "unchanged_bits": false,
+      "accepted_harmonic_count": null,
+      "accepted_harmonic_count_reason": "not exposed by public API"
+    },
+    {
+      "key": "fc100_r+0.1_zero_c+20",
+      "waveform_key": "fc100_r+0.1_zero",
+      "fc": 100,
+      "r": 0.1,
+      "phase": "zero",
+      "cent": 20,
+      "q_ideal_hz": 101.16194403019225,
+      "q_native_float32_hz": 101.16194152832031,
+      "q_native_float32_bits": 1120555754,
+      "ifdetector_nh_source_derived": 948,
+      "ifdetector_nh_derivation": "fres=float32(q/float32(fs)); nh=int(float32(4/fres))",
+      "window_start_sample_source_derived": 486,
+      "window_end_sample_source_derived": 1433,
+      "status": "success",
+      "before_f0_native": 101.16194152832031,
+      "after_f0_native": 100.00218200683594,
+      "before": {
+        "signed_cent": 19.999957184236,
+        "abs_cent": 19.999957184236,
+        "null_reason": null
+      },
+      "after": {
+        "signed_cent": 0.03777523316894343,
+        "abs_cent": 0.03777523316894343,
+        "null_reason": null
+      },
+      "abs_after_minus_abs_before_cent": -19.962181951067056,
+      "delta_null_reason": null,
+      "unchanged_bits": false,
+      "accepted_harmonic_count": null,
+      "accepted_harmonic_count_reason": "not exposed by public API"
+    },
+    {
+      "key": "fc100_r+0.1_pi_over_2_c-20",
+      "waveform_key": "fc100_r+0.1_pi_over_2",
+      "fc": 100,
+      "r": 0.1,
+      "phase": "pi_over_2",
+      "cent": -20,
+      "q_ideal_hz": 98.85140203528961,
+      "q_native_float32_hz": 98.85140228271484,
+      "q_native_float32_bits": 1120252907,
+      "ifdetector_nh_source_derived": 971,
+      "ifdetector_nh_derivation": "fres=float32(q/float32(fs)); nh=int(float32(4/fres))",
+      "window_start_sample_source_derived": 475,
+      "window_end_sample_source_derived": 1445,
+      "status": "success",
+      "before_f0_native": 98.85140228271484,
+      "after_f0_native": 99.96688079833984,
+      "before": {
+        "signed_cent": -19.99999566671826,
+        "abs_cent": 19.99999566671826,
+        "null_reason": null
+      },
+      "after": {
+        "signed_cent": -0.5734658648206004,
+        "abs_cent": 0.5734658648206004,
+        "null_reason": null
+      },
+      "abs_after_minus_abs_before_cent": -19.426529801897658,
+      "delta_null_reason": null,
+      "unchanged_bits": false,
+      "accepted_harmonic_count": null,
+      "accepted_harmonic_count_reason": "not exposed by public API"
+    },
+    {
+      "key": "fc100_r+0.1_pi_over_2_c+0",
+      "waveform_key": "fc100_r+0.1_pi_over_2",
+      "fc": 100,
+      "r": 0.1,
+      "phase": "pi_over_2",
+      "cent": 0,
+      "q_ideal_hz": 100.0,
+      "q_native_float32_hz": 100.0,
+      "q_native_float32_bits": 1120403456,
+      "ifdetector_nh_source_derived": 959,
+      "ifdetector_nh_derivation": "fres=float32(q/float32(fs)); nh=int(float32(4/fres))",
+      "window_start_sample_source_derived": 481,
+      "window_end_sample_source_derived": 1439,
+      "status": "success",
+      "before_f0_native": 100.0,
+      "after_f0_native": 99.97889709472656,
+      "before": {
+        "signed_cent": 0.0,
+        "abs_cent": 0.0,
+        "null_reason": null
+      },
+      "after": {
+        "signed_cent": -0.3653792356091937,
+        "abs_cent": 0.3653792356091937,
+        "null_reason": null
+      },
+      "abs_after_minus_abs_before_cent": 0.3653792356091937,
+      "delta_null_reason": null,
+      "unchanged_bits": false,
+      "accepted_harmonic_count": null,
+      "accepted_harmonic_count_reason": "not exposed by public API"
+    },
+    {
+      "key": "fc100_r+0.1_pi_over_2_c+20",
+      "waveform_key": "fc100_r+0.1_pi_over_2",
+      "fc": 100,
+      "r": 0.1,
+      "phase": "pi_over_2",
+      "cent": 20,
+      "q_ideal_hz": 101.16194403019225,
+      "q_native_float32_hz": 101.16194152832031,
+      "q_native_float32_bits": 1120555754,
+      "ifdetector_nh_source_derived": 948,
+      "ifdetector_nh_derivation": "fres=float32(q/float32(fs)); nh=int(float32(4/fres))",
+      "window_start_sample_source_derived": 486,
+      "window_end_sample_source_derived": 1433,
+      "status": "success",
+      "before_f0_native": 101.16194152832031,
+      "after_f0_native": 100.00147247314453,
+      "before": {
+        "signed_cent": 19.999957184236,
+        "abs_cent": 19.999957184236,
+        "null_reason": null
+      },
+      "after": {
+        "signed_cent": 0.02549176876213273,
+        "abs_cent": 0.02549176876213273,
+        "null_reason": null
+      },
+      "abs_after_minus_abs_before_cent": -19.974465415473865,
+      "delta_null_reason": null,
+      "unchanged_bits": false,
+      "accepted_harmonic_count": null,
+      "accepted_harmonic_count_reason": "not exposed by public API"
+    },
+    {
+      "key": "fc100_r+0.1_quadratic_positive_c-20",
+      "waveform_key": "fc100_r+0.1_quadratic_positive",
+      "fc": 100,
+      "r": 0.1,
+      "phase": "quadratic_positive",
+      "cent": -20,
+      "q_ideal_hz": 98.85140203528961,
+      "q_native_float32_hz": 98.85140228271484,
+      "q_native_float32_bits": 1120252907,
+      "ifdetector_nh_source_derived": 971,
+      "ifdetector_nh_derivation": "fres=float32(q/float32(fs)); nh=int(float32(4/fres))",
+      "window_start_sample_source_derived": 475,
+      "window_end_sample_source_derived": 1445,
+      "status": "success",
+      "before_f0_native": 98.85140228271484,
+      "after_f0_native": 99.97322845458984,
+      "before": {
+        "signed_cent": -19.99999566671826,
+        "abs_cent": 19.99999566671826,
+        "null_reason": null
+      },
+      "after": {
+        "signed_cent": -0.46354016080319377,
+        "abs_cent": 0.46354016080319377,
+        "null_reason": null
+      },
+      "abs_after_minus_abs_before_cent": -19.536455505915065,
+      "delta_null_reason": null,
+      "unchanged_bits": false,
+      "accepted_harmonic_count": null,
+      "accepted_harmonic_count_reason": "not exposed by public API"
+    },
+    {
+      "key": "fc100_r+0.1_quadratic_positive_c+0",
+      "waveform_key": "fc100_r+0.1_quadratic_positive",
+      "fc": 100,
+      "r": 0.1,
+      "phase": "quadratic_positive",
+      "cent": 0,
+      "q_ideal_hz": 100.0,
+      "q_native_float32_hz": 100.0,
+      "q_native_float32_bits": 1120403456,
+      "ifdetector_nh_source_derived": 959,
+      "ifdetector_nh_derivation": "fres=float32(q/float32(fs)); nh=int(float32(4/fres))",
+      "window_start_sample_source_derived": 481,
+      "window_end_sample_source_derived": 1439,
+      "status": "success",
+      "before_f0_native": 100.0,
+      "after_f0_native": 99.98944091796875,
+      "before": {
+        "signed_cent": 0.0,
+        "abs_cent": 0.0,
+        "null_reason": null
+      },
+      "after": {
+        "signed_cent": -0.1828120752021984,
+        "abs_cent": 0.1828120752021984,
+        "null_reason": null
+      },
+      "abs_after_minus_abs_before_cent": 0.1828120752021984,
+      "delta_null_reason": null,
+      "unchanged_bits": false,
+      "accepted_harmonic_count": null,
+      "accepted_harmonic_count_reason": "not exposed by public API"
+    },
+    {
+      "key": "fc100_r+0.1_quadratic_positive_c+20",
+      "waveform_key": "fc100_r+0.1_quadratic_positive",
+      "fc": 100,
+      "r": 0.1,
+      "phase": "quadratic_positive",
+      "cent": 20,
+      "q_ideal_hz": 101.16194403019225,
+      "q_native_float32_hz": 101.16194152832031,
+      "q_native_float32_bits": 1120555754,
+      "ifdetector_nh_source_derived": 948,
+      "ifdetector_nh_derivation": "fres=float32(q/float32(fs)); nh=int(float32(4/fres))",
+      "window_start_sample_source_derived": 486,
+      "window_end_sample_source_derived": 1433,
+      "status": "success",
+      "before_f0_native": 101.16194152832031,
+      "after_f0_native": 100.01871490478516,
+      "before": {
+        "signed_cent": 19.999957184236,
+        "abs_cent": 19.999957184236,
+        "null_reason": null
+      },
+      "after": {
+        "signed_cent": 0.32396848963933655,
+        "abs_cent": 0.32396848963933655,
+        "null_reason": null
+      },
+      "abs_after_minus_abs_before_cent": -19.67598869459666,
+      "delta_null_reason": null,
+      "unchanged_bits": false,
+      "accepted_harmonic_count": null,
+      "accepted_harmonic_count_reason": "not exposed by public API"
+    },
+    {
+      "key": "fc100_r+0.1_quadratic_negative_c-20",
+      "waveform_key": "fc100_r+0.1_quadratic_negative",
+      "fc": 100,
+      "r": 0.1,
+      "phase": "quadratic_negative",
+      "cent": -20,
+      "q_ideal_hz": 98.85140203528961,
+      "q_native_float32_hz": 98.85140228271484,
+      "q_native_float32_bits": 1120252907,
+      "ifdetector_nh_source_derived": 971,
+      "ifdetector_nh_derivation": "fres=float32(q/float32(fs)); nh=int(float32(4/fres))",
+      "window_start_sample_source_derived": 475,
+      "window_end_sample_source_derived": 1445,
+      "status": "success",
+      "before_f0_native": 98.85140228271484,
+      "after_f0_native": 99.96072387695312,
+      "before": {
+        "signed_cent": -19.99999566671826,
+        "abs_cent": 19.99999566671826,
+        "null_reason": null
+      },
+      "after": {
+        "signed_cent": -0.6800951815954006,
+        "abs_cent": 0.6800951815954006,
+        "null_reason": null
+      },
+      "abs_after_minus_abs_before_cent": -19.319900485122858,
+      "delta_null_reason": null,
+      "unchanged_bits": false,
+      "accepted_harmonic_count": null,
+      "accepted_harmonic_count_reason": "not exposed by public API"
+    },
+    {
+      "key": "fc100_r+0.1_quadratic_negative_c+0",
+      "waveform_key": "fc100_r+0.1_quadratic_negative",
+      "fc": 100,
+      "r": 0.1,
+      "phase": "quadratic_negative",
+      "cent": 0,
+      "q_ideal_hz": 100.0,
+      "q_native_float32_hz": 100.0,
+      "q_native_float32_bits": 1120403456,
+      "ifdetector_nh_source_derived": 959,
+      "ifdetector_nh_derivation": "fres=float32(q/float32(fs)); nh=int(float32(4/fres))",
+      "window_start_sample_source_derived": 481,
+      "window_end_sample_source_derived": 1439,
+      "status": "success",
+      "before_f0_native": 100.0,
+      "after_f0_native": 99.96952056884766,
+      "before": {
+        "signed_cent": 0.0,
+        "abs_cent": 0.0,
+        "null_reason": null
+      },
+      "after": {
+        "signed_cent": -0.5277507218664342,
+        "abs_cent": 0.5277507218664342,
+        "null_reason": null
+      },
+      "abs_after_minus_abs_before_cent": 0.5277507218664342,
+      "delta_null_reason": null,
+      "unchanged_bits": false,
+      "accepted_harmonic_count": null,
+      "accepted_harmonic_count_reason": "not exposed by public API"
+    },
+    {
+      "key": "fc100_r+0.1_quadratic_negative_c+20",
+      "waveform_key": "fc100_r+0.1_quadratic_negative",
+      "fc": 100,
+      "r": 0.1,
+      "phase": "quadratic_negative",
+      "cent": 20,
+      "q_ideal_hz": 101.16194403019225,
+      "q_native_float32_hz": 101.16194152832031,
+      "q_native_float32_bits": 1120555754,
+      "ifdetector_nh_source_derived": 948,
+      "ifdetector_nh_derivation": "fres=float32(q/float32(fs)); nh=int(float32(4/fres))",
+      "window_start_sample_source_derived": 486,
+      "window_end_sample_source_derived": 1433,
+      "status": "success",
+      "before_f0_native": 101.16194152832031,
+      "after_f0_native": 99.98603820800781,
+      "before": {
+        "signed_cent": 19.999957184236,
+        "abs_cent": 19.999957184236,
+        "null_reason": null
+      },
+      "after": {
+        "signed_cent": -0.24172817201364372,
+        "abs_cent": 0.24172817201364372,
+        "null_reason": null
+      },
+      "abs_after_minus_abs_before_cent": -19.758229012222355,
+      "delta_null_reason": null,
+      "unchanged_bits": false,
+      "accepted_harmonic_count": null,
+      "accepted_harmonic_count_reason": "not exposed by public API"
+    },
+    {
+      "key": "fc200_r-0.1_zero_c-20",
+      "waveform_key": "fc200_r-0.1_zero",
+      "fc": 200,
+      "r": -0.1,
+      "phase": "zero",
+      "cent": -20,
+      "q_ideal_hz": 197.70280407057922,
+      "q_native_float32_hz": 197.7028045654297,
+      "q_native_float32_bits": 1128641515,
+      "ifdetector_nh_source_derived": 485,
+      "ifdetector_nh_derivation": "fres=float32(q/float32(fs)); nh=int(float32(4/fres))",
+      "window_start_sample_source_derived": 718,
+      "window_end_sample_source_derived": 1202,
+      "status": "success",
+      "before_f0_native": 197.7028045654297,
+      "after_f0_native": 199.938720703125,
+      "before": {
+        "signed_cent": -19.99999566671826,
+        "abs_cent": 19.99999566671826,
+        "null_reason": null
+      },
+      "after": {
+        "signed_cent": -0.5305253059597649,
+        "abs_cent": 0.5305253059597649,
+        "null_reason": null
+      },
+      "abs_after_minus_abs_before_cent": -19.469470360758496,
+      "delta_null_reason": null,
+      "unchanged_bits": false,
+      "accepted_harmonic_count": null,
+      "accepted_harmonic_count_reason": "not exposed by public API"
+    },
+    {
+      "key": "fc200_r-0.1_zero_c+0",
+      "waveform_key": "fc200_r-0.1_zero",
+      "fc": 200,
+      "r": -0.1,
+      "phase": "zero",
+      "cent": 0,
+      "q_ideal_hz": 200.0,
+      "q_native_float32_hz": 200.0,
+      "q_native_float32_bits": 1128792064,
+      "ifdetector_nh_source_derived": 479,
+      "ifdetector_nh_derivation": "fres=float32(q/float32(fs)); nh=int(float32(4/fres))",
+      "window_start_sample_source_derived": 721,
+      "window_end_sample_source_derived": 1199,
+      "status": "success",
+      "before_f0_native": 200.0,
+      "after_f0_native": 199.96478271484375,
+      "before": {
+        "signed_cent": 0.0,
+        "abs_cent": 0.0,
+        "null_reason": null
+      },
+      "after": {
+        "signed_cent": -0.3048736587352531,
+        "abs_cent": 0.3048736587352531,
+        "null_reason": null
+      },
+      "abs_after_minus_abs_before_cent": 0.3048736587352531,
+      "delta_null_reason": null,
+      "unchanged_bits": false,
+      "accepted_harmonic_count": null,
+      "accepted_harmonic_count_reason": "not exposed by public API"
+    },
+    {
+      "key": "fc200_r-0.1_zero_c+20",
+      "waveform_key": "fc200_r-0.1_zero",
+      "fc": 200,
+      "r": -0.1,
+      "phase": "zero",
+      "cent": 20,
+      "q_ideal_hz": 202.3238880603845,
+      "q_native_float32_hz": 202.32388305664062,
+      "q_native_float32_bits": 1128944362,
+      "ifdetector_nh_source_derived": 474,
+      "ifdetector_nh_derivation": "fres=float32(q/float32(fs)); nh=int(float32(4/fres))",
+      "window_start_sample_source_derived": 723,
+      "window_end_sample_source_derived": 1196,
+      "status": "success",
+      "before_f0_native": 202.32388305664062,
+      "after_f0_native": 200.00843811035156,
+      "before": {
+        "signed_cent": 19.999957184236,
+        "abs_cent": 19.999957184236,
+        "null_reason": null
+      },
+      "after": {
+        "signed_cent": 0.07304017896013182,
+        "abs_cent": 0.07304017896013182,
+        "null_reason": null
+      },
+      "abs_after_minus_abs_before_cent": -19.926917005275868,
+      "delta_null_reason": null,
+      "unchanged_bits": false,
+      "accepted_harmonic_count": null,
+      "accepted_harmonic_count_reason": "not exposed by public API"
+    },
+    {
+      "key": "fc200_r-0.1_pi_over_2_c-20",
+      "waveform_key": "fc200_r-0.1_pi_over_2",
+      "fc": 200,
+      "r": -0.1,
+      "phase": "pi_over_2",
+      "cent": -20,
+      "q_ideal_hz": 197.70280407057922,
+      "q_native_float32_hz": 197.7028045654297,
+      "q_native_float32_bits": 1128641515,
+      "ifdetector_nh_source_derived": 485,
+      "ifdetector_nh_derivation": "fres=float32(q/float32(fs)); nh=int(float32(4/fres))",
+      "window_start_sample_source_derived": 718,
+      "window_end_sample_source_derived": 1202,
+      "status": "success",
+      "before_f0_native": 197.7028045654297,
+      "after_f0_native": 199.9392852783203,
+      "before": {
+        "signed_cent": -19.99999566671826,
+        "abs_cent": 19.99999566671826,
+        "null_reason": null
+      },
+      "after": {
+        "signed_cent": -0.5256367560180827,
+        "abs_cent": 0.5256367560180827,
+        "null_reason": null
+      },
+      "abs_after_minus_abs_before_cent": -19.474358910700175,
+      "delta_null_reason": null,
+      "unchanged_bits": false,
+      "accepted_harmonic_count": null,
+      "accepted_harmonic_count_reason": "not exposed by public API"
+    },
+    {
+      "key": "fc200_r-0.1_pi_over_2_c+0",
+      "waveform_key": "fc200_r-0.1_pi_over_2",
+      "fc": 200,
+      "r": -0.1,
+      "phase": "pi_over_2",
+      "cent": 0,
+      "q_ideal_hz": 200.0,
+      "q_native_float32_hz": 200.0,
+      "q_native_float32_bits": 1128792064,
+      "ifdetector_nh_source_derived": 479,
+      "ifdetector_nh_derivation": "fres=float32(q/float32(fs)); nh=int(float32(4/fres))",
+      "window_start_sample_source_derived": 721,
+      "window_end_sample_source_derived": 1199,
+      "status": "success",
+      "before_f0_native": 200.0,
+      "after_f0_native": 199.9645538330078,
+      "before": {
+        "signed_cent": 0.0,
+        "abs_cent": 0.0,
+        "null_reason": null
+      },
+      "after": {
+        "signed_cent": -0.30685524893812716,
+        "abs_cent": 0.30685524893812716,
+        "null_reason": null
+      },
+      "abs_after_minus_abs_before_cent": 0.30685524893812716,
+      "delta_null_reason": null,
+      "unchanged_bits": false,
+      "accepted_harmonic_count": null,
+      "accepted_harmonic_count_reason": "not exposed by public API"
+    },
+    {
+      "key": "fc200_r-0.1_pi_over_2_c+20",
+      "waveform_key": "fc200_r-0.1_pi_over_2",
+      "fc": 200,
+      "r": -0.1,
+      "phase": "pi_over_2",
+      "cent": 20,
+      "q_ideal_hz": 202.3238880603845,
+      "q_native_float32_hz": 202.32388305664062,
+      "q_native_float32_bits": 1128944362,
+      "ifdetector_nh_source_derived": 474,
+      "ifdetector_nh_derivation": "fres=float32(q/float32(fs)); nh=int(float32(4/fres))",
+      "window_start_sample_source_derived": 723,
+      "window_end_sample_source_derived": 1196,
+      "status": "success",
+      "before_f0_native": 202.32388305664062,
+      "after_f0_native": 200.007080078125,
+      "before": {
+        "signed_cent": 19.999957184236,
+        "abs_cent": 19.999957184236,
+        "null_reason": null
+      },
+      "after": {
+        "signed_cent": 0.0612852768454782,
+        "abs_cent": 0.0612852768454782,
+        "null_reason": null
+      },
+      "abs_after_minus_abs_before_cent": -19.93867190739052,
+      "delta_null_reason": null,
+      "unchanged_bits": false,
+      "accepted_harmonic_count": null,
+      "accepted_harmonic_count_reason": "not exposed by public API"
+    },
+    {
+      "key": "fc200_r-0.1_quadratic_positive_c-20",
+      "waveform_key": "fc200_r-0.1_quadratic_positive",
+      "fc": 200,
+      "r": -0.1,
+      "phase": "quadratic_positive",
+      "cent": -20,
+      "q_ideal_hz": 197.70280407057922,
+      "q_native_float32_hz": 197.7028045654297,
+      "q_native_float32_bits": 1128641515,
+      "ifdetector_nh_source_derived": 485,
+      "ifdetector_nh_derivation": "fres=float32(q/float32(fs)); nh=int(float32(4/fres))",
+      "window_start_sample_source_derived": 718,
+      "window_end_sample_source_derived": 1202,
+      "status": "success",
+      "before_f0_native": 197.7028045654297,
+      "after_f0_native": 199.9156951904297,
+      "before": {
+        "signed_cent": -19.99999566671826,
+        "abs_cent": 19.99999566671826,
+        "null_reason": null
+      },
+      "after": {
+        "signed_cent": -0.7299106323932131,
+        "abs_cent": 0.7299106323932131,
+        "null_reason": null
+      },
+      "abs_after_minus_abs_before_cent": -19.270085034325046,
+      "delta_null_reason": null,
+      "unchanged_bits": false,
+      "accepted_harmonic_count": null,
+      "accepted_harmonic_count_reason": "not exposed by public API"
+    },
+    {
+      "key": "fc200_r-0.1_quadratic_positive_c+0",
+      "waveform_key": "fc200_r-0.1_quadratic_positive",
+      "fc": 200,
+      "r": -0.1,
+      "phase": "quadratic_positive",
+      "cent": 0,
+      "q_ideal_hz": 200.0,
+      "q_native_float32_hz": 200.0,
+      "q_native_float32_bits": 1128792064,
+      "ifdetector_nh_source_derived": 479,
+      "ifdetector_nh_derivation": "fres=float32(q/float32(fs)); nh=int(float32(4/fres))",
+      "window_start_sample_source_derived": 721,
+      "window_end_sample_source_derived": 1199,
+      "status": "success",
+      "before_f0_native": 200.0,
+      "after_f0_native": 199.93043518066406,
+      "before": {
+        "signed_cent": 0.0,
+        "abs_cent": 0.0,
+        "null_reason": null
+      },
+      "after": {
+        "signed_cent": -0.6022696672822248,
+        "abs_cent": 0.6022696672822248,
+        "null_reason": null
+      },
+      "abs_after_minus_abs_before_cent": 0.6022696672822248,
+      "delta_null_reason": null,
+      "unchanged_bits": false,
+      "accepted_harmonic_count": null,
+      "accepted_harmonic_count_reason": "not exposed by public API"
+    },
+    {
+      "key": "fc200_r-0.1_quadratic_positive_c+20",
+      "waveform_key": "fc200_r-0.1_quadratic_positive",
+      "fc": 200,
+      "r": -0.1,
+      "phase": "quadratic_positive",
+      "cent": 20,
+      "q_ideal_hz": 202.3238880603845,
+      "q_native_float32_hz": 202.32388305664062,
+      "q_native_float32_bits": 1128944362,
+      "ifdetector_nh_source_derived": 474,
+      "ifdetector_nh_derivation": "fres=float32(q/float32(fs)); nh=int(float32(4/fres))",
+      "window_start_sample_source_derived": 723,
+      "window_end_sample_source_derived": 1196,
+      "status": "success",
+      "before_f0_native": 202.32388305664062,
+      "after_f0_native": 199.95106506347656,
+      "before": {
+        "signed_cent": 19.999957184236,
+        "abs_cent": 19.999957184236,
+        "null_reason": null
+      },
+      "after": {
+        "signed_cent": -0.42364097071531814,
+        "abs_cent": 0.42364097071531814,
+        "null_reason": null
+      },
+      "abs_after_minus_abs_before_cent": -19.57631621352068,
+      "delta_null_reason": null,
+      "unchanged_bits": false,
+      "accepted_harmonic_count": null,
+      "accepted_harmonic_count_reason": "not exposed by public API"
+    },
+    {
+      "key": "fc200_r-0.1_quadratic_negative_c-20",
+      "waveform_key": "fc200_r-0.1_quadratic_negative",
+      "fc": 200,
+      "r": -0.1,
+      "phase": "quadratic_negative",
+      "cent": -20,
+      "q_ideal_hz": 197.70280407057922,
+      "q_native_float32_hz": 197.7028045654297,
+      "q_native_float32_bits": 1128641515,
+      "ifdetector_nh_source_derived": 485,
+      "ifdetector_nh_derivation": "fres=float32(q/float32(fs)); nh=int(float32(4/fres))",
+      "window_start_sample_source_derived": 718,
+      "window_end_sample_source_derived": 1202,
+      "status": "success",
+      "before_f0_native": 197.7028045654297,
+      "after_f0_native": 199.96746826171875,
+      "before": {
+        "signed_cent": -19.99999566671826,
+        "abs_cent": 19.99999566671826,
+        "null_reason": null
+      },
+      "after": {
+        "signed_cent": -0.2816231697883473,
+        "abs_cent": 0.2816231697883473,
+        "null_reason": null
+      },
+      "abs_after_minus_abs_before_cent": -19.718372496929913,
+      "delta_null_reason": null,
+      "unchanged_bits": false,
+      "accepted_harmonic_count": null,
+      "accepted_harmonic_count_reason": "not exposed by public API"
+    },
+    {
+      "key": "fc200_r-0.1_quadratic_negative_c+0",
+      "waveform_key": "fc200_r-0.1_quadratic_negative",
+      "fc": 200,
+      "r": -0.1,
+      "phase": "quadratic_negative",
+      "cent": 0,
+      "q_ideal_hz": 200.0,
+      "q_native_float32_hz": 200.0,
+      "q_native_float32_bits": 1128792064,
+      "ifdetector_nh_source_derived": 479,
+      "ifdetector_nh_derivation": "fres=float32(q/float32(fs)); nh=int(float32(4/fres))",
+      "window_start_sample_source_derived": 721,
+      "window_end_sample_source_derived": 1199,
+      "status": "success",
+      "before_f0_native": 200.0,
+      "after_f0_native": 200.00482177734375,
+      "before": {
+        "signed_cent": 0.0,
+        "abs_cent": 0.0,
+        "null_reason": null
+      },
+      "after": {
+        "signed_cent": 0.041737622450855244,
+        "abs_cent": 0.041737622450855244,
+        "null_reason": null
+      },
+      "abs_after_minus_abs_before_cent": 0.041737622450855244,
+      "delta_null_reason": null,
+      "unchanged_bits": false,
+      "accepted_harmonic_count": null,
+      "accepted_harmonic_count_reason": "not exposed by public API"
+    },
+    {
+      "key": "fc200_r-0.1_quadratic_negative_c+20",
+      "waveform_key": "fc200_r-0.1_quadratic_negative",
+      "fc": 200,
+      "r": -0.1,
+      "phase": "quadratic_negative",
+      "cent": 20,
+      "q_ideal_hz": 202.3238880603845,
+      "q_native_float32_hz": 202.32388305664062,
+      "q_native_float32_bits": 1128944362,
+      "ifdetector_nh_source_derived": 474,
+      "ifdetector_nh_derivation": "fres=float32(q/float32(fs)); nh=int(float32(4/fres))",
+      "window_start_sample_source_derived": 723,
+      "window_end_sample_source_derived": 1196,
+      "status": "success",
+      "before_f0_native": 202.32388305664062,
+      "after_f0_native": 200.0684051513672,
+      "before": {
+        "signed_cent": 19.999957184236,
+        "abs_cent": 19.999957184236,
+        "null_reason": null
+      },
+      "after": {
+        "signed_cent": 0.5920253976950303,
+        "abs_cent": 0.5920253976950303,
+        "null_reason": null
+      },
+      "abs_after_minus_abs_before_cent": -19.40793178654097,
+      "delta_null_reason": null,
+      "unchanged_bits": false,
+      "accepted_harmonic_count": null,
+      "accepted_harmonic_count_reason": "not exposed by public API"
+    },
+    {
+      "key": "fc200_r+0.0_zero_c-20",
+      "waveform_key": "fc200_r+0.0_zero",
+      "fc": 200,
+      "r": 0,
+      "phase": "zero",
+      "cent": -20,
+      "q_ideal_hz": 197.70280407057922,
+      "q_native_float32_hz": 197.7028045654297,
+      "q_native_float32_bits": 1128641515,
+      "ifdetector_nh_source_derived": 485,
+      "ifdetector_nh_derivation": "fres=float32(q/float32(fs)); nh=int(float32(4/fres))",
+      "window_start_sample_source_derived": 718,
+      "window_end_sample_source_derived": 1202,
+      "status": "success",
+      "before_f0_native": 197.7028045654297,
+      "after_f0_native": 199.9857940673828,
+      "before": {
+        "signed_cent": -19.99999566671826,
+        "abs_cent": 19.99999566671826,
+        "null_reason": null
+      },
+      "after": {
+        "signed_cent": -0.12297333865719508,
+        "abs_cent": 0.12297333865719508,
+        "null_reason": null
+      },
+      "abs_after_minus_abs_before_cent": -19.877022328061063,
+      "delta_null_reason": null,
+      "unchanged_bits": false,
+      "accepted_harmonic_count": null,
+      "accepted_harmonic_count_reason": "not exposed by public API"
+    },
+    {
+      "key": "fc200_r+0.0_zero_c+0",
+      "waveform_key": "fc200_r+0.0_zero",
+      "fc": 200,
+      "r": 0,
+      "phase": "zero",
+      "cent": 0,
+      "q_ideal_hz": 200.0,
+      "q_native_float32_hz": 200.0,
+      "q_native_float32_bits": 1128792064,
+      "ifdetector_nh_source_derived": 479,
+      "ifdetector_nh_derivation": "fres=float32(q/float32(fs)); nh=int(float32(4/fres))",
+      "window_start_sample_source_derived": 721,
+      "window_end_sample_source_derived": 1199,
+      "status": "success",
+      "before_f0_native": 200.0,
+      "after_f0_native": 200.00006103515625,
+      "before": {
+        "signed_cent": 0.0,
+        "abs_cent": 0.0,
+        "null_reason": null
+      },
+      "after": {
+        "signed_cent": 0.000528330622941332,
+        "abs_cent": 0.000528330622941332,
+        "null_reason": null
+      },
+      "abs_after_minus_abs_before_cent": 0.000528330622941332,
+      "delta_null_reason": null,
+      "unchanged_bits": false,
+      "accepted_harmonic_count": null,
+      "accepted_harmonic_count_reason": "not exposed by public API"
+    },
+    {
+      "key": "fc200_r+0.0_zero_c+20",
+      "waveform_key": "fc200_r+0.0_zero",
+      "fc": 200,
+      "r": 0,
+      "phase": "zero",
+      "cent": 20,
+      "q_ideal_hz": 202.3238880603845,
+      "q_native_float32_hz": 202.32388305664062,
+      "q_native_float32_bits": 1128944362,
+      "ifdetector_nh_source_derived": 474,
+      "ifdetector_nh_derivation": "fres=float32(q/float32(fs)); nh=int(float32(4/fres))",
+      "window_start_sample_source_derived": 723,
+      "window_end_sample_source_derived": 1196,
+      "status": "success",
+      "before_f0_native": 202.32388305664062,
+      "after_f0_native": 200.02877807617188,
+      "before": {
+        "signed_cent": 19.999957184236,
+        "abs_cent": 19.999957184236,
+        "null_reason": null
+      },
+      "after": {
+        "signed_cent": 0.24909000627855465,
+        "abs_cent": 0.24909000627855465,
+        "null_reason": null
+      },
+      "abs_after_minus_abs_before_cent": -19.750867177957446,
+      "delta_null_reason": null,
+      "unchanged_bits": false,
+      "accepted_harmonic_count": null,
+      "accepted_harmonic_count_reason": "not exposed by public API"
+    },
+    {
+      "key": "fc200_r+0.0_pi_over_2_c-20",
+      "waveform_key": "fc200_r+0.0_pi_over_2",
+      "fc": 200,
+      "r": 0,
+      "phase": "pi_over_2",
+      "cent": -20,
+      "q_ideal_hz": 197.70280407057922,
+      "q_native_float32_hz": 197.7028045654297,
+      "q_native_float32_bits": 1128641515,
+      "ifdetector_nh_source_derived": 485,
+      "ifdetector_nh_derivation": "fres=float32(q/float32(fs)); nh=int(float32(4/fres))",
+      "window_start_sample_source_derived": 718,
+      "window_end_sample_source_derived": 1202,
+      "status": "success",
+      "before_f0_native": 197.7028045654297,
+      "after_f0_native": 199.98675537109375,
+      "before": {
+        "signed_cent": -19.99999566671826,
+        "abs_cent": 19.99999566671826,
+        "null_reason": null
+      },
+      "after": {
+        "signed_cent": -0.11465155898395915,
+        "abs_cent": 0.11465155898395915,
+        "null_reason": null
+      },
+      "abs_after_minus_abs_before_cent": -19.8853441077343,
+      "delta_null_reason": null,
+      "unchanged_bits": false,
+      "accepted_harmonic_count": null,
+      "accepted_harmonic_count_reason": "not exposed by public API"
+    },
+    {
+      "key": "fc200_r+0.0_pi_over_2_c+0",
+      "waveform_key": "fc200_r+0.0_pi_over_2",
+      "fc": 200,
+      "r": 0,
+      "phase": "pi_over_2",
+      "cent": 0,
+      "q_ideal_hz": 200.0,
+      "q_native_float32_hz": 200.0,
+      "q_native_float32_bits": 1128792064,
+      "ifdetector_nh_source_derived": 479,
+      "ifdetector_nh_derivation": "fres=float32(q/float32(fs)); nh=int(float32(4/fres))",
+      "window_start_sample_source_derived": 721,
+      "window_end_sample_source_derived": 1199,
+      "status": "success",
+      "before_f0_native": 200.0,
+      "after_f0_native": 200.00001525878906,
+      "before": {
+        "signed_cent": 0.0,
+        "abs_cent": 0.0,
+        "null_reason": null
+      },
+      "after": {
+        "signed_cent": 0.00013208267094709465,
+        "abs_cent": 0.00013208267094709465,
+        "null_reason": null
+      },
+      "abs_after_minus_abs_before_cent": 0.00013208267094709465,
+      "delta_null_reason": null,
+      "unchanged_bits": false,
+      "accepted_harmonic_count": null,
+      "accepted_harmonic_count_reason": "not exposed by public API"
+    },
+    {
+      "key": "fc200_r+0.0_pi_over_2_c+20",
+      "waveform_key": "fc200_r+0.0_pi_over_2",
+      "fc": 200,
+      "r": 0,
+      "phase": "pi_over_2",
+      "cent": 20,
+      "q_ideal_hz": 202.3238880603845,
+      "q_native_float32_hz": 202.32388305664062,
+      "q_native_float32_bits": 1128944362,
+      "ifdetector_nh_source_derived": 474,
+      "ifdetector_nh_derivation": "fres=float32(q/float32(fs)); nh=int(float32(4/fres))",
+      "window_start_sample_source_derived": 723,
+      "window_end_sample_source_derived": 1196,
+      "status": "success",
+      "before_f0_native": 202.32388305664062,
+      "after_f0_native": 200.02737426757812,
+      "before": {
+        "signed_cent": 19.999957184236,
+        "abs_cent": 19.999957184236,
+        "null_reason": null
+      },
+      "after": {
+        "signed_cent": 0.23694010571284013,
+        "abs_cent": 0.23694010571284013,
+        "null_reason": null
+      },
+      "abs_after_minus_abs_before_cent": -19.76301707852316,
+      "delta_null_reason": null,
+      "unchanged_bits": false,
+      "accepted_harmonic_count": null,
+      "accepted_harmonic_count_reason": "not exposed by public API"
+    },
+    {
+      "key": "fc200_r+0.0_quadratic_positive_c-20",
+      "waveform_key": "fc200_r+0.0_quadratic_positive",
+      "fc": 200,
+      "r": 0,
+      "phase": "quadratic_positive",
+      "cent": -20,
+      "q_ideal_hz": 197.70280407057922,
+      "q_native_float32_hz": 197.7028045654297,
+      "q_native_float32_bits": 1128641515,
+      "ifdetector_nh_source_derived": 485,
+      "ifdetector_nh_derivation": "fres=float32(q/float32(fs)); nh=int(float32(4/fres))",
+      "window_start_sample_source_derived": 718,
+      "window_end_sample_source_derived": 1202,
+      "status": "success",
+      "before_f0_native": 197.7028045654297,
+      "after_f0_native": 199.98577880859375,
+      "before": {
+        "signed_cent": -19.99999566671826,
+        "abs_cent": 19.99999566671826,
+        "null_reason": null
+      },
+      "after": {
+        "signed_cent": -0.1231054307206744,
+        "abs_cent": 0.1231054307206744,
+        "null_reason": null
+      },
+      "abs_after_minus_abs_before_cent": -19.876890235997585,
+      "delta_null_reason": null,
+      "unchanged_bits": false,
+      "accepted_harmonic_count": null,
+      "accepted_harmonic_count_reason": "not exposed by public API"
+    },
+    {
+      "key": "fc200_r+0.0_quadratic_positive_c+0",
+      "waveform_key": "fc200_r+0.0_quadratic_positive",
+      "fc": 200,
+      "r": 0,
+      "phase": "quadratic_positive",
+      "cent": 0,
+      "q_ideal_hz": 200.0,
+      "q_native_float32_hz": 200.0,
+      "q_native_float32_bits": 1128792064,
+      "ifdetector_nh_source_derived": 479,
+      "ifdetector_nh_derivation": "fres=float32(q/float32(fs)); nh=int(float32(4/fres))",
+      "window_start_sample_source_derived": 721,
+      "window_end_sample_source_derived": 1199,
+      "status": "success",
+      "before_f0_native": 200.0,
+      "after_f0_native": 200.00001525878906,
+      "before": {
+        "signed_cent": 0.0,
+        "abs_cent": 0.0,
+        "null_reason": null
+      },
+      "after": {
+        "signed_cent": 0.00013208267094709465,
+        "abs_cent": 0.00013208267094709465,
+        "null_reason": null
+      },
+      "abs_after_minus_abs_before_cent": 0.00013208267094709465,
+      "delta_null_reason": null,
+      "unchanged_bits": false,
+      "accepted_harmonic_count": null,
+      "accepted_harmonic_count_reason": "not exposed by public API"
+    },
+    {
+      "key": "fc200_r+0.0_quadratic_positive_c+20",
+      "waveform_key": "fc200_r+0.0_quadratic_positive",
+      "fc": 200,
+      "r": 0,
+      "phase": "quadratic_positive",
+      "cent": 20,
+      "q_ideal_hz": 202.3238880603845,
+      "q_native_float32_hz": 202.32388305664062,
+      "q_native_float32_bits": 1128944362,
+      "ifdetector_nh_source_derived": 474,
+      "ifdetector_nh_derivation": "fres=float32(q/float32(fs)); nh=int(float32(4/fres))",
+      "window_start_sample_source_derived": 723,
+      "window_end_sample_source_derived": 1196,
+      "status": "success",
+      "before_f0_native": 202.32388305664062,
+      "after_f0_native": 200.0279083251953,
+      "before": {
+        "signed_cent": 19.999957184236,
+        "abs_cent": 19.999957184236,
+        "null_reason": null
+      },
+      "after": {
+        "signed_cent": 0.24156236054253347,
+        "abs_cent": 0.24156236054253347,
+        "null_reason": null
+      },
+      "abs_after_minus_abs_before_cent": -19.758394823693465,
+      "delta_null_reason": null,
+      "unchanged_bits": false,
+      "accepted_harmonic_count": null,
+      "accepted_harmonic_count_reason": "not exposed by public API"
+    },
+    {
+      "key": "fc200_r+0.0_quadratic_negative_c-20",
+      "waveform_key": "fc200_r+0.0_quadratic_negative",
+      "fc": 200,
+      "r": 0,
+      "phase": "quadratic_negative",
+      "cent": -20,
+      "q_ideal_hz": 197.70280407057922,
+      "q_native_float32_hz": 197.7028045654297,
+      "q_native_float32_bits": 1128641515,
+      "ifdetector_nh_source_derived": 485,
+      "ifdetector_nh_derivation": "fres=float32(q/float32(fs)); nh=int(float32(4/fres))",
+      "window_start_sample_source_derived": 718,
+      "window_end_sample_source_derived": 1202,
+      "status": "success",
+      "before_f0_native": 197.7028045654297,
+      "after_f0_native": 199.9857940673828,
+      "before": {
+        "signed_cent": -19.99999566671826,
+        "abs_cent": 19.99999566671826,
+        "null_reason": null
+      },
+      "after": {
+        "signed_cent": -0.12297333865719508,
+        "abs_cent": 0.12297333865719508,
+        "null_reason": null
+      },
+      "abs_after_minus_abs_before_cent": -19.877022328061063,
+      "delta_null_reason": null,
+      "unchanged_bits": false,
+      "accepted_harmonic_count": null,
+      "accepted_harmonic_count_reason": "not exposed by public API"
+    },
+    {
+      "key": "fc200_r+0.0_quadratic_negative_c+0",
+      "waveform_key": "fc200_r+0.0_quadratic_negative",
+      "fc": 200,
+      "r": 0,
+      "phase": "quadratic_negative",
+      "cent": 0,
+      "q_ideal_hz": 200.0,
+      "q_native_float32_hz": 200.0,
+      "q_native_float32_bits": 1128792064,
+      "ifdetector_nh_source_derived": 479,
+      "ifdetector_nh_derivation": "fres=float32(q/float32(fs)); nh=int(float32(4/fres))",
+      "window_start_sample_source_derived": 721,
+      "window_end_sample_source_derived": 1199,
+      "status": "success",
+      "before_f0_native": 200.0,
+      "after_f0_native": 199.99998474121094,
+      "before": {
+        "signed_cent": 0.0,
+        "abs_cent": 0.0,
+        "null_reason": null
+      },
+      "after": {
+        "signed_cent": -0.0001320826808319975,
+        "abs_cent": 0.0001320826808319975,
+        "null_reason": null
+      },
+      "abs_after_minus_abs_before_cent": 0.0001320826808319975,
+      "delta_null_reason": null,
+      "unchanged_bits": false,
+      "accepted_harmonic_count": null,
+      "accepted_harmonic_count_reason": "not exposed by public API"
+    },
+    {
+      "key": "fc200_r+0.0_quadratic_negative_c+20",
+      "waveform_key": "fc200_r+0.0_quadratic_negative",
+      "fc": 200,
+      "r": 0,
+      "phase": "quadratic_negative",
+      "cent": 20,
+      "q_ideal_hz": 202.3238880603845,
+      "q_native_float32_hz": 202.32388305664062,
+      "q_native_float32_bits": 1128944362,
+      "ifdetector_nh_source_derived": 474,
+      "ifdetector_nh_derivation": "fres=float32(q/float32(fs)); nh=int(float32(4/fres))",
+      "window_start_sample_source_derived": 723,
+      "window_end_sample_source_derived": 1196,
+      "status": "success",
+      "before_f0_native": 202.32388305664062,
+      "after_f0_native": 200.0279541015625,
+      "before": {
+        "signed_cent": 19.999957184236,
+        "abs_cent": 19.999957184236,
+        "null_reason": null
+      },
+      "after": {
+        "signed_cent": 0.24195855323939222,
+        "abs_cent": 0.24195855323939222,
+        "null_reason": null
+      },
+      "abs_after_minus_abs_before_cent": -19.757998630996607,
+      "delta_null_reason": null,
+      "unchanged_bits": false,
+      "accepted_harmonic_count": null,
+      "accepted_harmonic_count_reason": "not exposed by public API"
+    },
+    {
+      "key": "fc200_r+0.1_zero_c-20",
+      "waveform_key": "fc200_r+0.1_zero",
+      "fc": 200,
+      "r": 0.1,
+      "phase": "zero",
+      "cent": -20,
+      "q_ideal_hz": 197.70280407057922,
+      "q_native_float32_hz": 197.7028045654297,
+      "q_native_float32_bits": 1128641515,
+      "ifdetector_nh_source_derived": 485,
+      "ifdetector_nh_derivation": "fres=float32(q/float32(fs)); nh=int(float32(4/fres))",
+      "window_start_sample_source_derived": 718,
+      "window_end_sample_source_derived": 1202,
+      "status": "success",
+      "before_f0_native": 197.7028045654297,
+      "after_f0_native": 199.93875122070312,
+      "before": {
+        "signed_cent": -19.99999566671826,
+        "abs_cent": 19.99999566671826,
+        "null_reason": null
+      },
+      "after": {
+        "signed_cent": -0.5302610596640102,
+        "abs_cent": 0.5302610596640102,
+        "null_reason": null
+      },
+      "abs_after_minus_abs_before_cent": -19.46973460705425,
+      "delta_null_reason": null,
+      "unchanged_bits": false,
+      "accepted_harmonic_count": null,
+      "accepted_harmonic_count_reason": "not exposed by public API"
+    },
+    {
+      "key": "fc200_r+0.1_zero_c+0",
+      "waveform_key": "fc200_r+0.1_zero",
+      "fc": 200,
+      "r": 0.1,
+      "phase": "zero",
+      "cent": 0,
+      "q_ideal_hz": 200.0,
+      "q_native_float32_hz": 200.0,
+      "q_native_float32_bits": 1128792064,
+      "ifdetector_nh_source_derived": 479,
+      "ifdetector_nh_derivation": "fres=float32(q/float32(fs)); nh=int(float32(4/fres))",
+      "window_start_sample_source_derived": 721,
+      "window_end_sample_source_derived": 1199,
+      "status": "success",
+      "before_f0_native": 200.0,
+      "after_f0_native": 199.96478271484375,
+      "before": {
+        "signed_cent": 0.0,
+        "abs_cent": 0.0,
+        "null_reason": null
+      },
+      "after": {
+        "signed_cent": -0.3048736587352531,
+        "abs_cent": 0.3048736587352531,
+        "null_reason": null
+      },
+      "abs_after_minus_abs_before_cent": 0.3048736587352531,
+      "delta_null_reason": null,
+      "unchanged_bits": false,
+      "accepted_harmonic_count": null,
+      "accepted_harmonic_count_reason": "not exposed by public API"
+    },
+    {
+      "key": "fc200_r+0.1_zero_c+20",
+      "waveform_key": "fc200_r+0.1_zero",
+      "fc": 200,
+      "r": 0.1,
+      "phase": "zero",
+      "cent": 20,
+      "q_ideal_hz": 202.3238880603845,
+      "q_native_float32_hz": 202.32388305664062,
+      "q_native_float32_bits": 1128944362,
+      "ifdetector_nh_source_derived": 474,
+      "ifdetector_nh_derivation": "fres=float32(q/float32(fs)); nh=int(float32(4/fres))",
+      "window_start_sample_source_derived": 723,
+      "window_end_sample_source_derived": 1196,
+      "status": "success",
+      "before_f0_native": 202.32388305664062,
+      "after_f0_native": 200.00840759277344,
+      "before": {
+        "signed_cent": 19.999957184236,
+        "abs_cent": 19.999957184236,
+        "null_reason": null
+      },
+      "after": {
+        "signed_cent": 0.07277602473320414,
+        "abs_cent": 0.07277602473320414,
+        "null_reason": null
+      },
+      "abs_after_minus_abs_before_cent": -19.927181159502794,
+      "delta_null_reason": null,
+      "unchanged_bits": false,
+      "accepted_harmonic_count": null,
+      "accepted_harmonic_count_reason": "not exposed by public API"
+    },
+    {
+      "key": "fc200_r+0.1_pi_over_2_c-20",
+      "waveform_key": "fc200_r+0.1_pi_over_2",
+      "fc": 200,
+      "r": 0.1,
+      "phase": "pi_over_2",
+      "cent": -20,
+      "q_ideal_hz": 197.70280407057922,
+      "q_native_float32_hz": 197.7028045654297,
+      "q_native_float32_bits": 1128641515,
+      "ifdetector_nh_source_derived": 485,
+      "ifdetector_nh_derivation": "fres=float32(q/float32(fs)); nh=int(float32(4/fres))",
+      "window_start_sample_source_derived": 718,
+      "window_end_sample_source_derived": 1202,
+      "status": "success",
+      "before_f0_native": 197.7028045654297,
+      "after_f0_native": 199.939208984375,
+      "before": {
+        "signed_cent": -19.99999566671826,
+        "abs_cent": 19.99999566671826,
+        "null_reason": null
+      },
+      "after": {
+        "signed_cent": -0.5262973700684275,
+        "abs_cent": 0.5262973700684275,
+        "null_reason": null
+      },
+      "abs_after_minus_abs_before_cent": -19.473698296649832,
+      "delta_null_reason": null,
+      "unchanged_bits": false,
+      "accepted_harmonic_count": null,
+      "accepted_harmonic_count_reason": "not exposed by public API"
+    },
+    {
+      "key": "fc200_r+0.1_pi_over_2_c+0",
+      "waveform_key": "fc200_r+0.1_pi_over_2",
+      "fc": 200,
+      "r": 0.1,
+      "phase": "pi_over_2",
+      "cent": 0,
+      "q_ideal_hz": 200.0,
+      "q_native_float32_hz": 200.0,
+      "q_native_float32_bits": 1128792064,
+      "ifdetector_nh_source_derived": 479,
+      "ifdetector_nh_derivation": "fres=float32(q/float32(fs)); nh=int(float32(4/fres))",
+      "window_start_sample_source_derived": 721,
+      "window_end_sample_source_derived": 1199,
+      "status": "success",
+      "before_f0_native": 200.0,
+      "after_f0_native": 199.9645233154297,
+      "before": {
+        "signed_cent": 0.0,
+        "abs_cent": 0.0,
+        "null_reason": null
+      },
+      "after": {
+        "signed_cent": -0.30711946113661265,
+        "abs_cent": 0.30711946113661265,
+        "null_reason": null
+      },
+      "abs_after_minus_abs_before_cent": 0.30711946113661265,
+      "delta_null_reason": null,
+      "unchanged_bits": false,
+      "accepted_harmonic_count": null,
+      "accepted_harmonic_count_reason": "not exposed by public API"
+    },
+    {
+      "key": "fc200_r+0.1_pi_over_2_c+20",
+      "waveform_key": "fc200_r+0.1_pi_over_2",
+      "fc": 200,
+      "r": 0.1,
+      "phase": "pi_over_2",
+      "cent": 20,
+      "q_ideal_hz": 202.3238880603845,
+      "q_native_float32_hz": 202.32388305664062,
+      "q_native_float32_bits": 1128944362,
+      "ifdetector_nh_source_derived": 474,
+      "ifdetector_nh_derivation": "fres=float32(q/float32(fs)); nh=int(float32(4/fres))",
+      "window_start_sample_source_derived": 723,
+      "window_end_sample_source_derived": 1196,
+      "status": "success",
+      "before_f0_native": 202.32388305664062,
+      "after_f0_native": 200.007080078125,
+      "before": {
+        "signed_cent": 19.999957184236,
+        "abs_cent": 19.999957184236,
+        "null_reason": null
+      },
+      "after": {
+        "signed_cent": 0.0612852768454782,
+        "abs_cent": 0.0612852768454782,
+        "null_reason": null
+      },
+      "abs_after_minus_abs_before_cent": -19.93867190739052,
+      "delta_null_reason": null,
+      "unchanged_bits": false,
+      "accepted_harmonic_count": null,
+      "accepted_harmonic_count_reason": "not exposed by public API"
+    },
+    {
+      "key": "fc200_r+0.1_quadratic_positive_c-20",
+      "waveform_key": "fc200_r+0.1_quadratic_positive",
+      "fc": 200,
+      "r": 0.1,
+      "phase": "quadratic_positive",
+      "cent": -20,
+      "q_ideal_hz": 197.70280407057922,
+      "q_native_float32_hz": 197.7028045654297,
+      "q_native_float32_bits": 1128641515,
+      "ifdetector_nh_source_derived": 485,
+      "ifdetector_nh_derivation": "fres=float32(q/float32(fs)); nh=int(float32(4/fres))",
+      "window_start_sample_source_derived": 718,
+      "window_end_sample_source_derived": 1202,
+      "status": "success",
+      "before_f0_native": 197.7028045654297,
+      "after_f0_native": 199.9674835205078,
+      "before": {
+        "signed_cent": -19.99999566671826,
+        "abs_cent": 19.99999566671826,
+        "null_reason": null
+      },
+      "after": {
+        "signed_cent": -0.28149106562951137,
+        "abs_cent": 0.28149106562951137,
+        "null_reason": null
+      },
+      "abs_after_minus_abs_before_cent": -19.71850460108875,
+      "delta_null_reason": null,
+      "unchanged_bits": false,
+      "accepted_harmonic_count": null,
+      "accepted_harmonic_count_reason": "not exposed by public API"
+    },
+    {
+      "key": "fc200_r+0.1_quadratic_positive_c+0",
+      "waveform_key": "fc200_r+0.1_quadratic_positive",
+      "fc": 200,
+      "r": 0.1,
+      "phase": "quadratic_positive",
+      "cent": 0,
+      "q_ideal_hz": 200.0,
+      "q_native_float32_hz": 200.0,
+      "q_native_float32_bits": 1128792064,
+      "ifdetector_nh_source_derived": 479,
+      "ifdetector_nh_derivation": "fres=float32(q/float32(fs)); nh=int(float32(4/fres))",
+      "window_start_sample_source_derived": 721,
+      "window_end_sample_source_derived": 1199,
+      "status": "success",
+      "before_f0_native": 200.0,
+      "after_f0_native": 200.00482177734375,
+      "before": {
+        "signed_cent": 0.0,
+        "abs_cent": 0.0,
+        "null_reason": null
+      },
+      "after": {
+        "signed_cent": 0.041737622450855244,
+        "abs_cent": 0.041737622450855244,
+        "null_reason": null
+      },
+      "abs_after_minus_abs_before_cent": 0.041737622450855244,
+      "delta_null_reason": null,
+      "unchanged_bits": false,
+      "accepted_harmonic_count": null,
+      "accepted_harmonic_count_reason": "not exposed by public API"
+    },
+    {
+      "key": "fc200_r+0.1_quadratic_positive_c+20",
+      "waveform_key": "fc200_r+0.1_quadratic_positive",
+      "fc": 200,
+      "r": 0.1,
+      "phase": "quadratic_positive",
+      "cent": 20,
+      "q_ideal_hz": 202.3238880603845,
+      "q_native_float32_hz": 202.32388305664062,
+      "q_native_float32_bits": 1128944362,
+      "ifdetector_nh_source_derived": 474,
+      "ifdetector_nh_derivation": "fres=float32(q/float32(fs)); nh=int(float32(4/fres))",
+      "window_start_sample_source_derived": 723,
+      "window_end_sample_source_derived": 1196,
+      "status": "success",
+      "before_f0_native": 202.32388305664062,
+      "after_f0_native": 200.0684051513672,
+      "before": {
+        "signed_cent": 19.999957184236,
+        "abs_cent": 19.999957184236,
+        "null_reason": null
+      },
+      "after": {
+        "signed_cent": 0.5920253976950303,
+        "abs_cent": 0.5920253976950303,
+        "null_reason": null
+      },
+      "abs_after_minus_abs_before_cent": -19.40793178654097,
+      "delta_null_reason": null,
+      "unchanged_bits": false,
+      "accepted_harmonic_count": null,
+      "accepted_harmonic_count_reason": "not exposed by public API"
+    },
+    {
+      "key": "fc200_r+0.1_quadratic_negative_c-20",
+      "waveform_key": "fc200_r+0.1_quadratic_negative",
+      "fc": 200,
+      "r": 0.1,
+      "phase": "quadratic_negative",
+      "cent": -20,
+      "q_ideal_hz": 197.70280407057922,
+      "q_native_float32_hz": 197.7028045654297,
+      "q_native_float32_bits": 1128641515,
+      "ifdetector_nh_source_derived": 485,
+      "ifdetector_nh_derivation": "fres=float32(q/float32(fs)); nh=int(float32(4/fres))",
+      "window_start_sample_source_derived": 718,
+      "window_end_sample_source_derived": 1202,
+      "status": "success",
+      "before_f0_native": 197.7028045654297,
+      "after_f0_native": 199.91567993164062,
+      "before": {
+        "signed_cent": -19.99999566671826,
+        "abs_cent": 19.99999566671826,
+        "null_reason": null
+      },
+      "after": {
+        "signed_cent": -0.7300427707735522,
+        "abs_cent": 0.7300427707735522,
+        "null_reason": null
+      },
+      "abs_after_minus_abs_before_cent": -19.26995289594471,
+      "delta_null_reason": null,
+      "unchanged_bits": false,
+      "accepted_harmonic_count": null,
+      "accepted_harmonic_count_reason": "not exposed by public API"
+    },
+    {
+      "key": "fc200_r+0.1_quadratic_negative_c+0",
+      "waveform_key": "fc200_r+0.1_quadratic_negative",
+      "fc": 200,
+      "r": 0.1,
+      "phase": "quadratic_negative",
+      "cent": 0,
+      "q_ideal_hz": 200.0,
+      "q_native_float32_hz": 200.0,
+      "q_native_float32_bits": 1128792064,
+      "ifdetector_nh_source_derived": 479,
+      "ifdetector_nh_derivation": "fres=float32(q/float32(fs)); nh=int(float32(4/fres))",
+      "window_start_sample_source_derived": 721,
+      "window_end_sample_source_derived": 1199,
+      "status": "success",
+      "before_f0_native": 200.0,
+      "after_f0_native": 199.93043518066406,
+      "before": {
+        "signed_cent": 0.0,
+        "abs_cent": 0.0,
+        "null_reason": null
+      },
+      "after": {
+        "signed_cent": -0.6022696672822248,
+        "abs_cent": 0.6022696672822248,
+        "null_reason": null
+      },
+      "abs_after_minus_abs_before_cent": 0.6022696672822248,
+      "delta_null_reason": null,
+      "unchanged_bits": false,
+      "accepted_harmonic_count": null,
+      "accepted_harmonic_count_reason": "not exposed by public API"
+    },
+    {
+      "key": "fc200_r+0.1_quadratic_negative_c+20",
+      "waveform_key": "fc200_r+0.1_quadratic_negative",
+      "fc": 200,
+      "r": 0.1,
+      "phase": "quadratic_negative",
+      "cent": 20,
+      "q_ideal_hz": 202.3238880603845,
+      "q_native_float32_hz": 202.32388305664062,
+      "q_native_float32_bits": 1128944362,
+      "ifdetector_nh_source_derived": 474,
+      "ifdetector_nh_derivation": "fres=float32(q/float32(fs)); nh=int(float32(4/fres))",
+      "window_start_sample_source_derived": 723,
+      "window_end_sample_source_derived": 1196,
+      "status": "success",
+      "before_f0_native": 202.32388305664062,
+      "after_f0_native": 199.95101928710938,
+      "before": {
+        "signed_cent": 19.999957184236,
+        "abs_cent": 19.999957184236,
+        "null_reason": null
+      },
+      "after": {
+        "signed_cent": -0.42403731576384773,
+        "abs_cent": 0.42403731576384773,
+        "null_reason": null
+      },
+      "abs_after_minus_abs_before_cent": -19.575919868472152,
+      "delta_null_reason": null,
+      "unchanged_bits": false,
+      "accepted_harmonic_count": null,
+      "accepted_harmonic_count_reason": "not exposed by public API"
+    }
+  ],
+  "groups": [
+    {
+      "fc": 100,
+      "r": -0.1,
+      "cent": -20,
+      "phase_count": 4,
+      "success_count": 4,
+      "unchanged_bits_count": 0,
+      "before_f0_native_hz": {
+        "count": 4,
+        "mean": 98.85140228271484,
+        "median": 98.85140228271484,
+        "min": 98.85140228271484,
+        "max": 98.85140228271484
+      },
+      "after_f0_native_hz": {
+        "count": 4,
+        "mean": 99.96682929992676,
+        "median": 99.96669006347656,
+        "min": 99.96070861816406,
+        "max": 99.97322845458984
+      },
+      "before_signed_cent": {
+        "count": 4,
+        "mean": -19.99999566671826,
+        "median": -19.99999566671826,
+        "min": -19.99999566671826,
+        "max": -19.99999566671826
+      },
+      "before_abs_cent": {
+        "count": 4,
+        "mean": 19.99999566671826,
+        "median": 19.99999566671826,
+        "min": 19.99999566671826,
+        "max": 19.99999566671826
+      },
+      "after_signed_cent": {
+        "count": 4,
+        "mean": -0.5743594185358804,
+        "median": -0.5767690312891514,
+        "min": -0.6803594507620249,
+        "max": -0.46354016080319377
+      },
+      "after_abs_cent": {
+        "count": 4,
+        "mean": 0.5743594185358804,
+        "median": 0.5767690312891514,
+        "min": 0.46354016080319377,
+        "max": 0.6803594507620249
+      },
+      "abs_after_minus_abs_before_cent": {
+        "count": 4,
+        "mean": -19.42563624818238,
+        "median": -19.42322663542911,
+        "min": -19.536455505915065,
+        "max": -19.319636215956233
+      }
+    },
+    {
+      "fc": 100,
+      "r": -0.1,
+      "cent": 0,
+      "phase_count": 4,
+      "success_count": 4,
+      "unchanged_bits_count": 0,
+      "before_f0_native_hz": {
+        "count": 4,
+        "mean": 100.0,
+        "median": 100.0,
+        "min": 100.0,
+        "max": 100.0
+      },
+      "after_f0_native_hz": {
+        "count": 4,
+        "mean": 99.97921371459961,
+        "median": 99.97896194458008,
+        "min": 99.96949768066406,
+        "max": 99.98943328857422
+      },
+      "before_signed_cent": {
+        "count": 4,
+        "mean": 0.0,
+        "median": 0.0,
+        "min": 0.0,
+        "max": 0.0
+      },
+      "before_abs_cent": {
+        "count": 4,
+        "mean": 0.0,
+        "median": 0.0,
+        "min": 0.0,
+        "max": 0.0
+      },
+      "after_signed_cent": {
+        "count": 4,
+        "mean": -0.3599009639553637,
+        "median": -0.3642562966198457,
+        "min": -0.5281470907503487,
+        "max": -0.18294417183141456
+      },
+      "after_abs_cent": {
+        "count": 4,
+        "mean": 0.3599009639553637,
+        "median": 0.3642562966198457,
+        "min": 0.18294417183141456,
+        "max": 0.5281470907503487
+      },
+      "abs_after_minus_abs_before_cent": {
+        "count": 4,
+        "mean": 0.3599009639553637,
+        "median": 0.3642562966198457,
+        "min": 0.18294417183141456,
+        "max": 0.5281470907503487
+      }
+    },
+    {
+      "fc": 100,
+      "r": -0.1,
+      "cent": 20,
+      "phase_count": 4,
+      "success_count": 4,
+      "unchanged_bits_count": 0,
+      "before_f0_native_hz": {
+        "count": 4,
+        "mean": 101.16194152832031,
+        "median": 101.16194152832031,
+        "min": 101.16194152832031,
+        "max": 101.16194152832031
+      },
+      "after_f0_native_hz": {
+        "count": 4,
+        "mean": 100.00209617614746,
+        "median": 100.00183868408203,
+        "min": 99.98601531982422,
+        "max": 100.01869201660156
+      },
+      "before_signed_cent": {
+        "count": 4,
+        "mean": 19.999957184236,
+        "median": 19.999957184236,
+        "min": 19.999957184236,
+        "max": 19.999957184236
+      },
+      "before_abs_cent": {
+        "count": 4,
+        "mean": 19.999957184236,
+        "median": 19.999957184236,
+        "min": 19.999957184236,
+        "max": 19.999957184236
+      },
+      "after_signed_cent": {
+        "count": 4,
+        "mean": 0.03627777062934512,
+        "median": 0.03183162111250389,
+        "min": -0.2421244754176265,
+        "max": 0.32357231570999917
+      },
+      "after_abs_cent": {
+        "count": 4,
+        "mean": 0.15734000833815837,
+        "median": 0.14008193407720382,
+        "min": 0.025623849488226675,
+        "max": 0.32357231570999917
+      },
+      "abs_after_minus_abs_before_cent": {
+        "count": 4,
+        "mean": -19.842617175897843,
+        "median": -19.859875250158794,
+        "min": -19.974333334747772,
+        "max": -19.676384868526
+      }
+    },
+    {
+      "fc": 100,
+      "r": 0,
+      "cent": -20,
+      "phase_count": 4,
+      "success_count": 4,
+      "unchanged_bits_count": 0,
+      "before_f0_native_hz": {
+        "count": 4,
+        "mean": 98.85140228271484,
+        "median": 98.85140228271484,
+        "min": 98.85140228271484,
+        "max": 98.85140228271484
+      },
+      "after_f0_native_hz": {
+        "count": 4,
+        "mean": 99.99349403381348,
+        "median": 99.99335861206055,
+        "min": 99.9932861328125,
+        "max": 99.99397277832031
+      },
+      "before_signed_cent": {
+        "count": 4,
+        "mean": -19.99999566671826,
+        "median": -19.99999566671826,
+        "min": -19.99999566671826,
+        "max": -19.99999566671826
+      },
+      "before_abs_cent": {
+        "count": 4,
+        "mean": 19.99999566671826,
+        "median": 19.99999566671826,
+        "min": 19.99999566671826,
+        "max": 19.99999566671826
+      },
+      "after_signed_cent": {
+        "count": 4,
+        "mean": -0.11263717267028003,
+        "median": -0.11498178763573025,
+        "min": -0.11623665679020292,
+        "max": -0.10434845861945671
+      },
+      "after_abs_cent": {
+        "count": 4,
+        "mean": 0.11263717267028003,
+        "median": 0.11498178763573025,
+        "min": 0.10434845861945671,
+        "max": 0.11623665679020292
+      },
+      "abs_after_minus_abs_before_cent": {
+        "count": 4,
+        "mean": -19.88735849404798,
+        "median": -19.88501387908253,
+        "min": -19.895647208098804,
+        "max": -19.883759009928056
+      }
+    },
+    {
+      "fc": 100,
+      "r": 0,
+      "cent": 0,
+      "phase_count": 4,
+      "success_count": 4,
+      "unchanged_bits_count": 0,
+      "before_f0_native_hz": {
+        "count": 4,
+        "mean": 100.0,
+        "median": 100.0,
+        "min": 100.0,
+        "max": 100.0
+      },
+      "after_f0_native_hz": {
+        "count": 4,
+        "mean": 100.00000953674316,
+        "median": 100.00000762939453,
+        "min": 100.00000762939453,
+        "max": 100.00001525878906
+      },
+      "before_signed_cent": {
+        "count": 4,
+        "mean": 0.0,
+        "median": 0.0,
+        "min": 0.0,
+        "max": 0.0
+      },
+      "before_abs_cent": {
+        "count": 4,
+        "mean": 0.0,
+        "median": 0.0,
+        "min": 0.0,
+        "max": 0.0
+      },
+      "after_signed_cent": {
+        "count": 4,
+        "mean": 0.0001651033360684888,
+        "median": 0.00013208267094709465,
+        "min": 0.00013208267094709465,
+        "max": 0.0002641653314326712
+      },
+      "after_abs_cent": {
+        "count": 4,
+        "mean": 0.0001651033360684888,
+        "median": 0.00013208267094709465,
+        "min": 0.00013208267094709465,
+        "max": 0.0002641653314326712
+      },
+      "abs_after_minus_abs_before_cent": {
+        "count": 4,
+        "mean": 0.0001651033360684888,
+        "median": 0.00013208267094709465,
+        "min": 0.00013208267094709465,
+        "max": 0.0002641653314326712
+      }
+    },
+    {
+      "fc": 100,
+      "r": 0,
+      "cent": 20,
+      "phase_count": 4,
+      "success_count": 4,
+      "unchanged_bits_count": 0,
+      "before_f0_native_hz": {
+        "count": 4,
+        "mean": 101.16194152832031,
+        "median": 101.16194152832031,
+        "min": 101.16194152832031,
+        "max": 101.16194152832031
+      },
+      "after_f0_native_hz": {
+        "count": 4,
+        "mean": 100.01528358459473,
+        "median": 100.01544952392578,
+        "min": 100.01473236083984,
+        "max": 100.0155029296875
+      },
+      "before_signed_cent": {
+        "count": 4,
+        "mean": 19.999957184236,
+        "median": 19.999957184236,
+        "min": 19.999957184236,
+        "max": 19.999957184236
+      },
+      "before_abs_cent": {
+        "count": 4,
+        "mean": 19.999957184236,
+        "median": 19.999957184236,
+        "min": 19.999957184236,
+        "max": 19.999957184236
+      },
+      "after_signed_cent": {
+        "count": 4,
+        "mean": 0.2645743939048212,
+        "median": 0.26744675952821684,
+        "min": 0.25503286137126335,
+        "max": 0.26837119519158764
+      },
+      "after_abs_cent": {
+        "count": 4,
+        "mean": 0.2645743939048212,
+        "median": 0.26744675952821684,
+        "min": 0.25503286137126335,
+        "max": 0.26837119519158764
+      },
+      "abs_after_minus_abs_before_cent": {
+        "count": 4,
+        "mean": -19.73538279033118,
+        "median": -19.732510424707783,
+        "min": -19.744924322864737,
+        "max": -19.73158598904441
+      }
+    },
+    {
+      "fc": 100,
+      "r": 0.1,
+      "cent": -20,
+      "phase_count": 4,
+      "success_count": 4,
+      "unchanged_bits_count": 0,
+      "before_f0_native_hz": {
+        "count": 4,
+        "mean": 98.85140228271484,
+        "median": 98.85140228271484,
+        "min": 98.85140228271484,
+        "max": 98.85140228271484
+      },
+      "after_f0_native_hz": {
+        "count": 4,
+        "mean": 99.96684455871582,
+        "median": 99.96671295166016,
+        "min": 99.96072387695312,
+        "max": 99.97322845458984
+      },
+      "before_signed_cent": {
+        "count": 4,
+        "mean": -19.99999566671826,
+        "median": -19.99999566671826,
+        "min": -19.99999566671826,
+        "max": -19.99999566671826
+      },
+      "before_abs_cent": {
+        "count": 4,
+        "mean": 19.99999566671826,
+        "median": 19.99999566671826,
+        "min": 19.99999566671826,
+        "max": 19.99999566671826
+      },
+      "after_signed_cent": {
+        "count": 4,
+        "mean": -0.5740951612361526,
+        "median": -0.5763726512730081,
+        "min": -0.6800951815954006,
+        "max": -0.46354016080319377
+      },
+      "after_abs_cent": {
+        "count": 4,
+        "mean": 0.5740951612361526,
+        "median": 0.5763726512730081,
+        "min": 0.46354016080319377,
+        "max": 0.6800951815954006
+      },
+      "abs_after_minus_abs_before_cent": {
+        "count": 4,
+        "mean": -19.425900505482105,
+        "median": -19.42362301544525,
+        "min": -19.536455505915065,
+        "max": -19.319900485122858
+      }
+    },
+    {
+      "fc": 100,
+      "r": 0.1,
+      "cent": 0,
+      "phase_count": 4,
+      "success_count": 4,
+      "unchanged_bits_count": 0,
+      "before_f0_native_hz": {
+        "count": 4,
+        "mean": 100.0,
+        "median": 100.0,
+        "min": 100.0,
+        "max": 100.0
+      },
+      "after_f0_native_hz": {
+        "count": 4,
+        "mean": 99.9792251586914,
+        "median": 99.97896957397461,
+        "min": 99.96952056884766,
+        "max": 99.98944091796875
+      },
+      "before_signed_cent": {
+        "count": 4,
+        "mean": 0.0,
+        "median": 0.0,
+        "min": 0.0,
+        "max": 0.0
+      },
+      "before_abs_cent": {
+        "count": 4,
+        "mean": 0.0,
+        "median": 0.0,
+        "min": 0.0,
+        "max": 0.0
+      },
+      "after_signed_cent": {
+        "count": 4,
+        "mean": -0.35970279239028574,
+        "median": -0.3641241862462552,
+        "min": -0.5277507218664342,
+        "max": -0.1828120752021984
+      },
+      "after_abs_cent": {
+        "count": 4,
+        "mean": 0.35970279239028574,
+        "median": 0.3641241862462552,
+        "min": 0.1828120752021984,
+        "max": 0.5277507218664342
+      },
+      "abs_after_minus_abs_before_cent": {
+        "count": 4,
+        "mean": 0.35970279239028574,
+        "median": 0.3641241862462552,
+        "min": 0.1828120752021984,
+        "max": 0.5277507218664342
+      }
+    },
+    {
+      "fc": 100,
+      "r": 0.1,
+      "cent": 20,
+      "phase_count": 4,
+      "success_count": 4,
+      "unchanged_bits_count": 0,
+      "before_f0_native_hz": {
+        "count": 4,
+        "mean": 101.16194152832031,
+        "median": 101.16194152832031,
+        "min": 101.16194152832031,
+        "max": 101.16194152832031
+      },
+      "after_f0_native_hz": {
+        "count": 4,
+        "mean": 100.00210189819336,
+        "median": 100.00182723999023,
+        "min": 99.98603820800781,
+        "max": 100.01871490478516
+      },
+      "before_signed_cent": {
+        "count": 4,
+        "mean": 19.999957184236,
+        "median": 19.999957184236,
+        "min": 19.999957184236,
+        "max": 19.999957184236
+      },
+      "before_abs_cent": {
+        "count": 4,
+        "mean": 19.999957184236,
+        "median": 19.999957184236,
+        "min": 19.999957184236,
+        "max": 19.999957184236
+      },
+      "after_signed_cent": {
+        "count": 4,
+        "mean": 0.03637682988919225,
+        "median": 0.031633500965538075,
+        "min": -0.24172817201364372,
+        "max": 0.32396848963933655
+      },
+      "after_abs_cent": {
+        "count": 4,
+        "mean": 0.1572409158960141,
+        "median": 0.13975170259129358,
+        "min": 0.02549176876213273,
+        "max": 0.32396848963933655
+      },
+      "abs_after_minus_abs_before_cent": {
+        "count": 4,
+        "mean": -19.842716268339984,
+        "median": -19.860205481644705,
+        "min": -19.974465415473865,
+        "max": -19.67598869459666
+      }
+    },
+    {
+      "fc": 200,
+      "r": -0.1,
+      "cent": -20,
+      "phase_count": 4,
+      "success_count": 4,
+      "unchanged_bits_count": 0,
+      "before_f0_native_hz": {
+        "count": 4,
+        "mean": 197.7028045654297,
+        "median": 197.7028045654297,
+        "min": 197.7028045654297,
+        "max": 197.7028045654297
+      },
+      "after_f0_native_hz": {
+        "count": 4,
+        "mean": 199.94029235839844,
+        "median": 199.93900299072266,
+        "min": 199.9156951904297,
+        "max": 199.96746826171875
+      },
+      "before_signed_cent": {
+        "count": 4,
+        "mean": -19.99999566671826,
+        "median": -19.99999566671826,
+        "min": -19.99999566671826,
+        "max": -19.99999566671826
+      },
+      "before_abs_cent": {
+        "count": 4,
+        "mean": 19.99999566671826,
+        "median": 19.99999566671826,
+        "min": 19.99999566671826,
+        "max": 19.99999566671826
+      },
+      "after_signed_cent": {
+        "count": 4,
+        "mean": -0.516923966039852,
+        "median": -0.5280810309889238,
+        "min": -0.7299106323932131,
+        "max": -0.2816231697883473
+      },
+      "after_abs_cent": {
+        "count": 4,
+        "mean": 0.516923966039852,
+        "median": 0.5280810309889238,
+        "min": 0.2816231697883473,
+        "max": 0.7299106323932131
+      },
+      "abs_after_minus_abs_before_cent": {
+        "count": 4,
+        "mean": -19.48307170067841,
+        "median": -19.471914635729334,
+        "min": -19.718372496929913,
+        "max": -19.270085034325046
+      }
+    },
+    {
+      "fc": 200,
+      "r": -0.1,
+      "cent": 0,
+      "phase_count": 4,
+      "success_count": 4,
+      "unchanged_bits_count": 0,
+      "before_f0_native_hz": {
+        "count": 4,
+        "mean": 200.0,
+        "median": 200.0,
+        "min": 200.0,
+        "max": 200.0
+      },
+      "after_f0_native_hz": {
+        "count": 4,
+        "mean": 199.96614837646484,
+        "median": 199.96466827392578,
+        "min": 199.93043518066406,
+        "max": 200.00482177734375
+      },
+      "before_signed_cent": {
+        "count": 4,
+        "mean": 0.0,
+        "median": 0.0,
+        "min": 0.0,
+        "max": 0.0
+      },
+      "before_abs_cent": {
+        "count": 4,
+        "mean": 0.0,
+        "median": 0.0,
+        "min": 0.0,
+        "max": 0.0
+      },
+      "after_signed_cent": {
+        "count": 4,
+        "mean": -0.29306523812618746,
+        "median": -0.30586445383669014,
+        "min": -0.6022696672822248,
+        "max": 0.041737622450855244
+      },
+      "after_abs_cent": {
+        "count": 4,
+        "mean": 0.31393404935161506,
+        "median": 0.30586445383669014,
+        "min": 0.041737622450855244,
+        "max": 0.6022696672822248
+      },
+      "abs_after_minus_abs_before_cent": {
+        "count": 4,
+        "mean": 0.31393404935161506,
+        "median": 0.30586445383669014,
+        "min": 0.041737622450855244,
+        "max": 0.6022696672822248
+      }
+    },
+    {
+      "fc": 200,
+      "r": -0.1,
+      "cent": 20,
+      "phase_count": 4,
+      "success_count": 4,
+      "unchanged_bits_count": 0,
+      "before_f0_native_hz": {
+        "count": 4,
+        "mean": 202.32388305664062,
+        "median": 202.32388305664062,
+        "min": 202.32388305664062,
+        "max": 202.32388305664062
+      },
+      "after_f0_native_hz": {
+        "count": 4,
+        "mean": 200.00874710083008,
+        "median": 200.00775909423828,
+        "min": 199.95106506347656,
+        "max": 200.0684051513672
+      },
+      "before_signed_cent": {
+        "count": 4,
+        "mean": 19.999957184236,
+        "median": 19.999957184236,
+        "min": 19.999957184236,
+        "max": 19.999957184236
+      },
+      "before_abs_cent": {
+        "count": 4,
+        "mean": 19.999957184236,
+        "median": 19.999957184236,
+        "min": 19.999957184236,
+        "max": 19.999957184236
+      },
+      "after_signed_cent": {
+        "count": 4,
+        "mean": 0.07567747069633053,
+        "median": 0.067162727902805,
+        "min": -0.42364097071531814,
+        "max": 0.5920253976950303
+      },
+      "after_abs_cent": {
+        "count": 4,
+        "mean": 0.2874979560539896,
+        "median": 0.24834057483772498,
+        "min": 0.0612852768454782,
+        "max": 0.5920253976950303
+      },
+      "abs_after_minus_abs_before_cent": {
+        "count": 4,
+        "mean": -19.71245922818201,
+        "median": -19.751616609398276,
+        "min": -19.93867190739052,
+        "max": -19.40793178654097
+      }
+    },
+    {
+      "fc": 200,
+      "r": 0,
+      "cent": -20,
+      "phase_count": 4,
+      "success_count": 4,
+      "unchanged_bits_count": 0,
+      "before_f0_native_hz": {
+        "count": 4,
+        "mean": 197.7028045654297,
+        "median": 197.7028045654297,
+        "min": 197.7028045654297,
+        "max": 197.7028045654297
+      },
+      "after_f0_native_hz": {
+        "count": 4,
+        "mean": 199.98603057861328,
+        "median": 199.9857940673828,
+        "min": 199.98577880859375,
+        "max": 199.98675537109375
+      },
+      "before_signed_cent": {
+        "count": 4,
+        "mean": -19.99999566671826,
+        "median": -19.99999566671826,
+        "min": -19.99999566671826,
+        "max": -19.99999566671826
+      },
+      "before_abs_cent": {
+        "count": 4,
+        "mean": 19.99999566671826,
+        "median": 19.99999566671826,
+        "min": 19.99999566671826,
+        "max": 19.99999566671826
+      },
+      "after_signed_cent": {
+        "count": 4,
+        "mean": -0.12092591675475592,
+        "median": -0.12297333865719508,
+        "min": -0.1231054307206744,
+        "max": -0.11465155898395915
+      },
+      "after_abs_cent": {
+        "count": 4,
+        "mean": 0.12092591675475592,
+        "median": 0.12297333865719508,
+        "min": 0.11465155898395915,
+        "max": 0.1231054307206744
+      },
+      "abs_after_minus_abs_before_cent": {
+        "count": 4,
+        "mean": -19.879069749963502,
+        "median": -19.877022328061063,
+        "min": -19.8853441077343,
+        "max": -19.876890235997585
+      }
+    },
+    {
+      "fc": 200,
+      "r": 0,
+      "cent": 0,
+      "phase_count": 4,
+      "success_count": 4,
+      "unchanged_bits_count": 0,
+      "before_f0_native_hz": {
+        "count": 4,
+        "mean": 200.0,
+        "median": 200.0,
+        "min": 200.0,
+        "max": 200.0
+      },
+      "after_f0_native_hz": {
+        "count": 4,
+        "mean": 200.00001907348633,
+        "median": 200.00001525878906,
+        "min": 199.99998474121094,
+        "max": 200.00006103515625
+      },
+      "before_signed_cent": {
+        "count": 4,
+        "mean": 0.0,
+        "median": 0.0,
+        "min": 0.0,
+        "max": 0.0
+      },
+      "before_abs_cent": {
+        "count": 4,
+        "mean": 0.0,
+        "median": 0.0,
+        "min": 0.0,
+        "max": 0.0
+      },
+      "after_signed_cent": {
+        "count": 4,
+        "mean": 0.00016510332100088095,
+        "median": 0.00013208267094709465,
+        "min": -0.0001320826808319975,
+        "max": 0.000528330622941332
+      },
+      "after_abs_cent": {
+        "count": 4,
+        "mean": 0.0002311446614168797,
+        "median": 0.00013208267588954607,
+        "min": 0.00013208267094709465,
+        "max": 0.000528330622941332
+      },
+      "abs_after_minus_abs_before_cent": {
+        "count": 4,
+        "mean": 0.0002311446614168797,
+        "median": 0.00013208267588954607,
+        "min": 0.00013208267094709465,
+        "max": 0.000528330622941332
+      }
+    },
+    {
+      "fc": 200,
+      "r": 0,
+      "cent": 20,
+      "phase_count": 4,
+      "success_count": 4,
+      "unchanged_bits_count": 0,
+      "before_f0_native_hz": {
+        "count": 4,
+        "mean": 202.32388305664062,
+        "median": 202.32388305664062,
+        "min": 202.32388305664062,
+        "max": 202.32388305664062
+      },
+      "after_f0_native_hz": {
+        "count": 4,
+        "mean": 200.02800369262695,
+        "median": 200.0279312133789,
+        "min": 200.02737426757812,
+        "max": 200.02877807617188
+      },
+      "before_signed_cent": {
+        "count": 4,
+        "mean": 19.999957184236,
+        "median": 19.999957184236,
+        "min": 19.999957184236,
+        "max": 19.999957184236
+      },
+      "before_abs_cent": {
+        "count": 4,
+        "mean": 19.999957184236,
+        "median": 19.999957184236,
+        "min": 19.999957184236,
+        "max": 19.999957184236
+      },
+      "after_signed_cent": {
+        "count": 4,
+        "mean": 0.2423877564433301,
+        "median": 0.24176045689096284,
+        "min": 0.23694010571284013,
+        "max": 0.24909000627855465
+      },
+      "after_abs_cent": {
+        "count": 4,
+        "mean": 0.2423877564433301,
+        "median": 0.24176045689096284,
+        "min": 0.23694010571284013,
+        "max": 0.24909000627855465
+      },
+      "abs_after_minus_abs_before_cent": {
+        "count": 4,
+        "mean": -19.757569427792667,
+        "median": -19.758196727345037,
+        "min": -19.76301707852316,
+        "max": -19.750867177957446
+      }
+    },
+    {
+      "fc": 200,
+      "r": 0.1,
+      "cent": -20,
+      "phase_count": 4,
+      "success_count": 4,
+      "unchanged_bits_count": 0,
+      "before_f0_native_hz": {
+        "count": 4,
+        "mean": 197.7028045654297,
+        "median": 197.7028045654297,
+        "min": 197.7028045654297,
+        "max": 197.7028045654297
+      },
+      "after_f0_native_hz": {
+        "count": 4,
+        "mean": 199.94028091430664,
+        "median": 199.93898010253906,
+        "min": 199.91567993164062,
+        "max": 199.9674835205078
+      },
+      "before_signed_cent": {
+        "count": 4,
+        "mean": -19.99999566671826,
+        "median": -19.99999566671826,
+        "min": -19.99999566671826,
+        "max": -19.99999566671826
+      },
+      "before_abs_cent": {
+        "count": 4,
+        "mean": 19.99999566671826,
+        "median": 19.99999566671826,
+        "min": 19.99999566671826,
+        "max": 19.99999566671826
+      },
+      "after_signed_cent": {
+        "count": 4,
+        "mean": -0.5170230665338753,
+        "median": -0.5282792148662188,
+        "min": -0.7300427707735522,
+        "max": -0.28149106562951137
+      },
+      "after_abs_cent": {
+        "count": 4,
+        "mean": 0.5170230665338753,
+        "median": 0.5282792148662188,
+        "min": 0.28149106562951137,
+        "max": 0.7300427707735522
+      },
+      "abs_after_minus_abs_before_cent": {
+        "count": 4,
+        "mean": -19.482972600184386,
+        "median": -19.47171645185204,
+        "min": -19.71850460108875,
+        "max": -19.26995289594471
+      }
+    },
+    {
+      "fc": 200,
+      "r": 0.1,
+      "cent": 0,
+      "phase_count": 4,
+      "success_count": 4,
+      "unchanged_bits_count": 0,
+      "before_f0_native_hz": {
+        "count": 4,
+        "mean": 200.0,
+        "median": 200.0,
+        "min": 200.0,
+        "max": 200.0
+      },
+      "after_f0_native_hz": {
+        "count": 4,
+        "mean": 199.9661407470703,
+        "median": 199.96465301513672,
+        "min": 199.93043518066406,
+        "max": 200.00482177734375
+      },
+      "before_signed_cent": {
+        "count": 4,
+        "mean": 0.0,
+        "median": 0.0,
+        "min": 0.0,
+        "max": 0.0
+      },
+      "before_abs_cent": {
+        "count": 4,
+        "mean": 0.0,
+        "median": 0.0,
+        "min": 0.0,
+        "max": 0.0
+      },
+      "after_signed_cent": {
+        "count": 4,
+        "mean": -0.29313129117580883,
+        "median": -0.3059965599359329,
+        "min": -0.6022696672822248,
+        "max": 0.041737622450855244
+      },
+      "after_abs_cent": {
+        "count": 4,
+        "mean": 0.31400010240123644,
+        "median": 0.3059965599359329,
+        "min": 0.041737622450855244,
+        "max": 0.6022696672822248
+      },
+      "abs_after_minus_abs_before_cent": {
+        "count": 4,
+        "mean": 0.31400010240123644,
+        "median": 0.3059965599359329,
+        "min": 0.041737622450855244,
+        "max": 0.6022696672822248
+      }
+    },
+    {
+      "fc": 200,
+      "r": 0.1,
+      "cent": 20,
+      "phase_count": 4,
+      "success_count": 4,
+      "unchanged_bits_count": 0,
+      "before_f0_native_hz": {
+        "count": 4,
+        "mean": 202.32388305664062,
+        "median": 202.32388305664062,
+        "min": 202.32388305664062,
+        "max": 202.32388305664062
+      },
+      "after_f0_native_hz": {
+        "count": 4,
+        "mean": 200.00872802734375,
+        "median": 200.00774383544922,
+        "min": 199.95101928710938,
+        "max": 200.0684051513672
+      },
+      "before_signed_cent": {
+        "count": 4,
+        "mean": 19.999957184236,
+        "median": 19.999957184236,
+        "min": 19.999957184236,
+        "max": 19.999957184236
+      },
+      "before_abs_cent": {
+        "count": 4,
+        "mean": 19.999957184236,
+        "median": 19.999957184236,
+        "min": 19.999957184236,
+        "max": 19.999957184236
+      },
+      "after_signed_cent": {
+        "count": 4,
+        "mean": 0.07551234587746622,
+        "median": 0.06703065078934117,
+        "min": -0.42403731576384773,
+        "max": 0.5920253976950303
+      },
+      "after_abs_cent": {
+        "count": 4,
+        "mean": 0.2875310037593901,
+        "median": 0.24840667024852595,
+        "min": 0.0612852768454782,
+        "max": 0.5920253976950303
+      },
+      "abs_after_minus_abs_before_cent": {
+        "count": 4,
+        "mean": -19.71242618047661,
+        "median": -19.751550513987475,
+        "min": -19.93867190739052,
+        "max": -19.40793178654097
+      }
+    }
+  ],
+  "interpretation_boundary": "artificial oracle signals; no natural-speech accuracy or quality conclusion"
+}
