@@ -1,0 +1,70 @@
+{
+  "schema_version": 1,
+  "selected_comparison": {
+    "recordings": 120,
+    "speakers": 40,
+    "native_waveforms": 1080,
+    "quality_rows": 3360,
+    "highband_rows": 360,
+    "missing_quality_rows": 0,
+    "all_paired_groups_complete_40_speakers": true
+  },
+  "original_attempt": {
+    "original_attempt": "v3",
+    "recordings": 120,
+    "speakers": 40,
+    "retained_member_files_verified": 4399,
+    "source_lock_sha256": "00d8be0b5fe87c7069a32c5248672494964b71511840fe688e199f7415ae66c2",
+    "llsm_library_sha256": "d8da444d9c3298899065de57d5efbea69574d38ec1c4d9f42a50c2cb1a730c2a",
+    "all_quality_keys": 3360,
+    "quality_status_counts": {
+      "measured": 2280,
+      "upstream_failed": 1080
+    },
+    "quality_record_errors": [],
+    "highband_status_counts": {
+      "measured": 240,
+      "upstream_failed": 120
+    },
+    "highband_record_errors": [],
+    "retained_examples_verified": 21,
+    "all_native_raw_arrays_independently_retained": false,
+    "all_quality_environments_match_fixed_lock": true,
+    "original_model_asset_records_verified": 15,
+    "old_apron48_failure": "Parent guard used THOP index1 instead of FNYQ index6 before saving; all120 Apron48 states unavailable, all360 branches ungenerated",
+    "rank_status": "No v3 three-way ranks because Apron48 failed"
+  },
+  "repair_attempt": {
+    "source_lock_sha256": "7cf2797e1094df69193fa55d1ca57d1a82219e03799cedc4975bb13c6ca04124",
+    "analyses": 120,
+    "native_waveforms": 360,
+    "quality_rows": 1080,
+    "highband_rows": 120,
+    "retained_member_files_verified": 2223,
+    "source_audit_failures": 0,
+    "measurement_phase_failures": 0,
+    "all_runner_children_reaped": true,
+    "all_quality_environments_match_fixed_lock": true,
+    "model_asset_records_verified": 15,
+    "llsm_library_sha256": "d8da444d9c3298899065de57d5efbea69574d38ec1c4d9f42a50c2cb1a730c2a",
+    "preparation_auxiliary_command_failures": "Package-list/metadata helper commands had cache/pip/quoting errors; original logs retained and metadata captured without repeating measurements."
+  },
+  "parent_verification": {
+    "original_input_arrays": 120,
+    "unique_example_arrays": 30,
+    "all_selected_quality_descriptors_valid": true,
+    "cross_attempt_reference_projections_match": true,
+    "cross_attempt_highband_reference_powers_match": true,
+    "full_native_raw_arrays_retained": false,
+    "independent_model_inference_repeated": false,
+    "browser_visual_verification": "not performed; static artifact/links/bytes verification only"
+  },
+  "audio": {
+    "selection_before_measurement": true,
+    "samples": 30,
+    "native_rates_preserved": true,
+    "maximum_seconds": 4.325,
+    "all_actual_display_gains": 1.0,
+    "conversion": "PCM16 presentation; measurement NPY bytes unchanged"
+  }
+}
