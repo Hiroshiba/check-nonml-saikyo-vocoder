@@ -3,6 +3,40 @@
   "reports": [
     {
       "kind": "navigation-only",
+      "id": "visqol-highband-response-2026-10-26",
+      "path": "research/visqol-highband-response-2026-10-26",
+      "source_path": "research/visqol-highband-response-2026-10-26",
+      "created_on": "2026-10-25",
+      "created_at": "2026-10-25T17:03:00Z",
+      "title": "高域を消す場合と位相を崩す場合のViSQOL応答",
+      "comparison_scope": "予定240枠中232枠を採点し、8枠は量子化範囲超過でした。完全対応36話者108録音のMOS-LQO差は位相ランダム化−除去で−0.524739。帯域別の符号は混在し、知覚順位やボコーダーの優劣には置き換えません。Apron24を維持します。",
+      "artifact_count": 15,
+      "artifact_manifest": {
+        "bytes": 2337,
+        "sha256": "6d215b7bf42ac107254da5808164951975ac8a3ab1e09bb45d278e914f3de3de"
+      },
+      "audio_listing": {
+        "caption": "固定例p225_029の実採点入力",
+        "note": "同じ区間のPCM16。掲載用の音量調整なし。",
+        "attribution_path": "audio_credits.html",
+        "samples": [
+          {
+            "path": "audio/p225_029-reference.wav",
+            "label": "参照区間"
+          },
+          {
+            "path": "audio/p225_029-remove_above_12k.wav",
+            "label": "高域除去"
+          },
+          {
+            "path": "audio/p225_029-random_phase_above_12k.wav",
+            "label": "高域位相ランダム化"
+          }
+        ]
+      }
+    },
+    {
+      "kind": "navigation-only",
       "id": "saved-f0-rate-diagnostic-2026-10-25",
       "path": "research/saved-f0-rate-diagnostic-2026-10-25",
       "source_path": "research/saved-f0-rate-diagnostic-2026-10-25",

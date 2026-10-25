@@ -1,0 +1,15 @@
+# 高域応答診断の固定条件と照合範囲
+
+予定は40話者120録音×2変換の240枠。完全対応は116録音で、主話者平均は36話者108録音。4話者の部分的な成功録音は主平均から外す。失敗8枠は変換後PCM16化で範囲超過し、ViSQOLは未起動。成功232枠のWAV、生CSV/debug、個票、コードと実行記録を保持し、全240枠の状態を親が照合した。
+
+元入力NPYの全長識別と固定prefix、実際のscorer入力WAVのbytes/SHA/PCMハッシュ/標本数、変換のarm/seed/FFT長、source全11ファイル、runtime、実行コマンド、生CSVとdebugの9桁直列化、各枠結果との一致を確認した。元Cloudの起動記録と別保持buildのSHAも照合したが、独立したプロセス証明ではない。変換・合成・採点を親で再実行したものではない。
+
+ViSQOL本体commit: c3aa2e498e0f7f14202643594335a0b9ee40bdd9。Audio mode、SVR、search_window_radius=60、48 kHz mono PCM16。互換ビルドはAbseil/TensorFlowの2ファイルへcstdintを各1行追加。バイナリSHA: 0c3ae11fbc4314278f62a9333e9371c3a26f848b097c2348913bc1fd8e218158。モデルSHA: 1e8246ed33bf36dc5c859351f7110f2cd31f98661989715c0fcf974ec48d3e2e。
+
+変換環境はPython 3.12.14、NumPy 2.3.5、SciPy 1.17.0。plan SHA: b73eb59757d2ec65110030fe31148a44ea01f94c222cb752b86e4e70a238d6bf。source-lock SHA: 16d5ddfd47c9134388f4d91879cdfc4bc9e6948e6b59b085774612367154ff28。種はASCIIのvisqol-highband-response-v1|case_idをSHA256化し先頭8バイトをlittle-endian uint64としてPCG64へ渡す。DFTの高域条件は4*k>N。偶数NのNyquistは実数符号のみ変更する。PCM16化はnp.rint(x*32768)でties-to-even、範囲超過は失敗。seed、音量、窓長を救済変更しない。
+
+各話者の3録音の対応差を平均し、完全な36話者を等重みで集約した。差の向きは位相ランダム化−除去。全32中心周波数の一致を照合してから集計し、録音・patchを独立な話者標本として扱わない。記述統計のみでp値や信頼区間は作らない。原音自己採点はしない。
+
+長さ別は固定prefixの144000標本未満/以上。各区分内に事前所属する録音の両変換が全て揃う話者を採用し、区分内録音平均から話者を等重みで扱う。主集計とは集合が異なる。
+
+実採点WAVは全件保持した。公開するのは従来の固定3例の9WAVで、採点入力とbyte一致。量子化前float配列の永続保持や、全WAVのGit公開を意味しない。初回uv syncのcache書込失敗は科学開始前に作業領域内cacheへ変更して回復し、科学条件・版は不変。shard3では科学開始前にpackを呼んでsummary不在となった操作上の失敗も元ログに残し、実測の失敗8枠とは区別する。
