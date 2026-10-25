@@ -3,6 +3,44 @@
   "reports": [
     {
       "kind": "navigation-only",
+      "id": "native48-rate-comparison-2026-10-25",
+      "path": "research/native48-rate-comparison-2026-10-25",
+      "source_path": "research/native48-rate-comparison-2026-10-25",
+      "created_on": "2026-10-25",
+      "created_at": "2026-10-25T03:24:05.420997+00:00",
+      "title": "48 kHz化で高域の不足は減るが、品質指標は分かれる",
+      "comparison_scope": "固定120録音の無編集の自動MOSはApron48が3.337（1位）、Apron24が3.285（2位）、WORLD48が3.215（3位）。話者類似度・明瞭性・参照付き品質距離はApron24が1位で、作業ベースを維持します。48 kHz版は高域のパワー不足を減らしましたが、高域の知覚品質を自動指標で確かめた結果ではありません。",
+      "artifact_count": 37,
+      "artifact_manifest": {
+        "bytes": 5991,
+        "sha256": "f603ef6559f0a50aeeda4fa247617ac5967648ad68f54aa6b3334ab4fcbdff4e"
+      },
+      "audio_listing": {
+        "caption": "p225_029の無編集。事前指定した同じ録音の約1.8秒を比較します。",
+        "note": "全120録音・品質3360個票の比較。短例はPCM16化のみで、実際の掲載倍率は全条件1です。元の標本化周波数を保持しています。VCTK 0.92、CC BY 4.0。",
+        "attribution_path": "audio_credits.html",
+        "samples": [
+          {
+            "path": "audio/p225_029-original-original.wav",
+            "label": "原音"
+          },
+          {
+            "path": "audio/p225_029-apron24-0.wav",
+            "label": "Apron24（作業ベース）"
+          },
+          {
+            "path": "audio/p225_029-world48-0.wav",
+            "label": "WORLD48"
+          },
+          {
+            "path": "audio/p225_029-apron48-0.wav",
+            "label": "Apron48（候補）"
+          }
+        ]
+      }
+    },
+    {
+      "kind": "navigation-only",
       "id": "trajectory-support-2026-10-25",
       "path": "research/trajectory-support-2026-10-25",
       "source_path": "research/trajectory-support-2026-10-25",
