@@ -1,0 +1,12 @@
+LibriSpeech test-clean, OpenSLR SLR12.
+Authors: Vassil Panayotov, Guoguo Chen, Daniel Povey, Sanjeev Khudanpur.
+Source: https://www.openslr.org/12/
+Archive: https://www.openslr.org/resources/12/test-clean.tar.gz
+License: Creative Commons Attribution 4.0 International (CC BY 4.0).
+License URL: https://creativecommons.org/licenses/by/4.0/
+Citation: LibriSpeech: an ASR corpus based on public domain audio books, ICASSP 2015.
+Processing: selected the same previously fixed 120 utterances; decoded the full FLAC
+signals to bit-exact signed PCM16 and wrote canonical mono 16 kHz WAV containers.
+No gain adjustment, resampling, truncation, synthesis, ASR, or quality scoring.
+Historical source selection and transcripts are copied from the fixed input contract.
+The corpus license is distinct from any repository code license.
