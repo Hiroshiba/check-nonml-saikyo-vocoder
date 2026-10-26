@@ -5,7 +5,16 @@
   "all120_factor_result_file_hashes_and_frame_counts_match": true,
   "equal_weighting": "120 recordings with exactly 3 per each of 40 speakers",
   "new_saved_f0_diagnostic_sha256": "ff238244680dc6f646ece087c06f8de627f9c83c7e37b4e5c76ee6f97f7d9301",
-  "interpretation": "Post-hoc aggregate contextual comparison; no new recurrence, no per-case smoothing comparison, sampler calibration or causal quality inference.",
+  "interpretation": "Post-hoc descriptive global and per-case comparison of voiced occupancy only; no new recurrence, sampler calibration or causal quality inference.",
   "source_provenance_sha256": "96e734a338bf462279ea988dd60b9c4ebdcc5262075957ba7d7fad0e1a34a8d5",
-  "model_relation": "Same retained O,T,pi and float64 tiny epsilon; log(O+epsilon), log(T+epsilon), log(pi+epsilon); numeric normalized supports, not physiological calibration."
+  "model_relation": "Same retained O,T,pi and float64 tiny epsilon; log(O+epsilon), log(T+epsilon), log(pi+epsilon); numeric normalized supports, not physiological calibration.",
+  "recording_level_followup": {
+    "file": "saved-vs-expected-voicing.json.gz",
+    "requested_saved_vuv_identical_branches": 360,
+    "all_recordings": 120,
+    "new_forward_backward_calls": 0,
+    "sample_mean_bias": -0.0006953549073853858,
+    "sample_mean_absolute_case_deviation": 0.005287646916059474,
+    "normalization_drift_preserved": true
+  }
 }
