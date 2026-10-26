@@ -1,0 +1,107 @@
+{
+  "kind": "soft_carrier_gain_worker_reported_execution_status_v1",
+  "not_a_verified_quality_result": true,
+  "as_of_utc": "2026-10-26T14:55:00Z",
+  "plan_sha256": "4642ef0ada3453d5ddb470e4426b976fa5025bb4d1bfafda080bd25656f6f144",
+  "reported_totals": {
+    "complete_four_condition_recordings": 108,
+    "planned_recordings": 120,
+    "quality_measured": 2400,
+    "quality_upstream_failed": 120,
+    "planned_quality_slots": 2520,
+    "aliases": 0,
+    "archive_bytes": 618962826
+  },
+  "owners": [
+    {
+      "owner": 0,
+      "complete_cases": 23,
+      "quality_measured": 494,
+      "upstream_failed": 10,
+      "archive_bytes": 136371026,
+      "archive_sha256": "3a325e867935c32350dc7e3e9255bfcd1d6a938aff2b87263af5647d4d34b4c1",
+      "scientific_stages_reported_terminal": true,
+      "aliases": 0,
+      "library_saved": false,
+      "parent_received_original_archive": false,
+      "parent_verified_archive_bytes": false
+    },
+    {
+      "owner": 1,
+      "complete_cases": 17,
+      "quality_measured": 434,
+      "upstream_failed": 70,
+      "archive_bytes": 94805939,
+      "archive_sha256": "bc1d41a9d60f48395e1060125b0b1cdcfe67850024d8b76f7528b6877569e62f",
+      "scientific_stages_reported_terminal": true,
+      "aliases": 0,
+      "library_saved": false,
+      "parent_received_original_archive": false,
+      "parent_verified_archive_bytes": false
+    },
+    {
+      "owner": 2,
+      "complete_cases": 23,
+      "quality_measured": 494,
+      "upstream_failed": 10,
+      "archive_bytes": 132223869,
+      "archive_sha256": "051c5bd5c81a362b0e2870deb8affde7600006ab51814e07df95e45184807079",
+      "scientific_stages_reported_terminal": true,
+      "aliases": 0,
+      "library_saved": false,
+      "parent_received_original_archive": false,
+      "parent_verified_archive_bytes": false
+    },
+    {
+      "owner": 3,
+      "complete_cases": 22,
+      "quality_measured": 484,
+      "upstream_failed": 20,
+      "archive_bytes": 120672149,
+      "archive_sha256": "ff3f77d2b56c4d40536109efdf4d6a68f72ed6eec0796e6224be0272b424bd59",
+      "scientific_stages_reported_terminal": true,
+      "aliases": 0,
+      "library_saved": false,
+      "parent_received_original_archive": false,
+      "parent_verified_archive_bytes": false
+    },
+    {
+      "owner": 4,
+      "complete_cases": 23,
+      "quality_measured": 494,
+      "upstream_failed": 10,
+      "archive_bytes": 134889843,
+      "archive_sha256": "c58f0978dc90cf1bb73ec006a307a79f9872fb7d7b7b4f333bf123025d488ba3",
+      "scientific_stages_reported_terminal": true,
+      "aliases": 0,
+      "library_saved": false,
+      "parent_received_original_archive": false,
+      "parent_verified_archive_bytes": false
+    }
+  ],
+  "reported_failure_codes": {
+    "librispeech_121-127105-0035": 5,
+    "librispeech_2300-131720-0022": 4,
+    "librispeech_260-123440-0020": 4,
+    "librispeech_3575-170457-0034": 4,
+    "librispeech_3575-170457-0054": 4,
+    "librispeech_2300-131720-0041": 5,
+    "librispeech_260-123286-0008": 5,
+    "librispeech_260-123288-0003": 5,
+    "librispeech_4507-16021-0016": 4,
+    "librispeech_5639-40744-0030": 5,
+    "librispeech_7021-79740-0011": 4,
+    "librispeech_8555-292519-0001": 4
+  },
+  "library_original_archives_received": 0,
+  "quality_means_or_ranks": null,
+  "storage_error": "HTTP401 before prepared-upload preparation; original archives remain local to producing tasks",
+  "source_helper_current_bytes_checked": true,
+  "owner2_recovery": "Original input ZIP was extra in source root; listed source bytes unchanged. Moved original ZIP outside source preserving hash/identity; original failure retained; parent-authorized one unchanged-packager recovery created original result archive. No scientific rerun.",
+  "limitations": [
+    "Counts and archive hashes are producing-task reports, not parent verification of original result bytes.",
+    "Frozen v1 scientific calls were not retried or replaced.",
+    "Status4 combines multiple shape checks; status5 identifies complete-noise-state validation, not its precise failed field.",
+    "This is an operational status record, not the planned full scientific report."
+  ]
+}
