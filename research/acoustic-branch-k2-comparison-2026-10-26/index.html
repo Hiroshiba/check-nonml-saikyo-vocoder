@@ -1,0 +1,211 @@
+<!doctype html><html lang="ja"><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>二つのF0系列と一本の系列：再構成と音高操作の比較</title>
+<style>:root{color-scheme:light dark;font-family:system-ui,sans-serif;line-height:1.7}
+body{max-width:84rem;margin:auto;padding:1rem 1.3rem}h1,h2{line-height:1.4}
+a{color:#076e70}.scroll{overflow-x:auto}table{border-collapse:collapse;width:100%;min-width:900px}
+th,td{border:1px solid #888;padding:.5rem;text-align:right}th:first-child,td:first-child{text-align:left}
+.best{font-weight:750;background:#e5f4d8;color:#173315}.base{border-left:3px solid #398388}
+.note{border-left:4px solid #888;padding:.5rem 1rem}.clips{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:.8rem}
+.clip{border:1px solid #888;padding:.6rem;border-radius:.4rem}.clip audio{width:100%}
+@media(prefers-color-scheme:dark){a{color:#8edbd8}.best{background:#244321;color:#eff7e6}}
+</style><main><h1>二つのF0系列と一本の系列：再構成と音高操作の比較</h1>
+<p>無編集の自動MOSはApron24が3.094で1位、WORLD16が3.045で2位、pYINの一本が2.935で3位、二系列の指標平均が2.613で4位でした。二系列は、同じpYINから一本を選ぶ場合より0.322低く、明瞭性・話者類似度・原音との品質距離も悪化しました。</p>
+<p>この固定K=2方式は作業ベースへ採用せず、Apron24を維持します。不確実性を残すこと一般の否定ではなく、今回抽出した二本をそのまま復号して平均的な品質を評価する方式の結果です。</p>
+<p>元LibriSpeechの40話者・各3録音で比較しました。二系列の欄は二つの音声の指標平均で、波形を平均したものではありません。
+各指標の良い方向と順位を分け、総合順位は作りません。</p>
+<h2>現在のApronと既存方式に対する比較</h2><div class="scroll"><table><thead><tr><th>指標・操作・区間</th>
+<th>二系列（指標平均）</th>
+<th>pYINの一本</th>
+<th>Apron24（現ベース）</th>
+<th>WORLD16</th>
+<th>二系列−pYIN一本</th><th>探索的95%区間</th></tr></thead><tbody>
+<tr><th>UTMOSv2：予測音質・+0半音・各方式の出力全長（高いほど良い）</th>
+<td class="">2.61324（4位）<br><small>40話者・120録音</small></td>
+<td class="">2.93549（3位）<br><small>40話者・120録音</small></td>
+<td class="best base">3.09384（1位）<br><small>40話者・120録音</small></td>
+<td class="">3.04539（2位）<br><small>40話者・120録音</small></td>
+<td>-0.322245<br><small>40話者・120録音</small></td><td>-0.377932 ～ -0.266769</td></tr>
+<tr><th>SCOREQ：原音との距離・+0半音・16 kHzの固定共通区間（低いほど良い）</th>
+<td class="">0.606518（4位）<br><small>40話者・120録音</small></td>
+<td class="">0.336862（2位）<br><small>40話者・120録音</small></td>
+<td class="best base">0.24348（1位）<br><small>40話者・120録音</small></td>
+<td class="">0.379067（3位）<br><small>40話者・120録音</small></td>
+<td>+0.269656<br><small>40話者・120録音</small></td><td>+0.229062 ～ +0.311151</td></tr>
+<tr><th>eSTOI：明瞭性・+0半音・16 kHzの固定共通区間（高いほど良い）</th>
+<td class="">0.874857（4位）<br><small>40話者・120録音</small></td>
+<td class="">0.91921（2位）<br><small>40話者・120録音</small></td>
+<td class="best base">0.930536（1位）<br><small>40話者・120録音</small></td>
+<td class="">0.905191（3位）<br><small>40話者・120録音</small></td>
+<td>-0.0443537<br><small>40話者・120録音</small></td><td>-0.0513374 ～ -0.0375187</td></tr>
+<tr><th>ECAPA：話者類似度・+0半音・16 kHzの固定共通区間（高いほど良い）</th>
+<td class="">0.920405（4位）<br><small>40話者・120録音</small></td>
+<td class="">0.951663（2位）<br><small>40話者・120録音</small></td>
+<td class="best base">0.957365（1位）<br><small>40話者・120録音</small></td>
+<td class="">0.930536（3位）<br><small>40話者・120録音</small></td>
+<td>-0.0312572<br><small>40話者・120録音</small></td><td>-0.0386232 ～ -0.024615</td></tr>
+<tr><th>ECAPA：話者類似度・+0半音・16 kHzで全長（高いほど良い）</th>
+<td class="">0.920237（4位）<br><small>40話者・120録音</small></td>
+<td class="">0.951609（2位）<br><small>40話者・120録音</small></td>
+<td class="best base">0.957407（1位）<br><small>40話者・120録音</small></td>
+<td class="">0.930619（3位）<br><small>40話者・120録音</small></td>
+<td>-0.0313716<br><small>40話者・120録音</small></td><td>-0.038786 ～ -0.0246579</td></tr>
+<tr><th>UTMOSv2：予測音質・-3半音・各方式の出力全長（高いほど良い）</th>
+<td class="">2.6243（4位）<br><small>40話者・120録音</small></td>
+<td class="">2.90927（3位）<br><small>40話者・120録音</small></td>
+<td class="best base">3.12004（1位）<br><small>40話者・120録音</small></td>
+<td class="">3.09452（2位）<br><small>40話者・120録音</small></td>
+<td>-0.284972<br><small>40話者・120録音</small></td><td>-0.347426 ～ -0.225732</td></tr>
+<tr><th>UTMOSv2：予測音質・+3半音・各方式の出力全長（高いほど良い）</th>
+<td class="">2.38418（4位）<br><small>40話者・120録音</small></td>
+<td class="">2.6652（3位）<br><small>40話者・120録音</small></td>
+<td class="base">2.7907（2位）<br><small>40話者・120録音</small></td>
+<td class="best ">2.86097（1位）<br><small>40話者・120録音</small></td>
+<td>-0.281023<br><small>40話者・120録音</small></td><td>-0.33524 ～ -0.224853</td></tr>
+<tr><th>ECAPA：話者類似度・-3半音・16 kHzで全長（高いほど良い）</th>
+<td class="best ">0.840834（1位）<br><small>40話者・120録音</small></td>
+<td class="">0.836268（3位）<br><small>40話者・120録音</small></td>
+<td class="base">0.839277（2位）<br><small>40話者・120録音</small></td>
+<td class="">0.826241（4位）<br><small>40話者・120録音</small></td>
+<td>+0.00456631<br><small>40話者・120録音</small></td><td>-0.00309691 ～ +0.0115536</td></tr>
+<tr><th>ECAPA：話者類似度・+3半音・16 kHzで全長（高いほど良い）</th>
+<td class="">0.848354（4位）<br><small>40話者・120録音</small></td>
+<td class="">0.854718（3位）<br><small>40話者・120録音</small></td>
+<td class="base">0.861286（2位）<br><small>40話者・120録音</small></td>
+<td class="best ">0.861441（1位）<br><small>40話者・120録音</small></td>
+<td>-0.00636468<br><small>40話者・120録音</small></td><td>-0.0126479 ～ -0.000756568</td></tr>
+</tbody></table></div>
+<p>各方式の絶対値は同じ四方式が揃った話者集合です。主比較は二系列とpYIN一本が揃った話者集合で、分母を混同しません。順位は全40話者が揃う場合だけ丸め前の値から示します。詳細の分母・話者別値は<a href="summary.json.gz">集計JSON</a>にあります。</p>
+<p>原音の予測音質（別参照、方式順位には含めない）：3.84918。対象は40話者・120録音。</p>
+<h2>二系列の音質低下は音高操作後にも残る</h2><p>二系列−pYIN一本の自動MOS差は、−3半音で−0.285、＋3半音で−0.281でした。無編集の話者類似度（全長）は−0.0314、明瞭性は−0.0444、原音との品質距離は＋0.2697です。これらはすべて悪化する向きでした。</p><p>例外として、−3半音の話者類似度は二系列が記述上1位でした。ただし二系列−pYIN一本の探索的95%区間は−0.00310〜＋0.01155で、0をまたぎます。＋3半音ではWORLD16が自動MOSと話者類似度で1位でした。Apron24がすべての操作・指標で最良という結論にはしません。</p><p>Apron24とpYIN一本の差はF0推定器などの違いを含みます。不確実性を二系列として残す方式の主比較は、同じpYINの一本との差です。Kやseedを結果後に調整したり、良い枝だけを選び直したりしていません。</p><h2>事後診断：抽出系列では有声フレームが少ない</h2><p>全120録音の保存F0を後から数えると、有声フレーム率は抽出系列1が38.5516%、系列2が38.4543%、pYINの一本が64.5324%でした。話者内3録音を平均して40話者を等重みにした値です。二系列の平均−一本は−26.0294ポイントで、全120録音・全40話者で負でした。</p><p>隣接フレームで有声・無声が切り替わる割合は、二系列の平均が2.0401%、一本が2.9772%でした。単に切替えが増えたという結果ではありません。正解の有声・無声ラベルはなく、この差が品質低下の原因だとも確定できません。<a href="saved-f0-voicing.json.gz">全録音のカウントと集計</a>を公開しています。</p><p><a href="../apron-f0-marginals-2026-10-22/index.html">以前の周辺確率の計算</a>では、同じ保存因子から求めた有声率の期待値は38.5725%でした。今回の二系列平均38.5030%に近い値です。元の120録音の因子記録とフレーム数を照合しましたが、この全体平均の近さだけで、各録音の一致、抽出器の校正、品質との因果は証明できません。<a href="voicing-context.json">既存集計との対応記録</a>。</p><h2>次は抽出本数より、分布を復号へ使う目的を見直す</h2><p>有声率の差を少数抽出の偶然として扱ってKやseedを増やす前に、同じモデルで一本を選ぶ場合と分布から抽出する場合の目的の違いを整理します。分布を保持できることと、そこから無作為に選んだ音声の自動品質が高いことは別です。</p><p>同じ絶対音高への編集については、事前指定5録音の保存状態も調べました。三系列すべてが有声のフレームは各録音の28.7〜63.8%に限られました。この5例を全120録音の品質判断に代用せず、<a href="https://github.com/Hiroshiba/check-nonml-saikyo-vocoder/blob/main/research/acoustic-branch-common-target-scope-2026-10-26.md">既に整理した編集範囲</a>と<a href="editing-support-inventory.json.gz">保存状態の記録</a>を踏まえて、次の測定が設計判断を変えるかを検討します。新しい共通音高の合成・採点はまだ行っていません。</p>
+<h2>事前指定した同じ録音の比較音声</h2>
+<p>結果を見る前に指定した5録音の先頭2秒です。掲載用のPCM16変換では、音量調整・再標本化・振幅の切り詰めをしていません。<a href="audio_credits.html">出典と加工条件</a>、<a href="audio-manifest.json">変換記録</a>を参照してください。</p>
+<details open><summary>librispeech_1089-134686-0008</summary>
+<h3>原音と音高変更なし</h3><div class="clips">
+<div class="clip"><p>原音</p><audio controls preload="none" src="audio/librispeech_1089-134686-0008-original-0.wav"></audio></div>
+<div class="clip"><p>抽出系列1 / +0半音</p><audio controls preload="none" src="audio/librispeech_1089-134686-0008-sample0-0.wav"></audio></div>
+<div class="clip"><p>抽出系列2 / +0半音</p><audio controls preload="none" src="audio/librispeech_1089-134686-0008-sample1-0.wav"></audio></div>
+<div class="clip"><p>pYINの一本 / +0半音</p><audio controls preload="none" src="audio/librispeech_1089-134686-0008-pyin_viterbi-0.wav"></audio></div>
+<div class="clip"><p>Apron24（現ベース） / +0半音</p><audio controls preload="none" src="audio/librispeech_1089-134686-0008-apron24-0.wav"></audio></div>
+<div class="clip"><p>WORLD16 / +0半音</p><audio controls preload="none" src="audio/librispeech_1089-134686-0008-world16-0.wav"></audio></div>
+</div>
+<h3>-3半音</h3><div class="clips">
+<div class="clip"><p>抽出系列1 / -3半音</p><audio controls preload="none" src="audio/librispeech_1089-134686-0008-sample0--3.wav"></audio></div>
+<div class="clip"><p>抽出系列2 / -3半音</p><audio controls preload="none" src="audio/librispeech_1089-134686-0008-sample1--3.wav"></audio></div>
+<div class="clip"><p>pYINの一本 / -3半音</p><audio controls preload="none" src="audio/librispeech_1089-134686-0008-pyin_viterbi--3.wav"></audio></div>
+<div class="clip"><p>Apron24（現ベース） / -3半音</p><audio controls preload="none" src="audio/librispeech_1089-134686-0008-apron24--3.wav"></audio></div>
+<div class="clip"><p>WORLD16 / -3半音</p><audio controls preload="none" src="audio/librispeech_1089-134686-0008-world16--3.wav"></audio></div>
+</div>
+<h3>+3半音</h3><div class="clips">
+<div class="clip"><p>抽出系列1 / +3半音</p><audio controls preload="none" src="audio/librispeech_1089-134686-0008-sample0-3.wav"></audio></div>
+<div class="clip"><p>抽出系列2 / +3半音</p><audio controls preload="none" src="audio/librispeech_1089-134686-0008-sample1-3.wav"></audio></div>
+<div class="clip"><p>pYINの一本 / +3半音</p><audio controls preload="none" src="audio/librispeech_1089-134686-0008-pyin_viterbi-3.wav"></audio></div>
+<div class="clip"><p>Apron24（現ベース） / +3半音</p><audio controls preload="none" src="audio/librispeech_1089-134686-0008-apron24-3.wav"></audio></div>
+<div class="clip"><p>WORLD16 / +3半音</p><audio controls preload="none" src="audio/librispeech_1089-134686-0008-world16-3.wav"></audio></div>
+</div>
+</details>
+<details><summary>librispeech_2094-142345-0032</summary>
+<h3>原音と音高変更なし</h3><div class="clips">
+<div class="clip"><p>原音</p><audio controls preload="none" src="audio/librispeech_2094-142345-0032-original-0.wav"></audio></div>
+<div class="clip"><p>抽出系列1 / +0半音</p><audio controls preload="none" src="audio/librispeech_2094-142345-0032-sample0-0.wav"></audio></div>
+<div class="clip"><p>抽出系列2 / +0半音</p><audio controls preload="none" src="audio/librispeech_2094-142345-0032-sample1-0.wav"></audio></div>
+<div class="clip"><p>pYINの一本 / +0半音</p><audio controls preload="none" src="audio/librispeech_2094-142345-0032-pyin_viterbi-0.wav"></audio></div>
+<div class="clip"><p>Apron24（現ベース） / +0半音</p><audio controls preload="none" src="audio/librispeech_2094-142345-0032-apron24-0.wav"></audio></div>
+<div class="clip"><p>WORLD16 / +0半音</p><audio controls preload="none" src="audio/librispeech_2094-142345-0032-world16-0.wav"></audio></div>
+</div>
+<h3>-3半音</h3><div class="clips">
+<div class="clip"><p>抽出系列1 / -3半音</p><audio controls preload="none" src="audio/librispeech_2094-142345-0032-sample0--3.wav"></audio></div>
+<div class="clip"><p>抽出系列2 / -3半音</p><audio controls preload="none" src="audio/librispeech_2094-142345-0032-sample1--3.wav"></audio></div>
+<div class="clip"><p>pYINの一本 / -3半音</p><audio controls preload="none" src="audio/librispeech_2094-142345-0032-pyin_viterbi--3.wav"></audio></div>
+<div class="clip"><p>Apron24（現ベース） / -3半音</p><audio controls preload="none" src="audio/librispeech_2094-142345-0032-apron24--3.wav"></audio></div>
+<div class="clip"><p>WORLD16 / -3半音</p><audio controls preload="none" src="audio/librispeech_2094-142345-0032-world16--3.wav"></audio></div>
+</div>
+<h3>+3半音</h3><div class="clips">
+<div class="clip"><p>抽出系列1 / +3半音</p><audio controls preload="none" src="audio/librispeech_2094-142345-0032-sample0-3.wav"></audio></div>
+<div class="clip"><p>抽出系列2 / +3半音</p><audio controls preload="none" src="audio/librispeech_2094-142345-0032-sample1-3.wav"></audio></div>
+<div class="clip"><p>pYINの一本 / +3半音</p><audio controls preload="none" src="audio/librispeech_2094-142345-0032-pyin_viterbi-3.wav"></audio></div>
+<div class="clip"><p>Apron24（現ベース） / +3半音</p><audio controls preload="none" src="audio/librispeech_2094-142345-0032-apron24-3.wav"></audio></div>
+<div class="clip"><p>WORLD16 / +3半音</p><audio controls preload="none" src="audio/librispeech_2094-142345-0032-world16-3.wav"></audio></div>
+</div>
+</details>
+<details><summary>librispeech_3729-6852-0000</summary>
+<h3>原音と音高変更なし</h3><div class="clips">
+<div class="clip"><p>原音</p><audio controls preload="none" src="audio/librispeech_3729-6852-0000-original-0.wav"></audio></div>
+<div class="clip"><p>抽出系列1 / +0半音</p><audio controls preload="none" src="audio/librispeech_3729-6852-0000-sample0-0.wav"></audio></div>
+<div class="clip"><p>抽出系列2 / +0半音</p><audio controls preload="none" src="audio/librispeech_3729-6852-0000-sample1-0.wav"></audio></div>
+<div class="clip"><p>pYINの一本 / +0半音</p><audio controls preload="none" src="audio/librispeech_3729-6852-0000-pyin_viterbi-0.wav"></audio></div>
+<div class="clip"><p>Apron24（現ベース） / +0半音</p><audio controls preload="none" src="audio/librispeech_3729-6852-0000-apron24-0.wav"></audio></div>
+<div class="clip"><p>WORLD16 / +0半音</p><audio controls preload="none" src="audio/librispeech_3729-6852-0000-world16-0.wav"></audio></div>
+</div>
+<h3>-3半音</h3><div class="clips">
+<div class="clip"><p>抽出系列1 / -3半音</p><audio controls preload="none" src="audio/librispeech_3729-6852-0000-sample0--3.wav"></audio></div>
+<div class="clip"><p>抽出系列2 / -3半音</p><audio controls preload="none" src="audio/librispeech_3729-6852-0000-sample1--3.wav"></audio></div>
+<div class="clip"><p>pYINの一本 / -3半音</p><audio controls preload="none" src="audio/librispeech_3729-6852-0000-pyin_viterbi--3.wav"></audio></div>
+<div class="clip"><p>Apron24（現ベース） / -3半音</p><audio controls preload="none" src="audio/librispeech_3729-6852-0000-apron24--3.wav"></audio></div>
+<div class="clip"><p>WORLD16 / -3半音</p><audio controls preload="none" src="audio/librispeech_3729-6852-0000-world16--3.wav"></audio></div>
+</div>
+<h3>+3半音</h3><div class="clips">
+<div class="clip"><p>抽出系列1 / +3半音</p><audio controls preload="none" src="audio/librispeech_3729-6852-0000-sample0-3.wav"></audio></div>
+<div class="clip"><p>抽出系列2 / +3半音</p><audio controls preload="none" src="audio/librispeech_3729-6852-0000-sample1-3.wav"></audio></div>
+<div class="clip"><p>pYINの一本 / +3半音</p><audio controls preload="none" src="audio/librispeech_3729-6852-0000-pyin_viterbi-3.wav"></audio></div>
+<div class="clip"><p>Apron24（現ベース） / +3半音</p><audio controls preload="none" src="audio/librispeech_3729-6852-0000-apron24-3.wav"></audio></div>
+<div class="clip"><p>WORLD16 / +3半音</p><audio controls preload="none" src="audio/librispeech_3729-6852-0000-world16-3.wav"></audio></div>
+</div>
+</details>
+<details><summary>librispeech_5639-40744-0013</summary>
+<h3>原音と音高変更なし</h3><div class="clips">
+<div class="clip"><p>原音</p><audio controls preload="none" src="audio/librispeech_5639-40744-0013-original-0.wav"></audio></div>
+<div class="clip"><p>抽出系列1 / +0半音</p><audio controls preload="none" src="audio/librispeech_5639-40744-0013-sample0-0.wav"></audio></div>
+<div class="clip"><p>抽出系列2 / +0半音</p><audio controls preload="none" src="audio/librispeech_5639-40744-0013-sample1-0.wav"></audio></div>
+<div class="clip"><p>pYINの一本 / +0半音</p><audio controls preload="none" src="audio/librispeech_5639-40744-0013-pyin_viterbi-0.wav"></audio></div>
+<div class="clip"><p>Apron24（現ベース） / +0半音</p><audio controls preload="none" src="audio/librispeech_5639-40744-0013-apron24-0.wav"></audio></div>
+<div class="clip"><p>WORLD16 / +0半音</p><audio controls preload="none" src="audio/librispeech_5639-40744-0013-world16-0.wav"></audio></div>
+</div>
+<h3>-3半音</h3><div class="clips">
+<div class="clip"><p>抽出系列1 / -3半音</p><audio controls preload="none" src="audio/librispeech_5639-40744-0013-sample0--3.wav"></audio></div>
+<div class="clip"><p>抽出系列2 / -3半音</p><audio controls preload="none" src="audio/librispeech_5639-40744-0013-sample1--3.wav"></audio></div>
+<div class="clip"><p>pYINの一本 / -3半音</p><audio controls preload="none" src="audio/librispeech_5639-40744-0013-pyin_viterbi--3.wav"></audio></div>
+<div class="clip"><p>Apron24（現ベース） / -3半音</p><audio controls preload="none" src="audio/librispeech_5639-40744-0013-apron24--3.wav"></audio></div>
+<div class="clip"><p>WORLD16 / -3半音</p><audio controls preload="none" src="audio/librispeech_5639-40744-0013-world16--3.wav"></audio></div>
+</div>
+<h3>+3半音</h3><div class="clips">
+<div class="clip"><p>抽出系列1 / +3半音</p><audio controls preload="none" src="audio/librispeech_5639-40744-0013-sample0-3.wav"></audio></div>
+<div class="clip"><p>抽出系列2 / +3半音</p><audio controls preload="none" src="audio/librispeech_5639-40744-0013-sample1-3.wav"></audio></div>
+<div class="clip"><p>pYINの一本 / +3半音</p><audio controls preload="none" src="audio/librispeech_5639-40744-0013-pyin_viterbi-3.wav"></audio></div>
+<div class="clip"><p>Apron24（現ベース） / +3半音</p><audio controls preload="none" src="audio/librispeech_5639-40744-0013-apron24-3.wav"></audio></div>
+<div class="clip"><p>WORLD16 / +3半音</p><audio controls preload="none" src="audio/librispeech_5639-40744-0013-world16-3.wav"></audio></div>
+</div>
+</details>
+<details><summary>librispeech_7176-88083-0002</summary>
+<h3>原音と音高変更なし</h3><div class="clips">
+<div class="clip"><p>原音</p><audio controls preload="none" src="audio/librispeech_7176-88083-0002-original-0.wav"></audio></div>
+<div class="clip"><p>抽出系列1 / +0半音</p><audio controls preload="none" src="audio/librispeech_7176-88083-0002-sample0-0.wav"></audio></div>
+<div class="clip"><p>抽出系列2 / +0半音</p><audio controls preload="none" src="audio/librispeech_7176-88083-0002-sample1-0.wav"></audio></div>
+<div class="clip"><p>pYINの一本 / +0半音</p><audio controls preload="none" src="audio/librispeech_7176-88083-0002-pyin_viterbi-0.wav"></audio></div>
+<div class="clip"><p>Apron24（現ベース） / +0半音</p><audio controls preload="none" src="audio/librispeech_7176-88083-0002-apron24-0.wav"></audio></div>
+<div class="clip"><p>WORLD16 / +0半音</p><audio controls preload="none" src="audio/librispeech_7176-88083-0002-world16-0.wav"></audio></div>
+</div>
+<h3>-3半音</h3><div class="clips">
+<div class="clip"><p>抽出系列1 / -3半音</p><audio controls preload="none" src="audio/librispeech_7176-88083-0002-sample0--3.wav"></audio></div>
+<div class="clip"><p>抽出系列2 / -3半音</p><audio controls preload="none" src="audio/librispeech_7176-88083-0002-sample1--3.wav"></audio></div>
+<div class="clip"><p>pYINの一本 / -3半音</p><audio controls preload="none" src="audio/librispeech_7176-88083-0002-pyin_viterbi--3.wav"></audio></div>
+<div class="clip"><p>Apron24（現ベース） / -3半音</p><audio controls preload="none" src="audio/librispeech_7176-88083-0002-apron24--3.wav"></audio></div>
+<div class="clip"><p>WORLD16 / -3半音</p><audio controls preload="none" src="audio/librispeech_7176-88083-0002-world16--3.wav"></audio></div>
+</div>
+<h3>+3半音</h3><div class="clips">
+<div class="clip"><p>抽出系列1 / +3半音</p><audio controls preload="none" src="audio/librispeech_7176-88083-0002-sample0-3.wav"></audio></div>
+<div class="clip"><p>抽出系列2 / +3半音</p><audio controls preload="none" src="audio/librispeech_7176-88083-0002-sample1-3.wav"></audio></div>
+<div class="clip"><p>pYINの一本 / +3半音</p><audio controls preload="none" src="audio/librispeech_7176-88083-0002-pyin_viterbi-3.wav"></audio></div>
+<div class="clip"><p>Apron24（現ベース） / +3半音</p><audio controls preload="none" src="audio/librispeech_7176-88083-0002-apron24-3.wav"></audio></div>
+<div class="clip"><p>WORLD16 / +3半音</p><audio controls preload="none" src="audio/librispeech_7176-88083-0002-world16-3.wav"></audio></div>
+</div>
+</details>
+
+<h2>固定条件と照合範囲</h2><p>二本の全長F0系列を保存済み因子から抽出し、各枝のRd・声道・雑音まで独立に解析しました。要求が一致した場合だけ元の抽出番号を残してまとめます。最良枝選び・失敗後の再抽出・成功枝への重みの再配分はしません。</p>
+<p>品質値・失敗・実呼出しと再利用の個票は<a href="raw-quality-rows.json.gz">公開個票</a>、固定した条件は<a href="https://github.com/Hiroshiba/check-nonml-saikyo-vocoder/blob/main/research/acoustic-branch-k2-plan-2026-10-26.md">実行計画</a>を参照してください。</p>
+<p>品質値は全方式を今回の同じ固定環境で測った値です。過去レポートの絶対値を混ぜて順位を付けていません。無編集と音高操作の採点区間も表中で区別しています。</p>
+<p>予定5,520枠、成功した論理値5520、再利用0、完了個票で確認した呼出し5520、不明な呼出し境界0。</p>
+<p>個票の状態：測定成功 5520件。</p>
+<p>二系列の品質値は、すべての録音・指標・操作で二本とも揃っています。</p>
+<p class="note">全個票・元入力・因子・ソースは保持しています。完全な状態と採点入力の実体を照合した範囲は事前指定5録音です。他の全長波形・状態の実体を全件再検証したとは主張しません。ファイルの識別値だけで実体の回収可能性は保証できません。<a href="audit-summary.json">照合範囲の記録</a>。</p>
+<h2>この比較だけでは分からないこと</h2><p>K=2の有限集合に対する結果であり、全事後分布の被覆や生理的なF0確率の校正ではありません。区間は固定した二系列に対する話者単位の探索的集計で、多重比較補正済み検定や同等性の証明ではありません。既存の人間評定による校正、新しい人の聴取、48 kHz・日本語・独立正解F0への追従精度は今回測っていません。</p></main></html>

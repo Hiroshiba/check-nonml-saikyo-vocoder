@@ -1,0 +1,14 @@
+<!doctype html>
+<html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>比較音声の出典と加工条件</title>
+<style>:root{color-scheme:light dark;font-family:system-ui,sans-serif;line-height:1.75}body{max-width:52rem;margin:auto;padding:1rem 1.3rem}a{color:#076e70}@media(prefers-color-scheme:dark){a{color:#8edbd8}}</style>
+</head><body><main>
+<h1>比較音声の出典と加工条件</h1>
+<p>出典は <a href="https://www.openslr.org/12/">OpenSLR SLR12 の LibriSpeech test-clean</a> です。LibriSpeech の作成者として Vassil Panayotov らを表示します。利用条件は <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International（CC BY 4.0）</a> です。</p>
+<p>掲載対象の録音は、結果を見る前に固定した次の5件です。成績の良い録音を選び直してはいません。</p>
+<ul><li>librispeech_1089-134686-0008</li><li>librispeech_2094-142345-0032</li><li>librispeech_3729-6852-0000</li><li>librispeech_5639-40744-0013</li><li>librispeech_7176-88083-0002</li></ul>
+<p>原音と、今回の実験で合成した二つの抽出系列・pYIN の一本の系列・Apron24・WORLD16 を掲載対象にしました。合成音の操作は、音高変更なし、−3半音、＋3半音です。「二系列」は各枝を別々に再生できます。二つの波形を混ぜた音声は作っていません。</p>
+<p>保存済みの先頭2秒の浮動小数点波形を、PCM16 WAV に変換しました。各値を32,768倍し、最も近い整数へ丸めています。ちょうど中間の値は偶数側へ丸めます。音量調整、再標本化、振幅の切り詰めはしていません。整数の範囲を超える音声があれば掲載不可と記録し、音量を下げたり別の録音に置き換えたりしません。</p>
+<p>今回の実験自体では新たに解析・合成していますが、掲載用の変換では合成し直していません。原朗読者や作品は個別に同定していません。音声の掲載は結果を確認するためのもので、人による聴取評価を行ったという意味ではありません。</p>
+<p><a href="audio-manifest.json">掲載音声の変換記録</a>には、元ファイルと変換後のファイルの識別値、標本化周波数、変換結果を記録しています。<a href="index.html">比較結果へ戻る</a>。</p>
+</main></body></html>
