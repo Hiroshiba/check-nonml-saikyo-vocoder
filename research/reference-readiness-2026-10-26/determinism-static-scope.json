@@ -1,0 +1,63 @@
+{
+  "scope": "Bounded static read only; no native execution, no root cause established, no proof of absence of undefined behavior",
+  "sources": [
+    {
+      "path": "ciglet/Sleepwalking-ciglet-895ba9b/ciglet.c",
+      "sha256": "41d3f5b84dbe32f447675756007cac6ba6fe836cfbf9b6d122b393d47fd77b46"
+    },
+    {
+      "path": "llsm/Sleepwalking-libllsm2-d18cdf0/dsputils.c",
+      "sha256": "eaf1866463f616c8baa63d3c7f49b8d1c7b84f3fae65ffcae8d53c549a49e33c"
+    },
+    {
+      "path": "llsm/Sleepwalking-libllsm2-d18cdf0/layer0.c",
+      "sha256": "d7db9d86d9cd407ba1933bf5b3b3c0926d575d21f4c09d21c149791c45993c5f"
+    }
+  ],
+  "findings": [
+    {
+      "source": "ciglet/Sleepwalking-ciglet-895ba9b/ciglet.c",
+      "lines": [
+        1199,
+        1227,
+        1233
+      ],
+      "finding": "Order-sensitive overlap-add is in inverse STFT; no call from inspected analysis path."
+    },
+    {
+      "source": "ciglet/Sleepwalking-ciglet-895ba9b/ciglet.c",
+      "lines": [
+        1113,
+        1162
+      ],
+      "finding": "Forward STFT parallel iterations allocate zeroed separate work buffers and write disjoint frame outputs."
+    },
+    {
+      "source": "llsm/Sleepwalking-libllsm2-d18cdf0/dsputils.c",
+      "lines": [
+        103,
+        108
+      ],
+      "finding": "Analysis spectrogram path uses forward STFT."
+    },
+    {
+      "source": "llsm/Sleepwalking-libllsm2-d18cdf0/dsputils.c",
+      "lines": [
+        353,
+        359,
+        385,
+        388
+      ],
+      "finding": "Inspected random generation is noise synthesis; layer0.c:544 caller belongs to synthesis."
+    },
+    {
+      "source": "llsm/Sleepwalking-libllsm2-d18cdf0/dsputils.c",
+      "lines": [
+        514,
+        574
+      ],
+      "finding": "Inspected Rd fitting accumulators initialized; not exhaustive undefined-behavior audit."
+    }
+  ],
+  "remaining_gap": "Past runtime CPU/FPU/mapped-library identities insufficient; no numerical code change justified by these possibilities."
+}

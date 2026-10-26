@@ -1,0 +1,136 @@
+{
+  "kind": "common_target_four_branch_retention_gap_v1",
+  "status": "blocked_by_predeclared_retention_not_access",
+  "plan_sha256": "a97b9b9a58ae2b77fdd2989f37ccb14698659f844fe4c86e8d3d2ca5468b5751",
+  "existing_three_branch_audit": {
+    "path": "../acoustic-branch-k2-comparison-2026-10-26/editing-support-inventory.json.gz",
+    "sha256": "1ecab6465b512b0363bf0593b4c9edfebe09b3be72901daf75dbefc143475a6c",
+    "public_report": "https://github.com/Hiroshiba/check-nonml-saikyo-vocoder/blob/main/research/acoustic-branch-k2-comparison-2026-10-26/index.html",
+    "coverage": "sample0/sample1/pyin_viterbi, not Apron24",
+    "sha256_scope": "uncompressed JSON bytes, not gzip file"
+  },
+  "cases": [
+    {
+      "owner": 0,
+      "case": "librispeech_1089-134686-0008",
+      "retention_sha256": "884d61cc00422fb98908be662ee40f3d259478ea4fb677bf0a10a005cd1edb8a",
+      "missing_apron_state_files": [
+        {
+          "path": "native/cases/librispeech_1089-134686-0008/apron/arrays.npz",
+          "bytes": 7977218,
+          "sha256": "9e5b1aac8b3cc468c3ff64e99864002981b682a1dc5c57135c73e47f343a5709",
+          "retained_in_archive": false,
+          "archive_member_present": false,
+          "extracted_file_present": false
+        },
+        {
+          "path": "native/cases/librispeech_1089-134686-0008/apron/metadata.json",
+          "bytes": 9670758,
+          "sha256": "2016a8a00edeef37cdc365761a773c2bdfc70b3c3dcb6f81b7909fdc24354a44",
+          "retained_in_archive": false,
+          "archive_member_present": false,
+          "extracted_file_present": false
+        }
+      ]
+    },
+    {
+      "owner": 1,
+      "case": "librispeech_2094-142345-0032",
+      "retention_sha256": "c69c6229f3cfc1473c96dcddc8f100543725034e17a558c10cc972597270a50a",
+      "missing_apron_state_files": [
+        {
+          "path": "native/cases/librispeech_2094-142345-0032/apron/arrays.npz",
+          "bytes": 4275652,
+          "sha256": "34ed3b7e9cdf265c1b1a22a28b1a9794c38eea32101e5cfc284cd99a003c15a8",
+          "retained_in_archive": false,
+          "archive_member_present": false,
+          "extracted_file_present": false
+        },
+        {
+          "path": "native/cases/librispeech_2094-142345-0032/apron/metadata.json",
+          "bytes": 5223681,
+          "sha256": "23bde51b20b3a8dde3bca8421181b08db691978258ee0b844c6369ac54a7c9e4",
+          "retained_in_archive": false,
+          "archive_member_present": false,
+          "extracted_file_present": false
+        }
+      ]
+    },
+    {
+      "owner": 2,
+      "case": "librispeech_3729-6852-0000",
+      "retention_sha256": "5e7612f4fec3db87315b5647c3e3ce58c2b16507276255878ece76328f029c9b",
+      "missing_apron_state_files": [
+        {
+          "path": "native/cases/librispeech_3729-6852-0000/apron/arrays.npz",
+          "bytes": 8975965,
+          "sha256": "a105d9d42fe815cecfd1914f03375a9ff89cadc3174cdc4d4fa983a101beb5c9",
+          "retained_in_archive": false,
+          "archive_member_present": false,
+          "extracted_file_present": false
+        },
+        {
+          "path": "native/cases/librispeech_3729-6852-0000/apron/metadata.json",
+          "bytes": 9840420,
+          "sha256": "8ba6793f901d365a13c855ad23a112e06b1977be71b28a561ea96345e3edcd9a",
+          "retained_in_archive": false,
+          "archive_member_present": false,
+          "extracted_file_present": false
+        }
+      ]
+    },
+    {
+      "owner": 3,
+      "case": "librispeech_5639-40744-0013",
+      "retention_sha256": "f498b3bb4e4d89a2ab6beb834fd9a0cc9eb715c85c37e704ce63789ff6f2e33c",
+      "missing_apron_state_files": [
+        {
+          "path": "native/cases/librispeech_5639-40744-0013/apron/arrays.npz",
+          "bytes": 8437061,
+          "sha256": "883a5254e5cc3f19a7809e0de3bc4f5111d8cd8693e0363cc1e3ff754987c64a",
+          "retained_in_archive": false,
+          "archive_member_present": false,
+          "extracted_file_present": false
+        },
+        {
+          "path": "native/cases/librispeech_5639-40744-0013/apron/metadata.json",
+          "bytes": 9767742,
+          "sha256": "3ae9b5ce648397bc1b69e91249bbd776c19127e8c094d3722652ab857d6a6a4a",
+          "retained_in_archive": false,
+          "archive_member_present": false,
+          "extracted_file_present": false
+        }
+      ]
+    },
+    {
+      "owner": 4,
+      "case": "librispeech_7176-88083-0002",
+      "retention_sha256": "e515f662af008e1bb65d58ae8e63fea81db0bb10b8eecbeb5922220b340ef36f",
+      "missing_apron_state_files": [
+        {
+          "path": "native/cases/librispeech_7176-88083-0002/apron/arrays.npz",
+          "bytes": 8084631,
+          "sha256": "1c4c3a034af125b2beb01fb694ef3e086c7cf16c77f4bae4b883a9f87132c007",
+          "retained_in_archive": false,
+          "archive_member_present": false,
+          "extracted_file_present": false
+        },
+        {
+          "path": "native/cases/librispeech_7176-88083-0002/apron/metadata.json",
+          "bytes": 9682741,
+          "sha256": "9c1aa3f6e7c6bebd225b7ae27a12e13202803bb42ae6515bc7d0418246427915",
+          "retained_in_archive": false,
+          "archive_member_present": false,
+          "extracted_file_present": false
+        }
+      ]
+    }
+  ],
+  "conclusion": "Apron24 full state metadata and NPZ were explicitly excluded for all five predeclared cases; four-branch physical-frame intersection and phase-count coverage cannot be established from these retained archives. Existing three-branch audit already completed and public summary reports 28.7–63.8% common voiced frames.",
+  "limits": [
+    "No new NPZ audit performed because requested fourth-branch data are absent and three-branch audit is already complete.",
+    "No archive retrieval, native/model call, candidate import, decoding, synthesis, target F0 selection or scoring.",
+    "WORLD16 is a distinct schema and is not a replacement for missing Apron24 Layer1 state.",
+    "Hashes do not reconstruct missing arrays. Five-case component readiness is not >=100-recording adoption evidence."
+  ]
+}
