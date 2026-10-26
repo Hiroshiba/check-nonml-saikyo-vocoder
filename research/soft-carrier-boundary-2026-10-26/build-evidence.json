@@ -1,0 +1,19 @@
+{
+  "scope": "retained source, archive inventory and build logs; no native load or scientific calls",
+  "files_verified": 40,
+  "parent_source_files_exact": 12,
+  "approved_modifications_exact": true,
+  "commands_recorded_successful": 7,
+  "binary_sha256": "b8958765983d4ac850fc0451f407c4d1a280576d18d9c799af79d1955d459dfb",
+  "status": "built_not_loaded_or_measured",
+  "warning_review": {
+    "result": "not a private-API blocker by static reachability",
+    "location": "retained stock llsm_synthesize, layer0.c:638-643",
+    "reason": "private entries do not call stock llsm_synthesize or llsm_chunk_getf0",
+    "runtime_verified": false
+  },
+  "source_lock_sha256": "9e9bc9fa1166bc48a2f8a92b61732896fe4fd38616db565b4747279c9131a311",
+  "result_archive_sha256": "97cd529cef17dd6eb12bc0bb61a0c409dff530f9a89beb1069a79382e0611afd",
+  "result_archive_bytes": 321907,
+  "normalization_patch_sha256": "e169e1887406da6989a351f0a79220ceed9f6c75ec88b1041e0bdb1c2cd81f6c"
+}
