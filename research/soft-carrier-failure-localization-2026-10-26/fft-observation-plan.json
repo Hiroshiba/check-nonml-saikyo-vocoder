@@ -1,0 +1,69 @@
+{
+  "schema_version": 1,
+  "state": "frozen",
+  "study_id": "separate-posthoc-fft-complex-observation",
+  "manifest": {
+    "path": "inputs/runner-manifest.json",
+    "bytes": 3836,
+    "sha256": "7b9897795abfc7f7da25bd4de8fb95961d9a78d5a245b59cd0711e242be04e9e"
+  },
+  "source_lock": {
+    "path": "source-lock.json",
+    "bytes": 16132,
+    "sha256": "21d1a3e1bd971dfd599689e455d6462338224875726a38d03748cb6e77c63f64"
+  },
+  "library": {
+    "path": "library/libsoftcarrier.so",
+    "bytes": 369976,
+    "sha256": "02f50a5902537176ae35c3bd22351ef6a02134240f9b0549c93259b3b0ada456"
+  },
+  "runtime": {
+    "python": "3.12",
+    "numpy": "2.3.5"
+  },
+  "analysis": {
+    "fs": 24000,
+    "gain": 1,
+    "seed": 0,
+    "timeout_seconds": 1800
+  },
+  "owners": [
+    [
+      "librispeech_121-127105-0035"
+    ]
+  ],
+  "abi_bytes": {
+    "diagnostic": 256,
+    "trace": 66712,
+    "fft": 16576
+  },
+  "machine_code_gate": {
+    "state": "pass",
+    "library_sha256": "02f50a5902537176ae35c3bd22351ef6a02134240f9b0549c93259b3b0ada456",
+    "scope": "Selected nonnull observation slot, nfft2048, magnitude count1025; static actual ELF, no loads",
+    "function": {
+      "name": "cig_stft_forward._omp_fn.0",
+      "address": "0x2e1b0",
+      "bytes": 4305
+    },
+    "copies": "real0x2efe1–0x2f024 imag0x2f027–0x2f059, each4100bytes",
+    "mxcsr_before": "0x2f068",
+    "mxcsr_after": "0x2ec70",
+    "vector_bins": "0–1023, no alignment peel or alias dispatch",
+    "scalar_bin": 1024,
+    "vector_sequence": "0x2eb80–0x2ebac equals old0x2e600–0x2e62c: mulps,mulps,addps,rsqrtps,zero mask,Newton",
+    "constants": {
+      "0x4ea70": "0xbf000000 (-0.5f)",
+      "0x4ec00": "0xc0400000 (-3.0f)"
+    },
+    "scalar_sequence": "mulss,mulss,addss,sqrtss0x2ec61",
+    "between_snapshots": "no calls, no ldmxcsr or FP-control writes",
+    "limits": "Assumes successful allocation, valid selected context, no external asynchronous FP-state tampering; runtime slot/operand/MXCSR evidence still required",
+    "disassembly_sha256": "823be5a56f865c733355156ed5fe8bdd693d60c7d1bc8e52934fecbe566c9077"
+  },
+  "native_calls_per_case": 1,
+  "scientific_retries": 0,
+  "scope": "Separate one-case observation of FFT complex operands and worker MXCSR; no algorithm/FPU changes or prior outcome replacement",
+  "parent_deduction": "If performed, rational squared-sum reconstruction is derived not directly observed",
+  "frozen_at": "2026-10-26T18:10:39.851250+00:00"
+}

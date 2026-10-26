@@ -1,0 +1,24 @@
+{
+  "state": "pass",
+  "library_sha256": "02f50a5902537176ae35c3bd22351ef6a02134240f9b0549c93259b3b0ada456",
+  "scope": "Selected nonnull observation slot, nfft2048, magnitude count1025; static actual ELF, no loads",
+  "function": {
+    "name": "cig_stft_forward._omp_fn.0",
+    "address": "0x2e1b0",
+    "bytes": 4305
+  },
+  "copies": "real0x2efe1–0x2f024 imag0x2f027–0x2f059, each4100bytes",
+  "mxcsr_before": "0x2f068",
+  "mxcsr_after": "0x2ec70",
+  "vector_bins": "0–1023, no alignment peel or alias dispatch",
+  "scalar_bin": 1024,
+  "vector_sequence": "0x2eb80–0x2ebac equals old0x2e600–0x2e62c: mulps,mulps,addps,rsqrtps,zero mask,Newton",
+  "constants": {
+    "0x4ea70": "0xbf000000 (-0.5f)",
+    "0x4ec00": "0xc0400000 (-3.0f)"
+  },
+  "scalar_sequence": "mulss,mulss,addss,sqrtss0x2ec61",
+  "between_snapshots": "no calls, no ldmxcsr or FP-control writes",
+  "limits": "Assumes successful allocation, valid selected context, no external asynchronous FP-state tampering; runtime slot/operand/MXCSR evidence still required",
+  "disassembly_sha256": "823be5a56f865c733355156ed5fe8bdd693d60c7d1bc8e52934fecbe566c9077"
+}

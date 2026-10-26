@@ -3,6 +3,7 @@
 <style>:root{color-scheme:light dark;font-family:system-ui,sans-serif;line-height:1.8}body{max-width:65rem;margin:auto;padding:1rem 1.4rem}h1,h2{line-height:1.4}a{color:#08676c}.scroll{overflow-x:auto}table{border-collapse:collapse;width:100%;font-size:.9rem}th,td{border:1px solid #888;padding:.45rem;text-align:left;white-space:nowrap}@media(prefers-color-scheme:dark){a{color:#8edbd8}}</style><main><h1>連続利得の解析失敗は、Rd上限と高域雑音包絡に分かれた</h1>
 <p>Apron24を維持します。今回の12録音の診断からは、Apron24・WORLD16との新しい品質差や順位は出せません。元の120録音比較は結果アーカイブを取得できておらず、この診断で欠測を補いません。</p>
 <p>別の診断版で、報告された失敗12録音を各1回だけ解析しました。7件は声門形状パラメーターRdが上限3を最小の浮動小数点1段だけ超え、5件は8–12 kHz帯の雑音包絡の調波振幅がNaNになった箇所で止まりました。次はこの二つの生成経路を調べます。利得の調整や品質の再採点を先に進める段階ではありません。</p>
+<h2>追加の一録音で、89点の発生経路を説明できました</h2><p><a href="fft-observation.html">FFTの実部・虚部と作業スレッドの状態を観測した記録</a>を追加しました。有限の複素値から導いた正の非正規化二乗和89点が、実測した負の無限大の位置と全て一致します。実行した逆平方根近似と補正式でこの観測を説明できますが、二乗和自体は実測ではなく導出です。</p>
 <h2>追加2例で生成段階を観測しました</h2><p><a href="numerical-trace.html">Rdの候補終点と、高域STFTの負の無限大を追った記録</a>を追加しました。Rd側の1例は格子の終点が既に上限を1 ULP超過。高域側の1例は正規化前から89点が負の無限大で、対数変換後にNaNとなりました。以下は最初の12件診断の記録です。</p>
 <h2>7件は私有入口のRd上限検査で止まった</h2>
 <p>7件とも、Layer1変換後のRdが3.000000238418579でした。float32の生bitsは0x40400001で、3のすぐ次に大きい表現値です。私有入口が要求するRd ≤ 3を満たさず、状態コード4になりました。</p>
