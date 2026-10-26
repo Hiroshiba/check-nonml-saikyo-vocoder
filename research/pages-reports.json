@@ -9,11 +9,11 @@
       "created_on": "2026-10-26",
       "created_at": "2026-10-26T17:00:00Z",
       "title": "連続利得の解析失敗はRd上限と高域雑音包絡に分かれた",
-      "comparison_scope": "12録音の失敗位置を診断し、追加2例で生成段階を観測。Rd側は候補終点が上限3を1 ULP超え、高域側はSTFT振幅89点が負の無限大、その対数がNaNでした。元比較の欠測は補わずApron24を維持。新しい品質順位・復号音声はありません。",
-      "artifact_count": 16,
+      "comparison_scope": "12録音の失敗位置を診断し、追加観測でRd候補終点の1 ULP超過と、高域89点が負の無限大になる経路を説明。後者は有限の複素値・FPU状態・機械語に基づく一録音の導出です。元比較の欠測は補わずApron24を維持。新しい品質順位・復号音声はありません。",
+      "artifact_count": 24,
       "artifact_manifest": {
-        "bytes": 2394,
-        "sha256": "f08c05edbe979d74991903064007c364c1ec6b840cca99dfdd8b0e8ed6b508ed"
+        "bytes": 3688,
+        "sha256": "343b81dfb82301f981cac05afb240581564623d5fffc08197651bfc479bf504f"
       },
       "published_at": "2026-10-26T17:15:27Z",
       "published_at_source": {

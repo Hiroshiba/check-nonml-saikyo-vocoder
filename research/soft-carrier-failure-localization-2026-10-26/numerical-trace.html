@@ -1,6 +1,6 @@
 <!doctype html><html lang="ja"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Rd終点と弱い高域スペクトルの数値観測</title>
-<style>:root{color-scheme:light dark;font-family:system-ui,sans-serif;line-height:1.8}body{max-width:65rem;margin:auto;padding:1rem 1.4rem}h1,h2{line-height:1.4}a{color:#08676c}.scroll{overflow-x:auto}table{border-collapse:collapse;width:100%;font-size:.9rem}th,td{border:1px solid #888;padding:.45rem;text-align:left;white-space:nowrap}@media(prefers-color-scheme:dark){a{color:#8edbd8}}</style><main><h1>Rdの終点超過と、高域STFTの負の無限大を生成段階で分ける</h1>
+<style>:root{color-scheme:light dark;font-family:system-ui,sans-serif;line-height:1.8}body{max-width:65rem;margin:auto;padding:1rem 1.4rem}h1,h2{line-height:1.4}a{color:#08676c}.scroll{overflow-x:auto}table{border-collapse:collapse;width:100%;font-size:.9rem}th,td{border:1px solid #888;padding:.45rem;text-align:left;white-space:nowrap}@media(prefers-color-scheme:dark){a{color:#8edbd8}}</style><main><p><a href="fft-observation.html">後続の一録音観測：複素値とFPU状態から89点の発生経路を説明</a>。以下はその前の2例の記録です。</p><h1>Rdの終点超過と、高域STFTの負の無限大を生成段階で分ける</h1>
 <p>Apron24を維持します。今回の2例からは、Apron24・WORLD16との新しい品質差や順位は出せません。元の120録音比較の未取得アーカイブや欠測は、この追加観測で補いません。</p>
 <p>前回の12件診断で見つけた二つの失敗群から、元manifest順で最初の1録音ずつを選びました。別の計装版を各1回だけ解析し、Rd側は候補格子の生成時点での上限超過、高域側はSTFT後・正規化前の振幅にある負の無限大と、その対数変換後のNaNを観測しました。対象は原因を調べるための2例です。全12件の原因が同じと断定したり、一般的な失敗率を推定したりしません。</p>
 <h2>Rdの上限超過は、候補格子から既に始まっていた</h2>

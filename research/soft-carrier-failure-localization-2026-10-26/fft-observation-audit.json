@@ -1,0 +1,52 @@
+{
+  "scope": "One instrumented recording, frame371, highband3; not original-binary or other-case universal claim",
+  "result_files_verified": 22,
+  "frozen_files_verified": 92,
+  "archive": {
+    "bytes": 48533,
+    "sha256": "b53da8764fce10fd2f286a73380102f404399b05796aea747e3820701ec81ee5"
+  },
+  "raw_bytes": {
+    "diagnostic": 256,
+    "trace": 66712,
+    "fft_arm": 16576,
+    "fft_get": 16576
+  },
+  "fft_arm_get_equal": true,
+  "native_calls": 1,
+  "status": 5,
+  "cleanup": "no_owned_output",
+  "disarm": 0,
+  "errors": [],
+  "independent_audit": "Raw fields, full inventories, original input hashes, lifecycle and independent exact-rational deduction all agree",
+  "derived_not_observed": "Binary32 squared sums and intermediate rsqrt/Newton values are derived from observed operands, MXCSR and actual instructions, not directly instrumented registers",
+  "highband": {
+    "fft_complex_finite": true,
+    "real_normal_count": 1025,
+    "imag_normal_count": 1023,
+    "imag_zero_count": 2,
+    "pre_negative_infinity_count": 89,
+    "pre_zero_count": 936,
+    "derived_sum_positive_subnormal_count": 89,
+    "derived_sum_units": "1–3 times2^-149",
+    "derived_sum_zero_count": 936,
+    "index_match": true,
+    "mxcsr_before": "0x00001fb7",
+    "mxcsr_after": "0x00001fb7"
+  },
+  "control": {
+    "fft_complex_zero": true,
+    "derived_sum_zero_count": 1025,
+    "pre_zero_count": 1025,
+    "mxcsr_before": "0x00001fa3",
+    "mxcsr_after": "0x00001fa3"
+  },
+  "fp_controls": "Nearest even, DAZ/FTZ off, six exception masks set; unchanged sticky snapshots do not imply no arithmetic exceptions",
+  "limits": [
+    "one selected post-hoc case",
+    "instrumentation can change earlier codegen",
+    "no external runtime attestation",
+    "assumes no asynchronous FP-state tampering",
+    "no quality inference or missing-value replacement"
+  ]
+}
