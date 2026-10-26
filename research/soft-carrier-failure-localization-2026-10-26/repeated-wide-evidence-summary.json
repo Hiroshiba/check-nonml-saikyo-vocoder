@@ -1,0 +1,186 @@
+{
+  "scope": "Post-hoc saved-data and static-source audit only. No native/science reruns, tests, signal recomputation, decode, or quality assessment.",
+  "proved": {
+    "designated_cases": 5,
+    "all_five_tree_bytes_identical": true,
+    "all_five_conditioning_arrays_byte_identical": true,
+    "all_five_config_clock_arrays_byte_identical": true,
+    "all_five_other_groups_contain_numeric_value_differences": true,
+    "all_five_new_wide_endpoint_arrays_byte_identical": true
+  },
+  "interpretation": [
+    "Cross-study repeated-wide mismatch is not solely ZIP/NPZ serialization or digest labels: actual numeric values differ in five retained cases, with identical tree bytes and conditioning arrays.",
+    "No actual-array claim for other 115 cases; successful hash-only cases cannot establish magnitude.",
+    "Within-study endpoint changes in 12 successful pairs have no designated full snapshots, so their magnitudes are unavailable. Cross-study wide deltas must not be attributed to endpoint modification.",
+    "Exact-bit repeated-wide reproducibility is not established. Identical classification/status does not imply identical numerical retained state.",
+    "No quality, perceptual relevance, endpoint benefit, or acceptance conclusion follows."
+  ],
+  "largest_noise_phase_difference_context": {
+    "case": "librispeech_3729-6852-0000",
+    "path": [
+      "frames",
+      "694",
+      "2",
+      "eenv",
+      "0",
+      "phse"
+    ],
+    "index": 1,
+    "old": -2.7542314529418945,
+    "new": -0.48682206869125366,
+    "associated_ampl_old": 1.1284243555564899e-05,
+    "associated_ampl_new": 1.285081816604361e-05,
+    "interpretation": "Raw retained values only; no inferred quality relevance."
+  },
+  "archive_identities": [
+    {
+      "path": "soft_carrier_packet/wide-domain-results-v1/downloads/wide-domain-owner-0-20261026-v1.zip",
+      "sha256": "4cff68a4ba4bac04758eb4453cfc03de9d0da80ca0ba773240a6ed05fd483ad6",
+      "bytes": 15241977
+    },
+    {
+      "path": "soft_carrier_packet/wide-domain-results-v1/downloads/wide-domain-owner-1-20261026-v1.zip",
+      "sha256": "7c6807b6a4310d5845296d55ed91cd6fd5a25c9339f476431d08d36b2a73c573",
+      "bytes": 15224213
+    },
+    {
+      "path": "soft_carrier_packet/wide-domain-results-v1/downloads/wide-domain-owner-2-20261026-v1.zip",
+      "sha256": "53e0df1847e665e6e88ec6d385982b9547b65f82f5e970ebcc5f4fc3f4b68300",
+      "bytes": 14628104
+    },
+    {
+      "path": "soft_carrier_packet/wide-domain-results-v1/downloads/wide-domain-owner-3-20261026-v1.zip",
+      "sha256": "e703879253d452dd21b227a4dc1529f04203b5af5852d1d7cb3c319f0135cfaf",
+      "bytes": 14584989
+    },
+    {
+      "path": "soft_carrier_packet/wide-domain-results-v1/downloads/wide-domain-owner-4-20261026-v1.zip",
+      "sha256": "ca47d3294a72785ccb1f327c839f81cc6ad5b8e21d8d0e7a7aef20602fb8e11d",
+      "bytes": 8338161
+    },
+    {
+      "path": "soft_carrier_packet/rd-endpoint-results-v1/downloads/rd-endpoint-owner-0-20261026-v1.zip",
+      "sha256": "c6f26ef5e014527ea8a641b6f3be12a7a2a02d942e9334cc91dda1126017ff30",
+      "bytes": 15260278
+    },
+    {
+      "path": "soft_carrier_packet/rd-endpoint-results-v1/downloads/rd-endpoint-owner-1-20261026-v1.zip",
+      "sha256": "3948f080e58388c36e5c9a8a10ff378b5a28021bc88148f6c00d0d4bb0e5347e",
+      "bytes": 15241879
+    },
+    {
+      "path": "soft_carrier_packet/rd-endpoint-results-v1/downloads/rd-endpoint-owner-2-20261026-v1.zip",
+      "sha256": "3556b940a616e97176be81339cb6d64151725f41b088ec33ffd95c16d3652b41",
+      "bytes": 14644210
+    },
+    {
+      "path": "soft_carrier_packet/rd-endpoint-results-v1/downloads/rd-endpoint-owner-3-20261026-v1.zip",
+      "sha256": "5a0cb384c54ebc75aef55af01b19150c0ea8a6d2e043321720071c044dc09418",
+      "bytes": 14605254
+    },
+    {
+      "path": "soft_carrier_packet/rd-endpoint-results-v1/downloads/rd-endpoint-owner-4-20261026-v1.zip",
+      "sha256": "98f350864638804672fcb8abaf9962bae48eed3198a9a19688920965eb54011b",
+      "bytes": 8358312
+    }
+  ],
+  "relative_norm_definitions": {
+    "old_l2_norm": "sqrt(sum(old_i**2)) over all retained scalar elements in group, accumulated in float64",
+    "difference_l2_norm": "sqrt(sum((new_i-old_i)**2)) over same group",
+    "relative_l2": "difference_l2_norm / old_l2_norm; null for zero denominator, no epsilon",
+    "max_abs_diff_over_old_abs_peak": "max(abs(new_i-old_i)) / max(abs(old_i)); null for zero denominator, no epsilon",
+    "limits": "Group aggregation can conceal localized change; noise_model mixes phase/amplitude/PSD fields. No perceptual weighting or quality interpretation."
+  },
+  "relative_norm_ranges": {
+    "Rd": {
+      "relative_l2": {
+        "min": 3.3489546211571276e-07,
+        "max": 9.04078661379254e-07
+      },
+      "max_abs_diff_over_old_abs_peak": {
+        "min": 9.216014327383437e-07,
+        "max": 3.1702643295947696e-06
+      },
+      "old_l2_norm": {
+        "min": 16.74753408450155,
+        "max": 22.595017693716027
+      },
+      "old_abs_peak": {
+        "min": 1.024087905883789,
+        "max": 2.322094202041626
+      }
+    },
+    "VT": {
+      "relative_l2": {
+        "min": 4.2331301002836685e-06,
+        "max": 2.0895690654194773e-05
+      },
+      "max_abs_diff_over_old_abs_peak": {
+        "min": 0.00012580674556788115,
+        "max": 0.0021622199417691015
+      },
+      "old_l2_norm": {
+        "min": 21629.9241265276,
+        "max": 60889.37452883353
+      },
+      "old_abs_peak": {
+        "min": 106.91495513916016,
+        "max": 140.9131622314453
+      }
+    },
+    "source_phase": {
+      "relative_l2": {
+        "min": 1.9619675075451004e-07,
+        "max": 3.5862831799934404e-07
+      },
+      "max_abs_diff_over_old_abs_peak": {
+        "min": 1.4260842098811194e-06,
+        "max": 4.490620423159665e-06
+      },
+      "old_l2_norm": {
+        "min": 602.7570405696132,
+        "max": 1036.084990820749
+      },
+      "old_abs_peak": {
+        "min": 8.526388168334961,
+        "max": 9.954856872558594
+      }
+    },
+    "noise_model": {
+      "relative_l2": {
+        "min": 2.9125931173095094e-06,
+        "max": 8.789093517399589e-05
+      },
+      "max_abs_diff_over_old_abs_peak": {
+        "min": 0.00013011529567207017,
+        "max": 0.023908322311774803
+      },
+      "old_l2_norm": {
+        "min": 19551.167995329164,
+        "max": 31148.35563578748
+      },
+      "old_abs_peak": {
+        "min": 94.83766174316406,
+        "max": 94.83766174316406
+      }
+    },
+    "noise_PSDRES": {
+      "relative_l2": {
+        "min": 0.00013733024538675588,
+        "max": 0.0002813947476302957
+      },
+      "max_abs_diff_over_old_abs_peak": {
+        "min": 0.00046874778370911496,
+        "max": 0.0013775240072559222
+      },
+      "old_l2_norm": {
+        "min": 1159.9723429241515,
+        "max": 1526.1298244514962
+      },
+      "old_abs_peak": {
+        "min": 35.54183578491211,
+        "max": 52.71199035644531
+      }
+    }
+  }
+}
