@@ -1,0 +1,1565 @@
+{
+  "schema_version": 1,
+  "files": [
+    {
+      "path": "DECISION.md",
+      "bytes": 6443,
+      "sha256": "72b416c76612d522e9a0bc2e8365d077750390be17c5d168ed9934df0edbcee1"
+    },
+    {
+      "path": "control-build-source/build_soft_carrier.py",
+      "bytes": 7586,
+      "sha256": "fad88b704147380c6a412fc6ccc88471a56de5792ca313491c02eb5dd8f243f0"
+    },
+    {
+      "path": "control-build-source/build_support.py",
+      "bytes": 3186,
+      "sha256": "7d3a817e5838b02b68accf5b4d1178b3e18f24a5cefa4f52f0c75c3c8a4ce90a"
+    },
+    {
+      "path": "control-build-source/native-source/API.md",
+      "bytes": 12357,
+      "sha256": "080b2a910b005b935869167035ae56668292461cddacaab945516d889d634440"
+    },
+    {
+      "path": "control-build-source/native-source/BASIS-API.md",
+      "bytes": 5537,
+      "sha256": "b5b98da7a5c016f06a5635583694a5d123b2b9b77100a61807d6943941e42740"
+    },
+    {
+      "path": "control-build-source/native-source/DIAGNOSTIC-API.md",
+      "bytes": 4956,
+      "sha256": "86687bfffd5290b6c68c71356e3b4ac97120d17d2df46d71bc874ba4e661944a"
+    },
+    {
+      "path": "control-build-source/native-source/UPSTREAM-SOURCE-RECORD.md",
+      "bytes": 4329,
+      "sha256": "433c836343cfdd49c7b1d5d23cea29a5258dca8e87dd5d517bb4533dcb19e2b2"
+    },
+    {
+      "path": "control-build-source/native-source/normalization-weight-only.patch",
+      "bytes": 471,
+      "sha256": "e169e1887406da6989a351f0a79220ceed9f6c75ec88b1041e0bdb1c2cd81f6c"
+    },
+    {
+      "path": "control-build-source/native-source/soft_carrier_api.h",
+      "bytes": 2173,
+      "sha256": "e3a765dec775b9037333c4a9ea80b01cc7fac48e615be06bed113c4b81d3f6c5"
+    },
+    {
+      "path": "control-build-source/native-source/soft_carrier_basis.inc.c",
+      "bytes": 2673,
+      "sha256": "5d32c21515af1402d7d98c11430b6b47bebee0d247e5010502eb1359e3bca3de"
+    },
+    {
+      "path": "control-build-source/native-source/soft_carrier_basis_api.h",
+      "bytes": 1157,
+      "sha256": "d7716db7271ef03c5cd4cf0e98c354fd53fd71f91b23b1a0f0f749ff92b0dda0"
+    },
+    {
+      "path": "control-build-source/native-source/soft_carrier_checks.inc.c",
+      "bytes": 3283,
+      "sha256": "650773e47517cae0cb4d1b30db6e66d385e7b8750d3ccef460d638b5e7a49749"
+    },
+    {
+      "path": "control-build-source/native-source/soft_carrier_diagnostic.inc.c",
+      "bytes": 2247,
+      "sha256": "23c94cc080cb50647a8de6e7882cc36fd92d210ec13e624b0e64c69ec5ce10be"
+    },
+    {
+      "path": "control-build-source/native-source/soft_carrier_diagnostic_api.h",
+      "bytes": 1407,
+      "sha256": "23933fa677931939601d5ffbab85042d5e9eb9e6a3888b5fa4b0664fb195d085"
+    },
+    {
+      "path": "control-build-source/native-source/soft_carrier_layer0_extension.c",
+      "bytes": 8116,
+      "sha256": "209ce2701de9560b9d7bdd0084fd6e97e86151c8fca65af9c11999c538e63574"
+    },
+    {
+      "path": "control-build-source/native-source/soft_carrier_periodic.inc.c",
+      "bytes": 3512,
+      "sha256": "d687d5e026aaf28d9989d80f38088864663a924c60db0b0017bf3773b6e6fd69"
+    },
+    {
+      "path": "control-build-source/native-source/soft_carrier_shape_checks.inc.c",
+      "bytes": 5793,
+      "sha256": "5a5823a069ef22b74243c56ac29beb9f6f0d812f83299e0a330c4b7470ca20ef"
+    },
+    {
+      "path": "control-build-source/source-lock.json",
+      "bytes": 2940,
+      "sha256": "adc0e3f42c2edbbd9365c57eaf5ae68b7841be53483c9ce64cd2822d09551b37"
+    },
+    {
+      "path": "control-build-source/vendor/ciglet.tar.gz",
+      "bytes": 54301,
+      "sha256": "8d2919e3aa04dbe360260afcd5db5bbb69fa6b8fa19fd143c75e14efa1dd6ba4"
+    },
+    {
+      "path": "control-build-source/vendor/llsm2.tar.gz",
+      "bytes": 53314,
+      "sha256": "c08c8ede7b0f1099330014d1ea8db9c0418cdcbc32605820be64d76f7cf53f8b"
+    },
+    {
+      "path": "diagnostic-codec-source/soft_carrier_codec/__init__.py",
+      "bytes": 388,
+      "sha256": "e563f902d224b1ea5fffcbdd7adaca5cd00dc795ef0f33de1fb2d5df3d913214"
+    },
+    {
+      "path": "diagnostic-codec-source/soft_carrier_codec/abi.py",
+      "bytes": 2898,
+      "sha256": "e528aa578aacec3b4bbfc8885125425d08424587eddae14a568892416e868ff8"
+    },
+    {
+      "path": "diagnostic-codec-source/soft_carrier_codec/artifact.py",
+      "bytes": 8841,
+      "sha256": "8c337ee952739b447a159199e5c696107f5543d67f747286ac5d3a23e57fe967"
+    },
+    {
+      "path": "diagnostic-codec-source/soft_carrier_codec/basis.py",
+      "bytes": 1991,
+      "sha256": "7389589df37d267369a37c011c2a1fcc4c69966ce5d38c3bd7e10ce08e7bc362"
+    },
+    {
+      "path": "diagnostic-codec-source/soft_carrier_codec/codec.py",
+      "bytes": 14178,
+      "sha256": "723256bbe1d4a2433810413728a22a2c50a5e410569f97d5c0706c3e998c649d"
+    },
+    {
+      "path": "diagnostic-codec-source/soft_carrier_codec/diagnostic.py",
+      "bytes": 9621,
+      "sha256": "a009a71007194b5b14862f1d68f1cf01b81bdd82a4a1a46769f6c6957ae182d9"
+    },
+    {
+      "path": "diagnostic-codec-source/soft_carrier_codec/schema.py",
+      "bytes": 10411,
+      "sha256": "dbbee2cb6f014a988d889bef199fdb6720b978d3bf9b101a19f4adb427466cd5"
+    },
+    {
+      "path": "diagnostic-codec-source/soft_carrier_codec/storage.py",
+      "bytes": 8433,
+      "sha256": "7d96893fc8d43ad7e87a501fe82e88d8cc077727feee8b2570670672c8c44612"
+    },
+    {
+      "path": "evidence/control-build-parent-verification.json",
+      "bytes": 873,
+      "sha256": "73555cb4cfd64150dba738d8197c2cf8db80baa93dd090188c9ce46a69a7070d"
+    },
+    {
+      "path": "evidence/parent-runner-static-checks.json",
+      "bytes": 1125,
+      "sha256": "57c797c3fb0d2c4b92bbffdb9052d93d042a8ac0d1ddf03a958a580502b0be92"
+    },
+    {
+      "path": "evidence/preparation-record.json",
+      "bytes": 473,
+      "sha256": "d9b2fa6e2df0a2c9869a2bd47dd6b710dc973649090658ef89bb809272cd3073"
+    },
+    {
+      "path": "evidence/prepare_manifest.py",
+      "bytes": 3728,
+      "sha256": "363c0cd15f20ae3f8f6d1be817aee1fef55445c7f4490d6c7ef44a2ce1a2c234"
+    },
+    {
+      "path": "evidence/protocol-review.json",
+      "bytes": 774,
+      "sha256": "97ebc2b2010cfe5c257cc99b450923b6a0285c717d8dc328ba88955625b253c0"
+    },
+    {
+      "path": "evidence/stable-magnitude-options.md",
+      "bytes": 4263,
+      "sha256": "3812a031d8fd5c0b9df9fcbd3c5fed2b89675755aad1a5ac7283a812fe9a3e7e"
+    },
+    {
+      "path": "evidence/stft-wide.txt",
+      "bytes": 52677,
+      "sha256": "b242e5cb6f4e342143c3dbd2002fede434e8fbb08315c347cfbdbb9bbaa01b21"
+    },
+    {
+      "path": "evidence/wide-build-parent-verification.json",
+      "bytes": 470,
+      "sha256": "31e6ed8c984cfa5397b068cce607fc3be05f852796971efbdb47e22e139fa1ae"
+    },
+    {
+      "path": "evidence/wide-build-record.json",
+      "bytes": 11903,
+      "sha256": "94eb65ae655f3afb93420e4f838eb614cb9982f63f12304f916e37cbd83421b2"
+    },
+    {
+      "path": "evidence/wide-machine-code-gate.json",
+      "bytes": 820,
+      "sha256": "d938b579bc253bf7d58d6c32e1b0ef4355f15bdf10f61bd83588430ba65a7f92"
+    },
+    {
+      "path": "inputs/factor-records/librispeech_1089-134686-0008.json",
+      "bytes": 2549,
+      "sha256": "401405c944d82434cd58e58ba89f11eba2f809ad1a55ddf0269c6d24fa63332c"
+    },
+    {
+      "path": "inputs/factor-records/librispeech_1089-134686-0011.json",
+      "bytes": 2549,
+      "sha256": "b3c928489f237b92180e910f9b18408e32e7f50f471cb1357f3e7862e68e3838"
+    },
+    {
+      "path": "inputs/factor-records/librispeech_1089-134686-0032.json",
+      "bytes": 2545,
+      "sha256": "a2b1c63ecf0788997fafd733089cc52f7c611cfb47ce7a0df0c8c3a7cb4c51de"
+    },
+    {
+      "path": "inputs/factor-records/librispeech_1188-133604-0003.json",
+      "bytes": 2549,
+      "sha256": "33dc173701f14dd96cf325e76d327ef844b2aef5f099b03749d34ef9f35cbe26"
+    },
+    {
+      "path": "inputs/factor-records/librispeech_1188-133604-0031.json",
+      "bytes": 2546,
+      "sha256": "a70ca515c57ec914c770eaabb6b52b076d4ab7d3078643c9d8b50f18abf8aad7"
+    },
+    {
+      "path": "inputs/factor-records/librispeech_1188-133604-0037.json",
+      "bytes": 2549,
+      "sha256": "094fd64686f49550d97f0fcc3e6f3f6d82397e082f6fe59b562a46cf91be7413"
+    },
+    {
+      "path": "inputs/factor-records/librispeech_121-121726-0012.json",
+      "bytes": 2543,
+      "sha256": "bfbb32c6b75865c33d462db095686176a39fe4fd0508cc57f9bffc4550780f42"
+    },
+    {
+      "path": "inputs/factor-records/librispeech_121-123852-0000.json",
+      "bytes": 2547,
+      "sha256": "4d38bc52e5acc3a7b9f4eb8bbbc13f01c1a44a5de5b85f7a3c17064229c9cb06"
+    },
+    {
+      "path": "inputs/factor-records/librispeech_121-127105-0035.json",
+      "bytes": 2547,
+      "sha256": "697c96bc19bfd167b5bb7e7666556f93a658c83a1b557e5e467b29a237deac93"
+    },
+    {
+      "path": "inputs/factor-records/librispeech_1221-135766-0005.json",
+      "bytes": 2549,
+      "sha256": "492531008b1cfe6a19b6c2c6c3e06456b35ac1a4ad371aa75b922d6eaf6abe45"
+    },
+    {
+      "path": "inputs/factor-records/librispeech_1221-135767-0006.json",
+      "bytes": 2549,
+      "sha256": "94f9ad97f85ccf78e142be541107c7f34590c759b1e375fd89e7d7a796e244a3"
+    },
+    {
+      "path": "inputs/factor-records/librispeech_1221-135767-0019.json",
+      "bytes": 2545,
+      "sha256": "c3aa8d06df798db0307656be3b0beb6e181717ab22a0074d9a7efe87f40608d3"
+    },
+    {
+      "path": "inputs/factor-records/librispeech_1284-1180-0020.json",
+      "bytes": 2547,
+      "sha256": "bc92e0fdc5a67b70b6f8b7270704efce896324903dd2d46896b74a11331387fa"
+    },
+    {
+      "path": "inputs/factor-records/librispeech_1284-1180-0027.json",
+      "bytes": 2543,
+      "sha256": "07d81349ba9697a05be3a6a4091d89c248086c5bb62aa07ad02d96499dfca8eb"
+    },
+    {
+      "path": "inputs/factor-records/librispeech_1284-1180-0028.json",
+      "bytes": 2547,
+      "sha256": "e563ed05cd61593e05622a9a3d827fec0133aae41b4096d82c5608d90caf0050"
+    },
+    {
+      "path": "inputs/factor-records/librispeech_1320-122617-0019.json",
+      "bytes": 2549,
+      "sha256": "28ef6b0cd3e9efbed213b3a609dd5495ff789a4380ce2a6da8da03e376767a63"
+    },
+    {
+      "path": "inputs/factor-records/librispeech_1320-122617-0023.json",
+      "bytes": 2549,
+      "sha256": "1313be7025f81ca5d8883ad4a7ab777e853023966e77b55e260f06a624700f24"
+    },
+    {
+      "path": "inputs/factor-records/librispeech_1320-122617-0039.json",
+      "bytes": 2549,
+      "sha256": "22fa5e672127b80c90017ae9f622d0313542e56b56c0dd3e0d8236045c13d298"
+    },
+    {
+      "path": "inputs/factor-records/librispeech_1580-141083-0010.json",
+      "bytes": 2549,
+      "sha256": "6473009990754518e55db3def97eee1e55860493c9f003c605ed59370536e64b"
+    },
+    {
+      "path": "inputs/factor-records/librispeech_1580-141084-0016.json",
+      "bytes": 2549,
+      "sha256": "73481a0b505cbb507307e64e3f0ce14923efac93a89d692a3c499254d0572d0b"
+    },
+    {
+      "path": "inputs/factor-records/librispeech_1580-141084-0047.json",
+      "bytes": 2549,
+      "sha256": "cd6445ffb5ef5376d62a982556603967ee05b7ece3c2dcb34537f6e7f8589016"
+    },
+    {
+      "path": "inputs/factor-records/librispeech_1995-1836-0000.json",
+      "bytes": 2547,
+      "sha256": "c5270656a96a440d22e5dc89e41911ce83f4c3ccae72361307e49b5cd6447b7a"
+    },
+    {
+      "path": "inputs/factor-records/librispeech_1995-1836-0014.json",
+      "bytes": 2547,
+      "sha256": "bb2fe9593eaa046f58790dfce068fde583f2a38eb529ee16d83371409ec03f12"
+    },
+    {
+      "path": "inputs/factor-records/librispeech_1995-1837-0023.json",
+      "bytes": 2547,
+      "sha256": "9c7888f3e88ab4c1d399b38e34ab5c5de79c83b2c2f430d1f8a9d65736917adb"
+    },
+    {
+      "path": "inputs/factor-records/librispeech_2094-142345-0032.json",
+      "bytes": 2545,
+      "sha256": "24dc89f746faa06226195244e8cc1399c1db0be7f206170c36f6df1422623de6"
+    },
+    {
+      "path": "inputs/factor-records/librispeech_2094-142345-0039.json",
+      "bytes": 2549,
+      "sha256": "f5dbdb6f194971b71f8b0d2fe1d9a986582aed4780acd4c55a6490e0fee8b546"
+    },
+    {
+      "path": "inputs/factor-records/librispeech_2094-142345-0040.json",
+      "bytes": 2545,
+      "sha256": "396c37334e7c8615a417188f07514db44db03f5e11ab4f3a4e5ad187cd6498f5"
+    },
+    {
+      "path": "inputs/factor-records/librispeech_2300-131720-0022.json",
+      "bytes": 2549,
+      "sha256": "ea4fd4dd30909f3482a961f5ce43640c4a0b47c0c3dcce1d8742ffcefb45e691"
+    },
+    {
+      "path": "inputs/factor-records/librispeech_2300-131720-0028.json",
+      "bytes": 2549,
+      "sha256": "aac0d6dc27c734669abb82d569e3cc79e8d4465628192929aba57208d7e4acdd"
+    },
+    {
+      "path": "inputs/factor-records/librispeech_2300-131720-0041.json",
+      "bytes": 2545,
+      "sha256": "aba4083d3429c3e80ee76542e86e5f4cb720f0758b974fefea053fcbdb2db618"
+    },
+    {
+      "path": "inputs/factor-records/librispeech_237-126133-0003.json",
+      "bytes": 2547,
+      "sha256": "eeeb8f7f9ec47c7d99e45445c3569f2b434ee5b2ed5a6ab5d22aff56ee9e39fd"
+    },
+    {
+      "path": "inputs/factor-records/librispeech_237-134500-0029.json",
+      "bytes": 2541,
+      "sha256": "1f686c119d6c76aee0a655cdab5a1094202dd841459c9c492d2d0296538c5910"
+    },
+    {
+      "path": "inputs/factor-records/librispeech_237-134500-0031.json",
+      "bytes": 2547,
+      "sha256": "582daf6c29a6b0b965202dfad09e4cfba0105bf34a97355c9ae355a69fec27e2"
+    },
+    {
+      "path": "inputs/factor-records/librispeech_260-123286-0008.json",
+      "bytes": 2543,
+      "sha256": "bbb4e8ec762703d9a8165e4cc09f90c7300a1e22722c503300c8676f8182bcf0"
+    },
+    {
+      "path": "inputs/factor-records/librispeech_260-123288-0003.json",
+      "bytes": 2547,
+      "sha256": "4d211a6922420d663e9329ffff52390dfcbaa675df4c24d2eb1b79e3c8487229"
+    },
+    {
+      "path": "inputs/factor-records/librispeech_260-123440-0020.json",
+      "bytes": 2547,
+      "sha256": "da9fd6ae66bc3b0ce11b01f790e27ec241b4710d25e239f7671326bacbd97b2b"
+    },
+    {
+      "path": "inputs/factor-records/librispeech_2830-3980-0000.json",
+      "bytes": 2543,
+      "sha256": "dde53a1839258a67a805bc1c4c203f35b7791eb15e38322f56a1b9a808d54b9f"
+    },
+    {
+      "path": "inputs/factor-records/librispeech_2830-3980-0038.json",
+      "bytes": 2547,
+      "sha256": "86eb8f195067fb87e26a9a86d2bf4c6354a3f4b5e1a0c95061273dddfe41ed21"
+    },
+    {
+      "path": "inputs/factor-records/librispeech_2830-3980-0042.json",
+      "bytes": 2543,
+      "sha256": "80c1054e48c3db50dd417167205b78f86b10c0746037a7a0417a474821af12dd"
+    },
+    {
+      "path": "inputs/factor-records/librispeech_2961-960-0010.json",
+      "bytes": 2546,
+      "sha256": "cd8581a388a6e78944ff553e358ab1b1bb7b233d6230d7775319c38e3c5373a1"
+    },
+    {
+      "path": "inputs/factor-records/librispeech_2961-960-0019.json",
+      "bytes": 2546,
+      "sha256": "765a6c1b55b442e2bb5df9abc65a51611f371d3727c8914887a204693f04d64a"
+    },
+    {
+      "path": "inputs/factor-records/librispeech_2961-961-0011.json",
+      "bytes": 2546,
+      "sha256": "d4b05b8d3fce12170f5f5d851714e02ed51d5d87f6dfcfd4a3d005ac71bd9c73"
+    },
+    {
+      "path": "inputs/factor-records/librispeech_3570-5694-0001.json",
+      "bytes": 2547,
+      "sha256": "b33e1d72b2f7388a32caf208abbe139ddf6c23e8783a38556f0cd3d489afaf0a"
+    },
+    {
+      "path": "inputs/factor-records/librispeech_3570-5694-0004.json",
+      "bytes": 2547,
+      "sha256": "9eb0b20af5596bd005458d07944d1007593883c88281c0e132d8db565d5d547c"
+    },
+    {
+      "path": "inputs/factor-records/librispeech_3570-5696-0010.json",
+      "bytes": 2547,
+      "sha256": "540609a97f7c9626f96584a8e0bf27bf6dfb899128bbad3bd32d78e4ad20116f"
+    },
+    {
+      "path": "inputs/factor-records/librispeech_3575-170457-0034.json",
+      "bytes": 2545,
+      "sha256": "b53155a3ad5c3afc8bc1c4d129d3e1fb56b3501253cc00ffa4be9ef1fa2151b0"
+    },
+    {
+      "path": "inputs/factor-records/librispeech_3575-170457-0041.json",
+      "bytes": 2549,
+      "sha256": "1fcb6d4820fa237998ad74f5c521ced6abc66a4b742a513b7cb12d7faa8e7e7c"
+    },
+    {
+      "path": "inputs/factor-records/librispeech_3575-170457-0054.json",
+      "bytes": 2549,
+      "sha256": "d336f2e992f8508035f11a828012d9286fd270d47a289d736ab4d9a2e4e70c31"
+    },
+    {
+      "path": "inputs/factor-records/librispeech_3729-6852-0000.json",
+      "bytes": 2547,
+      "sha256": "88c3eda7c45ae4a543abcafe423311a96c93cf7195a2dc5f97b72120a34c1f41"
+    },
+    {
+      "path": "inputs/factor-records/librispeech_3729-6852-0007.json",
+      "bytes": 2547,
+      "sha256": "8050cde85c557b21d531c7084f1b06c99008cff12408711006a0a0c4267253dd"
+    },
+    {
+      "path": "inputs/factor-records/librispeech_3729-6852-0017.json",
+      "bytes": 2547,
+      "sha256": "5407f63cbd2092ee451ed43b3b5cea7439f8fc61ca43923d183f6270ac023752"
+    },
+    {
+      "path": "inputs/factor-records/librispeech_4077-13751-0001.json",
+      "bytes": 2548,
+      "sha256": "137f0bd46acecfa1ce11d6264f90f2915392e9f02a297710d06e0f9a3c7c91af"
+    },
+    {
+      "path": "inputs/factor-records/librispeech_4077-13754-0002.json",
+      "bytes": 2548,
+      "sha256": "ef683f5097367f1ba199f851adc2535039b94fc2d7da64c446700cb2cf754b57"
+    },
+    {
+      "path": "inputs/factor-records/librispeech_4077-13754-0012.json",
+      "bytes": 2548,
+      "sha256": "a391c0ff0582942ee837c6ee5c2f9873d60a097293b9bc97dd7269d518513bab"
+    },
+    {
+      "path": "inputs/factor-records/librispeech_4446-2271-0003.json",
+      "bytes": 2543,
+      "sha256": "2ff457cde677f0643c2a7c1e30c5796244856a9c19339b3bbe9efa42d95ffb3f"
+    },
+    {
+      "path": "inputs/factor-records/librispeech_4446-2271-0022.json",
+      "bytes": 2543,
+      "sha256": "3cc3560bd9ae73d14ac9b9ccf748e7e3f0f216f8bfe2ceae73781861bdb51b41"
+    },
+    {
+      "path": "inputs/factor-records/librispeech_4446-2273-0010.json",
+      "bytes": 2547,
+      "sha256": "6309ef923f3cad2b6be96d6bf000bd71d5e6458e26aa263a78d0c9dd709f9217"
+    },
+    {
+      "path": "inputs/factor-records/librispeech_4507-16021-0016.json",
+      "bytes": 2548,
+      "sha256": "37422477811e2a2933d9821ab3ba7b6bb8f2d4ff3d39b7a7ec03ab4a51d4f761"
+    },
+    {
+      "path": "inputs/factor-records/librispeech_4507-16021-0032.json",
+      "bytes": 2548,
+      "sha256": "8c290c1b909c76b4bee25f538cb9b7ed2b868e725a87da9d9ccff30f556cdc93"
+    },
+    {
+      "path": "inputs/factor-records/librispeech_4507-16021-0045.json",
+      "bytes": 2547,
+      "sha256": "a446b2b4f1c8aa4e75c4d7e5bd975cf3adfa1f791f86b242082739830b161ae9"
+    },
+    {
+      "path": "inputs/factor-records/librispeech_4970-29093-0004.json",
+      "bytes": 2544,
+      "sha256": "110bc7330c2f5715f7168f77cd934668838e80c8de305d9b658c35aa07a05746"
+    },
+    {
+      "path": "inputs/factor-records/librispeech_4970-29093-0005.json",
+      "bytes": 2548,
+      "sha256": "d0fadff47fb8acadef77771b396422b9936cc2620166c411c9177eba9f915655"
+    },
+    {
+      "path": "inputs/factor-records/librispeech_4970-29095-0008.json",
+      "bytes": 2544,
+      "sha256": "1eac87bc6676af777493eae68e1a8fc46d7467801dbbdd36ce9c41887f45a071"
+    },
+    {
+      "path": "inputs/factor-records/librispeech_4992-23283-0016.json",
+      "bytes": 2547,
+      "sha256": "989efc8496a1904fea7d85e8cfa6ffa95abd4fbb4195d964bd75b66803149196"
+    },
+    {
+      "path": "inputs/factor-records/librispeech_4992-41797-0000.json",
+      "bytes": 2548,
+      "sha256": "6996abb6c64a66ebaf5444216a1d36ebfa6256b1f52cd6c84f485304b8b6a32d"
+    },
+    {
+      "path": "inputs/factor-records/librispeech_4992-41806-0000.json",
+      "bytes": 2548,
+      "sha256": "d60cbd9d5605f7e7403ba678fb617353e63f4f4701a6405ac686d479b639ec35"
+    },
+    {
+      "path": "inputs/factor-records/librispeech_5105-28240-0011.json",
+      "bytes": 2548,
+      "sha256": "49794ada9da9fbbbc50352b3fc60702254f6d99fa1314c90c8a2beed8eee7ce4"
+    },
+    {
+      "path": "inputs/factor-records/librispeech_5105-28241-0004.json",
+      "bytes": 2548,
+      "sha256": "d1b4e2db382b34f5715e724b81de4a0acbc653b2a884c66c6ff6b4a90f86b1ec"
+    },
+    {
+      "path": "inputs/factor-records/librispeech_5105-28241-0019.json",
+      "bytes": 2548,
+      "sha256": "b3fb381c3757739d53f53e6914e6218aea49b1f690662d231e99bd8c28530ace"
+    },
+    {
+      "path": "inputs/factor-records/librispeech_5142-33396-0019.json",
+      "bytes": 2547,
+      "sha256": "df394f8020830c77ed1f8538dcfc24abb522578e2a286496a19fb2c6cfebf5d1"
+    },
+    {
+      "path": "inputs/factor-records/librispeech_5142-33396-0030.json",
+      "bytes": 2544,
+      "sha256": "76dde6649483704ea84f1639f1d3524c87b828e21a56a9f64826498d165dba31"
+    },
+    {
+      "path": "inputs/factor-records/librispeech_5142-33396-0065.json",
+      "bytes": 2548,
+      "sha256": "23ea3ecb4fef6c891d186a5fcac7ede5f4889f0330d451c55d3b710cdcf15008"
+    },
+    {
+      "path": "inputs/factor-records/librispeech_5639-40744-0013.json",
+      "bytes": 2548,
+      "sha256": "0d44f72ca9fd4b28364270d4328f2f5f8d1c1974f362bf1c3120297126cd78c2"
+    },
+    {
+      "path": "inputs/factor-records/librispeech_5639-40744-0023.json",
+      "bytes": 2548,
+      "sha256": "9eb1e9565c2ce2e5a06b46b059dfebd05e2888c7fafba8702feb1f541e2c4242"
+    },
+    {
+      "path": "inputs/factor-records/librispeech_5639-40744-0030.json",
+      "bytes": 2548,
+      "sha256": "f62cd3ec410afc7272d885d360d0c3bfaa1fcfcc4c5bcbeb2da11c3eef52e15f"
+    },
+    {
+      "path": "inputs/factor-records/librispeech_5683-32865-0017.json",
+      "bytes": 2548,
+      "sha256": "f3c675e9385900b79a7e2d0645c6fef223caa1020791b69d9d5aa56dc72b6432"
+    },
+    {
+      "path": "inputs/factor-records/librispeech_5683-32879-0009.json",
+      "bytes": 2548,
+      "sha256": "b56c02b7ef71597c69892f54070a7e486ffbdb5b625b7e991ef8810a9a728a31"
+    },
+    {
+      "path": "inputs/factor-records/librispeech_5683-32879-0019.json",
+      "bytes": 2548,
+      "sha256": "1753e8bf0e4c3c7f6713c37d2ff533a309ffbde93d46eb7a219e66401f1ce8af"
+    },
+    {
+      "path": "inputs/factor-records/librispeech_61-70968-0042.json",
+      "bytes": 2540,
+      "sha256": "e14a1de65fb7550fc4431754179a1346d4f90aaad1f0b19347f7b1fba6c4ea61"
+    },
+    {
+      "path": "inputs/factor-records/librispeech_61-70968-0043.json",
+      "bytes": 2544,
+      "sha256": "08bdce6e916d342898570fd03b4abbe57327f6c10ab99ac42cbf1b1133036b9a"
+    },
+    {
+      "path": "inputs/factor-records/librispeech_61-70968-0054.json",
+      "bytes": 2544,
+      "sha256": "017adc6e9979c7572288920938044177ed2a43bcd1b4b8e83f0b4ec19039effd"
+    },
+    {
+      "path": "inputs/factor-records/librispeech_672-122797-0003.json",
+      "bytes": 2546,
+      "sha256": "8080cd2d402a0f69edf546a8c4d4c5026ea625a27ec463ffb9b5a2f9b24f7cb3"
+    },
+    {
+      "path": "inputs/factor-records/librispeech_672-122797-0044.json",
+      "bytes": 2543,
+      "sha256": "54e9927f9bb028316f4938e9baf1250675e4e7e35c12e991b89c70209d7414b3"
+    },
+    {
+      "path": "inputs/factor-records/librispeech_672-122797-0056.json",
+      "bytes": 2547,
+      "sha256": "87ec113d09753ea80ea81560958947f2038915b75e72195b9b04b22d323d2f01"
+    },
+    {
+      "path": "inputs/factor-records/librispeech_6829-68769-0014.json",
+      "bytes": 2544,
+      "sha256": "45cbd97667588272e6f8404f615cb299e486ba659cd4f43c8ed281826e45e7a4"
+    },
+    {
+      "path": "inputs/factor-records/librispeech_6829-68769-0038.json",
+      "bytes": 2544,
+      "sha256": "90a8e7fcaa04785843a2b8e4260c58fcbce50c460106ab38533713b26c4bd315"
+    },
+    {
+      "path": "inputs/factor-records/librispeech_6829-68769-0041.json",
+      "bytes": 2544,
+      "sha256": "868bb2b8be32301a83f17bb15f2f9823276109f182839042c856310e47d42080"
+    },
+    {
+      "path": "inputs/factor-records/librispeech_6930-75918-0013.json",
+      "bytes": 2544,
+      "sha256": "34e8728b7f431a173a3ba20b63be561e385ae51a8a67b0d66a2f9986f8f527ae"
+    },
+    {
+      "path": "inputs/factor-records/librispeech_6930-76324-0024.json",
+      "bytes": 2544,
+      "sha256": "b75f01092825730402b0d4f413b9481f85695bc2bfe3969dc4aa8e82d25e1ab2"
+    },
+    {
+      "path": "inputs/factor-records/librispeech_6930-81414-0026.json",
+      "bytes": 2544,
+      "sha256": "14818059206dd3b0e15dfb61dc3db943869c4a108bff82f06888e41136695f51"
+    },
+    {
+      "path": "inputs/factor-records/librispeech_7021-79740-0002.json",
+      "bytes": 2548,
+      "sha256": "46607bbe83a1b956a958ebc8f588d8d42fbdbde498c3b22868bacbd188bec1fc"
+    },
+    {
+      "path": "inputs/factor-records/librispeech_7021-79740-0011.json",
+      "bytes": 2548,
+      "sha256": "94e19c54fc68e9f996e48fc0d58a7c4273d66d70bc8a864fc3d75f1a5302e677"
+    },
+    {
+      "path": "inputs/factor-records/librispeech_7021-85628-0025.json",
+      "bytes": 2544,
+      "sha256": "1127afdaae4e68b9c3a0a7fd0a3dffe7a6e02aa397a78b7640ef145444ef3b5d"
+    },
+    {
+      "path": "inputs/factor-records/librispeech_7127-75946-0002.json",
+      "bytes": 2548,
+      "sha256": "fc66bcc7bcb212a3551579bbce81f141ba10f667a44dd761257a7cf0d1376520"
+    },
+    {
+      "path": "inputs/factor-records/librispeech_7127-75946-0029.json",
+      "bytes": 2548,
+      "sha256": "a573b6ea4f0eeff247f0d64186435f220f8658110acd5d2d3be16712bf3a3810"
+    },
+    {
+      "path": "inputs/factor-records/librispeech_7127-75947-0011.json",
+      "bytes": 2544,
+      "sha256": "a3030cb9202f4175b80383f0b43dc3d8b4da5392785d4f56d44380a272f20e3f"
+    },
+    {
+      "path": "inputs/factor-records/librispeech_7176-88083-0002.json",
+      "bytes": 2548,
+      "sha256": "7f0334bae80f495aacb4ba629f705e759ac27d88c7be4a20d8d29d3edf5de212"
+    },
+    {
+      "path": "inputs/factor-records/librispeech_7176-88083-0004.json",
+      "bytes": 2548,
+      "sha256": "ab5497c2e93edd1a70c78974997f4b22fcefa1707346d8793869762aa428e27a"
+    },
+    {
+      "path": "inputs/factor-records/librispeech_7176-88083-0026.json",
+      "bytes": 2548,
+      "sha256": "17822a30281eb57779e469a2d2db1f2f113900fecc75f34b22fa8997f72c24d9"
+    },
+    {
+      "path": "inputs/factor-records/librispeech_7729-102255-0028.json",
+      "bytes": 2549,
+      "sha256": "42e097e56952c282c62d4a204b24867585502a77f90bb7c2e1af27e3f38186f3"
+    },
+    {
+      "path": "inputs/factor-records/librispeech_7729-102255-0038.json",
+      "bytes": 2549,
+      "sha256": "18ba0ed28d9b0f741873672ca657bf43403176ff12854c57d9e76c831b555c8a"
+    },
+    {
+      "path": "inputs/factor-records/librispeech_7729-102255-0042.json",
+      "bytes": 2549,
+      "sha256": "81879f0837f39362ca77f374b24a60d9e5371cd14dfc2bde48fba174b36e9c8c"
+    },
+    {
+      "path": "inputs/factor-records/librispeech_8224-274381-0010.json",
+      "bytes": 2549,
+      "sha256": "e5ba235172178e59c01dd2a2e76721b993c6c10534960fa747ddbb9d5c0bac66"
+    },
+    {
+      "path": "inputs/factor-records/librispeech_8224-274381-0013.json",
+      "bytes": 2549,
+      "sha256": "2476f3b0c5abca78ba4e71e94cc59c7de6a8f7154b41bfa22a22f551320786ac"
+    },
+    {
+      "path": "inputs/factor-records/librispeech_8224-274384-0010.json",
+      "bytes": 2549,
+      "sha256": "303ad3b442e2431bcfae4ff3360336ff0ad6f9247468da7f491788728d835b14"
+    },
+    {
+      "path": "inputs/factor-records/librispeech_8230-279154-0018.json",
+      "bytes": 2549,
+      "sha256": "a9f65a75a5660a2379183008192841e2038b52b7f1f0e8b31202749246272f50"
+    },
+    {
+      "path": "inputs/factor-records/librispeech_8230-279154-0032.json",
+      "bytes": 2545,
+      "sha256": "6520a6c342b796acdf065192545a934b8a4bd718341fef7497d7dd38422f5eec"
+    },
+    {
+      "path": "inputs/factor-records/librispeech_8230-279154-0033.json",
+      "bytes": 2549,
+      "sha256": "7ef529a27ded91e28779246c4232692bd83d9acff950e229daa8ea7fc8142f3f"
+    },
+    {
+      "path": "inputs/factor-records/librispeech_8455-210777-0010.json",
+      "bytes": 2545,
+      "sha256": "4259ba5a165366e3bcce5bf6a865b25053ec10029269e2707e132bb259b0870e"
+    },
+    {
+      "path": "inputs/factor-records/librispeech_8455-210777-0049.json",
+      "bytes": 2545,
+      "sha256": "80a70d072de9ee1a1d619c8ad070ed1890b68ad8b48277ca9234c7ac04d2b632"
+    },
+    {
+      "path": "inputs/factor-records/librispeech_8455-210777-0060.json",
+      "bytes": 2549,
+      "sha256": "e8e19a3f465156e5a09e17fcb7a4c7d9cb55af8213446451206960e98dc0a7a9"
+    },
+    {
+      "path": "inputs/factor-records/librispeech_8463-294828-0003.json",
+      "bytes": 2549,
+      "sha256": "2d39f6e8d13ca553553c5aab74db5e94d9c614747677718e8ae54a2476a54bc6"
+    },
+    {
+      "path": "inputs/factor-records/librispeech_8463-294828-0014.json",
+      "bytes": 2549,
+      "sha256": "04b816ca89ecfcb9916208c6f2dea05f03108d6b598ad56fd3b7d66edd1805fc"
+    },
+    {
+      "path": "inputs/factor-records/librispeech_8463-294828-0022.json",
+      "bytes": 2545,
+      "sha256": "d470cc48be9427897e79c425c09aa98e9526b9b5090964146de4cca7b2683638"
+    },
+    {
+      "path": "inputs/factor-records/librispeech_8555-284447-0007.json",
+      "bytes": 2549,
+      "sha256": "c166de2e51e8802b8b4d2212c32aa1f20bfa27a85d3b18d5cce700781b2790fe"
+    },
+    {
+      "path": "inputs/factor-records/librispeech_8555-284449-0020.json",
+      "bytes": 2549,
+      "sha256": "02da242cc5bd36a831583d615e7e039f08bcf22a19dac0c6c37d312f416dbccc"
+    },
+    {
+      "path": "inputs/factor-records/librispeech_8555-292519-0001.json",
+      "bytes": 2549,
+      "sha256": "8b3449cc1c570bf6349401946349d1d050bd1a145f688a1be7bf5af24a633d5f"
+    },
+    {
+      "path": "inputs/factor-records/librispeech_908-157963-0018.json",
+      "bytes": 2544,
+      "sha256": "637d276e454d8384676f6fbf30c4a1afd0a29278537473067e80b31ee36629c0"
+    },
+    {
+      "path": "inputs/factor-records/librispeech_908-31957-0002.json",
+      "bytes": 2545,
+      "sha256": "395caa1385ef2d171126ad1cf560333ff7b728e8c0da2dfcb56519309f93b0ab"
+    },
+    {
+      "path": "inputs/factor-records/librispeech_908-31957-0016.json",
+      "bytes": 2546,
+      "sha256": "dd5b9c545fbb74cf9269c7e56b22cd558884c45474bb0b354ef30b602f2b9203"
+    },
+    {
+      "path": "inputs/manifest.json",
+      "bytes": 115312,
+      "sha256": "7906b02ef3d5e17c1ce980310b09418b5885b8dba57aa37a1417b26ed4f7c57a"
+    },
+    {
+      "path": "inputs/original-input-manifest.json",
+      "bytes": 55015,
+      "sha256": "1f392fc60fbca4003c236f03ffd9edba82b048737f23cf250295c1b4c6c85193"
+    },
+    {
+      "path": "inputs/states/librispeech_1089-134686-0008.npy",
+      "bytes": 2530,
+      "sha256": "0503e444fc1c8b727969ae3c179066db8edc2fcd65eb51d0fd766b794ecf5120"
+    },
+    {
+      "path": "inputs/states/librispeech_1089-134686-0011.npy",
+      "bytes": 2530,
+      "sha256": "f680b018927fd6d86eb9ff02d720451e420c774d2fe97f3d5bf0d7fcaeba6e6a"
+    },
+    {
+      "path": "inputs/states/librispeech_1089-134686-0032.npy",
+      "bytes": 1766,
+      "sha256": "05d1457fbde2297a209594ce8d9149e0928825e96a05f51abe444b2f09019d91"
+    },
+    {
+      "path": "inputs/states/librispeech_1188-133604-0003.npy",
+      "bytes": 2530,
+      "sha256": "bda4a3a4277c1eac9746e2f8624e1b878217d5025c088fae70b61fbec24f7278"
+    },
+    {
+      "path": "inputs/states/librispeech_1188-133604-0031.npy",
+      "bytes": 1830,
+      "sha256": "b27b66357a5d9d8bd990d7c568ed4901ddb1349ab2099cc68956a7744046ae2f"
+    },
+    {
+      "path": "inputs/states/librispeech_1188-133604-0037.npy",
+      "bytes": 2530,
+      "sha256": "5f9fdac069dd0ffae283f4617d43f31f3df57482531beedca293afabcd397790"
+    },
+    {
+      "path": "inputs/states/librispeech_121-121726-0012.npy",
+      "bytes": 1748,
+      "sha256": "55de22c2992374712cec33fd6b3a6ba8abadd14de4a4a36dc4ed70eedac60ebe"
+    },
+    {
+      "path": "inputs/states/librispeech_121-123852-0000.npy",
+      "bytes": 2530,
+      "sha256": "1fe7364e69fb5a5077e98f57956d8cba90bdf555dd04c48ba93382e87d9bcf14"
+    },
+    {
+      "path": "inputs/states/librispeech_121-127105-0035.npy",
+      "bytes": 2530,
+      "sha256": "3f3a7155f14f175b4178dee73502927672a56de294cc3b9901ab0de3e3ca9d1f"
+    },
+    {
+      "path": "inputs/states/librispeech_1221-135766-0005.npy",
+      "bytes": 2530,
+      "sha256": "88f644655e0fea5dab2d96d6ca0fc6d72119ba9f2c64edbd6bf64e0c8e040689"
+    },
+    {
+      "path": "inputs/states/librispeech_1221-135767-0006.npy",
+      "bytes": 2530,
+      "sha256": "e30649de73432c5d8213dbb60fbac85978475a32605a0797b910fd28b4ed3b4e"
+    },
+    {
+      "path": "inputs/states/librispeech_1221-135767-0019.npy",
+      "bytes": 1642,
+      "sha256": "ddf53be401459795988e1c9c187f18d5a04ed6a9c1ce515b62b203e447506801"
+    },
+    {
+      "path": "inputs/states/librispeech_1284-1180-0020.npy",
+      "bytes": 2478,
+      "sha256": "343839c325d107f58104f734a054d0ec04d29f38fb4d5a432c7471026aa6f51c"
+    },
+    {
+      "path": "inputs/states/librispeech_1284-1180-0027.npy",
+      "bytes": 1438,
+      "sha256": "017a4bcff921f8a29560885f15ba59f9f437759384dc692d89797deb0b15e744"
+    },
+    {
+      "path": "inputs/states/librispeech_1284-1180-0028.npy",
+      "bytes": 2530,
+      "sha256": "da1b3320f0a1cde0e36085a2850b12d0982b4144c28869939d8efd753d1e79bc"
+    },
+    {
+      "path": "inputs/states/librispeech_1320-122617-0019.npy",
+      "bytes": 2530,
+      "sha256": "107358aa17dc6194724f27d1594da37441ff2a795b5dc99014a4ddf1f5c29f98"
+    },
+    {
+      "path": "inputs/states/librispeech_1320-122617-0023.npy",
+      "bytes": 2530,
+      "sha256": "296a9ccc57a9cdf8f1c71fb599939b404de24f28a925098b45aeaf7d24d4c2ab"
+    },
+    {
+      "path": "inputs/states/librispeech_1320-122617-0039.npy",
+      "bytes": 2530,
+      "sha256": "0898c77536fecb8aed8c2bc8897843c334fa474f05ba08711b692b3f9bb34d14"
+    },
+    {
+      "path": "inputs/states/librispeech_1580-141083-0010.npy",
+      "bytes": 2258,
+      "sha256": "1534cff9bc45c455c048e776243705a39d440710777379bc11a8d0e2a3cebdd1"
+    },
+    {
+      "path": "inputs/states/librispeech_1580-141084-0016.npy",
+      "bytes": 2514,
+      "sha256": "1dd02999505543a6606a0ae7a905632a725536eba663ea95ee6e595bf79fade8"
+    },
+    {
+      "path": "inputs/states/librispeech_1580-141084-0047.npy",
+      "bytes": 2230,
+      "sha256": "b5bdf54527688660c46f90014a2390af131c8aed398ecf1dbccdf79cafff60b1"
+    },
+    {
+      "path": "inputs/states/librispeech_1995-1836-0000.npy",
+      "bytes": 2530,
+      "sha256": "ef3dbc71fc3cdc3d8bf8d8ad9e3680679ba21a7a6ed68d7a91751d5536cb37c7"
+    },
+    {
+      "path": "inputs/states/librispeech_1995-1836-0014.npy",
+      "bytes": 2530,
+      "sha256": "6f0cd91747b5ae008f7e2fa616d903ab889b537b28c70890a01364942416248c"
+    },
+    {
+      "path": "inputs/states/librispeech_1995-1837-0023.npy",
+      "bytes": 2530,
+      "sha256": "39e7219d51444a6c61f3470db07a58a65ffccdfa72a34da469bb0067e1cd9430"
+    },
+    {
+      "path": "inputs/states/librispeech_2094-142345-0032.npy",
+      "bytes": 1426,
+      "sha256": "4a221e9810a26a86fff92324393001856406118b635d0e4ac3bd23bf24590c37"
+    },
+    {
+      "path": "inputs/states/librispeech_2094-142345-0039.npy",
+      "bytes": 2530,
+      "sha256": "e2deb222e27730d542d64c21c21f66386f54aab7084d1c19d5ba71b63f36d8a3"
+    },
+    {
+      "path": "inputs/states/librispeech_2094-142345-0040.npy",
+      "bytes": 1084,
+      "sha256": "7c1a97a92c3f2f1fb7fe9124dc532490b46073e5d7c85736f03bf87d2a50d400"
+    },
+    {
+      "path": "inputs/states/librispeech_2300-131720-0022.npy",
+      "bytes": 2530,
+      "sha256": "8aa7e97d844d4e8304ad6bf7e328c2612d87f93b34e1519c4ec6602bd9589251"
+    },
+    {
+      "path": "inputs/states/librispeech_2300-131720-0028.npy",
+      "bytes": 2530,
+      "sha256": "0dd68925f44fe9acbbecf5cb7860a7645f77f53f1d5f4a11a13b0d231e67275c"
+    },
+    {
+      "path": "inputs/states/librispeech_2300-131720-0041.npy",
+      "bytes": 1630,
+      "sha256": "ccf490dc44261f1effcfa1a378549ed604b5ad2a79d82815b9c058e7843cdc4b"
+    },
+    {
+      "path": "inputs/states/librispeech_237-126133-0003.npy",
+      "bytes": 2530,
+      "sha256": "bbe08393df6e6ce74ba8bf96f1183ae1df0bc387611b63feed004847d1e0d92a"
+    },
+    {
+      "path": "inputs/states/librispeech_237-134500-0029.npy",
+      "bytes": 956,
+      "sha256": "7ef82af9412a0aba6f9f8da223cfd4f1214bb037454fc2b7711d80a67ac20703"
+    },
+    {
+      "path": "inputs/states/librispeech_237-134500-0031.npy",
+      "bytes": 2530,
+      "sha256": "24badd0caad6bf8a66438c9c438c2ca8f70714fd66b0f86f34a12eff89326bba"
+    },
+    {
+      "path": "inputs/states/librispeech_260-123286-0008.npy",
+      "bytes": 1624,
+      "sha256": "0c7f12a2084b788b824b494978affc45586a4acccbb001e5269d836d024344df"
+    },
+    {
+      "path": "inputs/states/librispeech_260-123288-0003.npy",
+      "bytes": 2530,
+      "sha256": "14d8bfefe3c15f0c4e600496f799841e2b3975db2244319ac8bd303c4c44fcdf"
+    },
+    {
+      "path": "inputs/states/librispeech_260-123440-0020.npy",
+      "bytes": 2128,
+      "sha256": "339c2ae16fa885029ba8b3c5f59414dd4b9794c530f2ebdb755bab4b13ad23e6"
+    },
+    {
+      "path": "inputs/states/librispeech_2830-3980-0000.npy",
+      "bytes": 1622,
+      "sha256": "53b457e90ef68b8c69b8eece3bb7d558aeae9d2b14ce0b596bf7ccc892a93b95"
+    },
+    {
+      "path": "inputs/states/librispeech_2830-3980-0038.npy",
+      "bytes": 2346,
+      "sha256": "411863760b54c5c62faf300022e17043ef25d773f29d30007e1d65b902d8ca12"
+    },
+    {
+      "path": "inputs/states/librispeech_2830-3980-0042.npy",
+      "bytes": 1338,
+      "sha256": "5db5461f3bcd07465288e18576d9b1e3910aa014141e17d09127c39c37e8795d"
+    },
+    {
+      "path": "inputs/states/librispeech_2961-960-0010.npy",
+      "bytes": 2530,
+      "sha256": "c2af16a4a536415e4e04f7ba87ef527d9f45100f2964651f9bb59dee78295fd9"
+    },
+    {
+      "path": "inputs/states/librispeech_2961-960-0019.npy",
+      "bytes": 2530,
+      "sha256": "347af49796e93d30b8fc6d85a5a290a6ca230e77b625ec94cdaf358b993cc842"
+    },
+    {
+      "path": "inputs/states/librispeech_2961-961-0011.npy",
+      "bytes": 2530,
+      "sha256": "6cdaa92e9d02213b8ab27035bd93dbb21fe9a0b8ada75a03419e214acddc4761"
+    },
+    {
+      "path": "inputs/states/librispeech_3570-5694-0001.npy",
+      "bytes": 2400,
+      "sha256": "e890012cc6f39eaa5f89a769dc1f7c8e4b0a720e91d943d5ff5186cac9afec5f"
+    },
+    {
+      "path": "inputs/states/librispeech_3570-5694-0004.npy",
+      "bytes": 2262,
+      "sha256": "3e764c84eb2cee02cbb73e34289ec91c43eb79da756562e4335ea367926a7b34"
+    },
+    {
+      "path": "inputs/states/librispeech_3570-5696-0010.npy",
+      "bytes": 2530,
+      "sha256": "2dacc5e103ce4067533fe8d465d64e2eb9f30c552ad259d3a1ded5bdd493bc3e"
+    },
+    {
+      "path": "inputs/states/librispeech_3575-170457-0034.npy",
+      "bytes": 1528,
+      "sha256": "a75439d0294c70c2a49c72e7f88aa6c7f8494e8fe8e6013d6835d95b92aff319"
+    },
+    {
+      "path": "inputs/states/librispeech_3575-170457-0041.npy",
+      "bytes": 2530,
+      "sha256": "48c69ad033eaafec6825031a5fb3ee32aea58917aec2b9e0f2fd404ad8d61e01"
+    },
+    {
+      "path": "inputs/states/librispeech_3575-170457-0054.npy",
+      "bytes": 2530,
+      "sha256": "2d164293c24798112910025de354e7790abbff443c27ed3f94fc2f885b7a2ed0"
+    },
+    {
+      "path": "inputs/states/librispeech_3729-6852-0000.npy",
+      "bytes": 2530,
+      "sha256": "c79a899fcce8f690c43c6430a7d43632dfd048a3ee2de138ca3dc8001c5ad2bf"
+    },
+    {
+      "path": "inputs/states/librispeech_3729-6852-0007.npy",
+      "bytes": 2530,
+      "sha256": "25c3a81f21cc4ee6126a7b41f729da41910561d0ce5ee1b450dbe29123744c5f"
+    },
+    {
+      "path": "inputs/states/librispeech_3729-6852-0017.npy",
+      "bytes": 2530,
+      "sha256": "d67ef888e49fe9c13a937a14a8915c6b774807fb92ce7606be98afa773b92c01"
+    },
+    {
+      "path": "inputs/states/librispeech_4077-13751-0001.npy",
+      "bytes": 2530,
+      "sha256": "a5afd98649f15c74712950c2a0a86d2be6f83a56a0a25da4de5f0b871d0cd75e"
+    },
+    {
+      "path": "inputs/states/librispeech_4077-13754-0002.npy",
+      "bytes": 2530,
+      "sha256": "b26c5d898b595ccadddce319ec38bd7869c25674f2e26d516ea5227ff834263c"
+    },
+    {
+      "path": "inputs/states/librispeech_4077-13754-0012.npy",
+      "bytes": 2530,
+      "sha256": "46c9972ab507fd46a849a4ce72afaca5b50ab7babbb7008fb60e7dffbec7cadc"
+    },
+    {
+      "path": "inputs/states/librispeech_4446-2271-0003.npy",
+      "bytes": 1610,
+      "sha256": "144b297f5495ecf681baa68976fac85b22637562d2e806e62a18bc6555fb3996"
+    },
+    {
+      "path": "inputs/states/librispeech_4446-2271-0022.npy",
+      "bytes": 1060,
+      "sha256": "bfbb56e15c242f2e0b8169d344188b57edd38e88f65bff5f0aef838f0b4d48fc"
+    },
+    {
+      "path": "inputs/states/librispeech_4446-2273-0010.npy",
+      "bytes": 2530,
+      "sha256": "e2c59d7910cfd6cca0f96ad760b03a0a26358e87439fcc04227f4e9cb02dc115"
+    },
+    {
+      "path": "inputs/states/librispeech_4507-16021-0016.npy",
+      "bytes": 2530,
+      "sha256": "c6bd2c52b44b8a3f2fbe574bc67f5ec9a7d22cd8bf67b7e8c3da50c9731866f0"
+    },
+    {
+      "path": "inputs/states/librispeech_4507-16021-0032.npy",
+      "bytes": 2530,
+      "sha256": "7f336de0929807953130d83d368b012e84690c184c622b7a19e8c99a0d5246dc"
+    },
+    {
+      "path": "inputs/states/librispeech_4507-16021-0045.npy",
+      "bytes": 2086,
+      "sha256": "be059357bb2bf0aac5d6abb77954918c1104288fba65a3412681d3e5caff485f"
+    },
+    {
+      "path": "inputs/states/librispeech_4970-29093-0004.npy",
+      "bytes": 1630,
+      "sha256": "5546022f85322c9ad558c81daf1604468c28433bc6565e70ec477ed546d8396e"
+    },
+    {
+      "path": "inputs/states/librispeech_4970-29093-0005.npy",
+      "bytes": 2530,
+      "sha256": "abf49a812747120c476b97a98260c4f19aec242bb25e808d375239fac0c38b27"
+    },
+    {
+      "path": "inputs/states/librispeech_4970-29095-0008.npy",
+      "bytes": 1346,
+      "sha256": "491818e5b3c895bc5ec04b2a2a89c798909648985ffc18e85816a78b9accefc3"
+    },
+    {
+      "path": "inputs/states/librispeech_4992-23283-0016.npy",
+      "bytes": 1928,
+      "sha256": "655221293b5cba5ccbecbe9650c9d89f0c548b5bd50c0132ded110c6bb12d347"
+    },
+    {
+      "path": "inputs/states/librispeech_4992-41797-0000.npy",
+      "bytes": 2324,
+      "sha256": "1bd83849150ccac3b96ab0ec3a0f3fb318cc547d3e8554bf5020c86f03053e20"
+    },
+    {
+      "path": "inputs/states/librispeech_4992-41806-0000.npy",
+      "bytes": 2530,
+      "sha256": "c26d2e32119ada52114cef2d95226267c697d26da02332edac88d7ee09afcb48"
+    },
+    {
+      "path": "inputs/states/librispeech_5105-28240-0011.npy",
+      "bytes": 2530,
+      "sha256": "2402319a9e0afc4904f5533cc006b7b9c5685b649d4dea31b479b3d1e152815e"
+    },
+    {
+      "path": "inputs/states/librispeech_5105-28241-0004.npy",
+      "bytes": 2530,
+      "sha256": "9d50b716dbcf4e1008705028ca1b9cfd656e1eb231f7ca22e1710816cd3d4155"
+    },
+    {
+      "path": "inputs/states/librispeech_5105-28241-0019.npy",
+      "bytes": 2246,
+      "sha256": "b1498a84a2525d1472f6aee421351f9d6108e6de45d4865b4b924daea6617aba"
+    },
+    {
+      "path": "inputs/states/librispeech_5142-33396-0019.npy",
+      "bytes": 2124,
+      "sha256": "b11539e2c2e0c9b2455edad9c2426c9f1fc5747e4b35aeb9606ddd4e1424a09d"
+    },
+    {
+      "path": "inputs/states/librispeech_5142-33396-0030.npy",
+      "bytes": 1236,
+      "sha256": "7e1d75fddeaabc1fd51177030e3c095d35262d7f6c133e6d0c8157c33d4948ce"
+    },
+    {
+      "path": "inputs/states/librispeech_5142-33396-0065.npy",
+      "bytes": 2208,
+      "sha256": "03d054d43249b5efc3b2a715ec2491cc76fa48bd3419ba30fe415ea25a04421a"
+    },
+    {
+      "path": "inputs/states/librispeech_5639-40744-0013.npy",
+      "bytes": 2530,
+      "sha256": "bf7409634a4220e618e224fa2d4db53c6cbf87f1feaade546008afc2189656d8"
+    },
+    {
+      "path": "inputs/states/librispeech_5639-40744-0023.npy",
+      "bytes": 2530,
+      "sha256": "e597302dab91fb771a0e7221fa379d12236d6dcfc8fbdb6ea9cb5f4051685e48"
+    },
+    {
+      "path": "inputs/states/librispeech_5639-40744-0030.npy",
+      "bytes": 2530,
+      "sha256": "0487a6bae15ac68ad5f26df0ce2815507bd6ac2339fc7103722ed8d1ac87299c"
+    },
+    {
+      "path": "inputs/states/librispeech_5683-32865-0017.npy",
+      "bytes": 2312,
+      "sha256": "2d609fec7e43bc1b65e146820098987fa8597c0a0280981a83c2b1261f540475"
+    },
+    {
+      "path": "inputs/states/librispeech_5683-32879-0009.npy",
+      "bytes": 2184,
+      "sha256": "66d70aa77d1975ab3314cf06cf753d463b2533de1570ab8475127af7b059e000"
+    },
+    {
+      "path": "inputs/states/librispeech_5683-32879-0019.npy",
+      "bytes": 2530,
+      "sha256": "3169db7f422d3ecb4592435fe5f723eb52ff6d95eb0e6d958e69bad68ce91f19"
+    },
+    {
+      "path": "inputs/states/librispeech_61-70968-0042.npy",
+      "bytes": 1244,
+      "sha256": "bd9738137864516ef4327f3ffa822d532796c9115af213c362a905fe35c1c562"
+    },
+    {
+      "path": "inputs/states/librispeech_61-70968-0043.npy",
+      "bytes": 2530,
+      "sha256": "2b7ecc2f1d75cc27974724be058df2a072ff13569dcf59b219c661007eb107be"
+    },
+    {
+      "path": "inputs/states/librispeech_61-70968-0054.npy",
+      "bytes": 2530,
+      "sha256": "faa7b11b351429cdacc571f48155db74e85143df5beab42504b458ab3cb808ea"
+    },
+    {
+      "path": "inputs/states/librispeech_672-122797-0003.npy",
+      "bytes": 2034,
+      "sha256": "49fe62fbb4fb809d140f1a1d51dc6937ee9aaaa64d210bfcf320956ed5a6f8e3"
+    },
+    {
+      "path": "inputs/states/librispeech_672-122797-0044.npy",
+      "bytes": 1626,
+      "sha256": "71e44164efac6d53001fe6bc1e7abc14ccb8420b984becf6e0f24393a85460f1"
+    },
+    {
+      "path": "inputs/states/librispeech_672-122797-0056.npy",
+      "bytes": 2220,
+      "sha256": "74ed2c4e87caedf74a314b7abed2d30e1d30dd8ee32b4df3821b6f7b0d7237f5"
+    },
+    {
+      "path": "inputs/states/librispeech_6829-68769-0014.npy",
+      "bytes": 1592,
+      "sha256": "f0f7bd22a93384c3737a38c3495ac9be03f786da89d5046db5d24a7dbd5a134b"
+    },
+    {
+      "path": "inputs/states/librispeech_6829-68769-0038.npy",
+      "bytes": 1132,
+      "sha256": "80a4c7229f8c95845e780390f7d0c6d042ed561893adbef1f3f1d1e98e2be9f6"
+    },
+    {
+      "path": "inputs/states/librispeech_6829-68769-0041.npy",
+      "bytes": 1194,
+      "sha256": "09cfc2e38769a54c582eb86437e114e2acc27c8da6bac0d32a43966b71902db6"
+    },
+    {
+      "path": "inputs/states/librispeech_6930-75918-0013.npy",
+      "bytes": 1306,
+      "sha256": "4aeb5bc8ecc5f60551ae8d247473b3e3e34f22081226a29d4e2a1d28d9ba3162"
+    },
+    {
+      "path": "inputs/states/librispeech_6930-76324-0024.npy",
+      "bytes": 1750,
+      "sha256": "6f00efebab705a49174055926378801acd0b9fd24adfb251832e279153120a6c"
+    },
+    {
+      "path": "inputs/states/librispeech_6930-81414-0026.npy",
+      "bytes": 1360,
+      "sha256": "b0825342bdb62e83e62497e78e45c441d7f3274c46c9355c795dbcad57fcf1cc"
+    },
+    {
+      "path": "inputs/states/librispeech_7021-79740-0002.npy",
+      "bytes": 2530,
+      "sha256": "397ad822f49838fec2013bc7ffc9a4804de14abd772d1ab7ea0be00c891e842c"
+    },
+    {
+      "path": "inputs/states/librispeech_7021-79740-0011.npy",
+      "bytes": 2530,
+      "sha256": "a0fcde86588bc1b66da26080ea3b86b030defd07158951c39a73054e12b34347"
+    },
+    {
+      "path": "inputs/states/librispeech_7021-85628-0025.npy",
+      "bytes": 1240,
+      "sha256": "8629d74a33d71c8e8f1d61a125d9e912b63d60d1d084def8607a494c487a132b"
+    },
+    {
+      "path": "inputs/states/librispeech_7127-75946-0002.npy",
+      "bytes": 2530,
+      "sha256": "2b44ba72f3860c048dbc7c1139dc06e08327f4c691000b22938d57c194a22014"
+    },
+    {
+      "path": "inputs/states/librispeech_7127-75946-0029.npy",
+      "bytes": 2530,
+      "sha256": "504fab27262a9c5c082862493ebcd8046f5d063ca3b0cf6a7600c6f8a5e0223b"
+    },
+    {
+      "path": "inputs/states/librispeech_7127-75947-0011.npy",
+      "bytes": 1578,
+      "sha256": "e97a4b596225fa3b026fdf681f6fbbb134340dc2829f5738582d816edc9f83af"
+    },
+    {
+      "path": "inputs/states/librispeech_7176-88083-0002.npy",
+      "bytes": 2530,
+      "sha256": "30cb2d4f867e793a878be21235741d429f539835538e3cd7996ce1a3733a713a"
+    },
+    {
+      "path": "inputs/states/librispeech_7176-88083-0004.npy",
+      "bytes": 2530,
+      "sha256": "ffdec87f7cac3aa148cd413b3da065254646dec5c9571d8d47a81216e2a73e53"
+    },
+    {
+      "path": "inputs/states/librispeech_7176-88083-0026.npy",
+      "bytes": 2342,
+      "sha256": "98b928f32c88c05d826c682617dd0561363c30d0970ad59217bd96b7f492dabd"
+    },
+    {
+      "path": "inputs/states/librispeech_7729-102255-0028.npy",
+      "bytes": 2530,
+      "sha256": "2ead88b3731d778a97eb523e88f7f0c5a2fa417d5dec1645500ea4290c2c8b41"
+    },
+    {
+      "path": "inputs/states/librispeech_7729-102255-0038.npy",
+      "bytes": 2530,
+      "sha256": "1932b26b70988d6b87f50665023779a8f3027fb1849a1670b63ead5e2e9f0ebf"
+    },
+    {
+      "path": "inputs/states/librispeech_7729-102255-0042.npy",
+      "bytes": 2530,
+      "sha256": "6db5ca4aa5db09922273cfee926dc1463a580d0910c397fbe054d8609e224bf0"
+    },
+    {
+      "path": "inputs/states/librispeech_8224-274381-0010.npy",
+      "bytes": 2530,
+      "sha256": "e630788a79316a3205dc0e918028091a09e17017eb5bfa8df8616cb4a6930f3b"
+    },
+    {
+      "path": "inputs/states/librispeech_8224-274381-0013.npy",
+      "bytes": 2530,
+      "sha256": "1e09f87c9eb899cdf0e6a8bbaaaee22219f0df4eef6b3cffbd9023717c2b42d6"
+    },
+    {
+      "path": "inputs/states/librispeech_8224-274384-0010.npy",
+      "bytes": 2530,
+      "sha256": "f33de888cb8a018b01f17708171727cabd966d4548dd3130a1d313fbbde860be"
+    },
+    {
+      "path": "inputs/states/librispeech_8230-279154-0018.npy",
+      "bytes": 2530,
+      "sha256": "e239e6537864769f79949f7b71e91dba55929f1b2fb58b8b2f7b1b70fff26adc"
+    },
+    {
+      "path": "inputs/states/librispeech_8230-279154-0032.npy",
+      "bytes": 1682,
+      "sha256": "433f82a56a71e9f948ca53adf045058429440241a2345d2d27da488c8cd2687d"
+    },
+    {
+      "path": "inputs/states/librispeech_8230-279154-0033.npy",
+      "bytes": 2530,
+      "sha256": "dc372a5fb915e231d9626b3898113ad10d482fbcbb40dd17d5b116ea22f20b76"
+    },
+    {
+      "path": "inputs/states/librispeech_8455-210777-0010.npy",
+      "bytes": 1370,
+      "sha256": "a4dcbcc4d7771924708a00945c38a8bb18eb49600d68c8589463bd84ec6bbb4b"
+    },
+    {
+      "path": "inputs/states/librispeech_8455-210777-0049.npy",
+      "bytes": 1774,
+      "sha256": "1332e32d196a3703757e026f6527d916ab2b86528c619310985635d0d4f324e6"
+    },
+    {
+      "path": "inputs/states/librispeech_8455-210777-0060.npy",
+      "bytes": 2530,
+      "sha256": "97335935ad4e5a4178c2d6658d818af8603c9ff87461707f60b121953f053555"
+    },
+    {
+      "path": "inputs/states/librispeech_8463-294828-0003.npy",
+      "bytes": 2530,
+      "sha256": "7d4be1c6d80b4741515f72a60d5d90e355fa962b3fe66a752379f60aaf1c194a"
+    },
+    {
+      "path": "inputs/states/librispeech_8463-294828-0014.npy",
+      "bytes": 2420,
+      "sha256": "f73668fab868abb9d2c401c61c22f5d8e40ff30c2945343caf596e82d43fa002"
+    },
+    {
+      "path": "inputs/states/librispeech_8463-294828-0022.npy",
+      "bytes": 1072,
+      "sha256": "58595854f7020a86ba7b9c2234625de6ef3ecd516289c2287ff2d3eaaaaeebcd"
+    },
+    {
+      "path": "inputs/states/librispeech_8555-284447-0007.npy",
+      "bytes": 2530,
+      "sha256": "4599523b0689419cac72abb4c00aa295ed1a4fafb989c848b670228b22db0800"
+    },
+    {
+      "path": "inputs/states/librispeech_8555-284449-0020.npy",
+      "bytes": 2168,
+      "sha256": "73b506b12a2c6386bf312a0967ec7e91433c9e965403764fac4119e9d5f98e41"
+    },
+    {
+      "path": "inputs/states/librispeech_8555-292519-0001.npy",
+      "bytes": 2530,
+      "sha256": "50b5ea4560c8e18da82ebf7d96a2f52fc5ccfca19c8cfd245ebcd5729b235b94"
+    },
+    {
+      "path": "inputs/states/librispeech_908-157963-0018.npy",
+      "bytes": 1832,
+      "sha256": "34233728699e091be00d298fbde7880c2bc67287e816ae172a0fca48148f9d86"
+    },
+    {
+      "path": "inputs/states/librispeech_908-31957-0002.npy",
+      "bytes": 2046,
+      "sha256": "3ece35b160857e90885c7a41deea93d848ea93b6ea94bbc5733413a66f6d810a"
+    },
+    {
+      "path": "inputs/states/librispeech_908-31957-0016.npy",
+      "bytes": 2530,
+      "sha256": "1935458838e4218e51e598d8d565e5249bbfcb9ed3d2c5509908c1390a10adb0"
+    },
+    {
+      "path": "libraries/control.so",
+      "bytes": 360176,
+      "sha256": "1ce62532b246a12d188ba4d7a3e05947724302285d802a65c09e5378e757af87"
+    },
+    {
+      "path": "libraries/wide.so",
+      "bytes": 360176,
+      "sha256": "467a5bfdb24b2e11f969effeed72aab2b9bee39bdee6afd41419881468c1f523"
+    },
+    {
+      "path": "runner/README.md",
+      "bytes": 6440,
+      "sha256": "09ef1b8175a2086eda4f599e941487d8ef0bcc6dd7637628bc3aac5a88cfa80f"
+    },
+    {
+      "path": "runner/STATIC-CHECKS.json",
+      "bytes": 704,
+      "sha256": "90302b7f78e27ad14de2bedaa04a6e317b8a2e17592a58258969faad485bf72b"
+    },
+    {
+      "path": "runner/common.py",
+      "bytes": 7214,
+      "sha256": "1c109f55cd90da1f84871e955d14880f580be7c7ac16cbff385d752dcff0da8b"
+    },
+    {
+      "path": "runner/package.py",
+      "bytes": 2548,
+      "sha256": "a5542558807fa920efcfd092c3105cf8660456db259e0a1dd1c9f97a533b914b"
+    },
+    {
+      "path": "runner/state_digest.py",
+      "bytes": 2084,
+      "sha256": "b6ec700f61c24b78235d73d9ff80ef8e59575337ed2ce2aa705cdfdf605d0db6"
+    },
+    {
+      "path": "runner/supervise.py",
+      "bytes": 7925,
+      "sha256": "e470dbcb9c5ee067f45095d755a698b0c7bed73593c7253fd622f46b77c6fd14"
+    },
+    {
+      "path": "runner/worker.py",
+      "bytes": 11644,
+      "sha256": "04a3ed3bfadcb08e0db56ee4b0b24659f36828a92be85a95546df10411b62a87"
+    },
+    {
+      "path": "wide-build-source/SOURCE-CONTRACT.md",
+      "bytes": 4304,
+      "sha256": "805c090eac5b226f20ccc01534e087bb53a9ed9c2474ab9183ba455b8687c52c"
+    },
+    {
+      "path": "wide-build-source/STATIC-VERIFICATION.json",
+      "bytes": 4290,
+      "sha256": "dc2ab7e5b4d2f37dcd2eb38a9ecc84600b0154d0d72ded0e4cacdf1406a654c6"
+    },
+    {
+      "path": "wide-build-source/abscplx-wide-intermediates.patch",
+      "bytes": 377,
+      "sha256": "34bd2455ed13e71405675f9a178d6af77972afc27156b4aa3495a13444edfe5f"
+    },
+    {
+      "path": "wide-build-source/build_support.py",
+      "bytes": 3186,
+      "sha256": "7d3a817e5838b02b68accf5b4d1178b3e18f24a5cefa4f52f0c75c3c8a4ce90a"
+    },
+    {
+      "path": "wide-build-source/build_wide_magnitude.py",
+      "bytes": 8330,
+      "sha256": "48a2c2a7734c96b28ad598d3b0b5ae30062ed83e78e85a4ce8acfa598020e845"
+    },
+    {
+      "path": "wide-build-source/native-source/API.md",
+      "bytes": 12357,
+      "sha256": "080b2a910b005b935869167035ae56668292461cddacaab945516d889d634440"
+    },
+    {
+      "path": "wide-build-source/native-source/BASIS-API.md",
+      "bytes": 5537,
+      "sha256": "b5b98da7a5c016f06a5635583694a5d123b2b9b77100a61807d6943941e42740"
+    },
+    {
+      "path": "wide-build-source/native-source/DIAGNOSTIC-API.md",
+      "bytes": 4956,
+      "sha256": "86687bfffd5290b6c68c71356e3b4ac97120d17d2df46d71bc874ba4e661944a"
+    },
+    {
+      "path": "wide-build-source/native-source/UPSTREAM-SOURCE-RECORD.md",
+      "bytes": 4329,
+      "sha256": "433c836343cfdd49c7b1d5d23cea29a5258dca8e87dd5d517bb4533dcb19e2b2"
+    },
+    {
+      "path": "wide-build-source/native-source/normalization-weight-only.patch",
+      "bytes": 471,
+      "sha256": "e169e1887406da6989a351f0a79220ceed9f6c75ec88b1041e0bdb1c2cd81f6c"
+    },
+    {
+      "path": "wide-build-source/native-source/soft_carrier_api.h",
+      "bytes": 2173,
+      "sha256": "e3a765dec775b9037333c4a9ea80b01cc7fac48e615be06bed113c4b81d3f6c5"
+    },
+    {
+      "path": "wide-build-source/native-source/soft_carrier_basis.inc.c",
+      "bytes": 2673,
+      "sha256": "5d32c21515af1402d7d98c11430b6b47bebee0d247e5010502eb1359e3bca3de"
+    },
+    {
+      "path": "wide-build-source/native-source/soft_carrier_basis_api.h",
+      "bytes": 1157,
+      "sha256": "d7716db7271ef03c5cd4cf0e98c354fd53fd71f91b23b1a0f0f749ff92b0dda0"
+    },
+    {
+      "path": "wide-build-source/native-source/soft_carrier_checks.inc.c",
+      "bytes": 3283,
+      "sha256": "650773e47517cae0cb4d1b30db6e66d385e7b8750d3ccef460d638b5e7a49749"
+    },
+    {
+      "path": "wide-build-source/native-source/soft_carrier_diagnostic.inc.c",
+      "bytes": 2247,
+      "sha256": "23c94cc080cb50647a8de6e7882cc36fd92d210ec13e624b0e64c69ec5ce10be"
+    },
+    {
+      "path": "wide-build-source/native-source/soft_carrier_diagnostic_api.h",
+      "bytes": 1407,
+      "sha256": "23933fa677931939601d5ffbab85042d5e9eb9e6a3888b5fa4b0664fb195d085"
+    },
+    {
+      "path": "wide-build-source/native-source/soft_carrier_layer0_extension.c",
+      "bytes": 8116,
+      "sha256": "209ce2701de9560b9d7bdd0084fd6e97e86151c8fca65af9c11999c538e63574"
+    },
+    {
+      "path": "wide-build-source/native-source/soft_carrier_periodic.inc.c",
+      "bytes": 3512,
+      "sha256": "d687d5e026aaf28d9989d80f38088864663a924c60db0b0017bf3773b6e6fd69"
+    },
+    {
+      "path": "wide-build-source/native-source/soft_carrier_shape_checks.inc.c",
+      "bytes": 5793,
+      "sha256": "5a5823a069ef22b74243c56ac29beb9f6f0d812f83299e0a330c4b7470ca20ef"
+    },
+    {
+      "path": "wide-build-source/prepare_wide_magnitude.py",
+      "bytes": 2441,
+      "sha256": "b55b8524e1274d0ecef00880ff839f03c2feb4da3cf45e7ce5d21cc34bfffeb8"
+    },
+    {
+      "path": "wide-build-source/source-lock.json",
+      "bytes": 3510,
+      "sha256": "e8138f2e7766077c02097054798a1e1b398340a53be0f36def8f217ee6f6c69e"
+    },
+    {
+      "path": "wide-build-source/vendor/ciglet.tar.gz",
+      "bytes": 54301,
+      "sha256": "8d2919e3aa04dbe360260afcd5db5bbb69fa6b8fa19fd143c75e14efa1dd6ba4"
+    },
+    {
+      "path": "wide-build-source/vendor/llsm2.tar.gz",
+      "bytes": 53314,
+      "sha256": "c08c8ede7b0f1099330014d1ea8db9c0418cdcbc32605820be64d76f7cf53f8b"
+    }
+  ]
+}

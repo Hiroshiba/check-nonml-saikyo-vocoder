@@ -1,6 +1,6 @@
 <!doctype html><html lang="ja"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>一録音の高域振幅が負の無限大になる命令経路</title>
-<style>:root{color-scheme:light dark;font-family:system-ui,sans-serif;line-height:1.8}body{max-width:65rem;margin:auto;padding:1rem 1.4rem}h1,h2{line-height:1.4}a{color:#08676c}.scroll{overflow-x:auto}table{border-collapse:collapse;width:100%;font-size:.9rem}th,td{border:1px solid #888;padding:.45rem;text-align:left;white-space:nowrap}@media(prefers-color-scheme:dark){a{color:#8edbd8}}</style><main><h1>一録音の89点が負の無限大になる経路を、保存値と命令列で説明する</h1>
+<style>:root{color-scheme:light dark;font-family:system-ui,sans-serif;line-height:1.8}body{max-width:65rem;margin:auto;padding:1rem 1.4rem}h1,h2{line-height:1.4}a{color:#08676c}.scroll{overflow-x:auto}table{border-collapse:collapse;width:100%;font-size:.9rem}th,td{border:1px solid #888;padding:.45rem;text-align:left;white-space:nowrap}@media(prefers-color-scheme:dark){a{color:#8edbd8}}</style><main><p><a href="wide-domain.html">後続の固定120録音比較</a>を追加しました。以下は先行する一録音の観測です。</p><h1>一録音の89点が負の無限大になる経路を、保存値と命令列で説明する</h1>
 <p>Apron24を維持します。今回も音質比較・順位付け・復号音声はありません。元の120録音比較の欠測や未取得アーカイブを、この原因調査で補いません。</p>
 <p>対象の高域フレームでは、FFTの実部・虚部は全て有限でした。保存した値と演算設定から厳密に導いた二乗和のうち、極小の正の値となる89点が、実際に負の無限大になった89点と位置まで一致しました。確認した逆平方根近似と補正の命令列で、この一録音・一フレームの結果を説明できます。</p>
 <p>二乗和や逆平方根の返却をCPUのレジスターから直接測ったわけではありません。実測した複素値・作業スレッドの状態・実際の機械語を組み合わせた導出であることを、以下でも区別します。他の録音や元の非計装binaryの全実行へは一般化しません。</p>

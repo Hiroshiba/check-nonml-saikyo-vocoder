@@ -1,0 +1,67 @@
+{
+  "schema": "compiled-frame-centers-static-audit-v1",
+  "method": "Static ELF disassembly, rodata inspection, pinned-source reading, and analytic binary32 range proof only; no builds, tests, native library calls, or arithmetic enumeration/simulation.",
+  "binaries": [
+    {
+      "path": "soft_carrier_packet/localization-frozen-v1/library/libsoftcarrier.so",
+      "sha256": "1ce62532b246a12d188ba4d7a3e05947724302285d802a65c09e5378e757af87"
+    },
+    {
+      "path": "soft_carrier_packet/wide-magnitude-build-received/extracted/build/libsoftcarrier.so",
+      "sha256": "467a5bfdb24b2e11f969effeed72aab2b9bee39bdee6afd41419881468c1f523"
+    }
+  ],
+  "domain": {
+    "fs": 24000,
+    "hop_binary32_bits": "0x3ba3d70a",
+    "hop_source_literal": "0.005f",
+    "nfrm_max": 1201,
+    "frame_index": "integer 0 <= i < nfrm; hence i <= 1200",
+    "maximum_center": 144000
+  },
+  "conclusion": "For every frame center actually computed in the specified domain, analysis, private periodic overlap-add, and private basis export yield exactly 120*i. The source-level round-versus-truncate center-mismatch uncertainty is closed for these compiled paths in both specified ELFs, not inferred solely from the two previously saved trace centers.",
+  "static_evidence": {
+    "cross_binary_comparison": "Complete objdump -d -Mintel disassemblies of llsm_harmonic_analysis, sc_periodic, and llsm_sc_export_periodic_basis_v1 were compared and identical after excluding the filename header. Relevant inspected constants are also identical.",
+    "address_kind": "ELF virtual addresses, before any runtime relocation",
+    "analysis": {
+      "symbol": "llsm_harmonic_analysis",
+      "symbol_address": "0x90f0",
+      "hop_times_fs": "0x92da: mulss xmm1,xmm3; hoisted hop*fs before frame loop",
+      "frame_product": "0x9381: cvtsi2ss xmm0,r9d; 0x938a: mulss xmm0,xmm1",
+      "round_and_store": "0x938e-0x9392 form signed rounding bias; 0x9396 addss; 0x939a cvttss2si; 0x939f stores center",
+      "rounding_bias": "rodata 0x4cb88: 0x3effffff, positive value 0.5 - 2^-25 for nonnegative products"
+    },
+    "periodic": {
+      "symbol": "sc_periodic",
+      "symbol_address": "0x17760",
+      "center": "0x1799c cvtsi2ss xmm0,ebp; 0x179a0 mulss using rodata 0x4cc78; 0x179a8 cvttss2si eax,xmm0",
+      "placement": "0x179ac subtracts 0x78 (120), implementing block start center-120"
+    },
+    "basis": {
+      "symbol": "llsm_sc_export_periodic_basis_v1",
+      "symbol_address": "0x1b7e0",
+      "center": "0x1bd54 cvtsi2ss from frame-index stack slot; 0x1bd5a mulss using rodata 0x4cc78; 0x1bd62 cvttss2si; 0x1bd66 stores centers[i]"
+    },
+    "private_multiplier": "rodata 0x4cc78: bytes 00 00 f0 42, binary32 bits 0x42f00000 = exactly 120",
+    "caller_hop": "llsm_sc_analyze 0x1c0a3 stores immediate 0x3ba3d70a in options.thop; llsm_analyze_harmonics 0x13152 loads options.thop into xmm1 before call at 0x13157"
+  },
+  "proof": [
+    "The exact real product of binary32 0.005f and exactly representable 24000 is 120 - 45*2^-24. Its distance below 120 is less than half a binary32 ULP at 120 (2^-18), so round-to-nearest mulss produces exactly 120.",
+    "Every integer index 0..1200 and every integer product 120*i through 144000 is exactly representable in binary32. Thus the subsequent analysis multiplication and both private multiplications give exact 120*i under nearest rounding.",
+    "For positive products the analysis adds 0.5 - 2^-25 and converts by truncation. Throughout the bounded range the rounded sum remains at least 120*i and less than 120*i+1, so the stored center is 120*i; i=0 also gives center zero. Both private paths truncate exact 120*i directly.",
+    "Directed SSE rounding modes do not reopen an integer-center mismatch: the hoisted product can only be 120 or 120-2^-17. The frame-product deficit is bounded by 1200*2^-17 plus one maximum ULP (2^-6), less than 0.025 sample. After adding the positive approximately-0.5 bias, even allowing another full 2^-6 ULP for addition, the result remains strictly between 120*i and 120*i+1 for i>0. Private products remain exact. This is a mathematical bound, not a runtime rounding-mode observation."
+  ],
+  "source_references": [
+    "soft_carrier_packet/diagnostic-build-source/vendor/llsm2.tar.gz::Sleepwalking-libllsm2-d18cdf0/dsputils.c:175-191 (analysis signature and round(i*thop*fs))",
+    "soft_carrier_packet/diagnostic-build-source/native-source/soft_carrier_periodic.inc.c:61-82 (fixed parameters, truncating center, placement)",
+    "soft_carrier_packet/diagnostic-build-source/native-source/soft_carrier_basis.inc.c:25-44 (basis window and truncating center)",
+    "soft_carrier_packet/diagnostic-build-source/native-source/soft_carrier_layer0_extension.c:47,85 (hop assignment and analysis call)"
+  ],
+  "limitations": [
+    "Limited to the identified binaries, emitted paths, fixed parameters, and stated frame-index domain; not a portable assertion about left-associated source arithmetic or arbitrary builds.",
+    "Analysis allocates/computes centers for voiced frames; the conclusion concerns computed centers and does not assert execution reaches or succeeds at every frame for every input.",
+    "No new execution or measurement was performed. No proof of whole-run equivalence, original all-run equivalence, harmonic/phase-value equality, synthesis quality, or listening quality is implied.",
+    "Equal integer anchoring does not independently establish all other phase conventions or signal processing behavior."
+  ],
+  "open_loop_status": "closed: this bounded compiled center-mismatch question requires no additional runtime observation"
+}
