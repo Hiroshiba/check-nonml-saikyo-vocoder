@@ -1,0 +1,67 @@
+{
+  "schema_version": 1,
+  "state": "frozen",
+  "study_id": "soft-carrier-first-failure-localization-20261026-v1",
+  "manifest": {
+    "path": "inputs/runner-manifest.json",
+    "bytes": 35226,
+    "sha256": "426cdf680fb985cccbde16df35485d5778da9582a69f95de3fe0164076acb38c"
+  },
+  "source_lock": {
+    "path": "source-lock.json",
+    "bytes": 19653,
+    "sha256": "6c524c2dbbebac9a0faa9da3d519750098eccdb2d26418e9982c65a14d82a007"
+  },
+  "library": {
+    "path": "library/libsoftcarrier.so",
+    "bytes": 360176,
+    "sha256": "1ce62532b246a12d188ba4d7a3e05947724302285d802a65c09e5378e757af87"
+  },
+  "runtime": {
+    "python": "3.12",
+    "numpy": "2.3.5"
+  },
+  "analysis": {
+    "fs": 24000,
+    "gain": 1,
+    "seed": 0,
+    "timeout_seconds": 1800
+  },
+  "owners": [
+    [
+      "librispeech_121-127105-0035",
+      "librispeech_260-123440-0020",
+      "librispeech_7021-79740-0011"
+    ],
+    [
+      "librispeech_2300-131720-0022",
+      "librispeech_3575-170457-0034",
+      "librispeech_8555-292519-0001"
+    ],
+    [
+      "librispeech_2300-131720-0041",
+      "librispeech_3575-170457-0054"
+    ],
+    [
+      "librispeech_260-123286-0008",
+      "librispeech_4507-16021-0016"
+    ],
+    [
+      "librispeech_260-123288-0003",
+      "librispeech_5639-40744-0030"
+    ]
+  ],
+  "prior_study": {
+    "plan_sha256": "4642ef0ada3453d5ddb470e4426b976fa5025bb4d1bfafda080bd25656f6f144",
+    "original_result_archives_received": false,
+    "source_of_failure_labels": "worker reports; not independently received original result bytes"
+  },
+  "planned_native_analysis_calls": 12,
+  "planned_decode_calls": 0,
+  "planned_solver_calls": 0,
+  "planned_quality_calls": 0,
+  "purpose": "Observe first failing predicate under an explicitly distinct diagnostic binary; no backfill of original study.",
+  "retention": "Retain complete new diagnostic records/raw256/inputs/source/plan/logs; no original result archive is modified or replaced.",
+  "binary_equivalence": "No runtime or bit-equivalence claim with previous binary; non-reproduction is an outcome, not a reason to retry.",
+  "frozen_at_utc": "2026-10-26T16:16:53.319644+00:00"
+}
