@@ -1,0 +1,37 @@
+{
+  "scope": "Separate instrumented two-case observations, not original-run equivalence or quality comparison",
+  "owners": [
+    {
+      "owner": 0,
+      "files_verified": 19,
+      "status": 4,
+      "case_id": "librispeech_2300-131720-0022"
+    },
+    {
+      "owner": 1,
+      "files_verified": 18,
+      "status": 5,
+      "case_id": "librispeech_121-127105-0035"
+    }
+  ],
+  "frozen_files_verified": 89,
+  "raw_sizes": [
+    256,
+    66712
+  ],
+  "archive_identities": [
+    {
+      "name": "soft-carrier-numerical-trace-owner-0-20261026-v1.tar.gz",
+      "bytes": 45418,
+      "sha256": "41b97f092fe450d9a0b55e7644afd23e6160d005713f376b750a399db4ac2f52"
+    },
+    {
+      "name": "soft-carrier-numerical-trace-owner-1-20261026-v1.tar.gz",
+      "bytes": 30330,
+      "sha256": "26886d4ebe0f62ab5714fb5f16f61997a7f7d1ec2cf15d4e1c0d2d9b8c37a9c8"
+    }
+  ],
+  "independent_audit": "All records, raw ABI, original array payloads and process identities agree; source-only audit, no new native/scientific run",
+  "specific_limit": "Single-call evidence is archived process boundaries and locked code, not external tracing",
+  "nonfinite_correction": "Pre/post spectrum89 negative infinities0xff800000; logarithm89 NaNs0xffc00000 at identical indices. Initial parent chat incorrectly called pre values NaN; corrected immediately before publication."
+}
