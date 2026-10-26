@@ -1,0 +1,1611 @@
+{
+  "scope": "Actual retained OWNER1 data only; 24 small-vector consistency audits and one preselected retained full-basis mathematical reconstruction. No population-quality aggregation, ranking, new experiment, synthetic fixture, solver, native/model call, or candidate-code import.",
+  "limits": [
+    "Other owners not accessed; no inference about their results.",
+    "23 cases lack full basis: their gradients/residuals and optimization are not independently reconstructed.",
+    "Stored solver success/status are reports, not independently rerun solver validation.",
+    "Floating-point comparisons report exact equality and differences, without arbitrary tolerance. Different reductions/BLAS may change final bits. Declared acceptance is exact feasibility and computed gap in [0,1e-6], not an interval/formal certificate.",
+    "Active masks are checked for shape/domain only, not independently validated as solver internals; zero-column identities can be verified from basis only for preselected case."
+  ],
+  "numpy_version_for_audit": "2.3.5",
+  "cases": [
+    {
+      "case": "librispeech_2094-142345-0032",
+      "checks": {
+        "retained_arrays_finite": true,
+        "numeric_diagnostics_finite": true,
+        "gains_exact_box_feasible": true,
+        "gains32_exact_box_feasible": true,
+        "rounded_gain_conversion_exact": true,
+        "projected_gradient_exact": true,
+        "shapes_correct": true,
+        "float_dtypes_correct": true,
+        "active_mask_values_valid": true,
+        "zero_columns_indices_valid": true,
+        "reported_positive_solver_success": true,
+        "stored_vector_gap_accepted": true,
+        "reported_acceptance_consistent": true,
+        "solver_parameters_match_frozen_source": true,
+        "declared_dimensions_clock_valid": true
+      },
+      "diagnostic_recalculations": {
+        "frank_wolfe_gap": {
+          "recomputed": 4.143004220992099e-08,
+          "reported": 4.143004220992099e-08,
+          "exact_equal": true,
+          "absolute_difference": 0.0
+        },
+        "frank_wolfe_gap_direct_formula": {
+          "recomputed": 4.143004220594215e-08,
+          "reported": 4.143004220594215e-08,
+          "exact_equal": true,
+          "absolute_difference": 0.0
+        },
+        "projected_gradient_inf_norm": {
+          "recomputed": 3.2454908970636076e-05,
+          "reported": 3.2454908970636076e-05,
+          "exact_equal": true,
+          "absolute_difference": 0.0
+        },
+        "max_box_violation": {
+          "recomputed": 0.0,
+          "reported": 0.0,
+          "exact_equal": true,
+          "absolute_difference": 0.0
+        },
+        "zero_observed_column_count": {
+          "recomputed": 0,
+          "reported": 0,
+          "exact_equal": true,
+          "absolute_difference": 0
+        }
+      },
+      "active_mask_counts": {
+        "-1": 1,
+        "0": 364,
+        "1": 284
+      },
+      "zero_columns": [],
+      "gain_range": [
+        1.4541311353244422e-10,
+        0.9999999999999999
+      ]
+    },
+    {
+      "case": "librispeech_2094-142345-0039",
+      "checks": {
+        "retained_arrays_finite": true,
+        "numeric_diagnostics_finite": true,
+        "gains_exact_box_feasible": true,
+        "gains32_exact_box_feasible": true,
+        "rounded_gain_conversion_exact": true,
+        "projected_gradient_exact": true,
+        "shapes_correct": true,
+        "float_dtypes_correct": true,
+        "active_mask_values_valid": true,
+        "zero_columns_indices_valid": true,
+        "reported_positive_solver_success": true,
+        "stored_vector_gap_accepted": true,
+        "reported_acceptance_consistent": true,
+        "solver_parameters_match_frozen_source": true,
+        "declared_dimensions_clock_valid": true
+      },
+      "diagnostic_recalculations": {
+        "frank_wolfe_gap": {
+          "recomputed": 2.0458599837403513e-07,
+          "reported": 2.0458599837403513e-07,
+          "exact_equal": true,
+          "absolute_difference": 0.0
+        },
+        "frank_wolfe_gap_direct_formula": {
+          "recomputed": 2.0458599837153146e-07,
+          "reported": 2.0458599837153146e-07,
+          "exact_equal": true,
+          "absolute_difference": 0.0
+        },
+        "projected_gradient_inf_norm": {
+          "recomputed": 2.777526067765379e-05,
+          "reported": 2.777526067765379e-05,
+          "exact_equal": true,
+          "absolute_difference": 0.0
+        },
+        "max_box_violation": {
+          "recomputed": 0.0,
+          "reported": 0.0,
+          "exact_equal": true,
+          "absolute_difference": 0.0
+        },
+        "zero_observed_column_count": {
+          "recomputed": 0,
+          "reported": 0,
+          "exact_equal": true,
+          "absolute_difference": 0
+        }
+      },
+      "active_mask_counts": {
+        "-1": 4,
+        "0": 901,
+        "1": 296
+      },
+      "zero_columns": [],
+      "gain_range": [
+        1.3413020926990882e-12,
+        0.9999999999999999
+      ]
+    },
+    {
+      "case": "librispeech_2094-142345-0040",
+      "checks": {
+        "retained_arrays_finite": true,
+        "numeric_diagnostics_finite": true,
+        "gains_exact_box_feasible": true,
+        "gains32_exact_box_feasible": true,
+        "rounded_gain_conversion_exact": true,
+        "projected_gradient_exact": true,
+        "shapes_correct": true,
+        "float_dtypes_correct": true,
+        "active_mask_values_valid": true,
+        "zero_columns_indices_valid": true,
+        "reported_positive_solver_success": true,
+        "stored_vector_gap_accepted": true,
+        "reported_acceptance_consistent": true,
+        "solver_parameters_match_frozen_source": true,
+        "declared_dimensions_clock_valid": true
+      },
+      "diagnostic_recalculations": {
+        "frank_wolfe_gap": {
+          "recomputed": 3.5142336341867374e-08,
+          "reported": 3.5142336341867374e-08,
+          "exact_equal": true,
+          "absolute_difference": 0.0
+        },
+        "frank_wolfe_gap_direct_formula": {
+          "recomputed": 3.514233634302477e-08,
+          "reported": 3.514233634302477e-08,
+          "exact_equal": true,
+          "absolute_difference": 0.0
+        },
+        "projected_gradient_inf_norm": {
+          "recomputed": 3.5570619651204005e-05,
+          "reported": 3.5570619651204005e-05,
+          "exact_equal": true,
+          "absolute_difference": 0.0
+        },
+        "max_box_violation": {
+          "recomputed": 0.0,
+          "reported": 0.0,
+          "exact_equal": true,
+          "absolute_difference": 0.0
+        },
+        "zero_observed_column_count": {
+          "recomputed": 0,
+          "reported": 0,
+          "exact_equal": true,
+          "absolute_difference": 0
+        }
+      },
+      "active_mask_counts": {
+        "-1": 9,
+        "0": 215,
+        "1": 254
+      },
+      "zero_columns": [],
+      "gain_range": [
+        4.319806709359953e-14,
+        0.9999999999999999
+      ]
+    },
+    {
+      "case": "librispeech_2300-131720-0022",
+      "checks": {
+        "retained_arrays_finite": true,
+        "numeric_diagnostics_finite": true,
+        "gains_exact_box_feasible": true,
+        "gains32_exact_box_feasible": true,
+        "rounded_gain_conversion_exact": true,
+        "projected_gradient_exact": true,
+        "shapes_correct": true,
+        "float_dtypes_correct": true,
+        "active_mask_values_valid": true,
+        "zero_columns_indices_valid": true,
+        "reported_positive_solver_success": true,
+        "stored_vector_gap_accepted": true,
+        "reported_acceptance_consistent": true,
+        "solver_parameters_match_frozen_source": true,
+        "declared_dimensions_clock_valid": true
+      },
+      "diagnostic_recalculations": {
+        "frank_wolfe_gap": {
+          "recomputed": 1.7116485691538674e-08,
+          "reported": 1.7116485691538674e-08,
+          "exact_equal": true,
+          "absolute_difference": 0.0
+        },
+        "frank_wolfe_gap_direct_formula": {
+          "recomputed": 1.7116485694079753e-08,
+          "reported": 1.7116485694079753e-08,
+          "exact_equal": true,
+          "absolute_difference": 0.0
+        },
+        "projected_gradient_inf_norm": {
+          "recomputed": 2.041448977596616e-05,
+          "reported": 2.041448977596616e-05,
+          "exact_equal": true,
+          "absolute_difference": 0.0
+        },
+        "max_box_violation": {
+          "recomputed": 0.0,
+          "reported": 0.0,
+          "exact_equal": true,
+          "absolute_difference": 0.0
+        },
+        "zero_observed_column_count": {
+          "recomputed": 0,
+          "reported": 0,
+          "exact_equal": true,
+          "absolute_difference": 0
+        }
+      },
+      "active_mask_counts": {
+        "-1": 14,
+        "0": 797,
+        "1": 390
+      },
+      "zero_columns": [],
+      "gain_range": [
+        5.2634753378676616e-20,
+        0.9999999999999999
+      ]
+    },
+    {
+      "case": "librispeech_2300-131720-0028",
+      "checks": {
+        "retained_arrays_finite": true,
+        "numeric_diagnostics_finite": true,
+        "gains_exact_box_feasible": true,
+        "gains32_exact_box_feasible": true,
+        "rounded_gain_conversion_exact": true,
+        "projected_gradient_exact": true,
+        "shapes_correct": true,
+        "float_dtypes_correct": true,
+        "active_mask_values_valid": true,
+        "zero_columns_indices_valid": true,
+        "reported_positive_solver_success": true,
+        "stored_vector_gap_accepted": true,
+        "reported_acceptance_consistent": true,
+        "solver_parameters_match_frozen_source": true,
+        "declared_dimensions_clock_valid": true
+      },
+      "diagnostic_recalculations": {
+        "frank_wolfe_gap": {
+          "recomputed": 3.444545534688966e-08,
+          "reported": 3.444545534688966e-08,
+          "exact_equal": true,
+          "absolute_difference": 0.0
+        },
+        "frank_wolfe_gap_direct_formula": {
+          "recomputed": 3.444545533526355e-08,
+          "reported": 3.444545533526355e-08,
+          "exact_equal": true,
+          "absolute_difference": 0.0
+        },
+        "projected_gradient_inf_norm": {
+          "recomputed": 2.8954971945660546e-05,
+          "reported": 2.8954971945660546e-05,
+          "exact_equal": true,
+          "absolute_difference": 0.0
+        },
+        "max_box_violation": {
+          "recomputed": 0.0,
+          "reported": 0.0,
+          "exact_equal": true,
+          "absolute_difference": 0.0
+        },
+        "zero_observed_column_count": {
+          "recomputed": 0,
+          "reported": 0,
+          "exact_equal": true,
+          "absolute_difference": 0
+        }
+      },
+      "active_mask_counts": {
+        "-1": 6,
+        "0": 760,
+        "1": 435
+      },
+      "zero_columns": [],
+      "gain_range": [
+        6.861267092620925e-14,
+        0.9999999999999999
+      ]
+    },
+    {
+      "case": "librispeech_2300-131720-0041",
+      "checks": {
+        "retained_arrays_finite": true,
+        "numeric_diagnostics_finite": true,
+        "gains_exact_box_feasible": true,
+        "gains32_exact_box_feasible": true,
+        "rounded_gain_conversion_exact": true,
+        "projected_gradient_exact": true,
+        "shapes_correct": true,
+        "float_dtypes_correct": true,
+        "active_mask_values_valid": true,
+        "zero_columns_indices_valid": true,
+        "reported_positive_solver_success": true,
+        "stored_vector_gap_accepted": true,
+        "reported_acceptance_consistent": true,
+        "solver_parameters_match_frozen_source": true,
+        "declared_dimensions_clock_valid": true
+      },
+      "diagnostic_recalculations": {
+        "frank_wolfe_gap": {
+          "recomputed": 2.2196289321580165e-07,
+          "reported": 2.2196289321580165e-07,
+          "exact_equal": true,
+          "absolute_difference": 0.0
+        },
+        "frank_wolfe_gap_direct_formula": {
+          "recomputed": 2.2196289321818607e-07,
+          "reported": 2.2196289321818607e-07,
+          "exact_equal": true,
+          "absolute_difference": 0.0
+        },
+        "projected_gradient_inf_norm": {
+          "recomputed": 6.0398999763178196e-05,
+          "reported": 6.0398999763178196e-05,
+          "exact_equal": true,
+          "absolute_difference": 0.0
+        },
+        "max_box_violation": {
+          "recomputed": 0.0,
+          "reported": 0.0,
+          "exact_equal": true,
+          "absolute_difference": 0.0
+        },
+        "zero_observed_column_count": {
+          "recomputed": 0,
+          "reported": 0,
+          "exact_equal": true,
+          "absolute_difference": 0
+        }
+      },
+      "active_mask_counts": {
+        "-1": 0,
+        "0": 743,
+        "1": 8
+      },
+      "zero_columns": [],
+      "gain_range": [
+        2.3048507239156132e-07,
+        0.9999999999999999
+      ]
+    },
+    {
+      "case": "librispeech_237-126133-0003",
+      "checks": {
+        "retained_arrays_finite": true,
+        "numeric_diagnostics_finite": true,
+        "gains_exact_box_feasible": true,
+        "gains32_exact_box_feasible": true,
+        "rounded_gain_conversion_exact": true,
+        "projected_gradient_exact": true,
+        "shapes_correct": true,
+        "float_dtypes_correct": true,
+        "active_mask_values_valid": true,
+        "zero_columns_indices_valid": true,
+        "reported_positive_solver_success": true,
+        "stored_vector_gap_accepted": true,
+        "reported_acceptance_consistent": true,
+        "solver_parameters_match_frozen_source": true,
+        "declared_dimensions_clock_valid": true
+      },
+      "diagnostic_recalculations": {
+        "frank_wolfe_gap": {
+          "recomputed": 4.996245183536768e-08,
+          "reported": 4.996245183536768e-08,
+          "exact_equal": true,
+          "absolute_difference": 0.0
+        },
+        "frank_wolfe_gap_direct_formula": {
+          "recomputed": 4.996245183547243e-08,
+          "reported": 4.996245183547243e-08,
+          "exact_equal": true,
+          "absolute_difference": 0.0
+        },
+        "projected_gradient_inf_norm": {
+          "recomputed": 3.37062230962859e-05,
+          "reported": 3.37062230962859e-05,
+          "exact_equal": true,
+          "absolute_difference": 0.0
+        },
+        "max_box_violation": {
+          "recomputed": 0.0,
+          "reported": 0.0,
+          "exact_equal": true,
+          "absolute_difference": 0.0
+        },
+        "zero_observed_column_count": {
+          "recomputed": 0,
+          "reported": 0,
+          "exact_equal": true,
+          "absolute_difference": 0
+        }
+      },
+      "active_mask_counts": {
+        "-1": 1,
+        "0": 1166,
+        "1": 34
+      },
+      "zero_columns": [],
+      "gain_range": [
+        3.075448789633935e-09,
+        0.9999999999999999
+      ]
+    },
+    {
+      "case": "librispeech_237-134500-0029",
+      "checks": {
+        "retained_arrays_finite": true,
+        "numeric_diagnostics_finite": true,
+        "gains_exact_box_feasible": true,
+        "gains32_exact_box_feasible": true,
+        "rounded_gain_conversion_exact": true,
+        "projected_gradient_exact": true,
+        "shapes_correct": true,
+        "float_dtypes_correct": true,
+        "active_mask_values_valid": true,
+        "zero_columns_indices_valid": true,
+        "reported_positive_solver_success": true,
+        "stored_vector_gap_accepted": true,
+        "reported_acceptance_consistent": true,
+        "solver_parameters_match_frozen_source": true,
+        "declared_dimensions_clock_valid": true
+      },
+      "diagnostic_recalculations": {
+        "frank_wolfe_gap": {
+          "recomputed": 8.153382584506756e-08,
+          "reported": 8.153382584506756e-08,
+          "exact_equal": true,
+          "absolute_difference": 0.0
+        },
+        "frank_wolfe_gap_direct_formula": {
+          "recomputed": 8.153382583669933e-08,
+          "reported": 8.153382583669933e-08,
+          "exact_equal": true,
+          "absolute_difference": 0.0
+        },
+        "projected_gradient_inf_norm": {
+          "recomputed": 4.7512837539676056e-05,
+          "reported": 4.7512837539676056e-05,
+          "exact_equal": true,
+          "absolute_difference": 0.0
+        },
+        "max_box_violation": {
+          "recomputed": 0.0,
+          "reported": 0.0,
+          "exact_equal": true,
+          "absolute_difference": 0.0
+        },
+        "zero_observed_column_count": {
+          "recomputed": 0,
+          "reported": 0,
+          "exact_equal": true,
+          "absolute_difference": 0
+        }
+      },
+      "active_mask_counts": {
+        "-1": 1,
+        "0": 329,
+        "1": 84
+      },
+      "zero_columns": [],
+      "gain_range": [
+        6.552810483813956e-09,
+        0.9999999999999999
+      ]
+    },
+    {
+      "case": "librispeech_237-134500-0031",
+      "checks": {
+        "retained_arrays_finite": true,
+        "numeric_diagnostics_finite": true,
+        "gains_exact_box_feasible": true,
+        "gains32_exact_box_feasible": true,
+        "rounded_gain_conversion_exact": true,
+        "projected_gradient_exact": true,
+        "shapes_correct": true,
+        "float_dtypes_correct": true,
+        "active_mask_values_valid": true,
+        "zero_columns_indices_valid": true,
+        "reported_positive_solver_success": true,
+        "stored_vector_gap_accepted": true,
+        "reported_acceptance_consistent": true,
+        "solver_parameters_match_frozen_source": true,
+        "declared_dimensions_clock_valid": true
+      },
+      "diagnostic_recalculations": {
+        "frank_wolfe_gap": {
+          "recomputed": 1.4979151801880413e-07,
+          "reported": 1.4979151801880413e-07,
+          "exact_equal": true,
+          "absolute_difference": 0.0
+        },
+        "frank_wolfe_gap_direct_formula": {
+          "recomputed": 1.4979151802263502e-07,
+          "reported": 1.4979151802263502e-07,
+          "exact_equal": true,
+          "absolute_difference": 0.0
+        },
+        "projected_gradient_inf_norm": {
+          "recomputed": 3.664449367823952e-05,
+          "reported": 3.664449367823952e-05,
+          "exact_equal": true,
+          "absolute_difference": 0.0
+        },
+        "max_box_violation": {
+          "recomputed": 0.0,
+          "reported": 0.0,
+          "exact_equal": true,
+          "absolute_difference": 0.0
+        },
+        "zero_observed_column_count": {
+          "recomputed": 0,
+          "reported": 0,
+          "exact_equal": true,
+          "absolute_difference": 0
+        }
+      },
+      "active_mask_counts": {
+        "-1": 1,
+        "0": 1162,
+        "1": 38
+      },
+      "zero_columns": [],
+      "gain_range": [
+        6.131080778279183e-10,
+        0.9999999999999999
+      ]
+    },
+    {
+      "case": "librispeech_260-123286-0008",
+      "checks": {
+        "retained_arrays_finite": true,
+        "numeric_diagnostics_finite": true,
+        "gains_exact_box_feasible": true,
+        "gains32_exact_box_feasible": true,
+        "rounded_gain_conversion_exact": true,
+        "projected_gradient_exact": true,
+        "shapes_correct": true,
+        "float_dtypes_correct": true,
+        "active_mask_values_valid": true,
+        "zero_columns_indices_valid": true,
+        "reported_positive_solver_success": true,
+        "stored_vector_gap_accepted": true,
+        "reported_acceptance_consistent": true,
+        "solver_parameters_match_frozen_source": true,
+        "declared_dimensions_clock_valid": true
+      },
+      "diagnostic_recalculations": {
+        "frank_wolfe_gap": {
+          "recomputed": 1.3528324420952969e-07,
+          "reported": 1.3528324420952969e-07,
+          "exact_equal": true,
+          "absolute_difference": 0.0
+        },
+        "frank_wolfe_gap_direct_formula": {
+          "recomputed": 1.3528324420419846e-07,
+          "reported": 1.3528324420419846e-07,
+          "exact_equal": true,
+          "absolute_difference": 0.0
+        },
+        "projected_gradient_inf_norm": {
+          "recomputed": 6.592008668515614e-05,
+          "reported": 6.592008668515614e-05,
+          "exact_equal": true,
+          "absolute_difference": 0.0
+        },
+        "max_box_violation": {
+          "recomputed": 0.0,
+          "reported": 0.0,
+          "exact_equal": true,
+          "absolute_difference": 0.0
+        },
+        "zero_observed_column_count": {
+          "recomputed": 0,
+          "reported": 0,
+          "exact_equal": true,
+          "absolute_difference": 0
+        }
+      },
+      "active_mask_counts": {
+        "-1": 0,
+        "0": 729,
+        "1": 19
+      },
+      "zero_columns": [],
+      "gain_range": [
+        4.286569503544659e-07,
+        0.9999999999999999
+      ]
+    },
+    {
+      "case": "librispeech_260-123288-0003",
+      "checks": {
+        "retained_arrays_finite": true,
+        "numeric_diagnostics_finite": true,
+        "gains_exact_box_feasible": true,
+        "gains32_exact_box_feasible": true,
+        "rounded_gain_conversion_exact": true,
+        "projected_gradient_exact": true,
+        "shapes_correct": true,
+        "float_dtypes_correct": true,
+        "active_mask_values_valid": true,
+        "zero_columns_indices_valid": true,
+        "reported_positive_solver_success": true,
+        "stored_vector_gap_accepted": true,
+        "reported_acceptance_consistent": true,
+        "solver_parameters_match_frozen_source": true,
+        "declared_dimensions_clock_valid": true
+      },
+      "diagnostic_recalculations": {
+        "frank_wolfe_gap": {
+          "recomputed": 8.250666108758347e-08,
+          "reported": 8.250666108758347e-08,
+          "exact_equal": true,
+          "absolute_difference": 0.0
+        },
+        "frank_wolfe_gap_direct_formula": {
+          "recomputed": 8.250666109349547e-08,
+          "reported": 8.250666109349547e-08,
+          "exact_equal": true,
+          "absolute_difference": 0.0
+        },
+        "projected_gradient_inf_norm": {
+          "recomputed": 2.7413232419948308e-05,
+          "reported": 2.7413232419948308e-05,
+          "exact_equal": true,
+          "absolute_difference": 0.0
+        },
+        "max_box_violation": {
+          "recomputed": 0.0,
+          "reported": 0.0,
+          "exact_equal": true,
+          "absolute_difference": 0.0
+        },
+        "zero_observed_column_count": {
+          "recomputed": 0,
+          "reported": 0,
+          "exact_equal": true,
+          "absolute_difference": 0
+        }
+      },
+      "active_mask_counts": {
+        "-1": 1,
+        "0": 1194,
+        "1": 6
+      },
+      "zero_columns": [],
+      "gain_range": [
+        7.910223112819585e-15,
+        0.9999999999999999
+      ]
+    },
+    {
+      "case": "librispeech_260-123440-0020",
+      "checks": {
+        "retained_arrays_finite": true,
+        "numeric_diagnostics_finite": true,
+        "gains_exact_box_feasible": true,
+        "gains32_exact_box_feasible": true,
+        "rounded_gain_conversion_exact": true,
+        "projected_gradient_exact": true,
+        "shapes_correct": true,
+        "float_dtypes_correct": true,
+        "active_mask_values_valid": true,
+        "zero_columns_indices_valid": true,
+        "reported_positive_solver_success": true,
+        "stored_vector_gap_accepted": true,
+        "reported_acceptance_consistent": true,
+        "solver_parameters_match_frozen_source": true,
+        "declared_dimensions_clock_valid": true
+      },
+      "diagnostic_recalculations": {
+        "frank_wolfe_gap": {
+          "recomputed": 4.159282566035523e-08,
+          "reported": 4.159282566035523e-08,
+          "exact_equal": true,
+          "absolute_difference": 0.0
+        },
+        "frank_wolfe_gap_direct_formula": {
+          "recomputed": 4.159282566973399e-08,
+          "reported": 4.159282566973399e-08,
+          "exact_equal": true,
+          "absolute_difference": 0.0
+        },
+        "projected_gradient_inf_norm": {
+          "recomputed": 2.9231829069109594e-05,
+          "reported": 2.9231829069109594e-05,
+          "exact_equal": true,
+          "absolute_difference": 0.0
+        },
+        "max_box_violation": {
+          "recomputed": 0.0,
+          "reported": 0.0,
+          "exact_equal": true,
+          "absolute_difference": 0.0
+        },
+        "zero_observed_column_count": {
+          "recomputed": 0,
+          "reported": 0,
+          "exact_equal": true,
+          "absolute_difference": 0
+        }
+      },
+      "active_mask_counts": {
+        "-1": 3,
+        "0": 827,
+        "1": 170
+      },
+      "zero_columns": [],
+      "gain_range": [
+        2.7175580509450908e-18,
+        0.9999999999999999
+      ]
+    },
+    {
+      "case": "librispeech_2830-3980-0000",
+      "checks": {
+        "retained_arrays_finite": true,
+        "numeric_diagnostics_finite": true,
+        "gains_exact_box_feasible": true,
+        "gains32_exact_box_feasible": true,
+        "rounded_gain_conversion_exact": true,
+        "projected_gradient_exact": true,
+        "shapes_correct": true,
+        "float_dtypes_correct": true,
+        "active_mask_values_valid": true,
+        "zero_columns_indices_valid": true,
+        "reported_positive_solver_success": true,
+        "stored_vector_gap_accepted": true,
+        "reported_acceptance_consistent": true,
+        "solver_parameters_match_frozen_source": true,
+        "declared_dimensions_clock_valid": true
+      },
+      "diagnostic_recalculations": {
+        "frank_wolfe_gap": {
+          "recomputed": 3.0679256298992905e-08,
+          "reported": 3.0679256298992905e-08,
+          "exact_equal": true,
+          "absolute_difference": 0.0
+        },
+        "frank_wolfe_gap_direct_formula": {
+          "recomputed": 3.0679256298599134e-08,
+          "reported": 3.0679256298599134e-08,
+          "exact_equal": true,
+          "absolute_difference": 0.0
+        },
+        "projected_gradient_inf_norm": {
+          "recomputed": 3.181325452161765e-05,
+          "reported": 3.181325452161765e-05,
+          "exact_equal": true,
+          "absolute_difference": 0.0
+        },
+        "max_box_violation": {
+          "recomputed": 0.0,
+          "reported": 0.0,
+          "exact_equal": true,
+          "absolute_difference": 0.0
+        },
+        "zero_observed_column_count": {
+          "recomputed": 0,
+          "reported": 0,
+          "exact_equal": true,
+          "absolute_difference": 0
+        }
+      },
+      "active_mask_counts": {
+        "-1": 28,
+        "0": 597,
+        "1": 122
+      },
+      "zero_columns": [],
+      "gain_range": [
+        3.8097222190946265e-23,
+        0.9999999999999999
+      ]
+    },
+    {
+      "case": "librispeech_2830-3980-0038",
+      "checks": {
+        "retained_arrays_finite": true,
+        "numeric_diagnostics_finite": true,
+        "gains_exact_box_feasible": true,
+        "gains32_exact_box_feasible": true,
+        "rounded_gain_conversion_exact": true,
+        "projected_gradient_exact": true,
+        "shapes_correct": true,
+        "float_dtypes_correct": true,
+        "active_mask_values_valid": true,
+        "zero_columns_indices_valid": true,
+        "reported_positive_solver_success": true,
+        "stored_vector_gap_accepted": true,
+        "reported_acceptance_consistent": true,
+        "solver_parameters_match_frozen_source": true,
+        "declared_dimensions_clock_valid": true
+      },
+      "diagnostic_recalculations": {
+        "frank_wolfe_gap": {
+          "recomputed": 1.2952585513811048e-08,
+          "reported": 1.2952585513811048e-08,
+          "exact_equal": true,
+          "absolute_difference": 0.0
+        },
+        "frank_wolfe_gap_direct_formula": {
+          "recomputed": 1.2952585511094572e-08,
+          "reported": 1.2952585511094572e-08,
+          "exact_equal": true,
+          "absolute_difference": 0.0
+        },
+        "projected_gradient_inf_norm": {
+          "recomputed": 2.2970346751471915e-05,
+          "reported": 2.2970346751471915e-05,
+          "exact_equal": true,
+          "absolute_difference": 0.0
+        },
+        "max_box_violation": {
+          "recomputed": 0.0,
+          "reported": 0.0,
+          "exact_equal": true,
+          "absolute_difference": 0.0
+        },
+        "zero_observed_column_count": {
+          "recomputed": 0,
+          "reported": 0,
+          "exact_equal": true,
+          "absolute_difference": 0
+        }
+      },
+      "active_mask_counts": {
+        "-1": 3,
+        "0": 421,
+        "1": 685
+      },
+      "zero_columns": [],
+      "gain_range": [
+        2.1097952665783605e-15,
+        0.9999999999999999
+      ]
+    },
+    {
+      "case": "librispeech_2830-3980-0042",
+      "checks": {
+        "retained_arrays_finite": true,
+        "numeric_diagnostics_finite": true,
+        "gains_exact_box_feasible": true,
+        "gains32_exact_box_feasible": true,
+        "rounded_gain_conversion_exact": true,
+        "projected_gradient_exact": true,
+        "shapes_correct": true,
+        "float_dtypes_correct": true,
+        "active_mask_values_valid": true,
+        "zero_columns_indices_valid": true,
+        "reported_positive_solver_success": true,
+        "stored_vector_gap_accepted": true,
+        "reported_acceptance_consistent": true,
+        "solver_parameters_match_frozen_source": true,
+        "declared_dimensions_clock_valid": true
+      },
+      "diagnostic_recalculations": {
+        "frank_wolfe_gap": {
+          "recomputed": 4.1131142052772e-08,
+          "reported": 4.1131142052772e-08,
+          "exact_equal": true,
+          "absolute_difference": 0.0
+        },
+        "frank_wolfe_gap_direct_formula": {
+          "recomputed": 4.113114204090662e-08,
+          "reported": 4.113114204090662e-08,
+          "exact_equal": true,
+          "absolute_difference": 0.0
+        },
+        "projected_gradient_inf_norm": {
+          "recomputed": 2.2662651869009842e-05,
+          "reported": 2.2662651869009842e-05,
+          "exact_equal": true,
+          "absolute_difference": 0.0
+        },
+        "max_box_violation": {
+          "recomputed": 0.0,
+          "reported": 0.0,
+          "exact_equal": true,
+          "absolute_difference": 0.0
+        },
+        "zero_observed_column_count": {
+          "recomputed": 0,
+          "reported": 0,
+          "exact_equal": true,
+          "absolute_difference": 0
+        }
+      },
+      "active_mask_counts": {
+        "-1": 3,
+        "0": 211,
+        "1": 391
+      },
+      "zero_columns": [],
+      "gain_range": [
+        2.6939830634615174e-14,
+        0.9999999999999999
+      ]
+    },
+    {
+      "case": "librispeech_2961-960-0010",
+      "checks": {
+        "retained_arrays_finite": true,
+        "numeric_diagnostics_finite": true,
+        "gains_exact_box_feasible": true,
+        "gains32_exact_box_feasible": true,
+        "rounded_gain_conversion_exact": true,
+        "projected_gradient_exact": true,
+        "shapes_correct": true,
+        "float_dtypes_correct": true,
+        "active_mask_values_valid": true,
+        "zero_columns_indices_valid": true,
+        "reported_positive_solver_success": true,
+        "stored_vector_gap_accepted": true,
+        "reported_acceptance_consistent": true,
+        "solver_parameters_match_frozen_source": true,
+        "declared_dimensions_clock_valid": true
+      },
+      "diagnostic_recalculations": {
+        "frank_wolfe_gap": {
+          "recomputed": 4.0185355843497276e-08,
+          "reported": 4.0185355843497276e-08,
+          "exact_equal": true,
+          "absolute_difference": 0.0
+        },
+        "frank_wolfe_gap_direct_formula": {
+          "recomputed": 4.0185355845018256e-08,
+          "reported": 4.0185355845018256e-08,
+          "exact_equal": true,
+          "absolute_difference": 0.0
+        },
+        "projected_gradient_inf_norm": {
+          "recomputed": 1.2802535945377613e-05,
+          "reported": 1.2802535945377613e-05,
+          "exact_equal": true,
+          "absolute_difference": 0.0
+        },
+        "max_box_violation": {
+          "recomputed": 0.0,
+          "reported": 0.0,
+          "exact_equal": true,
+          "absolute_difference": 0.0
+        },
+        "zero_observed_column_count": {
+          "recomputed": 0,
+          "reported": 0,
+          "exact_equal": true,
+          "absolute_difference": 0
+        }
+      },
+      "active_mask_counts": {
+        "-1": 1,
+        "0": 634,
+        "1": 566
+      },
+      "zero_columns": [],
+      "gain_range": [
+        5.5623991611661775e-12,
+        0.9999999999999999
+      ]
+    },
+    {
+      "case": "librispeech_2961-960-0019",
+      "checks": {
+        "retained_arrays_finite": true,
+        "numeric_diagnostics_finite": true,
+        "gains_exact_box_feasible": true,
+        "gains32_exact_box_feasible": true,
+        "rounded_gain_conversion_exact": true,
+        "projected_gradient_exact": true,
+        "shapes_correct": true,
+        "float_dtypes_correct": true,
+        "active_mask_values_valid": true,
+        "zero_columns_indices_valid": true,
+        "reported_positive_solver_success": true,
+        "stored_vector_gap_accepted": true,
+        "reported_acceptance_consistent": true,
+        "solver_parameters_match_frozen_source": true,
+        "declared_dimensions_clock_valid": true
+      },
+      "diagnostic_recalculations": {
+        "frank_wolfe_gap": {
+          "recomputed": 5.0266750348743544e-08,
+          "reported": 5.0266750348743544e-08,
+          "exact_equal": true,
+          "absolute_difference": 0.0
+        },
+        "frank_wolfe_gap_direct_formula": {
+          "recomputed": 5.02667503489429e-08,
+          "reported": 5.02667503489429e-08,
+          "exact_equal": true,
+          "absolute_difference": 0.0
+        },
+        "projected_gradient_inf_norm": {
+          "recomputed": 3.147866640884622e-05,
+          "reported": 3.147866640884622e-05,
+          "exact_equal": true,
+          "absolute_difference": 0.0
+        },
+        "max_box_violation": {
+          "recomputed": 0.0,
+          "reported": 0.0,
+          "exact_equal": true,
+          "absolute_difference": 0.0
+        },
+        "zero_observed_column_count": {
+          "recomputed": 0,
+          "reported": 0,
+          "exact_equal": true,
+          "absolute_difference": 0
+        }
+      },
+      "active_mask_counts": {
+        "-1": 3,
+        "0": 781,
+        "1": 417
+      },
+      "zero_columns": [],
+      "gain_range": [
+        6.297916126296213e-10,
+        0.9999999999999999
+      ]
+    },
+    {
+      "case": "librispeech_2961-961-0011",
+      "checks": {
+        "retained_arrays_finite": true,
+        "numeric_diagnostics_finite": true,
+        "gains_exact_box_feasible": true,
+        "gains32_exact_box_feasible": true,
+        "rounded_gain_conversion_exact": true,
+        "projected_gradient_exact": true,
+        "shapes_correct": true,
+        "float_dtypes_correct": true,
+        "active_mask_values_valid": true,
+        "zero_columns_indices_valid": true,
+        "reported_positive_solver_success": true,
+        "stored_vector_gap_accepted": true,
+        "reported_acceptance_consistent": true,
+        "solver_parameters_match_frozen_source": true,
+        "declared_dimensions_clock_valid": true
+      },
+      "diagnostic_recalculations": {
+        "frank_wolfe_gap": {
+          "recomputed": 2.7248967038262378e-08,
+          "reported": 2.7248967038262378e-08,
+          "exact_equal": true,
+          "absolute_difference": 0.0
+        },
+        "frank_wolfe_gap_direct_formula": {
+          "recomputed": 2.7248967041093586e-08,
+          "reported": 2.7248967041093586e-08,
+          "exact_equal": true,
+          "absolute_difference": 0.0
+        },
+        "projected_gradient_inf_norm": {
+          "recomputed": 2.3011456904975525e-05,
+          "reported": 2.3011456904975525e-05,
+          "exact_equal": true,
+          "absolute_difference": 0.0
+        },
+        "max_box_violation": {
+          "recomputed": 0.0,
+          "reported": 0.0,
+          "exact_equal": true,
+          "absolute_difference": 0.0
+        },
+        "zero_observed_column_count": {
+          "recomputed": 0,
+          "reported": 0,
+          "exact_equal": true,
+          "absolute_difference": 0
+        }
+      },
+      "active_mask_counts": {
+        "-1": 1,
+        "0": 1082,
+        "1": 118
+      },
+      "zero_columns": [],
+      "gain_range": [
+        8.543595598224987e-09,
+        0.9999999999999999
+      ]
+    },
+    {
+      "case": "librispeech_3570-5694-0001",
+      "checks": {
+        "retained_arrays_finite": true,
+        "numeric_diagnostics_finite": true,
+        "gains_exact_box_feasible": true,
+        "gains32_exact_box_feasible": true,
+        "rounded_gain_conversion_exact": true,
+        "projected_gradient_exact": true,
+        "shapes_correct": true,
+        "float_dtypes_correct": true,
+        "active_mask_values_valid": true,
+        "zero_columns_indices_valid": true,
+        "reported_positive_solver_success": true,
+        "stored_vector_gap_accepted": true,
+        "reported_acceptance_consistent": true,
+        "solver_parameters_match_frozen_source": true,
+        "declared_dimensions_clock_valid": true
+      },
+      "diagnostic_recalculations": {
+        "frank_wolfe_gap": {
+          "recomputed": 1.2641528981209774e-07,
+          "reported": 1.2641528981209774e-07,
+          "exact_equal": true,
+          "absolute_difference": 0.0
+        },
+        "frank_wolfe_gap_direct_formula": {
+          "recomputed": 1.2641528981255368e-07,
+          "reported": 1.2641528981255368e-07,
+          "exact_equal": true,
+          "absolute_difference": 0.0
+        },
+        "projected_gradient_inf_norm": {
+          "recomputed": 3.486628325344299e-05,
+          "reported": 3.486628325344299e-05,
+          "exact_equal": true,
+          "absolute_difference": 0.0
+        },
+        "max_box_violation": {
+          "recomputed": 0.0,
+          "reported": 0.0,
+          "exact_equal": true,
+          "absolute_difference": 0.0
+        },
+        "zero_observed_column_count": {
+          "recomputed": 0,
+          "reported": 0,
+          "exact_equal": true,
+          "absolute_difference": 0
+        }
+      },
+      "active_mask_counts": {
+        "-1": 0,
+        "0": 1104,
+        "1": 32
+      },
+      "zero_columns": [],
+      "gain_range": [
+        6.069393682173195e-08,
+        0.9999999999999999
+      ]
+    },
+    {
+      "case": "librispeech_3570-5694-0004",
+      "checks": {
+        "retained_arrays_finite": true,
+        "numeric_diagnostics_finite": true,
+        "gains_exact_box_feasible": true,
+        "gains32_exact_box_feasible": true,
+        "rounded_gain_conversion_exact": true,
+        "projected_gradient_exact": true,
+        "shapes_correct": true,
+        "float_dtypes_correct": true,
+        "active_mask_values_valid": true,
+        "zero_columns_indices_valid": true,
+        "reported_positive_solver_success": true,
+        "stored_vector_gap_accepted": true,
+        "reported_acceptance_consistent": true,
+        "solver_parameters_match_frozen_source": true,
+        "declared_dimensions_clock_valid": true
+      },
+      "diagnostic_recalculations": {
+        "frank_wolfe_gap": {
+          "recomputed": 3.4808398813717994e-08,
+          "reported": 3.4808398813717994e-08,
+          "exact_equal": true,
+          "absolute_difference": 0.0
+        },
+        "frank_wolfe_gap_direct_formula": {
+          "recomputed": 3.4808398809149654e-08,
+          "reported": 3.4808398809149654e-08,
+          "exact_equal": true,
+          "absolute_difference": 0.0
+        },
+        "projected_gradient_inf_norm": {
+          "recomputed": 2.3135457031808748e-05,
+          "reported": 2.3135457031808748e-05,
+          "exact_equal": true,
+          "absolute_difference": 0.0
+        },
+        "max_box_violation": {
+          "recomputed": 0.0,
+          "reported": 0.0,
+          "exact_equal": true,
+          "absolute_difference": 0.0
+        },
+        "zero_observed_column_count": {
+          "recomputed": 0,
+          "reported": 0,
+          "exact_equal": true,
+          "absolute_difference": 0
+        }
+      },
+      "active_mask_counts": {
+        "-1": 1,
+        "0": 615,
+        "1": 451
+      },
+      "zero_columns": [],
+      "gain_range": [
+        7.753900633116833e-10,
+        0.9999999999999999
+      ]
+    },
+    {
+      "case": "librispeech_3570-5696-0010",
+      "checks": {
+        "retained_arrays_finite": true,
+        "numeric_diagnostics_finite": true,
+        "gains_exact_box_feasible": true,
+        "gains32_exact_box_feasible": true,
+        "rounded_gain_conversion_exact": true,
+        "projected_gradient_exact": true,
+        "shapes_correct": true,
+        "float_dtypes_correct": true,
+        "active_mask_values_valid": true,
+        "zero_columns_indices_valid": true,
+        "reported_positive_solver_success": true,
+        "stored_vector_gap_accepted": true,
+        "reported_acceptance_consistent": true,
+        "solver_parameters_match_frozen_source": true,
+        "declared_dimensions_clock_valid": true
+      },
+      "diagnostic_recalculations": {
+        "frank_wolfe_gap": {
+          "recomputed": 5.2689296593508725e-08,
+          "reported": 5.2689296593508725e-08,
+          "exact_equal": true,
+          "absolute_difference": 0.0
+        },
+        "frank_wolfe_gap_direct_formula": {
+          "recomputed": 5.268929659935084e-08,
+          "reported": 5.268929659935084e-08,
+          "exact_equal": true,
+          "absolute_difference": 0.0
+        },
+        "projected_gradient_inf_norm": {
+          "recomputed": 1.5172349177139388e-05,
+          "reported": 1.5172349177139388e-05,
+          "exact_equal": true,
+          "absolute_difference": 0.0
+        },
+        "max_box_violation": {
+          "recomputed": 0.0,
+          "reported": 0.0,
+          "exact_equal": true,
+          "absolute_difference": 0.0
+        },
+        "zero_observed_column_count": {
+          "recomputed": 0,
+          "reported": 0,
+          "exact_equal": true,
+          "absolute_difference": 0
+        }
+      },
+      "active_mask_counts": {
+        "-1": 2,
+        "0": 683,
+        "1": 516
+      },
+      "zero_columns": [],
+      "gain_range": [
+        1.230188401655984e-10,
+        0.9999999999999999
+      ]
+    },
+    {
+      "case": "librispeech_3575-170457-0034",
+      "checks": {
+        "retained_arrays_finite": true,
+        "numeric_diagnostics_finite": true,
+        "gains_exact_box_feasible": true,
+        "gains32_exact_box_feasible": true,
+        "rounded_gain_conversion_exact": true,
+        "projected_gradient_exact": true,
+        "shapes_correct": true,
+        "float_dtypes_correct": true,
+        "active_mask_values_valid": true,
+        "zero_columns_indices_valid": true,
+        "reported_positive_solver_success": true,
+        "stored_vector_gap_accepted": true,
+        "reported_acceptance_consistent": true,
+        "solver_parameters_match_frozen_source": true,
+        "declared_dimensions_clock_valid": true
+      },
+      "diagnostic_recalculations": {
+        "frank_wolfe_gap": {
+          "recomputed": 9.291658795796263e-08,
+          "reported": 9.291658795796263e-08,
+          "exact_equal": true,
+          "absolute_difference": 0.0
+        },
+        "frank_wolfe_gap_direct_formula": {
+          "recomputed": 9.29165879549887e-08,
+          "reported": 9.29165879549887e-08,
+          "exact_equal": true,
+          "absolute_difference": 0.0
+        },
+        "projected_gradient_inf_norm": {
+          "recomputed": 3.659972311220727e-05,
+          "reported": 3.659972311220727e-05,
+          "exact_equal": true,
+          "absolute_difference": 0.0
+        },
+        "max_box_violation": {
+          "recomputed": 0.0,
+          "reported": 0.0,
+          "exact_equal": true,
+          "absolute_difference": 0.0
+        },
+        "zero_observed_column_count": {
+          "recomputed": 0,
+          "reported": 0,
+          "exact_equal": true,
+          "absolute_difference": 0
+        }
+      },
+      "active_mask_counts": {
+        "-1": 0,
+        "0": 628,
+        "1": 72
+      },
+      "zero_columns": [],
+      "gain_range": [
+        4.214223095330633e-08,
+        0.9999999999999999
+      ]
+    },
+    {
+      "case": "librispeech_3575-170457-0041",
+      "checks": {
+        "retained_arrays_finite": true,
+        "numeric_diagnostics_finite": true,
+        "gains_exact_box_feasible": true,
+        "gains32_exact_box_feasible": true,
+        "rounded_gain_conversion_exact": true,
+        "projected_gradient_exact": true,
+        "shapes_correct": true,
+        "float_dtypes_correct": true,
+        "active_mask_values_valid": true,
+        "zero_columns_indices_valid": true,
+        "reported_positive_solver_success": true,
+        "stored_vector_gap_accepted": true,
+        "reported_acceptance_consistent": true,
+        "solver_parameters_match_frozen_source": true,
+        "declared_dimensions_clock_valid": true
+      },
+      "diagnostic_recalculations": {
+        "frank_wolfe_gap": {
+          "recomputed": 2.0819864702359091e-07,
+          "reported": 2.0819864702359091e-07,
+          "exact_equal": true,
+          "absolute_difference": 0.0
+        },
+        "frank_wolfe_gap_direct_formula": {
+          "recomputed": 2.0819864702051327e-07,
+          "reported": 2.0819864702051327e-07,
+          "exact_equal": true,
+          "absolute_difference": 0.0
+        },
+        "projected_gradient_inf_norm": {
+          "recomputed": 3.229862517206694e-05,
+          "reported": 3.229862517206694e-05,
+          "exact_equal": true,
+          "absolute_difference": 0.0
+        },
+        "max_box_violation": {
+          "recomputed": 0.0,
+          "reported": 0.0,
+          "exact_equal": true,
+          "absolute_difference": 0.0
+        },
+        "zero_observed_column_count": {
+          "recomputed": 0,
+          "reported": 0,
+          "exact_equal": true,
+          "absolute_difference": 0
+        }
+      },
+      "active_mask_counts": {
+        "-1": 6,
+        "0": 1093,
+        "1": 102
+      },
+      "zero_columns": [],
+      "gain_range": [
+        9.534679310327235e-19,
+        0.9999999982250589
+      ]
+    },
+    {
+      "case": "librispeech_3575-170457-0054",
+      "checks": {
+        "retained_arrays_finite": true,
+        "numeric_diagnostics_finite": true,
+        "gains_exact_box_feasible": true,
+        "gains32_exact_box_feasible": true,
+        "rounded_gain_conversion_exact": true,
+        "projected_gradient_exact": true,
+        "shapes_correct": true,
+        "float_dtypes_correct": true,
+        "active_mask_values_valid": true,
+        "zero_columns_indices_valid": true,
+        "reported_positive_solver_success": true,
+        "stored_vector_gap_accepted": true,
+        "reported_acceptance_consistent": true,
+        "solver_parameters_match_frozen_source": true,
+        "declared_dimensions_clock_valid": true
+      },
+      "diagnostic_recalculations": {
+        "frank_wolfe_gap": {
+          "recomputed": 5.839626312059151e-08,
+          "reported": 5.839626312059151e-08,
+          "exact_equal": true,
+          "absolute_difference": 0.0
+        },
+        "frank_wolfe_gap_direct_formula": {
+          "recomputed": 5.839626312023616e-08,
+          "reported": 5.839626312023616e-08,
+          "exact_equal": true,
+          "absolute_difference": 0.0
+        },
+        "projected_gradient_inf_norm": {
+          "recomputed": 3.2004258664120044e-05,
+          "reported": 3.2004258664120044e-05,
+          "exact_equal": true,
+          "absolute_difference": 0.0
+        },
+        "max_box_violation": {
+          "recomputed": 0.0,
+          "reported": 0.0,
+          "exact_equal": true,
+          "absolute_difference": 0.0
+        },
+        "zero_observed_column_count": {
+          "recomputed": 0,
+          "reported": 0,
+          "exact_equal": true,
+          "absolute_difference": 0
+        }
+      },
+      "active_mask_counts": {
+        "-1": 10,
+        "0": 1133,
+        "1": 58
+      },
+      "zero_columns": [],
+      "gain_range": [
+        8.344741338210772e-13,
+        0.9999999999999999
+      ]
+    }
+  ],
+  "preselected_full_basis": {
+    "case": "librispeech_2094-142345-0032",
+    "method": "Independent NumPy column placement from retained native centers and already-windowed blocks, observed-prefix clipping; no solver or candidate import. Normalize coefficients by reciprocal scale, sum retained-column contributions, subtract retained PCM/scale, and take per-column inner products.",
+    "input_finite": true,
+    "input_shapes": {
+      "blocks": [
+        649,
+        240
+      ],
+      "centers": [
+        649
+      ],
+      "pcm": [
+        77760
+      ]
+    },
+    "matrix_nnz": {
+      "recomputed": 154224,
+      "reported": 154224
+    },
+    "zero_columns_exact": true,
+    "array_comparisons": {
+      "predicted_prefix_float64": {
+        "exact_equal": true,
+        "max_abs_difference": 0.0,
+        "compared_elements": 77760
+      },
+      "rounded_gain_predicted_prefix_float64": {
+        "exact_equal": true,
+        "max_abs_difference": 0.0,
+        "compared_elements": 77760
+      },
+      "normalized_residual_float64": {
+        "exact_equal": false,
+        "max_abs_difference": 6.938893903907228e-18,
+        "compared_elements": 77760
+      },
+      "normalized_gradient_float64": {
+        "exact_equal": false,
+        "max_abs_difference": 4.336808689942018e-19,
+        "compared_elements": 649
+      },
+      "projected_gradient_float64": {
+        "exact_equal": true,
+        "max_abs_difference": 0.0,
+        "compared_elements": 649
+      }
+    },
+    "scalar_comparisons": {
+      "pcm_norm": {
+        "recomputed": 22.95974159195257,
+        "reported": 22.95974159195258,
+        "absolute_difference": 7.105427357601002e-15,
+        "exact_equal": false
+      },
+      "normalization_scale": {
+        "recomputed": 22.95974159195257,
+        "reported": 22.95974159195258,
+        "absolute_difference": 7.105427357601002e-15,
+        "exact_equal": false
+      },
+      "normalized_cost": {
+        "recomputed": 0.025802216309135106,
+        "reported": 0.025802216309135095,
+        "absolute_difference": 1.0408340855860843e-17,
+        "exact_equal": false
+      },
+      "normalized_residual_norm": {
+        "recomputed": 0.22716609037941868,
+        "reported": 0.22716609037941862,
+        "absolute_difference": 5.551115123125783e-17,
+        "exact_equal": false
+      },
+      "pcm_residual_norm": {
+        "recomputed": 5.215674733565597,
+        "reported": 5.215674733565597,
+        "absolute_difference": 0.0,
+        "exact_equal": true
+      },
+      "frank_wolfe_gap": {
+        "recomputed": 4.143004221005185e-08,
+        "reported": 4.143004220992099e-08,
+        "absolute_difference": 1.3085997290588898e-19,
+        "exact_equal": false
+      },
+      "projected_gradient_inf_norm": {
+        "recomputed": 3.2454908970636076e-05,
+        "reported": 3.2454908970636076e-05,
+        "absolute_difference": 0.0,
+        "exact_equal": true
+      }
+    },
+    "reconstructed_gradient_gap_in_declared_range": true,
+    "stored_scale_isolation": {
+      "description": "Using reported normalization_scale isolates norm-reduction differences; not an independent scale verification.",
+      "normalized_residual_exact_equal": true,
+      "normalized_residual_max_abs_difference": 0.0
+    }
+  },
+  "frozen_formula_source": {
+    "path": "soft_carrier_packet/gain-quality-v2-results/extracted/owner-1/source/gain-source/bounded_gain.py",
+    "sha256": "f7b8339cd2be9c5c01f7aa3a82d47adb2a567e0d01b6a0694fe951fa65cf8dfe"
+  },
+  "summary": {
+    "case_count": 24,
+    "all_explicit_small_vector_checks_pass": true,
+    "all_small_vector_derived_scalar_diagnostics_exact": true,
+    "full_basis_reconstruction_count": 1,
+    "full_optimization_revalidation_claimed": false
+  }
+}

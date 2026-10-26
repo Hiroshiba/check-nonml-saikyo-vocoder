@@ -1,0 +1,30 @@
+<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>連続利得v2：計算完了報告と原値の回収状況</title><style>:root{color-scheme:light dark;font-family:system-ui,sans-serif;line-height:1.8}body{max-width:64rem;margin:auto;padding:1.4rem}a{color:#067277}audio{width:100%;max-width:19rem}.audio-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(14rem,1fr));gap:1rem}h1{line-height:1.45}@media(prefers-color-scheme:dark){a{color:#8edbd8}}</style></head><body><main><h1>連続利得の品質計算は全件完了の報告。原値の回収は24録音分に留まる</h1>
+<h2>Apron24との品質差は未確定で、ベースは変更しない</h2>
+<p>係数1・当てはめ係数・Apron24・WORLD16を固定120録音で比べる新しい計測は、全5担当から2,520個票の計算完了が報告されました。ただし、親が結果アーカイブを取得して独立に照合できたのは1担当、24録音・8話者・504個票です。残る4担当はLibraryへの保存で止まっています。</p>
+<p>当てはめ係数と係数1の主比較、現ベースApron24や既存方式WORLD16に対する品質順位、全40話者の平均や信頼区間は確定していません。回収できた24録音の平均を全120録音の値として使わず、Apron24を維持します。計算の完了報告と、原値を検証して比較できる状態は別です。</p>
+<h2>数値修正を含む別研究として、4条件を同じ評価内で測った</h2>
+<p>この比較は旧gain実験の再開や欠測補完ではありません。振幅の中間値を倍精度へ広げ、Rd候補の最後だけを正確な3にした私有ライブラリを使い、新しい計画・ソース台帳・実行識別を固定しました。直前の数値範囲比較では、この版で120録音すべての解析・保存が完了しています。</p>
+<p>同じ正のF0系列と未縮小のLayer1形状に対して、周期振幅の係数を0から1の範囲で原音へ当てはめます。重なる窓をまとめて解き、係数1と当てはめ係数のそれぞれの周期出力から雑音も再解析します。二乗誤差の低下だけでは、音質改善も物理的な有声確率の推定成功も判断できません。</p>
+<p>比較は無編集だけです。UTMOSは原音と4条件の全長、ECAPAは4条件の16 kHz全長と固定共通区間、SCOREQ/eSTOIは共通区間を使います。主要差はgain_fit−gain_oneのUTMOSで、3録音を話者平均にして40話者を等重みにする計画です。全120録音の回収が揃っていないため、この主集計と話者再抽出による区間は出していません。</p>
+<h2>計算終了は全5担当の報告、保存と独立照合は1担当</h2>
+<p>各担当は24録音を受け持ち、音声処理の240工程と品質の504個票が全件完了し、失敗・不明・値の流用は0件だったと報告しています。合計は120録音・2,520個票です。この全体の完了件数は担当報告であり、親が全アーカイブを検証した件数ではありません。</p>
+<p>担当1の約48.7 MBのアーカイブはLibraryに保存され、親が取得できました。他の4個は約70.1〜72.3 MBで、保存処理が転送前にHTTP401で止まりました。ファイルのサイズとSHAは担当から報告されていますが、親はその中身を未取得です。元ファイルは担当側に残っているとの報告で、永続保持を確認できたとは言いません。</p>
+<p>今回は大きな配列を事前指定5録音に限定した新しい保持計画でした。それでも4担当の成果物は大きなファイル用の保存処理を必要としました。保存失敗後に分割・縮小・再包装したり、別の転送先へ移したりはしていません。旧研究の未取得アーカイブも変更していません。</p>
+<h2>回収できた504個票と、係数の受入条件を独立に照合した</h2>
+<p>担当1について、保持4,727ファイルの実bytesと、省略552ファイルの台帳を照合しました。省略した配列はサイズ・SHAなどの記録だけで、実bytesを親が再検証したものではありません。504品質個票は全て実測、値の流用0件で、予約・入力の変換・モデル識別・呼出し境界・終了記録と整合していました。</p>
+<p>同じ担当の24録音では、保持した係数・勾配などの小配列から有限性、0〜1の範囲、float32への変換、射影勾配とFrank–Wolfe差を確認しました。受入条件に反するものはありません。全基底を保持した事前指定1録音では、保存値だけから予測値と勾配を別に組み立て直し、受入範囲にあることを確認しています。残る23録音の基底全体は再計算していません。音質改善や数学的な厳密証明の根拠にも使いません。</p>
+<p>実行情報は240工程中216件で完全、24件で一部未取得でした。後者は全てApron解析時のライブラリ識別情報で、事前に決めたハッシュ読取り量の上限に達したためです。音声処理や採点の失敗とは分けて記録しています。実際のFPU状態や、別Cloud間の数値差の原因までは分かりません。</p>
+<h2>掲載音声は、回収済みの事前指定1録音だけ</h2>
+<p>下の例は、実行前に指定した5録音のうち回収できたlibrispeech_2094-142345-0032です。原音と4条件の先頭2秒を掲載します。現在のApron24とWORLD16を同じ録音で並べますが、これだけで120録音の品質を代表するとは扱いません。人の聴取結果を評価条件や採用判断へ取り込む計画でもありません。</p>
+<p>掲載用にPCM16へ丸めました。音量調整・再標本化・振幅の切り詰めはせず、範囲外ならその音声の掲載を失敗として記録します。元NPYの識別と変換記録を添え、再合成や再採点は行いません。</p>
+<div class="audio-grid"><div><p>原音</p><audio controls preload="metadata" src="audio/original.wav"></audio></div><div><p>係数1</p><audio controls preload="metadata" src="audio/gain_one.wav"></audio></div><div><p>当てはめ係数</p><audio controls preload="metadata" src="audio/gain_fit.wav"></audio></div><div><p>Apron24（現ベース）</p><audio controls preload="metadata" src="audio/apron24.wav"></audio></div><div><p>WORLD16</p><audio controls preload="metadata" src="audio/world16.wav"></audio></div></div><p><a href="audio_credits.html">音声の出典・許諾・加工条件</a> / <a href="audio-records.json">元値と変換の記録</a></p>
+<h2>保存機能の回復を優先し、未検証の計算を増やさない</h2>
+<p>保存できなかった4アーカイブの原本と失敗記録を保ち、公式の保存経路で進められる根拠が得られるまで、同じ計算のやり直しや係数の掃引を増やしません。現状の24録音だけで勝敗を決めたり、担当報告を検証済みの原値へ読み替えたりすることも避けます。</p>
+<p>次に必要なのは、残る原値を回収して全体を照合することです。大きな成果物の保存処理に障害が残っています。この報告はその未完了を記録するもので、品質比較の完了報告ではありません。</p>
+<h2>固定計画と検証範囲</h2><ul>
+<li><a href="frozen-plan-ja.md">実行前の計画</a> / <a href="frozen-plan.json">固定plan</a> / <a href="frozen-source-lock.json">ソース台帳</a></li>
+<li><a href="coverage-and-retention.json">担当報告と親の回収範囲</a> / <a href="owner-1-archive-audit.json">回収済み担当1の照合記録</a></li>
+<li><a href="owner-1-verified-quality-rows.json.gz">担当1の検証済み504個票</a>：24録音分のみ。全120録音の集計ではありません。</li>
+<li><a href="owner-1-fit-audit.json">保持した係数と最適化診断の照合</a> / <a href="owner-1-runtime-summary.json">実行情報の取得範囲</a></li>
+<li><a href="../soft-carrier-failure-localization-2026-10-26/rd-endpoint.html">直前のRd終点比較と別Cloud間の差</a> / <a href="../acoustic-branch-k2-comparison-2026-10-26/index.html">過去のApron24・WORLD16を含む比較</a>（今回の品質値へ流用しません）</li>
+</ul></main></body></html>
