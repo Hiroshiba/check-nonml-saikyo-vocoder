@@ -1,0 +1,10 @@
+{
+  "reason": "v1 auditor mistakenly classified legitimate two-component execution-logs paths as unowned slots; scientific archives unchanged",
+  "old_source_sha256": "5cbea91b823be37f56b3ade89e88155d53eb80f8e57f1d2e33e29f220b642495",
+  "new_source_sha256": "6761bfbad6b1ef107d386cf8ddffd0f8549781204f1a8e1bb342208c8552b57e",
+  "static_checks": "AST and cached Ruff passed; independently reviewed narrow execution-logs exception",
+  "old_result_preserved": "parent-audit-v1.json",
+  "corrected_result": "parent-audit-v2.json",
+  "native_calls_added": 0,
+  "snapshots_verified": 10
+}
