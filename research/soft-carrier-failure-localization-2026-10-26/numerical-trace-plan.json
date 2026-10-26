@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "state": "frozen",
+  "study_id": "separate-posthoc-numerical-trace",
+  "manifest": {
+    "path": "inputs/runner-manifest.json",
+    "bytes": 6801,
+    "sha256": "b949d1140f7f285bebeadf458f0805b7d87298e40db90ba746ccd0feb68ea296"
+  },
+  "source_lock": {
+    "path": "source-lock.json",
+    "bytes": 15946,
+    "sha256": "87ec9a35369a5936bf817ba576575630cbe6d14bbea8f65cf356f7559bb2870e"
+  },
+  "library": {
+    "path": "library/libsoftcarrier.so",
+    "bytes": 365168,
+    "sha256": "d728037be580290e327fd126e2325d9f88399f24165877ca1c8865679ab99f8f"
+  },
+  "runtime": {
+    "python": "3.12",
+    "numpy": "2.3.5"
+  },
+  "analysis": {
+    "fs": 24000,
+    "gain": 1,
+    "seed": 0,
+    "timeout_seconds": 1800
+  },
+  "owners": [
+    [
+      "librispeech_2300-131720-0022"
+    ],
+    [
+      "librispeech_121-127105-0035"
+    ]
+  ],
+  "scope": "Observation-only separate post-hoc two-case diagnosis; no original missing-value replacement or quality inference",
+  "prior_localization_plan_sha256": "3600382d04c0c1c871a9d90d022abc53a1aacf50f95a794905b8324649430e72",
+  "selection": "First case in original manifest order in each observed failure group",
+  "trace_abi_version": 1,
+  "trace_struct_bytes": 66712,
+  "native_calls_per_case": 1,
+  "decode_calls": 0,
+  "quality_calls": 0,
+  "solver_calls": 0,
+  "scientific_retries": 0,
+  "result_retention": "Full immutable owner directory and exhaustive manifest after confirmed supervisor and child quiescence",
+  "frozen_at": "2026-10-26T17:29:07.148181+00:00"
+}
