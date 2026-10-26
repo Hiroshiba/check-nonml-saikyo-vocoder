@@ -1,0 +1,222 @@
+{
+  "scope": "Saved archive metadata and static source/log inspection only; no native loading, science rerun, tests, decode, or quality inference.",
+  "studies": {
+    "wide-domain-results-v1": {
+      "metadata_counts": {
+        "runtime": [
+          {
+            "value": {
+              "numpy": "2.3.5",
+              "python": "3.12.14",
+              "scipy": "1.17.0"
+            },
+            "count": 120
+          }
+        ],
+        "thread_environment": [
+          {
+            "value": {
+              "BLIS_NUM_THREADS": "1",
+              "MKL_NUM_THREADS": "1",
+              "NUMEXPR_NUM_THREADS": "1",
+              "OMP_NUM_THREADS": "1",
+              "OPENBLAS_NUM_THREADS": "1",
+              "VECLIB_MAXIMUM_THREADS": "1"
+            },
+            "count": 120
+          }
+        ],
+        "library": [
+          {
+            "value": {
+              "bytes": 360176,
+              "path": "libraries/wide.so",
+              "sha256": "467a5bfdb24b2e11f969effeed72aab2b9bee39bdee6afd41419881468c1f523"
+            },
+            "count": 120
+          }
+        ]
+      },
+      "owners": [
+        {
+          "archive": "soft_carrier_packet/wide-domain-results-v1/downloads/wide-domain-owner-0-20261026-v1.zip",
+          "archive_sha256": "4cff68a4ba4bac04758eb4453cfc03de9d0da80ca0ba773240a6ed05fd483ad6",
+          "original_archive": {
+            "bytes": 21710770,
+            "path": "/workspace/wide-domain-owner-0-20261026-v1.9ATT0d/downloads/fixed120-original-16k-inputs.tar.gz",
+            "sha256": "3aea0a515b16e5ed3053837e7d48b0b3d5222fdd416a6d5e8e158beaad49c3ed"
+          },
+          "wide_slots": 24
+        },
+        {
+          "archive": "soft_carrier_packet/wide-domain-results-v1/downloads/wide-domain-owner-1-20261026-v1.zip",
+          "archive_sha256": "7c6807b6a4310d5845296d55ed91cd6fd5a25c9339f476431d08d36b2a73c573",
+          "original_archive": {
+            "bytes": 21710770,
+            "path": "/workspace/soft-carrier-owner1-20261026-t471f4k3/downloads/fixed120-original-16k-inputs.tar.gz",
+            "sha256": "3aea0a515b16e5ed3053837e7d48b0b3d5222fdd416a6d5e8e158beaad49c3ed"
+          },
+          "wide_slots": 24
+        },
+        {
+          "archive": "soft_carrier_packet/wide-domain-results-v1/downloads/wide-domain-owner-2-20261026-v1.zip",
+          "archive_sha256": "53e0df1847e665e6e88ec6d385982b9547b65f82f5e970ebcc5f4fc3f4b68300",
+          "original_archive": {
+            "bytes": 21710770,
+            "path": "/workspace/owner2-wide-domain-20261026-bayq5pn8/downloads/fixed120-original-16k-inputs.tar.gz",
+            "sha256": "3aea0a515b16e5ed3053837e7d48b0b3d5222fdd416a6d5e8e158beaad49c3ed"
+          },
+          "wide_slots": 24
+        },
+        {
+          "archive": "soft_carrier_packet/wide-domain-results-v1/downloads/wide-domain-owner-3-20261026-v1.zip",
+          "archive_sha256": "e703879253d452dd21b227a4dc1529f04203b5af5852d1d7cb3c319f0135cfaf",
+          "original_archive": {
+            "bytes": 21710770,
+            "path": "/workspace/owner3-wide-domain-20261026-c38lipdy/downloads/original/fixed120-original-16k-inputs.tar.gz",
+            "sha256": "3aea0a515b16e5ed3053837e7d48b0b3d5222fdd416a6d5e8e158beaad49c3ed"
+          },
+          "wide_slots": 24
+        },
+        {
+          "archive": "soft_carrier_packet/wide-domain-results-v1/downloads/wide-domain-owner-4-20261026-v1.zip",
+          "archive_sha256": "ca47d3294a72785ccb1f327c839f81cc6ad5b8e21d8d0e7a7aef20602fb8e11d",
+          "original_archive": {
+            "bytes": 21710770,
+            "path": "/workspace/owner4-20261026-WYwmhU/downloads/fixed120-original-16k-inputs.tar.gz",
+            "sha256": "3aea0a515b16e5ed3053837e7d48b0b3d5222fdd416a6d5e8e158beaad49c3ed"
+          },
+          "wide_slots": 24
+        }
+      ]
+    },
+    "rd-endpoint-results-v1": {
+      "metadata_counts": {
+        "runtime": [
+          {
+            "value": {
+              "numpy": "2.3.5",
+              "python": "3.12.14",
+              "scipy": "1.17.0"
+            },
+            "count": 120
+          }
+        ],
+        "thread_environment": [
+          {
+            "value": {
+              "BLIS_NUM_THREADS": "1",
+              "MKL_NUM_THREADS": "1",
+              "NUMEXPR_NUM_THREADS": "1",
+              "OMP_NUM_THREADS": "1",
+              "OPENBLAS_NUM_THREADS": "1",
+              "VECLIB_MAXIMUM_THREADS": "1"
+            },
+            "count": 120
+          }
+        ],
+        "library": [
+          {
+            "value": {
+              "bytes": 360176,
+              "path": "libraries/wide.so",
+              "sha256": "467a5bfdb24b2e11f969effeed72aab2b9bee39bdee6afd41419881468c1f523"
+            },
+            "count": 120
+          }
+        ]
+      },
+      "owners": [
+        {
+          "archive": "soft_carrier_packet/rd-endpoint-results-v1/downloads/rd-endpoint-owner-0-20261026-v1.zip",
+          "archive_sha256": "c6f26ef5e014527ea8a641b6f3be12a7a2a02d942e9334cc91dda1126017ff30",
+          "original_archive": {
+            "bytes": 21710770,
+            "path": "/workspace/owner-0-rd-endpoint-20261026-RJSiSj/downloads/fixed120-original-16k-inputs.tar.gz",
+            "sha256": "3aea0a515b16e5ed3053837e7d48b0b3d5222fdd416a6d5e8e158beaad49c3ed"
+          },
+          "wide_slots": 24
+        },
+        {
+          "archive": "soft_carrier_packet/rd-endpoint-results-v1/downloads/rd-endpoint-owner-1-20261026-v1.zip",
+          "archive_sha256": "3948f080e58388c36e5c9a8a10ff378b5a28021bc88148f6c00d0d4bb0e5347e",
+          "original_archive": {
+            "bytes": 21710770,
+            "path": "/workspace/rd-endpoint-owner1-20261026-IoveQf/downloads/fixed120-original-16k-inputs.tar.gz",
+            "sha256": "3aea0a515b16e5ed3053837e7d48b0b3d5222fdd416a6d5e8e158beaad49c3ed"
+          },
+          "wide_slots": 24
+        },
+        {
+          "archive": "soft_carrier_packet/rd-endpoint-results-v1/downloads/rd-endpoint-owner-2-20261026-v1.zip",
+          "archive_sha256": "3556b940a616e97176be81339cb6d64151725f41b088ec33ffd95c16d3652b41",
+          "original_archive": {
+            "bytes": 21710770,
+            "path": "/workspace/rd-endpoint-owner-2-20261026-_5jts699/downloads/fixed120-original-16k-inputs.tar.gz",
+            "sha256": "3aea0a515b16e5ed3053837e7d48b0b3d5222fdd416a6d5e8e158beaad49c3ed"
+          },
+          "wide_slots": 24
+        },
+        {
+          "archive": "soft_carrier_packet/rd-endpoint-results-v1/downloads/rd-endpoint-owner-3-20261026-v1.zip",
+          "archive_sha256": "5a0cb384c54ebc75aef55af01b19150c0ea8a6d2e043321720071c044dc09418",
+          "original_archive": {
+            "bytes": 21710770,
+            "path": "/workspace/rd-endpoint-owner-3-20261026-Lj1EiQmi/downloads/fixed120-original-16k-inputs.tar.gz",
+            "sha256": "3aea0a515b16e5ed3053837e7d48b0b3d5222fdd416a6d5e8e158beaad49c3ed"
+          },
+          "wide_slots": 24
+        },
+        {
+          "archive": "soft_carrier_packet/rd-endpoint-results-v1/downloads/rd-endpoint-owner-4-20261026-v1.zip",
+          "archive_sha256": "98f350864638804672fcb8abaf9962bae48eed3198a9a19688920965eb54011b",
+          "original_archive": {
+            "bytes": 21710770,
+            "path": "/workspace/rd-endpoint-owner4.fxN0zw/downloads/fixed120-original-16k-inputs.tar.gz",
+            "sha256": "3aea0a515b16e5ed3053837e7d48b0b3d5222fdd416a6d5e8e158beaad49c3ed"
+          },
+          "wide_slots": 24
+        }
+      ]
+    }
+  },
+  "static_evidence": {
+    "worker_difference": "Only new input_before_sha256 persistence; same actual preparation and native invocation source. Compared wide-domain-runner-source/worker.py and rd-endpoint-runner-source/worker.py.",
+    "codec_source_files_compared": 8,
+    "codec_all_files_byte_identical": true,
+    "worker_seed": "Both worker.py call lib.srand(0) before llsm_sc_analyze in fresh worker process.",
+    "dynamic_dependencies": [
+      "libm.so.6",
+      "libmvec.so.1",
+      "libgomp.so.1",
+      "libc.so.6",
+      "ld-linux-x86-64.so.2"
+    ],
+    "dynamic_dependency_evidence": "soft_carrier_packet/wide-magnitude-build-received/extracted/build/logs/elf-dynamic.stdout.log",
+    "dynamic_symbols_evidence": "soft_carrier_packet/wide-magnitude-build-received/extracted/build/logs/elf-symbols.stdout.log",
+    "dynamic_symbols_examples": [
+      "sincosf",
+      "logf",
+      "expf",
+      "_ZGVbN2vv_pow",
+      "_ZGVbN2vv_atan2",
+      "GOMP_parallel",
+      "omp_get_num_threads"
+    ],
+    "random_source": "Vendor ciglet.h randu/randn/white_noise; llsm dsputils.c llsm_generate_white_noise uses randn; layer0.c noise excitation calls bandlimited random noise, but that is the synthesis path, not invoked by this analysis-only worker. No demonstrated stochastic analysis mechanism.",
+    "thread_source": "Vendor ciglet.c lines 1113,1199,1342 contain omp parallel for. Recorded OMP_NUM_THREADS=1; metadata is not runtime thread telemetry. USE_PTHREAD source largely realtime buffer synchronization.",
+    "analysis_flow_source": "soft_carrier_packet/wide-domain-frozen-v1/wide-build-source/native-source/soft_carrier_layer0_extension.c",
+    "analysis_flow": "harmonic analysis -> chunk_tolayer1 -> periodic reconstruction -> residual -> noise analysis; random synthesis excitation is in separate sc_synthesize_impl."
+  },
+  "unresolved_provenance": [
+    "No glibc/libm/libmvec/libgomp file versions/hashes or resolved loaded library paths retained in inspected owner JSON/log metadata. Search of JSON/log/stdout/stderr members below 500kB found no glibc/cpuinfo/libm.so/libmvec/uname/platform/LD_PRELOAD/GLIBC_TUNABLES strings.",
+    "CPU model/features, floating-point runtime state, loader tunables, and actual thread telemetry are not established by recorded package versions/thread environment.",
+    "Old PCM32 bytes/before hash were not persisted; identical projection expected hash and unchanged cast source constrain but do not independently verify old PCM32 bytes."
+  ],
+  "hypotheses_not_findings": [
+    "Different dynamically resolved math implementation or CPU dispatch could yield numeric differences with identical top-level DSO; not proven here.",
+    "Thread nondeterminism or uninitialized/native-state behavior cannot be excluded by source sampling; no evidence here establishes either as cause.",
+    "Random seed variation is not supported: both workers seed 0 and inspected random noise generation is synthesis-side."
+  ],
+  "conclusion": "Recorded Python package versions, requested thread environment, wide DSO identity and input preparation source match. This does not establish complete runtime identity. Cause of retained state differences remains unproven; no quality implication follows."
+}

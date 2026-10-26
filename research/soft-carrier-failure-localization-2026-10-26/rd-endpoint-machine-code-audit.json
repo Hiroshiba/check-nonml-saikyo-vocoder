@@ -1,0 +1,166 @@
+{
+  "schema": "actual-elf-static-machine-code-audit-v1",
+  "verdict": "PASS",
+  "scope": "Read-only static actual-ELF inspection, plus evidence-file writes; no library load, native function invocation, tests or smokes.",
+  "artifacts": {
+    "new": {
+      "path": "soft_carrier_packet/rd-endpoint-build-received/extracted/W/build/libsoftcarrier.so",
+      "bytes": 360176,
+      "sha256": "49d314aabd680fb36387e99b31e58cbc33383653d35b0b5ba19fc363d9a11672"
+    },
+    "prior_wide": {
+      "path": "soft_carrier_packet/wide-magnitude-build-received/extracted/build/libsoftcarrier.so",
+      "bytes": 360176,
+      "sha256": "467a5bfdb24b2e11f969effeed72aab2b9bee39bdee6afd41419881468c1f523"
+    }
+  },
+  "address_mapping": "ELF .text and .rodata virtual addresses equal file offsets (readelf -WS); end addresses exclusive.",
+  "rd_grid": {
+    "verdict": "PASS",
+    "function": "llsm_chunk_tolayer1 @ 0x1d1c0",
+    "allocation_bytes": 256,
+    "allocation_argument": "0x1d312: edi=0x100; malloc call 0x1d321",
+    "candidate_count": "0x1d32b: esi=64",
+    "harmonics": "0x1d326: edx=80",
+    "construction": "Compiler constant-folded linspace into 16 vector loads/stores, not runtime linspace call. Constants 0x4c7d0..0x4c8d0 copied into offsets0..240 by 0x1d330..0x1d3fd.",
+    "grid_constants_sha256": "427e9546038e52139e964a58d2a9feb339afa174682c106f556f2bdb8995097e",
+    "first63_sha256": "caada99ce16ba0433e051a7be1d3aefc07c8420a7f5bd4f843f0282ed1c532da",
+    "all64_initial_constants_identical_to_prior": true,
+    "construction_machine_bytes_identical_to_prior": true,
+    "first63_unchanged": true,
+    "initial_candidate63": {
+      "address": "0x4c8cc",
+      "bits": "0x40400001",
+      "float": 3.000000238418579
+    },
+    "overwrite": {
+      "instruction_address": "0x1d3fd",
+      "bytes": "c780fc00000000004040",
+      "instruction": "movl $0x40400000,0xfc(%rax)",
+      "index": 63,
+      "bits": "0x40400000",
+      "value": 3.0
+    },
+    "cached_model_call": {
+      "address": "0x1d407",
+      "target": "0x55e0 <llsm_create_cached_glottal_model@plt>",
+      "rdi": "same allocation pointer set at 0x1d33a",
+      "ordering": "straight-line construction, overwrite then call; no intervening branch or call"
+    },
+    "prior_cached_model_call": "0x1d3fd (no overwrite)"
+  },
+  "rd_bounds": {
+    "verdict": "PASS",
+    "function": "sc_chunk",
+    "range": [
+      "0x17ab0",
+      "0x195b2"
+    ],
+    "machine_bytes_identical_to_prior": true,
+    "sha256": "1c748118acbe79f00fd7d844602bfcff87c4fb5bf9f7e4e9ca37db6fceb4d07e",
+    "finite_check": "0x17de6 exponent-mask test; je 0x184c8 at 0x17deb",
+    "lower": {
+      "constant_address": "0x4cc88",
+      "bits": "3ca3d70a",
+      "comparison": "0x17df9 comiss %xmm0,%xmm4; 0x17dfc ja 0x18398",
+      "reject": "Rd < float32(0.02)"
+    },
+    "upper": {
+      "constant_address": "0x4c16c",
+      "bits": "40400000",
+      "comparison": "0x17e02 comiss constant,%xmm0; 0x17e09 ja 0x18580",
+      "reject": "Rd > float32(3.0)"
+    },
+    "interpretation": "Inclusive valid bounds preserved exactly; no tolerance/relaxation."
+  },
+  "stft_magnitude": {
+    "verdict": "PASS",
+    "worker": "cig_stft_forward._omp_fn.0",
+    "range": [
+      "0x2c6b0",
+      "0x2d677"
+    ],
+    "machine_bytes_identical_to_prior": true,
+    "sha256": "d10af162b3fa682bfaffc4f3dfd50e809a2e94f0a947c5c5d53f18cf929b34d9",
+    "vector": {
+      "convert_float_to_double": [
+        "0x2d2d1",
+        "0x2d2d4",
+        "0x2d2d7",
+        "0x2d2ed"
+      ],
+      "double_square": [
+        "0x2d2da",
+        "0x2d2e2",
+        "0x2d2e9",
+        "0x2d2f0"
+      ],
+      "double_sum": [
+        "0x2d2f4",
+        "0x2d2f8"
+      ],
+      "double_sqrt": [
+        "0x2d2fc",
+        "0x2d304"
+      ],
+      "final_float_conversion": [
+        "0x2d300",
+        "0x2d308"
+      ],
+      "store": "0x2d30f"
+    },
+    "tails": [
+      {
+        "convert": "0x2d354",
+        "double_square": "0x2d357",
+        "double_sum": "0x2d363",
+        "double_sqrt": "0x2d367",
+        "final_float": "0x2d36b"
+      },
+      {
+        "convert": "0x2d38e",
+        "double_square": "0x2d391",
+        "double_sum": "0x2d39d",
+        "double_sqrt": "0x2d3a1",
+        "final_float": "0x2d3a5"
+      },
+      {
+        "convert": "0x2d3c5",
+        "double_square": "0x2d3c8",
+        "double_sum": "0x2d3d4",
+        "double_sqrt": "0x2d3d8",
+        "final_float": "0x2d3dc"
+      }
+    ],
+    "float_rsqrt_in_worker": false,
+    "qualification": "Other worker float arithmetic exists for windowing/mean etc.; conversion-before-square statement refers specifically to magnitude paths."
+  },
+  "evidence": {
+    "machine-code/rd-grid-cgm.txt": {
+      "sha256": "da0998e12148297bc555a0ddabcf7064f460f67eaaa54351fe378f085289d83c",
+      "start": "0x1d312",
+      "end_exclusive": "0x1d419"
+    },
+    "machine-code/rd-strict-bounds.txt": {
+      "sha256": "b3c4ffd16b6ee46b268b56a6326f17f1f55d8bff5f6ad7041f79ca304241327a",
+      "start": "0x17dd5",
+      "end_exclusive": "0x17e0f"
+    },
+    "machine-code/stft-worker.txt": {
+      "sha256": "1b4dc9f65b53696bc1d9d3eae32af1f5eae2163dc01945aa2196db30aa25feef",
+      "start": "0x2c6b0",
+      "end_exclusive": "0x2d677"
+    },
+    "machine-code/stft-magnitude.txt": {
+      "sha256": "cab2db44dca174d418ea4c0798ed85b78e2371f0ec5d0497ece8cfa35d988e23",
+      "start": "0x2d290",
+      "end_exclusive": "0x2d3e7"
+    }
+  },
+  "limits": [
+    "Static code/bytes only; does not establish runtime success, finite output, numerical quality, scientific validity, or protocol-gate readiness.",
+    "No library loading/native calls/tests/smokes performed.",
+    "Source and build-provenance verification remains parent scope; this gate checks identified retained ELF."
+  ],
+  "blocked_actions": []
+}
