@@ -1,0 +1,13 @@
+# 初期化検査の修正と、実行前の停止
+
+最初の固定版では、ASRの全重みが欠落なしで読めることを要求した。実際は全5担当で missing_keys が wav2vec2.masked_spec_embed の1項目だけとなり、モデル初期化中に停止した。120発話の評価入口には一度も入っていない。別プロセスのUTMOSは全120件を完了し、原結果を保持・照合した。
+
+公式transformers 4.51.3の[Wav2Vec2実装](https://github.com/huggingface/transformers/blob/v4.51.3/src/transformers/models/wav2vec2/modeling_wav2vec2.py)で、このパラメータを読む分岐は明示的な時間maskまたは学習中の自動maskに限られることを確認した。標準CTCへinput_valuesだけを渡すeval推論では使用しない。[重み読込み実装](https://github.com/huggingface/transformers/blob/v4.51.3/src/transformers/modeling_utils.py)の都合で欠落値のstorageが未初期化の場合もあり、正常な全重み読込みや確実な乱数初期値だとは扱わない。
+
+後継版は、missing_keysがこの1項目、unexpected_keys・mismatched_keys・error_msgsが全て空という辞書に厳密一致する場合だけ進む。全moduleのtraining=Falseを初期化後と各forward前に確認する。パラメータを埋めたりconfigを書き換えたりせず、固定入力・モデル・環境・decoderを維持した。元版の失敗を後継版の成功へ書き換えていない。
+
+後継版では担当0が空の出力先を事前に作成したため、初回の入口検査で停止した。続く固定pinの形式誤記も評価前に停止した。担当1はplan SHAの1文字を転記し誤り、資産取得前に停止した。元ログを保持し、既存の原データやソースを変えずに引数を訂正してから、未開始だった各24発話を実行した。実行済みの評価枠を繰り返したものではない。
+
+全5担当のASR実ログには、masked_spec_embedがcheckpointから読まれなかったという警告と、一般的な学習推奨の文が残る。担当の最終要約は「警告なし」としたが、親は原ログを読み、この要約を訂正した。学習は行っていない。使われない特定パラメータだけを認める根拠と検査条件は、実行前の後継版計画へ固定した。
+
+全120件の正規化入力・logits・argmaxの360配列を保持し、親が形状・値の有限性・hash・CTC復号と語編集距離を照合した。親が正規化やニューラルforward自体を再実行して一致を証明したわけではない。CPU実行の異なる環境間でbit単位に同一になる保証もしていない。

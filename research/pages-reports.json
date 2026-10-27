@@ -3,6 +3,32 @@
   "reports": [
     {
       "kind": "navigation-only",
+      "id": "full-reference-profile-2026-10-27",
+      "path": "research/full-reference-profile-2026-10-27",
+      "source_path": "research/full-reference-profile-2026-10-27",
+      "created_on": "2026-10-27",
+      "created_at": "2026-10-27T01:53:31.754389+00:00",
+      "title": "全長原音の認識誤りと、予測MOSが選んだ区間",
+      "comparison_scope": "無加工120発話を照合。原音のWER4.1341%、予測MOS3.86683。抽出位置の和集合は中央値89.16%。方式比較・順位ではなく、Apron24を維持。",
+      "artifact_count": 18,
+      "artifact_manifest": {
+        "bytes": 2749,
+        "sha256": "9fc7c086da28aec22279d302b63b6594137a969a4d33ac577a259b39a2983681"
+      },
+      "audio_listing": {
+        "caption": "事前指定5例のうち先頭の1例。無加工原音の先頭2秒で、新しい合成音声ではありません。",
+        "note": "LibriSpeech test-clean、CC BY4.0。元PCM16を切出し、音量調整・再標本化なし。",
+        "attribution_path": "index.html",
+        "samples": [
+          {
+            "path": "audio/librispeech_1089-134686-0008.wav",
+            "label": "原音"
+          }
+        ]
+      }
+    },
+    {
+      "kind": "navigation-only",
       "id": "soft-carrier-gain-quality-v2-2026-10-26",
       "path": "research/soft-carrier-gain-quality-v2-2026-10-26",
       "source_path": "research/soft-carrier-gain-quality-v2-2026-10-26",

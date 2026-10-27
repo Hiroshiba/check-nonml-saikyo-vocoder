@@ -1,0 +1,589 @@
+{
+  "scope": "Public summary derived from retained parent audit; not the original audit bytes",
+  "original_parent_audit_sha256": "5af2264799626d9c89b4cadb486cb1f9029ca791f0764685280cd5af77f8fbb4",
+  "plan_sha256": "bbbd4746a0d37fbf7d0818f5ec5cb90e879f41caefa03fd258ab7d35e47b7b9d",
+  "source_lock_sha256": "564ba1104b55c8fc3a1a8e34521b42fa8411736bcbacd1b0fa8f800a0816d1d0",
+  "input_identity": {
+    "bytes": 33020315,
+    "sha256": "fca35148e3658edf977f4525b74cd73a06f3812e6aa27d333c145fd06ccb9950"
+  },
+  "source_fingerprints": {
+    "PLAN.md": {
+      "bytes": 6364,
+      "sha256": "b1f9cfb71d1e406487c2d4d3728eba30a169c6640eeb97254348772649782a4a"
+    },
+    "plan.json": {
+      "bytes": 9110,
+      "sha256": "bbbd4746a0d37fbf7d0818f5ec5cb90e879f41caefa03fd258ab7d35e47b7b9d"
+    },
+    "source-lock.json": {
+      "bytes": 5632,
+      "sha256": "564ba1104b55c8fc3a1a8e34521b42fa8411736bcbacd1b0fa8f800a0816d1d0"
+    },
+    "original-input-contract.json": {
+      "bytes": 168729,
+      "sha256": "644f4d57483366bb20d8dbcfdaa254e354aed4af8318a6a2984bb2e8b3ddc9c1"
+    },
+    "asset-manifest.json": {
+      "bytes": 2806,
+      "sha256": "5027ed5d44bd93280fc01e163f3239bc6c987a3058cb2f1291b1ed663482d9f0"
+    },
+    "environment/pyproject.toml": {
+      "bytes": 695,
+      "sha256": "d05d1d655fc0bdce3a9e7a1f37b74a9813bce42944004988fd88983c923223fc"
+    },
+    "environment/runtime-packages.json": {
+      "bytes": 1446,
+      "sha256": "5009724d4b08afd78754dbe20db22968145b76405fe1ef656266b2db9e20639a"
+    },
+    "environment/uv.lock": {
+      "bytes": 114711,
+      "sha256": "88c4cfa25a604b600932cb070f1fb44653b245ed3f889a970e6cc0e2b45b702b"
+    },
+    "mos_trace_source/source_references.json": {
+      "bytes": 11607,
+      "sha256": "0327aaeb93e5a7d280da65c7b3a87e5a56331d9bbc3faf5c70e24b5c6e6ceb38"
+    },
+    "mos_trace_source/crop_trace.py": {
+      "bytes": 11577,
+      "sha256": "dc8cf25bcc2979227c5cc4c2debded1f6b64fb251ca570d36065588d98ccb236"
+    },
+    "audit_source/asr_audit.py": {
+      "bytes": 8795,
+      "sha256": "1df8775f44013dde8ffa62743026f1c292b063a8cc839578f07cb14b20fa4a7c"
+    },
+    "audit_source/archive_inputs.py": {
+      "bytes": 4205,
+      "sha256": "7c06f6aad8628033408cd758b0069aebc420b42f792e4602dd71a9f9db46655e"
+    },
+    "audit_source/archive_cases.py": {
+      "bytes": 10099,
+      "sha256": "a9fc232abf827b46d5daa2d40e02565b54d9df6be667c27986b865fbfdbe8a5b"
+    },
+    "audit_source/archive_audit.py": {
+      "bytes": 12556,
+      "sha256": "75595d0041bf0ed92a1498388d7c031926d539f37317de8ae9b4e44ecc4dc093"
+    },
+    "audit_source/archive_io.py": {
+      "bytes": 5146,
+      "sha256": "a1d1b0b09c5cfdf0599e0d86040229d17aec479a4335173c8065e3d8347ba0a1"
+    },
+    "audit_source/crop_audit.py": {
+      "bytes": 9198,
+      "sha256": "3438eef3cc33c9bc057860eb16d29584cb9f6437e16c66021af0ca8a7a8a2930"
+    },
+    "asr_source/evaluator.py": {
+      "bytes": 8004,
+      "sha256": "9062c7aac76baf7865b90dba40c0ed47978713437a0307187aaecbd5d6d29482"
+    },
+    "asr_source/assets.py": {
+      "bytes": 2082,
+      "sha256": "ad7897672df076df998b368607cdd44fc427df920d9739a65bbce8ba0c593124"
+    },
+    "asr_source/__init__.py": {
+      "bytes": 284,
+      "sha256": "16a84ee34cffbc15d9b8697df1fb78b5c7fa90bb5d093086ddb0ad4232a2bf2d"
+    },
+    "asr_source/alignment.py": {
+      "bytes": 2513,
+      "sha256": "aab141744b7ebee962d188912ec5d786fb13861c09332276ae570b1006da6de6"
+    },
+    "runner_source/common.py": {
+      "bytes": 3460,
+      "sha256": "5768d807f1ff07b1d0edec19fe7235cb436d717babdda4d87e52a37e35dc80f5"
+    },
+    "runner_source/__init__.py": {
+      "bytes": 87,
+      "sha256": "aedaf654707c1a9a06d2eb9025adaa412cdf926b3e8bda9c36d71646591c28e4"
+    },
+    "runner_source/preflight.py": {
+      "bytes": 15062,
+      "sha256": "94c72653d3930432e1318ebbcb8de4929e1cd24c149034d9df0d586f9e51e941"
+    },
+    "runner_source/packaging.py": {
+      "bytes": 5590,
+      "sha256": "00f3b92fe789ff5329f925fe553f55fd96df068e8ffcdb594d8dd92d236cd250"
+    },
+    "runner_source/prepare_assets.py": {
+      "bytes": 3071,
+      "sha256": "44521df04fef5108b73e46fc6fc74a22cb08272d3471d1b3b84b43fa6b390c05"
+    },
+    "runner_source/owner.py": {
+      "bytes": 5304,
+      "sha256": "8a2c6ab1aec2e9711248b5dcd5371ac9f2979ef7c522742d0da5e651dd802b5e"
+    },
+    "runner_source/stage.py": {
+      "bytes": 11777,
+      "sha256": "891235ab816bfefe3bf0f8089ae0ac78a4b7ed52c64ee607f60f4e2083e2811a"
+    },
+    "reference_assets/asr/preprocessor_config.json": {
+      "bytes": 159,
+      "sha256": "b225d617c025463b9e157e06afea8b90dc7078fc70b013c533328423e0486b4a"
+    },
+    "reference_assets/asr/special_tokens_map.json": {
+      "bytes": 85,
+      "sha256": "bb7068de1150661a10b55f9e4b12a0e77af8bf91f5e45e1b58afaf1d0e17f675"
+    },
+    "reference_assets/asr/config.json": {
+      "bytes": 1596,
+      "sha256": "d3ec255c063d9f95057b553b19c20135b259875834a4fe9deb218a6be25b4cf3"
+    },
+    "reference_assets/asr/tokenizer_config.json": {
+      "bytes": 163,
+      "sha256": "dc790594f5bc351a4311c6624f40acd95850d4aaf2a5cb3c656c9b610720b608"
+    },
+    "reference_assets/asr/vocab.json": {
+      "bytes": 291,
+      "sha256": "19727f8944fe6459fc3f240ae2c198395b740f6a029bd23e06656266b83bcf64"
+    },
+    "reference_backend/vocoderbench/__init__.py": {
+      "bytes": 79,
+      "sha256": "73738d70706824f85fdfac302306af505437a50b0ca4cdc68fd57aec211a308d"
+    },
+    "reference_backend/vocoderbench/mos.py": {
+      "bytes": 12126,
+      "sha256": "fb632aa5440245525289962372db4f3eb007cd2b3b493b2d05ecccb878e85f03"
+    },
+    "reference_backend/vocoderbench/quality_backends.py": {
+      "bytes": 10198,
+      "sha256": "1f36068515bc3e218f9eb149d7fc3b2b8e62b5eee804448ff30f01624dd23a48"
+    },
+    "reference_backend/vocoderbench/quality_core.py": {
+      "bytes": 8262,
+      "sha256": "66bf6c08633424f544b2ad7eef2a74283c05d809aa9a59df8fc1ba0e5ab51f4b"
+    }
+  },
+  "owners": [
+    {
+      "owner": 0,
+      "archive_identity": {
+        "bytes": 919098,
+        "sha256": "2e18326f819d474f3642261dfb7127fd6d1402a2215bc8885c1938418d884e7c"
+      },
+      "valid_archive": true,
+      "errors": [],
+      "runtime": {
+        "packages": {
+          "audioread": "3.1.0",
+          "certifi": "2026.10.23",
+          "cffi": "2.1.1",
+          "charset-normalizer": "3.5.2",
+          "cloudpickle": "3.1.2",
+          "coloredlogs": "15.0.1",
+          "decorator": "5.3.1",
+          "filelock": "4.2.4",
+          "flatbuffers": "25.12.19",
+          "fsspec": "2026.9.0",
+          "hf-xet": "1.7.0",
+          "huggingface-hub": "0.36.2",
+          "humanfriendly": "10.0",
+          "hyperpyyaml": "1.2.3",
+          "idna": "3.20",
+          "jinja2": "3.1.6",
+          "joblib": "1.6.0",
+          "lazy-loader": "0.6",
+          "librosa": "0.11.0",
+          "llvmlite": "0.50.0",
+          "markupsafe": "3.0.4",
+          "mpmath": "1.3.0",
+          "msgpack": "1.2.3",
+          "narwhals": "2.27.1",
+          "networkx": "3.7",
+          "numba": "0.68.0",
+          "numpy": "2.5.4",
+          "onnxruntime": "1.22.0",
+          "packaging": "26.3",
+          "pillow": "13.0.0",
+          "platformdirs": "4.13.5",
+          "pooch": "1.9.0",
+          "protobuf": "7.36.2",
+          "pycparser": "3.12",
+          "pystoi": "0.4.1",
+          "pyyaml": "6.0.3",
+          "regex": "2026.9.29",
+          "requests": "2.34.2",
+          "ruamel-yaml": "0.18.17",
+          "ruamel-yaml-clib": "0.2.15",
+          "safetensors": "0.8.0",
+          "scikit-learn": "1.9.1",
+          "scipy": "1.18.1",
+          "sentencepiece": "0.2.2",
+          "setuptools": "84.2.1",
+          "soundfile": "0.14.0",
+          "soxr": "1.1.0",
+          "speechbrain": "1.0.3",
+          "sympy": "1.14.0",
+          "threadpoolctl": "3.7.0",
+          "timm": "1.0.15",
+          "tokenizers": "0.21.4",
+          "torch": "2.8.0+cpu",
+          "torchaudio": "2.8.0+cpu",
+          "torchvision": "0.23.0+cpu",
+          "tqdm": "4.70.1",
+          "transformers": "4.51.3",
+          "typing-extensions": "4.16.0",
+          "urllib3": "2.8.0",
+          "utmosv2": "1.3.1.dev0"
+        },
+        "utmosv2_commit": "cc2700db57bb83ee13dc31ebe1b868c254e15d09",
+        "python_version": "3.12.14",
+        "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+        "implementation": "CPython",
+        "machine": "x86_64",
+        "platform": "Linux-6.18.55-x86_64-with-glibc2.41",
+        "system": "Linux",
+        "reproducibility_limit": "Version/commit gate, not proof of cross-machine or future bit equality"
+      }
+    },
+    {
+      "owner": 1,
+      "archive_identity": {
+        "bytes": 919030,
+        "sha256": "0a85dcb5adde81559732486a3dc7aa993de382b23ba7df1c57832d93f3bee4c8"
+      },
+      "valid_archive": true,
+      "errors": [],
+      "runtime": {
+        "packages": {
+          "audioread": "3.1.0",
+          "certifi": "2026.10.23",
+          "cffi": "2.1.1",
+          "charset-normalizer": "3.5.2",
+          "cloudpickle": "3.1.2",
+          "coloredlogs": "15.0.1",
+          "decorator": "5.3.1",
+          "filelock": "4.2.4",
+          "flatbuffers": "25.12.19",
+          "fsspec": "2026.9.0",
+          "hf-xet": "1.7.0",
+          "huggingface-hub": "0.36.2",
+          "humanfriendly": "10.0",
+          "hyperpyyaml": "1.2.3",
+          "idna": "3.20",
+          "jinja2": "3.1.6",
+          "joblib": "1.6.0",
+          "lazy-loader": "0.6",
+          "librosa": "0.11.0",
+          "llvmlite": "0.50.0",
+          "markupsafe": "3.0.4",
+          "mpmath": "1.3.0",
+          "msgpack": "1.2.3",
+          "narwhals": "2.27.1",
+          "networkx": "3.7",
+          "numba": "0.68.0",
+          "numpy": "2.5.4",
+          "onnxruntime": "1.22.0",
+          "packaging": "26.3",
+          "pillow": "13.0.0",
+          "platformdirs": "4.13.5",
+          "pooch": "1.9.0",
+          "protobuf": "7.36.2",
+          "pycparser": "3.12",
+          "pystoi": "0.4.1",
+          "pyyaml": "6.0.3",
+          "regex": "2026.9.29",
+          "requests": "2.34.2",
+          "ruamel-yaml": "0.18.17",
+          "ruamel-yaml-clib": "0.2.15",
+          "safetensors": "0.8.0",
+          "scikit-learn": "1.9.1",
+          "scipy": "1.18.1",
+          "sentencepiece": "0.2.2",
+          "setuptools": "84.2.1",
+          "soundfile": "0.14.0",
+          "soxr": "1.1.0",
+          "speechbrain": "1.0.3",
+          "sympy": "1.14.0",
+          "threadpoolctl": "3.7.0",
+          "timm": "1.0.15",
+          "tokenizers": "0.21.4",
+          "torch": "2.8.0+cpu",
+          "torchaudio": "2.8.0+cpu",
+          "torchvision": "0.23.0+cpu",
+          "tqdm": "4.70.1",
+          "transformers": "4.51.3",
+          "typing-extensions": "4.16.0",
+          "urllib3": "2.8.0",
+          "utmosv2": "1.3.1.dev0"
+        },
+        "utmosv2_commit": "cc2700db57bb83ee13dc31ebe1b868c254e15d09",
+        "python_version": "3.12.14",
+        "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+        "implementation": "CPython",
+        "machine": "x86_64",
+        "platform": "Linux-6.18.55-x86_64-with-glibc2.41",
+        "system": "Linux",
+        "reproducibility_limit": "Version/commit gate, not proof of cross-machine or future bit equality"
+      }
+    },
+    {
+      "owner": 2,
+      "archive_identity": {
+        "bytes": 920437,
+        "sha256": "518121de5f62da2a2dadc3f008b16a1881cda7520d97a80e031861b3cd68f2c5"
+      },
+      "valid_archive": true,
+      "errors": [],
+      "runtime": {
+        "packages": {
+          "audioread": "3.1.0",
+          "certifi": "2026.10.23",
+          "cffi": "2.1.1",
+          "charset-normalizer": "3.5.2",
+          "cloudpickle": "3.1.2",
+          "coloredlogs": "15.0.1",
+          "decorator": "5.3.1",
+          "filelock": "4.2.4",
+          "flatbuffers": "25.12.19",
+          "fsspec": "2026.9.0",
+          "hf-xet": "1.7.0",
+          "huggingface-hub": "0.36.2",
+          "humanfriendly": "10.0",
+          "hyperpyyaml": "1.2.3",
+          "idna": "3.20",
+          "jinja2": "3.1.6",
+          "joblib": "1.6.0",
+          "lazy-loader": "0.6",
+          "librosa": "0.11.0",
+          "llvmlite": "0.50.0",
+          "markupsafe": "3.0.4",
+          "mpmath": "1.3.0",
+          "msgpack": "1.2.3",
+          "narwhals": "2.27.1",
+          "networkx": "3.7",
+          "numba": "0.68.0",
+          "numpy": "2.5.4",
+          "onnxruntime": "1.22.0",
+          "packaging": "26.3",
+          "pillow": "13.0.0",
+          "platformdirs": "4.13.5",
+          "pooch": "1.9.0",
+          "protobuf": "7.36.2",
+          "pycparser": "3.12",
+          "pystoi": "0.4.1",
+          "pyyaml": "6.0.3",
+          "regex": "2026.9.29",
+          "requests": "2.34.2",
+          "ruamel-yaml": "0.18.17",
+          "ruamel-yaml-clib": "0.2.15",
+          "safetensors": "0.8.0",
+          "scikit-learn": "1.9.1",
+          "scipy": "1.18.1",
+          "sentencepiece": "0.2.2",
+          "setuptools": "84.2.1",
+          "soundfile": "0.14.0",
+          "soxr": "1.1.0",
+          "speechbrain": "1.0.3",
+          "sympy": "1.14.0",
+          "threadpoolctl": "3.7.0",
+          "timm": "1.0.15",
+          "tokenizers": "0.21.4",
+          "torch": "2.8.0+cpu",
+          "torchaudio": "2.8.0+cpu",
+          "torchvision": "0.23.0+cpu",
+          "tqdm": "4.70.1",
+          "transformers": "4.51.3",
+          "typing-extensions": "4.16.0",
+          "urllib3": "2.8.0",
+          "utmosv2": "1.3.1.dev0"
+        },
+        "utmosv2_commit": "cc2700db57bb83ee13dc31ebe1b868c254e15d09",
+        "python_version": "3.12.14",
+        "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+        "implementation": "CPython",
+        "machine": "x86_64",
+        "platform": "Linux-6.18.55-x86_64-with-glibc2.41",
+        "system": "Linux",
+        "reproducibility_limit": "Version/commit gate, not proof of cross-machine or future bit equality"
+      }
+    },
+    {
+      "owner": 3,
+      "archive_identity": {
+        "bytes": 916378,
+        "sha256": "15c28e7ecadf51e983605f4c3e5ec37bf0bdbc7164abbe8807ff0686fb781934"
+      },
+      "valid_archive": true,
+      "errors": [],
+      "runtime": {
+        "packages": {
+          "audioread": "3.1.0",
+          "certifi": "2026.10.23",
+          "cffi": "2.1.1",
+          "charset-normalizer": "3.5.2",
+          "cloudpickle": "3.1.2",
+          "coloredlogs": "15.0.1",
+          "decorator": "5.3.1",
+          "filelock": "4.2.4",
+          "flatbuffers": "25.12.19",
+          "fsspec": "2026.9.0",
+          "hf-xet": "1.7.0",
+          "huggingface-hub": "0.36.2",
+          "humanfriendly": "10.0",
+          "hyperpyyaml": "1.2.3",
+          "idna": "3.20",
+          "jinja2": "3.1.6",
+          "joblib": "1.6.0",
+          "lazy-loader": "0.6",
+          "librosa": "0.11.0",
+          "llvmlite": "0.50.0",
+          "markupsafe": "3.0.4",
+          "mpmath": "1.3.0",
+          "msgpack": "1.2.3",
+          "narwhals": "2.27.1",
+          "networkx": "3.7",
+          "numba": "0.68.0",
+          "numpy": "2.5.4",
+          "onnxruntime": "1.22.0",
+          "packaging": "26.3",
+          "pillow": "13.0.0",
+          "platformdirs": "4.13.5",
+          "pooch": "1.9.0",
+          "protobuf": "7.36.2",
+          "pycparser": "3.12",
+          "pystoi": "0.4.1",
+          "pyyaml": "6.0.3",
+          "regex": "2026.9.29",
+          "requests": "2.34.2",
+          "ruamel-yaml": "0.18.17",
+          "ruamel-yaml-clib": "0.2.15",
+          "safetensors": "0.8.0",
+          "scikit-learn": "1.9.1",
+          "scipy": "1.18.1",
+          "sentencepiece": "0.2.2",
+          "setuptools": "84.2.1",
+          "soundfile": "0.14.0",
+          "soxr": "1.1.0",
+          "speechbrain": "1.0.3",
+          "sympy": "1.14.0",
+          "threadpoolctl": "3.7.0",
+          "timm": "1.0.15",
+          "tokenizers": "0.21.4",
+          "torch": "2.8.0+cpu",
+          "torchaudio": "2.8.0+cpu",
+          "torchvision": "0.23.0+cpu",
+          "tqdm": "4.70.1",
+          "transformers": "4.51.3",
+          "typing-extensions": "4.16.0",
+          "urllib3": "2.8.0",
+          "utmosv2": "1.3.1.dev0"
+        },
+        "utmosv2_commit": "cc2700db57bb83ee13dc31ebe1b868c254e15d09",
+        "python_version": "3.12.14",
+        "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+        "implementation": "CPython",
+        "machine": "x86_64",
+        "platform": "Linux-6.18.55-x86_64-with-glibc2.41",
+        "system": "Linux",
+        "reproducibility_limit": "Version/commit gate, not proof of cross-machine or future bit equality"
+      }
+    },
+    {
+      "owner": 4,
+      "archive_identity": {
+        "bytes": 918893,
+        "sha256": "00c1c095935391454aedb2c14683205837003efc75307d871f1c2319fa0b4298"
+      },
+      "valid_archive": true,
+      "errors": [],
+      "runtime": {
+        "packages": {
+          "audioread": "3.1.0",
+          "certifi": "2026.10.23",
+          "cffi": "2.1.1",
+          "charset-normalizer": "3.5.2",
+          "cloudpickle": "3.1.2",
+          "coloredlogs": "15.0.1",
+          "decorator": "5.3.1",
+          "filelock": "4.2.4",
+          "flatbuffers": "25.12.19",
+          "fsspec": "2026.9.0",
+          "hf-xet": "1.7.0",
+          "huggingface-hub": "0.36.2",
+          "humanfriendly": "10.0",
+          "hyperpyyaml": "1.2.3",
+          "idna": "3.20",
+          "jinja2": "3.1.6",
+          "joblib": "1.6.0",
+          "lazy-loader": "0.6",
+          "librosa": "0.11.0",
+          "llvmlite": "0.50.0",
+          "markupsafe": "3.0.4",
+          "mpmath": "1.3.0",
+          "msgpack": "1.2.3",
+          "narwhals": "2.27.1",
+          "networkx": "3.7",
+          "numba": "0.68.0",
+          "numpy": "2.5.4",
+          "onnxruntime": "1.22.0",
+          "packaging": "26.3",
+          "pillow": "13.0.0",
+          "platformdirs": "4.13.5",
+          "pooch": "1.9.0",
+          "protobuf": "7.36.2",
+          "pycparser": "3.12",
+          "pystoi": "0.4.1",
+          "pyyaml": "6.0.3",
+          "regex": "2026.9.29",
+          "requests": "2.34.2",
+          "ruamel-yaml": "0.18.17",
+          "ruamel-yaml-clib": "0.2.15",
+          "safetensors": "0.8.0",
+          "scikit-learn": "1.9.1",
+          "scipy": "1.18.1",
+          "sentencepiece": "0.2.2",
+          "setuptools": "84.2.1",
+          "soundfile": "0.14.0",
+          "soxr": "1.1.0",
+          "speechbrain": "1.0.3",
+          "sympy": "1.14.0",
+          "threadpoolctl": "3.7.0",
+          "timm": "1.0.15",
+          "tokenizers": "0.21.4",
+          "torch": "2.8.0+cpu",
+          "torchaudio": "2.8.0+cpu",
+          "torchvision": "0.23.0+cpu",
+          "tqdm": "4.70.1",
+          "transformers": "4.51.3",
+          "typing-extensions": "4.16.0",
+          "urllib3": "2.8.0",
+          "utmosv2": "1.3.1.dev0"
+        },
+        "utmosv2_commit": "cc2700db57bb83ee13dc31ebe1b868c254e15d09",
+        "python_version": "3.12.14",
+        "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+        "implementation": "CPython",
+        "machine": "x86_64",
+        "platform": "Linux-6.18.55-x86_64-with-glibc2.41",
+        "system": "Linux",
+        "reproducibility_limit": "Version/commit gate, not proof of cross-machine or future bit equality"
+      }
+    }
+  ],
+  "metrics": {
+    "asr": {
+      "all120_verified": false,
+      "verified_measurements": 0,
+      "statuses": {
+        "not_started": 120
+      },
+      "unavailable_or_invalid_slots": 120,
+      "global_values": null
+    },
+    "mos": {
+      "all120_verified": true,
+      "verified_measurements": 120,
+      "statuses": {
+        "measured": 120
+      },
+      "unavailable_or_invalid_slots": 0,
+      "global_values": {
+        "speaker_equal_predicted_mos": 3.8668300052483877
+      }
+    }
+  },
+  "limitations": [
+    "Neural forward not independently recomputed",
+    "No independent RNG replay or historical no-mutation proof"
+  ]
+}
